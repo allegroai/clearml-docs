@@ -1,0 +1,35 @@
+---
+title: Subprocess
+---
+
+The [subprocess_example.py](https://github.com/allegroai/clearml/blob/master/examples/distributed/subprocess_example.py) 
+script demonstrates multiple subprocesses interacting and reporting to a main Task. The following happens in the script: 
+* This script initializes a main Task and spawns subprocesses, each for an instances of that Task.
+* Each Task in a subprocess references the main Task by calling [Task.current_task](../../references/sdk/task#taskcurrent_task), 
+which always returns the main Task.
+* The Task in each subprocess reports the following to the main Task:
+    * Hyperparameters - Additional, different hyperparameters.
+    * Log - Text logged to the console as the Task in each subprocess executes.
+* When the script runs, it creates an experiment named `Popen example` which is associated with the `examples` project.
+
+## Hyperparameters
+
+**ClearML** automatically logs the command line options defined with `argparse`. A parameter dictionary is logged by 
+connecting it to the Task using a call to the [Task.connect](../../references/sdk/task#connect) method.
+
+    additional_parameters = {'stuff_' + str(randint(0, 100)): 'some stuff ' + str(randint(0, 100))}
+    Task.current_task().connect(additional_parameters)
+
+Command line options appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
+
+![image](../../img/examples_subprocess_example_01.png)
+
+Parameter dictionaries appear in **General**.
+
+![image](../../img/examples_subprocess_example_01a.png)
+
+## Log
+
+Output to the console, including the text messages from the Task in each subprocess, appear in **RESULTS** **>** **LOG**.
+
+![image](../../img/examples_subprocess_example_02.png)

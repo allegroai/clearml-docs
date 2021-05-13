@@ -1,0 +1,61 @@
+---
+title: Linux or macOS
+---
+
+:::important
+This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
+:::
+
+<br/>
+
+<details className="cml-expansion-panel info">
+<summary className="cml-expansion-panel-summary">Important: Upgrading from v0.14 or older</summary>
+<div class="cml-expansion-panel-content">
+  
+
+   For Linux only, if upgrading from <strong>Trains Server</strong> v0.14 or older, configure the <strong>ClearML Agent Services</strong>.
+
+   * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** will use the external public address of the **ClearML Server**.
+   * If ``CLEARML_AGENT_GIT_USER`` / ``CLEARML_AGENT_GIT_PASS`` are not provided, then **ClearML Agent Services** will not be able to access any private repositories for running service tasks.
+
+
+       export CLEARML_HOST_IP=server_host_ip_here
+       export CLEARML_AGENT_GIT_USER=git_username_here
+       export CLEARML_AGENT_GIT_PASS=git_password_here
+       
+
+:::note
+For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRAINS_AGENT_GIT_USER``, and ``TRAINS_AGENT_GIT_PASS`` are supported.          
+:::
+    
+</div>
+</details>
+   
+<br/>
+
+**To upgrade ClearML Server Docker deployment:**
+
+1. Shutdown **ClearML Server**. Execute the following command (which assumes the configuration file is in the environment path).
+ 
+        docker-compose -f docker-compose.yml down
+        
+1. If upgrading from **Trains Server** version 0.15 or older to **ClearML Server**, a data migration is required before 
+   upgrading. First follow these [data migration instructions](clearml_server_es7_migration.md), and then continue this upgrade.
+
+1. We recommend [backing up data](clearml_server_linux_mac.md#backing-up-and-restoring-data-and-configuration) and, if the configuration folder is 
+   not empty, backing up the configuration.
+
+1. If upgrading from **Trains Server** to **ClearML Server**, rename `/opt/trains` and its subdirectories to `/opt/clearml`.
+
+         sudo mv /opt/trains /opt/clearml
+
+1. Download the latest `docker-compose.yml` file.
+
+        curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
+
+1. Startup **ClearML Server**. This automatically pulls the latest **ClearML Server** build.
+        
+        docker-compose -f /opt/clearml/docker-compose.yml pull
+        docker-compose -f /opt/clearml/docker-compose.yml up -d
+
+If issues arise during your upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq.md#common-docker-upgrade-errors).

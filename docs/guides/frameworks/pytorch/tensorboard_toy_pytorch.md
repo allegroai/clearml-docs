@@ -1,0 +1,21 @@
+---
+title: PyTorch TensorBoard Toy
+---
+
+The [tensorboard_toy_pytorch.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/tensorboard_toy_pytorch.py) 
+example demonstrates the integration of **ClearML** into code, which creates a TensorBoard `SummaryWriter` object to log 
+debug sample images. When the script runs, it creates an experiment named `pytorch tensorboard toy example`, which is 
+associated with the `examples` project.
+
+## Debug samples
+
+The debug sample images appear according to metric, in the experiment page in the **ClearML web UI** under **RESULTS** 
+**>** **DEBUG SAMPLES**.
+
+![image](../../../img/examples_tensorboard_toy_pytorch_02.png)
+
+## Hyperparameters
+
+**ClearML** automatically logs TensorFlow Definitions. They appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **TF_DEFINE**.
+
+![image](../../../img/examples_tensorboard_toy_pytorch_00.png)

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+  <defs>
+    <symbol id="a" data-name="A" viewBox="0 0 80 64">
+      <g>
+        <path d="M0,64H80V36H0Z" fill="#aecbfa"/>
+        <path d="M72,64h8V36H72Z" fill="#669df6"/>
+        <path d="M80,64H72V36Z" fill="#4285f4"/>
+        <path d="M0,64H8V36H0Z" fill="#669df6"/>
+        <path d="M16,52H40V48H16Z" fill="#fff"/>
+        <path d="M52,50a6,6,0,0,0,6,6h0a6,6,0,0,0,6-6h0a6,6,0,0,0-6-6h0A6,6,0,0,0,52,50Z" fill="#fff"/>
+        <path d="M0,28H80V0H0Z" fill="#aecbfa"/>
+        <path d="M72,28h8V0H72Z" fill="#669df6"/>
+        <path d="M80,28H72V0Z" fill="#4285f4"/>
+        <path d="M0,28H8V0H0Z" fill="#669df6"/>
+        <path d="M16,16H40V12H16Z" fill="#fff"/>
+        <path d="M52,14a6,6,0,0,0,6,6h0a6,6,0,0,0,6-6h0a6,6,0,0,0-6-6h0A6,6,0,0,0,52,14Z" fill="#fff"/>
+      </g>
+    </symbol>
+  </defs>
+  <use width="80" height="64" transform="matrix(0.75, 0, 0, -0.75, 2, 56)" xlink:href="#a"/>
+</svg>
