@@ -15,7 +15,7 @@ module.exports = {
   title: 'ClearML',
   tagline: 'Auto-Magical Suite of tools to streamline your ML workflow',
   url: 'https://clear.ml',
-  baseUrl: '/',
+  baseUrl: '/docs/latest/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
