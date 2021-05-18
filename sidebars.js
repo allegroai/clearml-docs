@@ -63,12 +63,11 @@ module.exports = {
                 {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
                 {'FastAI': ['guides/frameworks/fastai/fastai_with_tensorboard']},
                 {
-                    'Keras': ['guides/frameworks/keras/allegro_clearml_keras_tb_example', 'guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard',
-                        'guides/frameworks/keras/manual_model_upload']
+                    'Keras': ['guides/frameworks/keras/allegro_clearml_keras_tb_example', 'guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']
                 },
                 {'Matplotlib': ['guides/frameworks/matplotlib/allegro_clearml_matplotlib_example', 'guides/frameworks/matplotlib/matplotlib_example']},
                 {
-                    'Pytorch': ['guides/frameworks/pytorch/manual_model_upload', 'guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
+                    'Pytorch': ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
                         'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
                         'guides/frameworks/pytorch/tensorboard_toy_pytorch']
                 },
@@ -84,12 +83,12 @@ module.exports = {
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
                 {'TensorboardX': ['guides/frameworks/tensorboardx/tensorboardx']},
                 {
-                    'Tensorflow': ['guides/frameworks/tensorflow/manual_model_upload', 'guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
+                    'Tensorflow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
                         'guides/frameworks/tensorflow/tensorflow_mnist', 'guides/frameworks/tensorflow/integration_keras_tuner']
                 },
                 {'XGboost': ['guides/frameworks/xgboost/xgboost_sample']}
             ]},
-            {'IDEs': ['guides/ide/remote_jupyter_tutorial']},
+            {'IDEs': ['guides/ide/remote_jupyter_tutorial', 'guides/ide/integration_pycharm']},
             {'Optimization': ['guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt']},
             {'Pipelines': ['guides/pipeline/pipeline_controller']},
 

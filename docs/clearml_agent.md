@@ -503,4 +503,14 @@ clearml-agent daemon --services-mode --queue services --create-queue --docker <d
 Do not enqueue training or inference Tasks into the services queue. They will put an unnecessary load on the server.
 :::
 
+### Setting Server Credentials
 
+Self hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by default with a services queue.
+By default, the server is open and does not require username and password, but it can be [password protected](deploying_clearml/clearml_server_security#user-access-security).
+In case it is password protected the services agent will need to be configured with server credentials (associated with a user).
+
+To do that, set these environment variables on  the ClearML Server machine with the appropriate credentials:
+```
+CLEARML_API_ACCESS_KEY
+CLEARML_API_SECRET_KEY
+```

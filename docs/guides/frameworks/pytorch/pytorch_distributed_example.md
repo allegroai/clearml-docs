@@ -71,6 +71,6 @@ Task.current_task().connect(param)
 
 ## Log
 
-Output to the console, including the text messages printed from the main Task object and each subprocess, appears in **RESULTS** **>** **LOG**.
+Output to the console, including the text messages printed from the main Task object and each subprocess, appears in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_pytorch_distributed_example_06.png)

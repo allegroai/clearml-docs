@@ -31,8 +31,8 @@ In the **ClearML Web UI**, the PR Curve summaries appear in the experiment's pag
 
 ![image](../../../img/examples_tensorboard_pr_curve_04.png)
 
-## Log
+## Console
 
-All other console output appears in **RESULTS** **>** **LOG**.
+All other console output appears in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_tensorboard_pr_curve_05.png)

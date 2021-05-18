@@ -186,13 +186,13 @@ module.exports = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/allegroai/clearml_docs/edit/master/website/',
+            'https://github.com/allegroai/clearml-docs/edit/main/',
         },
         API: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl:
-            'https://github.com/allegroai/clearml_docs/edit/master/website/',
+            'https://github.com/allegroai/clearml-docs/edit/main/',
         },
         blog: {
           blogTitle: 'ClearML Tutorials',
@@ -202,7 +202,7 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/allegroai/clearml_docs/edit/master/website/tutorials/',
+            'https://github.com/allegroai/clearml-docs/edit/main/tutorials/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

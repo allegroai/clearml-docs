@@ -71,9 +71,9 @@ These hyperparameters are those in the optimizer Task, where the `HyperParameter
 
 ![image](../../../../../img/examples_hyperparameter_search_01.png)
 
-### Log
+### Console
 
-All console output from `Hyper-Parameter Optimization` appears in **RESULTS** tab, **LOG** sub-tab.
+All console output from `Hyper-Parameter Optimization` appears in **RESULTS** tab, **CONSOLE** sub-tab.
 
 ![image](../../../../../img/examples_hyperparameter_search_03.png)
 

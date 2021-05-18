@@ -29,9 +29,9 @@ The loss and accuracy metric scalar plots appear in the experiment's page in the
 
 ![image](../../../img/examples_tensorflow_mnist_01.png)
 
-## Log
+## Console
 
-All console output appears in **RESULTS** **>** **LOG**.
+All console output appears in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_tensorflow_mnist_05.png)
 

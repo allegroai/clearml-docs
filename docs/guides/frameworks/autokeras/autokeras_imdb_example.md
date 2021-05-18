@@ -18,9 +18,9 @@ which are titled **:monitor: machine**.
 
 ![image](../../../img/examples_keras_16.png)
 
-## Log
+## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_keras_15.png)
 

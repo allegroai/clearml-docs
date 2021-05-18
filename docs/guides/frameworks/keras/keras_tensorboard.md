@@ -40,9 +40,9 @@ TensorFlow Definitions appear in **TF_DEFINE**.
 
 ![image](../../../img/examples_keras_00a.png)
 
-## Log
+## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_keras_03.png)
 

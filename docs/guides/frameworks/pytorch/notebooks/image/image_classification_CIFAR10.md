@@ -43,8 +43,8 @@ TensorFlow Definitions appear in the **TF_DEFINE** subsection.
 
 ![image](../../../../../img/examples_image_classification_CIFAR10_01a.png)
 
-## Log
+## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../../../img/examples_image_classification_CIFAR10_04.png)

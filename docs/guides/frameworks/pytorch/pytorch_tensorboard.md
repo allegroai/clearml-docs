@@ -33,9 +33,9 @@ These scalars, along with the resource utilization plots, which are titled **:mo
 
 ![image](../../../img/examples_pytorch_tensorboard_01.png)
 
-## Log
+## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_pytorch_tensorboard_06.png)
 

@@ -46,8 +46,8 @@ Parameter dictionaries appear in the **General** subsection.
 
 ![image](../../../../../img/download_and_preprocessing_01.png)
 
-## Log
+## Console
 
-Output to the console appears in **RESULTS** **>** **LOG**.
+Output to the console appears in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../../../img/download_and_preprocessing_06.png)

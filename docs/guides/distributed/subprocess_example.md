@@ -9,7 +9,7 @@ script demonstrates multiple subprocesses interacting and reporting to a main Ta
 which always returns the main Task.
 * The Task in each subprocess reports the following to the main Task:
     * Hyperparameters - Additional, different hyperparameters.
-    * Log - Text logged to the console as the Task in each subprocess executes.
+    * Console - Text logged to the console as the Task in each subprocess executes.
 * When the script runs, it creates an experiment named `Popen example` which is associated with the `examples` project.
 
 ## Hyperparameters
@@ -28,8 +28,8 @@ Parameter dictionaries appear in **General**.
 
 ![image](../../img/examples_subprocess_example_01a.png)
 
-## Log
+## Console
 
-Output to the console, including the text messages from the Task in each subprocess, appear in **RESULTS** **>** **LOG**.
+Output to the console, including the text messages from the Task in each subprocess, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../img/examples_subprocess_example_02.png)

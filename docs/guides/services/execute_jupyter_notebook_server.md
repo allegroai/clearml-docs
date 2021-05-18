@@ -54,7 +54,7 @@ It shows the server links are:
 
 ![image](../../img/examples_execute_jupyter_notebook_server_02.png)
 
-The Jupyter Note Server console output appears in **RESULTS** **>** **LOG**, including log entries for the notebooks run 
+The Jupyter Note Server console output appears in **RESULTS** **>** **CONSOLE**, including log entries for the notebooks run 
 on the server.
 
 To test the Jupyter Notebook, we ran a notebook named audio_preprocessing_example.ipynb. The log shows it was saved:

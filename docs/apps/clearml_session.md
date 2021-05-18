@@ -53,14 +53,15 @@ To run a session inside a Docker container, use the `--docker` flag and enter th
 session.
 
 ### Passing requirements
-`clearml-session` can download required Python packages. If the code you are going to execute in the remote session, has
-required packages, they can be specified. If there is a `requirement.txt` file, the file can be attached to the 
-command using `--requirements </file/location.txt>`. Alternatively, packages can be manually entered, using `--packages "<package_name>"` 
-(for example `--packages "keras" "clearml"`).
+`clearml-session` can download required Python packages. 
+A `requirement.txt` file can be attached to the command using `--requirements </file/location.txt>`.
+Alternatively, packages can be manually specified, using `--packages "<package_name>"` 
+(for example `--packages "keras" "clearml"`) and they'll be automatically installed.
 
 ### Passing Git credentials
 To send local .git-credentials file to the interactive session, add a `--git-credentials` flag and set it to `True`. 
-This way, git references can be tracked, including untracked changes. 
+This is helpful if working on private git repositories and allows for seemless cloning and tracking of git references,
+including untracked changes. 
 
 ### Re-launching and shutting down sessions 
 If a `clearml-session` was launched locally and is still running on a remote machine, users can easily reconnect to it.

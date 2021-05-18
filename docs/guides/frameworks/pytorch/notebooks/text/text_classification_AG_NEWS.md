@@ -29,9 +29,9 @@ Parameter dictionaries appear in the **General** subsection.
 
 ![image](../../../../../img/text_classification_AG_NEWS_01a.png)
 
-## Log
+## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../../../img/text_classification_AG_NEWS_02.png)
 

@@ -32,7 +32,7 @@ title: FAQ
 
 **Graphs and Logs**
 
-* [The first log lines are missing from the experiment log tab. Where did they go?](#first-log-lines-missing)
+* [The first log lines are missing from the experiment console tab. Where did they go?](#first-log-lines-missing)
 * [Can I create a graph comparing hyperparameters vs model accuracy?](#compare-graph-parameters)
 * [I want to add more graphs, not just with TensorBoard. Is this supported?](#more-graph-types)
 * [How can I report more than one scatter 2D series on the same plot?](#multiple-scatter2D)
@@ -357,12 +357,12 @@ values are `True`, `False`, and a dictionary for fine-grain control. See [Task.i
 
 ## Graphs and Logs
 
-**The first log lines are missing from the experiment log tab. Where did they go?** <a id="first-log-lines-missing"></a>
+**The first log lines are missing from the experiment console tab. Where did they go?** <a id="first-log-lines-missing"></a>
 
 Due to speed/optimization issues, we opted to display only the last several hundred log lines.
 
 You can always download the full log as a file using the **ClearML Web UI**. In the **ClearML Web UI** **>** experiment 
-info panel *>* **RESULTS** tab **>** **LOG** sub-tab, use the **Download full log** feature.
+info panel *>* **RESULTS** tab **>** **CONSOLE** sub-tab, use the **Download full log** feature.
 
 <br/>
 

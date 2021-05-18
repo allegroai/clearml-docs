@@ -63,9 +63,9 @@ The TensorFlow Definitions appear in the **TF_DEFINE** subsection.
 
 ![image](../../../img/examples_keras_jupyter_21.png)
 
-## Log
+## CONSOLE
 
-Text printed to the console for training appears in **RESULTS** **>** **LOG**.
+Text printed to the console for training appears in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_keras_jupyter_07.png)
 

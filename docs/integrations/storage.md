@@ -2,43 +2,17 @@
 title: Storage
 ---
 
+import ImageSwitcher from '/ImageSwitcher.js';
+
 ClearML is able to interface with the most popular storage solutions in the market for storing model checkpoints, artifacts 
 and charts.
 
 Supported storage mediums include:
 
-<div className="supported-storages">
-    <div>
-        <img src="/icons/ico-local-and-shared.svg" alt="Storage icon" />
-        Local and shared folders
-    </div>
-    <div>
-        <img src="/icons/ico-aws-s3.svg" alt="Storage icon" />
-        S3 buckets
-    </div>
-    <div>
-        <img src="/icons/ico-google-cloud-storage.svg" alt="Storage icon" />
-        Google Cloud Storage
-    </div>
-    <div>
-        <img src="/icons/ico-azure-storage.svg" alt="Storage icon" />
-        Azure Storage
-    </div>
-    <div>
-        <img src="/icons/ico-nas.svg" alt="Storage icon" />
-        http(s)
-    </div>
-    <div>
-        <img src="/icons/ico-minio.svg" alt="Storage icon" />
-        minio
-    </div>
-    <div>
-        <img src="/icons/ico-ceph.svg" alt="Storage icon" />
-        ceph
-    </div>
-</div>
-
----
+<ImageSwitcher alt="ClearML Supported Storage"
+    lightImageSrc="/icons/ClearML_Supported_Storage--on-light.png"
+    darkImageSrc="/icons/ClearML_Supported_Storage--on-dark.png" 
+/>
 
 :::note
 Once uploading an object to a storage medium, each machine that uses the object must have access to it.

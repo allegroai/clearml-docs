@@ -11,16 +11,14 @@ ClearML Data Management solves two important challenges:
 
 **We believe Data is not code**. It should not be stored in a git tree, because progress on datasets is not always linear. 
 Moreover, it can be difficult and inefficient to find on a git tree the commit associated with a certain version of a dataset. 
-The data usage in experiments needs to have high observability and needs to be understood, not just by data scientists.
 
-`clearml-data` allows to easily create new flexible datasets, from which users can add and remove files. These datasets can 
-be retrieved simply from any machine with physical or network access to the data. Additionally, datasets can be set up to 
-inherit from other datasets, so data lineages can be created, and users can track when and how their data changes.
+A `clearml-data` dataset is a collection of files, stored on a central storage location (S3 \ GS \ Azure \ Network Storage).
+Datasets can be set up to inherit from other datasets, so data lineages can be created, 
+and users can track when and how their data changes.<br/>
+Dataset changes are stored using differentiable storage, meaning a version will store the change-set from its previous dataset parents
 
-`clearml-data` utilizes existing object storage like S3/GS/Azure and even plain file system shares.
-
-Datasets are stored in a binary differential format, allowing storage optimization and networking. Local copies 
-of datasets are always cached, so the same data never needs to be downloaded twice.
+Local copies of datasets are always cached, so the same data never needs to be downloaded twice.
+When a dataset is pulled it will automatically pull all parent datasets and merge them into one output folder for you to work with
 
 ClearML-data offers two interfaces:
 - `clearml-data` - CLI utility for creating, uploading, and managing datasets.  
@@ -249,10 +247,11 @@ Datasets can be searched by project, name, ID, and tags.
 
 ### Python API
 
-All API commands should be imported with<br/> `from clearml import Dataset`
+All API commands should be imported with<br/>
+`from clearml import Dataset`
 
 
-#### `Dataset.get(dataset_id='<DS_ID>').get_local_copy()`  
+#### `Dataset.get(dataset_id=DS_ID).get_local_copy()`  
 
 Returns a path to dataset in cache, and downloads it if it is not already in cache.
 
@@ -265,7 +264,7 @@ Returns a path to dataset in cache, and downloads it if it is not already in cac
 
 <br/>
 
-#### `Dataset.get(dataset_id='<DS_ID>').get_mutable_local_copy()` 
+#### `Dataset.get(dataset_id=DS_ID).get_mutable_local_copy()` 
 
 Downloads the dataset to a specific folder (non-cached). If the folder already has contents, specify whether to overwrite 
 its contents with the dataset contents.

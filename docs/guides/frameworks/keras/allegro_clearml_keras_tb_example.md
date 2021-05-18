@@ -36,7 +36,7 @@ Histograms for layer density appear in **RESULTS** **>** **PLOTS**.
 
 ## Log
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/keras_colab_01.png)
 

@@ -31,7 +31,7 @@ appear in the experiment's page in the **web UI**, under **RESULTS** **>** **SCA
 
 ## Log
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_pytorch_tensorboardx_02.png)
 

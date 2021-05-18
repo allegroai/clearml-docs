@@ -62,8 +62,8 @@ All the hyperparameters appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS**.
 
 ![image](../../img/examples_pytorch_distributed_example_01a.png)
 
-## Log
+## Console
 
-Output to the console, including the text messages printed from the main Task object and each subprocess appear in **RESULTS** **>** **LOG**.
+Output to the console, including the text messages printed from the main Task object and each subprocess appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../img/examples_pytorch_distributed_example_06.png)

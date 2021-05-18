@@ -27,9 +27,9 @@ The loss and accuracy metric scalar plots appear in the experiment's page in the
 
 ![image](../../../img/examples_pytorch_tensorboardx_01.png)
 
-## Log
+## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_pytorch_tensorboardx_02.png)
 

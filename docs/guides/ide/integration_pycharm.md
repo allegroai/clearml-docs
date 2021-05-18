@@ -14,7 +14,7 @@ The **ClearML PyCharm plugin** enables syncing a local execution configuration t
 
 **To install the ClearML PyCharm plugin, do the following:**
 
-1. Download the latest plugin version from the [Releases page](https://github.com/allegroai/trains-pycharm-plugin/releases). 
+1. Download the latest plugin version from the [Releases page](https://github.com/allegroai/clearml-pycharm-plugin/releases). 
 
 1. Install the plugin in PyCharm from local disk:
 

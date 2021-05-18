@@ -239,7 +239,7 @@ After extending the Python experiment script, run it and view the results in the
    including the file path, size, hash, metadata, and a preview.
 1. In the **OTHER** section, click **Loss**. The uploaded numpy array appears, including its related information.
 1. Click the **RESULTS** tab.
-1. Click the **LOG** sub-tab, and see the debugging message showing the Pandas DataFrame sample.
+1. Click the **CONSOLE** sub-tab, and see the debugging message showing the Pandas DataFrame sample.
 1. Click the **SCALARS** sub-tab, and see the scalar plots for epoch logging loss.
 1. Click the **PLOTS** sub-tab, and see the confusion matrix and histogram.
 

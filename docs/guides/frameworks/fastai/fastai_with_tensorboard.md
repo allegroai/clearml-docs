@@ -23,6 +23,6 @@ Histograms output to TensorBoard. They appear in **RESULTS** **>** **PLOTS**.
 
 ## Logs
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **LOG**.
+Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_reporting_fastai_03.png)

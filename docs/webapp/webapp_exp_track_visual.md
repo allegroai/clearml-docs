@@ -9,7 +9,7 @@ including:
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
 * [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
-* [Logs](#log) - stdout, stderr, output to the console from libraries, and **ClearML** explicit reporting. 
+* [Console](#console) - stdout, stderr, output to the console from libraries, and **ClearML** explicit reporting. 
 * [Scalars](#scalars) - Metric plots.
 * [Plots](#other-plots) - Other plots and data, for example: Matplotlib, Plotly, and **ClearML** explicit reporting.
 * [Debug samples](#debug-samples) - Images, audio, video, and HTML.
@@ -332,9 +332,9 @@ General experiment details appear in the **INFO** tab. This includes information
 
 
 
-### Log
+### Console
 
-The complete experiment log containing everything printed to stdout and strerr appears in the **LOG** tab. The full log 
+The complete experiment log containing everything printed to stdout and strerr appears in the **CONSOLE** tab. The full log 
 is downloadable. To view the end of the log, click **Jump to end**.
 
 <details className="cml-expansion-panel screenshot">

@@ -31,9 +31,9 @@ The feature importance plot and tree plot appear in the project's page in the **
 
 ![image](../../../img/examples_xgboost_sample_06.png)
 
-## Log
+## Console
 
-All other console output appear in **RESULTS** **>** **LOG**.
+All other console output appear in **RESULTS** **>** **CONSOLE**.
 
 ![image](../../../img/examples_xgboost_sample_05.png)
 
