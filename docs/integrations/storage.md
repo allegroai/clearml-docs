@@ -2,16 +2,15 @@
 title: Storage
 ---
 
-import ImageSwitcher from '/ImageSwitcher.js';
 
-ClearML is able to interface with the most popular storage solutions in the market for storing model checkpoints, artifacts 
+ClearML is able to interface with the most popular storage solutions in the market for storing model checkpoints, artifacts
 and charts.
 
 Supported storage mediums include:
 
 <ImageSwitcher alt="ClearML Supported Storage"
-    lightImageSrc="/icons/ClearML_Supported_Storage--on-light.png"
-    darkImageSrc="/icons/ClearML_Supported_Storage--on-dark.png" 
+    lightImageSrc="/docs/latest/icons/ClearML_Supported_Storage--on-light.png"
+    darkImageSrc="/docs/latest/icons/ClearML_Supported_Storage--on-dark.png"
 />
 
 :::note
@@ -61,7 +60,7 @@ ClearML also supports [MinIO](https://github.com/minio/minio) by adding this con
                 #     multipart: false
                 #     secure: false
                 # }
-``` 
+```
 
 ### Configuring Azure
 To configure Azure blob storage specify the account name and key.
@@ -106,7 +105,7 @@ It's also possible to specify credentials for a specific bucket.
 ClearML Offers a package to manage downloading, uploading and caching of content directly from code.
 
 ### Uploading files
-To upload a file using storage manager, just run the following line specifying the path to a local file or folder, and the 
+To upload a file using storage manager, just run the following line specifying the path to a local file or folder, and the
 remote destination.
 ```python
 from clearml import StorageManager
@@ -119,10 +118,10 @@ StorageManager.upload_file(local_file='path_to_file',remote_url='s3://my_bucket'
 To download files into cache, run the following line, specifying the remote destination's URL.
 ```python
 StorageManager.get_local_copy(remote_url='s3://my_bucket/path_to_file')
-``` 
+```
 
 :::note
-Zip and tar.gz files will be automatically extracted to cache. This can be controlled with the`extract_archive` flag. 
+Zip and tar.gz files will be automatically extracted to cache. This can be controlled with the`extract_archive` flag.
 :::
 
 ### Controling cache file limit
@@ -130,7 +129,7 @@ It's possible to control the maximum cache size by limiting the number of files 
 This is done by calling the ```StorageManager.set_cache_file_limit()``` method.
 
 ## Caching
-ClearML also manages a cache of all downloaded content so nothing is duplicated, and code won't need to download the same 
+ClearML also manages a cache of all downloaded content so nothing is duplicated, and code won't need to download the same
 piece twice!
 
 Configure cache location by modifying the [clearml.conf](../configs/clearml_conf.md) file:
@@ -153,7 +152,7 @@ storage {
 
 ### Direct Access
 By default, all artifacts (Models \ Artifacts \ Datasets) are automatically downloaded to the cache before they're used.<br/>
-Some storage mediums (NFS \ Local storage) allows for direct access, 
+Some storage mediums (NFS \ Local storage) allows for direct access,
 which means that the code would work with the object where it's originally stored and not downloaded to cache first.<br/>
 To enable direct access, specify the urls to access directly.
 
