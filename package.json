@@ -16,11 +16,11 @@
     "prettier:diff": "prettier --config .prettierrc --list-different \"**/*.{js,md}\""
   },
   "dependencies": {
-    "@cmfcmf/docusaurus-search-local": "^0.5.0",
-    "@docusaurus/core": "2.0.0-alpha.70",
-    "@docusaurus/plugin-content-blog": "^2.0.0-alpha.72",
-    "@docusaurus/preset-classic": "2.0.0-alpha.70",
-    "@easyops-cn/docusaurus-search-local": "^0.14.4",
+    "@cmfcmf/docusaurus-search-local": "^0.6.2",
+    "@docusaurus/core": "^2.0.0-beta.0",
+    "@docusaurus/plugin-content-blog": "^2.0.0-beta.0",
+    "@docusaurus/preset-classic": "2.0.0-beta.0",
+    "@easyops-cn/docusaurus-search-local": "^0.16.3",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
     "medium-zoom": "^1.0.6",

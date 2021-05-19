@@ -181,17 +181,17 @@ html[data-theme="light"] .hero .button.button--primary{
 
 /* header social icons */
 .header-ico--github {
-  background-image: url('/docs/latest/img/ico-github.svg');
+  background-image: url('/img/ico-github.svg');
   margin-right: calc(var(--ifm-navbar-item-padding-horizontal) * 2);
 }
 .header-ico--twitter {
-  background-image: url('/docs/latest/img/ico-twitter.svg');
+  background-image: url('/img/ico-twitter.svg');
 }
 .header-ico--youtube {
-  background-image: url('/docs/latest/img/ico-youtube.svg');
+  background-image: url('/img/ico-youtube.svg');
 }
 .header-ico--slack {
-  background-image: url('/docs/latest/img/ico-slack.svg');
+  background-image: url('/img/ico-slack.svg');
 }
 .header-ico {
   width:24px;
@@ -255,7 +255,7 @@ html[data-theme="light"] .hero .button.button--primary{
 
 
 html[data-theme="light"] [class^="sidebarLogo"] {
-  background: url('/docs/latest/img/logo--on-light.svg') 1rem center no-repeat;
+  background: url('/img/logo--on-light.svg') 1rem center no-repeat;
   background-size: 6rem;
 }
 html[data-theme="light"] [class^="sidebarLogo"] > img {
@@ -283,7 +283,7 @@ html[data-theme="dark"] .navbar-sidebar {
   background-color: #141722;
 }
 html[data-theme="light"] .navbar-sidebar .navbar__brand {
-  background: url('/docs/latest/img/logo--on-light.svg') 0 center no-repeat;
+  background: url('/img/logo--on-light.svg') 0 center no-repeat;
   background-size: 5.5rem;
 }
 html[data-theme="light"] .navbar-sidebar .navbar__logo {
@@ -315,16 +315,16 @@ html[data-theme="dark"] .navbar-sidebar .menu__link.header-ico--slack:before {
 
 
 .navbar-sidebar .menu__link.header-ico--slack:hover {
-  background: url('/docs/latest/img/ico-slack.svg') no-repeat center;
+  background: url('/img/ico-slack.svg') no-repeat center;
 }
 .navbar-sidebar .menu__link.header-ico--twitter:hover {
-  background: url('/docs/latest/img/ico-twitter.svg') no-repeat center;
+  background: url('/img/ico-twitter.svg') no-repeat center;
 }
 .navbar-sidebar .menu__link.header-ico--github:hover {
-  background: url('/docs/latest/img/ico-github.svg') no-repeat center;
+  background: url('/img/ico-github.svg') no-repeat center;
 }
 .navbar-sidebar .menu__link.header-ico--youtube:hover {
-  background: url('/docs/latest/img/ico-youtube.svg') no-repeat center;
+  background: url('/img/ico-youtube.svg') no-repeat center;
 }
 
 .menu__link.header-ico {
@@ -414,22 +414,22 @@ html[data-theme="dark"] .footer__copyright {
 /* social links icons */
 .footer__link-item[href*="slack"] {
   padding-left: 1.4rem;
-  background: url('/docs/latest/img/ico-slack.svg') no-repeat left center;
+  background: url('/img/ico-slack.svg') no-repeat left center;
   background-size: 1rem;
 }
 .footer__link-item[href*="youtube"] {
   padding-left: 1.4rem;
-  background: url('/docs/latest/img/ico-youtube.svg') no-repeat left center;
+  background: url('/img/ico-youtube.svg') no-repeat left center;
   background-size: 1rem;
 }
 .footer__link-item[href*="twitter"] {
   padding-left: 1.4rem;
-  background: url('/docs/latest/img/ico-twitter.svg') no-repeat left center;
+  background: url('/img/ico-twitter.svg') no-repeat left center;
   background-size: 1rem;
 }
 .footer__link-item[href*="stackoverflow"] {
   padding-left: 1.4rem;
-  background: url('/docs/latest/img/ico-stackoverflow.svg') no-repeat left center;
+  background: url('/img/ico-stackoverflow.svg') no-repeat left center;
   background-size: 1rem;
 }
 
@@ -582,7 +582,7 @@ html[data-theme="light"] .icon {
   height: 24px;
   transform: rotate(0);
   transition: 0.25s;
-  background: url('/docs/latest/icons/ico-chevron-down.svg') no-repeat center;
+  background: url('/icons/ico-chevron-down.svg') no-repeat center;
 }
 
 /* expansion content */
@@ -594,23 +594,23 @@ html[data-theme="light"] .icon {
 /* icon types */
 /* ->  info  */
 .cml-expansion-panel.info .cml-expansion-panel-summary:before {
-  background-image: url('/docs/latest/icons/ico-info-circle.svg');
+  background-image: url('/icons/ico-info-circle.svg');
 }
 /* ->  tips  */
 .cml-expansion-panel.tips .cml-expansion-panel-summary:before {
-  background-image: url('/docs/latest/icons/ico-tips.svg');
+  background-image: url('/icons/ico-tips.svg');
 }
 /* ->  alert  */
 .cml-expansion-panel.alert .cml-expansion-panel-summary:before {
-  background-image: url('/docs/latest/icons/ico-alert.svg');
+  background-image: url('/icons/ico-alert.svg');
 }
 /* ->  screenshot  */
 .cml-expansion-panel.screenshot .cml-expansion-panel-summary:before {
-  background-image: url('/docs/latest/icons/ico-image.svg');
+  background-image: url('/icons/ico-image.svg');
 }
 /* ->  configuration  */
 .cml-expansion-panel.configuration .cml-expansion-panel-summary:before {
-  background-image: url('/docs/latest/icons/ico-config.svg');
+  background-image: url('/icons/ico-config.svg');
 }
 
 /* light mode */
@@ -701,7 +701,7 @@ html[data-theme="dark"] .alert--info {
 
 /* show visual identification for external links */
 .markdown a[href^="https://"] {
-  background: url('/docs/latest/icons/ico-open-in-new.svg') center right no-repeat;
+  background: url('/icons/ico-open-in-new.svg') center right no-repeat;
   background-size: 0.9rem;
   margin-right: 0.4rem;
   padding-right: 1rem;
