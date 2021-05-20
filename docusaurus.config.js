@@ -15,7 +15,7 @@ module.exports = {
   title: 'ClearML',
   tagline: 'Auto-Magical Suite of tools to streamline your ML workflow',
   url: 'https://clear.ml',
-  baseUrl: '/docs/latest/',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
@@ -176,6 +176,11 @@ module.exports = {
       ],
       // Please do not remove the credits, help to publicize Docusaurus :)
       copyright: `Copyright © ${new Date().getFullYear()} allegro.ai. Built with Docusaurus.`,
+    },
+    googleAnalytics: {
+      trackingID: 'none',
+      // Optional fields.
+      anonymizeIP: true, // Should IPs be anonymized?
     },
   },
   presets: [
