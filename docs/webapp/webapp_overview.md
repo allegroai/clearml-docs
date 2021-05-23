@@ -35,7 +35,7 @@ The **ClearML Web UI** is composed of the following pages:
 In addition, from the **ClearML Web UI**, use these buttons to access the **ClearML** community:
 
 * The **ClearML** <img src="/docs/latest/icons/ico-slack-c.svg" alt="Slack Channel" className="icon size-md" /> Slack channel. Ask questions about **ClearML**.
-* The **ClearML** <img src='/icons/ico-youtube.svg' alt='YouTube' className='icon size-md' /> YouTube Channel. View our tutorials, presentations, and discussions.
+* The **ClearML** <img src="/docs/latest/icons/ico-youtube.svg" alt="YouTube" className="icon size-md" /> YouTube Channel. View our tutorials, presentations, and discussions.
 * The **ClearML** <img src="/docs/latest/icons/ico-github.svg" alt="GitHub" className="icon size-md" /> GitHub repository.
 
 
