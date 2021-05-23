@@ -12,8 +12,8 @@ Use the Profile page to manage a **ClearML** user account, including:
 
 ## Setting user preferences
 
-The **HiDPI browser scale override** adjusts scaling on High-DPI monitors to improve the Web UI experience. It is enabled 
-by default, but can be disabled. 
+The **HiDPI browser scale override** adjusts scaling on High-DPI monitors to improve the Web UI experience. It is enabled
+by default, but can be disabled.
 
 Users that use their own **ClearML Server** can choose whether to send anonymous usage data to Allegro AI.
 
@@ -28,25 +28,25 @@ Users that use their own **ClearML Server** can choose whether to send anonymous
     * **Secret / SAS** - The secret key or shared access signature for Azure Storage.
     * **Region** - The region for AWS S3.
     * **Host (Endpoint)** - The host for non-AWS S3 servers.
-    
+
 ## Creating ClearML credentials
 
-**ClearML** credentials include: 
+**ClearML** credentials include:
 * Access key
-* Secret key 
-* Web server 
-* API server 
+* Secret key
+* Web server
+* API server
 * File servers host URLs
-  
-**ClearML Hosted Service** users need credentials for each workspace they use. Users with their own self-hosted **ClearML Server** 
+
+**ClearML Hosted Service** users need credentials for each workspace they use. Users with their own self-hosted **ClearML Server**
 need only one set of credentials.
 
-**ClearML** credentials can be created for a current workspace. To create **ClearML** credentials for another workspace, 
+**ClearML** credentials can be created for a current workspace. To create **ClearML** credentials for another workspace,
 switch to it.
 
 **To create ClearML credentials:**
 
-1. Click the Profile button <img src="/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> 
+1. Click the Profile button <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" />
    (upper right corner).
 
 1. In **WORKSPACES**, use the current workspace or select another (self-hosted **ClearML Server** users have one workspace).
@@ -55,25 +55,25 @@ switch to it.
 
 ## Switching workspaces
 
-:::note 
-Switching workspaces does not apply to users of a self-hosted **ClearML Server**  
+:::note
+Switching workspaces does not apply to users of a self-hosted **ClearML Server**
 :::
 
-**ClearML Hosted Service** users who are members of multiple teams can switch from one workspace to another. 
+**ClearML Hosted Service** users who are members of multiple teams can switch from one workspace to another.
 
 **Switch workspaces in one of the following ways:**
 
-* Profile button - Click <img src="/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> (upper right corner on any page) **>** 
+* Profile button - Click <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> (upper right corner on any page) **>**
   Click the workspace to switch to.
 * Profile page - In the **WORKSPACES** section, click **SWITCH TO WORKSPACE** **>** Click the workspace to switch to.
 
 ## Inviting new teammates
 
-:::note 
+:::note
 Inviting new teammates does not apply to users of a self-hosted **ClearML Server**.
 :::
 
-**ClearML Hosted Service** users can invite other users to collaborate in their workspace. On the Profile page, the **WORKSPACES** 
+**ClearML Hosted Service** users can invite other users to collaborate in their workspace. On the Profile page, the **WORKSPACES**
 section shows the current members of the team, and whether the team has reached its maximum number of members.
 
 
@@ -81,9 +81,9 @@ section shows the current members of the team, and whether the team has reached 
 
 1. Create an invitation hyperlink with one of these options:
 
-    * Profile button - Click <img src="/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> 
+    * Profile button - Click <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" />
       **>** **Invite a User** **>** Copy the invitation hyperlink.
-    
+
     * Profile page - In **WORKSPACES** **>** **Members** **>** Click **INVITE USER** **>** Copy the invitation hyperlink.
 
 1. Send the invitation hyperlink to an invitee.
