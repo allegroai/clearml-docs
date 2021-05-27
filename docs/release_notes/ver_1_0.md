@@ -2,6 +2,23 @@
 title: Version 1.0
 ---
 
+### ClearML Server 1.0.2
+
+**Bug Fixes**
+
+- Fix Task container does not accept `null` values [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1622119047293300)
+- Fix debug images exception in Results page
+- Fix a typo in Worker Setup help popup
+
+### ClearML Server 1.0.1
+
+**Bug Fixes**
+
+- Fix clearing experiment requirements causes "empty" requirements (as opposed to "no requirements")
+- Fix logout fails with `endpoint not found` error [ClearML GitHub issue 349](https://github.com/allegroai/clearml/issues/349)
+- Fix hamburger side menu `Manage Queues` does nothing and returns console error [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1620308724418100)
+- Fix broken config dir backwards compatibility (`/opt/trains/config` should also be supported)
+
 ### ClearML 1.0.0
 
 **Breaking Changes**
