@@ -6,7 +6,7 @@ title: Version 1.0
 
 **Bug Fixes**
 
-- Fix Task container does not accept `null` values [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1622119047293300)
+- Fix Task container does not accept `null` values [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1622119047293300) [ClearML GitHub issue 365](https://github.com/allegroai/clearml/issues/365)
 - Fix debug images exception in Results page
 - Fix a typo in Worker Setup help popup
 
