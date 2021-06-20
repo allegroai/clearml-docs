@@ -1,5 +1,5 @@
 ---
-title: Hyperparameter optimization
+title: Hyperparameter Optimization
 ---
 
 ## What is HyperParameter Optimization?
@@ -9,11 +9,14 @@ performing models can be complicated. Manually adjusting hyperparameters over th
 slow and tedious. Luckily, **hyperparameter optimization** can be automated and boosted using **ClearML**'s 
 `HyperParameterOptimizer` class.
 
-## What does ClearML's `HyperParameterOptimizer` do? 
+## ClearML's HyperParameter Optimization
 
-The  `HyperParameterOptimizer` class does the following:
-* Clones the base experiment that needs to be optimized
-* Changes arguments based on an optimizer strategy that is specified
+ClearML provides the `HyperParameterOptimizer` class which takes care of the entire optimization process for users in 
+with a simple interface.
+
+The `HyperParameterOptimizer` class does the following:
+* Clones a base experiment that needs to be optimized.
+* Changes arguments based on the specified optimizer strategy.
 * Tries to minimize / maximize defined objectives. 
 
 
@@ -21,7 +24,7 @@ The `HyperParameterOptimizer` class contains **ClearML**’s hyperparameter opti
 using different optimizers, including existing software frameworks, enabling simple, accurate, and fast hyperparameter 
 optimization.
 
-**The optimizers include:**  
+### Supported Optimizers
 
 * **Optuna** - `automation.optuna.optuna.OptimizerOptuna`. Optuna is the default optimizer in ClearML. It makes use of 
   different samplers such as grid search, random, bayesian, and evolutionary algorithms. 
@@ -35,6 +38,13 @@ optimization.
 * **Full grid** sampling strategy of every hyperparameter combination - `Grid search automation.optimization.GridSearch`.
 * **Custom** - `automation.optimization.SearchStrategy`. - Use a custom class and inherit from the ClearML automation base strategy class 
 
+## How Does it Work?
+
+**ClearML**'s approach to hyperparameter optimization is scalable, easy to set up and to manage, and it makes it easy to 
+compare results.
+
+### Workflow
+
 Make use of **ClearML**'s hyperparameter optimization capabilities by:
 * Initializing an Optimizer Task, which will record and monitor arguments, execution details, results, and more. 
 * Instantiating a `HyperParameterOptimizer`, where the following is specified:
@@ -43,11 +53,10 @@ Make use of **ClearML**'s hyperparameter optimization capabilities by:
   * Metric to optimize 
   * Optimizer class (optimization strategy) where the optimization configuration and resources budget are defined
   * And more.
-* Enqueuing the Task to be executed by a `clearml-agent` or multiple agent in a remote machine. 
+* Enqueuing the Task to be executed by a ClearML Agent (or multiple agents) in a remote machine. 
 * Monitoring the optimization process and viewing the summarized results in the **ClearML web UI**
 
-**ClearML**'s approach to hyperparameter optimization is scalable, easy to set up and to manage, and it makes it easy to 
-compare results.
+![image](../img/fundamentals_hpo_summary.png)
 
 ## Defining a hyperparameter optimization search example
 
@@ -100,19 +109,8 @@ compare results.
         max_iteration_per_job=150000,  
         )
   ```
-  For further information about the `HyperParameterOptimizer` arguments, see the [Automation module reference](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
+<br/><br/>
 
-1. Make sure an agent or multiple agents are listening to the queue defined above (`execution_queue='default'`). See [Clearml Agent](../clearml_agent.md).
+Check out the [Hyperparameter Optimization](../guides/optimization/hyper-parameter-optimization) tutorial for a step by step guide.
 
-1. Start the hyperparameter optimization process:
-  ```python
-  optimizer.set_report_period(1) # setting the time gap between two consecutive reports
-  optimizer.start()
-  optimizer.wait() # wait until process is done
-  optimizer.stop() # make sure background optimization stopped    
-  ```
-
-1. Take a look at the summarized results of the optimization in the **Web UI**,  in the optimizer Task's experiment page. 
-   There is also the option to look at the results of a specific experiment, or the results of a few experiments and 
-   to [Compare](../webapp/webapp_exp_comparing.md). 
-
+ For further information about the `HyperParameterOptimizer` arguments, see the [Automation module reference](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).

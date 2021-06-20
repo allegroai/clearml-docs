@@ -2,18 +2,18 @@
 title: Artifacts & Models
 ---
 
-ClearML allows  easy storarge of experiments' output products as **artifacts** that can later be accessed easily 
+ClearML allows easy storage of experiments' output products as **artifacts** that can later be accessed easily 
 and used, through the web UI or programmatically. 
 
 A few examples of artifacts are: 
-* Model snapshot \ weights file 
+* Model snapshot / weights file 
 * Data preprocessing
 * Feature representation of data
 * and more!
 
 ## Artifacts
 ### Logging Artifacts
-To log any type of artifact to a Task, use the upload_artifact() method. For example:
+To log any type of artifact to a Task, use the `upload_artifact()` method. For example:
 
 * Upload a local file containing the preprocessing results of the data.
 ```python
@@ -24,7 +24,7 @@ task.upload_artifact(name='data', artifact_object='/path/to/preprocess_data.csv'
 ```python
 task.upload_artifact(name='folder', artifact_object='/path/to/folder/')
 ```
-* Upload an instance of an object, Numpy/Pandas/PIL (converted to npz/csv.gz/jpg formats accordingly). If the 
+* Upload an instance of an object, Numpy / Pandas / PIL (converted to npz / csv.gz / jpg formats accordingly). If the 
   object type is unknown, it is pickled and uploaded.
 ```python
 person_dict = {'name': 'Erik', 'age': 30}
@@ -41,9 +41,9 @@ Tasks).
 1. Retrieve all the Task's artifacts with the *artifact* property, which is essentially a dictionary, 
 where the key is the artifact name, and the value is the artifact itself.
 1. Access a specific artifact using one of the following methods:
-   - Access files by calling *get_local_copy()*, which caches the files for later use and returns a path to the cached 
+   - Access files by calling `get_local_copy()`, which caches the files for later use and returns a path to the cached 
   file
-   - Access object artifacts by using the *get()* method that returns the Python object.
+   - Access object artifacts by using the `get()` method that returns the Python object.
     
 The code below demonstrates how to access a file artifact using the previously generated preprocessed data:
 ```python
@@ -64,13 +64,15 @@ See more details in the using artifacts [example](https://github.com/allegroai/c
 - Python objects (pickled)
 
 ## Models 
-Models are a special kind of artifact and, unlike regular artifacts that are accessed with the creating Task's ID, Models 
-are entities with their own unique ID, this makes Models a standalone entry that can be used as an artifactory interface.
+Models are a special kind of artifact and, unlike regular artifacts, which can only be accessed with the creating Task's ID,
+Models are entities with their own unique ID that can be accessed directly or via the creating task.
 
-### Logging Models (weights file)
+This property makes Models a standalone entry that can be used as an artifactory interface.
 
-When models are saved (for instance, by calling the `torch.save()` method), ClearML automatically logs the models and all 
-snapshot paths.
+### Automatic Model Logging
+
+When models are saved using certain frameworks (for instance, by calling the `torch.save()` method), ClearML automatically 
+logs the models and all snapshot paths.
 
 ![image](../img/fundamentals_artifacts_logging_models.png)
 
@@ -78,6 +80,47 @@ See model storage examples, [TF](https://github.com/allegroai/clearml/blob/maste
 [PyTorch](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py),
 [Keras](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py),
 [Scikit-Learn](https://github.com/allegroai/clearml/blob/master/examples/frameworks/scikit-learn/sklearn_joblib_example.py).
+
+### Manual Model Logging 
+
+To manually log a model, create an instance of OutputModel class:
+```python
+from clearml import OutputModel, Task
+
+# Instantiate a Task 
+task = Task.init(project_name="myProject", task_name="myTask")
+
+# Instantiate an OutputModel, with a Task object argument
+output_model = OutputModel(task=task, framework="PyTorch")
+```
+
+The OutputModel object is always connected to a Task object as it's instantiated with a Task object as an argument. 
+It is, therefore, automatically registered as the Task’s output model.
+
+The snapshots of manually uploaded models aren't automatically captured, but there are two methods
+to update an output model. 
+
+#### Updating Via Task Object
+Using the [Task.update_output_model](../references/sdk/task.md#update_output_model) method:
+  
+```python
+task.update_output_model(model_path='path/to/model')
+```
+It's possible to modify the following parameters:
+* Weights file / folder - Uploads the files specified with the `model_path`.
+  If a remote storage is provided (S3 / GS / Https etc...), it saves the URL.
+* Model Metadata - Model name, description, iteration number of model, and tags. 
+
+#### Updating Via Model Object
+Using the [OutputModel.update_weights](../references/sdk/model_outputmodel.md#update_weights) method:
+  
+```python
+output_model.update_weights()
+```
+* Specify either the name of a locally stored weights file to upload (`weights_filename`), or the URI of a storage destination
+for model weight upload (`registered_uri`).
+* Model Metadata - Model description and iteration number. 
+
 
 ### Using Models
 
@@ -90,7 +133,7 @@ local_weights_path = last_snapshot.get_local_copy()
 ```
 1. Get the instance of the Task that created the original weights files
 2. Query the Task on its output models (a list of snapshots)
-3. Get the latest snapshot (if using Tensorflow, the snapshots are stored in a folder, so the 'local_weights_path' will point to a folder containing the requested snapshot).
+3. Get the latest snapshot (if using Tensorflow, the snapshots are stored in a folder, so the `local_weights_path` will point to a folder containing the requested snapshot).
 
 Notice that if one of the frameworks will load the weights file, the running Task will automatically update, with 
 "Input Model" pointing directly to the original training Task's model. With this feature, it's easy to get a full genealogy 
@@ -109,7 +152,7 @@ task = Task.init(project_name='examples', task_name='storing model', output_uri=
 ```
 
 To automatically store all created models from all experiments in a certain storage medium, edit the `clearml.conf` (see
- [ClearML Cofiguration Reference](../configs/clearml_conf#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` to the desired 
+ [ClearML Configuration Reference](../configs/clearml_conf#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` to the desired 
 storage (see [Storage](../integrations/storage.md)).
 This is especially helpful when using [clearml-agent](../clearml_agent.md) to execute code.
 

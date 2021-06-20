@@ -318,19 +318,45 @@ Like any other arguments, they can be changed from the UI or programmatically.
 Function Tasks must be created from within a regular Task, created by calling `Task.init()`
 :::
 
-## Task lifecycle 
+## Task Lifecycle 
 
-1. A Task is created when running the code. It collects the environment configuration of the runtime execution.
-1. Results of the code execution (graphs, artifacts, etc.) are stored by the Task.
-1. To execute a Task (in draft mode) on a remote machine, push the Task into an execution queue.
-1. A `clearml-agent` can execute a Task on a remote machine:
-   1. The agent pulls the Task from the execution queue.
-   2. The agent sets the environment, runs the code, and collects the results.
-1. An existing Task can be replicated (cloned). The environment / configuration is replicated, but the output results are 
-   left empty (draft mode).
-    
+ClearML Tasks are created in one of the following methods:
+* Manually running code that is instrumented with the ClearML SDK and invokes `Task.init()`.
+* Cloning an existing task.
+* Creating a task via CLI using [clearml-task](../apps/clearml_task.md).
+
+### Logging Task Information
+
+![image](../img/clearml_logging_diagram.png)
+
+The above diagram describes how execution information is recorded when running code instrumented with ClearML:
+
+1. Once a ClearML Task is initialized, ClearML automatically logs the complete environment information 
+   including:
+   * Source code
+   * Python environment 
+   * Configuration parameters.
+1. As the execution progresses, any outputs produced are recorded including:
+   * Console logs
+   * Metrics and graphs 
+   * Models and other artifacts
+1. Once the script terminates, the Task will change its status to either `Completed`, `Failed`, or `Aborted`. 
    
-#### Task states and state transitions
+All information logged can be viewed in the [task details UI](../webapp/webapp_exp_track_visual.md). 
+
+### Cloning Tasks
+
+![image](../img/clearml_task_life_cycle_diagram.png)
+
+The above diagram demonstrates how a previously run task can be used as a baseline for experimentation:
+
+1. A previously run task is cloned, creating a new task, in *draft* mode.  
+   The new task retains all of the source task's configuration. The original task's outputs are not carried over.
+1. The new task's configuration is modified to reflect the desired parameters for the new execution. 
+1. The new task is enqueued for execution.
+1. A `clearml-agent` servicing the queue pulls the new task and executes it (where ClearML again logs all of the execution outputs).
+
+### Task states
 
 The state of a Task represents its stage in the Task lifecycle. It indicates whether the Task is read-write (editable) or 
 read-only. For each state, a state transition indicates which actions can be performed on an experiment, and the new state 

@@ -67,4 +67,11 @@ improving our results later on!
 ## Visibility Matters
 
 While it's possible to track experiments with one tool, and pipeline them with another, we believe that having 
-everything under the same roof benefits you great! It's
+everything under the same roof has its benefits! <br/>
+Being able to track experiments progress, compare experiments, and based on that send experiments to execution on remote
+machines (that also builds the environment themselves) has tremendous benefits in terms of visibility and ease of integration.<br/>
+Being able to have visibility into your pipeline, while using experiments already defined in the platform 
+enables users to have a clearer picture of what's the status of the pipeline 
+and makes it easier to start using pipelines earlier in the process by simplifying chaining tasks.<br/>
+Managing datasets with the same tools and APIs that manage the experiments also lowers the barrier of entry into 
+experiment and data provenance.

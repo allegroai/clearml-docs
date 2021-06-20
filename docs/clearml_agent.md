@@ -18,6 +18,7 @@ to a remote machine, and executing the code as follows:
    working directory and entry point stored in the experiment. It executes with logging and monitoring.
 1. While the Task is executing, and anytime after, track the experiment and visualize results in the **ClearML Web UI**.
 
+
 Continue using **ClearML Agent** once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
 * Programmatically
@@ -514,3 +515,165 @@ To do that, set these environment variables on  the ClearML Server machine with 
 CLEARML_API_ACCESS_KEY
 CLEARML_API_SECRET_KEY
 ```
+
+## Google Colab
+
+ClearML Agent can run on a [google colab](https://colab.research.google.com/) instance. This helps users to leverage 
+compute resources provided by google colab and send experiments for execution on it. <br/>
+Check out [this](guides/ide/google_colab.md) tutorial on how to run a ClearML Agent on Google Colab!
+
+## Dynamic GPU Allocation 
+
+:::important
+Available with the ClearML Enterprise offering
+:::
+
+The ClearML Enterprise server supports dynamic allocation of GPUs based on queue properties.
+Agents can spin multiple Tasks from different queues based on the number of GPUs the queue 
+needs.
+
+`dynamic-gpus` enables dynamic allocation of GPUs based on queue properties. 
+To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
+
+```console
+clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
+```
+
+### Example
+
+Let's say there are three queues on a server, named: 
+* `dual_gpu`
+* `quad_gpu`
+* `opportunistic` 
+
+An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple 
+queues that are configured to run with a certain amount of resources: 
+
+```console
+clearml-agent daemon --dynamic-gpus --queues quad_gpu=4 dual_gpu=2 
+``` 
+
+The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue. 
+The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from `dual_gpu` 
+queue, look for available GPUs again and spin on GPUs 4-5. 
+
+Another option for allocating GPUs:
+
+```console
+clearml-agent daemon --dynamic-gpus --queue dual=2 opportunistic=1-4
+``` 
+
+Notice that a minimum and maximum value of GPUs was specified for the `opportunistic` queue. This means the agent 
+will pull a Task from the `opportunistic` queue and allocate up to 4 GPUs based on availability (i.e. GPUs not currently 
+being used by other agents).
+
+## Scheduling working hours
+
+:::important
+Available with the ClearML Enterprise offering
+:::
+
+The Agent scheduler enables scheduling working hours for each Agent. During working hours, a worker will actively poll 
+queues for Tasks, fetch and execute them. Outside working hours, a worker will be idle.
+
+Schedule workers by:
+
+* Setting configuration file options
+* Running `clearml-agent` from the command line (overrides configuration file options)
+
+Override worker schedules by:
+
+* Setting runtime properties to force a worker on or off
+* Tagging a queue on or off
+
+### Running clearml-agent with a schedule (command line)
+
+Set a schedule for a worker from the command line when running `clearml-agent`. Two properties enable setting working hours:
+
+:::warning
+Use only one of these properties
+:::
+
+* `uptime` - Time span during which a worker will actively poll a queue(s) for Tasks, and execute them. Outside this 
+  time span, the worker will be idle.
+* `downtime` - Time span during which a worker will be idle. Outside this time span, the worker will actively poll and 
+  execute Tasks.
+
+Define `uptime` or `downtime` as `"<hours> <days>"`, where:
+
+* `<hours>` - A span of hours (`00-23`) or a single hour. A single hour defines a span from that hour to midnight. 
+* `<days>` - A span of days (`SUN-SAT`) or a single day.
+
+Use `-` for a span, and `,` to separate individual values. To span before midnight to after midnight, use two spans.
+
+For example:
+
+* `"20-23 SUN"` - 8 PM to 11 PM on Sundays.
+* `"20-23 SUN,TUE"` - 8 PM to 11 PM on Sundays and Tuesdays.
+* `"20-23 SUN-TUE"` - 8 PM to 11 PM on Sundays, Mondays, and Tuesdays.
+* `"20 SUN"` - 8 PM to midnight on Sundays.
+* `"20-00,00-08 SUN"` - 8 PM to midnight and midnight to 8 AM on Sundays
+* `"20-00 SUN", "00-08 MON"` - 8 PM on Sundays to 8 AM on Mondays (spans from before midnight to after midnight).
+
+### Setting worker schedules in the configuration file
+
+Set a schedule for a worker using configuration file options. The options are:
+
+:::warning
+Only use one of these properties
+:::
+
+* ``agent.uptime``
+* ``agent.downtime``
+
+Use the same time span format for days and hours as is used in the command line.
+
+For example, set a worker's schedule from 5 PM to 8 PM on Sunday through Tuesday, and 1 PM to 10 PM on Wednesday.
+
+    agent.uptime: ["17-20 SUN-TUE", "13-22 WED"]
+
+### Overriding worker schedules using runtime properties
+
+Runtime properties override the command line uptime / downtime properties. The runtime properties are:
+
+:::warning
+Use only one of these properties
+:::
+
+* `force:on` - Pull and execute Tasks until the property expires.
+* `force:off` - Prevent pulling and execution of Tasks until the property expires.
+
+Currently, these runtime properties can only be set using an ClearML REST API call to the `workers.set_runtime_properties`
+endpoint, as follows: 
+
+* The body of the request must contain the `worker-id`, and the runtime property to add.
+* An expiry date is optional. Use the format `”expiry”:<time>`. For example,  `”expiry”:86400` will set an expiry of 24 hours.
+* To delete the property, set the expiry date to zero, `'expiry:0'`.
+
+For example, to force a worker on for 24 hours:
+
+    curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"worker":"<worker_id>","runtime_properties":[{"key": "force", "value": "on", "expiry": 86400}]}' http://<api-server-hostname-or-ip>:8008/workers.set_runtime_properties
+
+### Overriding worker schedules using queue tags
+
+Queue tags override command line and runtime properties. The queue tags are the following:
+
+:::warning
+Use only one of these properties
+:::
+
+* ``force_workers:on`` - Any worker listening to the queue will keep pulling Tasks from the queue.
+* ``force_workers:off`` - Prevent all workers listening to the queue from pulling Tasks from the queue.
+
+Currently, you can set queue tags using an ClearML REST API call to the ``queues.update`` endpoint, or the 
+APIClient. The body of the call must contain the ``queue-id`` and the tags to add.
+
+For example, force workers on for a queue using the APIClient:
+
+    from trains.backend_api.session.client import APIClient
+    client = APIClient()
+    client.queues.update(queue=”<queue_id>”, tags=["force_workers:on"]
+
+Or, force workers on for a queue using the REST API:
+
+    curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"queue":"<queue_id>","tags":["force_workers:on"]}' http://<api-server-hostname-or-ip>:8008/queues.update

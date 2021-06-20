@@ -2,12 +2,11 @@
 title: Libraries
 ---
 
-
 ClearML integrates with many frameworks and tools out of the box! <br/>
 
 Just follow the [getting started](/getting_started/ds/ds_first_steps.md) to automatically capture metrics, models and artifacts or check out examples for each library.
 
-![integrations](../img/integrations.png)
+![image](../img/integration_tools.png)
 
 **Frameworks**
 - [Pytorch](https://github.com/allegroai/clearml/tree/master/examples/frameworks/pytorch)

@@ -48,7 +48,9 @@ module.exports = {
             },
             'deploying_clearml/clearml_server_config', 'deploying_clearml/clearml_config_for_clearml_server', 'deploying_clearml/clearml_server_security'
         ]},
+
         //'Comments': ['Notes'],
+
 
 
     ],
@@ -88,7 +90,7 @@ module.exports = {
                 },
                 {'XGboost': ['guides/frameworks/xgboost/xgboost_sample']}
             ]},
-            {'IDEs': ['guides/ide/remote_jupyter_tutorial', 'guides/ide/integration_pycharm']},
+            {'IDEs': ['guides/ide/remote_jupyter_tutorial', 'guides/ide/integration_pycharm', 'guides/ide/google_colab']},
             {'Optimization': ['guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt']},
             {'Pipelines': ['guides/pipeline/pipeline_controller']},
 
@@ -96,7 +98,7 @@ module.exports = {
                 'guides/reporting/hyper_parameters', 'guides/reporting/image_reporting', 'guides/reporting/manual_matplotlib_reporting', 'guides/reporting/media_reporting',
                 'guides/reporting/model_config', 'guides/reporting/pandas_reporting', 'guides/reporting/plotly_reporting',
                 'guides/reporting/scalar_reporting', 'guides/reporting/scatter_hist_confusion_mat_reporting', 'guides/reporting/text_reporting']},
-            {'Services': ['guides/services/aws_autoscaler', 'guides/services/cleanup_service', 'guides/services/execute_jupyter_notebook_server', 'guides/services/slack_alerts']},
+            {'Services': ['guides/services/aws_autoscaler', 'guides/services/cleanup_service', 'guides/services/slack_alerts']},
             {'Storage': ['guides/storage/examples_storagehelper']},
             {'Web UI': ['guides/ui/building_leader_board','guides/ui/tuning_exp']}
 
@@ -128,8 +130,42 @@ module.exports = {
                 'references/sdk/hpo_parameters_parameterset',
                 ]},
     ],
+
+    hyperdatasetsSidebar: [
+        'hyperdatasets/overview',
+        {'Frames': [
+            'hyperdatasets/frames',
+            'hyperdatasets/single_frames',
+            'hyperdatasets/frame_groups',
+            'hyperdatasets/sources',
+            'hyperdatasets/annotations',
+            'hyperdatasets/masks',
+            'hyperdatasets/previews',
+            'hyperdatasets/custom_metadata'
+            ]},
+        'hyperdatasets/dataset',
+        'hyperdatasets/dataviews',
+        'hyperdatasets/task',
+        {'WebApp': [
+            {'Dataviews': [
+                'hyperdatasets/webapp/webapp_dataviews',
+                'hyperdatasets/webapp/webapp_exp_modifying',
+                'hyperdatasets/webapp/webapp_exp_track_visual',
+                'hyperdatasets/webapp/webapp_exp_comparing',
+                ]},
+            {'Datasets': [
+                'hyperdatasets/webapp/webapp_datasets',
+                'hyperdatasets/webapp/webapp_datasets_versioning',
+                'hyperdatasets/webapp/webapp_datasets_frames'
+                ]},
+            'hyperdatasets/webapp/webapp_annotator'
+        ]}
+    ],
+
+
     apiSidebar: [
         'references/api/definitions',
         'references/api/endpoints',
-    ]
+    ],
+
 };

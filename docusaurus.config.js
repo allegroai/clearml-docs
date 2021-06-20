@@ -63,6 +63,11 @@ module.exports = {
           label: 'Docs',
           position: 'left',
         },
+        {
+          to:'/docs/hyperdatasets/overview',
+          label: 'Hyper Datasets',
+          position: 'left',
+        },
         // {to: 'tutorials', label: 'Tutorials', position: 'left'},
         // Please keep GitHub link to the right for consistency.
         {to: '/docs/guides', label: 'Examples', position: 'left'},

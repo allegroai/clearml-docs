@@ -8,10 +8,7 @@ and charts.
 
 Supported storage mediums include:
 
-<ImageSwitcher alt="ClearML Supported Storage"
-    lightImageSrc="/docs/latest/icons/ClearML_Supported_Storage--on-light.png"
-    darkImageSrc="/docs/latest/icons/ClearML_Supported_Storage--on-dark.png"
-/>
+![image](../../static/icons/ClearML_Supported_Storage--on-light.png)
 
 :::note
 Once uploading an object to a storage medium, each machine that uses the object must have access to it.

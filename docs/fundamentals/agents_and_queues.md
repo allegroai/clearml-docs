@@ -3,31 +3,54 @@ title: Agent & Queue
 ---
 
 Two major components of MLOps is experiment reproducibility, and the ability to scale work to multiple machines. ClearML Agent, 
-coupled with execution queues, addresses both of those needs. 
+coupled with execution queues, addresses both these needs. 
 
-The Agent is the base for **Automation** in ClearML and can be leveraged to build automated pipelines, services (such as alerts) and more.
+The ClearML Agent is the base for **Automation** in ClearML and can be leveraged to build automated pipelines, launch custom services 
+(e.g. a [monitor and alert service](https://github.com/allegroai/clearml/tree/master/examples/services/monitoring)) and more.
 
 ## What does a ClearML Agent do?
-An agent (Also referred to as a Worker) allows users to execute code on any machine it's installed on, which is used to scale data science work beyond one's own machine.
-ClearML Agent not only clones the code, applies uncommitted changes, tracks experiment metrics and machine's status, but it also recreates the entire execution environment, be it by pulling the docker container or installing specified packages.
-Once the environment is set up, and the code is cloned, the script is executed by the Agent, which reports metrics as well as monitor the machine it runs in. 
+An agent (also referred to as a Worker) allows users to execute code on any machine it's installed on, thus facilitating the 
+scaling of data science work beyond one's own machine.  
+The agent takes care of deploying the code to the target machine as well as setting up the entire execution environment: 
+from installing required packages to setting environment variables, 
+all leading to executing the code (supporting both virtual environment or flexible docker container configurations)
 
-The Agent also allows code parameters to be modified on-the-fly without code modification, this is the base for [Hyper Parameter Optimization](https://github.com/allegroai/clearml/tree/master/examples/optimization/hyper-parameter-optimization).
-An agent can be associated with specific GPUs, so a machine with 8 GPUs can execute code only on a few GPUs or all the GPUs together.   
+The Agent also supports overriding parameter values on-the-fly without code modification, thus enabling no-code experimentation (This is also the foundation on which 
+ClearML [Hyper Parameter Optimization](hpo.md) is implemented).  
+An agent can be associated with specific GPUs, enabling workload distribution. For example, on a machine with 8 GPUs you can allocate several GPUs to an agent and use the rest for a different workload 
+(even through another agent).   
 
 
 
 ## What is a Queue?
 
-A queue is a list of Task IDs to be executed. You can configure a specific agent or agents to listen to a certain queue, 
-and to execute all Tasks pushed to that queue one after the other. 
+A ClearML queue is an ordered list of Tasks scheduled for execution.  
+A queue can be serviced by one or multiple ClearML agents.  
+Agents servicing a queue pull the queued tasks in order and execute them. 
 
-The Agent can also listen to multiple queues, according to one of the following options: 
+A ClearML Agent can service multiple queues in either of the following modes: 
 
-* The Agent pulls first from tfhe high priority queue then from the low priority queue.
+* Strict priority: The agent services the higher priority queue before servicing lower priority ones.
+* Round robin: The agent pulls a single task from a queue then moves to service the next queue.
 
-* The Agent can pull in a round-robin (i.e. each queue has the same priority).
+## Agent and Queue workflow 
 
+![image](../img/clearml_agent_flow_diagram.png)
+
+The diagram above demonstrates a typical flow where an agent executes a task:  
+
+1. Enqueue a task for execution on the queue.
+1. The agent pulls the task from the queue.
+1. The agent launches a docker container in which to run the task's code.
+1. The task's execution environment is set up:
+   1.  Execute any custom setup script configured.
+   1.  Install any required system packages.
+   1.  Clone the code from a git repository.
+   1.  Apply any uncommitted changes recorded.
+   1.  Set up the python environment and required packages.
+1. The task's script/code is executed.  
+
+While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Workers and Queues** page).  
 
 ## Resource management
 Installing an Agent on machines allows it to monitor all the machine's status (GPU \ CPU \ Memory \ Network \ Disk IO). 
@@ -41,7 +64,7 @@ You can organize your queues according to resource usage. Say you have a single-
 "single-gpu-queue" and assign the machine's agent, as well as other single-GPU agents to that queue. This way you will know 
 that Tasks assigned to that queue will be executed by a single GPU machine.
 
-While the agents are up and running in your machines, you can access these resources from any machine by enqueueing a  
+While the agents are up and running in your machines, you can access these resources from any machine by enqueueing a 
 Task to one of your queues, according to the amount of resources you want to allocate to the Task. 
 
 With queues and ClearML Agent, you can easily add and remove machines from the cluster, and you can 
