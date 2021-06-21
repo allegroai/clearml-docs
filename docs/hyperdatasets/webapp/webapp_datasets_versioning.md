@@ -92,14 +92,14 @@ Frame exports downloaded filtered frames as a JSON file.
 
 **To modify a Dataset version name, do the following:**
 
-* At the top right of the Dataset page, hover over the Dataset version name, click <img src="/docs/latest/static/icons/ico-edit.svg" className="icon size-md space-sm" /> , edit the name, and then click <img src="/docs/latest/static/icons/ico-save.svg" className="icon size-md space-sm" /> (check).
+* At the top right of the Dataset page, hover over the Dataset version name, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" /> , edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" className="icon size-md space-sm" /> (check).
 
 ### Modifying version descriptions
 
 **To modify a version description, do the following:**
 
-* Expand the **INFO** area, hover over the **Description**, click <img src="/docs/latest/static/icons/ico-edit.svg" className="icon size-md space-sm" />,
-  edit the name, and then click <img src="/docs/latest/static/icons/ico-save.svg" className="icon size-md space-sm" /> (check).
+* Expand the **INFO** area, hover over the **Description**, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />,
+  edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" className="icon size-md space-sm" /> (check).
 
 ### Deleting versions
 

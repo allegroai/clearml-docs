@@ -27,7 +27,7 @@ Use annotation tasks to efficiently organize the annotation of frames in Dataset
         * **All Frames** - Include all frames in this task.
         * **Empty Frames** - Include only frames without any annotations in this task.
         * **By Label** - Include only frames with specific labels, and optionally filter these frames by confidence level and
-         the number of instances. You can also click <img src="/docs/latest/static/icons/ico-code.svg" className="icon size-md space-sm" /> and then add a Lucene query for this ROI label filter.
+         the number of instances. You can also click <img src="/docs/latest/icons/ico-code.svg" className="icon size-md space-sm" /> and then add a Lucene query for this ROI label filter.
 
 1. Choose the iteration parameters specifying how frames in this version are presented to the annotator.
 
@@ -46,13 +46,13 @@ Use annotation tasks to efficiently organize the annotation of frames in Dataset
 
 To mark an annotation task as **Completed**:
 
-* In the annotation task card, click <img src="/docs/latest/static/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu) **>** **Complete** **>** **CONFIRM**.
+* In the annotation task card, click <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu) **>** **Complete** **>** **CONFIRM**.
 
 ### Deleting annotation tasks
 
 To delete an annotation task:
 
-* In the annotation task card, click <img src="/docs/latest/static/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu) **>** **Delete** **>** **CONFIRM**.
+* In the annotation task card, click <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu) **>** **Delete** **>** **CONFIRM**.
 
 ### Filtering annotation tasks
 
@@ -69,7 +69,7 @@ Sort the annotation tasks by either using **RECENT** or **NAME** from the drop-d
 
 To View the Dataset version, filters, and iteration information:
 
-* In the annotation task card, click <img src="/docs/latest/static/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu) **>** **Info**
+* In the annotation task card, click <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu) **>** **Info**
 
 
 ## Annotating Images and Video
@@ -82,7 +82,7 @@ depend upon the settings in the annotation task (see [Creating Annotation Tasks]
 
 **To annotate frames:**
 
-1. On the Annotator page, click the annotation task card, or click <img src="/docs/latest/static/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu)
+1. On the Annotator page, click the annotation task card, or click <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu)
    and then click **Annotate**.
 1. See instructions below about annotating frames.
 
@@ -91,10 +91,10 @@ depend upon the settings in the annotation task (see [Creating Annotation Tasks]
 
 1. Select an annotation mode and add the bounded area to the frame image.
 
-    * Rectangle mode - Click <img src="/docs/latest/static/icons/ico-rectangle-icon-purple.svg" className="icon size-md space-sm" /> and then click the image, drag and release.
-    * Polygon mode - Click <img src="/docs/latest/static/icons/ico-polygon-icon-purple.svg" className="icon size-md space-sm" /> and then click the image for the first vertex,
+    * Rectangle mode - Click <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" className="icon size-md space-sm" /> and then click the image, drag and release.
+    * Polygon mode - Click <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" className="icon size-md space-sm" /> and then click the image for the first vertex,
       move to another vertex and click, continue until closing the last vertex.
-    * Key points mode - Click <img src="/docs/latest/static/icons/ico-keypoint-icon-purple.svg" className="icon size-md space-sm" /> and then click each key point.
+    * Key points mode - Click <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" className="icon size-md space-sm" /> and then click each key point.
 
 1. In the new label area, choose or enter a label.
 1. Optionally, add metadata.

@@ -18,8 +18,8 @@ provides a deep comparison of input data selection criteria of experiment Datavi
 
 **To locate the input data differences:**
 
-1. Click the **DETAILS** tab **>** Expand the **DATAVIEWS** section, or, in the header, click <img src="/docs/latest/static/icons/ico-previous-diff.svg" alt="Previous diff" className="icon size-md" />
-   (Previous diff) or <img src="/docs/latest/static/icons/ico-next-diff.svg" className="icon size-md space-sm" /> (Next diff).
+1. Click the **DETAILS** tab **>** Expand the **DATAVIEWS** section, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Previous diff" className="icon size-md" />
+   (Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" className="icon size-md space-sm" /> (Next diff).
 1. Expand any of the following sections:
 
 * **Augmentation** - On-the-fly data augmentation.
