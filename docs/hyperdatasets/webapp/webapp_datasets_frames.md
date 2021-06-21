@@ -2,18 +2,18 @@
 title: Working with Frames
 ---
 
-View and edit SingleFrames in the Dataset page. After selecting a Dataset version, the **Version Browser** shows a sample
-of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFrames, in the [frame viewer](#frame-viewer).
-Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering)
-filtering logic.
+View and edit SingleFrames in the Dataset page. After selecting a Dataset version, the **Version Browser** shows a sample 
+of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFrames, in the [frame viewer](#frame-viewer). 
+Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
+filtering logic. 
 
 ![image](../../img/hyperdatasets/frames_01.png)
 
 ## Frame viewer
 
-Frame viewer allows you to view and edit annotations which can be FrameGroup objects (Regions of Interest) and FrameGroup
-labels applied to the entire frame not a region of the frame, the frame details (see [frames](../frames.md)),
-frame metadata, the raw data source URI, as well as providing navigation and viewing tools.
+Frame viewer allows you to view and edit annotations which can be FrameGroup objects (Regions of Interest) and FrameGroup 
+labels applied to the entire frame not a region of the frame, the frame details (see [frames](../frames.md)), 
+frame metadata, the raw data source URI, as well as providing navigation and viewing tools. 
 
 ![image](../../img/hyperdatasets/web-app/dataset_example_frame_editor.png)
 
@@ -54,16 +54,16 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
             * Frame labels - Labels applied to the entire frame, not a region in the frame.
     * Optionally, filter annotations by confidence level using the <span class="tr_gui">Minimum confidence</span> slider.
     * Add, change, and delete [annotations](#annotations) and [frame metadata](#frame-metadata).
-
+      
 :::important
 To save frames changes at any time, click **SAVE** (below the annotation list area).
 :::
-
+ 
 
 ### Viewing FrameGroups
 
-Viewing and editing frames in a FrameGroup is similar to viewing and editing SingleFrames.
-Click the FrameGroup in the Dataset. In the frame viewer, select SingleFrame to view / modify from
+Viewing and editing frames in a FrameGroup is similar to viewing and editing SingleFrames. 
+Click the FrameGroup in the Dataset. In the frame viewer, select SingleFrame to view / modify from 
 a dropdown list in the **Current Source** section.
 
 ![image](../../img/hyperdatasets/framegroup_01.png)
@@ -71,27 +71,27 @@ a dropdown list in the **Current Source** section.
 ## Filtering frames
 ### Simple frame filtering
 
-Simple frame filtering applies one annotation object (ROI) label and returns frames containing at least one annotation
-with that label.
+Simple frame filtering applies one annotation object (ROI) label and returns frames containing at least one annotation 
+with that label. 
 
 **To apply a simple frame filter:**
 
 * In the **Version Browser**, choose a label on the label list.
 
-For example:
+For example: 
 * Before filtering, the **Version Browser** in the image below contains seven frames.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
-
+      
 
 ![image](../../img/hyperdatasets/frame_filtering_01.png)
 
 
-</div>
+</div>      
 </details>
-<br/>
+<br/>  
 
 * A simple label filter for `person` shows three frames with each containing at least one ROI labeled `person`.
 
@@ -106,9 +106,9 @@ For example:
 
 ### Advanced frame filtering
 
-Advanced frame filtering applies sophisticated filtering logic, which is composed of as many frame filters as needed,
-where each frame filter can be a combination of ROI, frame, and source rules.
-* ROI rules use include and exclude logic to match frames by ROI label; an ROI label can match frames containing at least
+Advanced frame filtering applies sophisticated filtering logic, which is composed of as many frame filters as needed, 
+where each frame filter can be a combination of ROI, frame, and source rules. 
+* ROI rules use include and exclude logic to match frames by ROI label; an ROI label can match frames containing at least 
   one annotation object (ROI) with all labels in the rule.
 * Frame rules and source rules use Lucene queries with AND, OR, and NOT logic. Frame rules apply to frame metadata.
 * Source rules apply to frame source information.
@@ -123,13 +123,13 @@ where each frame filter can be a combination of ROI, frame, and source rules.
         * Choose **Include** or **Exclude**, select ROI labels, and optionally set the confidence level range.
 
         * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />.
-
+            
     * Frame rule - Enter a Lucene query using frame metadata fields in the format `meta.<key>:<value>`.
-
-    * Source rule - Enter a Lucene query using frame metadata fields in the format `sources.<key>:<value>`.
+    
+    * Source rule - Enter a Lucene query using frame metadata fields in the format `sources.<key>:<value>`.            
 
 ### Examples
-
+        
 #### ROI rules
 
 
@@ -141,7 +141,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
   ![image](../../img/hyperdatasets/frame_filtering_03.png)
 
   </div>
-  </details>
+  </details>            
   <br/>
 
 * In the ROI rule, add a second label. Add `partially_occluded`. Only frames containing at least one ROI labeled as both <code>person</code> and <code>partially_occluded</code> match the filter.
@@ -152,7 +152,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
    ![image](../../img/hyperdatasets/frame_filtering_04.png)
 
    </div>
-   </details>
+   </details>            
    <br/>
 
    By opening a frame in the frame viewer, you can see an ROI labeled with both.
@@ -164,7 +164,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
    ![image](../../img/hyperdatasets/frame_filtering_05.png)
 
    </div>
-   </details>
+   </details>            
    <br/>
 
 
@@ -181,7 +181,7 @@ Filter by metadata using Lucene queries.
     ![image](../../img/hyperdatasets/frame_filtering_08.png)
 
     </div>
-    </details>
+    </details>            
     <br/>
 
     By opening a frame in the frame viewer, you can see the metadata.
@@ -193,13 +193,13 @@ Filter by metadata using Lucene queries.
     ![image](../../img/hyperdatasets/frame_filtering_09.png)
 
     </div>
-    </details>
+    </details>            
     <br/>
 
-
+    
 #### Source rules
 
-Filter by sources using Lucene queries.
+Filter by sources using Lucene queries.    
 
 * Add a source rule to filter for sources URIs with a wildcards.
 
@@ -210,11 +210,11 @@ Filter by sources using Lucene queries.
     ![image](../../img/hyperdatasets/frame_filtering_10.png)
 
     </div>
-    </details>
+    </details>            
     <br/>
 
 Use Lucene queries in ROI label filters and frame rules.
-
+        
 ## Annotations
 
 ### Frame objects (Regions of Interest)
@@ -225,26 +225,26 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 
 1. Optionally, select a default label in the Default ROI Label(s) list. New annotations are automatically assigned this label.
 
-1. Click one of the following modes and create a bounding area in the frame:
-
-    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" className="icon size-md space-sm" /> - Rectangle mode: Drag a
-   rectangle onto the frame.
-
-    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" className="icon size-md space-sm" /> - Ellipse mode: Drag an ellipse
-   onto the frame.
-
+1. Click one of the following modes and create a bounding area in the frame:   
+   
+    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" className="icon size-md space-sm" /> - Rectangle mode: Drag a 
+   rectangle onto the frame.   
+    
+    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" className="icon size-md space-sm" /> - Ellipse mode: Drag an ellipse 
+   onto the frame.   
+    
     * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" className="icon size-md space-sm" /> - Polygon mode: Click the polygon
-   vertices onto the frame.
+   vertices onto the frame.       
+    
+    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" className="icon size-md space-sm" /> - Key points mode: Click each 
+   keypoint onto the frame. After the clicking the last keypoint, click the first again to close the bounding area.   
 
-    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" className="icon size-md space-sm" /> - Key points mode: Click each
-   keypoint onto the frame. After the clicking the last keypoint, click the first again to close the bounding area.
+    A new annotation is created. 
 
-    A new annotation is created.
-
-1. In the newly created annotation, select or type a label.
-1. Optionally, add metadata. This is metadata for the annotation, not the entire frame.
+1. In the newly created annotation, select or type a label. 
+1. Optionally, add metadata. This is metadata for the annotation, not the entire frame. 
 1. Optionally, lock the annotation.
-1. If you move to another frame, the frame editor automatically saves changes. Otherwise, if you exit the frame editor,
+1. If you move to another frame, the frame editor automatically saves changes. Otherwise, if you exit the frame editor, 
    you are prompted to save.
 
 **To copy an annotation:**
@@ -280,13 +280,13 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 * Resize a bounded area by clicking on a vertex and dragging.
 
 **To modify annotation metadata:**
-
+ 
 * In the label, click edit and then in the popup modify the metadata dictionary (in JSON format).
 
 **To modify annotation colors:**
-
+    
 * Modify the color of an area by clicking the circle in the label name and select a new color.
-
+ 
 **To lock annotations:**
 
 * All annotations - Above the annotations, click the lock / unlock.
@@ -305,6 +305,6 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 
 ## Frame metadata
 
-**To edit frame metadata:**
+**To edit frame metadata:** 
 
 * Expand the **FRAME METADATA** area, click edit, and then in the popup modify the metadata dictionary (in JSON format).
