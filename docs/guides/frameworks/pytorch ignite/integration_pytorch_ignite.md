@@ -2,12 +2,36 @@
 title: PyTorch Ignite Integration
 ---
 Integrate **ClearML** into code using [ignite](https://github.com/pytorch/ignite). 
-Use ignite's `ClearMLLogger`, and the handlers that can be attached to it. See ignite's [handler](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/trains_logger.py). 
+Use ignite's `TensorboardLogger`, and the handlers that can be attached to it. See ignite's [handler](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/trains_logger.py). 
 
 :::note 
 If you are not already using **ClearML**, see our [Getting Started](/getting_started/ds/ds_first_steps.md).
 :::
 
+## Ignite Tensorboard Logger
+
+Integrate **TensorboardLogger** with the following steps:
+1. Create an ignite `ClearMLLogger` object. 
+  
+1. When the code runs, it connects to the **ClearML** backend, and creates a Task (experiment) in **ClearML**.
+  ```python
+from ignite.contrib.handlers import TensorboardLogger
+
+tb_logger = TensorboardLogger(log_dir="cifar-output")
+  ```
+1. Later in the code, attach any of the **TensorBoard** handlers to the `ClearMLLogger` object.
+   
+  For example, attach the `OutputHandler` and log training loss at every 100 iterations:
+  ```python
+    tb_logger.attach_output_handler(
+        trainer,
+        event_name=Events.ITERATION_COMPLETED(every=params.get('loss_report')),
+        tag="training",
+        output_transform=lambda loss: {"loss": loss},
+    )
+  ```
+
+<!--
 ## Ignite ClearMLLogger
 
 Integrate **ClearML** with the following steps:
@@ -28,27 +52,7 @@ Integrate **ClearML** with the following steps:
         output_transform=lambda loss: {"loss": loss}),
         event_name=Events.ITERATION_COMPLETED)
   ```
-    
-### ClearMLLogger parameters
-
-The following are the `ClearMLLogger` method parameters:
-
-* `project_name` (optional[str]) – The name of the project in which the experiment will be created. If the project does not exist, it is created. If `project_name` is `None`, the repository name becomes the project name.
-* `task_name` (optional[str]) – The name of Task (experiment). If `task_name` is `None`, the Python experiment script’s file name becomes the Task name.
-* `task_type` (optional[str]) – The name of the experiment. 
-
-    The `task_type` values include:
-    
-    * `TaskTypes.training` (default)
-    * `TaskTypes.train`
-    * `TaskTypes.testing`
-    * `TaskTypes.inference`
-        
-* `report_freq` (optional[int]) – The histogram processing frequency (handles histogram values every X calls to the handler). Affects `GradsHistHandler` and `WeightsHistHandler`. Default value is `100`.    
-* `histogram_update_freq_multiplier` (optional[int]) – The histogram report frequency (report first X histograms and once every X reports afterwards). Default value is `10`.
-* `histogram_granularity` (optional[int]): Optional. Histogram sampling granularity. Default is `50`.
-
-<a name="visualizing" class="tr_top_negative"></a>  
+    -->
 
 ## Logging 
 
@@ -59,36 +63,32 @@ To log scalars, Ignite engine's output and / or metrics, use the `OutputHandler`
 * Log training loss at each iteration:
 ```python
 # Attach the logger to the trainer to log training loss at each iteration
-clearml_logger.attach(trainer,
-    log_handler=OutputHandler(tag="training",
-    output_transform=lambda loss: {"loss": loss}),
-    event_name=Events.ITERATION_COMPLETED)
+tb_logger.attach_output_handler(
+    trainer,
+    event_name=Events.ITERATION_COMPLETED(every=params.get('loss_report')),
+    tag="training",
+    output_transform=lambda loss: {"loss": loss},
+    )
 ```
 
-* Log metrics for training:
-    
-```python
-# Attach the logger to the evaluator on the training dataset and log NLL, Accuracy metrics after each epoch
-# We setup `global_step_transform=global_step_from_engine(trainer)` to take the epoch
-# of the `trainer` instead of `train_evaluator`.
-clearml_logger.attach(train_evaluator,
-    log_handler=OutputHandler(tag="training",
-        metric_names=["nll", "accuracy"],
-        global_step_transform=global_step_from_engine(trainer)),
-    event_name=Events.EPOCH_COMPLETED)
-```
+$$* Log metrics for training and validation:
 
-* Log metrics for validation:
-                    
-```python
+FROM PREVIOUS NOTES FOR VALIDATION 
 # Attach the logger to the evaluator on the validation dataset and log NLL, Accuracy metrics after
 # each epoch. We setup `global_step_transform=global_step_from_engine(trainer)` to take the epoch of the
 # `trainer` instead of `evaluator`.
-clearml_logger.attach(evaluator,
-    log_handler=OutputHandler(tag="validation",
-        metric_names=["nll", "accuracy"],
-        global_step_transform=global_step_from_engine(trainer)),
-    event_name=Events.EPOCH_COMPLETED)
+
+    
+```python
+    # Attach handler to dump evaluator's metrics every epoch completed
+    for tag, evaluator in [("training", trainer), ("validation", evaluator)]:
+        tb_logger.attach_output_handler(
+            evaluator,
+            event_name=Events.EPOCH_COMPLETED,
+            tag=tag,
+            metric_names="all",
+            global_step_transform=global_step_from_engine(trainer),
+        )
 ```
 
 ### Optimizer parameters
