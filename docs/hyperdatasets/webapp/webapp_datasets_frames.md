@@ -23,18 +23,18 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 
 |Control Icon|Actions|
 |-----|------|
-|<img src="/static/icons/ico-skip-backward.svg" className="icon size-md space-sm" />|Jump backwards (CTRL + Left). Jumps backwards by five frames.|
-|<img src="/static/icons/ico-skip-previous.svg" className="icon size-md space-sm" />|Go to the previous frame containing a non-filtered annotation. The filter is the minimum confidence level setting. If the confidence level filter is set to zero, any frame containing annotations matches the filter.|
-|<img src="/static/icons/ico-arrow-left.svg" className="icon size-md space-sm" />|Go to the previous frame (Left Arrow).|
-|<img src="/static/icons/ico-arrow-right.svg" className="icon size-md space-sm" />|Go to the next frame (Right Arrow).|
-|<img src="/static/icons/ico-skip-next.svg" className="icon size-md space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/static/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).|
-|<img src="/static/icons/ico-skip-forward.svg" className="icon size-md space-sm" />|Jump forwards (CTRL + Right). Jumps 5 frames forwards.|
-|<img src="/static/icons/ico-revert.svg" className="icon size-md space-sm" />|Reload the frame.|
-|<img src="/static/icons/ico-undo.svg" className="icon size-md space-sm" />|Undo changes.|
-|<img src="/static/icons/ico-redo.svg" className="icon size-md space-sm" />|Redo changes.|
-|<img src="/static/icons/ico-reset_1.svg" className="icon size-md space-sm" />|Autofit|
-|<img src="/static/icons/ico-zoom-in.svg" className="icon size-md space-sm" />|Zoom in|
-|<img src="/static/icons/ico-zoom-out.svg" className="icon size-md space-sm" />|Zoom out|
+|<img src="/docs/latest/icons/ico-skip-backward.svg" className="icon size-md space-sm" />|Jump backwards (CTRL + Left). Jumps backwards by five frames.|
+|<img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />|Go to the previous frame containing a non-filtered annotation. The filter is the minimum confidence level setting. If the confidence level filter is set to zero, any frame containing annotations matches the filter.|
+|<img src="/docs/latest/icons/ico-arrow-left.svg" className="icon size-md space-sm" />|Go to the previous frame (Left Arrow).|
+|<img src="/docs/latest/icons/ico-arrow-right.svg" className="icon size-md space-sm" />|Go to the next frame (Right Arrow).|
+|<img src="/docs/latest/icons/ico-skip-next.svg" className="icon size-md space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).|
+|<img src="/docs/latest/icons/ico-skip-forward.svg" className="icon size-md space-sm" />|Jump forwards (CTRL + Right). Jumps 5 frames forwards.|
+|<img src="/docs/latest/icons/ico-revert.svg" className="icon size-md space-sm" />|Reload the frame.|
+|<img src="/docs/latest/icons/ico-undo.svg" className="icon size-md space-sm" />|Undo changes.|
+|<img src="/docs/latest/icons/ico-redo.svg" className="icon size-md space-sm" />|Redo changes.|
+|<img src="/docs/latest/icons/ico-reset_1.svg" className="icon size-md space-sm" />|Autofit|
+|<img src="/docs/latest/icons/ico-zoom-in.svg" className="icon size-md space-sm" />|Zoom in|
+|<img src="/docs/latest/icons/ico-zoom-out.svg" className="icon size-md space-sm" />|Zoom out|
 |Percentage textbox|Zoom percentage|
 
 ### Viewing and editing frames
@@ -122,7 +122,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 
         * Choose **Include** or **Exclude**, select ROI labels, and optionally set the confidence level range.
 
-        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/static/icons/ico-edit.svg" className="icon size-md space-sm" />.
+        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />.
             
     * Frame rule - Enter a Lucene query using frame metadata fields in the format `meta.<key>:<value>`.
     
@@ -227,16 +227,16 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 
 1. Click one of the following modes and create a bounding area in the frame:   
    
-    * <img src="/static/icons/ico-rectangle-icon-purple.svg" className="icon size-md space-sm" /> - Rectangle mode: Drag a 
+    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" className="icon size-md space-sm" /> - Rectangle mode: Drag a 
    rectangle onto the frame.   
     
-    * <img src="/static/icons/ico-ellipse-icon-purple.svg" className="icon size-md space-sm" /> - Ellipse mode: Drag an ellipse 
+    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" className="icon size-md space-sm" /> - Ellipse mode: Drag an ellipse 
    onto the frame.   
     
-    * <img src="/static/icons/ico-polygon-icon-purple.svg" className="icon size-md space-sm" /> - Polygon mode: Click the polygon
+    * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" className="icon size-md space-sm" /> - Polygon mode: Click the polygon
    vertices onto the frame.       
     
-    * <img src="/static/icons/ico-keypoint-icon-purple.svg" className="icon size-md space-sm" /> - Key points mode: Click each 
+    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" className="icon size-md space-sm" /> - Key points mode: Click each 
    keypoint onto the frame. After the clicking the last keypoint, click the first again to close the bounding area.   
 
     A new annotation is created. 
@@ -267,7 +267,7 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 1. Expand the **FRAME LABELS** area.
 1. Click **+ Add new**.
 1. Enter a label.
-1. Optionally, click <img src="/static/icons/ico-edit.svg" className="icon size-md space-sm" />.
+1. Optionally, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />.
 
 ### Annotation management
 
