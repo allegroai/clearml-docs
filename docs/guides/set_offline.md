@@ -8,7 +8,7 @@ local folder, which can be later uploaded to the [ClearML Server](../deploying_c
 
 ## Setting Task to offline mode
 
-Before initializing a Task, use the [Task.set_offline](../references/sdk/task.md##taskset_offline) class method and set the 
+Before initializing a Task, use the [Task.set_offline](../references/sdk/task.md#taskset_offline) class method and set the 
 `offline_mode` argument to `True`.
 
 ```python
@@ -33,7 +33,7 @@ ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b78684
 ## Uploading local session
 
 In order to upload to the ClearML Server the local execution data that the Task captured offline, use the 
-[Task.import_offline_session](../references/sdk/task.md##taskimport_offline_session) method. This method will upload the 
+[Task.import_offline_session](../references/sdk/task.md#taskimport_offline_session) method. This method will upload the 
 Task's full execution details and outputs. 
 
 ```python
