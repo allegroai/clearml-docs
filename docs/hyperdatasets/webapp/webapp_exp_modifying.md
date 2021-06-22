@@ -33,7 +33,7 @@ are iterated and frame filters (see [Dataviews](webapp_dataviews.md).
   
 * Import a different Dataview associated with the same or another project.  
     
-    * Click <img src="/static/icons/ico-import.svg" className="icon size-md space-sm" /> (**Import dataview**) and then 
+    * Click <img src="/docs/latest/icons/ico-import.svg" className="icon size-md space-sm" /> (**Import dataview**) and then 
       select **Import to current dataview** or **Import to aux dataview**.
       
 :::note
@@ -101,7 +101,7 @@ that are not mapped are ignored.
       
         1. Select or enter the label to map to in the output model.
     
-    * Remove (<img src="/static/icons/ico-trash.svg" className="icon size-md space-sm" />) a mapping.
+    * Remove (<img src="/docs/latest/icons/ico-trash.svg" className="icon size-md space-sm" />) a mapping.
 
 1. Click **SAVE**
 
@@ -117,7 +117,7 @@ Modify the label enumeration assigned to output models.
     
         * Select a label and then enter an integer for it.
     
-    * Remove (<img src="/static/icons/ico-trash.svg" className="icon size-md space-sm" />)  an enumeration.
+    * Remove (<img src="/docs/latest/icons/ico-trash.svg" className="icon size-md space-sm" />)  an enumeration.
 
 1. Click **SAVE**.
 
@@ -133,7 +133,7 @@ For more detailed information, see [Data Augmentation](../dataviews.md#data-augm
 
     * Add (**+**) or edit an augmentation step - Select a **METHOD**, **OPERATION**, and **STRENGTH**.
         
-    * Remove (<img src="/static/icons/ico-trash.svg" className="icon size-md space-sm" />)  an augmentation step.
+    * Remove (<img src="/docs/latest/icons/ico-trash.svg" className="icon size-md space-sm" />)  an augmentation step.
     
 1. Click **SAVE**.    
     
