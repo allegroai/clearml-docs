@@ -108,55 +108,78 @@ The Task must be connected to a git repository, since currently single script de
 1. Click on the JupyterLab / VSCode link, or connect directly to the SSH session.
 1. In JupyterLab / VSCode, access the experiment's repository in the `environment/task_repository` folder. 
 
+### Choosing a ***Server
+By default, `clearml-session` both Jupyter-Lab and the vscode server. In order to save on resources and time,
+you can choose to download only of these option. To stop installation of one of these
+option, pass either `--vscode-server` or `--jupyter-lab` and set it to False.  
 
+
+### Running remote session on cloud
+By default, `clearml-session` runs on prem on the machine that the ClearML Agent executing the session was
+set up. If you are running the session on a cloud, pass the `--public-ip` flag and set it to `True`
+in order to register the public IP of the remote machine. 
 
 --public-ip [true/false]
                         If True register the public IP of the remote machine.
                         Set if running on the cloud. Default: false (use for
                         local / on-premises)
-  --vscode-server [true/false]
-                        Install vscode server (code-server) on interactive
-                        session (default: true)
-  --jupyter-lab [true/false]
-                        Install Jupyter-Lab on interactive session (default:
-                        true)
-  --user-folder USER_FOLDER
+
+### Setting the remote base folder 
+--user-folder USER_FOLDER
                         Advanced: Set the remote base folder (default: ~/)
-  --requirements REQUIREMENTS
-                        Specify requirements.txt file to install when setting
-                        the interactive session. Requirements file is read and
-                        stored in `packages` section as default for the next
-                        sessions. Can be overridden by calling `--packages`
-  --init-script [INIT_SCRIPT]
+
+### Setting an initialization script
+Use `--init-script` to pass a BASH init script file to be executed when setting up 
+the interactive session. 
+
+--init-script [INIT_SCRIPT]
                         Specify BASH init script file to be executed when
                         setting the interactive session. Script content is
                         read and stored as default script for the next
                         sessions. To clear the init-script do not pass a file
-  --config-file CONFIG_FILE
-                        Advanced: Change the configuration file used to store
-                        the previous state (default: ~/.clearml_session.json)
-  --remote-gateway [REMOTE_GATEWAY]
+
+
+## Advanced Options
+
+### Change configuration file
+`clearml-session` stores its previous state by default in the `.clearml_session.json` configuration file. To change this configuration
+file, pass the `--config-file` flag along with the path to another configuration file. 
+
+### Specify gateway IP
+--remote-gateway [REMOTE_GATEWAY]
                         Advanced: Specify gateway ip/address to be passed to
                         interactive session (for use with k8s ingestion / ELB)
-  --base-task-id BASE_TASK_ID
+  
+### Set a base task ID
+--base-task-id BASE_TASK_ID
                         Advanced: Set the base task ID for the interactive
                         session. (default: previously used Task). Use `none`
                         for the default interactive session
-  --disable-keepalive   Advanced: If set, disable the transparent proxy always
-                        keeping the sockets alive. Default: false, use
-                        transparent socket mitigating connection drops.
-  --queue-excluded-tag [QUEUE_EXCLUDED_TAG [QUEUE_EXCLUDED_TAG ...]]
+
+### Disable keepalive
+By default, `clearml-serving` uses a transparent proxy to keep the sockets alive, to maintain connection to the remote 
+resource, and mitigate connection drops. To disable this, pass the `--disable-keepalive` flag and set it to `true`. 
+
+### Queue Tags  
+--queue-excluded-tag [QUEUE_EXCLUDED_TAG [QUEUE_EXCLUDED_TAG ...]]
                         Advanced: Excluded queues with this specific tag from
                         the selection
-  --queue-include-tag [QUEUE_INCLUDE_TAG [QUEUE_INCLUDE_TAG ...]]
+
+--queue-include-tag [QUEUE_INCLUDE_TAG [QUEUE_INCLUDE_TAG ...]]
                         Advanced: Only include queues with this specific tag
                         from the selection
-  --skip-docker-network
+  
+### Skip Docker network
+--skip-docker-network
                         Advanced: If set, `--network host` is **not** passed
                         to docker (assumes k8s network ingestion) (default:
                         false)
-  --password PASSWORD   Advanced: Select ssh password for the interactive
+  
+### Set a session username and password
+In order to set an SSH username and / or a password for the interactive session, pass the `--password` and `--username` 
+flags. 
+--password PASSWORD   Advanced: Select ssh password for the interactive
                         session (default: `randomly-generated` or previously
                         used one)
-  --username USERNAME   Advanced: Select ssh username for the interactive
+--username USERNAME   Advanced: Select ssh username for the interactive
                         session (default: `root` or previously used one)
