@@ -2,23 +2,24 @@
 title: PyTorch Ignite Integration
 ---
 
-The [cifat_ignite.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/ignite/cifar_ignite.py) example 
+The [cifar_ignite.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/ignite/cifar_ignite.py) example 
 script integrates **ClearML** into code using [ignite](https://github.com/pytorch/ignite). 
 The script creates a neural network to train a model to classify images from the CIFAR10 dataset. 
 
 The example script does the following:
-* Call `Task.connect` to report configurations.
-* Uses ignite's `TensorboardLogger`, and the handlers that can be attached to it. See ignite's [handler](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/trains_logger.py). 
-* Uses ClearML's automatic logging to capture data and outputs captured by `TensorboardLogger`.
+* Calls `Task.connect` to report configurations.
+* Uses ignite's `TensorboardLogger` and attaches handlers to it. See ignite's [handler](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/trains_logger.py). 
+* Uses ClearML's automatic logging to capture data and outputs logged with `TensorboardLogger`.
 * Creates an experiment named 'image classification CIFAR10', which is associated with the 'Image Example' project.
 
 :::note 
-If you are not already using **ClearML**, see our [Getting Started](../../getting_started/ds/ds_first_steps.md).
+If you are not already using **ClearML**, see our [Getting Started](../../../getting_started/ds/ds_first_steps.md).
 :::
 
 ## Logging hyperparameters
 
-Parameters are explicitly reported to ClearML using the `task.connect` method. The 
+Parameters are explicitly reported to ClearML using the `task.connect` method.  
+
 ```python
 params = {'number_of_epochs': 20, 'batch_size': 64, 'dropout': 0.25, 'base_lr': 0.001, 'momentum': 0.9, 'loss_report': 100}
 params = task.connect(params)  # enabling configuration override by clearml
@@ -40,12 +41,10 @@ Integrate **TensorboardLogger** with the following steps:
 
 ## Logging 
 
-### Ignite engine output and / or metrics
-
 To log scalars, Ignite engine's output and / or metrics, use the `OutputHandler` by attaching it 
 to the `TensorboardLogger` object. 
 
-The code also creates a trainer engine with supervised update function, using ignite's `create_supervised_trainer` method.
+The code also creates a trainer engine with a supervised update function, using ignite's `create_supervised_trainer` method.
 
 * Log trainer loss every 100 iterations:
 ```python
@@ -59,8 +58,8 @@ tb_logger.attach_output_handler(
 
 * Log metrics for training and validation:
 
-Attach the logger to the evaluator on the validation dataset and log ALL, Accuracy metrics after
-each epoch. We setup `global_step_transform=global_step_from_engine(trainer)` to take the epoch of the
+Attach the logger to the evaluator on the validation dataset and log all metrics after
+each epoch. We set up `global_step_transform=global_step_from_engine(trainer)` to take the epoch of the
 `trainer` instead of `evaluator`
 
 ```python
@@ -78,39 +77,29 @@ for tag, evaluator in [("training", trainer), ("validation", evaluator)]:
 
 ## Model snapshots
 
-To save input snapshots as **ClearML** artifacts, use `torch.save`:
+To save input snapshots, use `torch.save`:
 
 ```python
 torch.save(net.state_dict(), PATH)
 ```
 
-ClearML automatically captures the model. 
+**ClearML** automatically captures the model and saves it as an artifact. 
 
 View saved snapshots in the **ARTIFACTS** tab.
 
-![image](../../../img/ignite_artifact.png)
+![image](../../../img/examples_cifar_artifacts.png)
 
 To view the model, in the **ARTIFACTS** tab, click the model name (or download it).
 
-![image](../../../img/ignite_model.png)
+![image](../../../img/examples_cifar_model.png)
 
-
-## Visualizing experiment results
-
-When the code with an ignite `TensorboardLogger` object and attached [handlers](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/trains_logger.py)
-runs, the experiment results can be visualized in the **ClearML Web UI**. 
-
-The `ignite` repository contains an MNIST ClearMLLogger example, [mnist_with_clearml_logger.py](https://github.com/pytorch/ignite/blob/master/examples/contrib/mnist/mnist_with_clearml_logger.py). 
-
-Run this code and visualize the experiment results in the **ClearML Web UI**.
 
 ### Scalars
 
 View the scalars, including training and validation metrics, in the experiment's page in the **ClearML Web UI**, under 
 **RESULTS** **>** **SCALARS**.
 
-![image](../../../img/ignite_training.png)
-![image](../../../img/ignite_validation.png)
+![image](../../../img/examples_cifar_scalars.png)
 
 
 ## Ignite ClearMLLogger
@@ -120,4 +109,8 @@ offers a ClearMLLogger handler to log metrics, text, model/optimizer parameters,
 
 When code with ClearMLLogger integrated into it runs, it connects to the **ClearML** backend, and creates a Task (experiment) in **ClearML**.
 
+The `ignite` repository contains an MNIST ClearMLLogger example, [mnist_with_clearml_logger.py](https://github.com/pytorch/ignite/blob/master/examples/contrib/mnist/mnist_with_clearml_logger.py).
+Run this code and visualize the experiment results in the **ClearML Web UI**.
+
 For more information, see [CLEARML_LOGGER](https://pytorch.org/ignite/generated/ignite.contrib.handlers.clearml_logger.html).
+
