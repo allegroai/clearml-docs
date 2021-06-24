@@ -6,27 +6,47 @@ Machine Learning and Deep Learning development is sometimes more challenging tha
 you are working on an average laptop or computer, and you have a sizeable dataset that requires significant computation, 
 your local machine may not be able to provide you with the resources for an effective workflow.
 
-If you can run and debug your code  on your own machine, congrats you are lucky! Continue doing that, then clone your code 
+If you can run and debug your code on your own machine, congrats you are lucky! Continue doing that, then clone your code 
 in the UI and send it for long-term training on a remote machine.
 
 **If you are not that lucky**, this section is for you :)
 
-## What does Clearml Session do?
+## What does ClearML Session do?
 `clearml-session` is a feature that allows to launch a session of Jupyterlab and VS Code, and to execute code on a remote 
 machine that better meets resource needs. With this feature, local links are provided, which can be used to access 
-JupyterLab and VSCode on a remote machine over a secure and encrypted SSH connection.
+JupyterLab and VS Code on a remote machine over a secure and encrypted SSH connection.
 
-![image](../img/clearml_session_jupyter.png)
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">Jupyter-Lab Window</summary>
+<div className="cml-expansion-panel-content">
+
+![image](../img/session_jupyter.png)
+
+</div>
+</details>
+
+<br/>
+
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">VS Code Window</summary>
+<div className="cml-expansion-panel-content">
+
+![image](../img/session_vs_code.png)
+
+</div>
+</details>
+
+<!--![image](../img/clearml_session_jupyter.png)-->
 
 ## How it Works
 
 ClearML allows to leverage a resource (e.g. GPU or CPU machine) by utilizing the [ClearML Agent](../clearml_agent).
-A ClearML Agent will be executed on target machine, and ClearML Session will instruct it to execute the Jupyter \ VSCode server to develop remotely.
-After entering a `clearml-session` command with all 
-specifications: 
+A ClearML Agent will run on a target machine, and ClearML Session will instruct it to execute the Jupyter \ VS Code 
+server to develop remotely.
+After entering a `clearml-session` command with all specifications: 
 
    1. `clearml-session` creates a new [Task](../fundamentals/task.md) that is responsible for setting up the SSH and 
-      JupyterLab / VSCode environment, according to your specifications, on the host machine. 
+      JupyterLab / VS Code environment, according to your specifications, on the host machine. 
    
    1. The Task is enqueued to the queue ClearML Agent listens to and then executed by it. It will download the appropriate server and execute it.  
    
@@ -34,7 +54,7 @@ specifications:
    machine via SSH, and tunnels both SSH and JupyterLab over the SSH connection. If a specific Docker was specified, the 
    JupyterLab environment will run inside the Docker. 
    
-   1. The CLI outputs access links to the remote JupyterLab and VSCode sessions:  
+   1. The CLI outputs access links to the remote JupyterLab and VS Code sessions:  
 
     ```console
     Interactive session is running:
@@ -52,15 +72,15 @@ specifications:
 To run a session inside a Docker container, use the `--docker` flag and enter the docker image to use in the interactive 
 session.
 
-### Passing requirements
-`clearml-session` can download required Python packages. 
-A `requirement.txt` file can be attached to the command using `--requirements </file/location.txt>`.
+### Installing requirements
+`clearml-session` can install required Python packages when setting up the remote environment. A `requirement.txt` file 
+can be attached to the command using `--requirements </file/location.txt>`.
 Alternatively, packages can be manually specified, using `--packages "<package_name>"` 
-(for example `--packages "keras" "clearml"`) and they'll be automatically installed.
+(for example `--packages "keras" "clearml"`), and they'll be automatically installed.
 
-### Accessing git repository
-To access a git repository remotely, add a `--git-credentials` flag and set it to `True`, so the local .git-credentials 
-file is sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless 
+### Accessing a git repository
+To access a git repository remotely, add a `--git-credentials` flag and set it to `true`, so the local .git-credentials 
+file will be sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless 
 cloning and tracking of git references, including untracked changes. 
 
 ### Re-launching and shutting down sessions 
@@ -72,7 +92,7 @@ to an existing session will show up:
 Connect to active session id=c7302b564aa945408aaa40ac5c69399c [Y]/n?`
 ```
 
-If multiple sessions were launched from a local machine and are still active, choose the session to reconnect to:
+If multiple sessions were launched from a local machine and are still active, choose the desired session:
 
 ```console
 Active sessions:
@@ -84,19 +104,21 @@ Connect to session [0-1] or 'N' to skip
 To shut down a remote session, which will free the `clearml-agent` and close the CLI, enter "Shutdown". If a session 
 is shutdown, there is no option to reconnect to it. 
 
-### Connecting to existing session
-If a `clearml-session` is running remotely, it's possible to continue working on the session from any machine. Starting a 
-session initializes a Task with a unique ID in the ClearML Server. To connect to an existing session: 
-1. Go to the ClearML UI, find the interactive session Task (by default it's in project "DevOps").
-1. Click on the ID button to the right of the Task name, and copy the unique ID.
+### Connecting to an existing session
+If a `clearml-session` is running remotely, it's possible to continue working on the session from any machine. 
+When `clearml-session` is launched, it initializes a task with a unique ID in the ClearML Server. 
+
+To connect to an existing session: 
+1. Go to the web UI, find the interactive session task (by default, it's in project "DevOps").
+1. Click on the ID button to the right of the task name, and copy the unique ID.
 1. Enter the following command: `clearml-session --attach <session_id>`.
-1. Click on the JupyterLab / VSCode link that is outputted, or connect directly to the SSH session
+1. Click on the JupyterLab / VS Code link that is outputted, or connect directly to the SSH session
 
 
 ### Starting a debugging session 
 Previously executed experiments in the ClearML system can be debugged on a remote interactive session. 
 Input into `clearml-session` the ID of a Task to debug, then `clearml-session` clones the experiment's git repository and 
-replicates the environment on a remote machine. Then the code can be interactively executed and debugged on JupyterLab / VSCode. 
+replicates the environment on a remote machine. Then the code can be interactively executed and debugged on JupyterLab / VS Code. 
 
 :::note
 The Task must be connected to a git repository, since currently single script debugging is not supported.
@@ -105,81 +127,63 @@ The Task must be connected to a git repository, since currently single script de
 1. In the **ClearML web UI**, find the experiment (Task) that needs debugging.
 1. Click on the ID button next to the Task name, and copy the unique ID.
 1. Enter the following command: `clearml-session --debugging-session <experiment_id_here>`
-1. Click on the JupyterLab / VSCode link, or connect directly to the SSH session.
-1. In JupyterLab / VSCode, access the experiment's repository in the `environment/task_repository` folder. 
+1. Click on the JupyterLab / VS Code link, or connect directly to the SSH session.
+1. In JupyterLab / VS Code, access the experiment's repository in the `environment/task_repository` folder. 
 
-### Choosing a ***Server
-By default, `clearml-session` both Jupyter-Lab and the vscode server. In order to save on resources and time,
-you can choose to download only of these option. To stop installation of one of these
-option, pass either `--vscode-server` or `--jupyter-lab` and set it to False.  
+### Choosing an environment
+By default, `clearml-session` downloads both Jupyter-Lab and VS Code servers. In order to save on resources and time,
+you can choose to download just one of these options. To stop installation of one of the environments, pass either 
+`--vscode-server` or `--jupyter-lab` and set it to `false`.  
 
 
-### Running remote session on cloud
-By default, `clearml-session` runs on prem on the machine that the ClearML Agent executing the session was
-set up. If you are running the session on a cloud, pass the `--public-ip` flag and set it to `True`
-in order to register the public IP of the remote machine. 
+### Running a remote session on cloud
+`clearml-session` enables scaling-out development to multiple clouds, assigning development machines on AWS / GCP / Azure 
+in a seamless way. By default, the remote session runs on-prem on the machine where the ClearML Agent executing the session was
+launched. If you are running the session on a public cloud, pass the `--public-ip` flag and set it to `true`
+in order to register the public IP of the remote machine.
 
---public-ip [true/false]
-                        If True register the public IP of the remote machine.
-                        Set if running on the cloud. Default: false (use for
-                        local / on-premises)
-
-### Setting the remote base folder 
---user-folder USER_FOLDER
-                        Advanced: Set the remote base folder (default: ~/)
-
-### Setting an initialization script
-Use `--init-script` to pass a BASH init script file to be executed when setting up 
-the interactive session. 
-
---init-script [INIT_SCRIPT]
-                        Specify BASH init script file to be executed when
-                        setting the interactive session. Script content is
-                        read and stored as default script for the next
-                        sessions. To clear the init-script do not pass a file
-
+### Executing an initialization script
+Use `--init-script` to specify a BASH init script file to be executed when the interactive session
+is being set up. The script content is read and stored as the default script for the next sessions. 
 
 ## Advanced Options
 
+### Setting the remote base folder
+Set the remote base folder for the session by passing the `--user-folder` flag with the path to the folder. 
+By default, it is in the home folder(`~/`). The new base folder becomes the default folder in future sessions. 
+
 ### Change configuration file
-`clearml-session` stores its previous state by default in the `.clearml_session.json` configuration file. To change this configuration
-file, pass the `--config-file` flag along with the path to another configuration file. 
+`clearml-session` stores its previous state by default in the `.clearml_session.json` configuration file. To change 
+this configuration file, pass the `--config-file` with the path to another configuration file. 
 
 ### Specify gateway IP
---remote-gateway [REMOTE_GATEWAY]
-                        Advanced: Specify gateway ip/address to be passed to
-                        interactive session (for use with k8s ingestion / ELB)
+Use `--remote-gateway` to specify gateway IP to pass to the interactive session, if an external address needs to be accessed.
   
 ### Set a base task ID
---base-task-id BASE_TASK_ID
-                        Advanced: Set the base task ID for the interactive
-                        session. (default: previously used Task). Use `none`
-                        for the default interactive session
-
+If you have a remote session task with your required specification and configurations, that task can be used as a base task
+for `clearml-session`. Set a base task for the remote session by passing the task's ID with the `--base-task-id` flag. 
+By default, the previously used session task is used as the base. To set the session to the default interactive session
+pass `--base-task-id none`
+                        
 ### Disable keepalive
-By default, `clearml-serving` uses a transparent proxy to keep the sockets alive, to maintain connection to the remote 
-resource, and mitigate connection drops. To disable this, pass the `--disable-keepalive` flag and set it to `true`. 
+By default, `clearml-serving` uses a transparent proxy to keep the sockets alive, in order to maintain the connection to 
+the remote resource. To disable this, pass the `--disable-keepalive` flag and set it to `true`. 
 
 ### Queue Tags  
---queue-excluded-tag [QUEUE_EXCLUDED_TAG [QUEUE_EXCLUDED_TAG ...]]
-                        Advanced: Excluded queues with this specific tag from
-                        the selection
+When launching `clearml-session`, if a queue isn't specified, the CLI asks which queue to use. The queue list can be filtered 
+according to specific tags by using the `--queue-excluded-tag` and `--queue-include-tag` flags, and specifying a list of tags. 
+With `--queue-excluded-tag`, all queues with the specified tag/s will not show as options, and with `--queue-include-tag`,
+only tags with the specified tag/s will be included as options.
 
---queue-include-tag [QUEUE_INCLUDE_TAG [QUEUE_INCLUDE_TAG ...]]
-                        Advanced: Only include queues with this specific tag
-                        from the selection
+See the `tags` parameter in the [queues.create](../references/api/endpoints#post-queuescreate)
+API call. 
   
 ### Skip Docker network
---skip-docker-network
-                        Advanced: If set, `--network host` is **not** passed
-                        to docker (assumes k8s network ingestion) (default:
-                        false)
-  
+Specify whether to pass the `--network host` flag to the Docker that is launching the remote session (see 
+[Networking using the host network](https://docs.docker.com/network/network-tutorial-host/)), by using the `--skip-docker-network`.
+By default, it is set to `false`.
+ 
 ### Set a session username and password
-In order to set an SSH username and / or a password for the interactive session, pass the `--password` and `--username` 
-flags. 
---password PASSWORD   Advanced: Select ssh password for the interactive
-                        session (default: `randomly-generated` or previously
-                        used one)
---username USERNAME   Advanced: Select ssh username for the interactive
-                        session (default: `root` or previously used one)
+In order to set your own SSH username and / or a password for the interactive session, pass the `--password` and `--username` 
+flags. By default, the SSH password for the interactive session is either a previously used password or a randomly generated 
+one. By default, the SSH username is `root` or a previously used username. 
