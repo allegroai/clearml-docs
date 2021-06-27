@@ -137,10 +137,10 @@ you can choose to download just one of these options. To stop installation of on
 
 
 ### Running a remote session on cloud
-`clearml-session` enables scaling-out development to multiple clouds, assigning development machines on AWS/GCP/Azure in a 
-seamless way. By default, the remote session runs on-prem on the machine that the ClearML Agent executing the session was
-launched. If you are running the session on a cloud, pass the `--public-ip` flag and set it to `true`
-in order to register the public IP of the remote machine. 
+`clearml-session` enables scaling-out development to multiple clouds, assigning development machines on AWS / GCP / Azure 
+in a seamless way. By default, the remote session runs on-prem on the machine where the ClearML Agent executing the session was
+launched. If you are running the session on a public cloud, pass the `--public-ip` flag and set it to `true`
+in order to register the public IP of the remote machine.
 
 ### Executing an initialization script
 Use `--init-script` to specify a BASH init script file to be executed when the interactive session
@@ -150,16 +150,14 @@ is being set up. The script content is read and stored as the default script for
 
 ### Setting the remote base folder
 Set the remote base folder for the session by passing the `--user-folder` flag with the path to the folder. 
-By default, it is in the home folder(`~/`)
+By default, it is in the home folder(`~/`). The new base folder becomes the default folder in future sessions. 
 
 ### Change configuration file
 `clearml-session` stores its previous state by default in the `.clearml_session.json` configuration file. To change 
 this configuration file, pass the `--config-file` with the path to another configuration file. 
 
 ### Specify gateway IP
---remote-gateway [REMOTE_GATEWAY]
-                        Advanced: Specify gateway ip/address to be passed to
-                        interactive session (for use with k8s ingestion / ELB)
+Use `--remote-gateway` to specify gateway IP to pass to the interactive session, if an external address needs to be accessed.
   
 ### Set a base task ID
 If you have a remote session task with your required specification and configurations, that task can be used as a base task
@@ -181,12 +179,10 @@ See the `tags` parameter in the [queues.create](../references/api/endpoints#post
 API call. 
   
 ### Skip Docker network
-You can specify that `--network host` is not passed to the Docker launching the session, by passing the `--skip-docker-network`
-flag and setting it to `true`. 
-                        Advanced: If set, `--network host` is **not** passed
-                        to docker (assumes k8s network ingestion) (default:
-                        false)
-  
+Specify whether to pass the `--network host` flag to the Docker that is launching the remote session (see 
+[Networking using the host network](https://docs.docker.com/network/network-tutorial-host/)), by using the `--skip-docker-network`.
+By default, it is set to `false`.
+ 
 ### Set a session username and password
 In order to set your own SSH username and / or a password for the interactive session, pass the `--password` and `--username` 
 flags. By default, the SSH password for the interactive session is either a previously used password or a randomly generated 
