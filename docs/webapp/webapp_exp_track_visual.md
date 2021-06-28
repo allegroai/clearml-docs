@@ -5,7 +5,7 @@ title: Tracking Experiments and Visualizing Results
 While an experiment is running, and any time after it finishes, track it and visualize the results in the **ClearML Web UI**,
 including:
 
-* [Execution details](#execution-details) - Code, the base Docker image used for **ClearML Agent**, output destination for artifacts, and the logging level.
+* [Execution details](#execution-details) - Code, the base Docker image used for **[ClearML Agent](../clearml_agent.md)**, output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
 * [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
@@ -359,25 +359,26 @@ are on the left side of the window. The tools include:
 * **Group by** - select one of the following:
   * **Metric** - all variants for a metric on the same plot
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
+    <details className="cml-expansion-panel screenshot">
+    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+    <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_33.png)
+    ![image](../img/webapp_tracking_33.png)
 
-</div>
-</details>
+    </div>
+    </details>
+    <br/>
+      
+  * **None** - Group by metric-variant combination (individual metric-variant plots).
 
-* **None** - Group by metric-variant combination (individual metric-variant plots).
+    <details className="cml-expansion-panel screenshot">
+    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+    <div className="cml-expansion-panel-content">
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
+    ![image](../img/webapp_tracking_34.png)
 
-![image](../img/webapp_tracking_34.png)
-
-</div>
-</details>
+    </div>
+    </details>
 
 * Show / hide plots - Click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />
   on those you want to see.
@@ -386,29 +387,6 @@ are on the left side of the window. The tools include:
   * **RELATIVE** - time since experiment began
   * **WALL** - local clock time
 * Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
-
-
-#### Plot controls
-
-Each plot supports plot controls allowing you better analyze the results. The table below lists the plot controls which may be available for any plot. Hover over a plot, and the controls appear.
-
-|Icon|Description|
-|---|---|
-| ![image](../img/svg/download-png.svg) | Download plots as PNG files. |
-| ![image](../img/svg/pan.svg) | Pan around plot. Click ![image](../img/svg/pan.svg), click the plot, and then drag. |
-| ![image](../img/svg/dotted-box.svg) | To examine an area, draw a dotted box around it. Click ![image](../img/svg/dotted-box.svg) and then drag. |
-| ![image](../img/svg/dotted-lasso.svg) | To examine an area, draw a dotted lasso around it. Click ![image](../img/svg/dotted-lasso.svg) and then drag. |
-| ![image](../img/svg/zoom.svg) | Zoom into a section of a plot. Zoom in - Click ![image](../img/svg/zoom.svg) and drag over a section of the plot. Reset to original scale - Click ![image](../img/svg/reset-scale.svg). |
-| ![image](../img/svg/zoom-in.svg) | Zoom in. |
-| ![image](../img/svg/zoom-out.svg) | Zoom out. |
-| ![image](../img/svg/reset-autoscale.svg) | Reset to autoscale after zooming ( ![image](../img/svg/zoom.svg), ![image](../img/svg/zoom-in.svg), or ![image](../img/svg/zoom-out.svg) ). |
-| ![image](../img/svg/reset-axes.svg) | Reset axes after a zoom.
-| ![image](../img/svg/spike-lines.svg) | Show / hide spike lines. |
-| ![image](../img/svg/show-closest.svg) | Show the closest data point on hover, including horizontal and vertical axes values. Click ![image](../img/svg/show-closest.svg) and then hover over a series on the plot. |
-| ![image](../img/svg/compare-data.svg) | Compare data on hover. Click ![image](../img/svg/compare-data.svg) and then hover over the plot. |
-| ![image](../img/svg/logarithmic-view.svg) | Switch to logarithmic view. |
-| ![image](../img/svg/legend.svg) | Hide / show the legend. |
-| ![image](../img/svg/download-json.svg) | To get metric data for further analysis, download plot data to JSON file. |
 
 
 ### Other plots
@@ -426,12 +404,36 @@ Individual plots can be shown / hidden or filtered by title.
 </div>
 </details>
 
+### Plot controls
 
+Each plot (in the **SCALARS** and **PLOTS** tabs) supports plot controls allowing you better analyze the results. The table 
+below lists the plot controls which may be available for any plot. Hover over a plot, and the controls appear.
 
+|Icon|Description|
+|---|---|
+| <img src="/docs/latest/img/svg/download-png.svg" className="icon size-md space-sm" /> | Download plots as PNG files. |
+| <img src="/docs/latest/img/svg/pan.svg" className="icon size-md space-sm" />  | Pan around plot. Click <img src="/docs/latest/img/svg/pan.svg" className="icon size-md space-sm" />, click the plot, and then drag. |
+| <img src="/docs/latest/img/svg/dotted-box.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/img/svg/dotted-box.svg" className="icon size-md space-sm" /> and then drag. |
+| <img src="/docs/latest/img/svg/dotted-lasso.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/img/svg/dotted-lasso.svg" className="icon size-md space-sm" /> and then drag. |
+| <img src="/docs/latest/img/svg/zoom.svg" className="icon size-md space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/img/svg/zoom.svg" className="icon size-md space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/img/svg/reset-scale.svg" className="icon size-md space-sm" />. |
+| <img src="/docs/latest/img/svg/zoom-in.svg" className="icon size-md space-sm" /> | Zoom in. |
+| <img src="/docs/latest/img/svg/zoom-out.svg" className="icon size-md space-sm" /> | Zoom out. |
+| <img src="/docs/latest/img/svg/reset-autoscale.svg" className="icon size-md space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/img/svg/zoom.svg" className="icon size-md space-sm" />, <img src="/docs/latest/img/svg/zoom-in.svg" className="icon size-md space-sm" />, or <img src="/docs/latest/img/svg/zoom-out.svg" className="icon size-md space-sm" />). |
+| <img src="/docs/latest/img/svg/reset-axes.svg" className="icon size-md space-sm" /> | Reset axes after a zoom.
+| <img src="/docs/latest/img/svg/spike-lines.svg" className="icon size-md space-sm" /> | Show / hide spike lines. |
+| <img src="/docs/latest/img/svg/show-closest.svg" className="icon size-md space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/img/svg/show-closest.svg" className="icon size-md space-sm" /> and then hover over a series on the plot. |
+| <img src="/docs/latest/img/svg/compare-data.svg" className="icon size-md space-sm" /> | Compare data on hover. Click <img src="/docs/latest/img/svg/compare-data.svg" className="icon size-md space-sm" /> and then hover over the plot. |
+| <img src="/docs/latest/img/svg/logarithmic-view.svg" className="icon size-md space-sm" /> | Switch to logarithmic view. |
+| <img src="/docs/latest/img/svg/legend.svg" className="icon size-md space-sm" /> | Hide / show the legend. |
+|<img src="/docs/latest/img/svg/download-json.svg" className="icon size-md space-sm" />  | To get metric data for further analysis, download plot data to JSON file. |
+| <img src="/docs/latest/icons/ico-maximize.svg" alt="View in full screen" className="icon size-md" /> | View plot in full screen.|
 
-
-
-
+#### 3D plot controls 
+|Icon|Description|
+|---|---|
+| <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="orbital rotation mode" className="icon size-md" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
+| <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="turntable rotation mode" className="icon size-md" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
+| <img src="/docs/latest/icons/ico-homepage.svg" alt="reset axes" className="icon size-md" />| Reset axes to default position. |
 
 ### Debug samples
 
