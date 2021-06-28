@@ -46,11 +46,12 @@ server to develop remotely.
 After entering a `clearml-session` command with all specifications: 
 
    1. `clearml-session` creates a new [Task](../fundamentals/task.md) that is responsible for setting up the SSH and 
-      JupyterLab / VS Code environment, according to your specifications, on the host machine. 
+      JupyterLab / VS Code environment according to your specifications on the host machine. 
    
-   1. The Task is enqueued to the queue ClearML Agent listens to and then executed by it. It will download the appropriate server and execute it.  
+   1. The Task is enqueued, and a ClearML Agent pulls and executes it. The agent downloads the appropriate server and 
+      launches it.  
    
-   1. Once the Agent finishes the initial setup of the interactive Task, the local `cleaml-session` connects to the host 
+   1. Once the agent finishes the initial setup of the interactive Task, the local `cleaml-session` connects to the host 
    machine via SSH, and tunnels both SSH and JupyterLab over the SSH connection. If a specific Docker was specified, the 
    JupyterLab environment will run inside the Docker. 
    
@@ -152,38 +153,38 @@ is being set up. The script content is read and stored as the default script for
 Set the remote base folder for the session by passing the `--user-folder` flag with the path to the folder. 
 By default, it is in the home folder(`~/`). The new base folder becomes the default folder in future sessions. 
 
-### Change configuration file
+### Changing the configuration file
 `clearml-session` stores its previous state by default in the `.clearml_session.json` configuration file. To change 
 this configuration file, pass the `--config-file` with the path to another configuration file. 
 
-### Specify gateway IP
-Use `--remote-gateway` to specify gateway IP to pass to the interactive session, if an external address needs to be accessed.
+### Specifying gateway IP
+Use `--remote-gateway` to specify a gateway IP to pass to the interactive session, if an external address needs to be accessed.
   
-### Set a base task ID
+### Setting a base task ID
 If you have a remote session task with your required specification and configurations, that task can be used as a base task
 for `clearml-session`. Set a base task for the remote session by passing the task's ID with the `--base-task-id` flag. 
-By default, the previously used session task is used as the base. To set the session to the default interactive session
+By default, the previously used session task is used as the base. To set the session to the default interactive session,
 pass `--base-task-id none`
                         
-### Disable keepalive
+### Disabling keepalive
 By default, `clearml-serving` uses a transparent proxy to keep the sockets alive, in order to maintain the connection to 
 the remote resource. To disable this, pass the `--disable-keepalive` flag and set it to `true`. 
 
-### Queue Tags  
+### Filtering queues by tags  
 When launching `clearml-session`, if a queue isn't specified, the CLI asks which queue to use. The queue list can be filtered 
 according to specific tags by using the `--queue-excluded-tag` and `--queue-include-tag` flags, and specifying a list of tags. 
-With `--queue-excluded-tag`, all queues with the specified tag/s will not show as options, and with `--queue-include-tag`,
-only tags with the specified tag/s will be included as options.
+With `--queue-excluded-tag`, all queues with the specified tag/s will not be listed options, and with `--queue-include-tag`,
+only tags with the specified tag/s will be listed.
 
 See the `tags` parameter in the [queues.create](../references/api/endpoints#post-queuescreate)
 API call. 
   
-### Skip Docker network
+### Skipping Docker network
 Specify whether to pass the `--network host` flag to the Docker that is launching the remote session (see 
 [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/)), by using the `--skip-docker-network`.
 By default, it is set to `false`.
  
-### Set a session username and password
+### Setting a session username and password
 In order to set your own SSH username and / or a password for the interactive session, pass the `--password` and `--username` 
-flags. By default, the SSH password for the interactive session is either a previously used password or a randomly generated 
-one. By default, the SSH username is `root` or a previously used username. 
+flags. By default, the interactive session uses either a previously used password or a randomly generated 
+one, and either  SSH username is `root` or a previously used username. 
