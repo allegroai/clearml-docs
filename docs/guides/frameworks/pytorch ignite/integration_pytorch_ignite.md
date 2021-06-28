@@ -7,7 +7,7 @@ script integrates **ClearML** into code using [ignite](https://github.com/pytorc
 The script creates a neural network to train a model to classify images from the CIFAR10 dataset. 
 
 The example script does the following:
-* Calls `Task.connect` to report configurations.
+* Calls `Task.connect` to explicitly report configurations.
 * Uses ignite's `TensorboardLogger` and attaches handlers to it. See ignite's [TensorboardLogger handler](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/tensorboard_logger.py). 
 * Uses ClearML's automatic logging to capture data and outputs logged with `TensorboardLogger`.
 * Creates an experiment named 'image classification CIFAR10', which is associated with the 'Image Example' project.
@@ -41,7 +41,7 @@ Integrate **TensorboardLogger** with the following steps:
 
 ## Logging 
 
-To log scalars, Ignite engine's output and / or metrics, use the `OutputHandler` by attaching it 
+To log scalars, ignite engine's output and / or metrics, use the `OutputHandler` by attaching it 
 to the `TensorboardLogger` object. 
 
 The code also creates a trainer engine with a supervised update function, using ignite's `create_supervised_trainer` method.
