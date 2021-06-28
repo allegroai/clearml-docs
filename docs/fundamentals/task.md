@@ -22,10 +22,13 @@ In ClearML, Tasks are organized into projects, and Tasks can be identified eithe
 or by a unique ID.
 
 ### Projects and Sub Projects
-In ClearML, Tasks are organized into projects. Projects are logical entities (similar to folders) that group tasks. Users can decide
-how to group tasks, but different models or objectives are usually grouped into different projects.
-Projects can be further divided into sub-projects (and sub-sub-projects, etc.)
-just like files and subdirectories on a computer, making experiment organization easier. 
+In ClearML, Tasks are organized into projects. Projects are logical entities (similar to folders) that group tasks and 
+[models](artifacts.md#models). Users can decide how to group tasks, but different models or objectives are usually grouped 
+into different projects. Projects can be further divided into sub-projects (and sub-sub-projects, etc.)
+just like files and subdirectories on a computer, making experiment organization easier.
+
+In the WebApp, every project has an editable markdown project **overview**, where a description of the project can be 
+written and shared (see [Project Overview](../webapp/webapp_project_overview.md)).
 
 ## Task sections
 
