@@ -7,8 +7,8 @@ script integrates **ClearML** into code using [ignite](https://github.com/pytorc
 The script creates a neural network to train a model to classify images from the CIFAR10 dataset. 
 
 The example script does the following:
-* Calls `Task.connect` to explicitly report configurations.
-* Uses ignite's `TensorboardLogger` and attaches handlers to it. See ignite's [TensorboardLogger handler](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/tensorboard_logger.py). 
+* Calls `Task.connect` to report configurations.
+* Uses ignite's `TensorboardLogger` and attaches handlers to it. See ignite's [handler](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/trains_logger.py). 
 * Uses ClearML's automatic logging to capture data and outputs logged with `TensorboardLogger`.
 * Creates an experiment named 'image classification CIFAR10', which is associated with the 'Image Example' project.
 
@@ -41,12 +41,12 @@ Integrate **TensorboardLogger** with the following steps:
 
 ## Logging 
 
-To log scalars, ignite engine's output and / or metrics, use the `OutputHandler` by attaching it 
+To log scalars, Ignite engine's output and / or metrics, use the `OutputHandler` by attaching it 
 to the `TensorboardLogger` object. 
 
 The code also creates a trainer engine with a supervised update function, using ignite's `create_supervised_trainer` method.
 
-* Log trainer loss:
+* Log trainer loss every 100 iterations:
 ```python
 tb_logger.attach_output_handler(
     trainer,
@@ -105,8 +105,12 @@ View the scalars, including training and validation metrics, in the experiment's
 ## Ignite ClearMLLogger
 
 ClearML automatically captures data and ouputs logged by the TensorboardLogger. Pytorch Ignite also 
-offers a ClearMLLogger handler to log metrics, text, model / optimizer parameters, plots during training and validation.
+offers a ClearMLLogger handler to log metrics, text, model/optimizer parameters, plots during training and validation.
 
-For more information, see the [ClearMLLogger example](pytorch_mnist.md).
+When code with ClearMLLogger integrated into it runs, it connects to the **ClearML** backend, and creates a Task (experiment) in **ClearML**.
 
+The `ignite` repository contains an MNIST ClearMLLogger example, [mnist_with_clearml_logger.py](https://github.com/pytorch/ignite/blob/master/examples/contrib/mnist/mnist_with_clearml_logger.py).
+Run this code and visualize the experiment results in the **ClearML Web UI**.
+
+For more information, see [CLEARML_LOGGER](https://pytorch.org/ignite/generated/ignite.contrib.handlers.clearml_logger.html).
 
