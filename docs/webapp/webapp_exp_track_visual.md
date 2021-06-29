@@ -394,21 +394,21 @@ Each plot supports plot controls allowing you better analyze the results. The ta
 
 |Icon|Description|
 |---|---|
-| ![image](../img/svg/download-png.svg) | Download plots as PNG files. |
-| ![image](../img/svg/pan.svg) | Pan around plot. Click ![image](../img/svg/pan.svg), click the plot, and then drag. |
-| ![image](../img/svg/dotted-box.svg) | To examine an area, draw a dotted box around it. Click ![image](../img/svg/dotted-box.svg) and then drag. |
-| ![image](../img/svg/dotted-lasso.svg) | To examine an area, draw a dotted lasso around it. Click ![image](../img/svg/dotted-lasso.svg) and then drag. |
-| ![image](../img/svg/zoom.svg) | Zoom into a section of a plot. Zoom in - Click ![image](../img/svg/zoom.svg) and drag over a section of the plot. Reset to original scale - Click ![image](../img/svg/reset-scale.svg). |
-| ![image](../img/svg/zoom-in.svg) | Zoom in. |
-| ![image](../img/svg/zoom-out.svg) | Zoom out. |
-| ![image](../img/svg/reset-autoscale.svg) | Reset to autoscale after zooming ( ![image](../img/svg/zoom.svg), ![image](../img/svg/zoom-in.svg), or ![image](../img/svg/zoom-out.svg) ). |
-| ![image](../img/svg/reset-axes.svg) | Reset axes after a zoom.
-| ![image](../img/svg/spike-lines.svg) | Show / hide spike lines. |
-| ![image](../img/svg/show-closest.svg) | Show the closest data point on hover, including horizontal and vertical axes values. Click ![image](../img/svg/show-closest.svg) and then hover over a series on the plot. |
-| ![image](../img/svg/compare-data.svg) | Compare data on hover. Click ![image](../img/svg/compare-data.svg) and then hover over the plot. |
-| ![image](../img/svg/logarithmic-view.svg) | Switch to logarithmic view. |
-| ![image](../img/svg/legend.svg) | Hide / show the legend. |
-| ![image](../img/svg/download-json.svg) | To get metric data for further analysis, download plot data to JSON file. |
+| <img src="/docs/latest/icons/ico-download-png.svg" className="icon size-md space-sm" /> | Download plots as PNG files. |
+| <img src="/docs/latest/icons/ico-pan.svg" className="icon size-md space-sm" /> | Pan around plot. Click <img src="/docs/latest/icons/ico-pan.svg" className="icon size-md space-sm" />, click the plot, and then drag. |
+| <img src="/docs/latest/icons/ico-dotted-box.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/icons/ico-dotted-box.svg" className="icon size-md space-sm" /> and then drag. |
+| <img src="/docs/latest/icons/ico-dotted-lasso.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/icons/ico-dotted-lasso.svg" className="icon size-md space-sm" /> and then drag. |
+| <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/icons/ico-reset-autoscale.svg" className="icon size-md space-sm" /> . |
+| <img src="/docs/latest/icons/ico-zoom-in-square.svg" className="icon size-md space-sm" /> | Zoom in. |
+| <img src="/docs/latest/icons/ico-zoom-out-square.svg" className="icon size-md space-sm" /> | Zoom out. |
+| <img src="/docs/latest/icons/ico-reset-autoscale.svg" className="icon size-md space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-zoom-in-square.svg" className="icon size-md space-sm" />, or <img src="/docs/latest/icons/ico-zoom-out-square.svg" className="icon size-md space-sm" />). |
+| <img src="/docs/latest/icons/ico-reset-axes.svg" className="icon size-md space-sm" /> | Reset axes after a zoom. |
+| <img src="/docs/latest/icons/ico-spike-lines.svg" className="icon size-md space-sm" /> | Show / hide spike lines. |
+| <img src="/docs/latest/icons/ico-show-closest.svg" className="icon size-md space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/icons/ico-show-closest.svg" className="icon size-md space-sm" /> and then hover over a series on the plot. |
+| <img src="/docs/latest/icons/ico-compare-data.svg" className="icon size-md space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" className="icon size-md space-sm" /> and then hover over the plot. |
+| <img src="/docs/latest/icons/ico-logarithmic-view.svg" className="icon size-md space-sm" /> | Switch to logarithmic view. |
+| <img src="/docs/latest/icons/ico-ico-graph-legend.svg" className="icon size-md space-sm" /> | Hide / show the legend. |
+| <img src="/docs/latest/icons/ico-download-json.svg" className="icon size-md space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
 
 
 ### Other plots
