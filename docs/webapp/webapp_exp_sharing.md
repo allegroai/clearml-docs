@@ -23,7 +23,7 @@ Share experiments from the experiments table, the info panel menu, and/or the fu
 1. Click **Share** in one of these ways:
 
     * The experiment table - Right click the experiment **>** **Share**
-    * The info panel or full screen details view - Click the experiment **>** <img src="/docs/img/svg/bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> 
+    * The info panel or full screen details view - Click the experiment **>** <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> 
       (menu) **>** **Share**. 
    
 1. Click **Create link**.
