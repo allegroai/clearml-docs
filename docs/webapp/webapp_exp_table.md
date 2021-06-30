@@ -12,7 +12,7 @@ To assist in focusing on active experimentation, experiments and models can be a
 in the active experiments and models tables. See [Archiving](webapp_archiving).
 :::
 
-![image](../img/webapp_exp_table_01.png)
+![Experiment table](../img/webapp_exp_table_01.png)
 
 ## Experiments table columns
 
@@ -55,7 +55,20 @@ Use experiments table customization for various use cases, including:
 Changes are persistent (cached in the browser), and represented in the URL so customized settings can be saved in a browser
 bookmark and shared with other **ClearML** users to collaborate.
 
-![image](../img/gif/webapp_exp_table_cust.gif)
+:::note
+The following experiments-table customizations are saved on a **per project** basis: 
+* Displayed columns and their order
+* Column width
+* Active sort order
+* Active filters
+* Custom columns (metrics and / or hyperparameters)
+
+If a project has sub-projects, the experiments can be viewed by their sub-project groupings or together with 
+all the experiments in the project. The customizations of these two views are saved separately. 
+:::
+
+
+![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
 
 ### Adding metrics and / or hyperparameters
 
@@ -124,4 +137,4 @@ based on their name by using the search bar.
 The final dashboard can be shared by copying the URL from the address bar, this address will replicate the exact same dashboard on any browser.
 The dashboard can also be bookmarked for later use.
 
-![image](../img/gif/clearml_tutorial_leaderboard.gif)
+![Experiment leaderboard gif](../img/gif/clearml_tutorial_leaderboard.gif)

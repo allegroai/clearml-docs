@@ -5,7 +5,7 @@ title: The Models Table
 The models table is a [customizable](#customizing-the-models-table) list of models associated with the experiments in a project. From the models table,
 view model details, and modify, publish, archive, tag, and move models to other projects.
 
-![image](../img/webapp_models_01.png)
+![Models table](../img/webapp_models_01.png)
 
 ## Models table columns
 
@@ -38,6 +38,17 @@ Customize any combination of the following:
 * Filter columns - Type of experiment, experiment status (state), user
 * Sort columns - Metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
 * Column autofit - In the column heading, double click a resizer (column separator).
+
+:::note
+The following models-table customizations are saved on a **per project** basis: 
+* Displayed columns and their order
+* Column width
+* Active sort
+* Active filters
+
+If a project has sub-projects, the models can be viewed by their sub-project groupings or together with 
+all the models in the project. The customizations of these two views are saved separately. 
+:::
 
 ## ClearML Actions from the models table
 
