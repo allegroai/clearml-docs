@@ -4,11 +4,19 @@ title: Project Overview
 
 In the WebApp, you can navigate through a project's experiments and models by using the [experiments table](webapp_exp_table.md) 
 and the [models table](webapp_model_table.md). Additionally, to make organization easier, every project has an editable 
-markdown file in its **OVERVIEW** tab. The project overview is a sort of scratchpad where you can write and share reports, 
-reference specific experiments or models, connect to project management tickets from external services, and anything 
-else related to a specific project.
+markdown file in its **OVERVIEW** tab where a project can be described. The project overview is a sort of scratchpad where 
+you can write and share reports, reference specific experiments or models, connect to project management tickets from 
+external services, and anything else related to a specific project.
 
 ![image](../img/gif/webapp_metric_snapshot.gif)
+
+## Creating an overview
+
+When creating a new project in the WebApp, in the popup that appears when clicking **+ CREATE NEW PROJECT**, there is an 
+option to insert a `Description` field, which will be sent to the **OVERVIEW** tab. The description later edited from the 
+**OVERVIEW** tab. 
+
+To create an overview for an already existing project, go the project's **OVERVIEW** tab and click **ADD PROJECT OVERVIEW**. 
 
 ## Metric snapshot
 
