@@ -388,7 +388,6 @@ are on the left side of the window. The tools include:
   * **WALL** - local clock time
 * Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
-
 ### Other plots
 
 Other plots include data reported by libraries, visualization tools, and **ClearML** explicit reporting. These may include
@@ -404,29 +403,28 @@ Individual plots can be shown / hidden or filtered by title.
 </div>
 </details>
 
-### Plot controls
 
-Each plot (in the **SCALARS** and **PLOTS** tabs) supports plot controls allowing you better analyze the results. The table 
-below lists the plot controls which may be available for any plot. Hover over a plot, and the controls appear.
+#### Plot controls
+
+Each plot (in the **SCALARS** and **PLOTS** tabs) supports plot controls allowing you better analyze the results. The table below lists the plot controls which may be available for any plot. Hover over a plot, and the controls appear.
 
 |Icon|Description|
 |---|---|
-| <img src="/docs/latest/img/svg/download-png.svg" className="icon size-md space-sm" /> | Download plots as PNG files. |
-| <img src="/docs/latest/img/svg/pan.svg" className="icon size-md space-sm" />  | Pan around plot. Click <img src="/docs/latest/img/svg/pan.svg" className="icon size-md space-sm" />, click the plot, and then drag. |
-| <img src="/docs/latest/img/svg/dotted-box.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/img/svg/dotted-box.svg" className="icon size-md space-sm" /> and then drag. |
-| <img src="/docs/latest/img/svg/dotted-lasso.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/img/svg/dotted-lasso.svg" className="icon size-md space-sm" /> and then drag. |
-| <img src="/docs/latest/img/svg/zoom.svg" className="icon size-md space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/img/svg/zoom.svg" className="icon size-md space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/img/svg/reset-scale.svg" className="icon size-md space-sm" />. |
-| <img src="/docs/latest/img/svg/zoom-in.svg" className="icon size-md space-sm" /> | Zoom in. |
-| <img src="/docs/latest/img/svg/zoom-out.svg" className="icon size-md space-sm" /> | Zoom out. |
-| <img src="/docs/latest/img/svg/reset-autoscale.svg" className="icon size-md space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/img/svg/zoom.svg" className="icon size-md space-sm" />, <img src="/docs/latest/img/svg/zoom-in.svg" className="icon size-md space-sm" />, or <img src="/docs/latest/img/svg/zoom-out.svg" className="icon size-md space-sm" />). |
-| <img src="/docs/latest/img/svg/reset-axes.svg" className="icon size-md space-sm" /> | Reset axes after a zoom.
-| <img src="/docs/latest/img/svg/spike-lines.svg" className="icon size-md space-sm" /> | Show / hide spike lines. |
-| <img src="/docs/latest/img/svg/show-closest.svg" className="icon size-md space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/img/svg/show-closest.svg" className="icon size-md space-sm" /> and then hover over a series on the plot. |
-| <img src="/docs/latest/img/svg/compare-data.svg" className="icon size-md space-sm" /> | Compare data on hover. Click <img src="/docs/latest/img/svg/compare-data.svg" className="icon size-md space-sm" /> and then hover over the plot. |
-| <img src="/docs/latest/img/svg/logarithmic-view.svg" className="icon size-md space-sm" /> | Switch to logarithmic view. |
-| <img src="/docs/latest/img/svg/legend.svg" className="icon size-md space-sm" /> | Hide / show the legend. |
-|<img src="/docs/latest/img/svg/download-json.svg" className="icon size-md space-sm" />  | To get metric data for further analysis, download plot data to JSON file. |
-| <img src="/docs/latest/icons/ico-maximize.svg" alt="View in full screen" className="icon size-md" /> | View plot in full screen.|
+| <img src="/docs/latest/icons/ico-download-png.svg" className="icon size-md space-sm" /> | Download plots as PNG files. |
+| <img src="/docs/latest/icons/ico-pan.svg" className="icon size-md space-sm" /> | Pan around plot. Click <img src="/docs/latest/icons/ico-pan.svg" className="icon size-md space-sm" />, click the plot, and then drag. |
+| <img src="/docs/latest/icons/ico-dotted-box.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/icons/ico-dotted-box.svg" className="icon size-md space-sm" /> and then drag. |
+| <img src="/docs/latest/icons/ico-dotted-lasso.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/icons/ico-dotted-lasso.svg" className="icon size-md space-sm" /> and then drag. |
+| <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/icons/ico-reset-autoscale.svg" className="icon size-md space-sm" /> . |
+| <img src="/docs/latest/icons/ico-zoom-in-square.svg" className="icon size-md space-sm" /> | Zoom in. |
+| <img src="/docs/latest/icons/ico-zoom-out-square.svg" className="icon size-md space-sm" /> | Zoom out. |
+| <img src="/docs/latest/icons/ico-reset-autoscale.svg" className="icon size-md space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-zoom-in-square.svg" className="icon size-md space-sm" />, or <img src="/docs/latest/icons/ico-zoom-out-square.svg" className="icon size-md space-sm" />). |
+| <img src="/docs/latest/icons/ico-reset-axes.svg" className="icon size-md space-sm" /> | Reset axes after a zoom. |
+| <img src="/docs/latest/icons/ico-spike-lines.svg" className="icon size-md space-sm" /> | Show / hide spike lines. |
+| <img src="/docs/latest/icons/ico-show-closest.svg" className="icon size-md space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/icons/ico-show-closest.svg" className="icon size-md space-sm" /> and then hover over a series on the plot. |
+| <img src="/docs/latest/icons/ico-compare-data.svg" className="icon size-md space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" className="icon size-md space-sm" /> and then hover over the plot. |
+| <img src="/docs/latest/icons/ico-logarithmic-view.svg" className="icon size-md space-sm" /> | Switch to logarithmic view. |
+| <img src="/docs/latest/icons/ico-ico-graph-legend.svg" className="icon size-md space-sm" /> | Hide / show the legend. |
+| <img src="/docs/latest/icons/ico-download-json.svg" className="icon size-md space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
 
 #### 3D plot controls 
 |Icon|Description|
@@ -434,6 +432,12 @@ below lists the plot controls which may be available for any plot. Hover over a 
 | <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="orbital rotation mode" className="icon size-md" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
 | <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="turntable rotation mode" className="icon size-md" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
 | <img src="/docs/latest/icons/ico-homepage.svg" alt="reset axes" className="icon size-md" />| Reset axes to default position. |
+
+
+
+
+
+
 
 ### Debug samples
 
