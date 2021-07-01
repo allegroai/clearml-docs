@@ -8,26 +8,21 @@ A Task is a single code execution session. To transform an existing script into 
  which creates a Task object that automatically captures code execution information as well as execution outputs.
 
 The code execution includes: 
-* Source code
-* Uncommitted code
 * Git information
+* Uncommitted code modifications
 * Python environment
-* Parameters and hyperparameters
-* Configurations (e.g. command line arguments, configuration file etc.)
-* If relevant, Container configurations
+* Execution configuration
 
 The execution output includes:
-* Console outputs
-* Metrics
+* Console output
 * Scalars
+* Plots
+*  Debug samples
 * [Models](artifacts.md#models) 
-* TensorBoard outputs
  
 All the information captured by a Task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
 and it can be viewed in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
-model checkpoints, artifacts, and charts in supported storage services (see [Storage](../integrations/storage.md)). For 
-more about the Task information that can be tracked and visualized, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md) 
-in the WebApp documentation.
+model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). 
 
 Previously executed Tasks can be accessed and utilized with code. It's possible to copy (clone) a Task multiple times 
 and to modify it for re-execution.  
@@ -42,6 +37,13 @@ how to group tasks, though different models or objectives are usually grouped in
 Projects can be further divided into sub-projects (and sub-sub-projects, etc.)
 just like files and subdirectories on a computer, making experiment organization easier. 
 
+### Task Sections
+
+$$$$$BRIEF SUMMARY OF THE OBJECT STRUCTURE 
+$$$$$
+$$$$$ Task structure includes task execution details, configuration details, artifacts, scalars, and plots
+$REWORD$$$For more about the Task information that can be tracked and visualized, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md) 
+in the WebApp documentation. 
 
 ## Task Lifecycle 
 
@@ -81,7 +83,7 @@ The above diagram demonstrates how a previously run task can be used as a baseli
 1. The new task is enqueued for execution.
 1. A `clearml-agent` servicing the queue pulls the new task and executes it (where ClearML again logs all the execution outputs).
 
-### Task states
+## Task states
 
 The state of a Task represents its stage in the Task lifecycle. It indicates whether the Task is read-write (editable) or 
 read-only. For each state, a state transition indicates which actions can be performed on an experiment, and the new state 
