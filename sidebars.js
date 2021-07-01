@@ -69,7 +69,8 @@ module.exports = {
                 },
                 {'Matplotlib': ['guides/frameworks/matplotlib/allegro_clearml_matplotlib_example', 'guides/frameworks/matplotlib/matplotlib_example']},
                 {
-                    'Pytorch': ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
+                    'Pytorch': ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib', 'guides/frameworks/pytorch/pytorch_mnist',
+                        'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
                         'guides/frameworks/pytorch/tensorboard_toy_pytorch']
                 },
                 {'Pytorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch ignite/pytorch_ignite_mnist']},
