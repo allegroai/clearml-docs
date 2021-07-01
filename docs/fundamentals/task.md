@@ -2,10 +2,37 @@
 title: Task / Experiment
 ---
 
-ClearML Task lies at the heart of ClearML's experiment manager. 
+**ClearML Task** lies at the heart of ClearML's experiment manager. 
 
-A Task is a single code execution session. To transform an existing script into a Task, one must call [Task.init()](../references/sdk/task.md#taskinit) 
- which creates a Task object that automatically captures code execution information as well as execution outputs.
+A Task is a single code execution session, which can represent an experiment, a step in a workflow, a workflow controller, 
+or any custom implementation you choose.
+
+To transform an existing script into a Task, one must call [Task.init()](../references/sdk/task.md#taskinit) and 
+specify the names of the Task and its project. This creates a Task object that automatically captures code execution 
+information as well as execution outputs. 
+
+All the information captured by a Task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
+and it can be viewed in the [ClearML WebApp](../webapp/webapp_overview.md) (UI) in the specified project.
+
+Projects are logical entities (similar to folders) that group tasks. Users can decide
+how to group tasks, though different models or objectives are usually grouped into different projects.
+Projects can be further divided into sub-projects (and sub-sub-projects, etc.)
+just like files and subdirectories on a computer, making experiment organization easier. 
+
+Previously executed Tasks can be accessed and utilized with code. It's possible to copy (clone) a Task multiple times 
+and to modify it for re-execution.  
+
+In ClearML, Tasks are organized into projects, and Tasks can be identified either by a project name & task name combination 
+or by a unique ID.
+
+
+### Task Sections
+
+$$$$$BRIEF SUMMARY OF THE OBJECT STRUCTURE 
+$$$$$
+$$$$$ Task structure includes task execution details, configuration details, artifacts, scalars, and plots
+$REWORD$$$For more about the Task information that can be tracked and visualized, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md) 
+in the WebApp documentation. 
 
 The code execution includes: 
 * Git information
@@ -17,33 +44,11 @@ The execution output includes:
 * Console output
 * Scalars
 * Plots
-*  Debug samples
+* Debug samples
 * [Models](artifacts.md#models) 
- 
-All the information captured by a Task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
-and it can be viewed in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
+
+ClearML can also be configured to upload 
 model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). 
-
-Previously executed Tasks can be accessed and utilized with code. It's possible to copy (clone) a Task multiple times 
-and to modify it for re-execution.  
-
-In ClearML, Tasks are organized into projects, and Tasks can be identified either by a project name & task name combination 
-or by a unique ID.
-
-## Projects and Sub Projects
-
-Projects are logical entities (similar to folders) that group tasks. Users can decide
-how to group tasks, though different models or objectives are usually grouped into different projects.
-Projects can be further divided into sub-projects (and sub-sub-projects, etc.)
-just like files and subdirectories on a computer, making experiment organization easier. 
-
-### Task Sections
-
-$$$$$BRIEF SUMMARY OF THE OBJECT STRUCTURE 
-$$$$$
-$$$$$ Task structure includes task execution details, configuration details, artifacts, scalars, and plots
-$REWORD$$$For more about the Task information that can be tracked and visualized, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md) 
-in the WebApp documentation. 
 
 ## Task Lifecycle 
 
