@@ -7,50 +7,63 @@ title: Task / Experiment
 A Task is a single code execution session, which can represent an experiment, a step in a workflow, a workflow controller, 
 or any custom implementation you choose.
 
-To transform an existing script into a Task, one must call [Task.init()](../references/sdk/task.md#taskinit) and 
-specify the names of the Task and its project. This creates a Task object that automatically captures code execution 
+To transform an existing script into a **ClearML Task**, one must call the [Task.init()](../references/sdk/task.md#taskinit) method 
+and specify a task name and its project. This creates a Task object that automatically captures code execution 
 information as well as execution outputs. 
 
-All the information captured by a Task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
-and it can be viewed in the [ClearML WebApp](../webapp/webapp_overview.md) (UI) in the specified project.
-
-Projects are logical entities (similar to folders) that group tasks. Users can decide
-how to group tasks, though different models or objectives are usually grouped into different projects.
-Projects can be further divided into sub-projects (and sub-sub-projects, etc.)
-just like files and subdirectories on a computer, making experiment organization easier. 
-
-Previously executed Tasks can be accessed and utilized with code. It's possible to copy (clone) a Task multiple times 
-and to modify it for re-execution.  
-
-In ClearML, Tasks are organized into projects, and Tasks can be identified either by a project name & task name combination 
-or by a unique ID.
-
-
-### Task Sections
-
-$$$$$BRIEF SUMMARY OF THE OBJECT STRUCTURE 
-$$$$$
-$$$$$ Task structure includes task execution details, configuration details, artifacts, scalars, and plots
-$REWORD$$$For more about the Task information that can be tracked and visualized, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md) 
-in the WebApp documentation. 
-
-The code execution includes: 
-* Git information
-* Uncommitted code modifications
-* Python environment
-* Execution configuration
-
-The execution output includes:
-* Console output
-* Scalars
-* Plots
-* Debug samples
-* [Models](artifacts.md#models) 
-
-ClearML can also be configured to upload 
+All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
+and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
 model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). 
 
-## Task Lifecycle 
+In the UI and code, tasks are grouped into projects, which are logical entities similar to folders. Users can decide
+how to group tasks, though different models or objectives are usually grouped into different projects.
+Projects can be divided into sub-projects (and sub-sub-projects, etc.) just like files and subdirectories on a 
+computer, making experiment organization easier. 
+
+Tasks that are in the system can be accessed and utilized with code. To [access a task](#accessing-tasks), it can be identified either by a 
+project name & task name combination or by a unique ID. 
+
+It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task multiple times and to modify it for re-execution.  
+
+
+## Task sections
+
+The sections of **ClearML Task** are made up of the information that a task captures and stores, which consists of code 
+execution details and execution outputs. This information is used for tracking 
+and visualizing results, reproducing, tuning, and comparing experiments, and executing workflows. 
+
+The captured [code execution information](../webapp/webapp_exp_track_visual.md#execution-details) includes: 
+* Git information 
+* Uncommitted code modifications
+* Python environment
+* Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration)
+
+The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-results) includes:
+* [Console output](../webapp/webapp_exp_track_visual.md#console)
+* [Scalars](../webapp/webapp_exp_track_visual.md#scalars)
+* [Plots](../webapp/webapp_exp_track_visual.md#other-plots)
+* [Debug samples](../webapp/webapp_exp_track_visual.md#debug-samples)
+* [Models](artifacts.md#models) 
+
+To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
+
+## Task types
+
+Tasks have a *type* attribute, which denotes their purpose (Training / Testing / Data processing). This helps to further 
+organize projects and ensure tasks are easy to [search and find](#querying--searching-tasks). The default task type is *training*.
+Available task types are: 
+- Experimentation
+
+    - *training*, *testing*, *inference*
+    
+- Other workflows
+     
+    - *controller*, *optimizer*
+    - *monitor*, *service*, *application*
+    - *data_processing*, *qc* 
+    - *custom*
+
+## Task lifecycle 
 
 ClearML Tasks are created in one of the following methods:
 * Manually running code that is instrumented with the ClearML SDK and invokes `Task.init()`.
@@ -59,7 +72,7 @@ ClearML Tasks are created in one of the following methods:
 
 ### Logging Task Information
 
-![image](../img/clearml_logging_diagram.png)
+![Logging ClearML Task information diagram](../img/clearml_logging_diagram.png)
 
 The above diagram describes how execution information is recorded when running code instrumented with ClearML:
 
@@ -72,17 +85,17 @@ The above diagram describes how execution information is recorded when running c
    * Console logs
    * Metrics and graphs 
    * Models and other artifacts
-1. Once the script terminates, the Task will change its status to either `Completed`, `Failed`, or `Aborted`. 
+1. Once the script terminates, the task will change its status to either `Completed`, `Failed`, or `Aborted` (see [Task states](#task-states) below). 
    
 All information logged can be viewed in the [task details UI](../webapp/webapp_exp_track_visual.md). 
 
 ### Cloning Tasks
 
-![image](../img/clearml_task_life_cycle_diagram.png)
+![ClearML Task lifecycle diagram](../img/clearml_task_life_cycle_diagram.png)
 
 The above diagram demonstrates how a previously run task can be used as a baseline for experimentation:
 
-1. A previously run task is cloned, creating a new task, in *draft* mode.  
+1. A previously run task is cloned, creating a new task, in `Draft` mode (see [Task states](#task-states) below).  
    The new task retains all the source task's configuration. The original task's outputs are not carried over.
 1. The new task's configuration is modified to reflect the desired parameters for the new execution. 
 1. The new task is enqueued for execution.
@@ -105,22 +118,6 @@ The following table describes the Task states and state transitions.
 | *Failed* | The experiment ran and terminated with an error. | The same as *Completed*. |
 | *Aborted* | The experiment ran, and was manually or programmatically terminated. | The same as *Completed*. |
 | *Published* | The experiment is read-only. Publish an experiment to prevent changes to its inputs and outputs. | A *Published* experiment cannot be reset. If it is cloned, the state of the newly cloned experiment becomes *Draft*. |
-
-### Task types
-
-Tasks also have a *type* attribute, which denotes their purpose (Training / Testing / Data processing). This helps to further 
-organize projects and ensure Tasks are easy to search and find. The default Task type is *training*.
-Available Task types are: 
-- Experimentation
-
-    - *training*, *testing*, *inference*
-    
-- Other workflows
-     
-    - *controller*, *optimizer*
-    - *monitor*, *service*, *application*
-    - *data_processing*, *qc* 
-    - *custom*
 
 
 ## Usage
