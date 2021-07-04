@@ -12,21 +12,22 @@ specify the names of the Task and its project. This creates a Task object that a
 information as well as execution outputs. 
 
 All the information captured by a Task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
-and it can be viewed in the [ClearML WebApp](../webapp/webapp_overview.md) (UI) in the specified project.
+and it can be viewed in the [ClearML WebApp](../webapp/webapp_overview.md) (UI).
 
-Projects are logical entities (similar to folders) that group tasks. Users can decide
+In the WebApp and code, tasks are grouped into projects, which are logical entities similar to folders. Users can decide
 how to group tasks, though different models or objectives are usually grouped into different projects.
-Projects can be further divided into sub-projects (and sub-sub-projects, etc.)
-just like files and subdirectories on a computer, making experiment organization easier. 
+Projects can be further divided into sub-projects (and sub-sub-projects, etc.) just like files and subdirectories on a 
+computer, making experiment organization easier. 
 
 Previously executed Tasks can be accessed and utilized with code. It's possible to copy (clone) a Task multiple times 
 and to modify it for re-execution.  
 
 In ClearML, Tasks are organized into projects, and Tasks can be identified either by a project name & task name combination 
-or by a unique ID.
+or by a unique ID. 
 
 
 ### Task Sections
+
 
 $$$$$BRIEF SUMMARY OF THE OBJECT STRUCTURE 
 $$$$$
