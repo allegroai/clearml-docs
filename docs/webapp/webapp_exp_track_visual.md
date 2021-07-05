@@ -424,6 +424,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view logo" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
 | <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend logo" className="icon size-sm space-sm" /> | Hide / show the legend. |
 | <img src="/docs/latest/icons/ico-download-json.svg" alt="Download JSON logo" className="icon size-sm space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
+| <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot logo" className="icon size-sm space-sm" /> | Expand plot to entire window. |
 
 #### 3D plot controls 
 |Icon|Description|
