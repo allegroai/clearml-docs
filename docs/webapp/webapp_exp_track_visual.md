@@ -385,10 +385,11 @@ are on the left side of the window. The tools include:
   * **WALL** - local clock time
 * Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
-### Other plots
+See further [plot controls](#plot-controls) below.
 
-Other plots include data reported by libraries, visualization tools, and **ClearML** explicit reporting. These may include
-2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. Other plots appear in **RESULTS** **>** **PLOTS**.
+### Plots
+Non-time-series plots appear in **RESULTS** **>** **PLOTS**. These include data reported by libraries, visualization 
+tools, and **ClearML** explicit reporting. These may include 2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. 
 Individual plots can be shown / hidden or filtered by title.
 
 <details className="cml-expansion-panel screenshot">
@@ -403,7 +404,8 @@ Individual plots can be shown / hidden or filtered by title.
 
 #### Plot controls
 
-Each plot (in the **SCALARS** and **PLOTS** tabs) supports plot controls allowing you better analyze the results. The table below lists the plot controls which may be available for any plot. Hover over a plot, and the controls appear.
+The table below lists the plot controls which may be available for any plot (in the **SCALARS** and **PLOTS** tabs). 
+These controls allow you to better analyze the results. Hover over a plot, and the controls appear.
 
 |Icon|Description|
 |---|---|
