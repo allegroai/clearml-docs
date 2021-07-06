@@ -5,6 +5,7 @@ title: FAQ
 **General Information**
 
 * [How do I know a new version came out?](#new-version-auto-update)
+* [How do I find out ClearML version information?](#versions)
 
 **Models**
 
@@ -102,7 +103,6 @@ title: FAQ
 **ClearML API**
 
 * [How can I use the ClearML API to fetch data?](#api)
-* [How can I find which API Server and API versions I am using?](#api_version)
 
 ## General Information
 
@@ -118,6 +118,19 @@ For example, when a new **ClearML Python Package** version is available, the not
 When a new **ClearML Server** version is available, the notification is:
 
     CLEARML-SERVER new version available: upgrade to vX.Y is recommended!
+
+
+**How do I find out ClearML version information?** <a className="tr_top_negative" id="versions"></a>
+
+To get the web application, API server, and API versions:  
+Go to the WebApp **Profile** page. On the bottom right of the page, it says **Version** followed by 
+three numbers: the web application version, the API server version, and the API version.
+
+To get the `clearml`, `clearml-agent`, and `clearml-session` package versions, pass:
+
+```
+pip freeze|grep clearml
+```
 
 ## Models
 
@@ -857,26 +870,3 @@ For example, to get the metrics for an experiment and to print metrics as a hist
         scalars = res.response_data
         print('scalars {}'.format(scalars))
 
-
-**How can I find which API Server and API versions I am using?** <a className="tr_top_negative" id="api_version"></a>
-
-In the WebApp, go to your **Profile** page. On the bottom right of the page, it says **Version** followed by 
-three numbers: the web server version, the API server version, and the API version.
-
-Another way to find the versions is to use the `server.info` REST API call:
-
-Pass the following command:
-```console
-curl <api_server>/server.info
-```
-
-which should return something like this:
-
-```console
-{"meta":{"id":"x68888b225ifcah8rb5122066afh5s2ae","trx":"cjfhf68saa084435ebh10s0a66fd5g2a8",
-    "endpoint":{"name":"server.info","requested_version":"2.13","actual_version":"1.0"},
-    "result_code":200,"result_subcode":0,"result_msg":"OK","error_stack":null,"error_data":{}},
-    "data":{"version":"3.4.0","build":"","commit":"","api_version":"2.13"}}
-```
-
-Under the `data` key, `version` is the API server version and `api_version` is appropriately the API version. 
