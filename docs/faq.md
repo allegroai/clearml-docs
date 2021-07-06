@@ -816,7 +816,8 @@ configuration option `agent.package_manager.system_site_packages` to `true`.
 
 **How can I use the ClearML API to fetch data?** <a className="tr_top_negative" id="api"></a>
 
-To fetch data using the **ClearML API**, create an authenticated session and send requests for data using the **ClearML API** services and methods. The responses to the requests contain your data.
+To fetch data using the **ClearML API**, create an authenticated session and send requests for data using the **ClearML API** 
+services and methods. The responses to the requests contain your data.
 
 For example, to get the metrics for an experiment and to print metrics as a histogram:
 
@@ -859,8 +860,8 @@ For example, to get the metrics for an experiment and to print metrics as a hist
 
 **How can I find which API Server and API versions I am using?** <a className="tr_top_negative" id="api_version"></a>
 
-In the WebApp, got to your Profile page. On the bottom right of the page it says **Version**, followed by 
-three numbers: the webserver version, the API Server version, and the API version.
+In the WebApp, go to your **Profile** page. On the bottom right of the page, it says **Version** followed by 
+three numbers: the web server version, the API server version, and the API version.
 
 Another way to find the versions is to use the `server.info` REST API call:
 
@@ -869,7 +870,7 @@ Pass the following command:
 curl <api_server>/server.info
 ```
 
-which should output something like this:
+which should return something like this:
 
 ```console
 {"meta":{"id":"x68888b225ifcah8rb5122066afh5s2ae","trx":"cjfhf68saa084435ebh10s0a66fd5g2a8",
@@ -878,4 +879,4 @@ which should output something like this:
     "data":{"version":"3.4.0","build":"","commit":"","api_version":"2.13"}}
 ```
 
-Under the `data` key, the `version` is the API Server version and `api_version` is appropriately the API Version. 
+Under the `data` key, `version` is the API server version and `api_version` is appropriately the API version. 
