@@ -116,7 +116,9 @@ Modify the experiment table in the following ways to create a customized leaderb
 * Add reported [metrics](#to-add-metrics), any time series reported metric can be selected, then select the last reported
   value, or the minimum / maximum reported value.
 * Filter based on user (dropdown and select) or [experiment types](../fundamentals/task.md#task-types)
-* Add specific [tags](webapp_exp_track_visual.md#tagging-experiments) and filter based on them
+* Add specific [tags](webapp_exp_track_visual.md#tagging-experiments) and filter based on them. Tags can be filtered using
+  the **ANY** or **ALL** options, which correspond with the logical "AND" and "OR" respectively. These options appear
+  on top of the tag list when clicking the tag's column filter.  
 
 Now the table can be sorted based on any of the columns (probably one of the performance metrics). Select to filter experiments
 based on their name by using the search bar.
