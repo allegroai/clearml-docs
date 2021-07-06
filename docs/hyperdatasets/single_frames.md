@@ -4,7 +4,7 @@ title: SingleFrames
 
 
 A `SingleFrame` contains metadata pointing to raw data, and other metadata and data, which supports experimentation and 
-**ClearML Enterprise**'s Git-like Dataset versioning.
+ClearML Enterprise's Git-like Dataset versioning.
 
 ## Frame Components
 
@@ -123,7 +123,7 @@ The panel below describes the details contained within a `frame`:
 
 ## WebApp 
 
-A frame that has been connected to the **ClearML Enterprise** platform is available to view and analyze on the 
+A frame that has been connected to the ClearML Enterprise platform is available to view and analyze on the 
 WebApp (UI). 
 
 When viewing a frame on the WebApp, all the information associated with it can be viewed, including its frame labels and
