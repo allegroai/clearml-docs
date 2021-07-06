@@ -409,29 +409,29 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 
 |Icon|Description|
 |---|---|
-| <img src="/docs/latest/icons/ico-download-png.svg" alt="Download PNG logo" className="icon size-sm space-sm" /> | Download plots as PNG files. |
-| <img src="/docs/latest/icons/ico-pan.svg" alt="Pan logo" className="icon size-sm space-sm" /> | Pan around plot. Click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan logo" className="icon size-sm space-sm" />, click the plot, and then drag. |
-| <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box logo" className="icon size-sm space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box logo" className="icon size-sm space-sm" /> and then drag. |
-| <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso logo" className="icon size-sm space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso logo" className="icon size-sm space-sm" /> and then drag. |
-| <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom logo" className="icon size-sm space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom logo" className="icon size-sm space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale logo" className="icon size-sm space-sm" /> . |
-| <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in logo" className="icon size-sm space-sm" /> | Zoom in. |
-| <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out logo" className="icon size-sm space-sm" /> | Zoom out. |
-| <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale logo" className="icon size-sm space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom logo" className="icon size-sm space-sm" />, <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in logo" className="icon size-sm space-sm" />, or <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out logo" className="icon size-sm space-sm" />). |
-| <img src="/docs/latest/icons/ico-reset-axes.svg" alt="Reset axes logo" className="icon size-sm space-sm" /> | Reset axes after a zoom. |
-| <img src="/docs/latest/icons/ico-spike-lines.svg" alt="Spike lines logo" className="icon size-sm space-sm" /> | Show / hide spike lines. |
-| <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest logo" className="icon size-sm space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest logo" className="icon size-sm space-sm" /> and then hover over a series on the plot. |
-| <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data logo" className="icon size-sm space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data logo" className="icon size-sm space-sm" /> and then hover over the plot. |
-| <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view logo" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
-| <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend logo" className="icon size-sm space-sm" /> | Hide / show the legend. |
-| <img src="/docs/latest/icons/ico-download-json.svg" alt="Download JSON logo" className="icon size-sm space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
-| <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot logo" className="icon size-sm space-sm" /> | Expand plot to entire window. |
+| <img src="/docs/latest/icons/ico-download-png.svg" alt="Download PNG icon" className="icon size-sm space-sm" /> | Download plots as PNG files. |
+| <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-sm space-sm" /> | Pan around plot. Click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-sm space-sm" />, click the plot, and then drag. |
+| <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box icon" className="icon size-sm space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box icon" className="icon size-sm space-sm" /> and then drag. |
+| <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso icon" className="icon size-sm space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso icon" className="icon size-sm space-sm" /> and then drag. |
+| <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale icon" className="icon size-sm space-sm" /> . |
+| <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in icon" className="icon size-sm space-sm" /> | Zoom in. |
+| <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out icon" className="icon size-sm space-sm" /> | Zoom out. |
+| <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale icon" className="icon size-sm space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" />, <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in icon" className="icon size-sm space-sm" />, or <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out icon" className="icon size-sm space-sm" />). |
+| <img src="/docs/latest/icons/ico-reset-axes.svg" alt="Reset axes icon" className="icon size-sm space-sm" /> | Reset axes after a zoom. |
+| <img src="/docs/latest/icons/ico-spike-lines.svg" alt="Spike lines icon" className="icon size-sm space-sm" /> | Show / hide spike lines. |
+| <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> and then hover over a series on the plot. |
+| <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> and then hover over the plot. |
+| <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view icon" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
+| <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
+| <img src="/docs/latest/icons/ico-download-json.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
+| <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. |
 
 #### 3D plot controls 
 |Icon|Description|
 |---|---|
-| <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="Orbital rotation mode logo" className="icon size-sm" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
-| <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="Turntable rotation mode logo" className="icon size-sm" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
-| <img src="/docs/latest/icons/ico-homepage.svg" alt="reset axes logo" className="icon size-sm" />| Reset axes to default position. |
+| <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="Orbital rotation mode icon" className="icon size-sm" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
+| <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="Turntable rotation mode icon" className="icon size-sm" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
+| <img src="/docs/latest/icons/ico-homepage.svg" alt="reset axes icon" className="icon size-sm" />| Reset axes to default position. |
 
 
 ### Debug samples
