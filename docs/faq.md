@@ -102,6 +102,7 @@ title: FAQ
 **ClearML API**
 
 * [How can I use the ClearML API to fetch data?](#api)
+* [How can I find which API Server and API versions I am using?](#api_version)
 
 ## General Information
 
@@ -854,3 +855,27 @@ For example, to get the metrics for an experiment and to print metrics as a hist
         ))
         scalars = res.response_data
         print('scalars {}'.format(scalars))
+
+
+**How can I find which API Server and API versions I am using?** <a className="tr_top_negative" id="api_version"></a>
+
+In the WebApp, got to your Profile page. On the bottom right of the page it says **Version**, followed by 
+three numbers: the webserver version, the API Server version, and the API version.
+
+Another way to find the versions is to use the `server.info` REST API call:
+
+Pass the following command:
+```console
+curl <api_server>/server.info
+```
+
+which should output something like this:
+
+```console
+{"meta":{"id":"x68888b225ifcah8rb5122066afh5s2ae","trx":"cjfhf68saa084435ebh10s0a66fd5g2a8",
+    "endpoint":{"name":"server.info","requested_version":"2.13","actual_version":"1.0"},
+    "result_code":200,"result_subcode":0,"result_msg":"OK","error_stack":null,"error_data":{}},
+    "data":{"version":"3.4.0","build":"","commit":"","api_version":"2.13"}}
+```
+
+Under the `data` key, the `version` is the API Server version and `api_version` is appropriately the API Version. 
