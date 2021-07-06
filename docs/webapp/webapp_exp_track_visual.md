@@ -366,13 +366,13 @@ are on the left side of the window. The tools include:
     </details>
     <br/>
       
-  * **None** - Group by metric-variant combination (individual metric-variant plots).
+  * **None** - Group by metric and variant (individual metric-variant plots).
 
     <details className="cml-expansion-panel screenshot">
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
     <div className="cml-expansion-panel-content">
 
-    ![Plots groups my metric-variant combination](../img/webapp_tracking_34.png)
+    ![Plots groups my metric and variant](../img/webapp_tracking_34.png)
 
     </div>
     </details>
@@ -385,7 +385,7 @@ are on the left side of the window. The tools include:
   * **WALL** - local clock time
 * Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
-See further [plot controls](#plot-controls) below.
+See additional [plot controls](#plot-controls) below.
 
 ### Plots
 Non-time-series plots appear in **RESULTS** **>** **PLOTS**. These include data reported by libraries, visualization 
