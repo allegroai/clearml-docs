@@ -37,6 +37,13 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 |<img src="/docs/latest/icons/ico-zoom-out.svg" className="icon size-md space-sm" />|Zoom out|
 |Percentage textbox|Zoom percentage|
 
+#### Mouse and Keyboard Controls
+
+|Control|Actions|
+|----|-----|
+|Ctrl + mouse wheel | Zoom in and zoom out|
+|Hold spacebar + click preview + drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off.  | 
+
 ### Viewing and editing frames
 
 **To view / edit a frame in the frame editor**
@@ -250,6 +257,7 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 **To copy an annotation:**
 
 1. Click the annotation or bounded area in the image or video clip.
+1. In the annotation, click the copy icon   
 1. Optionally, navigate to a different frame.
 1. Click **PASTE**. The new annotation appears in the same location as the one you copied.
 1. Optionally, to paste the same annotation, click **PASTE** again in the desired frame.
