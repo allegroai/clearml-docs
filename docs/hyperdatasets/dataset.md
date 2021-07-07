@@ -4,8 +4,8 @@ title: Datasets and Dataset Versions
 
 ClearML Enterprise's **Datasets** and **Dataset versions** provide the internal data structure 
 and functionality for the following purposes:
-* Connecting source data to the **ClearML Enterprise** platform
-* Using **ClearML Enterprise**'s GIT-like [Dataset versioning](#dataset-versioning)
+* Connecting source data to the ClearML Enterprise platform
+* Using ClearML Enterprise's GIT-like [Dataset versioning](#dataset-versioning)
 * Integrating the powerful features of [Dataviews](dataviews.md) with an experiment
 * [Annotating](webapp/webapp_datasets_frames.md#annotations) images and videos
 
@@ -29,8 +29,8 @@ it must be published first.
 
 ## Example Datasets
 
-**ClearML Enterprise** provides Example Datasets, available to in the **ClearML Enterprise** platform, with frames already built, 
-and ready for your experimentation. Find these example Datasets in the **ClearML Enterprise** WebApp (UI). They appear 
+ClearML Enterprise provides Example Datasets, available to in the ClearML Enterprise platform, with frames already built, 
+and ready for your experimentation. Find these example Datasets in the ClearML Enterprise WebApp (UI). They appear 
 with an "Example" banner in the WebApp (UI).
 
 ## Usage
@@ -113,10 +113,10 @@ Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=True)
 
 ## Dataset Versioning
 
-Dataset versioning refers to the group of **ClearML Enterprise** SDK and WebApp (UI) features for creating, 
+Dataset versioning refers to the group of ClearML Enterprise SDK and WebApp (UI) features for creating, 
 modifying, and deleting Dataset versions.
 
-**ClearML Enterprise** supports simple and sophisticated Dataset versioning, including **simple version structures** and 
+ClearML Enterprise supports simple and sophisticated Dataset versioning, including **simple version structures** and 
 **advanced version structures**. 
 
 In a **simple version structure**, a parent can have one and only one child, and the last child in the Dataset versions 

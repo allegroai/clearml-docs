@@ -2,7 +2,7 @@
 title: Dataviews Table
 ---
 
-[Dataviews](../dataviews.mda) appear in the same Project as the experiment that stored the Dataview in the **ClearML Enterprise** platform, 
+[Dataviews](../dataviews.mda) appear in the same Project as the experiment that stored the Dataview in the ClearML Enterprise platform, 
 as well as the **DATAVIEWS** tab in the **All Projects** page.
 
 The **Dataviews table** is a [customizable](#customizing-the-dataviews-table) list of Dataviews associated with a project.
