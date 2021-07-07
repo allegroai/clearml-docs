@@ -120,10 +120,10 @@ When a new **ClearML Server** version is available, the notification is:
     CLEARML-SERVER new version available: upgrade to vX.Y is recommended!
 
 
-**How do I find out ClearML version information?** <a className="tr_top_negative" id="versions"></a>
+**How do I find out ClearML version information?** <a id="versions"></a>
 
-To get the web application, API server, and API versions:  
-Go to the WebApp **Profile** page. On the bottom right of the page, it says **Version** followed by 
+To find the web application, API server, and API versions:  
+Go to the WebApp **Profile** page. On the bottom right of the page, it says **Version**, followed by 
 three numbers: the web application version, the API server version, and the API version.
 
 To get the `clearml`, `clearml-agent`, and `clearml-session` package versions, pass:
@@ -131,6 +131,9 @@ To get the `clearml`, `clearml-agent`, and `clearml-session` package versions, p
 ```
 pip freeze|grep clearml
 ```
+
+which should return the versions of all three.
+
 
 ## Models
 
