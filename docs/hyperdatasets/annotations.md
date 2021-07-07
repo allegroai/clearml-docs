@@ -2,7 +2,7 @@
 title: Annotations
 ---
 
-With **ClearML Enterprise**, annotations can be applied to video and image frames. [Frames](single_frames.md) support 
+With ClearML Enterprise, annotations can be applied to video and image frames. [Frames](single_frames.md) support 
 two types of annotations: **Frame objects** and **Frame labels**.
 
 Annotation Tasks can be used to efficiently organize the annotation of frames in Dataset versions (see 
@@ -15,7 +15,7 @@ For information about how to view, create, and manage annotations using the WebA
 Frame objects are labeled Regions of Interest (ROIs), which can be bounded by polygons (including rectangles), ellipses, 
 or key points. These ROIs are useful for object detection, classification, or semantic segmentation. 
 
-Frame objects can include ROI labels, confidence levels, and masks for semantic segmentation. In **ClearML Enterprise**, 
+Frame objects can include ROI labels, confidence levels, and masks for semantic segmentation. In ClearML Enterprise, 
 one or more labels and sources dictionaries can be associated with an ROI (although multiple source ROIs are not frequently used).
 
 ## Frame labels
