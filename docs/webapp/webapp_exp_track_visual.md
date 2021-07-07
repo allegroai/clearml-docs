@@ -314,10 +314,11 @@ General experiment details appear in the **INFO** tab. This includes information
 * User who created the experiment
 * Experiment state (status)
 * Whether the experiment is archived
-* Experiment runtime properties - Information about the machine running the task, including:
+* Runtime properties - Information about the machine running the experiment, including:
   * Operating system
   * CUDA driver version
-  * Number of cores used
+  * Number of CPU cores
+  * Number of GPUs
   * Python version
   * CPU / GPU type
   * Memory size
