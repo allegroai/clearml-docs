@@ -7,7 +7,7 @@ of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFram
 Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
 filtering logic. 
 
-![image](../../img/hyperdatasets/frames_01.png)
+![Dataset page](../../img/hyperdatasets/frames_01.png)
 
 ## Frame viewer
 
@@ -15,7 +15,7 @@ Frame viewer allows you to view and edit annotations which can be FrameGroup obj
 labels applied to the entire frame not a region of the frame, the frame details (see [frames](../frames.md)), 
 frame metadata, the raw data source URI, as well as providing navigation and viewing tools. 
 
-![image](../../img/hyperdatasets/web-app/dataset_example_frame_editor.png)
+![Frame viewer](../../img/hyperdatasets/web-app/dataset_example_frame_editor.png)
 
 ### Frame viewer controls
 
@@ -23,18 +23,18 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 
 |Control Icon|Actions|
 |-----|------|
-|<img src="/docs/latest/icons/ico-skip-backward.svg" className="icon size-md space-sm" />|Jump backwards (CTRL + Left). Jumps backwards by five frames.|
-|<img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />|Go to the previous frame containing a non-filtered annotation. The filter is the minimum confidence level setting. If the confidence level filter is set to zero, any frame containing annotations matches the filter.|
-|<img src="/docs/latest/icons/ico-arrow-left.svg" className="icon size-md space-sm" />|Go to the previous frame (Left Arrow).|
-|<img src="/docs/latest/icons/ico-arrow-right.svg" className="icon size-md space-sm" />|Go to the next frame (Right Arrow).|
-|<img src="/docs/latest/icons/ico-skip-next.svg" className="icon size-md space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).|
-|<img src="/docs/latest/icons/ico-skip-forward.svg" className="icon size-md space-sm" />|Jump forwards (CTRL + Right). Jumps 5 frames forwards.|
-|<img src="/docs/latest/icons/ico-revert.svg" className="icon size-md space-sm" />|Reload the frame.|
-|<img src="/docs/latest/icons/ico-undo.svg" className="icon size-md space-sm" />|Undo changes.|
-|<img src="/docs/latest/icons/ico-redo.svg" className="icon size-md space-sm" />|Redo changes.|
-|<img src="/docs/latest/icons/ico-reset_1.svg" className="icon size-md space-sm" />|Autofit|
-|<img src="/docs/latest/icons/ico-zoom-in.svg" className="icon size-md space-sm" />|Zoom in|
-|<img src="/docs/latest/icons/ico-zoom-out.svg" className="icon size-md space-sm" />|Zoom out|
+|<img src="/docs/latest/icons/ico-skip-backward.svg" alt="Jump backwards icon" className="icon size-sm space-sm" />|Jump backwards (CTRL + Left). Jumps backwards by five frames.|
+|<img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-sm space-sm" />|Go to the previous frame containing a non-filtered annotation. The filter is the minimum confidence level setting. If the confidence level filter is set to zero, any frame containing annotations matches the filter.|
+|<img src="/docs/latest/icons/ico-arrow-left.svg" alt="Previous frame icon" className="icon size-sm space-sm" />|Go to the previous frame (Left Arrow).|
+|<img src="/docs/latest/icons/ico-arrow-right.svg" alt="Next frame icon" className="icon size-sm space-sm" />|Go to the next frame (Right Arrow).|
+|<img src="/docs/latest/icons/ico-skip-next.svg" className="icon size-sm space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).|
+|<img src="/docs/latest/icons/ico-skip-forward.svg" alt="Jump forwards icon" className="icon size-sm space-sm" />|Jump forwards (CTRL + Right). Jumps 5 frames forwards.|
+|<img src="/docs/latest/icons/ico-revert.svg" alt="Reload frame icon" className="icon size-sm space-sm" />|Reload the frame.|
+|<img src="/docs/latest/icons/ico-undo.svg" alt="Undo icon" className="icon size-sm space-sm" />|Undo changes.|
+|<img src="/docs/latest/icons/ico-redo.svg" alt="Redo icon" className="icon size-sm space-sm" />|Redo changes.|
+|<img src="/docs/latest/icons/ico-reset_1.svg" alt="Autofit icon" className="icon size-sm space-sm" />|Autofit|
+|<img src="/docs/latest/icons/ico-zoom-in.svg" alt="Zoom in icon" className="icon size-sm space-sm" />|Zoom in|
+|<img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out icon" className="icon size-sm space-sm" />|Zoom out|
 |Percentage textbox|Zoom percentage|
 
 #### Mouse and Keyboard Controls
@@ -42,7 +42,7 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 |Control|Actions|
 |----|-----|
 |Ctrl + mouse wheel | Zoom in and zoom out|
-|Hold spacebar + click preview + drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off.  | 
+|Hold spacebar + press preview + drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off.  | 
 
 ### Viewing and editing frames
 
@@ -73,7 +73,7 @@ Viewing and editing frames in a FrameGroup is similar to viewing and editing Sin
 Click the FrameGroup in the Dataset. In the frame viewer, select SingleFrame to view / modify from 
 a dropdown list in the **Current Source** section.
 
-![image](../../img/hyperdatasets/framegroup_01.png)
+![Frame dropdown menu in FrameGroup](../../img/hyperdatasets/framegroup_01.png)
 
 ## Filtering frames
 ### Simple frame filtering
@@ -93,7 +93,7 @@ For example:
 <div className="cml-expansion-panel-content">
       
 
-![image](../../img/hyperdatasets/frame_filtering_01.png)
+![Unfiltered version browser](../../img/hyperdatasets/frame_filtering_01.png)
 
 
 </div>      
@@ -106,7 +106,7 @@ For example:
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../../img/hyperdatasets/frame_filtering_02.png)
+![Filtered version browser](../../img/hyperdatasets/frame_filtering_02.png)
 
 </div>
 </details>
@@ -145,7 +145,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
   <summary className="cml-expansion-panel-summary">View a screenshot</summary>
   <div className="cml-expansion-panel-content">
 
-  ![image](../../img/hyperdatasets/frame_filtering_03.png)
+  ![Adding an ROI rule](../../img/hyperdatasets/frame_filtering_03.png)
 
   </div>
   </details>            
@@ -156,7 +156,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
    <div className="cml-expansion-panel-content">
 
-   ![image](../../img/hyperdatasets/frame_filtering_04.png)
+   ![Add label to ROI rule](../../img/hyperdatasets/frame_filtering_04.png)
 
    </div>
    </details>            
@@ -168,7 +168,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
    <div className="cml-expansion-panel-content">
 
-   ![image](../../img/hyperdatasets/frame_filtering_05.png)
+   ![Labeled ROIs in frame viewer](../../img/hyperdatasets/frame_filtering_05.png)
 
    </div>
    </details>            
@@ -185,7 +185,7 @@ Filter by metadata using Lucene queries.
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
     <div className="cml-expansion-panel-content">
 
-    ![image](../../img/hyperdatasets/frame_filtering_08.png)
+    ![Filter by metadata ](../../img/hyperdatasets/frame_filtering_08.png)
 
     </div>
     </details>            
@@ -197,7 +197,7 @@ Filter by metadata using Lucene queries.
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
     <div className="cml-expansion-panel-content">
 
-    ![image](../../img/hyperdatasets/frame_filtering_09.png)
+    ![Frame metadata in frame viewer](../../img/hyperdatasets/frame_filtering_09.png)
 
     </div>
     </details>            
@@ -214,7 +214,7 @@ Filter by sources using Lucene queries.
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
     <div className="cml-expansion-panel-content">
 
-    ![image](../../img/hyperdatasets/frame_filtering_10.png)
+    ![Filter by source](../../img/hyperdatasets/frame_filtering_10.png)
 
     </div>
     </details>            
@@ -234,16 +234,16 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 
 1. Click one of the following modes and create a bounding area in the frame:   
    
-    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" className="icon size-md space-sm" /> - Rectangle mode: Drag a 
+    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode icon" className="icon size-md space-sm" /> - Rectangle mode: Drag a 
    rectangle onto the frame.   
     
-    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" className="icon size-md space-sm" /> - Ellipse mode: Drag an ellipse 
+    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" alt="Ellipse mode icon" className="icon size-md space-sm" /> - Ellipse mode: Drag an ellipse 
    onto the frame.   
     
-    * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" className="icon size-md space-sm" /> - Polygon mode: Click the polygon
+    * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode icon" className="icon size-md space-sm" /> - Polygon mode: Click the polygon
    vertices onto the frame.       
     
-    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" className="icon size-md space-sm" /> - Key points mode: Click each 
+    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode icon" className="icon size-md space-sm" /> - Key points mode: Click each 
    keypoint onto the frame. After the clicking the last keypoint, click the first again to close the bounding area.   
 
     A new annotation is created. 
@@ -257,7 +257,8 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 **To copy an annotation:**
 
 1. Click the annotation or bounded area in the image or video clip.
-1. In the annotation, click the copy icon   
+1. In the annotation, click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy annotation icon" className="icon size-md space-sm" /> 
+   (copy annotation)   
 1. Optionally, navigate to a different frame.
 1. Click **PASTE**. The new annotation appears in the same location as the one you copied.
 1. Optionally, to paste the same annotation, click **PASTE** again in the desired frame.
