@@ -72,12 +72,30 @@ experiments in the table.
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ HYPER PARAMETERS** **>** Expand a section **>** Select the
   hyperparameter checkboxes.
 
+### Filtering experiments
+
+Column filters help display relevant experiments according to criteria that is inputted. 
+Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
+in the following columns: 
+* Experiment type, experiment status (state), user, parent task
+  * Choose values from the drop down menu that appears
+* Time started, iterations, run time, metrics, and hyperparameters 
+  * Insert a maximum and / or minimum value 
+* Tags 
+  * Choose values from the drop down menu that appears. Tags can be filtered using
+  the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These options appear
+    on the top of the drop down menu. 
+    
+Once a filter is applied to a column, its icon will look like  <img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" />   
+
+
+
+
 ### Using other customization features
 
 **To use other customization features:**
 
 * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** select or clear the checkboxes of columns to show or hide.
-* Filter columns - According to type of experiment, experiment status (state), or user
 * Sort columns - According to metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
 * Dynamic column ordering - Drag a column title to a different position.
 * Column resizing - In the column heading, drag to a new size.
@@ -116,9 +134,7 @@ Modify the experiment table in the following ways to create a customized leaderb
 * Add reported [metrics](#to-add-metrics), any time series reported metric can be selected, then select the last reported
   value, or the minimum / maximum reported value.
 * Filter based on user (dropdown and select) or [experiment types](../fundamentals/task.md#task-types)
-* Add specific [tags](webapp_exp_track_visual.md#tagging-experiments) and filter based on them. Tags can be filtered using
-  the **ANY** or **ALL** options, which correspond with the logical "AND" and "OR" respectively. These options appear
-  on top of the tag list when clicking the tag's column filter.  
+* Add specific [tags](webapp_exp_track_visual.md#tagging-experiments) and filter based on them. 
 
 Now the table can be sorted based on any of the columns (probably one of the performance metrics). Select to filter experiments
 based on their name by using the search bar.
