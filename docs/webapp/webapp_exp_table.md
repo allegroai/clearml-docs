@@ -74,6 +74,8 @@ experiments in the table.
 
 ### Filtering experiments
 
+![Filtering table gif](../img/gif/filter_screenshots.gif)
+
 Column filters help display relevant experiments according to criteria that is inputted. 
 Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
 in the following columns: 
