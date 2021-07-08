@@ -57,11 +57,11 @@ bookmark and shared with other **ClearML** users to collaborate.
 
 :::note
 The following experiments-table customizations are saved on a **per project** basis: 
-* Displayed columns and their order
+* Columns order
 * Column width
 * Active sort order
 * Active filters
-* Custom columns (metrics and / or hyperparameters)
+* Custom columns
 
 If a project has sub-projects, the experiments can be viewed by their sub-project groupings or together with 
 all the experiments in the project. The customizations of these two views are saved separately. 
