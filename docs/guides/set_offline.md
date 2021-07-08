@@ -52,4 +52,4 @@ ClearML results page: https://app.community.clear.ml/projects/4043a1657f374e9298
 ```
 
 The session details can be viewed in the ClearML WebApp, in the "my_task" experiment of the "examples" 
-project, as specified when initializing the Task.a
+project, as specified when initializing the Task.
