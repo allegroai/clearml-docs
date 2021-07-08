@@ -122,17 +122,24 @@ When a new ClearML Server version is available, the notification is:
 
 **How do I find out ClearML version information?** <a id="versions"></a>
 
-To find the web application, API server, and API versions:  
-Go to your Profile page on the WebApp. On the bottom right of the page, it says **Version**, followed by 
-three numbers: the web application version, the API server version, and the API version.
+ClearML server version information is available in the ClearML webapp profile page. On the bottom right of the page, 
+it says **Version**, followed by three numbers: the web application version, the API server version, and the API version.
 
-To get the `clearml`, `clearml-agent`, and `clearml-session` package versions, pass:
+ClearML python package information can be obtained using `pip freeze`.
+
+For example: 
 
 ```
 pip freeze|grep clearml
 ```
 
-which should return the versions of all three.
+should return something like this:
+
+```console
+clearml==1.0.3rc1
+clearml-agent==1.0.0
+clearml-session==0.3.2
+```
 
 
 ## Models
