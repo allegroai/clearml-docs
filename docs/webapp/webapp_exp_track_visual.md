@@ -319,17 +319,18 @@ General experiment details appear in the **INFO** tab. This includes information
   * CUDA driver version
   * Number of CPU cores
   * Number of GPUs
-  * Python version
   * CPU / GPU type
   * Memory size
   * Host name 
-
+  * Processor
+  * Python version
+    
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_31.png)
+![image](../img/webapp_exp_runtime.png)
 
 </div>
 </details>
