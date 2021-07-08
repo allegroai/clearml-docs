@@ -120,12 +120,16 @@ When a new ClearML Server version is available, the notification is:
     CLEARML-SERVER new version available: upgrade to vX.Y is recommended!
 
 
+<br/>
+
 **How do I find out ClearML version information?** <a id="versions"></a>
 
 ClearML server version information is available in the ClearML webapp profile page. On the bottom right of the page, 
 it says **Version**, followed by three numbers: the web application version, the API server version, and the API version.
 
-ClearML python package information can be obtained using `pip freeze`.
+![Server version information](img/faq_server_versions.png)
+
+ClearML python package information can be obtained by using `pip freeze`.
 
 For example: 
 
