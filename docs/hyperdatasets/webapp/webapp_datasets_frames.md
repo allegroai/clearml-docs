@@ -42,7 +42,7 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 |Control|Actions|
 |----|-----|
 |Ctrl + mouse wheel | Zoom in and zoom out|
-|Hold spacebar + press preview + drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off.  | 
+|Hold spacebar + press and hold preview + drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off. | 
 
 ### Viewing and editing frames
 
