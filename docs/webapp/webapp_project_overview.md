@@ -2,10 +2,10 @@
 title: Project Overview
 ---
 
-A project's **OVERVIEW** tab consists of a metric snapshot and an editable Markdown document, which provide options to 
-present a general picture of the project. When either overview option is utilized, the **OVERVIEW** tab
-becomes the project's landing page, meaning that it's the first thing that is seen when opening the project. Otherwise, 
-the [experiments table](webapp_exp_table.md) remains as the landing page. 
+A project's **OVERVIEW** tab consists of a graph which can show a snapshot of a specific metrics value across the projects 
+experiments and a space to enter a project's description with markdown viewer/editor to edit it.
+The page provides options to present a general picture of the project. When either overview option is utilized, the 
+**OVERVIEW** tab becomes the project's landing page, meaning that it's the first thing that is seen when opening the project. 
 
 ![Project overview tab gif](../img/gif/webapp_metric_snapshot.gif)
 
@@ -20,7 +20,7 @@ on their status (`Completed`, `Aborted`, `Published`, or `Failed`). Hover over a
 appear with the details of the experiment associated with the metric value. Click the point, and you will 
 be sent to the experiment's page. 
 
-## Editable Markdown document
+## Project description
 
 Every project has a `description` field. The UI provides a Markdown editor to edit this field.
 
