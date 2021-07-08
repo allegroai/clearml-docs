@@ -2,119 +2,123 @@
 title: Task / Experiment
 ---
 
-ClearML Task lies at the heart of ClearML's experiment manager. A Task is an object that holds 
-all the execution information: Code, Environment, Parameters, Artifacts and Results.
+**ClearML Task** lies at the heart of ClearML's experiment manager. 
 
-A Task is a single code execution session. To transform an existing script into a Task, one must call [Task.init()](../references/sdk/task.md#taskinit) 
- which creates a Task object that automatically captures: 
-* Git information
-* Python environment
-* Parameters in the code
-* Uncommitted code
-* Outputs of the execution (e.g. console outputs, Tensorboard, logs etc.) 
+A Task is a single code execution session, which can represent an experiment, a step in a workflow, a workflow controller, 
+or any custom implementation you choose.
 
-Previously executed Tasks can be accessed and utilized with code. It's possible to copy a Task multiple times and modify its: 
-* Arguments
-* Environment (e.g. repo commit ID, Python package)  
-* Configurations (e.g. command line arguments, configuration file etc.).
+To transform an existing script into a **ClearML Task**, one must call the [Task.init()](../references/sdk/task.md#taskinit) method 
+and specify a task name and its project. This creates a Task object that automatically captures code execution 
+information as well as execution outputs. 
 
-In ClearML, Tasks are organized into projects, and Tasks can be identified either by a project name & task name combination 
-or by a unique ID.
+All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
+and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
+model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). 
 
-### Projects and Sub Projects
-In ClearML, Tasks are organized into projects. Projects are logical entities (similar to folders) that group tasks. Users can decide
-how to group tasks, but different models or objectives are usually grouped into different projects.
-Projects can be further divided into sub-projects (and sub-sub-projects, etc.)
-just like files and subdirectories on a computer, making experiment organization easier. 
+In the UI and code, tasks are grouped into projects, which are logical entities similar to folders. Users can decide
+how to group tasks, though different models or objectives are usually grouped into different projects.
+Projects can be divided into sub-projects (and sub-sub-projects, etc.) just like files and subdirectories on a 
+computer, making experiment organization easier. 
+
+Tasks that are in the system can be accessed and utilized with code. To [access a task](#accessing-tasks), it can be identified either by a 
+project name & task name combination or by a unique ID. 
+
+It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task multiple times and to modify it for re-execution.  
+
 
 ## Task sections
 
-A Task is comprised of multiple sections, linked together for traceability. 
-After a Task has been initialized, it's possible to track, visualize, and, depending on its status, edit Task details, including:
-* [Execution Information](#execution)
-* [Configuration Parameters](#configuration)
-* [Artifacts](#artifacts).
+The sections of **ClearML Task** are made up of the information that a task captures and stores, which consists of code 
+execution details and execution outputs. This information is used for tracking 
+and visualizing results, reproducing, tuning, and comparing experiments, and executing workflows. 
 
+The captured [code execution information](../webapp/webapp_exp_track_visual.md#execution-details) includes: 
+* Git information 
+* Uncommitted code modifications
+* Python environment
+* Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration)
 
-### Execution
-The environment for executing the experiment.
+The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-results) includes:
+* [Console output](../webapp/webapp_exp_track_visual.md#console)
+* [Scalars](../webapp/webapp_exp_track_visual.md#scalars)
+* [Plots](../webapp/webapp_exp_track_visual.md#other-plots)
+* [Debug samples](../webapp/webapp_exp_track_visual.md#debug-samples)
+* [Models](artifacts.md#models) 
 
-#### Source code: 
-- Repository / Commit - Saves a reference to the git repository and specific commit ID of the current experiment.
-- Script Path - Stores the entry point script for the experiment.
-- Working Directory - The working directory for the current experiment. This is relative to the root git repository folder.
+To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
 
-#### Uncommitted changes
-Stores the uncommitted changes of the current experiment. If the experiment has no git repository, it will store the 
-entire experiment script file here (ClearML only stores a single file, when using more than a single script for 
-an experiment please use git :smile: )
- 
-#### Installed packages
-Stores a list of all the packages that the experiment is using, including the specific version of the packages. 
-Only directly imported packages will appear here. This is done to make sure the important packages and versions used 
-by the experiment are captured.
-The section itself is fully compatible with the Python `requirements.txt` standard, and is fully editable.
- 
-#### Base docker image
-Specify the required docker image for remote execution of the code (see [ClearML Agent](../clearml_agent)).
-A remote machine will execute the entire experiment inside the requested docker. 
-It's also possible to add parameters for the docker execution. For example: 
-`nvcr.io/nvidia/pytorch:20.11-py3 --ipc=host`
+## Task types
 
-#### Output destination
-Storage target to Automatically uploads all models / snapshots. This is applicable 
-mostly when an experiment is executed by an agent, read more on [Agents](../clearml_agent.md) and [Storage](../integrations/storage) integration here.
+Tasks have a *type* attribute, which denotes their purpose (Training / Testing / Data processing). This helps to further 
+organize projects and ensure tasks are easy to [search and find](#querying--searching-tasks). The default task type is *training*.
+Available task types are: 
+- Experimentation
 
+    - *training*, *testing*, *inference*
+    
+- Other workflows
+     
+    - *controller*, *optimizer*
+    - *monitor*, *service*, *application*
+    - *data_processing*, *qc* 
+    - *custom*
 
-### Configuration
-Configurations are a set of arguments / dictionaries / files used to define the experiment (read more [here](hyperparameters)).
+## Task lifecycle 
 
-#### User properties
-Editable key / value store, which enables adding information to an experiment after execution, making it easier to search / filter.
+ClearML Tasks are created in one of the following methods:
+* Manually running code that is instrumented with the ClearML SDK and invokes `Task.init()`.
+* Cloning an existing task.
+* Creating a task via CLI using [clearml-task](../apps/clearml_task.md).
 
-#### Hyperparameters 
-- Args - Command line arguments of the experiment process .`argparse` values are automatically detected and logged here.
-- Environment - Specific [Environment variables](../configs/env_vars.md) to be logged.
-- General - The default section name for a general purpose dictionary of parameters that are logged. See the 'name'
-  parameter of [`task_connect`](../references/sdk/task#connect).
-- *user_section* - Custom section for logged python dictionaries & objects that are logged.
-  
-#### Configuration object:
-- General - Default section for a dictionary or configuration file to store as plain test configuration. Modifiable when executed 
-  by an agent.
-- *user_section* - Support for multiple configuration files (or dictionaries), name each configuration section. Modifiable 
-  when executed by an agent.
+### Logging Task Information
 
-### Artifacts
-Artifacts are a way to store the outputs of an experiment, and later use those outputs as inputs in other processes.  
+![Logging ClearML Task information diagram](../img/clearml_logging_diagram.png)
 
-See more information on [Artifacts](artifacts).
+The above diagram describes how execution information is recorded when running code instrumented with ClearML:
 
-#### Models
-- **Input Model** - Any model weights file loaded by the experiment will appear here.
-- **Output Model** - Any stored weights file / model will be logged here. This is useful for searching and connecting output models to 
-  inference pipelines for production automation.
+1. Once a ClearML Task is initialized, ClearML automatically logs the complete environment information 
+   including:
+   * Source code
+   * Python environment 
+   * Configuration parameters.
+1. As the execution progresses, any outputs produced are recorded including:
+   * Console logs
+   * Metrics and graphs 
+   * Models and other artifacts
+1. Once the script terminates, the task will change its status to either `Completed`, `Failed`, or `Aborted` (see [Task states](#task-states) below). 
+   
+All information logged can be viewed in the [task details UI](../webapp/webapp_exp_track_visual.md). 
 
-### Results
-Results recorded in the task. Supports text, graphs, plots, images audio and more including automatic reports by Tensorboard and Matplotlib.
-See [logger](logger).
+### Cloning Tasks
 
+![ClearML Task lifecycle diagram](../img/clearml_task_life_cycle_diagram.png)
 
-#### Console 
-Stdout and stderr outputs will appear here automatically.
+The above diagram demonstrates how a previously run task can be used as a baseline for experimentation:
 
-#### Scalars
-Any time-series graphs appear here such as Tensorboard scalar, scalar reporting from code and machine performance (CPU / GPU / Net etc.). 
+1. A previously run task is cloned, creating a new task, in `Draft` mode (see [Task states](#task-states) below).  
+   The new task retains all the source task's configuration. The original task's outputs are not carried over.
+1. The new task's configuration is modified to reflect the desired parameters for the new execution. 
+1. The new task is enqueued for execution.
+1. A `clearml-agent` servicing the queue pulls the new task and executes it (where ClearML again logs all the execution outputs).
 
-#### Plots
-Non-time-series plots appear here, such as Tensorboard Histograms \ Distribution and Matplotlib plots (with exception to `imshow` plots). <br/>
-It's also possible to report plots directly to ClearML (e.g. scatter 2d / 3d tables, generic plotly objects etc). 
+## Task states
 
-#### Debug samples 
-Any media (image / audio / html) is saved here.
-Media reported to Tensorboard is saved here as well as images shown with `Matplotlib.plot.imshow`.<br/>
+The state of a Task represents its stage in the Task lifecycle. It indicates whether the Task is read-write (editable) or 
+read-only. For each state, a state transition indicates which actions can be performed on an experiment, and the new state 
+after performing an action.
 
-It's also possible to manually report media / link an experiment produces with the Logger interface. See [Logger.report_media](../references/sdk/logger.md#report_media).<br/> 
+The following table describes the Task states and state transitions. 
+
+| State | Description / Usage | State Transition |
+|---|---|---|
+| *Draft* | The experiment is editable. Only experiments in *Draft* mode are editable. The experiment is not running locally or remotely. | If the experiment is enqueued for a [worker](../fundamentals/agents_and_queues.md) to fetch and execute, the state becomes *Pending*. |
+| *Pending* | The experiment was enqueued and is waiting in a queue for a worker to fetch and execute it. | If the experiment is dequeued, the state becomes *Draft*. |
+| *Running* | The experiment is running locally or remotely. | If the experiment is manually or programmatically terminated, the state becomes *Aborted*. |
+| *Completed* | The experiment ran and terminated successfully. | If the experiment is reset or cloned, the state of the cloned experiment or newly cloned experiment becomes *Draft*. Resetting deletes the logs and output of a previous run. Cloning creates an exact, editable copy. |
+| *Failed* | The experiment ran and terminated with an error. | The same as *Completed*. |
+| *Aborted* | The experiment ran, and was manually or programmatically terminated. | The same as *Completed*. |
+| *Published* | The experiment is read-only. Publish an experiment to prevent changes to its inputs and outputs. | A *Published* experiment cannot be reset. If it is cloned, the state of the newly cloned experiment becomes *Draft*. |
+
 
 ## Usage
 
@@ -145,13 +149,14 @@ task = Task.init(
 )
 ```
 
-Once a Task is created, the Task object can be accessed from anywhere in the code by calling [`Task.current_task()`](../references/sdk/task.md#taskcurrent_task).
+Once a Task is created, the Task object can be accessed from anywhere in the code by calling [`Task.current_task`](../references/sdk/task.md#taskcurrent_task).
 
 If multiple Tasks need to be created in the same process (for example, for logging multiple manual runs), 
-make sure we close a Task, before initializing a new one. To close a task simply call `task.close()` 
+make sure to close a Task, before initializing a new one. To close a task simply call `task.close` 
 (see example [here](https://github.com/allegroai/clearml/blob/master/examples/advanced/multiple_tasks_single_process.py)).
 
-Projects can be divided into sub-projects, just like folders are broken into subfolders.
+When initializing a Task, its project needs to be specified. If the project entered does not exist, it will be created. 
+Projects can be divided into sub-projects, just like folders are broken into sub-folders.
 For example:
 ```python
 Task.init(project_name='main_project/sub_project', task_name='test')
@@ -166,9 +171,10 @@ In order to mitigate the clutter that a multitude of debugging Tasks might creat
 * The last time it was executed (on this machine) was under 72 hours ago (configurable, see 
   `sdk.development.task_reuse_time_window_in_hours` in the [`sdk.development` section](../configs/clearml_conf.md#sdkdevelopment) of 
   the ClearML configuration reference)
-* The previous Task execution did not have any artifacts/models
+* The previous Task execution did not have any artifacts / models
 
 It's possible to always create a new Task by passing `reuse_last_task_id=False`.
+
 See full `Task.init` documentation [here](../references/sdk/task.md#taskinit).
 
 ### Empty Task Creation
@@ -226,7 +232,7 @@ task_list = Task.get_tasks(
     task_filter=None  # Optional[Dict]
 )
 ```
-We can search for tasks by either their UUID or their project \ name combination
+
 It's possible to also filter Tasks by passing filtering rules to `task_filter`. 
   For example:
 ```python
@@ -295,6 +301,8 @@ task.execute_remotely(
 Once the function is called on the machine, it will stop the local process and enqueue the current Task into the *default* 
 queue. From there, an agent will be able to pick it up and launch it.
 
+See the [Remote Execution](https://github.com/allegroai/clearml/blob/master/examples/advanced/execute_remotely_example.py) example. 
+
 #### Remote Function Execution
 A specific function can also be launched on a remote machine with `create_function_task`.
 
@@ -318,74 +326,3 @@ Like any other arguments, they can be changed from the UI or programmatically.
 Function Tasks must be created from within a regular Task, created by calling `Task.init()`
 :::
 
-## Task Lifecycle 
-
-ClearML Tasks are created in one of the following methods:
-* Manually running code that is instrumented with the ClearML SDK and invokes `Task.init()`.
-* Cloning an existing task.
-* Creating a task via CLI using [clearml-task](../apps/clearml_task.md).
-
-### Logging Task Information
-
-![image](../img/clearml_logging_diagram.png)
-
-The above diagram describes how execution information is recorded when running code instrumented with ClearML:
-
-1. Once a ClearML Task is initialized, ClearML automatically logs the complete environment information 
-   including:
-   * Source code
-   * Python environment 
-   * Configuration parameters.
-1. As the execution progresses, any outputs produced are recorded including:
-   * Console logs
-   * Metrics and graphs 
-   * Models and other artifacts
-1. Once the script terminates, the Task will change its status to either `Completed`, `Failed`, or `Aborted`. 
-   
-All information logged can be viewed in the [task details UI](../webapp/webapp_exp_track_visual.md). 
-
-### Cloning Tasks
-
-![image](../img/clearml_task_life_cycle_diagram.png)
-
-The above diagram demonstrates how a previously run task can be used as a baseline for experimentation:
-
-1. A previously run task is cloned, creating a new task, in *draft* mode.  
-   The new task retains all of the source task's configuration. The original task's outputs are not carried over.
-1. The new task's configuration is modified to reflect the desired parameters for the new execution. 
-1. The new task is enqueued for execution.
-1. A `clearml-agent` servicing the queue pulls the new task and executes it (where ClearML again logs all of the execution outputs).
-
-### Task states
-
-The state of a Task represents its stage in the Task lifecycle. It indicates whether the Task is read-write (editable) or 
-read-only. For each state, a state transition indicates which actions can be performed on an experiment, and the new state 
-after performing an action.
-
-The following table describes Task the states and state transitions. 
-
-| State | Description / Usage | State Transition |
-|---|---|---|
-| *Draft* | The experiment is editable. Only experiments in *Draft* mode are editable. The experiment is not running locally or remotely. | If the experiment is enqueued for a [worker](../fundamentals/agents_and_queues.md) to fetch and execute, the state becomes *Pending*. |
-| *Pending* | The experiment was enqueued and is waiting in a queue for a worker to fetch and execute it. | If the experiment is dequeued, the state becomes *Draft*. |
-| *Running* | The experiment is running locally or remotely. | If the experiment is manually or programmatically terminated, the state becomes *Aborted*. |
-| *Completed* | The experiment ran and terminated successfully. | If the experiment is reset or cloned, the state of the cloned experiment or newly cloned experiment becomes *Draft*. Resetting deletes the logs and output of a previous run. Cloning creates an exact, editable copy. |
-| *Failed* | The experiment ran and terminated with an error. | The same as *Completed*. |
-| *Aborted* | The experiment ran, and was manually or programmatically terminated. | The same as *Completed*. |
-| *Published* | The experiment is read-only. Publish an experiment to prevent changes to its inputs and outputs. | A *Published* experiment cannot be reset. If it is cloned, the state of the newly cloned experiment becomes *Draft*. |
-
-## Task types
-
-Tasks also have a *type* attribute, which denotes their purpose (Training / Testing / Data processing). This helps to further 
-organize projects and ensure Tasks are easy to search and find. The default Task type is *training*.
-Available Task types are: 
-- Experimentation
-
-    - *training*, *testing*, *inference*
-    
-- Other workflows
-     
-    - *controller*, *optimizer*
-    - *monitor*, *service*, *application*
-    - *data_processing*, *qc* 
-    - *custom*
