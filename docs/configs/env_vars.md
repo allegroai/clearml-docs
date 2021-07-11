@@ -17,6 +17,7 @@ ClearML's environment variables overide the clearml.conf file and SDK
 |**CLEARML_DOCKER_IMAGE** | Sets the default docker image to run from|
 |**CLEARML_LOG_LEVEL** | debug \ warning \ error \ info | Sets the ClearML package's log verbosity|
 |**CLEARML_SUPPRESS_UPDATE_MESSAGE** | Suppresses the message that notifies users of new ClearML package version|
+|**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server|
 
 ### VCS
 Overrides Repository Auto-logging
