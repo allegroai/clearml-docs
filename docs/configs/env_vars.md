@@ -17,7 +17,6 @@ ClearML's environment variables overide the clearml.conf file and SDK
 |**CLEARML_DOCKER_IMAGE** | Sets the default docker image to run from|
 |**CLEARML_LOG_LEVEL** | debug \ warning \ error \ info | Sets the ClearML package's log verbosity|
 |**CLEARML_SUPPRESS_UPDATE_MESSAGE** | Suppresses the message that notifies users of new ClearML package version|
-|**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server|
 
 ### VCS
 Overrides Repository Auto-logging
@@ -39,6 +38,7 @@ Overrides Repository Auto-logging
 |**CLEARML_API_SECRET_KEY** | Sets the Server's Private Access Key|
 |**CLEARML_API_HOST_VERIFY_CERT**| Enables \ Disable server certificate verification (If behind a firewall)|
 |**CLEARML_OFFLINE_MODE** | Sets Offline mode|
+|**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server when no HOST server is set|
 
 ## ClearML Agent Variables
 |Name|Description|
