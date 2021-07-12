@@ -43,7 +43,7 @@ Customize any combination of the following:
 
 The following table describes the **ClearML** features that can be used from the models table, including the states that
 allow each feature. Model states are *Draft* (editable) and *Published* (read-only). These actions can be accessed with 
-the context-menu (when right-clicking a model). 
+the context menu (when right-clicking a model). 
 
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|

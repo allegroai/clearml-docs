@@ -87,7 +87,7 @@ experiments in the table.
 ## ClearML actions from the experiments table
 
 The following table describes the **ClearML** features that can be used from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
-that allow each feature. These actions can be accessed with the context-menu (when right-clicking an experiment). 
+that allow each feature. These actions can be accessed with the context menu (when right-clicking an experiment). 
 
 | ClearML Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
