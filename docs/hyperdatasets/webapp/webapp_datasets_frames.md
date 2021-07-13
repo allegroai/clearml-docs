@@ -23,12 +23,12 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 
 |Control Icon|Actions|
 |-----|------|
-|<img src="/docs/latest/icons/ico-skip-backward.svg" alt="Jump backwards icon" className="icon size-sm space-sm" />|Jump backwards (CTRL + Left). Jumps backwards by five frames.|
+|<img src="/docs/latest/icons/ico-skip-backward.svg" alt="Jump backwards icon" className="icon size-sm space-sm" />|Jump backwards (CTRL + Left arrow). Jumps backwards by five frames.|
 |<img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-sm space-sm" />|Go to the previous frame containing a non-filtered annotation. The filter is the minimum confidence level setting. If the confidence level filter is set to zero, any frame containing annotations matches the filter.|
-|<img src="/docs/latest/icons/ico-arrow-left.svg" alt="Previous frame icon" className="icon size-sm space-sm" />|Go to the previous frame (Left Arrow).|
-|<img src="/docs/latest/icons/ico-arrow-right.svg" alt="Next frame icon" className="icon size-sm space-sm" />|Go to the next frame (Right Arrow).|
+|<img src="/docs/latest/icons/ico-arrow-left.svg" alt="Previous frame icon" className="icon size-sm space-sm" />|Go to the previous frame (Left arrow).|
+|<img src="/docs/latest/icons/ico-arrow-right.svg" alt="Next frame icon" className="icon size-sm space-sm" />|Go to the next frame (Right arrow).|
 |<img src="/docs/latest/icons/ico-skip-next.svg" alt="Jump to previous unfiltered annotation" className="icon size-sm space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).|
-|<img src="/docs/latest/icons/ico-skip-forward.svg" alt="Jump forwards icon" className="icon size-sm space-sm" />|Jump forwards (CTRL + Right). Jumps 5 frames forwards.|
+|<img src="/docs/latest/icons/ico-skip-forward.svg" alt="Jump forwards icon" className="icon size-sm space-sm" />|Jump forwards (CTRL + Right arrow). Jumps 5 frames forwards.|
 |<img src="/docs/latest/icons/ico-revert.svg" alt="Reload frame icon" className="icon size-sm space-sm" />|Reload the frame.|
 |<img src="/docs/latest/icons/ico-undo.svg" alt="Undo icon" className="icon size-sm space-sm" />|Undo changes.|
 |<img src="/docs/latest/icons/ico-redo.svg" alt="Redo icon" className="icon size-sm space-sm" />|Redo changes.|
@@ -45,8 +45,8 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 | + | Zoom in |
 | - | Zoom out |
 |Hold spacebar + Press and hold image + Drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off. | 
-| Ctrl + Z | Undo |
-| Ctrl + Y | Redo |
+| Ctrl + Z | Undo changes|
+| Ctrl + Y | Redo changes|
 | Right arrow | Next frame |
 | Ctrl + Right arrow | Jump forward 10 frames |
 | Left arrow | Previous frame |
