@@ -5,7 +5,7 @@ title: Tracking Experiments and Visualizing Results
 While an experiment is running, and any time after it finishes, track it and visualize the results in the **ClearML Web UI**,
 including:
 
-* [Execution details](#execution-details) - Code, the base Docker image used for **ClearML Agent**, output destination for artifacts, and the logging level.
+* [Execution details](#execution-details) - Code, the base Docker image used for **[ClearML Agent](../clearml_agent.md)**, output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
 * [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
@@ -22,7 +22,7 @@ The **ClearML Web UI** provides two viewing modes for experiment details:
 
 * Full screen details mode.
 
-Both modes contain all experiment details. When either view is open, switch to the other mode by clicking <img src="/docs/latest/icons/ico-info-min.svg" className="icon size-md space-sm" />
+Both modes contain all experiment details. When either view is open, switch to the other mode by clicking <img src="/docs/latest/icons/ico-info-min.svg" alt="Table/Full screen view" className="icon size-md space-sm" />
 (**View in experiments table / full screen**), or clicking <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (**menu**) > **View in experiments
 table / full screen**.
 
@@ -36,7 +36,7 @@ can be performed from the table (as well as the menu in the info panel).
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_40.png)
+![Info panel](../img/webapp_tracking_40.png)
 
 </div>
 </details>
@@ -50,7 +50,7 @@ table is not visible when the full screen details view is open. Perform experime
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_33.png)
+![Full screen view](../img/webapp_tracking_33.png)
 
 </div>
 </details>
@@ -88,7 +88,7 @@ The output details include:
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_18.png)
+![Execution details section](../img/webapp_tracking_18.png)
 
 </div>
 </details>
@@ -100,7 +100,7 @@ The output details include:
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_19.png)
+![Uncomitted changes section](../img/webapp_tracking_19.png)
 
 </div>
 </details>
@@ -111,7 +111,7 @@ The output details include:
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_20.png)
+![Installed packages section](../img/webapp_tracking_20.png)
 
 </div>
 </details>
@@ -137,7 +137,7 @@ The **Args** section shows automatically logged `argparse` arguments, and all ol
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_22.png)
+![Command line arguments configuration section](../img/webapp_tracking_22.png)
 
 </div>
 </details>
@@ -151,7 +151,7 @@ If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** section w
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_23.png)
+![Environment variables configuration section](../img/webapp_tracking_23.png)
 
 </div>
 </details>
@@ -166,7 +166,7 @@ with a `name` argument provided.
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_25.png)
+![Custom parameters section](../img/webapp_tracking_25.png)
 
 </div>
 </details>
@@ -179,7 +179,7 @@ The **TF_DEFINE** sections shows automatic TensorFlow logging.
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_26.png)
+![TF_DEFINE parameter section](../img/webapp_tracking_26.png)
 
 </div>
 </details>
@@ -195,7 +195,7 @@ except experiments whose status is *Published* (read-only).
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_21.png)
+![User properties section](../img/webapp_tracking_21.png)
 
 </div>
 </details>
@@ -216,7 +216,7 @@ In older versions of **ClearML Server**, the Task model configuration appeared i
 <summary className="cml-expansion-panel-summary">View a screenshot - Configuration objects </summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_24.png)
+![Configuration objects](../img/webapp_tracking_24.png)
 
 </div>
 </details>
@@ -226,13 +226,10 @@ In older versions of **ClearML Server**, the Task model configuration appeared i
 <summary className="cml-expansion-panel-summary">View a screenshot - Custom configuration object</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_28.png)
+![Custom configuration objects](../img/webapp_tracking_28.png)
 
 </div>
 </details>
-
-
-
 
 ## Artifacts
 
@@ -259,7 +256,7 @@ including design, label enumeration, and general information, go to the **MODELS
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_exp_artifacts_01.png)
+![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png)
 
 </div>
 </details>
@@ -284,7 +281,7 @@ Artifacts which are uploaded and dynamically tracked by **ClearML** appear in th
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_29.png)
+![Data audit section](../img/webapp_tracking_29.png)
 
 </div>
 </details>
@@ -297,7 +294,7 @@ Other artifacts, which are uploaded but not dynamically tracked after the upload
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_30.png)
+![Other artifacts section](../img/webapp_tracking_30.png)
 
 </div>
 </details>
@@ -352,7 +349,7 @@ is downloadable. To view the end of the log, click **Jump to end**.
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_32.png)
+![Console tab](../img/webapp_tracking_32.png)
 
 </div>
 </details>
@@ -370,25 +367,26 @@ are on the left side of the window. The tools include:
 * **Group by** - select one of the following:
   * **Metric** - all variants for a metric on the same plot
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
+    <details className="cml-expansion-panel screenshot">
+    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+    <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_33.png)
+    ![Plots grouped by metric](../img/webapp_tracking_33.png)
 
-</div>
-</details>
+    </div>
+    </details>
+    <br/>
+      
+  * **None** - Group by metric and variant (individual metric-variant plots).
 
-* **None** - Group by metric-variant combination (individual metric-variant plots).
+    <details className="cml-expansion-panel screenshot">
+    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+    <div className="cml-expansion-panel-content">
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
+    ![Plots groups my metric and variant](../img/webapp_tracking_34.png)
 
-![image](../img/webapp_tracking_34.png)
-
-</div>
-</details>
+    </div>
+    </details>
 
 * Show / hide plots - Click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />
   on those you want to see.
@@ -398,50 +396,53 @@ are on the left side of the window. The tools include:
   * **WALL** - local clock time
 * Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
+See additional [plot controls](#plot-controls) below.
 
-#### Plot controls
-
-Each plot supports plot controls allowing you better analyze the results. The table below lists the plot controls which may be available for any plot. Hover over a plot, and the controls appear.
-
-|Icon|Description|
-|---|---|
-| <img src="/docs/latest/icons/ico-download-png.svg" className="icon size-md space-sm" /> | Download plots as PNG files. |
-| <img src="/docs/latest/icons/ico-pan.svg" className="icon size-md space-sm" /> | Pan around plot. Click <img src="/docs/latest/icons/ico-pan.svg" className="icon size-md space-sm" />, click the plot, and then drag. |
-| <img src="/docs/latest/icons/ico-dotted-box.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/icons/ico-dotted-box.svg" className="icon size-md space-sm" /> and then drag. |
-| <img src="/docs/latest/icons/ico-dotted-lasso.svg" className="icon size-md space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/icons/ico-dotted-lasso.svg" className="icon size-md space-sm" /> and then drag. |
-| <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/icons/ico-reset-autoscale.svg" className="icon size-md space-sm" /> . |
-| <img src="/docs/latest/icons/ico-zoom-in-square.svg" className="icon size-md space-sm" /> | Zoom in. |
-| <img src="/docs/latest/icons/ico-zoom-out-square.svg" className="icon size-md space-sm" /> | Zoom out. |
-| <img src="/docs/latest/icons/ico-reset-autoscale.svg" className="icon size-md space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/icons/ico-zoom.svg" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-zoom-in-square.svg" className="icon size-md space-sm" />, or <img src="/docs/latest/icons/ico-zoom-out-square.svg" className="icon size-md space-sm" />). |
-| <img src="/docs/latest/icons/ico-reset-axes.svg" className="icon size-md space-sm" /> | Reset axes after a zoom. |
-| <img src="/docs/latest/icons/ico-spike-lines.svg" className="icon size-md space-sm" /> | Show / hide spike lines. |
-| <img src="/docs/latest/icons/ico-show-closest.svg" className="icon size-md space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/icons/ico-show-closest.svg" className="icon size-md space-sm" /> and then hover over a series on the plot. |
-| <img src="/docs/latest/icons/ico-compare-data.svg" className="icon size-md space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" className="icon size-md space-sm" /> and then hover over the plot. |
-| <img src="/docs/latest/icons/ico-logarithmic-view.svg" className="icon size-md space-sm" /> | Switch to logarithmic view. |
-| <img src="/docs/latest/icons/ico-ico-graph-legend.svg" className="icon size-md space-sm" /> | Hide / show the legend. |
-| <img src="/docs/latest/icons/ico-download-json.svg" className="icon size-md space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
-
-
-### Other plots
-
-Other plots include data reported by libraries, visualization tools, and **ClearML** explicit reporting. These may include
-2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. Other plots appear in **RESULTS** **>** **PLOTS**.
+### Plots
+Non-time-series plots appear in **RESULTS** **>** **PLOTS**. These include data reported by libraries, visualization 
+tools, and **ClearML** explicit reporting. These may include 2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. 
 Individual plots can be shown / hidden or filtered by title.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_35.png)
+![Plots tab](../img/webapp_tracking_35.png)
 
 </div>
 </details>
 
 
+#### Plot controls
 
+The table below lists the plot controls which may be available for any plot (in the **SCALARS** and **PLOTS** tabs). 
+These controls allow you to better analyze the results. Hover over a plot, and the controls appear.
 
+|Icon|Description|
+|---|---|
+| <img src="/docs/latest/icons/ico-download-png.svg" alt="Download PNG icon" className="icon size-sm space-sm" /> | Download plots as PNG files. |
+| <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-sm space-sm" /> | Pan around plot. Click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-sm space-sm" />, click the plot, and then drag. |
+| <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box icon" className="icon size-sm space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box icon" className="icon size-sm space-sm" /> and then drag. |
+| <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso icon" className="icon size-sm space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso icon" className="icon size-sm space-sm" /> and then drag. |
+| <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale icon" className="icon size-sm space-sm" /> . |
+| <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in icon" className="icon size-sm space-sm" /> | Zoom in. |
+| <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out icon" className="icon size-sm space-sm" /> | Zoom out. |
+| <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale icon" className="icon size-sm space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" />, <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in icon" className="icon size-sm space-sm" />, or <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out icon" className="icon size-sm space-sm" />). |
+| <img src="/docs/latest/icons/ico-reset-axes.svg" alt="Reset axes icon" className="icon size-sm space-sm" /> | Reset axes after a zoom. |
+| <img src="/docs/latest/icons/ico-spike-lines.svg" alt="Spike lines icon" className="icon size-sm space-sm" /> | Show / hide spike lines. |
+| <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> and then hover over a series on the plot. |
+| <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> and then hover over the plot. |
+| <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view icon" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
+| <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
+| <img src="/docs/latest/icons/ico-download-json.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
+| <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. |
 
-
+#### 3D plot controls 
+|Icon|Description|
+|---|---|
+| <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="Orbital rotation mode icon" className="icon size-sm" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
+| <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="Turntable rotation mode icon" className="icon size-sm" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
+| <img src="/docs/latest/icons/ico-homepage.svg" alt="reset axes icon" className="icon size-sm" />| Reset axes to default position. |
 
 
 ### Debug samples
@@ -459,7 +460,7 @@ View debug samples by metric at any iteration. The most recent iteration appears
 <summary className="cml-expansion-panel-summary">View a screenshot - Debug samples</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_43.png)
+![Debug Samples tab](../img/webapp_tracking_43.png)
 
 </div>
 </details>
@@ -470,7 +471,7 @@ View debug samples by metric at any iteration. The most recent iteration appears
 <summary className="cml-expansion-panel-summary">View a screenshot - Viewer </summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_tracking_44.png)
+![Debug Samples image viewer](../img/webapp_tracking_44.png)
 
 </div>
 </details>
@@ -494,8 +495,6 @@ View debug samples by metric at any iteration. The most recent iteration appears
     * Download the file - Click <img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />.
     * Zoom
     * For images, locate a position on the sample - Hover over the sample and the X, Y coordinates appear in the legend below the sample.
-
-
 
 
 ## Tagging experiments
