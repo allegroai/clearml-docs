@@ -330,7 +330,7 @@ General experiment details appear in the **INFO** tab. This includes information
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![image](../img/webapp_exp_runtime.png)
+![Info tab](../img/webapp_tracking_31.png)
 
 </div>
 </details>
