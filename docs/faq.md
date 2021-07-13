@@ -93,6 +93,7 @@ title: FAQ
 * [How do I bypass a proxy configuration to access my local ClearML Server?](#proxy-localhost)
 * [Trains is failing to update ClearML Server. I get an error 500 (or 400). How do I fix this?](#elastic_watermark)
 * [Why is my Trains Web-App (UI) not showing any data?](#web-ui-empty)
+* [When running a task, `clearml-init`, or ClearML Agent, I get an "Unauthorized (invalid credentials) (failed to locate provided credentials)" error. What happened?](#credentials)
 
 **ClearML Agent**
 
@@ -778,7 +779,7 @@ Do the following:
 
 <br/>
 
-**The ClearML Server keeps returning HTTP 500 (or 400) errors. How do I fix this?**
+**The ClearML Server keeps returning HTTP 500 (or 400) errors. How do I fix this?** <a id="elastic_watermark"></a>
 
 The **ClearML Server** will return HTTP error responses (5XX, or 4XX) when some of its [backend components](deploying_clearml/clearml_server.md) 
 are failing. 
@@ -801,6 +802,33 @@ A likely indication of this situation can be determined by searching your clearm
 
 If your **ClearML Web-App (UI)** does not show anything, it may be an error authenticating with the server. Try clearing the application cookies for the site in your browser's developer tools. 
     
+** When running a task, `clearml-init`, or ClearML Agent, I get an "Unauthorized (invalid credentials) (failed to locate provided credentials)" error. What happened?** <a id="credentials"></a>
+
+This can happen when your code isn't running in the same machine as your server. 
+$$ this usually happens when working inside VMs (localhost is the network adapter of the VM and not the host running the service$$$
+
+If a task, `clearml-init`, or ClearML 
+Agent run on a virtual machine, and the clearml configuration 
+files says "localhost", the "localhost" is pointing to the local machine, and not the virtual machine.
+Make sure that ip server address in configuration is always externally available address from where code is executed 
+$$$$$ of the server  when ClearML Server configurations are pointing to `localhost`. 
+
+This usually happens when working inside virtual machines, so the localhost is the network adapter of the VM and not the 
+host running the service. Sometimes this is firewall configuration issues.
+
+To fix this, go to the `api` section of your `clearml.config` file. Change the localhost to point to your machine IP, which 
+should look something like this (change the 192.168.1.2 to the actual IP address):
+```editorconfig
+api {
+    web_server: http://192.168.1.2:8080
+    api_server: http://192.168.1.2:8008
+    credentials {
+        "access_key" = "KEY"
+        "secret_key" = "SECRET"
+    }
+}
+```
+
 ## ClearML Agent
 
 **How can I execute ClearML Agent without installing packages each time?** <a className="tr_top_negative" id="system_site_packages"></a>
