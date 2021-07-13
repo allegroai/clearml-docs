@@ -31,10 +31,10 @@ Customize any combination of the following:
 * Sort columns - By experiment name and / or elapsed time since creation.
 * Column autofit - In the column heading, double click a resizer (column separator).
 
-## ClearML Actions from the Dataviews table
+## ClearML actions from the Dataviews table
 
 The following table describes the **ClearML** features that can be used from the Dataviews table. These actions can be 
-utilized with the context menu (when right-clicking a Dataview) or in Dataview's info panel menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />). 
+utilized with the context menu (when right-clicking a Dataview) or in a Dataview's info panel menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />). 
 
 | ClearML Action | Description |
 |---|---|--|
@@ -42,6 +42,14 @@ utilized with the context menu (when right-clicking a Dataview) or in Dataview's
 | Archive | To more easily work with active Dataviews, move a Dataview to the archive. See [Archiving Dataviews](#archiving-dataviews). | 
 | Clone | Make an exact copy of a Dataview. |
 | Move to project | To organize work and improve collaboration, move a Dataview to another project. | 
+
+$$$When multiple selection is applied, perform operations on all selected items that match the action criteria (show in parentheses the number of items that can be affected) and not only the one which was right-clicked:
+* Dataviews
+** Archive
+** Move to Project
+** Delete
+
+
 
 ## Viewing, adding, and editing Dataviews
 

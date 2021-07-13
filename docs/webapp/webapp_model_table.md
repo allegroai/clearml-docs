@@ -39,7 +39,7 @@ Customize any combination of the following:
 * Sort columns - Metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
 * Column autofit - In the column heading, double click a resizer (column separator).
 
-## ClearML Actions from the models table
+## ClearML actions from the models table
 
 The following table describes the **ClearML** features that can be used from the models table, including the states that
 allow each feature. Model states are *Draft* (editable) and *Published* (read-only). These actions can be accessed with 
@@ -53,6 +53,13 @@ the context menu (when right-clicking a model).
 | Tags | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
 | Move to project | To organize work and improve collaboration, move a model to another project. | Any state |
+
+$$$When multiple selection is applied, perform operations on all selected items that match the action criteria (show in parentheses the number of items that can be affected) and not only the one which was right-clicked:
+* Models
+** Publish
+** Archive
+** Move to Project
+** Delete
 
 ## Tagging models
 

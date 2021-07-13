@@ -84,12 +84,12 @@ experiments in the table.
 * Column resizing - In the column heading, drag to a new size.
 * Column autofit - In the column heading, double click a column separator.
 
-## ClearML actions from the experiments table
+## Actions from the experiments table
 
-The following table describes the **ClearML** features that can be used from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
-that allow each feature. These actions can be accessed with the context menu (when right-clicking an experiment). 
+The following table describes the operations that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
+that allow each operation.  
 
-| ClearML Action | Description | States Valid for the Action | State Transition |
+| Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
 | View details | View experiment details in the experiments table, the [info panel](webapp_exp_track_visual#info-panel) (keep the experiments table in view), or the [full screen details view](webapp_exp_track_visual#full-screen-details-view). | Any state |  None  |
 | Manage a queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and queues](webapp_workers_queues) page. | *Enqueued* |  None  |
@@ -104,6 +104,31 @@ that allow each feature. These actions can be accessed with the context menu (wh
 | Tags | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
 | Move | Move an experiment to another project. | Any state |  None  |
+
+These actions can be accessed with the context menu (when right-clicking an experiment) or in 
+an experiment's info panel menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />).
+
+Most of the actions mentioned above can be performed on multiple experiments at once in the experiment table. Select 
+multiple experiments, then use the context menu, or the popup menu that appears at the bottom of the page, to perform
+operations on the selected experiments. The actions can be performed on the experiments
+that match the action criteria. The context menu shows the number of 
+experiments that can be affected by each action. In the bottom menu, when hovering over an icon, a tooltip appears
+with the action and the number of items which will be affected by the action. 
+
+* Experiment
+** Archive
+** Enqueue
+** Reset
+** Abort
+** Publish
+** Move to Project
+** Delete
+
+Note: Popup message should also indicate that this applies to more than one task/model/dataview.
+
+When batch operation returns, UI page is refreshed. 
+
+In case of partial failure, pop up shows which items failed."
 
 
 ## Creating an experiment leaderboard
