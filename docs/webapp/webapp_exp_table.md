@@ -76,19 +76,18 @@ experiments in the table.
 
 ![Filtering table gif](../img/gif/filter_screenshots.gif)
 
-Column filters help display relevant experiments according to criteria that is inputted. 
 Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
-in the following columns: 
-* Experiment type, experiment status (state), user, parent task
-  * Choose values from the drop down menu that appears
-* Time started, iterations, run time, metrics, and hyperparameters 
-  * Insert a maximum and / or minimum value 
-* Tags 
-  * Choose values from the drop down menu that appears. Tags can be filtered using
+on a column, and the relevant filter appears.
+
+There are a few types of filters:
+* Value menu - Choose values to include in a column from a drop down menu
+* Numerical ranges - Insert minimum and / or maximum value
+* Date ranges - Insert starting and / or ending date and time
+* Tags - Choose values from a drop down menu. Tags can be filtered using
   the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These options appear
-    on the top of the drop down menu. 
-    
-Once a filter is applied to a column, its icon will look like  <img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" />   
+    on the top of the drop down menu
+  
+Once a filter is applied to a column, its filter icon will appear with a yellow dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
 
 
 
