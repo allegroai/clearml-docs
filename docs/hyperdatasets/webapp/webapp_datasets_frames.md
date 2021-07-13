@@ -44,13 +44,13 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 |Ctrl + mouse wheel | Zoom in and zoom out|
 | + | Zoom in |
 | - | Zoom out |
-|Hold spacebar + press and hold image + drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off. | 
-| Ctrl + z | Undo |
-| Ctrl + y | Redo |
+|Hold spacebar + Press and hold image + Drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off. | 
+| Ctrl + Z | Undo |
+| Ctrl + Y | Redo |
 | Right arrow | Next frame |
-| Ctrl + right arrow | Jump forward 10 frames |
+| Ctrl + Right arrow | Jump forward 10 frames |
 | Left arrow | Previous frame |
-| Ctrl + left arrow | Jump backward 10 frames |
+| Ctrl + Left arrow | Jump backward 10 frames |
 
 ### Viewing and editing frames
 
