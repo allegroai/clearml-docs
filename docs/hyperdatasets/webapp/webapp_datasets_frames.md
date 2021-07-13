@@ -27,7 +27,7 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 |<img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-sm space-sm" />|Go to the previous frame containing a non-filtered annotation. The filter is the minimum confidence level setting. If the confidence level filter is set to zero, any frame containing annotations matches the filter.|
 |<img src="/docs/latest/icons/ico-arrow-left.svg" alt="Previous frame icon" className="icon size-sm space-sm" />|Go to the previous frame (Left Arrow).|
 |<img src="/docs/latest/icons/ico-arrow-right.svg" alt="Next frame icon" className="icon size-sm space-sm" />|Go to the next frame (Right Arrow).|
-|<img src="/docs/latest/icons/ico-skip-next.svg" className="icon size-sm space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).|
+|<img src="/docs/latest/icons/ico-skip-next.svg" alt="Jump to previous unfiltered annotation" className="icon size-sm space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).|
 |<img src="/docs/latest/icons/ico-skip-forward.svg" alt="Jump forwards icon" className="icon size-sm space-sm" />|Jump forwards (CTRL + Right). Jumps 5 frames forwards.|
 |<img src="/docs/latest/icons/ico-revert.svg" alt="Reload frame icon" className="icon size-sm space-sm" />|Reload the frame.|
 |<img src="/docs/latest/icons/ico-undo.svg" alt="Undo icon" className="icon size-sm space-sm" />|Undo changes.|
@@ -42,7 +42,15 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 |Control|Actions|
 |----|-----|
 |Ctrl + mouse wheel | Zoom in and zoom out|
-|Hold spacebar + press and hold preview + drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off. | 
+| + | Zoom in |
+| - | Zoom out |
+|Hold spacebar + press and hold image + drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off. | 
+| Ctrl + z | Undo |
+| Ctrl + y | Redo |
+| Right arrow | Next frame |
+| Ctrl + right arrow | Jump forward 10 frames |
+| Left arrow | Previous frame |
+| Ctrl + left arrow | Jump backward 10 frames |
 
 ### Viewing and editing frames
 
