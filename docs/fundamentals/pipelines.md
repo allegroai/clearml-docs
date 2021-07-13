@@ -14,7 +14,7 @@ up of steps. Each step consists of a task that already exists in the ClearML Ser
 user decides the controlling logic of the step interactions, whether it be simple ([DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)) 
 or more complex. 
 
-Once the pipeline is running, is starts sequentially launching the steps configured in the Controller. In each step, the template task 
+Once the pipeline is running, it starts sequentially launching the steps configured in the Controller. In each step, the template task 
 is cloned, and the cloned task is sent for execution. Depending on the specifications laid out in the Controller Task, a 
 step's parameters can be overridden, and / or a step can use a previous step's work products. 
 
@@ -63,7 +63,7 @@ rerun pipeline again), users can apply custom logic, using generic methods to en
 The custom logic of the pipeline sits in the *Controller Task*'s script.  
 
 Custom pipelines usually involve cloning template tasks, modifying their parameters, and manually enqueuing 
-them to queues (for execution by [agents](../clearml_agent.md). It's possible to create custom logic that controls inputs 
+them to queues (for execution by [agents](../clearml_agent.md)). It's possible to create custom logic that controls inputs 
 (e.g. overriding hyperparameters and artifacts) and acts upon task outputs.
 
 See an example of a custom pipeline [here](../guides/automation/task_piping.md).
