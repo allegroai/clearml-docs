@@ -10,12 +10,13 @@ Pipelines are controlled by a *Controller Task* that holds the logic of the pipe
 ## How do pipelines work? 
 
 Before running a pipeline, we need to configure a Controller Task, in which the pipeline is defined. Pipelines are made 
-up of steps. Each step is a task that already exists in the ClearML Server and is called a **template**. The user decides 
-the controlling logic of the step interactions, whether it be simple ([DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)) 
-or complex custom logic. 
+up of steps. Each step consists of a task that already exists in the ClearML Server and is used as a template. The 
+user decides the controlling logic of the step interactions, whether it be simple ([DAG](https://en.wikipedia.org/wiki/Directed_acyclic_graph)) 
+or more complex. 
 
-Once the pipeline is running, it first clones the template tasks and then sends the cloned tasks for execution 
-according to the pipeline's control logic.
+Once the pipeline is running, is starts sequentially launching the steps configured in the Controller. In each step, the template task 
+is cloned, and the cloned task is sent for execution. Depending on the specifications laid out in the Controller Task, a 
+step's parameters can be overridden, and / or a step can use a previous step's work products. 
 
 Callbacks can be utilized to control pipeline execution flow. A callback can be defined 
 to be called before and / or after the execution of every task in a pipeline. Additionally, there is an option to 
@@ -28,7 +29,7 @@ create customized, step-specific callbacks.
 
 For a simple, DAG based logic, use the off-the-shelf [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md) class to define the DAG (see an example 
 [here](../guides/pipeline/pipeline_controller)). Once the `PipelineController` object is populated and configured, 
-we can start the pipeline, which will launch its first steps, then it waits until the pipeline is completed. 
+we can start the pipeline, which will begin executing the steps in succession, then it waits until the pipeline is completed. 
 The pipeline control logic is processed in a background thread. 
 
 :::note
@@ -43,12 +44,12 @@ method. Alternatively, step-specific callback functions can be specified with th
 `post_execute_callback` parameters of the [`add_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
 method. 
 
-## Complex pipelines
+## Advanced pipelines
 
-Since a pipeline *Controller Task* is a task on its own, it is flexible and can be used to create more complicated workflows, 
-such as pipelines running other pipelines, or a pipeline running multiple tasks concurrently.
+Since a pipeline *Controller Task* is itself a ClearML Task, it can be used as a pipeline step and can be used to create 
+more complicated workflows, such as pipelines running other pipelines, or a pipeline running multiple tasks concurrently.
 
-For example, it could be useful to have one pipeline for data preparation, which triggers a second pipeline which trains
+For example, it could be useful to have one pipeline for data preparation, which triggers a second pipeline that trains
 networks.
 
 It could also be useful to run a pipeline that runs tasks concurrently, training multiple networks with different hyperparameter
@@ -65,4 +66,4 @@ Custom pipelines usually involve cloning template tasks, modifying their paramet
 them to queues (for execution by [agents](../clearml_agent.md). It's possible to create custom logic that controls inputs 
 (e.g. overriding hyperparameters and artifacts) and acts upon task outputs.
 
-See an example of custom pipelines [here](../guides/automation/task_piping.md).
+See an example of a custom pipeline [here](../guides/automation/task_piping.md).
