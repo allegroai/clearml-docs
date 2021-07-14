@@ -92,6 +92,7 @@ module.exports = {
                 {'XGboost': ['guides/frameworks/xgboost/xgboost_sample']}
             ]},
             {'IDEs': ['guides/ide/remote_jupyter_tutorial', 'guides/ide/integration_pycharm', 'guides/ide/google_colab']},
+            {'Offline Mode':['guides/set_offline']},
             {'Optimization': ['guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt']},
             {'Pipelines': ['guides/pipeline/pipeline_controller']},
 
