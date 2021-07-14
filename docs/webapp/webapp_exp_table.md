@@ -108,27 +108,22 @@ that allow each operation.
 These actions can be accessed with the context menu (when right-clicking an experiment) or in 
 an experiment's info panel menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />).
 
-Most of the actions mentioned above can be performed on multiple experiments at once in the experiment table. Select 
-multiple experiments, then use the context menu, or the popup menu that appears at the bottom of the page, to perform
-operations on the selected experiments. The actions can be performed on the experiments
-that match the action criteria. The context menu shows the number of 
-experiments that can be affected by each action. In the bottom menu, when hovering over an icon, a tooltip appears
-with the action and the number of items which will be affected by the action. 
+Most of the actions mentioned in the chart above can be performed on multiple experiments at once, including:
+* Archive
+* Enqueue
+* Reset
+* Abort
+* Publish
+* Add tag  
+* Move to Project
 
-* Experiment
-** Archive
-** Enqueue
-** Reset
-** Abort
-** Publish
-** Move to Project
-** Delete
+Select multiple experiments, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+operations on the selected experiments. Actions can be performed only on the experiments that match the action criteria 
+(for example, only *Running* experiments can be aborted). The context menu shows the number 
+of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooptip that
+appears when hovering over an action icon. 
 
-Note: Popup message should also indicate that this applies to more than one task/model/dataview.
 
-When batch operation returns, UI page is refreshed. 
-
-In case of partial failure, pop up shows which items failed."
 
 
 ## Creating an experiment leaderboard
