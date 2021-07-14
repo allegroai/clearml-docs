@@ -9,7 +9,7 @@ The **Dataviews table** is a [customizable](#customizing-the-dataviews-table) li
 Use it to [view, create, and edit Dataviews](#viewing-adding-and-editing-dataviews) in the info panel. Dataview tables 
 can be filtered by name or name fragments and / or ID, by using the search bar.
 
-![image](../../img/hyperdatasets/dataviews_table_01.png)
+![Dataviews table](../../img/hyperdatasets/dataviews_table_01.png)
 
 The Dataviews table columns in their default order are below. Dynamically order the columns by dragging a column heading 
 to a new position.
@@ -30,6 +30,18 @@ Customize any combination of the following:
 * Filter by user
 * Sort columns - By experiment name and / or elapsed time since creation.
 * Column autofit - In the column heading, double click a resizer (column separator).
+
+:::note
+The following Dataviews-table customizations are saved on a **per project** basis: 
+* Column order
+* Column width
+* Active sort order
+* Active filters
+
+If a project has sub-projects, the Dataviews can be viewed by their sub-project groupings or together with 
+all the Dataviews in the project. The customizations of these two views are saved separately. 
+:::
+
 
 ## Viewing, adding, and editing Dataviews
 
