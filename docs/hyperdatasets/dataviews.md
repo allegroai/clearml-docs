@@ -2,7 +2,7 @@
 title: Dataviews
 ---
 
-Dataviews is a powerful and easy-to-use **ClearML Enterprise** feature for creating and managing local views of remote 
+Dataviews is a powerful and easy-to-use ClearML Enterprise feature for creating and managing local views of remote 
 Datasets. Dataviews can use sophisticated queries to input data from a subset of a Dataset 
 or combinations of Datasets. 
 
@@ -85,7 +85,7 @@ in steps, where each step is composed of a method, an operation, and a strength 
   Use any of the following operations:
 
     * Blur - Gaussian smoothing 
-    * Noise - **ClearML Enterprise**'s own noise augmentation consisting of: 
+    * Noise - ClearML Enterprise's own noise augmentation consisting of: 
       * **high** noise - like snow on analog televisions with a weak TV signal 
       * **low** noise - like a low resolution image magnified in localized areas on the image
     * Recolor - using an internal RGB lookup-table

@@ -68,9 +68,10 @@ all the experiments in the project. The customizations of these two views are sa
 :::
 
 
-![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
 
 ### Adding metrics and / or hyperparameters
+
+![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
 
 Add metrics and / or hyperparameters columns to the experiments table. The metrics and hyperparameters depend upon the
 experiments in the table.
@@ -137,4 +138,4 @@ based on their name by using the search bar.
 The final dashboard can be shared by copying the URL from the address bar, this address will replicate the exact same dashboard on any browser.
 The dashboard can also be bookmarked for later use.
 
-![Experiment leaderboard gif](../img/gif/clearml_tutorial_leaderboard.gif)
+![Experiment table sharing](../img/webapp_exp_table_sharing.png)
