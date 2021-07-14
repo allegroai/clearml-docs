@@ -2,14 +2,14 @@
 title: Dataviews Table
 ---
 
-[Dataviews](../dataviews.mda) appear in the same Project as the experiment that stored the Dataview in the **ClearML Enterprise** platform, 
+[Dataviews](../dataviews.mda) appear in the same Project as the experiment that stored the Dataview in the ClearML Enterprise platform, 
 as well as the **DATAVIEWS** tab in the **All Projects** page.
 
 The **Dataviews table** is a [customizable](#customizing-the-dataviews-table) list of Dataviews associated with a project.
 Use it to [view, create, and edit Dataviews](#viewing-adding-and-editing-dataviews) in the info panel. Dataview tables 
 can be filtered by name or name fragments and / or ID, by using the search bar.
 
-![image](../../img/hyperdatasets/dataviews_table_01.png)
+![Dataviews table](../../img/hyperdatasets/dataviews_table_01.png)
 
 The Dataviews table columns in their default order are below. Dynamically order the columns by dragging a column heading 
 to a new position.
@@ -30,6 +30,18 @@ Customize any combination of the following:
 * Filter by user
 * Sort columns - By experiment name and / or elapsed time since creation.
 * Column autofit - In the column heading, double click a resizer (column separator).
+
+:::note
+The following Dataviews-table customizations are saved on a **per project** basis: 
+* Column order
+* Column width
+* Active sort order
+* Active filters
+
+If a project has sub-projects, the Dataviews can be viewed by their sub-project groupings or together with 
+all the Dataviews in the project. The customizations of these two views are saved separately. 
+:::
+
 
 ## Viewing, adding, and editing Dataviews
 
@@ -61,7 +73,7 @@ frame filters to different Dataset versions.
 1. Do one of the following:
 
     * In the Dataview table, right click a Dataview and then click **Clone**.
-    * If the info panel is opened, click <img src="/docs/img/svg/bars-menu.svg" alt="Menu" className="icon size-lg space-sm" /> 
+    * If the info panel is opened, click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" /> 
       (menu) and then click **Clone**.
     
 1. Select a project or accept the current project, enter a name, and optionally enter a description
@@ -79,7 +91,7 @@ They only appear in the archive. After archiving, the Dataview can be restored f
     * Archive one Dataview - Right click the Dataview **>** **Archive**.
     * Archive multiple Dataviews - Select the Dataview checkboxes **>** In the footer menu that appears at the bottom of 
       the page, click **ARCHIVE**.
-* In the Dataview info panel - Click <img src="/docs/img/svg/bars-menu.svg" alt="Menu" className="icon size-lg space-sm" /> 
+* In the Dataview info panel - Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" /> 
   (menu) **>** **ARCHIVE**.
 
 **To restore a Dataview:**
@@ -90,6 +102,6 @@ They only appear in the archive. After archiving, the Dataview can be restored f
     * In the Dataview table:
         * Restore one Dataview - Right click the Dataview **>** **Restore**.
         * Restore multiple Dataviews - Select the Dataview checkboxes **>** **Restore**.
-    * In the info panel, restore one Dataview - Click <img src="/docs/img/svg/bars-menu.svg" alt="Menu" className="icon size-lg space-sm" /> 
+    * In the info panel, restore one Dataview - Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" /> 
       (menu) **>** **Restore**.
 

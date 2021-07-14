@@ -193,7 +193,7 @@ Compare debug samples at any iteration to verify that an experiment is running a
 first. Use the viewer / player to inspect images, audio, video samples and do any of the following:
 * Move to the same sample in a different iteration (move the iteration slider).
 * Show the next or previous iteration's sample.
-* Download the file <img src="/docs/img/svg/download-json.svg" className="icon size-md space-sm" />.
+* Download the file <img src="/docs/latest/icons/ico-download-json.svg" className="icon size-md space-sm" />.
 * Zoom.
 * View the sample's iteration number, width, height, and coordinates.
 
@@ -203,8 +203,8 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 1. Locate debug samples by doing the following:
 
     * Filter by metric. In the **Metric** list, choose a metric.
-    * Show other iterations. Click <img src="/docs/img/svg/next-batch.svg" className="icon size-md space-sm" /> (Older images),
-      <img src="/docs/img/svg/prev-batch.svg" className="icon size-md space-sm" /> (New images), or <img src="/docs/img/svg/back-to-top.svg" className="icon size-md space-sm" /> (Newest images).
+    * Show other iterations. Click <img src="/docs/latest/icons/ico-circle-older.svg" className="icon size-md space-sm" /> (Older images),
+      <img src="/docs/latest/icons/ico-circle-newer.svg" className="icon size-md space-sm" /> (New images), or <img src="/docs/latest/icons/ico-circle-newest.svg" className="icon size-md space-sm" /> (Newest images).
 
     ![image](../img/webapp_compare_30.png)
 
@@ -222,7 +222,7 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 1. Do any of the following:
 
     * Move to the same sample in another iteration - Move the slider, or click **<** (previous) or **>** (next).
-    * Download the file - Click  <img src="/docs/img/svg/download-json.svg" className="icon size-md space-sm" />.
+    * Download the file - Click  <img src="/docs/latest/icons/ico-download-json.svg" className="icon size-md space-sm" />.
     * Zoom
     * For images, locate a position on the sample - Hover over the sample and the X, Y coordinates appear in the legend below the sample.
 
@@ -274,7 +274,7 @@ Search all text in the comparison.
 
 Show differences in other experiments in reference to a new base experiment. To set a new base experiment, do one of the following:
 * Click on <img src="/docs/latest/icons/ico-switch-base.svg" className="icon size-md space-sm" /> on the top right of the experiment that will be the new base.
-* Click on <img src="/docs/img/svg/pan.svg" className="icon size-md space-sm" /> the new base experiment and drag it all the way to the left
+* Click on <img src="/docs/latest/icons/ico-pan.svg" className="icon size-md space-sm" /> the new base experiment and drag it all the way to the left
 
 ![image](../img/webapp_compare_22.png)
 
@@ -282,7 +282,7 @@ Show differences in other experiments in reference to a new base experiment. To 
 
 ### Dynamic ordering of the compared experiments
 
-To reorder the experiments being compared, press <img src="/docs/img/svg/pan.svg" className="icon size-md space-sm" /> on the top right of the experiment that
+To reorder the experiments being compared, press <img src="/docs/latest/icons/ico-pan.svg" className="icon size-md space-sm" /> on the top right of the experiment that
   needs to be moved, and drag the experiment to its new position.
 
 ![image](../img/webapp_compare_21.png)
