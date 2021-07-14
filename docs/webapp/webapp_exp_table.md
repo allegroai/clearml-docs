@@ -81,12 +81,12 @@ Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.s
 on a column, and the relevant filter appears.
 
 There are a few types of filters:
-* Value menu - Choose values to include in a column from a drop down menu
+* Value set - Choose which values to include from a list of all values in the column
 * Numerical ranges - Insert minimum and / or maximum value
 * Date ranges - Insert starting and / or ending date and time
-* Tags - Choose values from a drop down menu. Tags can be filtered using
+* Tags - Choose which tags to include from a list of all tags used in the column. Additionally, tags can be filtered using
   the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These options appear
-    on the top of the drop down menu
+    on the top of the tag list. 
   
 Once a filter is applied to a column, its filter icon will appear with a yellow dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
 
