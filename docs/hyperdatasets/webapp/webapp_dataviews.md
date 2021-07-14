@@ -9,7 +9,7 @@ The **Dataviews table** is a [customizable](#customizing-the-dataviews-table) li
 Use it to [view, create, and edit Dataviews](#viewing-adding-and-editing-dataviews) in the info panel. Dataview tables 
 can be filtered by name or name fragments and / or ID, by using the search bar.
 
-![image](../../img/hyperdatasets/dataviews_table_01.png)
+![Dataviews table](../../img/hyperdatasets/dataviews_table_01.png)
 
 The Dataviews table columns in their default order are below. Dynamically order the columns by dragging a column heading 
 to a new position.
@@ -31,9 +31,21 @@ Customize any combination of the following:
 * Sort columns - By experiment name and / or elapsed time since creation.
 * Column autofit - In the column heading, double click a resizer (column separator).
 
-## ClearML actions from the Dataviews table
+:::note
+The following Dataviews-table customizations are saved on a **per project** basis: 
+* Column order
+* Column width
+* Active sort order
+* Active filters
 
-The following table describes the **ClearML** features that can be used from the Dataviews table. 
+If a project has sub-projects, the Dataviews can be viewed by their sub-project groupings or together with 
+all the Dataviews in the project. The customizations of these two views are saved separately. 
+:::
+
+
+## Actions from the Dataviews table
+
+The following table describes the actions that can be performed from the Dataviews table. 
 
 | ClearML Action | Description |
 |---|---|--|

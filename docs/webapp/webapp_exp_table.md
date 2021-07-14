@@ -12,7 +12,7 @@ To assist in focusing on active experimentation, experiments and models can be a
 in the active experiments and models tables. See [Archiving](webapp_archiving).
 :::
 
-![image](../img/webapp_exp_table_01.png)
+![Experiment table](../img/webapp_exp_table_01.png)
 
 ## Experiments table columns
 
@@ -55,10 +55,23 @@ Use experiments table customization for various use cases, including:
 Changes are persistent (cached in the browser), and represented in the URL so customized settings can be saved in a browser
 bookmark and shared with other **ClearML** users to collaborate.
 
+:::note
+The following experiments-table customizations are saved on a **per project** basis: 
+* Columns order
+* Column width
+* Active sort order
+* Active filters
+* Custom columns
+
+If a project has sub-projects, the experiments can be viewed by their sub-project groupings or together with 
+all the experiments in the project. The customizations of these two views are saved separately. 
+:::
+
+
 
 ### Adding metrics and / or hyperparameters
 
-![image](../img/gif/webapp_exp_table_cust.gif)
+![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
 
 Add metrics and / or hyperparameters columns to the experiments table. The metrics and hyperparameters depend upon the
 experiments in the table.
@@ -86,7 +99,7 @@ experiments in the table.
 
 ## Actions from the experiments table
 
-The following table describes the operations that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
+The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
 that allow each operation.  
 
 | Action | Description | States Valid for the Action | State Transition |
@@ -137,4 +150,4 @@ based on their name by using the search bar.
 The final dashboard can be shared by copying the URL from the address bar, this address will replicate the exact same dashboard on any browser.
 The dashboard can also be bookmarked for later use.
 
-![image](../img/webapp_exp_table_sharing.png)
+![Experiment table sharing](../img/webapp_exp_table_sharing.png)
