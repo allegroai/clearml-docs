@@ -44,7 +44,7 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 |Ctrl + Mouse wheel | Zoom in and zoom out|
 | + | Zoom in |
 | - | Zoom out |
-|Hold spacebar + Press and hold image + Drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off. | 
+|Hold spacebar + Press and hold image + Drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off | 
 | Ctrl + Z | Undo changes|
 | Ctrl + Y | Redo changes|
 | Right arrow | Next frame |
@@ -52,9 +52,12 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 | Left arrow | Previous frame |
 | Ctrl + Left arrow | Jump backward 10 frames |
 | Delete | Remove annotation |
-| Shift M | Edit metadata | 
-
-
+| Alt + ] / [ | Add default ROI label and switch between previous / next label to choose the default label |
+| Shift + M | Edit metadata | 
+| Hold Shift | Use when editing a key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) annotation. While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
+| Shift + Tab | Previous annotation (use after clicking an annotation) |
+| Enter | Finish a key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) annotation |
+| Esc | Cancel an annotating process in polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-lg space-sm" />) or key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) mode. If not in the middle of annotating, Esc will return you to the dataset's page | 
 
 ### Viewing and editing frames
 
