@@ -33,8 +33,7 @@ Customize any combination of the following:
 
 ## ClearML actions from the Dataviews table
 
-The following table describes the **ClearML** features that can be used from the Dataviews table. These actions can be 
-utilized with the context menu (when right-clicking a Dataview) or in a Dataview's info panel menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />). 
+The following table describes the **ClearML** features that can be used from the Dataviews table. 
 
 | ClearML Action | Description |
 |---|---|--|
@@ -43,12 +42,15 @@ utilized with the context menu (when right-clicking a Dataview) or in a Dataview
 | Clone | Make an exact copy of a Dataview. |
 | Move to project | To organize work and improve collaboration, move a Dataview to another project. | 
 
-$$$When multiple selection is applied, perform operations on all selected items that match the action criteria (show in parentheses the number of items that can be affected) and not only the one which was right-clicked:
-* Dataviews
-** Archive
-** Move to Project
-** Delete
+These actions can be utilized with the context menu (when right-clicking a Dataview) or in a Dataview's info panel 
+menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />). 
 
+Some of the actions mentioned in the chart above can be performed on multiple Dataviews at once.
+Select multiple Dataviews, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+operations on the selected Dataviews. The context menu shows the number of Dataviews that can be affected by each action. 
+The same information can be found in the bottom menu, in a tooltip that appears when hovering over an action icon. 
+
+![Dataviews table batch operations](../../img/webapp_dataview_table_batch_operations.png)
 
 
 ## Viewing, adding, and editing Dataviews

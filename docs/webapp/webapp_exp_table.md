@@ -108,22 +108,14 @@ that allow each operation.
 These actions can be accessed with the context menu (when right-clicking an experiment) or in 
 an experiment's info panel menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />).
 
-Most of the actions mentioned in the chart above can be performed on multiple experiments at once, including:
-* Archive
-* Enqueue
-* Reset
-* Abort
-* Publish
-* Add tag  
-* Move to Project
-
+Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
 Select multiple experiments, then use either the context menu, or the bar that appears at the bottom of the page, to perform
 operations on the selected experiments. Actions can be performed only on the experiments that match the action criteria 
 (for example, only *Running* experiments can be aborted). The context menu shows the number 
-of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooptip that
+of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooltip that
 appears when hovering over an action icon. 
 
-
+![Experiment table batch operations](../img/webapp_exp_table_batch_operations.png)
 
 
 ## Creating an experiment leaderboard

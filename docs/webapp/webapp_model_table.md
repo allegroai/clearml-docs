@@ -42,8 +42,7 @@ Customize any combination of the following:
 ## ClearML actions from the models table
 
 The following table describes the **ClearML** features that can be used from the models table, including the states that
-allow each feature. Model states are *Draft* (editable) and *Published* (read-only). These actions can be accessed with 
-the context menu (when right-clicking a model). 
+allow each feature. Model states are *Draft* (editable) and *Published* (read-only). 
 
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
@@ -54,12 +53,15 @@ the context menu (when right-clicking a model).
 | Download | Download a model. The file format depends upon the framework. | *Published* |
 | Move to project | To organize work and improve collaboration, move a model to another project. | Any state |
 
-$$$When multiple selection is applied, perform operations on all selected items that match the action criteria (show in parentheses the number of items that can be affected) and not only the one which was right-clicked:
-* Models
-** Publish
-** Archive
-** Move to Project
-** Delete
+These actions can be accessed with the context menu (when right-clicking a model) or in 
+a model's info panel menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />).
+
+Some of the actions mentioned in the chart above can be performed on multiple models at once.
+Select multiple models, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+operations on the selected models. The context menu shows the number of models that can be affected by each action. 
+The same information can be found in the bottom menu, in a tooltip that appears when hovering over an action icon.   
+
+![Models table batch operations](../img/webapp_models_table_batch_operations.png)
 
 ## Tagging models
 
