@@ -30,6 +30,7 @@ title: FAQ
 * [In the Web UI, I can't access files that my experiment stored. Why not?](#access_files)
 * [I get the message "ClearML Monitor: Could not detect iteration reporting, falling back to iterations as seconds-from-start". What does it mean?](#resource_monitoring)
 * [Can I control what ClearML automatically logs?](#controlling_logging)
+* [Can I run a ClearML Task while working offline?](#offline_mode)
 
 **Graphs and Logs**
 
@@ -382,6 +383,22 @@ Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and
 When initializing a Task by calling the `Task.init` method, provide the `auto_connect_frameworks` parameter to control 
 framework logging, and the `auto_connect_streams` parameter to control `stdout`, `stderr`, and standard logging. The 
 values are `True`, `False`, and a dictionary for fine-grain control. See [Task.init](references/sdk/task.md#classmethod-initproject_namenone-task_namenone-task_typetasktypestraining-training-tagsnone-reuse_last_task_idtrue-continue_last_taskfalse-output_urinone-auto_connect_arg_parsertrue-auto_connect_frameworkstrue-auto_resource_monitoringtrue-auto_connect_streamstrue).
+
+
+<br/>
+
+
+**Can I run ClearML Task while working offline?** <a id="offline_mode"></a>
+
+Yes! You can use ClearML's Offline Mode, in which all the data and logs that a task captures from the code are stored in a 
+local folder 
+
+Before initializing a task, use the [Task.set_offline](references/sdk/task.md#taskset_offline) 
+class method and set the `offline_mode` argument to `True`. When executed, this returns the Task ID and a path to the local 
+session folder. In order to upload to the ClearML Server the local execution data that the Task captured offline, use the 
+[Task.import_offline_session](references/sdk/task.md#taskimport_offline_session) method. See [Storing Task Data Offline](guides/set_offline.md).
+
+
 
 ## Graphs and Logs
 
