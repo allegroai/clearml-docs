@@ -116,12 +116,12 @@ Once a filter is applied to a column, its filter icon will appear with a highlig
 * Column resizing - In the column heading, drag to a new size.
 * Column autofit - In the column heading, double click a column separator.
 
-## ClearML actions from the experiments table
+## Experiment actions
 
-The following table describes the **ClearML** features that can be used from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
-that allow each feature.
+The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
+that allow each operation.  
 
-| ClearML Action | Description | States Valid for the Action | State Transition |
+| Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
 | View details | View experiment details in the experiments table, the [info panel](webapp_exp_track_visual#info-panel) (keep the experiments table in view), or the [full screen details view](webapp_exp_track_visual#full-screen-details-view). | Any state |  None  |
 | Manage a queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and queues](webapp_workers_queues) page. | *Enqueued* |  None  |
@@ -136,6 +136,19 @@ that allow each feature.
 | Tags | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
 | Move | Move an experiment to another project. | Any state |  None  |
+
+These actions can be accessed with the context menu (when right-clicking an experiment or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
+in an experiment's info panel).
+
+
+Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
+Select multiple experiments, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+operations on the selected experiments. Actions can be performed only on the experiments that match the action criteria 
+(for example, only *Running* experiments can be aborted). The context menu shows the number 
+of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooltip that
+appears when hovering over an action icon. 
+
+![Experiment table batch operations](../img/webapp_exp_table_batch_operations.png)
 
 
 ## Creating an experiment leaderboard
