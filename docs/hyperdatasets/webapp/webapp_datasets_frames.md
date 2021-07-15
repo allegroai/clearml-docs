@@ -39,7 +39,9 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 
 #### Mouse and Keyboard Controls
 
-|Control|Actions|
+**General controls**
+
+|Control|Action|
 |----|-----|
 |Ctrl + Mouse wheel | Zoom in and zoom out|
 | + | Zoom in |
@@ -51,13 +53,24 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 | Ctrl + Right arrow | Jump forward 10 frames |
 | Left arrow | Previous frame |
 | Ctrl + Left arrow | Jump backward 10 frames |
+| Esc | Escape frame viewer and return to dataset page |
+
+**Annotation controls**
+
+|Control|Action|
+|----|-----|
 | Delete | Remove annotation |
-| Alt + ] / [ | Add default ROI label and switch between previous / next label to choose the default label |
+| Alt + ] / [ | Choose a default ROI label by navigating between previous / next labels  |
 | Shift + M | Edit metadata | 
-| Hold Shift | Use when editing a key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) annotation. While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
 | Shift + Tab | Previous annotation (use after clicking an annotation) |
-| Enter | Finish a key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) annotation |
-| Esc | Cancel an annotating process in polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-lg space-sm" />) or key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) mode. If not in the middle of annotating, Esc will return you to the dataset's page | 
+
+**Mode-specific annotation controls**
+
+|Control |Mode |Action|
+|----|-----|----|
+| Hold Shift | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) | While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
+| Enter | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) | Complete annotation |
+| Esc | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />), Polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-lg space-sm" />) | Cancel annotation process | 
 
 ### Viewing and editing frames
 
