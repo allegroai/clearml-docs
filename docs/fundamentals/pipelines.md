@@ -25,7 +25,7 @@ create customized, step-specific callbacks.
 ![Pipeline chart](../img/fundamentals_pipeline.png)
 
 
-## Simple DAG Pipelines
+## Simple DAG pipelines
 
 For a simple, DAG based logic, use the off-the-shelf [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md) class to define the DAG (see an example 
 [here](../guides/pipeline/pipeline_controller)). Once the `PipelineController` object is populated and configured, 
@@ -56,7 +56,7 @@ It could also be useful to run a pipeline that runs tasks concurrently, training
 values simultaneously. See the [Tabular training pipeline](../guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline.md) 
 example of a pipeline with concurrent steps. 
 
-## Custom Pipelines
+## Custom pipelines
 
 In cases where a DAG is insufficient (for example, when needing to launch one pipeline, then, if performance is inadequate, 
 rerun pipeline again), users can apply custom logic, using generic methods to enqueue tasks, implemented in python code.
