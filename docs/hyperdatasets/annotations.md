@@ -8,7 +8,7 @@ two types of annotations: **Frame objects** and **Frame labels**.
 Annotation Tasks can be used to efficiently organize the annotation of frames in Dataset versions (see 
 [Annotations Task Page](webapp/webapp_annotator.md)).  
 
-For information about how to view, create, and manage annotations using the WebApp, see [Annotating Images and Videos](#annotating-images-and-video).
+For information about how to view, create, and manage annotations using the WebApp, see [Annotating Images and Videos](webapp/webapp_annotator.md#annotating-images-and-video).
 
 ## Frame objects
 
@@ -27,7 +27,7 @@ Frame labels are applied to an entire frame, not a region in a frame.
 
 ### Adding a frame object
 
-To add a frame object annotation to a SingleFrame, use the [`SingleFrame.add_annotation`](google.com) method.  
+To add a frame object annotation to a SingleFrame, use the `SingleFrame.add_annotation` method.  
 
 ```python
 # a bounding box labeled "test" at x=10,y=10 with width of 30px and height of 20px
@@ -41,14 +41,14 @@ When adding an annotation there are a few options for entering the annotation's 
 * `poly2d_xy` - A list of floating points (x,y) to create for single polygon, or a list of Floating points lists for a 
   complex polygon
 * `ellipse2d_xyrrt` - A List consisting of cx, cy, rx, ry, and theta for an ellipse 
-* And more! See [`SingleFrame.add_annotation`](google.com) for further options. 
+* And more! See `SingleFrame.add_annotation` for further options. 
 
 ### Adding a Frame label
 
 Adding a frame label is similar to creating a frame objects, except that coordinates don't need to be specified, since 
 the whole frame is being referenced. 
 
-Use the [`SingleFrame.add_annotation`](google.com) method, but use only the `labels` parameter. 
+Use the `SingleFrame.add_annotation` method, but use only the `labels` parameter. 
 
 ```python
 # labels for the whole frame        

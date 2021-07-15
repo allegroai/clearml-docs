@@ -30,7 +30,7 @@ frame.metadata['dangerous'] = 'no'
 
 ### Adding ROI metadata
 
-Metadata can be added to individual ROIs when adding an annotation to a `frame`, using the [`add_annotation`](google.com)
+Metadata can be added to individual ROIs when adding an annotation to a `frame`, using the `add_annotation`
 method. 
 
 ```python

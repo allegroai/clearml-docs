@@ -132,7 +132,7 @@ may repeat. The settings include the following:
 
 ### Creating Dataviews
 
-Use the [`allegroai.DataView`](google.com) class to create a DataView object. Instantiate DataView objects, specifying 
+Use the `allegroai.DataView` class to create a DataView object. Instantiate DataView objects, specifying 
 iteration settings and additional iteration parameters that control query iterations. 
 
 ```python
@@ -143,7 +143,7 @@ myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=
 
 ### Adding queries
 
-To add a query to a DataView, use the [`DataView.add_query`](google.com) method and specify Dataset versions, 
+To add a query to a DataView, use the `DataView.add_query` method and specify Dataset versions, 
 ROI and / or frame queries, and other criteria. 
 
 The `dataset_name` and `version_name` arguments specify the Dataset Version. The `roi_query` and `frame_query` arguments 
@@ -254,7 +254,7 @@ myDataView.add_query(dataset_name='myDataset',
 
 ### Controlling query iteration
 
-Use [`DataView.set_iteration_parameters`](google.com) to manage the order, number, timing, and reproducibility of frames 
+Use `DataView.set_iteration_parameters` to manage the order, number, timing, and reproducibility of frames 
 for training.
 
 
@@ -303,8 +303,8 @@ myDataView.set_iteration_parameters(
 
 ### Debiasing input data
 
-Debias input data using the [DataView.add_query](google.com) method's [weight](google.com) argument to add weights. This 
-is the same [DataView.add_query](google.com) that can be used to specify Dataset versions, and ROI queries and frame queries.
+Debias input data using the `DataView.add_query` method's `weight` argument to add weights. This 
+is the same `DataView.add_query` that can be used to specify Dataset versions, and ROI queries and frame queries.
 
 This example adjusts an imbalance in the input data to improve training for `Car` ROIs that are also `largely occluded` 
 (obstructed). For every frame containing at least one ROI labeled `Car`, approximately five frames containing at least 
@@ -357,7 +357,7 @@ Set label enumeration values to maintain data conformity across multiple codebas
 It is important to set enumeration values for all labels of importance. 
 The default value for labels that are not assigned values is `-1`.
 
-To assign enumeration values for labels use the [`DataView.set_labels`](google.com) method, set a mapping of a label 
+To assign enumeration values for labels use the `DataView.set_labels` method, set a mapping of a label 
 (string) to an integer for ROI labels in a Dataview object.
 
 If certain ROI labels are [mapped](#mapping-roi-labels) from certain labels **to** other labels, 
