@@ -86,12 +86,31 @@ experiments in the table.
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ HYPER PARAMETERS** **>** Expand a section **>** Select the
   hyperparameter checkboxes.
 
+### Filtering experiments
+
+![Filtering table gif](../img/gif/filter_screenshots.gif)
+
+Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
+on a column, and the relevant filter appears.
+
+There are a few types of filters:
+* Value set - Choose which values to include from a list of all values in the column
+* Numerical ranges - Insert minimum and / or maximum value
+* Date ranges - Insert starting and / or ending date and time
+* Tags - Choose which tags to include from a list of all tags used in the column. Additionally, tags can be filtered using
+  the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These options appear
+    on the top of the tag list. 
+  
+Once a filter is applied to a column, its filter icon will appear with a yellow dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
+
+
+
+
 ### Using other customization features
 
 **To use other customization features:**
 
 * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** select or clear the checkboxes of columns to show or hide.
-* Filter columns - According to type of experiment, experiment status (state), or user
 * Sort columns - According to metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
 * Dynamic column ordering - Drag a column title to a different position.
 * Column resizing - In the column heading, drag to a new size.
@@ -130,7 +149,7 @@ Modify the experiment table in the following ways to create a customized leaderb
 * Add reported [metrics](#to-add-metrics), any time series reported metric can be selected, then select the last reported
   value, or the minimum / maximum reported value.
 * Filter based on user (dropdown and select) or [experiment types](../fundamentals/task.md#task-types)
-* Add specific [tags](webapp_exp_track_visual.md#tagging-experiments) and filter based on them
+* Add specific [tags](webapp_exp_track_visual.md#tagging-experiments) and filter based on them. 
 
 Now the table can be sorted based on any of the columns (probably one of the performance metrics). Select to filter experiments
 based on their name by using the search bar.
