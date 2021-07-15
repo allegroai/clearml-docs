@@ -133,57 +133,20 @@ The Task must be connected to a git repository, since currently single script de
 
 
 ### Command line options
-#### `--vscode-server` and `--jupyter-lab`
-By default, `clearml-session` downloads both Jupyter-Lab and VS Code servers. In order to save on resources and time,
-you can choose to download just one of these options. To stop installation of one of the environments, pass either 
-`--vscode-server` or `--jupyter-lab` and set it to `false`.  
 
-#### `--public-ip`
-`clearml-session` enables scaling-out development to multiple clouds, assigning development machines on AWS / GCP / Azure 
-in a seamless way. By default, the remote session runs on-prem on the machine where the ClearML Agent executing the session was
-launched. If you are running the session on a public cloud, pass the `--public-ip` flag and set it to `true`
-in order to register the public IP of the remote machine.
-
-#### `--init-script`
-Use `--init-script` to specify a BASH init script file to be executed when the interactive session
-is being set up. The script content is read and stored as the default script for the next sessions. 
-
-#### `--user-folder`
-Set the remote base folder for the session by passing the `--user-folder` flag with the path to the folder. 
-By default, it is in the home folder(`~/`). The new base folder becomes the default folder in future sessions. 
-
-#### `--config-file`
-`clearml-session` stores its previous state by default in the `.clearml_session.json` configuration file. To change 
-this configuration file, pass `--config-file` with the path to another configuration file. 
-
-#### `--remote-gateway`
-Use `--remote-gateway` to specify a gateway IP to pass to the interactive session, if an external address needs to be accessed.
-  
-#### `--base-task-id`
-If you have a remote session task with your required specification and configurations, that task can be used as a base task
-for `clearml-session`. Set a base task for the remote session by passing the task's ID with the `--base-task-id` flag. 
-By default, the previously used session task is used as the base. To set the session to the default interactive session,
-pass `--base-task-id none`
-                        
-#### `--disable-keepalive`
-By default, `clearml-serving` uses a transparent proxy to keep the sockets alive, in order to maintain the connection to 
-the remote resource. To disable this, pass the `--disable-keepalive` flag and set it to `true`. 
-
-#### `--queue-excluded-tag` and `--queue-include-tag`  
-When launching `clearml-session`, if a queue isn't specified, the CLI asks which queue to use. The queue list can be filtered 
-according to specific tags by using the `--queue-excluded-tag` and `--queue-include-tag` flags, and specifying a list of tags. 
-With `--queue-excluded-tag`, all queues with the specified tag/s will not be listed options, and with `--queue-include-tag`,
-only tags with the specified tag/s will be listed.
-
-See the `tags` parameter in the [queues.create](../references/api/endpoints#post-queuescreate)
-API call. 
-  
-#### `--skip-docker-network`
-Specify whether to pass the `--network host` flag to the Docker that is launching the remote session (see 
-[Networking using the host network](https://docs.docker.com/network/network-tutorial-host/)), by using the `--skip-docker-network`.
-By default, it is set to `false`.
- 
-#### `--username` and `--password`
-In order to set your own SSH username and / or a password for the interactive session, pass the `--username` and `--password` 
-flags. By default, the interactive session uses either a previously used password or a randomly generated 
-one, and either  SSH username is `root` or a previously used username. 
+| Command line options | Description | Default |
+|-----|---|---|
+| `--jupyter-lab` | Download a Jupyter-Lab environment | `true` |
+| `--vscode-server` | Download a VSCode environment | `true` |
+| `--public-ip` | Register the public IP of the remote machine (if you are running the session on a public cloud) | Session runs on the machine whose agent is executing the session|
+| `--init-script` | Specify a BASH init script file to be executed when the interactive session is being set up | Previously entered BASH script |
+| `--user-folder` | Specify the path for the session's remote base folder for the session | Home folder(`~/`) or previously entered user folder path |
+| `--config-file` | Specify a path to another configuration file for `clearml-session` to store its previous state | `.clearml_session.json` or previously entered configuration file |  
+| `--remote-gateway` | Specify a gateway IP to pass to the interactive session, if an external address needs to be accessed.| `none`|
+| `--base-task-id` | If you have a remote session task with your required specification and configurations, that task can be used as a base task for `clearml-session`. Pass the task's ID | `none` or the previously entered base task |
+| `--disable-keepalive` | Disable transparent proxy that keep sockets alive to maintain the connection to the remote resource | `false` | 
+| `--queue-excluded-tag` | The queue option list will exclude queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/endpoints#post-queuescreate) API call. | `none` |
+| `--queue-include-tag` | The queue option list will include only queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/endpoints#post-queuescreate) API call. | `none` |
+| `--skip-docker-network` | Pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
+| `--username`| Set your own SSH username for the interactive session | A randomly generated password or a previously used one | 
+| `--password`| Set your own SSH password for the interactive session | `root` |
