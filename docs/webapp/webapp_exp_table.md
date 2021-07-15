@@ -116,7 +116,7 @@ Once a filter is applied to a column, its filter icon will appear with a yellow 
 * Column resizing - In the column heading, drag to a new size.
 * Column autofit - In the column heading, double click a column separator.
 
-## Actions from the experiments table
+## Experiment actions
 
 The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
 that allow each operation.  
@@ -137,8 +137,9 @@ that allow each operation.
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
 | Move | Move an experiment to another project. | Any state |  None  |
 
-These actions can be accessed with the context menu (when right-clicking an experiment) or in 
-an experiment's info panel menu (<img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-lg space-sm" />).
+These actions can be accessed with the context menu (when right-clicking an experiment or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
+in an experiment's info panel).
+
 
 Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
 Select multiple experiments, then use either the context menu, or the bar that appears at the bottom of the page, to perform
