@@ -37,7 +37,7 @@ with an "Example" banner in the WebApp (UI).
 
 ### Creating Datasets
 
-Use the [Dataset.create](google.com) method to create a Dataset. It will contain an empty version named `Current`.
+Use the `Dataset.create` method to create a Dataset. It will contain an empty version named `Current`.
 
 ```python
 from allegroai import Dataset
@@ -45,7 +45,7 @@ from allegroai import Dataset
 myDataset = Dataset.create(dataset_name='myDataset')
 ```
 
-Or, use the [DatasetVersion.create_new_dataset](google.com) method.
+Or, use the `DatasetVersion.create_new_dataset` method.
 
 ```python
 from allegroai import DatasetVersion
@@ -132,7 +132,7 @@ a Dataset version that yields a parent with two children, or when publishing the
 
 ## Versioning Usage
 
-Manage Dataset versioning using the [DatasetVersion](google.com) class in the ClearML Enterprise SDK.
+Manage Dataset versioning using the DatasetVersion class in the ClearML Enterprise SDK.
 
 ### Creating snapshots
 
@@ -140,7 +140,7 @@ If the Dataset contains only one version whose status is *Draft*, snapshots of t
 When creating a snapshot, the current version becomes the snapshot (it keeps the same version ID),
 and the newly created version (with its new version ID) becomes the current version.
 
-To create a snapshot, use the [DatasetVersion.create_snapshot](google.com) method. 
+To create a snapshot, use the `DatasetVersion.create_snapshot` method. 
 
 
 #### Snapshot naming
@@ -205,7 +205,7 @@ myDataset = DatasetVersion.create_snapshot(dataset_name='MyDataset',
 
 Create a new version from any version whose status is *Published*. 
 
-To create a new version, call the [DatasetVersion.create_version](google.com) method, and
+To create a new version, call the `DatasetVersion.create_version` method, and
 provide: 
 * Either the Dataset name or ID
 * The parent version name or ID from which the child inherits frames 
@@ -241,7 +241,7 @@ myDataset = DatasetVersion.create_version(dataset_name='MyDataset',
 
 ### Getting versions
 
-To get a version or versions, use the [DatasetVersion.get_version](google.com) and [DatasetVersion.get_versions](google.com) 
+To get a version or versions, use the `DatasetVersion.get_version` and `DatasetVersion.get_versions` 
 methods, respectively.
 
 **Getting a list of all versions**
@@ -281,7 +281,7 @@ myDatasetversion = DatasetVersion.get_version(dataset_name='MyDataset',
 
 ### Deleting versions
 
-Delete versions which are status *Draft* using the [Dataset.delete_version](google.com) method.
+Delete versions which are status *Draft* using the `Dataset.delete_version` method.
 
 ```python
 from allegroai import Dataset
@@ -293,7 +293,7 @@ myDataset.delete_version(version_name='VersionToDelete')
 
 ### Publishing versions
 
-Publish (make read-only) versions which are status *Draft* using the [Dataset.publish_version](google.com) method. This includes the current version, if the Dataset is in
+Publish (make read-only) versions which are status *Draft* using the `Dataset.publish_version` method. This includes the current version, if the Dataset is in
 the simple version structure.
 
 ```python
