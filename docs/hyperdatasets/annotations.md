@@ -8,7 +8,7 @@ two types of annotations: **Frame objects** and **Frame labels**.
 Annotation Tasks can be used to efficiently organize the annotation of frames in Dataset versions (see 
 [Annotations Task Page](webapp/webapp_annotator.md)).  
 
-For information about how to view, create, and manage annotations using the WebApp, see [Annotating Images and Videos](#annotating-images-and-video).
+For information about how to view, create, and manage annotations using the WebApp, see [Annotating Images and Videos](webapp/webapp_annotator.md#annotating-images-and-video).
 
 ## Frame objects
 
