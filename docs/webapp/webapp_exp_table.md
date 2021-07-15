@@ -101,7 +101,7 @@ There are a few types of filters:
   the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These options appear
     on the top of the tag list. 
   
-Once a filter is applied to a column, its filter icon will appear with a yellow dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
+Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
 
 
 
