@@ -218,7 +218,7 @@ There are also options to populate the instance with:
 * A dictionary of annotation objects - `annotations`
 * A URI link to a mask file for the frame - `mask_source`
 
-For more information, see the SingleFrame reference.
+For more information, see the `SingleFrame` class description.
 
 ### Adding SingleFrames to a Dataset Version
 
