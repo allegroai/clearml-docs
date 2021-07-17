@@ -804,14 +804,16 @@ If your **ClearML Web-App (UI)** does not show anything, it may be an error auth
     
 ** When running a task, `clearml-init`, or ClearML Agent, I get an "Unauthorized (invalid credentials) (failed to locate provided credentials)" error. What happened?** <a id="credentials"></a>
 
-This can happen when your code isn't running in the same machine as your server. 
-$$ this usually happens when working inside VMs (localhost is the network adapter of the VM and not the host running the service$$$
+This can happen when your code isn't running in the same machine as your server, which usually happens when using a virtual machine.  
 
-If a task, `clearml-init`, or ClearML 
-Agent run on a virtual machine, and the clearml configuration 
+If a task, `clearml-init`, or ClearML Agent run on a virtual machine, and the ClearML configuration 
 files says "localhost", the "localhost" is pointing to the local machine, and not the virtual machine.
-Make sure that ip server address in configuration is always externally available address from where code is executed 
+Make sure that that server IP address in the configuration is always externally available from where code is executed 
+
 $$$$$ of the server  when ClearML Server configurations are pointing to `localhost`. 
+
+ 
+$$ this usually happens when working inside VMs (localhost is the network adapter of the VM and not the host running the service$$$
 
 This usually happens when working inside virtual machines, so the localhost is the network adapter of the VM and not the 
 host running the service. Sometimes this is firewall configuration issues.
