@@ -11,6 +11,8 @@ slow and tedious. Luckily, **hyperparameter optimization** can be automated and 
 
 ## ClearML's HyperParameter Optimization
 
+![Hyperparameter optimization diagram](../img/hpo_diagram.png)
+
 ClearML provides the `HyperParameterOptimizer` class which takes care of the entire optimization process for users in 
 with a simple interface.
 
