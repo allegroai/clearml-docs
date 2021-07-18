@@ -11,22 +11,33 @@ slow and tedious. Luckily, **hyperparameter optimization** can be automated and 
 
 ## ClearML's HyperParameter Optimization
 
+ClearML provides the `HyperParameterOptimizer` class which takes care of the entire optimization process for users in 
+with a simple interface.  
+
+**ClearML**'s approach to hyperparameter optimization is scalable, easy to set up and to manage, and it makes it easy to 
+compare results.
+
+### Workflow
+
 ![Hyperparameter optimization diagram](../img/hpo_diagram.png)
 
-ClearML provides the `HyperParameterOptimizer` class which takes care of the entire optimization process for users in 
-with a simple interface.
+ClearML provides the `HyperParameterOptimizer` class which takes care of the entire optimization process for users 
+with a simple interface. The diagram above demonstrates the typical flow of where the parameters of a base task are optimized: 
 
-The `HyperParameterOptimizer` class does the following:
-* Clones a base experiment that needs to be optimized.
-* Changes arguments based on the specified optimizer strategy.
-* Tries to minimize / maximize defined objectives. 
+1. Configure an Optimization Task with a base task to be optimized, and a set of parameter values to test
+1. Clone the base task. Each clone's parameter is overridden with a value from the optimization task  
+1. Enqueue each clone for execution by a ClearML Agent
+1. The Optimization Task records and monitors the cloned tasks' configuration and execution details, and returns a 
+   summary of the optimization results 
+ 
 
+![Optimization results summary chart](../img/fundamentals_hpo_summary.png)
+
+### Supported Optimizers
 
 The `HyperParameterOptimizer` class contains **ClearML**’s hyperparameter optimization modules. Its modular design enables 
 using different optimizers, including existing software frameworks, enabling simple, accurate, and fast hyperparameter 
 optimization.
-
-### Supported Optimizers
 
 * **Optuna** - `automation.optuna.optuna.OptimizerOptuna`. Optuna is the default optimizer in ClearML. It makes use of 
   different samplers such as grid search, random, bayesian, and evolutionary algorithms. 
@@ -40,25 +51,6 @@ optimization.
 * **Full grid** sampling strategy of every hyperparameter combination - `Grid search automation.optimization.GridSearch`.
 * **Custom** - `automation.optimization.SearchStrategy`. - Use a custom class and inherit from the ClearML automation base strategy class 
 
-## How Does it Work?
-
-**ClearML**'s approach to hyperparameter optimization is scalable, easy to set up and to manage, and it makes it easy to 
-compare results.
-
-### Workflow
-
-Make use of **ClearML**'s hyperparameter optimization capabilities by:
-* Initializing an Optimizer Task, which will record and monitor arguments, execution details, results, and more. 
-* Instantiating a `HyperParameterOptimizer`, where the following is specified:
-  * Task to optimize
-  * Hyperparameters to optimize
-  * Metric to optimize 
-  * Optimizer class (optimization strategy) where the optimization configuration and resources budget are defined
-  * And more.
-* Enqueuing the Task to be executed by a ClearML Agent (or multiple agents) in a remote machine. 
-* Monitoring the optimization process and viewing the summarized results in the **ClearML web UI**
-
-![image](../img/fundamentals_hpo_summary.png)
 
 ## Defining a hyperparameter optimization search example
 
