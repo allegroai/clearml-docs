@@ -5,7 +5,7 @@ title: The Models Table
 The models table is a [customizable](#customizing-the-models-table) list of models associated with the experiments in a project. From the models table,
 view model details, and modify, publish, archive, tag, and move models to other projects.
 
-![image](../img/webapp_models_01.png)
+![Models table](../img/webapp_models_01.png)
 
 ## Models table columns
 
@@ -39,10 +39,22 @@ Customize any combination of the following:
 * Sort columns - Metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
 * Column autofit - In the column heading, double click a resizer (column separator).
 
-## ClearML Actions from the models table
+:::note
+The following models-table customizations are saved on a **per project** basis: 
+* Columns order
+* Column width
+* Active sort order
+* Active filters
+* Custom columns
 
-The following table describes the **ClearML** features that can be used from the models table, including the states that
-allow each feature. Model states are *Draft* (editable) and *Published* (read-only).
+If a project has sub-projects, the models can be viewed by their sub-project groupings or together with 
+all the models in the project. The customizations of these two views are saved separately. 
+:::
+
+## Model actions
+
+The following table describes the actions that can be done from the models table, including the states that
+allow each feature. Model states are *Draft* (editable) and *Published* (read-only). 
 
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
@@ -52,6 +64,16 @@ allow each feature. Model states are *Draft* (editable) and *Published* (read-on
 | Tags | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
 | Move to project | To organize work and improve collaboration, move a model to another project. | Any state |
+
+These actions can be accessed with the context menu (when right-clicking a model or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
+in a model's info panel).
+
+Some of the actions mentioned in the chart above can be performed on multiple models at once.
+Select multiple models, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+operations on the selected models. The context menu shows the number of models that can be affected by each action. 
+The same information can be found in the bottom menu, in a tooltip that appears when hovering over an action icon.   
+
+![Models table batch operations](../img/webapp_models_table_batch_operations.png)
 
 ## Tagging models
 

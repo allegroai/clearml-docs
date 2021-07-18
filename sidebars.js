@@ -24,6 +24,7 @@ module.exports = {
         {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
             {
                 'Projects Page': [
+                    'webapp/webapp_project_overview',
                     {
                         'Experiments': ['webapp/webapp_exp_table', 'webapp/webapp_exp_track_visual', 'webapp/webapp_exp_reproducing', 'webapp/webapp_exp_tuning',
                             'webapp/webapp_exp_comparing', 'webapp/webapp_exp_sharing']
@@ -91,6 +92,7 @@ module.exports = {
                 {'XGboost': ['guides/frameworks/xgboost/xgboost_sample']}
             ]},
             {'IDEs': ['guides/ide/remote_jupyter_tutorial', 'guides/ide/integration_pycharm', 'guides/ide/google_colab']},
+            {'Offline Mode':['guides/set_offline']},
             {'Optimization': ['guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt']},
             {'Pipelines': ['guides/pipeline/pipeline_controller']},
 

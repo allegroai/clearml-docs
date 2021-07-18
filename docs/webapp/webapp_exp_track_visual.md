@@ -311,6 +311,17 @@ General experiment details appear in the **INFO** tab. This includes information
 * User who created the experiment
 * Experiment state (status)
 * Whether the experiment is archived
+* Runtime properties - Information about the machine running the experiment, including:
+  * Operating system
+  * CUDA driver version
+  * Number of CPU cores
+  * Number of GPUs
+  * CPU / GPU type
+  * Memory size
+  * Host name 
+  * Processor
+  * Python version
+    
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>

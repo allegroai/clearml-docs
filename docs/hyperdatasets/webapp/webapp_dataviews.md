@@ -9,7 +9,7 @@ The **Dataviews table** is a [customizable](#customizing-the-dataviews-table) li
 Use it to [view, create, and edit Dataviews](#viewing-adding-and-editing-dataviews) in the info panel. Dataview tables 
 can be filtered by name or name fragments and / or ID, by using the search bar.
 
-![image](../../img/hyperdatasets/dataviews_table_01.png)
+![Dataviews table](../../img/hyperdatasets/dataviews_table_01.png)
 
 The Dataviews table columns in their default order are below. Dynamically order the columns by dragging a column heading 
 to a new position.
@@ -30,6 +30,41 @@ Customize any combination of the following:
 * Filter by user
 * Sort columns - By experiment name and / or elapsed time since creation.
 * Column autofit - In the column heading, double click a resizer (column separator).
+
+:::note
+The following Dataviews-table customizations are saved on a **per project** basis: 
+* Column order
+* Column width
+* Active sort order
+* Active filters
+
+If a project has sub-projects, the Dataviews can be viewed by their sub-project groupings or together with 
+all the Dataviews in the project. The customizations of these two views are saved separately. 
+:::
+
+
+## Dataview actions
+
+The following table describes the actions that can be performed from the Dataviews table. 
+
+| ClearML Action | Description |
+|---|---|--|
+| View details | Dataview details, including input datasets, label mapping, augmentation operations, and iteration control. Click a Dataview and the info panel slides open. |
+| Archive | To more easily work with active Dataviews, move a Dataview to the archive. See [Archiving Dataviews](#archiving-dataviews). | 
+| Clone | Make an exact copy of a Dataview. |
+| Move to project | To organize work and improve collaboration, move a Dataview to another project. | 
+
+These actions can be accessed with the context menu (when right-clicking a Dataview or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
+in a Dataview's info panel).
+
+
+Some of the actions mentioned in the chart above can be performed on multiple Dataviews at once.
+Select multiple Dataviews, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+operations on the selected Dataviews. The context menu shows the number of Dataviews that can be affected by each action. 
+The same information can be found in the bottom menu, in a tooltip that appears when hovering over an action icon. 
+
+![Dataviews table batch operations](../../img/webapp_dataview_table_batch_operations.png)
+
 
 ## Viewing, adding, and editing Dataviews
 
