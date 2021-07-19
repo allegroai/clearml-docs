@@ -6,25 +6,25 @@ title: Hyperparameter Optimization
 Hyperparameters are variables that directly control the behaviors of training algorithms, and have a significant effect on 
 the performance of the resulting machine learning models. Finding the hyperparameter values that yield the best 
 performing models can be complicated. Manually adjusting hyperparameters over the course of many training trials can be 
-slow and tedious. Luckily, **hyperparameter optimization** can be automated and boosted using **ClearML**'s 
-`HyperParameterOptimizer` class.
+slow and tedious. Luckily, hyperparameter optimization can be automated and boosted using ClearML's 
+**`HyperParameterOptimizer`** class.
 
 ## ClearML's HyperParameter Optimization
 
-ClearML provides the `HyperParameterOptimizer` class which takes care of the entire optimization process for users in 
+ClearML provides the `HyperParameterOptimizer` class, which takes care of the entire optimization process for users in 
 with a simple interface.  
 
-**ClearML**'s approach to hyperparameter optimization is scalable, easy to set up and to manage, and it makes it easy to 
+ClearML's approach to hyperparameter optimization is scalable, easy to set up and to manage, and it makes it easy to 
 compare results.
 
 ### Workflow
 
 ![Hyperparameter optimization diagram](../img/hpo_diagram.png)
 
-ClearML provides the `HyperParameterOptimizer` class which takes care of the entire optimization process for users 
-with a simple interface. The diagram above demonstrates the typical flow of where the parameters of a base task are optimized: 
+The diagram above demonstrates the typical flow of hyperparameter optimization where the parameters of a base task are optimized: 
 
-1. Configure an Optimization Task with a base task to be optimized, and a set of parameter values to test
+1. Configure an Optimization Task with a base task whose parameters will be optimized, and a set of parameter values to 
+   test
 1. Clone the base task. Each clone's parameter is overridden with a value from the optimization task  
 1. Enqueue each clone for execution by a ClearML Agent
 1. The Optimization Task records and monitors the cloned tasks' configuration and execution details, and returns a 
@@ -47,9 +47,9 @@ optimization.
   at scale by combining the speed of Hyperband searches with the guidance and guarantees of convergence of Bayesian Optimization. 
   For more information about HpBandSter BOHB, see the [HpBandSter](https://automl.github.io/HpBandSter/build/html/index.html) 
   documentation.
-* **Random** uniform sampling of hyperparameters - `automation.optimization.RandomSearch`
+* **Random** uniform sampling of hyperparameters - `automation.optimization.RandomSearch`.
 * **Full grid** sampling strategy of every hyperparameter combination - `Grid search automation.optimization.GridSearch`.
-* **Custom** - `automation.optimization.SearchStrategy`. - Use a custom class and inherit from the ClearML automation base strategy class 
+* **Custom** - `automation.optimization.SearchStrategy` - Use a custom class and inherit from the ClearML automation base strategy class 
 
 
 ## Defining a hyperparameter optimization search example
@@ -62,7 +62,7 @@ optimization.
   from clearml.automation.optuna import OptimizerOptuna
   ```
 1. Initialize the Task, which will be stored in ClearML Server when the code runs. After the code runs at least once, 
-   it can be reproduced and tuned:
+   it can be reproduced, and the parameters can be tuned:
   ```python
   from clearml import Task
   
@@ -76,7 +76,7 @@ optimization.
 1. Define the optimization configuration and resources budget:
   ```python
   optimizer = HyperParameterOptimizer(
-        # specifying the Task to be optimized, Task must be in system already so it can be cloned
+        # specifying the task to be optimized, task must be in system already so it can be cloned
         base_task_id=TEMPLATE_TASK_ID,  
         # setting the hyper-parameters to optimize
         hyper_parameters=[
@@ -105,6 +105,9 @@ optimization.
   ```
 <br/><br/>
 
-Check out the [Hyperparameter Optimization](../guides/optimization/hyper-parameter-optimization) tutorial for a step by step guide.
+For more information about `HyperParameterOptimizer` and supported optimization modules, see the [Automation module reference](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
 
- For further information about the `HyperParameterOptimizer` arguments, see the [Automation module reference](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
+## Tutorial
+
+Check out the [Hyperparameter Optimization](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) tutorial for a step-by-step guide.
+
