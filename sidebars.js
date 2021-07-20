@@ -13,7 +13,7 @@ module.exports = {
             'Where do I start?': [{'Data Scientists': ['getting_started/ds/ds_first_steps', 'getting_started/ds/ds_second_steps', 'getting_started/ds/best_practices']},
                 {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
         }, 'getting_started/architecture']},
-        {'ClearML Fundamentals': ['fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
+        {'ClearML Fundamentals': ['fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/projects', 'fundamentals/logger', 'fundamentals/agents_and_queues',
             'fundamentals/pipelines']},
         'clearml_sdk',
         'clearml_agent',
