@@ -10,8 +10,6 @@ Its main focus is around:
 **ClearML Agent** executes an experiment or other workflow by reproducing the state of the code from the original machine 
 to a remote machine.
 
-## Agent workflow
-
 ![image](img/clearml_agent_flow_diagram.png)
 
 The diagram above demonstrates a typical flow where an agent executes a task:  
