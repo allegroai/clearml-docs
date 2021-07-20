@@ -134,6 +134,8 @@ The Task must be connected to a git repository, since currently single script de
 
 ### Command line options
 
+<div className="tbl-cmd">
+
 | Command line options | Description | Default value |
 |-----|---|---|
 | `--jupyter-lab` | Download a Jupyter-Lab environment | `true` |
@@ -150,3 +152,5 @@ The Task must be connected to a git repository, since currently single script de
 | `--skip-docker-network` | Pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
 | `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
 | `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
+
+</div>

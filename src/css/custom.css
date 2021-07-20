@@ -492,6 +492,17 @@ html[data-theme="light"] .footer__link-item[href*="stackoverflow"] {
   border-bottom-right-radius: var(--ifm-card-border-radius);
 }
 
+.markdown table code {
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 1400px) {
+  .tbl-cmd tbody tr td:first-child code {
+    white-space: nowrap;
+  }
+}
+
+
 html[data-theme="dark"] .markdown thead th {
   color: var(--ifm-color-gray-600);
 }
