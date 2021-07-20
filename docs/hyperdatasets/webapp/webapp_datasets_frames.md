@@ -21,41 +21,32 @@ frame metadata, the raw data source URI, as well as providing navigation and vie
 
 Use frame viewer controls to navigate between frames in a Dataset Version, and control frame changes and viewing.
 
-|Control Icon|Actions|
-|-----|------|
-|<img src="/docs/latest/icons/ico-skip-backward.svg" alt="Jump backwards icon" className="icon size-sm space-sm" />|Jump backwards (CTRL + Left arrow). Jumps backwards by five frames.|
-|<img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-sm space-sm" />|Go to the previous frame containing a non-filtered annotation. The filter is the minimum confidence level setting. If the confidence level filter is set to zero, any frame containing annotations matches the filter.|
-|<img src="/docs/latest/icons/ico-arrow-left.svg" alt="Previous frame icon" className="icon size-sm space-sm" />|Go to the previous frame (Left arrow).|
-|<img src="/docs/latest/icons/ico-arrow-right.svg" alt="Next frame icon" className="icon size-sm space-sm" />|Go to the next frame (Right arrow).|
-|<img src="/docs/latest/icons/ico-skip-next.svg" alt="Jump to previous unfiltered annotation" className="icon size-sm space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).|
-|<img src="/docs/latest/icons/ico-skip-forward.svg" alt="Jump forwards icon" className="icon size-sm space-sm" />|Jump forwards (CTRL + Right arrow). Jumps 5 frames forwards.|
-|<img src="/docs/latest/icons/ico-revert.svg" alt="Reload frame icon" className="icon size-sm space-sm" />|Reload the frame.|
-|<img src="/docs/latest/icons/ico-undo.svg" alt="Undo icon" className="icon size-sm space-sm" />|Undo changes.|
-|<img src="/docs/latest/icons/ico-redo.svg" alt="Redo icon" className="icon size-sm space-sm" />|Redo changes.|
-|<img src="/docs/latest/icons/ico-reset_1.svg" alt="Autofit icon" className="icon size-sm space-sm" />|Autofit|
-|<img src="/docs/latest/icons/ico-zoom-in.svg" alt="Zoom in icon" className="icon size-sm space-sm" />|Zoom in|
-|<img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out icon" className="icon size-sm space-sm" />|Zoom out|
-|Percentage textbox|Zoom percentage|
+|Control Icon|Actions|Shortcut|
+|-----|------|----|
+|<img src="/docs/latest/icons/ico-skip-backward.svg" alt="Jump backwards icon" className="icon size-sm space-sm" />| Jumps backwards ten frames | CTRL + Left arrow |
+|<img src="/docs/latest/icons/ico-skip-previous.svg" alt="Jump to previous unfiltered annotation" className="icon size-sm space-sm" />|Go to the previous frame containing a non-filtered annotation. The filter is the minimum confidence level setting. If the confidence level filter is set to zero, any frame containing annotations matches the filter.| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
+|<img src="/docs/latest/icons/ico-arrow-left.svg" alt="Previous frame icon" className="icon size-sm space-sm" />|Go to the previous frame | Left arrow |
+|<img src="/docs/latest/icons/ico-arrow-right.svg" alt="Next frame icon" className="icon size-sm space-sm" />|Go to the next frame | Right arrow |
+|<img src="/docs/latest/icons/ico-skip-next.svg" alt="Jump to next unfiltered annotation" className="icon size-sm space-sm" />|Go to the next frame containing a non-filtered annotation (same filter as <img src="/docs/latest/icons/ico-skip-previous.svg" className="icon size-md space-sm" />).| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
+|<img src="/docs/latest/icons/ico-skip-forward.svg" alt="Jump forwards icon" className="icon size-sm space-sm" />|Jump forwards ten frames | CTRL + Right arrow |
+|<img src="/docs/latest/icons/ico-revert.svg" alt="Reload frame icon" className="icon size-sm space-sm" />|Reload the frame.| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
+|<img src="/docs/latest/icons/ico-undo.svg" alt="Undo icon" className="icon size-sm space-sm" />|Undo changes.|Ctrl + Z| 
+|<img src="/docs/latest/icons/ico-redo.svg" alt="Redo icon" className="icon size-sm space-sm" />|Redo changes.|Ctrl + Y| 
+|<img src="/docs/latest/icons/ico-reset_1.svg" alt="Autofit icon" className="icon size-sm space-sm" />|Autofit| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
+|<img src="/docs/latest/icons/ico-zoom-in.svg" alt="Zoom in icon" className="icon size-sm space-sm" />|Zoom in| **+** or Ctrl + Mouse wheel| 
+|<img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out icon" className="icon size-sm space-sm" />|Zoom out| **-** or Ctrl + Mouse wheel |
+|Percentage textbox|Zoom percentage| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
 
-#### Mouse and Keyboard Controls
+#### Additional keyboard shortcuts
 
 **General controls**
 
 |Control|Action|
 |----|-----|
-|Ctrl + Mouse wheel | Zoom in and zoom out|
-| + | Zoom in |
-| - | Zoom out |
-|Hold spacebar + Press and hold image + Drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off | 
-| Ctrl + Z | Undo changes|
-| Ctrl + Y | Redo changes|
-| Right arrow | Next frame |
-| Ctrl + Right arrow | Jump forward 10 frames |
-| Left arrow | Previous frame |
-| Ctrl + Left arrow | Jump backward 10 frames |
-| Esc | Escape frame viewer and return to dataset page |
+|Hold Spacebar + Press and hold image + Drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off | 
+|Esc | Escape frame viewer and return to dataset page |
 
-**Annotation controls**
+**General annotation controls**
 
 |Control|Action|
 |----|-----|
