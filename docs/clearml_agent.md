@@ -8,16 +8,24 @@ Its main focus is around:
 - Scaling workflows on multiple target machines. 
 
 **ClearML Agent** executes an experiment or other workflow by reproducing the state of the code from the original machine 
-to a remote machine, and executing the code as follows:
+to a remote machine.
 
-1. **ClearML Agent** creates a new Python virtual environment (for every experiment).
-1. In the new Python virtual environment, **ClearML Agent** installs the required Python package versions.
-1. **ClearML Agent** clones the Git repository based on the definition stored in the experiment.
-1. **ClearML Agent** applies the uncommitted changes to the newly cloned code.
-1. Once the state of the code is reproduced on a remote machine, **ClearML Agent** runs the Python script based on the 
-   working directory and entry point stored in the experiment. It executes with logging and monitoring.
-1. While the Task is executing, and anytime after, track the experiment and visualize results in the **ClearML Web UI**.
+![image](img/clearml_agent_flow_diagram.png)
 
+The diagram above demonstrates a typical flow where an agent executes a task:  
+
+1. Enqueue a task for execution on the queue.
+1. The agent pulls the task from the queue.
+1. The agent launches a docker container in which to run the task's code.
+1. The task's execution environment is set up:
+   1.  Execute any custom setup script configured.
+   1.  Install any required system packages.
+   1.  Clone the code from a git repository.
+   1.  Apply any uncommitted changes recorded.
+   1.  Set up the python environment and required packages.
+1. The task's script/code is executed.  
+
+While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Workers and Queues** page).  
 
 Continue using **ClearML Agent** once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
