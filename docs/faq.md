@@ -95,7 +95,7 @@ title: FAQ
 * [How do I bypass a proxy configuration to access my local ClearML Server?](#proxy-localhost)
 * [Trains is failing to update ClearML Server. I get an error 500 (or 400). How do I fix this?](#elastic_watermark)
 * [Why is my Trains Web-App (UI) not showing any data?](#web-ui-empty)
-* [When running a task, `clearml-init`, or ClearML Agent, I get an "Unauthorized (invalid credentials) (failed to locate provided credentials)" error. What happened?](#credentials)
+* [Why can't I access my ClearML Server when I run my code in a virtual machine?](#vm_server)
 
 **ClearML Agent**
 
@@ -847,14 +847,15 @@ A likely indication of this situation can be determined by searching your clearm
 
 If your ClearML Web-App (UI) does not show anything, it may be an error authenticating with the server. Try clearing the application cookies for the site in your browser's developer tools. 
     
-**When running a task, `clearml-init`, or ClearML Agent, I get an "Unauthorized (invalid credentials) (failed to locate provided credentials)" error. What happened?** <a id="credentials"></a>
+**Why can't I access my ClearML Server when I run my code in a virtual machine?** <a id="vm_server"></a>
 
-This can happen when your code isn't executed in the same machine as your ClearML server, which usually happens when using 
-a virtual machine. If ClearML Server is configured to run on "localhost", then it is running on the local machine, and not 
-the virtual machine where the code is running. You need to make sure that that server IP address specified in the 
-configuration is always externally available from the machine where the code is executed.
+This can happen when your code isn't executed in the same machine as your ClearML Server. In the configuration file, 
+make sure to write the server's IP address in a way that the virtual machine will know how to access it. 
 
-To fix this, go to the `api` section of your `clearml.conf` file. Instead of `localhost`, point to your virtual machine's 
+When you run an experiment, `clearml-init`, or clearml-agent on a VM, `localhost` will point to the VM. If the 
+server is running locally and not on the VM, then the VM will not recognize the server with an IP pointing to `localhost`. 
+
+To fix this, go to the `api` section of your `clearml.conf` file. Instead of `localhost`, write out your local machine's 
 IP address. It should look something like this:
 
 ```
@@ -867,6 +868,7 @@ api {
     }
 }
 ```
+
 
 ## ClearML Agent
 
