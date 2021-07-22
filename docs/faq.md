@@ -852,8 +852,8 @@ If your ClearML Web-App (UI) does not show anything, it may be an error authenti
 This can happen when your code isn't executed in the same machine as your ClearML Server. In the configuration file, 
 make sure to write the server's IP address in a way that the virtual machine will know how to access it. 
 
-When you run an experiment, `clearml-init`, or clearml-agent on a VM, `localhost` will point to the VM. If the 
-server is running locally and not on the VM, then the VM will not recognize the server with an IP pointing to `localhost`. 
+When you run an experiment, `clearml-init`, or clearml-agent on a VM, `localhost` refers to the VM. If the 
+server is running locally and not on the VM, then the VM will not recognize the server with its IP address written as `localhost`. 
 
 To fix this, go to the `api` section of your `clearml.conf` file. Instead of `localhost`, write out your local machine's 
 IP address. It should look something like this:
