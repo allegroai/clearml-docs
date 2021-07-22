@@ -5,10 +5,11 @@ title: Version 1.1
 ### ClearML Server 1.1.0 
 
 **New Features and Improvements**
+
 - Add metric snapshot plot to project overview UI - Show an aggregated view of all project experiments value for a leading metric
 - Add logical 'AND' option to UI experiment table tag filter
 - Add Task runtime properties to experiment INFO UI tab 
-- Add full screen view for any experiment result plot.
+- Add full screen view for any experiment result plot
 - Add version information to UI profile page
 - Improve UI table view configuration persistence - User table-view configuration is saved per project:
     - Visible columns 
@@ -24,10 +25,10 @@ title: Version 1.1
 - Fix experiment details UI failure opening hyperparameter sections beginning with "#" [ClearML Server GitHub issue 79](https://github.com/allegroai/clearml-server/issues/79)  
 - Fix UI dataview filter resetting version on filter addition
 - Fix UI project overview:
-- Fix links in project overview not working.  
-- Allow editing empty overview for legacy projects.
-- Fix Table plots using fraction of available space.  \
-- Fix scalars color assignment broken by '.' in scalar name.
+  - Fix links in project overview not working  
+  - Allow editing empty overview for legacy projects
+- Fix Table plots using fraction of available space 
+- Fix scalars color assignment broken by '.' in scalar name
 - Fix tasks cannot be moved between queues
 - Fix UI Docker argument input - Force arguments in designated field
 - Fix extraneous "tag" string prefixing Commit ID in Task execution information UI
