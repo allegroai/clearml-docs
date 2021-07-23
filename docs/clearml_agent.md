@@ -135,162 +135,165 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
     * Mac - `$HOME/clearml.conf`
     * Windows - `\User\<username>\clearml.conf`
 
-1. After the `api` section, add the following `agent` section:
-    
+1. After the `api` section, add your `agent` section
+     <details className="cml-expansion-panel configuration">
+     <summary className="cml-expansion-panel-summary">View sample agent section</summary>
+     <div className="cml-expansion-panel-content">
+
         agent {
-            # Set GIT user/pass credentials (if user/pass are set, GIT protocol will be set to https)
-            # leave blank for GIT SSH credentials (set force_git_ssh_protocol=true to force SSH protocol)
-            git_user: ""
-            git_pass: ""
-            # Limit credentials to a single domain, for example: github.com,
-            # all other domains will use public access (no user/pass). Default: always send user/pass for any VCS domain
-            git_host=""
-   
-            # Force GIT protocol to use SSH regardless of the git url (Assumes GIT user/pass are blank)
-            force_git_ssh_protocol: false
-            # Force a specific SSH port when converting http to ssh links (the domain is kept the same)
-            # force_git_ssh_port: 0
-            # Force a specific SSH username when converting http to ssh links (the default username is 'git')
-            # force_git_ssh_user: git
-   
-            # unique name of this worker, if None, created based on hostname:process_id
-            # Override with os environment: CLEARML_WORKER_ID
-            # worker_id: "clearml-agent-machine1:gpu0"
-            worker_id: ""
-        
-            # worker name, replaces the hostname when creating a unique name for this worker
-            # Override with os environment: CLEARML_WORKER_ID
-            # worker_name: "clearml-agent-machine1"
-            worker_name: ""
-   
-            # Set the python version to use when creating the virtual environment and launching the experiment
-            # Example values: "/usr/bin/python3" or "/usr/local/bin/python3.6"
-            # The default is the python executing the clearml_agent
-            python_binary: ""
-        
-            # select python package manager:
-            # currently supported pip and conda
-            # poetry is used if pip selected and repository contains poetry.lock file
-            package_manager: {
-               # supported options: pip, conda, poetry
-               type: pip,
-        
-               # specify pip version to use (examples "<20", "==19.3.1", "", empty string will install the latest version)
-               pip_version: "<20.2",
-        
-               # virtual environment inheres packages from system
-               system_site_packages: false,
-               # install with --upgrade
-               force_upgrade: false,
-        
-               # additional artifact repositories to use when installing python packages
-               # extra_index_url: ["https://allegroai.jfrog.io/clearmlai/api/pypi/public/simple"]
-               extra_index_url: []
-                
-               # additional conda channels to use when installing with conda package manager
-               conda_channels: ["defaults", "conda-forge", "pytorch", ]
-               # conda_full_env_update: false
-               # conda_env_as_base_docker: false
+           # Set GIT user/pass credentials (if user/pass are set, GIT protocol will be set to https)
+           # leave blank for GIT SSH credentials (set force_git_ssh_protocol=true to force SSH protocol)
+           git_user: ""
+           git_pass: ""
+           # Limit credentials to a single domain, for example: github.com,
+           # all other domains will use public access (no user/pass). Default: always send user/pass for any VCS domain
+           git_host=""
+
+           # Force GIT protocol to use SSH regardless of the git url (Assumes GIT user/pass are blank)
+           force_git_ssh_protocol: false
+           # Force a specific SSH port when converting http to ssh links (the domain is kept the same)
+           # force_git_ssh_port: 0
+           # Force a specific SSH username when converting http to ssh links (the default username is 'git')
+           # force_git_ssh_user: git
+
+           # unique name of this worker, if None, created based on hostname:process_id
+           # Override with os environment: CLEARML_WORKER_ID
+           # worker_id: "clearml-agent-machine1:gpu0"
+           worker_id: ""
+
+           # worker name, replaces the hostname when creating a unique name for this worker
+           # Override with os environment: CLEARML_WORKER_ID
+           # worker_name: "clearml-agent-machine1"
+           worker_name: ""
+
+           # Set the python version to use when creating the virtual environment and launching the experiment
+           # Example values: "/usr/bin/python3" or "/usr/local/bin/python3.6"
+           # The default is the python executing the clearml_agent
+           python_binary: ""
+
+           # select python package manager:
+           # currently supported pip and conda
+           # poetry is used if pip selected and repository contains poetry.lock file
+           package_manager: {
+              # supported options: pip, conda, poetry
+              type: pip,
+
+              # specify pip version to use (examples "<20", "==19.3.1", "", empty string will install the latest version)
+              pip_version: "<20.2",
+
+              # virtual environment inheres packages from system
+              system_site_packages: false,
+              # install with --upgrade
+              force_upgrade: false,
+
+              # additional artifact repositories to use when installing python packages
+              # extra_index_url: ["https://allegroai.jfrog.io/clearmlai/api/pypi/public/simple"]
+              extra_index_url: []
                
-               # set the priority packages to be installed before the rest of the required packages
-               # priority_packages: ["cython", "numpy", "setuptools", ]
+              # additional conda channels to use when installing with conda package manager
+              conda_channels: ["defaults", "conda-forge", "pytorch", ]
+              # conda_full_env_update: false
+              # conda_env_as_base_docker: false
+              
+              # set the priority packages to be installed before the rest of the required packages
+              # priority_packages: ["cython", "numpy", "setuptools", ]
 
-               # set the optional priority packages to be installed before the rest of the required packages,
-               # In case a package installation fails, the package will be ignored,
-               # and the virtual environment process will continue
-               # priority_optional_packages: ["pygobject", ]
+              # set the optional priority packages to be installed before the rest of the required packages,
+              # In case a package installation fails, the package will be ignored,
+              # and the virtual environment process will continue
+              # priority_optional_packages: ["pygobject", ]
 
-               # set the post packages to be installed after all the rest of the required packages
-               # post_packages: ["horovod", ]
+              # set the post packages to be installed after all the rest of the required packages
+              # post_packages: ["horovod", ]
 
-               # set the optional post packages to be installed after all the rest of the required packages,
-               # In case a package installation fails, the package will be ignored,
-               # and the virtual environment process will continue
-               # post_optional_packages: []
+              # set the optional post packages to be installed after all the rest of the required packages,
+              # In case a package installation fails, the package will be ignored,
+              # and the virtual environment process will continue
+              # post_optional_packages: []
 
-               # set to True to support torch nightly build installation,
-               # notice: torch nightly builds are ephemeral and are deleted from time to time
-               torch_nightly: false,
-            },
-        
-            # target folder for virtual environments builds, created when executing experiment
-            venvs_dir = ~/.clearml/venvs-builds
-        
-            # cached virtual environment folder
-            venvs_cache: {
-               # maximum number of cached venvs
-               max_entries: 10
-               # minimum required free space to allow for cache entry, disable by passing 0 or negative value
-               free_space_threshold_gb: 2.0
-               # unmark to enable virtual environment caching
-               # path: ~/.clearml/venvs-cache
-            },
+              # set to True to support torch nightly build installation,
+              # notice: torch nightly builds are ephemeral and are deleted from time to time
+              torch_nightly: false,
+           },
 
-            # cached git clone folder
-            vcs_cache: {
-                enabled: true,
-                path: ~/.clearml/vcs-cache
-            },
-        
-            # use venv-update in order to accelerate python virtual environment building
-            # Still in beta, turned off by default
-            venv_update: {
-                enabled: false,
-            },
-        
-            # cached folder for specific python package download (mostly pytorch versions)
-            pip_download_cache {
-                enabled: true,
-                path: ~/.clearml/pip-download-cache
-            },
-        
-            translate_ssh: true,
-            # reload configuration file every daemon execution
-            reload_config: false,
-        
-            # pip cache folder mapped into docker, used for python package caching
-            docker_pip_cache = ~/.clearml/pip-cache
-            # apt cache folder mapped into docker, used for ubuntu package caching
-            docker_apt_cache = ~/.clearml/apt-cache
-        
-            # optional arguments to pass to docker image
-            # these are local for this agent and will not be updated in the experiment's docker_cmd section
-            # extra_docker_arguments: ["--ipc=host", "-v", "/mnt/host/data:/mnt/data"]
-        
-            # optional shell script to run in docker when started before the experiment is started
-            # extra_docker_shell_script: ["apt-get install -y bindfs", ]
-        
-            # Install the required packages for opencv libraries (libsm6 libxext6 libxrender-dev libglib2.0-0),
-            # for backwards compatibility reasons, true as default,
-            # change to false to skip installation and decrease docker spin up time
-            # docker_install_opencv_libs: true
-   
-            # set to true in order to force "docker pull" before running an experiment using a docker image.
-            # This makes sure the docker image is updated.
-            docker_force_pull: false
-        
-            default_docker: {
-                # default docker image to use when running in docker mode
-                image: "nvidia/cuda:10.1-runtime-ubuntu18.04"
-        
-                # optional arguments to pass to docker image
-                # arguments: ["--ipc=host", ]
-            }
-        
-            # set the OS environments based on the Task's Environment section before launching the Task process.
-            enable_task_env: false
+           # target folder for virtual environments builds, created when executing experiment
+           venvs_dir = ~/.clearml/venvs-builds
 
-            # CUDA versions used for Conda setup & solving PyTorch wheel packages
-            # it Should be detected automatically. Override with os environment CUDA_VERSION / CUDNN_VERSION
-            # cuda_version: 10.1
-            # cudnn_version: 7.6
+           # cached virtual environment folder
+           venvs_cache: {
+              # maximum number of cached venvs
+              max_entries: 10
+              # minimum required free space to allow for cache entry, disable by passing 0 or negative value
+              free_space_threshold_gb: 2.0
+              # unmark to enable virtual environment caching
+              # path: ~/.clearml/venvs-cache
+           },
+
+           # cached git clone folder
+           vcs_cache: {
+               enabled: true,
+               path: ~/.clearml/vcs-cache
+           },
+
+           # use venv-update in order to accelerate python virtual environment building
+           # Still in beta, turned off by default
+           venv_update: {
+               enabled: false,
+           },
+
+           # cached folder for specific python package download (mostly pytorch versions)
+           pip_download_cache {
+               enabled: true,
+               path: ~/.clearml/pip-download-cache
+           },
+
+           translate_ssh: true,
+           # reload configuration file every daemon execution
+           reload_config: false,
+
+           # pip cache folder mapped into docker, used for python package caching
+           docker_pip_cache = ~/.clearml/pip-cache
+           # apt cache folder mapped into docker, used for ubuntu package caching
+           docker_apt_cache = ~/.clearml/apt-cache
+
+           # optional arguments to pass to docker image
+           # these are local for this agent and will not be updated in the experiment's docker_cmd section
+           # extra_docker_arguments: ["--ipc=host", "-v", "/mnt/host/data:/mnt/data"]
+
+           # optional shell script to run in docker when started before the experiment is started
+           # extra_docker_shell_script: ["apt-get install -y bindfs", ]
+
+           # Install the required packages for opencv libraries (libsm6 libxext6 libxrender-dev libglib2.0-0),
+           # for backwards compatibility reasons, true as default,
+           # change to false to skip installation and decrease docker spin up time
+           # docker_install_opencv_libs: true
+
+           # set to true in order to force "docker pull" before running an experiment using a docker image.
+           # This makes sure the docker image is updated.
+           docker_force_pull: false
+
+           default_docker: {
+               # default docker image to use when running in docker mode
+               image: "nvidia/cuda:10.1-runtime-ubuntu18.04"
+
+               # optional arguments to pass to docker image
+               # arguments: ["--ipc=host", ]
+           }
+
+           # set the OS environments based on the Task's Environment section before launching the Task process.
+           enable_task_env: false
+
+           # CUDA versions used for Conda setup & solving PyTorch wheel packages
+           # it Should be detected automatically. Override with os environment CUDA_VERSION / CUDNN_VERSION
+           # cuda_version: 10.1
+           # cudnn_version: 7.6
         }
-
+   </div></details>   
 1. Save the configuration.
 
 ## Execution
 
-### Simple Execution
+### Spinning up an Agent
 
 #### Executing an Agent
 To execute an agent, listening to a queue, run:
@@ -370,40 +373,6 @@ clearml-agent daemon --queue default --foreground
 ```
 
 
-## Building Docker Containers
-
-### Task Container
-
-Build a Docker container that when launched executes a specific experiment, or a clone (copy) of that experiment.
-
-- Build a Docker container that at launch will execute a specific Task.
-  ```bash
-  clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point reuse_task
-  ```
-- Build a Docker container that at launch will clone a Task  specified by Task ID, and will execute the newly cloned Task.
-  ```bash
-  clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point clone_task
-  ```
-- Run built Docker by executing:
-  ```bash
-  docker run <new-docker-name>
-  ```
-
-### Base Docker Container
-
-Build a Docker container according to the execution environment of a specific Task.
-
-```bash
-clearml-agent build --id <task-id> --docker --target <new-docker-name>
-```
-
-
-It's possible to add the Docker container as the base Docker image to a Task (experiment), using one of the following methods:
-
-- Using the **ClearML Web UI** - See [Base Docker image](webapp/webapp_exp_tuning.md#base-docker-image) on the "Tuning 
-  Experiments" page.
-- In the **ClearML** configuration file - Use the **ClearML** configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker) 
-  options.
 
 ## Execution Environments
 
@@ -490,6 +459,51 @@ venvs_cache: {
     },
 ```
 
+## Dynamic GPU Allocation
+
+:::important
+Available with the ClearML Enterprise offering
+:::
+
+The ClearML Enterprise server supports dynamic allocation of GPUs based on queue properties.
+Agents can spin multiple Tasks from different queues based on the number of GPUs the queue
+needs.
+
+`dynamic-gpus` enables dynamic allocation of GPUs based on queue properties.
+To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
+
+```console
+clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
+```
+
+### Example
+
+Let's say there are three queues on a server, named:
+* `dual_gpu`
+* `quad_gpu`
+* `opportunistic`
+
+An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple
+queues that are configured to run with a certain amount of resources:
+
+```console
+clearml-agent daemon --dynamic-gpus --queues quad_gpu=4 dual_gpu=2 
+``` 
+
+The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue.
+The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from `dual_gpu`
+queue, look for available GPUs again and spin on GPUs 4-5.
+
+Another option for allocating GPUs:
+
+```console
+clearml-agent daemon --dynamic-gpus --queue dual=2 opportunistic=1-4
+``` 
+
+Notice that a minimum and maximum value of GPUs was specified for the `opportunistic` queue. This means the agent
+will pull a Task from the `opportunistic` queue and allocate up to 4 GPUs based on availability (i.e. GPUs not currently
+being used by other agents).
+
 ## Services Mode
 The ClearML Agent Services Mode executes an Agent that can execute multiple Tasks. This is useful for Tasks that are mostly 
 idling, such as periodic cleanup services, or a [pipeline controller](references/sdk/automation_controller_pipelinecontroller.md). 
@@ -524,56 +538,47 @@ CLEARML_API_ACCESS_KEY
 CLEARML_API_SECRET_KEY
 ```
 
+## Exporting a Task into a Standalone Docker Container
+
+### Task Container
+
+Build a Docker container that when launched executes a specific experiment, or a clone (copy) of that experiment.
+
+- Build a Docker container that at launch will execute a specific Task.
+  ```bash
+  clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point reuse_task
+  ```
+- Build a Docker container that at launch will clone a Task  specified by Task ID, and will execute the newly cloned Task.
+  ```bash
+  clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point clone_task
+  ```
+- Run built Docker by executing:
+  ```bash
+  docker run <new-docker-name>
+  ```
+
+### Base Docker Container
+
+Build a Docker container according to the execution environment of a specific Task.
+
+```bash
+clearml-agent build --id <task-id> --docker --target <new-docker-name>
+```
+
+
+It's possible to add the Docker container as the base Docker image to a Task (experiment), using one of the following methods:
+
+- Using the **ClearML Web UI** - See [Base Docker image](webapp/webapp_exp_tuning.md#base-docker-image) on the "Tuning
+  Experiments" page.
+- In the **ClearML** configuration file - Use the **ClearML** configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
+  options.
+
 ## Google Colab
 
 ClearML Agent can run on a [google colab](https://colab.research.google.com/) instance. This helps users to leverage 
 compute resources provided by google colab and send experiments for execution on it. <br/>
 Check out [this](guides/ide/google_colab.md) tutorial on how to run a ClearML Agent on Google Colab!
 
-## Dynamic GPU Allocation 
-
-:::important
-Available with the ClearML Enterprise offering
-:::
-
-The ClearML Enterprise server supports dynamic allocation of GPUs based on queue properties.
-Agents can spin multiple Tasks from different queues based on the number of GPUs the queue 
-needs.
-
-`dynamic-gpus` enables dynamic allocation of GPUs based on queue properties. 
-To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
-
-```console
-clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
-```
-
-### Example
-
-Let's say there are three queues on a server, named: 
-* `dual_gpu`
-* `quad_gpu`
-* `opportunistic` 
-
-An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple 
-queues that are configured to run with a certain amount of resources: 
-
-```console
-clearml-agent daemon --dynamic-gpus --queues quad_gpu=4 dual_gpu=2 
-``` 
-
-The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue. 
-The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from `dual_gpu` 
-queue, look for available GPUs again and spin on GPUs 4-5. 
-
-Another option for allocating GPUs:
-
-```console
-clearml-agent daemon --dynamic-gpus --queue dual=2 opportunistic=1-4
-``` 
-
-Notice that a minimum and maximum value of GPUs was specified for the `opportunistic` queue. This means the agent 
-will pull a Task from the `opportunistic` queue and allocate up to 4 GPUs based on availability (i.e. GPUs not currently 
-being used by other agents).
 
 ## Scheduling working hours
 
