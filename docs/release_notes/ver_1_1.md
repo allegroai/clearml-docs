@@ -2,9 +2,9 @@
 title: Version 1.1
 ---
 
-## ClearML Server 1.1.0 
+### ClearML Server 1.1.0 
 
-### New Features and Improvements
+**New Features and Improvements**
 
 - Add metric snapshot plot to project overview UI - Show an aggregated view of all project experiments value for a leading metric
 - Add logical `AND` option to UI experiment table tag filter
@@ -20,7 +20,7 @@ title: Version 1.1
     - Active sort
     - Active filters
 
-### Bug Fixes
+**Bug Fixes**
 
 - Fix experiment details UI failure opening hyperparameter sections beginning with `#` [ClearML Server GitHub issue #79](https://github.com/allegroai/clearml-server/issues/79)
 - Fix performance issues with UI comparison of  large experiments [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1621698235159800)
