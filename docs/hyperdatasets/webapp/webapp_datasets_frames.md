@@ -59,9 +59,9 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 
 |Control |Mode |Action|
 |----|-----|----|
-| Hold Shift | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) | While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
-| Enter | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />) | Complete annotation |
-| Esc | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-lg space-sm" />), Polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-lg space-sm" />) | Cancel annotation process | 
+| Hold Shift | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />) | While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
+| Enter | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />) | Complete annotation |
+| Esc | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />), Polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-md space-sm" />) | Cancel annotation process | 
 
 ### Viewing and editing frames
 
