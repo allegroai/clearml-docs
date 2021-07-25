@@ -105,7 +105,7 @@ optimization.
   ```
 <br/><br/>
 
-For more information about `HyperParameterOptimizer` and supported optimization modules, see the [Automation module reference](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
+For more information about `HyperParameterOptimizer` and supported optimization modules, see the [HyperParameterOptimizer class reference](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
 
 ## Tutorial
 
