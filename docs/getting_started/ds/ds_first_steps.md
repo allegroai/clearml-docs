@@ -42,6 +42,14 @@ Task = Task.init(project_name=”great project”, task_name=”best experiment�
 Task name is not unique, it's possible to have multiple experiments with the same name.
 If the project does not already exist, a new one will be created automatically.
 
+The console should return the following output:
+
+```
+ClearML Task: created new task id=1ca59ef1f86d44bd81cb517d529d9e5a
+2021-07-25 13:59:09
+ClearML results page: https://community/projects/4043a1657f374e9298649c6ba72ad233/experiments/1ca59ef1f86d44bd81cb517d529d9e5a/output/log
+2021-07-25 13:59:16
+```
 
 **That’s it!** You are done integrating ClearML with your code :)
 
