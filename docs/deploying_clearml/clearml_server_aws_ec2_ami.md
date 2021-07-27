@@ -149,7 +149,7 @@ sudo tar czvf ~/clearml_backup_config.tgz -C /opt/clearml/config .
 
 ## ClearML Server AWS community AMIs
 
-The following sections contain lists of AMI Image IDs, per region, for each released **ClearML Server** version.
+The following section contains a list of AMI Image IDs per region for the latest **ClearML Server** version.
 
 
 
