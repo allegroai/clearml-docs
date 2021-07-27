@@ -849,14 +849,13 @@ If your ClearML Web-App (UI) does not show anything, it may be an error authenti
     
 **Why can't I access my ClearML Server when I run my code in a virtual machine?** <a id="vm_server"></a>
 
-This can happen when your code isn't executed in the same machine as your ClearML Server. In the configuration file, 
-make sure to write the server's IP address in a way that the virtual machine will know how to access it. 
+When executing experiments inside a virtual machine (or container), the network definitions inside the VM are different from 
+those of the host. The virtual machine's and the server machine's IP addresses are different, so you have to make sure 
+that the machine that is executing the experiment can access the server's machine. 
 
-When you run an experiment, `clearml-init`, or clearml-agent on a VM, `localhost` refers to the VM. If the 
-server is running locally and not on the VM, then the VM will not recognize the server with its IP address written as `localhost`. 
-
-To fix this, go to the `api` section of your `clearml.conf` file. Instead of `localhost`, write out your local machine's 
-IP address. It should look something like this:
+Make sure to have an independent configuration file for the virtual machine where you are running your experiments. 
+Edit the `api` section of your `clearml.conf` file and insert IP addresses of the server machine that are accessible 
+from the VM. It should look something like this:
 
 ```
 api {
