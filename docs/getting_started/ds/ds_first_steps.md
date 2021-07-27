@@ -38,6 +38,7 @@ Then initialize the Task object in your `main()` function, or the beginning of t
 ```python
 Task = Task.init(project_name=”great project”, task_name=”best experiment”)
 ```
+
 Task name is not unique, it's possible to have multiple experiments with the same name.
 If the project does not already exist, a new one will be created automatically.
 
