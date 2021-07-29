@@ -2,19 +2,16 @@
 title: Projects
 ---
 
-Projects are the entities similar to folders that contain [tasks](task.md), [models](artifacts.md#models), and [dataviews](../hyperdatasets/dataviews.md). 
-Users can decide how to group tasks, models, and dataviews in different projects, though different models or objectives 
-are usually grouped into different projects. Grouping into projects helps in identifying experiments, models, and dataviews 
-when queried.
-
-:::note
-Dataviews are available with the ClearML Enterprise offering
-:::
+Projects are contextual containers for [tasks](task.md) and [models](artifacts.md#models) (as well as [dataviews](../hyperdatasets/dataviews.md) 
+when hyperdatasets are enabled), providing a logical structure similar to file system folders. 
+An often useful method is to categorize components into projects according to models or objectives. 
+Grouping into projects helps in identifying tasks, models, and dataviews when queried.
 
 Projects can be divided into sub-projects (and sub-sub-projects, etc.) just like files and subdirectories on a 
 computer, making organization easier. 
 
-When creating projects, there is an option to write a description, where users can provide the project's general picture. 
+Projects contain a textual description field for noting relevant information. The WebApp supports markdown rendering 
+of the description (see [overview](../webapp/webapp_project_overview.md)).
 
 In addition, the project's default output URI can be specified. When new experiments from 
 the project are executed, the model checkpoints (snapshots) and artifacts are stored in the default output location. 
@@ -31,7 +28,7 @@ models, and dataviews, can be viewed in the project's [experiments table](../web
 ### Creating sub-projects
 
 When [initializing a task](task.md#task-creation), its project needs to be specified. If the project entered does not exist, it will be created. 
-Projects can be divided into sub-projects, just like folders are broken into sub-folders. Input into the `project_name` 
+Projects can contain sub-projects, just like folders can contain sub-folders. Input into the `project_name` 
 parameter a target project path. The project path should follow the project tree hierarchy, in which the project and 
 sub-projects are slash (`/`) delimited.
 
