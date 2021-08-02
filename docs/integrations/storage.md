@@ -18,6 +18,9 @@ Once uploading an object to a storage medium, each machine that uses the object 
 
 Configuration for storage is done by editing the [clearml.conf](../configs/clearml_conf.md).
 
+The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) format, 
+so environment variables can be input and then accessed.
+
 ### Configuring AWS S3
 
 Modify these parts of the clearml.conf file and add the key, secret, and region of the s3 bucket.
@@ -49,6 +52,22 @@ aws {
     }
 ```
 
+AWS's environment variables can also be input.  Instead of `sdk.aws.s3.key`, `sdk.aws.s3.secret` and `sdk.aws.s3.region`, 
+use the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION variables.
+
+For example: 
+```
+s3 {
+            ...
+            # default, used for any bucket not specified below
+            key: "${AWS_ACCESS_KEY_ID}"
+            secret: "${AWS_SECRET_ACCESS_KEY}"
+            region: "${AWS_DEFAULT_REGION}"
+            ...
+            ....
+}
+``` 
+
 ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
 ```
                 #     host: "my-minio-host:9000"
@@ -58,6 +77,7 @@ ClearML also supports [MinIO](https://github.com/minio/minio) by adding this con
                 #     secure: false
                 # }
 ```
+
 
 ### Configuring Azure
 To configure Azure blob storage specify the account name and key.
@@ -72,6 +92,21 @@ To configure Azure blob storage specify the account name and key.
         #     }
         # ]
     }
+```
+
+Azure's environment variables can be input. Instead of `sdk.azure.storage.containers.account_name`
+and `sdk.azure.storage.containers.account_key`, use the AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_KEY environment variables.
+
+For example:
+```
+...
+containers: [
+             {
+                 account_name: "${AZURE_STORAGE_ACCOUNT}"
+                 account_key: "${AZURE_STORAGE_KEY}"
+                 # container_name:
+             }
+         ]
 ```
 
 ### Configuring Google Storage
@@ -95,6 +130,18 @@ It's also possible to specify credentials for a specific bucket.
         #     },
         # ]
     }
+```
+
+The GOOGLE_APPLICATION_CREDENTIALS environment variable can be used instead of defining `sdk.google.storage.credentials_json`.
+```
+...
+credentials = [
+             {
+                 bucket: "my-bucket"
+                 ...
+                 credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+             }
+
 ```
 
 ## Storage Manager
