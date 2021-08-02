@@ -31,7 +31,7 @@ ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b78684
 ```
 
 All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. The 
-session's zip folder's default location is `~/.clearml/cache/offline/<task_id>.zip`.
+session's zip folder's location is `~/.clearml/cache/offline/<task_id>.zip`.
 
 ## Uploading local session
 
