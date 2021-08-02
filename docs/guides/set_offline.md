@@ -30,6 +30,9 @@ ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
 ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
 ```
 
+All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. The 
+session's zip folder's default location is `~/.clearml/cache/offline/<task_id>.zip`.
+
 ## Uploading local session
 
 In order to upload to the ClearML Server the local execution data that the Task captured offline, use the 
