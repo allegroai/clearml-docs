@@ -14,7 +14,7 @@ This reference page is organized by configuration file section:
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
 in the **ClearML** GitHub repositories  
 
-### Editing your configuration file
+## Editing your configuration file
 
 To add, change, or delete options, edit your configuration file.
 
@@ -29,10 +29,27 @@ To add, change, or delete options, edit your configuration file.
 1. In the required section (sections listed on this page), add, modify, or remove required options.
 1. Save configuration file.
 
+## Environment variables
+ClearML's configuration file uses HOCON configuration format, which supports using environment variables.
+
+For example: 
+```editorconfig
+ google.storage {
+        # # Default project and credentials file
+        # # Will be used when no bucket configuration is found
+        project: "clearml"
+        credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+```
+
+`${GOOGLE_APPLICATION_CREDENTIALS}` will automatically be substituted by the environment variable value.
+
+See [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) for more information about the configuration format. 
+
+See [Note on Windows](https://github.com/lightbend/config/blob/main/HOCON.md#note-on-windows-and-case-sensitivity-of-environment-variables)
+for information about using environment variables with Windows. 
 
 
-<a class="tr_top_negative" name="agent"></a>
-
+## Configuration file sections
 
 ### agent section
 
