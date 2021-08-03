@@ -30,7 +30,8 @@ To add, change, or delete options, edit your configuration file.
 1. Save configuration file.
 
 ## Environment variables
-ClearML's configuration file uses HOCON configuration format, which supports using environment variables.
+ClearML's configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) configuration format, 
+which supports accessing environment.
 
 For example: 
 ```editorconfig
@@ -43,10 +44,8 @@ For example:
 
 `${GOOGLE_APPLICATION_CREDENTIALS}` will automatically be substituted by the environment variable value.
 
-See [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) for more information about the configuration format. 
-
 See [Note on Windows](https://github.com/lightbend/config/blob/main/HOCON.md#note-on-windows-and-case-sensitivity-of-environment-variables)
-for information about using environment variables with Windows. 
+for information about using environment variables with Windows in the configuration file. 
 
 
 ## Configuration file sections
