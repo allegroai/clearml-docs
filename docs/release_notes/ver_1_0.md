@@ -2,6 +2,40 @@
 title: Version 1.0
 ---
 
+### ClearML 1.0.5
+
+**Features**
+
+- Add Click support [ClearML GitHub issue #386](https://github.com/allegroai/clearml/issues/386)
+- Add progress bar to SHA2 generation [ClearML GitHub issue #396](https://github.com/allegroai/clearml/issues/396)
+- Add prefix to Task reported runtime info: `cpu_cores`, `gpu_driver_version` and `gpu_driver_cuda_version`
+- Add support for `Logger.report_text()` explicit log-level reporting
+- Add `return_full_path` argument to `StorageManager.list()`
+- Support `Task.get_tasks()` passing multiple project names
+- Add `TaskScheduler`
+- Add `task_filter` argument to `Objective.get_top_tasks()`, allow `name` as a `task_filter` field
+- Add `--output-uri` command-line option to `clearml-task`
+- Add `requirements_file` argument to `Task.force_requirements_env_freeze()` to allow specifying a local requirements file
+- Add support for `list` type argument in `Task.connect_configuration()` (previously only `dict` type was supported)
+- Rename `TrainsTuner` to `ClearmlTuner`
+- Update documentation links
+- Get notebook auth token from the JUPYTERHUB_API_TOKEN environment
+variable if it is not present in the server info
+
+**Bug Fixes**
+
+- Fix Pandas with multi-index [ClearML GitHub issue #399](https://github.com/allegroai/clearml/issues/399)
+- Fix check permissions fail in `HTTPDriver` [ClearML GitHub issue #394](https://github.com/allegroai/clearml/issues/394)
+- Fix Dataset not setting system tag on existing `data_processing` Tasks
+- Fix disable redundant resource monitoring in pipeline controller
+- Fix `ClearMLJob` when both `project` and `target_project` are specified
+- Fix `ClearMLJob` docker container info is not cached
+- Fix no print logging after Python logging handlers are cleared
+- Fix `PipelineController` callback returning `False`
+- Fix internal `logging.Logger` can't be pickled (only applicable to Python 3.6 or lower)
+- Wait for reported events to flush to ensure `Task.flush()` with `wait_for_uploads=True` awaits background processes
+
+
 ### ClearML 1.0.4
 
 **Features**
