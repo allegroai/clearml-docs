@@ -59,7 +59,7 @@ module.exports = {
             'guides/guidemain',
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
             {'Data Management': ['guides/data management/data_man_simple', 'guides/data management/data_man_folder_sync', 'guides/data management/data_man_cifar_classification']},
-            {'Clearml Task': ['guides/clearml-task/clearml_task_tutorial']},
+            {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
