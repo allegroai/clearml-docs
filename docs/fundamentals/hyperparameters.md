@@ -111,7 +111,7 @@ See examples of ClearML's automatic logging of TFDefines:
 [Hydra](https://github.com/facebookresearch/hydra) is a module developed by FaceBook AI Research to manage experiments' 
 parameters. Hydra offers the best of both worlds, managing configurations with files while making parameters overridable at runtime.
 
-ClearML logs the Omegaconf which holds all the configuration files, as well as overriden values. 
+ClearML logs the Omegaconf which holds all the configuration files, as well as overridden values. 
 
 Check out the [example code](https://github.com/allegroai/clearml/blob/master/examples/frameworks/hydra/hydra_example.py),
 which demonstrates the creation of a configuration object to which configuration values can be added and overridden using the 

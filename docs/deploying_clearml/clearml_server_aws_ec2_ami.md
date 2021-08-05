@@ -149,31 +149,31 @@ sudo tar czvf ~/clearml_backup_config.tgz -C /opt/clearml/config .
 
 ## ClearML Server AWS community AMIs
 
-The following sections contain lists of AMI Image IDs, per region, for each released **ClearML Server** version.
+The following section contains a list of AMI Image IDs per region for the latest **ClearML Server** version.
 
 
 
 ### Latest version
 
-#### v1.0.2
+#### v1.1.0
 
-* **eu-north-1** : ami-04db2c396ce47ba78 
-* **ap-south-1** : ami-0052405573bfec551 
-* **eu-west-3** : ami-03f632c63f93adf8a 
-* **eu-west-2** : ami-0a4224787c2f50fe9 
-* **eu-west-1** : ami-0d1275951594ad1cc 
-* **ap-northeast-3** : ami-0475a797c30290331 
-* **ap-northeast-2** : ami-02cb3189a0678d09a 
-* **ap-northeast-1** : ami-06dd488152487b1f1 
-* **sa-east-1** : ami-09ae7b95817dc3a71 
-* **ca-central-1** : ami-03db73a5a7de428f0 
-* **ap-southeast-1** : ami-0fa16c18439f9085e 
-* **ap-southeast-2** : ami-01edf47969e2515dd 
-* **eu-central-1** : ami-0c41a118281233368 
-* **us-east-2** : ami-0d8203795c3f6a861 
-* **us-west-1** : ami-0e5eb94cd23c094d5 
-* **us-west-2** : ami-032afac2f83d1b8f3 
-* **us-east-1** : ami-0d255a19090ed388d
+* **eu-north-1** : ami-0d04eba79249d225b 
+* **ap-south-1** : ami-01900399c17492874 
+* **eu-west-3** : ami-0401f02712333a812 
+* **eu-west-2** : ami-0504ebac43689749c 
+* **eu-west-1** : ami-028729bbc6acdd57d 
+* **ap-northeast-3** : ami-051819a5650f03a81 
+* **ap-northeast-2** : ami-0b57b812e13b1e1f1 
+* **ap-northeast-1** : ami-09a8d6225a9f4a67f 
+* **sa-east-1** : ami-0af2b217ba744e4ce 
+* **ca-central-1** : ami-05a6192e633b62110 
+* **ap-southeast-1** : ami-01e402205687879df 
+* **ap-southeast-2** : ami-01a03b2b23c9c806f 
+* **eu-central-1** : ami-0d7892ca1b552741f 
+* **us-east-2** : ami-023f7ce2124538a21 
+* **us-west-1** : ami-06a00e3425351f83c 
+* **us-west-2** : ami-0058ad8734dbc8ef8 
+* **us-east-1** : ami-0f2b67aef5b95dc38 
 
 ## Next Step
 
