@@ -19,8 +19,6 @@ title: Version 1.0
 - Add support for `list` type argument in `Task.connect_configuration()` (previously only `dict` type was supported)
 - Rename `TrainsTuner` to `ClearmlTuner`
 - Update documentation links
-- Get notebook auth token from the JUPYTERHUB_API_TOKEN environment
-variable if it is not present in the server info
 
 **Bug Fixes**
 
