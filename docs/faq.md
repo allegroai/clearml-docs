@@ -77,7 +77,6 @@ title: FAQ
     * [AWS EC2 AMIs?](#aws_ec2_amis)
     * [Google Cloud Platform?](#google_cloud_platform)
 * [How do I restart ClearML Server?](#restart)
-* [Can I deploy ClearML Server on Kubernetes clusters?](#kubernetes)
 * [Can I create a Helm Chart for ClearML Server Kubernetes deployment?](#helm)
 * [My Docker cannot load a local host directory on SELinux?](#selinux)
 
@@ -659,12 +658,6 @@ if you deployed to Linux, see [Restarting](deploying_clearml/clearml_server_linu
 
 <br/>
 
-**Can I deploy ClearML Server on Kubernetes clusters?** <a id="kubernetes"></a>
-
-Yes! ClearML Server supports Kubernetes. For detailed instructions, see [Deploying ClearML Server: Kubernetes](deploying_clearml/clearml_server_kubernetes.md) 
-in the "Deploying ClearML" section.
-
-<br/>
 
 **Can I create a Helm Chart for ClearML Server Kubernetes deployment?** <a id="helm"></a>
 
