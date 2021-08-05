@@ -48,7 +48,7 @@ logger = task.get_logger()
 
 Check out all the available object types that can be reported in the example [here](../guides/reporting/scalar_reporting.md).
 
-#### Media reporting
+### Media reporting
 
 ClearML also supports reporting media (such as audio, video and images) for every iteration.
 This section is mostly used for debugging. It's recommended to use [artifacts](artifacts.md#artifacts) for storing script 
