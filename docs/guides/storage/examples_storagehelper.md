@@ -5,9 +5,9 @@ title: Storage Examples
 This page describes storage examples using the [StorageManager](../../references/sdk/storage.md) 
 class. The storage examples include:
 
-* [Downloading a file](#downloading_storagemanager) - Get an object from storage.
-* [Uploading a file](#uploading_storagemanager) - Upload an object.
-* [Setting cache limits](#cache) - Set the maximum number of objects.
+* [Downloading a file](#downloading-a-file) - Get an object from storage.
+* [Uploading a file](#uploading-a-file) - Upload an object.
+* [Setting cache limits](#setting-cache-limits) - Set the maximum number of objects.
 
 :::note 
 `StorageManager` supports http(s), S3, Google Cloud Storage, Azure, and file system folders.
