@@ -31,6 +31,8 @@ args = parser.parse_args()
 task = Task.init(project_name="examples",task_name="argparser logging")
 ``` 
 
+See argparse logging example [here](../guides/reporting/hyper_parameters.md).
+
 ## Connecting Objects
 
 Users can directly connect objects, such as dictionaries or even custom classes, to Tasks.
@@ -50,6 +52,8 @@ task = Task.init(project_name='examples',task_name='argparser')
 
 task.connect(me)
 ```
+See connecting objects example [here](../guides/reporting/hyper_parameters.md).
+
 
 * Connecting a dictionary:
 ```python
@@ -97,6 +101,10 @@ The CLEARML_LOG_ENVIRONMENT always overrides the clearml.conf file.
 ## TF Defines
 
 ClearML automatically captures TFDefine files, which are used as configuration files for Tensorflow.
+
+See examples of ClearML's automatic logging of TFDefines:
+* [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
+* [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
 
 ## Hydra
 

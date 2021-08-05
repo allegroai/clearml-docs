@@ -37,5 +37,6 @@ A specific branch and commit ID, other than latest commit in master, to be execu
 `--branch <branch_name> --commit <commit_id>` flags.
 If unspecified, `clearml-task` will use the latest commit from the master branch.
 
+## Tutorial
 Learn how to use the `clearml-task` feature [here](../guides/clearml-task/clearml_task_tutorial.md).
 
