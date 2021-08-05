@@ -59,11 +59,15 @@ example of a pipeline with concurrent steps.
 ## Custom pipelines
 
 In cases where a DAG is insufficient (for example, when needing to launch one pipeline, then, if performance is inadequate, 
-rerun pipeline again), users can apply custom logic, using generic methods to enqueue tasks, implemented in python code.
+rerun pipeline again), users can apply cusom logic, using generic methods to enqueue tasks, implemented in python code.
 The custom logic of the pipeline sits in the *Controller Task*'s script.  
 
 Custom pipelines usually involve cloning template tasks, modifying their parameters, and manually enqueuing 
 them to queues (for execution by [agents](../clearml_agent.md)). It's possible to create custom logic that controls inputs 
 (e.g. overriding hyperparameters and artifacts) and acts upon task outputs.
 
-See an example of a custom pipeline [here](../guides/automation/task_piping.md).
+See examples of custom pipelines: 
+    * [Task Piping](../guides/automation/task_piping.md)
+    * [Manual Random Parameter Search](../guides/automation/manual_random_param_search_example.md)
+
+

@@ -46,7 +46,8 @@ The object used for reporting metrics is called **logger** and is obtained by ca
 logger = task.get_logger()
 ```
 
-Check out all the available object types that can be reported in the example [here](../guides/reporting/scalar_reporting.md).
+Check out all the available object types that can be reported in the [Explicit Reporting](../guides/reporting/scalar_reporting.md) 
+example or in the [Jupyter Notebook](../guides/reporting/clearml_logging_example.md) Explicit Reporting example.
 
 ### Media reporting
 
@@ -59,4 +60,21 @@ See details in [Logger.report_media](../references/sdk/logger.md#report_media).
 
 ![image](../img/fundamentals_logger_reported_images.png)
 
-Check out the Media Reporting [example](../guides/reporting/media_reporting).
+Check out the Media Reporting [example](../guides/reporting/media_reporting.md).
+
+### Examples
+
+Check out ClearML's reporting examples for various types of results:
+- [Text](../guides/reporting/text_reporting.md) 
+- [Scalars](../guides/reporting/scalar_reporting.md)
+- Plots 
+    - [2d plots](../guides/reporting/scatter_hist_confusion_mat_reporting.md)
+    - [3d plots](../guides/reporting/3d_plots_reporting.md)
+    - [Tables (Pandas and CSV file)](../guides/reporting/pandas_reporting.md)
+    - [Matplotlib figures](../guides/reporting/manual_matplotlib_reporting.md)
+    - [Plotly figures](../guides/reporting/plotly_reporting.md)
+- Debug Samples
+    - [Images](../guides/reporting/image_reporting.md)
+    - [HTML](../guides/reporting/html_reporting.md)
+    - [Media - images, audio, video](../guides/reporting/media_reporting.md)
+    
