@@ -18,7 +18,7 @@ In ClearML, there are four types of reports:
 
 ## Automatic Reporting
 
-ClearML automatically captures metrics reported to tools, such as Tensorboard and Matplotlib, with no additional code
+ClearML automatically captures metrics reported to tools, such as TensorBoard and Matplotlib, with no additional code
 necessary.
 
 In addition, ClearML will capture and log everything written to standard output, from debug messages to errors to 
@@ -29,9 +29,19 @@ GPU, CPU, Memory and Network information is also automatically captured.
 ![image](../img/fundamentals_logger_cpu_monitoring.png)
 
 ### Supported packages
-- [Tensorboard](https://www.tensorflow.org/tensorboard)
-- [TensorboardX](https://github.com/lanpa/tensorboardX)
-- [matplotlib](https://matplotlib.org/)
+- [TensorBoard](https://www.tensorflow.org/tensorboard)
+- [TensorBoardX](https://github.com/lanpa/tensorboardX)
+- [Matplotlib](https://matplotlib.org/)
+
+### Automatic reporting examples
+Check out some of ClearML's automatic reporting examples for supported packages:
+* TensorBoard
+  * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
+  * [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md)
+* [TensorBoardX](../guides/frameworks/tensorboardx/tensorboardx.md) 
+* Matplotlib examples in [script](../guides/frameworks/matplotlib/matplotlib_example.md) and [Jupyter Notebook](../guides/frameworks/matplotlib/allegro_clearml_matplotlib_example.md)
+  
+
 
 
 ## Manual Reporting
@@ -62,9 +72,9 @@ See details in [Logger.report_media](../references/sdk/logger.md#report_media).
 
 Check out the Media Reporting [example](../guides/reporting/media_reporting.md).
 
-### Examples
+### Explicit reporting examples
 
-Check out ClearML's reporting examples for various types of results:
+Check out ClearML's explicit reporting examples for various types of results:
 - [Text](../guides/reporting/text_reporting.md) 
 - [Scalars](../guides/reporting/scalar_reporting.md)
 - Plots 
