@@ -67,6 +67,22 @@ Switching workspaces does not apply to users of a self-hosted **ClearML Server**
   Click the workspace to switch to.
 * Profile page - In the **WORKSPACES** section, click **SWITCH TO WORKSPACE** **>** Click the workspace to switch to.
 
+
+## Configuration vault
+
+:::note
+This feature is only supported by the **ClearML Enterprise Server**
+:::
+
+Enterprise users can insert configurations in HOCON or Json format into the vault. When the vault is
+enabled, configurations will be used by ClearML Agents and SDK running with the user's credentials, and will be merged 
+into the agent configuration upon agent launch and / or code execution. 
+
+**To use the vault**:
+* Click **EDIT** or double click the vault box
+* Insert / edit the configuration in the vault 
+* Click the toggle atop the vault to enable / disable the configurations
+
 ## Inviting new teammates
 
 :::note
