@@ -12,7 +12,7 @@ meaning that it's the first thing that is seen when opening the project.
 ## Metric snapshot
 
 On the top of the **OVERVIEW** tab, there is an option to display a **metric snapshot**. Choose a metric and variant, 
-and then the window will present an aggregated view of the value for that metric value and the time that each 
+and then the window will present an aggregated view of the value for that metric and the time that each 
 experiment scored that value. This way, the project's progress can be quickly deduced.
 
 All project experiments that reported the specified metric show up in the snapshot. Their colors vary based

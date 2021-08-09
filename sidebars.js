@@ -14,7 +14,7 @@ module.exports = {
                 {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
         }, 'getting_started/architecture']},
         {'ClearML Fundamentals': ['fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
-            'fundamentals/pipelines']},
+            'fundamentals/hpo', 'fundamentals/pipelines']},
         'clearml_sdk',
         'clearml_agent',
         'clearml_data',

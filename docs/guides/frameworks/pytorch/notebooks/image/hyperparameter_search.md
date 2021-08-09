@@ -4,7 +4,7 @@ title: Image Hyperparameter Optimization - Jupyter Notebook
 
 [hyperparameter_search.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/hyperparameter_search.ipynb) 
 demonstrates integrating **ClearML** into a Jupyter Notebook which performs automated hyperparameter optimization. This 
-is an example of **ClearML** [automation](../../../../../references/sdk/automation_controller_pipelinecontroller). It creates a **ClearML** 
+is an example of **ClearML** automation. It creates a **ClearML** 
 [HyperParameterOptimizer](../../../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object, which is a search controller. The search controller's search strategy optimizer is [OptimizerBOHB](../../../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md) 
 The example maximizes total accuracy by finding an optimal batch size, base learning rate, and dropout. **ClearML** 

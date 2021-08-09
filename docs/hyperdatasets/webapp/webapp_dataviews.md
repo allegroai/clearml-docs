@@ -43,6 +43,29 @@ all the Dataviews in the project. The customizations of these two views are save
 :::
 
 
+## Dataview actions
+
+The following table describes the actions that can be performed from the Dataviews table. 
+
+| ClearML Action | Description |
+|---|---|--|
+| View details | Dataview details, including input datasets, label mapping, augmentation operations, and iteration control. Click a Dataview and the info panel slides open. |
+| Archive | To more easily work with active Dataviews, move a Dataview to the archive. See [Archiving Dataviews](#archiving-dataviews). | 
+| Clone | Make an exact copy of a Dataview. |
+| Move to project | To organize work and improve collaboration, move a Dataview to another project. | 
+
+These actions can be accessed with the context menu (when right-clicking a Dataview or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
+in a Dataview's info panel).
+
+
+Some of the actions mentioned in the chart above can be performed on multiple Dataviews at once.
+Select multiple Dataviews, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+operations on the selected Dataviews. The context menu shows the number of Dataviews that can be affected by each action. 
+The same information can be found in the bottom menu, in a tooltip that appears when hovering over an action icon. 
+
+![Dataviews table batch operations](../../img/webapp_dataview_table_batch_operations.png)
+
+
 ## Viewing, adding, and editing Dataviews
 
 **To view, add, or edit a Dataview:**
