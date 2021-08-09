@@ -74,9 +74,9 @@ Switching workspaces does not apply to users of a self-hosted **ClearML Server**
 This feature is only supported by the **ClearML Enterprise Server**
 :::
 
-Enterprise users can insert configurations in HOCON or Json format into the vault. When the vault is
-enabled, configurations will be used by ClearML Agents and SDK running with the user's credentials, and will be merged 
-into the agent configuration upon agent launch and / or code execution. 
+Enterprise users can insert configurations in HOCON or Json format into the central configuration vault. When the vault is
+enabled, the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
+The configuration will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
 
 **To use the vault**:
 * Click **EDIT** or double click the vault box
