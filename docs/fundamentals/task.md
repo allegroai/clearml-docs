@@ -15,11 +15,8 @@ All the information captured by a task is by default uploaded to the [ClearML Se
 and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
 model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). 
 
-In the UI and code, tasks are grouped into projects, which are logical entities similar to folders. Users can decide
+In the UI and code, tasks are grouped into [projects](projects.md), which are logical entities similar to folders. Users can decide
 how to group tasks, though different models or objectives are usually grouped into different projects.
-Projects can be divided into sub-projects (and sub-sub-projects, etc.) just like files and subdirectories on a 
-computer, making experiment organization easier. In the WebApp, every project has an [**Overview**](../webapp/webapp_project_overview.md)
-tab, where a project description can be written and shared.
 
 Tasks that are in the system can be accessed and utilized with code. To [access a task](#accessing-tasks), it can be identified either by a 
 project name & task name combination or by a unique ID. 
