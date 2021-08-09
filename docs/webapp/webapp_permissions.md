@@ -3,124 +3,124 @@ title: Access Controls
 ---
 
 :::important 
-This feature is only supported by the ClearML Enterprise Server 
+* This feature is only supported by the ClearML Enterprise Server 
+* This feature is available to workspace administrators
 :::
 
-The Access Controls page allows organization administrators to grant users access permissions to workspace resources: 
-* projects
-* tasks 
-* models
-* dataviews 
-* datasets
-* queues 
+The Access Controls page allows workspace administrators to grant users access permissions to the following workspace 
+resources: 
+* [Projects](../fundamentals/projects.md)
+* [Tasks](../fundamentals/task.md) 
+* [Models](../fundamentals/artifacts.md#models)
+* [Dataviews](../hyperdatasets/dataviews.md) 
+* [Datasets](../hyperdatasets/dataset.md)
+* [Queues](../fundamentals/agents_and_queues.md#what-is-a-queue) 
 
+Admins can grant **READ ONLY** (RO) and **READ & MODIFY** (RW) permissions to resources. 
 
-When disabled, all users can access all resources.
-
-Workspace resource access is made available by granting access permissions to users
-
-$$
-When permissions feature is  enabled - only admins can create/delete/rename queues (assuming they have write permissions). Non admins can’t create/delete/rename queues even if they have write permissions
-
-System groups cannot be changed, unless assignable: true in which case users can be added/removed to that group
-
-An admin cannot remove herself from the Admins group
-$$
-
-
-Available permissions:
-
-read-only (ro)
-read+modify (rw)
-
-
-Default values
-
-Users implicitly have rw access to all resources they have created.
-
-Initial preconfigured rules:
-
-rw access to all resources for admins
-
-rw access to all resources for all users
-
-Special rule for “top level items” - rw access - one per resource type (projects/queues/datasets)
-
-Permission assignment
-
+A workspace is initially preconfigured so all administrators and users have RW access 
+to all resources.
 
 ## Tables
 
-### Users table
+### Users
+The users table lists workspace members. Each row of the table includes a user's email, name, status and [user groups](#user-groups).
 
-The Users table is a chart where you can add organization members. Each row of the table
-includes the email, name, status and access group of a user.
+**To add users:** 
+1. Press the **+ ADD USER** button and a dialog will pop up
+1. Input the email of a user or multiple users delimited by a comma, semicolon, or pipe
+1. Click **ADD**
 
-To edit a users press the $$$$GOOGLE PENCIL ICON. 
+**To edit a user's name:** 
+1. Hover over the user's row
+1. Click the <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> button.
+1. Edit name in dialog
+1. Click **SAVE**
 
-To add users, press the **+ ADD USER** button, and insert the email of 
-the user, or multiple users delimited by a comma, semicolon, or pipe. 
+**To remove a user:**
+1. Hover over the user's row
+1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
+:::note
+Admins can only remove non-admin users. 
+:::
 
+### User groups
+There is an option for administrators to define user permission groups for a workspace. The user groups 
+can be granted a set of access privileges, and users that are assigned to a user group are granted the group's 
+access privileges. Users can be assigned to multiple user groups.
 
-### Permission groups
-There is an option for administrators to define permission groups for the workspace. The permissions groups 
-are a set of access privileges. Users that are assigned to a permissions group are granted access to the group's privileges. 
-Users can be assigned into multiple permission groups.
+Two preconfigured groups that can't be removed or edited are the **Users** and **Admins** groups.
+
+The user group table lists all the active user groups. Each row includes a group's name, description, and member list. 
+
+**To create a group:**
+1. Click **+ ADD GROUP**
+1. In the dialog, add a group name and description
+1. Add members to the group. When clicking the input box, a dropdown menu of workspace members appears, from which group
+members can be selected. The menu can be filtered by inputting name fragments
+1. Click **SAVE**
+
+**To edit a user group:**
+1. Hover over the user group's row
+1. Click the <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> button
+1. Edit the group's name and / or description
+1. Edit group members:
+    1. To remove a member, do one of the following:
+        1. Hover over a user's row and click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
+        1. Click the input box, so a dropdown menu of workspace members appears. Uncheck members to remove them 
+    1. To add a member:
+        1. Click the input box, so a dropdown menu of workspace members appears
+        1. Select members to add to the group. Filter the menu by typing in name fragments
+    
+**To delete a user group:**
+1. Hover over the user group's row 
+1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
 
 ### Access rules
 
-Workspace admin get an ‘Access control’ menu option to the profile menu
+The access rules table is where the access privileges can be viewed, defined, and edited. 
 
-Access rule table
+Access rules delineate the criteria for granting access privileges.  
 
-Ordered “firewall” rule table
+**To create an access rule:**
+1. Click **+ ADD RULES**, and a rule creation dialog pops up
+1. Select the resource to grant privileges to. There is an option to select a specific resource object (e.g. a 
+   specific project or task)
+1. Select the permission type - **Read Only** or **Read & Modify**
+1. Assign users to be given access. Click the input box, and select the users from the list that appears. Filter the list by entering name fragments
+1. Assign groups to be given access. Click the input box, and select the groups from the list that appears. Filter the list by entering name fragments
+1. Click **SAVE**
 
-Resource | permission | user groups
+Access is inherited according to resource containers. For instance, if a user is given access to a project, the user will also 
+have access to the project's task and their contents. A user who is granted access to a specific task will not have
+access to another task in the project, unless explicitly granted.  
 
-Add/remove rows
-
-Column view filters
-
-User group table
-
-Name | Description | Users
-
-Group name is unique in workspace context
-
-Actions: Add/Remove/Edit rows
-
-Two non-editable, non removeable groups: “All users” and “Admins”
-
-User table  (possibly extend user mgt page)
-
-
-**+ADD RULES**
-choose:
-* resource
-there's an option to choose a specific object of that resource (e.g. a specific project or task).
-* permission - read only or read & modify
-* assign users with that rule
-* assign groups with that rule 
-
-#### Access resolution
-
-Access is inherited by container e.g. workspace->project->tasks->artifacts:
-
-Users that have access to project A, gain that access to all its tasks and their contents, models and dataviews.
-
-Users that have access to task a in project A do not get any access to other tasks in that project unless explicitly defined.
+**To edit an access rule:**
+1. Hover over the access rule's row
+1. Click the <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> button
+1. Change the resource, resource object, and permission type as desired
+1. Edit access rules users and groups members:
+    1. To revoke a user's or group's access, do one of the following:
+        1. Hover over a user's or group's row and click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
+        1. Click the relevant input box, so a dropdown menu of workspace members / groups appears. Uncheck members / groups to revoke their access rule privilege 
+    1. To grant access to a user or group:
+        1. Click the relevant input box, so a dropdown menu of workspace users / groups appears
+        1. Select users / groups from the menu. Filter the menu by typing in name fragments
+    1. Click **SAVE**
 
 
+**To delete an access rule:**
+1. Hover over the access's row 
+1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
 
+#### Filtering the access rules table
 
-
-Note that even if users are RW - fixed users should still be read-only (can’t be removed)
-
-
-Note: when changing permissions of a user that is already logged in - changes should take affect immediately - no re-login required
-
+The access rules table can be filtered according to resource type and according to users / groups with access. 
+* **To filter according to resource**, click the **View** dropdown menu and select the desired resource
+* **To filter according to users / groups**, click <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />
+on the **USERS & GROUPS** column and select the users and groups to view from the list that appears. 
 
 

@@ -32,7 +32,7 @@ module.exports = {
                     {'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing', 'webapp/webapp_model_modifying']},
                     'webapp/webapp_archiving']
             },
-            'webapp/webapp_profile', 'webapp/webapp_workers_queues']},
+            'webapp/webapp_workers_queues', 'webapp/webapp_profile', 'webapp/webapp_permissions' ]},
         {'Configurations': ['configs/clearml_conf', 'configs/env_vars']},
         //'References': ['references/clearml_ref','references/clearml_agent_ref'],
         {'ClearML Server': ['deploying_clearml/clearml_server',
