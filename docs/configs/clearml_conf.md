@@ -14,7 +14,7 @@ This reference page is organized by configuration file section:
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
 in the **ClearML** GitHub repositories  
 
-### Editing your configuration file
+## Editing your configuration file
 
 To add, change, or delete options, edit your configuration file.
 
@@ -974,3 +974,16 @@ will not exceed the value of `matplotlib_untitled_history_size`
     
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
+
+## Configuration vault
+
+:::note
+This feature is only supported by the **ClearML Enterprise Server**
+:::
+
+Enterprise users can insert configurations into the central configuration vault. When the vault is
+enabled, the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
+The configuration will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
+These configurations override the configurations written in the configuration file. 
+
+See [configuration vault](../webapp/webapp_profile.md#configuration-vault) in the WebApp.
