@@ -7,6 +7,7 @@ Use the Profile page to manage a **ClearML** user account, including:
 * [User preferences](#setting-user-preferences) - Set **ClearML Web UI** options.
 * [Cloud Storage access for the ClearML Web UI](#providing-cloud-storage-access-for-the-clearml-web-ui) - So that the **ClearML Web UI** can render data stored in a Cloud, such as debug samples.
 * [ClearML credentials](#creating-clearml-credentials) - Create **ClearML** credentials to configure **ClearML** and **ClearML Agent** (if you run **ClearML Agent** commands directly).
+* [Configuration vault](#configuration-vault) - Input configuration snippets which will merge into **ClearML**'s and **ClearML Agent**'s configurations when enabled.
 * [Switch workspaces](#switching-workspaces) - If using multiple workspaces (are a member of more than one **ClearML Hosted Service** team), switch workspaces.
 * [Invite new teammates](#inviting-new-teammates) - Collaborate with new users by inviting them to a **ClearML Hosted Service** workspace.
 
@@ -53,21 +54,6 @@ switch to it.
 
 1. In **App Credentials** **>** **+ Create new credentials**.
 
-## Switching workspaces
-
-:::note
-Switching workspaces does not apply to users of a self-hosted **ClearML Server**
-:::
-
-**ClearML Hosted Service** users who are members of multiple teams can switch from one workspace to another.
-
-**Switch workspaces in one of the following ways:**
-
-* Profile button - Click <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> (upper right corner on any page) **>**
-  Click the workspace to switch to.
-* Profile page - In the **WORKSPACES** section, click **SWITCH TO WORKSPACE** **>** Click the workspace to switch to.
-
-
 ## Configuration vault
 
 :::note
@@ -82,6 +68,21 @@ The configuration will be merged into the ClearML and ClearML Agent configuratio
 * Click **EDIT** or double click the vault box
 * Insert / edit the configuration in the vault 
 * Click the toggle atop the vault to enable / disable the configurations
+
+## Switching workspaces
+
+:::note
+Switching workspaces does not apply to users of a self-hosted **ClearML Server**
+:::
+
+**ClearML Hosted Service** users who are members of multiple teams can switch from one workspace to another.
+
+**Switch workspaces in one of the following ways:**
+
+* Profile button - Click <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> (upper right corner on any page) **>**
+  Click the workspace to switch to.
+* Profile page - In the **WORKSPACES** section, click **SWITCH TO WORKSPACE** **>** Click the workspace to switch to.
+
 
 ## Inviting new teammates
 
