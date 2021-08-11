@@ -592,6 +592,7 @@ queues for Tasks, fetch and execute them. Outside working hours, a worker will b
 Schedule workers by:
 
 * Setting configuration file options
+* Setting configurations in the [configuration vault](../webapp/webapp_profile.md#configuration-vault)
 * Running `clearml-agent` from the command line (overrides configuration file options)
 
 Override worker schedules by:

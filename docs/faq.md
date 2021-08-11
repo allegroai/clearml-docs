@@ -844,7 +844,8 @@ If your ClearML Web-App (UI) does not show anything, it may be an error authenti
 **How can I execute ClearML Agent without installing packages each time?** <a className="tr_top_negative" id="system_site_packages"></a>
 
 Instead of installing the Python packages in the virtual environment created by ClearML Agent, you can optimize execution 
-time by inheriting the packages from your global site-packages directory. In the ClearML configuration file, set the 
+time by inheriting the packages from your global site-packages directory. In the ClearML configuration file
+(or in the [configuration vault](../webapp/webapp_profile.md#configuration-vault) in the Enterprise Server), set the 
 configuration option `agent.package_manager.system_site_packages` to `true`.
 
 

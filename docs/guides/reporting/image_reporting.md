@@ -13,7 +13,7 @@ demonstrates reporting (uploading) images in several formats, including:
 **ClearML** uploads images to the bucket specified in the **ClearML** configuration file, or **ClearML** can be configured 
 for image storage, see [Logger.set_default_upload_destination](../../references/sdk/logger.md#set_default_upload_destination) 
 (storage for [artifacts](../../fundamentals/artifacts.md#setting-upload-destination) is different). Set credentials for 
-storage in the **ClearML** configuration file.
+storage in the **ClearML** configuration file (or Enterprise Server's [configuration vault](../webapp/webapp_profile.md#configuration-vault)).
 
 When the script runs, it creates an experiment named `image reporting`, which is associated with the `examples` project.
 

@@ -12,7 +12,7 @@ method to upload from:
 **ClearML** uploads media to the bucket specified in the **ClearML** configuration file, or **ClearML** can be configured 
 for image storage, see [Logger.set_default_upload_destination](../../references/sdk/logger.md#set_default_upload_destination)
 (storage for [artifacts](../../fundamentals/artifacts#setting-upload-destination) is different). Set credentials for storage in the **ClearML** 
-[configuration file](../../configs/clearml_conf.md).
+[configuration file](../../configs/clearml_conf.md) (or the Enterprise Server's [configuration vault](../webapp/webapp_profile.md#configuration-vault)).
 
 **ClearML** reports media in the **ClearML Web UI** **>** experiment details **>** **RESULTS** tab **>** **DEBUG SAMPLES** 
 sub-tab. 

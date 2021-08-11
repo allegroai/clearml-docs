@@ -21,7 +21,7 @@ Configure **ClearML** for uploading artifacts to any of the supported types of s
 S3 buckets, Google Cloud Storage, and Azure Storage ([debug sample storage](../../references/sdk/logger.md#set_default_upload_destination)  
 is different). Configure **ClearML** in any of the following ways:
 
-* In the configuration file, set [default_output_uri](../../configs/clearml_conf.md#sdkdevelopment).
+* In the configuration file (or Enterprise Server's [configuration vault](../webapp/webapp_profile.md#configuration-vault)), set [default_output_uri](../../configs/clearml_conf.md#sdkdevelopment).
 * In code, when [initializing a Task](../../references/sdk/task.md#taskinit), use the `output_uri` parameter.
 * In the **ClearML Web UI**, when [modifying an experiment](../../webapp/webapp_exp_tuning.md#output-destination).
 
