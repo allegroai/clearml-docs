@@ -981,9 +981,10 @@ will not exceed the value of `matplotlib_untitled_history_size`
 This feature is only supported by the **ClearML Enterprise Server**
 :::
 
-Enterprise users can insert configurations into the central configuration vault. When the vault is
-enabled, the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
+The ClearML Enterprise Server includes the configuration vault, where users can insert configurations. When the vault is enabled, 
+the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
 The configuration will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
+
 These configurations override the configurations written in the configuration file. 
 
-See [configuration vault](../webapp/webapp_profile.md#configuration-vault) in the WebApp.
+See [configuration vault](../webapp/webapp_profile.md#configuration-vault). 

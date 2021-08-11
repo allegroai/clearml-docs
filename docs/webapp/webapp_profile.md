@@ -57,7 +57,7 @@ switch to it.
 ## Configuration vault
 
 :::note
-This feature is only supported by the **ClearML Enterprise Server**
+The configuration vault is only supported by the **ClearML Enterprise Server**
 :::
 
 Enterprise users can insert configurations in HOCON or Json format into the central configuration vault. When the vault is
