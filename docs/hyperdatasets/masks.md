@@ -241,7 +241,7 @@ This example shows two masks for video from a camera. The masks label cars and t
  
 ## Usage
 
-### Setting mask-label mapping
+### Setting version mask-label mapping
 
 In order to visualize different mask labels, use the `set_masks_labels` method of the [DatasetVersion](dataset.md#dataset-versioning) 
 class in order to map the labels to color values. This stores a dataset-version-wide mapping of pixel mask values to labels. 
@@ -264,7 +264,7 @@ myDatasetversion.set_masks_labels(
 )
 ```
 
-### Accessing mask-label mapping
+### Accessing version mask-label mapping
 
 The mask values and labels are stored as a property in a dataset version's metadata.
 

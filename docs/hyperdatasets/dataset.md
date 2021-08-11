@@ -303,8 +303,8 @@ myVersion = DatasetVersion.get_version(dataset_name='MyDataset',
 myVersion.publish_version()
 ```
 
-### Setting mask-label mapping
+### Setting version mask-label mapping
 
 In order to visualize different masks in a dataset version, the mask values need to be mapped to their labels. Mask-label 
-mapping is stored in a version's metadata. See [masks](masks.md#setting-mask-label-mapping).  
+mapping is stored in a version's metadata. See [masks](masks.md#setting-version-mask-label-mapping).  
 
