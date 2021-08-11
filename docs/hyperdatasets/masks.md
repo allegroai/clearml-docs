@@ -244,7 +244,7 @@ This example shows two masks for video from a camera. The masks label cars and t
 ### Adding mask annotations 
 
 To add a mask annotation to a frame, use the `add_annotation` method of the [SingleFrame](single_frames.md) class.
-Input the mask value as a list with the RGB values in `mask_rgb` parameter, and input a list of labels with the `labels` parameter.
+Input the mask value as a list with the RGB values in the `mask_rgb` parameter, and input a list of labels with the `labels` parameter.
 
 ```python
 frame = SingleFrame(
