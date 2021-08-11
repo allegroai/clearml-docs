@@ -241,6 +241,19 @@ This example shows two masks for video from a camera. The masks label cars and t
  
 ## Usage
 
+### Adding mask annotations 
+
+To add a mask annotation to a frame, use the `add_annotation` method of the [SingleFrame](single_frames.md) class.
+Input the mask value as a list with the RGB values in `mask_rgb` parameter, and input a list of labels with the `labels` parameter.
+
+```python
+frame = SingleFrame(
+    source='/home/user/woof_meow.jpg',
+    preview_uri='https://storage.googleapis.com/kaggle-competitions/kaggle/3362/media/woof_meow.jpg',
+    
+frame.add_annotation(mask_rgb=[0, 0, 0], labels=['cat'])
+```
+
 ### Setting version mask-label mapping
 
 In order to visualize different mask labels, use the `set_masks_labels` method of the [DatasetVersion](dataset.md#dataset-versioning) 
