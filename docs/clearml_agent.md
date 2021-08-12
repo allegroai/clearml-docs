@@ -123,6 +123,7 @@ pip install clearml-agent
     * Windows - `\User\<username>\clearml.conf`
 
 1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
+   There is also an option to configure all agents in the Enterprise Server's [configuration vault](webapp/webapp_profile.md#configuration-vault).
 
 ### Adding ClearML Agent to a configuration file
 
@@ -592,7 +593,6 @@ queues for Tasks, fetch and execute them. Outside working hours, a worker will b
 Schedule workers by:
 
 * Setting configuration file options
-* Setting configurations in the [configuration vault](webapp/webapp_profile.md#configuration-vault)
 * Running `clearml-agent` from the command line (overrides configuration file options)
 
 Override worker schedules by:
@@ -631,7 +631,7 @@ For example:
 
 ### Setting worker schedules in the configuration file
 
-Set a schedule for a worker using configuration file options (which can also be inputted in the [configuration vault](webapp/webapp_profile.md#configuration-vault)). The options are:
+Set a schedule for a worker using configuration file options. The options are:
 
 :::warning
 Only use one of these properties

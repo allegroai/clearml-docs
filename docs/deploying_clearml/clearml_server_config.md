@@ -58,8 +58,7 @@ Accessing the **ClearML Web UI** with `app.clearml.mydomain.com` will automatica
 
 ## ClearML Server Feature Configurations
 
-**ClearML Server** features can be configured using either configuration files, environment variables, or the Enterprise Server's
-[configuration vault](../webapp/webapp_profile.md#configuration-vault).
+**ClearML Server** features can be configured using either configuration files or environment variables.
 
 ### Configuration files
 

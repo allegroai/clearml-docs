@@ -98,7 +98,7 @@ and formats for specifying locations include:
 :::note
 Also set the output destination for artifacts in code (see the `output_uri` parameter of the
 [Task.init](../references/sdk/task.md#taskinit)
-method), and in the **ClearML** configuration file (or the Enterprise Server's [configuration vault](webapp_profile.md#configuration-vault)) 
+method), and in the **ClearML** configuration file 
 for all experiments (see [default_output_uri](../configs/clearml_conf#config_default_output_uri)
 on the **ClearML** Configuration Reference page).
 :::
