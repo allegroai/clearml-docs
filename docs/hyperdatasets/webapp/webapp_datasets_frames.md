@@ -243,6 +243,27 @@ Use Lucene queries in ROI label filters and frame rules.
         
 ## Annotations
 
+### Masks 
+
+Use the **MASKS** panel to select a mask or multiple masks to view in a frame. 
+
+To view / hide a specific mask, click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" />.
+In order to view all masks, click **Show all** / **Hide all**. 
+
+To adjust the visibility of a mask, use its opacity slider. 
+
+#### Labels 
+
+Below the mask list, the **Active mask labels** section displays the mapping of mask values to their labels. 
+The panel presents labels only from masks that are being viewed.
+
+**To modify a mask's color and opacity:**
+1. Click the colored circle next to the label 
+1. Select a new color
+1. Adjust the opacity slider 
+1. Click **OK**
+
+
 ### Frame objects (Regions of Interest)
 
 You can add annotations by drawing new bounding areas, and copying existing annotations in the same or other frames.
