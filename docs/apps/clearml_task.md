@@ -24,7 +24,7 @@ The ClearML Agent will pull it from dockerhub or a docker artifactory automatica
 
 ### Package Dependencies
 If the local script requires packages to be installed installed or the remote repository doesn't have a requirements.txt file,
-specify manually the required python packages using<br/>
+specify manually the required python packages using <br/>
 `--packages "<package_name>"`, for example `--packages "keras" "tensorflow>2.2"`.
 
 ### Queue
@@ -37,5 +37,31 @@ A specific branch and commit ID, other than latest commit in master, to be execu
 `--branch <branch_name> --commit <commit_id>` flags.
 If unspecified, `clearml-task` will use the latest commit from the master branch.
 
-Learn how to use the `clearml-task` feature [here](../guides/clearml-task/clearml_task_tutorial.md).
+### Command line options
 
+|command line options | Description| 
+|---|----|
+| `--version` | Display the `clearml-task` utility version | 
+| `--project`| Set the project name for the task. Required, unless `--base-task-id`.| 
+| `--name` | Select a name for the remote task (Required) |
+| `--repo` | URL of remote repository. Example: `--repo https://github.com/allegroai/clearml.git` |
+| `--branch` | Select specific repository branch / tag. By default, latest commit from the master branch |
+| `--commit` | Select specific commit ID to use. By default, latest commit, or local repository matching the local commit ID |
+| `--folder` | Remotely execute the code in the local folder. Notice! It assumes a git repository already exists. Current state of the repo (commit ID and uncommitted changes) is logged and will be replicated on the remote machine | 
+| `--script` | Specify the entry point script for the remote execution. When used in tandem with `--repo` the script should be a relative path inside the repository. For example: `--script source/train.py`. When used with `--folder`, it supports a direct path to a file inside the local repository itself, for example: `--script ~/project/source/train.py` |
+| `--cwd` | Working directory to launch the script from. Repository root folder. Relative to repo root or local folder |
+| `--args` | Arguments to pass to the remote execution, list of `<argument>=<value>` strings. Currently only argparse arguments are supported. Example: `--args lr=0.003 batch_size=64` | 
+| `--queue` | Select the queue to launch the task. If not provided, a Task will be created but it will not be launched. | 
+| `--requirements` | Specify `requirements.txt` file to install when setting the session. Default: `requirements.txt` from the repository will be used.|  
+| `--packages` | Manually specify a list of required packages. Example: `--packages "tqdm>=2.1" "scikit-learn"` | 
+| `--docker` | Select the docker image to use in the remote session | 
+| `--docker_args` | Add docker arguments, pass a single string | 
+| `--docker_bash_setup_script` | Add bash script to be executed inside the docker before setting up the Task's environment | 
+| `--output-uri` | Optional: set the Task `output_uri` (automatically upload model destination) | 
+| `--task-type` | Set the Task type, optional values: training, testing, inference, data_processing, application, monitor, controller, optimizer, service, qc, custom | 
+| `--skip-task-init` | If set, `Task.init()` call is not added to the entry point, and is assumed to be called within the script. Default: Add `Task.init()` call to entry point script| 
+| `--base-task-id` | Use a pre-existing task in the system, instead of a local repo/script. Essentially clones an existing task and overrides arguments/requirements. | 
+
+
+## Tutorial
+Learn how to use the `clearml-task` feature [here](../guides/clearml-task/clearml_task_tutorial.md).
