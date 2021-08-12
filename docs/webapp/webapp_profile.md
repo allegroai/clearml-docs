@@ -64,10 +64,14 @@ Enterprise users can insert configurations in HOCON or Json format into the cent
 enabled, the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
 The configuration will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
 
-**To use the vault**:
+**To edit vault contents:**
 * Click **EDIT** or double click the vault box
-* Insert / edit the configuration in the vault 
+* Insert / edit the configurations in the vault 
+* Press **OK**
+
+**To apply vault configurations:**
 * Click the toggle atop the vault to enable / disable the configurations
+* Once enabled, the configurations will be merged to the configuration file during ClearML and ClearML Agent usage 
 
 ## Switching workspaces
 
