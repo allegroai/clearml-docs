@@ -244,7 +244,7 @@ This example shows two masks for video from a camera. The masks label cars and t
 ### Adding mask annotations 
 
 To add a mask annotation to a frame, use the `add_annotation` method of the [SingleFrame](single_frames.md) class.
-Input the mask value as a list with the RGB values in the `mask_rgb` parameter, and input a list of labels with the `labels` parameter.
+Input the mask value as a list with the RGB values in the `mask_rgb` parameter, and a list of labels in the `labels` parameter.
 
 ```python
 frame = SingleFrame(
@@ -254,41 +254,3 @@ frame = SingleFrame(
 frame.add_annotation(mask_rgb=[0, 0, 0], labels=['cat'])
 ```
 
-### Setting version mask-label mapping
-
-In order to visualize different mask labels, use the `set_masks_labels` method of the [DatasetVersion](dataset.md#dataset-versioning) 
-class in order to map the labels to color values. This stores a dataset-version-wide mapping of pixel mask values to labels. 
-When using the method, input a dictionary of RGB-value tuple keys and label-list values.
-
-```python
-from allegroai import DatasetVersion
-
-# Getting a version 
-myDatasetversion = DatasetVersion.get_version(dataset_name='MyDataset', 
-                                              version_name='VersionName')
-
-# Mapping out colors and labels of masks 
-myDatasetversion.set_masks_labels(
-    {
-      (0, 0, 0): ["background"],
-      (1, 1, 1): ["person", "sitting"],
-      (2, 2, 2): ["cat"],
-    }
-)
-```
-
-### Accessing version mask-label mapping
-
-The mask values and labels are stored as a property in a dataset version's metadata.
-
-```python
-mappping = myDatasetversion.get_metadata()['mask_labels']
-
-print(mapping)
-```         
-
-This should return a dictionary of the version's masks and labels, which should look something like this:
-
-```python
-{'_all_': [{'value': [0, 0, 0], 'labels': ['background']}, {'value': [1, 1, 1], 'labels': ['person', 'sitting']}, {'value': [2, 2, 2], 'labels': ['cat']}]}
-```
