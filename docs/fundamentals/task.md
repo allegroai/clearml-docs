@@ -135,8 +135,8 @@ from clearml import Task
 
 
 task = Task.init(
-    project_name='example', 
-    task_name='task template', 
+    project_name='example',    # project name of at least 3 characters
+    task_name='task template', # task name of at least 3 characters
     task_type=None,
     tags=None,
     reuse_last_task_id=True,
