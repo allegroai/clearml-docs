@@ -17,14 +17,14 @@ enables modifying Dataviews, including:
 
 
 The selection and control of input data can be modified in *Draft* experiments that are not [development experiments](../task.md#development-experiments). 
-Do this by modifying the Dataview used by the experiment. The Dataview specifies the Dataset versions from which frames 
+Do this by modifying the Dataview used by the experiment. The Dataview specifies the Hyper Dataset versions from which frames 
 are iterated and frame filters (see [Dataviews](webapp_dataviews.md).   
 
 **To choose a Dataview**, do any of the following:
 
 * Create a new Dataview  
     
-    * Click **+** and then follow the instructions below to select Dataset versions, filter frames, map labels (label translation), 
+    * Click **+** and then follow the instructions below to select Hyper Dataset versions, filter frames, map labels (label translation), 
       and set label enumeration, data augmentation, and iteration controls.
       
 * Select a different Dataview already associated with the experiment. 
@@ -72,7 +72,7 @@ For more detailed information, see [Filtering](../dataviews.md#filtering).
 1. In the **FILTERING** area, click **EDIT**.
 1. For each frame filter:
 
-    1. Select the Dataset version to which the frame filter applies.
+    1. Select the Hyper Dataset version to which the frame filter applies.
     1. Add, change, or remove any combination of the following rules:
     
         * ROI rule - Include or exclude frames containing any single ROI with any combination of labels in the Dataset 
@@ -95,7 +95,7 @@ that are not mapped are ignored.
 1. In the **MAPPING** section, click **EDIT**
     * Add (**+**) or edit a mapping:
       
-        1. Select the Dataset and version whose labels will be mapped.
+        1. Select the Hyper Dataset and version whose labels will be mapped.
       
         1. Select one or more labels to map.
       
@@ -123,7 +123,7 @@ Modify the label enumeration assigned to output models.
 
 ## Data augmentation
 
-Modify the on-the-fly data augmentation applied to frames input from the select Dataset versions and filtered by the frame filters. Data augmentation is applied in steps, where each step applies a method, operation, and strength.
+Modify the on-the-fly data augmentation applied to frames input from the select Hyper Dataset versions and filtered by the frame filters. Data augmentation is applied in steps, where each step applies a method, operation, and strength.
  
 For more detailed information, see [Data Augmentation](../dataviews.md#data-augmentation).
 

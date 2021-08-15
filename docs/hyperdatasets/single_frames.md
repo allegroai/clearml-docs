@@ -4,7 +4,7 @@ title: SingleFrames
 
 
 A `SingleFrame` contains metadata pointing to raw data, and other metadata and data, which supports experimentation and 
-ClearML Enterprise's Git-like Dataset versioning.
+ClearML Enterprise's Git-like Hyper Dataset versioning.
 
 ## Frame Components
 
@@ -42,7 +42,7 @@ For more information, see [Masks](masks.md).
 
 ### Previews 
 `previews` is a dictionary containing metadata for optional thumbnail images that can be used in the ClearML Enterprise WebApp (UI) 
-to view selected images in a Dataset. `previews` includes the `uri` of the thumbnail image.
+to view selected images in a Hyper Dataset. `previews` includes the `uri` of the thumbnail image.
 
 For more information, see [Previews](previews.md).
 
@@ -63,9 +63,9 @@ The panel below describes the details contained within a `frame`:
 * `id` (*string*) - The unique ID of this frame. 
 * `blob` (*string*) - Raw data.
 * `context_id` (*string*) - Source URL.
-* `dataset` (*dict*) - The Dataset and version containing the frame.
+* `dataset` (*dict*) - The Hyper Dataset and version containing the frame.
 
-    * `id` - ID of the Dataset.
+    * `id` - ID of the Hyper Dataset.
     * `version` - ID of the version.
 
 * `meta` (*dict*) - Frame custom metadata. Any custom key-value pairs (`sources` and `rois` can also contain a meta 
