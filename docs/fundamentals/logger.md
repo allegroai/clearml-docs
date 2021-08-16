@@ -59,9 +59,6 @@ The object used for reporting metrics is called **logger** and is obtained by ca
 logger = task.get_logger()
 ```
 
-Check out all the available object types that can be reported in the [Explicit Reporting](../guides/reporting/scalar_reporting.md) 
-example or in the [Jupyter Notebook](../guides/reporting/clearml_logging_example.md) Explicit Reporting example.
-
 ### Media reporting
 
 ClearML also supports reporting media (such as audio, video and images) for every iteration.
@@ -73,11 +70,9 @@ See details in [Logger.report_media](../references/sdk/logger.md#report_media).
 
 ![image](../img/fundamentals_logger_reported_images.png)
 
-Check out the Media Reporting [example](../guides/reporting/media_reporting.md).
-
 ### Explicit reporting examples
 
-Check out ClearML's explicit reporting examples for various types of results:
+Check out all the available object types that can be reported using ClearML's explicit reporting:
 - [Text](../guides/reporting/text_reporting.md) 
 - [Scalars](../guides/reporting/scalar_reporting.md)
 - Plots 
@@ -90,4 +85,4 @@ Check out ClearML's explicit reporting examples for various types of results:
     - [Images](../guides/reporting/image_reporting.md)
     - [HTML](../guides/reporting/html_reporting.md)
     - [Media - images, audio, video](../guides/reporting/media_reporting.md)
-    
+- Explicit reporting in Jupyter Notebook [example](../guides/reporting/clearml_logging_example.md)
