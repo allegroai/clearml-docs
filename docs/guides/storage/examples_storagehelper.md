@@ -26,6 +26,10 @@ method, and specify the destination location as the `remote_url` argument:
     
     manager.get_local_copy(remote_url="s3://MyBucket/MyFolder/file.zip")
 
+:::note
+Zip and tar.gz files will be automatically extracted to cache. This can be controlled with the`extract_archive` flag.
+:::
+
 To download a file to a specific context in cache, specify the name of the context as the `cache_context` argument:
 
     manager.get_local_copy(remote_url="s3://MyBucket/MyFolder/file.ext", cache_context="test")
@@ -34,7 +38,6 @@ To download a non-compressed file, set the `extract_archive` argument to `False`
 
     manager.get_local_copy(remote_url="s3://MyBucket/MyFolder/file.ext", extract_archive=False)
 
-<a class="tr_top_negative" name="uploading_storagemanager"></a>
 
 ### Uploading a file
 
