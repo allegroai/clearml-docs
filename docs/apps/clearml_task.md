@@ -39,6 +39,8 @@ If unspecified, `clearml-task` will use the latest commit from the master branch
 
 ### Command line options
 
+<div className="tbl-cmd">
+
 |command line options | Description| 
 |---|----|
 | `--version` | Display the `clearml-task` utility version | 
@@ -62,6 +64,7 @@ If unspecified, `clearml-task` will use the latest commit from the master branch
 | `--skip-task-init` | If set, `Task.init()` call is not added to the entry point, and is assumed to be called within the script. Default: Add `Task.init()` call to entry point script | 
 | `--base-task-id` | Use a pre-existing task in the system, instead of a local repo / script. Essentially clones an existing task and overrides arguments / requirements | 
 
+</div>
 
 ## Tutorial
 Learn how to use the `clearml-task` feature [here](../guides/clearml-task/clearml_task_tutorial.md).
