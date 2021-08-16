@@ -95,9 +95,9 @@ Some tasks, mainly control (Like a pipeline controller) or services (Like an arc
 This is where the `services-modes` comes into play. An agent running in services-mode will spin multiple tasks at the same time, each Task will register itself as a sub-agent (visible in the workers Tab in the UI).
 Some examples for suitable tasks are:
 
-- [Pipeline controller](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_controller.py) - Implementing the pipeline scheduling and logic
-- [Hyper-Parameter Optimization](https://github.com/allegroai/clearml/blob/master/examples/optimization/hyper-parameter-optimization/hyper_parameter_optimizer.py) - Implementing an active selection of experiments
-- [Control Service](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) - AWS Autoscaler for example
-- [External services](https://github.com/allegroai/clearml/blob/master/examples/services/monitoring/slack_alerts.py) - Such as Slack integration alert service
+- [Pipeline controller](../guides/pipeline/pipeline_controller.md) - Implementing the pipeline scheduling and logic
+- [Hyper-Parameter Optimization](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) - Implementing an active selection of experiments
+- [Control Service](../guides/services/aws_autoscaler.md) - AWS Autoscaler for example
+- [External services](../guides/services/slack_alerts.md) - Such as Slack integration alert service
 
 By default, [ClearML Server](../deploying_clearml/clearml_server.md) comes with an Agent running on the machine that runs it. It also comes with a Services queue.

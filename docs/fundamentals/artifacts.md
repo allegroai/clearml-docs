@@ -81,7 +81,8 @@ See automatic model logging examples:
 * [PyTorch](../guides/frameworks/pytorch/pytorch_mnist.md)
 * [Keras](../guides/frameworks/keras/keras_tensorboard.md)
 * [Scikit-Learn](../guides/frameworks/scikit-learn/sklearn_joblib_example.md)
-
+* [XGBoost](../guides/frameworks/xgboost/xgboost_sample.md)
+* [FastAI](../guides/frameworks/fastai/fastai_with_tensorboard.md)
 
 
 ### Manual Model Logging 

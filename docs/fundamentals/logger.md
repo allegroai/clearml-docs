@@ -38,6 +38,7 @@ Check out some of ClearML's automatic reporting examples for supported packages:
 * TensorBoard
   * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
   * [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md)
+  * [Tensorboard with PyTorch](../guides/frameworks/pytorch/pytorch_tensorboard.md)
 * [TensorBoardX](../guides/frameworks/tensorboardx/tensorboardx.md) 
 * Matplotlib examples in [script](../guides/frameworks/matplotlib/matplotlib_example.md) and [Jupyter Notebook](../guides/frameworks/matplotlib/allegro_clearml_matplotlib_example.md)
   
