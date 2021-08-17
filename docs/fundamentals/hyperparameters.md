@@ -31,6 +31,28 @@ args = parser.parse_args()
 task = Task.init(project_name="examples",task_name="argparser logging")
 ``` 
 
+## Click
+
+Parameters passed to experiments using [click](https://click.palletsprojects.com/en/8.0.x/), are automatically captured 
+by ClearML, so no code changes are needed.
+
+```python
+from clearml import Task
+import click
+
+task = Task.init(project_name='examples', task_name='click single command')
+
+@click.command()
+@click.option('--count', default=1, help='Number of greetings.')
+@click.option('--name', prompt='Your name',
+              help='The person to greet.')
+def hello(count, name):
+    for x in range(count):
+        click.echo("Hello {}!".format(name))
+
+hello()
+```
+
 ## Connecting Objects
 
 Users can directly connect objects, such as dictionaries or even custom classes, to Tasks.
