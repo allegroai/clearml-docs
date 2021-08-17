@@ -13,7 +13,7 @@ The example script does the following:
 
 ## Scalars
 
-In the ClearML Web UI, the scalars plot for $$$$$$$$$$$$ appears in the experiment's page under **RESULTS > SCALARS**.
+The scalars logged in the experiment can be visualized in a plot, which appears in the ClearML web UI, in the **experiment's page > RESULTS > SCALARS**.
 
 ![LightGBM scalars](../../../img/examples_lightgbm_scalars.png)
 
