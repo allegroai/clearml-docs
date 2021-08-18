@@ -17,7 +17,7 @@ metadata and data.
 These parent-child version relationships can be represented as version trees with a root-level parent. A Dataset 
 can contain one or more trees.
 
-Mask-labels can be defined globally, for a DatasetVersion, which will be applied to every frame-mask available in that version.
+Mask-labels can be defined globally, for a DatasetVersion, which will be applied to all masks in that version.
 
 ## Dataset version state
 
