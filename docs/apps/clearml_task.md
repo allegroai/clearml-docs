@@ -41,28 +41,28 @@ If unspecified, `clearml-task` will use the latest commit from the master branch
 
 <div className="tbl-cmd">
 
-|Name | Description| 
-|---|----|
-| `--version` | Display the `clearml-task` utility version | 
-| `--project`| Set the project name for the task (Required, unless using `--base-task-id`) | 
-| `--name` | Select a name for the remote task (Required) |
-| `--repo` | URL of remote repository. Example: `--repo https://github.com/allegroai/clearml.git` |
-| `--branch` | Select specific repository branch / tag. By default, latest commit from the master branch |
-| `--commit` | Select specific commit ID to use. By default, latest commit, or local commit ID when using local repository |
-| `--folder` | Remotely execute the code in a local folder. Notice! It assumes a git repository already exists. Current state of the repo (commit ID and uncommitted changes) is logged and will be replicated on the remote machine | 
-| `--script` | Entry point script for the remote execution. When used in tandem with `--repo`, the script should be a relative path inside the repository. For example: `--script source/train.py`. When used with `--folder`, it supports a direct path to a file inside the local repository itself, for example: `--script ~/project/source/train.py` |
-| `--cwd` | Working directory to launch the script from. Relative to repo root or local `--folder` |
-| `--args` | Arguments to pass to the remote task, list of `<argument>=<value>` strings. Currently only argparse arguments are supported. Example: `--args lr=0.003 batch_size=64` | 
-| `--queue` | Select task's execution queue. If not provided, a task will be created but it will not be launched | 
-| `--requirements` | Specify `requirements.txt` file to install when setting the session. By default, the` requirements.txt` from the repository will be used |  
-| `--packages` | Manually specify a list of required packages. Example: `--packages "tqdm>=2.1" "scikit-learn"` | 
-| `--docker` | Select the docker image to use in the remote task | 
-| `--docker_args` | Add docker arguments, pass a single string | 
-| `--docker_bash_setup_script` | Add bash script to be executed inside the docker before setting up the task's environment | 
-| `--output-uri` | Set the task `output_uri`, upload destination for task models and artifacts (Optional) | 
-| `--task-type` | Set the task type. Optional values: training, testing, inference, data_processing, application, monitor, controller, optimizer, service, qc, custom | 
-| `--skip-task-init` | If set, `Task.init()` call is not added to the entry point, and is assumed to be called within the script. Default: Add `Task.init()` call to entry point script | 
-| `--base-task-id` | Use a pre-existing task in the system, instead of a local repo / script. Essentially clones an existing task and overrides arguments / requirements | 
+|Name | Description| Optional |
+|---|----|---|
+| `--version` | Display the `clearml-task` utility version | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--project`| Set the project name for the task (Required, unless using `--base-task-id`) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+| `--name` | Select a name for the remote task | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+| `--repo` | URL of remote repository. Example: `--repo https://github.com/allegroai/clearml.git` | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--branch` | Select specific repository branch / tag. By default, latest commit from the master branch | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--commit` | Select specific commit ID to use. By default, latest commit, or local commit ID when using local repository | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--folder` | Remotely execute the code in a local folder. Notice! It assumes a git repository already exists. Current state of the repo (commit ID and uncommitted changes) is logged and will be replicated on the remote machine | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> | 
+| `--script` | Entry point script for the remote execution. When used in tandem with `--repo`, the script should be a relative path inside the repository. For example: `--script source/train.py`. When used with `--folder`, it supports a direct path to a file inside the local repository itself, for example: `--script ~/project/source/train.py` | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+| `--cwd` | Working directory to launch the script from. Relative to repo root or local `--folder` | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--args` | Arguments to pass to the remote task, list of `<argument>=<value>` strings. Currently only argparse arguments are supported. Example: `--args lr=0.003 batch_size=64` | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--queue` | Select task's execution queue. If not provided, a task will be created but it will not be launched | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--requirements` | Specify `requirements.txt` file to install when setting the session. By default, the` requirements.txt` from the repository will be used |  <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--packages` | Manually specify a list of required packages. Example: `--packages "tqdm>=2.1" "scikit-learn"` | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--docker` | Select the docker image to use in the remote task | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--docker_args` | Add docker arguments, pass a single string | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--docker_bash_setup_script` | Add bash script to be executed inside the docker before setting up the task's environment | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--output-uri` | Set the task `output_uri`, upload destination for task models and artifacts (Optional) | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--task-type` | Set the task type. Optional values: training, testing, inference, data_processing, application, monitor, controller, optimizer, service, qc, custom | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--skip-task-init` | If set, `Task.init()` call is not added to the entry point, and is assumed to be called within the script. Default: Add `Task.init()` call to entry point script | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--base-task-id` | Use a pre-existing task in the system, instead of a local repo / script. Essentially clones an existing task and overrides arguments / requirements | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 
 </div>
 
