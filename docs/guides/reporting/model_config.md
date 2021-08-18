@@ -14,7 +14,7 @@ When the script runs, it creates an experiment named `Model configuration exampl
 ### Using a configuration file
 
 Connect a configuration file to a Task by calling the [Task.connect_configuration](../../references/sdk/task.md#connect_configuration) 
-method with the file location and the section name as arguments. In this example, we connect a JSON file and a YAML file
+method with the file location and the configuration object's name as arguments. In this example, we connect a JSON file and a YAML file
 to a Task. 
 
     config_file_json = 'data_samples/sample.json'
@@ -27,7 +27,7 @@ to a Task.
 area. The JSON file will appear in the **json file** section, and the YAML file will appear **yaml file** section, as specified 
 in the `name` parameter of the `connect_configuration` method. 
 
-![image](../../img/examples_reporting_config_3.png)
+![image](../../img/examples_reporting_config.png)
 
 ### Configuration dictionary
 
@@ -48,7 +48,7 @@ method with the dictionary and the section name as arguments. After the configur
 **ClearML** reports the configuration in the **ClearML Web UI** **>** experiment details **>** **CONFIGURATION** tab **>** 
 **CONFIGURATION OBJECTS** area **>** **dictionary** section.
 
-![image](../../img/examples_reporting_config.png)
+![image](../../img/examples_reporting_config_3.png)
 
 ## Label enumeration
 
