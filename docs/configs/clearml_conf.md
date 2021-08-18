@@ -31,7 +31,7 @@ To add, change, or delete options, edit your configuration file.
 
 ## Environment variables
 ClearML's configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) configuration format, 
-which supports accessing environment.
+which supports environment variable reference.
 
 For example: 
 ```editorconfig
