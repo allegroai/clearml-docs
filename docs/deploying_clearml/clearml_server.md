@@ -42,7 +42,7 @@ authentication, sub-domains, and load balancers, and use any of its many configu
     * Pre-built [Google Cloud Platform custom images](clearml_server_gcp.md)
     * Pre-built Docker images for [Linux](clearml_server_linux_mac.md), [macOS](clearml_server_linux_mac.md), and 
       [Windows 10](clearml_server_win.md)
-    * [Kubernetes](clearml_server_kubernetes.md) and [Kubernetes using Helm](clearml_server_kubernetes_helm.md)
+    * [Kubernetes using Helm](clearml_server_kubernetes_helm.md)
 
 1. Optionally, [configure ClearML Server](clearml_server_config.md) for additional features, including sub-domains and load balancers, 
    web login authentication, and the non-responsive task watchdog.
@@ -56,6 +56,6 @@ When necessary, upgrade your ClearML Server on any of the available formats:
 * [Google Cloud Platform](upgrade_server_gcp.md)
 * [Linux or MacOS](upgrade_server_linux_mac.md)
 * [Windows 10](upgrade_server_win.md)
-* [Kubernetes](upgrade_server_kubernetes.md) and [Kubernetes using Helm](upgrade_server_kubernetes_helm.md).
+* [Kubernetes using Helm](upgrade_server_kubernetes_helm.md).
 
 If you are using v0.15 or Older, [upgrade to ClearML Server](clearml_server_es7_migration.md).
