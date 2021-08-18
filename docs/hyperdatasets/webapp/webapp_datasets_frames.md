@@ -253,13 +253,13 @@ To adjust the visibility of a layer, use its opacity slider. To hide / show a la
 
 #### Labels 
 
-Below the layers, the **Labels** panel displays the mapping of mask values to their labels. 
+Below the layers, the **LABELS** section displays the mapping of mask values to their labels. 
 The panel includes masks labels from the frame and from its dataset version.
 
-**To modify a mask color and opacity:**
-* Clicking the color circle next to the label 
+**To modify a mask's color and opacity:**
+* Click the colored circle next to the label 
 * Select a new color
-* Use the opacity slider 
+* Adjust the opacity slider 
 * Click **OK**
 
 
