@@ -6,7 +6,7 @@ ClearML Task is ClearML's Zero Code Integration Module. Using only the command l
 you can easily track your work and integrate ClearML with your existing code.
 
 `clearml-task` automatically integrates ClearML into any script or **any** python repository. `clearml-task` has the option 
-to send the task to a queue, where a **ClearML Agent** listening to the queue will fetch the task it and executes it on a 
+to send the task to a queue, where a **ClearML Agent** listening to the queue will fetch the task and execute it on a 
 remote or local machine. It's even possible to provide command line arguments and provide Python module dependencies and requirements.txt file! 
 
 ## How Does ClearML Task Work?
@@ -41,7 +41,7 @@ If unspecified, `clearml-task` will use the latest commit from the master branch
 
 <div className="tbl-cmd">
 
-|command line options | Description| 
+|Name | Description| 
 |---|----|
 | `--version` | Display the `clearml-task` utility version | 
 | `--project`| Set the project name for the task (Required, unless using `--base-task-id`) | 
