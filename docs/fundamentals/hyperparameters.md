@@ -33,7 +33,7 @@ task = Task.init(project_name="examples",task_name="argparser logging")
 
 ## Click parameters
 
-Parameters passed to experiments using [click](https://click.palletsprojects.com/en/8.0.x/), are automatically captured 
+Parameters passed to experiments, using [click](https://click.palletsprojects.com/en/8.0.x/), are automatically captured 
 by ClearML, so no code changes are needed.
 
 ```python
