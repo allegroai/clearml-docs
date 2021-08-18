@@ -6,10 +6,10 @@ This reference page provides detailed information about the configurable options
 
 This reference page is organized by configuration file section:
 
-* [agent](#agent) - Contains **ClearML Agent** configuration options. If **ClearML Agent** was not installed, the configuration 
+* [agent](#agent-section) - Contains **ClearML Agent** configuration options. If **ClearML Agent** was not installed, the configuration 
   file will not have an `agent` section.
-* [api](#api) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Server**.
-* [sdk](#sdk) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
+* [api](#api-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Server**.
+* [sdk](#sdk-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
 in the **ClearML** GitHub repositories  
