@@ -75,6 +75,7 @@ module.exports = {
                         'guides/frameworks/pytorch/tensorboard_toy_pytorch']
                 },
                 {'Pytorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite']},
+                {'Pytorch Lightning': ['guides/frameworks/pytorch_lightning/pytorch_lightning_example']},
                 {
                     'Pytorch Notebooks': [
                         {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
