@@ -24,15 +24,15 @@ to a Task.
     task.connect_configuration(configuration=config_file_yaml, name="yaml file")        
 
 **ClearML** reports the configurations in the **ClearML Web UI** experiment details **>** **CONFIGURATION** tab **>** **CONFIGURATION OBJECTS** 
-area. The JSON file will appear in the **json file** section, and the YAML file will appear **yaml file** section, as specified 
-in the `name` parameter of the `connect_configuration` method. 
+section. The contents of the JSON file will appear in the **json file** object, and the contents of the YAML file will appear 
+in the **yaml file** object, as specified in the `name` parameter of the `connect_configuration` method. 
 
 ![image](../../img/examples_reporting_config.png)
 
 ### Configuration dictionary
 
 Connect a configuration dictionary to a Task by creating a dictionary, and then calling the [Task.connect_configuration](../../references/sdk/task.md#connect_configuration) 
-method with the dictionary and the section name as arguments. After the configuration is connected, **ClearML** tracks changes to it.
+method with the dictionary and the object name as arguments. After the configuration is connected, **ClearML** tracks changes to it.
 
     model_config_dict = {
         'CHANGE ME': 13.37,
@@ -46,7 +46,7 @@ method with the dictionary and the section name as arguments. After the configur
     model_config_dict['CHANGE ME'] *= model_config_dict['new value']
 
 **ClearML** reports the configuration in the **ClearML Web UI** **>** experiment details **>** **CONFIGURATION** tab **>** 
-**CONFIGURATION OBJECTS** area **>** **dictionary** section.
+**CONFIGURATION OBJECTS** area **>** **dictionary** object.
 
 ![image](../../img/examples_reporting_config_3.png)
 
