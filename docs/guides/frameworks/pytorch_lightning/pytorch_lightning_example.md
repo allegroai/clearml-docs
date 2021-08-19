@@ -3,7 +3,7 @@ title: Pytorch Lightning
 ---
 
 The [pytorch-lightning](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch-lightning/pytorch_lightning_example.py) 
-script demonstrates the integration of ClearML into code that uses PyTorch Lightning. 
+script demonstrates the integration of ClearML into code that uses [PyTorch Lightning](https://www.pytorchlightning.ai/). 
 
 The example script does the following:
 * Trains a simple deep neural network on the PyTorch built-in MNIST dataset
