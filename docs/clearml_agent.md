@@ -51,7 +51,7 @@ pip install clearml-agent
 ```
 
 :::note
-Install ClearML Agent in your system or using a Docker image. Do not install it in a virtual environment.
+Install ClearML Agent as a system Python package and not in a Python virtual environment.
 :::
 
 ## Configuration
