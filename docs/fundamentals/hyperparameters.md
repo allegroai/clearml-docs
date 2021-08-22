@@ -14,9 +14,11 @@ These sections are further broken down into sub-sections (General \ Args \ TF_De
 
 ![image](../img/hyperparameters_sections.png)
 
-## Argument Parser
-Parameters passed to experiments, using Python's built-in argparser module, are automatically captured by ClearML, so no code 
-changes are needed.
+## Command line parsing 
+Parameters passed to experiments, using Python's built-in argparse module and [click](https://click.palletsprojects.com/en/8.0.x/), 
+are automatically captured by ClearML, so no code changes are needed.
+
+### Argparse example 
 
 ```python
 from clearml import Task
@@ -31,10 +33,7 @@ args = parser.parse_args()
 task = Task.init(project_name="examples",task_name="argparser logging")
 ``` 
 
-## Click parameters
-
-Parameters passed to experiments, using [click](https://click.palletsprojects.com/en/8.0.x/), are automatically captured 
-by ClearML, so no code changes are needed.
+### Click example
 
 ```python
 from clearml import Task
@@ -52,6 +51,8 @@ def hello(count, name):
 
 hello()
 ```
+
+See another code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py).
 
 
 ## Connecting Objects
