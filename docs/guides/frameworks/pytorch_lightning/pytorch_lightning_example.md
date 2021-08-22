@@ -12,7 +12,7 @@ The example script does the following:
 
 ## Scalars
 
-The test loss and validation loss metric scalar plots appear in the experiment's page in the ClearML web UI under **RESULTS > SCALARS**. 
+ClearML automatically logs the test loss and validation loss plots, which appear in the experiment's page in the ClearML web UI under **RESULTS > SCALARS**. 
 Resource utilization plots, which are titled **:monitor: machine**, also appear in the **SCALARS** tab.
 
 ![PyTorch Lightning console](../../../img/examples_pytorch_lightning_scalars.png)
