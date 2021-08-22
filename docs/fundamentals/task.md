@@ -11,6 +11,10 @@ To transform an existing script into a **ClearML Task**, one must call the [Task
 and specify a task name and its project. This creates a Task object that automatically captures code execution 
 information as well as execution outputs. 
 
+:::note
+ClearML object (e.g. task, project) names are required to be at least 3 characters long
+:::
+
 All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
 and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
 model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). Additionally, 
