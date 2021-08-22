@@ -12,12 +12,13 @@ in the UI and send it for long-term training on a remote machine.
 **If you are not that lucky**, this section is for you :)
 
 ## What does ClearML Session do?
-`clearml-session` is a feature that allows to launch a session of Jupyterlab and VS Code, and to execute code on a remote 
+`clearml-session` is a feature that allows to launch a session of JupyterLab and VS Code, and to execute code on a remote 
 machine that better meets resource needs. With this feature, local links are provided, which can be used to access 
-JupyterLab and VS Code on a remote machine over a secure and encrypted SSH connection.
+JupyterLab and VS Code on a remote machine over a secure and encrypted SSH connection. By default, the JupyterLab and 
+VS Code remote sessions use ports 8878 and 8898 respectively. 
 
 <details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Jupyter-Lab Window</summary>
+<summary className="cml-expansion-panel-summary">JupyterLab Window</summary>
 <div className="cml-expansion-panel-content">
 
 ![image](../img/session_jupyter.png)
@@ -138,7 +139,7 @@ The Task must be connected to a git repository, since currently single script de
 
 | Command line options | Description | Default value |
 |-----|---|---|
-| `--jupyter-lab` | Download a Jupyter-Lab environment | `true` |
+| `--jupyter-lab` | Download a JupyterLab environment | `true` |
 | `--vscode-server` | Download a VSCode environment | `true` |
 | `--public-ip` | Register the public IP of the remote machine (if you are running the session on a public cloud) | Session runs on the machine whose agent is executing the session|
 | `--init-script` | Specify a BASH init script file to be executed when the interactive session is being set up | `none` or previously entered BASH script |

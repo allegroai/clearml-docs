@@ -9,7 +9,7 @@ The example script does the following:
 * Trains a simple deep neural network on the PyTorch built-in [MNIST](https://pytorch.org/docs/stable/torchvision/datasets.html#mnist)
   dataset.
 * Uses **ClearML** automatic logging. 
-* Calls the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method to demonstrate explicit reporting and explicit reporting, 
+* Calls the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method to demonstrate explicit reporting, 
   which allows adding customized reporting to the code.
 * Creates an experiment named `pytorch mnist train`, which is associated with the `examples` project.
 
