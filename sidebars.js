@@ -68,6 +68,7 @@ module.exports = {
                 {
                     'Keras': ['guides/frameworks/keras/allegro_clearml_keras_tb_example', 'guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']
                 },
+                {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
                 {'Matplotlib': ['guides/frameworks/matplotlib/allegro_clearml_matplotlib_example', 'guides/frameworks/matplotlib/matplotlib_example']},
                 {
                     'Pytorch': ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
