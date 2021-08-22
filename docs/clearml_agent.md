@@ -487,7 +487,7 @@ An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then atta
 queues that are configured to run with a certain amount of resources:
 
 ```console
-clearml-agent daemon --dynamic-gpus --gpus 0-7 --queues quad_gpu=4 dual_gpu=2 
+clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue quad_gpu=4 dual_gpu=2 
 ``` 
 
 The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue.
