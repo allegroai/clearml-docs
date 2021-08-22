@@ -237,6 +237,10 @@ Artifacts tracked in an experiment appear in the **ARTIFACTS** tab, and include 
 
 Copy the location of models and artifacts stored in local files (`file://`) to the clipboard. Download models and artifacts in remote storage (for example `https://` or `s3`).
 
+:::note
+Links to artifacts that are stored in remote storage are clickable, while links to artifacts in local storage are non-clickable. 
+:::
+
 ### Models
 
 The input and output models appear in the **ARTIFACTS** tab. Models are associated with the experiment, but to see further model details,
