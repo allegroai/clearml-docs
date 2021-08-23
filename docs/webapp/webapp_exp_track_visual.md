@@ -235,11 +235,9 @@ In older versions of **ClearML Server**, the Task model configuration appeared i
 
 Artifacts tracked in an experiment appear in the **ARTIFACTS** tab, and include models and other artifacts.
 
-Copy the location of models and artifacts stored in local files (`file://`) to the clipboard. Download models and artifacts in remote storage (for example `https://` or `s3`).
-
-:::note
-Links to artifacts that are stored in remote storage are clickable, while links to artifacts in local storage are non-clickable. 
-:::
+Since local files cannot be served by the browser, the UI provides the means to copy the path (`file://`), whereas network 
+located files (for example `https://` or `s3`) can probably be served, so the UI provides a clickable link and means to 
+download such files.
 
 ### Models
 
