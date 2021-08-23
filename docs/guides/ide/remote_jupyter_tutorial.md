@@ -105,7 +105,7 @@ Now, let's execute some code in the remote session!
    
 ### Step 5: Shut down remote session
 
-To shut down the remote session, which will free the `clearml-agent` and close the CLI. Enter "Shutdown".
+To shut down the remote session, which will free the `clearml-agent` and close the CLI, enter "Shutdown".
    
 ```console
 Connection is up and running
