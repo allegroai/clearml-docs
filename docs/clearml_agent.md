@@ -50,7 +50,7 @@ To install ClearML Agent, execute
 pip install clearml-agent
 ```
 
-:::note
+:::info
 Install ClearML Agent as a system Python package and not in a Python virtual environment.
 :::
 
