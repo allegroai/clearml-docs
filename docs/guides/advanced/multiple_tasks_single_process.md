@@ -3,7 +3,23 @@ title: Multiple Tasks in Single Process
 ---
 
 The [multiple_tasks_single_process](https://github.com/allegroai/clearml/blob/master/examples/advanced/multiple_tasks_single_process.py)
-script demonstrates initializing multiple tasks in a single script. 
+script demonstrates multiple task initializations in a single script. 
 
-In order to initialize a task, the `init` method is used. In order to initialize the next tasks, the previous tasks 
-must be finalized, using the `close` method. 
+In order to initialize a task, the [`Task.init`](../../references/sdk/task.md#taskinit) method is used and a `task_name` and 
+`project_name` are input. In order to initialize another task in the same script, the previous task must be manually shut down, 
+using the [`close`](../../references/sdk/task.md#close) method. 
+
+When the script is executed, it should return something like this:
+
+```text
+ClearML Task: created new task id=5c4d2d3674a94e35b10f04d9d2180l62
+ClearML results page: https://app.community.clear.ml/projects/6835eb7316554c2b933b69638470fe02/experiments/5c4d2d3674a94e35b10f04d9d2180l62/output/log
+...
+ClearML Task: created new task id=28a84c17a6204b438e1e7a094a234a7f
+ClearML results page: https://app.community.clear.ml/projects/7894eb7316554c4b933a79638473fe02/experiments/28a84c17a6204b438e1e7a094a234a7f/output/log
+...
+ClearML Task: created new task id=6d1e253ba0234d32a38sg85013185g46
+ClearML results page: https://app.community.clear.ml/projects/7895eb7316554c4b933a69638470fe02/experiments/6d1e253ba0234d32a38sg85013185g46/output/log
+```
+
+Notice that three separate tasks with distinct IDs are created, and a link is provided to view the results of each one.  
