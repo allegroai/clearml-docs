@@ -14,11 +14,12 @@ These sections are further broken down into sub-sections (General \ Args \ TF_De
 
 ![image](../img/hyperparameters_sections.png)
 
-## Command line parsing 
-Parameters passed to experiments, using Python's built-in argparse module and [click](https://click.palletsprojects.com/en/8.0.x/), 
-are automatically captured by ClearML, so no code changes are needed.
+## Command Line Parsing 
+ClearML captures any command line parameters passed when invoking code that uses standard python packages such as 
+argparse or [click](https://click.palletsprojects.com). This happens automatically with no additional code required beyond 
+initializing ClearML.
 
-### Argparse example 
+### Argparse Example 
 
 ```python
 from clearml import Task
@@ -33,7 +34,7 @@ args = parser.parse_args()
 task = Task.init(project_name="examples",task_name="argparser logging")
 ``` 
 
-### Click example
+### Click Example
 
 ```python
 from clearml import Task
