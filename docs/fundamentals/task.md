@@ -153,7 +153,7 @@ Once a Task is created, the Task object can be accessed from anywhere in the cod
 
 If multiple Tasks need to be created in the same process (for example, for logging multiple manual runs), 
 make sure to close a Task, before initializing a new one. To close a task simply call `task.close` 
-(see example [here](https://github.com/allegroai/clearml/blob/master/examples/advanced/multiple_tasks_single_process.py)).
+(see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a Task, its project needs to be specified. If the project entered does not exist, it will be created. 
 Projects can be divided into sub-projects, just like folders are broken into sub-folders.
