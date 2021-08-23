@@ -59,7 +59,7 @@ module.exports = {
             'guides/guidemain',
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
             {'Data Management': ['guides/data management/data_man_simple', 'guides/data management/data_man_folder_sync', 'guides/data management/data_man_cifar_classification']},
-            {'Clearml Task': ['guides/clearml-task/clearml_task_tutorial']},
+            {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
@@ -68,6 +68,7 @@ module.exports = {
                 {
                     'Keras': ['guides/frameworks/keras/allegro_clearml_keras_tb_example', 'guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']
                 },
+                {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
                 {'Matplotlib': ['guides/frameworks/matplotlib/allegro_clearml_matplotlib_example', 'guides/frameworks/matplotlib/matplotlib_example']},
                 {
                     'Pytorch': ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
@@ -106,7 +107,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
+        'Release Notes': ['release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
             'release_notes/ver_0_13', 'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10',
             'release_notes/ver_0_9',
         ],
