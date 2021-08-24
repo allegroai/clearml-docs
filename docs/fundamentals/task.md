@@ -9,11 +9,7 @@ or any custom implementation you choose.
 
 To transform an existing script into a **ClearML Task**, one must call the [Task.init()](../references/sdk/task.md#taskinit) method 
 and specify a task name and its project. This creates a Task object that automatically captures code execution 
-information as well as execution outputs. 
-
-:::note
-ClearML object (e.g. task, project) names are required to be at least 3 characters long
-:::
+information as well as execution outputs.
 
 All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
 and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
@@ -133,6 +129,10 @@ The following table describes the Task states and state transitions.
 * Python packages used (i.e. directly imported Python packages, and the versions available on the machine)
 * Argparse arguments (default and specific to the current execution)
 * Reports to Tensorboard & Matplotlib and model checkpoints.
+
+:::note
+ClearML object (e.g. task, project) names are required to be at least 3 characters long
+:::
 
 ```python
 from clearml import Task
