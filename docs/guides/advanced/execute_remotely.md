@@ -3,23 +3,33 @@ title: Remote Execution
 ---
 
 The [execute_remotely_example](https://github.com/allegroai/clearml/blob/master/examples/advanced/execute_remotely_example.py)
-script demonstrates the use of the [`execute_remotely`](../../references/sdk/task.md#execute_remotely/) method. 
+script demonstrates the use of the [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely/) method. 
 
-The script does the following: 
-* Trains a simple deep neural network on the PyTorch built-in MNIST dataset.
-* Uses ClearML's automatic and explicit logging.
-* Creates an experiment named `remote_execution pytorch mnist train`, which is associated with the `examples` project.
+:::note
+Make sure to have at least one [ClearML Agent](../../clearml_agent.md) running and assigned to listen to the `default` queue 
+```
+clearml-agent daemon --queue default
+```
+:::
 
 ## Execution Flow
 
-The following describes the code's execution flow: 
+The script trains a simple deep neural network on the PyTorch built-in MNIST dataset. The following describes the code's 
+execution flow: 
 1. The training runs for one epoch. 
-1. The code passes the `execute_remotely` method which terminates the local execution of the code.
-1. Execution switches to remote execution by the agent listening to queue specified in the `queue_name` parameter of the method. 
+1. The code passes the `execute_remotely` method which terminates the local execution of the code and enqueues the task 
+   to the `default` queue, as specified in the `queue_name` parameter.
+1. An agent listening to the queue fetches the task and restarts task execution remotely. When the agent executes the task, 
+   the `execute_remotely` is considered no-op. 
 
-The `execute_remotely` method is especially helpful when running code on a development machine for a few iterations
+The execution flow that uses `execute_remotely` method is especially helpful when running code on a development machine for a few iterations
 to debug and to make sure the code doesn't crash, or setting up an environment. After that, the training can be 
 moved to be executed by a stronger machine.
+
+During execution, the script does the following:
+* Uses ClearML's automatic and explicit logging.
+* Creates an experiment named `remote_execution pytorch mnist train`, which is associated with the `examples` project.
+
 
 ## Scalars
 
