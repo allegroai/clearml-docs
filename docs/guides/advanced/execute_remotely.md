@@ -22,11 +22,11 @@ execution flow:
 1. An agent listening to the queue fetches the task and restarts task execution remotely. When the agent executes the task, 
    the `execute_remotely` is considered no-op. 
 
-The execution flow that uses `execute_remotely` method is especially helpful when running code on a development machine for a few iterations
-to debug and to make sure the code doesn't crash, or setting up an environment. After that, the training can be 
+An execution flow that uses `execute_remotely` method is especially helpful when running code on a development machine for a few iterations
+to debug and to make sure the code doesn't crash, or to set up an environment. After that, the training can be 
 moved to be executed by a stronger machine.
 
-During execution, the script does the following:
+During the execution of the example script, the code does the following:
 * Uses ClearML's automatic and explicit logging.
 * Creates an experiment named `remote_execution pytorch mnist train`, which is associated with the `examples` project.
 
