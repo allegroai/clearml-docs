@@ -213,7 +213,7 @@ Use the `daemon` subcommand to run a worker, optionally in a Docker container, l
 
 **`dynamic-gpus`**
 
-*  Allow to dynamically allocate gpus based on queue properties, configure with `--queues <queue_name>=<num_gpus>`.
+*  Allow to dynamically allocate gpus based on queue properties, configure with `--queue <queue_name>=<num_gpus>`.
 
   For example: `--dynamic-gpus --queue dual_gpus=2 single_gpu=1`
 

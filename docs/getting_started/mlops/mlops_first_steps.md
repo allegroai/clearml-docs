@@ -30,7 +30,7 @@ pip install clearml-agent
 Connect the Agent to the server by [creating credentials](https://app.community.clear.ml/profile), then run this:
 
 ```bash
-clearml-init
+clearml-agent init
 ```
 
 :::note
