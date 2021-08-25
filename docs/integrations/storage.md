@@ -18,8 +18,7 @@ Once uploading an object to a storage medium, each machine that uses the object 
 
 Configuration for storage is done by editing the [clearml.conf](../configs/clearml_conf.md).
 
-The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) format, 
-so environment variables can be input and then accessed.
+The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) format, which supports runtime environment variable access.
 
 ### Configuring AWS S3
 
@@ -52,8 +51,7 @@ aws {
     }
 ```
 
-AWS's environment variables can also be input.  Instead of `sdk.aws.s3.key`, `sdk.aws.s3.secret` and `sdk.aws.s3.region`, 
-use the AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, AWS_DEFAULT_REGION variables.
+AWS's S3 access parameters can be specified by referencing the standard environment variables if already defined.
 
 For example: 
 ```
@@ -64,7 +62,6 @@ s3 {
             secret: "${AWS_SECRET_ACCESS_KEY}"
             region: "${AWS_DEFAULT_REGION}"
             ...
-            ....
 }
 ``` 
 
@@ -94,8 +91,7 @@ To configure Azure blob storage specify the account name and key.
     }
 ```
 
-Azure's environment variables can be input. Instead of `sdk.azure.storage.containers.account_name`
-and `sdk.azure.storage.containers.account_key`, use the AZURE_STORAGE_ACCOUNT and AZURE_STORAGE_KEY environment variables.
+Azure's storage access parameters can be specified by referencing the standard environment variables if already defined.
 
 For example:
 ```
@@ -132,7 +128,8 @@ It's also possible to specify credentials for a specific bucket.
     }
 ```
 
-The GOOGLE_APPLICATION_CREDENTIALS environment variable can be used instead of defining `sdk.google.storage.credentials_json`.
+GCP's storage access parameters can be specified by referencing the standard environment variables if already defined.
+
 ```
 ...
 credentials = [
