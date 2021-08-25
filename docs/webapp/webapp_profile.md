@@ -7,9 +7,11 @@ Use the Profile page to manage a **ClearML** user account, including:
 * [User preferences](#setting-user-preferences) - Set **ClearML Web UI** options.
 * [Cloud Storage access for the ClearML Web UI](#providing-cloud-storage-access-for-the-clearml-web-ui) - So that the **ClearML Web UI** can render data stored in a Cloud, such as debug samples.
 * [ClearML credentials](#creating-clearml-credentials) - Create **ClearML** credentials to configure **ClearML** and **ClearML Agent** (if you run **ClearML Agent** commands directly).
-* [Configuration vault](#configuration-vault) - Input configuration snippets which will merge into **ClearML**'s and **ClearML Agent**'s configurations when enabled.
+* [Configuration vault](#configuration-vault) - Define additional **ClearML** configuration entries that are applied to all **ClearML** and **ClearML Agent** instances (which use this profile's access credentials).
 * [Switch workspaces](#switching-workspaces) - If using multiple workspaces (are a member of more than one **ClearML Hosted Service** team), switch workspaces.
 * [Invite new teammates](#inviting-new-teammates) - Collaborate with new users by inviting them to a **ClearML Hosted Service** workspace.
+
+![Profile page](../img/webapp_profile.png)
 
 ## Setting user preferences
 
@@ -56,20 +58,24 @@ switch to it.
 
 ## Configuration vault
 
+![Configuration vault](../img/webapp_profile_configuration_vault.png)
+
 :::note
 The configuration vault is only supported by the **ClearML Enterprise Server**
 :::
 
-Enterprise users can insert configurations in HOCON or Json format into the central configuration vault. When the vault is
-enabled, the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
-The configuration will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
+Use the configuration vault to enter global ClearML configuration entries in any of ClearML supported configuration 
+formats: HOCON / JSON / YAML. When the vault is enabled, the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
+The configuration will extend the configuration defined in the local clearml.conf file. 
+
+These configurations override the configurations written in the ClearML [configuration file](../configs/clearml_conf.md). 
 
 **To edit vault contents:**
 * Click **EDIT** or double click the vault box
 * Insert / edit the configurations in the vault 
 * Press **OK**
 
-**To apply vault configurations:**
+**To apply vault contents:**
 * Click the toggle atop the vault to enable / disable the configurations
 * Once enabled, the configurations will be merged to the configuration file during ClearML and ClearML Agent usage 
 

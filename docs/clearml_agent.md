@@ -123,7 +123,12 @@ pip install clearml-agent
     * Windows - `\User\<username>\clearml.conf`
 
 1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
-   There is also an option to configure all agents in the Enterprise Server's [configuration vault](webapp/webapp_profile.md#configuration-vault).
+   
+:::note
+The ClearML Enterprise server provides a [configuration vault](webapp/webapp_profile.md#configuration-vault), the contents 
+of which are categorically applied on top of the agent-local configuration
+:::
+
 
 ### Adding ClearML Agent to a configuration file
 
