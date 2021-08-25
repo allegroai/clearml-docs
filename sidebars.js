@@ -57,6 +57,7 @@ module.exports = {
     ],
     guidesSidebar: [
             'guides/guidemain',
+            {'Advanced': ['guides/advanced/execute_remotely', 'guides/advanced/multiple_tasks_single_process']},
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
             {'Data Management': ['guides/data management/data_man_simple', 'guides/data management/data_man_folder_sync', 'guides/data management/data_man_cifar_classification']},
             {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
