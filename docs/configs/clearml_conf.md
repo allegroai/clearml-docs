@@ -40,6 +40,7 @@ For example:
         # # Will be used when no bucket configuration is found
         project: "clearml"
         credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+}
 ```
 
 `${GOOGLE_APPLICATION_CREDENTIALS}` will automatically be substituted by the environment variable value.
