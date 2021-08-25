@@ -45,10 +45,14 @@ If **ClearML** was previously configured, follow [this](clearml_agent#adding-cle
 ClearML Agent specific configurations
 :::
 
-To install ClearML Agent execute
+To install ClearML Agent, execute
 ```bash
 pip install clearml-agent
 ```
+
+:::info
+Install ClearML Agent as a system Python package and not in a Python virtual environment.
+:::
 
 ## Configuration
 
