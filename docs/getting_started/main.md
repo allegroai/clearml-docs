@@ -20,5 +20,4 @@ while ClearML ensures your work is reproducible and scalable.
 - Much More!
 
 #### Who We Are
-ClearML is supported by you :heart: and by the team behind [allegro.ai](https://www.allegro.ai) , where we build even more MLOps for enterprise companies. 
-
+ClearML is supported by you :heart: and by the team behind [allegro.ai](https://www.allegro.ai) , where we build even more MLOps for enterprise companies.
