@@ -9,17 +9,16 @@ or any custom implementation you choose.
 
 To transform an existing script into a **ClearML Task**, one must call the [Task.init()](../references/sdk/task.md#taskinit) method 
 and specify a task name and its project. This creates a Task object that automatically captures code execution 
-information as well as execution outputs. 
+information as well as execution outputs.
 
 All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
 and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
-model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). 
+model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). Additionally, 
+there is an option to work with tasks in Offline Mode, in which all information is saved in a local folder (see 
+[Storing Task Data Offline](../guides/set_offline.md)).
 
-In the UI and code, tasks are grouped into projects, which are logical entities similar to folders. Users can decide
+In the UI and code, tasks are grouped into [projects](projects.md), which are logical entities similar to folders. Users can decide
 how to group tasks, though different models or objectives are usually grouped into different projects.
-Projects can be divided into sub-projects (and sub-sub-projects, etc.) just like files and subdirectories on a 
-computer, making experiment organization easier. In the WebApp, every project has an [**Overview**](../webapp/webapp_project_overview.md)
-tab, where a project description can be written and shared.
 
 Tasks that are in the system can be accessed and utilized with code. To [access a task](#accessing-tasks), it can be identified either by a 
 project name & task name combination or by a unique ID. 
@@ -131,13 +130,17 @@ The following table describes the Task states and state transitions.
 * Argparse arguments (default and specific to the current execution)
 * Reports to Tensorboard & Matplotlib and model checkpoints.
 
+:::note
+ClearML object (e.g. task, project) names are required to be at least 3 characters long
+:::
+
 ```python
 from clearml import Task
 
 
 task = Task.init(
-    project_name='example', 
-    task_name='task template', 
+    project_name='example',    # project name of at least 3 characters
+    task_name='task template', # task name of at least 3 characters
     task_type=None,
     tags=None,
     reuse_last_task_id=True,
@@ -154,7 +157,7 @@ Once a Task is created, the Task object can be accessed from anywhere in the cod
 
 If multiple Tasks need to be created in the same process (for example, for logging multiple manual runs), 
 make sure to close a Task, before initializing a new one. To close a task simply call `task.close` 
-(see example [here](https://github.com/allegroai/clearml/blob/master/examples/advanced/multiple_tasks_single_process.py)).
+(see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a Task, its project needs to be specified. If the project entered does not exist, it will be created. 
 Projects can be divided into sub-projects, just like folders are broken into sub-folders.

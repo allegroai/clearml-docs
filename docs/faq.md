@@ -77,7 +77,6 @@ title: FAQ
     * [AWS EC2 AMIs?](#aws_ec2_amis)
     * [Google Cloud Platform?](#google_cloud_platform)
 * [How do I restart ClearML Server?](#restart)
-* [Can I deploy ClearML Server on Kubernetes clusters?](#kubernetes)
 * [Can I create a Helm Chart for ClearML Server Kubernetes deployment?](#helm)
 * [My Docker cannot load a local host directory on SELinux?](#selinux)
 
@@ -95,6 +94,7 @@ title: FAQ
 * [How do I bypass a proxy configuration to access my local ClearML Server?](#proxy-localhost)
 * [Trains is failing to update ClearML Server. I get an error 500 (or 400). How do I fix this?](#elastic_watermark)
 * [Why is my Trains Web-App (UI) not showing any data?](#web-ui-empty)
+* [Why can't I access my ClearML Server when I run my code in a virtual machine?](#vm_server)
 
 **ClearML Agent**
 
@@ -659,12 +659,6 @@ if you deployed to Linux, see [Restarting](deploying_clearml/clearml_server_linu
 
 <br/>
 
-**Can I deploy ClearML Server on Kubernetes clusters?** <a id="kubernetes"></a>
-
-Yes! ClearML Server supports Kubernetes. For detailed instructions, see [Deploying ClearML Server: Kubernetes](deploying_clearml/clearml_server_kubernetes.md) 
-in the "Deploying ClearML" section.
-
-<br/>
 
 **Can I create a Helm Chart for ClearML Server Kubernetes deployment?** <a id="helm"></a>
 
@@ -823,7 +817,7 @@ Do the following:
 
 <br/>
 
-**The ClearML Server keeps returning HTTP 500 (or 400) errors. How do I fix this?**
+**The ClearML Server keeps returning HTTP 500 (or 400) errors. How do I fix this?** <a id="elastic_watermark"></a>
 
 The ClearML Server will return HTTP error responses (5XX, or 4XX) when some of its [backend components](deploying_clearml/clearml_server.md) 
 are failing. 
@@ -846,6 +840,28 @@ A likely indication of this situation can be determined by searching your clearm
 
 If your ClearML Web-App (UI) does not show anything, it may be an error authenticating with the server. Try clearing the application cookies for the site in your browser's developer tools. 
     
+**Why can't I access my ClearML Server when I run my code in a virtual machine?** <a id="vm_server"></a>
+
+The network definitions inside a virtual machine (or container) are different from those of the host. The virtual machine's 
+and the server machine's IP addresses are different, so you have to make sure that the machine that is executing the 
+experiment can access the server's machine. 
+
+Make sure to have an independent configuration file for the virtual machine where you are running your experiments. 
+Edit the `api` section of your `clearml.conf` file and insert IP addresses of the server machine that are accessible 
+from the VM. It should look something like this:
+
+```
+api {
+    web_server: http://192.168.1.2:8080
+    api_server: http://192.168.1.2:8008
+    credentials {
+        "access_key" = "KEY"
+        "secret_key" = "SECRET"
+    }
+}
+```
+
+
 ## ClearML Agent
 
 **How can I execute ClearML Agent without installing packages each time?** <a className="tr_top_negative" id="system_site_packages"></a>

@@ -14,9 +14,12 @@ These sections are further broken down into sub-sections (General \ Args \ TF_De
 
 ![image](../img/hyperparameters_sections.png)
 
-## Argument Parser
-Parameters passed to experiments, using Python's built-in argparser module, are automatically captured by ClearML, so no code 
-changes are needed.
+## Command Line Parsing 
+ClearML captures any command line parameters passed when invoking code that uses standard python packages such as 
+argparse or [click](https://click.palletsprojects.com). This happens automatically with no additional code required beyond 
+initializing ClearML.
+
+### Argparse Example 
 
 ```python
 from clearml import Task
@@ -31,7 +34,28 @@ args = parser.parse_args()
 task = Task.init(project_name="examples",task_name="argparser logging")
 ``` 
 
-See argparse logging example [here](../guides/reporting/hyper_parameters.md).
+See another argparse logging example [here](../guides/reporting/hyper_parameters.md).
+
+### Click Example
+
+```python
+from clearml import Task
+import click
+
+task = Task.init(project_name='examples', task_name='click single command')
+
+@click.command()
+@click.option('--count', default=1, help='Number of greetings.')
+@click.option('--name', prompt='Your name',
+              help='The person to greet.')
+def hello(count, name):
+    for x in range(count):
+        click.echo("Hello {}!".format(name))
+
+hello()
+```
+
+See another code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py).
 
 ## Connecting Objects
 
@@ -52,7 +76,7 @@ task = Task.init(project_name='examples',task_name='argparser')
 
 task.connect(me)
 ```
-See connecting objects example [here](../guides/reporting/hyper_parameters.md).
+See connecting configuration objects example [here](../guides/reporting/hyper_parameters.md).
 
 
 * Connecting a dictionary:

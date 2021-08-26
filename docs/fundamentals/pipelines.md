@@ -59,7 +59,7 @@ example of a pipeline with concurrent steps.
 ## Custom pipelines
 
 In cases where a DAG is insufficient (for example, when needing to launch one pipeline, then, if performance is inadequate, 
-rerun pipeline again), users can apply cusom logic, using generic methods to enqueue tasks, implemented in python code.
+rerun pipeline again), users can apply custom logic, using generic methods to enqueue tasks, implemented in python code.
 The custom logic of the pipeline sits in the *Controller Task*'s script.  
 
 Custom pipelines usually involve cloning template tasks, modifying their parameters, and manually enqueuing 

@@ -45,10 +45,14 @@ If **ClearML** was previously configured, follow [this](clearml_agent#adding-cle
 ClearML Agent specific configurations
 :::
 
-To install ClearML Agent execute
+To install ClearML Agent, execute
 ```bash
 pip install clearml-agent
 ```
+
+:::info
+Install ClearML Agent as a system Python package and not in a Python virtual environment.
+:::
 
 ## Configuration
 
@@ -487,7 +491,7 @@ An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then atta
 queues that are configured to run with a certain amount of resources:
 
 ```console
-clearml-agent daemon --dynamic-gpus --queues quad_gpu=4 dual_gpu=2 
+clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue quad_gpu=4 dual_gpu=2 
 ``` 
 
 The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue.
@@ -497,7 +501,7 @@ queue, look for available GPUs again and spin on GPUs 4-5.
 Another option for allocating GPUs:
 
 ```console
-clearml-agent daemon --dynamic-gpus --queue dual=2 opportunistic=1-4
+clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue dual=2 opportunistic=1-4
 ``` 
 
 Notice that a minimum and maximum value of GPUs was specified for the `opportunistic` queue. This means the agent

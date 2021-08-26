@@ -131,13 +131,13 @@ Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** 
 
 #### Command line arguments
 
-The **Args** section shows automatically logged `argparse` arguments, and all older experiments parameters, except TensorFlow Definitions. Hover over a parameter, and the type, description, and default value appear, if they were provided.
+The **Args** parameter group shows automatically logged `argparse` arguments, and all older experiments parameters, except TensorFlow Definitions. Hover over a parameter, and the type, description, and default value appear, if they were provided.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![Command line arguments configuration section](../img/webapp_tracking_22.png)
+![Command line arguments configuration group](../img/webapp_tracking_22.png)
 
 </div>
 </details>
@@ -145,13 +145,13 @@ The **Args** section shows automatically logged `argparse` arguments, and all ol
 
 #### Environment variables
 
-If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** section will show environment variables (see [this FAQ](../faq#track-env-vars)).
+If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group will show environment variables (see [this FAQ](../faq#track-env-vars)).
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![Environment variables configuration section](../img/webapp_tracking_23.png)
+![Environment variables configuration group](../img/webapp_tracking_23.png)
 
 </div>
 </details>
@@ -159,27 +159,27 @@ If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** section w
 
 #### Custom parameter groups
 
-Custom sections shows parameter dictionaries, if the parameters were connected to the Task, using the `Task.connect` method,
+Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using the `Task.connect` method,
 with a `name` argument provided.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![Custom parameters section](../img/webapp_tracking_25.png)
+![Custom parameters group](../img/webapp_tracking_25.png)
 
 </div>
 </details>
 
 #### TensorFlow Definitions
 
-The **TF_DEFINE** sections shows automatic TensorFlow logging.
+The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![TF_DEFINE parameter section](../img/webapp_tracking_26.png)
+![TF_DEFINE parameter group](../img/webapp_tracking_26.png)
 
 </div>
 </details>
@@ -205,7 +205,7 @@ except experiments whose status is *Published* (read-only).
 
 **ClearML** tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
 These objects include those that are automatically tracked, and those connected to a Task in code (see [Task.connect_configuration](../references/sdk/task.md#connect_configuration)).
-**ClearML** supports providing a name for a Task model configuration (see the [name](../references/sdk/task.md#connect_configuration)
+**ClearML** supports providing a name for a Task model configuration object (see the [name](../references/sdk/task.md#connect_configuration)
 parameter in `Task.connect_configuration`.
 
 :::important
@@ -235,7 +235,11 @@ In older versions of **ClearML Server**, the Task model configuration appeared i
 
 Artifacts tracked in an experiment appear in the **ARTIFACTS** tab, and include models and other artifacts.
 
-Copy the location of models and artifacts stored in local files (`file://`) to the clipboard. Download models and artifacts in remote storage (for example `https://` or `s3`).
+Artifacts location is stored in the `FILE PATH` field.
+The UI provides locally stored artifacts with a 'copy to clipboard' action (<img src="/docs/latest/icons/ico-clipboard.svg" alt="Clipboard" className="icon size-sm space-sm" />) 
+to facilitate local storage access (since web applications are prohibited from accessing the local disk for security reasons).
+The UI provides Network hosted (e.g. https://, s3:// etc. URIs) artifacts with a download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" />) 
+to retrieve these files.
 
 ### Models
 
