@@ -160,6 +160,8 @@ The "name" argument, is the name of the section that the object will go into. If
 
 See [here](https://github.com/allegroai/clearml/blob/master/examples/reporting/model_config.py) for a detailed example.
 
+![Configuration objects](../img/fundamentals_hyperparameters_config_objects.png)
+
 ## Manual Parameter Access
 
 ### Manual Parameter Input
