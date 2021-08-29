@@ -36,18 +36,18 @@ GPU, CPU, Memory and Network information is also automatically captured.
 ### Automatic Reporting Examples
 Check out some of ClearML's automatic reporting examples for supported packages:
 * TensorBoard
-  * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - automatic logging of TensorBoard outputs,
+  * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - logging TensorBoard outputs and
     TensorFlow flags
-  * [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - automatic logging of TensorBoard histograms, scalars, images, text, and 
+  * [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - logging TensorBoard histograms, scalars, images, text, and 
     TensorFlow flags
-  * [Tensorboard with PyTorch](../guides/frameworks/pytorch/pytorch_tensorboard.md) - automatic logging of TensorBoard scalars, debug samples, text integrated into 
+  * [Tensorboard with PyTorch](../guides/frameworks/pytorch/pytorch_tensorboard.md) - logging TensorBoard scalars, debug samples, and text integrated into 
     code that uses PyTorch
-* [TensorBoardX](../guides/frameworks/tensorboardx/tensorboardx.md) - automatic logging of TensorBoardX scalars, debug 
+* [TensorBoardX](../guides/frameworks/tensorboardx/tensorboardx.md) - logging TensorBoardX scalars, debug 
   samples, and text in code using PyTorch
 * Matplotlib 
-  * [Matplotlib Script Example](../guides/frameworks/matplotlib/matplotlib_example.md) and [Jupyter Notebook](../guides/frameworks/matplotlib/allegro_clearml_matplotlib_example.md) - automatic
-    logging of scatter diagrams plotted with Matplotlib
-  * [Matplotlib with PyTorch](../guides/frameworks/pytorch/pytorch_matplotlib.md) - automatic logging of debug images shows 
+  * [Matplotlib Script Example](../guides/frameworks/matplotlib/matplotlib_example.md) and [Jupyter Notebook](../guides/frameworks/matplotlib/allegro_clearml_matplotlib_example.md) -
+    logging scatter diagrams plotted with Matplotlib
+  * [Matplotlib with PyTorch](../guides/frameworks/pytorch/pytorch_matplotlib.md) - logging debug images shown 
     by Matplotlib
 
 
@@ -77,7 +77,7 @@ See details in [Logger.report_media](../references/sdk/logger.md#report_media).
 
 ### Explicit Reporting Examples
 
-Check out all the available object types that can be reported using ClearML's explicit reporting:
+Check out ClearML's explicit reporting examples for various types of results:
 - [Text](../guides/reporting/text_reporting.md) 
 - [Scalars](../guides/reporting/scalar_reporting.md)
 - Plots 

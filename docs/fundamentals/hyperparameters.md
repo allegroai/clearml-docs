@@ -124,9 +124,9 @@ The CLEARML_LOG_ENVIRONMENT always overrides the clearml.conf file.
 
 ## TF Defines
 
-ClearML automatically captures TFDefine files, which are used as configuration files for Tensorflow.
+ClearML automatically captures TensorFlow definitions, which are used as configuration files for Tensorflow.
 
-See examples of ClearML's automatic logging of TFDefines:
+See examples of ClearML's automatic logging of TF Defines:
 * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
 * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
 
