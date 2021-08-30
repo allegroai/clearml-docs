@@ -23,7 +23,7 @@ clearml-init
 In ClearML, experiments are organized as [Tasks](../../fundamentals/task). 
 
 ClearML will automatically log your experiment and code once you integrate the ClearML [SDK](../../clearml_sdk.md) with your code.
-At the begging of your code, import the clearml package 
+At the beginning of your code, import the clearml package 
 
 ```python
 from clearml import Task
