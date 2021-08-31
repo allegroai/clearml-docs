@@ -12,9 +12,14 @@ This reference page is organized by configuration file section:
 * [sdk](#sdk) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
-in the **ClearML** GitHub repositories  
+in the **ClearML Agent** GitHub repository. 
 
-### Editing your configuration file
+:::info
+The values in the ClearML configuration file can be overridden by environment variables, the [configuration vault](../webapp/webapp_profile.md#configuration-vault), 
+and command-line arguments. 
+:::
+
+## Editing your configuration file
 
 To add, change, or delete options, edit your configuration file.
 
@@ -974,3 +979,4 @@ will not exceed the value of `matplotlib_untitled_history_size`
     
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
+  
