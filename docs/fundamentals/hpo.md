@@ -57,7 +57,7 @@ optimization.
 * **BOHB** - `automation.hpbandster.bandster.OptimizerBOHB`. BOHB performs robust and efficient hyperparameter optimization 
   at scale by combining the speed of Hyperband searches with the guidance and guarantees of convergence of Bayesian Optimization. 
   For more information about HpBandSter BOHB, see the [HpBandSter](https://automl.github.io/HpBandSter/build/html/index.html) 
-  documentation.
+  documentation and a [code example](../guides/frameworks/pytorch/notebooks/image/hyperparameter_search.md).
 * **Random** uniform sampling of hyperparameters - `automation.optimization.RandomSearch`.
 * **Full grid** sampling strategy of every hyperparameter combination - `Grid search automation.optimization.GridSearch`.
 * **Custom** - `automation.optimization.SearchStrategy` - Use a custom class and inherit from the ClearML automation base strategy class 
