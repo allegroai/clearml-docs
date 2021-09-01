@@ -28,10 +28,21 @@ The diagram above demonstrates the typical flow of hyperparameter optimization w
 1. Clone the base task. Each clone's parameter is overridden with a value from the optimization task  
 1. Enqueue each clone for execution by a ClearML Agent
 1. The Optimization Task records and monitors the cloned tasks' configuration and execution details, and returns a 
-   summary of the optimization results 
+   summary of the optimization results in tabular and parallel coordinate formats, and in a scalar plot. 
  
 
 ![Optimization results summary chart](../img/fundamentals_hpo_summary.png)
+
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">Parallel coordinate and scalar plots</summary>
+<div className="cml-expansion-panel-content">
+
+![Parallel Coordinates](../img/fundamentals_hpo_parallel_coordinates.png)
+
+![Scalars](../img/fundamentals_hpo_scalars.png)
+
+</div>
+</details>
 
 ### Supported Optimizers
 

@@ -25,6 +25,7 @@ project name & task name combination or by a unique ID.
 
 It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task multiple times and to modify it for re-execution.  
 
+![Task](../img/fundamentals_task.png)
 
 ## Task sections
 
