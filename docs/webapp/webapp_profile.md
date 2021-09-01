@@ -7,7 +7,7 @@ Use the Profile page to manage a **ClearML** user account, including:
 * [User preferences](#setting-user-preferences) - Set **ClearML Web UI** options.
 * [Cloud Storage access for the ClearML Web UI](#providing-cloud-storage-access-for-the-clearml-web-ui) - So that the **ClearML Web UI** can render data stored in a Cloud, such as debug samples.
 * [ClearML credentials](#creating-clearml-credentials) - Create **ClearML** credentials to configure **ClearML** and **ClearML Agent** (if you run **ClearML Agent** commands directly).
-* [Configuration vault](#configuration-vault) - Define additional **ClearML** configuration entries that are applied to all **ClearML** and **ClearML Agent** instances (which use this profile's access credentials).
+* [Configuration vault](#configuration-vault) (supported by the Enterprise Server) - Define additional **ClearML** configuration entries that are applied to all **ClearML** and **ClearML Agent** instances (which use this profile's access credentials).
 * [Switch workspaces](#switching-workspaces) - If using multiple workspaces (are a member of more than one **ClearML Hosted Service** team), switch workspaces.
 * [Invite new teammates](#inviting-new-teammates) - Collaborate with new users by inviting them to a **ClearML Hosted Service** workspace.
 
@@ -58,17 +58,16 @@ switch to it.
 
 ## Configuration vault
 
-![Configuration vault](../img/webapp_profile_configuration_vault.png)
-
 :::note
 The configuration vault is only supported by the **ClearML Enterprise Server**
 :::
 
+![Configuration vault](../img/webapp_profile_configuration_vault.png)
+
 Use the configuration vault to enter global ClearML configuration entries in any of ClearML supported configuration 
 formats: HOCON / JSON / YAML. When the vault is enabled, the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
-The configuration will extend the configuration defined in the local clearml.conf file. 
-
-These configurations override the configurations written in the ClearML [configuration file](../configs/clearml_conf.md). 
+New entries will extend the configuration in the ClearML [configuration file](../configs/clearml_conf.md), and
+existing configurations will be overridden.
 
 **To edit vault contents:**
 * Click **EDIT** or double click the vault box
