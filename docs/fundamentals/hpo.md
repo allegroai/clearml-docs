@@ -63,7 +63,7 @@ optimization.
 * **Custom** - `automation.optimization.SearchStrategy` - Use a custom class and inherit from the ClearML automation base strategy class 
 
 
-## Defining a hyperparameter optimization search example
+## Defining a Hyperparameter Optimization Search Example
 
 1. Import ClearML's automation modules: 
 

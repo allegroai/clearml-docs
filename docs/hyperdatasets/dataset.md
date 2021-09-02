@@ -17,7 +17,7 @@ metadata and data.
 These parent-child version relationships can be represented as version trees with a root-level parent. A Dataset 
 can contain one or more trees.
 
-## Dataset version state
+## Dataset Version State
 
 Dataset versions can have either **Draft** or **Published** status. 
 

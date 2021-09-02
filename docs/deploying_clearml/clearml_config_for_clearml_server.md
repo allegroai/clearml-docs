@@ -95,7 +95,7 @@ The configuration file's location depends upon the operating system:
 * Mac - `$HOME/clearml.conf`
 * Windows - `\User\<username>\clearml.conf`
 
-## Add ClearML to a configuration file
+## Add ClearML to a Configuration File
 
 The setup wizard may indicate that a configuration file already exists. For example, if a **ClearML Agent** was previously 
 configured, then a configuration file was created. The wizard does not edit or overwrite existing configuration files. 
