@@ -12,7 +12,7 @@ With the **Workers and Queues** page, users can:
 
 
 
-## Resources utilization
+## Resources Utilization
 
 **To monitor resource utilization:**
 
@@ -34,7 +34,7 @@ With the **Workers and Queues** page, users can:
 
 
 
-## Worker utilization
+## Worker Utilization
 
 Optimize worker use by monitoring worker utilization in the **Workers** tab.
 
@@ -45,7 +45,7 @@ Optimize worker use by monitoring worker utilization in the **Workers** tab.
 
 
 
-## Queue utilization
+## Queue Utilization
 
 **To monitor all queues:**
 
@@ -64,7 +64,7 @@ Optimize worker use by monitoring worker utilization in the **Workers** tab.
 
 
 
-## Queue management
+## Queue Management
 
 In the **Queues** tab, do any of the following:
 

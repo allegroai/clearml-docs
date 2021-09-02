@@ -52,7 +52,7 @@ For more information, see [Previews](previews.md).
 
 For more information, see [Custom Metadata](custom_metadata.md).
 
-## Frame structure
+## Frame Structure
 
 The panel below describes the details contained within a `frame`:
 
@@ -294,7 +294,7 @@ myDatasetVersion.update_frames(frames)
 ```
 
 
-### Deleting frames
+### Deleting Frames
 
 To delete a SingleFrame, use the `DatasetVersion.delete_frames` method.
 
