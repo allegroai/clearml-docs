@@ -123,7 +123,7 @@ from clearml import Task
 executed_task = Task.get_task(task_id='aabbcc')
 # get a summary of the min/max/last value of all reported scalars
 min_max_vlues = executed_task.get_last_scalar_metrics()
-# get detialed graphs of all scalars
+# get detailed graphs of all scalars
 full_scalars = executed_task.get_reported_scalars()
 ```
 

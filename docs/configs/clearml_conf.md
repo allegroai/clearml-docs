@@ -14,7 +14,7 @@ This reference page is organized by configuration file section:
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
 in the **ClearML** GitHub repositories  
 
-## Editing your configuration file
+## Editing Your Configuration File
 
 To add, change, or delete options, edit your configuration file.
 
@@ -29,7 +29,7 @@ To add, change, or delete options, edit your configuration file.
 1. In the required section (sections listed on this page), add, modify, or remove required options.
 1. Save configuration file.
 
-## Environment variables
+## Environment Variables
 ClearML's configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) configuration format, 
 which supports environment variable reference.
 
@@ -49,7 +49,7 @@ See [Note on Windows](https://github.com/lightbend/config/blob/main/HOCON.md#not
 for information about using environment variables with Windows in the configuration file. 
 
 
-## Configuration file sections
+## Configuration File Sections
 
 ### agent section
 

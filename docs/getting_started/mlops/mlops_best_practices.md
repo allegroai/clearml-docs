@@ -28,7 +28,7 @@ Once we have a Task in ClearML, we can clone and edit its definition in the UI. 
 - Create data monitoring & scheduling and launch inference jobs to test performance on any new coming dataset.
 - Once there are two or more experiments that run after another, group them together into a [pipeline](../../fundamentals/pipelines.md)
 
-## Manage your data
+## Manage Your Data
 Use [ClearML Data](../../clearml_data.md) to version your data, then link it to running experiments for easy reproduction.
 Make datasets machine agnostic (i.e. store original dataset in a shared storage location, e.g. shared-folder/S3/Gs/Azure)
 ClearML Data supports efficient Dataset storage and caching, differentiable & compressed

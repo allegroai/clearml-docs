@@ -53,7 +53,7 @@ Interactive session config:
   }
 ```
 
-### Step 2: Launch interactive session 
+### Step 2: Launch Interactive Session 
 
 When the CLI asks whether to `Launch interactive session [Y]/n?`, press 'Y' or 'Enter'.  
 
@@ -72,7 +72,7 @@ Setup process details: https://app.community.clear.ml/projects/60893b87b0b642679
 Waiting for environment setup to complete [usually about 20-30 seconds]
 ```
 
-### Step 3: Connect to remote notebook
+### Step 3: Connect to Remote Notebook
 
 Then the CLI will output a link to the ready environment:
 
@@ -87,7 +87,7 @@ Click on the JupyterLab link, which will open the remote session
    
 Now, let's execute some code in the remote session!
 
-### Step 4: Execute code
+### Step 4: Execute Code
 
 1. Open up a new Notebook.
 
@@ -103,7 +103,7 @@ Now, let's execute some code in the remote session!
    Look in the script, and notice that it makes use of ClearML, Keras, and TensorFlow, but we don't need to install these 
    packages in Jupyter, because we specified them in the `--packages` flag of `clearml-session`. 
    
-### Step 5: Shut down remote session
+### Step 5: Shut Down Remote Session
 
 To shut down the remote session, which will free the `clearml-agent` and close the CLI, enter "Shutdown".
    

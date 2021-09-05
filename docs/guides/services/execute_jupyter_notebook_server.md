@@ -14,7 +14,7 @@ Notebook server by passing environment variables to the subprocess, which point 
 Task. When the script runs, it creates an experiment named `Allocate Jupyter Notebook Instance`, which is associated with 
 the `DevOps` project in the **ClearML Web UI**.
 
-## Running the Jupyter Notebook server service
+## Running the Jupyter Notebook Server Service
 
 1. The example script must run at least once before it can execute as a **ClearML Agent** service, because the Task must 
    be stored in **ClearML Server** in order to be enqueued for a **ClearML Agent** to fetch and execute.
@@ -36,7 +36,7 @@ the `DevOps` project in the **ClearML Web UI**.
     The status changes to *Pending* and then to *Running*. Once it is running, the Jupyter Notebook server is ready to 
    run notebooks.
 
-## Logging the Jupyter Notebook server
+## Logging the Jupyter Notebook Server
 
 **ClearML** stores the Jupyter Notebook server links in the `Task.comment` property, which appears in the **ClearML Web UI**
 **>** the experiment's **INFO** tab **>** **DESCRIPTION** section.

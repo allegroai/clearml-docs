@@ -12,13 +12,13 @@ example script.
   for the TensorFlow examples.
 * Have **ClearML Agent** [installed and configured](../../clearml_agent.md#installation).
 
-## Step 1: Run the experiment
+## Step 1: Run the Experiment
 
 In the `examples/frameworks/pytorch` directory, run the experiment script:
 
     python pytorch_mnist.py
 
-## Step 2: Clone the experiment
+## Step 2: Clone the Experiment
 
 Clone the experiment to create an editable copy for tuning.
 
@@ -28,7 +28,7 @@ Clone the experiment to create an editable copy for tuning.
 
 1. In the context menu, click **Clone** **>** **CLONE**. The newly cloned experiment appears and its info panel slides open.
 
-## Step 3: Tune the cloned experiment
+## Step 3: Tune the Cloned Experiment
 
 To demonstrate tuning, change two hyperparameter values.
 
@@ -40,7 +40,7 @@ To demonstrate tuning, change two hyperparameter values.
 
 1. Click **SAVE**.
 
-## Step 4: Run a worker daemon listening to a queue
+## Step 4: Run a Worker Daemon Listening to a Queue
 
 To execute the cloned experiment, use a worker that can run a worker daemon listening to a queue.
 
@@ -78,7 +78,7 @@ Run the worker daemon on the local development machine.
         
         Running CLEARML-AGENT daemon in background mode, writing stdout/stderr to /home/<username>/.clearml_agent_daemon_outym6lqxrz.txt
 
-## Step 5: Enqueue the tuned experiment
+## Step 5: Enqueue the Tuned Experiment
 
 Enqueue the tuned experiment.
 
@@ -92,7 +92,7 @@ Enqueue the tuned experiment.
    the status becomes Running. The progress of the experiment can be viewed in the info panel. When the status becomes 
    Completed, continue to the next step.
 
-## Step 6: Compare the experiments
+## Step 6: Compare the Experiments
 
 To compare the original and tuned experiments:
 1. In the **ClearML Web-App (UI)**, on the Projects page, click the `examples` project.

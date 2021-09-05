@@ -10,7 +10,7 @@ the needed files.
 1. Open terminal and change directory to the cloned repository's examples folder
     `cd clearml/examples/reporting`
 
-## Creating initial dataset
+## Creating Initial Dataset
 
 1. To create the dataset, run this code:
 
@@ -68,7 +68,7 @@ The command also finalizes the dataset, making it immutable and ready to be cons
    Dataset closed and finalized
    ```
 
-## Listing Dataset content
+## Listing Dataset Content
 
 To see that all the files were added to the created dataset, use `clearml-data list` and enter the ID of the dataset
 that was just closed.

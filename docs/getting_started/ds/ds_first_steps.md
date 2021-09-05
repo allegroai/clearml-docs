@@ -5,6 +5,7 @@ title: First Steps
 
 ## Install ClearML
 
+
 First, [sign up for free](https://app.community.clear.ml)
 
 Install the clearml python package:
@@ -18,7 +19,7 @@ clearml-init
 ```
 
 
-## Auto-log experiment
+## Auto-log Experiment
 
 In ClearML, experiments are organized as [Tasks](../../fundamentals/task). 
 

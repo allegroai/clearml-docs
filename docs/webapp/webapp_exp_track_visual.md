@@ -14,7 +14,7 @@ including:
 * [Plots](#other-plots) - Other plots and data, for example: Matplotlib, Plotly, and **ClearML** explicit reporting.
 * [Debug samples](#debug-samples) - Images, audio, video, and HTML.
 
-## Viewing modes
+## Viewing Modes
 
 The **ClearML Web UI** provides two viewing modes for experiment details:
 
@@ -27,7 +27,7 @@ Both modes contain all experiment details. When either view is open, switch to t
 table / full screen**.
 
 
-### Info panel
+### Info Panel
 
 The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table#clearml-actions-from-the-experiments-table)
 can be performed from the table (as well as the menu in the info panel).
@@ -41,7 +41,7 @@ can be performed from the table (as well as the menu in the info panel).
 </div>
 </details>
 
-### Full screen details view
+### Full Screen Details View
 
 The full screen details view allows for easier viewing and working with experiment tracking and results. The experiments
 table is not visible when the full screen details view is open. Perform experiment actions from the menu.
@@ -56,7 +56,7 @@ table is not visible when the full screen details view is open. Perform experime
 </details>
 
 
-## Execution details
+## Execution Details
 In the EXECUTION tab of an experiment's detail page, there are records of:
 * Source code
 * **ClearML Agent** configuration
@@ -65,7 +65,7 @@ In the EXECUTION tab of an experiment's detail page, there are records of:
 * Installed Python packages
 
 
-### Source code, ClearML Agent configuration, and output details
+### Source Code, ClearML Agent Configuration, and Output Details
 
 The source code details of the EXECUTION tab of an experiment include:
 * The experiment's repository
@@ -94,7 +94,7 @@ The output details include:
 </details>
 
 
-### Uncommitted changes
+### Uncommitted Changes
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -106,7 +106,7 @@ The output details include:
 </details>
 
 
-### Installed Python packages and their versions
+### Installed Python packages and Their Versions
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
@@ -129,7 +129,7 @@ In older versions of **ClearML Server**, the **CONFIGURATION** tab was named **H
 
 Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPER PARAMETERS**.
 
-#### Command line arguments
+#### Command Line Arguments
 
 The **Args** parameter group shows automatically logged `argparse` arguments, and all older experiments parameters, except TensorFlow Definitions. Hover over a parameter, and the type, description, and default value appear, if they were provided.
 
@@ -143,7 +143,7 @@ The **Args** parameter group shows automatically logged `argparse` arguments, an
 </details>
 
 
-#### Environment variables
+#### Environment Variables
 
 If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group will show environment variables (see [this FAQ](../faq#track-env-vars)).
 
@@ -157,7 +157,7 @@ If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group wil
 </details>
 
 
-#### Custom parameter groups
+#### Custom Parameter Groups
 
 Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using the `Task.connect` method,
 with a `name` argument provided.
@@ -186,7 +186,7 @@ The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
 Once an experiment is run and stored in **ClearML Server**, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
-### User properties
+### User Properties
 
 User properties allow to store any descriptive information in a key-value pair format. They are editable in any experiment,
 except experiments whose status is *Published* (read-only).
@@ -201,7 +201,7 @@ except experiments whose status is *Published* (read-only).
 </details>
 
 
-### Configuration objects
+### Configuration Objects
 
 **ClearML** tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
 These objects include those that are automatically tracked, and those connected to a Task in code (see [Task.connect_configuration](../references/sdk/task.md#connect_configuration)).
@@ -266,7 +266,7 @@ including design, label enumeration, and general information, go to the **MODELS
 </details>
 
 
-### Other artifacts
+### Other Artifacts
 
 **To retrieve another artifact:**
 
@@ -276,7 +276,7 @@ including design, label enumeration, and general information, go to the **MODELS
     * Copy its location to the clipboard <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
       if it is in a local file.
 
-#### Data audit
+#### Data Audit
 
 Artifacts which are uploaded and dynamically tracked by **ClearML** appear in the **DATA AUDIT** section. They include the file path, file size, hash, and metadata stored with the artifact.
 
@@ -306,7 +306,7 @@ Other artifacts, which are uploaded but not dynamically tracked after the upload
 
 
 
-## General information
+## General Information
 
 General experiment details appear in the **INFO** tab. This includes information describing the stored experiment:
 * The parent experiment
@@ -339,7 +339,7 @@ General experiment details appear in the **INFO** tab. This includes information
 
 
 
-## Experiment results
+## Experiment Results
 
 
 
@@ -364,7 +364,7 @@ is downloadable. To view the end of the log, click **Jump to end**.
 
 All scalars that **ClearML** automatically logs, as well as those explicitly reported in code, appear in **RESULTS** **>** **SCALARS**.
 
-#### Scalar plot tools
+#### Scalar Plot Tools
 
 Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
@@ -417,7 +417,7 @@ Individual plots can be shown / hidden or filtered by title.
 </details>
 
 
-#### Plot controls
+#### Plot Controls
 
 The table below lists the plot controls which may be available for any plot (in the **SCALARS** and **PLOTS** tabs). 
 These controls allow you to better analyze the results. Hover over a plot, and the controls appear.
@@ -441,7 +441,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-download-json.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
 | <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. |
 
-#### 3D plot controls 
+#### 3D Plot Controls 
 |Icon|Description|
 |---|---|
 | <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="Orbital rotation mode icon" className="icon size-sm" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
@@ -449,7 +449,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-homepage.svg" alt="reset axes icon" className="icon size-sm" />| Reset axes to default position. |
 
 
-### Debug samples
+### Debug Samples
 
 View debug samples by metric at any iteration. The most recent iteration appears first. Use the viewer / player to inspect images, audio, video samples and do any of the following:
 
@@ -501,7 +501,7 @@ View debug samples by metric at any iteration. The most recent iteration appears
     * For images, locate a position on the sample - Hover over the sample and the X, Y coordinates appear in the legend below the sample.
 
 
-## Tagging experiments
+## Tagging Experiments
 
 Tags are user-defined, color-coded labels that can be added to experiments (and models), allowing to easily identify and
 group experiments. Tags can show any text. For example, add tags for the type of remote machine experiments were executed
@@ -518,6 +518,6 @@ on, label versions of experiments, or apply team names to organize experimentati
 
 
 
-## Locating the experiment (Task) ID
+## Locating the Experiment (Task) ID
 
 * In the info panel, in the top area, to the right of the Task name, click **ID**. The Task ID appears.

@@ -20,11 +20,11 @@ with options to run locally or as a service.
 * **ClearML Agent** is [installed and configured](../../clearml_agent.md#installation).
 * **ClearML Agent** is launched in [services mode](../../clearml_agent.md#services-mode).
 
-## Running the cleanup service
+## Running the Cleanup Service
 
-### Running using the ClearML Web UI
+### Running Using the ClearML Web UI
 
-#### Step 1. Configuring the cleanup service
+#### Step 1. Configuring the Cleanup Service
 
 1. In the **ClearML Web UI** **Projects** page, click the **DevOps** project **>** click the **Cleanup Service** Task.
 1. In the info panel, click the **CONFIGURATION** tab.
@@ -43,14 +43,14 @@ with options to run locally or as a service.
 
 * Right click the **Cleanup Service** Task **>** **Enqueue** **>** In the queue list, select **services** **>** **ENQUEUE**.
 
-### Running using the script
+### Running Using the Script
 
 The [cleanup_service.py](https://github.com/allegroai/clearml/blob/master/examples/services/cleanup/cleanup_service.py) allows 
 to enqueue the cleanup service to run in **ClearML Agent** services mode, because the `run_as_service` parameter is set to `True`.
 
     python cleanup_service.py
     
-## The cleanup service code
+## The Cleanup Service Code
 
 [cleanup_service.py](https://github.com/allegroai/clearml/blob/master/examples/services/cleanup/cleanup_service.py) creates 
 a **ClearML** API client session to delete the Tasks. It creates an `APIClient` object that establishes a session with the 
