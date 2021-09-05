@@ -11,7 +11,7 @@ slow and tedious. Luckily, hyperparameter optimization can be automated and boos
 
 ## ClearML's HyperParameter Optimization
 
-ClearML provides the `HyperParameterOptimizer` class, which takes care of the entire optimization process for users in 
+ClearML provides the `HyperParameterOptimizer` class, which takes care of the entire optimization process for users 
 with a simple interface.  
 
 ClearML's approach to hyperparameter optimization is scalable, easy to set up and to manage, and it makes it easy to 

@@ -3,7 +3,7 @@ title: Environment Variables
 ---
 
 :::info
-ClearML's environment variables overide the clearml.conf file and SDK
+ClearML's environment variables override the clearml.conf file and SDK
 :::
 
 ## ClearML SDK Variables
