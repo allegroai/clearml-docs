@@ -300,6 +300,7 @@ the watchdog marks them as `aborted`. The non-responsive experiment watchdog is 
 
 Modify the following settings for the watchdog:
 
+* Watchdog status - enabled / disabled
 * The time threshold (in seconds) of experiment inactivity (default value is 7200 seconds (2 hours)).
 * The time interval (in seconds) between watchdog cycles.
  
@@ -312,6 +313,8 @@ Modify the following settings for the watchdog:
 
         tasks {
             non_responsive_tasks_watchdog {
+                enabled: true
+
                 # In-progress tasks that haven't been updated for at least 'value' seconds will be stopped by the watchdog
                 threshold_sec: 7200
         

@@ -52,7 +52,7 @@ For more information, see [Previews](previews.md).
 
 For more information, see [Custom Metadata](custom_metadata.md).
 
-## Frame structure
+## Frame Structure
 
 The panel below describes the details contained within a `frame`:
 
@@ -218,11 +218,11 @@ There are also options to populate the instance with:
 * A dictionary of annotation objects - `annotations`
 * A URI link to a mask file for the frame - `mask_source`
 
-For more information, see [SingleFrame](google.com).
+For more information, see the `SingleFrame` class description.
 
 ### Adding SingleFrames to a Dataset Version
 
-Use the [`DatasetVersion.add_frames`](google.com) method to add SingleFrames to a [Dataset version](dataset.md#dataset-versioning)
+Use the `DatasetVersion.add_frames` method to add SingleFrames to a [Dataset version](dataset.md#dataset-versioning)
 (see [Creating snapshots](dataset.md#creating-snapshots) or [Creating child versions](dataset.md#creating-child-versions)).
 
 ```python
@@ -248,7 +248,7 @@ myDatasetversion.add_frames(frames)
 
 
 ### Accessing SingleFrames
-To access a SingleFrame, use the [DatasetVersion.get_single_frame](google.com) method. 
+To access a SingleFrame, use the `DatasetVersion.get_single_frame` method. 
 
 ```python
 from allegroai import DatasetVersion
@@ -266,9 +266,9 @@ To access a SingleFrame, the following must be specified:
 ### Updating SingleFrames
 
 To update a SingleFrame: 
-* Access the SingleFrame by calling the [DatasetVersion.get_single_frame](google.com) method, 
+* Access the SingleFrame by calling the `DatasetVersion.get_single_frame` method, 
 * Make changes to the frame
-* Update the frame in a DatasetVersion using the [DatasetVersion.update_frames](google.com) method.
+* Update the frame in a DatasetVersion using the `DatasetVersion.update_frames` method.
 
 ```python
 frames = []                
@@ -294,9 +294,9 @@ myDatasetVersion.update_frames(frames)
 ```
 
 
-### Deleting frames
+### Deleting Frames
 
-To delete a SingleFrame, use the [DatasetVersion.delete_frames](google.com) method.
+To delete a SingleFrame, use the `DatasetVersion.delete_frames` method.
 
 ```python
 frames = []                

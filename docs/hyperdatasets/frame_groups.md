@@ -69,7 +69,7 @@ myVersion.add_frames(frames)
 
 ### Accessing a FrameGroup
 
-To access a FrameGroup, use the [DatasetVersion.get_single_frame](google.com) method, just like when 
+To access a FrameGroup, use the `DatasetVersion.get_single_frame` method, just like when 
 [accessing a SingleFrame](single_frames.md#accessing-singleframes).
 
 ```python
@@ -102,7 +102,7 @@ myVersion.update_frames(frames)
    
 ### Deleting frames
 
-To delete a FrameGroup, use the [DatasetVersion.delete_frames](google.com) method, just like when deleting a 
+To delete a FrameGroup, use the `DatasetVersion.delete_frames` method, just like when deleting a 
 SingleFrame, except that a FrameGroup is being referenced.
 
 ```python

@@ -3,7 +3,7 @@ title: Environment Variables
 ---
 
 :::info
-ClearML's environment variables overide the clearml.conf file and SDK
+ClearML's environment variables override the clearml.conf file and SDK
 :::
 
 ## ClearML SDK Variables
@@ -38,6 +38,7 @@ Overrides Repository Auto-logging
 |**CLEARML_API_SECRET_KEY** | Sets the Server's Private Access Key|
 |**CLEARML_API_HOST_VERIFY_CERT**| Enables \ Disable server certificate verification (If behind a firewall)|
 |**CLEARML_OFFLINE_MODE** | Sets Offline mode|
+|**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server when no HOST server is set|
 
 ## ClearML Agent Variables
 |Name|Description|

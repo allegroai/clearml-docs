@@ -12,9 +12,9 @@ To assist in focusing on active experimentation, experiments and models can be a
 in the active experiments and models tables. See [Archiving](webapp_archiving).
 :::
 
-![image](../img/webapp_exp_table_01.png)
+![Experiment table](../img/webapp_exp_table_01.png)
 
-## Experiments table columns
+## Experiments Table Columns
 
 The experiments table default and customizable columns are described in the following table.
 
@@ -36,7 +36,7 @@ The experiments table default and customizable columns are described in the foll
 
 
 
-## Customizing the experiments table
+## Customizing the Experiments Table
 
 The experiments table can be customized by:
 * Showing / hiding default columns
@@ -55,40 +55,73 @@ Use experiments table customization for various use cases, including:
 Changes are persistent (cached in the browser), and represented in the URL so customized settings can be saved in a browser
 bookmark and shared with other **ClearML** users to collaborate.
 
-![image](../img/gif/webapp_exp_table_cust.gif)
+:::note
+The following experiments-table customizations are saved on a **per project** basis: 
+* Columns order
+* Column width
+* Active sort order
+* Active filters
+* Custom columns
 
-### Adding metrics and / or hyperparameters
+If a project has sub-projects, the experiments can be viewed by their sub-project groupings or together with 
+all the experiments in the project. The customizations of these two views are saved separately. 
+:::
+
+
+
+### Adding Metrics and / or Hyperparameters
+
+![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
 
 Add metrics and / or hyperparameters columns to the experiments table. The metrics and hyperparameters depend upon the
 experiments in the table.
 
-#### To add metrics:
+#### To Add Metrics:
 
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ METRICS** **>** Expand a metric **>** Select the **LAST** (value),
   **MIN** (minimal value), and / or **MAX** (maximal value) checkboxes.
 
-#### To add hyperparameters:
+#### To Add Hyperparameters:
 
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ HYPER PARAMETERS** **>** Expand a section **>** Select the
   hyperparameter checkboxes.
 
-### Using other customization features
+### Filtering Experiments
+
+![Filtering table gif](../img/gif/filter_screenshots.gif)
+
+Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
+on a column, and the relevant filter appears.
+
+There are a few types of filters:
+* Value set - Choose which values to include from a list of all values in the column
+* Numerical ranges - Insert minimum and / or maximum value
+* Date ranges - Insert starting and / or ending date and time
+* Tags - Choose which tags to include from a list of all tags used in the column. Additionally, tags can be filtered using
+  the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These options appear
+    on the top of the tag list. 
+  
+Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
+
+
+
+
+### Using Other Customization Features
 
 **To use other customization features:**
 
 * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** select or clear the checkboxes of columns to show or hide.
-* Filter columns - According to type of experiment, experiment status (state), or user
 * Sort columns - According to metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
 * Dynamic column ordering - Drag a column title to a different position.
 * Column resizing - In the column heading, drag to a new size.
 * Column autofit - In the column heading, double click a column separator.
 
-## ClearML actions from the experiments table
+## Experiment Actions
 
-The following table describes the **ClearML** features that can be used from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
-that allow each feature.
+The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
+that allow each operation.  
 
-| ClearML Action | Description | States Valid for the Action | State Transition |
+| Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
 | View details | View experiment details in the experiments table, the [info panel](webapp_exp_track_visual#info-panel) (keep the experiments table in view), or the [full screen details view](webapp_exp_track_visual#full-screen-details-view). | Any state |  None  |
 | Manage a queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and queues](webapp_workers_queues) page. | *Enqueued* |  None  |
@@ -104,8 +137,21 @@ that allow each feature.
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
 | Move | Move an experiment to another project. | Any state |  None  |
 
+These actions can be accessed with the context menu (when right-clicking an experiment or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
+in an experiment's info panel).
 
-## Creating an experiment leaderboard
+
+Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
+Select multiple experiments, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+operations on the selected experiments. Actions can be performed only on the experiments that match the action criteria 
+(for example, only *Running* experiments can be aborted). The context menu shows the number 
+of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooltip that
+appears when hovering over an action icon. 
+
+![Experiment table batch operations](../img/webapp_exp_table_batch_operations.png)
+
+
+## Creating an Experiment Leaderboard
 
 Filter & sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
 updates in real time with experiment performance and outputs.
@@ -116,7 +162,7 @@ Modify the experiment table in the following ways to create a customized leaderb
 * Add reported [metrics](#to-add-metrics), any time series reported metric can be selected, then select the last reported
   value, or the minimum / maximum reported value.
 * Filter based on user (dropdown and select) or [experiment types](../fundamentals/task.md#task-types)
-* Add specific [tags](webapp_exp_track_visual.md#tagging-experiments) and filter based on them
+* Add specific [tags](webapp_exp_track_visual.md#tagging-experiments) and filter based on them. 
 
 Now the table can be sorted based on any of the columns (probably one of the performance metrics). Select to filter experiments
 based on their name by using the search bar.
@@ -124,4 +170,4 @@ based on their name by using the search bar.
 The final dashboard can be shared by copying the URL from the address bar, this address will replicate the exact same dashboard on any browser.
 The dashboard can also be bookmarked for later use.
 
-![image](../img/gif/clearml_tutorial_leaderboard.gif)
+![Experiment table sharing](../img/webapp_exp_table_sharing.png)

@@ -4,7 +4,7 @@ title: Viewing Model Details
 
 In the models table, click on a model to view its general information, configuration, and label enumeration.
     
-## General model information
+## General Model Information
 
 General information includes: 
 * Model URL
@@ -16,11 +16,11 @@ If a model is a local file, it is downloadable. If a model is in another type of
 
 ![image](../img/webapp_models_02.png)
 
-## Model configuration 
+## Model Configuration 
 
 ![image](../img/webapp_models_05.png)
 
-## Label enumeration
+## Label Enumeration
 
 For each class, label enumeration contains the class name (key) and value.
 

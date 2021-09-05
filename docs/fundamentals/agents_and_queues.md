@@ -8,7 +8,7 @@ coupled with execution queues, addresses both these needs.
 The ClearML Agent is the base for **Automation** in ClearML and can be leveraged to build automated pipelines, launch custom services 
 (e.g. a [monitor and alert service](https://github.com/allegroai/clearml/tree/master/examples/services/monitoring)) and more.
 
-## What does a ClearML Agent do?
+## What Does a ClearML Agent Do?
 An agent (also referred to as a Worker) allows users to execute code on any machine it's installed on, thus facilitating the 
 scaling of data science work beyond one's own machine.  
 The agent takes care of deploying the code to the target machine as well as setting up the entire execution environment: 
@@ -33,7 +33,7 @@ A ClearML Agent can service multiple queues in either of the following modes:
 * Strict priority: The agent services the higher priority queue before servicing lower priority ones.
 * Round robin: The agent pulls a single task from a queue then moves to service the next queue.
 
-## Agent and Queue workflow 
+## Agent and Queue Workflow 
 
 ![image](../img/clearml_agent_flow_diagram.png)
 
@@ -52,7 +52,7 @@ The diagram above demonstrates a typical flow where an agent executes a task:
 
 While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Workers and Queues** page).  
 
-## Resource management
+## Resource Management
 Installing an Agent on machines allows it to monitor all the machine's status (GPU \ CPU \ Memory \ Network \ Disk IO). 
 When managing multiple machines, this allows users to have an overview of their entire HW resources. What is the status of each machine, what is the expected workload
 on each machine and so on.
@@ -70,7 +70,7 @@ Task to one of your queues, according to the amount of resources you want to all
 With queues and ClearML Agent, you can easily add and remove machines from the cluster, and you can 
 reuse machines without the need for any dedicated containers or images.
 
-## Additional features
+## Additional Features
 
 Agents can be deployed bare-metal, with multiple instances allocating 
 specific GPUs to the agents. They can also be deployed as dockers in a Kubernetes cluster.
@@ -95,9 +95,9 @@ Some tasks, mainly control (Like a pipeline controller) or services (Like an arc
 This is where the `services-modes` comes into play. An agent running in services-mode will spin multiple tasks at the same time, each Task will register itself as a sub-agent (visible in the workers Tab in the UI).
 Some examples for suitable tasks are:
 
-- [Pipeline controller](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_controller.py) - Implementing the pipeline scheduling and logic
-- [Hyper-Parameter Optimization](https://github.com/allegroai/clearml/blob/master/examples/optimization/hyper-parameter-optimization/hyper_parameter_optimizer.py) - Implementing an active selection of experiments
-- [Control Service](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) - AWS Autoscaler for example
-- [External services](https://github.com/allegroai/clearml/blob/master/examples/services/monitoring/slack_alerts.py) - Such as Slack integration alert service
+- [Pipeline controller](../guides/pipeline/pipeline_controller.md) - Implementing the pipeline scheduling and logic
+- [Hyper-Parameter Optimization](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) - Implementing an active selection of experiments
+- [Control Service](../guides/services/aws_autoscaler.md) - AWS Autoscaler for example
+- [External services](../guides/services/slack_alerts.md) - Such as Slack integration alert service
 
 By default, [ClearML Server](../deploying_clearml/clearml_server.md) comes with an Agent running on the machine that runs it. It also comes with a Services queue.
