@@ -349,7 +349,7 @@ that “group A” or ”group_b” will not be able to starve one another of re
 
 ClearML Agent can also execute specific tasks directly, without listening to a queue.
 
-#### Execute a Task Without Queue
+#### Execute a Task without Queue
 
 Execute a Task with a `clearml-agent` worker without a queue.
 ```bash
@@ -362,7 +362,7 @@ Clone the specified Task and execute the cloned Task with a `clearml-agent` work
 clearml-agent execute --id <task-id> --clone
 ```
 
-#### Execute Task Inside a Docker
+#### Execute Task inside a Docker
 
 Execute a Task with a `clearml-agent` worker using a Docker container without a queue.
 ```bash
@@ -603,7 +603,7 @@ Override worker schedules by:
 * Setting runtime properties to force a worker on or off
 * Tagging a queue on or off
 
-### Running clearml-agent With a Schedule (Command Line)
+### Running clearml-agent with a Schedule (Command Line)
 
 Set a schedule for a worker from the command line when running `clearml-agent`. Two properties enable setting working hours:
 

@@ -157,6 +157,6 @@ depend upon the settings in the annotation task (see [Creating Annotation Tasks]
 
 * Click the lock.
 
-#### Modify frame Metadata
+#### Modify Frame Metadata
 
 * Expand the **FRAME METADATA** area, click edit, and then in the popup modify the metadata dictionary (in JSON format).
