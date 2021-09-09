@@ -11,7 +11,7 @@ while ClearML ensures your work is reproducible and scalable.
 
 <img src="https://github.com/allegroai/clearml-docs/blob/main/docs/img/clearml_architecture.png?raw=true" width="100%" alt="Architecture diagram"/>
 
-## What can you do with ClearML?
+## What Can You Do with ClearML?
 
 - Track and upload metrics and models with only 2 lines of code
 - Create a bot that sends you a slack message whenever you model improves in accuracy

@@ -7,7 +7,7 @@ example script demonstrates hyperparameter optimization, which is automated by u
 
 <a class="tr_top_negative" name="strategy"></a>
 
-## Set the search strategy for optimization
+## Set the Search Strategy for Optimization
 
 A search strategy is required for the optimization, as well as a search strategy optimizer class to implement that strategy.
 
@@ -57,7 +57,7 @@ the `RandomSearch` for the search strategy.
             'we will be using RandomSearch strategy instead')
         aSearchStrategy = RandomSearch
 
-## Define a callback
+## Define a Callback
 
 When the optimization starts, a callback is provided that returns the best performing set of hyperparameters. In the script, 
 the `job_complete_callback` function returns the ID of `top_performance_job_id`.
@@ -73,7 +73,7 @@ the `job_complete_callback` function returns the ID of `top_performance_job_id`.
         if job_id == top_performance_job_id:
             print('WOOT WOOT we broke the record! Objective reached {}'.format(objective_value))
 
-## Initialize the optimization Task
+## Initialize the Optimization Task
 
 Initialize the Task, which will be stored in **ClearML Server** when the code runs. After the code runs at least once, it 
 can be [reproduced](../../../webapp/webapp_exp_reproducing.md) and [tuned](../../../webapp/webapp_exp_tuning.md).
@@ -89,7 +89,7 @@ the project **Hyper-Parameter Optimization**, which can be seen in the **ClearML
                      task_type=Task.TaskTypes.optimizer,
                      reuse_last_task_id=False)
 
-## Set up the arguments
+## Set Up the Arguments
 
 Create an arguments dictionary that contains the ID of the Task to optimize, and a Boolean indicating whether the 
 optimizer will run as a service, see [Running as a service](#running-as-a-service).
@@ -112,7 +112,7 @@ to optimize a different experiment, see [tuning experiments](../../../webapp/web
         args['template_task_id'] = Task.get_task(
             project_name='examples', task_name='Keras HP optimization base').id
 
-## Instantiate the optimizer object
+## Instantiate the Optimizer Object
 
 Instantiate an [automation.optimization.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object, setting the optimization parameters, beginning with the ID of the experiment to optimize.
@@ -170,7 +170,7 @@ Specify the remaining parameters, including the time limit per Task (minutes), p
 
 <a class="tr_top_negative" name="service"></a>    
 
-## Running as a service
+## Running as a Service
 
 The optimization can run as a service, if the `run_as_service` argument is set to  `true`. For more information about 
 running as a service, see [ClearML Agent services container](../../../clearml_agent.md#services-mode) 

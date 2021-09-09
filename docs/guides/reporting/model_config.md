@@ -9,9 +9,9 @@ the configuration and label enumeration with it.
 
 When the script runs, it creates an experiment named `Model configuration example`, which is associated with the `examples` project.
 
-## Configuring models
+## Configuring Models
 
-### Using a configuration file
+### Using a Configuration File
 
 Connect a configuration file to a Task by calling the [Task.connect_configuration](../../references/sdk/task.md#connect_configuration) 
 method with the file location and the configuration object's name as arguments. In this example, we connect a JSON file and a YAML file
@@ -29,7 +29,7 @@ in the **yaml file** object, as specified in the `name` parameter of the `connec
 
 ![image](../../img/examples_reporting_config.png)
 
-### Configuration dictionary
+### Configuration Dictionary
 
 Connect a configuration dictionary to a Task by creating a dictionary, and then calling the [Task.connect_configuration](../../references/sdk/task.md#connect_configuration) 
 method with the dictionary and the object name as arguments. After the configuration is connected, **ClearML** tracks changes to it.
@@ -50,7 +50,7 @@ method with the dictionary and the object name as arguments. After the configura
 
 ![image](../../img/examples_reporting_config_3.png)
 
-## Label enumeration
+## Label Enumeration
 
 Connect a label enumeration dictionary by creating the dictionary, and then calling the [Task.connect_label_enumeration](../../references/sdk/task.md#connect_label_enumeration) 
 method with the dictionary as an argument.

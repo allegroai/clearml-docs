@@ -46,7 +46,7 @@ Artifacts can be stored anywhere, either on the ClearML server, or any object st
 see all [storage capabilities](../../integrations/storage).
 
 
-### Adding artifacts
+### Adding Artifacts
 
 Uploading a local file containing the preprocessed results of the data:
 ```python
@@ -154,7 +154,7 @@ Any page is sharable by copying the URL from the address bar, allowing you to bo
 It's also possible to tag Tasks for visibility and filtering allowing you to add more information on the execution of the experiment. 
 Later you can search based on task name and tag in the search bar, and filter experiments based on their tags, parameters, status and more.
 
-## What's next?
+## What's Next?
 
 This covers the Basics of ClearML! Running through this guide we've learned how to log Parameters, Artifacts and Metrics!
 

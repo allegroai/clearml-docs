@@ -25,7 +25,7 @@ models, and dataviews, can be viewed in the project's [experiments table](../web
 
 ## Usage
 
-### Creating sub-projects
+### Creating Sub-projects
 
 When [initializing a task](task.md#task-creation), its project needs to be specified. If the project entered does not exist, it will be created. 
 Projects can contain sub-projects, just like folders can contain sub-folders. Input into the `project_name` 
@@ -44,7 +44,7 @@ Nesting projects works on multiple levels. For example: `project_name=main_proje
 
 Projects can also be created using the [`projects.create`](../references/api/endpoints.md#post-projectscreate) REST API call. 
 
-### View all projects in system
+### View All Projects in System
 
 To view all projects in the system, use the `Task` class method `get_projects`:
 
@@ -54,7 +54,7 @@ project_list = Task.get_projects()
 
 This returns a list of project sorted by last update time.
 
-### More actions
+### More Actions
 
 For additional ways to work with projects, use the REST API `projects` resource. Some of the available actions include:
 * [`projects.create`](../references/api/endpoints.md#post-projectscreate) and [`projects.delete`](../references/api/endpoints.md#post-projectsdelete) - create and delete projects

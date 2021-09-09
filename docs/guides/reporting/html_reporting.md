@@ -22,7 +22,7 @@ function, which reports the **ClearML** documentation's home page.
 
     Logger.current_logger().report_media("html", "url_html", iteration=iteration, url="https://allegro.ai/docs/index.html")
 
-## Reporting HTML local files
+## Reporting HTML Local Files
 
 Report the following using the `Logger.report_media` parameter method `local_path` parameter:
 * [Interactive HTML](#interactive-html)

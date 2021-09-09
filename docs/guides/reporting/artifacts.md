@@ -31,7 +31,7 @@ When the script runs, it creates an experiment named `artifacts example`, which 
 
 ![image](../../img/examples_reporting_03.png)
 
-## Dynamically tracked artifacts
+## Dynamically Tracked Artifacts
 
 Currently, **ClearML** supports uploading and dynamically tracking Pandas DataFrames. Use the [Task.register_artifact](../../references/sdk/task.md#register_artifact)
 method. If the Pandas DataFrame changes, **ClearML** uploads the changes. The updated artifact is associated with the experiment.
@@ -59,7 +59,7 @@ method to retrieve it, we can see that **ClearML** tracked the change.
     # or access it from anywhere using the Task's get_registered_artifacts()
     Task.current_task().get_registered_artifacts()['train'].sample(frac=0.5, replace=True, random_state=1)
 
-## Artifacts without tracking
+## Artifacts Without Tracking
 
 **ClearML** supports several types of objects that can be uploaded and are not tracked. Use the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
 method. 
@@ -79,7 +79,7 @@ Artifacts without tracking include:
     # add and upload pandas.DataFrame (onetime snapshot of the object)
     task.upload_artifact('Pandas', artifact_object=df)
 
-### Local files
+### Local Files
 
     # add and upload local file artifact
     task.upload_artifact('local file', artifact_object=os.path.join('data_samples', 'dancing.jpg'))
@@ -89,12 +89,12 @@ Artifacts without tracking include:
     # add and upload dictionary stored as JSON)
     task.upload_artifact('dictionary', df.to_dict())
 
-### Numpy objects
+### Numpy Objects
 
     # add and upload Numpy Object (stored as .npz file)
     task.upload_artifact('Numpy Eye', np.eye(100, 100))
 
-### Image files
+### Image Files
 
     # add and upload Image (stored as .png file)
     im = Image.open(os.path.join('data_samples', 'dancing.jpg'))

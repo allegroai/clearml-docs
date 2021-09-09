@@ -13,7 +13,7 @@ For upgrade purposes, the terms **Trains Server** and **ClearML Server** are int
 The sections below contain the steps to upgrade **ClearML Server** on the [same AWS instance](#upgrading-on-the-same-aws-instance), and 
 to upgrade and migrate to a [new AWS instance](#upgrading-and-migrating-to-a-new-aws-instance).
 
-### Upgrading on the same AWS instance
+### Upgrading on the Same AWS Instance
 
 This section contains the steps to upgrade **ClearML Server** on the same AWS instance.
 
@@ -48,7 +48,7 @@ Some legacy **Trains Server** AMIs provided an auto-upgrade on restart capabilit
         docker-compose -f /opt/clearml/docker-compose.yml pull
         docker-compose -f docker-compose.yml up -d
 
-### Upgrading and migrating to a new AWS instance
+### Upgrading and Migrating to a New AWS Instance
 
 This section contains the steps to upgrade **ClearML Server** on the new AWS instance.
 

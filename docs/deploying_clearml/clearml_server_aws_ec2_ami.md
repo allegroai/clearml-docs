@@ -35,7 +35,7 @@ in the [Security](clearml_server_security.md) page.
 The minimum recommended amount of RAM is 8 GB. For example, a t3.large or t3a.large EC2 instance type would accommodate the recommended RAM size.
 
 
-### AWS community AMIs
+### AWS Community AMIs
 
 **To launch a ClearML Server AWS community AMI:**
 
@@ -106,7 +106,7 @@ Once deployed, **ClearML Server** exposes the following services:
 If needed, modify the default login behavior to match workflow policy, see [Configuring Web Login Authentication](clearml_server_config.md#web-login-authentication) 
 on the "Configuring Your Own ClearML Server" page.
 
-## Storage configuration
+## Storage Configuration
 
 The pre-built **ClearML Server** storage configuration is the following:
 
@@ -115,7 +115,7 @@ The pre-built **ClearML Server** storage configuration is the following:
 * File Server: `/mnt/fileserver/`
 
 
-## Backing up and restoring data and configuration
+## Backing Up and Restoring Data and Configuration
 
 :::note
 If data is being moved between a **Trains Server** and a **ClearML Server** installation, make sure to use the correct paths 
@@ -147,13 +147,13 @@ sudo tar czvf ~/clearml_backup_config.tgz -C /opt/clearml/config .
    ```
         
 
-## ClearML Server AWS community AMIs
+## ClearML Server AWS Community AMIs
 
 The following section contains a list of AMI Image IDs per region for the latest **ClearML Server** version.
 
 
 
-### Latest version
+### Latest Version
 
 #### v1.1.1
 

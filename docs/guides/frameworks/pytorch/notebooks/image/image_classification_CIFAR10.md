@@ -17,7 +17,7 @@ The accuracy, accuracy per class, and training loss scalars are automatically lo
 
 ![image](../../../../../img/examples_image_classification_CIFAR10_05.png)
 
-## Debug samples
+## Debug Samples
 
 The image samples are automatically logged and appear in **RESULTS** **>** **DEBUG SAMPLES**.
 

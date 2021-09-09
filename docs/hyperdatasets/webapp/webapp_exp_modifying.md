@@ -40,7 +40,7 @@ are iterated and frame filters (see [Dataviews](webapp_dataviews.md).
 After importing a Dataview, it can be renamed and / or removed. 
 :::
 
-### Selecting Dataset versions
+### Selecting Dataset Versions
 
 To input data from a different data source or different version of a data source, select a different Dataset version used 
 by the Dataview.
@@ -62,7 +62,7 @@ by the Dataview.
 
 1. Click **SAVE**.
    
-## Filtering frames
+## Filtering Frames
 
 Filtering of SingleFrames iterated by a Dataview for input to the experiment is accomplished by frame filters. 
 For more detailed information, see [Filtering](../dataviews.md#filtering).
@@ -85,7 +85,7 @@ For more detailed information, see [Filtering](../dataviews.md#filtering).
 
 1. Click **SAVE**.
     
-## Mapping labels (label translation)
+## Mapping Labels (Label Translation)
 
 Modify the ROI label mapping rules, which translate one or more input labels to another label for the output model. Labels 
 that are not mapped are ignored. 
@@ -105,7 +105,7 @@ that are not mapped are ignored.
 
 1. Click **SAVE**
 
-## Label enumeration
+## Label Enumeration
 
 Modify the label enumeration assigned to output models.
 
@@ -121,7 +121,7 @@ Modify the label enumeration assigned to output models.
 
 1. Click **SAVE**.
 
-## Data augmentation
+## Data Augmentation
 
 Modify the on-the-fly data augmentation applied to frames input from the select Dataset versions and filtered by the frame filters. Data augmentation is applied in steps, where each step applies a method, operation, and strength.
  
@@ -137,7 +137,7 @@ For more detailed information, see [Data Augmentation](../dataviews.md#data-augm
     
 1. Click **SAVE**.    
     
-## Iteration controls
+## Iteration Controls
 
 Modify the frame iteration performed by the Dataview to control the order, number, timing, and reproducibility of frames 
 for training.

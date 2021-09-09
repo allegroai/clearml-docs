@@ -17,7 +17,7 @@ The scatter plots appear in the **ClearML Web UI**, in **RESULTS** **>** **PLOTS
 
 ![image](../../../img/examples_matplotlib_example_03.png)
 
-## Debug samples
+## Debug Samples
 
 The images appear in **RESULTS** **>** **DEBUG SAMPLES**. Each debug sample image is associated with a metric.
 
