@@ -17,7 +17,8 @@ module.exports = {
             'fundamentals/hpo', 'fundamentals/pipelines']},
         'clearml_sdk',
         'clearml_agent',
-        'clearml_data',
+        {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
+                {'Tutorials': ['clearml_data/data management/data_man_simple', 'clearml_data/data management/data_man_folder_sync', 'clearml_data/data management/data_man_cifar_classification']},]},
         {'Applications': ['apps/clearml_session', 'apps/clearml_task']},
         {'Integrations': ['integrations/libraries', 'integrations/storage']},
 
@@ -59,7 +60,6 @@ module.exports = {
             'guides/guidemain',
             {'Advanced': ['guides/advanced/execute_remotely', 'guides/advanced/multiple_tasks_single_process']},
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
-            {'Data Management': ['guides/data management/data_man_simple', 'guides/data management/data_man_folder_sync', 'guides/data management/data_man_cifar_classification']},
             {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},

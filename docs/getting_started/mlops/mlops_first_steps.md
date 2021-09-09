@@ -81,7 +81,7 @@ Task.enqueue(cloned_task, queue_name='default')
 ## Logging Artifacts
 Artifacts are a great way to pass and reuse data between Tasks in the system.
 From anywhere in the code you can upload [multiple](../../fundamentals/artifacts.md#logging-artifacts) types of data, object and files.
-Artifacts are the base of ClearML's [Data Management](../../clearml_data.md) solution and as a way to communicate complex objects between different
+Artifacts are the base of ClearML's [Data Management](../../clearml_data/clearml_data.md) solution and as a way to communicate complex objects between different
 stages of a [pipeline](../../fundamentals/pipelines.md)
 
 ```python
@@ -139,7 +139,7 @@ tasks = Task.get_tasks(project_name='examples', task_name='partial_name_match', 
 Data is probably one of the biggest factors that determines the success of a project.
 Associating the data a model used to the model's configuration, code and results (such as accuracy) is key to deducing meaningful insights into how
 models behave. <br/>
-[ClearML Data](../../clearml_data.md) allows you to version your data so it's never lost, fetch it from every machine with minimal code changes 
+[ClearML Data](../../clearml_data/clearml_data.md) allows you to version your data so it's never lost, fetch it from every machine with minimal code changes 
 and associate data to experiments results.
 Logging data can be done via command line, or via code. If any preprocessing code is involved, ClearML logs it as well!<br/> 
 Once data is logged, it can be used by other experiments.
