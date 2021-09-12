@@ -1,5 +1,5 @@
 ---
-title: Tuning experiments
+title: Tuning Experiments
 ---
 
 Tune experiments and edit an experiment's execution details, then execute the tuned experiments on local or remote machines.
