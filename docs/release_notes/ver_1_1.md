@@ -1,22 +1,13 @@
 ---
 title: Version 1.1
 ---
-
-### ClearML Server 1.1.1
-
-**Bug Fixes**
-
-- Fix experiment plots override reported color-scale [ClearML GitHub issue #373](https://github.com/allegroai/clearml/issues/373), [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1627310354415200)
-- Fix file server `GET` response for gzipped data-files contains `Content-Encoding: gz` header, causing clients to automatically decompress the file [ClearML GitHub issue #411](https://github.com/allegroai/clearml/issues/411)
-- Fix server error when running with non-migrated v0.16 ElasticSearch data [Slack Channel](https://clearml.slack.com/archives)/CTK20V944/p1627911579075600
-
 ### ClearML Agent 1.1.0
 
-**Breaking Changes**
-
+:::info Breaking Changes
 - Disable default demo server (available by setting the `CLEARML_NO_DEFAULT_SERVER=0` environment variable)
 - Change k8s glue default pod label to `CLEARML=agent` (instead of `TRAINS=agent`)
-
+:::
+  
 **Features**
 
 - Add poetry cache into docker mapping [ClearML Agent GitHub issue #74](https://github.com/allegroai/clearml-agent/issues/74)
@@ -64,6 +55,14 @@ title: Version 1.1
   - Fix `agent.extra_docker_bash_script` not applied correctly
   - Fix task runtime properties are removed when re-enqueuing task
   - Fix error is not thrown when failing to push task to queue
+
+### ClearML Server 1.1.1
+
+**Bug Fixes**
+
+- Fix experiment plots override reported color-scale [ClearML GitHub issue #373](https://github.com/allegroai/clearml/issues/373), [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1627310354415200)
+- Fix file server `GET` response for gzipped data-files contains `Content-Encoding: gz` header, causing clients to automatically decompress the file [ClearML GitHub issue #411](https://github.com/allegroai/clearml/issues/411)
+- Fix server error when running with non-migrated v0.16 ElasticSearch data [Slack Channel](https://clearml.slack.com/archives)/CTK20V944/p1627911579075600
 
 ### ClearML Server 1.1.0 
 
