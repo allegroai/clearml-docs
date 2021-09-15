@@ -49,7 +49,7 @@ ClearML k8s glue default pod label was changed to `CLEARML=agent` (instead of `T
 - Fix venv cache cannot reinstall package from git with http credentials
 - Fix `PYTHONIOENCODING` environment variable is overwritten when already defined
 - k8s glue
-  - Fix suppoer for multiple k8s glue instances with pod limits
+  - Fix support for multiple k8s glue instances with pod limits
   - Fix task container handling fails parsing docker image
   - Fix task container is not set when using default image/arguments
   - Fix task container image arguments are used when no image is specified
