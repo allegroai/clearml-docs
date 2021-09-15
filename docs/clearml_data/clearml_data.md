@@ -29,11 +29,7 @@ ClearML Data offers two interfaces:
 
 `clearml-data` comes built-in with our `clearml` python package! Just check out the [getting started](getting_started/ds/ds_first_steps.md) guide for more info!
 
-## Workflow 
-Below is an example of a workflow using ClearML Data's command line tool to create a dataset and inegrating the dataset into code
-using ClearML Data's python interface. 
-
-### Creating a Dataset
+## Creating a Dataset
 
 Using the `clearml-data` CLI, users can create datasets using the following commands:
 ```bash
@@ -53,13 +49,8 @@ by default to the [ClearML server](deploying_clearml/clearml_server.md).
    
 1. The dataset will be finalized, making it immutable and ready to be consumed. 
 
-:::note
-`clearml-data` is stateful and remembers the last created dataset so there's no need to specify a specific dataset ID unless
-we want to work on another dataset.
-:::
-
 ### Using a Dataset
-Now in our python code, we can access and use the created dataset from anywhere:
+Now we can programmatically access and utilize the created dataset from anywhere:
 
 ```python
 from clearml import Dataset
@@ -69,11 +60,7 @@ local_path = Dataset.get(dataset_id='dataset_id_from_previous_command').get_loca
 
 We have all our files in the same folder structure under `local_path`, it is that simple!<br/>
 
-The next step is to set the dataset_id as a parameter for our code and voilà! We can now train on any dataset we have in
-the system.
-
-
-
+We can now train on any dataset we have in the system.
 
 
 ## Tutorials 
