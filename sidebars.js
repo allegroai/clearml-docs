@@ -135,7 +135,6 @@ module.exports = {
                 'references/sdk/hpo_parameters_parameterset',
                 ]},
     ],
-
     hyperdatasetsSidebar: [
         'hyperdatasets/overview',
         {'Frames': [
@@ -166,11 +165,21 @@ module.exports = {
             'hyperdatasets/webapp/webapp_annotator'
         ]}
     ],
-
-
-    apiSidebar: [
-        'references/api/definitions',
-        'references/api/endpoints',
+    sdkHyperDataset: [
+        {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
+        {'DataFrame': ['references/hyperdataset/singleframe',
+            'references/hyperdataset/framegroup', 'references/hyperdataset/annotation',]},
+        'references/hyperdataset/dataview',
     ],
-
+    apiSidebar: [
+        'references/api/index',
+        'references/api/definitions',
+        'references/api/login',
+        'references/api/debug',
+        'references/api/projects',
+        'references/api/queues',
+        'references/api/workers',
+        'references/api/events',
+        'references/api/tasks',
+    ]
 };
