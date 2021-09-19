@@ -71,21 +71,20 @@ module.exports = {
                 },
                 {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
                 {'Matplotlib': ['guides/frameworks/matplotlib/allegro_clearml_matplotlib_example', 'guides/frameworks/matplotlib/matplotlib_example']},
-                {
-                    'Pytorch': ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
+                {'Pytorch':
+                        ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
                         'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
-                        'guides/frameworks/pytorch/tensorboard_toy_pytorch']
+                        'guides/frameworks/pytorch/tensorboard_toy_pytorch',
+                            {'Pytorch Notebooks': [
+                                {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
+                                {'Image': ['guides/frameworks/pytorch/notebooks/image/hyperparameter_search', 'guides/frameworks/pytorch/notebooks/image/image_classification_CIFAR10']},
+                                {'Table': ['guides/frameworks/pytorch/notebooks/table/download_and_preprocessing', 'guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline']},
+                                {'Text': ['guides/frameworks/pytorch/notebooks/text/text_classification_AG_NEWS']}]
+                            }
+                            ]
                 },
                 {'Pytorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite']},
                 {'Pytorch Lightning': ['guides/frameworks/pytorch_lightning/pytorch_lightning_example']},
-                {
-                    'Pytorch Notebooks': [
-                        {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
-                        {'Image': ['guides/frameworks/pytorch/notebooks/image/hyperparameter_search', 'guides/frameworks/pytorch/notebooks/image/image_classification_CIFAR10']},
-                        {'Table': ['guides/frameworks/pytorch/notebooks/table/download_and_preprocessing', 'guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline']},
-                        {'Text': ['guides/frameworks/pytorch/notebooks/text/text_classification_AG_NEWS']}
-                    ]
-                },
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
                 {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx']},
                 {
