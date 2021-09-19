@@ -2,66 +2,67 @@
 title: Best Practices
 ---
 
-Use ClearML Data to version your data, then link it to running experiments for easy reproduction. Make datasets machine 
-agnostic (i.e. store original dataset in a shared storage location, e.g. shared-folder/S3/Gs/Azure) ClearML Data supports 
-efficient Dataset storage and caching, differentiable & compressed.
+Use ClearML Data to version and manage your data. 
 
-## Workflow 
-Below is an example of a workflow using ClearML Data's command line tool to create a dataset and inegrating the dataset into code
-using ClearML Data's python interface. 
+The following are recommendations for practices for ClearML Data usage. 
 
-### Creating a Dataset
+## Make Datasets Machine-Agnostic 
 
-Using the `clearml-data` CLI, users can create datasets using the following commands:
-```bash
-clearml-data create --project dataset_example --name initial_version
-clearml-data add --files data_folder
-clearml-data close
-```
+Store original dataset in a shared storage location (e.g. shared-folder/S3/Gs/Azure). 
 
-The commands will do the following:
+ClearML Data supports efficient Dataset storage and caching, differentiable & compressed.  Use ClearML Data to store 
+data in a central location that you and your teammates can easily access and utilize anywhere
 
-1. Start a Data Processing Task called "initial_version" in the "dataset_example" project
+## Version Datasets
 
-1. The CLI will return a unique ID for the dataset
+Use ClearML Data to version datasets. After creating and populating datasets, they can be finalized. Once finalized,
+the dataset can no longer be modified. This way the dataset is reproducible and it is clear which version of the data was used
+in certain contexts. 
 
-1. All the files from the "data_folder" folder will be added to the dataset and uploaded
-by default to the [ClearML server](deploying_clearml/clearml_server.md).
-   
-1. The dataset will be finalized, making it immutable and ready to be consumed. 
+Once you have additional data, you can create a new version of the dataset and specify the previous dataset as a parent. 
+This way, the new dataset version inherits the previous version's contents and the dataset's contents can be updated. 
 
-:::note
-`clearml-data` is stateful and remembers the last created dataset so there's no need to specify a specific dataset ID unless
-we want to work on another dataset.
-:::
+### Manage Datasets 
 
-### Using a Dataset
-Now in our python code, we can access and use the created dataset from anywhere:
+Arrange datasets in "topics" or use-cases in projects
 
-```python
-from clearml import Dataset
+When creating a dataset, the dataset creates an individual task (unless otherwise specified). Datasets can be organized
+in projects and sub-projects by use case. Another tool available for organizing datasets are tags. When creating a dataset, 
+add labels to the dataset, which will make searching for the dataset easier.
 
-local_path = Dataset.get(dataset_id='dataset_id_from_previous_command').get_local_copy()
-```
+Arranging and organizing datasets according to use cases and using tag makes managing multiple datasets easier.
 
-We have all our files in the same folder structure under `local_path`, it is that simple!<br/>
+## Accessing Datasets
+Organizing the dataset will make it easier to access datasets. 
 
-The next step is to set the dataset_id as a parameter for our code and voilà! We can now train on any dataset we have in
-the system.
+Specific individual datasets can be accessed with their ID or a name & project combination. 
+If only a project is specified, the `get` method returns the most recent dataset in a project. The same is true with tags; 
+if only a tag is specified with the `get` method, the method will return the most recent dataset labeled with that tag.
 
-$$$$
-* Arrange datasets in "topics" or use-cases in projects
-* How to manage multiple datasets in a single project. how to save "best" or "latest" for multiple datasets
-* Manage it with multiple datasets with different names. maybe you put some searchable metadata on it
-is there a recommended way to manage multiple datasets?
-* Possibly add example - find a tabular dataset online and say you want to update it from time to time but before it goes in, you need to preprocess it so maybe you have 2 datasets that are the "latest", one is the raw one and the other is the preprocessed one 
-* Talk about how to version datasets. (i.e. have a dataset and I want to add stuff \ remove stuff from it.)  --
-* With versioning -- that would be creating a new dataset with the old dataset as a parent and then adding / removing stuff? Unclear what versioning would entail
-talk about how to mark the latest dataset (with tags probably)
-* How to do something like "find the latest dataset in a project, then use it as a parent and add data to it”
-* How to associate preprocessing code to the dataset itself
-* When to using sync mode, when to add stuff manually with "add"
-* How to deal with data periodically coming in
-* Erez thinks that for data periodically coming in, just show the script that creates the data each evening. how you schedule it is irrelevant plus people might not use the scheduler for that but maybe some scheduling function of cloud provider or just regular cron job in linux
-* CLI => push data => Use it on the Task. Erez said maybe to extend this example (https://clear.ml/docs/latest/docs/guides/data%20management/data_man_cifar_classification/) which covers this workflow 
-* Erez thinks maybe we should add an example of a dataset that updates every day, and how to manage it
+With ClearML, you easily access the most recent datasets from a specific project or the most recent projects with a specific
+tag or combination of tags. Use the `Dataset.get` to get a specific Dataset. If only `dataset_project` is input, the method 
+returns the most recent Dataset in the Dataset project. 
+
+## Adding Statistics to Datasets 
+(i.e. reporting some metrics/stats on the Datasets with the Logger)
+
+Users can report statistics metrics and debug samples on the Dataset itself. Use the [`get_logger`](../references/sdk/dataset.md#get_logger)
+method to access the dataset's logger object, then feel free to log a bunch of data to the dataset, using the methods
+available through the [logger](../references/sdk/logger.md) object
+
+plus you can add some metric reporting (like table reporting) to create a preview of the data stored for better visibility, or maybe create some statistics as part of the data ingest script. 
+
+you can use logger's [`report_table`](../references/sdk/logger.md#report_table) method
+
+### Deal with Periodic Data Modifications   
+
+Your dataset probably changes periodically, with more data coming in, fixes being introduced. If the data is updated into the same 
+folder structure, which serves as a dataset's single point of truth, you can schedule a script which uses the dataset sync 
+functionality which will update a dataset based on a folder . This will track 
+the modifications made to a folder.
+
+
+## Link versions to running experiments for easy reproduction
+
+In `Dataset.create` there is the method `use_current_task` (bool) – False (default), a new Dataset task is created. If True, the dataset is created on the current Task.
+

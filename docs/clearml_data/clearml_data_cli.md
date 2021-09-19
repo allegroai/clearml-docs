@@ -4,6 +4,8 @@ title: CLI
 
 It's possible to manage datasets (create / modify / upload / delete) with the `clearml-data` command line tool.
 
+The following page provides a reference to `clearml-data`'s CLI commands. 
+
 ### Creating a Dataset
 ```bash
 clearml-data create --project <project_name> --name <dataset_name> --parents <existing_dataset_id>`

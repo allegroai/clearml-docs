@@ -1,8 +1,8 @@
 ---
-title: Data Management Example
+title: Data Management from CLI
 ---
 
-In this example we'll create a simple dataset and demonstrate basic actions on it. 
+In this example we'll create a simple dataset and demonstrate basic actions on it, using the `clearml-data` CLI. 
 
 ## Prerequisites
 First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. This contains all

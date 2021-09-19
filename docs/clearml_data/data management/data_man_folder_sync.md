@@ -1,10 +1,10 @@
 ---
-title: Folder Sync
+title: Folder Sync with CLI
 ---
 
-This example shows how to use the *clearml-data* folder sync function.
+This example shows how to use the `clearml-data` folder sync function.
 
-*clearml-data* folder sync mode is useful for cases when users have a single point of truth (i.e. a folder) that updates 
+`clearml-data` folder sync mode is useful for cases when users have a single point of truth (i.e. a folder) that updates 
 from time to time. When the point of truth is updated, users can call `clearml-data sync` and the 
 changes (file addition, modification, or removal) will be reflected in ClearML.
 

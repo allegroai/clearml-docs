@@ -60,7 +60,7 @@ module.exports = {
             'guides/guidemain',
             {'Advanced': ['guides/advanced/execute_remotely', 'guides/advanced/multiple_tasks_single_process']},
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
-            {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
+            {'Clearml Task': ['guides/clearml-task/clearml_task_tutorial']},
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
