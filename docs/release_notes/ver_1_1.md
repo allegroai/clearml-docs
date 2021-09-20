@@ -1,6 +1,13 @@
 ---
 title: Version 1.1
 ---
+### ClearML SDK 1.1.1
+
+**Bug Fixes**
+
+- Fix `Logger.report_image()` throws warning
+- Fix TensorBoard `add_image()` not being reported
+
 ### ClearML SDK 1.1.0
 
 :::info Breaking Changes
