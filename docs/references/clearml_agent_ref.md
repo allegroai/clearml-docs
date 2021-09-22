@@ -139,7 +139,7 @@ Use the `build` subcommand to create a worker environment without executing the 
 
 ## config
 
-Use the `config` subcommand to list your **ClearML Agent** configurations.
+Use the `config` subcommand to list your **ClearML Agent** configuration.
 
 ### Syntax
 
