@@ -1,6 +1,76 @@
 ---
 title: Version 1.1
 ---
+### ClearML SDK 1.1.1
+
+**Bug Fixes**
+
+- Fix `Logger.report_image()` throws warning
+- Fix TensorBoard `add_image()` not being reported
+
+### ClearML SDK 1.1.0
+
+:::info Breaking Changes
+- New PipelineController v2 was introduced. New constructor is not backwards compatible!
+- ClearML will no longer try to use the demo server by default (change this by setting the `CLEARML_NO_DEFAULT_SERVER=0` environment variable)
+- `Task.completed()` was deprecated, use `Task.mark_completed()` instead
+:::
+
+**Features**
+
+- Add Task Trigger Scheduler
+- Add Task Cron Scheduler
+- Add PipelineController from function
+- Add PipelineDecorator (`PipelineDecorator.pipeline` and `PipelineDecorator.component` decorators for full custom pipeline logic)
+- Add xgboost auto metric logging [ClearML GitHub issue #381](https://github.com/allegroai/clearml/issues/381)
+- Add `sdk.storage.log.report_upload_chunk_size_mb` and `sdk.storage.log.report_download_chunk_size_mb` configuration options to control upload/download log reporting [ClearML GitHub issue #424](https://github.com/allegroai/clearml/issues/424)
+- Add new optional `auto_connect_frameworks` argument value to `Task.init()` (e.g. `auto_connect_frameworks={'tfdefines':False}`) to allow disabling TF defines [ClearML GitHub issue #408](https://github.com/allegroai/clearml/issues/408)
+- Add support for `CLEARNL_CONFIG_VERBOSE` environment variable to allow external control over verbosity of the configuration loading process
+- Add support for uploading artifacts with a list of files using `Task.upload_artifcats(name, [Path(), Path()])`
+- Add missing *clearml-task* parameters `--docker_args`, `--docker_bash_setup_script` and `--output-uri`
+- Change `CreateAndPopulate` will auto list packages imported but not installed locally
+- Add `clearml.task.populate.create_task_from_function()` to create a Task from a function,  wrapping function input arguments into hyper-parameter section as kwargs and storing function results as named artifacts
+- Add support for Task serialization (e.g. for pickle)
+- Add `Task.get_configuration_object_as_dict()`
+- Add `docker_image` argument to `Task.set_base_docker()` (deprecate `docker_cmd`)
+- Add `auto_version_bump` argument to `PipelineController`
+- Add `sdk.development.detailed_import_report` configuration option to provide a detailed report of all python package imports
+- Set current Task as Dataset parent when creating dataset
+- Add support for deferred configuration
+- Examples
+  - Add Pipeline v2 examples
+  - Add `TaskScheduler` and `TriggerScheduler` examples
+  - Add pipeline controller callback example
+  - Improve existing examples and docstrings
+
+**Bug Fixes**
+
+- Fix poltly plots converting `NaN` to `nan` instead of `null` [ClearML GitHub issue #373](https://github.com/allegroai/clearml/issues/373)
+- Fix deprecation warning [ClearML GitHub issue #376](https://github.com/allegroai/clearml/issues/376)
+- Fix plotly multi-index without index names [ClearML GitHub issue #399](https://github.com/allegroai/clearml/issues/399)
+- Fix click support [ClearML GitHub issue #437](https://github.com/allegroai/clearml/issues/437)
+- Fix docstring [ClearML GitHub issue #438](https://github.com/allegroai/clearml/issues/438)
+- Fix passing `task-type` to *clearml-task* [ClearML GitHub issue #422](https://github.com/allegroai/clearml/issues/422)
+- Fix `clearml-task --version` throws an error [ClearML GitHub issue #422](https://github.com/allegroai/clearml/issues/422)
+- Fix *clearml-task* ssh repository links are not detected as remote repositories [ClearML GitHub issue #423](https://github.com/allegroai/clearml/issues/423)
+- Fix `getattr` throws an exception [ClearML GitHub issue #426](https://github.com/allegroai/clearml/issues/426)
+- Fix encoding while saving notebook preview [ClearML GitHub issue #443](https://github.com/allegroai/clearml/issues/443)
+- Fix poetry toml file without requirements.txt [ClearML GitHub issue #444](https://github.com/allegroai/clearml/issues/444)
+- Fix `PY3.x` fails calling `SemLock._after_fork` with forkserver context, forking while lock is acquired [ClearML Agent GitHub issue #73](https://github.com/allegroai/clearml-agent/issues/73)
+- Fix wrong download path in `StorageManager.download_folder()`
+- Fix jupyter notebook `display(...)` convert to `print(...)`
+- Fix Tensorflow `add_image()` with `description='text'`
+- Fix `Task.close()` should remove `current_task()` reference
+- Fix `TaskScheduler` weekdays, change default `execute_immediately` to `False`
+- Fix Python2 compatibility
+- Fix *clearml-task* exit with error when failing to verify `output_uri` (output warning instead)
+- Fix unsafe Google Storage delete object
+- Fix multi-process spawning wait-for-uploads can create a deadlock in very rare cases
+- Fix `task.set_parent()` fails when passing Task object
+- Fix `PipelineController` skipping queued Tasks
+- Remove `humanfriendly` dependency (unused)
+
+
 ### ClearML Agent 1.1.0
 
 :::info Breaking Changes
