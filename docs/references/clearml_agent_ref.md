@@ -1,7 +1,7 @@
 ---
 title: ClearML Agent Reference
 ---
-This reference page provides details information about **ClearML Agent** commands, including:
+This reference page provides detailed information about **ClearML Agent** commands, including:
 
 * [build](#build) - Create a worker environment, without executing an experiment.
 * [config](#config) - List your **ClearML Agent** configuration.
@@ -11,7 +11,7 @@ This reference page provides details information about **ClearML Agent** command
 
 ## build
 
-Use the `build` subcommand to create a worker environment, but do not execute the experiment.
+Use the `build` subcommand to create a worker environment without executing the experiment.
 
 ### Syntax 
 
@@ -139,7 +139,7 @@ Use the `build` subcommand to create a worker environment, but do not execute th
 
 ## config
 
-Use the `config` subcommand to list your **ClearML Agent** configuration.
+Use the `config` subcommand to list your **ClearML Agent** configurations.
 
 ### Syntax
 
