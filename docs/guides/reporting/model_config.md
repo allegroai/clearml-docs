@@ -23,7 +23,7 @@ to a Task.
     config_file_yaml = 'data_samples/config_yaml.yaml'
     task.connect_configuration(configuration=config_file_yaml, name="yaml file")        
 
-**ClearML** reports the configurations in the **ClearML Web UI** experiment details **>** **CONFIGURATION** tab **>** **CONFIGURATION OBJECTS** 
+The configuration is logged to the ClearML Task and can be viewed in the **ClearML Web UI** experiment details **>** **CONFIGURATION** tab **>** **CONFIGURATION OBJECTS** 
 section. The contents of the JSON file will appear in the **json file** object, and the contents of the YAML file will appear 
 in the **yaml file** object, as specified in the `name` parameter of the `connect_configuration` method. 
 
@@ -45,7 +45,7 @@ method with the dictionary and the object name as arguments. After the configura
     model_config_dict['new value'] = 10
     model_config_dict['CHANGE ME'] *= model_config_dict['new value']
 
-**ClearML** reports the configuration in the **ClearML Web UI** **>** experiment details **>** **CONFIGURATION** tab **>** 
+The configurations are connected to the ClearML Task and can be viewed in the **ClearML Web UI** **>** experiment details **>** **CONFIGURATION** tab **>** 
 **CONFIGURATION OBJECTS** area **>** **dictionary** object.
 
 ![image](../../img/examples_reporting_config_3.png)

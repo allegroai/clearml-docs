@@ -42,7 +42,7 @@ Task.init(project_name='main_project/sub_project', task_name='test')
 
 Nesting projects works on multiple levels. For example: `project_name=main_project/sub_project/sub_sub_project` 
 
-Projects can also be created using the [`projects.create`](../references/api/endpoints.md#post-projectscreate) REST API call. 
+Projects can also be created using the [`projects.create`](../references/api/projects.md#post-projectscreate) REST API call. 
 
 ### View All Projects in System
 
@@ -57,11 +57,11 @@ This returns a list of project sorted by last update time.
 ### More Actions
 
 For additional ways to work with projects, use the REST API `projects` resource. Some of the available actions include:
-* [`projects.create`](../references/api/endpoints.md#post-projectscreate) and [`projects.delete`](../references/api/endpoints.md#post-projectsdelete) - create and delete projects
-* [`projects.get_hyper_parameters`](../references/api/endpoints.md#post-projectsget_hyper_parameters) - get a list of all hyperparameter sections and names used in a project
-* [`projects.merge_projects`](../references/api/endpoints.md#post-projectsmerge) - merge projects into a single project
+* [`projects.create`](../references/api/projects.md#post-projectscreate) and [`projects.delete`](../references/api/projects.md#post-projectsdelete) - create and delete projects
+* [`projects.get_hyper_parameters`](../references/api/projects.md#post-projectsget_hyper_parameters) - get a list of all hyperparameter sections and names used in a project
+* [`projects.merge_projects`](../references/api/projects.md#post-projectsmerge) - merge projects into a single project
 
-See more in the [REST API reference](../references/api/endpoints.md#projects).
+See more in the [REST API reference](../references/api/projects.md#projects).
 
 
 
