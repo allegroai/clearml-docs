@@ -14,8 +14,7 @@ Execute this python script to download the data
  ```python
  from clearml import StorageManager
  # We're using the StorageManager to download the data for us! 
- # It's a neat little utility that helps us download
- # files we need and cache them :)
+ # It's a neat little utility that helps us download files we need and cache them :)
 
  manager = StorageManager()
  dataset_path = manager.get_local_copy(remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz")
@@ -53,11 +52,11 @@ clearml-data add --files <dataset_path>
 where `dataset_path` is the path that was printed earlier, which denotes the location of the downloaded dataset.
 
 :::note
-There's no need to specify a *dataset_id* as *clearml-data* session stores it.
+There's no need to specify a `dataset_id`, since the `clearml-data` session stores it.
 :::
 
 ## Finalizing the Dataset
-Run the `close` command to upload the files (it'll be uploaded to ClearML Server by default):<br/>
+Run the [`close`](../../references/sdk/dataset.md#close) command to upload the files (it'll be uploaded to ClearML Server by default):<br/>
 
 ```
 clearml-data close 

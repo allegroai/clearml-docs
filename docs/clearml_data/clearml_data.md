@@ -23,7 +23,7 @@ When a dataset is pulled it will automatically pull all parent datasets and merg
 
 ## Setup
 
-`clearml-data` comes built-in with our `clearml` python package! Just check out the [getting started](getting_started/ds/ds_first_steps.md) guide for more info!
+`clearml-data` comes built-in with our `clearml` python package! Just check out the [Getting Started](getting_started/ds/ds_first_steps.md) guide for more info!
 
 ## Using ClearML Data
 
@@ -31,18 +31,11 @@ ClearML Data offers two interfaces:
 - `clearml-data` - CLI utility for creating, uploading, and managing datasets. See [CLI](clearml_data_cli.md) for a reference of `clearml-data` commands.
 - `clearml.Dataset` - A python interface for creating, retrieving, managing, and using datasets. See [SDK](clearml_data_sdk.md) for an overview of the basic methods of the `Dataset` module.
 
-For an overview of our recommendations for ClearML Data workflow and practices, see [Best Practices](best_practices.md).
-
-## Tutorials 
-
-Take a look at the ClearML Data tutorials:
-* [Dataset Management with CLI and SDK](data%20management/data_man_cifar_classification)
-* [Dataset Management with CLI](data%20management/data_man_simple)
-* [Folder Sync with CLI](data%20management/data_man_folder_sync)
+For an overview of our recommendations for ClearML Data workflows and practices, see [Best Practices](best_practices.md).
 
 ## WebApp 
 
-When using either interface of ClearML Data, the data can be visualized and retrieved in ClearML's WebApp. 
+When using either interface of ClearML Data, the data can be visualized and retrieved with ClearML's WebApp. 
 
 Once a dataset has been finalized, view its data genealogy in the dataset's
 page **>** **RESULTS** **>** **PLOTS**
@@ -53,11 +46,30 @@ View a list of a dataset's contents in the dataset's page **> ARTIFACTS > data**
 in zip folder format by clicking  <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" />,
 next to the **FILE PATH**.
 
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">Dataset Contents</summary>
+<div className="cml-expansion-panel-content">
+
 ![Dataset data WebApp](../img/dataset_data.png)
+
+</div>
+</details>
+
+<br/>
 
 View the  DAG of the dataset dependencies (all previous dataset versions and their parents) in the dataset's page **> ARTIFACTS > state**.
 
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">Data Dependency DAG</summary>
+<div className="cml-expansion-panel-content">
+
 ![Dataset state WebApp](../img/dataset_data_state.png)
+
+</div>
+</details>
+
+
+
 
 
 

@@ -13,7 +13,7 @@ Import the `Dataset` module, and let's get started!
 from clearml import Dataset
 ```
 
-## Dataset Creation 
+## Create Datasets 
 
 ClearML Data supports multiple ways to create datasets programmatically, which provides for a variety of use-cases:
 * [`Dataset.create()`](#datasetcreate) - Create a new dataset. Parent datasets can be specified, from which the new dataset 
@@ -28,7 +28,6 @@ Creating datasets programmatically is especially helpful when data preprocessing
 preprocessing code and the dataset can be saved in a single task (see `use_current_task` parameter in [`Dataset.create`](../references/sdk/dataset.md#datasetcreate)).  
 
 ```python
-from clearml import Dataset
 
 # Preprocessing code here
 
@@ -56,18 +55,19 @@ squashed_dataset_1 = Dataset.squash(dataset_name='squashed dataset\'s name',
 
 # option 2 - list project and dataset pairs 
 squashed_dataset_2 = Dataset.squash(dataset_name='squashed dataset 2',
-                         dataset_project_name_pairs=[('dataset1 project', 'dataset1 name'), ('dataset2 project', 'dataset2 name')]
+                         dataset_project_name_pairs=[('dataset1 project', 'dataset1 name'), 
+                                                     ('dataset2 project', 'dataset2 name')]
                          )
 ```
 
 In addition, the target storage of the compressed dataset can be specified using the `output_url` parameter of [`Dataset.squash`](../references/sdk/dataset.md#datasetsquash).
 
-## Accessing Datasets
+## Access Datasets
 Once a dataset has been created and uploaded to a server, the dataset can be accessed programmatically from anywhere. 
 
 Use the [`Dataset.get`](../references/sdk/dataset.md#datasetget) class method to access a specific Dataset object, either 
-with the dataset's ID or with its project and name. If only the dataset's project name is provided, the method returns the 
-last dataset in the specified project.
+with the dataset's ID or with its project and name. If only a project name or tag is provided, the method returns the 
+most recent dataset in the specified project, or the most recent dataset with the specified tag.
 
 Once a specific dataset object has been accessed, get a local copy of the dataset using one of the following options:
 * [`Dataset.get_local_copy()`](../references/sdk/dataset.md#get_local_copy) - get a read-only local copy of an entire dataset. 
@@ -75,7 +75,7 @@ Once a specific dataset object has been accessed, get a local copy of the datase
 * [`Dataset.get_mutable_local_copy()`](../references/sdk/dataset.md#get_mutable_local_copy) - get a writable local copy 
 of an entire dataset. This method downloads the dataset to a specific folder (non-cached), specified with the `target_folder` parameter. If 
 the specified folder already has contents, specify whether to overwrite its contents with the dataset contents, using the `overwrite` parameter.
-   
+
 ## Modify Datasets
 
 Once a dataset has been created, users can add and remove files from it using the [`Dataset.add_files`](#add_files) 
@@ -140,4 +140,4 @@ to a specific folder's content changes. Specify the folder to sync with the `loc
 
 This method is useful in the case where there's a single point of truth, either a local or network folder, that gets updated periodically. 
 The folder changes will be reflected in a new dataset version. This method saves time since you don't have to manually 
-update (add \ remove) files.
+update (add / remove) files in a dataset.

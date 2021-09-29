@@ -11,10 +11,14 @@ changes (file addition, modification, or removal) will be reflected in ClearML.
 ## Creating Initial Version
 
 ## Prerequisites
-First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. This contains all
+1. First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. This contains all
 the needed files.
+
 1. Open terminal and change directory to the cloned repository's examples folder
-    `cd clearml/examples/reporting`
+    
+   ```
+   cd clearml/examples/reporting
+   ```
 
 ## Syncing a Folder
 Create a dataset and sync the `data_samples` folder from the repo to ClearML
