@@ -444,9 +444,9 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 #### 3D Plot Controls 
 |Icon|Description|
 |---|---|
-| <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="Orbital rotation mode icon" className="icon size-sm" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
-| <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="Turntable rotation mode icon" className="icon size-sm" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
-| <img src="/docs/latest/icons/ico-homepage.svg" alt="reset axes icon" className="icon size-sm" />| Reset axes to default position. |
+| <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="Orbital rotation mode icon" className="icon size-sm space-sm" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
+| <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="Turntable rotation mode icon" className="icon size-sm space-sm" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
+| <img src="/docs/latest/icons/ico-reset-axes.svg" alt="reset axes icon" className="icon size-sm space-sm" />| Reset axes to default position. |
 
 
 ### Debug Samples
