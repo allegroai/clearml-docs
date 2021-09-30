@@ -2,7 +2,7 @@
 title: Best Practices
 ---
 
-This section talks about what made us design ClearML the way we did and how does it reflect on ML / DL workflows.
+This section talks about what made us design ClearML the way we did and how it reflects on ML / DL workflows.
 While ClearML was designed to fit into any workflow, we do feel that working as we describe below brings a lot of advantages from organizing one's workflow
 and furthermore, preparing it to scale in the long term.
 
@@ -21,14 +21,14 @@ During early stages of model development, while code is still being modified hea
   - A workstation with a GPU, usually with a limited amount of memory for small batch-sizes. This is used to train the model and ensure the model we chose makes sense and that the training
   procedure works. Can be used to provide initial models for testing. 
 
-The abovementioned setups might be folded into each other and that's great! If you have a GPU machine for each researcher that's awesome! 
+The abovementioned setups might be folded into each other and that's great! If you have a GPU machine for each researcher, that's awesome! 
 The goal of this phase is to get a code, dataset and environment setup, so we can start digging to find the best model!
 
--  [ClearML SDK](../../clearml_sdk.md) should be integrated into your code (Check out our [getting started](ds_first_steps.md)). 
+-  [ClearML SDK](../../clearml_sdk.md) should be integrated into your code (check out our [getting started](ds_first_steps.md)). 
   This helps visualizing the results and tracking progress.
 - [ClearML Agent](../../clearml_agent.md) helps moving your work to other machines without the hassle of rebuilding the environment every time, 
   while also creating an easy queue interface that easily allows you to just drop your experiments to be executed one by one
-  (Great for ensuring that the GPUs are churning during the weekend).
+  (great for ensuring that the GPUs are churning during the weekend).
 - [ClearML Session](../../apps/clearml_session.md) helps with developing on remote machines, just like you'd develop on you local laptop!
 
 ## Train Remotely
