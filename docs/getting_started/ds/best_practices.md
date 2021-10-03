@@ -58,9 +58,9 @@ that we need.
 We believe that you should track everything! From obscure parameters to weird metrics, it's impossible to know what will end up
 improving our results later on!
 
-- Make sure experiments are reproducible! ClearML logs  code, parameters, environment in a single, easily searchable place. 
-- Development is not linear. Configuration / Parameters should not be stored in your git.
-  They are temporary, and we constantly change them. But we still need to log them because who knows, one day...
+- Make sure experiments are reproducible! ClearML logs code, parameters, environment in a single, easily searchable place. 
+- Development is not linear. Configuration / Parameters should not be stored in your git, as
+  they are temporary and constantly changing. They still need to be logged because who knows, one day...
 - Uncommitted changes to your code should be stored for later forensics in case that magic number actually saved the day. Not every line change should be committed.
 - Mark potentially good experiments, make them the new baseline for comparison.
 
