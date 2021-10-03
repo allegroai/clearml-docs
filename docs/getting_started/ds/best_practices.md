@@ -48,7 +48,7 @@ that we need.
 - [ClearML Agent](../../clearml_agent.md) does the heavy lifting. It reproduces the execution environment, clones your code, 
   applies code patches, manages parameters (Including overriding them on the fly), executes the code and queues multiple tasks
   It can even [build](../../clearml_agent.md#buildingdockercontainers) the docker container for you!  
-- [ClearML Pipelines](../../fundamentals/pipelines.md) ensures that steps run in the same order, 
+- [ClearML Pipelines](../../fundamentals/pipelines.md) ensure that steps run in the same order, 
   programmatically chaining tasks together, while giving an overview of the execution pipeline's status.
 
 **Your entire environment should magically be able to run on any machine, without you working hard.** 
@@ -59,8 +59,8 @@ We believe that you should track everything! From obscure parameters to weird me
 improving our results later on!
 
 - Make sure experiments are reproducible! ClearML logs  code, parameters, environment in a single, easily searchable place. 
-- Development is not linear. Configuration / Parameters should not be stored in your git
-  they are temporary, and we constantly change them. But we still need to log them because who knows, one day...
+- Development is not linear. Configuration / Parameters should not be stored in your git.
+  They are temporary, and we constantly change them. But we still need to log them because who knows, one day...
 - Uncommitted changes to your code should be stored for later forensics in case that magic number actually saved the day. Not every line change should be committed.
 - Mark potentially good experiments, make them the new baseline for comparison.
 
