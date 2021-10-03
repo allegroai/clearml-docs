@@ -47,8 +47,8 @@ that we need.
   accessed, [compared](../../webapp/webapp_exp_comparing.md) and [tracked](../../webapp/webapp_exp_track_visual.md).
 - [ClearML Agent](../../clearml_agent.md) does the heavy lifting. It reproduces the execution environment, clones your code, 
   applies code patches, manages parameters (Including overriding them on the fly), executes the code and queues multiple tasks
-  It can even [build](../../clearml_agent.md#buildingdockercontainers) the docker container for you!
--[ClearML Pipelines](../../fundamentals/pipelines.md) ensures that steps run in the same order, 
+  It can even [build](../../clearml_agent.md#buildingdockercontainers) the docker container for you!  
+- [ClearML Pipelines](../../fundamentals/pipelines.md) ensures that steps run in the same order, 
   programmatically chaining tasks together, while giving an overview of the execution pipeline's status.
 
 **Your entire environment should magically be able to run on any machine, without you working hard.** 
