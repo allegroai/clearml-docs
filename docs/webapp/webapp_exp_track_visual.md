@@ -424,7 +424,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 
 |Icon|Description|
 |---|---|
-| <img src="/docs/latest/icons/ico-download-png.svg" alt="Download PNG icon" className="icon size-sm space-sm" /> | Download plots as PNG files. |
+| <img src="/docs/latest/icons/ico-download-pic.svg" alt="Download PNG icon" className="icon size-sm space-sm" /> | Download plots as PNG files. |
 | <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-sm space-sm" /> | Pan around plot. Click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-sm space-sm" />, click the plot, and then drag. |
 | <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box icon" className="icon size-sm space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box icon" className="icon size-sm space-sm" /> and then drag. |
 | <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso icon" className="icon size-sm space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso icon" className="icon size-sm space-sm" /> and then drag. |
@@ -444,9 +444,9 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 #### 3D Plot Controls 
 |Icon|Description|
 |---|---|
-| <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="Orbital rotation mode icon" className="icon size-sm" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
-| <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="Turntable rotation mode icon" className="icon size-sm" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
-| <img src="/docs/latest/icons/ico-homepage.svg" alt="reset axes icon" className="icon size-sm" />| Reset axes to default position. |
+| <img src="/docs/latest/icons/ico-orbital-rotation.svg" alt="Orbital rotation mode icon" className="icon size-sm space-sm" />| Switch to orbital rotation mode - rotate the plot around its middle point. |
+| <img src="/docs/latest/icons/ico-turntable-rotation.svg" alt="Turntable rotation mode icon" className="icon size-sm space-sm" />| Switch to turntable rotation mode - rotate the plot around its middle point while constraining one axis |
+| <img src="/docs/latest/icons/ico-reset-axes.svg" alt="reset axes icon" className="icon size-sm space-sm" />| Reset axes to default position. |
 
 
 ### Debug Samples
