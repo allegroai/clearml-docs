@@ -129,8 +129,10 @@ storage {
 ```
 
 ### Direct Access
-By default, all artifacts (Models / Artifacts / Datasets) are automatically downloaded to the cache before they're used.<br/>
+By default, all artifacts (Models / Artifacts / Datasets) are automatically downloaded to the cache before they're used.
+
 Some storage mediums (NFS / Local storage) allows for direct access,
-which means that the code would work with the object where it's originally stored and not downloaded to cache first.<br/>
+which means that the code would work with the object where it's originally stored and not downloaded to cache first.
+
 To enable direct access, specify the urls to access directly.
 
