@@ -37,7 +37,7 @@ To ensure full automatic logging it is recommended to import the ClearML package
 Then initialize the Task object in your `main()` function, or the beginning of the script.
 
 ```python
-task = Task.init(project_name=”great project”, task_name=”best experiment”)
+task = Task.init(project_name='great project', task_name='best experiment')
 ```
 
 Task name is not unique, it's possible to have multiple experiments with the same name.
