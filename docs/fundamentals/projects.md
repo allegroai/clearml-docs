@@ -19,7 +19,7 @@ the project are executed, the model checkpoints (snapshots) and artifacts are st
 ## WebApp 
 
 Users can create and modify projects, and see project details in the WebApp (see [WebApp Home](../webapp/webapp_home.md)). 
-The project's description can be edited in the [overview](../webapp/webapp_overview.md) page. Each project's experiments,  
+The project's description can be edited in the [overview](../webapp/webapp_overview.md) page. Each project's experiments,
 models, and dataviews, can be viewed in the project's [experiments table](../webapp/webapp_exp_table.md),
  [models table](../webapp/webapp_model_table.md), and [dataviews table](../hyperdatasets/webapp/webapp_dataviews.md). 
 

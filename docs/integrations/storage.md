@@ -39,7 +39,7 @@ aws {
                 #     key: "my-access-key"
                 #     secret: "my-secret-key"
                 # },
-                # {
+                
             ]
         }
         boto3 {
@@ -51,6 +51,7 @@ aws {
 
 ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
 ```
+                # {
                 #     host: "my-minio-host:9000"
                 #     key: "12345678"
                 #     secret: "12345678"
@@ -128,8 +129,8 @@ storage {
 ```
 
 ### Direct Access
-By default, all artifacts (Models \ Artifacts \ Datasets) are automatically downloaded to the cache before they're used.<br/>
-Some storage mediums (NFS \ Local storage) allows for direct access,
+By default, all artifacts (Models / Artifacts / Datasets) are automatically downloaded to the cache before they're used.<br/>
+Some storage mediums (NFS / Local storage) allows for direct access,
 which means that the code would work with the object where it's originally stored and not downloaded to cache first.<br/>
 To enable direct access, specify the urls to access directly.
 
