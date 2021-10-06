@@ -18,7 +18,7 @@ Artifacts can be uploaded and dynamically tracked, or uploaded without tracking.
 <a name="configure_artifact_storage" class="tr_top_negative"></a>
 
 Configure **ClearML** for uploading artifacts to any of the supported types of storage, which include local and shared folders, 
-S3 buckets, Google Cloud Storage, and Azure Storage ([debug sample storage](../../references/sdk/logger.md#set_default_upload_destination)  
+S3 buckets, Google Cloud Storage, and Azure Storage ([debug sample storage](../../references/sdk/logger.md#set_default_upload_destination) 
 is different). Configure **ClearML** in any of the following ways:
 
 * In the configuration file, set [default_output_uri](../../configs/clearml_conf.md#sdkdevelopment).
