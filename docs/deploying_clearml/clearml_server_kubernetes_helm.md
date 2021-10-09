@@ -88,17 +88,17 @@ After modifying several Elasticsearch settings in the Docker configuration (see 
 
 1. Add the clearml-server repository to Helm:
 
-        helm repo add allegroai https://allegroai.github.io/clearml-server-helm/
+        helm repo add allegroai https://allegroai.github.io/clearml-helm-charts
 
-1. Confirm the clearml-server repository is now in Helm:
+1. Confirm the clearml repository is now in Helm:
     
-        helm search clearml
+        helm search repo allegroai
 
-    The helm search results must include `allegroai/clearml-server-chart`.
+    The helm search results must include `allegroai/clearml`.
     
-1. Install `clearml-server-chart` on your cluster:
+1. Install `clearml` on your cluster:
     
-        helm install allegroai/clearml-server-chart --namespace=clearml --name clearml-server
+        helm install clearml-server allegroai/clearml -n clearml --create-namespace
 
     A clearml `namespace` is created in the cluster and clearml-server is deployed in it.
 
