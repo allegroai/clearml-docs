@@ -378,12 +378,30 @@ After thirty minutes, it remains unchanged.
 
 **Can I control what ClearML automatically logs?** <a id="controlling_logging"></a>
 
-Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks. 
+Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
+by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
 
-When initializing a Task by calling the `Task.init` method, provide the `auto_connect_frameworks` parameter to control 
-framework logging, and the `auto_connect_streams` parameter to control `stdout`, `stderr`, and standard logging. The 
-values are `True`, `False`, and a dictionary for fine-grain control. See [Task.init](references/sdk/task.md#classmethod-initproject_namenone-task_namenone-task_typetasktypestraining-training-tagsnone-reuse_last_task_idtrue-continue_last_taskfalse-output_urinone-auto_connect_arg_parsertrue-auto_connect_frameworkstrue-auto_resource_monitoringtrue-auto_connect_streamstrue).
+To control a Task's framework logging, use the `auto_connect_framworks`. Turn off all automatic logging by setting the 
+parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
 
+For example: 
+```python
+auto_connect_frameworks={
+    'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
+    'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
+}
+```
+
+To control the `stdout`, `stderr`, and standard logging, use the `auto_connect_streams` parameter. 
+To disable logging all three, set the parameter to `False`. For finer grained control, input a dictionary, where the keys are `stout`, `stderr`, 
+and `logging`, and the values are booleans. For example: 
+
+```python
+auto_connect_streams={'stdout': True, 'stderr': True, 'logging': False}
+```
+
+See [`Task.init`](references/sdk/task.md#taskinit).
 
 <br/>
 

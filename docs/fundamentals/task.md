@@ -154,16 +154,8 @@ task = Task.init(
 )
 ```
 
-When a Task is initialized, it automatically captures parameters and outputs from supported frameworks. To control the Task's 
-automatic logging, use the `auto_connect_framworks` parameter of the `Task.init` method. Turn off all automatic logging 
-by setting the parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. For example: 
-```python
-auto_connect_frameworks={
-    'matplotlib': True, 'tensorflow': True, 'tensorboard': True, 'pytorch': True,
-    'xgboost': True, 'scikit': True, 'fastai': True, 'lightgbm': True,
-    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-}
-``` 
+When a Task is initialized, it automatically captures parameters and outputs from supported frameworks. To control the what ClearML
+automatically logs, see this [FAQ](../faq.md#controlling_logging).
 
 Once a Task is created, the Task object can be accessed from anywhere in the code by calling [`Task.current_task`](../references/sdk/task.md#taskcurrent_task).
 
