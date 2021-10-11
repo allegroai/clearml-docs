@@ -154,6 +154,9 @@ task = Task.init(
 )
 ```
 
+When a Task is initialized, it automatically captures parameters and outputs from supported frameworks. To control what ClearML
+automatically logs, see this [FAQ](../faq.md#controlling_logging).
+
 Once a Task is created, the Task object can be accessed from anywhere in the code by calling [`Task.current_task`](../references/sdk/task.md#taskcurrent_task).
 
 If multiple Tasks need to be created in the same process (for example, for logging multiple manual runs), 
