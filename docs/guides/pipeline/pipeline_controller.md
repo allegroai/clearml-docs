@@ -2,7 +2,7 @@
 title: Simple Pipeline - Serialized Data
 ---
 
-The [pipeline_controller.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_controller.py) 
+The [pipeline_from_tasks.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_from_tasks.py) 
 example demonstrates a simple pipeline in **ClearML**. 
 This pipeline is composed of three steps: 
 1. Download data
@@ -20,7 +20,7 @@ class. This class includes functionality to:
 * Cleanup after pipeline completes execution
  
 This example implements the pipeline with four Tasks (each Task is created using a different script):
-* **Controller Task** ([pipeline_controller.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_controller.py)) - 
+* **Controller Task** ([pipeline_from_tasks.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_from_tasks.py)) - 
   Creates a pipeline controller, adds the steps (Tasks) to the pipeline, runs the pipeline. 
 * **Step 1 Task** ([step1_dataset_artifact.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/step1_dataset_artifact.py)) - 
   Downloads data and stores the data as an artifact.
