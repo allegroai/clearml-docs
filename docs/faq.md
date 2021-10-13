@@ -381,7 +381,7 @@ After thirty minutes, it remains unchanged.
 Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
 by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
 
-To control a Task's framework logging, use the `auto_connect_framworks`. Turn off all automatic logging by setting the 
+To control a Task's framework logging, use the `auto_connect_framworks` parameter. Turn off all automatic logging by setting the 
 parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
 
 For example: 
