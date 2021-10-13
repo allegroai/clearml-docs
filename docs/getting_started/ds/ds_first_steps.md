@@ -26,14 +26,14 @@ In ClearML, experiments are organized as [Tasks](../../fundamentals/task).
 ClearML will automatically log your experiment and code, including outputs and parameters from popular ML frameworks, 
 once you integrate the ClearML [SDK](../../clearml_sdk.md) with your code. To control what ClearML automatically logs, see this [FAQ](../../faq.md#controlling_logging). 
 
-At the beginning of your code, import the `clearml` package 
+At the beginning of your code, import the `clearml` package: 
 
 ```python
 from clearml import Task
 ```
 
 :::note Full Automatic Logging
-To ensure full automatic logging it is recommended to import the ClearML package at the top of your entry script.
+To ensure full automatic logging, it is recommended to import the ClearML package at the top of your entry script.
 :::
 
 Then initialize the Task object in your `main()` function, or the beginning of the script.
