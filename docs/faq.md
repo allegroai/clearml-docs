@@ -381,7 +381,7 @@ After thirty minutes, it remains unchanged.
 Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
 by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
 
-To control a Task's framework logging, use the `auto_connect_framworks` parameter. Turn off all automatic logging by setting the 
+To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
 parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
 
 For example: 
@@ -702,7 +702,7 @@ on the "Configuring Your Own ClearML Server" page.
 
 **Can I add web login authentication to ClearML Server?** <a id="web-auth"></a>
 
-By default, anyone can login to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
+By default, anyone can log in to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
 
 For detailed instructions, see [Web Login Authentication](deploying_clearml/clearml_server_config.md#web-login-authentication) 
 on the "Configuring Your Own ClearML Server" page in the "Deploying ClearML" section.
