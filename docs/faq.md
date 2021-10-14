@@ -702,7 +702,7 @@ on the "Configuring Your Own ClearML Server" page.
 
 **Can I add web login authentication to ClearML Server?** <a id="web-auth"></a>
 
-By default, anyone can login to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
+By default, anyone can log in to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
 
 For detailed instructions, see [Web Login Authentication](deploying_clearml/clearml_server_config.md#web-login-authentication) 
 on the "Configuring Your Own ClearML Server" page in the "Deploying ClearML" section.
