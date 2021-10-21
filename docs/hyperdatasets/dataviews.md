@@ -41,7 +41,7 @@ A frame filter contains the following criteria:
 
 Use combinations of these frame filters to build sophisticated queries.
 
-## Debiasing input data
+## Debiasing Input Data
 
 Apply debiasing to each frame filter to adjust for an imbalance in input data. Ratios (weights) enable setting the proportion 
 of frames that are inputted, according to any of the criteria in a frame filter, including ROI labels, frame metadata, 
@@ -52,7 +52,7 @@ you want to input the same number of both. To debias the data, create two frame 
 of `1`, and the other for `nighttime` with a ratio of `5`. The Dataview will iterate approximately an equal number of 
 SingleFrames for each. 
 
-## ROI Label mapping (label translation)
+## ROI Label Mapping (Label Translation)
 
 ROI label mapping (label translation) applies to the new model. For example, apply mapping to:
 
@@ -60,12 +60,12 @@ ROI label mapping (label translation) applies to the new model. For example, app
 * Consolidate disparate datasets containing different names for the ROI.
 * Hide labeled objects from the training process.
 
-## Class label enumeration
+## Class Label Enumeration
 
 Define class labels for the new model and assign integers to each in order to maintain data conformity across multiple 
 codebases and datasets. It is important to set enumeration values for all labels of importance. 
 
-## Data augmentation
+## Data Augmentation
 
 On-the-fly data augmentation is applied to SingleFrames, transforming images without creating new data. Apply data augmentation 
 in steps, where each step is composed of a method, an operation, and a strength as follows: 
@@ -99,7 +99,7 @@ in steps, where each step is composed of a method, an operation, and a strength 
     * 1.0 - Medium (recommended)
     * 2.0 - High (strong)
 
-## Iteration control
+## Iteration Control
 
 The input data **iteration control** settings determine the order, number, timing, and reproducibility of the Dataview iterating 
 SingleFrames. Depending upon the combination of iteration control settings, all SingleFrames may not be iterated, and some 
@@ -141,7 +141,7 @@ from allegroai import DataView, IterationOrder
 myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
 ```
 
-### Adding queries
+### Adding Queries
 
 To add a query to a DataView, use the `DataView.add_query` method and specify Dataset versions, 
 ROI and / or frame queries, and other criteria. 
@@ -154,7 +154,7 @@ specify the queries.
 Multiple queries can be added to the same or different Dataset versions, each query with the same or different ROI 
 and / or frame queries.
 
-#### ROI queries: 
+#### ROI Queries: 
 
 * ROI query for a single label
 
@@ -206,7 +206,7 @@ myDataView.add_query(dataset_name='myDataset', version_name='training',
     roi_query='label.keyword:\"Car\" AND NOT label.keyword:\"partly_occluded\"')
 ```
 
-#### Querying multiple Datasets and versions
+#### Querying Multiple Datasets and Versions
 
 This example demonstrates an ROI query filtering for frames containing the ROI labels `car`, `truck`, or `bicycle` 
 from two versions of one Dataset, and one version of another Dataset.
@@ -234,7 +234,7 @@ myDataView.add_query(dataset_name='dataset_2',
 
 ```
 
-#### Frame queries
+#### Frame Queries
 
 Use frame queries to filter frames by ROI labels and / or frame metadata key-value pairs that a frame must include or 
 exclude for the DataView to return the frame. 
@@ -252,13 +252,13 @@ myDataView.add_query(dataset_name='myDataset',
 ```
 
 
-### Controlling query iteration
+### Controlling Query Iteration
 
 Use `DataView.set_iteration_parameters` to manage the order, number, timing, and reproducibility of frames 
 for training.
 
 
-#### Iterate frames infinitely 
+#### Iterate Frames Infinitely 
 
 This example demonstrates creating a Dataview and setting its parameters to iterate infinitely until the script is 
 manually terminated. 
@@ -271,7 +271,7 @@ myDataView = DataView()
 myDataView.set_iteration_parameters(order=IterationOrder.random, infinite=True)
 ```
 
-#### Iterate all frames matching the query
+#### Iterate All Frames Matching the Query
 This example demonstrates creating a DataView and setting its parameters to iterate and return all frames matching a query.
 
 ```python
@@ -287,7 +287,7 @@ myDataView.add_query(dataset_name='myDataset',
                      version_name='myVersion', roi_query='cat')
 ```
 
-#### Iterate a maximum number of frames
+#### Iterate a Maximum Number of Frames
 This example demonstrates creating a DataView and setting its parameters to iterate a specific number of frames. If the 
 Dataset version contains fewer than that number of frames matching the query, then fewer are returned by the iterator.
 
@@ -301,7 +301,7 @@ myDataView.set_iteration_parameters(
     maximum_number_of_frames=5000)
 ```
 
-### Debiasing input data
+### Debiasing Input Data
 
 Debias input data using the `DataView.add_query` method's `weight` argument to add weights. This 
 is the same `DataView.add_query` that can be used to specify Dataset versions, and ROI queries and frame queries.

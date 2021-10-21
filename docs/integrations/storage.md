@@ -18,6 +18,8 @@ Once uploading an object to a storage medium, each machine that uses the object 
 
 Configuration for storage is done by editing the [clearml.conf](../configs/clearml_conf.md).
 
+The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) format, which supports runtime environment variable access.
+
 ### Configuring AWS S3
 
 Modify these parts of the clearml.conf file and add the key, secret, and region of the s3 bucket.
@@ -39,7 +41,7 @@ aws {
                 #     key: "my-access-key"
                 #     secret: "my-secret-key"
                 # },
-                # {
+                
             ]
         }
         boto3 {
@@ -49,8 +51,23 @@ aws {
     }
 ```
 
+AWS's S3 access parameters can be specified by referencing the standard environment variables if already defined.
+
+For example: 
+```
+s3 {
+            ...
+            # default, used for any bucket not specified below
+            key: "${AWS_ACCESS_KEY_ID}"
+            secret: "${AWS_SECRET_ACCESS_KEY}"
+            region: "${AWS_DEFAULT_REGION}"
+            ...
+}
+``` 
+
 ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
 ```
+                # {
                 #     host: "my-minio-host:9000"
                 #     key: "12345678"
                 #     secret: "12345678"
@@ -58,6 +75,7 @@ ClearML also supports [MinIO](https://github.com/minio/minio) by adding this con
                 #     secure: false
                 # }
 ```
+
 
 ### Configuring Azure
 To configure Azure blob storage specify the account name and key.
@@ -72,6 +90,20 @@ To configure Azure blob storage specify the account name and key.
         #     }
         # ]
     }
+```
+
+Azure's storage access parameters can be specified by referencing the standard environment variables if already defined.
+
+For example:
+```
+...
+containers: [
+             {
+                 account_name: "${AZURE_STORAGE_ACCOUNT}"
+                 account_key: "${AZURE_STORAGE_KEY}"
+                 # container_name:
+             }
+         ]
 ```
 
 ### Configuring Google Storage
@@ -97,33 +129,26 @@ It's also possible to specify credentials for a specific bucket.
     }
 ```
 
+GCP's storage access parameters can be specified by referencing the standard environment variables if already defined.
+
+```
+...
+credentials = [
+             {
+                 bucket: "my-bucket"
+                 ...
+                 credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+             }
+
+```
+
 ## Storage Manager
 
-ClearML Offers a package to manage downloading, uploading and caching of content directly from code.
+ClearML offers the [StorageManager](../references/sdk/storage.md) class to manage downloading, uploading, and caching of 
+content directly from code.
 
-### Uploading files
-To upload a file using storage manager, just run the following line specifying the path to a local file or folder, and the
-remote destination.
-```python
-from clearml import StorageManager
+See [Storage Examples](../guides/storage/examples_storagehelper.md).
 
-StorageManager.upload_file(local_file='path_to_file',remote_url='s3://my_bucket')
-```
-
-
-### Downloading files
-To download files into cache, run the following line, specifying the remote destination's URL.
-```python
-StorageManager.get_local_copy(remote_url='s3://my_bucket/path_to_file')
-```
-
-:::note
-Zip and tar.gz files will be automatically extracted to cache. This can be controlled with the`extract_archive` flag.
-:::
-
-### Controling cache file limit
-It's possible to control the maximum cache size by limiting the number of files it stores.
-This is done by calling the ```StorageManager.set_cache_file_limit()``` method.
 
 ## Caching
 ClearML also manages a cache of all downloaded content so nothing is duplicated, and code won't need to download the same
@@ -148,8 +173,10 @@ storage {
 ```
 
 ### Direct Access
-By default, all artifacts (Models \ Artifacts \ Datasets) are automatically downloaded to the cache before they're used.<br/>
-Some storage mediums (NFS \ Local storage) allows for direct access,
-which means that the code would work with the object where it's originally stored and not downloaded to cache first.<br/>
+By default, all artifacts (Models / Artifacts / Datasets) are automatically downloaded to the cache before they're used.
+
+Some storage mediums (NFS / Local storage) allows for direct access,
+which means that the code would work with the object where it's originally stored and not downloaded to cache first.
+
 To enable direct access, specify the urls to access directly.
 

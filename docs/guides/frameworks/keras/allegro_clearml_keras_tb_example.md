@@ -40,7 +40,7 @@ Text printed to the console for training progress, as well as all other console 
 
 ![image](../../../img/keras_colab_01.png)
 
-## Configuration objects
+## Configuration Objects
 
 The configuration appears in **CONFIGURATIONS** **>** **CONFIGURATION OBJECTS** **>** **General**. 
 

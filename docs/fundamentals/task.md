@@ -9,7 +9,7 @@ or any custom implementation you choose.
 
 To transform an existing script into a **ClearML Task**, one must call the [Task.init()](../references/sdk/task.md#taskinit) method 
 and specify a task name and its project. This creates a Task object that automatically captures code execution 
-information as well as execution outputs. 
+information as well as execution outputs.
 
 All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
 and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
@@ -25,8 +25,9 @@ project name & task name combination or by a unique ID.
 
 It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task multiple times and to modify it for re-execution.  
 
+![Task](../img/fundamentals_task.png)
 
-## Task sections
+## Task Sections
 
 The sections of **ClearML Task** are made up of the information that a task captures and stores, which consists of code 
 execution details and execution outputs. This information is used for tracking 
@@ -47,7 +48,7 @@ The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-
 
 To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
 
-## Task types
+## Task Types
 
 Tasks have a *type* attribute, which denotes their purpose (Training / Testing / Data processing). This helps to further 
 organize projects and ensure tasks are easy to [search and find](#querying--searching-tasks). The default task type is *training*.
@@ -63,7 +64,7 @@ Available task types are:
     - *data_processing*, *qc* 
     - *custom*
 
-## Task lifecycle 
+## Task Lifecycle 
 
 ClearML Tasks are created in one of the following methods:
 * Manually running code that is instrumented with the ClearML SDK and invokes `Task.init()`.
@@ -101,7 +102,7 @@ The above diagram demonstrates how a previously run task can be used as a baseli
 1. The new task is enqueued for execution.
 1. A `clearml-agent` servicing the queue pulls the new task and executes it (where ClearML again logs all the execution outputs).
 
-## Task states
+## Task States
 
 The state of a Task represents its stage in the Task lifecycle. It indicates whether the Task is read-write (editable) or 
 read-only. For each state, a state transition indicates which actions can be performed on an experiment, and the new state 
@@ -130,13 +131,17 @@ The following table describes the Task states and state transitions.
 * Argparse arguments (default and specific to the current execution)
 * Reports to Tensorboard & Matplotlib and model checkpoints.
 
+:::note
+ClearML object (e.g. task, project) names are required to be at least 3 characters long
+:::
+
 ```python
 from clearml import Task
 
 
 task = Task.init(
-    project_name='example', 
-    task_name='task template', 
+    project_name='example',    # project name of at least 3 characters
+    task_name='task template', # task name of at least 3 characters
     task_type=None,
     tags=None,
     reuse_last_task_id=True,
@@ -149,11 +154,14 @@ task = Task.init(
 )
 ```
 
+When a Task is initialized, it automatically captures parameters and outputs from supported frameworks. To control what ClearML
+automatically logs, see this [FAQ](../faq.md#controlling_logging).
+
 Once a Task is created, the Task object can be accessed from anywhere in the code by calling [`Task.current_task`](../references/sdk/task.md#taskcurrent_task).
 
 If multiple Tasks need to be created in the same process (for example, for logging multiple manual runs), 
 make sure to close a Task, before initializing a new one. To close a task simply call `task.close` 
-(see example [here](https://github.com/allegroai/clearml/blob/master/examples/advanced/multiple_tasks_single_process.py)).
+(see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a Task, its project needs to be specified. If the project entered does not exist, it will be created. 
 Projects can be divided into sub-projects, just like folders are broken into sub-folders.

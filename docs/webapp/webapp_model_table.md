@@ -7,7 +7,7 @@ view model details, and modify, publish, archive, tag, and move models to other 
 
 ![Models table](../img/webapp_models_01.png)
 
-## Models table columns
+## Models Table Columns
 
 The models table contains the following columns:
 
@@ -25,7 +25,7 @@ The models table contains the following columns:
 
 
 
-## Customizing the models table
+## Customizing the Models Table
 
 The models table is customizable. Changes are persistent (cached in the browser) and represented in the URL, so customized settings
 can be saved in a browser bookmark and shared with other **ClearML** users to collaborate.
@@ -51,7 +51,7 @@ If a project has sub-projects, the models can be viewed by their sub-project gro
 all the models in the project. The customizations of these two views are saved separately. 
 :::
 
-## Model actions
+## Model Actions
 
 The following table describes the actions that can be done from the models table, including the states that
 allow each feature. Model states are *Draft* (editable) and *Published* (read-only). 
@@ -75,7 +75,7 @@ The same information can be found in the bottom menu, in a tooltip that appears 
 
 ![Models table batch operations](../img/webapp_models_table_batch_operations.png)
 
-## Tagging models
+## Tagging Models
 
 Tags are user-defined, color-coded labels that can be added to models (and experiments), allowing to easily identify and
 group of experiments. A tag can show any text, for any purpose. For example, add tags for the type of remote machine

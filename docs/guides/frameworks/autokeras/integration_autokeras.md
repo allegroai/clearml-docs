@@ -25,7 +25,7 @@ Once these are logged, they can be visualized in the **ClearML Web UI**.
 If you are not already using **ClearML**, see [Getting Started](/getting_started/ds/best_practices.md).
 :::
 
-## Adding ClearML to code
+## Adding ClearML to Code
 
 Add two lines of code:
 ```python

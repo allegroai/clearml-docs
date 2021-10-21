@@ -8,7 +8,7 @@ Enterprise WebApp (UI).
 In addition to all of **ClearML**'s offerings, ClearML Enterprise keeps track of the Dataviews associated with an 
 experiment, which can be viewed and [modified](webapp_exp_modifying.md) in the WebApp.
 
-## Viewing an experiment's Dataviews 
+## Viewing an Experiment's Dataviews 
 
 In an experiment's page, go to the **DATAVIEWS** tab to view all the experiment's Dataview details, including:
 * Input data [selection](#dataset-versions) and [filtering](#filtering)
@@ -48,7 +48,7 @@ ROI label mapping (label translation) applies to the new model. For example, use
 
 For detailed information, see [Mapping ROI labels](../dataviews.md#mapping-roi-labels).
 
-### Label enumeration
+### Label Enumeration
 
 Assign label enumeration in the **LABELS ENUMERATION** area.
 
@@ -59,7 +59,7 @@ where each step is composed of a method, an operation, and a strength.
  
 For detailed information, see [Data augmentation](../dataviews.md#data-augmentation).
 
-### Iteration control
+### Iteration Control
 
 The input data iteration control settings determine the order, number, timing, and reproducibility of the Dataview iterating 
 SingleFrames. Depending upon the combination of iteration control settings, all SingleFrames may not be iterated, and some may repeat. 

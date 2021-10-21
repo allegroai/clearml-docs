@@ -30,7 +30,7 @@ See [Example 1](#example-1), which shows `masks` in `sources`, `mask` in `rois`,
 a mask to its source in a frame.
 
 
-## Masks structure
+## Masks Structure
 
 The chart below explains the keys and values of the `masks` dictionary (in the [`sources`](sources.md) 
 section of a Frame).

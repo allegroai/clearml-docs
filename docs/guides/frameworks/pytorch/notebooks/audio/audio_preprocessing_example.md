@@ -11,17 +11,17 @@ demonstrates integrating **ClearML** into a Jupyter Notebook which uses PyTorch 
 
 ![image](../../../../../img/examples_audio_preprocessing_example_08.png)
 
-## Debug samples
+## Debug Samples
 
 **ClearML** automatically logs the audio samples which the example reports by calling TensorBoard methods, and the spectrogram visualizations reported by calling Matplotlib methods. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
 
-### Audio samples
+### Audio Samples
 
 You can play the audio samples by double clicking the audio thumbnail.
 
 ![image](../../../../../img/examples_audio_preprocessing_example_03.png)
 
-### Spectrogram visualizations
+### Spectrogram Visualizations
 
 ![image](../../../../../img/examples_audio_preprocessing_example_06.png)
 ![image](../../../../../img/examples_audio_preprocessing_example_06a.png)
