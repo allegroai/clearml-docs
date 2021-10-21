@@ -6,7 +6,7 @@ The [pytorch_tensorboardX.py](https://github.com/allegroai/clearml/blob/master/e
 example demonstrates the integration of **ClearML** into code that uses PyTorch and TensorBoardX. 
 
 The script does the following:
-1. Trains a simple deep neural network on the PyTorch built-in [MNIST](https://pytorch.org/docs/stable/torchvision/datasets.html#mnist) dataset.
+1. Trains a simple deep neural network on the PyTorch built-in [MNIST](https://pytorch.org/vision/stable/datasets.html#mnist) dataset.
 1. Creates a TensorBoardX `SummaryWriter` object to log: 
    * Scalars during training 
    * Scalars and debug samples during testing 

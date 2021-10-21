@@ -6,15 +6,15 @@ This reference page provides detailed information about the configurable options
 
 This reference page is organized by configuration file section:
 
-* [agent](#agent) - Contains **ClearML Agent** configuration options. If **ClearML Agent** was not installed, the configuration 
+* [agent](#agent-section) - Contains **ClearML Agent** configuration options. If **ClearML Agent** was not installed, the configuration 
   file will not have an `agent` section.
-* [api](#api) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Server**.
-* [sdk](#sdk) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
+* [api](#api-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Server**.
+* [sdk](#sdk-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
 in the **ClearML** GitHub repositories  
 
-### Editing your configuration file
+## Editing Your Configuration File
 
 To add, change, or delete options, edit your configuration file.
 
@@ -29,10 +29,27 @@ To add, change, or delete options, edit your configuration file.
 1. In the required section (sections listed on this page), add, modify, or remove required options.
 1. Save configuration file.
 
+## Environment Variables
+ClearML's configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) configuration format, 
+which supports environment variable reference.
+
+For example: 
+```editorconfig
+ google.storage {
+        # # Default project and credentials file
+        # # Will be used when no bucket configuration is found
+        project: "clearml"
+        credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+}
+```
+
+`${GOOGLE_APPLICATION_CREDENTIALS}` will automatically be substituted by the environment variable value.
+
+See [Note on Windows](https://github.com/lightbend/config/blob/main/HOCON.md#note-on-windows-and-case-sensitivity-of-environment-variables)
+for information about using environment variables with Windows in the configuration file. 
 
 
-<a class="tr_top_negative" name="agent"></a>
-
+## Configuration File Sections
 
 ### agent section
 
@@ -68,6 +85,25 @@ To add, change, or delete options, edit your configuration file.
 * The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
         
 ---
+
+**`agent.docker_container_name_format`** (*string*)
+
+:::note Support
+Supported from Docker 0.6.5
+:::
+
+* Set a name format for Docker containers created by a daemon
+
+* The following variables can be used:
+  * `task_id`
+  * `worker_id` 
+  * `rand_string` - random lower-case letters string, up to 32 characters)
+
+* The resulting name must start with an alphanumeric character, while the rest of the name may contain alphanumeric characters, 
+  underscores (`_`), dots (`.`) and / or dashes (`-`)
+
+---
+
         
 **`agent.docker_force_pull`** (*bool*)
         
@@ -78,6 +114,12 @@ To add, change, or delete options, edit your configuration file.
     * `true` - Always update the Docker image.
     * `false` - Do not always update.
   
+
+---
+
+**`agent.docker_internal_mounts`** (*dict*)
+
+* Set internal mount points inside the Docker. This is especially useful for non-root Docker container images.
 
 ---
         
@@ -152,6 +194,34 @@ To add, change, or delete options, edit your configuration file.
     * If not using Git SSH credentials, use this option to specify a Git password for cloning your repositories.
         
 ---
+
+**`agent.hide_docker_command_env_vars`** (*dict*)
+
+*  Hide Docker environment variables containing secrets when printing out the Docker command. When printed, the variable
+   values will be replaced by `********`
+   
+* Turning this feature on will hide the following environment variables values:
+  
+    * `CLEARML_API_SECRET_KEY`
+    * `CLEARML_AGENT_GIT_PASS`
+    * `AWS_SECRET_ACCESS_KEY` 
+    * `AZURE_STORAGE_KEY`
+  
+* To mask additional environment variables, add their keys to the `extra_keys` list
+
+---
+
+**`agent.ignore_requested_python_version`** (*bool*)
+
+  * Indicates whether to ignore any requested python version 
+  
+  * The values are:
+    
+    * `true` - ignore any requested python version
+    * `false` - if a task was using a specific python version and the system supports multiple versions, the agent will 
+      use the requested python version (default)
+
+___
         
 **`agent.python_binary`** (*string*)
         
@@ -974,3 +1044,16 @@ will not exceed the value of `matplotlib_untitled_history_size`
     
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
+
+## Configuration vault
+
+:::note
+This feature is only supported by the **ClearML Enterprise Server**
+:::
+
+The ClearML Enterprise Server includes the configuration vault. Users can add configuration sections to the vault and, once 
+the vault is enabled, the configurations will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
+
+These configurations override the configurations written in the configuration file. 
+
+See [configuration vault](../webapp/webapp_profile.md#configuration-vault). 

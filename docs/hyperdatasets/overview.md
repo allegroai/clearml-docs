@@ -1,8 +1,8 @@
 ---
-title: Hyper Datasets
+title: Hyper-Datasets
 ---
 
-ClearML's Hyper Datasets are an MLOps-oriented abstraction of your data, which facilitates traceable, reproducible model development
+ClearML's Hyper-Datasets are an MLOps-oriented abstraction of your data, which facilitates traceable, reproducible model development
 through parametrized data access and meta-data version control.
 
 The basic premise is that a user-formed query is a full representation of the dataset used by the ML/DL process. 

@@ -9,7 +9,7 @@ In the budget, set the maximum number of each instance type to spin for experime
 Configure multiple instance types per queue, and multiple queues. The **ClearML** AWS 
 autoscaler will spin down idle instances based on the maximum idle time and the polling interval configurations. 
 
-## Running the ClearML AWS autoscaler
+## Running the ClearML AWS Autoscaler
 The **ClearML** AWS autoscaler can execute in [ClearML services mode](../../clearml_agent.md#services-mode), 
 and is configurable. 
 
@@ -23,7 +23,7 @@ Run **ClearML** AWS autoscaler in one of these ways:
   * Run script locally or as a service.
   * When executed, a Task is created, named `AWS Auto-Scaler` that associated with the `DevOps` project.
 
-### Running using the ClearML Web UI
+### Running Using the ClearML Web UI
 
 Edit the parameters for the instance types, edit budget configuration by editing the Task, and then enqueue the Task to 
 run in **ClearML Agent** services mode.
@@ -102,7 +102,7 @@ run in **ClearML Agent** services mode.
 
 1. In the experiments table, right click the **AWS Auto-Scaler** Task **>** **Enqueue** **>** **services** queue **>**  **ENQUEUE**.
             
-### Running using the script
+### Running Using the Script
 
 The [aws_autoscaler.py](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) 
 script includes a wizard which prompts for instance details and budget configuration. 
@@ -112,7 +112,7 @@ The script can run in two ways:
 * Configure and enqueue.
 * Enqueue with an existing configuration.
 
-#### To configure and enqueue:
+#### To Configure and Enqueue:
 
 Use the `run` command line option:
 
@@ -241,7 +241,7 @@ Execution log https://app.clearml-master.hosted.allegro.ai/projects/142a598b5d23
    
 <br/>
 
-#### To enqueue with an existing configuration:
+#### To Enqueue with an Existing Configuration:
 
 Use the `remote` command line option:
 
