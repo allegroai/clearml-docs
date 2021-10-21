@@ -129,6 +129,12 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     * Windows - `\User\<username>\clearml.conf`
 
 1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
+   
+:::note
+The ClearML Enterprise server provides a [configuration vault](webapp/webapp_profile.md#configuration-vault), the contents 
+of which are categorically applied on top of the agent-local configuration
+:::
+
 
 ### Adding ClearML Agent to a Configuration File
 

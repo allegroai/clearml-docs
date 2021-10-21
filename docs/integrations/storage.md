@@ -18,6 +18,8 @@ Once uploading an object to a storage medium, each machine that uses the object 
 
 Configuration for storage is done by editing the [clearml.conf](../configs/clearml_conf.md).
 
+The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) format, which supports runtime environment variable access.
+
 ### Configuring AWS S3
 
 Modify these parts of the clearml.conf file and add the key, secret, and region of the s3 bucket.
@@ -49,6 +51,20 @@ aws {
     }
 ```
 
+AWS's S3 access parameters can be specified by referencing the standard environment variables if already defined.
+
+For example: 
+```
+s3 {
+            ...
+            # default, used for any bucket not specified below
+            key: "${AWS_ACCESS_KEY_ID}"
+            secret: "${AWS_SECRET_ACCESS_KEY}"
+            region: "${AWS_DEFAULT_REGION}"
+            ...
+}
+``` 
+
 ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
 ```
                 # {
@@ -59,6 +75,7 @@ ClearML also supports [MinIO](https://github.com/minio/minio) by adding this con
                 #     secure: false
                 # }
 ```
+
 
 ### Configuring Azure
 To configure Azure blob storage specify the account name and key.
@@ -73,6 +90,20 @@ To configure Azure blob storage specify the account name and key.
         #     }
         # ]
     }
+```
+
+Azure's storage access parameters can be specified by referencing the standard environment variables if already defined.
+
+For example:
+```
+...
+containers: [
+             {
+                 account_name: "${AZURE_STORAGE_ACCOUNT}"
+                 account_key: "${AZURE_STORAGE_KEY}"
+                 # container_name:
+             }
+         ]
 ```
 
 ### Configuring Google Storage
@@ -96,6 +127,19 @@ It's also possible to specify credentials for a specific bucket.
         #     },
         # ]
     }
+```
+
+GCP's storage access parameters can be specified by referencing the standard environment variables if already defined.
+
+```
+...
+credentials = [
+             {
+                 bucket: "my-bucket"
+                 ...
+                 credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+             }
+
 ```
 
 ## Storage Manager
