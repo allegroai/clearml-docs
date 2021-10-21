@@ -2,7 +2,7 @@
 title: Working with Frames
 ---
 
-View and edit SingleFrames in the Dataset page. After selecting a Dataset version, the **Version Browser** shows a sample 
+View and edit SingleFrames in the Dataset page. After selecting a Hyper-Dataset version, the **Version Browser** shows a sample 
 of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFrames, in the [frame viewer](#frame-viewer). 
 Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
 filtering logic. 
@@ -19,7 +19,7 @@ frame metadata, the raw data source URI, as well as providing navigation and vie
 
 ### Frame Viewer Controls
 
-Use frame viewer controls to navigate between frames in a Dataset Version, and control frame changes and viewing.
+Use frame viewer controls to navigate between frames in a Hyper-Dataset Version, and control frame changes and viewing.
 
 |Control Icon|Actions|Shortcut|
 |-----|------|----|
@@ -89,7 +89,7 @@ To save frames changes at any time, click **SAVE** (below the annotation list ar
 ### Viewing FrameGroups
 
 Viewing and editing frames in a FrameGroup is similar to viewing and editing SingleFrames. 
-Click the FrameGroup in the Dataset. In the frame viewer, select SingleFrame to view / modify from 
+Click the FrameGroup in the Hyper-Dataset. In the frame viewer, select SingleFrame to view / modify from 
 a dropdown list in the **Current Source** section.
 
 ![Frame dropdown menu in FrameGroup](../../img/hyperdatasets/framegroup_01.png)
