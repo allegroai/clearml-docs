@@ -991,3 +991,16 @@ will not exceed the value of `matplotlib_untitled_history_size`
     
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
+
+## Configuration vault
+
+:::note
+This feature is only supported by the **ClearML Enterprise Server**
+:::
+
+The ClearML Enterprise Server includes the configuration vault. Users can add configuration sections to the vault and, once 
+the vault is enabled, the configurations will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
+
+These configurations override the configurations written in the configuration file. 
+
+See [configuration vault](../webapp/webapp_profile.md#configuration-vault). 

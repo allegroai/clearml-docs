@@ -489,7 +489,7 @@ experiment info panel > EXECUTION tab.
 
 **I read there is a feature for centralized model storage. How do I use it?** <a id="centralized-model-storage"></a>
 
-When calling [Task.init](references/sdk/task.md#classmethod-initproject_namenone-task_namenone-task_typetasktypestraining-training-tagsnone-reuse_last_task_idtrue-continue_last_taskfalse-output_urinone-auto_connect_arg_parsertrue-auto_connect_frameworkstrue-auto_resource_monitoringtrue-auto_connect_streamstrue), 
+When calling [Task.init](references/sdk/task.md#taskinit), 
 providing the `output_uri` parameter allows you to specify the location in which model checkpoints (snapshots) will be stored.
 
 For example, to store model checkpoints (snapshots) in `/mnt/shared/folder`:
@@ -551,7 +551,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
         pip install clearml
 
-1. Use the [Task.set_credentials](references/sdk/task.md#classmethod-set_credentialsapi_hostnone-web_hostnone-files_hostnone-keynone-secretnone-store_conf_filefalse) 
+1. Use the [Task.set_credentials](references/sdk/task.md#taskset_credentials) 
    method to specify the host, port, access key and secret key (see step 1).
 
         # Set your credentials using the trains apiserver URI and port, access_key, and secret_key.
