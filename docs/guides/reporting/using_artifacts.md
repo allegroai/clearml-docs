@@ -32,7 +32,7 @@ class method to get the first task and access its artifacts, specifically the `d
 method downloads the files and returns a path. 
 
 ```python
-preprocess_task = Task.get_task(task_name=’create artifact’, project_name=’examples’)
+preprocess_task = Task.get_task(task_name='create artifact', project_name='examples')
 local_json = preprocess_task.artifacts['data file'].get_local_copy()
 ```
 
