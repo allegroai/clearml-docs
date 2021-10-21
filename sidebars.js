@@ -86,7 +86,7 @@ module.exports = {
                 {'Pytorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite']},
                 {'Pytorch Lightning': ['guides/frameworks/pytorch_lightning/pytorch_lightning_example']},
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
-                {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx']},
+                {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx', "guides/frameworks/tensorboardx/video_tensorboardx"]},
                 {
                     'Tensorflow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
                         'guides/frameworks/tensorflow/tensorflow_mnist', 'guides/frameworks/tensorflow/integration_keras_tuner']
