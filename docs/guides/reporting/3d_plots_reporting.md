@@ -9,7 +9,7 @@ When the script runs, it creates an experiment named `3D plot reporting`, which 
 
 **ClearML** reports these plots in the **ClearML Web UI** **>** experiment page **>** **RESULTS** tab **>** **PLOTS** sub-tab. 
 
-## Surface plot
+## Surface Plot
 
 To plot a series as a surface plot, use the [Logger.report_surface](../../references/sdk/logger.md#report_surface) 
 method.
@@ -30,7 +30,7 @@ Visualize the reported surface plot in **RESULTS** **>** **PLOTS**.
 
 ![image](../../img/examples_reporting_01.png)
 
-## 3D scatter plot
+## 3D Scatter Plot
 
 To plot a series as a 3-dimensional scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) 
 method.

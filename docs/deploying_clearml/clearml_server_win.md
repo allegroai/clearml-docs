@@ -60,7 +60,7 @@ By default, **ClearML Server** launches with unrestricted access. To restrict **
    
     The server is now running on [http://localhost:8080](http://localhost:8080).
  
-## Port mapping
+## Port Mapping
 
 After deploying **ClearML Server**, the services expose the following node ports:
 

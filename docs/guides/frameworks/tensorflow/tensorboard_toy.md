@@ -29,7 +29,7 @@ The `tf.summary.histogram` output appears in **RESULTS** **>** **PLOTS**.
 
 ![image](../../../img/examples_tensorboard_toy_04.png)
 
-## Debug samples
+## Debug Samples
 
 **ClearML** automatically tracks images and text output to TensorFlow. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
 

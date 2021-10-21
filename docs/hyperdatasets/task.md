@@ -6,7 +6,7 @@ Hyper-Datasets extend the **ClearML** [**Task**](../fundamentals/task.md) with [
 
 ## Usage 
 
-Hyper-Datasets are supported through `allegroai` python package.
+Hyper-Datasets are supported by the `allegroai` python package.
 
 ### Connecting Dataviews to a Task
 

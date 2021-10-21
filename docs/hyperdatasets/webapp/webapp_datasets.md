@@ -10,7 +10,7 @@ The Datasets page offers the following functionalities:
 
 ![image](../../img/hyperdatasets/datasets_01.png)
 
-## Dataset cards
+## Dataset Cards
 
 Dataset cards show summary information about versions, frames, and labels in a Dataset, and the elapsed time since the Dataset was last update and the user doing the update. Dataset cards allow you to open a specific Dataset to perform Dataset versioning and frames management.
 
@@ -26,7 +26,7 @@ Dataset cards show summary information about versions, frames, and labels in a D
 To change the label color coding, hover over a label color, click thr hand pointer, and then select a new color.
 :::
         
-## Creating new Datasets
+## Creating New Datasets
 
 Create a new Dataset which will contain one version named `Current`. The new version will not contain any frames. 
 

@@ -29,7 +29,7 @@ Integrate **ClearML** with the following steps:
         event_name=Events.ITERATION_COMPLETED)
   ```
     
-### ClearMLLogger parameters
+### ClearMLLogger Parameters
 
 The following are the `ClearMLLogger` method parameters:
 
@@ -52,7 +52,7 @@ The following are the `ClearMLLogger` method parameters:
 
 ## Logging 
 
-### Ignite engine output and / or metrics
+### Ignite Engine Output and / or Metrics
 
 To log scalars, Ignite engine's output and / or metrics, use the `OutputHandler`. 
 
@@ -91,7 +91,7 @@ clearml_logger.attach(evaluator,
     event_name=Events.EPOCH_COMPLETED)
 ```
 
-### Optimizer parameters
+### Optimizer Parameters
 
 To log optimizer parameters, use `OptimizerParamsHandler`:
 ```python
@@ -101,7 +101,7 @@ clearml_logger.attach(trainer,
     event_name=Events.ITERATION_STARTED)
 ```
     
-### Model weights
+### Model Weights
 
 To log model weights as scalars, use `WeightsScalarHandler`:
 
@@ -122,7 +122,7 @@ clearml_logger.attach(trainer,
 ```
     
 
-## Model snapshots
+## Model Snapshots
 
 To save input snapshots as **ClearML** artifacts, use `ClearMLSaver`:
 
@@ -137,7 +137,7 @@ handler = Checkpoint(to_save, ClearMLSaver(clearml_logger), n_saved=1,
 validation_evaluator.add_event_handler(Events.EVENT_COMPLETED, handler)
 ```
 
-## Visualizing experiment results
+## Visualizing Experiment Results
 
 When the code with an ignite `ClearMLLogger` object and attached [handlers](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/trains_logger.py)
 runs, the experiment results can be visualized in the **ClearML Web UI**. 
@@ -154,7 +154,7 @@ View the scalars, including training and validation metrics, in the experiment's
 ![image](../../../img/ignite_training.png)
 ![image](../../../img/ignite_validation.png)
 
-### Model snapshots
+### Model Snapshots
 
 To save model snapshots, use `ClearMLServer`.
 
