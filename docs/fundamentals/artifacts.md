@@ -53,7 +53,7 @@ preprocess_task = Task.get_task(task_id='the_preprocessing_task_id')
 local_csv = preprocess_task.artifacts['data'].get_local_copy()
 ```
 
-See more details in the using artifacts [example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
+See more details in the using artifacts [example](../guides/reporting/using_artifacts.md).
 
 ### List of Supported Artifacts
 
