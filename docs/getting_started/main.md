@@ -9,7 +9,7 @@ ClearML is an open source platform that automates and simplifies developing and 
 It is designed as an end-to-end MLOps suite allowing you to focus on developing your ML code & automation, 
 while ClearML ensures your work is reproducible and scalable.
 
-<img src="https://github.com/allegroai/clearml-docs/blob/main/docs/img/clearml_architecture.png?raw=true" width="100%" alt="Architecture diagram"/>
+![Architecture diagram](../img/clearml_architecture.png)
 
 ## What Can You Do with ClearML?
 

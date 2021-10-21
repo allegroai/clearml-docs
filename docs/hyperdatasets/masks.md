@@ -241,7 +241,7 @@ This example shows two masks for video from a camera. The masks label cars and t
  
 ## Usage
 
-### Adding mask annotations 
+### Adding Mask Annotations 
 
 To add a mask annotation to a frame, use the `add_annotation` method of the [SingleFrame](single_frames.md) class. This 
 method is generally used to add ROI annotations, but it can also be used to add frame specific mask labels. Input the 

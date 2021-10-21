@@ -18,7 +18,7 @@ enables modifying Dataviews, including:
 
 The selection and control of input data can be modified in *Draft* experiments that are not [development experiments](../task.md#development-experiments). 
 Do this by modifying the Dataview used by the experiment. The Dataview specifies the Hyper-Dataset versions from which frames 
-are iterated and frame filters (see [Dataviews](webapp_dataviews.md).   
+are iterated and frame filters (see [Dataviews](webapp_dataviews.md)).   
 
 **To choose a Dataview**, do any of the following:
 
