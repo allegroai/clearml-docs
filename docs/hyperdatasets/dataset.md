@@ -17,6 +17,8 @@ metadata and data.
 These parent-child version relationships can be represented as version trees with a root-level parent. A Dataset 
 can contain one or more trees.
 
+Mask-labels can be defined globally, for a DatasetVersion, which will be applied to all masks in that version.
+
 ## Dataset Version State
 
 Dataset versions can have either **Draft** or **Published** status. 
@@ -130,7 +132,7 @@ version at the root level), or the last child in the Dataset versions tree is *P
 Creating a version in a simple version structure may convert it to an advanced structure. This happens when creating 
 a Dataset version that yields a parent with two children, or when publishing the last child version.  
 
-## Versioning Usage
+## DatasetVersion Usage
 
 Manage Dataset versioning using the DatasetVersion class in the ClearML Enterprise SDK.
 
@@ -303,3 +305,45 @@ myVersion = DatasetVersion.get_version(dataset_name='MyDataset',
 myVersion.publish_version()
 ```
 
+### Managing Version Mask-labels
+
+#### Setting Version Mask-label Mapping
+
+In order to visualize masks in a dataset version, the mask values need to be mapped to their labels. Mask-label 
+mapping is stored in a version's metadata. 
+
+To define the DatasetVersion level mask-label mapping, use the `set_masks_labels` method of the [DatasetVersion](dataset.md#dataset-versioning) 
+class, and input a dictionary of RGB-value tuple keys and label-list values.
+
+```python
+from allegroai import DatasetVersion
+
+# Getting a version 
+myDatasetversion = DatasetVersion.get_version(dataset_name='MyDataset', 
+                                              version_name='VersionName')
+
+# Mapping out colors and labels of masks 
+myDatasetversion.set_masks_labels(
+    {
+      (0, 0, 0): ["background"],
+      (1, 1, 1): ["person", "sitting"],
+      (2, 2, 2): ["cat"],
+    }
+)
+```
+
+#### Accessing Version Mask-label Mapping
+
+The mask values and labels are stored as a property in a dataset version's metadata.
+
+```python
+mappping = myDatasetversion.get_metadata()['mask_labels']
+
+print(mapping)
+```         
+
+This should return a dictionary of the version's masks and labels, which should look something like this:
+
+```python
+{'_all_': [{'value': [0, 0, 0], 'labels': ['background']}, {'value': [1, 1, 1], 'labels': ['person', 'sitting']}, {'value': [2, 2, 2], 'labels': ['cat']}]}
+```

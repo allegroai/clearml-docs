@@ -20,7 +20,7 @@ The models table contains the following columns:
 | **PROJECT** | The project with which the model is associated.| Default |
 | **USER** | The user who ran the experiment that created the model, or the user who imported the model.| Default |
 | **TASK** | The experiment (Task) name that created the model. | Default |
-| **CREATED** | Elapsed time since the model creation. Hover over the elapsed time to view the date and time.| Default |
+| **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Default |
 | **DESCRIPTION** | The model description. | Default (hidden) |
 
 
