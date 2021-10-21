@@ -6,15 +6,15 @@ This reference page provides detailed information about the configurable options
 
 This reference page is organized by configuration file section:
 
-* [agent](#agent) - Contains **ClearML Agent** configuration options. If **ClearML Agent** was not installed, the configuration 
+* [agent](#agent-section) - Contains **ClearML Agent** configuration options. If **ClearML Agent** was not installed, the configuration 
   file will not have an `agent` section.
-* [api](#api) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Server**.
-* [sdk](#sdk) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
+* [api](#api-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Server**.
+* [sdk](#sdk-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
 in the **ClearML** GitHub repositories  
 
-### Editing your configuration file
+## Editing Your Configuration File
 
 To add, change, or delete options, edit your configuration file.
 
@@ -29,10 +29,27 @@ To add, change, or delete options, edit your configuration file.
 1. In the required section (sections listed on this page), add, modify, or remove required options.
 1. Save configuration file.
 
+## Environment Variables
+ClearML's configuration file uses [HOCON](https://github.com/lightbend/config/blob/main/HOCON.md) configuration format, 
+which supports environment variable reference.
+
+For example: 
+```editorconfig
+ google.storage {
+        # # Default project and credentials file
+        # # Will be used when no bucket configuration is found
+        project: "clearml"
+        credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+}
+```
+
+`${GOOGLE_APPLICATION_CREDENTIALS}` will automatically be substituted by the environment variable value.
+
+See [Note on Windows](https://github.com/lightbend/config/blob/main/HOCON.md#note-on-windows-and-case-sensitivity-of-environment-variables)
+for information about using environment variables with Windows in the configuration file. 
 
 
-<a class="tr_top_negative" name="agent"></a>
-
+## Configuration File Sections
 
 ### agent section
 

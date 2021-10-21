@@ -20,11 +20,11 @@ For all configuration options, see the [ClearML Configuration Reference](../conf
 We recommend using the latest version of **ClearML Server**.
 :::
 
-## ClearML Server deployment configuration
+## ClearML Server Deployment Configuration
 
 **ClearML Server** supports two deployment configurations: single IP (domain) and sub-domains.
     
-### Single IP (domain) configuration
+### Single IP (Domain) Configuration
 
 Single IP (domain) with the following open ports:
 
@@ -32,7 +32,7 @@ Single IP (domain) with the following open ports:
 * API service on port `8008`
 * File storage service on port `8081`
 
-### Sub-domain configuration
+### Sub-domain Configuration
     
 Sub-domain configuration with default http/s ports (`80` or `443`):
 
@@ -60,7 +60,7 @@ Accessing the **ClearML Web UI** with `app.clearml.mydomain.com` will automatica
 
 **ClearML Server** features can be configured using either configuration files or environment variables.
 
-### Configuration files
+### Configuration Files
 
 The **ClearML Server** uses the following configuration files:
 
@@ -88,12 +88,12 @@ tasks {
 :::
 
 
-### Environment variables
+### Environment Variables
 
 The **ClearML Server** supports several fixed environment variables that affect its behavior,
 as well as dynamic environment variable that can be used to override any configuration file setting.
 
-#### Fixed environment variables
+#### Fixed Environment Variables
 
 General
 
@@ -109,7 +109,7 @@ Database service overrides:
 * `CLEARML_REDIS_SERVICE_PORT` allows overriding the port for the Redis service
 
 
-#### Dynamic environment variables
+#### Dynamic Environment Variables
 
 Dynamic environment variables can be used to override any configuration setting that appears in the configuration files.
 
@@ -144,11 +144,11 @@ the default secret for the system's apiserver component can be overridden by set
   dynamic environment variable's key to lower-case before overriding configuration values with the environment variable value.
 :::
 
-## Configuration procedures
+## Configuration Procedures
 
 
 
-### Sub-domains and load balancers
+### Sub-domains and Load Balancers
 
 To illustrate this configuration, we provide the following example based on AWS load balancing: 
 
@@ -189,7 +189,7 @@ To illustrate this configuration, we provide the following example based on AWS 
 
 
 
-### Opening Elasticsearch, MongoDB, and Redis for external access 
+### Opening Elasticsearch, MongoDB, and Redis for External Access 
 
 For improved security, the ports for **ClearML Server** Elasticsearch, MongoDB, and Redis servers are not exposed by default; 
 they are only open internally in the docker network. If external access is needed, open these ports (but make sure to 
@@ -267,7 +267,7 @@ Without web login authentication, **ClearML Server** does not restrict access (b
 
 1. Restart **ClearML Server**.
 
-### Using hashed passwords
+### Using Hashed Passwords
 You can also use hashed passwords instead of plain-text passwords. To do that:
  - Set `pass_hashed: true`
  - Use a base64-encoded hashed password in the `password` field instead of a plain-text password. Assuming Jane's plain-text password is `123456`, use the following bash command to generate the base64-encoded hashed password: 
@@ -300,6 +300,7 @@ the watchdog marks them as `aborted`. The non-responsive experiment watchdog is 
 
 Modify the following settings for the watchdog:
 
+* Watchdog status - enabled / disabled
 * The time threshold (in seconds) of experiment inactivity (default value is 7200 seconds (2 hours)).
 * The time interval (in seconds) between watchdog cycles.
  
@@ -312,6 +313,8 @@ Modify the following settings for the watchdog:
 
         tasks {
             non_responsive_tasks_watchdog {
+                enabled: true
+
                 # In-progress tasks that haven't been updated for at least 'value' seconds will be stopped by the watchdog
                 threshold_sec: 7200
         

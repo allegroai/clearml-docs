@@ -2,7 +2,7 @@
 title: Simple Pipeline - Serialized Data
 ---
 
-The [pipeline_controller.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_controller.py) 
+The [pipeline_from_tasks.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_from_tasks.py) 
 example demonstrates a simple pipeline in **ClearML**. 
 This pipeline is composed of three steps: 
 1. Download data
@@ -20,7 +20,7 @@ class. This class includes functionality to:
 * Cleanup after pipeline completes execution
  
 This example implements the pipeline with four Tasks (each Task is created using a different script):
-* **Controller Task** ([pipeline_controller.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_controller.py)) - 
+* **Controller Task** ([pipeline_from_tasks.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_from_tasks.py)) - 
   Creates a pipeline controller, adds the steps (Tasks) to the pipeline, runs the pipeline. 
 * **Step 1 Task** ([step1_dataset_artifact.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/step1_dataset_artifact.py)) - 
   Downloads data and stores the data as an artifact.
@@ -37,7 +37,7 @@ controller Task has already run at least once and is in **ClearML Server**).
 
 The sections below describe in more detail what happens in the controller Task and in each step Task.
 
-## The pipeline controller
+## The Pipeline Controller
 
 1. Create the pipeline controller object.
 
@@ -98,7 +98,7 @@ The sections below describe in more detail what happens in the controller Task a
       pipe.stop()    
       ```
    
-## Step 1 - Downloading the data
+## Step 1 - Downloading the Data
 
 In the Step 1 Task ([step1_dataset_artifact.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/step1_dataset_artifact.py)): 
 1. Clone base Task and enqueue it for execution
@@ -118,7 +118,7 @@ when the `add_step` method is called in the pipeline controller.
    task.upload_artifact('dataset', artifact_object=local_iris_pkl)
    ```
    
-## Step 2 - Processing the data
+## Step 2 - Processing the Data
 
 In the Step 2 Task ([step2_data_processing.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/step2_data_processing.py)): 
 1. Create a parameter dictionary and connect it to the Task.
@@ -158,7 +158,7 @@ In the Step 2 Task ([step2_data_processing.py](https://github.com/allegroai/clea
    task.upload_artifact('y_test', y_test)
    ```
    
-## Step 3 - Training the network
+## Step 3 - Training the Network
 
 In the Step 3 Task ([step3_train_model.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/step3_train_model.py)): 
 1. Create a parameter dictionary and connect it to the Task.
@@ -191,7 +191,7 @@ In the Step 3 Task ([step3_train_model.py](https://github.com/allegroai/clearml/
     
 1. Train the network and log plots, along with **ClearML** automatic logging.
 
-## Running the pipeline
+## Running the Pipeline
 
 **To run the pipeline:**
 

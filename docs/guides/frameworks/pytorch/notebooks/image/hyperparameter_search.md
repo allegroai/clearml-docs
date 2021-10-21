@@ -4,7 +4,7 @@ title: Image Hyperparameter Optimization - Jupyter Notebook
 
 [hyperparameter_search.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/hyperparameter_search.ipynb) 
 demonstrates integrating **ClearML** into a Jupyter Notebook which performs automated hyperparameter optimization. This 
-is an example of **ClearML** [automation](../../../../../references/sdk/automation_controller_pipelinecontroller). It creates a **ClearML** 
+is an example of **ClearML** automation. It creates a **ClearML** 
 [HyperParameterOptimizer](../../../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object, which is a search controller. The search controller's search strategy optimizer is [OptimizerBOHB](../../../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md) 
 The example maximizes total accuracy by finding an optimal batch size, base learning rate, and dropout. **ClearML** 
@@ -77,7 +77,7 @@ All console output from `Hyper-Parameter Optimization` appears in **RESULTS** ta
 
 ![image](../../../../../img/examples_hyperparameter_search_03.png)
 
-## Experiments comparison
+## Experiments Comparison
 
 **ClearML** automatically logs each job, meaning each experiment that executes with a set of hyperparameters, separately. Each appears as an individual experiment in the **ClearML Web UI**, where the Task name is `image_classification_CIFAR10` and the hyperparameters appended.
 
@@ -93,31 +93,31 @@ Use the **ClearML Web UI** [experiment comparison](../../../../../webapp/webapp_
 * Plots
 * Debug images
 
-### Side by side hyperparameter value comparison
+### Side by Side Hyperparameter Value Comparison
 
 In the experiment comparison window, **HYPER PARAMETERS** tab, select **Values** in the list (the right of **+ Add Experiment**), and hyperparameter differences appear with a different background color.
 
 ![image](../../../../../img/examples_hyperparameter_search_06.png)
 
-### Metric comparison by hyperparameter
+### Metric Comparison by Hyperparameter
 
 Select **Parallel Coordinates** in the list, click a **Performance Metric**, and then select the checkboxes of the hyperparameters.
 
 ![image](../../../../../img/examples_hyperparameter_search_07.png)
 
-### Scalar values comparison
+### Scalar Values Comparison
 
 In the **SCALARS** tab, select **Last Values**, **Min Values**, or **Max Values**. Value differences appear with a different background color.
 
 ![image](../../../../../img/examples_hyperparameter_search_09.png)
 
-### Scalar series comparison
+### Scalar Series Comparison
 
 Select **Graph** and the scalar series for the jobs appears, where each scalar plot shows the series for all jobs.
 
 ![image](../../../../../img/examples_hyperparameter_search_08.png)
 
-### Debug samples comparison
+### Debug Samples Comparison
 
 In the **DEBUG SAMPLES** tab, debug images appear.
 

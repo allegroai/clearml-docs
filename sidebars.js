@@ -13,7 +13,7 @@ module.exports = {
             'Where do I start?': [{'Data Scientists': ['getting_started/ds/ds_first_steps', 'getting_started/ds/ds_second_steps', 'getting_started/ds/best_practices']},
                 {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
         }, 'getting_started/architecture']},
-        {'ClearML Fundamentals': ['fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
+        {'ClearML Fundamentals': ['fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
             'fundamentals/hpo', 'fundamentals/pipelines']},
         'clearml_sdk',
         'clearml_agent',
@@ -57,9 +57,10 @@ module.exports = {
     ],
     guidesSidebar: [
             'guides/guidemain',
+            {'Advanced': ['guides/advanced/execute_remotely', 'guides/advanced/multiple_tasks_single_process']},
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
             {'Data Management': ['guides/data management/data_man_simple', 'guides/data management/data_man_folder_sync', 'guides/data management/data_man_cifar_classification']},
-            {'Clearml Task': ['guides/clearml-task/clearml_task_tutorial']},
+            {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
@@ -68,23 +69,24 @@ module.exports = {
                 {
                     'Keras': ['guides/frameworks/keras/allegro_clearml_keras_tb_example', 'guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']
                 },
+                {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
                 {'Matplotlib': ['guides/frameworks/matplotlib/allegro_clearml_matplotlib_example', 'guides/frameworks/matplotlib/matplotlib_example']},
-                {
-                    'Pytorch': ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
+                {'Pytorch':
+                        ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
                         'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
-                        'guides/frameworks/pytorch/tensorboard_toy_pytorch']
+                        'guides/frameworks/pytorch/tensorboard_toy_pytorch',
+                            {'Pytorch Notebooks': [
+                                {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
+                                {'Image': ['guides/frameworks/pytorch/notebooks/image/hyperparameter_search', 'guides/frameworks/pytorch/notebooks/image/image_classification_CIFAR10']},
+                                {'Table': ['guides/frameworks/pytorch/notebooks/table/download_and_preprocessing', 'guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline']},
+                                {'Text': ['guides/frameworks/pytorch/notebooks/text/text_classification_AG_NEWS']}]
+                            }
+                            ]
                 },
                 {'Pytorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite']},
-                {
-                    'Pytorch Notebooks': [
-                        {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
-                        {'Image': ['guides/frameworks/pytorch/notebooks/image/hyperparameter_search', 'guides/frameworks/pytorch/notebooks/image/image_classification_CIFAR10']},
-                        {'Table': ['guides/frameworks/pytorch/notebooks/table/download_and_preprocessing', 'guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline']},
-                        {'Text': ['guides/frameworks/pytorch/notebooks/text/text_classification_AG_NEWS']}
-                    ]
-                },
+                {'Pytorch Lightning': ['guides/frameworks/pytorch_lightning/pytorch_lightning_example']},
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
-                {'TensorboardX': ['guides/frameworks/tensorboardx/tensorboardx']},
+                {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx']},
                 {
                     'Tensorflow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
                         'guides/frameworks/tensorflow/tensorflow_mnist', 'guides/frameworks/tensorflow/integration_keras_tuner']
@@ -106,7 +108,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_1','release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
+        'Release Notes': ['release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
             'release_notes/ver_0_13', 'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10',
             'release_notes/ver_0_9',
         ],
@@ -132,7 +134,6 @@ module.exports = {
                 'references/sdk/hpo_parameters_parameterset',
                 ]},
     ],
-
     hyperdatasetsSidebar: [
         'hyperdatasets/overview',
         {'Frames': [
@@ -163,11 +164,21 @@ module.exports = {
             'hyperdatasets/webapp/webapp_annotator'
         ]}
     ],
-
-
-    apiSidebar: [
-        'references/api/definitions',
-        'references/api/endpoints',
+    sdkHyperDataset: [
+        {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
+        {'DataFrame': ['references/hyperdataset/singleframe',
+            'references/hyperdataset/framegroup', 'references/hyperdataset/annotation',]},
+        'references/hyperdataset/dataview',
     ],
-
+    apiSidebar: [
+        'references/api/index',
+        'references/api/definitions',
+        'references/api/login',
+        'references/api/debug',
+        'references/api/projects',
+        'references/api/queues',
+        'references/api/workers',
+        'references/api/events',
+        'references/api/tasks',
+    ]
 };

@@ -20,7 +20,7 @@ sub-tab.
 When the script runs, it creates an experiment named `audio and video reporting`, which is associated with the `examples` 
 project.
 
-## Reporting (uploading) media from a source by URL
+## Reporting (Uploading) Media from a Source by URL
 
 Report by calling the [Logger.report_media](../../references/sdk/logger.md#report_media) 
 method using the `url` parameter.
@@ -40,7 +40,7 @@ The reported audio can be viewed in the **DEBUG SAMPLES** sub-tab. Double click 
 ![image](../../img/examples_reporting_08.png)
 
 
-## Reporting (uploading) media from a local file
+## Reporting (Uploading) Media from a Local File
 
 Use the `local_path` parameter.
 

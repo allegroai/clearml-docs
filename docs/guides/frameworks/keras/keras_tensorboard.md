@@ -46,7 +46,7 @@ Text printed to the console for training progress, as well as all other console 
 
 ![image](../../../img/examples_keras_03.png)
 
-## Configuration objects
+## Configuration Objects
 
 In the experiment code, a configuration dictionary is connected to the Task by calling the [Task.connect](../../../references/sdk/task.md#connect) 
 method. 

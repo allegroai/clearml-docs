@@ -3,11 +3,14 @@ title: Kubernetes Helm
 ---
 
 :::important
-This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
-:::
+**This documentation page is being updated.** Please see the new and improved **[ClearML Helm Charts repository](https://github.com/allegroai/clearml-helm-charts)**
+for the most updated instructions.
+::: 
 
 :::note
-We strongly encourage to keep the **ClearML Server** up to date, by upgrading to the current release.
+* This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
+
+* We strongly encourage to keep the **ClearML Server** up to date, by upgrading to the current release.
 :::
 
 1. Upgrade using new or upgraded values.yaml

@@ -9,10 +9,10 @@ meaning that it's the first thing that is seen when opening the project.
 
 ![Project overview tab gif](../img/gif/webapp_metric_snapshot.gif)
 
-## Metric snapshot
+## Metric Snapshot
 
 On the top of the **OVERVIEW** tab, there is an option to display a **metric snapshot**. Choose a metric and variant, 
-and then the window will present an aggregated view of the value for that metric value and the time that each 
+and then the window will present an aggregated view of the value for that metric and the time that each 
 experiment scored that value. This way, the project's progress can be quickly deduced.
 
 All project experiments that reported the specified metric show up in the snapshot. Their colors vary based
@@ -20,14 +20,14 @@ on their status (`Completed`, `Aborted`, `Published`, or `Failed`). Hover over a
 appear with the details of the experiment associated with the metric value. Click the point, and you will 
 be sent to the experiment's page. 
 
-## Project description
+## Project Description
 
 Every project has a `description` field. The UI provides a Markdown editor to edit this field.
 
 In the Markdown document, you can write and share reports and add links to **ClearML** experiments 
 or any network resource such as issue tracker, web repository, etc.
 
-### Editing the description
+### Editing the Description
 
 To edit the description in the **OVERVIEW** tab, hover over the description section, and press the  **EDIT** button that
 appears on the top right of the window. 

@@ -10,17 +10,17 @@ The accuracy, learning rate, and training loss scalars are automatically logged,
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_03.png)
 
-## Debug samples
+## Debug Samples
 
 The audio samples and spectrogram plots are automatically logged and appear in **RESULTS** **>** **DEBUG SAMPLES**.
 
-### Audio samples
+### Audio Samples
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_06.png)
 
 By doubling clicking a thumbnail, you can play an audio sample.
 
-### Spectrogram visualizations
+### Spectrogram Visualizations
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_04.png)
 

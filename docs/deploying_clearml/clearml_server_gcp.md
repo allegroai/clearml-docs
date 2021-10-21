@@ -20,7 +20,7 @@ for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to De
 and delete all cookies under the **ClearML Server** URL.
 :::
 
-## Default ClearML Server service ports
+## Default ClearML Server Service Ports
 
 After deploying **ClearML Server**, the services expose the following node ports:
 
@@ -28,7 +28,7 @@ After deploying **ClearML Server**, the services expose the following node ports
 * API server on `8008`
 * File Server on `8081`
 
-## Default ClearML Server storage paths
+## Default ClearML Server Storage Paths
 
 The persistent storage configuration:
 
@@ -85,7 +85,7 @@ The minimum requirements for **ClearML Server** are:
         docker-compose -f /opt/clearml/docker-compose.yml up -d
 
 
-## Backing up and restoring data and configuration
+## Backing Up and Restoring Data and Configuration
 
 The commands in this section are an example of how to back up and restore data and configuration    . 
 
@@ -112,11 +112,11 @@ If the data and the configuration need to be restored:
 
 The following section contains a list of Custom Image URLs (exported in different formats) for each released **ClearML Server** version.
 
-### Latest version - v1.0.2
+### Latest Version - v1.0.2
 
 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz)
 
-### All release versions
+### All Release Versions
 
 - v1.0.2 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-2.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-2.tar.gz)
 - v1.0.1 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-1.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-1.tar.gz)

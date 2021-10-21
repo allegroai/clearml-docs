@@ -5,7 +5,7 @@ title: Modifying Models
 In the models table, modify models that have a status of *Draft* (status *Published* is read-only). Modify the model
 configuration and label enumeration.
 
-## Model configuration
+## Model Configuration
 
 **To edit the model configuration:**
 
@@ -14,7 +14,7 @@ configuration and label enumeration.
 
 ![image](../img/webapp_models_05a.png)
 
-### Label enumeration
+### Label Enumeration
 
 For each class, label enumeration contains the class name (key) and value.
 

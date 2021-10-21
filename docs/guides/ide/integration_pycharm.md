@@ -18,7 +18,7 @@ The **ClearML PyCharm plugin** enables syncing a local execution configuration t
 
 ![image](../../img/ide_pycharm_plugin_from_disk.png)
 
-## Optional: ClearML configuration parameters
+## Optional: ClearML Configuration Parameters
 
 :::warning
 If you set ClearML configuration parameters (ClearML Server and ClearML credentials) in the plugin, they will override 

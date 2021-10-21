@@ -6,10 +6,10 @@ The [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples
 demonstrates the integration of **ClearML** into code that uses PyTorch. 
 
 The example script does the following:
-* Trains a simple deep neural network on the PyTorch built-in [MNIST](https://pytorch.org/docs/stable/torchvision/datasets.html#mnist)
+* Trains a simple deep neural network on the PyTorch built-in [MNIST](https://pytorch.org/vision/stable/datasets.html#mnist)
   dataset.
 * Uses **ClearML** automatic logging. 
-* Calls the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method to demonstrate explicit reporting and explicit reporting, 
+* Calls the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method to demonstrate explicit reporting, 
   which allows adding customized reporting to the code.
 * Creates an experiment named `pytorch mnist train`, which is associated with the `examples` project.
 

@@ -17,7 +17,7 @@ example script from ClearML's GitHub repo:
 * The [clearml](https://github.com/allegroai/clearml) repository is cloned.
 * The `clearml` package is installed.
   
-## Before starting
+## Before Starting
 
 Make a copy of `pytorch_mnist.py` in order to add explicit reporting to it.
 
@@ -26,7 +26,7 @@ Make a copy of `pytorch_mnist.py` in order to add explicit reporting to it.
 
     cp pytorch_mnist.py pytorch_mnist_tutorial.py
 
-## Step 1: Setting an output destination for model checkpoints
+## Step 1: Setting an Output Destination for Model Checkpoints
 
 Specify a default output location, which is where model checkpoints (snapshots) and artifacts will be stored when the 
 experiment runs. Some possible destinations include: 
@@ -72,7 +72,7 @@ For example, if the Task ID is `9ed78536b91a44fbb3cc7a006128c1b0`, then the dire
     |           +-- models
     |           +-- artifacts
 
-## Step 2: Logger class reporting methods
+## Step 2: Logger Class Reporting Methods
 
 In addition to **ClearML** automagical logging, the **ClearML** Python
 package contains methods for explicit reporting of plots, log text, media, and tables. These methods include:
@@ -90,14 +90,14 @@ package contains methods for explicit reporting of plots, log text, media, and t
 * [Logger.report_media](../../references/sdk/logger.md#report_media) - Report media including images, audio, and video.
 * [Logger.get_default_upload_destination](../../references/sdk/logger.md#get_default_upload_destination) - Retrieve the destination that is set for uploaded media.
 
-### Get a logger
+### Get a Logger
 
 First, create a logger for the Task using the [Task.get_logger](../../references/sdk/task.md#get_logger) 
 method.
 
     logger = task.get_logger
 
-### Plot scalar metrics
+### Plot Scalar Metrics
 
 Add scalar metrics using the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
 method to report loss metrics.
@@ -125,7 +125,7 @@ method to report loss metrics.
                 logger.report_scalar(title='Scalar example {} - epoch'.format(epoch), 
                     series='Loss', value=loss.item(), iteration=batch_idx)
 
-### Plot other (not scalar) data
+### Plot Other (Not Scalar) Data
 
 The script contains a function named `test`, which determines loss and correct for the trained model. We add a histogram 
 and confusion matrix to log them.
@@ -165,19 +165,19 @@ and confusion matrix to log them.
         logger.report_confusion_matrix(title='Confusion matrix example', 
             series='Test loss / correct', matrix=matrix, iteration=1)
 
-### Log text
+### Log Text
 
 Extend **ClearML** by explicitly logging text, including errors, warnings, and debugging statements. We use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
 method and its argument `level` to report a debugging message.
 
     logger.report_text('The default output destination for model snapshots and artifacts is: {}'.format(model_snapshots_path ), level=logging.DEBUG)
 
-## Step 3: Registering artifacts
+## Step 3: Registering Artifacts
 
 Registering an artifact uploads it to **ClearML Server**, and if it changes, the change is logged in **ClearML Server**. 
 Currently, **ClearML** supports Pandas DataFrames as registered artifacts.
 
-### Register the artifact
+### Register the Artifact
 
 In the tutorial script, `test` function, we can assign the test loss and correct data to a Pandas DataFrame object and register 
 that Pandas DataFrame using the [Task.register_artifact](../../references/sdk/task.md#register_artifact) method.
@@ -193,7 +193,7 @@ that Pandas DataFrame using the [Task.register_artifact](../../references/sdk/ta
     task.register_artifact('Test_Loss_Correct', df, metadata={'metadata string': 'apple', 
         'metadata int': 100, 'metadata dict': {'dict string': 'pear', 'dict int': 200}})
     
-### Reference the registered artifact
+### Reference the Registered Artifact
 
 Once an artifact is registered, it can be referenced and utilized in the Python experiment script.
 
@@ -205,7 +205,7 @@ methods to take a sample.
     sample = Task.current_task().get_registered_artifacts()['Test_Loss_Correct'].sample(frac=0.5, 
         replace=True, random_state=1)
     
-## Step 4: Uploading artifacts
+## Step 4: Uploading Artifacts
 
 Artifact can be uploaded to the **ClearML Server**, but changes are not logged.
 
@@ -225,7 +225,7 @@ method with metadata specified in the `metadata` parameter.
         metadata={'metadata string': 'banana', 'metadata integer': 300,
         'metadata dictionary': {'dict string': 'orange', 'dict int': 400}})
 
-## Additional information
+## Additional Information
 
 After extending the Python experiment script, run it and view the results in the **ClearML Web UI**.
 
