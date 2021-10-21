@@ -7,7 +7,7 @@ Tasks in a pipeline can leverage other tasks' work products such as artifacts an
 
 Pipelines are controlled by a *Controller Task* that holds the logic of the pipeline execution steps. 
 
-## How do pipelines work? 
+## How Do Pipelines Work? 
 
 Before running a pipeline, we need to configure a Controller Task, in which the pipeline is defined. Pipelines are made 
 up of steps. Each step consists of a task that already exists in the ClearML Server and is used as a template. The 
@@ -25,7 +25,7 @@ create customized, step-specific callbacks.
 ![Pipeline chart](../img/fundamentals_pipeline.png)
 
 
-## Simple DAG pipelines
+## Simple DAG Pipelines
 
 For a simple, DAG based logic, use the off-the-shelf [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md) class to define the DAG (see an example 
 [here](../guides/pipeline/pipeline_controller)). Once the `PipelineController` object is populated and configured, 
@@ -44,7 +44,7 @@ method. Alternatively, step-specific callback functions can be specified with th
 `post_execute_callback` parameters of the [`add_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
 method. 
 
-## Advanced pipelines
+## Advanced Pipelines
 
 Since a pipeline *Controller Task* is itself a ClearML Task, it can be used as a pipeline step and can be used to create 
 more complicated workflows, such as pipelines running other pipelines, or a pipeline running multiple tasks concurrently.
@@ -56,7 +56,7 @@ It could also be useful to run a pipeline that runs tasks concurrently, training
 values simultaneously. See the [Tabular training pipeline](../guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline.md) 
 example of a pipeline with concurrent steps. 
 
-## Custom pipelines
+## Custom Pipelines
 
 In cases where a DAG is insufficient (for example, when needing to launch one pipeline, then, if performance is inadequate, 
 rerun pipeline again), users can apply custom logic, using generic methods to enqueue tasks, implemented in python code.
@@ -66,4 +66,8 @@ Custom pipelines usually involve cloning template tasks, modifying their paramet
 them to queues (for execution by [agents](../clearml_agent.md)). It's possible to create custom logic that controls inputs 
 (e.g. overriding hyperparameters and artifacts) and acts upon task outputs.
 
-See an example of a custom pipeline [here](../guides/automation/task_piping.md).
+See examples of custom pipelines: 
+   * [Task Piping](../guides/automation/task_piping.md)
+   * [Manual Random Parameter Search](../guides/automation/manual_random_param_search_example.md)
+
+

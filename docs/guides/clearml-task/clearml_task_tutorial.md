@@ -13,7 +13,7 @@ on a remote or local machine, from the remote repository and from a local script
 
 - [allegroai/events](https://github.com/allegroai/events) repository cloned (for local script execution)
 
-### Executing code from a remote repository 
+### Executing Code from a Remote Repository 
 
 ``` bash
 clearml-task --project keras_examples --name remote_test --repo https://github.com/allegroai/events.git --script /webinar-0620/keras_mnist.py --args batch_size=64 epochs=1 --queue default
@@ -57,7 +57,7 @@ or add the **`--packages '<package_name>`** flag to the command.
 <br />
 
 
-### Executing a local script
+### Executing a Local Script
 Using `clearml-task` to execute a local script is very similar to using it with a remote repo.
 
 For this example, we will be using a local version of this [script](https://github.com/allegroai/events/blob/master/webinar-0620/keras_mnist.py).

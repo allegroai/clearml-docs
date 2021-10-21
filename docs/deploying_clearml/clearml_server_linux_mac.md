@@ -135,7 +135,7 @@ instructions in the [Security](clearml_server_security.md) page.
    
 The server is now running on [http://localhost:8080](http://localhost:8080).
  
-## Port mapping
+## Port Mapping
 
 After deploying **ClearML Server**, the services expose the following ports:
 
@@ -154,7 +154,7 @@ After deploying **ClearML Server**, the services expose the following ports:
 
 
 
-## Backing up and restoring data and configuration
+## Backing Up and Restoring Data and Configuration
 
 The commands in this section are an example of how to back up and to restore data and configuration    . 
 

@@ -22,13 +22,13 @@ In this pipeline example, the data preprocessing Task and training Task are each
 The data download Task is not a step in the pipeline, see [download_and_split](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/download_and_split.ipynb).
 :::
     
-## Pipeline controller and steps
+## Pipeline Controller and Steps
 
 In this example, a pipeline controller object is created.
 
     pipe = PipelineController(default_execution_queue='dan_queue', add_pipeline_tags=True)
     
-### Preprocessing step
+### Preprocessing Step
 
 Two preprocessing nodes are added to the pipeline. These steps will run concurrently.
     
@@ -89,7 +89,7 @@ two sets of data are created in the pipeline.
 </details>
    
 
-### Training step
+### Training Step
 
 Each training node depends upon the completion of one preprocessing node. The parameter `parents` is a list of step names indicating all steps that must complete before the new step starts. In this case, `preprocessing_1` must complete before `train_1` begins, and `preprocessing_2` must complete before `train_2` begins.
 
@@ -133,7 +133,7 @@ The ID of a Task whose artifact contains a set of preprocessed data for training
 </details>
    
 
-### Best model step
+### Best Model Step
 
 The best model step depends upon both training nodes completing and takes the two training node Task IDs to override.
 
@@ -168,7 +168,7 @@ The IDs of the training Tasks from the steps named `train_1` and `train_2` are p
 </details>
    
 
-### Pipeline start, wait, and cleanup
+### Pipeline Start, Wait, and Cleanup
 
 Once all steps are added to the pipeline, start it. Wait for it to complete. Finally, cleanup the pipeline processes.
 
@@ -196,7 +196,7 @@ Once all steps are added to the pipeline, start it. Wait for it to complete. Fin
 </details>
 
 
-## Running the pipeline
+## Running the Pipeline
 
 **To run the pipeline:**
 

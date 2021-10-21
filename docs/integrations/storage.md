@@ -39,7 +39,7 @@ aws {
                 #     key: "my-access-key"
                 #     secret: "my-secret-key"
                 # },
-                # {
+                
             ]
         }
         boto3 {
@@ -51,6 +51,7 @@ aws {
 
 ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
 ```
+                # {
                 #     host: "my-minio-host:9000"
                 #     key: "12345678"
                 #     secret: "12345678"
@@ -99,31 +100,11 @@ It's also possible to specify credentials for a specific bucket.
 
 ## Storage Manager
 
-ClearML Offers a package to manage downloading, uploading and caching of content directly from code.
+ClearML offers the [StorageManager](../references/sdk/storage.md) class to manage downloading, uploading, and caching of 
+content directly from code.
 
-### Uploading files
-To upload a file using storage manager, just run the following line specifying the path to a local file or folder, and the
-remote destination.
-```python
-from clearml import StorageManager
+See [Storage Examples](../guides/storage/examples_storagehelper.md).
 
-StorageManager.upload_file(local_file='path_to_file',remote_url='s3://my_bucket')
-```
-
-
-### Downloading files
-To download files into cache, run the following line, specifying the remote destination's URL.
-```python
-StorageManager.get_local_copy(remote_url='s3://my_bucket/path_to_file')
-```
-
-:::note
-Zip and tar.gz files will be automatically extracted to cache. This can be controlled with the`extract_archive` flag.
-:::
-
-### Controling cache file limit
-It's possible to control the maximum cache size by limiting the number of files it stores.
-This is done by calling the ```StorageManager.set_cache_file_limit()``` method.
 
 ## Caching
 ClearML also manages a cache of all downloaded content so nothing is duplicated, and code won't need to download the same
@@ -148,8 +129,10 @@ storage {
 ```
 
 ### Direct Access
-By default, all artifacts (Models \ Artifacts \ Datasets) are automatically downloaded to the cache before they're used.<br/>
-Some storage mediums (NFS \ Local storage) allows for direct access,
-which means that the code would work with the object where it's originally stored and not downloaded to cache first.<br/>
+By default, all artifacts (Models / Artifacts / Datasets) are automatically downloaded to the cache before they're used.
+
+Some storage mediums (NFS / Local storage) allows for direct access,
+which means that the code would work with the object where it's originally stored and not downloaded to cache first.
+
 To enable direct access, specify the urls to access directly.
 

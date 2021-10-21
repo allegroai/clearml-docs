@@ -7,7 +7,7 @@ example demonstrates the integration of **ClearML** into code, which creates a T
 debug sample images. When the script runs, it creates an experiment named `pytorch tensorboard toy example`, which is 
 associated with the `examples` project.
 
-## Debug samples
+## Debug Samples
 
 The debug sample images appear according to metric, in the experiment page in the **ClearML web UI** under **RESULTS** 
 **>** **DEBUG SAMPLES**.

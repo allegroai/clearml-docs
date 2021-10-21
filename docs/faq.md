@@ -94,6 +94,7 @@ title: FAQ
 * [How do I bypass a proxy configuration to access my local ClearML Server?](#proxy-localhost)
 * [Trains is failing to update ClearML Server. I get an error 500 (or 400). How do I fix this?](#elastic_watermark)
 * [Why is my Trains Web-App (UI) not showing any data?](#web-ui-empty)
+* [Why can't I access my ClearML Server when I run my code in a virtual machine?](#vm_server)
 
 **ClearML Agent**
 
@@ -377,12 +378,30 @@ After thirty minutes, it remains unchanged.
 
 **Can I control what ClearML automatically logs?** <a id="controlling_logging"></a>
 
-Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks. 
+Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
+by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
 
-When initializing a Task by calling the `Task.init` method, provide the `auto_connect_frameworks` parameter to control 
-framework logging, and the `auto_connect_streams` parameter to control `stdout`, `stderr`, and standard logging. The 
-values are `True`, `False`, and a dictionary for fine-grain control. See [Task.init](references/sdk/task.md#taskinit).
+To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
+parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
 
+For example: 
+```python
+auto_connect_frameworks={
+    'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
+    'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
+}
+```
+
+To control the `stdout`, `stderr`, and standard logging, use the `auto_connect_streams` parameter. 
+To disable logging all three, set the parameter to `False`. For finer grained control, input a dictionary, where the keys are `stout`, `stderr`, 
+and `logging`, and the values are booleans. For example: 
+
+```python
+auto_connect_streams={'stdout': True, 'stderr': True, 'logging': False}
+```
+
+See [`Task.init`](references/sdk/task.md#taskinit).
 
 <br/>
 
@@ -683,7 +702,7 @@ on the "Configuring Your Own ClearML Server" page.
 
 **Can I add web login authentication to ClearML Server?** <a id="web-auth"></a>
 
-By default, anyone can login to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
+By default, anyone can log in to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
 
 For detailed instructions, see [Web Login Authentication](deploying_clearml/clearml_server_config.md#web-login-authentication) 
 on the "Configuring Your Own ClearML Server" page in the "Deploying ClearML" section.
@@ -816,7 +835,7 @@ Do the following:
 
 <br/>
 
-**The ClearML Server keeps returning HTTP 500 (or 400) errors. How do I fix this?**
+**The ClearML Server keeps returning HTTP 500 (or 400) errors. How do I fix this?** <a id="elastic_watermark"></a>
 
 The ClearML Server will return HTTP error responses (5XX, or 4XX) when some of its [backend components](deploying_clearml/clearml_server.md) 
 are failing. 
@@ -839,6 +858,28 @@ A likely indication of this situation can be determined by searching your clearm
 
 If your ClearML Web-App (UI) does not show anything, it may be an error authenticating with the server. Try clearing the application cookies for the site in your browser's developer tools. 
     
+**Why can't I access my ClearML Server when I run my code in a virtual machine?** <a id="vm_server"></a>
+
+The network definitions inside a virtual machine (or container) are different from those of the host. The virtual machine's 
+and the server machine's IP addresses are different, so you have to make sure that the machine that is executing the 
+experiment can access the server's machine. 
+
+Make sure to have an independent configuration file for the virtual machine where you are running your experiments. 
+Edit the `api` section of your `clearml.conf` file and insert IP addresses of the server machine that are accessible 
+from the VM. It should look something like this:
+
+```
+api {
+    web_server: http://192.168.1.2:8080
+    api_server: http://192.168.1.2:8008
+    credentials {
+        "access_key" = "KEY"
+        "secret_key" = "SECRET"
+    }
+}
+```
+
+
 ## ClearML Agent
 
 **How can I execute ClearML Agent without installing packages each time?** <a className="tr_top_negative" id="system_site_packages"></a>

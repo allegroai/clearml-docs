@@ -1,5 +1,5 @@
 ---
-title: Reproducing experiments
+title: Reproducing Experiments
 ---
 
 Reproduce experiments on local or remote machines, in one of the following ways: 

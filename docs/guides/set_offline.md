@@ -6,7 +6,7 @@ If your computer is offline, or you do not want a Task's data and logs stored in
 the **Offline Mode** option. In this mode, all the data and logs that the Task captures from the code are stored in a 
 local folder, which can be later uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md).
 
-## Setting Task to offline mode
+## Setting Task to Offline Mode
 
 Before initializing a Task, use the [Task.set_offline](../references/sdk/task.md#taskset_offline) class method and set the 
 `offline_mode` argument to `True`.
@@ -30,7 +30,10 @@ ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
 ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
 ```
 
-## Uploading local session
+All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. The 
+session's zip folder's location is `~/.clearml/cache/offline/<task_id>.zip`.
+
+## Uploading Local Session
 
 In order to upload to the ClearML Server the local execution data that the Task captured offline, use the 
 [Task.import_offline_session](../references/sdk/task.md#taskimport_offline_session) method. This method will upload the 

@@ -13,6 +13,8 @@ Use the Profile page to manage a **ClearML** user account, including:
 
 ![Profile page](../img/webapp_profile.png)
 
+## Setting User Preferences
+
 ## Setting user preferences
 
 The **HiDPI browser scale override** adjusts scaling on High-DPI monitors to improve the Web UI experience. It is enabled
@@ -32,7 +34,7 @@ Users that use their own **ClearML Server** can choose whether to send anonymous
     * **Region** - The region for AWS S3.
     * **Host (Endpoint)** - The host for non-AWS S3 servers.
 
-## Creating ClearML credentials
+## Creating ClearML Credentials
 
 **ClearML** credentials include:
 * Access key
@@ -56,9 +58,9 @@ switch to it.
 
 1. In **App Credentials** **>** **+ Create new credentials**.
 
-## Configuration vault
+## Configuration Vault
 
-:::note
+:::note Feature Support
 The configuration vault is only supported by the **ClearML Enterprise Server**
 :::
 
@@ -78,9 +80,9 @@ existing configurations will be overridden.
 * Click the toggle atop the vault to enable / disable the configurations
 * Once enabled, the configurations will be merged to the configuration file during ClearML and ClearML Agent usage 
 
-## Switching workspaces
+## Switching Workspaces
 
-:::note
+:::note Feature Support
 Switching workspaces does not apply to users of a self-hosted **ClearML Server**
 :::
 
@@ -93,9 +95,9 @@ Switching workspaces does not apply to users of a self-hosted **ClearML Server**
 * Profile page - In the **WORKSPACES** section, click **SWITCH TO WORKSPACE** **>** Click the workspace to switch to.
 
 
-## Inviting new teammates
+## Inviting New Teammates
 
-:::note
+:::note Feature Support
 Inviting new teammates does not apply to users of a self-hosted **ClearML Server**.
 :::
 
@@ -114,7 +116,7 @@ section shows the current members of the team, and whether the team has reached 
 
 1. Send the invitation hyperlink to an invitee.
 
-## Leaving a workspace
+## Leaving a Workspace
 
 A member of a workspace can leave the workspace and no longer be a member of that team.
 
