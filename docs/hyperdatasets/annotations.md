@@ -5,12 +5,12 @@ title: Annotations
 With ClearML Enterprise, annotations can be applied to video and image frames. [Frames](single_frames.md) support 
 two types of annotations: **Frame objects** and **Frame labels**.
 
-Annotation Tasks can be used to efficiently organize the annotation of frames in Dataset versions (see 
+Annotation Tasks can be used to efficiently organize the annotation of frames in Hyper-Dataset versions (see 
 [Annotations Task Page](webapp/webapp_annotator.md)).  
 
 For information about how to view, create, and manage annotations using the WebApp, see [Annotating Images and Videos](webapp/webapp_annotator.md#annotating-images-and-video).
 
-## Frame objects
+## Frame Objects
 
 Frame objects are labeled Regions of Interest (ROIs), which can be bounded by polygons (including rectangles), ellipses, 
 or key points. These ROIs are useful for object detection, classification, or semantic segmentation. 
@@ -18,14 +18,14 @@ or key points. These ROIs are useful for object detection, classification, or se
 Frame objects can include ROI labels, confidence levels, and masks for semantic segmentation. In ClearML Enterprise, 
 one or more labels and sources dictionaries can be associated with an ROI (although multiple source ROIs are not frequently used).
 
-## Frame labels
+## Frame Labels
 
 Frame labels are applied to an entire frame, not a region in a frame.
 
 
 ## Usage
 
-### Adding a frame object
+### Adding a Frame Object
 
 To add a frame object annotation to a SingleFrame, use the `SingleFrame.add_annotation` method.  
 
@@ -43,7 +43,7 @@ When adding an annotation there are a few options for entering the annotation's 
 * `ellipse2d_xyrrt` - A List consisting of cx, cy, rx, ry, and theta for an ellipse 
 * And more! See `SingleFrame.add_annotation` for further options. 
 
-### Adding a Frame label
+### Adding a Frame Label
 
 Adding a frame label is similar to creating a frame objects, except that coordinates don't need to be specified, since 
 the whole frame is being referenced. 

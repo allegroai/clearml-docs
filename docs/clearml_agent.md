@@ -100,7 +100,8 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
         Verifying credentials ...
         Credentials verified!
 
-1. Enter your Git username and password. Leave blank for SSH key authentication or when only using public repositories.<br/>
+1. Enter your Git username and password. Leave blank for SSH key authentication or when only using public repositories.
+   
    This is needed for cloning repositories by the agent.
 
         Enter git username for repository cloning (leave blank for SSH key authentication): []
@@ -110,7 +111,8 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     
         Git repository cloning will be using user=<username> password=<password>        
 
-1. Enter an additional artifact repository, or press **Enter** if not required.<br/>
+1. Enter an additional artifact repository, or press **Enter** if not required.
+   
    This is needed for installing Python packages not found in pypi. 
 
         Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
@@ -127,8 +129,14 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     * Windows - `\User\<username>\clearml.conf`
 
 1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
+   
+:::note
+The ClearML Enterprise server provides a [configuration vault](webapp/webapp_profile.md#configuration-vault), the contents 
+of which are categorically applied on top of the agent-local configuration
+:::
 
-### Adding ClearML Agent to a configuration file
+
+### Adding ClearML Agent to a Configuration File
 
 In case a `clearml.conf` file already exists, add a few ClearML Agent specific configurations to it.<br/>
 
@@ -297,7 +305,7 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 
 ## Execution
 
-### Spinning up an Agent
+### Spinning Up an Agent
 
 #### Executing an Agent
 To execute an agent, listening to a queue, run:
@@ -345,17 +353,17 @@ clearml-agent daemon --detached --queue group_a group_b --order-fairness  --gpus
 It will make sure the agent will pull from the “group_a” queue, then from “group_b”, then back to “group_a”, etc. This ensures 
 that “group A” or ”group_b” will not be able to starve one another of resources.
 
-### Explicit Task execution
+### Explicit Task Execution
 
 ClearML Agent can also execute specific tasks directly, without listening to a queue.
 
-#### Execute a Task without queue
+#### Execute a Task without Queue
 
 Execute a Task with a `clearml-agent` worker without a queue.
 ```bash
 clearml-agent execute --id <task-id>
 ```
-#### Clone a Task and execute the cloned Task
+#### Clone a Task and Execute the Cloned Task
 
 Clone the specified Task and execute the cloned Task with a `clearml-agent` worker without a queue.
 ```bash
@@ -580,11 +588,12 @@ It's possible to add the Docker container as the base Docker image to a Task (ex
 ## Google Colab
 
 ClearML Agent can run on a [google colab](https://colab.research.google.com/) instance. This helps users to leverage 
-compute resources provided by google colab and send experiments for execution on it. <br/>
+compute resources provided by google colab and send experiments for execution on it. 
+
 Check out [this](guides/ide/google_colab.md) tutorial on how to run a ClearML Agent on Google Colab!
 
 
-## Scheduling working hours
+## Scheduling Working Hours
 
 :::important
 Available with the ClearML Enterprise offering
@@ -603,7 +612,7 @@ Override worker schedules by:
 * Setting runtime properties to force a worker on or off
 * Tagging a queue on or off
 
-### Running clearml-agent with a schedule (command line)
+### Running clearml-agent with a Schedule (Command Line)
 
 Set a schedule for a worker from the command line when running `clearml-agent`. Two properties enable setting working hours:
 
@@ -632,7 +641,7 @@ For example:
 * `"20-00,00-08 SUN"` - 8 PM to midnight and midnight to 8 AM on Sundays
 * `"20-00 SUN", "00-08 MON"` - 8 PM on Sundays to 8 AM on Mondays (spans from before midnight to after midnight).
 
-### Setting worker schedules in the configuration file
+### Setting Worker Schedules in the Configuration File
 
 Set a schedule for a worker using configuration file options. The options are:
 
@@ -649,7 +658,7 @@ For example, set a worker's schedule from 5 PM to 8 PM on Sunday through Tuesday
 
     agent.uptime: ["17-20 SUN-TUE", "13-22 WED"]
 
-### Overriding worker schedules using runtime properties
+### Overriding Worker Schedules Using Runtime Properties
 
 Runtime properties override the command line uptime / downtime properties. The runtime properties are:
 
@@ -671,7 +680,7 @@ For example, to force a worker on for 24 hours:
 
     curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"worker":"<worker_id>","runtime_properties":[{"key": "force", "value": "on", "expiry": 86400}]}' http://<api-server-hostname-or-ip>:8008/workers.set_runtime_properties
 
-### Overriding worker schedules using queue tags
+### Overriding Worker Schedules Using Queue Tags
 
 Queue tags override command line and runtime properties. The queue tags are the following:
 

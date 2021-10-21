@@ -125,9 +125,10 @@ title: Version 1.0
 
 ### ClearML 1.0.0
 
-**Breaking Changes**
-* Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()` and `Logger.report_matplotlib_figure()` - please use keywords instead of positional arguments
-
+:::info Breaking Changes
+Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()` and `Logger.report_matplotlib_figure()` - please use keywords instead of positional arguments
+:::
+  
 **Features**
 
 * Add OS environemt variable `CLEARML_DEFAULT_OUTPUT_URI` to override default `output_uri` for automatic models upload - [ClearML GitHub issue 328](https://github.com/allegroai/clearml/issues/328)

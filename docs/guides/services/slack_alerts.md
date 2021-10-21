@@ -43,14 +43,14 @@ The Slack API token and channel you create are required to configure the Slack a
     1. In the confirmation dialog, click **Allow**.
     1. Click **Copy** to copy the **Bot User OAuth Access Token**.
 
-## Running the service
+## Running the Service
 There are two options to run the Slack alerts service:
 * [Using the ClearML Web UI](#running-using-the-clearml-web-ui)
 * [Using the script](#running-using-the-script)
 
-### Running using the ClearML Web UI
+### Running Using the ClearML Web UI
 
-#### Step 1. Configuring the service
+#### Step 1. Configuring the Service
 
 1. In the **ClearML Web UI** **Projects** page, click the **Monitoring** project **>** click the **Slack Alerts** Task.
 1. In the info panel, click the **CONFIGURATION** tab.
@@ -73,11 +73,11 @@ There are two options to run the Slack alerts service:
       **services**.
     * **slack_api** - The Slack API key. The default value can be set in the environment variable, `SLACK_API_TOKEN`  (MANDATORY).
 
-#### Step 2. Enqueuing the service
+#### Step 2. Enqueuing the Service
 
 * Right click the **Monitoring** Task **>** **Enqueue** **>** Select **services** **>** **ENQUEUE**.
 
-### Running using the script
+### Running Using the Script
 
 The [slack_alerts.py](https://github.com/allegroai/clearml/blob/master/examples/services/monitoring/slack_alerts.py) 
 allows to configure the monitoring service, and then either:
@@ -109,7 +109,7 @@ allows to configure the monitoring service, and then either:
 *  ``local`` - If ``True``, run locally only instead of as a service. If ``False``, then automatically enqueue the Task 
    to run in **ClearML Agent** services mode. The default value is ``False``.
     
-## Additional information about slack_alerts.py
+## Additional Information about slack_alerts.py
 
 In `slack_alerts.py`, the class `SlackMonitor` inherits from the `Monitor` class in `clearml.automation.monitor`. 
 `SlackMonitor` overrides the following `Monitor` class methods:

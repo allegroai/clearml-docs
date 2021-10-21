@@ -66,8 +66,7 @@ clearml-data close
 ## Using the Dataset
 Now that we have a new dataset registered, we can consume it.
 
-We [take](https://github.com/allegroai/clearml/blob/master/examples/frameworks/ignite/cifar_ignite.py)
-this script as a base to train on the CIFAR dataset.
+We take [this script](https://github.com/allegroai/clearml/blob/master/examples/frameworks/ignite/cifar_ignite.py) as a base to train on the CIFAR dataset.
 
 We replace the file load part with ClearML's Dataset object. The Dataset's `get_local_copy()` method will return a path
 to the cached, downloaded dataset.
