@@ -29,7 +29,7 @@ Artifact details (location and size) can be viewed in ClearML’s **web UI > exp
 
 After the second task is initialized, the script uses the [`Task.get_task`](../../references/sdk/task.md#taskget_task) 
 class method to get the first task and access its artifacts, specifically the `data file` artifact. The `get_local_copy` 
-method downloads the files and returns a path to the files. 
+method downloads the files and returns a path. 
 
 ```python
 preprocess_task = Task.get_task(task_name=’create artifact’, project_name=’examples’)
