@@ -2,6 +2,81 @@
 title: Version 1.1
 ---
 
+### ClearML SDK 1.1.3
+
+**Features**
+
+- Add support for MegEngine with examples [ClearML GitHub issue #455](https://github.com/allegroai/clearml/issues/455)
+- Add `TaskTypes` to main namespace [ClearML GitHub issue #453](https://github.com/allegroai/clearml/issues/453)
+- Log environment variables starting with `*` in `environ_bind.py` [ClearML GitHub issue #459](https://github.com/allegroai/clearml/issues/459)
+- Add `LogUnifomParameterRange` for hyperparameter optimization with Optuna [ClearML GitHub issue #462](https://github.com/allegroai/clearml/issues/462)
+- Add joblib (equivalent to scikit) to `Task.init(auto_connect_frameworks)` argument
+- Pipeline
+  - Add eager decorated pipeline execution
+  - Support pipeline monitoring for scalers/models/artifacts
+  - Add `PipelineController.upload_model()`
+  - Add `PipelineController.add_step(configuration_overrides)` argument allowing to override Task configuration objects
+  - Change `PipelineController.start_locally()` default `run_pipeline_steps_locally=False`
+  - Add `PipelineController.stop(mark_failed, mark_aborted)` argguments
+  - Add `PipelineController.run_locally` decorator
+  - Add `PipelineController.continue_on_fail` property
+  - Add `PipelineController.__init__(abort_on_failure)` argument
+  - Add nested pipeline components missing pipeline tags
+  - Add ClreamlJob state cache (refresh every second)
+- Datasets
+  - Add `clearml-data` multi-chunk support
+  - Change `clearml-data` default chunk size to 512MB
+  - Change `Dataset.create()` now automatically reverts to using current Task if no project/name provided
+- Add `Optimizer.get_top_experiments_id_metrics_pair()` for top performing experiments
+- Add support for setting default value to auto connected argparse arguments
+- Add `Task.get_script()` and `Task.set_script()` for getting and setting task's script prioerties for execution
+- Add `Task.mark_completed()` `force` and `status_message` arguments
+- Add `Task.stopped()` `reason` argument
+- Add `Task.query_tasks()`, `Task.get_task()` and `Task.get_tasks()` `tags` argument
+- Improve PyJWT resiliency support
+- Improve documentation and docstrings
+- Add examples
+
+**Bug Fixes**
+
+- Fix xgb train overload [ClearML GitHub issue #456](https://github.com/allegroai/clearml/issues/456)
+- Fix `http://` throws `OSError` in Windows by using `pathlib2` instead of `os` [ClearML GitHub issue #463](https://github.com/allegroai/clearml/issues/463)
+- Fix local diff should include staged commits, otherwise applying git diff fails [ClearML GitHub issue #457](https://github.com/allegroai/clearml/issues/457)
+- Fix `task.upload_artifact` non-standard dictionary will now revert to `pickle` [ClearML GitHub issue #452](https://github.com/allegroai/clearml/issues/452)
+- Fix `S3BucketConfig.is_valid()` for EC2 environments with `use_credentials_chain` [ClearML GitHub issue #478](https://github.com/allegroai/clearml/issues/378)
+- Fix audio classifier example when training with a custom dataset [ClearML GitHub issue #484](https://github.com/allegroai/clearml/issues/484)
+- Fix `clearml-task` diff was corrupted by Windows drive letter and separator [ClearML GitHub issue #483](https://github.com/allegroai/clearml/issues/483)
+- Fix `task.connect(dict)` value casting - if `None` is the default value, use backend stored type
+- Fix Jupyter notebook should always set Task as completed/stopped, never failed (exceptions are caught in interactive session)
+- Fix Pipeline support
+  - Fix `LocalClearmlJob` setting failed status
+  - Fix pipeline stopping all running steps
+  - Fix nested pipeline component parent point to pipeline Task
+  - Fix `PipelineController.start()` should not kill the process when done
+  - Fix pipeline failing to create Step Task should cause the pipeline to be marked failed
+- Fix images reported over history size were not sent if frequency was too high
+- Fix TQDM "line cleanup" not using `CR` but rather arrow-up escape sequence
+- Fix git detectors missing git repository without origin
+- Fix support for upload `LazyEvalWrapper` artifacts
+- Fix duplicate task dataset tags
+- Fix FileLock create target folder
+- Fix crash inside forked subprocess might leave SafeQueue in a locked state, causing `task.close()` to hang
+- Fix subprocess `Task.current_task()` should return class instance
+- Fix PyTorch distributed example `TimeoutSocket` issue in Windows
+- Fix broken `Dataset.finalize()`
+- Fix Python 3.5 compatibility
+
+### ClearML Agent 1.1.1
+
+**Features and Bug Fixes**
+
+- Add support for truncating task log file after reporting to server using `agent.truncate_task_output_files` configuration setting
+- Improve PyJWT resiliency support
+- Fix `--stop` checking default queue tag (#80)
+- Fix queue tag `default` does not exist and `--queue` not specified (try queue named `"default"`)
+- Fix Python 3.5 compatibility
+- Fix PY2.7 support for PyTorch
+
 ### ClearML SDK 1.1.2
 
 **Bug Fix**
