@@ -2,6 +2,17 @@
 title: Version 1.1
 ---
 
+### ClearML Agent v1.1.1
+
+**Features and Bug Fixes**
+
+- Add support for truncating task log file after reporting to server using `agent.truncate_task_output_files` configuration setting
+- Fix PyJWT resiliency support
+- Fix `--stop` checking default queue tag [ClearML Agent GitHub issue #80](https://github.com/allegroai/clearml-agent/issues/80)
+- Fix queue tag `default` does not exist and `--queue` not specified (try queue named `"default"`)
+- Fix Python 3.5 compatibility
+- Fix PY2.7 support for PyTorch
+
 ### ClearML SDK 1.1.3
 
 **Features**
