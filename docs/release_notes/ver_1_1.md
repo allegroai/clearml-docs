@@ -2,7 +2,7 @@
 title: Version 1.1
 ---
 
-### ClearML Agent v1.1.1
+### ClearML Agent 1.1.1
 
 **Features and Bug Fixes**
 
