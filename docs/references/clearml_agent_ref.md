@@ -1,7 +1,7 @@
 ---
 title: ClearML Agent Reference
 ---
-This reference page provides details information about **ClearML Agent** commands, including:
+This reference page provides detailed information about **ClearML Agent** commands, including:
 
 * [build](#build) - Create a worker environment, without executing an experiment.
 * [config](#config) - List your **ClearML Agent** configuration.
@@ -11,7 +11,7 @@ This reference page provides details information about **ClearML Agent** command
 
 ## build
 
-Use the `build` subcommand to create a worker environment, but do not execute the experiment.
+Use the `build` subcommand to create a worker environment without executing the experiment.
 
 ### Syntax 
 
@@ -213,7 +213,7 @@ Use the `daemon` subcommand to run a worker, optionally in a Docker container, l
 
 **`dynamic-gpus`**
 
-*  Allow to dynamically allocate gpus based on queue properties, configure with `--queues <queue_name>=<num_gpus>`.
+*  Allow to dynamically allocate gpus based on queue properties, configure with `--queue <queue_name>=<num_gpus>`.
 
   For example: `--dynamic-gpus --queue dual_gpus=2 single_gpu=1`
 

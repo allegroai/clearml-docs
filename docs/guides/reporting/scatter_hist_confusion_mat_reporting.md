@@ -84,7 +84,7 @@ method.
         yaxis_reversed=True,
     )
 
-## 2D scatter plots
+## 2D Scatter Plots
 
 Report 2D scatter plots by calling the [Logger.report_scatter2d](../../references/sdk/logger.md#report_scatter2d) 
 method. Use the `mode` parameter to plot data points with lines (by default), markers, or both lines and markers.

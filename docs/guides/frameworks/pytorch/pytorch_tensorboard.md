@@ -21,7 +21,7 @@ These scalars, along with the resource utilization plots, which are titled **:mo
 
 ![image](../../../img/examples_pytorch_tensorboard_07.png)
 
-## Debug samples
+## Debug Samples
 
 **ClearML** automatically tracks images and text output to TensorFlow. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
 

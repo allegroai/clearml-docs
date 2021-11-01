@@ -35,7 +35,7 @@ and **ClearML Server** needs to be installed.
 * Minimum free disk space of at least 30% plus two times the size of the data.
 * Python version >=2.7 or >=3.6, and Python accessible from the command-line as `python`
 
-### Migrating the data
+### Migrating the Data
 
 **To migrate the data:**
 
@@ -125,13 +125,13 @@ and **ClearML Server** needs to be installed.
 
                 kubectl get jobs -n upgrade-elastic                                   
 
-### Finishing up
+### Finishing Up
 
 To finish up: 
 1. Verify the data migration
 1. Conclude the upgrade.
 
-#### Step 1. Verifying the data migration
+#### Step 1. Verifying the Data Migration
 
 Upon successful completion, the migration script renames the original **Trains Server** directory, which contains the now 
 migrated data, and prints a completion message:
@@ -150,7 +150,7 @@ For help in resolving migration issues, check the **allegro-clearml** [Slack Cha
 [GitHub Issues](https://github.com/allegroai/clearml-server/issues), and the **ClearML Server** sections of the [FAQ](../faq.md).     
 :::
     
-#### Step 2. Completing the installation
+#### Step 2. Completing the Installation
 
 After verifying the data migration completed successfully, conclude the **ClearML Server** installation process.
 
@@ -205,7 +205,7 @@ For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRA
 
 If issues arise during the upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq#common-docker-upgrade-errors).
 
-##### Other deployment formats
+##### Other Deployment Formats
 
 To conclude the upgrade for deployment formats other than Linux, follow their upgrade instructions: 
  

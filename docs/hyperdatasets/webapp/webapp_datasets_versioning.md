@@ -7,7 +7,7 @@ deleting Dataset versions.
 
 From the Datasets page, click on one of the Datasets in order to see and work with its versions. 
 
-### Viewing snapshots
+### Viewing Snapshots
     
 View snapshots in the simple version structure using either:
         
@@ -35,7 +35,7 @@ chronological order, with oldest at the top, and the most recent at the bottom.
 </div>   
 </details>
 
-### Creating snapshots
+### Creating Snapshots
 
 To create a snapshot, you must be in the simple (version table) view. 
 
@@ -54,7 +54,7 @@ To create a snapshot, you must be in the simple (version table) view.
 The WebApp (UI) does not currently support the automatic naming of snapshots with timestamps appended. You must provide a snapshot name.
 :::
 
-### Creating versions
+### Creating Versions
 
 To create a version, you must be in the advanced (version tree) view.
 
@@ -66,7 +66,7 @@ To create a version, you must be in the advanced (version tree) view.
 1. Enter a version name, and optionally a description.
 1. Click **CREATE**.
 
-### Publishing versions
+### Publishing Versions
 
 Publish (make read-only) any Dataset version whose status is *Draft*. If the Dataset is in the simple structure,
 and you publish the current version, then only the advanced view is available,
@@ -79,7 +79,7 @@ and you cannot create snapshots.
 1. Click **PUBLISH**.
 1. Click **PUBLISH** again to confirm.
 
-### Exporting frames
+### Exporting Frames
 
 Frame exports downloaded filtered frames as a JSON file.
 
@@ -88,20 +88,20 @@ Frame exports downloaded filtered frames as a JSON file.
 * In the Thumbnails area, click **EXPORT FRAMES**. The frames JSON file downloads.
   
 
-### Modifying version names
+### Modifying Version Names
 
 **To modify a Dataset version name, do the following:**
 
 * At the top right of the Dataset page, hover over the Dataset version name, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" /> , edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" className="icon size-md space-sm" /> (check).
   
-### Modifying version descriptions
+### Modifying Version Descriptions
 
 **To modify a version description, do the following:**
 
 * Expand the **INFO** area, hover over the **Description**, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />, 
   edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" className="icon size-md space-sm" /> (check).
  
-### Deleting versions
+### Deleting Versions
 
 You can delete versions whose status is *Draft*. 
 

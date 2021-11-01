@@ -14,7 +14,7 @@ them.
 When a user opens the hyperlink for a shared experiment in their browser, only that experiment appears in the experiment table. 
 :::
 
-## Sharing experiments
+## Sharing Experiments
 
 Share experiments from the experiments table, the info panel menu, and/or the full screen details menu.
 
@@ -30,7 +30,7 @@ Share experiments from the experiments table, the info panel menu, and/or the fu
 
 1. Copy the hyperlink and send it to a **ClearML Hosted Service** user of another workspace.
 
-## Making shared experiment private
+## Making Shared Experiment Private
 
 **To make a shared experiment private again:**
 
