@@ -45,7 +45,7 @@ TensorFlow Definitions appear in **TF_DEFINE**.
 
 ![image](../../../img/examples_keras_00a.png)
 
-## Log
+## Console
 
 Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
 
@@ -53,6 +53,13 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Configuration Objects
 
-The configuration appears in **CONFIGURATIONS** **>** **CONFIGURATION OBJECTS** **>** **General**. 
+In the experiment code, a configuration dictionary is connected to the Task by calling the [Task.connect](../../../references/sdk/task.md#connect) 
+method. 
+
+```python
+task.connect_configuration({'test': 1337, 'nested': {'key': 'value', 'number': 1}})
+```
+
+It appears in **CONFIGURATIONS** **>** **CONFIGURATION OBJECTS** **>** **General**. 
 
 ![image](../../../img/keras_colab_02.png)
