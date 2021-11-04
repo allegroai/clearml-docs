@@ -45,8 +45,7 @@ Check out some of ClearML's automatic reporting examples for supported packages:
 * [TensorBoardX](../guides/frameworks/tensorboardx/tensorboardx.md) - logging TensorBoardX scalars, debug 
   samples, and text in code using PyTorch
 * Matplotlib 
-  * [Matplotlib Script Example](../guides/frameworks/matplotlib/matplotlib_example.md) and [Jupyter Notebook](../guides/frameworks/matplotlib/allegro_clearml_matplotlib_example.md) -
-    logging scatter diagrams plotted with Matplotlib
+  * [Matplotlib](../guides/frameworks/matplotlib/matplotlib_example.md) - logging scatter diagrams plotted with Matplotlib
   * [Matplotlib with PyTorch](../guides/frameworks/pytorch/pytorch_matplotlib.md) - logging debug images shown 
     by Matplotlib
 
