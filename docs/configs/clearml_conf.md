@@ -102,7 +102,7 @@ Supported from Docker 0.6.5
 * The following variables can be used:
   * `task_id`
   * `worker_id` 
-  * `rand_string` - random lower-case letters string, (up to 32 characters)
+  * `rand_string` - random lower-case letters string (up to 32 characters)
 
 * The resulting name must start with an alphanumeric character, while the rest of the name may contain alphanumeric characters, 
   underscores (`_`), dots (`.`) and / or dashes (`-`)
