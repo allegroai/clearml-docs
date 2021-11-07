@@ -122,6 +122,8 @@ module.exports = {
             'references/sdk/dataset',
             {'Pipeline': ['references/sdk/automation_controller_pipelinecontroller',
                 'references/sdk/automation_job_clearmljob']},
+            'references/sdk/scheduler',
+            'references/sdk/trigger',
             {'HyperParameter Optimization': [
                 'references/sdk/hpo_optimization_hyperparameteroptimizer',
                 'references/sdk/hpo_optimization_gridsearch',
