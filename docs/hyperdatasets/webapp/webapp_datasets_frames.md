@@ -2,14 +2,14 @@
 title: Working with Frames
 ---
 
-View and edit SingleFrames in the Dataset page. After selecting a Dataset version, the **Version Browser** shows a sample 
+View and edit SingleFrames in the Dataset page. After selecting a Hyper-Dataset version, the **Version Browser** shows a sample 
 of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFrames, in the [frame viewer](#frame-viewer). 
 Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
 filtering logic. 
 
 ![Dataset page](../../img/hyperdatasets/frames_01.png)
 
-## Frame viewer
+## Frame Viewer
 
 Frame viewer allows you to view and edit annotations which can be FrameGroup objects (Regions of Interest) and FrameGroup 
 labels applied to the entire frame not a region of the frame, the frame details (see [frames](../frames.md)), 
@@ -17,9 +17,9 @@ frame metadata, the raw data source URI, as well as providing navigation and vie
 
 ![Frame viewer](../../img/hyperdatasets/web-app/dataset_example_frame_editor.png)
 
-### Frame viewer controls
+### Frame Viewer Controls
 
-Use frame viewer controls to navigate between frames in a Dataset Version, and control frame changes and viewing.
+Use frame viewer controls to navigate between frames in a Hyper-Dataset Version, and control frame changes and viewing.
 
 |Control Icon|Actions|Shortcut|
 |-----|------|----|
@@ -39,14 +39,14 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 
 #### Additional keyboard shortcuts
 
-**General controls**
+**General Controls**
 
 |Control|Action|
 |----|-----|
 |Hold Spacebar + Press and hold image + Drag| Move around image. NOTE: If using a touchpad, this only works if the *Disable touchpad while typing* setting is turned off | 
 |Esc | Escape frame viewer and return to dataset page |
 
-**General annotation controls**
+**General Annotation Controls**
 
 |Control|Action|
 |----|-----|
@@ -63,7 +63,7 @@ Use frame viewer controls to navigate between frames in a Dataset Version, and c
 | Enter | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />) | Complete annotation |
 | Esc | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />), Polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-md space-sm" />) | Cancel annotation process | 
 
-### Viewing and editing frames
+### Viewing and Editing Frames
 
 **To view / edit a frame in the frame editor**
 
@@ -89,13 +89,13 @@ To save frames changes at any time, click **SAVE** (below the annotation list ar
 ### Viewing FrameGroups
 
 Viewing and editing frames in a FrameGroup is similar to viewing and editing SingleFrames. 
-Click the FrameGroup in the Dataset. In the frame viewer, select SingleFrame to view / modify from 
+Click the FrameGroup in the Hyper-Dataset. In the frame viewer, select SingleFrame to view / modify from 
 a dropdown list in the **Current Source** section.
 
 ![Frame dropdown menu in FrameGroup](../../img/hyperdatasets/framegroup_01.png)
 
-## Filtering frames
-### Simple frame filtering
+## Filtering Frames
+### Simple Frame Filtering
 
 Simple frame filtering applies one annotation object (ROI) label and returns frames containing at least one annotation 
 with that label. 
@@ -130,7 +130,7 @@ For example:
 </div>
 </details>
 
-### Advanced frame filtering
+### Advanced Frame Filtering
 
 Advanced frame filtering applies sophisticated filtering logic, which is composed of as many frame filters as needed, 
 where each frame filter can be a combination of ROI, frame, and source rules. 
@@ -156,7 +156,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 
 ### Examples
         
-#### ROI rules
+#### ROI Rules
 
 
 * Create one ROI rule for <code>person</code> shows the same three frames as the simple frame filter (above).
@@ -194,7 +194,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
    <br/>
 
 
-#### Frame rules
+#### Frame Rules
 
 Filter by metadata using Lucene queries.
 
@@ -223,7 +223,7 @@ Filter by metadata using Lucene queries.
     <br/>
 
     
-#### Source rules
+#### Source Rules
 
 Filter by sources using Lucene queries.    
 
@@ -243,7 +243,7 @@ Use Lucene queries in ROI label filters and frame rules.
         
 ## Annotations
 
-### Frame objects (Regions of Interest)
+### Frame Objects (Regions of Interest)
 
 You can add annotations by drawing new bounding areas, and copying existing annotations in the same or other frames.
 
@@ -288,7 +288,7 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 1. Optionally, navigate to a different frame.
 1. Click **PASTE**.
 
-### Frame labels
+### Frame Labels
 
 **To add frame labels:**
 
@@ -297,7 +297,7 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 1. Enter a label.
 1. Optionally, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />.
 
-### Annotation management
+### Annotation Management
 
 **To move annotations:**
 
@@ -331,7 +331,7 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 * Change - In the annotation label textbox, choose a label from the list or type a new label.
 * Delete - In the annotation, in the label area, click the label's **X**.
 
-## Frame metadata
+## Frame Metadata
 
 **To edit frame metadata:** 
 

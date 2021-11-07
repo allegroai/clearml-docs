@@ -7,8 +7,13 @@ Use the Profile page to manage a **ClearML** user account, including:
 * [User preferences](#setting-user-preferences) - Set **ClearML Web UI** options.
 * [Cloud Storage access for the ClearML Web UI](#providing-cloud-storage-access-for-the-clearml-web-ui) - So that the **ClearML Web UI** can render data stored in a Cloud, such as debug samples.
 * [ClearML credentials](#creating-clearml-credentials) - Create **ClearML** credentials to configure **ClearML** and **ClearML Agent** (if you run **ClearML Agent** commands directly).
+* [Configuration vault](#configuration-vault) (supported by the Enterprise Server) - Define additional **ClearML** configuration entries that are applied to all **ClearML** and **ClearML Agent** instances (which use this profile's access credentials).
 * [Switch workspaces](#switching-workspaces) - If using multiple workspaces (are a member of more than one **ClearML Hosted Service** team), switch workspaces.
 * [Invite new teammates](#inviting-new-teammates) - Collaborate with new users by inviting them to a **ClearML Hosted Service** workspace.
+
+![Profile page](../img/webapp_profile.png)
+
+## Setting User Preferences
 
 ## Setting user preferences
 
@@ -29,7 +34,7 @@ Users that use their own **ClearML Server** can choose whether to send anonymous
     * **Region** - The region for AWS S3.
     * **Host (Endpoint)** - The host for non-AWS S3 servers.
 
-## Creating ClearML credentials
+## Creating ClearML Credentials
 
 **ClearML** credentials include:
 * Access key
@@ -53,9 +58,31 @@ switch to it.
 
 1. In **App Credentials** **>** **+ Create new credentials**.
 
-## Switching workspaces
+## Configuration Vault
 
-:::note
+:::note Feature Support
+The configuration vault is only supported by the **ClearML Enterprise Server**
+:::
+
+![Configuration vault](../img/webapp_profile_configuration_vault.png)
+
+Use the configuration vault to enter global ClearML configuration entries in any of ClearML supported configuration 
+formats: HOCON / JSON / YAML. When the vault is enabled, the inputted configurations will be used by ClearML Agents and the ClearML SDK running with the user's credentials.
+New entries will extend the configuration in the ClearML [configuration file](../configs/clearml_conf.md), and
+existing configurations will be overridden.
+
+**To edit vault contents:**
+* Click **EDIT** or double click the vault box
+* Insert / edit the configurations in the vault 
+* Press **OK**
+
+**To apply vault contents:**
+* Click the toggle atop the vault to enable / disable the configurations
+* Once enabled, the configurations will be merged to the configuration file during ClearML and ClearML Agent usage 
+
+## Switching Workspaces
+
+:::note Feature Support
 Switching workspaces does not apply to users of a self-hosted **ClearML Server**
 :::
 
@@ -67,9 +94,10 @@ Switching workspaces does not apply to users of a self-hosted **ClearML Server**
   Click the workspace to switch to.
 * Profile page - In the **WORKSPACES** section, click **SWITCH TO WORKSPACE** **>** Click the workspace to switch to.
 
-## Inviting new teammates
 
-:::note
+## Inviting New Teammates
+
+:::note Feature Support
 Inviting new teammates does not apply to users of a self-hosted **ClearML Server**.
 :::
 
@@ -88,7 +116,7 @@ section shows the current members of the team, and whether the team has reached 
 
 1. Send the invitation hyperlink to an invitee.
 
-## Leaving a workspace
+## Leaving a Workspace
 
 A member of a workspace can leave the workspace and no longer be a member of that team.
 

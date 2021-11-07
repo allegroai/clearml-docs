@@ -81,8 +81,12 @@ module.exports = {
               to: '/docs/references/sdk/task',
             },
             {
+              label: 'HyperDatasets',
+              to: '/docs/references/hyperdataset/hyperdataset',
+            },
+            {
               label: 'Server API',
-              to: '/docs/references/api/endpoints',
+              to: '/docs/references/api/index',
             },
             {
               label: 'Agent Reference',

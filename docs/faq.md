@@ -378,12 +378,30 @@ After thirty minutes, it remains unchanged.
 
 **Can I control what ClearML automatically logs?** <a id="controlling_logging"></a>
 
-Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks. 
+Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
+by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
 
-When initializing a Task by calling the `Task.init` method, provide the `auto_connect_frameworks` parameter to control 
-framework logging, and the `auto_connect_streams` parameter to control `stdout`, `stderr`, and standard logging. The 
-values are `True`, `False`, and a dictionary for fine-grain control. See [Task.init](references/sdk/task.md#classmethod-initproject_namenone-task_namenone-task_typetasktypestraining-training-tagsnone-reuse_last_task_idtrue-continue_last_taskfalse-output_urinone-auto_connect_arg_parsertrue-auto_connect_frameworkstrue-auto_resource_monitoringtrue-auto_connect_streamstrue).
+To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
+parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
 
+For example: 
+```python
+auto_connect_frameworks={
+    'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
+    'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
+}
+```
+
+To control the `stdout`, `stderr`, and standard logging, use the `auto_connect_streams` parameter. 
+To disable logging all three, set the parameter to `False`. For finer grained control, input a dictionary, where the keys are `stout`, `stderr`, 
+and `logging`, and the values are booleans. For example: 
+
+```python
+auto_connect_streams={'stdout': True, 'stderr': True, 'logging': False}
+```
+
+See [`Task.init`](references/sdk/task.md#taskinit).
 
 <br/>
 
@@ -471,7 +489,7 @@ experiment info panel > EXECUTION tab.
 
 **I read there is a feature for centralized model storage. How do I use it?** <a id="centralized-model-storage"></a>
 
-When calling [Task.init](references/sdk/task.md#classmethod-initproject_namenone-task_namenone-task_typetasktypestraining-training-tagsnone-reuse_last_task_idtrue-continue_last_taskfalse-output_urinone-auto_connect_arg_parsertrue-auto_connect_frameworkstrue-auto_resource_monitoringtrue-auto_connect_streamstrue), 
+When calling [Task.init](references/sdk/task.md#taskinit), 
 providing the `output_uri` parameter allows you to specify the location in which model checkpoints (snapshots) will be stored.
 
 For example, to store model checkpoints (snapshots) in `/mnt/shared/folder`:
@@ -533,7 +551,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
         pip install clearml
 
-1. Use the [Task.set_credentials](references/sdk/task.md#classmethod-set_credentialsapi_hostnone-web_hostnone-files_hostnone-keynone-secretnone-store_conf_filefalse) 
+1. Use the [Task.set_credentials](references/sdk/task.md#taskset_credentials) 
    method to specify the host, port, access key and secret key (see step 1).
 
         # Set your credentials using the trains apiserver URI and port, access_key, and secret_key.
@@ -684,7 +702,7 @@ on the "Configuring Your Own ClearML Server" page.
 
 **Can I add web login authentication to ClearML Server?** <a id="web-auth"></a>
 
-By default, anyone can login to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
+By default, anyone can log in to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
 
 For detailed instructions, see [Web Login Authentication](deploying_clearml/clearml_server_config.md#web-login-authentication) 
 on the "Configuring Your Own ClearML Server" page in the "Deploying ClearML" section.

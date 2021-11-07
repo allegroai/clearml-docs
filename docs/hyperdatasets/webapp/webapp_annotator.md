@@ -42,30 +42,30 @@ Use annotation tasks to efficiently organize the annotation of frames in Dataset
             
 1. Click **Create**.
 
-### Completing annotation tasks
+### Completing Annotation Tasks
 
 To mark an annotation task as **Completed**:
 
 * In the annotation task card, click <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu) **>** **Complete** **>** **CONFIRM**.
 
-### Deleting annotation tasks
+### Deleting Annotation Tasks
 
 To delete an annotation task:
 
 * In the annotation task card, click <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> (menu) **>** **Delete** **>** **CONFIRM**.
 
-### Filtering annotation tasks
+### Filtering Annotation Tasks
 
 There are two option for filtering annotation tasks:
 
 * Active / Completed Filter - Toggle to show annotation tasks that are either **Active** or **Completed**
 * Dataset Filter - Use to view only the annotation tasks for a specific Dataset.
 
-### Sorting annotation tasks
+### Sorting annotation Tasks
 
 Sort the annotation tasks by either using **RECENT** or **NAME** from the drop-down menu on the top left of the page.  
 
-### Viewing annotation task information
+### Viewing Annotation Task Information
 
 To View the Dataset version, filters, and iteration information:
 
@@ -87,7 +87,7 @@ depend upon the settings in the annotation task (see [Creating Annotation Tasks]
 1. See instructions below about annotating frames.
 
 
-#### Add FrameGroup objects
+#### Add FrameGroup Objects
 
 1. Select an annotation mode and add the bounded area to the frame image.
 
@@ -100,63 +100,63 @@ depend upon the settings in the annotation task (see [Creating Annotation Tasks]
 1. Optionally, add metadata. 
 1. Optionally, lock the annotation.
 
-#### Add frame labels
+#### Add Frame Labels
 
 1. In **FRAME LABEL**, click **+ Add new**.
 1. In the new label area, choose or enter a label. 
 1. Optionally, add metadata. 
 1. Optionally, lock the annotation.
 
-#### Copy / paste an annotations
+#### Copy / Paste an Annotations
 
 1. Click the annotation or bounded area in the image or video clip.
 1. Optionally, navigate to a different frame.
 1. Click **PASTE**. The new annotation appears in the same location as the one you copied.
 1. Optionally, to paste the same annotation, again, click **PASTE**.
 
-#### Copy / paste all annotations
+#### Copy / Paste All Annotations
 
 1. Click **COPY ALL**.
 1. Optionally, navigate to a different frame.
 1. Click **PASTE**.
 
-#### Move annotations
+#### Move Annotations
 
 * Move a bounded area by clicking on it and dragging.
 
-#### Resize annotations
+#### Resize Annotations
 
 * Resize a bounded area by clicking on a vertex and dragging.
 
-#### Delete annotations
+#### Delete Annotations
 
 1. Click the annotation or bounded area in the image or video clip.
 1. Press **DELETE** or in the annotation, click **>X**.
 
-#### Add labels
+#### Add Labels
 
 * Click in the annotation and choose a label from the label list, or type a new label.
 
-#### Modify labels
+#### Modify Labels
 
 * In the annotation label textbox, choose a label from the list or type a new label.
 
-#### Delete labels
+#### Delete Labels
 
 * In the annotation, in the label area, click the label's **X**.
 
-#### Modify annotation metadata
+#### Modify Annotation Metadata
 
 * In the label, click edit and then in the popup modify the metadata dictionary (in JSON format).
 
-#### Modify annotation color
+#### Modify Annotation Color
 
 * Modify the color of an area by clicking the circle in the label name and select a new color.
 
-#### Lock / unlock annotations
+#### Lock / Unlock Annotations
 
 * Click the lock.
 
-#### Modify frame metadata
+#### Modify Frame Metadata
 
 * Expand the **FRAME METADATA** area, click edit, and then in the popup modify the metadata dictionary (in JSON format).

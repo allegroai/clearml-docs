@@ -2,7 +2,7 @@
 title: Best Practices
 ---
 
-This section talks about what made us design ClearML the way we did and how does it reflect on ML \ DL workflows.
+This section talks about what made us design ClearML the way we did and how it reflects on ML / DL workflows.
 While ClearML was designed to fit into any workflow, we do feel that working as we describe below brings a lot of advantages from organizing one's workflow
 and furthermore, preparing it to scale in the long term.
 
@@ -12,7 +12,7 @@ The below is only our opinion. ClearML was designed to fit into any workflow whe
 
 ## Develop Locally
 
-**Work on a machine that is easily managable!** 
+**Work on a machine that is easily manageable!** 
 
 During early stages of model development, while code is still being modified heavily, this is the usual setup we'd expect to see used by data scientists:
 
@@ -21,35 +21,35 @@ During early stages of model development, while code is still being modified hea
   - A workstation with a GPU, usually with a limited amount of memory for small batch-sizes. This is used to train the model and ensure the model we chose makes sense and that the training
   procedure works. Can be used to provide initial models for testing. 
 
-The abovementioned setups might be folded into each other and that's great! If you have a GPU machine for each researcher that's awesome! 
-The goal of this phase is to get a code, dataset and environment set-up so we can start digging to find the best model!
+The abovementioned setups might be folded into each other and that's great! If you have a GPU machine for each researcher, that's awesome! 
+The goal of this phase is to get a code, dataset and environment setup, so we can start digging to find the best model!
 
--  [ClearML SDK](../../clearml_sdk.md) should be integrated into your code (Check out our [getting started](ds_first_steps.md)). 
-  This helps visualizing the results and track progress.
+-  [ClearML SDK](../../clearml_sdk.md) should be integrated into your code (check out our [getting started](ds_first_steps.md)). 
+  This helps visualizing the results and tracking progress.
 - [ClearML Agent](../../clearml_agent.md) helps moving your work to other machines without the hassle of rebuilding the environment every time, 
   while also creating an easy queue interface that easily allows you to just drop your experiments to be executed one by one
-  (Great for ensuring that the GPUs are churning during the weekend).
+  (great for ensuring that the GPUs are churning during the weekend).
 - [ClearML Session](../../apps/clearml_session.md) helps with developing on remote machines, just like you'd develop on you local laptop!
 
 ## Train Remotely
 
-In this phase, we scale our training efforts, and try to come up with the best code \ parameter \ data combination that 
+In this phase, we scale our training efforts, and try to come up with the best code / parameter / data combination that 
 yields the best performing model for our task!
 
   - The real training (usually) should **not** be executed on your development machine.
   - Training sessions should be launched and monitored from a web UI.
   - You should continue coding while experiments are being executed without interrupting them.
-  - Stop optimizing your code because your machine struggles, and run it on a beefier machine (cloud \ on-prem).
+  - Stop optimizing your code because your machine struggles, and run it on a beefier machine (cloud / on-prem).
 
-Visulization and comparisons dashboards keep your sanity at bay! In this stage we usually have a docker container with all the binaries 
+Visualization and comparisons dashboards keep your sanity at bay! In this stage we usually have a docker container with all the binaries 
 that we need. 
 - [ClearML SDK](../../clearml_sdk.md) ensures that all the metrics, parameters and Models are automatically logged and can later be 
   accessed, [compared](../../webapp/webapp_exp_comparing.md) and [tracked](../../webapp/webapp_exp_track_visual.md).
-- [ClearML Agent](../../clearml_agent.md) does the heavy lifting. It reproduces the execution environment, clones your code 
-  , apply code patches, manage parameters (Including overriding them on the fly), execute the code and queue multiple tasks
-  It can even [build](../../clearml_agent.md#buildingdockercontainers) the docker container for you!
--[ClearML Pipelines](../../fundamentals/pipelines.md) ensures that steps run in the same order, 
-  programatically chaining tasks together, while giving an overview of the execution pipeline's status.<br/>
+- [ClearML Agent](../../clearml_agent.md) does the heavy lifting. It reproduces the execution environment, clones your code, 
+  applies code patches, manages parameters (Including overriding them on the fly), executes the code and queues multiple tasks
+  It can even [build](../../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container) the docker container for you!  
+- [ClearML Pipelines](../../fundamentals/pipelines.md) ensure that steps run in the same order, 
+  programmatically chaining tasks together, while giving an overview of the execution pipeline's status.
 
 **Your entire environment should magically be able to run on any machine, without you working hard.** 
 
@@ -58,20 +58,23 @@ that we need.
 We believe that you should track everything! From obscure parameters to weird metrics, it's impossible to know what will end up
 improving our results later on!
 
-- Make sure experiments are reproducible! ClearML logs  code, parameters, environment in a single, easily searchable place. 
-- Development is not linear. Configuration \ Parameters should not be stored in your git
-  they are temporary, and we constantly change them. But we still need to log them because who knows one day...
+- Make sure experiments are reproducible! ClearML logs code, parameters, environment in a single, easily searchable place. 
+- Development is not linear. Configuration / Parameters should not be stored in your git, as
+  they are temporary and constantly changing. They still need to be logged because who knows, one day...
 - Uncommitted changes to your code should be stored for later forensics in case that magic number actually saved the day. Not every line change should be committed.
 - Mark potentially good experiments, make them the new baseline for comparison.
 
 ## Visibility Matters
 
 While it's possible to track experiments with one tool, and pipeline them with another, we believe that having 
-everything under the same roof has its benefits! <br/>
-Being able to track experiments progress, compare experiments, and based on that send experiments to execution on remote
-machines (that also builds the environment themselves) has tremendous benefits in terms of visibility and ease of integration.<br/>
-Being able to have visibility into your pipeline, while using experiments already defined in the platform 
-enables users to have a clearer picture of what's the status of the pipeline 
-and makes it easier to start using pipelines earlier in the process by simplifying chaining tasks.<br/>
+everything under the same roof has its benefits! 
+
+Being able to track experiment progress and compare experiments, and based on that send experiments to execution on remote
+machines (that also build the environment themselves) has tremendous benefits in terms of visibility and ease of integration.
+
+Being able to have visibility in your pipeline, while using experiments already defined in the platform 
+enables users to have a clearer picture of the pipeline's status 
+and makes it easier to start using pipelines earlier in the process by simplifying chaining tasks.
+
 Managing datasets with the same tools and APIs that manage the experiments also lowers the barrier of entry into 
 experiment and data provenance.

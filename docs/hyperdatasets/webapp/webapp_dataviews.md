@@ -19,7 +19,7 @@ to a new position.
 * **CREATED** - Elapsed time since the Dataview was created.
 * **DESCRIPTION**
 
-## Customizing the Dataviews table
+## Customizing the Dataviews Table
 
 The Dataviews table can be customized. Changes are persistent (cached in the browser), and represented in the URL. 
 Save customized settings in a browser bookmark, and share the URL with teammates.
@@ -43,7 +43,7 @@ all the Dataviews in the project. The customizations of these two views are save
 :::
 
 
-## Dataview actions
+## Dataview Actions
 
 The following table describes the actions that can be performed from the Dataviews table. 
 
@@ -66,7 +66,7 @@ The same information can be found in the bottom menu, in a tooltip that appears 
 ![Dataviews table batch operations](../../img/webapp_dataview_table_batch_operations.png)
 
 
-## Viewing, adding, and editing Dataviews
+## Viewing, Adding, and Editing Dataviews
 
 **To view, add, or edit a Dataview:**
 

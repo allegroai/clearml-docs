@@ -53,7 +53,7 @@ preprocess_task = Task.get_task(task_id='the_preprocessing_task_id')
 local_csv = preprocess_task.artifacts['data'].get_local_copy()
 ```
 
-See more details in the using artifacts [example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
+See more details in the using artifacts [example](../guides/reporting/using_artifacts.md).
 
 ### List of Supported Artifacts
 
@@ -76,10 +76,14 @@ logs the models and all snapshot paths.
 
 ![image](../img/fundamentals_artifacts_logging_models.png)
 
-See model storage examples, [TF](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py),
-[PyTorch](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py),
-[Keras](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py),
-[Scikit-Learn](https://github.com/allegroai/clearml/blob/master/examples/frameworks/scikit-learn/sklearn_joblib_example.py).
+See automatic model logging examples: 
+* [TF](../guides/frameworks/tensorflow/tensorflow_mnist.md)
+* [PyTorch](../guides/frameworks/pytorch/pytorch_mnist.md)
+* [Keras](../guides/frameworks/keras/keras_tensorboard.md)
+* [Scikit-Learn](../guides/frameworks/scikit-learn/sklearn_joblib_example.md)
+* [XGBoost](../guides/frameworks/xgboost/xgboost_sample.md)
+* [FastAI](../guides/frameworks/fastai/fastai_with_tensorboard.md)
+
 
 ### Manual Model Logging 
 
@@ -121,6 +125,7 @@ output_model.update_weights()
 for model weight upload (`registered_uri`).
 * Model Metadata - Model description and iteration number. 
 
+See [Model Configuration](../guides/reporting/model_config.md) example.
 
 ### Using Models
 

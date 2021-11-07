@@ -2,7 +2,7 @@
 title: Next Steps
 ---
 
-So, we've [already](ds_first_steps.md) installed ClearML's python package and ran our first experiment!
+So, we've already [installed ClearML's python package](ds_first_steps.md) and ran our first experiment!
 
 Now, we'll learn how to track Hyperparameters, Artifacts and Metrics!
 
@@ -10,12 +10,13 @@ Now, we'll learn how to track Hyperparameters, Artifacts and Metrics!
 
 Every previously executed experiment is stored as a Task.
 A Task has a project and a name, both can be changed after the experiment has been executed.
-A Task is also automatically assigned an auto-generated unique identifier (UUID string) that cannot be changed and will always locate the same Task in the system.<br/>
+A Task is also automatically assigned an auto-generated unique identifier (UUID string) that cannot be changed and will always locate the same Task in the system.
+
 It's possible to retrieve a Task object programmatically by querying the system based on either the Task ID, 
 or project & name combination. It's also possible to query tasks based on their properties, like Tags.
 
-``` python
-prev_task = Task.get_task(task_id=’123456deadbeef’)
+```python
+prev_task = Task.get_task(task_id='123456deadbeef')
 ```
 
 Once we have a Task object we can query the state of the Task, get its Model, scalars, parameters, etc.
@@ -25,7 +26,8 @@ Once we have a Task object we can query the state of the Task, get its Model, sc
 For full reproducibility, it's paramount to save Hyperparameters for each experiment. Since Hyperparameters can have substantial impact
 on Model performance, saving and comparing these between experiments is sometimes the key to understand model behavior.
 
-ClearML supports logging `argparse` module arguments out of the box, so once integrating it into the code, it will automatically log all parameters provided to the argument parser.<br/>
+ClearML supports logging `argparse` module arguments out of the box, so once integrating it into the code, it will automatically log all parameters provided to the argument parser.
+
 It's also possible to log parameter dictionaries (very useful when parsing an external config file and storing as a dict object), 
 whole configuration files or even custom objects or [Hydra](https://hydra.cc/docs/intro/) configurations!
 
@@ -40,49 +42,52 @@ Check [this](../../fundamentals/hyperparameters.md) out for all Hyperparameter l
 
 ClearML allows you to easily store the output products of an experiment -  Model snapshot \ weights file, a preprocessing of your data, feature representation of data and more! 
 
-Essentially artifacts are files (or python objects) uploaded from a script and are stored alongside the Task.
+Essentially, artifacts are files (or python objects) uploaded from a script and are stored alongside the Task.
 These Artifacts can be easily accessed by the web UI or programmatically. 
-Artifacts can be stored anywhere, either on the ClearML server, or any object storage solution or shared folder.<br/>
-see all [storage capabilities](../../integrations/storage).
+
+Artifacts can be stored anywhere, either on the ClearML server, or any object storage solution or shared folder. 
+See all [storage capabilities](../../integrations/storage).
 
 
-### Adding artifacts
+### Adding Artifacts
 
 Uploading a local file containing the preprocessed results of the data:
 ```python
-task.upload_artifact(‘/path/to/preprocess_data.csv’, name=’data’)
+task.upload_artifact('/path/to/preprocess_data.csv', name='data')
 ```
 
-We can also upload an entire folder with all its content by passing the folder (the folder will be zipped and uploaded as a single zip file)
+We can also upload an entire folder with all its content by passing the folder (the folder will be zipped and uploaded as a single zip file).
 ```python
-task.upload_artifact(‘/path/to/folder/’, name=’folder’)
+task.upload_artifact('/path/to/folder/', name='folder')
 ```
 
-Lastly we can upload an instance of an object, Numpy/Pandas/PIL Images are supported with npz/csv.gz/jpg formats accordingly.
+Lastly, we can upload an instance of an object; Numpy/Pandas/PIL Images are supported with npz/csv.gz/jpg formats accordingly.
 If the object type is unknown ClearML pickles it and uploads the pickle file.
 
 ```python
-task.upload_artifacts(my_numpy_matrix, name=’features’)
+task.upload_artifacts(my_numpy_matrix, name='features')
 ```
 
 Check out all [artifact logging](../../fundamentals/artifacts.md) options.
 
 ### Using Artifacts
 
-Logged Artifacts can be used by other Tasks, whether it's a pretrains Model or processed data.
+Logged Artifacts can be used by other Tasks, whether it's a pre-trained Model or processed data.
 To use an Artifact, first we have to get an instance of the Task that originally created it, 
-then we either download it and get it's path, or get the Artifact object directly.<br/>
+then we either download it and get its path, or get the Artifact object directly.
+
 For example, using a previously generated preprocessed data.
 
 ```python
-preprocess_task = Task.get_task(task_id=’preprocessing_task_id’)
-local_csv = preprocess_task.artifacts[’data’].get_local_copy()
+preprocess_task = Task.get_task(task_id='preprocessing_task_id')
+local_csv = preprocess_task.artifacts['data'].get_local_copy()
 ```
 
-The `task.artifacts` is a dictionary where the keys are the Artifacts names and the returned object is the Artifact object.
-Calling ‘get_local_copy()’ will return a local cached copy of the artifact, 
+The `task.artifacts` is a dictionary where the keys are the Artifact names, and the returned object is the Artifact object.
+Calling `get_local_copy()` will return a local cached copy of the artifact, 
 this means that the next time we execute the code we will not need to download the artifact again.
-Calling 'get()' will get a deserialized pickled object. 
+Calling `get()` will get a deserialized pickled object. 
+
 Check out the [artifacts retrieval](https://github.com/allegroai/clearml/blob/master/examples/reporting/artifacts_retrieval.py) example code.
 
 ### Models
@@ -94,10 +99,10 @@ we need to pass a storage location for the model files to be uploaded to.
 
 For example uploading all snapshots to our S3 bucket:
 ```python
-task = Task.init(project_name=’examples’, task_name=’storing model’, output_uri=’s3://my_models/’)
+task = Task.init(project_name='examples', task_name='storing model', output_uri='s3://my_models/')
 ```
 
-From now on, whenever the framework (TF/Keras/PyTroch etc.) will be storing a snapshot, the model file will automatically get uploaded to our bucket under a specific folder for the experiment.
+From now on, whenever the framework (TF/Keras/PyTorch etc.) will be storing a snapshot, the model file will automatically get uploaded to our bucket under a specific folder for the experiment.
 
 Loading models by a framework is also logged by the system, these models appear under the “Input Models” section, under the Artifacts tab.
 
@@ -110,14 +115,14 @@ Check out model snapshots examples for [TF](https://github.com/allegroai/clearml
 Loading a previously trained model is quite similar to loading artifacts.
 
 ```python
-prev_task = Task.get_task(task_id=’the_training_task’)
-last_snapshot = prev_task.models[‘output’][-1]
+prev_task = Task.get_task(task_id='the_training_task')
+last_snapshot = prev_task.models['output'][-1]
 local_weights_path = last_snapshot.get_local_copy()
 ```
 
 Like before we have to get the instance of the Task training the original weights files, then we can query the task for its output models (a list of snapshots), and get the latest snapshot.
 :::note
-Using Tensorflow, the snapshots are stored in a folder, meaning the ‘local_weights_path’ will point to a folder containing our requested snapshot.
+Using Tensorflow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing our requested snapshot.
 :::
 As with Artifacts all models are cached, meaning the next time we will run this code, no model will need to be downloaded.
 Once one of the frameworks will load the weights file, the running Task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.
@@ -126,9 +131,11 @@ This feature allows you to easily get a full genealogy of every trained and used
 ## Log Metrics
 
 Full metrics logging is the key to finding the best performing model!
-By default, everything that's reported to Tensorboard & Matplotlib is automatically captured and logged.<br/>
-Since not all metrics are tracked that way, it's also possible to manually report metrics using the `logger` object.<br/>
-It's possible to log everything, from time series data to confusion matrices to HTML, Audio and Video, to custom plotly graphs! Everything goes!<br/>
+By default, everything that's reported to Tensorboard & Matplotlib is automatically captured and logged.
+
+Since not all metrics are tracked that way, it's also possible to manually report metrics using the `logger` object.
+
+It's possible to log everything, from time series data to confusion matrices to HTML, Audio and Video, to custom plotly graphs! Everything goes!
 
 ![image](../../img/report_plotly.png)
 
@@ -149,12 +156,14 @@ It's possible to  filter and sort based on parameters and metrics, so creating c
 Create a dashboard for a project, presenting the latest Models and their accuracy scores, for immediate insights. 
 
 It can also be used as a live leaderboard, showing the best performing experiments' status, updated in real time.
-This is helpful to monitor your projects' progress, and share it across the organization.<br/>
-Any page is sharable by copying the URL from the address bar, allowing you to bookmark leaderboards or send an exact view of a specific experiment or a comparison view.<br/>
+This is helpful to monitor your projects' progress, and share it across the organization.
+
+Any page is sharable by copying the URL from the address bar, allowing you to bookmark leaderboards or send an exact view of a specific experiment or a comparison view.
+
 It's also possible to tag Tasks for visibility and filtering allowing you to add more information on the execution of the experiment. 
 Later you can search based on task name and tag in the search bar, and filter experiments based on their tags, parameters, status and more.
 
-## What's next?
+## What's Next?
 
 This covers the Basics of ClearML! Running through this guide we've learned how to log Parameters, Artifacts and Metrics!
 
@@ -164,7 +173,7 @@ or check these pages out:
 - Scale you work and deploy [ClearML Agents](../../clearml_agent.md)
 - Develop on remote machines with [ClearML Session](../../apps/clearml_session.md)
 - Structure your work and put it into [Pipelines](../../fundamentals/pipelines.md)
-- Improve your experiments with [HyperParameter Optimization](https://github.com/allegroai/clearml/tree/master/examples/optimization/hyper-parameter-optimization)
+- Improve your experiments with [HyperParameter Optimization](../../fundamentals/hpo.md)
 - Check out ClearML's integrations to [external libraries](../../integrations/libraries.md).
 
  
