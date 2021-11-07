@@ -7,7 +7,7 @@ Hyperparameters are variables that directly control the behaviors of training al
 the performance of the resulting machine learning models. Finding the hyperparameter values that yield the best 
 performing models can be complicated. Manually adjusting hyperparameters over the course of many training trials can be 
 slow and tedious. Luckily, hyperparameter optimization can be automated and boosted using ClearML's 
-**`HyperParameterOptimizer`** class.
+[**`HyperParameterOptimizer`**](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class.
 
 ## ClearML's HyperParameter Optimization
 
@@ -50,17 +50,17 @@ The `HyperParameterOptimizer` class contains **ClearML**’s hyperparameter opti
 using different optimizers, including existing software frameworks, enabling simple, accurate, and fast hyperparameter 
 optimization.
 
-* **Optuna** - `automation.optuna.optuna.OptimizerOptuna`. Optuna is the default optimizer in ClearML. It makes use of 
+* **Optuna** - [`automation.optuna.OptimizerOptuna`](../references/sdk/hpo_optuna_optuna_optimizeroptuna.md). Optuna is the default optimizer in ClearML. It makes use of 
   different samplers such as grid search, random, bayesian, and evolutionary algorithms. 
   For more information, see the [Optuna](https://optuna.readthedocs.io/en/latest/) 
   documentation.
-* **BOHB** - `automation.hpbandster.bandster.OptimizerBOHB`. BOHB performs robust and efficient hyperparameter optimization 
+* **BOHB** - [`automation.hpbandster.OptimizerBOHB`](../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md). BOHB performs robust and efficient hyperparameter optimization 
   at scale by combining the speed of Hyperband searches with the guidance and guarantees of convergence of Bayesian Optimization. 
   For more information about HpBandSter BOHB, see the [HpBandSter](https://automl.github.io/HpBandSter/build/html/index.html) 
   documentation and a [code example](../guides/frameworks/pytorch/notebooks/image/hyperparameter_search.md).
-* **Random** uniform sampling of hyperparameters - `automation.optimization.RandomSearch`.
-* **Full grid** sampling strategy of every hyperparameter combination - `Grid search automation.optimization.GridSearch`.
-* **Custom** - `automation.optimization.SearchStrategy` - Use a custom class and inherit from the ClearML automation base strategy class 
+* **Random** uniform sampling of hyperparameters - [`automation.RandomSearch`](../references/sdk/hpo_optimization_randomsearch.md).
+* **Full grid** sampling strategy of every hyperparameter combination - [`automation.GridSearch`](../references/sdk/hpo_optimization_gridsearch.md).
+* **Custom** - [`automation.optimization.SearchStrategy`](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L268) - Use a custom class and inherit from the ClearML automation base strategy class 
 
 
 ## Defining a Hyperparameter Optimization Search Example
@@ -114,7 +114,7 @@ optimization.
         max_iteration_per_job=150000,  
         )
   ```
-<br/><br/>
+<br/>
 
 For more information about `HyperParameterOptimizer` and supported optimization modules, see the [HyperParameterOptimizer class reference](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
 

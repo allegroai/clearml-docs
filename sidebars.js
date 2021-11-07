@@ -67,27 +67,26 @@ module.exports = {
                 {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
                 {'FastAI': ['guides/frameworks/fastai/fastai_with_tensorboard']},
                 {
-                    'Keras': ['guides/frameworks/keras/allegro_clearml_keras_tb_example', 'guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']
+                    'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']
                 },
                 {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
-                {'Matplotlib': ['guides/frameworks/matplotlib/allegro_clearml_matplotlib_example', 'guides/frameworks/matplotlib/matplotlib_example']},
-                {
-                    'PyTorch': ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
+                {'Matplotlib': ['guides/frameworks/matplotlib/matplotlib_example']},
+                {'PyTorch':
+                        ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
                         'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
-                        'guides/frameworks/pytorch/tensorboard_toy_pytorch']
+                        'guides/frameworks/pytorch/tensorboard_toy_pytorch',
+                            {'PyTorch Notebooks': [
+                                {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
+                                {'Image': ['guides/frameworks/pytorch/notebooks/image/hyperparameter_search', 'guides/frameworks/pytorch/notebooks/image/image_classification_CIFAR10']},
+                                {'Table': ['guides/frameworks/pytorch/notebooks/table/download_and_preprocessing', 'guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline']},
+                                {'Text': ['guides/frameworks/pytorch/notebooks/text/text_classification_AG_NEWS']}]
+                            }
+                            ]
                 },
                 {'PyTorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch ignite/pytorch_ignite_mnist']},
                 {'PyTorch Lightning': ['guides/frameworks/pytorch_lightning/pytorch_lightning_example']},
-                {
-                    'PyTorch Notebooks': [
-                        {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
-                        {'Image': ['guides/frameworks/pytorch/notebooks/image/hyperparameter_search', 'guides/frameworks/pytorch/notebooks/image/image_classification_CIFAR10']},
-                        {'Table': ['guides/frameworks/pytorch/notebooks/table/download_and_preprocessing', 'guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline']},
-                        {'Text': ['guides/frameworks/pytorch/notebooks/text/text_classification_AG_NEWS']}
-                    ]
-                },
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
-                {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx']},
+                {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx', "guides/frameworks/tensorboardx/video_tensorboardx"]},
                 {
                     'Tensorflow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
                         'guides/frameworks/tensorflow/tensorflow_mnist', 'guides/frameworks/tensorflow/integration_keras_tuner']
@@ -99,7 +98,7 @@ module.exports = {
             {'Optimization': ['guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt']},
             {'Pipelines': ['guides/pipeline/pipeline_controller']},
 
-            {'Reporting': ['guides/reporting/explicit_reporting','guides/reporting/3d_plots_reporting', 'guides/reporting/artifacts', 'guides/reporting/clearml_logging_example', 'guides/reporting/html_reporting',
+            {'Reporting': ['guides/reporting/explicit_reporting','guides/reporting/3d_plots_reporting', 'guides/reporting/artifacts', 'guides/reporting/using_artifacts', 'guides/reporting/clearml_logging_example', 'guides/reporting/html_reporting',
                 'guides/reporting/hyper_parameters', 'guides/reporting/image_reporting', 'guides/reporting/manual_matplotlib_reporting', 'guides/reporting/media_reporting',
                 'guides/reporting/model_config', 'guides/reporting/pandas_reporting', 'guides/reporting/plotly_reporting',
                 'guides/reporting/scalar_reporting', 'guides/reporting/scatter_hist_confusion_mat_reporting', 'guides/reporting/text_reporting']},
@@ -135,7 +134,6 @@ module.exports = {
                 'references/sdk/hpo_parameters_parameterset',
                 ]},
     ],
-
     hyperdatasetsSidebar: [
         'hyperdatasets/overview',
         {'Frames': [
@@ -166,11 +164,21 @@ module.exports = {
             'hyperdatasets/webapp/webapp_annotator'
         ]}
     ],
-
-
-    apiSidebar: [
-        'references/api/definitions',
-        'references/api/endpoints',
+    sdkHyperDataset: [
+        {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
+        {'DataFrame': ['references/hyperdataset/singleframe',
+            'references/hyperdataset/framegroup', 'references/hyperdataset/annotation',]},
+        'references/hyperdataset/dataview',
     ],
-
+    apiSidebar: [
+        'references/api/index',
+        'references/api/definitions',
+        'references/api/login',
+        'references/api/debug',
+        'references/api/projects',
+        'references/api/queues',
+        'references/api/workers',
+        'references/api/events',
+        'references/api/tasks',
+    ]
 };

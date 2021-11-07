@@ -9,9 +9,9 @@ the configuration and label enumeration with it.
 
 When the script runs, it creates an experiment named `Model configuration example`, which is associated with the `examples` project.
 
-## Configuring models
+## Configuring Models
 
-### Using a configuration file
+### Using a Configuration File
 
 Connect a configuration file to a Task by calling the [Task.connect_configuration](../../references/sdk/task.md#connect_configuration) 
 method with the file location and the configuration object's name as arguments. In this example, we connect a JSON file and a YAML file
@@ -23,13 +23,13 @@ to a Task.
     config_file_yaml = 'data_samples/config_yaml.yaml'
     task.connect_configuration(configuration=config_file_yaml, name="yaml file")        
 
-**ClearML** reports the configurations in the **ClearML Web UI** experiment details **>** **CONFIGURATION** tab **>** **CONFIGURATION OBJECTS** 
+The configuration is logged to the ClearML Task and can be viewed in the **ClearML Web UI** experiment details **>** **CONFIGURATION** tab **>** **CONFIGURATION OBJECTS** 
 section. The contents of the JSON file will appear in the **json file** object, and the contents of the YAML file will appear 
 in the **yaml file** object, as specified in the `name` parameter of the `connect_configuration` method. 
 
 ![image](../../img/examples_reporting_config.png)
 
-### Configuration dictionary
+### Configuration Dictionary
 
 Connect a configuration dictionary to a Task by creating a dictionary, and then calling the [Task.connect_configuration](../../references/sdk/task.md#connect_configuration) 
 method with the dictionary and the object name as arguments. After the configuration is connected, **ClearML** tracks changes to it.
@@ -45,12 +45,12 @@ method with the dictionary and the object name as arguments. After the configura
     model_config_dict['new value'] = 10
     model_config_dict['CHANGE ME'] *= model_config_dict['new value']
 
-**ClearML** reports the configuration in the **ClearML Web UI** **>** experiment details **>** **CONFIGURATION** tab **>** 
+The configurations are connected to the ClearML Task and can be viewed in the **ClearML Web UI** **>** experiment details **>** **CONFIGURATION** tab **>** 
 **CONFIGURATION OBJECTS** area **>** **dictionary** object.
 
 ![image](../../img/examples_reporting_config_3.png)
 
-## Label enumeration
+## Label Enumeration
 
 Connect a label enumeration dictionary by creating the dictionary, and then calling the [Task.connect_label_enumeration](../../references/sdk/task.md#connect_label_enumeration) 
 method with the dictionary as an argument.

@@ -17,6 +17,8 @@ metadata and data.
 These parent-child version relationships can be represented as version trees with a root-level parent. A Dataset 
 can contain one or more trees.
 
+Mask-labels can be defined globally, for a DatasetVersion, which will be applied to all masks in that version.
+
 ## Dataset Version State
 
 Dataset versions can have either **Draft** or **Published** status. 
@@ -80,7 +82,7 @@ myDataset = DatasetVersion.create_new_dataset(dataset_name='myDataset',
                                               description='some description text')
 ```
     
-### Accessing current Dataset
+### Accessing Current Dataset
 
 To get the current Dataset, use the `DatasetVersion.get_current` method.
 
@@ -130,11 +132,11 @@ version at the root level), or the last child in the Dataset versions tree is *P
 Creating a version in a simple version structure may convert it to an advanced structure. This happens when creating 
 a Dataset version that yields a parent with two children, or when publishing the last child version.  
 
-## Versioning Usage
+## DatasetVersion Usage
 
 Manage Dataset versioning using the DatasetVersion class in the ClearML Enterprise SDK.
 
-### Creating snapshots
+### Creating Snapshots
 
 If the Dataset contains only one version whose status is *Draft*, snapshots of the current version can be created.
 When creating a snapshot, the current version becomes the snapshot (it keeps the same version ID),
@@ -143,7 +145,7 @@ and the newly created version (with its new version ID) becomes the current vers
 To create a snapshot, use the `DatasetVersion.create_snapshot` method. 
 
 
-#### Snapshot naming
+#### Snapshot Naming
 
 In the simple version structure, ClearML Enterprise supports two methods for snapshot naming:
 * **Timestamp naming** - If only the Dataset name or ID is provided, the snapshot is named `snapshot` with a timestamp 
@@ -172,7 +174,7 @@ In the simple version structure, ClearML Enterprise supports two methods for sna
   The newly created version (with a new version ID) becomes the current version, and its name is `Current`.
 
 
-#### Current version naming
+#### Current Version Naming
 
 In the simple version structure, ClearML Enterprise supports two methods for current version naming:
 
@@ -189,7 +191,7 @@ myDataset = DatasetVersion.create_snapshot(dataset_name='MyDataset',
                                            child_name='NewCurrentVersionName')
 ```
 
-#### Adding metadata and comments
+#### Adding Metadata and Comments
 
 Add a metadata dictionary and / or comment to a snapshot.
 
@@ -201,7 +203,7 @@ myDataset = DatasetVersion.create_snapshot(dataset_name='MyDataset',
                                            child_comment='some text comment')
 ```
 
-### Creating child versions
+### Creating Child Versions
 
 Create a new version from any version whose status is *Published*. 
 
@@ -230,7 +232,7 @@ myVersion = DatasetVersion.create_version(dataset_name='MyDataset',
                                           raise_if_exists=True))
 ```
                                           
-### Creating root-level parent versions                                          
+### Creating Root-level Parent Versions                                          
 
 Create a new version at the root-level. This is a version without a parent, and it contains no frames.
 
@@ -239,7 +241,7 @@ myDataset = DatasetVersion.create_version(dataset_name='MyDataset',
                                           version_name='NewRootVersion')
 ```
 
-### Getting versions
+### Getting Versions
 
 To get a version or versions, use the `DatasetVersion.get_version` and `DatasetVersion.get_versions` 
 methods, respectively.
@@ -279,7 +281,7 @@ myDatasetversion = DatasetVersion.get_version(dataset_name='MyDataset',
                                               version_name='VersionName')
 ```
 
-### Deleting versions
+### Deleting Versions
 
 Delete versions which are status *Draft* using the `Dataset.delete_version` method.
 
@@ -291,7 +293,7 @@ myDataset.delete_version(version_name='VersionToDelete')
 ```
 
 
-### Publishing versions
+### Publishing Versions
 
 Publish (make read-only) versions which are status *Draft* using the `Dataset.publish_version` method. This includes the current version, if the Dataset is in
 the simple version structure.
@@ -303,3 +305,45 @@ myVersion = DatasetVersion.get_version(dataset_name='MyDataset',
 myVersion.publish_version()
 ```
 
+### Managing Version Mask-labels
+
+#### Setting Version Mask-label Mapping
+
+In order to visualize masks in a dataset version, the mask values need to be mapped to their labels. Mask-label 
+mapping is stored in a version's metadata. 
+
+To define the DatasetVersion level mask-label mapping, use the `set_masks_labels` method of the [DatasetVersion](dataset.md#dataset-versioning) 
+class, and input a dictionary of RGB-value tuple keys and label-list values.
+
+```python
+from allegroai import DatasetVersion
+
+# Getting a version 
+myDatasetversion = DatasetVersion.get_version(dataset_name='MyDataset', 
+                                              version_name='VersionName')
+
+# Mapping out colors and labels of masks 
+myDatasetversion.set_masks_labels(
+    {
+      (0, 0, 0): ["background"],
+      (1, 1, 1): ["person", "sitting"],
+      (2, 2, 2): ["cat"],
+    }
+)
+```
+
+#### Accessing Version Mask-label Mapping
+
+The mask values and labels are stored as a property in a dataset version's metadata.
+
+```python
+mappping = myDatasetversion.get_metadata()['mask_labels']
+
+print(mapping)
+```         
+
+This should return a dictionary of the version's masks and labels, which should look something like this:
+
+```python
+{'_all_': [{'value': [0, 0, 0], 'labels': ['background']}, {'value': [1, 1, 1], 'labels': ['person', 'sitting']}, {'value': [2, 2, 2], 'labels': ['cat']}]}
+```

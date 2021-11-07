@@ -40,7 +40,7 @@ When the script runs, it logs:
 
 ![image](../../../img/integration_keras_tuner_06.png)
 
-## Summary of hyperparameter optimization
+## Summary of Hyperparameter Optimization
 
 **ClearML** automatically logs the parameters of each experiment run in the hyperparameter search. They appear in tabular 
 form in **RESULTS** **>** **PLOTS**.
@@ -61,7 +61,7 @@ The model configuration is stored with the model.
 
 ![image](../../../img/integration_keras_tuner_05.png)
 
-## Configuration objects
+## Configuration Objects
 
 ### Hyperparameters
 

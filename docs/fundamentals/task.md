@@ -27,7 +27,7 @@ It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task mult
 
 ![Task](../img/fundamentals_task.png)
 
-## Task sections
+## Task Sections
 
 The sections of **ClearML Task** are made up of the information that a task captures and stores, which consists of code 
 execution details and execution outputs. This information is used for tracking 
@@ -48,7 +48,7 @@ The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-
 
 To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
 
-## Task types
+## Task Types
 
 Tasks have a *type* attribute, which denotes their purpose (Training / Testing / Data processing). This helps to further 
 organize projects and ensure tasks are easy to [search and find](#querying--searching-tasks). The default task type is *training*.
@@ -64,7 +64,7 @@ Available task types are:
     - *data_processing*, *qc* 
     - *custom*
 
-## Task lifecycle 
+## Task Lifecycle 
 
 ClearML Tasks are created in one of the following methods:
 * Manually running code that is instrumented with the ClearML SDK and invokes `Task.init()`.
@@ -102,7 +102,7 @@ The above diagram demonstrates how a previously run task can be used as a baseli
 1. The new task is enqueued for execution.
 1. A `clearml-agent` servicing the queue pulls the new task and executes it (where ClearML again logs all the execution outputs).
 
-## Task states
+## Task States
 
 The state of a Task represents its stage in the Task lifecycle. It indicates whether the Task is read-write (editable) or 
 read-only. For each state, a state transition indicates which actions can be performed on an experiment, and the new state 
@@ -153,6 +153,9 @@ task = Task.init(
     auto_connect_streams=True,    
 )
 ```
+
+When a Task is initialized, it automatically captures parameters and outputs from supported frameworks. To control what ClearML
+automatically logs, see this [FAQ](../faq.md#controlling_logging).
 
 Once a Task is created, the Task object can be accessed from anywhere in the code by calling [`Task.current_task`](../references/sdk/task.md#taskcurrent_task).
 
