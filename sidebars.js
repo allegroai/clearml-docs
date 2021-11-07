@@ -115,8 +115,6 @@ module.exports = {
     },
     sdkSidebar: [
             'references/sdk/task',
-            'references/sdk/scheduler',
-            'references/sdk/trigger',
             'references/sdk/logger',
             {'Model': ['references/sdk/model_model',
                 'references/sdk/model_inputmodel', 'references/sdk/model_outputmodel',]},
