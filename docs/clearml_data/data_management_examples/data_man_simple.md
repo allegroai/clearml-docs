@@ -30,7 +30,7 @@ the needed files.
     ```
 
 1. Now let's add a folder. File addition is recursive, so it's enough to point at the folder 
-to captures all files and subfolders:
+to captures all files and sub-folders:
    
    ```bash
    clearml-data add --files data_samples

@@ -23,28 +23,33 @@ When a dataset is pulled it will automatically pull all parent datasets and merg
 
 ## Setup
 
-`clearml-data` comes built-in with our `clearml` python package! Just check out the [Getting Started](getting_started/ds/ds_first_steps.md) guide for more info!
+`clearml-data` comes built-in with the `clearml` python package! Just check out the [Getting Started](../getting_started/ds/ds_first_steps.md) 
+guide for more info!
 
 ## Using ClearML Data
 
 ClearML Data offers two interfaces:
-- `clearml-data` - CLI utility for creating, uploading, and managing datasets. See [CLI](clearml_data_cli.md) for a reference of `clearml-data` commands.
+- `clearml-data` - A CLI utility for creating, uploading, and managing datasets. See [CLI](clearml_data_cli.md) for a reference of `clearml-data` commands.
 - `clearml.Dataset` - A python interface for creating, retrieving, managing, and using datasets. See [SDK](clearml_data_sdk.md) for an overview of the basic methods of the `Dataset` module.
 
 For an overview of our recommendations for ClearML Data workflows and practices, see [Best Practices](best_practices.md).
 
 ## WebApp 
 
-When using either interface of ClearML Data, the data can be visualized and retrieved with ClearML's WebApp. 
+ClearML's WebApp provides a visual interface to your datasets through dataset tasks. Dataset tasks are categorized 
+as data-processing [task type](../fundamentals/task.md#task-types), and they are labeled with a `DATASET` system tag.
 
-Once a dataset has been finalized, view its data genealogy in the dataset's
-page **>** **RESULTS** **>** **PLOTS**
+Full log (calls / CLI) of the dataset creation process can be found in a dataset's **EXECUTION** section.
 
-![Dataset genealogy and summary](../img/dataset_genealogy_summary.png)
-
-View a list of a dataset's contents in the dataset's page **> ARTIFACTS > data**. Download the dastaset 
-in zip folder format by clicking  <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" />,
+Listing of the dataset differential snapshot, summary of files added / modified / removed and details of files in the 
+differential snapshot (location / size / hash), is available in the **ARTIFACTS** section. Download the dataset 
+by clicking  <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" />,
 next to the **FILE PATH**.
+
+The full dataset listing (all files included) is available in the **CONFIGURATION** section under **Dataset Content**. 
+This allows you to quickly compare two dataset contents and visually see the difference.
+The dataset genealogy DAG and change-set summary table is visualized in **RESULTS > PLOTS**
+
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">Dataset Contents</summary>
@@ -57,7 +62,7 @@ next to the **FILE PATH**.
 
 <br/>
 
-View the  DAG of the dataset dependencies (all previous dataset versions and their parents) in the dataset's page **> ARTIFACTS > state**.
+View a DAG of the dataset dependencies (all previous dataset versions and their parents) in the dataset's page **> ARTIFACTS > state**.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">Data Dependency DAG</summary>
@@ -68,6 +73,18 @@ View the  DAG of the dataset dependencies (all previous dataset versions and the
 </div>
 </details>
 
+
+Once a dataset has been finalized, view its genealogy in the dataset's
+page **>** **RESULTS** **>** **PLOTS**
+
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">Dataset Genealogy</summary>
+<div className="cml-expansion-panel-content">
+
+![Dataset genealogy and summary](../img/dataset_genealogy_summary.png)
+
+</div>
+</details>
 
 
 

@@ -132,7 +132,7 @@ You can also search and query Tasks in the system.
 Use the `Task.get_tasks` call to retrieve Tasks objects and filter based on the specific values of the Task - status, parameters, metrics and more!
 ```python
 from clearml import Task
-tasks = Task.get_tasks(project_name='examples', task_name='partial_name_match', task_filter={'status': 'in_proress'})
+tasks = Task.get_tasks(project_name='examples', task_name='partial_name_match', task_filter={'status': 'in_progress'})
 ```
 
 ## Manage Your Data

@@ -2,8 +2,8 @@
 title: Dataset Management with CLI and SDK
 ---
 
-In this tutorial, we are going to manage the CIFAR dataset with `clearml-data` CLI, and then ingest
-the data with ClearML's [`Dataset`](../../references/sdk/dataset.md) class.
+In this tutorial, we are going to manage the CIFAR dataset with `clearml-data` CLI, and then use ClearML's [`Dataset`](../../references/sdk/dataset.md) 
+class to ingest the data.
 
 ## Creating the Dataset
 
@@ -11,20 +11,20 @@ the data with ClearML's [`Dataset`](../../references/sdk/dataset.md) class.
 Before we can register the CIFAR dataset with `clearml-data`, we need to obtain a local copy of it.
 
 Execute this python script to download the data
- ```python
- from clearml import StorageManager
- # We're using the StorageManager to download the data for us! 
- # It's a neat little utility that helps us download files we need and cache them :)
+```python
+from clearml import StorageManager
 
- manager = StorageManager()
- dataset_path = manager.get_local_copy(remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz")
- # make sure to copy the printed value
- print("COPY THIS DATASET PATH: {}".format(dataset_path))
- ```
+manager = StorageManager()
+dataset_path = manager.get_local_copy(
+    remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
+)
+# make sure to copy the printed value
+print("COPY THIS DATASET PATH: {}".format(dataset_path))
+```
 
 Expected response:
 ```bash
-COPY THIS DATASET PATH: /home/erez/.clearml/cache/storage_manager/global/f2751d3a22ccb78db0e07874912b5c43.cifar-10-python_artifacts_archive_None
+COPY THIS DATASET PATH: ~/.clearml/cache/storage_manager/global/f2751d3a22ccb78db0e07874912b5c43.cifar-10-python_artifacts_archive_None
 ```
 The script prints the path to the downloaded data. It will be needed later on.
 
@@ -62,10 +62,11 @@ Run the [`close`](../../references/sdk/dataset.md#close) command to upload the f
 clearml-data close 
 ```
 
-This command marks the dataset as *completed*, so it will no longer be modifiable. This way the dataset is reproducible. 
+This command sets the dataset task's status to *completed*, so it will no longer be modifiable. This ensures future
+reproducibility. 
 
 The information about the dataset, including a list of files and their sizes, can be viewed
-in the WebApp, in the dataset's experiment's page, in the **ARTIFACTS** tab,
+in the WebApp, in the dataset task's **ARTIFACTS** tab.
 
 ![image](../../img/examples_data_management_cifar_dataset.png)
 
@@ -84,13 +85,14 @@ from clearml import Dataset
 
 dataset_path = Dataset.get(dataset_name=dataset_name, dataset_project=dataset_project).get_local_copy()
 
-trainset = datasets.CIFAR10(root=dataset_path,
-                            train=True,
-                            download=False,
-                            transform=transform)
+trainset = datasets.CIFAR10(
+    root=dataset_path,
+    train=True,
+    download=False,
+    transform=transform
+)
 ```
 The Dataset's [`get_local_copy`](../../references/sdk/dataset.md#get_local_copy) method will return a path to the cached, 
 downloaded dataset. Then we provide the path to Pytorch's dataset object.
 
-The script then creates a neural network to train a model to classify images from the dataset that was
-created above.
+The script then trains a neural network to classify images using the dataset created above.

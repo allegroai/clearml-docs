@@ -2,7 +2,7 @@
 title: CLI 
 --- 
 
-It's possible to manage datasets (create / modify / upload / delete) with the `clearml-data` command line tool.
+The `clearml-data` utility is a CLI tool for controlling and managing your data with ClearML.  
 
 The following page provides a reference to `clearml-data`'s CLI commands. 
 
@@ -34,7 +34,7 @@ do not require the `--id` flag.
 
 <br/>
 
-### Add Files
+### Adding Files
 ```bash
 clearml-data add --id <dataset_id> --files <filenames/folders_to_add>
 ```
@@ -56,7 +56,7 @@ It's possible to add individual files or complete folders.<br/>
 
 <br/>
 
-### Remove Files
+### Removing Files
 ```bash
 clearml-data remove --id <dataset_id_to_remove_from> --files <filenames/folders_to_remove>
 ```
@@ -76,7 +76,7 @@ clearml-data remove --id <dataset_id_to_remove_from> --files <filenames/folders_
 
 <br/>
 
-### Upload Dataset Content
+### Uploading Dataset Content
 ```bash
 clearml-data upload [--id <dataset_id>] [--storage <upload_destination>]
 ```
@@ -98,7 +98,7 @@ medium by entering an upload destination, such as `s3://bucket`, `gs://`, `azure
 
 <br/>
 
-### Finalize Dataset
+### Finalizing a Dataset
 ```bash
 clearml-data close --id <dataset_id>
 ```
@@ -121,7 +121,7 @@ Once a dataset is finalized, it can no longer be modified.
 
 <br/>
 
-### Sync Local Folder
+### Syncing Local Storage
 ```
 clearml-data sync [--id <dataset_id] --folder <folder_location>  [--parents '<parent_id>']`
 ```
@@ -154,7 +154,7 @@ This command also uploads the data and finalizes the dataset automatically.
 
 <br/>
 
-### List Dataset Content
+### Listing Dataset Content
 ```bash
 clearml-data list [--id <dataset_id>]
 ```
@@ -175,7 +175,7 @@ clearml-data list [--id <dataset_id>]
 
 <br/>
 
-###  Delete Dataset
+###  Deleting a Dataset
 ```
 clearml-data delete [--id <dataset_id_to_delete>]
 ```
@@ -196,7 +196,7 @@ This does not work on datasets with children.
 
 <br/>
 
-### Search for a Dataset
+### Searching for a Dataset
 ```
 clearml-data search [--name <name>] [--project <project_name>] [--tags <tag>]
 ```
@@ -219,7 +219,7 @@ Datasets can be searched by project, name, ID, and tags.
 
 <br/>
 
-### Compare Two Datasets 
+### Comparing Two Datasets 
 
 ```
 clearml-data compare [--source SOURCE] [--target TARGET] 
@@ -243,7 +243,7 @@ Comparison summary: 4 files removed, 3 files modified, 0 files added
 
 </div>
 
-### Merge Datasets
+### Merging Datasets
 
 ```
 clearml-data squash --name NAME --ids [IDS [IDS ...]] 
@@ -264,7 +264,7 @@ Squash (merge) multiple datasets into a single dataset version.
 
 </div>
 
-### Verify Dataset
+### Verifying a Dataset
 
 ```
 clearml-data verify [--id ID] [--folder FOLDER] 
@@ -285,7 +285,7 @@ Verify that the dataset content matches the data from the local source.
 
 </div>
 
-### Get a Dataset 
+### Getting a Dataset 
 
 ```
 clearml-data get [--id ID] [--copy COPY] [--link LINK] [--overwrite]
@@ -308,13 +308,13 @@ Get a local copy of a dataset. By default, you get a read only cached folder, bu
 
 </div>
 
-### Publish a Dataset
+### Publishing a Dataset
 
 ```
 clearml-data publish --id ID
 ```
 
-Publish the dataset for public use. The dataset must be [finalized](#finalize-dataset) before it is published.
+Publish the dataset for public use. The dataset must be [finalized](#finalizing-a-dataset) before it is published.
 
 
 **Parameters**
