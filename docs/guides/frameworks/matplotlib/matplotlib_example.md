@@ -9,7 +9,7 @@ View the example in [script](https://github.com/allegroai/clearml/blob/master/ex
 or in [Jupyter Notebook](https://github.com/allegroai/clearml/blob/master/examples/frameworks/matplotlib/jupyter_matplotlib_example.ipynb).
 
 :::note 
-The example in [Jupyter Notebook](https://github.com/allegroai/clearml/blob/master/examples/frameworks/matplotlib/jupyter_matplotlib_example.ipynb), 
+The example in [Jupyter Notebook](https://github.com/allegroai/clearml/blob/master/examples/frameworks/matplotlib/jupyter_matplotlib_example.ipynb) 
 includes a clickable icon to open the notebook in Google Colab.
 :::
 
