@@ -13,7 +13,7 @@ line options (in the **Args** subsection).
 
 When the script runs, it creates an experiment named `hyper-parameters example`, which is associated with the `examples` project.
 
-## argparse command line options
+## Argparse Command Line Options
 
 If a code uses argparse and initializes a Task, **ClearML** automatically logs the argparse arguments.
 
@@ -45,7 +45,7 @@ TensorFlow Definitions appear in **HYPER PARAMETERS** **>** **TF_DEFINE**.
 
 ![image](../../img/examples_reporting_hyper_param_03.png)
 
-## Parameter dictionaries
+## Parameter Dictionaries
 
 Connect a parameter dictionary to a Task by calling the [Task.connect](../../references/sdk/task.md#connect)
 method, and **ClearML** logs the parameters. **ClearML** also tracks changes to the parameters.

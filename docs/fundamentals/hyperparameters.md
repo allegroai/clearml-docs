@@ -14,9 +14,12 @@ These sections are further broken down into sub-sections (General \ Args \ TF_De
 
 ![image](../img/hyperparameters_sections.png)
 
-## Argument Parser
-Parameters passed to experiments, using Python's built-in argparser module, are automatically captured by ClearML, so no code 
-changes are needed.
+## Command Line Parsing 
+ClearML captures any command line parameters passed when invoking code that uses standard python packages such as 
+argparse or [click](https://click.palletsprojects.com). This happens automatically with no additional code required beyond 
+initializing ClearML.
+
+### Argparse Example 
 
 ```python
 from clearml import Task
@@ -30,6 +33,29 @@ args = parser.parse_args()
 
 task = Task.init(project_name="examples",task_name="argparser logging")
 ``` 
+
+See another argparse logging example [here](../guides/reporting/hyper_parameters.md).
+
+### Click Example
+
+```python
+from clearml import Task
+import click
+
+task = Task.init(project_name='examples', task_name='click single command')
+
+@click.command()
+@click.option('--count', default=1, help='Number of greetings.')
+@click.option('--name', prompt='Your name',
+              help='The person to greet.')
+def hello(count, name):
+    for x in range(count):
+        click.echo("Hello {}!".format(name))
+
+hello()
+```
+
+See another code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py).
 
 ## Connecting Objects
 
@@ -50,6 +76,8 @@ task = Task.init(project_name='examples',task_name='argparser')
 
 task.connect(me)
 ```
+See connecting configuration objects example [here](../guides/reporting/hyper_parameters.md).
+
 
 * Connecting a dictionary:
 ```python
@@ -96,7 +124,11 @@ The CLEARML_LOG_ENVIRONMENT always overrides the clearml.conf file.
 
 ## TF Defines
 
-ClearML automatically captures TFDefine files, which are used as configuration files for Tensorflow.
+ClearML automatically captures TensorFlow definitions, which are used as configuration files for Tensorflow.
+
+See examples of ClearML's automatic logging of TF Defines:
+* [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
+* [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
 
 ## Hydra
 
@@ -134,6 +166,8 @@ Configuration objects can be split into categories in the Configuration section.
 The "name" argument, is the name of the section that the object will go into. If a section name is not specified, the default section is *General*.
 
 See [here](https://github.com/allegroai/clearml/blob/master/examples/reporting/model_config.py) for a detailed example.
+
+![Configuration objects](../img/fundamentals_hyperparameters_config_objects.png)
 
 ## Manual Parameter Access
 

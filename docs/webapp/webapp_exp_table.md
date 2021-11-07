@@ -14,7 +14,7 @@ in the active experiments and models tables. See [Archiving](webapp_archiving).
 
 ![Experiment table](../img/webapp_exp_table_01.png)
 
-## Experiments table columns
+## Experiments Table Columns
 
 The experiments table default and customizable columns are described in the following table.
 
@@ -36,7 +36,7 @@ The experiments table default and customizable columns are described in the foll
 
 
 
-## Customizing the experiments table
+## Customizing the Experiments Table
 
 The experiments table can be customized by:
 * Showing / hiding default columns
@@ -69,24 +69,24 @@ all the experiments in the project. The customizations of these two views are sa
 
 
 
-### Adding metrics and / or hyperparameters
+### Adding Metrics and / or Hyperparameters
 
 ![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
 
 Add metrics and / or hyperparameters columns to the experiments table. The metrics and hyperparameters depend upon the
 experiments in the table.
 
-#### To add metrics:
+#### To Add Metrics:
 
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ METRICS** **>** Expand a metric **>** Select the **LAST** (value),
   **MIN** (minimal value), and / or **MAX** (maximal value) checkboxes.
 
-#### To add hyperparameters:
+#### To Add Hyperparameters:
 
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ HYPER PARAMETERS** **>** Expand a section **>** Select the
   hyperparameter checkboxes.
 
-### Filtering experiments
+### Filtering Experiments
 
 ![Filtering table gif](../img/gif/filter_screenshots.gif)
 
@@ -106,7 +106,7 @@ Once a filter is applied to a column, its filter icon will appear with a highlig
 
 
 
-### Using other customization features
+### Using Other Customization Features
 
 **To use other customization features:**
 
@@ -116,7 +116,7 @@ Once a filter is applied to a column, its filter icon will appear with a highlig
 * Column resizing - In the column heading, drag to a new size.
 * Column autofit - In the column heading, double click a column separator.
 
-## Experiment actions
+## Experiment Actions
 
 The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
 that allow each operation.  
@@ -151,7 +151,7 @@ appears when hovering over an action icon.
 ![Experiment table batch operations](../img/webapp_exp_table_batch_operations.png)
 
 
-## Creating an experiment leaderboard
+## Creating an Experiment Leaderboard
 
 Filter & sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
 updates in real time with experiment performance and outputs.
