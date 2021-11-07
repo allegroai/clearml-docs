@@ -21,7 +21,7 @@ For this tutorial, use one of the following as a project:
 * A project on the demo **ClearML Server** ([https://demoapp.demo.clear.ml/profile](https://demoapp.demo.clear.ml/profile)).
 * Clone the [clearml](https://github.com/allegroai/clearml) repository and execute some of the example scripts.
 
-## Step 1: Select a project
+## Step 1: Select a Project
 
 The leaderboard will track experiments in one or all projects. 
 
@@ -29,7 +29,7 @@ Begin by opening the **ClearML Web UI** and selecting a project, by doing one of
 * On the Home page, click a project card or **VIEW ALL**.
 * On the Projects page, click a project card or the **All projects** card.
 
-## Step 2: Filter the experiments
+## Step 2: Filter the Experiments
 
 The experiments table allows filtering experiments by experiment name, type, and status.
 
@@ -52,7 +52,7 @@ The experiments table allows filtering experiments by experiment name, type, and
     * **Aborted** - The experiment ran and was manually or programmatically terminated.
     * **Published** - The experiment is not running, it is preserved as read-only.
 
-## Step 3: Hide the defaults column
+## Step 3: Hide the Defaults Column
 
 Customize the columns on the tracking leaderboard by hiding any of the default columns shown below.
 
@@ -70,7 +70,7 @@ Customize the columns on the tracking leaderboard by hiding any of the default c
     * **UPDATED** - The elapsed time since the experiment update.
     * **ITERATION** - The last iteration of the experiment. For experiments with a status of Running, this is the most recent iteration. For Completed, Aborted, and Failed experiments, this is the final iteration.
 
-## Step 4: Show metrics or hyperparameters
+## Step 4: Show Metrics or Hyperparameters
 
 The leaderboard can contain any combination of metrics and hyperparameters. For each metric, choose whether to view the last (most 
 recent), minimum, and / or maximum values.
@@ -82,7 +82,7 @@ recent), minimum, and / or maximum values.
    the leaderboard, and select the metric values (min / max / last).
 1. For hyperparameters, click **+ HYPER PARAMETERS**, and then select the hyperparameter checkboxes of those to show in the leaderboard.
 
-## Step 5: Enable auto refresh
+## Step 5: Enable Auto Refresh
 
 Auto refresh allows monitoring the progress of experiments in real time. It is enabled by default. 
 
@@ -90,7 +90,7 @@ Auto refresh allows monitoring the progress of experiments in real time. It is e
 
 * Hover over refresh and then check / uncheck the **Auto Refresh** checkbox.
 
-## Step 6: Save the tracking leaderboard
+## Step 6: Save the Tracking Leaderboard
 
 The URL for **ClearML Web UI** now contains parameters and values for the customized leaderboard. Bookmark it to be able 
 to return to the leaderboard and monitor the experiments.

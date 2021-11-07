@@ -17,14 +17,14 @@ enables modifying Dataviews, including:
 
 
 The selection and control of input data can be modified in *Draft* experiments that are not [development experiments](../task.md#development-experiments). 
-Do this by modifying the Dataview used by the experiment. The Dataview specifies the Dataset versions from which frames 
-are iterated and frame filters (see [Dataviews](webapp_dataviews.md).   
+Do this by modifying the Dataview used by the experiment. The Dataview specifies the Hyper-Dataset versions from which frames 
+are iterated and frame filters (see [Dataviews](webapp_dataviews.md)).   
 
 **To choose a Dataview**, do any of the following:
 
 * Create a new Dataview  
     
-    * Click **+** and then follow the instructions below to select Dataset versions, filter frames, map labels (label translation), 
+    * Click **+** and then follow the instructions below to select Hyper-Dataset versions, filter frames, map labels (label translation), 
       and set label enumeration, data augmentation, and iteration controls.
       
 * Select a different Dataview already associated with the experiment. 
@@ -40,7 +40,7 @@ are iterated and frame filters (see [Dataviews](webapp_dataviews.md).
 After importing a Dataview, it can be renamed and / or removed. 
 :::
 
-### Selecting Dataset versions
+### Selecting Dataset Versions
 
 To input data from a different data source or different version of a data source, select a different Dataset version used 
 by the Dataview.
@@ -62,7 +62,7 @@ by the Dataview.
 
 1. Click **SAVE**.
    
-## Filtering frames
+## Filtering Frames
 
 Filtering of SingleFrames iterated by a Dataview for input to the experiment is accomplished by frame filters. 
 For more detailed information, see [Filtering](../dataviews.md#filtering).
@@ -72,7 +72,7 @@ For more detailed information, see [Filtering](../dataviews.md#filtering).
 1. In the **FILTERING** area, click **EDIT**.
 1. For each frame filter:
 
-    1. Select the Dataset version to which the frame filter applies.
+    1. Select the Hyper-Dataset version to which the frame filter applies.
     1. Add, change, or remove any combination of the following rules:
     
         * ROI rule - Include or exclude frames containing any single ROI with any combination of labels in the Dataset 
@@ -85,7 +85,7 @@ For more detailed information, see [Filtering](../dataviews.md#filtering).
 
 1. Click **SAVE**.
     
-## Mapping labels (label translation)
+## Mapping Labels (Label Translation)
 
 Modify the ROI label mapping rules, which translate one or more input labels to another label for the output model. Labels 
 that are not mapped are ignored. 
@@ -95,7 +95,7 @@ that are not mapped are ignored.
 1. In the **MAPPING** section, click **EDIT**
     * Add (**+**) or edit a mapping:
       
-        1. Select the Dataset and version whose labels will be mapped.
+        1. Select the Hyper-Dataset and version whose labels will be mapped.
       
         1. Select one or more labels to map.
       
@@ -105,7 +105,7 @@ that are not mapped are ignored.
 
 1. Click **SAVE**
 
-## Label enumeration
+## Label Enumeration
 
 Modify the label enumeration assigned to output models.
 
@@ -121,9 +121,9 @@ Modify the label enumeration assigned to output models.
 
 1. Click **SAVE**.
 
-## Data augmentation
+## Data Augmentation
 
-Modify the on-the-fly data augmentation applied to frames input from the select Dataset versions and filtered by the frame filters. Data augmentation is applied in steps, where each step applies a method, operation, and strength.
+Modify the on-the-fly data augmentation applied to frames input from the select Hyper-Dataset versions and filtered by the frame filters. Data augmentation is applied in steps, where each step applies a method, operation, and strength.
  
 For more detailed information, see [Data Augmentation](../dataviews.md#data-augmentation).
 
@@ -137,7 +137,7 @@ For more detailed information, see [Data Augmentation](../dataviews.md#data-augm
     
 1. Click **SAVE**.    
     
-## Iteration controls
+## Iteration Controls
 
 Modify the frame iteration performed by the Dataview to control the order, number, timing, and reproducibility of frames 
 for training.

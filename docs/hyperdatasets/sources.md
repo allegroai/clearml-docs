@@ -19,7 +19,7 @@ list of source IDs. Those IDs connect `sources` to ROIs.
 
 The examples below demonstrate the `sources` section of a Frame for different types of content.
 
-### Example 1: Video sources
+### Example 1: Video Sources
 
 This example demonstrates `sources` for video.
 
@@ -70,7 +70,7 @@ is the source with the ID `front` and the other is the source with the ID `rear`
 Sources includes a variety of content types. This example shows mp4 video.
 :::
 
-### Example 2: Images sources
+### Example 2: Images Sources
 
 This example demonstrates `sources` images.
 <details className="cml-expansion-panel info">
@@ -101,7 +101,7 @@ The `sources` of this frame contains the following information:
 * `timestamp` is 0 (timestamps are used for video).
 
 
-### Example 3: Sources and regions of interest
+### Example 3: Sources and Regions of Interest
 
 This example demonstrates `sources` for video, `masks`, and `preview`. 
 

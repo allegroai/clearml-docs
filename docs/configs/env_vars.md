@@ -3,7 +3,7 @@ title: Environment Variables
 ---
 
 :::info
-ClearML's environment variables overide the clearml.conf file and SDK
+ClearML's environment variables override the clearml.conf file and SDK
 :::
 
 ## ClearML SDK Variables
@@ -36,7 +36,7 @@ Overrides Repository Auto-logging
 |**CLEARML_FILES_HOST** | Sets the File Server URL
 |**CLEARML_API_ACCESS_KEY** | Sets the Server's Public Access Key|
 |**CLEARML_API_SECRET_KEY** | Sets the Server's Private Access Key|
-|**CLEARML_API_HOST_VERIFY_CERT**| Enables \ Disable server certificate verification (If behind a firewall)|
+|**CLEARML_API_HOST_VERIFY_CERT**| Enables \ Disables server certificate verification (If behind a firewall)|
 |**CLEARML_OFFLINE_MODE** | Sets Offline mode|
 |**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server when no HOST server is set|
 
@@ -50,9 +50,14 @@ Overrides Repository Auto-logging
 |**CLEARML_CUDNN_VERSION** | Sets the CUDNN version to be used|
 |**CLEARML_CPU_ONLY** | Force CPU only mode|
 |**CLEARML_DOCKER_SKIP_GPUS_FLAG**| Skips the GPUs flag (support for docker V18|
+|**CLEARML_AGENT_DISABLE_SSH_MOUNT**| Disables the auto `.ssh` mount into the docker|
 |**CLEARML_AGENT_GIT_USER** | Sets the Git user for ClearML Agent|
 |**CLEARML_AGENT_GIT_PASS** | Sets the Git password for ClearML Agent|
 |**CLEARML_AGENT_GIT_HOST** | Sets Git host (only sending login to this host)|
 |**CLEARML_AGENT_EXEC_USER**| User for Agent executing tasks (root by default)|
+|**CLEARML_AGENT_EXTRA_DOCKER_ARGS**| Overrides extra docker args configuration |
 |**CLEARML_AGENT_EXTRA_PYTHON_PATH**| Sets extra python path|
+|**CLEARML_AGENT_INITIAL_CONNECT_RETRY_OVERRIDE**| Overrides initial server connection behavior (true by default), allows explicit number to specify number of connect retries) | 
 |**CLEARML_AGENT_K8S_HOST_MOUNT / CLEARML_AGENT_DOCKER_HOST_MOUNT**| Specifies Agent's mount point for Docker \ K8s|
+|**CLEARML_AGENT_SKIP_PIP_VENV_INSTALL**| Skips Python virtual env installation on execute and provides a custom venv binary |
+|**CLEARML_AGENT_VENV_CACHE_PATH**|Overrides venv cache folder configuration|

@@ -8,7 +8,7 @@ demonstrates **ClearML**'s automatic logging of code running in a Jupyter Notebo
 The example does the following: 
 1. Trains a simple deep neural network on the Keras built-in [MNIST](https://keras.io/api/datasets/mnist/#load_data-function) 
    dataset.
-1. Builds a sequential model using a categorical crossentropy loss objective function. 
+1. Builds a sequential model using a categorical cross entropy loss objective function. 
    
 1. Specifies accuracy as the metric, and uses two callbacks: a TensorBoard callback and a model checkpoint callback. 
    
@@ -31,7 +31,7 @@ They appear in **RESULTS** **>** **PLOTS**.
 
 ![image](../../../img/examples_keras_jupyter_03b.png)
 
-## Debug samples
+## Debug Samples
 
 The example calls Matplotlib methods to log debug sample images. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
 
@@ -63,7 +63,7 @@ The TensorFlow Definitions appear in the **TF_DEFINE** subsection.
 
 ![image](../../../img/examples_keras_jupyter_21.png)
 
-## CONSOLE
+## Console
 
 Text printed to the console for training appears in **RESULTS** **>** **CONSOLE**.
 

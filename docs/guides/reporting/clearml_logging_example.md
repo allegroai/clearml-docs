@@ -94,7 +94,7 @@ method.
 
 ![image](../../img/colab_explicit_reporting_06.png)
 
-### Confusion matrices
+### Confusion Matrices
 
 Report confusion matrices by calling the [Logger.report_matrix](../../references/sdk/logger.md#report_matrix) 
 method.

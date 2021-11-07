@@ -39,7 +39,7 @@ instructions in the [Security](clearml_server_security.md) page.
 :::
 
 
-### Step 1: Modify Elasticsearch default values in the Docker configuration file
+### Step 1: Modify Elasticsearch Default Values in the Docker Configuration File
 
 Before deploying **ClearML Server** in a Kubernetes cluster, modify several Elasticsearch settings in the Docker configuration. 
 For more information, see [Install Elasticsearch with Docker](https://www.elastic.co/guide/en/elasticsearch/reference/master/docker.html#_notes_for_production_use_and_defaults) 
@@ -80,7 +80,7 @@ in the Elasticsearch documentation and [Daemon configuration file](https://docs.
 
         sudo service docker restart
 
-### Step 2. Deploy ClearML Server in the Kubernetes using Helm
+### Step 2. Deploy ClearML Server in the Kubernetes Using Helm
 
 After modifying several Elasticsearch settings in the Docker configuration (see Step 1 above), deploy **ClearML Server**.
 
@@ -88,17 +88,17 @@ After modifying several Elasticsearch settings in the Docker configuration (see 
 
 1. Add the clearml-server repository to Helm:
 
-        helm repo add allegroai https://allegroai.github.io/clearml-server-helm/
+        helm repo add allegroai https://allegroai.github.io/clearml-helm-charts
 
-1. Confirm the clearml-server repository is now in Helm:
+1. Confirm the clearml repository is now in Helm:
     
-        helm search clearml
+        helm search repo allegroai
 
-    The helm search results must include `allegroai/clearml-server-chart`.
+    The helm search results must include `allegroai/clearml`.
     
-1. Install `clearml-server-chart` on your cluster:
+1. Install `clearml` on your cluster:
     
-        helm install allegroai/clearml-server-chart --namespace=clearml --name clearml-server
+        helm install clearml-server allegroai/clearml -n clearml --create-namespace
 
     A clearml `namespace` is created in the cluster and clearml-server is deployed in it.
 

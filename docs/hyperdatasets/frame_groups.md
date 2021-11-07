@@ -100,7 +100,7 @@ myVersion.update_frames(frames)
 
 ```    
    
-### Deleting frames
+### Deleting Frames
 
 To delete a FrameGroup, use the `DatasetVersion.delete_frames` method, just like when deleting a 
 SingleFrame, except that a FrameGroup is being referenced.
