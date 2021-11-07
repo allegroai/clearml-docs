@@ -14,7 +14,7 @@ The example script does the following:
   project. ClearMLLogger connects to ClearML so everything which is logged through it and its handlers 
   is automatically captured by ClearML. 
 * Uses the following ClearMLLogger helper handlers:
-    * **ClearMLSaver** - Saves input snapshots as ClearML artifacts
+    * **ClearMLSaver** - Saves input snapshots as ClearML artifacts.
     * **GradsHistHandler** and **WeightsHistHandler** - Logs the model's gradients and weights respectively as histograms.
     * **GradsScalarHandler** and **WeightsScalarHandler** - Logs gradients and weights respectively as scalars.
 
@@ -44,12 +44,8 @@ Integrate ClearML with the following steps:
 ### Parameters
 The following are the `ClearMLLogger` parameters:
 * `project_name` - The name of the project in which the experiment will be created. 
-* `task_name` – The name of task
-* `task_type` – The type of experiment. The values include:
-  * `TaskTypes.training` (default)
-  * `TaskTypes.train`
-  * `TaskTypes.testing`
-  * `TaskTypes.inference`
+* `task_name` – The name of task.
+* `task_type` – The type of experiment (see [task types](../../../fundamentals/task.md#task-types)).
 * `report_freq` – The histogram processing frequency (handles histogram values every X calls to the handler). Affects 
   `GradsHistHandler` and `WeightsHistHandler`. Default value is 100.
 * `histogram_update_freq_multiplier` – The histogram report frequency (report first X histograms and once every X 
@@ -119,7 +115,7 @@ clearml_logger.attach(trainer,
 
 ### Model Snapshots
 
-To save input snapshots as **ClearML** artifacts, use `ClearMLSaver`:
+To save model checkpoints as ClearML artifacts, use `ClearMLSaver`:
 
 ```python
 from ignite.handlers import Checkpoint
@@ -141,7 +137,7 @@ validation_evaluator.add_event_handler(Events.EPOCH_COMPLETED, handler)
 
 ## Visualizing Experiment Results
 
-When the code runs, the experiment results can be visualized in the [ClearML Web UI](../../../webapp/webapp_overview.md). 
+When the code runs, the experiment results can be viewed in the [ClearML Web UI](../../../webapp/webapp_overview.md). 
 
 ### Scalars
 

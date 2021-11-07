@@ -9,9 +9,10 @@ The example script does the following:
 * Trains a  neural network on the CIFAR10 dataset for image classification.
 * Creates a [ClearML Task](../../../fundamentals/task.md) named `image classification CIFAR10`, which is associated with 
   the `examples` project.
-* Calls the [`Task.connect`](../../../references/sdk/task.md#connect) method to report configurations.
+* Calls the [`Task.connect`](../../../references/sdk/task.md#connect) method to track experiment configuration.
 * Uses `ignite`'s `TensorboardLogger` and attaches handlers to it. See [`TensorboardLogger`](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/tensorboard_logger.py). 
-* Uses ClearML's automatic logging to capture information and outputs logged with `TensorboardLogger`.
+
+ClearML's automatic logging captures information and outputs logged with `TensorboardLogger`.
 
 ## Hyperparameters
 
@@ -21,7 +22,7 @@ Parameters are explicitly reported to ClearML using the [`Task.connect`](../../.
 params = {'number_of_epochs': 20, 'batch_size': 64, 'dropout': 0.25, 'base_lr': 0.001, 'momentum': 0.9, 'loss_report': 100}
 params = task.connect(params)  # enabling configuration override by clearml
 ```
-The hyperparameter configurations can be viewed in the WebApp in the experiment's page, in the **CONFIGURATION** tab. 
+The hyperparameter configurations can be viewed in the WebApp in the experiment's **CONFIGURATION** tab. 
 
 ![image](../../../img/examples_integration_pytorch_ignite_config.png)
 
@@ -61,7 +62,7 @@ ClearML automatically tracks images logged to TensorboardLogger. They appear in 
 
 ## Ignite ClearMLLogger
 
-PyTorch Ignite also offers a `ClearMLLogger` handler to log metrics, text, model / optimizer parameters, plots, and model 
+PyTorch Ignite also offers a dedicated `ClearMLLogger` handler to log metrics, text, model / optimizer parameters, plots, and model 
 checkpoints during training and validation.
 
 For more information, see the [PyTorch Ignite ClearMLLogger](https://pytorch.org/ignite/generated/ignite.contrib.handlers.clearml_logger.html)
