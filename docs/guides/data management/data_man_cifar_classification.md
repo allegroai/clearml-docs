@@ -25,7 +25,7 @@ Execute this python script to download the data
 
 Expected reponse:
 ```bash
-COPY THIS DATASET PATH: /home/erez/.clearml/cache/storage_manager/global/f2751d3a22ccb78db0e07874912b5c43.cifar-10-python_artifacts_archive_None
+COPY THIS DATASET PATH: ~/.clearml/cache/storage_manager/global/f2751d3a22ccb78db0e07874912b5c43.cifar-10-python_artifacts_archive_None
 ```
 The script prints the path to the downloaded data. It'll be needed later one
 
