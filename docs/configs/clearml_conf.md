@@ -1050,7 +1050,7 @@ will not exceed the value of `matplotlib_untitled_history_size`
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
 
-## Configuration vault
+## Configuration Vault
 
 :::note
 This feature is only supported by the **ClearML Enterprise Server**
