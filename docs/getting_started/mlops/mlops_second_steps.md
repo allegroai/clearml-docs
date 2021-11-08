@@ -3,8 +3,10 @@ title: Next Steps
 ---
 
 Once Tasks are defined and in the ClearML system, they can be chained together to create Pipelines.
-Pipelines provide users with a greater level of abstraction and automation, with Tasks running one after the other.<br/>
-Tasks can interface with other Tasks in the pipeline and leverage other Tasks' work products.<br/> 
+Pipelines provide users with a greater level of abstraction and automation, with Tasks running one after the other.
+
+Tasks can interface with other Tasks in the pipeline and leverage other Tasks' work products.
+
 We'll go through a scenario where users create a Dataset, process the data then consume it with another task, all running as a pipeline.
 
 

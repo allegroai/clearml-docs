@@ -3,7 +3,7 @@ title: Projects
 ---
 
 Projects are contextual containers for [tasks](task.md) and [models](artifacts.md#models) (as well as [dataviews](../hyperdatasets/dataviews.md) 
-when hyperdatasets are enabled), providing a logical structure similar to file system folders. 
+when Hyper-Datasets are enabled), providing a logical structure similar to file system folders. 
 An often useful method is to categorize components into projects according to models or objectives. 
 Grouping into projects helps in identifying tasks, models, and dataviews when queried.
 
@@ -19,7 +19,7 @@ the project are executed, the model checkpoints (snapshots) and artifacts are st
 ## WebApp 
 
 Users can create and modify projects, and see project details in the WebApp (see [WebApp Home](../webapp/webapp_home.md)). 
-The project's description can be edited in the [overview](../webapp/webapp_overview.md) page. Each project's experiments,  
+The project's description can be edited in the [overview](../webapp/webapp_overview.md) page. Each project's experiments,
 models, and dataviews, can be viewed in the project's [experiments table](../webapp/webapp_exp_table.md),
  [models table](../webapp/webapp_model_table.md), and [dataviews table](../hyperdatasets/webapp/webapp_dataviews.md). 
 

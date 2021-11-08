@@ -14,6 +14,8 @@ title: FAQ
 * [Can I store the model configuration file as well?](#store-model-configuration)
 * [I am training multiple models at the same time, but I only see one of them. What happened?](#only-last-model-appears)
 * [Can I log input and output models manually?](#manually-log-models)
+* [Models are not accessible from the UI after I migrated ClearML Server to a new domain. How do I fix this?](#migrate_server_models)
+* [Models are not accessible from the UI after I moved them (different bucket / server). How do I fix this?](#relocate_models)
 
 **Experiments**
 
@@ -44,6 +46,7 @@ title: FAQ
 * [Is there something ClearML can do about uncommitted code running?](#help-uncommitted-code)
 * [I read there is a feature for centralized model storage. How do I use it?](#centralized-model-storage)
 * [When using PyCharm to remotely debug a machine, the Git repo is not detected. Do you have a solution?](#pycharm-remote-debug-detect-git)
+* [Debug images and / or artifacts are not loading in the UI after I migrated ClearML Server to a new domain. How do I fix this?](#migrate_server_debug)
 
 
 **Remote Debugging (ClearML PyCharm Plugin)**
@@ -200,6 +203,68 @@ method to manually connect a model weights file.
 
 For more information about models, see [InputModel](references/sdk/model_inputmodel.md) 
 and [OutputModel](references/sdk/model_outputmodel.md) classes.
+
+<br/>
+
+**Models are not accessible the UI after I migrated ClearML Server to a new domain. How do I fix this?** <a id="migrate_server_models"></a>
+
+This can happen if your models were uploaded to the ClearML files server, since the value registered was their full URL 
+at the time of registration (e.g. `https://files.<OLD_DOMAIN>/path/to/model`).
+
+To fix this, the registered URL of each model needs to be replaced with its current URL.
+
+To replace the URL of each model, execute the following commands:
+
+1. Open bash in the mongo DB docker container: 
+
+    ```bash 
+    sudo docker exec -it clearml-mongo /bin/bash
+    ```
+
+1. Inside the docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, 
+   as well as the URL protocol if you aren't using `s3`. 
+    ```bash
+    cat <<EOT >> script.js
+    db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
+    e.uri = e.uri.replace("s3://<old-bucket-name>/","s3://<new-bucket-name>/");
+    db.model.save(e);});
+    EOT 
+    ```
+
+1. Run the script against the backend DB:
+
+   ```bash
+   mongo backend script.js
+   ```
+<br/>
+
+**Models are not accessible from the UI after I moved them (different bucket / server). How do I fix this?** <a id="relocate_models"></a>
+
+This can happen if your models were uploaded to the ClearML files server, since the value registered was their full URL 
+at the time of registration (e.g. `https://files.<OLD_DOMAIN>/path/to/model`).
+
+To fix this, the registered URL of each model needs to be replaced with its current URL:
+
+1. Open bash in the mongo DB Docker container: 
+
+   ```bash
+   sudo docker exec -it clearml-mongo /bin/bash
+   ```
+
+1. Inside the Docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3. 
+    ```bash
+    cat <<EOT >> script.js
+    db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
+    e.uri = e.uri.replace("s3://<old-bucket-name>/","s3://<new-bucket-name>/");
+    db.model.save(e);});
+    EOT 
+    ```
+
+1. Run the script against the backend DB:
+
+    ```bash
+    mongo backend script.js
+    ```
 
 ## Experiments
 
@@ -378,12 +443,30 @@ After thirty minutes, it remains unchanged.
 
 **Can I control what ClearML automatically logs?** <a id="controlling_logging"></a>
 
-Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks. 
+Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
+by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
 
-When initializing a Task by calling the `Task.init` method, provide the `auto_connect_frameworks` parameter to control 
-framework logging, and the `auto_connect_streams` parameter to control `stdout`, `stderr`, and standard logging. The 
-values are `True`, `False`, and a dictionary for fine-grain control. See [Task.init](references/sdk/task.md#classmethod-initproject_namenone-task_namenone-task_typetasktypestraining-training-tagsnone-reuse_last_task_idtrue-continue_last_taskfalse-output_urinone-auto_connect_arg_parsertrue-auto_connect_frameworkstrue-auto_resource_monitoringtrue-auto_connect_streamstrue).
+To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
+parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
 
+For example: 
+```python
+auto_connect_frameworks={
+    'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
+    'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
+}
+```
+
+To control the `stdout`, `stderr`, and standard logging, use the `auto_connect_streams` parameter. 
+To disable logging all three, set the parameter to `False`. For finer grained control, input a dictionary, where the keys are `stout`, `stderr`, 
+and `logging`, and the values are booleans. For example: 
+
+```python
+auto_connect_streams={'stdout': True, 'stderr': True, 'logging': False}
+```
+
+See [`Task.init`](references/sdk/task.md#taskinit).
 
 <br/>
 
@@ -471,7 +554,7 @@ experiment info panel > EXECUTION tab.
 
 **I read there is a feature for centralized model storage. How do I use it?** <a id="centralized-model-storage"></a>
 
-When calling [Task.init](references/sdk/task.md#classmethod-initproject_namenone-task_namenone-task_typetasktypestraining-training-tagsnone-reuse_last_task_idtrue-continue_last_taskfalse-output_urinone-auto_connect_arg_parsertrue-auto_connect_frameworkstrue-auto_resource_monitoringtrue-auto_connect_streamstrue), 
+When calling [Task.init](references/sdk/task.md#taskinit), 
 providing the `output_uri` parameter allows you to specify the location in which model checkpoints (snapshots) will be stored.
 
 For example, to store model checkpoints (snapshots) in `/mnt/shared/folder`:
@@ -503,6 +586,56 @@ see [ClearML Configuration Reference](configs/clearml_conf.md).
 Yes! Since this is such a common occurrence, we created a PyCharm plugin that allows a remote debugger to grab your local 
 repository / commit ID. For detailed information about using the plugin, see the [ClearML PyCharm Plugin](guides/ide/integration_pycharm.md).
 
+<br/>
+
+**Debug images and/or artifacts are not loading in the UI after I migrated ClearML Server to a new domain. How do I fix this?**  <a id="migrate_server_debug"></a>  
+
+This can happen if your debug images and / or artifacts were uploaded to the ClearML file server, since the value
+registered was their full URL at the time of registration (e.g. `https://files.<OLD_DOMAIN>/path/to/artifact`).
+
+To fix this, the registered URL of each debug image and / or artifact needs to be replaced with its current URL.
+
+* For **debug images**, use the following command. Make sure to insert the old domain and the new domain that will replace it
+    ```bash
+    curl --header "Content-Type: application/json" \
+    --request POST \
+    --data '{
+        "script": {
+            "source": "ctx._source.url = ctx._source.url.replace('https://files.<OLD_DOMAIN>', 'https://files.<NEW_DOMAIN>')",
+            "lang": "painless"
+        },
+        "query": {
+            "match_all": {}
+        }
+    }' \
+    ```
+
+* For **artifacts**, you can do the following: 
+
+    1. Open bash in the mongo DB docker container:
+
+    ```bash 
+    sudo docker exec -it clearml-mongo /bin/bash
+    ```
+
+    1. Inside the docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, 
+   as well as the URL protocol prefixes if you aren't using `s3`. 
+   
+    ```bash
+    cat <<EOT >> script.js
+    db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
+    e.uri = e.uri.replace("s3://<old-bucket-name>/","s3://<new-bucket-name>/");
+    db.model.save(e);});
+    EOT 
+    ```
+
+    1. Run the script against the backend DB:
+
+    ```bash
+    mongo backend script.js
+    ```
+   
+
 ## Jupyter
 
 **I am using Jupyter Notebook. Is this supported?** <a id="jupyter-notebook"></a>
@@ -533,7 +666,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
         pip install clearml
 
-1. Use the [Task.set_credentials](references/sdk/task.md#classmethod-set_credentialsapi_hostnone-web_hostnone-files_hostnone-keynone-secretnone-store_conf_filefalse) 
+1. Use the [Task.set_credentials](references/sdk/task.md#taskset_credentials) 
    method to specify the host, port, access key and secret key (see step 1).
 
         # Set your credentials using the trains apiserver URI and port, access_key, and secret_key.
@@ -684,7 +817,7 @@ on the "Configuring Your Own ClearML Server" page.
 
 **Can I add web login authentication to ClearML Server?** <a id="web-auth"></a>
 
-By default, anyone can login to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
+By default, anyone can log in to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
 
 For detailed instructions, see [Web Login Authentication](deploying_clearml/clearml_server_config.md#web-login-authentication) 
 on the "Configuring Your Own ClearML Server" page in the "Deploying ClearML" section.
@@ -860,6 +993,7 @@ api {
     }
 }
 ```
+
 
 
 ## ClearML Agent

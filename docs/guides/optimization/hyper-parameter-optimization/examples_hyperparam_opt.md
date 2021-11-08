@@ -5,17 +5,15 @@ title: Hyperparameter Optimization
 The [hyper_parameter_optimizer.py](https://github.com/allegroai/clearml/blob/master/examples/optimization/hyper-parameter-optimization/hyper_parameter_optimizer.py) 
 example script demonstrates hyperparameter optimization, which is automated by using **ClearML** 
 
-<a class="tr_top_negative" name="strategy"></a>
-
 ## Set the Search Strategy for Optimization
 
 A search strategy is required for the optimization, as well as a search strategy optimizer class to implement that strategy.
 
 The following search strategies can be used:
 
-* Optuna hyperparameter optimization - [automation.optuna.optuna.OptimizerOptuna](../../../references/sdk/hpo_optuna_optuna_optimizeroptuna.md). 
+* Optuna hyperparameter optimization - [automation.optuna.OptimizerOptuna](../../../references/sdk/hpo_optuna_optuna_optimizeroptuna.md). 
   For more information about Optuna, see the [Optuna](https://optuna.org/) documentation.
-* BOHB - [automation.hpbandster.bandster.OptimizerBOHB](../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md).
+* BOHB - [automation.hpbandster.OptimizerBOHB](../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md).
   
   BOHB performs robust and efficient hyperparameter optimization at scale by combining the speed of Hyperband searches 
   with the guidance and guarantees of convergence of Bayesian Optimization.
@@ -24,11 +22,11 @@ The following search strategies can be used:
   For more information about HpBandSter BOHB, see the [HpBandSter](https://automl.github.io/HpBandSter/build/html/index.html) 
   documentation.
      
-* Random uniform sampling of hyperparameter strategy - [automation.optimization.RandomSearch](../../../references/sdk/hpo_optimization_randomsearch.md)
-* Full grid sampling strategy of every hyperparameter combination - Grid search [automation.optimization.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
+* Random uniform sampling of hyperparameter strategy - [automation.RandomSearch](../../../references/sdk/hpo_optimization_randomsearch.md)
+* Full grid sampling strategy of every hyperparameter combination - Grid search [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
 * Custom - Use a custom class and inherit from the **ClearML** automation base strategy class, automation.optimization.SearchStrategy.
 
-The search strategy class that is chosen will be passed to the [automation.optimization.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
+The search strategy class that is chosen will be passed to the [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object later.
 
 The example code attempts to import `OptimizerOptuna` for the search strategy. If `clearml.automation.optuna` is not 
@@ -40,14 +38,14 @@ the `RandomSearch` for the search strategy.
     
     if not aSearchStrategy:
         try:
-            from clearml.automation.optuna import OptimizerOptuna
+            from clearml.optuna import OptimizerOptuna
             aSearchStrategy = OptimizerOptuna
         except ImportError as ex:
             pass
     
     if not aSearchStrategy:
         try:
-            from clearml.automation.hpbandster import OptimizerBOHB
+            from clearml.automation.hpbandster  import OptimizerBOHB
             aSearchStrategy = OptimizerBOHB
         except ImportError as ex:
             pass
@@ -104,7 +102,7 @@ In this example, an experiment named **Keras HP optimization base** is being opt
 least once so that it is stored in **ClearML Server**, and, therefore, can be cloned.
 
 Since the arguments dictionary is connected to the Task, after the code runs once, the `template_task_id` can be changed 
-to optimize a different experiment, see [tuning experiments](../../../webapp/webapp_exp_tuning.md).
+to optimize a different experiment.
 
 ```python
     # experiment template to optimize in the hyper-parameter optimization
@@ -122,7 +120,7 @@ to optimize a different experiment, see [tuning experiments](../../../webapp/web
 
 ## Creating the Optimizer Object
 
-Initialize an [automation.optimization.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
+Initialize an [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object, setting the optimization parameters, beginning with the ID of the experiment to optimize.
 
 ```python
@@ -131,8 +129,8 @@ object, setting the optimization parameters, beginning with the ID of the experi
         base_task_id=args['template_task_id'],
 ```
 
-Set the hyperparameter ranges to sample, instantiating them as **ClearML** automation objects using [automation.parameters.UniformIntegerParameterRange](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
-and [automation.parameters.DiscreteParameterRange](../../../references/sdk/hpo_parameters_discreteparameterrange.md).
+Set the hyperparameter ranges to sample, instantiating them as **ClearML** automation objects using [automation.UniformIntegerParameterRange](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
+and [automation.DiscreteParameterRange](../../../references/sdk/hpo_parameters_discreteparameterrange.md).
 
 ```python
     hyper_parameters=[
@@ -185,8 +183,6 @@ Specify the remaining parameters, including the time limit per Task (minutes), p
 )  # done creating HyperParameterOptimizer
 
 ```
-
-<a class="tr_top_negative" name="service"></a>    
 
 ## Running as a Service
 

@@ -239,3 +239,19 @@ This example shows two masks for video from a camera. The masks label cars and t
   * Each ROI has a label of `right_lane` indicating the ROI object.
   * Each `mask` has an `id` (`car`, `person`) and a unique RGB `value` (color-coding).
  
+## Usage
+
+### Adding Mask Annotations 
+
+To add a mask annotation to a frame, use the `add_annotation` method of the [SingleFrame](single_frames.md) class. This 
+method is generally used to add ROI annotations, but it can also be used to add frame specific mask labels. Input the 
+mask value as a list with the RGB values in the `mask_rgb` parameter, and a list of labels in the `labels` parameter.
+
+```python
+frame = SingleFrame(
+    source='/home/user/woof_meow.jpg',
+    preview_uri='https://storage.googleapis.com/kaggle-competitions/kaggle/3362/media/woof_meow.jpg',
+    
+frame.add_annotation(mask_rgb=[0, 0, 0], labels=['cat'])
+```
+

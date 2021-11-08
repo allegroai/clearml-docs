@@ -95,10 +95,11 @@ and formats for specifying locations include:
 * In **EXECUTION** **>** **OUTPUT** > **DESTINATION** **>** hover **>** **EDIT** **>** edit **>** **SAVE**.
 
 
-:::note
+:::note Set Output Destination for Artifacts
 Also set the output destination for artifacts in code (see the `output_uri` parameter of the
-[Task.init](../references/sdk/task.md#classmethod-initproject_namenone-task_namenone-task_typetasktypestraining-training-tagsnone-reuse_last_task_idtrue-continue_last_taskfalse-output_urinone-auto_connect_arg_parsertrue-auto_connect_frameworkstrue-auto_resource_monitoringtrue-auto_connect_streamstrue)
-method), and in the **ClearML** configuration file for all experiments (see [default_output_uri](../configs/clearml_conf#config_default_output_uri)
+[Task.init](../references/sdk/task.md#taskinit)
+method), and in the **ClearML** configuration file 
+for all experiments (see [default_output_uri](../configs/clearml_conf#config_default_output_uri)
 on the **ClearML** Configuration Reference page).
 :::
 

@@ -12,9 +12,14 @@ This reference page is organized by configuration file section:
 * [sdk](#sdk-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
-in the **ClearML** GitHub repositories  
+in the **ClearML Agent** GitHub repository. 
 
-## Editing Your Configuration File
+:::info
+The values in the ClearML configuration file can be overridden by environment variables, the [configuration vault](../webapp/webapp_profile.md#configuration-vault), 
+and command-line arguments. 
+:::
+
+# Editing Your Configuration File
 
 To add, change, or delete options, edit your configuration file.
 
@@ -85,6 +90,25 @@ for information about using environment variables with Windows in the configurat
 * The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
         
 ---
+
+**`agent.docker_container_name_format`** (*string*)
+
+:::note Support
+Supported from Docker 0.6.5
+:::
+
+* Set a name format for Docker containers created by a daemon
+
+* The following variables can be used:
+  * `task_id`
+  * `worker_id` 
+  * `rand_string` - random lower-case letters string (up to 32 characters)
+
+* The resulting name must start with an alphanumeric character, while the rest of the name may contain alphanumeric characters, 
+  underscores (`_`), dots (`.`) and / or dashes (`-`)
+
+---
+
         
 **`agent.docker_force_pull`** (*bool*)
         
@@ -95,6 +119,12 @@ for information about using environment variables with Windows in the configurat
     * `true` - Always update the Docker image.
     * `false` - Do not always update.
   
+
+---
+
+**`agent.docker_internal_mounts`** (*dict*)
+
+* Set internal mount points inside the Docker. This is especially useful for non-root Docker container images.
 
 ---
         
@@ -169,6 +199,34 @@ for information about using environment variables with Windows in the configurat
     * If not using Git SSH credentials, use this option to specify a Git password for cloning your repositories.
         
 ---
+
+**`agent.hide_docker_command_env_vars`** (*dict*)
+
+*  Hide Docker environment variables containing secrets when printing out the Docker command. When printed, the variable
+   values will be replaced by `********`
+   
+* Turning this feature on will hide the following environment variables values:
+  
+    * `CLEARML_API_SECRET_KEY`
+    * `CLEARML_AGENT_GIT_PASS`
+    * `AWS_SECRET_ACCESS_KEY` 
+    * `AZURE_STORAGE_KEY`
+  
+* To mask additional environment variables, add their keys to the `extra_keys` list
+
+---
+
+**`agent.ignore_requested_python_version`** (*bool*)
+
+  * Indicates whether to ignore any requested python version 
+  
+  * The values are:
+    
+    * `true` - ignore any requested python version
+    * `false` - if a task was using a specific python version, and the system supports multiple versions, the agent will 
+      use the requested python version (default)
+
+___
         
 **`agent.python_binary`** (*string*)
         
@@ -991,3 +1049,16 @@ will not exceed the value of `matplotlib_untitled_history_size`
     
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
+
+## Configuration Vault
+
+:::note
+This feature is only supported by the **ClearML Enterprise Server**
+:::
+
+The ClearML Enterprise Server includes the configuration vault. Users can add configuration sections to the vault and, once 
+the vault is enabled, the configurations will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
+
+These configurations override the configurations written in the configuration file. 
+
+See [configuration vault](../webapp/webapp_profile.md#configuration-vault). 

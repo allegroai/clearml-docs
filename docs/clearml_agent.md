@@ -100,7 +100,8 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
         Verifying credentials ...
         Credentials verified!
 
-1. Enter your Git username and password. Leave blank for SSH key authentication or when only using public repositories.<br/>
+1. Enter your Git username and password. Leave blank for SSH key authentication or when only using public repositories.
+   
    This is needed for cloning repositories by the agent.
 
         Enter git username for repository cloning (leave blank for SSH key authentication): []
@@ -110,7 +111,8 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     
         Git repository cloning will be using user=<username> password=<password>        
 
-1. Enter an additional artifact repository, or press **Enter** if not required.<br/>
+1. Enter an additional artifact repository, or press **Enter** if not required.
+   
    This is needed for installing Python packages not found in pypi. 
 
         Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
@@ -127,6 +129,12 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     * Windows - `\User\<username>\clearml.conf`
 
 1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
+   
+:::note
+The ClearML Enterprise server provides a [configuration vault](webapp/webapp_profile.md#configuration-vault), the contents 
+of which are categorically applied on top of the agent-local configuration
+:::
+
 
 ### Adding ClearML Agent to a Configuration File
 
@@ -580,7 +588,8 @@ It's possible to add the Docker container as the base Docker image to a Task (ex
 ## Google Colab
 
 ClearML Agent can run on a [google colab](https://colab.research.google.com/) instance. This helps users to leverage 
-compute resources provided by google colab and send experiments for execution on it. <br/>
+compute resources provided by google colab and send experiments for execution on it. 
+
 Check out [this](guides/ide/google_colab.md) tutorial on how to run a ClearML Agent on Google Colab!
 
 
