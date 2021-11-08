@@ -2,6 +2,17 @@
 title: Version 1.1
 ---
 
+### ClearML SDK 1.1.4
+
+**Bug Fixes**
+
+- Fix duplicate keyword argument (affects `clearml-data`, `Dataset.get()`) [ClearML GitHub issue #490](https://github.com/allegroai/clearml/issues/490)
+- Fix session raises missing host error when in offline mode [ClearML GitHub issue #489](https://github.com/allegroai/clearml/issues/489)
+- Fix `Task.get_task()` does not load `output_uri` from stored Task
+- Fix `Task.get_models()['input']` returns string instead of `clearml.Model`
+- Fix `tf.saved_model.load()` binding for `TensorFlow>=2.0`
+- Fix hyperparams with `None` value converted to empty string causes inferred type to change to `str` in consecutive `Task.connect()` calls
+
 ### ClearML Agent 1.1.1
 
 **Features and Bug Fixes**
