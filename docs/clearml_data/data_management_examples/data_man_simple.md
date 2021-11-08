@@ -1,14 +1,17 @@
 ---
-title: Data Management Example
+title: Data Management from CLI
 ---
 
-In this example we'll create a simple dataset and demonstrate basic actions on it. 
+In this example we'll create a simple dataset and demonstrate basic actions on it, using the `clearml-data` CLI. 
 
 ## Prerequisites
-First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. This contains all
+1. First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. This contains all
 the needed files.
 1. Open terminal and change directory to the cloned repository's examples folder
-    `cd clearml/examples/reporting`
+   
+    ```
+    cd clearml/examples/reporting
+   ```
 
 ## Creating Initial Dataset
 
@@ -27,7 +30,7 @@ the needed files.
     ```
 
 1. Now let's add a folder. File addition is recursive, so it's enough to point at the folder 
-to captures all files and subfolders:
+to captures all files and sub-folders:
    
    ```bash
    clearml-data add --files data_samples
@@ -42,11 +45,13 @@ to captures all files and subfolders:
    Hash generation completed
    5 files added
    ```
+   
+   
 :::note
 After creating a dataset, we don't have to specify its ID when running commands, such as *add*, *remove* or *list*
 :::
 
-1. Close the dataset - this command uploads the files. By default, the files are uploaded to the file server, but  
+3. Close the dataset - this command uploads the files. By default, the files are uploaded to the file server, but  
 this can be configured with the `--storage` flag to any of ClearML's supported storage mediums (see [storage](../../integrations/storage.md)).
 The command also finalizes the dataset, making it immutable and ready to be consumed.
 
