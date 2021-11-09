@@ -5,7 +5,7 @@ title: Data Management from CLI
 In this example we'll create a simple dataset and demonstrate basic actions on it, using the `clearml-data` CLI. 
 
 ## Prerequisites
-1. First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. This contains all
+1. First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. It contains all
 the needed files.
 1. Open terminal and change directory to the cloned repository's examples folder
    
@@ -89,13 +89,13 @@ clearml-data - Dataset Management & Versioning CLI
 
 List dataset content: 24d05040f3e14fbfbed8edb1bf08a88c 
 Listing dataset content
-file name                                                        | size       | hash                                                            
-------------------------------------------------------------------------------------------------------------------------------------------------
-dancing.jpg                                                      |     40,484 | 78e804c0c1d54da8d67e9d072c1eec514b91f4d1f296cdf9bf16d6e54d63116a
-data.csv                                                         |     21,440 | b618696f57b822cd2e9b92564a52b3cc93a2206f41df3f022956bb6cfe4e7ad5
-picasso.jpg                                                      |    114,573 | 6b3c67ea9ec82b09bd7520dd09dad2f1176347d740fd2042c88720e780691a7c
-sample.json                                                      |        132 | 9c42a9a978ac7a71873ebd5c65985e613cfaaff1c98f655af0d2ee0246502fd7
-sample.mp3                                                       |     72,142 | fbb756ae14005420ff00ccdaff99416bebfcea3adb7e30963a69e68e9fbe361b
+file name                        | size       | hash                                                            
+-----------------------------------------------------------------------------------------------------------------
+dancing.jpg                      |     40,484 | 78e804c0c1d54da8d67e9d072c1eec514b91f4d1f296cdf9bf16d6e54d63116a
+data.csv                         |     21,440 | b618696f57b822cd2e9b92564a52b3cc93a2206f41df3f022956bb6cfe4e7ad5
+picasso.jpg                      |    114,573 | 6b3c67ea9ec82b09bd7520dd09dad2f1176347d740fd2042c88720e780691a7c
+sample.json                      |        132 | 9c42a9a978ac7a71873ebd5c65985e613cfaaff1c98f655af0d2ee0246502fd7
+sample.mp3                       |     72,142 | fbb756ae14005420ff00ccdaff99416bebfcea3adb7e30963a69e68e9fbe361b
 Total 5 files, 248771 bytes
 ```
 

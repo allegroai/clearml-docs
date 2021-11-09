@@ -121,7 +121,12 @@ Log as many metrics from your processes! It improves visibility on their progres
 Use the Logger class from to report scalars and plots.
 ```python
 from clearml import Logger
-Logger.current_logger().report_scalar(graph='metric', series='variant', value=13.37, iteration=counter)
+Logger.current_logger().report_scalar(
+    graph='metric', 
+    series='variant', 
+    value=13.37, 
+    iteration=counter
+)
 ```
 
 You can later analyze reported scalars
@@ -139,7 +144,11 @@ You can also search and query Tasks in the system.
 Use the `Task.get_tasks` call to retrieve Tasks objects and filter based on the specific values of the Task - status, parameters, metrics and more!
 ```python
 from clearml import Task
-tasks = Task.get_tasks(project_name='examples', task_name='partial_name_match', task_filter={'status': 'in_progress'})
+tasks = Task.get_tasks(
+    project_name='examples', 
+    task_name='partial_name_match', 
+    task_filter={'status': 'in_progress'}
+)
 ```
 
 ## Manage Your Data

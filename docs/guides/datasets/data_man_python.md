@@ -83,12 +83,19 @@ demonstrates data ingestion using the dataset created in the first script.
 dataset_name = "cifar_dataset"
 dataset_project = "dataset_examples"
 
-dataset_path = Dataset.get(dataset_name=dataset_name, dataset_project=dataset_project).get_local_copy()
+dataset_path = Dataset.get(
+    dataset_name=dataset_name, 
+    dataset_project=dataset_project
+).get_local_copy()
 ```
 
 The script above gets the dataset and uses the [`Dataset.get_local_copy`](../../references/sdk/dataset.md#get_local_copy) 
-method to return a path to the cached, read-only local dataset. If you need a modifiable copy of the dataset, 
-use `Dataset.get(dataset_name, dataset_project).get_mutable_local_copy(path/to/download)`
+method to return a path to the cached, read-only local dataset. 
+
+If you need a modifiable copy of the dataset, use the following: 
+```python
+Dataset.get(dataset_name, dataset_project).get_mutable_local_copy("path/to/download")
+```
 
 The script then creates a neural network to train a model to classify images from the dataset that was
 created above.
