@@ -14,9 +14,9 @@ ClearML Enterprise's hyperdatasets supports rapid prototyping, creating new oppo
 * Enabling complex applications like collaborative (federated) learning. 
 
 
-## Hyperdataset Components 
+## Hyper-Dataset Components 
 
-A hyperdataset is composed of the following components:
+A Hyper-Dataset is composed of the following components:
 
 * [Frames](frames.md)
     * [SingleFrames](single_frames.md) 
