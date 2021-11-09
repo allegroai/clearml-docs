@@ -85,8 +85,13 @@ experiments in the table.
 
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ HYPER PARAMETERS** **>** Expand a section **>** Select the
   hyperparameter checkboxes.
+  
+:::note Float Behavior
+By default, the experiments table displays rounded up float values. Hover over a float to view its precise value in the 
+tooltip that appears. To view all precise values in a column, hover over a float and click `-->`.  
+:::
 
-### Filtering Experiments
+### Filtering Columns
 
 ![Filtering table gif](../img/gif/filter_screenshots.gif)
 
@@ -97,12 +102,15 @@ There are a few types of filters:
 * Value set - Choose which values to include from a list of all values in the column
 * Numerical ranges - Insert minimum and / or maximum value
 * Date ranges - Insert starting and / or ending date and time
-* Tags - Choose which tags to include from a list of all tags used in the column. Additionally, tags can be filtered using
-  the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These options appear
-    on the top of the tag list. 
+* Tags - Choose which tags to include from a list of all tags used in the column. 
+  * Filter tags using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These 
+    options appear on the top of the tag list.
+  * Exclude a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox.
   
 Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
 
+To clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" /> 
+in the top right corner of the table.
 
 
 

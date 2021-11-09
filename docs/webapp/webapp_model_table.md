@@ -90,3 +90,21 @@ experiments execute on, label versions of experiments, or apply team names to or
         * Change a tag's colors - Click **Tag Colors** **>** Click the tag icon **>** **Background** or **Foreground**
           **>** Pick a color **>** **OK** **>** **CLOSE**.
 * To remove a tag - Hover over the tag **>** **X**.
+
+## Filtering Columns
+
+Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
+on a column, and the relevant filter appears.
+
+There are a couple filter types:
+* Value set - Choose which values to include from a list of all values in the column
+* Tags - Choose which tags to include / exclude from a list of all tags used in the column. 
+  * Filter tags using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These 
+    options appear on the top of the tag list.
+  * Exclude a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox. 
+  
+Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right 
+(<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
+
+To clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" /> 
+in the top right corner of the table.
