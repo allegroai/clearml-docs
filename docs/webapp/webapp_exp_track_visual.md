@@ -100,7 +100,7 @@ The output details include:
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![Uncomitted changes section](../img/webapp_tracking_19.png)
+![Uncommitted changes section](../img/webapp_tracking_19.png)
 
 </div>
 </details>
