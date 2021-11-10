@@ -34,7 +34,6 @@ The **ClearML** experiment comparison provides [comparison features](#comparison
 1. In the bottom bar, click **COMPARE**. The comparison page appears, showing a column for each experiment and differences with a highlighted background color. The experiment on the left is the base experiment. Other experiments compare to the base experiment.
 
 
-
 ## Details
 
 The **DETAILS** tab includes deep comparisons of the following:
@@ -230,7 +229,7 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 
 To assist in experiment analysis, the comparison page supports:
 
-* [Adding experiments to the comparison](#adding-experiments-to-the-comparison) using a partial name search.
+* [Adding experiments to the comparison](#adding-experiments-to-the-comparison) 
 * [Finding the next or previous difference](#finding-the-next-or-previous-difference).
 * [Hiding identical fields](#hiding-identical-fields)
 * [Searching all text](#searching-all-text)
@@ -243,11 +242,15 @@ To assist in experiment analysis, the comparison page supports:
 
 ### Adding Experiments to the Comparison
 
-Add an experiment to the comparison - Click **Add Experiment** and start typing an experiment name. An experiment search
-and select dialog appears showing matching experiments to choose from. To add an experiment, click **+**. To Remove
-an experiment, click <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-md" />.
+**To add experiments:**
+1. Click **+ Add Experiment** in the top left corner of any of the comparison tabs. This will open up a window with an
+   experiment table. 
+1. Find the experiments to add by sorting and [filtering](webapp_exp_table.md#filtering-experiments) the experiments with 
+   the buttons on the columns. Experiments can also be filtered by entering name fragments into the search bar.
+1. Select experiments to add to the comparison.
+1. Click **APPLY**.
 
-![image](../img/webapp_compare_0194.png)
+![image](../img/webapp_compare_add.png)
 
 
 
