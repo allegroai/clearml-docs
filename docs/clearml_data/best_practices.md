@@ -3,8 +3,8 @@ title: Best Practices
 ---
 
 :::important
-This page covers ClearML's file-based data management solution. To learn about ClearML's more advanced queryable 
-interface, see [Hyper-Datasets](../hyperdatasets/overview.md).
+This page covers `clearml-data`, ClearML's file-based data management solution.
+See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced queryable dataset management solution.
 :::
 
 The following are some recommendations for using ClearML Data. 

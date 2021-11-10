@@ -3,8 +3,8 @@ title: Introduction
 ---
 
 :::important
-This page covers ClearML's file-based data management solution, which includes the `clearml-data` CLI tool and the `Dataset` 
-SDK class. To learn about ClearML's more advanced queryable interface, see [Hyper-Datasets](../hyperdatasets/overview.md).
+This page covers `clearml-data`, ClearML's file-based data management solution.
+See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced queryable dataset management solution.
 :::
 
 In Machine Learning, you are very likely dealing with a gargantuan amount of data that you need to put in a dataset,
