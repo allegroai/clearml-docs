@@ -74,14 +74,14 @@ most recent dataset in the specified project, or the most recent dataset with th
 
 Once a specific dataset object has been obtained, get a local copy of the dataset using one of the following options:
 * [`Dataset.get_local_copy()`](../references/sdk/dataset.md#get_local_copy) - get a read-only local copy of an entire dataset. 
-  This method returns a path to the dataset in local cache (downloading the dataset if it is not already in cache)
+  This method returns a path to the dataset in local cache (downloading the dataset if it is not already in cache).
 * [`Dataset.get_mutable_local_copy()`](../references/sdk/dataset.md#get_mutable_local_copy) - get a writable local copy 
 of an entire dataset. This method downloads the dataset to a specific folder (non-cached), specified with the `target_folder` parameter. If 
 the specified folder already has contents, specify whether to overwrite its contents with the dataset contents, using the `overwrite` parameter.
 
 ## Modifying Datasets
 
-Once a dataset has been created, its contents can be modified and replaced. When your data is changes, you can 
+Once a dataset has been created, its contents can be modified and replaced. When your data is changed, you can 
 add updated files or remove unnecessary files. 
 
 ### add_files()

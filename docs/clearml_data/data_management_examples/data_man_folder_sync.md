@@ -8,10 +8,8 @@ This example shows how to use the `clearml-data` folder sync function.
 from time to time. When the point of truth is updated, users can call `clearml-data sync` and the 
 changes (file addition, modification, or removal) will be reflected in ClearML.
 
-## Creating Initial Version
-
 ## Prerequisites
-1. First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. This contains all
+1. First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. It contains all
 the needed files.
 
 1. Open terminal and change directory to the cloned repository's examples folder
