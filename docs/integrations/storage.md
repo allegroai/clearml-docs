@@ -40,6 +40,7 @@ aws {
                 #     bucket: "my-bucket-name"
                 #     key: "my-access-key"
                 #     secret: "my-secret-key"
+                #     verify: "/path/to/ca/bundle.crt" OR false to not verify
                 # },
                 
             ]
