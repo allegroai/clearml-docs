@@ -346,7 +346,7 @@ General experiment details appear in the **INFO** tab. This includes information
 
 ### Console
 
-The complete experiment log containing everything printed to stdout and strerr appears in the **CONSOLE** tab. The full log
+The complete experiment log containing everything printed to stdout and stderr appears in the **CONSOLE** tab. The full log
 is downloadable. To view the end of the log, click **Jump to end**.
 
 <details className="cml-expansion-panel screenshot">
@@ -363,6 +363,8 @@ is downloadable. To view the end of the log, click **Jump to end**.
 ### Scalars
 
 All scalars that **ClearML** automatically logs, as well as those explicitly reported in code, appear in **RESULTS** **>** **SCALARS**.
+
+$$$$$$$The scalar graphs display averaged plot. To view whereas full screen now brings all data
 
 #### Scalar Plot Tools
 
@@ -439,7 +441,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view icon" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
 | <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
 | <img src="/docs/latest/icons/ico-download-json.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
-| <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. |
+| <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. When used with scalar graphs, full screen mode displays all data points, as opposed to an averaged plot |
 
 #### 3D Plot Controls 
 |Icon|Description|
