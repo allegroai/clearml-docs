@@ -2,6 +2,11 @@
 title: Workflows 
 ---
 
+:::important
+This page covers `clearml-data`, ClearML's file-based data management solution.
+See [Hyper-Datasets](../../hyperdatasets/overview.md) for ClearML's advanced queryable dataset management solution.
+:::
+
 Take a look at the ClearML Data examples which demonstrate common workflows using the `clearml-data` CLI and the 
 `Dataset` class:
 * [Dataset Management with CLI](data_man_simple.md) - Tutorial for creating, modifying, and consuming dataset with CLI.
