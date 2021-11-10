@@ -98,10 +98,10 @@ on a column, and the relevant filter appears.
 
 There are a couple filter types:
 * Value set - Choose which values to include from a list of all values in the column
-* Tags - Choose which tags to include / exclude from a list of all tags used in the column. 
-  * Filter tags using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These 
+* Tags - Choose which tags to filter by from a list of all tags used in the column. 
+  * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These 
     options appear on the top of the tag list.
-  * Exclude a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox. 
+  * Filter by the absence of a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox. 
   
 Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right 
 (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
