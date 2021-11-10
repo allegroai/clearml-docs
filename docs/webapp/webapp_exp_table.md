@@ -88,7 +88,7 @@ experiments in the table.
   
 :::note Float Values Display
 By default, the experiments table displays rounded up float values. Hover over a float to view its precise value in the 
-tooltip that appears. To view all precise values in a column, hover over a float and click `-->`.  
+tooltip that appears. To view all precise values in a column, hover over a float and click <img src="/docs/latest/icons/ico-line-exapnd.svg" alt="Expand" className="icon size-md" />.  
 :::
 
 ### Filtering Columns
