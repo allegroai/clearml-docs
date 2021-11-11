@@ -111,14 +111,14 @@ Provides general version information:
 1. Click <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> (check)
 
 ### Version Metadata Panel 
-Any version specific metadata, in HOCON format.
+Any version specific metadata, in JSON format.
 The content icon color signifies whether any metadata is currently accompanying the dataset version.
 
 **To edit a version's metadata:**
 
 1. Click <img src="/docs/latest/icons/ico-metadata.svg" alt="Edit metadata" className="icon size-md space-sm" /> on the 
    **VERSION METADATA** panel to open the edit window
-1. Edit the section contents (HOCON format)
+1. Edit the section contents (JSON format)
 1. Click **OK**
 
 ### Version Label Statistics Panel
