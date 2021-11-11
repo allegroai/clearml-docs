@@ -86,32 +86,48 @@ and you cannot create snapshots.
 
 **To modify a Dataset version name, do the following:**
 
-* At the top left of the Dataset page, hover over the Dataset version name, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" /> , edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" className="icon size-md space-sm" /> (check).
+* At the top left of the Dataset page, hover over the Dataset version name, click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" /> , edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> (check).
 
 ## Version and Snapshot Information
-A selected dataset version's or snapshot's information is displayed in three panels:
-* **VERSION INFO** - General version information, including version ID, dataset ID and name, status (*Draft* or *Published*), 
-  creating user, update time, and description.
-* **VERSION METADATA** - User defined values associated with the version.
-* **VERSION LABEL STATISTICS** - Usage stats of version labels. Each label is listed along with the number
-of times it was used in the version. The pie chart displays a visualization of the stats. Hover over chart slice, and 
-  its associated label and usage percentage will appear at the center of the chart. 
-  
-### Modifying Version Descriptions
+Additional information about the selected dataset version is presented below the version selection panel in collapsible 
+panels:
+
+### Version Info Panel 
+Provides general version information:
+* Version ID 
+* Dataset ID 
+* Dataset name 
+* Status (*Draft* or *Published*) 
+* Creating user
+* Version update time
+* Version description.
+
 **To modify a version description, do the following:**
 
 1. Expand the **INFO** area 
 1. Hover over the **Description** element
-1. Click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />
+1. Click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" />
 1. Edit the description
-1. Click <img src="/docs/latest/icons/ico-save.svg" className="icon size-md space-sm" /> (check)
- 
-### Modifying Version Metadata
-**To add / modify a version's metadata, do the following**:
+1. Click <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> (check)
 
-1. Click $$$$$ in the **VERSION METADATA** panel
-1. Input metadata in JSON format
+### Version Metadata Panel 
+Any version specific metadata, in HOCON format.
+The content icon color signifies whether any metadata is currently accompanying the dataset version.
+
+**To edit a version's metadata:**
+
+1. Click <img src="/docs/latest/icons/ico-metadata.svg" alt="Edit metadata" className="icon size-md space-sm" /> on the 
+   **VERSION METADATA** panel to open the edit window
+1. Edit the section contents (HOCON format)
 1. Click **OK**
+
+### Version Label Statistics Panel
+Label usage stats for this dataset version. 
+* Each label is listed along with the number of times it was used in the version
+* The pie chart visualizes these stats. Hover over a chart slice and its associated label and usage 
+  percentage will appear at the center of the chart. 
+  
+ 
 
 ## Deleting Versions
 
