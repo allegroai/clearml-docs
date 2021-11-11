@@ -31,8 +31,11 @@ from allegroai import FrameGroup, SingleFrame
 frame_group = FrameGroup()
 
 # Create a SingleFrame
-frame = SingleFrame(source='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg', 
-                    width=512, height=512, preview_uri='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg')
+frame = SingleFrame(
+    source='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg', 
+    width=512, height=512, 
+    preview_uri='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg'
+)
     
 # Add the first SingleFrame to the FrameGroup.
 frame_group['FrameOne'] = frame
@@ -54,7 +57,9 @@ To add FrameGroups to a Dataset Version:
 frame_group = FrameGroup()
 
 # Create SingleFrame
-single_frame = SingleFrame(source='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg')
+single_frame = SingleFrame(
+    source='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg'
+)
 
 # Add the first SingleFrame to the FrameGroup.
 frame_group['FrameOne'] = single_frame
@@ -74,9 +79,11 @@ To access a FrameGroup, use the `DatasetVersion.get_single_frame` method, just l
 
 ```python
 # Get the FrameGroup
-frame_group = DatasetVersion.get_single_frame(frame_id='f3ed0e09bf23fc947f426a0d254c652c', 
-                                              dataset_name='MyDataset', 
-                                              version_name='FrameGroup')
+frame_group = DatasetVersion.get_single_frame(
+    frame_id='f3ed0e09bf23fc947f426a0d254c652c', 
+    dataset_name='MyDataset', 
+    version_name='FrameGroup'
+)
 ```
 
 ### Updating FrameGroups
@@ -88,8 +95,11 @@ SingleFrame needs to be referenced using its name as the key in the FrameGroup.
 frames = []                
 
 # Get the FrameGroup
-frame_group = DatasetVersion.get_single_frame(frame_id='f3ed0e09bf23fc947f426a0d254c652c', 
-                                              dataset_name='MyDataset', version_name='FrameGroup')
+frame_group = DatasetVersion.get_single_frame(
+    frame_id='f3ed0e09bf23fc947f426a0d254c652c', 
+    dataset_name='MyDataset', 
+    version_name='FrameGroup'
+)
         
 # Add metadata by referencing the name of the SingleFrame in the FrameGroup
 frame_group['FrameOne'].metadata['new_key'] = 'new_value'
@@ -102,15 +112,18 @@ myVersion.update_frames(frames)
    
 ### Deleting Frames
 
-To delete a FrameGroup, use the `DatasetVersion.delete_frames` method, just like when deleting a 
-SingleFrame, except that a FrameGroup is being referenced.
+To delete a FrameGroup, use the [`DatasetVersion.delete_frames`](../references/hyperdataset/hyperdatasetversion.md#delete_frames) 
+method, just like when deleting a SingleFrame, except that a FrameGroup is being referenced.
 
 ```python
 frames = []                
 
 # Get the FrameGroup
-frame_group = DatasetVersion.get_single_frame(frame_id='f3ed0e09bf23fc947f426a0d254c652c', 
-                                        dataset_name='MyDataset', version_name='FrameGroup')
+frame_group = DatasetVersion.get_single_frame(
+    frame_id='f3ed0e09bf23fc947f426a0d254c652c', 
+    dataset_name='MyDataset', 
+    version_name='FrameGroup'
+)
 
 # Delete the FrameGroup
 frames.append(frame_group)
