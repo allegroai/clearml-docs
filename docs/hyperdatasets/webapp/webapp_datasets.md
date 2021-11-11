@@ -40,7 +40,7 @@ To edit the dataset-level metadata
     * Click <img src="/docs/latest/icons/ico-status-completed.svg" alt="Check mark" className="icon size-md space-sm" /> 
     `Metadata`
     * Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" />, then click **Edit Metadata** <img src="/docs/latest/icons/ico-metadata.svg" alt="Edit metadata" className="icon size-md space-sm" />
-1. Edit the section contents (HOCON format) 
+1. Edit the section contents (JSON format) 
 1. Click **OK**
 
         
