@@ -1,11 +1,11 @@
 ---
-title: Dataset Versioning
+title: Dataset Versions
 ---
 
-Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying, and 
-deleting Dataset versions.
+Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying, 
+and deleting Dataset versions. 
 
-From the Datasets page, click on one of the Datasets in order to see and work with its versions. 
+From the [Datasets page](webapp_datasets.md), click on one of the Datasets in order to see and work with its versions. 
 
 ## Snapshots
 ### Viewing Snapshots
@@ -24,8 +24,8 @@ View snapshots in the simple version structure using either:
 </details>
 <br/>
 
-* The advanced view, a tree of versions. The tree contains one version whose status is <i>Draft</i>, and snapshots appear in
-chronological order, with oldest at the top, and the most recent at the bottom.
+* The advanced view, a tree of versions. The tree contains one version whose status is *Draft*, and snapshots appear in
+chronological order, with the oldest at the top, and the most recent at the bottom.
   
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">Advanced view (version tree)</summary>
@@ -56,7 +56,7 @@ The WebApp (UI) does not currently support the automatic naming of snapshots wit
 a snapshot name.
 :::
 
-## Versions
+## Version Management
 ### Creating Versions
 
 To create a version, you must be in the advanced (version tree) view.
@@ -88,7 +88,19 @@ and you cannot create snapshots.
 
 * At the top left of the Dataset page, hover over the Dataset version name, click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" /> , edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> (check).
 
-## Version and Snapshot Information
+### Deleting Versions
+
+You can delete versions whose status is *Draft*. 
+
+**To delete the current version, do the following:**
+
+* If you are in the simple view, click **Switch to Advanced View**.
+* Click the version to delete.
+* Click **DELETE**.
+* Click **DELETE** again to confirm.
+
+
+## Version Information
 Additional information about the selected dataset version is presented below the version selection panel in collapsible 
 panels:
 
@@ -127,24 +139,132 @@ Label usage stats for this dataset version.
 * The pie chart visualizes these stats. Hover over a chart slice and its associated label and usage 
   percentage will appear at the center of the chart. 
   
- 
-
-## Deleting Versions
-
-You can delete versions whose status is *Draft*. 
-
-**To delete the current version, do the following:**
-
-* If you are in the simple view, click **Switch to Advanced View**.
-* Click the version to delete.
-* Click **DELETE**.
-* Click **DELETE** again to confirm.
-
-## Exporting Frames
-
-Frame exports downloaded filtered frames as a JSON file.
-
-**To export frames, do the following:**
-
-* In the **Version Browser** area, click **EXPORT FRAMES**. The frames JSON file downloads.
   
+## Version Frame Browser
+The **Version Frame Browser** displays a preview of the contents of the selected dataset version.
+The dataset version can be filtered by multiple criteria. The resulting frames can be exported as a JSON file.  
+
+To view further details about a specific frame, click on its preview, which will open the [Frame Viewer](webapp_datasets_frames.md#frame-viewer).
+
+### Simple Frame Filtering
+Simple frame filtering applies one annotation object (ROI) label and returns frames containing at least one annotation 
+with that label. 
+
+**To apply a simple frame filter,**  select a label from the **LABEL FILTER** list.
+
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">Simple filter example</summary>
+<div className="cml-expansion-panel-content">
+
+* Before filtering, the **Version Browser** in the image below contains seven frames.
+
+
+![Unfiltered version browser](../../img/hyperdatasets/frame_filtering_01.png)
+
+* A simple label filter for `person` shows three frames, each containing at least one ROI labeled `person`.
+
+![Filtered version browser](../../img/hyperdatasets/frame_filtering_02.png)
+
+</div>
+</details>
+
+### Advanced Frame Filtering
+
+Advanced frame filtering applies sophisticated filtering logic, which is composed of as many frame filters as needed, 
+where each frame filter can be a combination of ROI, frame, and source rules. 
+* ROI rules use include and exclude logic to match frames by ROI label; an ROI label can match frames containing at least 
+  one annotation object (ROI) with all labels in the rule.
+* Frame rules and source rules use Lucene queries with AND, OR, and NOT logic. Frame rules apply to frame metadata.
+* Source rules apply to frame source information.
+
+**To apply advanced filters:**
+1. In the **Version Browser**, click **Switch to advanced filters**.
+1. In a **FRAME FILTER**, create one of the following rules:
+    * ROI rule
+        * Choose **Include** or **Exclude**, select ROI labels, and optionally set the confidence level range.
+        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" alt="Setting Gear" className="icon size-md space-sm" />.
+    * Frame rule - Enter a Lucene query using frame metadata fields in the format `meta.<key>:<value>`.
+    * Source rule - Enter a Lucene query using frame metadata fields in the format `sources.<key>:<value>`.            
+
+#### Filtering Examples
+
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">ROI Rules</summary>
+<div className="cml-expansion-panel-content">      
+
+* Create one ROI rule for `person` shows the same three frames as the simple frame filter (above).
+
+![Adding an ROI rule](../../img/hyperdatasets/frame_filtering_03.png)
+
+* In the ROI rule, add a second label. Add `partially_occluded`. Only frames containing at least one ROI labeled as both 
+  `person` and `partially_occluded` match the filter.
+  
+![Add label to ROI rule](../../img/hyperdatasets/frame_filtering_04.png)
+   
+* By opening a frame in the frame viewer, you can see an ROI labeled with both.
+
+![Labeled ROIs in frame viewer](../../img/hyperdatasets/frame_filtering_05.png)
+
+</div>
+</details>
+<br/>
+
+<details className="cml-expansion-panel screenshot">
+    <summary className="cml-expansion-panel-summary">Frame Rules</summary>
+    <div className="cml-expansion-panel-content">
+
+Filter by metadata using Lucene queries.
+
+* Add a frame rule to filter by the metadata key `dangerous` for the value of `no`.
+  
+![Filter by metadata ](../../img/hyperdatasets/frame_filtering_08.png)
+
+* Open a frame in the frame viewer to see its metadata.
+  
+![Frame metadata in frame viewer](../../img/hyperdatasets/frame_filtering_09.png)
+
+</div>
+</details>            
+<br/>
+
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">Source Rules</summary>
+<div className="cml-expansion-panel-content">
+
+Filter by sources using Lucene queries.    
+
+* Add a source rule to filter for sources URIs with a wildcards.
+  
+![Filter by source](../../img/hyperdatasets/frame_filtering_10.png)
+
+Lucene queries can also be used in ROI label filters and frame rules.
+
+</div>
+</details>      
+
+### Exporting Frames
+
+To export (download) filtered datasets as a JSON file, click **EXPORT FRAMES**. 
+
+### Frame Browser Configuration
+Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />  to open the
+frame browser configuration settings. 
+
+#### Grouping Previews
+FrameGroups or SingleFrames can share the same `context_id` (URL). For example, users can set the same `context_id` 
+to multiple FrameGroups that represent frames in a single video. 
+
+Use the **Grouping** menu to select one of the following options:
+* Split Preview - Show separate previews for each individual FrameGroup, regardless of shared context.
+* Group by URL - Show a single preview for all FrameGroups with the same context   
+
+#### Preview Source
+When using multi-source FrameGroups, users can choose which of the FrameGroups’ sources will be displayed as the preview. 
+
+Use the **PREVIEW SOURCE** menu to select from the list of sources.
+Choose the `Default preview source` option to present the first available source.
+
+:::note
+If a FrameGroup doesn't have the selected preview source, the next available source will be used for the preview.  
+::: 
+
