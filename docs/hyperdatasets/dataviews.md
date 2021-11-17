@@ -143,8 +143,8 @@ myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=
 
 ### Adding Queries
 
-To add a query to a DataView, use the `DataView.add_query` method and specify Dataset versions, 
-ROI and / or frame queries, and other criteria. 
+To add a query to a DataView, use the [`DataView.add_query`](../references/hyperdataset/dataview.md#add_query) method 
+and specify Dataset versions, ROI and / or frame queries, and other criteria. 
 
 The `dataset_name` and `version_name` arguments specify the Dataset Version. The `roi_query` and `frame_query` arguments 
 specify the queries. 
@@ -165,8 +165,11 @@ This example is an ROI query filtering for frames containing at least one ROI wi
 myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
 
 # Add a query for a Dataset version 
-myDataView.add_query(dataset_name='myDataset',
-                     version_name='myVersion', roi_query='cat')
+myDataView.add_query(
+    dataset_name='myDataset',
+    version_name='myVersion', 
+    roi_query='cat'
+)
 ```
 
 * ROI query for one label OR another
@@ -175,11 +178,17 @@ This example is an ROI query filtering for frames containing at least one ROI wi
 
 ```python
 # Add a query for a Dataset version 
-myDataView.add_query(dataset_name='myDataset', version_name='myVersion', 
-                     roi_query='cat')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion', 
+    roi_query='cat'
+)
 
-myDataView.add_query(dataset_name='myDataset', version_name='myVersion', 
-                     roi_query='dog')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion',
+    roi_query='dog'
+)
 ```
 
 * ROI query for one label AND another label  
@@ -188,8 +197,10 @@ This example is an ROI query filtering for frames containing at least one ROI wi
 
 ```python
 # Add a query for a Dataset version
-myDataView.add_query(dataset_name='myDataset', version_name='training',
-                     roi_query=['Car','partly_occluded'])
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='training',
+    roi_query=['Car','partly_occluded'])
 ```
 
 * ROI query for one label AND NOT another (Lucene query).    
@@ -202,8 +213,11 @@ This example is an ROI query filtering for frames containing at least one ROI wi
 # Use a Lucene Query
 #   "label" is a key in the rois dictionary of a frame
 #   In this Lucene Query, specify two values for the label key and use a Logical AND NOT
-myDataView.add_query(dataset_name='myDataset', version_name='training',
-    roi_query='label.keyword:\"Car\" AND NOT label.keyword:\"partly_occluded\"')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='training',
+    roi_query='label.keyword:\"Car\" AND NOT label.keyword:\"partly_occluded\"'
+)
 ```
 
 #### Querying Multiple Datasets and Versions
@@ -215,23 +229,28 @@ from two versions of one Dataset, and one version of another Dataset.
 # Add queries:
 
 # The 1st Dataset version 
-myDataView.add_query(dataset_name='dataset_1',
-                     version_name='version_1',
-                     roi_query='label.keyword:\"car\" OR label.keyword:\"truck\" OR '
-                               'label.keyword:\"bicycle\"')
+myDataView.add_query(
+    dataset_name='dataset_1',
+    version_name='version_1',
+    roi_query='label.keyword:\"car\" OR label.keyword:\"truck\" OR '
+                'label.keyword:\"bicycle\"'
+)
 
 # The 1st Dataset, but a different version
-myDataView.add_query(dataset_name='dataset_1',
-                     version_name='version_2',
-                     roi_query='label.keyword:\"car\" OR label.keyword:\"truck\" OR '
-                               'label.keyword:\"bicycle\"')
+myDataView.add_query(
+    dataset_name='dataset_1',
+    version_name='version_2',
+    roi_query='label.keyword:\"car\" OR label.keyword:\"truck\" OR '
+                               'label.keyword:\"bicycle\"'
+)
 
 # A 2nd Dataset (version)
-myDataView.add_query(dataset_name='dataset_2', 
-                     version_name='some_version',
-                     roi_query='label.keyword:\"car\" OR label.keyword:\"truck\" OR '
-                               'label.keyword:\"bicycle\"')
-
+myDataView.add_query(
+    dataset_name='dataset_2',
+    version_name='some_version',
+    roi_query='label.keyword:\"car\" OR label.keyword:\"truck\" OR '
+                               'label.keyword:\"bicycle\"'
+)
 ```
 
 #### Frame Queries
@@ -246,16 +265,18 @@ This example demonstrates a frame query filtering for frames containing the meta
         
 ```python
 # Add a frame query for frames with the meta key "city" value of "bremen"
-myDataView.add_query(dataset_name='myDataset',
-                     version_name='version',
-                     frame_query='meta.city:"bremen"')
+myDataView.add_query(
+    dataset_name='myDataset',
+    version_name='version',
+    frame_query='meta.city:"bremen"'
+)
 ```
 
 
 ### Controlling Query Iteration
 
-Use `DataView.set_iteration_parameters` to manage the order, number, timing, and reproducibility of frames 
-for training.
+Use [`DataView.set_iteration_parameters`](../references/hyperdataset/dataview.md#set_iteration_parameters) to manage the 
+order, number, timing, and reproducibility of frames for training.
 
 
 #### Iterate Frames Infinitely 
@@ -280,11 +301,16 @@ myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=
 
 # Set Iteration Parameters (overrides parameters in constructing the DataView object
 myDataView.set_iteration_parameters(
-    order=IterationOrder.random, infinite=False)
+    order=IterationOrder.random, 
+    infinite=False
+)
 
 # Add a query for a Dataset version 
-myDataView.add_query(dataset_name='myDataset',
-                     version_name='myVersion', roi_query='cat')
+myDataView.add_query(
+    dataset_name='myDataset',
+    version_name='myVersion', 
+    roi_query='cat'
+)
 ```
 
 #### Iterate a Maximum Number of Frames
@@ -297,14 +323,17 @@ myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=
 
 # Set Iteration Parameters (overrides parameters in constructing the DataView object
 myDataView.set_iteration_parameters(
-    order=IterationOrder.random, infinite=False,
-    maximum_number_of_frames=5000)
+    order=IterationOrder.random, 
+    infinite=False,
+    maximum_number_of_frames=5000
+)
 ```
 
 ### Debiasing Input Data
 
-Debias input data using the `DataView.add_query` method's `weight` argument to add weights. This 
-is the same `DataView.add_query` that can be used to specify Dataset versions, and ROI queries and frame queries.
+Debias input data using the [`DataView.add_query`](../references/hyperdataset/dataview.md#add_query) method's `weight` 
+argument to add weights. This is the same `DataView.add_query` that can be used to specify Dataset versions, and ROI 
+queries and frame queries.
 
 This example adjusts an imbalance in the input data to improve training for `Car` ROIs that are also `largely occluded` 
 (obstructed). For every frame containing at least one ROI labeled `Car`, approximately five frames containing at least 
@@ -334,21 +363,33 @@ The example maps `Car` (upper case "C") to `car` (lower case "c").
 myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
 
 # The 1st Dataset (version) - "car" with lowercase "c"
-myDataView.add_query(dataset_name='myDataset', version_name='myVersion' roi_query='car')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion', 
+    roi_query='car'
+)
 
 # The 2nd Dataset (version) - "car" with lowercase "c"
-myDataView.add_query(dataset_name='dataset_2', version_name='aVersion',  
-                     roi_query='car')
+myDataView.add_query(
+    dataset_name='dataset_2', 
+    version_name='aVersion',  
+    roi_query='car'
+)
 
 # A 3rd Dataset (version) - "Car" with uppercase "C"
-myDataView.add_query(dataset_name='dataset_3', version_name='training', 
-                     roi_query='Car')
+myDataView.add_query(
+    dataset_name='dataset_3', 
+    version_name='training',
+    roi_query='Car'
+)
 
 # Use a mapping rule to translate "Car" (uppercase) to "car" (lowercase)
-myDataView.add_mapping_rule(dataset_name='dataset_3',
-                            version_name='training', 
-                            from_labels=['Car'], 
-                            to_label='car')
+myDataView.add_mapping_rule(
+    dataset_name='dataset_3',
+    version_name='training', 
+    from_labels=['Car'], 
+    to_label='car'
+)
 ```
 
 ### Setting Label Enumeration Values
@@ -369,21 +410,38 @@ For example, if the labels `truck`, `van`, and `car` are mapped **to** `vehicle`
 myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
 
 # Add a query for a Dataset version 
-myDataView.add_query(dataset_name='myDataset', version_name='myVersion', 
-                     roi_query='cat')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion', 
+    roi_query='cat'
+)
 
-myDataView.add_query(dataset_name='myDataset', version_name='myVersion', 
-                     roi_query='dog')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion', 
+    roi_query='dog'
+)
 
-myDataView.add_query(dataset_name='myDataset', version_name='myVersion', 
-                     roi_query='bird')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion', 
+    roi_query='bird'
+)
 
-myDataView.add_query(dataset_name='myDataset', version_name='myVersion', 
-                     roi_query='sheep')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion', 
+    roi_query='sheep'
+)
 
-myDataView.add_query(dataset_name='myDataset', version_name='myVersion', 
-                     roi_query='cow')
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion', 
+    roi_query='cow'
+)
 
 # Set the enumeration label values
-myDataView.set_labels({"cat": 1, "dog": 2, "bird": 3, "sheep": 4, "cow": 5, "ignore": -1,})
+myDataView.set_labels(
+    {"cat": 1, "dog": 2, "bird": 3, "sheep": 4, "cow": 5, "ignore": -1,}
+)
 ```
