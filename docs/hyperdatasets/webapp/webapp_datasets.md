@@ -18,11 +18,13 @@ Dataset cards allow you to open a specific Dataset to perform Dataset versioning
 * Dataset name
 * Elapsed time since the last update. Hover over elapsed time and view date of last update.
 * User updating the Dataset
-* Dataset-level metadata button (if a dataset has dataset-level metadata). 
+* If the dataset contains dataset-level metadata, the card displays the <img src="/docs/latest/icons/ico-status-completed.svg" alt="Check mark" className="icon size-md space-sm" /> 
+    `Metadata` indicator, which is also a shortcut to [edit the Dataset's metadata](#editing-dataset-level-metadata) 
 * The number of versions in the Dataset
 * The total number of frames in all versions of the Dataset. If an asterisk (\*) appears next to **FRAMES**, then you can hover it and see the name of the version whose frames were last updated appears.
 * The percentage of frames annotated in all versions of the Dataset. If an asterisk (\*) appears next to **ANNOTATED**, then you can hover it and see the name of the version whose frames were last annotated appears.
-* If the Dataset version's status is *Published*, then the top labels in the Dataset, color coded (colors are editable) appear. If the Dataset version is Draft, then no labels appear.
+* If the Dataset version's status is *Published*, then the Dataset's top labels appear (colors are editable). If the 
+  Dataset version is *Draft*, then no labels appear.
 
 :::note Change Label Color
 To change the label color coding, hover over a label color, click thr hand pointer, and then select a new color.
