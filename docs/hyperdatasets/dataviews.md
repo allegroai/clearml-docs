@@ -70,7 +70,7 @@ codebases and datasets. It is important to set enumeration values for all labels
 On-the-fly data augmentation is applied to SingleFrames, transforming images without creating new data. Apply data augmentation 
 in steps, where each step is composed of a method, an operation, and a strength as follows: 
 
-* **Affine** augmentation method - Transform an image's geometric shape to another position on a 2-dimensional plane.  
+* **Affine** augmentation method - Transform an image's geometric shape to another position on a 2-dimensional plane. 
   Use any of the following operations:
 
     * Rotate

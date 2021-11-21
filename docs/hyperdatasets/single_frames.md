@@ -271,7 +271,7 @@ To update a SingleFrame:
 * Access the SingleFrame by calling the [`DatasetVersion.get_single_frame`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame) 
   method 
 * Make changes to the frame
-* Update the frame in a DatasetVersion using the [`DatasetVersion.update_frames`](../references/hyperdataset/hyperdatasetversion.md##update_frames) 
+* Update the frame in a DatasetVersion using the [`DatasetVersion.update_frames`](../references/hyperdataset/hyperdatasetversion.md#update_frames) 
   method.
 
 ```python
