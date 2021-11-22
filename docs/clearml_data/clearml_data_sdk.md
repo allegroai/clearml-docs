@@ -2,6 +2,10 @@
 title: SDK
 ---
 
+:::important
+This page covers `clearml-data`, ClearML's file-based data management solution.
+See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced queryable dataset management solution.
+:::
 
 Datasets can be created, modified, and managed with ClearML Data's python interface. The following page provides an overview
 for using the most basic methods of the `Dataset` class. See the [Dataset reference page](../references/sdk/dataset.md) 

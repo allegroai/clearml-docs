@@ -2,6 +2,11 @@
 title: CLI 
 --- 
 
+:::important
+This page covers `clearml-data`, ClearML's file-based data management solution.
+See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced queryable dataset management solution.
+:::
+
 The `clearml-data` utility is a CLI tool for controlling and managing your data with ClearML.  
 
 The following page provides a reference to `clearml-data`'s CLI commands. 
