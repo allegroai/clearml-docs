@@ -363,8 +363,8 @@ is downloadable. To view the end of the log, click **Jump to end**.
 ### Scalars
 
 All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in **RESULTS** **>** 
-**SCALARS**. Scalar values are presented as time series line chart of average aggregated buckets. To see the raw,
-non-averaged series for a metric, view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
+**SCALARS**. Scalar values are presented as time series line chart. To see the series for a metric in high resolution, 
+view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
 
 :::info Full Screen Refresh
 Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-sm space-sm" /> 
