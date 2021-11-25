@@ -187,8 +187,7 @@ Specify the remaining parameters, including the time limit per Task (minutes), p
 ## Running as a Service
 
 The optimization can run as a service, if the `run_as_service` argument is set to  `true`. For more information about 
-running as a service, see [ClearML Agent services container](../../../clearml_agent.md#services-mode) 
-on "Concepts and Architecture" page.
+running as a service, see [Services Mode](../../../clearml_agent.md#services-mode).
 
 ```python
     # if we are running as a service, just enqueue ourselves into the services queue and let it run the optimization
