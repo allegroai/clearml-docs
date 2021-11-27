@@ -29,7 +29,7 @@ table / full screen**.
 
 ### Info Panel
 
-The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table#clearml-actions-from-the-experiments-table)
+The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table#experiment-actions)
 can be performed from the table (as well as the menu in the info panel).
 
 <details className="cml-expansion-panel screenshot">
