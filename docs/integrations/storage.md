@@ -77,6 +77,16 @@ ClearML also supports [MinIO](https://github.com/minio/minio) by adding this con
                 # }
 ```
 
+Note: to force usage of a non Amazon endpoint (like the MinIO example above), port declaration is *always* needed, even if standard; this is an example [MinIO](https://github.com/minio/minio) with TLS enabled:
+```
+                # {
+                #     host: "my-minio-host:443"
+                #     key: "12345678"
+                #     secret: "12345678"
+                #     multipart: false
+                #     secure: true
+                # }
+```
 
 ### Configuring Azure
 To configure Azure blob storage specify the account name and key.
