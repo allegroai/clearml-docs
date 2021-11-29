@@ -87,19 +87,25 @@ The Agent has three running modes:
 - Conda Environment Mode: Similar to the Virtual Environment mode, only instead of using pip, it uses conda install and 
   pip combination. Notice this mode is quite brittle due to the Conda package version support table.
 
-## Services Agent & Queue
+## Services Mode
 
-The ClearML Agent, in its default setup, spins a single Task per Agent. It's possible to run multiple agents on the same machine,
-but each one will execute a single Task at a time.<br/>
-This setup makes sense compute-heavy Tasks that might take some time to complete.
-Some tasks, mainly control (Like a pipeline controller) or services (Like an archive cleanup service) are mostly idling, and only implement a thin control logic.<br/>
+In its default mode, a ClearML Agent executes a single task at a time, since training tasks typically require all resources 
+available to them. Some tasks are mostly idling and require less computation power, such as controller tasks (e.g. 
+a pipeline controller) or service tasks (e.g. cleanup service). 
 
-This is where the `services-modes` comes into play. An agent running in services-mode will spin multiple tasks at the same time, each Task will register itself as a sub-agent (visible in the workers Tab in the UI).
-Some examples for suitable tasks are:
+This is where the `services-modes` comes into play. An agent running in `services-mode` will let multiple tasks execute 
+in parallel (each task will register itself as a sub-agent, visible in the [Workers & Queues](../webapp/webapp_workers_queues.md) tab in the UI).
+
+This mode is intended for running maintenance tasks. Some suitable tasks include:
 
 - [Pipeline controller](../guides/pipeline/pipeline_controller.md) - Implementing the pipeline scheduling and logic
 - [Hyper-Parameter Optimization](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) - Implementing an active selection of experiments
 - [Control Service](../guides/services/aws_autoscaler.md) - AWS Autoscaler for example
 - [External services](../guides/services/slack_alerts.md) - Such as Slack integration alert service
 
-By default, [ClearML Server](../deploying_clearml/clearml_server.md) comes with an Agent running on the machine that runs it. It also comes with a Services queue.
+:::warning
+Do not enqueue training or inference tasks into the services queue. They will put an unnecessary load on the server.
+:::
+
+By default, the open source [ClearML Server](../deploying_clearml/clearml_server.md) runs a single clearml-agent in 
+services mode that listens to the `services` queue.
