@@ -6,7 +6,7 @@ The [using_artifacts_example](https://github.com/allegroai/clearml/blob/master/e
 script demonstrates uploading a data file to a task as an artifact and then accessing and utilizing the artifact in a different task.
 
 When the script runs it creates two tasks, `create artifact` and `use artifact from other task`, both of which are associated 
-with the `examples` project. The first task creates and uploads the artifact and the second task accesses the first task’s 
+with the `examples` project. The first task creates and uploads the artifact, and the second task accesses the first task’s 
 artifact and utilizes it. 
 
 ## Task 1: Uploading an Artifact 
@@ -30,6 +30,11 @@ Artifact details (location and size) can be viewed in ClearML’s **web UI > exp
 After the second task is initialized, the script uses the [`Task.get_task`](../../references/sdk/task.md#taskget_task) 
 class method to get the first task and access its artifacts, specifically the `data file` artifact. The `get_local_copy` 
 method downloads the files and returns a path. 
+
+:::info Cache
+ClearML manages a cache of all downloaded content, so the code won't download the 
+same data multiple times. See [Caching](../../integrations/storage.md#caching) for configuration options.
+:::
 
 ```python
 preprocess_task = Task.get_task(task_name='create artifact', project_name='examples')
