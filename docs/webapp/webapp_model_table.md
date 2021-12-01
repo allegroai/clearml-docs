@@ -68,7 +68,7 @@ allow each feature. Model states are *Draft* (editable) and *Published* (read-on
 These actions can be accessed with the context menu (when right-clicking a model or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
 in a model's info panel).
 
-Some of the actions mentioned in the chart above can be performed on multiple models at once.
+Some actions mentioned in the chart above can be performed on multiple models at once.
 Select multiple models, then use either the context menu, or the bar that appears at the bottom of the page, to perform
 operations on the selected models. The context menu shows the number of models that can be affected by each action. 
 The same information can be found in the bottom menu, in a tooltip that appears when hovering over an action icon.   

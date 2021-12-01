@@ -31,7 +31,7 @@ and **ClearML Server** needs to be installed.
 
 * Read/write permissions for the default **Trains Server** data directory `/opt/clearml/data` and its subdirectories, or, 
   if this default directory is not used, the permissions for the directory and subdirectories that are used.
-* A minimum of 8GB system RAM.
+* A minimum of 8 GB system RAM.
 * Minimum free disk space of at least 30% plus two times the size of the data.
 * Python version >=2.7 or >=3.6, and Python accessible from the command-line as `python`
 
