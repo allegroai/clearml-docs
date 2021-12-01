@@ -53,7 +53,7 @@ The pipeline control logic is processed in a background thread.
 
 :::note
 We recommend enqueuing Pipeline Controller Tasks into a 
-[services](agents_and_queues.md#services-agent--queue) queue
+[services](../clearml_agent.md#services-mode) queue.
 :::
 
 Callback functions can be specified to be called in the steps of a `PipelineController` object. 

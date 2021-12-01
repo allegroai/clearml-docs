@@ -558,25 +558,24 @@ will pull a Task from the `opportunistic` queue and allocate up to 4 GPUs based 
 being used by other agents).
 
 ## Services Mode
-The ClearML Agent Services Mode executes an Agent that can execute multiple Tasks. This is useful for Tasks that are mostly 
-idling, such as periodic cleanup services, or a [pipeline controller](references/sdk/automation_controller_pipelinecontroller.md). 
-
-Launch a service Task like any other Task, by enqueuing it to the appropriate queue.
-
-:::note
-The default `clearml-server` configuration already runs a single `clearml-agent` in services mode that listens to the “services” queue.
-:::
+ClearML Agent supports a **Services Mode** where, as soon as a task is launched off of its queue, the agent moves on to the 
+next task without waiting for the previous one to complete. This mode is intended for running resource-sparse tasks that 
+are usually idling, such as periodic cleanup services or a [pipeline controller](references/sdk/automation_controller_pipelinecontroller.md). 
 
 To run a `clearml-agent` in services mode, run:
 ```bash
 clearml-agent daemon --services-mode --queue services --create-queue --docker <docker_name> --cpu-only
 ```
-:::note
-`services-mode` currently only supports Docker mode. Each service spins on its own Docker image.
+:::note Notes
+* `services-mode` currently only supports Docker mode. Each service spins on its own Docker image.
+* The default `clearml-server` configuration already runs a single `clearml-agent` in services mode that listens to the 
+  `services` queue.
 :::
 
+Launch a service task like any other task, by enqueuing it to the appropriate queue.
+
 :::warning
-Do not enqueue training or inference Tasks into the services queue. They will put an unnecessary load on the server.
+Do not enqueue training or inference tasks into the services queue. They will put an unnecessary load on the server.
 :::
 
 ### Setting Server Credentials
