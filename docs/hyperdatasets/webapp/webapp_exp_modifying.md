@@ -6,7 +6,7 @@ An experiment that has been executed can be [cloned](../../webapp/webapp_exp_rep
 execution details can be modified, and the modified experiment can be executed. 
 
 In addition to all the [**ClearML** tuning capabilities](../../webapp/webapp_exp_tuning.md), the **ClearML Enterprise WebApp** (UI) 
-enables modifying Dataviews, including: 
+enables modifying [Dataviews](webapp_dataviews.md), including: 
 * [Selected Dataview](#selecting-dataviews)
 * [Dataset versions](#selecting-dataset-versions)
 * [Frame filtering](#filtering-frames)
@@ -14,11 +14,6 @@ enables modifying Dataviews, including:
 * [Class label enumeration](#label-enumeration)
 * [Data augmentation](#data-augmentation)
 * [Input frame iteration controls](#iteration-controls)
-
-
-The selection and control of input data can be modified in *Draft* experiments that are not [development experiments](../task.md#development-experiments). 
-Do this by modifying the Dataview used by the experiment. The Dataview specifies the Hyper-Dataset versions from which frames 
-are iterated and frame filters (see [Dataviews](webapp_dataviews.md)).   
 
 ## Selecting Dataviews
 
