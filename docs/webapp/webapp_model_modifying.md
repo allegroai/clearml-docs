@@ -20,6 +20,6 @@ For each class, label enumeration contains the class name (key) and value.
 
 **To add, change, or delete label enumeration classes:**
 * In the **MODELS** tab, click a model **>** **LABELS** **>** Hover over **LABELS** **>** **EDIT** **>** **+**, edit a
-  key or value, or <img src="/docs/latest/icons/ico-trash.svg" alt="trash" className="icon size-sm space-sm" /> (delete) **>** **SAVE**.
+  key or value, or <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" /> (delete) **>** **SAVE**.
 
 ![image](../img/webapp_models_04a.png)

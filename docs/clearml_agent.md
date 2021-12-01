@@ -434,7 +434,7 @@ ClearML Agent supports executing tasks in multiple environments.
 ### PIP Mode 
 By default, ClearML Agent works in PIP Mode, in which it uses [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) 
 as the package manager. When ClearML runs, it will create a virtual environment 
-(or reuse an exisitng one, see [here](clearml_agent.md#virtual-environment-reuse)).
+(or reuse an existing one, see [here](clearml_agent.md#virtual-environment-reuse)).
 Task dependencies (Python packages) will be installed in the virtual environment.
 
 ### Conda Mode 
@@ -582,7 +582,7 @@ Do not enqueue training or inference tasks into the services queue. They will pu
 
 Self hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by default with a services queue.
 By default, the server is open and does not require username and password, but it can be [password protected](deploying_clearml/clearml_server_security#user-access-security).
-In case it is password protected the services agent will need to be configured with server credentials (associated with a user).
+In case it is password-protected, the services agent will need to be configured with server credentials (associated with a user).
 
 To do that, set these environment variables on  the ClearML Server machine with the appropriate credentials:
 ```
@@ -627,8 +627,8 @@ It's possible to add the Docker container as the base Docker image to a Task (ex
 
 ## Google Colab
 
-ClearML Agent can run on a [google colab](https://colab.research.google.com/) instance. This helps users to leverage 
-compute resources provided by google colab and send experiments for execution on it. 
+ClearML Agent can run on a [Google Colab](https://colab.research.google.com/) instance. This helps users to leverage 
+compute resources provided by Google Colab and send experiments for execution on it. 
 
 Check out [this](guides/ide/google_colab.md) tutorial on how to run a ClearML Agent on Google Colab!
 
