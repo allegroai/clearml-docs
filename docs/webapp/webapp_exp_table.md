@@ -151,7 +151,7 @@ in an experiment's info panel).
 
 
 Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
-Select multiple experiments, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+[Select multiple experiments](#selecting-experiments), then use either the context menu, or the bar that appears at the bottom of the page, to perform
 operations on the selected experiments. Actions can be performed only on the experiments that match the action criteria 
 (for example, only *Running* experiments can be aborted). The context menu shows the number 
 of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooltip that
@@ -159,6 +159,18 @@ appears when hovering over an action icon.
 
 ![Experiment table batch operations](../img/webapp_exp_table_batch_operations.png)
 
+## Selecting Experiments
+
+Select all experiments from an experiment table's current page or from all experiments in a project.  
+
+To select all experiments shown in the **current page** of an experiment table, click the **Select All** checkbox in the 
+top left of the table. To clear selection, click the **Select All** checkbox again. 
+
+Click the down arrow next to the **Select All** checkbox to access selection options for all **project experiments**:
+* **All** - Select all experiments in the project, including those which are not on the current page
+* **None** - Clear Selection
+* **Filtered** - Select all experiments in the project that correspond with the current active filters in the projects, 
+  including those that are not on the current page
 
 ## Creating an Experiment Leaderboard
 
