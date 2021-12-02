@@ -43,20 +43,28 @@ and **ClearML Server** needs to be installed.
 
     * **Linux and macOS**
     
-            docker-compose -f /opt/trains/docker-compose.yml down
-    
+        ```bash
+        docker-compose -f /opt/trains/docker-compose.yml down
+        ```
+   
     * **Windows**
-    
-            docker-compose -f c:\opt\trains\docker-compose-win10.yml down
+            
+        ```bash
+        docker-compose -f c:\opt\trains\docker-compose-win10.yml down
+        ```
             
     * **Kubernetes**
+        
+        ```bash
+        kubectl delete -k overlays/current_version
+        ```
     
-            kubectl delete -k overlays/current_version
-            
     * **Kubernetes using Helm**
     
-            helm del --purge trains-server
-            kubectl delete namespace trains            
+        ```bash
+        helm del --purge trains-server
+        kubectl delete namespace trains          
+        ```      
             
 1. For **Kubernetes** and **Kubernetes using Helm**, connect to the node in the Kubernetes cluster labeled `app=trains`.
                 
@@ -74,11 +82,13 @@ and **ClearML Server** needs to be installed.
 
     * **Linux, macOS, and Windows** - if managing own containers.
     
-        Run the migration script. If elevated privileges are used to run Docker (`sudo` in Linux, or admin in Windows), 
+      Run the migration script. If elevated privileges are used to run Docker (`sudo` in Linux, or admin in Windows), 
       then use elevated privileges to run the migration script.
     
-            python elastic_upgrade.py [-s|--source <source_path>] [-t|--target <target_path>] [-n|--no-backup] [-p|--parallel]
-    
+      ```bash
+      python elastic_upgrade.py [-s|--source <source_path>] [-t|--target <target_path>] [-n|--no-backup] [-p|--parallel]
+      ``` 
+      
         The following optional command line parameters can be used to control the execution of the migration script:           
     
         * `<source_path>` - The path to the Elasticsearch data directory in the current **Trains Server** deployment.  
@@ -203,7 +213,7 @@ For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRA
         docker-compose -f /opt/clearml/docker-compose.yml pull
         docker-compose -f /opt/clearml/docker-compose.yml up -d
 
-If issues arise during the upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq#common-docker-upgrade-errors).
+If issues arise during the upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq.md#common-docker-upgrade-errors).
 
 ##### Other Deployment Formats
 
