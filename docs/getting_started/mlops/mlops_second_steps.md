@@ -35,14 +35,18 @@ task = Task.init(project_name='data', task_name='create', task_type='data_proces
 dataset = Dataset.get(dataset_project='data', dataset_name='dataset_v1')
 
 # get a local mutable copy of the dataset
-dataset_folder = dataset.get_mutable_local_copy(target_folder='work_dataset', overwrite=True)
+dataset_folder = dataset.get_mutable_local_copy(
+    target_folder='work_dataset', 
+    overwrite=True
+)
 # change some files in the `./work_dataset` folder
 ...
 # create a new version of the dataset with the pickle file
 new_dataset = Dataset.create(
     dataset_project='data', dataset_name='dataset_v2', 
     parent_datasets=[dataset], 
-    use_current_task=True,  # this will make sure we have the creation code and the actual dataset artifacts on the same Task
+    use_current_task=True,  
+    # this will make sure we have the creation code and the actual dataset artifacts on the same Task
 )
 new_dataset.sync_folder(local_path=dataset_folder)
 new_dataset.upload()

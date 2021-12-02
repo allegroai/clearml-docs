@@ -100,7 +100,7 @@ The output details include:
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![Uncomitted changes section](../img/webapp_tracking_19.png)
+![Uncommitted changes section](../img/webapp_tracking_19.png)
 
 </div>
 </details>
@@ -205,7 +205,7 @@ except experiments whose status is *Published* (read-only).
 
 **ClearML** tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
 These objects include those that are automatically tracked, and those connected to a Task in code (see [Task.connect_configuration](../references/sdk/task.md#connect_configuration)).
-**ClearML** supports providing a name for a Task model configuration object (see the [name](../references/sdk/task.md#connect_configuration)
+**ClearML** supports providing a name for a Task model configuration object (see the [name](../references/sdk/task.md#connect_configuration))
 parameter in `Task.connect_configuration`.
 
 :::important

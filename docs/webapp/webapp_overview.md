@@ -13,7 +13,7 @@ The **ClearML Web UI** is the graphical user interface for the **ClearML** platf
 
 
 The **ClearML Web UI** is composed of the following pages:
-* The [Home](webapp_home.md) Page - The dashboard for recent activity, and quick access to experiments and and projects.
+* The [Home](webapp_home.md) Page - The dashboard for recent activity, and quick access to experiments and projects.
 * The Projects Page - The main experimentation page. It is a main projects page where specific projects can be opened.
 
   Each project page contains customizable [experiments](webapp_exp_table.md) and [models](webapp_model_table.md) tables

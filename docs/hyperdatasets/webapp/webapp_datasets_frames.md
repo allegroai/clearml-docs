@@ -67,7 +67,7 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 
 **To view / edit a frame in the frame editor**
 
-1. Locate your frame by applying a [simple frame filter](#simple) or [advanced frame filter](#advanced), and clicking <span class="tr_gui">LOAD MORE</span>, if required.
+1. Locate your frame by applying a [simple frame filter](#simple-frame-filtering) or [advanced frame filter](#advanced-frame-filtering), and clicking <span class="tr_gui">LOAD MORE</span>, if required.
 1. Click the frame thumbnail. The frame editor appears.
 1. Do any of the following:
     * View frame details, including:
@@ -148,7 +148,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 
         * Choose **Include** or **Exclude**, select ROI labels, and optionally set the confidence level range.
 
-        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />.
+        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" alt="edit pencil" className="icon size-md space-sm" />.
             
     * Frame rule - Enter a Lucene query using frame metadata fields in the format `meta.<key>:<value>`.
     
