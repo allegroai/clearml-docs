@@ -273,16 +273,16 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 
 1. Click one of the following modes and create a bounding area in the frame:   
    
-    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode icon" className="icon size-md space-sm" /> - Rectangle mode: Drag a 
+    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode icon" className="icon size-sm space-sm" /> - Rectangle mode: Drag a 
    rectangle onto the frame.   
     
-    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" alt="Ellipse mode icon" className="icon size-md space-sm" /> - Ellipse mode: Drag an ellipse 
+    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" alt="Ellipse mode icon" className="icon size-sm space-sm" /> - Ellipse mode: Drag an ellipse 
    onto the frame.   
     
-    * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode icon" className="icon size-md space-sm" /> - Polygon mode: Click the polygon
+    * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode icon" className="icon size-sm space-sm" /> - Polygon mode: Click the polygon
    vertices onto the frame.       
     
-    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode icon" className="icon size-md space-sm" /> - Key points mode: Click each 
+    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode icon" className="icon size-sm space-sm" /> - Key points mode: Click each 
    keypoint onto the frame. After the clicking the last keypoint, click the first again to close the bounding area.   
 
     A new annotation is created. 
