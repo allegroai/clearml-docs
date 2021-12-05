@@ -581,7 +581,7 @@ Do not enqueue training or inference tasks into the services queue. They will pu
 ### Setting Server Credentials
 
 Self hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by default with a services queue.
-By default, the server is open and does not require username and password, but it can be [password protected](deploying_clearml/clearml_server_security#user-access-security).
+By default, the server is open and does not require username and password, but it can be [password-protected](deploying_clearml/clearml_server_security#user-access-security).
 In case it is password-protected, the services agent will need to be configured with server credentials (associated with a user).
 
 To do that, set these environment variables on  the ClearML Server machine with the appropriate credentials:
@@ -630,7 +630,7 @@ It's possible to add the Docker container as the base Docker image to a Task (ex
 ClearML Agent can run on a [Google Colab](https://colab.research.google.com/) instance. This helps users to leverage 
 compute resources provided by Google Colab and send experiments for execution on it. 
 
-Check out [this](guides/ide/google_colab.md) tutorial on how to run a ClearML Agent on Google Colab!
+Check out [this tutorial](guides/ide/google_colab.md) on how to run a ClearML Agent on Google Colab!
 
 
 ## Scheduling Working Hours

@@ -603,20 +603,24 @@ providing the `output_uri` parameter allows you to specify the location in which
 
 For example, to store model checkpoints (snapshots) in `/mnt/shared/folder`:
 
-    task = Task.init(project_name, task_name, output_uri="/mnt/shared/folder")
+```python
+task = Task.init(project_name, task_name, output_uri="/mnt/shared/folder")
+```
 
 ClearML will copy all stored snapshots into a subfolder under `/mnt/shared/folder`. The subfolder's name will contain 
 the experiment's ID. If the experiment's ID is `6ea4f0b56d994320a713aeaf13a86d9d`, the following folder will be used:
-
-`/mnt/shared/folder/task.6ea4f0b56d994320a713aeaf13a86d9d/models/`
+```
+/mnt/shared/folder/task.6ea4f0b56d994320a713aeaf13a86d9d/models/
+```
 
 ClearML supports other storage types for `output_uri`, including:
+```python
+# AWS S3 bucket
+task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
 
-    # AWS S3 bucket
-    task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
-
-    # Google Cloud Storage bucket
-    task = Task.init(project_name, task_name, output_uri="gs://bucket-name/folder")
+# Google Cloud Storage bucket
+task = Task.init(project_name, task_name, output_uri="gs://bucket-name/folder")
+```
 
 To use Cloud storage with ClearML, configure the storage credentials in your `~/clearml.conf`. For detailed information, 
 see [ClearML Configuration Reference](configs/clearml_conf.md).
