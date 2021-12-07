@@ -83,7 +83,9 @@ dataset_project = "dataset_examples"
 
 from clearml import Dataset
 
-dataset_path = Dataset.get(dataset_name=dataset_name, dataset_project=dataset_project).get_local_copy()
+dataset_path = Dataset.get(
+    dataset_name=dataset_name, 
+    dataset_project=dataset_project).get_local_copy()
 
 trainset = datasets.CIFAR10(
     root=dataset_path,
