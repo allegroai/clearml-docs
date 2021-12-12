@@ -43,43 +43,48 @@ run in **ClearML Agent** services mode.
         * **workers_prefix**
         
 1. Configure the budget.
-    * In **CONFIGURATION OBJECTS** **>** **General** **>** hover **>** **EDIT**. Edit the `resource_configurations` dictionary:
-        
-            resource_configurations {
-                <resource-name> {
-                  instance_type = "<instance_type>"
-                  is_spot = <boolean>
-                  availability_zone = "<AWS-region>"
-                  ami_id = "<AMI-ID>"
-                  ebs_device_name = "<EBS-device-name>"
-                  ebs_volume_size = <EBS-size-in-GB>
-                  ebs_volume_type = "<EBS-vol-type>"
-                }
+   In **CONFIGURATION OBJECTS** **>** **General** **>** hover **>** **EDIT**. Edit the `resource_configurations` dictionary:
+    ```editorconfig
+    resource_configurations {
+        <resource-name> {
+            instance_type = "<instance_type>"
+            is_spot = <boolean>
+            availability_zone = "<AWS-region>"
+            ami_id = "<AMI-ID>"
+            ebs_device_name = "<EBS-device-name>"
+            ebs_volume_size = <EBS-size-in-GB>
+            ebs_volume_type = "<EBS-vol-type>"
             }
-            queues {
-                <queue-name> = [["<resource-name>", <max-instances-of-resource-name>]]
-            }
-            extra_clearml_conf = "<ClearML-config-file>"
-            extra_vm_bash_script = "<bash-script>"
-        
-        * `<resource-name>` - The name assigned to each resource (AWS EC2 instance type). Used in the budget.
-        * `queues` - The **ClearML** AWS autoscaler will optimize scaling for experiments awaiting execution in these queues.
-        * `<queue-name>` - A specific queue.
-        * `<max-instances-of-resource-name>` - The maximum number of instances of the specified `resource-name` to spin up.
-        * `is_spot` - If `true`, then use a spot instance. If `false`, then use a reserved instance.
-        * `extra_clearml_conf` - A **ClearML** configuration file to use for executing experiments in **ClearML Agent**.
-        * `extra_vm_bash_script` - A bash script to execute when creating an instance, before **ClearML Agent** executes.
-      
-      <br/>
+    }
+    queues {
+        <queue-name> = [["<resource-name>", <max-instances-of-resource-name>]]
+    }
+    extra_clearml_conf = "<ClearML-config-file>"
+    extra_vm_bash_script = "<bash-script>"
+    ```    
+   
+    * `<resource-name>` - The name assigned to each resource (AWS EC2 instance type). Used in the budget.
+    * `queues` - The **ClearML** AWS autoscaler will optimize scaling for experiments awaiting execution in these queues.
+    * `<queue-name>` - A specific queue.
+    * `<max-instances-of-resource-name>` - The maximum number of instances of the specified `resource-name` to spin up.
+    * `is_spot` - If `true`, then use a spot instance. If `false`, then use a reserved instance.
+    * `extra_clearml_conf` - A **ClearML** configuration file to use for executing experiments in **ClearML Agent**.
+    * `extra_vm_bash_script` - A bash script to execute when creating an instance, before **ClearML Agent** executes.
+    
+    :::note Default AMI
+    The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI
+    :::
+    
+    <br/>
 
-      <details className="cml-expansion-panel screenshot">
-      <summary className="cml-expansion-panel-summary">View a screenshot</summary>
-      <div className="cml-expansion-panel-content">
+   <details className="cml-expansion-panel screenshot">
+   <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+   <div className="cml-expansion-panel-content">
 
-      ![image](../../img/webapp_aws_autoscaler_05.png)
+   ![image](../../img/webapp_aws_autoscaler_05.png)
 
-      </div>
-      </details>
+   </div>
+   </details>
 
    
 1. Set the Task to run in **ClearML Agent** services mode.
@@ -88,14 +93,15 @@ run in **ClearML Agent** services mode.
      
     1. Change the **remote** parameter to **true**.
    
-      <details className="cml-expansion-panel screenshot">
-      <summary className="cml-expansion-panel-summary">View a screenshot</summary>
-      <div className="cml-expansion-panel-content">
+   <br/>
+   <details className="cml-expansion-panel screenshot">
+   <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+   <div className="cml-expansion-panel-content">
 
-      ![image](../../img/webapp_aws_autoscaler_02.png)
+   ![image](../../img/webapp_aws_autoscaler_02.png)
 
-      </div>
-      </details>
+   </div>
+   </details>
 
     
 1. Click **SAVE**.
@@ -178,7 +184,11 @@ Use the `run` command line option:
       Enter the Amazon EBS volume size (in GiB) [100]:
       Enter the Amazon EBS volume type ['gp2']:
       ```
-    
+   
+   :::info Default AMI
+   The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI
+   ::: 
+   
    Name the instance type that was configured. Later in the configuration, use this name to create the budget.
    
       ```console
