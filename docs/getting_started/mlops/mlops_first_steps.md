@@ -87,7 +87,7 @@ experiment, and the experiment can be [tracked and its results visualized](../..
 
 The cloning, modifying, and enqueuing actions described above can also be performed programmatically.
 
-### First steps
+### First Steps
 #### Access Previously Executed Experiments
 All Tasks in the system can be accessed through their unique Task ID, or based on their properties using the [`Task.get_task`](../../references/sdk/task.md#taskget_task) 
 method. For example:

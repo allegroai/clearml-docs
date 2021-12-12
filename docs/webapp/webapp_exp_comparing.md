@@ -57,8 +57,8 @@ sorted by sections.
 
 ### To Locate the Source Differences:
 
-* Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Left arrow" className="icon size-md" />
-  (Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Right arrow" className="icon size-md space-sm" /> (Next diff).
+* Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
+  (Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
 
 For example, in the image below, expanding **ARTIFACTS** **>** **Output Model** **>** **Model** shows that the model ID
 and name are different.
@@ -81,8 +81,8 @@ The Values mode is a side-by-side comparison that shows hyperparameter value dif
 1. In the dropdown menu (on the upper left, next to **+ Add Experiments**), choose **Values**.
 1. To show only differences, move the **Hide Identical Fields** slider to on.
 1. Locate differences by either:
-    * Clicking <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Left arrow" className="icon size-md space-sm" /> (Previous diff) or
-      <img src="/docs/latest/icons/ico-next-diff.svg" alt="Right arrow" className="icon size-md space-sm" /> (Next diff).
+    * Clicking <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md space-sm" /> (Previous diff) or
+      <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
     * Scrolling to see highlighted hyperparameters.
 
 For example, expanding **General** shows that the `batch_size` and `epochs` differ between the experiments.
@@ -253,8 +253,8 @@ an experiment, click <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" cla
 
 ### Finding the Next or Previous Difference
 
-* Find the previous difference <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Left arrow" className="icon size-md space-sm" />, or
-  the next difference <img src="/docs/latest/icons/ico-next-diff.svg" alt="Right arrow" className="icon size-md space-sm" />.
+* Find the previous difference <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md space-sm" />, or
+  the next difference <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" />.
 
 
 
