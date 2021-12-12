@@ -73,9 +73,10 @@ module.exports = {
                 {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
                 {'Matplotlib': ['guides/frameworks/matplotlib/matplotlib_example']},
                 {'PyTorch':
-                        ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
-                        'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
-                        'guides/frameworks/pytorch/tensorboard_toy_pytorch',
+                        [
+                            'guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
+                            'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard','guides/frameworks/pytorch/tensorboard_toy_pytorch',
+                            'guides/frameworks/pytorch/pytorch_tensorboardx', 'guides/frameworks/pytorch/pytorch_abseil',
                             {'PyTorch Notebooks': [
                                 {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
                                 {'Image': ['guides/frameworks/pytorch/notebooks/image/hyperparameter_search', 'guides/frameworks/pytorch/notebooks/image/image_classification_CIFAR10']},
