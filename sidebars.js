@@ -24,7 +24,8 @@ module.exports = {
 
         {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
             {
-                'Projects Page': [
+                'Projects': [
+                    'webapp/webapp_projects_page',
                     'webapp/webapp_project_overview',
                     {
                         'Experiments': ['webapp/webapp_exp_table', 'webapp/webapp_exp_track_visual', 'webapp/webapp_exp_reproducing', 'webapp/webapp_exp_tuning',
