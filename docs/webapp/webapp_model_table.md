@@ -64,6 +64,7 @@ allow each feature. Model states are *Draft* (editable) and *Published* (read-on
 | Tags | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
 | Move to project | To organize work and improve collaboration, move a model to another project. | Any state |
+| Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any state |
 
 These actions can be accessed with the context menu (when right-clicking a model or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
 in a model's info panel).

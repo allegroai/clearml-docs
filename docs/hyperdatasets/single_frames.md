@@ -194,7 +194,7 @@ For more information about using Frames in the WebApp, see [Working with Frames]
 
 ### Creating a SingleFrame
 
-To create a `SingleFrame`, instantiate a `SingleFrame` class and populate it with:
+To create a [`SingleFrame`](../references/hyperdataset/singleframe.md), instantiate a `SingleFrame` class and populate it with:
 * The URI link to the source file of the data frame
 * A preview URI that is accessible by browser, so you will be able to visualize the data frame in the web UI
 
@@ -248,14 +248,16 @@ myDatasetversion.add_frames(frames)
 
 
 ### Accessing SingleFrames
-To access a SingleFrame, use the `DatasetVersion.get_single_frame` method. 
+To access a SingleFrame, use the [`DatasetVersion.get_single_frame`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame) 
+method. 
 
 ```python
 from allegroai import DatasetVersion
-frame = DatasetVersion.get_single_frame(frame_id='dcd81d094ab44e37875c13f2014530ae', 
-                                         dataset_name='MyDataset', # OR dataset_id='80ccb3ae11a74b91b1c6f25f98539039' 
-                                         version_name='SingleFrame' # OR version_id='b07b626e3b6f4be7be170a2f39e14bfb'
-                                         ) 
+frame = DatasetVersion.get_single_frame(
+    frame_id='dcd81d094ab44e37875c13f2014530ae', 
+    dataset_name='MyDataset', # OR dataset_id='80ccb3ae11a74b91b1c6f25f98539039' 
+    version_name='SingleFrame' # OR version_id='b07b626e3b6f4be7be170a2f39e14bfb'
+) 
 ```
 
 To access a SingleFrame, the following must be specified:
@@ -266,23 +268,30 @@ To access a SingleFrame, the following must be specified:
 ### Updating SingleFrames
 
 To update a SingleFrame: 
-* Access the SingleFrame by calling the `DatasetVersion.get_single_frame` method, 
+* Access the SingleFrame by calling the [`DatasetVersion.get_single_frame`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame) 
+  method 
 * Make changes to the frame
-* Update the frame in a DatasetVersion using the `DatasetVersion.update_frames` method.
+* Update the frame in a DatasetVersion using the [`DatasetVersion.update_frames`](../references/hyperdataset/hyperdatasetversion.md#update_frames) 
+  method.
 
 ```python
 frames = []                
 
 # get the SingleFrame
-frame = DatasetVersion.get_single_frame(frame_id='dcd81d094ab44e37875c13f2014530ae', 
-                                        dataset_name='MyDataset', 
-                                        version_name='SingleFrame')
+frame = DatasetVersion.get_single_frame(
+    frame_id='dcd81d094ab44e37875c13f2014530ae', 
+    dataset_name='MyDataset', 
+    version_name='SingleFrame'
+)
     
 # make changes to the frame
 ## add a new annotation
-frame.add_annotation(poly2d_xy=[154, 343, 209, 343, 209, 423, 154, 423],
-                     labels=['tire'], metadata={'alive': 'no'}, 
-                     confidence=0.5)
+frame.add_annotation(
+    poly2d_xy=[154, 343, 209, 343, 209, 423, 154, 423],
+    labels=['tire'], 
+    metadata={'alive': 'no'}, 
+    confidence=0.5
+)
         
 ## add metadata
 frame.meta['road_hazard'] = 'yes'
@@ -296,14 +305,18 @@ myDatasetVersion.update_frames(frames)
 
 ### Deleting Frames
 
-To delete a SingleFrame, use the `DatasetVersion.delete_frames` method.
+To delete a SingleFrame, use the [`DatasetVersion.delete_frames`](../references/hyperdataset/hyperdatasetversion.md#delete_frames) 
+method.
 
 ```python
 frames = []                
 
 # get the SingleFrame
-frame = DatasetVersion.get_single_frame(frame_id='f3ed0e09bf23fc947f426a0d254c652c', 
-dataset_name='MyDataset', version_name='FrameGroup')
+frame = DatasetVersion.get_single_frame(
+    frame_id='f3ed0e09bf23fc947f426a0d254c652c', 
+    dataset_name='MyDataset', 
+    version_name='FrameGroup'
+)
 
 # delete the SingleFrame
 frames.append(frame)

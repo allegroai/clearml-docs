@@ -126,7 +126,7 @@ in the top right corner of the table.
 
 ## Experiment Actions
 
-The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
+The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states)
 that allow each operation.  
 
 | Action | Description | States Valid for the Action | State Transition |
@@ -145,6 +145,7 @@ that allow each operation.
 | Tags | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
 | Move | Move an experiment to another project. | Any state |  None  |
+| Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config#custom-ui-context-menu-actions). | Any State | None |
 
 These actions can be accessed with the context menu (when right-clicking an experiment or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
 in an experiment's info panel).

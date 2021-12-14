@@ -39,7 +39,8 @@ with an "Example" banner in the WebApp (UI).
 
 ### Creating Datasets
 
-Use the `Dataset.create` method to create a Dataset. It will contain an empty version named `Current`.
+Use the [`Dataset.create`](../references/hyperdataset/hyperdataset.md#datasetcreate) method to create a Dataset. It will 
+contain an empty version named `Current`.
 
 ```python
 from allegroai import Dataset
@@ -47,7 +48,8 @@ from allegroai import Dataset
 myDataset = Dataset.create(dataset_name='myDataset')
 ```
 
-Or, use the `DatasetVersion.create_new_dataset` method.
+Or, use the [`DatasetVersion.create_new_dataset`](../references/hyperdataset/hyperdatasetversion.md#datasetversioncreate_new_dataset) 
+method.
 
 ```python
 from allegroai import DatasetVersion
@@ -77,14 +79,17 @@ except ValueError:
 Additionally, create a Dataset with tags and a description.
 
 ```python
-myDataset = DatasetVersion.create_new_dataset(dataset_name='myDataset', 
-                                              tags=['One Tag', 'Another Tag', 'And one more tag'], 
-                                              description='some description text')
+myDataset = DatasetVersion.create_new_dataset(
+  dataset_name='myDataset', 
+  tags=['One Tag', 'Another Tag', 'And one more tag'], 
+  description='some description text'
+)
 ```
     
 ### Accessing Current Dataset
 
-To get the current Dataset, use the `DatasetVersion.get_current` method.
+To get the current Dataset, use the [`DatasetVersion.get_current`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_current) 
+method.
 
 ```python
 myDataset = DatasetVersion.get_current(dataset_name='myDataset')
@@ -92,11 +97,11 @@ myDataset = DatasetVersion.get_current(dataset_name='myDataset')
 
 ### Deleting Datasets
 
-Use the `Dataset.delete` method to delete a Dataset.
+Use the [`Dataset.delete`](../references/hyperdataset/hyperdataset.md#datasetdelete) method to delete a Dataset.
 
 Delete an empty Dataset (no versions).
 
-```python 
+```python
 Dataset.delete(dataset_name='MyDataset', delete_all_versions=False, force=False)
 ```
 
@@ -187,8 +192,10 @@ a snapshot named `snapshot` with the timestamp appended.
 The newly created version (with a new version ID) is the current version, and its name is `NewCurrentVersionName`.
 
 ```python
-myDataset = DatasetVersion.create_snapshot(dataset_name='MyDataset', 
-                                           child_name='NewCurrentVersionName')
+myDataset = DatasetVersion.create_snapshot(
+  dataset_name='MyDataset', 
+  child_name='NewCurrentVersionName'
+)
 ```
 
 #### Adding Metadata and Comments
@@ -198,17 +205,19 @@ Add a metadata dictionary and / or comment to a snapshot.
 For example:
  
 ```python
-myDataset = DatasetVersion.create_snapshot(dataset_name='MyDataset',
-                                           child_metadata={'abc':'1234','def':'5678'}, 
-                                           child_comment='some text comment')
+myDataset = DatasetVersion.create_snapshot(
+  dataset_name='MyDataset',
+  child_metadata={'abc':'1234','def':'5678'}, 
+  child_comment='some text comment'
+)
 ```
 
 ### Creating Child Versions
 
 Create a new version from any version whose status is *Published*. 
 
-To create a new version, call the `DatasetVersion.create_version` method, and
-provide: 
+To create a new version, call the [`DatasetVersion.create_version`](../references/hyperdataset/hyperdataset.md#datasetversioncreate_version) 
+method, and provide: 
 * Either the Dataset name or ID
 * The parent version name or ID from which the child inherits frames 
 * The new version's name.
@@ -218,18 +227,22 @@ where the new version inherits the frames of the existing version. If `NewChildV
 it is returned.
 
 ```python
-myVersion = DatasetVersion.create_version(dataset_name='MyDataset',
-                                          parent_version_names=['PublishedVersion'], 
-                                          version_name='NewChildVersion')
+myVersion = DatasetVersion.create_version(
+  dataset_name='MyDataset',
+  parent_version_names=['PublishedVersion'], 
+  version_name='NewChildVersion'
+)
 ```
                                           
 To raise a ValueError exception if `NewChildVersion` exists, set `raise_if_exists` to `True`.                                           
                                           
 ```python
-myVersion = DatasetVersion.create_version(dataset_name='MyDataset',
-                                          parent_version_names=['PublishedVersion'], 
-                                          version_name='NewChildVersion',
-                                          raise_if_exists=True))
+myVersion = DatasetVersion.create_version(
+  dataset_name='MyDataset',
+  parent_version_names=['PublishedVersion'], 
+  version_name='NewChildVersion',
+  raise_if_exists=True
+)
 ```
                                           
 ### Creating Root-level Parent Versions                                          
@@ -237,13 +250,16 @@ myVersion = DatasetVersion.create_version(dataset_name='MyDataset',
 Create a new version at the root-level. This is a version without a parent, and it contains no frames.
 
 ```python
-myDataset = DatasetVersion.create_version(dataset_name='MyDataset', 
-                                          version_name='NewRootVersion')
+myDataset = DatasetVersion.create_version(
+  dataset_name='MyDataset', 
+  version_name='NewRootVersion'
+)
 ```
 
 ### Getting Versions
 
-To get a version or versions, use the `DatasetVersion.get_version` and `DatasetVersion.get_versions` 
+To get a version or versions, use the [`DatasetVersion.get_version`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_version) 
+and [`DatasetVersion.get_versions`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_versions) 
 methods, respectively.
 
 **Getting a list of all versions**
@@ -255,15 +271,19 @@ myDatasetversion = DatasetVersion.get_versions(dataset_name='MyDataset')
 **Getting a list of all _published_ versions**
 
 ```python
-myDatasetversion = DatasetVersion.get_versions(dataset_name='MyDataset', 
-                                               only_published=True)
+myDatasetversion = DatasetVersion.get_versions(
+  dataset_name='MyDataset', 
+  only_published=True
+)
 ```
 
 **Getting a list of all _drafts_ versions**
 
 ```python
-myDatasetversion = DatasetVersion.get_versions(dataset_name='MyDataset', 
-                                               only_draft=True)
+myDatasetversion = DatasetVersion.get_versions(
+  dataset_name='MyDataset', 
+  only_draft=True
+)
 ```
 
 **Getting the current version** 
@@ -277,13 +297,16 @@ myDatasetversion = DatasetVersion.get_version(dataset_name='MyDataset')
 **Getting a specific version**
 
 ```python
-myDatasetversion = DatasetVersion.get_version(dataset_name='MyDataset', 
-                                              version_name='VersionName')
+myDatasetversion = DatasetVersion.get_version(
+  dataset_name='MyDataset', 
+  version_name='VersionName'
+)
 ```
 
 ### Deleting Versions
 
-Delete versions which are status *Draft* using the `Dataset.delete_version` method.
+Delete versions which are status *Draft* using the [`Dataset.delete_version`](../references/hyperdataset/hyperdataset.md#delete_version)
+method.
 
 ```python
 from allegroai import Dataset
@@ -295,12 +318,14 @@ myDataset.delete_version(version_name='VersionToDelete')
 
 ### Publishing Versions
 
-Publish (make read-only) versions which are status *Draft* using the `Dataset.publish_version` method. This includes the current version, if the Dataset is in
-the simple version structure.
+Publish (make read-only) versions which are status *Draft* using the [`DatasetVersion.publish_version`](../references/hyperdataset/hyperdatasetversion.md#publish_version) 
+method. This includes the current version, if the Dataset is in the simple version structure.
 
 ```python
-myVersion = DatasetVersion.get_version(dataset_name='MyDataset', 
-                                       version_name='VersionToPublish')
+myVersion = DatasetVersion.get_version(
+  dataset_name='MyDataset', 
+  version_name='VersionToPublish'
+)
 
 myVersion.publish_version()
 ```
@@ -312,8 +337,8 @@ myVersion.publish_version()
 In order to visualize masks in a dataset version, the mask values need to be mapped to their labels. Mask-label 
 mapping is stored in a version's metadata. 
 
-To define the DatasetVersion level mask-label mapping, use the `set_masks_labels` method of the [DatasetVersion](dataset.md#dataset-versioning) 
-class, and input a dictionary of RGB-value tuple keys and label-list values.
+To define the DatasetVersion level mask-label mapping, use the [`DatasetVersion.set_masks_labels`](../references/hyperdataset/hyperdatasetversion.md#set_masks_labels) 
+method, and input a dictionary of RGB-value tuple keys and label-list values.
 
 ```python
 from allegroai import DatasetVersion
@@ -337,7 +362,7 @@ myDatasetversion.set_masks_labels(
 The mask values and labels are stored as a property in a dataset version's metadata.
 
 ```python
-mappping = myDatasetversion.get_metadata()['mask_labels']
+mapping = myDatasetversion.get_metadata()['mask_labels']
 
 print(mapping)
 ```         

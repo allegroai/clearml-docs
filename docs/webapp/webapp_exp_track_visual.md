@@ -375,8 +375,8 @@ to update the graph.
 
 Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" alt="Settings gear" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
-* **Group by** - select one of the following:
-  * **Metric** - all variants for a metric on the same plot
+* **Group by** - Select one of the following:
+  * **Metric** - All variants for a metric on the same plot
 
     <details className="cml-expansion-panel screenshot">
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -403,8 +403,8 @@ are on the left side of the window. The tools include:
   on those you want to see.
 * **Horizontal axis** modes (scalars, only) - Select one of the following:
   * **ITERATIONS**
-  * **RELATIVE** - time since experiment began
-  * **WALL** - local clock time
+  * **RELATIVE** - Time since experiment began
+  * **WALL** - Local clock time
 * Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
 See additional [plot controls](#plot-controls) below.
