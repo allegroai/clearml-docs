@@ -26,8 +26,12 @@ The example uploads a dictionary as an artifact in the main Task by calling the 
 method on [`Task.current_task`](../../references/sdk/task.md#taskcurrent_task) (the main Task). The dictionary contains the [`dist.rank`](https://pytorch.org/docs/stable/distributed.html#torch.distributed.get_rank) 
 of the subprocess, making each unique.
 
-    Task.current_task().upload_artifact(
-        'temp {:02d}'.format(dist.get_rank()), artifact_object={'worker_rank': dist.get_rank()})
+```python
+Task.current_task().upload_artifact(
+    'temp {:02d}'.format(dist.get_rank()), 
+    artifact_object={'worker_rank': dist.get_rank()}
+)
+```
 
 All of these artifacts appear in the main Task under **ARTIFACTS** **>** **OTHER**.
 
@@ -40,8 +44,14 @@ method on `Task.current_task().get_logger`, which is the logger for the main Tas
 with the same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are 
 logged together.
 
-    Task.current_task().get_logger().report_scalar(
-        'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i)
+```python
+Task.current_task().get_logger().report_scalar(
+    'loss', 
+    'worker {:02d}'.format(dist.get_rank()), 
+    value=loss.item(), 
+    iteration=i
+)
+```
 
 The single scalar plot for loss appears in **RESULTS** **>** **SCALARS**.
 
@@ -49,12 +59,14 @@ The single scalar plot for loss appears in **RESULTS** **>** **SCALARS**.
 
 ## Hyperparameters
 
-**ClearML** automatically logs the argparse command line options. Since the [Task.connect](../../references/sdk/task#connect) 
-method is called on `Task.current_task`, they are logged in the main Task. A different hyperparameter key is used in each 
+**ClearML** automatically logs the argparse command line options. Since the [`Task.connect`](../../references/sdk/task#connect) 
+method is called on [`Task.current_task`](../../references/sdk/task.md#taskcurrent_task), they are logged in the main Task. A different hyperparameter key is used in each 
 subprocess, so they do not overwrite each other in the main Task.
 
-    param = {'worker_{}_stuff'.format(dist.get_rank()): 'some stuff ' + str(randint(0, 100))}
-    Task.current_task().connect(param)
+```python
+param = {'worker_{}_stuff'.format(dist.get_rank()): 'some stuff ' + str(randint(0, 100))}
+Task.current_task().connect(param)
+```
 
 All the hyperparameters appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS**.
 

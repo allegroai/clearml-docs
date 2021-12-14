@@ -34,23 +34,14 @@ installed, it attempts to import `OptimizerBOHB`. If `clearml.automation.hpbands
 the `RandomSearch` for the search strategy. 
 
 ```python
-    aSearchStrategy = None
-    
-    if not aSearchStrategy:
-        try:
-            from clearml.optuna import OptimizerOptuna
-            aSearchStrategy = OptimizerOptuna
-        except ImportError as ex:
-            pass
-    
-    if not aSearchStrategy:
-        try:
-            from clearml.automation.hpbandster  import OptimizerBOHB
-            aSearchStrategy = OptimizerBOHB
-        except ImportError as ex:
-            pass
-    
-    if not aSearchStrategy:
+try:
+    from clearml.automation.optuna import OptimizerOptuna  # noqa
+    aSearchStrategy = OptimizerOptuna
+except ImportError as ex:
+    try:
+        from clearml.automation.hpbandster import OptimizerBOHB  # noqa
+        aSearchStrategy = OptimizerBOHB
+    except ImportError as ex:
         logging.getLogger().warning(
             'Apologies, it seems you do not have \'optuna\' or \'hpbandster\' installed, '
             'we will be using RandomSearch strategy instead')
@@ -63,16 +54,16 @@ When the optimization starts, a callback is provided that returns the best perfo
 the `job_complete_callback` function returns the ID of `top_performance_job_id`.
 
 ```python
-    def job_complete_callback(
-        job_id,                 # type: str
-        objective_value,        # type: float
-        objective_iteration,    # type: int
-        job_parameters,         # type: dict
-        top_performance_job_id  # type: str
-    ):
-        print('Job completed!', job_id, objective_value, objective_iteration, job_parameters)
-        if job_id == top_performance_job_id:
-            print('WOOT WOOT we broke the record! Objective reached {}'.format(objective_value))
+def job_complete_callback(
+    job_id,                 # type: str
+    objective_value,        # type: float
+    objective_iteration,    # type: int
+    job_parameters,         # type: dict
+    top_performance_job_id  # type: str
+):
+    print('Job completed!', job_id, objective_value, objective_iteration, job_parameters)
+    if job_id == top_performance_job_id:
+        print('WOOT WOOT we broke the record! Objective reached {}'.format(objective_value))
 ```
 
 ## Initialize the Optimization Task
@@ -86,11 +77,13 @@ When the code runs, it creates an experiment named **Automatic Hyper-Parameter O
 the project **Hyper-Parameter Optimization**, which can be seen in the **ClearML Web UI**. 
  
  ```python
-    # Connecting CLEARML
-    task = Task.init(project_name='Hyper-Parameter Optimization',
-                     task_name='Automatic Hyper-Parameter Optimization',
-                     task_type=Task.TaskTypes.optimizer,
-                     reuse_last_task_id=False)
+# Connecting CLEARML
+task = Task.init(
+    project_name='Hyper-Parameter Optimization',
+    task_name='Automatic Hyper-Parameter Optimization',
+    task_type=Task.TaskTypes.optimizer,
+    reuse_last_task_id=False
+)
 ```
 
 ## Set Up the Arguments
@@ -105,17 +98,17 @@ Since the arguments dictionary is connected to the Task, after the code runs onc
 to optimize a different experiment.
 
 ```python
-    # experiment template to optimize in the hyper-parameter optimization
-    args = {
-        'template_task_id': None,
-        'run_as_service': False,
-    }
-    args = task.connect(args)
+# experiment template to optimize in the hyper-parameter optimization
+args = {
+    'template_task_id': None,
+    'run_as_service': False,
+}
+args = task.connect(args)
     
-    # Get the template task experiment that we want to optimize
-    if not args['template_task_id']:
-        args['template_task_id'] = Task.get_task(
-            project_name='examples', task_name='Keras HP optimization base').id
+# Get the template task experiment that we want to optimize
+if not args['template_task_id']:
+    args['template_task_id'] = Task.get_task(
+        project_name='examples', task_name='Keras HP optimization base').id
 ```
 
 ## Creating the Optimizer Object
@@ -124,9 +117,9 @@ Initialize an [automation.HyperParameterOptimizer](../../../references/sdk/hpo_o
 object, setting the optimization parameters, beginning with the ID of the experiment to optimize.
 
 ```python
-    an_optimizer = HyperParameterOptimizer(
-        # This is the experiment we want to optimize
-        base_task_id=args['template_task_id'],
+an_optimizer = HyperParameterOptimizer(
+    # This is the experiment we want to optimize
+    base_task_id=args['template_task_id'],
 ```
 
 Set the hyperparameter ranges to sample, instantiating them as **ClearML** automation objects using [automation.UniformIntegerParameterRange](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
@@ -190,24 +183,25 @@ The optimization can run as a service, if the `run_as_service` argument is set t
 running as a service, see [Services Mode](../../../clearml_agent.md#services-mode).
 
 ```python
-    # if we are running as a service, just enqueue ourselves into the services queue and let it run the optimization
-    if args['run_as_service']:
-        # if this code is executed by `clearml-agent` the function call does nothing.
-        # if executed locally, the local process will be terminated, and a remote copy will be executed instead
-        task.execute_remotely(queue_name='services', exit_process=True)
+# if we are running as a service, just enqueue ourselves into the services queue and let it run the optimization
+if args['run_as_service']:
+    # if this code is executed by `clearml-agent` the function call does nothing.
+    # if executed locally, the local process will be terminated, and a remote copy will be executed instead
+    task.execute_remotely(queue_name='services', exit_process=True)
 ```
 
 ## Optimize
 
-The optimizer is ready. Set the report period and start it, providing the callback method to report the best performance.
+The optimizer is ready. Set the report period and [start](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md#start) 
+it, providing the callback method to report the best performance.
 
 ```python
-    # report every 12 seconds, this is way too often, but we are testing here J
-    an_optimizer.set_report_period(0.2)
-    # start the optimization process, callback function to be called every time an experiment is completed
-    # this function returns immediately
-    an_optimizer.start(job_complete_callback=job_complete_callback)
-    # set the time limit for the optimization process (2 hours)
+# report every 12 seconds, this is way too often, but we are testing here J
+an_optimizer.set_report_period(0.2)
+# start the optimization process, callback function to be called every time an experiment is completed
+# this function returns immediately
+an_optimizer.start(job_complete_callback=job_complete_callback)
+# set the time limit for the optimization process (2 hours)
 ```
 
 Now that it is running: 
@@ -218,15 +212,15 @@ Now that it is running:
 1. Stop the optimizer.
 
 ```python
-    # set the time limit for the optimization process (2 hours)
-    an_optimizer.set_time_limit(in_minutes=90.0)
-    # wait until process is done (notice we are controlling the optimization process in the background)
-    an_optimizer.wait()
-    # optimization is completed, print the top performing experiments id
-    top_exp = an_optimizer.get_top_experiments(top_k=3)
-    print([t.id for t in top_exp])
-    # make sure background optimization stopped
-    an_optimizer.stop()
-    
-    print('We are done, good bye')
+# set the time limit for the optimization process (2 hours)
+an_optimizer.set_time_limit(in_minutes=90.0)
+# wait until process is done (notice we are controlling the optimization process in the background)
+an_optimizer.wait()
+# optimization is completed, print the top performing experiments id
+top_exp = an_optimizer.get_top_experiments(top_k=3)
+print([t.id for t in top_exp])
+# make sure background optimization stopped
+an_optimizer.stop()
+
+print('We are done, good bye')
 ```

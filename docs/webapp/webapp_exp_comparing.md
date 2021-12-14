@@ -126,7 +126,7 @@ Visualize the comparison of scalars, which includes metrics and monitored resour
 
 1. Click the **SCALARS** tab.
 1. In the dropdown menu (upper right of the left sidebar), choose either:
-    * **Last values** (the final or most recent value)
+    * **Last Values** (the final or most recent value)
     * **Min Values** (the minimal values)
     * **Max Values** (the maximal values)
 1. Sort by variant.

@@ -11,14 +11,25 @@ Plotly figure, using the `figure` parameter.
 In this example, the Plotly figure is created using `plotly.express.scatter` (see [Scatter Plots in Python](https://plotly.com/python/line-and-scatter/) 
 in the Plotly documentation): 
 
-    # Iris dataset
-    df = px.data.iris()
+```python
+# Iris dataset
+df = px.data.iris()
     
-    # create complex plotly figure
-    fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species", marginal_y="rug", marginal_x="histogram")
+# create complex plotly figure
+fig = px.scatter(
+    df, 
+    x="sepal_width", 
+    y="sepal_length", 
+    color="species", 
+    marginal_y="rug", 
+    marginal_x="histogram"
+)
     
-    # report the plotly figure
-    task.get_logger().report_plotly(title="iris", series="sepal", iteration=0, figure=fig)
+# report the plotly figure
+task.get_logger().report_plotly(
+    title="iris", series="sepal", iteration=0, figure=fig
+)
+```
 
 When the script runs, it creates an experiment named `plotly reporting`, which is associated with the examples project.
 
