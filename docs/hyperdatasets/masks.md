@@ -251,6 +251,7 @@ mask value as a list with the RGB values in the `mask_rgb` parameter, and a list
 frame = SingleFrame(
     source='/home/user/woof_meow.jpg',
     preview_uri='https://storage.googleapis.com/kaggle-competitions/kaggle/3362/media/woof_meow.jpg',
+)
     
 frame.add_annotation(mask_rgb=[0, 0, 0], labels=['cat'])
 ```
