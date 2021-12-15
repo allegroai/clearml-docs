@@ -36,6 +36,6 @@ task = Task.init(project_name="myProject", task_name="myExperiment")
 When the code runs, it initializes a Task in **ClearML Server**. A hyperlink to the experiment's log is output to the console.
 
     CLEARML Task: created new task id=c1f1dc6cf2ee4ec88cd1f6184344ca4e
-    CLEARML results page: https://app.clearml-master.hosted.allegro.ai/projects/1c7a45633c554b8294fa6dcc3b1f2d4d/experiments/c1f1dc6cf2ee4ec88cd1f6184344ca4e/output/log
+    CLEARML results page: https://app.community.clear.ml/projects/1c7a45633c554b8294fa6dcc3b1f2d4d/experiments/c1f1dc6cf2ee4ec88cd1f6184344ca4e/output/log
 
 Later in the code, define callbacks using TensorBoard, and **ClearML** logs TensorBoard scalars, histograms, and images.
