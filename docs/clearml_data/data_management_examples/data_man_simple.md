@@ -64,7 +64,6 @@ The command also finalizes the dataset, making it immutable and ready to be cons
    ```bash
    clearml-data - Dataset Management & Versioning CLI
    Finalizing dataset id 24d05040f3e14fbfbed8edb1bf08a88c
-   Pending uploads, starting dataset upload to https://files.community-master.hosted.allegro.ai
    Pending uploads, starting dataset upload to https://files.community.clear.ml
    Uploading compressed dataset changes (4 files, total 221.56 KB) to https://files.community.clear.ml
    Upload completed (221.56 KB)
