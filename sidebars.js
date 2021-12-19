@@ -67,11 +67,10 @@ module.exports = {
             {'Frameworks': [
                 {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
                 {'FastAI': ['guides/frameworks/fastai/fastai_with_tensorboard']},
-                {
-                    'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']
-                },
+                {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},
                 {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
                 {'Matplotlib': ['guides/frameworks/matplotlib/matplotlib_example']},
+                {'MegEngine':['guides/frameworks/megengine/megengine_mnist']},
                 {'PyTorch':
                         ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
                         'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
