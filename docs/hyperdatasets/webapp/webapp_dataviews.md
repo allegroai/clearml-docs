@@ -38,7 +38,7 @@ The following Dataviews-table customizations are saved on a **per project** basi
 * Active sort order
 * Active filters
 
-If a project has sub-projects, the Dataviews can be viewed by their sub-project groupings or together with 
+If a project has subprojects, the Dataviews can be viewed by their subproject groupings or together with 
 all the Dataviews in the project. The customizations of these two views are saved separately. 
 :::
 
