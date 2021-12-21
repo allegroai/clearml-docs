@@ -446,7 +446,7 @@ clearml-agent execute [-h] --id TASK_ID [--log-file LOG_FILE] [--disable-monitor
 
 **`gpus`** 
 * Specify active GPUs for the daemon to use (docker / virtual environment), Equivalent to setting
-  NVIDIA_VISIBLE_DEVICES Examples: `--gpus 0` or `--gpu 0,1,2` or `--gpus all`
+  `NVIDIA_VISIBLE_DEVICES`. Examples: `--gpus 0` or `--gpu 0,1,2` or `--gpus all`
 
 
 ---
