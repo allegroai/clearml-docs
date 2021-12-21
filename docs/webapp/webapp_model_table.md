@@ -47,7 +47,7 @@ The following models-table customizations are saved on a **per project** basis:
 * Active filters
 * Custom columns
 
-If a project has sub-projects, the models can be viewed by their sub-project groupings or together with 
+If a project has subprojects, the models can be viewed by their subproject groupings or together with 
 all the models in the project. The customizations of these two views are saved separately. 
 :::
 
