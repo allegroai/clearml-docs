@@ -63,7 +63,7 @@ The following experiments-table customizations are saved on a **per project** ba
 * Active filters
 * Custom columns
 
-If a project has sub-projects, the experiments can be viewed by their sub-project groupings or together with 
+If a project has subprojects, the experiments can be viewed by their subproject groupings or together with 
 all the experiments in the project. The customizations of these two views are saved separately. 
 :::
 

@@ -7,7 +7,7 @@ when Hyper-Datasets are enabled), providing a logical structure similar to file 
 An often useful method is to categorize components into projects according to models or objectives. 
 Grouping into projects helps in identifying tasks, models, and dataviews when queried.
 
-Projects can be divided into sub-projects (and sub-sub-projects, etc.) just like files and subdirectories on a 
+Projects can be divided into subprojects (and sub-subprojects, etc.) just like files and subdirectories on a 
 computer, making organization easier. 
 
 Projects contain a textual description field for noting relevant information. The WebApp supports markdown rendering 
@@ -25,12 +25,12 @@ models, and dataviews, can be viewed in the project's [experiments table](../web
 
 ## Usage
 
-### Creating Sub-projects
+### Creating Subprojects
 
 When [initializing a task](task.md#task-creation), its project needs to be specified. If the project entered does not exist, it will be created. 
-Projects can contain sub-projects, just like folders can contain sub-folders. Input into the `project_name` 
+Projects can contain subprojects, just like folders can contain sub-folders. Input into the `project_name` 
 parameter a target project path. The project path should follow the project tree hierarchy, in which the project and 
-sub-projects are slash (`/`) delimited.
+subprojects are slash (`/`) delimited.
 
 For example:
 
