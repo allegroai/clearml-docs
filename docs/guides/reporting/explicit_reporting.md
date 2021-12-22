@@ -1,15 +1,15 @@
 ---
-title: Explicit Reporting
+title: Explicit Reporting Tutorial
 ---
 
-In this tutorial, learn how to extend **ClearML** automagical capturing of inputs and outputs with explicit reporting. 
+In this tutorial, learn how to extend ClearML automagical capturing of inputs and outputs with explicit reporting. 
 
 In this example, we will add the following to the [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
 example script from ClearML's GitHub repo:
 
 * Setting an output destination for model checkpoints (snapshots).
 * Explicitly logging a scalar, other (non-scalar) data, and logging text.
-* Registering an artifact, which is uploaded to **ClearML Server**, and **ClearML** logs changes to it.
+* Registering an artifact, which is uploaded to **ClearML Server**, and ClearML logs changes to it.
 * Uploading an artifact, which is uploaded, but changes to it are not logged.
 
 ## Prerequisites
@@ -19,10 +19,9 @@ example script from ClearML's GitHub repo:
   
 ## Before Starting
 
-Make a copy of `pytorch_mnist.py` in order to add explicit reporting to it.
+Make a copy of [`pytorch_mnist.py`](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
+in order to add explicit reporting to it.
 
-* In the local **ClearML** repository, `example` directory.
-        
 ```bash
 cp pytorch_mnist.py pytorch_mnist_tutorial.py
 ```
@@ -59,7 +58,7 @@ task = Task.init(project_name='examples',
     output_uri=model_snapshots_path)
 ```
 
-When the script runs, **ClearML** creates the following directory structure:
+When the script runs, ClearML creates the following directory structure:
 
     + - <output destination name>
     |   +-- <project name>
@@ -79,7 +78,7 @@ For example, if the Task ID is `9ed78536b91a44fbb3cc7a006128c1b0`, then the dire
 
 ## Step 2: Logger Class Reporting Methods
 
-In addition to **ClearML** automagical logging, the **ClearML** Python
+In addition to ClearML automagical logging, the `clearml` Python
 package contains methods for explicit reporting of plots, log text, media, and tables. These methods include:
 
 * [Logger.report_histogram](../../references/sdk/logger.md#report_histogram)
@@ -99,6 +98,7 @@ package contains methods for explicit reporting of plots, log text, media, and t
 
 First, create a logger for the Task using the [Task.get_logger](../../references/sdk/task.md#get_logger) 
 method.
+
 ```python
 logger = task.get_logger
 ```
@@ -187,7 +187,7 @@ def test(args, model, device, test_loader):
 
 ### Log Text
 
-Extend **ClearML** by explicitly logging text, including errors, warnings, and debugging statements. We use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
+Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. We use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
 method and its argument `level` to report a debugging message.
 
 ```python
@@ -203,7 +203,7 @@ logger.report_text(
 ## Step 3: Registering Artifacts
 
 Registering an artifact uploads it to **ClearML Server**, and if it changes, the change is logged in **ClearML Server**. 
-Currently, **ClearML** supports Pandas DataFrames as registered artifacts.
+Currently, ClearML supports Pandas DataFrames as registered artifacts.
 
 ### Register the Artifact
 
@@ -245,7 +245,6 @@ sample = Task.current_task().get_registered_artifacts()['Test_Loss_Correct'].sam
   replace=True, 
   random_state=1
 )
-
 ``` 
     
 ## Step 4: Uploading Artifacts
@@ -280,7 +279,9 @@ task.upload_artifact(
 
 After extending the Python experiment script, run it and view the results in the **ClearML Web UI**.
 
-    python pytorch_mnist_tutorial.py
+```bash
+python pytorch_mnist_tutorial.py
+```
 
 **To view the experiment results, do the following:**
 
