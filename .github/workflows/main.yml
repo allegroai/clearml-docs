@@ -27,4 +27,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: grep -r -Eoh "(https://github.com/[a-zA-Z0-9./?=_%:-]*)" $GITHUB_WORKSPACE | sort -u | xargs sh -c 'curl --output /dev/null --silent --head --fail $0 || curl --output /dev/null --silent --head --fail --write-out "%{url_effective}: %{http_code}\n" $0 || exit 255'
+        run: |
+          grep -r -Eoh "(https://github.com/[a-zA-Z0-9./?=_%:-]*)" $GITHUB_WORKSPACE | sort -u | xargs sh -c 'curl --output /dev/null --silent --head --fail $0 || curl --output /dev/null --silent --head --fail --write-out "%{url_effective}: %{http_code}\n" $0 || exit 255'
