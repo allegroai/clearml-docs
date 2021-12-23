@@ -40,6 +40,11 @@ dataset = Dataset.create(
 )
 ```
 
+:::tip Locating Task ID
+To locate a task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
+to the right of the task name, click `ID` and the task ID appears
+:::
+
 The created dataset inherits the content of the `parent_datasets`. When multiple dataset parents are listed, 
 they are merged in order of specification. Each parent overrides any overlapping files from a previous parent dataset.
 
