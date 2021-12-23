@@ -17,6 +17,11 @@ clearml-data create --project <project_name> --name <dataset_name> --parents <ex
 ```
 Creates a new dataset. <br/>
 
+:::tip Locating Task ID
+To locate a task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
+to the right of the task name, click `ID` and the task ID appears
+:::
+
 **Parameters**
 
 <div className="tbl-cmd">
@@ -31,12 +36,9 @@ Creates a new dataset. <br/>
 </div>
 
 
-
-:::tip Task ID
-* clearml-data works in a stateful mode so once a new dataset is created, the following commands
+:::info
+clearml-data works in a stateful mode so once a new dataset is created, the following commands
 do not require the `--id` flag.
-* To locate a task ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
-  to the right of the task name, click `ID` and the task ID appears
 :::
 
 <br/>
