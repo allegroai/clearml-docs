@@ -92,7 +92,7 @@ module.exports = {
                     'Tensorflow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
                         'guides/frameworks/tensorflow/tensorflow_mnist', 'guides/frameworks/tensorflow/integration_keras_tuner']
                 },
-                {'XGboost': ['guides/frameworks/xgboost/xgboost_sample']}
+                {'XGBoost': ['guides/frameworks/xgboost/xgboost_sample', 'guides/frameworks/xgboost/xgboost_metrics']}
             ]},
             {'IDEs': ['guides/ide/remote_jupyter_tutorial', 'guides/ide/integration_pycharm', 'guides/ide/google_colab']},
             {'Offline Mode':['guides/set_offline']},
