@@ -33,11 +33,12 @@ Overrides Repository Auto-logging
 |Name|Description|
 |---|---|
 |**CLEARML_API_HOST** | Sets the API Server URL|
+|**CLEARML_CONFIG_FILE**| Sets the ClearML configuration file. Overrides the default configuration file location |
 |**CLEARML_WEB_HOST** | Sets the Web UI Server URL|
 |**CLEARML_FILES_HOST** | Sets the File Server URL
 |**CLEARML_API_ACCESS_KEY** | Sets the Server's Public Access Key|
 |**CLEARML_API_SECRET_KEY** | Sets the Server's Private Access Key|
-|**CLEARML_API_HOST_VERIFY_CERT**| Enables \ Disables server certificate verification (If behind a firewall)|
+|**CLEARML_API_HOST_VERIFY_CERT**| Enables / Disables server certificate verification (If behind a firewall)|
 |**CLEARML_OFFLINE_MODE** | Sets Offline mode|
 |**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server when no HOST server is set|
 

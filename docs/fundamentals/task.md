@@ -164,7 +164,7 @@ make sure to close a Task, before initializing a new one. To close a task simply
 (see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a Task, its project needs to be specified. If the project entered does not exist, it will be created. 
-Projects can be divided into sub-projects, just like folders are broken into sub-folders.
+Projects can be divided into subprojects, just like folders are broken into sub-folders.
 For example:
 ```python
 Task.init(project_name='main_project/sub_project', task_name='test')

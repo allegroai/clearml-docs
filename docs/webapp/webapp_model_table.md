@@ -47,7 +47,7 @@ The following models-table customizations are saved on a **per project** basis:
 * Active filters
 * Custom columns
 
-If a project has sub-projects, the models can be viewed by their sub-project groupings or together with 
+If a project has subprojects, the models can be viewed by their subproject groupings or together with 
 all the models in the project. The customizations of these two views are saved separately. 
 :::
 
@@ -58,7 +58,7 @@ allow each feature. Model states are *Draft* (editable) and *Published* (read-on
 
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
-| View details | Model details include general information, the model configuration, and label enumeration. Click a model and the info panel slides open. | Any state |
+| View details | Model details include general information, the model configuration, and label enumeration. Click a model, and the info panel slides open. | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
 | Archive | To more easily work with active models, move a model to the archive. See [Archiving](webapp_archiving). | Any state |
 | Tags | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |

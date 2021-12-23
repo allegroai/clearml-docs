@@ -130,11 +130,11 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 * **TF_DEFINE** - TensorFlow definitions (from code, TF_DEFINEs automatic logging).
 
 * **General** - Parameter dictionaries (from code, connected to the Task by calling the [Task.connect](../references/sdk/task.md#connect)
-  method.
+  method).
 
 * Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq#track-env-vars)).
 
-* Custom named parameter groups - see the `name` parameter in [Task.connect](../references/sdk/task.md#connectmutable-namenone).
+* Custom named parameter groups (see the `name` parameter in [Task.connect](../references/sdk/task.md#connectmutable-namenone)).
 
 **To add, change, or delete hyperparameters:**
 
@@ -191,7 +191,7 @@ model in the **MODELS** tab.
 1. Edit the model configuration or label enumeration.
 
     * Model configuration - In the **NETWORK** tab **>** Hover and click **EDIT**. **>** CLick **EDIT** or **CLEAR** (to
-      remove the configuration
+      remove the configuration).
 
        Users can also search for the configuration (hover over the configuration textbox, the search box appears) and copy the
       configuration to the clipboard (hover and click <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md" />).
