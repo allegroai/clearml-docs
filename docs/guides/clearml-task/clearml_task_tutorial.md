@@ -49,10 +49,10 @@ Task id=2f96ee95b05d4693b360d0fcbb26b727 sent for execution on queue default
 Execution log at: https://app.community.clear.ml/projects/552d5399112d47029c146d5248570295/experiments/2f96ee95b05d4693b360d0fcbb26b727/output/log
 ```
 
-:::note
-**clearml-task** automatically finds the requirements.txt file in remote repositories. 
+:::note Adding Requirements
+`clearml-task` automatically finds the requirements.txt file in remote repositories. 
 If a remote repo does not have such a file, make sure to either add one with all the required Python packages, 
-or add the **`--packages '<package_name>`** flag to the command.
+or add the `--packages "<package_name>"` flag to the command (for example: `--packages "tqdm>=2.1" "scikit-learn"`).
 ::: 
 <br />
 

@@ -18,9 +18,14 @@ Accuracy, learning rate, and training loss appear in **RESULTS** **>** **SCALARS
 is logged by connecting it to the Task using a call to the [Task.connect](../../../../../references/sdk/task.md#connect) 
 method.
 
-    configuration_dict = {'number_of_epochs': 6, 'batch_size': 16, 'ngrams': 2, 'base_lr': 1.0}
-    configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
-
+```python
+configuration_dict = {
+    'number_of_epochs': 6, 'batch_size': 16, 'ngrams': 2, 'base_lr': 1.0
+}
+# enabling configuration override by clearml
+configuration_dict = task.connect(configuration_dict)  
+```
+    
 Command line options appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
 
 ![image](../../../../../img/text_classification_AG_NEWS_01.png)
