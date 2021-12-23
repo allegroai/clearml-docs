@@ -63,7 +63,7 @@ The following experiments-table customizations are saved on a **per project** ba
 * Active filters
 * Custom columns
 
-If a project has sub-projects, the experiments can be viewed by their sub-project groupings or together with 
+If a project has subprojects, the experiments can be viewed by their subproject groupings or together with 
 all the experiments in the project. The customizations of these two views are saved separately. 
 :::
 
@@ -124,7 +124,7 @@ that allow each operation.
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
 | View details | View experiment details in the experiments table, the [info panel](webapp_exp_track_visual#info-panel) (keep the experiments table in view), or the [full screen details view](webapp_exp_track_visual#full-screen-details-view). | Any state |  None  |
-| Manage a queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and queues](webapp_workers_queues) page. | *Enqueued* |  None  |
+| Manage a queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues) page. | *Enqueued* |  None  |
 | View a worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
 | Archive | To more easily work with active experiments, move an experiment to the archive. See [Archiving](webapp_archiving). | Any state |  None  |

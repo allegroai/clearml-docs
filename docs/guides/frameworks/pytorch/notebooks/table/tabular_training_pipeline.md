@@ -4,7 +4,7 @@ title: Tabular Data Pipeline with Concurrent Steps - Jupyter Notebook
 
 This example demonstrates an ML pipeline which preprocesses data in two concurrent steps, trains two networks, where each 
 network's training depends upon the completion of its own preprocessed data, and picks the best model. It is implemented 
-using the [automation.controller.PipelineController](../../../../../references/sdk/automation_controller_pipelinecontroller.md) 
+using the [PipelineController](../../../../../references/sdk/automation_controller_pipelinecontroller.md) 
 class.
 
 The pipeline uses four Tasks (each Task is created using a different notebook): 
@@ -14,11 +14,11 @@ The pipeline uses four Tasks (each Task is created using a different notebook):
 * A training Task ([train_tabular_predictor.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/train_tabular_predictor.ipynb))
 * A better model comparison Task ([pick_best_model.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/pick_best_model.ipynb))
 
-The `automation.controller.PipelineController` class includes functionality to create a pipeline controller, add steps to the pipeline, pass data from one step to another, control the dependencies of a step beginning only after other steps complete, run the pipeline, wait for it to complete, and cleanup afterwards.
+The `PipelineController` class includes functionality to create a pipeline controller, add steps to the pipeline, pass data from one step to another, control the dependencies of a step beginning only after other steps complete, run the pipeline, wait for it to complete, and cleanup afterwards.
 
 In this pipeline example, the data preprocessing Task and training Task are each added to the pipeline twice (each is in two steps). When the pipeline runs, the data preprocessing Task and training Task are cloned twice, and the newly cloned Tasks execute. The Task they are cloned from, called the base Task, does not execute. The pipeline controller passes different data to each cloned Task by overriding parameters. In this way, the same Task can run more than once in the pipeline, but with different data.
 
-:::note
+:::note Download Data
 The data download Task is not a step in the pipeline, see [download_and_split](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/download_and_split.ipynb).
 :::
     
@@ -26,21 +26,43 @@ The data download Task is not a step in the pipeline, see [download_and_split](h
 
 In this example, a pipeline controller object is created.
 
-    pipe = PipelineController(default_execution_queue='dan_queue', add_pipeline_tags=True)
+```python
+pipe = PipelineController(    
+    project="Tabular Example",
+    name="tabular training pipeline", 
+    add_pipeline_tags=True, 
+    version="0.1"
+)
+```
     
 ### Preprocessing Step
 
 Two preprocessing nodes are added to the pipeline. These steps will run concurrently.
-    
-    pipe.add_step(name='preprocessing_1', base_task_project='Tabular Example', base_task_name='tabular preprocessing',
-                  parameter_override={'General/data_task_id': '39fbf86fc4a341359ac6df4aa70ff91b',
-                                      'General/fill_categorical_NA': 'True',
-                                      'General/fill_numerical_NA': 'True'})
-    pipe.add_step(name='preprocessing_2', base_task_project='Tabular Example', base_task_name='tabular preprocessing',
-                  parameter_override={'General/data_task_id': '39fbf86fc4a341359ac6df4aa70ff91b',
-                                      'General/fill_categorical_NA': 'False',
-                                      'General/fill_numerical_NA': 'True'})
 
+```python
+pipe.add_step(
+   name='preprocessing_1', 
+   base_task_project='Tabular Example', 
+   base_task_name='tabular preprocessing',
+   parameter_override={
+      'General/data_task_id': TABULAR_DATASET_ID,
+      'General/fill_categorical_NA': 'True',
+      'General/fill_numerical_NA': 'True'
+   }
+)
+pipe.add_step(
+   name='preprocessing_2', 
+   base_task_project='Tabular Example', 
+   base_task_name='tabular preprocessing',
+   parameter_override={
+      'General/data_task_id': TABULAR_DATASET_ID,
+      'General/fill_categorical_NA': 'False',
+      'General/fill_numerical_NA': 'True'
+   }
+)
+
+```    
+    
 
 The preprocessing data Task fills in values of `NaN` data based on the values of the parameters named `fill_categorical_NA` 
 and `fill_numerical_NA`. It will connect a parameter dictionary to the Task which contains keys with those same names. 
@@ -51,39 +73,43 @@ two sets of data are created in the pipeline.
 <summary className="cml-expansion-panel-summary">ClearML tracks and reports the preprocessing step</summary>
 <div className="cml-expansion-panel-content">
 
-   In the preprocessing data Task, the parameter values in ``data_task_id``, ``fill_categorical_NA``, and ``fill_numerical_NA`` are overridden.
+In the preprocessing data Task, the parameter values in ``data_task_id``, ``fill_categorical_NA``, and ``fill_numerical_NA`` are overridden.
+```python
+configuration_dict = {
+   'data_task_id': TABULAR_DATASET_ID,
+   'fill_categorical_NA': True, 
+   'fill_numerical_NA': True
+}
+configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
+```
 
-    configuration_dict = {'data_task_id': '39fbf86fc4a341359ac6df4aa70ff91b',
-                            'fill_categorical_NA': True, 'fill_numerical_NA': True}
-    configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
+**ClearML** tracks and reports each instance of the preprocessing Task.
 
-   **ClearML** tracks and reports each instance of the preprocessing Task.
+The raw data appears as a table in **RESULTS** **>** **PLOTS**.
 
-   The raw data appears as a table in **RESULTS** **>** **PLOTS**.
-
-   These images are from one of the two preprocessing Tasks.
+These images are from one of the two preprocessing Tasks.
    
-   ![image](../../../../../img/preprocessing_and_encoding_02.png)
+![image](../../../../../img/preprocessing_and_encoding_02.png)
 
-   The data after filling NA values is also reported.
+The data after filling NA values is also reported.
    
-   ![image](../../../../../img/preprocessing_and_encoding_03.png)
+![image](../../../../../img/preprocessing_and_encoding_03.png)
    
-   After an outcome dictionary (label enumeration) is created, it appears in **ARTIFACTS** **>** **OTHER** **>** **Outcome Dictionary**.
+After an outcome dictionary (label enumeration) is created, it appears in **ARTIFACTS** **>** **OTHER** **>** **Outcome Dictionary**.
 
-   ![image](../../../../../img/preprocessing_and_encoding_04.png)
+![image](../../../../../img/preprocessing_and_encoding_04.png)
 
-   The training and validation data is labeled with the encoding and reported as table.
+The training and validation data is labeled with the encoding and reported as table.
    
-   ![image](../../../../../img/preprocessing_and_encoding_05.png)
+![image](../../../../../img/preprocessing_and_encoding_05.png)
 
-   The column categories are created and uploaded as artifacts, which appear in appears in **ARTIFACTS** **>** **OTHER** **>** **Outcome Dictionary**.
+The column categories are created and uploaded as artifacts, which appear in appears in **ARTIFACTS** **>** **OTHER** **>** **Outcome Dictionary**.
    
-   ![image](../../../../../img/preprocessing_and_encoding_06.png)
+![image](../../../../../img/preprocessing_and_encoding_06.png)
 
-   Finally, the training data and validation data are stored as artifacts.
+Finally, the training data and validation data are stored as artifacts.
    
-   ![image](../../../../../img/preprocessing_and_encoding_07.png)   
+![image](../../../../../img/preprocessing_and_encoding_07.png)   
 
 </div>
 </details>
@@ -95,39 +121,57 @@ Each training node depends upon the completion of one preprocessing node. The pa
 
 The ID of a Task whose artifact contains a set of preprocessed data for training will be overridden using the `data_task_id` key. Its value takes the form `${<stage-name>.<part-of-Task>}`. In this case, `${preprocessing_1.id}` is the ID of one of the preprocessing node Tasks. In this way, each training Task consumes its own set of data.
 
-    pipe.add_step(name='train_1', parents=['preprocessing_1'],
-                  base_task_project='Tabular Example', base_task_name='tabular prediction',
-                  parameter_override={'General/data_task_id': '${preprocessing_1.id}'})
-    pipe.add_step(name='train_2', parents=['preprocessing_2'],
-                  base_task_project='Tabular Example', base_task_name='tabular prediction',
-                  parameter_override={'General/data_task_id': '${preprocessing_2.id}'})
+```python
+pipe.add_step(
+   name='train_1', 
+   parents=['preprocessing_1'],
+   base_task_project='Tabular Example', 
+   base_task_name='tabular prediction',
+   parameter_override={
+      'General/data_task_id': '${preprocessing_1.id}'
+   }
+)
+pipe.add_step(
+   name='train_2', 
+   parents=['preprocessing_2'],
+   base_task_project='Tabular Example', 
+   base_task_name='tabular prediction',
+   parameter_override={
+      'General/data_task_id': '${preprocessing_2.id}'
+   }
+)
+```
    
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">ClearML tracks and reports the training step</summary>
 <div className="cml-expansion-panel-content">
 
-   In the training Task, the ``data_task_id`` parameter value is overridden. This allows the pipeline controller to pass a 
-   different Task ID to each instance of training, where each Task has an artifact containing different data.
+In the training Task, the ``data_task_id`` parameter value is overridden. This allows the pipeline controller to pass a 
+different Task ID to each instance of training, where each Task has an artifact containing different data.
+  
+```python
+configuration_dict = {
+    'data_task_id': TABULAR_DATASET_ID, 
+    'number_of_epochs': 15, 'batch_size': 100, 'dropout': 0.3, 'base_lr': 0.1
+}
+configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
+   ```
+    
+**ClearML** tracks and reports the training step with each instance of the newly cloned and executed training Task.
 
-    configuration_dict = {'data_task_id': 'b605d76398f941e69fc91b43420151d2', 
-                          'number_of_epochs': 15, 'batch_size': 100, 'dropout': 0.3, 'base_lr': 0.1}
-    configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
+**ClearML** automatically logs training loss and learning. They appear in **RESULTS** **>** **SCALARS**.
 
-   **ClearML** tracks and reports the training step with each instance of the newly cloned and executed training Task.
+The following images show one of the two training Tasks.
 
-   **ClearML** automatically logs training loss and learning. They appear in **RESULTS** **>** **SCALARS**.
+![image](../../../../../img/train_tabular_predictor_04.png)
 
-   The following images show one of the two training Tasks.
+Parameter dictionaries appear in the **General** subsection.
 
-   ![image](../../../../../img/train_tabular_predictor_04.png)
-
-   Parameter dictionaries appear in the **General** subsection.
-
-   ![image](../../../../../img/train_tabular_predictor_01.png)
+![image](../../../../../img/train_tabular_predictor_01.png)
    
-   The TensorFlow Definitions appear in the **TF_DEFINE** subsection.
+The TensorFlow Definitions appear in the **TF_DEFINE** subsection.
 
-   ![image](../../../../../img/train_tabular_predictor_02.png)
+![image](../../../../../img/train_tabular_predictor_02.png)
    
 </div>
 </details>
@@ -137,32 +181,45 @@ The ID of a Task whose artifact contains a set of preprocessed data for training
 
 The best model step depends upon both training nodes completing and takes the two training node Task IDs to override.
 
-    pipe.add_step(name='pick_best', parents=['train_1', 'train_2'],
-              base_task_project='Tabular Example', base_task_name='pick best model',
-              parameter_override={'General/train_tasks_ids': '[${train_1.id}, ${train_2.id}]'})
-              
+```python
+pipe.add_step(
+   name='pick_best', 
+   parents=['train_1', 'train_2'],
+   base_task_project='Tabular Example', 
+   base_task_name='pick best model',
+   parameter_override={
+      'General/train_tasks_ids': '[${train_1.id}, ${train_2.id}]'
+   }
+)           
+```
+       
 The IDs of the training Tasks from the steps named `train_1` and `train_2` are passed to the best model Task. They take the form `${<stage-name>.<part-of-Task>}`.           
 
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">ClearML tracks and reports the best model step</summary>
 <div className="cml-expansion-panel-content">
 
-   In the best model Task, the `train_tasks_ids` parameter is overridden with the Task IDs of the two training tasks.
+In the best model Task, the `train_tasks_ids` parameter is overridden with the Task IDs of the two training tasks.
 
-    configuration_dict = {'train_tasks_ids': ['c9bff3d15309487a9e5aaa00358ff091', 'c9bff3d15309487a9e5aaa00358ff091']}
-    configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
+```python
+configuration_dict = {
+   'train_tasks_ids': 
+      ['c9bff3d15309487a9e5aaa00358ff091', 'c9bff3d15309487a9e5aaa00358ff091']
+}
+configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
+```
 
-   The logs shows the Task ID and accuracy for the best model in **RESULTS** **>** **LOGS**.
+The logs show the Task ID and accuracy for the best model in **RESULTS** **>** **LOGS**.
    
-   ![image](../../../../../img/tabular_training_pipeline_02.png)
+![image](../../../../../img/tabular_training_pipeline_02.png)
    
-   In **ARTIFACTS** **>** **Output Model** is link to the model details.
+The link to the model details is in **ARTIFACTS** **>** **Output Model** .
         
-   ![image](../../../../../img/tabular_training_pipeline_03.png)
+![image](../../../../../img/tabular_training_pipeline_03.png)
    
-   The model details appear in the **MODELS** table **>** **>GENERAL**.
+The model details appear in the **MODELS** table **>** **>GENERAL**.
    
-   ![image](../../../../../img/tabular_training_pipeline_04.png)
+![image](../../../../../img/tabular_training_pipeline_04.png)
    
 </div>
 </details>
@@ -172,25 +229,26 @@ The IDs of the training Tasks from the steps named `train_1` and `train_2` are p
 
 Once all steps are added to the pipeline, start it. Wait for it to complete. Finally, cleanup the pipeline processes.
 
-    # Starting the pipeline (in the background)
-    pipe.start()
-    # Wait until pipeline terminates
-    pipe.wait()
-    # cleanup everything
-    pipe.stop()    
-
+```python
+# Starting the pipeline (in the background)
+pipe.start()
+# Wait until pipeline terminates
+pipe.wait()
+# cleanup everything
+pipe.stop()
+```
 
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">ClearML tracks and reports the pipeline's execution</summary>
 <div className="cml-expansion-panel-content">
 
-   ClearML reports the pipeline with its steps in **RESULTS** **>** **PLOTS**.
+ClearML reports the pipeline with its steps in **RESULTS** **>** **PLOTS**.
    
-   ![image](../../../../../img/tabular_training_pipeline_01.png)
+![image](../../../../../img/tabular_training_pipeline_01.png)
    
-   By hovering over a step or path between nodes, you can view information about it.
+By hovering over a step or path between nodes, you can view information about it.
        
-   ![image](../../../../../img/tabular_training_pipeline_06.png)
+![image](../../../../../img/tabular_training_pipeline_06.png)
    
 </div>
 </details>

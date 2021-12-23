@@ -98,8 +98,8 @@ Frame exports downloaded filtered frames as a JSON file.
 
 **To modify a version description, do the following:**
 
-* Expand the **INFO** area, hover over the **Description**, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />, 
-  edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" className="icon size-md space-sm" /> (check).
+* Expand the **INFO** area, hover over the **Description**, click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" />, 
+  edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> (check).
  
 ### Deleting Versions
 

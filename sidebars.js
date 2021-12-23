@@ -17,13 +17,15 @@ module.exports = {
             'fundamentals/hpo', 'fundamentals/pipelines']},
         'clearml_sdk',
         'clearml_agent',
-        'clearml_data',
+        {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
+                {'Workflows': ['clearml_data/data_management_examples/workflows', 'clearml_data/data_management_examples/data_man_simple', 'clearml_data/data_management_examples/data_man_folder_sync', 'clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},]},
         {'Applications': ['apps/clearml_session', 'apps/clearml_task']},
         {'Integrations': ['integrations/libraries', 'integrations/storage']},
 
         {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
             {
-                'Projects Page': [
+                'Projects': [
+                    'webapp/webapp_projects_page',
                     'webapp/webapp_project_overview',
                     {
                         'Experiments': ['webapp/webapp_exp_table', 'webapp/webapp_exp_track_visual', 'webapp/webapp_exp_reproducing', 'webapp/webapp_exp_tuning',
@@ -33,7 +35,7 @@ module.exports = {
                     'webapp/webapp_archiving']
             },
             'webapp/webapp_profile', 'webapp/webapp_workers_queues']},
-        {'Configurations': ['configs/clearml_conf', 'configs/env_vars']},
+        {'Configurations': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
         //'References': ['references/clearml_ref','references/clearml_agent_ref'],
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
@@ -59,23 +61,22 @@ module.exports = {
             'guides/guidemain',
             {'Advanced': ['guides/advanced/execute_remotely', 'guides/advanced/multiple_tasks_single_process']},
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
-            {'Data Management': ['guides/data management/data_man_simple', 'guides/data management/data_man_folder_sync', 'guides/data management/data_man_cifar_classification']},
             {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
+            {'Datasets': ['guides/datasets/data_man_cifar_classification', 'guides/datasets/data_man_python']},
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
                 {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
                 {'FastAI': ['guides/frameworks/fastai/fastai_with_tensorboard']},
-                {
-                    'Keras': ['guides/frameworks/keras/allegro_clearml_keras_tb_example', 'guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']
-                },
+                {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},
                 {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
-                {'Matplotlib': ['guides/frameworks/matplotlib/allegro_clearml_matplotlib_example', 'guides/frameworks/matplotlib/matplotlib_example']},
-                {'Pytorch':
+                {'Matplotlib': ['guides/frameworks/matplotlib/matplotlib_example']},
+                {'MegEngine':['guides/frameworks/megengine/megengine_mnist']},
+                {'PyTorch':
                         ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
                         'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
                         'guides/frameworks/pytorch/tensorboard_toy_pytorch',
-                            {'Pytorch Notebooks': [
+                            {'PyTorch Notebooks': [
                                 {'Audio': ['guides/frameworks/pytorch/notebooks/audio/audio_classification_UrbanSound8K', 'guides/frameworks/pytorch/notebooks/audio/audio_preprocessing_example']},
                                 {'Image': ['guides/frameworks/pytorch/notebooks/image/hyperparameter_search', 'guides/frameworks/pytorch/notebooks/image/image_classification_CIFAR10']},
                                 {'Table': ['guides/frameworks/pytorch/notebooks/table/download_and_preprocessing', 'guides/frameworks/pytorch/notebooks/table/tabular_training_pipeline']},
@@ -83,8 +84,8 @@ module.exports = {
                             }
                             ]
                 },
-                {'Pytorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite']},
-                {'Pytorch Lightning': ['guides/frameworks/pytorch_lightning/pytorch_lightning_example']},
+                {'PyTorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch ignite/pytorch_ignite_mnist']},
+                {'PyTorch Lightning': ['guides/frameworks/pytorch_lightning/pytorch_lightning_example']},
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
                 {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx', "guides/frameworks/tensorboardx/video_tensorboardx"]},
                 {
@@ -122,6 +123,8 @@ module.exports = {
             'references/sdk/dataset',
             {'Pipeline': ['references/sdk/automation_controller_pipelinecontroller',
                 'references/sdk/automation_job_clearmljob']},
+            'references/sdk/scheduler',
+            'references/sdk/trigger',
             {'HyperParameter Optimization': [
                 'references/sdk/hpo_optimization_hyperparameteroptimizer',
                 'references/sdk/hpo_optimization_gridsearch',

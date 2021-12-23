@@ -12,14 +12,24 @@ To reports scalars, call the [Logger.report_scalar](../../references/sdk/logger.
 method. To report more than one series on the same plot, use the same `title` argument. For different plots, use different 
 `title` arguments. 
 
-    # report two scalar series on the same graph
-    for i in range(100):
-        Logger.current_logger().report_scalar("unified graph", "series A", iteration=i, value=1./(i+1))
-        Logger.current_logger().report_scalar("unified graph", "series B", iteration=i, value=10./(i+1))
+```python
+# report two scalar series on the same graph
+for i in range(100):
+    Logger.current_logger().report_scalar(
+        "unified graph", "series A", iteration=i, value=1./(i+1)
+    )
+    Logger.current_logger().report_scalar(
+        "unified graph", "series B", iteration=i, value=10./(i+1)
+    )
     
-    # report two scalar series on two different graphs
-    for i in range(100):
-        Logger.current_logger().report_scalar("graph A", "series A", iteration=i, value=1./(i+1))
-        Logger.current_logger().report_scalar("graph B", "series B", iteration=i, value=10./(i+1))
+# report two scalar series on two different graphs
+for i in range(100):
+    Logger.current_logger().report_scalar(
+        "graph A", "series A", iteration=i, value=1./(i+1)
+    )
+    Logger.current_logger().report_scalar(
+        "graph B", "series B", iteration=i, value=10./(i+1)
+    )
+```
 
 ![image](../../img/examples_reporting_14.png)

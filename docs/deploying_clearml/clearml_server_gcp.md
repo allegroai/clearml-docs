@@ -12,7 +12,7 @@ provides custom images for each released version of **ClearML Server**. For a li
 
 After deploying **ClearML Server**, configure the **ClearML Python Package** for it, see [Configuring ClearML for ClearML Server](clearml_config_for_clearml_server.md).
 
-For information about updgrading **ClearML server on GCP, see [here](upgrade_server_gcp.md).
+For information about upgrading ClearML server on GCP, see [here](upgrade_server_gcp.md).
 
 :::important
 If **ClearML Server** is being reinstalled, we recommend clearing browser cookies for **ClearML Server**. For example, 

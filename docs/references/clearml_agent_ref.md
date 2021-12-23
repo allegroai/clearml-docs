@@ -15,14 +15,16 @@ Use the `build` subcommand to create a worker environment without executing the 
 
 ### Syntax 
 
-    clearml-agent build [-h] --id TASK_ID [--target TARGET]
-                            [--install-globally]
-                            [--docker [DOCKER [DOCKER ...]]]
-                            [--python-version PYTHON_VERSION]
-                            [--entry-point {reuse_task,clone_task}] [-O]
-                            [--git-user GIT_USER] [--git-pass GIT_PASS]
-                            [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}]
-                            [--gpus GPUS] [--cpu-only]
+```bash
+clearml-agent build [-h] --id TASK_ID [--target TARGET]
+                    [--install-globally]
+                    [--docker [DOCKER [DOCKER ...]]]
+                    [--python-version PYTHON_VERSION]
+                    [--entry-point {reuse_task,clone_task}] [-O]
+                    [--git-user GIT_USER] [--git-pass GIT_PASS]
+                    [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}]
+                    [--gpus GPUS] [--cpu-only]
+```
                           
 ### Arguments                          
 
@@ -152,14 +154,27 @@ Use the `daemon` subcommand to run a worker, optionally in a Docker container, l
 
 ### Syntax
 
-    clearml-agent daemon [-h] [--foreground] [--queue QUEUES [QUEUES ...]] [--order-fairness] [--standalone-mode]
-                            [--services-mode [SERVICES_MODE]] [--create-queue] [--detached] [--stop] [--dynamic-gpus]
-                            [--uptime [UPTIME [UPTIME ...]]] [--downtime [DOWNTIME [DOWNTIME ...]]] [--status] [-O]
-                            [--git-user GIT_USER] [--git-pass GIT_PASS] [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}]
-                            [--gpus GPUS] [--cpu-only] [--docker [DOCKER [DOCKER ...]]] [--force-current-version]
+```bash
+clearml-agent daemon [-h] [--foreground] [--queue QUEUES [QUEUES ...]] [--order-fairness] 
+                     [--standalone-mode] [--services-mode [SERVICES_MODE]] 
+                     [--child-report-tags CHILD_REPORT_TAGS [CHILD_REPORT_TAGS ...]]
+                     [--create-queue] [--detached] [--stop] [--dynamic-gpus] 
+                     [--uptime [UPTIME [UPTIME ...]]] [--downtime [DOWNTIME [DOWNTIME ...]]] 
+                     [--status] [--use-owner-token] [-O] 
+                     [--git-user GIT_USER] [--git-pass GIT_PASS] 
+                     [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}] 
+                     [--gpus GPUS] [--cpu-only] 
+                     [--docker [DOCKER [DOCKER ...]]] [--force-current-version]
+```
 
                            
 ### Arguments
+
+---
+
+**`child-report-tags`**
+
+List of tags to send with the status reports from the worker that executes a task.
 
 ---
 
@@ -204,7 +219,7 @@ Use the `daemon` subcommand to run a worker, optionally in a Docker container, l
 
   For example, use `09-13 TUE` to set Tuesday's downtime to 09-13. 
   
-:::note
+:::info
 * This feature is only supported by the ClearML Enterprise Server 
 * Make sure to have only one of uptime / downtime configuration and not both.
 ::: 
@@ -217,7 +232,7 @@ Use the `daemon` subcommand to run a worker, optionally in a Docker container, l
 
   For example: `--dynamic-gpus --queue dual_gpus=2 single_gpu=1`
 
-:::note
+:::info Enterprise Feature
 This feature is only supported by the ClearML Enterprise Server 
 :::
 
@@ -339,10 +354,16 @@ This feature is only supported by the ClearML Enterprise Server
 * Specify uptime for clearml-agent in `<hours> <days>` format. for example, use `17-20 TUE` to set Tuesday's
   uptime to 17-20
   
-:::note
+:::info
 * This feature is only supported by the ClearML Enterprise Server 
 * Make sure to have only one of uptime / downtime configuration and not both.
 ::: 
+  
+---
+
+**`use-owner-token`**
+
+Generate and use the task owner's token for the execution of the task.
   
 ## execute
 
@@ -350,9 +371,14 @@ Use the `execute` subcommand to build and execute an experiment without a queue.
 
 ### Syntax
 
-        clearml-agent execute [-h] --id TASK_ID [--log-file LOG_FILE] [--disable-monitoring] [--full-monitoring] [--require-queue]
-                             [--standalone-mode] [--docker [DOCKER [DOCKER ...]]] [--clone] [-O] [--git-user GIT_USER]
-                             [--git-pass GIT_PASS] [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}] [--gpus GPUS] [--cpu-only]
+```bash
+clearml-agent execute [-h] --id TASK_ID [--log-file LOG_FILE] [--disable-monitoring] 
+                      [--full-monitoring] [--require-queue]
+                      [--standalone-mode] [--docker [DOCKER [DOCKER ...]]] [--clone] 
+                      [-O] [--git-user GIT_USER] [--git-pass GIT_PASS] 
+                      [--log-level {DEBUG,INFO,WARN,WARNING,ERROR,CRITICAL}] 
+                      [--gpus GPUS] [--cpu-only]
+```
 
                             
 ### Arguments                            
@@ -420,7 +446,7 @@ Use the `execute` subcommand to build and execute an experiment without a queue.
 
 **`gpus`** 
 * Specify active GPUs for the daemon to use (docker / virtual environment), Equivalent to setting
-  NVIDIA_VISIBLE_DEVICES Examples: --gpus 0 or --gpu 0,1,2 or --gpus all
+  `NVIDIA_VISIBLE_DEVICES`. Examples: `--gpus 0` or `--gpu 0,1,2` or `--gpus all`
 
 
 ---

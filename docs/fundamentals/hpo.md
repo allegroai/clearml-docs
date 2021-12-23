@@ -120,5 +120,5 @@ For more information about `HyperParameterOptimizer` and supported optimization 
 
 ## Tutorial
 
-Check out the [Hyperparameter Optimization](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) tutorial for a step-by-step guide.
+Check out the [Hyperparameter Optimization tutorial](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) for a step-by-step guide.
 

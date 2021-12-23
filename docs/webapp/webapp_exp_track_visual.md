@@ -29,7 +29,7 @@ table / full screen**.
 
 ### Info Panel
 
-The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table#clearml-actions-from-the-experiments-table)
+The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table#experiment-actions)
 can be performed from the table (as well as the menu in the info panel).
 
 <details className="cml-expansion-panel screenshot">
@@ -100,7 +100,7 @@ The output details include:
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
 
-![Uncomitted changes section](../img/webapp_tracking_19.png)
+![Uncommitted changes section](../img/webapp_tracking_19.png)
 
 </div>
 </details>
@@ -206,7 +206,7 @@ except experiments whose status is *Published* (read-only).
 **ClearML** tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
 These objects include those that are automatically tracked, and those connected to a Task in code (see [Task.connect_configuration](../references/sdk/task.md#connect_configuration)).
 **ClearML** supports providing a name for a Task model configuration object (see the [name](../references/sdk/task.md#connect_configuration)
-parameter in `Task.connect_configuration`.
+parameter in `Task.connect_configuration`).
 
 :::important
 In older versions of **ClearML Server**, the Task model configuration appeared in the **ARTIFACTS** tab, **MODEL CONFIGURATION** section. Task model configurations now appear in the **Configuration Objects** section, in the **CONFIGURATION** tab.
@@ -346,7 +346,7 @@ General experiment details appear in the **INFO** tab. This includes information
 
 ### Console
 
-The complete experiment log containing everything printed to stdout and strerr appears in the **CONSOLE** tab. The full log
+The complete experiment log containing everything printed to stdout and stderr appears in the **CONSOLE** tab. The full log
 is downloadable. To view the end of the log, click **Jump to end**.
 
 <details className="cml-expansion-panel screenshot">
@@ -368,8 +368,8 @@ All scalars that **ClearML** automatically logs, as well as those explicitly rep
 
 Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
-* **Group by** - select one of the following:
-  * **Metric** - all variants for a metric on the same plot
+* **Group by** - Select one of the following:
+  * **Metric** - All variants for a metric on the same plot
 
     <details className="cml-expansion-panel screenshot">
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -396,8 +396,8 @@ are on the left side of the window. The tools include:
   on those you want to see.
 * **Horizontal axis** modes (scalars, only) - Select one of the following:
   * **ITERATIONS**
-  * **RELATIVE** - time since experiment began
-  * **WALL** - local clock time
+  * **RELATIVE** - Time since experiment began
+  * **WALL** - Local clock time
 * Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
 See additional [plot controls](#plot-controls) below.
