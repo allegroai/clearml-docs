@@ -57,7 +57,7 @@ executing_pipeline(
 
 By default, the pipeline controller and the pipeline steps are launched through ClearML [queues](../../fundamentals/agents_and_queues.md#what-is-a-queue). 
 Use the [`PipelineDecorator.set_default_execution_queue`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorset_default_execution_queue)
-method to specify the execution queue of all pipeline steps. The` execution_queue` parameter of the `PipelineDecorator.component` 
+method to specify the execution queue of all pipeline steps. The `execution_queue` parameter of the `@PipelineDecorator.component` 
 decorator overrides the default queue value for the specific step for which it was specified.
 
 :::note Execution Modes
@@ -95,7 +95,7 @@ Each function step’s arguments are stored in their respective task’s **CONFI
 ![Pipeline step configuration](../../img/pipeline_decorator_step_configuration.png)
 
 
-Values that were listed in the `return_values`parameter of the `PipelineDecorator.component` decorator are stored as 
+Values that were listed in the `return_values`parameter of the `@PipelineDecorator.component` decorator are stored as 
 artifacts in the relevant step's task. These artifacts can be viewed in the step task’s **ARTIFACTS** tab. 
 
 ![Pipeline step artifacts](../../img/pipeline_decorator_step_artifacts.png)

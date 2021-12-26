@@ -40,7 +40,7 @@ Check [this](../../fundamentals/hyperparameters.md) out for all Hyperparameter l
 
 ## Log Artifacts
 
-ClearML allows you to easily store the output products of an experiment -  Model snapshot \ weights file, a preprocessing of your data, feature representation of data and more! 
+ClearML allows you to easily store the output products of an experiment -  Model snapshot / weights file, a preprocessing of your data, feature representation of data and more! 
 
 Essentially, artifacts are files (or python objects) uploaded from a script and are stored alongside the Task.
 These Artifacts can be easily accessed by the web UI or programmatically. 

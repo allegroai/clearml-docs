@@ -19,7 +19,7 @@ example script from ClearML's GitHub repo:
   
 ## Before Starting
 
-Make a copy of [`pytorch_mnist.py`](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
+Make a copy of [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
 in order to add explicit reporting to it.
 
 ```bash
