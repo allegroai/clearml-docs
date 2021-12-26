@@ -209,6 +209,11 @@ See [`Task.create`](../references/sdk/task.md#taskcreate) in the Python SDK refe
 A Task can be identified by its project and name, and by a unique identifier (UUID string). The name and project of 
 a Task can be changed after an experiment has been executed, but its ID can't be changed.
 
+:::tip Locating Task IDs
+To locate a task ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
+to the right of the task name, click `ID` and the task ID appears
+:::
+
 Programmatically, Task objects can be retrieved by querying the system based on either the Task ID or a project and name 
 combination. If a project / name combination is used, and multiple Tasks have the exact same name, the function will return
 the *last modified Task*.
