@@ -218,7 +218,7 @@ In the Step 3 Task ([step3_train_model.py](https://github.com/allegroai/clearml/
 
     * Run the script.
      
-          python pipeline_controller.py
+          python pipeline_from_tasks.py
         
     * Remotely execute the Task - If the Task `pipeline demo` in the project `examples` already exists in ClearML Server, clone it and enqueue it to execute.
     

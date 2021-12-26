@@ -37,12 +37,10 @@ VS Code remote sessions use ports 8878 and 8898 respectively.
 </div>
 </details>
 
-<!--![image](../img/clearml_session_jupyter.png)-->
-
 ## How it Works
 
 ClearML allows to leverage a resource (e.g. GPU or CPU machine) by utilizing the [ClearML Agent](../clearml_agent).
-A ClearML Agent will run on a target machine, and ClearML Session will instruct it to execute the Jupyter \ VS Code 
+A ClearML Agent will run on a target machine, and ClearML Session will instruct it to execute the Jupyter / VS Code 
 server to develop remotely.
 After entering a `clearml-session` command with all specifications: 
 

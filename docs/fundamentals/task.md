@@ -226,7 +226,7 @@ a_task = Task.get_task(project_name='examples', task_name='artifacts')
 Once a Task object is obtained, it's possible to query the state of the Task, reported scalars, etc.
 The Task's outputs, such as artifacts and models, can also be retrieved. 
 
-### Querying \ Searching Tasks
+### Querying / Searching Tasks
 
 Searching and filtering Tasks can be done via the [web UI](../webapp/webapp_overview.md), but also programmatically.
 Input search parameters into the `Task.get_tasks` method, which returns a list of Task objects that match the search. 

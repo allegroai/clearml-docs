@@ -134,7 +134,7 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 
 * Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq#track-env-vars)).
 
-* Custom named parameter groups (see the `name` parameter in [Task.connect](../references/sdk/task.md#connectmutable-namenone)).
+* Custom named parameter groups (see the `name` parameter in [Task.connect](../references/sdk/task.md#connect)).
 
 **To add, change, or delete hyperparameters:**
 
