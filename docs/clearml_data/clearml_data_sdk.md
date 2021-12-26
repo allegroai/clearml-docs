@@ -40,9 +40,9 @@ dataset = Dataset.create(
 )
 ```
 
-:::tip Locating Task ID
-To locate a task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
-to the right of the task name, click `ID` and the task ID appears
+:::tip Locating Dataset ID
+To locate a dataset's ID, go to the dataset task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
+to the right of the dataset task name, click `ID` and the dataset ID appears
 :::
 
 The created dataset inherits the content of the `parent_datasets`. When multiple dataset parents are listed, 
