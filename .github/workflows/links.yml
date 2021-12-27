@@ -52,7 +52,7 @@ jobs:
                   "type": "section",
                   "text": {
                     "type": "mrkdwn",
-                    "text": "$REPORT"
+                    "text": $REPORT
                   }
               ]
             }
