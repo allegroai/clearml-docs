@@ -31,6 +31,6 @@ jobs:
         id: lychee
         uses: lycheeverse/lychee-action@v1.2.0
         with:
-          args: --verbose --no-progress ${{steps.find_files.outputs.files}}
+          args: --verbose --no-progress ${{join(steps.find_files.outputs.files, ' ')}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
