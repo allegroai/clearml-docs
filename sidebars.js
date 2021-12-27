@@ -84,7 +84,7 @@ module.exports = {
                             }
                             ]
                 },
-                {'PyTorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch ignite/pytorch_ignite_mnist']},
+                {'PyTorch Ignite': ['guides/frameworks/pytorch_ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch_ignite/pytorch_ignite_mnist']},
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
                 {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx', "guides/frameworks/tensorboardx/video_tensorboardx"]},
