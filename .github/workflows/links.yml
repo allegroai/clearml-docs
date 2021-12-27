@@ -25,7 +25,7 @@ jobs:
       - name: Find all markdown files
         id: find_files
         run: |
-          echo "::set-output name=files::$(find . -name '*.md' -type f | sed 's|^./||' | sed 's/^/\"/;s/$/\"/' | tr '\n' ' ')"
+          echo "::set-output name=files::$(find . -name '*.md' -type f | sed 's|^./||' | sed 's/^/\'/;s/$/\'/' | tr '\n' ' ')"
         
       - name: Link Checker
         id: lychee
