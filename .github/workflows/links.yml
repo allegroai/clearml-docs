@@ -34,3 +34,25 @@ jobs:
           args: --verbose --no-progress ${{steps.find_files.outputs.files}}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Read Markdown
+        if: ${{ steps.lychee.outputs.exit_code != 0 }}
+        run: echo "REPORT=$(jq -Rs '.' ./lychee/out.md)" >> $GITHUB_ENV
+
+      - name: Slack Notification
+        if: ${{ steps.lychee.outputs.exit_code != 0 }}
+        uses: tiloio/slack-webhook-action@v1.0.1
+        with:
+          slack_web_hook_url: ${{ secrets.SLACK_WEBHOOK }}
+          slack_json: |
+            {
+              "text": "Link Checker failure in github.com/allegroai/clearl-docs",
+              "blocks": [
+                {
+                  "type": "section",
+                  "text": {
+                    "type": "mrkdwn",
+                    "text": "$REPORT"
+                  }
+              ]
+            }
