@@ -21,7 +21,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Slack Notification
-        uses: tiloio/slack-webhook-action@v1.0.1
+        uses: tokorom/action-slack-incoming-webhook@main
+        env:
+          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
         with:
-          slack_web_hook_url: ${{ secrets.SLACK_WEBHOOK }}
-          slack_json: '{"text": "Link Checker failure in github.com/allegroai/clearl-docs", "blocks": [{"type": "section", "text": {"type": "mrkdwn", "text": "Testing!"}}]}'
+          text: Link Checker failure in github.com/allegroai/clearl-docs
+          blocks: |
+            [
+              {"type": "section", "text": {"type": "mrkdwn", "text": "Testing!"}}
+            ]
+
