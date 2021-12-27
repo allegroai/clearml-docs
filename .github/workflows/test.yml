@@ -24,16 +24,4 @@ jobs:
         uses: tiloio/slack-webhook-action@v1.0.1
         with:
           slack_web_hook_url: ${{ secrets.SLACK_WEBHOOK }}
-          slack_json: |
-            {
-              "text": "Link Checker failure in github.com/allegroai/clearl-docs",
-              "blocks": [
-                {
-                  "type": "section",
-                  "text": {
-                    "type": "mrkdwn",
-                    "text": "Testing!"
-                  }
-                }
-              ]
-            }
+          slack_json: '{"text": "Link Checker failure in github.com/allegroai/clearl-docs", "blocks": [{"type": "section", "text": {"type": "mrkdwn", "text": "Testing!"}}]}'
