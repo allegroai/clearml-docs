@@ -25,12 +25,8 @@ jobs:
       - name: Find all markdown files
         id: find_files
         run: |
-          echo '::set-output name=files::$(find . -name "*.md")'
-
-      - name: test output
-        run: |
-          echo ${{steps.find_files.outputs.files}}
-
+          echo "::set-output name=files::$(find . -name '*.md')"
+        
       - name: Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1.2.0
