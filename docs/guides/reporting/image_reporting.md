@@ -10,10 +10,10 @@ demonstrates reporting (uploading) images in several formats, including:
 * PIL Image objects
 * Local files. 
 
-**ClearML** uploads images to the bucket specified in the **ClearML** configuration file 
-or **ClearML** can be configured for image storage, see [Logger.set_default_upload_destination](../../references/sdk/logger.md#set_default_upload_destination) 
+ClearML uploads images to the bucket specified in the ClearML [configuration file](../../configs/clearml_conf.md), 
+or ClearML can be configured for image storage, see [Logger.set_default_upload_destination](../../references/sdk/logger.md#set_default_upload_destination) 
 (storage for [artifacts](../../fundamentals/artifacts.md#setting-upload-destination) is different). Set credentials for 
-storage in the **ClearML** configuration file.
+storage in the ClearML configuration file.
 
 When the script runs, it creates an experiment named `image reporting`, which is associated with the `examples` project.
 
@@ -48,7 +48,7 @@ Logger.current_logger().report_image(
 )
 ```
 
-**ClearML** reports these images as debug samples in the **ClearML Web UI** **>** experiment details **>** **RESULTS** tab
+ClearML reports these images as debug samples in the **ClearML Web UI** **>** experiment details **>** **RESULTS** tab
 **>** **DEBUG SAMPLES** sub-tab. 
 
 ![image](../../img/examples_reporting_07.png)
