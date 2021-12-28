@@ -32,7 +32,7 @@ jobs:
         with:
           format: json
           output: /tmp/links.json
-          args: --verbose --no-progress $MD_FILES
+          args: --verbose --no-progress ${{ env.MD_FILES }}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
