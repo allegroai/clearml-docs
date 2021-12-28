@@ -67,11 +67,11 @@ module.exports = {
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
                 {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
-                {'FastAI': ['guides/frameworks/fastai/fastai_with_tensorboard']},
+                'guides/frameworks/fastai/fastai_with_tensorboard',
                 {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},
-                {'LightGBM': ['guides/frameworks/lightgbm/lightgbm_example']},
-                {'Matplotlib': ['guides/frameworks/matplotlib/matplotlib_example']},
-                {'MegEngine':['guides/frameworks/megengine/megengine_mnist']},
+                'guides/frameworks/lightgbm/lightgbm_example',
+                'guides/frameworks/matplotlib/matplotlib_example',
+                'guides/frameworks/megengine/megengine_mnist',
                 {'PyTorch':
                         ['guides/frameworks/pytorch/pytorch_distributed_example', 'guides/frameworks/pytorch/pytorch_matplotlib',
                         'guides/frameworks/pytorch/pytorch_mnist', 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/pytorch/pytorch_tensorboardx',
@@ -84,15 +84,15 @@ module.exports = {
                             }
                             ]
                 },
-                {'PyTorch Ignite': ['guides/frameworks/pytorch ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch ignite/pytorch_ignite_mnist']},
-                {'PyTorch Lightning': ['guides/frameworks/pytorch_lightning/pytorch_lightning_example']},
+                {'PyTorch Ignite': ['guides/frameworks/pytorch_ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch_ignite/pytorch_ignite_mnist']},
+                'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
                 {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx', "guides/frameworks/tensorboardx/video_tensorboardx"]},
                 {
                     'Tensorflow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
                         'guides/frameworks/tensorflow/tensorflow_mnist', 'guides/frameworks/tensorflow/integration_keras_tuner']
                 },
-                {'XGboost': ['guides/frameworks/xgboost/xgboost_sample']}
+                'guides/frameworks/xgboost/xgboost_sample'
             ]},
             {'IDEs': ['guides/ide/remote_jupyter_tutorial', 'guides/ide/integration_pycharm', 'guides/ide/google_colab']},
             {'Offline Mode':['guides/set_offline']},

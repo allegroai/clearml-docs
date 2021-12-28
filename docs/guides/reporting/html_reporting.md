@@ -15,12 +15,14 @@ When the script runs, it creates an experiment named `html samples reporting`, w
 
 ## Reporting HTML URLs
 
-Report HTML by URL, using the `Logger.report_media` method `url` parameter.
+Report HTML by URL, using the [Logger.report_media](../../references/sdk/logger.md#report_media) method's `url` parameter.
 
 See the example script's [report_html_url](https://github.com/allegroai/clearml/blob/master/examples/reporting/html_reporting.py#L16) 
 function, which reports the **ClearML** documentation's home page.
 
-    Logger.current_logger().report_media("html", "url_html", iteration=iteration, url="https://allegro.ai/docs/index.html")
+```python
+Logger.current_logger().report_media("html", "url_html", iteration=iteration, url="https://clear.ml/docs")
+```
 
 ## Reporting HTML Local Files
 
