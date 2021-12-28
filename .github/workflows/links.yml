@@ -31,14 +31,13 @@ jobs:
         uses: lycheeverse/lychee-action@v1.2.0
         with:
           format: json
-          output: /tmp/links.json
           args: --verbose --no-progress ${{ env.MD_FILES }}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       - name: Read Results
         if: ${{ steps.lychee.outputs.exit_code != 0 }}
-        run: echo "REPORT=$(jq -Rs '.' /tmp/links.json)" >> $GITHUB_ENV
+        run: echo "REPORT=$(jq -Rs '.' ./lychee/out.md)" >> $GITHUB_ENV
 
       - name: Echo Results
         if: ${{ steps.lychee.outputs.exit_code != 0 }}
