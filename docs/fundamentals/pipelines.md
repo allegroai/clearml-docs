@@ -361,7 +361,7 @@ The remote mode is the pipeline controller's default mode. In this mode, the pip
 Example:
 ```python
 if __name__ == '__main__':
-    executing_pipeline(pickle_url='https://exaple.com/iris_dataset.pkl')
+    executing_pipeline(pickle_url='https://example.com/iris_dataset.pkl')
     print('pipeline completed')
 ```
 

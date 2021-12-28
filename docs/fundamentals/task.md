@@ -282,7 +282,7 @@ cloned = Task.clone(
 
 A cloned Task starts in [draft](#task-states) mode, so its Task configurations can be edited (see 
 [Task.set_parameters](../references/sdk/task.md#set_parameters)).
-Once a Task is modified, launch it by pushing it into an execution queue, then a [ClearML Agent](../clearml_agent) will pull 
+Once a Task is modified, launch it by pushing it into an execution queue, then a [ClearML Agent](../clearml_agent.md) will pull 
 it from the queue and execute the Task.
 
 ```python
