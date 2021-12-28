@@ -37,12 +37,8 @@ jobs:
 
       - name: Read Results
         if: ${{ steps.lychee.outputs.exit_code != 0 }}
-        run: echo "REPORT=$(jq -Rs '.' ./lychee/out.md)" >> $GITHUB_ENV
-
-      - name: Echo Results
-        if: ${{ steps.lychee.outputs.exit_code != 0 }}
-        run: echo $REPORT
-        
+        run: echo "FAILED_URLS=$(jq -r '.fail_map[] | .[] | .url' ./lychee/out.md)" >> $GITHUB_ENV
+    
       - name: Slack Notification
         if: ${{ steps.lychee.outputs.exit_code != 0 }}
         uses: tokorom/action-slack-incoming-webhook@main
@@ -52,5 +48,5 @@ jobs:
           blocks: |
             [
               {"type": "section", "text": {"type": "mrkdwn", "text": ":warning: Link Checker failure in github.com/allegroai/clearl-docs "}},
-              {"type": "section", "text": {"type": "mrkdwn", "text": $REPORT}}
+              {"type": "section", "text": {"type": "mrkdwn", "text": "$FAILED_URLS"}}
             ]
