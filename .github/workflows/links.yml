@@ -38,7 +38,7 @@ jobs:
 
       - name: Read Results
         if: ${{ steps.lychee.outputs.exit_code != 0 }}
-        run: echo "REPORT=$(jq -Rs '```.```' /tmp/links.json)" >> $GITHUB_ENV
+        run: echo "REPORT=$(jq -Rs '.' /tmp/links.json)" >> $GITHUB_ENV
 
       - name: Echo Results
         if: ${{ steps.lychee.outputs.exit_code != 0 }}
