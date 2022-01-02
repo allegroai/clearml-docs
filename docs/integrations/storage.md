@@ -59,9 +59,9 @@ For example:
 aws {
         s3 {
             # default, used for any bucket not specified below
-            key: "${AWS_ACCESS_KEY_ID}"
-            secret: "${AWS_SECRET_ACCESS_KEY}"
-            region: "${AWS_DEFAULT_REGION}"
+            key: ${AWS_ACCESS_KEY_ID}
+            secret: ${AWS_SECRET_ACCESS_KEY}
+            region: ${AWS_DEFAULT_REGION}
         }
 }
 ``` 
@@ -116,8 +116,8 @@ For example:
 azure.storage {
     containers: [
         {
-            account_name: "${AZURE_STORAGE_ACCOUNT}"
-            account_key: "${AZURE_STORAGE_KEY}"
+            account_name: ${AZURE_STORAGE_ACCOUNT}
+            account_key: ${AZURE_STORAGE_KEY}
             # container_name:
         }
     ]
@@ -156,7 +156,7 @@ google.storage {
              bucket: ""
              subdir: "path/in/bucket" # Not required
              project: ""
-             credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+             credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
          },
      ]
 }

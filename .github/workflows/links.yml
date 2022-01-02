@@ -24,21 +24,21 @@ jobs:
 
       - name: Find all markdown files
         id: find_files
-        run: |
-          echo "::set-output name=files::$(find . -name '*.md' -type f | sed 's|^./||' | tr '\n' ' ')"
+        run: echo "MD_FILES=$(find . -name '*.md' -type f | sed 's|^./||' | tr '\n' ' ')" >> $GITHUB_ENV
         
       - name: Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1.2.0
         with:
-          args: --verbose --no-progress ${{steps.find_files.outputs.files}}
+          format: json
+          args: --verbose --no-progress ${{ env.MD_FILES }}
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
-      - name: Read Markdown
+      - name: Read Results
         if: ${{ steps.lychee.outputs.exit_code != 0 }}
-        run: echo "REPORT=$(jq -Rs '.' ./lychee/out.md)" >> $GITHUB_ENV
-
+        run: echo "FAILED_URLS=$(jq -r '.fail_map[] | .[] | .url' ./lychee/out.md)" >> $GITHUB_ENV
+    
       - name: Slack Notification
         if: ${{ steps.lychee.outputs.exit_code != 0 }}
         uses: tokorom/action-slack-incoming-webhook@main
@@ -48,5 +48,5 @@ jobs:
           blocks: |
             [
               {"type": "section", "text": {"type": "mrkdwn", "text": ":warning: Link Checker failure in github.com/allegroai/clearl-docs "}},
-              {"type": "section", "text": {"type": "mrkdwn", "text": $REPORT}}
+              {"type": "section", "text": {"type": "mrkdwn", "text": "$FAILED_URLS"}}
             ]
