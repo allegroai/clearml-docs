@@ -293,7 +293,7 @@ Task.enqueue(
 )
 ```
 
-See enqueue [example](https://github.com/allegroai/clearml/blob/master/examples/automation/task_piping_example.py).
+See enqueue [example](https://github.com/allegroai/clearml/blob/master/examples/automation/programmatic_orchestration.py).
 
 ### Advanced Remote Execution
 
