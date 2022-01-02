@@ -11,7 +11,7 @@ including:
 * [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
 * [Console](#console) - stdout, stderr, output to the console from libraries, and **ClearML** explicit reporting.
 * [Scalars](#scalars) - Metric plots.
-* [Plots](#other-plots) - Other plots and data, for example: Matplotlib, Plotly, and **ClearML** explicit reporting.
+* [Plots](#plots) - Other plots and data, for example: Matplotlib, Plotly, and **ClearML** explicit reporting.
 * [Debug samples](#debug-samples) - Images, audio, video, and HTML.
 
 ## Viewing Modes
@@ -29,7 +29,7 @@ table / full screen**.
 
 ### Info Panel
 
-The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table#experiment-actions)
+The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table.md#experiment-actions)
 can be performed from the table (as well as the menu in the info panel).
 
 <details className="cml-expansion-panel screenshot">

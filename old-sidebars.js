@@ -74,7 +74,7 @@ module.exports = {
                 {'Tensorflow':['guides/frameworks/tensorflow/manual_model_upload','guides/frameworks/tensorflow/tensorboard_pr_curve','guides/frameworks/tensorflow/tensorboard_toy',
                                'guides/frameworks/tensorflow/tensorflow_mnist','guides/frameworks/tensorflow/integration_keras_tuner']},
                 {'XGboost':['guides/frameworks/xgboost/xgboost_sample']},
-                {'Pytorch Ignite':['guides/frameworks/pytorch ignite/integration_pytorch_ignite']}
+                {'Pytorch Ignite':['guides/frameworks/pytorch_ignite/integration_pytorch_ignite']}
                 ]},
                 {'Automation':['guides/automation/manual_random_param_search_example','guides/automation/task_piping']},
                 {'Data Management':['guides/data management/data_man_simple','guides/data management/data_man_folder_sync','guides/data management/data_man_cifar_classification']},

@@ -41,7 +41,7 @@ and [configuration options](configs/clearml_conf.md#agent-section).
 ## Installation
 
 :::note
-If **ClearML** was previously configured, follow [this](clearml_agent#adding-clearml-agent-to-a-configuration-file) to add 
+If **ClearML** was previously configured, follow [this](#adding-clearml-agent-to-a-configuration-file) to add 
 ClearML Agent specific configurations
 :::
 

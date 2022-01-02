@@ -16,7 +16,7 @@ but can be overridden by command-line arguments.
 |**CLEARML_TASK_NO_REUSE** | Control Task reuse|
 |**CLEARML_CACHE_DIR** | Sets the location of the cache directory|
 |**CLEARML_DOCKER_IMAGE** | Sets the default docker image to run from|
-|**CLEARML_LOG_LEVEL** | debug \ warning \ error \ info | Sets the ClearML package's log verbosity|
+|**CLEARML_LOG_LEVEL** | debug / warning / error / info - Sets the ClearML package's log verbosity|
 |**CLEARML_SUPPRESS_UPDATE_MESSAGE** | Suppresses the message that notifies users of new ClearML package version|
 
 ### VCS
@@ -33,11 +33,12 @@ Overrides Repository Auto-logging
 |Name|Description|
 |---|---|
 |**CLEARML_API_HOST** | Sets the API Server URL|
+|**CLEARML_CONFIG_FILE**| Sets the ClearML configuration file. Overrides the default configuration file location |
 |**CLEARML_WEB_HOST** | Sets the Web UI Server URL|
 |**CLEARML_FILES_HOST** | Sets the File Server URL
 |**CLEARML_API_ACCESS_KEY** | Sets the Server's Public Access Key|
 |**CLEARML_API_SECRET_KEY** | Sets the Server's Private Access Key|
-|**CLEARML_API_HOST_VERIFY_CERT**| Enables \ Disables server certificate verification (If behind a firewall)|
+|**CLEARML_API_HOST_VERIFY_CERT**| Enables / Disables server certificate verification (if behind a firewall)|
 |**CLEARML_OFFLINE_MODE** | Sets Offline mode|
 |**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server when no HOST server is set|
 
@@ -59,6 +60,6 @@ Overrides Repository Auto-logging
 |**CLEARML_AGENT_EXTRA_DOCKER_ARGS**| Overrides extra docker args configuration |
 |**CLEARML_AGENT_EXTRA_PYTHON_PATH**| Sets extra python path|
 |**CLEARML_AGENT_INITIAL_CONNECT_RETRY_OVERRIDE**| Overrides initial server connection behavior (true by default), allows explicit number to specify number of connect retries) | 
-|**CLEARML_AGENT_K8S_HOST_MOUNT / CLEARML_AGENT_DOCKER_HOST_MOUNT**| Specifies Agent's mount point for Docker \ K8s|
+|**CLEARML_AGENT_K8S_HOST_MOUNT / CLEARML_AGENT_DOCKER_HOST_MOUNT**| Specifies Agent's mount point for Docker / K8s|
 |**CLEARML_AGENT_SKIP_PIP_VENV_INSTALL**| Skips Python virtual env installation on execute and provides a custom venv binary |
 |**CLEARML_AGENT_VENV_CACHE_PATH**|Overrides venv cache folder configuration|

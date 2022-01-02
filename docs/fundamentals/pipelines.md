@@ -155,7 +155,7 @@ def main(pickle_url, mock_parameter='mock'):
     X_train, X_test, y_train, y_test = step_two(data_frame)
     model = step_three(X_train, y_train)
  accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
- print(f‘Accuracy={accuracy}%’)
+ print(f"Accuracy={accuracy}%")
 ```
 
 Notice that the driver is the `main` function, calling ("launching") the different steps. Next we add the decorators over 
@@ -222,7 +222,7 @@ def main(pickle_url, mock_parameter='mock'):
     X_train, X_test, y_train, y_test = step_two(data_frame)
     model = step_three(X_train, y_train)
  accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
- print(f‘Accuracy={accuracy}%’)
+ print(f"Accuracy={accuracy}%")
 ```
 
 We wrap each pipeline component with `@PipelineDecorator.component`, and the main pipeline logic with 
@@ -361,7 +361,7 @@ The remote mode is the pipeline controller's default mode. In this mode, the pip
 Example:
 ```python
 if __name__ == '__main__':
-    executing_pipeline(pickle_url='https://exaple.com/iris_dataset.pkl')
+    executing_pipeline(pickle_url='https://example.com/iris_dataset.pkl')
     print('pipeline completed')
 ```
 

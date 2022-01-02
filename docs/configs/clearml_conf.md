@@ -44,7 +44,7 @@ For example:
         # # Default project and credentials file
         # # Will be used when no bucket configuration is found
         project: "clearml"
-        credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+        credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
 }
 ```
 
