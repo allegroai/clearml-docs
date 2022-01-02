@@ -31,7 +31,7 @@ it must be published first.
 
 ## Example Datasets
 
-ClearML Enterprise provides Example Datasets, available to in the ClearML Enterprise platform, with frames already built, 
+ClearML Enterprise provides Example Datasets complete with frames, 
 and ready for your experimentation. Find these example Datasets in the ClearML Enterprise WebApp (UI). They appear 
 with an "Example" banner in the WebApp (UI).
 
