@@ -85,10 +85,7 @@ Custom pipelines usually involve cloning template tasks, modifying their paramet
 them to queues (for execution by [agents](../clearml_agent.md)). It's possible to create custom logic that controls inputs 
 (e.g. overriding hyperparameters and artifacts) and acts upon task outputs.
 
-See examples of custom pipelines: 
-   * [Task Piping](../guides/automation/task_piping.md)
-   * [Manual Random Parameter Search](../guides/automation/manual_random_param_search_example.md)
-
+See [Manual Random Parameter Search](../guides/automation/manual_random_param_search_example.md) example of a custom pipeline.
 
 ## Pipeline from Function Decorator
 
