@@ -12,7 +12,7 @@ Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/ta
 
 You can always find us at [clearml@allegro.ai](mailto:clearml@allegro.ai?subject=ClearML).
 
-## Allegro AI Resources
+## Additional ClearML Resources
 
 Read the [ClearML Blog](https://clear.ml/blog/).
 
