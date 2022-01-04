@@ -6,7 +6,7 @@ title: Community Resources
 
 For feature requests or bug reports, see **ClearML** [GitHub Issues](https://github.com/allegroai/trains/issues).
 
-If you have any questions, post on the **allegroai-clearml** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg).
+If you have any questions, post on the **ClearML** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg).
 
 Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with the **clearml** tag.
 
@@ -14,11 +14,11 @@ You can always find us at [clearml@allegro.ai](mailto:clearml@allegro.ai?subject
 
 ## Allegro AI Resources
 
-Read the [Allegro Blogs](https://allegro.ai/blog/).
+Read the [ClearML Blog](https://clear.ml/blog/).
 
 Subscribe to the **ClearML** [Youtube Channel](https://www.youtube.com/c/ClearML) and view the tutorials, presentations, and discussions.
 
-Join us on Twitter [@allegroAI](https://twitter.com/clearmlapp) for **ClearML** announcements and community discussions.
+Join us on Twitter [@clearmlapp](https://twitter.com/clearmlapp) for **ClearML** announcements and community discussions.
 
 Follow **ClearML** on [LinkedIn](https://www.linkedin.com/company/clearml).
 
