@@ -6,14 +6,14 @@ The [pipeline_from_functions.py](https://github.com/allegroai/clearml/blob/maste
 example script demonstrates the creation of a pipeline using the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md) 
 class.
 
-This example creates a pipeline incorporating four tasks, each of which is created from a function:
-* `executing_pipeline`- Implements the pipeline controller which defines the pipeline structure and execution logic.
+This example creates a pipeline incorporating four tasks, three of which are created from a function:
 * `step_one` - Downloads and processes data.
 * `step_two` - Further processes the data from `step_one`.
 * `step_three` - Uses the processed data from `step_two` to train a model.
 
-The step functions will be registered as pipeline steps when they are added to the pipeline controller. The pipeline 
-execution logic is defined in the pipeline controller function. 
+The fourth task is the pipeline task, which is created when the pipeline is launched. 
+
+The step functions will be registered as pipeline steps when they are added to the pipeline controller.
 
 When the pipeline steps are executed, corresponding ClearML Tasks are created. For this reason, each function which makes 
 up a pipeline step needs to be self-contained. Notice that all package imports inside the function will be automatically 
