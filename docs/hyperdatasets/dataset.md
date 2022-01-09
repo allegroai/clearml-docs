@@ -9,29 +9,15 @@ and functionality for the following purposes:
 * Integrating the powerful features of [Dataviews](dataviews.md) with an experiment
 * [Annotating](webapp/webapp_datasets_frames.md#annotations) images and videos
 
-Datasets consist of versions with SingleFrames and / or FrameGroups. Each Dataset can contain multiple versions, where 
-each version can have multiple children that inherit their parent's SingleFrames and / or FrameGroups. This inheritance 
-includes the frame metadata and data connecting the source data to the ClearML Enterprise platform, as well as the other 
-metadata and data. 
+Datasets consist of versions with SingleFrames and / or FrameGroups. Each Dataset can contain multiple versions, which 
+can have multiple children that inherit their parent's contents. 
 
-These parent-child version relationships can be represented as version trees with a root-level parent. A Dataset 
-can contain one or more trees.
-
-Mask-labels can be defined globally, for a DatasetVersion, which will be applied to all masks in that version.
-
-## Dataset Version State
-
-Dataset versions can have either **Draft** or **Published** status. 
-
-A **Draft** version is editable, so frames can be added to and deleted and / or modified from the Dataset. 
- 
-A **Published** version is read-only, which ensures reproducible experiments and preserves a version of a Dataset. 
-Child versions can only be created from *Published* versions. To create a child of a *Draft* Dataset version, 
-it must be published first.
+Mask-labels can be defined globally, for a DatasetVersion. When defined this way, they will be applied to all masks in 
+that version.
 
 ## Example Datasets
 
-ClearML Enterprise provides Example Datasets, available to in the ClearML Enterprise platform, with frames already built, 
+ClearML Enterprise provides Example Datasets complete with frames, 
 and ready for your experimentation. Find these example Datasets in the ClearML Enterprise WebApp (UI). They appear 
 with an "Example" banner in the WebApp (UI).
 
@@ -123,19 +109,31 @@ Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=True)
 Dataset versioning refers to the group of ClearML Enterprise SDK and WebApp (UI) features for creating, 
 modifying, and deleting Dataset versions.
 
-ClearML Enterprise supports simple and sophisticated Dataset versioning, including **simple version structures** and 
-**advanced version structures**. 
+ClearML Enterprise supports simple and advanced Dataset versioning paradigms.  A **simple version structure** consists of 
+a single evolving version, with historic static snapshots. Continuously push your changes to your single dataset version, 
+and take a snapshot to record the content of your dataset at a specific point in time.
 
-In a **simple version structure**, a parent can have one and only one child, and the last child in the Dataset versions 
-tree must be a *Draft*. This simple structure allows working with a single set of versions of a Dataset. Create children 
-and publish versions to preserve data history. Each version whose status is *Published* in a simple version structure is 
-referred to as a **snapshot**.
+You can, alternatively, employ any **advanced structure**, where each version evolves in parallel, and you control which 
+versions are locked for further changes and which can be modified. See details [below](#dataset-version-structure). 
 
-In an **advanced version structure**, at least one parent has more than one child (this can include more than one parent 
-version at the root level), or the last child in the Dataset versions tree is *Published*.
+## Dataset Version State
 
-Creating a version in a simple version structure may convert it to an advanced structure. This happens when creating 
-a Dataset version that yields a parent with two children, or when publishing the last child version.  
+Dataset versions can have either *Draft* or *Published* state. 
+
+A *Draft* version is editable, so frames can be added to and deleted and / or modified. 
+ 
+A *Published* version is read-only, which ensures reproducible experiments and preserves the Dataset version contents. 
+Child versions can only be created from *Published* versions, as they inherit their predecessor version contents.
+
+## Dataset Version Structure
+To implement a simple version structure, where the dataset is ever evolving, with a linear set of historic snapshots, 
+a parent version can have one and only one child, with the last child in the Dataset versions tree in *Draft* state. 
+Different version structures, such as where at least one parent has more than one child, or the single last child in the 
+Dataset versions tree is *Published* are considered advanced version structures.
+
+For details about programmatically implementing simple and advanced version structures, see [Creating Snapshots](#creating-snapshots) 
+and [Creating Child Versions](#creating-child-versions) respectively below. 
+
 
 ## DatasetVersion Usage
 

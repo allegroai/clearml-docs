@@ -2,39 +2,19 @@
 title: Dataset Versions
 ---
 
-Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying, 
-and deleting Dataset versions. 
+Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying, and 
+deleting [Dataset versions](../dataset.md#dataset-versioning).
 
 From the [Datasets page](webapp_datasets.md), click on one of the Datasets in order to see and work with its versions. 
 
-## Snapshots
-### Viewing Snapshots
-    
-View snapshots in the simple version structure using either:
-        
-* The simple view, a table of snapshots.
+## Dataset Version History
+The WebApp (UI) will present your dataset version structure in one of two ways, depending on the structure implemented.
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Simple view (snapshot table)</summary>
-<div className="cml-expansion-panel-content">
+## Simple View 
+While your dataset maintains a simple (linear) [version structure](../dataset.md#dataset-version-structure), the WebApp 
+(UI) will present the version history as a table of historic snapshots:
 
 ![image](../../img/hyperdatasets/web-app/dataset_simple_adv_01.png)
-
-</div>
-</details>
-<br/>
-
-* The advanced view, a tree of versions. The tree contains one version whose status is *Draft*, and snapshots appear in
-chronological order, with the oldest at the top, and the most recent at the bottom.
-  
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Advanced view (version tree)</summary>
-<div className="cml-expansion-panel-content">
-
-![image](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
-
-</div>   
-</details>
 
 ### Creating Snapshots
 
@@ -42,28 +22,36 @@ To create a snapshot, you must be in the simple (version table) view.
 
 **To create a snapshot, do the following:**
 
-1. If you are in the advanced view, click **Switch to Simple View** (In certain situations, this may not be possible, 
-   see [Dataset Versioning](../dataset.md#dataset-versioning)) 
-1. If the **DATASET HISTORY** section is not opened, click it.
-1. If a snapshot is currently selected, click **RETURN TO CURRENT VERSION**.
 1. Click **+ CREATE SNAPSHOT**.
 1. Enter a version name, and optionally a description.
 1. Click **CREATE**.
 
-
-:::note Snapshot Naming
-The WebApp (UI) does not currently support the automatic naming of snapshots with timestamps appended. You must provide 
-a snapshot name.
+:::note VERSION BROWSING
+Snapshots are always taken of the current version. If you are currently viewing a previous snapshot, click 
+**RETURN TO CURRENT VERSION** to make snapshot creation available.
 :::
 
-## Version Management
-### Creating Versions
+You can view your dataset’s explicit version structure and create a more complex structure by switching to the advanced 
+view.
 
-To create a version, you must be in the advanced (version tree) view.
+### Modifying Snapshot Name
+To modify a Dataset version name:
+1. Click the snapshot name on the top left of the dataset page
+1. Edit the name,
+1. Click <img src="/docs/latest/icons/ico-save.svg" alt="check" className="icon size-md space-sm" /> (check).
+
+        
+## Advanced View
+
+When employing a non-trivial [version structure](../dataset.md#dataset-version-structure) of your dataset, the WebApp 
+(UI) presents the version history as a tree of versions.
+
+![image](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
+
+### Creating Versions
 
 **To create a child version, do the following:**
 
-1. If you are in the simple view, click **Switch to Advanced View**.
 1. Click the (parent) version from which to create a child (inherit all frames).
 1. Click **+ CREATE NEW VERSION**.
 1. Enter a version name, and optionally a description.
@@ -71,34 +59,29 @@ To create a version, you must be in the advanced (version tree) view.
 
 ### Publishing Versions
 
-Publish (make read-only) any Dataset version whose status is *Draft*. If the Dataset is in the simple structure,
-and you publish the current version, then only the advanced view is available,
-and you cannot create snapshots. 
+Publish (make read-only) any Dataset version whose status is *Draft*. If you publish a dataset's current version, the
+dataset's structure will no longer be considered a simple version structure. 
 
 **To publish a version, do the following:**
 
-1. If you are in the simple view, click **Switch to Advanced View**.
 1. Click the version to publish.
 1. Click **PUBLISH**.
 1. Click **PUBLISH** again to confirm.
 
 ### Modifying Version Names
 
-**To modify a Dataset version name, do the following:**
-
-* At the top left of the Dataset page, hover over the Dataset version name, click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" /> , edit the name, and then click <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> (check).
+**To modify a Dataset version name:**
+1. Click the dataset version name on the top left of the dataset page
+1. Edit the name,
+1. Click <img src="/docs/latest/icons/ico-save.svg" alt="check" className="icon size-md space-sm" /> (check).
 
 ### Deleting Versions
 
 You can delete versions whose status is *Draft*. 
 
-**To delete the current version, do the following:**
-
-* If you are in the simple view, click **Switch to Advanced View**.
-* Click the version to delete.
-* Click **DELETE**.
-* Click **DELETE** again to confirm.
-
+1. Click the version to delete.
+1. Click **DELETE**.
+1. Click **DELETE** again to confirm.
 
 ## Version Information
 Additional information about the selected dataset version is presented below the version selection panel in collapsible 
