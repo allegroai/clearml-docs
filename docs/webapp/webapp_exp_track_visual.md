@@ -29,7 +29,7 @@ table / full screen**.
 
 ### Info Panel
 
-The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table#clearml-actions-from-the-experiments-table)
+The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table.md#experiment-actions)
 can be performed from the table (as well as the menu in the info panel).
 
 <details className="cml-expansion-panel screenshot">
@@ -41,7 +41,7 @@ can be performed from the table (as well as the menu in the info panel).
 </div>
 </details>
 
-### Full screen Details View
+### Full Screen Details View
 
 The full screen details view allows for easier viewing and working with experiment tracking and results. The experiments
 table is not visible when the full screen details view is open. Perform experiment actions from the menu.

@@ -24,15 +24,19 @@ project.
 Report by calling the [Logger.report_media](../../references/sdk/logger.md#report_media) 
 method using the `url` parameter.
 
-    # report video, an already uploaded video media (url)
-    Logger.current_logger().report_media(
-        'video', 'big bunny', iteration=1,
-        url='https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4')
+```python
+# report video, an already uploaded video media (url)
+Logger.current_logger().report_media(
+    'video', 'big bunny', iteration=1,
+    url='https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/720/Big_Buck_Bunny_720_10s_1MB.mp4'
+)
     
-    #  report audio, report an already uploaded audio media (url)
-    Logger.current_logger().report_media(
-        'audio', 'pink panther', iteration=1,
-        url='https://www2.cs.uic.edu/~i101/SoundFiles/PinkPanther30.wav')
+#  report audio, report an already uploaded audio media (url)
+Logger.current_logger().report_media(
+    'audio', 'pink panther', iteration=1,
+    url='https://www2.cs.uic.edu/~i101/SoundFiles/PinkPanther30.wav'
+)
+```
 
 The reported audio can be viewed in the **DEBUG SAMPLES** sub-tab. Double click a thumbnail, and the audio player opens.
 
@@ -43,10 +47,13 @@ The reported audio can be viewed in the **DEBUG SAMPLES** sub-tab. Double click 
 
 Use the `local_path` parameter.
 
-    #  report audio, report local media audio file
-    Logger.current_logger().report_media(
-        'audio', 'tada', iteration=1,
-        local_path=os.path.join('data_samples', 'sample.mp3'))
+```python
+#  report audio, report local media audio file
+Logger.current_logger().report_media(
+    'audio', 'tada', iteration=1,
+    local_path=os.path.join('data_samples', 'sample.mp3')
+)
+```
     
 The reported video can be viewed in the **DEBUG SAMPLES** sub-tab. Double click a thumbnail, and the video player opens.
 

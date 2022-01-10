@@ -26,85 +26,102 @@ Modify these parts of the clearml.conf file and add the key, secret, and region 
 It's possible to also give access to specific s3 buckets.
 ```
 aws {
-        s3 {
-            # S3 credentials, used for read/write access by various SDK elements
+    s3 {
+        # S3 credentials, used for read/write access by various SDK elements
 
-            # default, used for any bucket not specified below
-            key: ""
-            secret: ""
-            region: ""
+        # default, used for any bucket not specified below
+        key: ""
+        secret: ""
+        region: ""
 
-            credentials: [
-                # specifies key/secret credentials to use when handling s3 urls (read or write)
-                # {
-                #     bucket: "my-bucket-name"
-                #     key: "my-access-key"
-                #     secret: "my-secret-key"
-                #     verify: "/path/to/ca/bundle.crt" OR false to not verify
-                # },
+        credentials: [
+            # specifies key/secret credentials to use when handling s3 urls (read or write)
+            {
+                bucket: "my-bucket-name"
+                key: ""
+                secret: ""
+                verify: "/path/to/ca/bundle.crt" OR false to not verify
+            },
                 
-            ]
-        }
-        boto3 {
-            pool_connections: 512
-            max_multipart_concurrency: 16
-        }
+        ]
     }
+    boto3 {
+        pool_connections: 512
+        max_multipart_concurrency: 16
+    }
+}
 ```
 
 AWS's S3 access parameters can be specified by referencing the standard environment variables if already defined.
 
 For example: 
 ```
-s3 {
-            ...
+aws {
+        s3 {
             # default, used for any bucket not specified below
-            key: "${AWS_ACCESS_KEY_ID}"
-            secret: "${AWS_SECRET_ACCESS_KEY}"
-            region: "${AWS_DEFAULT_REGION}"
-            ...
+            key: ${AWS_ACCESS_KEY_ID}
+            secret: ${AWS_SECRET_ACCESS_KEY}
+            region: ${AWS_DEFAULT_REGION}
+        }
 }
 ``` 
 
 ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
 ```
-                # {
-                #     host: "my-minio-host:9000"
-                #     key: "12345678"
-                #     secret: "12345678"
-                #     multipart: false
-                #     secure: false
-                # }
+aws {
+        s3 {
+            # default, used for any bucket not specified below
+            key: ""
+            secret: ""
+            region: ""
+
+            credentials: [
+                {
+                    # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
+                    host: "my-minio-host:9000"
+                    key: ""
+                    secret: ""
+                    multipart: false
+                    secure: false
+                }
+            ]
+        } 
+}
 ```
 
+:::info non-AWS Endpoints
+To force usage of a non-AWS endpoint (like the MinIO example above), port declaration is *always* needed, even if standard.
+To enable TLS, pass `secure: true`.
+:::
 
 ### Configuring Azure
 To configure Azure blob storage specify the account name and key.
 
 ```
-    azure.storage {
-        # containers: [
-        #     {
-        #         account_name: "clearml"
-        #         account_key: "secret"
-        #         # container_name:
-        #     }
-        # ]
-    }
+azure.storage {
+    containers: [
+        {
+            account_name: ""
+            account_key: ""
+            # container_name:
+        }
+    ]
+}
 ```
 
 Azure's storage access parameters can be specified by referencing the standard environment variables if already defined.
 
 For example:
 ```
-...
-containers: [
-             {
-                 account_name: "${AZURE_STORAGE_ACCOUNT}"
-                 account_key: "${AZURE_STORAGE_KEY}"
-                 # container_name:
-             }
-         ]
+azure.storage {
+    containers: [
+        {
+            account_name: ${AZURE_STORAGE_ACCOUNT}
+            account_key: ${AZURE_STORAGE_KEY}
+            # container_name:
+        }
+    ]
+}
 ```
 
 ### Configuring Google Storage
@@ -112,35 +129,37 @@ To configure Google Storage, specify the project and the path to the credentials
 It's also possible to specify credentials for a specific bucket.
 
 ```
- google.storage {
-        # # Default project and credentials file
-        # # Will be used when no bucket configuration is found
-        # project: "clearml"
-        # credentials_json: "/path/to/credentials.json"
+google.storage {
+    # Default project and credentials file
+    # Will be used when no bucket configuration is found
+    project: "clearml"
+    credentials_json: "/path/to/credentials.json"
 
-        # # Specific credentials per bucket and sub directory
-        # credentials = [
-        #     {
-        #         bucket: "my-bucket"
-        #         subdir: "path/in/bucket" # Not required
-        #         project: "clearml"
-        #         credentials_json: "/path/to/credentials.json"
-        #     },
-        # ]
-    }
+    # Specific credentials per bucket and sub directory
+    credentials = [
+         {
+             bucket: ""
+             subdir: "path/in/bucket" # Not required
+             project: ""
+             credentials_json: "/path/to/credentials.json"
+         },
+     ]
+}
 ```
 
 GCP's storage access parameters can be specified by referencing the standard environment variables if already defined.
 
 ```
-...
-credentials = [
-             {
-                 bucket: "my-bucket"
-                 ...
-                 credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
-             }
-
+google.storage {
+    credentials = [
+         {
+             bucket: ""
+             subdir: "path/in/bucket" # Not required
+             project: ""
+             credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
+         },
+     ]
+}
 ```
 
 ## Storage Manager
@@ -159,18 +178,18 @@ Configure cache location by modifying the [clearml.conf](../configs/clearml_conf
 
 ```
 storage {
-        cache {
-            # Defaults to system temp folder / cache
-            default_base_dir: "~/.clearml/cache"
-        }
-
-        direct_access: [
-            # Objects matching are considered to be available for direct access, i.e. they will not be downloaded
-            # or cached, and any download request will return a direct reference.
-            # Objects are specified in glob format, available for url and content_type.
-            { url: "file://*" }  # file-urls are always directly referenced
-        ]
+    cache {
+        # Defaults to system temp folder / cache
+        default_base_dir: "~/.clearml/cache"
     }
+
+    direct_access: [
+        # Objects matching are considered to be available for direct access, i.e. they will not be downloaded
+        # or cached, and any download request will return a direct reference.
+        # Objects are specified in glob format, available for url and content_type.
+        { url: "file://*" }  # file-urls are always directly referenced
+    ]
+}
 ```
 
 ### Direct Access

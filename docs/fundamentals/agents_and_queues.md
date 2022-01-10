@@ -9,23 +9,24 @@ The ClearML Agent is the base for **Automation** in ClearML and can be leveraged
 (e.g. a [monitor and alert service](https://github.com/allegroai/clearml/tree/master/examples/services/monitoring)) and more.
 
 ## What Does a ClearML Agent Do?
-An agent (also referred to as a Worker) allows users to execute code on any machine it's installed on, thus facilitating the 
-scaling of data science work beyond one's own machine.  
+An agent (also referred to as a worker) allows users to execute code on any machine it's installed on, thus facilitating the 
+scaling of data science work beyond one's own machine.
+
 The agent takes care of deploying the code to the target machine as well as setting up the entire execution environment: 
 from installing required packages to setting environment variables, 
-all leading to executing the code (supporting both virtual environment or flexible docker container configurations)
+all leading to executing the code (supporting both virtual environment or flexible docker container configurations).
 
-The Agent also supports overriding parameter values on-the-fly without code modification, thus enabling no-code experimentation (This is also the foundation on which 
-ClearML [Hyper Parameter Optimization](hpo.md) is implemented).  
-An agent can be associated with specific GPUs, enabling workload distribution. For example, on a machine with 8 GPUs you can allocate several GPUs to an agent and use the rest for a different workload 
-(even through another agent).   
+The agent also supports overriding parameter values on-the-fly without code modification, thus enabling no-code experimentation (this is also the foundation on which 
+ClearML [Hyperparameter Optimization](hpo.md) is implemented).  
+
+An agent can be associated with specific GPUs, enabling workload distribution. For example, on a machine with 8 GPUs you 
+can allocate several GPUs to an agent and use the rest for a different workload, even through another agent (see [Dynamic GPU Allocation](../clearml_agent.md#dynamic-gpu-allocation)).   
 
 
 
 ## What is a Queue?
 
-A ClearML queue is an ordered list of Tasks scheduled for execution.  
-A queue can be serviced by one or multiple ClearML agents.  
+A ClearML queue is an ordered list of Tasks scheduled for execution. A queue can be serviced by one or multiple agents. 
 Agents servicing a queue pull the queued tasks in order and execute them. 
 
 A ClearML Agent can service multiple queues in either of the following modes: 
@@ -50,18 +51,19 @@ The diagram above demonstrates a typical flow where an agent executes a task:
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
 
-While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Workers and Queues** page).  
+While the agent is running, it continuously reports system metrics to the ClearML Server (these can be monitored in the 
+[**Workers and Queues**](../webapp/webapp_workers_queues.md) page).  
 
 ## Resource Management
-Installing an Agent on machines allows it to monitor all the machine's status (GPU \ CPU \ Memory \ Network \ Disk IO). 
-When managing multiple machines, this allows users to have an overview of their entire HW resources. What is the status of each machine, what is the expected workload
-on each machine and so on.
+Installing an Agent on machines allows it to monitor all the machine's status (GPU / CPU / Memory / Network / Disk IO). 
+When managing multiple machines, this allows users to have an overview of their HW resources: the status of each machine, 
+the expected workload on each machine, etc.
 
 ![image](../img/agents_queues_resource_management.png)
 
 
 You can organize your queues according to resource usage. Say you have a single-GPU machine. You can create a queue called
-"single-gpu-queue" and assign the machine's agent, as well as other single-GPU agents to that queue. This way you will know 
+`single-gpu-queue` and assign the machine's agent, as well as other single-GPU agents to that queue. This way you will know 
 that Tasks assigned to that queue will be executed by a single GPU machine.
 
 While the agents are up and running in your machines, you can access these resources from any machine by enqueueing a 
@@ -76,7 +78,7 @@ Agents can be deployed bare-metal, with multiple instances allocating
 specific GPUs to the agents. They can also be deployed as dockers in a Kubernetes cluster.
 
 The Agent has three running modes:
-- Docker mode: The agent spins a docker image based on the Task’s definition then inside the docker the agent will clone 
+- Docker Mode: The agent spins a docker image based on the Task’s definition then inside the docker the agent will clone 
   the specified repository/code, apply the original execution’s uncommitted changes, install the required python packages 
   and start executing the code while monitoring it.
 - Virtual Environment Mode: The agent creates a new virtual environment for the experiment, installs the required python 
@@ -85,19 +87,25 @@ The Agent has three running modes:
 - Conda Environment Mode: Similar to the Virtual Environment mode, only instead of using pip, it uses conda install and 
   pip combination. Notice this mode is quite brittle due to the Conda package version support table.
 
-## Services Agent & Queue
+## Services Mode
 
-The ClearML Agent, in its default setup, spins a single Task per Agent. It's possible to run multiple agents on the same machine,
-but each one will execute a single Task at a time.<br/>
-This setup makes sense compute-heavy Tasks that might take some time to complete.
-Some tasks, mainly control (Like a pipeline controller) or services (Like an archive cleanup service) are mostly idling, and only implement a thin control logic.<br/>
+In its default mode, a ClearML Agent executes a single task at a time, since training tasks typically require all resources 
+available to them. Some tasks are mostly idling and require less computation power, such as controller tasks (e.g. 
+a pipeline controller) or service tasks (e.g. cleanup service). 
 
-This is where the `services-modes` comes into play. An agent running in services-mode will spin multiple tasks at the same time, each Task will register itself as a sub-agent (visible in the workers Tab in the UI).
-Some examples for suitable tasks are:
+This is where the `services-modes` comes into play. An agent running in `services-mode` will let multiple tasks execute 
+in parallel (each task will register itself as a sub-agent, visible in the [Workers & Queues](../webapp/webapp_workers_queues.md) tab in the UI).
+
+This mode is intended for running maintenance tasks. Some suitable tasks include:
 
 - [Pipeline controller](../guides/pipeline/pipeline_controller.md) - Implementing the pipeline scheduling and logic
 - [Hyper-Parameter Optimization](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) - Implementing an active selection of experiments
 - [Control Service](../guides/services/aws_autoscaler.md) - AWS Autoscaler for example
 - [External services](../guides/services/slack_alerts.md) - Such as Slack integration alert service
 
-By default, [ClearML Server](../deploying_clearml/clearml_server.md) comes with an Agent running on the machine that runs it. It also comes with a Services queue.
+:::warning
+Do not enqueue training or inference tasks into the services queue. They will put an unnecessary load on the server.
+:::
+
+By default, the open source [ClearML Server](../deploying_clearml/clearml_server.md) runs a single clearml-agent in 
+services mode that listens to the `services` queue.

@@ -53,7 +53,7 @@ The pipeline control logic is processed in a background thread.
 
 :::note
 We recommend enqueuing Pipeline Controller Tasks into a 
-[services](agents_and_queues.md#services-agent--queue) queue
+[services](../clearml_agent.md#services-mode) queue.
 :::
 
 Callback functions can be specified to be called in the steps of a `PipelineController` object. 
@@ -85,10 +85,7 @@ Custom pipelines usually involve cloning template tasks, modifying their paramet
 them to queues (for execution by [agents](../clearml_agent.md)). It's possible to create custom logic that controls inputs 
 (e.g. overriding hyperparameters and artifacts) and acts upon task outputs.
 
-See examples of custom pipelines: 
-   * [Task Piping](../guides/automation/task_piping.md)
-   * [Manual Random Parameter Search](../guides/automation/manual_random_param_search_example.md)
-
+See [Manual Random Parameter Search](../guides/automation/manual_random_param_search_example.md) example of a custom pipeline.
 
 ## Pipeline from Function Decorator
 
@@ -155,7 +152,7 @@ def main(pickle_url, mock_parameter='mock'):
     X_train, X_test, y_train, y_test = step_two(data_frame)
     model = step_three(X_train, y_train)
  accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
- print(f‘Accuracy={accuracy}%’)
+ print(f"Accuracy={accuracy}%")
 ```
 
 Notice that the driver is the `main` function, calling ("launching") the different steps. Next we add the decorators over 
@@ -222,7 +219,7 @@ def main(pickle_url, mock_parameter='mock'):
     X_train, X_test, y_train, y_test = step_two(data_frame)
     model = step_three(X_train, y_train)
  accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
- print(f‘Accuracy={accuracy}%’)
+ print(f"Accuracy={accuracy}%")
 ```
 
 We wrap each pipeline component with `@PipelineDecorator.component`, and the main pipeline logic with 
@@ -361,7 +358,7 @@ The remote mode is the pipeline controller's default mode. In this mode, the pip
 Example:
 ```python
 if __name__ == '__main__':
-    executing_pipeline(pickle_url='https://exaple.com/iris_dataset.pkl')
+    executing_pipeline(pickle_url='https://example.com/iris_dataset.pkl')
     print('pipeline completed')
 ```
 

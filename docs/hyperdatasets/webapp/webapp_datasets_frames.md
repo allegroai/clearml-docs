@@ -4,6 +4,8 @@ title: Working with Frames
 
 View and edit SingleFrames in the Dataset page. After selecting a Hyper-Dataset version, the **Version Browser** shows a sample 
 of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFrames, in the [frame viewer](#frame-viewer). 
+Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
+filtering logic. 
 
 ![Dataset page](../../img/hyperdatasets/frames_01.png)
 
@@ -58,16 +60,15 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 
 |Control |Mode |Action|
 |----|-----|----|
-| Hold Shift | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />) | While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
-| Enter | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />) | Complete annotation |
-| Esc | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />), Polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-md space-sm" />) | Cancel annotation process | 
+| Hold Shift | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-sm space-sm" />) | While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
+| Enter | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-sm space-sm" />) | Complete annotation |
+| Esc | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-sm space-sm" />), Polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-sm space-sm" />) | Cancel annotation process | 
 
 ### Viewing and Editing Frames
 
 **To view / edit a frame in the frame editor**
 
-1. Locate your frame by applying a [simple frame filter](webapp_datasets_versioning.md#simple-frame-filtering) or 
-   [advanced frame filter](webapp_datasets_versioning.md#advanced-frame-filtering), and clicking **LOAD MORE**, if required.
+1. Locate your frame by applying a [simple frame filter](#simple-frame-filtering) or [advanced frame filter](#advanced-frame-filtering), and clicking **LOAD MORE**, if required.
 1. Click the frame thumbnail. The frame editor appears.
 1. Do any of the following:
     * View frame details, including:
@@ -94,6 +95,152 @@ a dropdown list in the **Current Source** section.
 
 ![Frame dropdown menu in FrameGroup](../../img/hyperdatasets/framegroup_01.png)
 
+## Filtering Frames
+### Simple Frame Filtering
+
+Simple frame filtering applies one annotation object (ROI) label and returns frames containing at least one annotation 
+with that label. 
+
+**To apply a simple frame filter:**
+
+* In the **Version Browser**, choose a label on the label list.
+
+For example: 
+* Before filtering, the **Version Browser** in the image below contains seven frames.
+
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">View a screenshot</summary>
+<div className="cml-expansion-panel-content">
+      
+
+![Unfiltered version browser](../../img/hyperdatasets/frame_filtering_01.png)
+
+
+</div>      
+</details>
+<br/>  
+
+* A simple label filter for `person` shows three frames with each containing at least one ROI labeled `person`.
+
+<details className="cml-expansion-panel screenshot">
+<summary className="cml-expansion-panel-summary">View a screenshot</summary>
+<div className="cml-expansion-panel-content">
+
+![Filtered version browser](../../img/hyperdatasets/frame_filtering_02.png)
+
+</div>
+</details>
+
+### Advanced Frame Filtering
+
+Advanced frame filtering applies sophisticated filtering logic, which is composed of as many frame filters as needed, 
+where each frame filter can be a combination of ROI, frame, and source rules. 
+* ROI rules use include and exclude logic to match frames by ROI label; an ROI label can match frames containing at least 
+  one annotation object (ROI) with all labels in the rule.
+* Frame rules and source rules use Lucene queries with AND, OR, and NOT logic. Frame rules apply to frame metadata.
+* Source rules apply to frame source information.
+
+**To apply advanced filters:**
+
+1. In the **Version Browser**, click **Switch to advanced filters**.
+1. In a **FRAME FILTER**, create one of the following rules:
+
+    * ROI rule
+
+        * Choose **Include** or **Exclude**, select ROI labels, and optionally set the confidence level range.
+
+        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" alt="edit pencil" className="icon size-md space-sm" />.
+            
+    * Frame rule - Enter a Lucene query using frame metadata fields in the format `meta.<key>:<value>`.
+    
+    * Source rule - Enter a Lucene query using frame metadata fields in the format `sources.<key>:<value>`.            
+
+### Examples
+        
+#### ROI Rules
+
+
+* Create one ROI rule for <code>person</code> shows the same three frames as the simple frame filter (above).
+  <details className="cml-expansion-panel screenshot">
+  <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+  <div className="cml-expansion-panel-content">
+
+  ![Adding an ROI rule](../../img/hyperdatasets/frame_filtering_03.png)
+
+  </div>
+  </details>            
+  <br/>
+
+* In the ROI rule, add a second label. Add `partially_occluded`. Only frames containing at least one ROI labeled as both <code>person</code> and <code>partially_occluded</code> match the filter.
+<details className="cml-expansion-panel screenshot">
+   <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+   <div className="cml-expansion-panel-content">
+
+   ![Add label to ROI rule](../../img/hyperdatasets/frame_filtering_04.png)
+
+   </div>
+   </details>            
+   <br/>
+
+   By opening a frame in the frame viewer, you can see an ROI labeled with both.
+
+   <details className="cml-expansion-panel screenshot">
+   <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+   <div className="cml-expansion-panel-content">
+
+   ![Labeled ROIs in frame viewer](../../img/hyperdatasets/frame_filtering_05.png)
+
+   </div>
+   </details>            
+   <br/>
+
+
+#### Frame Rules
+
+Filter by metadata using Lucene queries.
+
+* Add a frame rule to filter by the metadata key <code>dangerous</code> for the value of <code>no</code>.
+
+    <details className="cml-expansion-panel screenshot">
+    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+    <div className="cml-expansion-panel-content">
+
+    ![Filter by metadata ](../../img/hyperdatasets/frame_filtering_08.png)
+
+    </div>
+    </details>            
+    <br/>
+
+    By opening a frame in the frame viewer, you can see the metadata.
+
+    <details className="cml-expansion-panel screenshot">
+    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+    <div className="cml-expansion-panel-content">
+
+    ![Frame metadata in frame viewer](../../img/hyperdatasets/frame_filtering_09.png)
+
+    </div>
+    </details>            
+    <br/>
+
+    
+#### Source Rules
+
+Filter by sources using Lucene queries.    
+
+* Add a source rule to filter for sources URIs with a wildcards.
+
+    <details className="cml-expansion-panel screenshot">
+    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
+    <div className="cml-expansion-panel-content">
+
+    ![Filter by source](../../img/hyperdatasets/frame_filtering_10.png)
+
+    </div>
+    </details>            
+    <br/>
+
+Use Lucene queries in ROI label filters and frame rules.
         
 
 ## Masks 

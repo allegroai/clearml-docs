@@ -56,8 +56,8 @@ sorted by sections.
 
 ### To Locate the Source Differences:
 
-* Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Previous diff" className="icon size-md" />
-  (Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="next difference" className="icon size-md space-sm" /> (Next diff).
+* Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
+  (Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
 
 For example, in the image below, expanding **ARTIFACTS** **>** **Output Model** **>** **Model** shows that the model ID
 and name are different.
@@ -80,8 +80,8 @@ The Values mode is a side-by-side comparison that shows hyperparameter value dif
 1. In the dropdown menu (on the upper left, next to **+ Add Experiments**), choose **Values**.
 1. To show only differences, move the **Hide Identical Fields** slider to on.
 1. Locate differences by either:
-    * Clicking <img src="/docs/latest/icons/ico-previous-diff.svg" alt=Left arrow" className="icon size-md space-sm" /> (Previous diff) or
-      <img src="/docs/latest/icons/ico-next-diff.svg" alt="Right arrow" className="icon size-md space-sm" /> (Next diff).
+    * Clicking <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md space-sm" /> (Previous diff) or
+      <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
     * Scrolling to see highlighted hyperparameters.
 
 For example, expanding **General** shows that the `batch_size` and `epochs` differ between the experiments.
@@ -125,7 +125,7 @@ Visualize the comparison of scalars, which includes metrics and monitored resour
 
 1. Click the **SCALARS** tab.
 1. In the dropdown menu (upper right of the left sidebar), choose either:
-    * **Last values** (the final or most recent value)
+    * **Last Values** (the final or most recent value)
     * **Min Values** (the minimal values)
     * **Max Values** (the maximal values)
 1. Sort by variant.
@@ -203,7 +203,7 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 
     * Filter by metric. In the **Metric** list, choose a metric.
     * Show other iterations. Click <img src="/docs/latest/icons/ico-circle-older.svg" alt="Left arrow" className="icon size-md space-sm" /> (Older images),
-      <img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (New images), or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="Right arrow" className="icon size-md space-sm" /> (Newest images).
+      <img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (New images), or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="right arrow, newest image" className="icon size-md space-sm" /> (Newest images).
 
     ![image](../img/webapp_compare_30.png)
 
@@ -255,8 +255,8 @@ To assist in experiment analysis, the comparison page supports:
 
 ### Finding the Next or Previous Difference
 
-* Find the previous difference <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Left arrow" className="icon size-md space-sm" />, or
-  the next difference <img src="/docs/latest/icons/ico-next-diff.svg" alt="Right arrow" className="icon size-md space-sm" />.
+* Find the previous difference <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md space-sm" />, or
+  the next difference <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" />.
 
 
 
@@ -290,7 +290,7 @@ To reorder the experiments being compared, press <img src="/docs/latest/icons/ic
 ![image](../img/webapp_compare_21.png)
 
 ### Removing an Experiment from the Comparison
-Remove an experiment from the comparison, by pressing <img src="/docs/latest/icons/ico-remove-compare.svg" alt="Remove" className="icon size-md space-sm" />
+Remove an experiment from the comparison, by pressing <img src="/docs/latest/icons/ico-remove-compare.svg" alt="Minus" className="icon size-md space-sm" />
 on the top right of the experiment that needs to be removed.
 
 ![image](../img/webapp_compare_23.png)

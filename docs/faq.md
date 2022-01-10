@@ -165,7 +165,10 @@ that metric column.
 Yes! For example, you can use the [Task.set_model_label_enumeration](references/sdk/task.md#set_model_label_enumerationenumerationnone) 
 method to store label enumeration:
 
-    Task.current_task().set_model_label_enumeration( {"label": int(0), } )
+```python
+Task.current_task().set_model_label_enumeration( {"label": int(0), } )
+```
+    
 
 For more information about `Task` class methods, see the [Task Class](fundamentals/task.md) reference page.
 
@@ -176,7 +179,9 @@ For more information about `Task` class methods, see the [Task Class](fundamenta
 Yes! Use the [Task.set_model_config](references/sdk/task.md#set_model_configconfig_textnone-config_dictnone) 
 method:
 
-    Task.current_task().set_model_config("a very long text with the configuration file's content")
+```python
+Task.current_task().set_model_config("a very long text with the configuration file's content")
+```
  
 <br/>
 
@@ -196,10 +201,12 @@ and [Task.connect](references/sdk/task.md#connect) methods to manually connect a
 [OutputModel.update_weights](references/sdk/model_outputmodel.md#update_weights) 
 method to manually connect a model weights file.
 
-    input_model = InputModel.import_model(link_to_initial_model_file)
-    Task.current_task().connect(input_model)
+```python
+input_model = InputModel.import_model(link_to_initial_model_file)
+Task.current_task().connect(input_model)
 
-    OutputModel(Task.current_task()).update_weights(link_to_new_model_file_here)
+OutputModel(Task.current_task()).update_weights(link_to_new_model_file_here)
+```
 
 For more information about models, see [InputModel](references/sdk/model_inputmodel.md) 
 and [OutputModel](references/sdk/model_outputmodel.md) classes.
@@ -276,18 +283,20 @@ to reproduce. You can see uncommitted changes in the ClearML Web UI, in the EXEC
 
 **I do not use argparse for hyperparameters. Do you have a solution?** <a id="dont-want-argparser"></a>
 
-Yes! ClearML supports connecting hyperparameter dictionaries to experiments, using the [Task.connect](fundamentals/hyperparameters#connecting-objects) method.
+Yes! ClearML supports connecting hyperparameter dictionaries to experiments, using the [Task.connect](references/sdk/task.md#connect) method.
 
 For example, to log the hyperparameters `learning_rate`, `batch_size`, `display_step`,
 `model_path`, `n_hidden_1`, and `n_hidden_2`:
 
-    # Create a dictionary of parameters
-    parameters_dict = { 'learning_rate': 0.001, 'batch_size': 100, 'display_step': 1, 
-        'model_path': "/tmp/model.ckpt", 'n_hidden_1': 256, 'n_hidden_2': 256 }
+```python
+# Create a dictionary of parameters
+parameters_dict = { 'learning_rate': 0.001, 'batch_size': 100, 'display_step': 1, 
+                    'model_path': "/tmp/model.ckpt", 'n_hidden_1': 256, 'n_hidden_2': 256 }
         
-    # Connect the dictionary to your CLEARML Task
-    parameters_dict = Task.current_task().connect(parameters_dict)
-
+# Connect the dictionary to your CLEARML Task
+parameters_dict = Task.current_task().connect(parameters_dict)
+```
+    
 
 <br/>
 
@@ -296,7 +305,10 @@ For example, to log the hyperparameters `learning_rate`, `batch_size`, `display_
 Yes! When creating experiments and calling [Task.init](fundamentals/task.md#usage), 
 you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
 
-    task = Task.init(project_name, task_name, Task.TaskTypes.testing)
+```python
+task = Task.init(project_name, task_name, Task.TaskTypes.testing)
+```
+    
 
 <br/>
 
@@ -348,24 +360,26 @@ Your firewall may be preventing the connection. Try one of the following solutio
 An experiment's name is a user-controlled property, which can be accessed via the `Task.name` variable. This allows you to use meaningful naming schemes for easily filtering and comparing of experiments.
 
 For example, to distinguish between different experiments, you can append the task ID to the task name:
-
-    task = Task.init('examples', 'train')
-    task.name += ' {}'.format(task.id)
+```python
+task = Task.init('examples', 'train')
+task.name += ' {}'.format(task.id)
+```
 
 Or, append the Task ID post-execution:
+```python
+tasks = Task.get_tasks(project_name='examples', task_name='train')
+for t in tasks:
+    t.name += ' {}'.format(task.id)
+```
 
-    tasks = Task.get_tasks(project_name='examples', task_name='train')
-    for t in tasks:
-        t.name += ' {}'.format(task.id)
-    
 Another example is to append a specific hyperparameter and its value to each task's name:
-
-    tasks = Task.get_tasks(project_name='examples', task_name='my_automl_experiment')
-    for t in tasks:
-        params = t.get_parameters()
-        if 'my_secret_parameter' in params:
-            t.name += ' my_secret_parameter={}'.format(params['my_secret_parameter'])
-
+```python
+tasks = Task.get_tasks(project_name='examples', task_name='my_automl_experiment')
+for t in tasks:
+    params = t.get_parameters()
+    if 'my_secret_parameter' in params:
+        t.name += ' my_secret_parameter={}'.format(params['my_secret_parameter'])
+```
 Use this experiment naming when creating automation pipelines with a naming convention.
 
 <a id="typing"></a>
@@ -398,11 +412,12 @@ You cannot undo the deletion of an experiment.
 :::
 
 For example, the following script deletes an experiment whose Task ID is `123456789`.
-
-    from clearml_agent import APIClient
+```python
+from clearml_agent import APIClient
     
-    client = APIClient()
-    client.tasks.delete(task='123456789')
+client = APIClient()
+client.tasks.delete(task='123456789')
+```
 
 <a id="random_see"></a>
 
@@ -429,14 +444,14 @@ that ran the Task stored the file. This applies to debug samples and artifacts. 
 
 If metric reporting begins within the first three minutes, ClearML reports resource monitoring by iteration. Otherwise, 
 it reports resource monitoring by seconds from start, and logs a message:
-      
-      CLEARML Monitor: Could not detect iteration reporting, falling back to iterations as seconds-from-start. 
-
+```      
+CLEARML Monitor: Could not detect iteration reporting, falling back to iterations as seconds-from-start. 
+```
 However, if metric reporting begins after three minutes and anytime up to thirty minutes, resource monitoring reverts to 
 by iteration, and ClearML logs a message 
-
-      CLEARML Monitor: Reporting detected, reverting back to iteration based reporting. 
-
+```
+CLEARML Monitor: Reporting detected, reverting back to iteration based reporting. 
+```
 After thirty minutes, it remains unchanged.
 
 <br/>
@@ -499,11 +514,17 @@ info panel > RESULTS tab > CONSOLE sub-tab, use the *Download full log* feature.
 Yes! You can manually create a plot with a single point X-axis for the hyperparameter value, and Y-axis for the accuracy. 
 For example:
 
-    number_layers = 10
-    accuracy = 0.95
-    Task.current_task().get_logger().report_scatter2d(
-        "performance", "accuracy", iteration=0, 
-        mode='markers', scatter=[(number_layers, accuracy)])
+```python
+number_layers = 10
+accuracy = 0.95
+Task.current_task().get_logger().report_scatter2d(
+    "performance", 
+    "accuracy", 
+    iteration=0, 
+    mode='markers', 
+    scatter=[(number_layers, accuracy)]
+)
+```
 
 Assuming the hyperparameter is `number_layers` with current value `10`, and the `accuracy` for the trained model is `0.95`. Then, the experiment comparison graph shows:
 
@@ -511,11 +532,19 @@ Assuming the hyperparameter is `number_layers` with current value `10`, and the 
 
 Another option is a histogram chart:
 
-    number_layers = 10
-    accuracy = 0.95
-    Task.current_task().get_logger().report_vector(
-        "performance", "accuracy", iteration=0, labels=['accuracy'],
-        values=[accuracy], xlabels=['number_layers %d' % number_layers])
+```python
+number_layers = 10
+accuracy = 0.95
+Task.current_task().get_logger().report_vector(
+    "performance", 
+    "accuracy", 
+    iteration=0, 
+    labels=['accuracy'],
+    values=[accuracy], 
+    xlabels=['number_layers %d' % number_layers]
+)
+
+```
 
 ![image](img/clearml_faq_screenshots/compare_plots_hist.png)
 
@@ -535,13 +564,28 @@ method reports all series with the same `title` and `iteration` parameter values
 
 For example, the following two scatter2D series are reported on the same plot, because both have a `title` of `example_scatter` and an `iteration` of `1`:
 
-    scatter2d_1 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
-    logger.report_scatter2d("example_scatter", "series_1", iteration=1, scatter=scatter2d_1,
-                            xaxis="title x", yaxis="title y")
+```python
+scatter2d_1 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
+logger.report_scatter2d(
+    "example_scatter",
+    "series_1", 
+    iteration=1, 
+    scatter=scatter2d_1,
+    xaxis="title x", 
+    yaxis="title y"
+)
     
-    scatter2d_2 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
-    logger.report_scatter2d("example_scatter", "series_2", iteration=1, scatter=scatter2d_2,
-                            xaxis="title x", yaxis="title y")
+scatter2d_2 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
+logger.report_scatter2d(
+    "example_scatter", 
+    "series_2", 
+    iteration=1, 
+    scatter=scatter2d_2,
+    xaxis="title x", 
+    yaxis="title y"
+)
+
+```
 
 ## GIT and Storage
 
@@ -559,20 +603,24 @@ providing the `output_uri` parameter allows you to specify the location in which
 
 For example, to store model checkpoints (snapshots) in `/mnt/shared/folder`:
 
-    task = Task.init(project_name, task_name, output_uri="/mnt/shared/folder")
+```python
+task = Task.init(project_name, task_name, output_uri="/mnt/shared/folder")
+```
 
 ClearML will copy all stored snapshots into a subfolder under `/mnt/shared/folder`. The subfolder's name will contain 
 the experiment's ID. If the experiment's ID is `6ea4f0b56d994320a713aeaf13a86d9d`, the following folder will be used:
-
-`/mnt/shared/folder/task.6ea4f0b56d994320a713aeaf13a86d9d/models/`
+```
+/mnt/shared/folder/task.6ea4f0b56d994320a713aeaf13a86d9d/models/
+```
 
 ClearML supports other storage types for `output_uri`, including:
+```python
+# AWS S3 bucket
+task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
 
-    # AWS S3 bucket
-    task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
-
-    # Google Cloud Storage bucket
-    task = Task.init(project_name, task_name, output_uri="gs://bucket-name/folder")
+# Google Cloud Storage bucket
+task = Task.init(project_name, task_name, output_uri="gs://bucket-name/folder")
+```
 
 To use Cloud storage with ClearML, configure the storage credentials in your `~/clearml.conf`. For detailed information, 
 see [ClearML Configuration Reference](configs/clearml_conf.md).
@@ -668,18 +716,21 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
 1. Use the [Task.set_credentials](references/sdk/task.md#taskset_credentials) 
    method to specify the host, port, access key and secret key (see step 1).
-
-        # Set your credentials using the trains apiserver URI and port, access_key, and secret_key.
-        Task.set_credentials(host='http://localhost:8008',key='<access_key>', secret='<secret_key>')
-    
+   ```python
+   # Set your credentials using the trains apiserver URI and port, access_key, and secret_key.
+   Task.set_credentials(host='http://localhost:8008',key='<access_key>', secret='<secret_key>')
+   ```
+   
    :::note 
    `host` is the API server (default port `8008`), not the web server (default port `8080`).
    :::
    
 1. You can now use ClearML.
-
-        # create a task and start training
-        task = Task.init('juptyer project', 'my notebook')
+   ```python
+   # create a task and start training
+   task = Task.init('juptyer project', 'my notebook')
+   ```
+        
 
 <a id="commit-git-in-jupyter"></a>
 
@@ -733,15 +784,21 @@ Set the OS environment variable `ClearML_LOG_ENVIRONMENT` with the variables you
 
 * All environment variables:
 
-        export ClearML_LOG_ENVIRONMENT="*"
+  ```
+  export ClearML_LOG_ENVIRONMENT="*"
+  ```
     
 * Specific environment variables, for example, log `PWD` and `PYTHONPATH`:
 
-        export ClearML_LOG_ENVIRONMENT="PWD,PYTHONPATH"
+  ```
+  export ClearML_LOG_ENVIRONMENT="PWD,PYTHONPATH"
+  ```
     
 * No environment variables:
 
-        export ClearML_LOG_ENVIRONMENT=
+  ```
+  export ClearML_LOG_ENVIRONMENT=
+  ```
 
 ## ClearML Hosted Service
         
@@ -752,8 +809,6 @@ If you joined the ClearML Hosted Service and run a script, but your experiment d
     pip install clearml
     
     clearml-init
-    
-     
 
 ## ClearML Server Deployment
 
@@ -879,32 +934,46 @@ To change the MongoDB and / or Elastic ports for your ClearML Server, do the fol
 
     * For MongoDB:
     
-            MONGODB_SERVICE_PORT: <new-mongodb-port>
+        ```bash
+        MONGODB_SERVICE_PORT: <new-mongodb-port>
+        ```        
     
     * For Elastic:
     
-            ELASTIC_SERVICE_PORT: <new-elasticsearch-port> 
+        ```bash
+        ELASTIC_SERVICE_PORT: <new-elasticsearch-port>
+        ```         
     
         For example:
         
-            MONGODB_SERVICE_PORT: 27018
-            ELASTIC_SERVICE_PORT: 9201
-        
+        ```bash
+        MONGODB_SERVICE_PORT: 27018
+        ELASTIC_SERVICE_PORT: 9201
+        ```
+    
 1. For MongoDB, in the `services/mongo/ports` section, expose the new MongoDB port:
 
-            <new-mongodb-port>:27017
-        
-   For example:
+    ```bash
+    <new-mongodb-port>:27017
+    ```    
+   
+    For example:
     
-            20718:27017
-        
+    ```bash
+    20718:27017
+    ```
+       
 1. For Elastic, in the `services/elasticsearch/ports` section, expose the new Elastic port:
 
-        <new-elasticsearch-port>:9200
-            
-    For example:
+    ```bash
+   <new-elasticsearch-port>:9200
+   ```         
+   
+   For example:
 
-        9201:9200
+   ```bash
+   9201:9200
+   ```
    
 1. Restart ClearML Server, see [Restarting ClearML Server](#restart).
 
@@ -929,14 +998,18 @@ Do the following:
     
     * Linux:
     
-            no_proxy=127.0.0.1
-            NO_PROXY=127.0.0.1
-    
+        ```bash
+        no_proxy=127.0.0.1
+        NO_PROXY=127.0.0.1
+        ```
+   
     * Windows:
     
-            set no_proxy=127.0.0.1
-            set NO_PROXY=127.0.0.1
-
+        ```bash
+        set no_proxy=127.0.0.1
+        set NO_PROXY=127.0.0.1
+        ```
+   
 1. Run the ClearML wizard `clearml-init` to configure ClearML for ClearML Server, which will prompt you to open the ClearML Web UI at, [http://127.0.0.1:8080/](http://127.0.0.1:8080/), and create new ClearML credentials.
 
     The wizard completes with:
@@ -1022,32 +1095,35 @@ For example, to get the metrics for an experiment and to print metrics as a hist
 1. From the response, get the data for the experiment (task) ID `11` and print the experiment name.
 1. Send a request for a metrics histogram for experiment (task) ID `11` using the `events` service `ScalarMetricsIterHistogramRequest` method and print the histogram.
 
-        # Import Session from the trains backend_api
-        from trains.backend_api import Session
-        # Import the services for tasks, events, and projects
-        from trains.backend_api.services import tasks, events, projects
+    ```python
+    # Import Session from the trains backend_api
+    from trains.backend_api import Session
+    # Import the services for tasks, events, and projects
+    from trains.backend_api.services import tasks, events, projects
         
-        # Create an authenticated session
-        session = Session()
+    # Create an authenticated session
+    session = Session()
         
-        # Get projects matching the project name 'examples'
-        res = session.send(projects.GetAllRequest(name='examples'))
-        # Get all the project Ids matching the project name 'examples"
-        projects_id = [p.id for p in res.response.projects]
-        print('project ids: {}'.format(projects_id))
+    # Get projects matching the project name 'examples'
+    res = session.send(projects.GetAllRequest(name='examples'))
+    # Get all the project Ids matching the project name 'examples"
+    projects_id = [p.id for p in res.response.projects]
+    print('project ids: {}'.format(projects_id))
         
-        # Get all the experiments/tasks
-        res = session.send(tasks.GetAllRequest(project=projects_id))
+    # Get all the experiments/tasks
+    res = session.send(tasks.GetAllRequest(project=projects_id))
         
-        # Do your work
-        # For example, get the experiment whose ID is '11'
-        task = res.response.tasks[11]
-        print('task name: {}'.format(task.name))
+    # Do your work
+    # For example, get the experiment whose ID is '11'
+    task = res.response.tasks[11]
+    print('task name: {}'.format(task.name))
         
-        # For example, for experiment ID '11', get the experiment metric values
-        res = session.send(events.ScalarMetricsIterHistogramRequest(
-            task=task.id,
-        ))
-        scalars = res.response_data
-        print('scalars {}'.format(scalars))
-
+    # For example, for experiment ID '11', get the experiment metric values
+    res = session.send(events.ScalarMetricsIterHistogramRequest(
+        task=task.id,
+        )
+   )
+    scalars = res.response_data
+    print('scalars {}'.format(scalars))
+    ```
+   

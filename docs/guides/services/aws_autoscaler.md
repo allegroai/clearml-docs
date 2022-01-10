@@ -2,130 +2,40 @@
 title: ClearML AWS Autoscaler Service
 ---
 
-The **ClearML** AWS autoscaler optimizes AWS EC2 instance scaling according to the instance types used, and the 
-budget configured. 
+The ClearML [AWS autoscaler example](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) 
+demonstrates how to use the [`clearml.automation.auto_scaler`](https://github.com/allegroai/clearml/blob/master/clearml/automation/auto_scaler.py) 
+module to implement a service that optimizes AWS EC2 instance scaling according to a defined instance budget.
 
-In the budget, set the maximum number of each instance type to spin for experiments awaiting execution in a specific queue. 
-Configure multiple instance types per queue, and multiple queues. The **ClearML** AWS 
-autoscaler will spin down idle instances based on the maximum idle time and the polling interval configurations. 
+It periodically polls your AWS cluster and automatically stops idle instances based on a defined maximum idle time or spins 
+up new instances when there aren't enough to execute pending tasks.
 
 ## Running the ClearML AWS Autoscaler
-The **ClearML** AWS autoscaler can execute in [ClearML services mode](../../clearml_agent.md#services-mode), 
-and is configurable. 
 
-Run **ClearML** AWS autoscaler in one of these ways:
- 
-* In the ClearML Web UI.
-  * The autoscaler is pre-loaded in the **ClearML Server** and its status is *Draft* (editable).
-  * Set the instance types and configure the budget in the **ClearML Web UI**, and then enqueue the Task to the `services` queues.
-* By running the  [aws_autoscaler.py](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) 
-  script.
-  * Run script locally or as a service.
-  * When executed, a Task is created, named `AWS Auto-Scaler` that associated with the `DevOps` project.
+run the ClearML AWS autoscaler in one of these ways:
+* Run the [aws_autoscaler.py](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) 
+  script locally
+* Launch through your [`services` queue](../../clearml_agent.md#services-mode)
 
-### Running Using the ClearML Web UI
+:::note Default AMI
+The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI
+:::
 
-Edit the parameters for the instance types, edit budget configuration by editing the Task, and then enqueue the Task to 
-run in **ClearML Agent** services mode.
+### Running the Script
 
-1. Open the **ClearML Web UI** **>** **Projects** page **>** **DevOps** project **>** **AWS Auto-Scaler** Task.
-1. Set the AWS and Git credentials, parameters for idle AWS EC2 instances, and a worker prefix.
-    * In the **CONFIGURATIONS** tab **>** **HYPER PARAMETERS** **>** **Args** **>** hover **>** **EDIT**. 
-        * **cloud_credentials_key** - AWS access key.  
-        * **cloud_credentials_region** - AWS region.
-        * **cloud_credentials_secret** - AWS access secret.
-        * **cloud_provider** - AWS.
-        * **default_docker_image** - The default Docker image to use for the AWS EC2 instance. 
-        * **git_pass** - Git password.
-        * **git_user** - Git username.
-        * **max_idle_time_min** - The maximum time an AWS EC2 instance can be idle before the **ClearML** AWS autoscaler spins it down.
-        * **polling_interval_time_min** - How often the **ClearML** AWS autoscaler checks for idle instances.
-        * **workers_prefix**
-        
-1. Configure the budget.
-    * In **CONFIGURATION OBJECTS** **>** **General** **>** hover **>** **EDIT**. Edit the `resource_configurations` dictionary:
-        
-            resource_configurations {
-                <resource-name> {
-                  instance_type = "<instance_type>"
-                  is_spot = <boolean>
-                  availability_zone = "<AWS-region>"
-                  ami_id = "<AMI-ID>"
-                  ebs_device_name = "<EBS-device-name>"
-                  ebs_volume_size = <EBS-size-in-GB>
-                  ebs_volume_type = "<EBS-vol-type>"
-                }
-            }
-            queues {
-                <queue-name> = [["<resource-name>", <max-instances-of-resource-name>]]
-            }
-            extra_clearml_conf = "<ClearML-config-file>"
-            extra_vm_bash_script = "<bash-script>"
-        
-        * `<resource-name>` - The name assigned to each resource (AWS EC2 instance type). Used in the budget.
-        * `queues` - The **ClearML** AWS autoscaler will optimize scaling for experiments awaiting execution in these queues.
-        * `<queue-name>` - A specific queue.
-        * `<max-instances-of-resource-name>` - The maximum number of instances of the specified `resource-name` to spin up.
-        * `is_spot` - If `true`, then use a spot instance. If `false`, then use a reserved instance.
-        * `extra_clearml_conf` - A **ClearML** configuration file to use for executing experiments in **ClearML Agent**.
-        * `extra_vm_bash_script` - A bash script to execute when creating an instance, before **ClearML Agent** executes.
-      
-      <br/>
+:::info Self deployed ClearML server
+A template  `AWS Auto-Scaler` task is available in the `DevOps Services` project.
+You can clone it, adapt its [configuration](#configuration) to your needs, and enqueue it for execution directly from the ClearML UI. 
+:::
 
-      <details className="cml-expansion-panel screenshot">
-      <summary className="cml-expansion-panel-summary">View a screenshot</summary>
-      <div className="cml-expansion-panel-content">
+Launch the autoscaler locally by executing the following command:
 
-      ![image](../../img/webapp_aws_autoscaler_05.png)
+```bash
+python aws_autoscaler.py --run
+```
 
-      </div>
-      </details>
+When the script runs, a configuration wizard prompts for instance details and budget configuration.
 
-   
-1. Set the Task to run in **ClearML Agent** services mode.
-
-    1. In **HYPER PARAMETERS** **>** **Args** **>** hover **>** **EDIT**.
-     
-    1. Change the **remote** parameter to **true**.
-   
-      <details className="cml-expansion-panel screenshot">
-      <summary className="cml-expansion-panel-summary">View a screenshot</summary>
-      <div className="cml-expansion-panel-content">
-
-      ![image](../../img/webapp_aws_autoscaler_02.png)
-
-      </div>
-      </details>
-
-    
-1. Click **SAVE**.
-
-1. In the experiments table, right click the **AWS Auto-Scaler** Task **>** **Enqueue** **>** **services** queue **>**  **ENQUEUE**.
-            
-### Running Using the Script
-
-The [aws_autoscaler.py](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) 
-script includes a wizard which prompts for instance details and budget configuration. 
-
-The script can run in two ways:
-
-* Configure and enqueue.
-* Enqueue with an existing configuration.
-
-#### To Configure and Enqueue:
-
-Use the `run` command line option:
-
-    python aws_autoscaler.py --run
-
-   When the script runs, a configuration wizard prompts for all required information.
-
-<br/>
-<details className="cml-expansion-panel configuration">
-<summary className="cml-expansion-panel-summary">View the configuration wizard steps</summary>
-<div className="cml-expansion-panel-content">
-
-1. The setup wizard begins. Enter the AWS credentials and AWS region name.
+1. Enter the AWS credentials and AWS region name.
 
       ```console
       AWS Autoscaler setup wizard
@@ -139,7 +49,7 @@ Use the `run` command line option:
       Enter AWS region name [us-east-1b]:
       ```
    
-1. Enter Git credentials. These are required by **ClearML Agent** to set up a Task execution environment in an AWS EC2 instance.
+1. Enter Git credentials. These are required by ClearML Agent to set up a Task execution environment in an AWS EC2 instance.
   
       ```console
       GIT credentials:
@@ -160,30 +70,24 @@ Use the `run` command line option:
       ```
 
 1. For each AWS EC2 instance type that will be used in the budget, do the following:
-   * Choose the instance type
-   * Choose whether to use spot instances 
-   * Select an AMI 
-   * Define the Amazon EBS volume 
-     
-   Select as many instance types as needed.
-
-      ```console
-      Configure the machine types for the auto-scaler:
-      ------------------------------------------------
-      Select Amazon instance type ['g4dn.4xlarge']:
-      Use spot instances? [y/N]: y
-      Select availability zone ['us-east-1b']:
-      Select the Amazon Machine Image id ['ami-07c95cafbb788face']:
-      Enter the Amazon EBS device ['/dev/xvda']:
-      Enter the Amazon EBS volume size (in GiB) [100]:
-      Enter the Amazon EBS volume type ['gp2']:
-      ```
-    
+   
+   ```console
+   Configure the machine types for the auto-scaler:
+   ------------------------------------------------
+   Select Amazon instance type ['g4dn.4xlarge']:
+   Use spot instances? [y/N]: y
+   Select availability zone ['us-east-1b']:
+   Select the Amazon Machine Image id ['ami-07c95cafbb788face']:
+   Enter the Amazon EBS device ['/dev/xvda']:
+   Enter the Amazon EBS volume size (in GiB) [100]:
+   Enter the Amazon EBS volume type ['gp2']:
+   ```
+   
    Name the instance type that was configured. Later in the configuration, use this name to create the budget.
    
-      ```console
-      Select a name for this instance type (used in the budget section) For example 'aws4gpu':
-      ```
+   ```console
+   Select a name for this instance type (used in the budget section) For example 'aws4gpu':
+   ```
    
    The wizard prompts whether to select another instance type.
       
@@ -191,15 +95,14 @@ Use the `run` command line option:
       Define another instance type? [y/N]:
       ```
    
-1. Before **ClearML Agent** executes, enter any bash script to run on newly created instances. 
+1. Enter any bash script to run on newly created instances before launching the ClearML Agent.
 
       ```console
       Enter any pre-execution bash script to be executed on the newly created instances []:
       ```
 
-1. Configure the AWS autoscaler budget. For each queue that will be used in the budget, select the queue and the maximum 
-   number of each instance type, which the **ClearML** AWS autoscaler can spin up to execute experiments awaiting execution 
-   in that queue.
+1. Configure the AWS autoscaler budget. For each queue that will be used in the budget, enter the maximum number of 
+   instances of a selected type that can be spun up simultaneously.
  
       ```console 
       Define the machines budget:
@@ -216,7 +119,7 @@ Use the `run` command line option:
       Do you wish to add another instance type to queue? [y/N]:         
       ```
    
-1. The **ClearML** AWS autoscalar polls instances, and if instances have been idle for the maximum idle time that was specified, 
+1. The ClearML AWS autoscaler polls instances, and if instances have been idle for the maximum idle time that was specified, 
    the autoscaler spins them down.
 
       ```console
@@ -224,27 +127,45 @@ Use the `run` command line option:
       Enter instances polling interval for the auto-scaler (in minutes) [5]:
       ```
 
+The configuration is complete, and a new task called `AWS Auto-Scaler` is created in the `DevOps` project. The service begins, 
+and the script prints a hyperlink to the Task's log.
 
-The configuration is complete. **ClearML** initializes the Task `AWS Auto-Scaler`, the service begins, and the script 
-prints a hyperlink to the Task's log.
-        
+       
 ```console
 CLEARML Task: created new task id=d0ee5309a9a3471d8802f2561da60dfa
 CLEARML Monitor: GPU monitoring failed getting GPU reading, switching off GPU monitoring
-CLEARML results page: https://app.clearml-master.hosted.allegro.ai/projects/142a598b5d234bebb37a57d692f5689f/experiments/d0ee5309a9a3471d8802f2561da60dfa/output/log
+CLEARML results page: https://app.community.clear.ml/projects/142a598b5d234bebb37a57d692f5689f/experiments/d0ee5309a9a3471d8802f2561da60dfa/output/log
 Running AWS auto-scaler as a service
-Execution log https://app.clearml-master.hosted.allegro.ai/projects/142a598b5d234bebb37a57d692f5689f/experiments/d0ee5309a9a3471d8802f2561da60dfa/output/log    
+Execution log https://app.community.clear.ml/projects/142a598b5d234bebb37a57d692f5689f/experiments/d0ee5309a9a3471d8802f2561da60dfa/output/log    
 ```
 
+### Remote Execution
+Using the  `--remote` command line option will enqueue the autoscaler to your [`services` queue](../../clearml_agent.md#services-mode)
+once the configuration wizard is complete:
 
-</div></details>
-   
-<br/>
+```bash
+python aws_autoscaler.py --remote
+```
+Make sure a `clearml-agent` is assigned to that queue.
 
-#### To Enqueue with an Existing Configuration:
+## WebApp
+### Configuration 
 
-Use the `remote` command line option:
+The values configured through the wizard are stored in the task’s hyperparameters and configuration objects by using the 
+[`Task.connect`](../../references/sdk/task.md#connect) and [`Task.set_configuration_object`](../../references/sdk/task.md#set_configuration_object) 
+methods respectively. They can be viewed in the WebApp, in the task’s **CONFIGURATION** page under **HYPER PARAMETERS** and **CONFIGURATION OBJECTS > General**. 
 
-    python aws_autoscaler.py --remote
+ClearML automatically logs command line arguments defined with argparse. View them in the experiments **CONFIGURATION** 
+page under **HYPER PARAMETERS > General**.
 
-   When the script runs, it allows you to create a new configuration.
+![Autoscaler configuration](../../img/examples_aws_autoscaler_config.png)
+
+The task can be reused to launch another autoscaler instance: clone the task, then edit its parameters for the instance 
+types and budget configuration, and enqueue the task for execution (you’ll typically want to use a ClearML Agent running 
+in [services mode](../../clearml_agent.md#services-mode) for such service tasks).
+
+### Console
+
+All other console output appears in the experiment’s **RESULTS > CONSOLE**.
+
+![Autoscaler console](../../img/examples_aws_autoscaler_console.png)

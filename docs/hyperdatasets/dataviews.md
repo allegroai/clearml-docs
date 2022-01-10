@@ -342,11 +342,19 @@ one ROI labeled with both `Car` and `largely_occluded` will be input.
 ```python
 myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
 
-myDataView.add_query(dataset_name='myDataset', version_name='training', 
-                     roi_query='Car', weight = 1)
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='training', 
+    roi_query='Car', 
+    weight = 1
+)
 
-myDataView.add_query(dataset_name='myDataset', version_name='training', 
-                     roi_query='label.keyword:\"Car\" AND label.keyword:\"largely_occluded\"', weight = 5)
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='training',
+    roi_query='label.keyword:\"Car\" AND label.keyword:\"largely_occluded\"', 
+    weight = 5
+)
 ```
 
 ### Mapping ROI Labels

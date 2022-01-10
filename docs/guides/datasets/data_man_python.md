@@ -24,7 +24,9 @@ We first need to obtain a local copy of the CIFAR dataset.
  from clearml import StorageManager
 
  manager = StorageManager()
- dataset_path = manager.get_local_copy(remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz")
+ dataset_path = manager.get_local_copy(
+     remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
+ )
 ```
 
 This script downloads the data and `dataset_path` contains the path to the downloaded data. 

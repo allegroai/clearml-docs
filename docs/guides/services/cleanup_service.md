@@ -2,67 +2,64 @@
 title: Cleanup Service
 ---
 
-The cleanup service deletes: 
-* Archived Tasks and their associated model checkpoints (snapshots)
-* Other artifacts 
-* Debug samples 
+The [cleanup service](https://github.com/allegroai/clearml/blob/master/examples/services/cleanup/cleanup_service.py) 
+demonstrates how to use the `clearml.backend_api.session.client.APIClient` class to implement a service that deletes old 
+archived tasks and their associated files: model checkpoints, other artifacts, and debug samples. 
 
-The cleanup service can be configured with parameters specifying which Archived Tasks to delete and when to delete them. 
-Its Task name is `Cleanup Service` and it is associated with the project `DevOps`. 
+Modify the cleanup service’s parameters to specify which archived experiments to delete and when to delete them. 
 
-`Cleanup Service` can be configured in the **ClearML Web UI**, and then the Task can be enqueued for execution in the 
- [ClearML services mode](../../clearml_agent.md#services-mode). 
-It is pre-loaded in **ClearML Server** and its status is *Draft* (editable). Or, run the script [cleanup_service.py](https://github.com/allegroai/clearml/blob/master/examples/services/cleanup/cleanup_service.py), 
-with options to run locally or as a service. 
+### Running the Cleanup Service
 
-## Prerequisites
+:::info Self deployed ClearML server
+A template `Cleanup Service` task is available in the `DevOps Services` project. You can clone it, adapt its [configuration](#configuration) 
+to your needs, and enqueue it for execution directly from the ClearML UI. 
+:::
 
-* **ClearML Agent** is [installed and configured](../../clearml_agent.md#installation).
-* **ClearML Agent** is launched in [services mode](../../clearml_agent.md#services-mode).
+Configure the task execution by modifying the `args` dictionary:
+* `delete_threshold_days` - Tasks older than this number of days will be deleted. The default value is 30 days.
+* `cleanup_period_in_days` - Repeat the cleanup service at this interval, in days. The default value is 1.0 (run once a day).
+* `force_delete` - If `False` (default), delete only Draft tasks. If `True`,  allows deletion of  tasks in any status. 
+* `run_as_service` - If `True` (default),  the task will be enqueued for remote execution (default queue: "services"). Otherwise, the script will execute locally. 
 
-## Running the Cleanup Service
+:::note Remote Execution
+If `run_as_service` is set to `True`, make sure a `clearml-agent` is assigned to the `services` queue.
+:::
 
-### Running Using the ClearML Web UI
+Now that the script is configured, execute it: 
+```bash
+python cleanup_service.py
+```
 
-#### Step 1. Configuring the Cleanup Service
+A new task called `Cleanup Service` is created in the `DevOps` project on your ClearML server. The script output should 
+look similar to: 
+```console
+ClearML Task: created new task id=8126c0af800f4903be07421aa344d7b3
+ClearML results page: https://app.community.clear.ml/projects/608e9039/experiments/81261aa34d7b3/output/log
+Cleanup service started
+Starting cleanup
+Deleting 100 tasks
+```
 
-1. In the **ClearML Web UI** **Projects** page, click the **DevOps** project **>** click the **Cleanup Service** Task.
-1. In the info panel, click the **CONFIGURATION** tab.
-1. In the **GENERAL** section, hover over the parameter area **>** **EDIT**.
-1. Configure the service parameters:
-    * **cleanup_period_in_days** - Repeat the cleanup service at this interval, in days. The default value is **1.0** (run once a day).
-    * **delete_threshold_days** - Tasks older than this number of days will be deleted. The default value is **30** days.
-    * **force_delete**
-        * **True** - Delete all Tasks older than **delete_threshold_days**.
-        * **False** - Delete only status **created** (*Draft*) Tasks. The default value is **False**.
-    * **run_as_service**
-        * **True** - Run the cleanup as a service (it repeats regularly).
-        * **False** - Run the Task once locally. The default value **False**.
+This is followed by details from the cleanup. 
 
-#### Step 2. Enqueuing the cleanup service
-
-* Right click the **Cleanup Service** Task **>** **Enqueue** **>** In the queue list, select **services** **>** **ENQUEUE**.
-
-### Running Using the Script
-
-The [cleanup_service.py](https://github.com/allegroai/clearml/blob/master/examples/services/cleanup/cleanup_service.py) allows 
-to enqueue the cleanup service to run in **ClearML Agent** services mode, because the `run_as_service` parameter is set to `True`.
-
-    python cleanup_service.py
-    
 ## The Cleanup Service Code
 
 [cleanup_service.py](https://github.com/allegroai/clearml/blob/master/examples/services/cleanup/cleanup_service.py) creates 
-a **ClearML** API client session to delete the Tasks. It creates an `APIClient` object that establishes a session with the 
-**ClearML** backend (**ClearML Server**), and accomplishes the cleanup by calling:
-
-* `Tasks.get_all` to get a list of Tasks to delete, providing the following parameters:
-
+an `APIClient` object that establishes a session with the ClearML Server, and accomplishes the cleanup by calling:
+* [`Tasks.get_all`](../../references/api/tasks.md#post-tasksget_all) to get a list of Tasks to delete, providing the following parameters:
     * `system_tags` - Get only Tasks tagged as `archived`.
-    * `only_fields` - Get only the Task `id`. Only the Task `id` is needed to delete Tasks and its output.
-    * `order_by` - Order the list of Tasks returned by last activity timestamp, in descending order (most recent first).
-    * `page_size` - Set the number of Tasks returned in each page (the last page may contain fewer results).
-    * `page` - Set the number of the page in the resulting list of Tasks to return.
     * `status_changed` - Get Tasks whose last status change is older than then delete threshold (in seconds).
+* [`Task.delete`](../../references/sdk/task.md#delete) - Delete a Task.  
 
-* `Tasks.delete` - Delete a Task, optionally forcing the deletion of a Task, even if its status is not *Draft*.  
+## Configuration
+The experiment’s hyperparameters are explicitly logged to ClearML using the [`Task.connect`](../../references/sdk/task.md#connect) 
+method. View them in the WebApp, in the experiment’s **CONFIGURATION** page under **HYPER PARAMETERS > General**.
+
+The task can be reused. Clone the task, edit its parameters, and enqueue the task to run in ClearML Agent [services mode](../../clearml_agent.md#services-mode).
+
+![Cleanup service configuration](../../img/example_cleanup_configuration.png)
+
+## Console
+All console output appears in the experiment’s **RESULTS > CONSOLE**.
+
+![Cleanup service console](../../img/examples_cleanup_console.png)

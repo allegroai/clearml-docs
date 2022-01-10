@@ -50,7 +50,7 @@ The minimum recommended amount of RAM is 8 GB. For example, a t3.large or t3a.la
 
 1. Open the AWS Marketplace for the [Allegro AI ClearML Server](https://aws.amazon.com/marketplace/pp/B085D8W5NM).
 1. In the heading area, click **Continue to Subscribe**.
-1. **On the Subscribe to software** page, click **Accept Terms**, and then click **Continue to Configuration**.
+1. On the **Subscribe to software** page, click **Accept Terms**, and then click **Continue to Configuration**.
 1. On the **Configure this software** page, complete the following:
 
     1. In the **Fulfillment Option** list, select **64-bit (x86) Amazon Machine Image (AMI)**.

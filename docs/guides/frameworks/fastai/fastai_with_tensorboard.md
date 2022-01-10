@@ -1,5 +1,5 @@
 ---
-title: Fastai
+title: FastAI
 ---
 The [fastai_with_tensorboard.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/fastai/fastai_with_tensorboard.py) 
 example demonstrates the integration of **ClearML** into code that uses fastai and TensorBoard. 

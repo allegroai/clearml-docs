@@ -71,7 +71,7 @@ Select source code by changing any of the following:
 
 
 #### Base Docker Image
-Select a pre-configured Docker that **ClearML Agent** will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#building-docker-containers)).
+Select a pre-configured Docker that **ClearML Agent** will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container)).
 
 **To add, change, or delete a base Docker image:**
 
@@ -99,7 +99,7 @@ and formats for specifying locations include:
 Also set the output destination for artifacts in code (see the `output_uri` parameter of the
 [Task.init](../references/sdk/task.md#taskinit)
 method), and in the **ClearML** configuration file 
-for all experiments (see [default_output_uri](../configs/clearml_conf#config_default_output_uri)
+for all experiments (see [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
 on the **ClearML** Configuration Reference page).
 :::
 
@@ -130,11 +130,11 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 * **TF_DEFINE** - TensorFlow definitions (from code, TF_DEFINEs automatic logging).
 
 * **General** - Parameter dictionaries (from code, connected to the Task by calling the [Task.connect](../references/sdk/task.md#connect)
-  method.
+  method).
 
 * Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq#track-env-vars)).
 
-* Custom named parameter groups - see the `name` parameter in [Task.connect](../references/sdk/task.md#connectmutable-namenone).
+* Custom named parameter groups (see the `name` parameter in [Task.connect](../references/sdk/task.md#connect)).
 
 **To add, change, or delete hyperparameters:**
 
@@ -191,7 +191,7 @@ model in the **MODELS** tab.
 1. Edit the model configuration or label enumeration.
 
     * Model configuration - In the **NETWORK** tab **>** Hover and click **EDIT**. **>** CLick **EDIT** or **CLEAR** (to
-      remove the configuration
+      remove the configuration).
 
        Users can also search for the configuration (hover over the configuration textbox, the search box appears) and copy the
       configuration to the clipboard (hover and click <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md" />).
