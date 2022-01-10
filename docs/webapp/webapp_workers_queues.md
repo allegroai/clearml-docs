@@ -69,10 +69,12 @@ Optimize worker use by monitoring worker utilization in the **Workers** tab.
 In the **Queues** tab, do any of the following:
 
 * Create a queue - Click **+ NEW QUEUE** (top right) **>** Type a queue name **>** **CREATE**.
-* Do either of the following by clicking a queue in the queues list (lower right):
-    * Rename a queue - Click **RENAME** > Type a queue name **>** **RENAME**, or click **DELETE**.
+* Do any of the following by right-clicking a queue in the queues list (lower right):
     * Delete a queue - Click **Delete**.
-* Do any of the following by right clicking an experiment in a queue's **EXPERIMENTS** tab (lower right):
+    * Rename a queue - Click **RENAME** > Type a queue name **>** **RENAME**, or click **DELETE**.
+    * Custom action - The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
+      appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).
+* Do any of the following by right-clicking an experiment in a queue's **EXPERIMENTS** tab (lower right):
     * Reorder experiments in a queue - Drag an experiment to a new position in the queue, or click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Menu button" className="icon size-md space-sm" />
       (menu) and then select **Move to top** or **Move to bottom**.
     * Move to a new queue - Click  <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Menu button" className="icon size-md space-sm" />  (menu) **>** **Move to queue...** **>** Select a queue **>** **ENQUEUE**.
