@@ -39,7 +39,7 @@ module.exports = {
             },
             'webapp/webapp_workers_queues', 'webapp/webapp_profile']
         },
-        {'Configurations': ['configs/clearml_conf', 'configs/env_vars']},
+        {'Configurations': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
         //'References': ['references/clearml_ref','references/clearml_agent_ref'],
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
