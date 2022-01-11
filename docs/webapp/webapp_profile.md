@@ -9,15 +9,15 @@ button in the top right corner of the web UI screen, then click **Settings**.
 
 The Settings page consists of the following sections:
 * [Profile](#profile) - You basic user information
-* [System configuration](#system-configuration) - Control general system behavior settings and input storage access credentials
-* [Workspace configurations](#workspace-configuration)  
+* [Configuration](#configuration) - Control general system behavior settings and input storage access credentials
+* [Workspace](#workspace)  
     * [ClearML credentials](#clearml-credentials) - Create client credentials for ClearML and ClearML Agent to use 
     * [Configuration vault](#configuration-vault) (ClearML Enterprise Server) - Define global ClearML client settings
       that are applied to all ClearML and ClearML Agent instances (which use the workspace's access 
       credentials)
-* [User management](#user-management) - Manage the users that have access to a workspace
-* [Access controls](#access-controls) (ClearML Enterprise Server) - Manage per-resource access privileges 
-* [Billing & Usage](#billing-and-usage) (free service) - View service usage stats   
+* [Users & Groups](#users--groups) - Manage the users that have access to a workspace
+* [Access Rules](#access-rules) (ClearML Enterprise Server) - Manage per-resource access privileges 
+* [Usage & Billing](#usage--billing) (ClearML Hosted Service) - View current usage information and billing details 
 
 ## Profile 
 The profile tab presents user information.
@@ -28,7 +28,7 @@ The profile tab presents user information.
 1. Change the name
 1. Click <img src="/docs/latest/icons/ico-save.svg" alt="Check Mark" className="icon size-md" /> button
 
-## System Configuration
+## Configuration
 ### Customizing UI Behavior
 
 Under **USER PREFERENCES**, users can set a few web UI options:
@@ -52,7 +52,7 @@ In the **Web App Cloud Access** section, enter the following credentials:
 * **Region** - The region for AWS S3.
 * **Host (Endpoint)** - The host for non-AWS S3 servers.
 
-## Workspace Configuration
+## Workspace
 
 ### Multiple Workspaces
 
@@ -97,7 +97,7 @@ To invite a user to your workspace, in the **MEMBERS** section:
 A dialog box will appear with an invitation link to send to the invited users. Existing members will receive an in-app 
 notification informing them that they can join your workspace. 
 
-After inviting users, the page will redirect to the [User Management](#user-management) section, where the
+After inviting users, the page will redirect to the [Users & Groups](#users--groups) section, where the
 pending invitations are displayed. 
 
 ### Leaving a Workspace
@@ -120,13 +120,12 @@ in that workspace. You can rejoin the workspace only if you are re-invited.
 This feature is only available under the ClearML Enterprise plan
 :::
 
-![Configuration vault](../img/webapp_profile_configuration_vault.png)
-
 Use the configuration vault to store global ClearML configuration entries that can extend the ClearML [configuration file](../configs/clearml_conf.md) 
 of any ClearML Agents or the ClearML SDK running with your credentials. Productivity tip: Keep the vault disabled while 
 you edit your configuration, and enable it when the configuration is ready.
 
-$New entries will extend the configuration in the ClearML configuration file, and existing configurations will be overridden.
+New entries will extend the configuration in the ClearML [configuration file](../configs/clearml_conf.md), and existing 
+file entries will be overridden by the vault values.
 
 Fill in values using any of ClearML supported configuration formats: HOCON / JSON / YAML.
 
@@ -139,12 +138,12 @@ Fill in values using any of ClearML supported configuration formats: HOCON / JSO
 * Click the toggle atop the vault to enable / disable the configurations
 * Once enabled, the configurations will be merged to the configuration file during ClearML and ClearML Agent usage 
 
-## User Management 
+## Users & Groups  
 
 ClearML Hosted Service users can add users to their workspace.
 
 :::note Hosted Service Feature
-Inviting new teammates is only available on the ClearML hosted Service
+Inviting new teammates is only available on the ClearML Hosted Service
 :::
 
 ### Users
@@ -171,7 +170,7 @@ user can only rejoin your workspace when you re-invite them.
 ### User Groups
 
 :::important Enterprise Feature
-This feature is only available under the ClearML Enterprise plan, as part of the [Access Controls](#access-controls) 
+This feature is only available under the ClearML Enterprise plan, as part of the [Access Rules](#access-rules) 
 feature.
 :::
 
@@ -212,13 +211,13 @@ The user group table lists all the active user groups. Each row includes a group
 When a user group is deleted, its members will lose the access privileges that had been granted to the group (unless 
 otherwise provided individually or to another group they are members of). 
 
-## Access Controls
+## Access Rules
 
 :::important Enterprise Feature 
 This feature is only available under the ClearML Enterprise plan
 :::
 
-Workspace administrators can use the **Access Controls** page to manage workspace permissions, by specifying which users 
+Workspace administrators can use the **Access Rules** page to manage workspace permissions, by specifying which users 
 and / or user groups have access permissions to the following workspace resources:
  
 * [Projects](../fundamentals/projects.md)
@@ -271,21 +270,24 @@ The access rules table can be filtered by resource type and by target resource a
 * **To filter by target resource or users / groups**, click <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />
 on the respective column and select the users / groups to view from the list that appears. 
   
-## Billing and Usage
+## Usage & Billing
 
-The **USAGE AND BILLING** section displays your ClearML workspace usage information including: 
+The **USAGE & BILLING** section displays your ClearML workspace usage information including: 
 * Number of workspace users
 * Available storage
 * Number of monthly API calls  
 
 ![Billing and Usage free](../img/settings_billing_usage_free.png)
 
+To add users to your workspace, click **INVITE USERS** in the **USERS** section. This will redirect you to the 
+**USER MANAGEMENT** page, where you can invite users (see details [here](#inviting-new-teammates))
+
 ### ClearML Pro 
 
 If you use up your free resources, consider upgrading your account! See the [ClearML pricing page](https://clear.ml/pricing/) 
 for additional plans information.
 
-With the ClearML Pro plan, the **USAGE AND BILLING** page additionally shows estimated charges for the current billing 
+With the ClearML Pro plan, the **USAGE & BILLING** page additionally shows estimated charges for the current billing 
 period and provides access to billing information.
 
 ![Billing and Usage pro](../img/settings_billing_usage.png)
