@@ -1,9 +1,9 @@
 ---
-title: Home Page
+title: Dashboard
 ---
 
 
-The Home page provides the following options:
+The **Dashboard** provides the following options:
 * Quickly access the summarized monitoring of recently updated projects and their experiments
 * Create new projects 
 * Open the [**Workers & Queues**](webapp_workers_queues.md) tab to monitor resource utilization and to manage queues.
