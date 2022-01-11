@@ -12,9 +12,14 @@ This reference page is organized by configuration file section:
 * [sdk](#sdk-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
-in the **ClearML** GitHub repositories  
+in the **ClearML Agent** GitHub repository. 
 
-## Editing Your Configuration File
+:::info
+The values in the ClearML configuration file can be overridden by environment variables, the [configuration vault](../webapp/webapp_profile.md#configuration-vault), 
+and command-line arguments. 
+:::
+
+# Editing Your Configuration File
 
 To add, change, or delete options, edit your configuration file.
 
@@ -39,7 +44,7 @@ For example:
         # # Default project and credentials file
         # # Will be used when no bucket configuration is found
         project: "clearml"
-        credentials_json: "${GOOGLE_APPLICATION_CREDENTIALS}"
+        credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
 }
 ```
 
@@ -88,19 +93,21 @@ for information about using environment variables with Windows in the configurat
 
 **`agent.docker_container_name_format`** (*string*)
 
-:::note Support
-Supported from Docker 0.6.5
+:::note Compatibility Required
+Compatible with Docker versions 0.6.5 and above
 :::
 
-* Set a name format for Docker containers created by a daemon
+* Set a name format for Docker containers created by an agent
 
 * The following variables can be used:
   * `task_id`
   * `worker_id` 
-  * `rand_string` - random lower-case letters string, up to 32 characters)
+  * `rand_string` - random lower-case letters string (up to 32 characters)
 
 * The resulting name must start with an alphanumeric character, while the rest of the name may contain alphanumeric characters, 
   underscores (`_`), dots (`.`) and / or dashes (`-`)
+  
+* For example: `clearml-id-{task_id}-{rand_string:.8}`
 
 ---
 
@@ -119,7 +126,22 @@ Supported from Docker 0.6.5
 
 **`agent.docker_internal_mounts`** (*dict*)
 
-* Set internal mount points inside the Docker. This is especially useful for non-root Docker container images.
+* Set internal mount points inside the Docker. This is especially useful for non-root Docker container images.  
+
+For example:
+  
+  ```
+  docker_internal_mounts {
+       sdk_cache: "/clearml_agent_cache"
+       apt_cache: "/var/cache/apt/archives"
+       ssh_folder: "/root/.ssh"
+       pip_cache: "/root/.cache/pip"
+       poetry_cache: "/root/.cache/pypoetry"
+       vcs_cache: "/root/.clearml/vcs-cache"
+       venv_build: "/root/.clearml/venvs-builds"
+       pip_download: "/root/.clearml/pip-download-cache"
+  }
+  ```
 
 ---
         
@@ -197,17 +219,25 @@ Supported from Docker 0.6.5
 
 **`agent.hide_docker_command_env_vars`** (*dict*)
 
-*  Hide Docker environment variables containing secrets when printing out the Docker command. When printed, the variable
+  * Hide Docker environment variables containing secrets when printing out the Docker command. When printed, the variable
    values will be replaced by `********`
    
-* Turning this feature on will hide the following environment variables values:
+  * Enable this feature by setting `enabled` to `true`. Doing this will hide the following environment variables values:
   
     * `CLEARML_API_SECRET_KEY`
     * `CLEARML_AGENT_GIT_PASS`
     * `AWS_SECRET_ACCESS_KEY` 
     * `AZURE_STORAGE_KEY`
   
-* To mask additional environment variables, add their keys to the `extra_keys` list
+  * To mask additional environment variables, add their keys to the `extra_keys` list.  
+  For example, to hide the value of a custom environment variable named `MY_SPECIAL_PASSWORD`, set `extra_keys: ["MY_SPECIAL_PASSWORD"]`
+  
+  ```
+  hide_docker_command_env_vars {
+    enabled: true 
+    extra_keys: ["MY_SPECIAL_PASSWORD"]
+  }
+  ```
 
 ---
 
@@ -218,7 +248,7 @@ Supported from Docker 0.6.5
   * The values are:
     
     * `true` - ignore any requested python version
-    * `false` - if a task was using a specific python version and the system supports multiple versions, the agent will 
+    * `false` - if a task was using a specific python version, and the system supports multiple versions, the agent will 
       use the requested python version (default)
 
 ___
@@ -701,6 +731,16 @@ and limitations on bucket naming.
   
 <br/>
 
+---
+    
+**`sdk.aws.s3.credentials.verify`** (*string*/*boolean*)
+
+* Specify whether to verify SSL certificates. By default, they are verified. Input a path to a CA bundle, or set to 
+  `false` to skip SSL certificate verification. 
+
+  
+<br/>
+
 #### sdk.azure.storage
 
 **`sdk.azure.storage.containers`** (*[dict]*)
@@ -1045,7 +1085,7 @@ will not exceed the value of `matplotlib_untitled_history_size`
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
 
-## Configuration vault
+## Configuration Vault
 
 :::note
 This feature is only supported by the **ClearML Enterprise Server**

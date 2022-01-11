@@ -27,21 +27,22 @@ Frame labels are applied to an entire frame, not a region in a frame.
 
 ### Adding a Frame Object
 
-To add a frame object annotation to a SingleFrame, use the `SingleFrame.add_annotation` method.  
+To add a frame object annotation to a SingleFrame, use the [`SingleFrame.add_annotation`](../references/hyperdataset/singleframe.md#add_annotation) 
+method.  
 
 ```python
 # a bounding box labeled "test" at x=10,y=10 with width of 30px and height of 20px
 frame.add_annotation(box2d_xywh=(10, 10, 30, 20), labels=['test'])
 ```
 
-The argument `box2d_xywh` specifies the coordinates of the annotation's bounding box, and the argument `labels` specifies
+The `box2d_xywh` argument specifies the coordinates of the annotation's bounding box, and the `labels` argument specifies
 a list of labels for the annotation.
 
 When adding an annotation there are a few options for entering the annotation's boundaries, including: 
-* `poly2d_xy` - A list of floating points (x,y) to create for single polygon, or a list of Floating points lists for a 
-  complex polygon
-* `ellipse2d_xyrrt` - A List consisting of cx, cy, rx, ry, and theta for an ellipse 
-* And more! See `SingleFrame.add_annotation` for further options. 
+* `poly2d_xy` - A list of floating points (x,y) to create for single polygon, or a list of floating points lists for a 
+  complex polygon.
+* `ellipse2d_xyrrt` - A List consisting of cx, cy, rx, ry, and theta for an ellipse. 
+* And more! See [`SingleFrame.add_annotation`](../references/hyperdataset/singleframe.md#add_annotation) for further options. 
 
 ### Adding a Frame Label
 

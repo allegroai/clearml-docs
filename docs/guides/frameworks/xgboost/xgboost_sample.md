@@ -1,9 +1,9 @@
 ---
-title: XGBoost
+title: XGBoost and scikit-learn
 ---
 
 The [xgboost_sample.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/xgboost/xgboost_sample.py) 
-example demonstrates integrating **ClearML** into code that trains a network on the scikit-learn [iris](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris) 
+example demonstrates integrating ClearML into code that trains a network on the scikit-learn [iris](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris) 
 classification dataset, using XGBoost to do the following:
 
 * Load a model ([xgboost.Booster.load_model](https://xgboost.readthedocs.io/en/latest/python/python_api.html#xgboost.Booster.load_model))
@@ -14,7 +14,7 @@ classification dataset, using XGBoost to do the following:
 
 And using scikit-learn to score accuracy ([sklearn.metrics.accuracy_score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.accuracy_score.html)).
 
-**ClearML** automatically logs:
+ClearML automatically logs:
 * Input model
 * Output model 
 * Model checkpoints (snapshots) 

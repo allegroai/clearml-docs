@@ -37,7 +37,8 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 |<img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out icon" className="icon size-md space-sm" />|Zoom out| **-** or Ctrl + Mouse wheel |
 |Percentage textbox|Zoom percentage| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
 
-#### Additional keyboard shortcuts
+
+#### Additional Keyboard Shortcuts
 
 **General Controls**
 
@@ -59,15 +60,15 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 
 |Control |Mode |Action|
 |----|-----|----|
-| Hold Shift | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />) | While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
-| Enter | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />) | Complete annotation |
-| Esc | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" />), Polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-md space-sm" />) | Cancel annotation process | 
+| Hold Shift | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-sm space-sm" />) | While holding Shift, add new points to the ROI by left clicking, and move a single point by dragging it with your mouse | 
+| Enter | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-sm space-sm" />) | Complete annotation |
+| Esc | Key points (<img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-sm space-sm" />), Polygon (<img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-sm space-sm" />) | Cancel annotation process | 
 
 ### Viewing and Editing Frames
 
 **To view / edit a frame in the frame editor**
 
-1. Locate your frame by applying a [simple frame filter](#simple) or [advanced frame filter](#advanced), and clicking <span class="tr_gui">LOAD MORE</span>, if required.
+1. Locate your frame by applying a [simple frame filter](#simple-frame-filtering) or [advanced frame filter](#advanced-frame-filtering), and clicking **LOAD MORE**, if required.
 1. Click the frame thumbnail. The frame editor appears.
 1. Do any of the following:
     * View frame details, including:
@@ -78,10 +79,10 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
         * Annotations
             * Frame objects - Labeled Regions of Interest, with confidence levels and custom metadata per frame object.
             * Frame labels - Labels applied to the entire frame, not a region in the frame.
-    * Optionally, filter annotations by confidence level using the <span class="tr_gui">Minimum confidence</span> slider.
+    * Optionally, filter annotations by confidence level using the **Minimum confidence** slider.
     * Add, change, and delete [annotations](#annotations) and [frame metadata](#frame-metadata).
       
-:::important
+:::important Saving Frame Changes
 To save frames changes at any time, click **SAVE** (below the annotation list area).
 :::
  
@@ -148,7 +149,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 
         * Choose **Include** or **Exclude**, select ROI labels, and optionally set the confidence level range.
 
-        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />.
+        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" alt="edit pencil" className="icon size-md space-sm" />.
             
     * Frame rule - Enter a Lucene query using frame metadata fields in the format `meta.<key>:<value>`.
     
@@ -241,8 +242,28 @@ Filter by sources using Lucene queries.
 
 Use Lucene queries in ROI label filters and frame rules.
         
-## Annotations
 
+## Masks 
+
+Use the **MASKS** panel to select a mask or multiple masks to apply over the frame. 
+
+To view / hide a specific mask, click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" />.
+In order to view all masks, click **Show all** / **Hide all**. 
+
+To adjust the transparency of a mask, use its opacity slider. 
+
+### Labels 
+
+The **Active mask labels** section displays the color mapping of the mask labels. 
+The panel presents labels only from masks that are currently displayed.
+
+**To modify a label's color and opacity:**
+1. Click the colored circle next to the label 
+1. Select a new color
+1. Adjust the opacity slider 
+1. Click **OK**
+
+## Annotations
 ### Frame Objects (Regions of Interest)
 
 You can add annotations by drawing new bounding areas, and copying existing annotations in the same or other frames.
@@ -295,7 +316,7 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 1. Expand the **FRAME LABELS** area.
 1. Click **+ Add new**.
 1. Enter a label.
-1. Optionally, click <img src="/docs/latest/icons/ico-edit.svg" className="icon size-md space-sm" />.
+1. Optionally, click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" />.
 
 ### Annotation Management
 

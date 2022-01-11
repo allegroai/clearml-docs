@@ -2,7 +2,7 @@
 title: Dataviews Table
 ---
 
-[Dataviews](../dataviews.mda) appear in the same Project as the experiment that stored the Dataview in the ClearML Enterprise platform, 
+[Dataviews](../dataviews.md) appear in the same Project as the experiment that stored the Dataview in the ClearML Enterprise platform, 
 as well as the **DATAVIEWS** tab in the **All Projects** page.
 
 The **Dataviews table** is a [customizable](#customizing-the-dataviews-table) list of Dataviews associated with a project.
@@ -38,7 +38,7 @@ The following Dataviews-table customizations are saved on a **per project** basi
 * Active sort order
 * Active filters
 
-If a project has sub-projects, the Dataviews can be viewed by their sub-project groupings or together with 
+If a project has subprojects, the Dataviews can be viewed by their subproject groupings or together with 
 all the Dataviews in the project. The customizations of these two views are saved separately. 
 :::
 
@@ -53,6 +53,7 @@ The following table describes the actions that can be performed from the Datavie
 | Archive | To more easily work with active Dataviews, move a Dataview to the archive. See [Archiving Dataviews](#archiving-dataviews). | 
 | Clone | Make an exact copy of a Dataview. |
 | Move to project | To organize work and improve collaboration, move a Dataview to another project. | 
+| Custom action | When available, provides a mechanism to define your own custom action which will appear in the context menu. See [Custom UI Context Menu Actions](../../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).|
 
 These actions can be accessed with the context menu (when right-clicking a Dataview or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
 in a Dataview's info panel).

@@ -2,12 +2,12 @@
 title: Overview
 ---
 
-The **ClearML Web UI** is the graphical user interface for the **ClearML** platform, which includes:
+The **ClearML Web UI** is the graphical user interface for the ClearML platform, which includes:
 * Experiment management
 * Browsing
 * Resource utilization monitoring
 * Profile management
-* Direct access to the **ClearML** community (Slack Channel, Youtube, and GitHub).
+* Direct access to the ClearML community (Slack Channel, Youtube, and GitHub).
 
 ![image](../img/webapp_screenshots.gif)
 
@@ -15,7 +15,7 @@ The **ClearML Web UI** is the graphical user interface for the **ClearML** platf
 The ClearML Web UI is composed of the following pages:
 * The [Home](webapp_home.md) Page <img src="/docs/latest/icons/ico-homepage.svg" alt="Homepage" className="icon size-md" /> - 
   The dashboard for recent activity and quick access to experiments and projects.
-* The Projects Page <img src="/docs/latest/icons/ico-projects.svg" alt="Projects page" className="icon size-md" /> - The main experimentation page. 
+* The [Projects Page](webapp_projects_page.md) <img src="/docs/latest/icons/ico-projects.svg" alt="Projects page" className="icon size-md" /> - The main experimentation page. 
   It is a main projects page where specific projects can be opened.
 
   Each project page contains customizable [experiments](webapp_exp_table.md) and [models](webapp_model_table.md) tables
@@ -65,7 +65,7 @@ email > click **ADD** > page will redirect to the [**User Management**](webapp_p
 
 ## Community 
 
-In addition, from the **ClearML Web UI**, use these buttons to access the **ClearML** community:
+In addition, from the **ClearML Web UI**, use these buttons to access the ClearML community:
 
 * The **ClearML** <img src="/docs/latest/icons/ico-slack-c.svg" alt="Slack Channel" className="icon size-md" /> Slack channel. Ask questions about **ClearML**.
 * The **ClearML** <img src="/docs/latest/icons/ico-youtube.svg" alt="YouTube" className="icon size-md" /> YouTube Channel. View our tutorials, presentations, and discussions.

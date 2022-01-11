@@ -164,7 +164,7 @@ make sure to close a Task, before initializing a new one. To close a task simply
 (see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a Task, its project needs to be specified. If the project entered does not exist, it will be created. 
-Projects can be divided into sub-projects, just like folders are broken into sub-folders.
+Projects can be divided into subprojects, just like folders are broken into sub-folders.
 For example:
 ```python
 Task.init(project_name='main_project/sub_project', task_name='test')
@@ -209,6 +209,11 @@ See [`Task.create`](../references/sdk/task.md#taskcreate) in the Python SDK refe
 A Task can be identified by its project and name, and by a unique identifier (UUID string). The name and project of 
 a Task can be changed after an experiment has been executed, but its ID can't be changed.
 
+:::tip Locating Task IDs
+To locate a task ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
+to the right of the task name, click `ID` and the task ID appears
+:::
+
 Programmatically, Task objects can be retrieved by querying the system based on either the Task ID or a project and name 
 combination. If a project / name combination is used, and multiple Tasks have the exact same name, the function will return
 the *last modified Task*.
@@ -226,7 +231,7 @@ a_task = Task.get_task(project_name='examples', task_name='artifacts')
 Once a Task object is obtained, it's possible to query the state of the Task, reported scalars, etc.
 The Task's outputs, such as artifacts and models, can also be retrieved. 
 
-### Querying \ Searching Tasks
+### Querying / Searching Tasks
 
 Searching and filtering Tasks can be done via the [web UI](../webapp/webapp_overview.md), but also programmatically.
 Input search parameters into the `Task.get_tasks` method, which returns a list of Task objects that match the search. 
@@ -277,7 +282,7 @@ cloned = Task.clone(
 
 A cloned Task starts in [draft](#task-states) mode, so its Task configurations can be edited (see 
 [Task.set_parameters](../references/sdk/task.md#set_parameters)).
-Once a Task is modified, launch it by pushing it into an execution queue, then a [ClearML Agent](../clearml_agent) will pull 
+Once a Task is modified, launch it by pushing it into an execution queue, then a [ClearML Agent](../clearml_agent.md) will pull 
 it from the queue and execute the Task.
 
 ```python
@@ -288,7 +293,7 @@ Task.enqueue(
 )
 ```
 
-See enqueue [example](https://github.com/allegroai/clearml/blob/master/examples/automation/task_piping_example.py).
+See enqueue [example](https://github.com/allegroai/clearml/blob/master/examples/automation/programmatic_orchestration.py).
 
 ### Advanced Remote Execution
 

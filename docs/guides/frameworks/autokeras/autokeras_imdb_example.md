@@ -1,5 +1,5 @@
 ---
-title: AutoKeras Imdb
+title: AutoKeras IMDB
 ---
 The [autokeras_imdb_example.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/autokeras/autokeras_imdb_example.py) example 
 script demonstrates the integration of **ClearML** into code, which uses [autokeras](https://github.com/keras-team/autokeras). 

@@ -117,7 +117,7 @@ The node ports map to the following  container ports:
 * `30081` maps to `clearml-fileserver` container on port `8081`
 
 :::important
-We recommend using the container ports (``8080``, ``8008``, and ``8081``), or a load balancer (see the next section, [Accessing ClearML Server](#accessing)).
+We recommend using the container ports (``8080``, ``8008``, and ``8081``), or a load balancer (see the next section, [Accessing ClearML Server](#accessing-clearml-server)).
 :::
 
 ## Accessing ClearML Server 

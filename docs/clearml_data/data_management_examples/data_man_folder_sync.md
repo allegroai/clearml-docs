@@ -1,20 +1,22 @@
 ---
-title: Folder Sync
+title: Folder Sync with CLI
 ---
 
-This example shows how to use the *clearml-data* folder sync function.
+This example shows how to use the `clearml-data` folder sync function.
 
-*clearml-data* folder sync mode is useful for cases when users have a single point of truth (i.e. a folder) that updates 
+`clearml-data` folder sync mode is useful for cases when users have a single point of truth (i.e. a folder) that updates 
 from time to time. When the point of truth is updated, users can call `clearml-data sync` and the 
 changes (file addition, modification, or removal) will be reflected in ClearML.
 
-## Creating Initial Version
-
 ## Prerequisites
-First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. This contains all
+1. First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. It contains all
 the needed files.
+
 1. Open terminal and change directory to the cloned repository's examples folder
-    `cd clearml/examples/reporting`
+    
+   ```
+   cd clearml/examples/reporting
+   ```
 
 ## Syncing a Folder
 Create a dataset and sync the `data_samples` folder from the repo to ClearML

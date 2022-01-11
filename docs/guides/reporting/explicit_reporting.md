@@ -1,15 +1,15 @@
 ---
-title: Explicit Reporting
+title: Explicit Reporting Tutorial
 ---
 
-In this tutorial, learn how to extend **ClearML** automagical capturing of inputs and outputs with explicit reporting. 
+In this tutorial, learn how to extend ClearML automagical capturing of inputs and outputs with explicit reporting. 
 
 In this example, we will add the following to the [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
 example script from ClearML's GitHub repo:
 
 * Setting an output destination for model checkpoints (snapshots).
 * Explicitly logging a scalar, other (non-scalar) data, and logging text.
-* Registering an artifact, which is uploaded to **ClearML Server**, and **ClearML** logs changes to it.
+* Registering an artifact, which is uploaded to **ClearML Server**, and ClearML logs changes to it.
 * Uploading an artifact, which is uploaded, but changes to it are not logged.
 
 ## Prerequisites
@@ -19,12 +19,12 @@ example script from ClearML's GitHub repo:
   
 ## Before Starting
 
-Make a copy of `pytorch_mnist.py` in order to add explicit reporting to it.
+Make a copy of [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
+in order to add explicit reporting to it.
 
-* In the local **ClearML** repository, `example` directory.
-        
-
-    cp pytorch_mnist.py pytorch_mnist_tutorial.py
+```bash
+cp pytorch_mnist.py pytorch_mnist_tutorial.py
+```
 
 ## Step 1: Setting an Output Destination for Model Checkpoints
 
@@ -42,19 +42,23 @@ In this tutorial, we specify a local folder destination.
 
 In `pytorch_mnist_tutorial.py`, change the code from:
 
-    task = Task.init(project_name='examples', task_name='pytorch mnist train')
+```python
+task = Task.init(project_name='examples', task_name='pytorch mnist train')
+```
 
 to:
 
-    model_snapshots_path = '/mnt/clearml'
-    if not os.path.exists(model_snapshots_path):
-        os.makedirs(model_snapshots_path)
+```python
+model_snapshots_path = '/mnt/clearml'
+if not os.path.exists(model_snapshots_path):
+    os.makedirs(model_snapshots_path)
 
-    task = Task.init(project_name='examples', 
-        task_name='extending automagical ClearML example', 
-        output_uri=model_snapshots_path)
+task = Task.init(project_name='examples', 
+    task_name='extending automagical ClearML example', 
+    output_uri=model_snapshots_path)
+```
 
-When the script runs, **ClearML** creates the following directory structure:
+When the script runs, ClearML creates the following directory structure:
 
     + - <output destination name>
     |   +-- <project name>
@@ -74,7 +78,7 @@ For example, if the Task ID is `9ed78536b91a44fbb3cc7a006128c1b0`, then the dire
 
 ## Step 2: Logger Class Reporting Methods
 
-In addition to **ClearML** automagical logging, the **ClearML** Python
+In addition to ClearML automagical logging, the `clearml` Python
 package contains methods for explicit reporting of plots, log text, media, and tables. These methods include:
 
 * [Logger.report_histogram](../../references/sdk/logger.md#report_histogram)
@@ -95,103 +99,136 @@ package contains methods for explicit reporting of plots, log text, media, and t
 First, create a logger for the Task using the [Task.get_logger](../../references/sdk/task.md#get_logger) 
 method.
 
-    logger = task.get_logger
+```python
+logger = task.get_logger
+```
 
 ### Plot Scalar Metrics
 
 Add scalar metrics using the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
 method to report loss metrics.
 
-    def train(args, model, device, train_loader, optimizer, epoch):
+```python
+def train(args, model, device, train_loader, optimizer, epoch):
     
-        save_loss = []
+    save_loss = []
     
-        model.train()
-        for batch_idx, (data, target) in enumerate(train_loader):
-            data, target = data.to(device), target.to(device)
-            optimizer.zero_grad()
-            output = model(data)
-            loss = F.nll_loss(output, target)
-            loss.backward()
+    model.train()
+    for batch_idx, (data, target) in enumerate(train_loader):
+        data, target = data.to(device), target.to(device)
+        optimizer.zero_grad()
+        output = model(data)
+        loss = F.nll_loss(output, target)
+        loss.backward()
     
-            save_loss.append(loss)
+        save_loss.append(loss)
     
-            optimizer.step()
-            if batch_idx % args.log_interval == 0:
-                print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
-                    epoch, batch_idx * len(data), len(train_loader.dataset),
-                           100. * batch_idx / len(train_loader), loss.item()))
-                # Add manual scalar reporting for loss metrics
-                logger.report_scalar(title='Scalar example {} - epoch'.format(epoch), 
-                    series='Loss', value=loss.item(), iteration=batch_idx)
+        optimizer.step()
+        if batch_idx % args.log_interval == 0:
+            print('Train Epoch: {} [{}/{} ({:.0f}%)]\tLoss: {:.6f}'.format(
+                epoch, batch_idx * len(data), len(train_loader.dataset),
+                        100. * batch_idx / len(train_loader), loss.item()))
+            # Add manual scalar reporting for loss metrics
+            logger.report_scalar(title='Scalar example {} - epoch'.format(epoch), 
+                series='Loss', value=loss.item(), iteration=batch_idx)
+```
 
 ### Plot Other (Not Scalar) Data
 
 The script contains a function named `test`, which determines loss and correct for the trained model. We add a histogram 
 and confusion matrix to log them.
 
-    def test(args, model, device, test_loader):
+```python
+def test(args, model, device, test_loader):
     
-        save_test_loss = []
-        save_correct = []
+    save_test_loss = []
+    save_correct = []
     
-        model.eval()
-        test_loss = 0
-        correct = 0
-        with torch.no_grad():
-            for data, target in test_loader:
-                data, target = data.to(device), target.to(device)
-                output = model(data)
-                # sum up batch loss
-                test_loss += F.nll_loss(output, target, reduction='sum').item()
-                # get the index of the max log-probability
-                pred = output.argmax(dim=1, keepdim=True)
-                correct += pred.eq(target.view_as(pred)).sum().item()
+    model.eval()
+    test_loss = 0
+    correct = 0
+    with torch.no_grad():
+        for data, target in test_loader:
+            data, target = data.to(device), target.to(device)
+            output = model(data)
+            # sum up batch loss
+            test_loss += F.nll_loss(output, target, reduction='sum').item()
+            # get the index of the max log-probability
+            pred = output.argmax(dim=1, keepdim=True)
+            correct += pred.eq(target.view_as(pred)).sum().item()
     
-                save_test_loss.append(test_loss)
-                save_correct.append(correct)
+            save_test_loss.append(test_loss)
+            save_correct.append(correct)
     
-        test_loss /= len(test_loader.dataset)
+    test_loss /= len(test_loader.dataset)
     
-        print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
-            test_loss, correct, len(test_loader.dataset),
-            100. * correct / len(test_loader.dataset)))
+    print('\nTest set: Average loss: {:.4f}, Accuracy: {}/{} ({:.0f}%)\n'.format(
+        test_loss, correct, len(test_loader.dataset),
+        100. * correct / len(test_loader.dataset)))
     
-        logger.report_histogram(title='Histogram example', series='correct',
-            iteration=1, values=save_correct, xaxis='Test', yaxis='Correct')
+    logger.report_histogram(
+      title='Histogram example', 
+      series='correct',
+      iteration=1, 
+      values=save_correct, 
+      xaxis='Test', 
+      yaxis='Correct'
+    )
     
-        # Manually report test loss and correct as a confusion matrix
-        matrix = np.array([save_test_loss, save_correct])
-        logger.report_confusion_matrix(title='Confusion matrix example', 
-            series='Test loss / correct', matrix=matrix, iteration=1)
+    # Manually report test loss and correct as a confusion matrix
+    matrix = np.array([save_test_loss, save_correct])
+    logger.report_confusion_matrix(
+      title='Confusion matrix example', 
+      series='Test loss / correct', 
+      matrix=matrix, 
+      iteration=1
+    )
+```
 
 ### Log Text
 
-Extend **ClearML** by explicitly logging text, including errors, warnings, and debugging statements. We use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
+Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. We use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
 method and its argument `level` to report a debugging message.
 
-    logger.report_text('The default output destination for model snapshots and artifacts is: {}'.format(model_snapshots_path ), level=logging.DEBUG)
+```python
+logger.report_text(
+  'The default output destination for model snapshots and artifacts is: {}'.format(
+    model_snapshots_path
+  ), 
+  level=logging.DEBUG
+)
+```
+
 
 ## Step 3: Registering Artifacts
 
 Registering an artifact uploads it to **ClearML Server**, and if it changes, the change is logged in **ClearML Server**. 
-Currently, **ClearML** supports Pandas DataFrames as registered artifacts.
+Currently, ClearML supports Pandas DataFrames as registered artifacts.
 
 ### Register the Artifact
 
 In the tutorial script, `test` function, we can assign the test loss and correct data to a Pandas DataFrame object and register 
 that Pandas DataFrame using the [Task.register_artifact](../../references/sdk/task.md#register_artifact) method.
 
-    # Create the Pandas DataFrame
-    test_loss_correct = {
-            'test lost': save_test_loss,
-            'correct': save_correct
-    }
-    df = pd.DataFrame(test_loss_correct, columns=['test lost','correct'])
+```python
+# Create the Pandas DataFrame
+test_loss_correct = {
+        'test lost': save_test_loss,
+        'correct': save_correct
+}
+df = pd.DataFrame(test_loss_correct, columns=['test lost','correct'])
     
-    # Register the test loss and correct as a Pandas DataFrame artifact
-    task.register_artifact('Test_Loss_Correct', df, metadata={'metadata string': 'apple', 
-        'metadata int': 100, 'metadata dict': {'dict string': 'pear', 'dict int': 200}})
+# Register the test loss and correct as a Pandas DataFrame artifact
+task.register_artifact(
+  'Test_Loss_Correct', 
+  df, 
+  metadata={
+    'metadata string': 'apple', 
+    'metadata int': 100, 
+    'metadata dict': {'dict string': 'pear', 'dict int': 200}
+  }
+)
+```
     
 ### Reference the Registered Artifact
 
@@ -201,9 +238,14 @@ In the tutorial script, we add [Task.current_task](../../references/sdk/task.md#
 [Task.get_registered_artifacts](../../references/sdk/task.md#get_registered_artifacts) 
 methods to take a sample.
 
-    # Once the artifact is registered, we can get it and work with it. Here, we sample it.
-    sample = Task.current_task().get_registered_artifacts()['Test_Loss_Correct'].sample(frac=0.5, 
-        replace=True, random_state=1)
+```python
+# Once the artifact is registered, we can get it and work with it. Here, we sample it.
+sample = Task.current_task().get_registered_artifacts()['Test_Loss_Correct'].sample(
+  frac=0.5, 
+  replace=True, 
+  random_state=1
+)
+``` 
     
 ## Step 4: Uploading Artifacts
 
@@ -220,16 +262,26 @@ Supported artifacts include:
 In the tutorial script, we upload the loss data as an artifact using the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
 method with metadata specified in the `metadata` parameter.
 
-    # Upload test loss as an artifact. Here, the artifact is numpy array
-    task.upload_artifact('Predictions',artifact_object=np.array(save_test_loss),
-        metadata={'metadata string': 'banana', 'metadata integer': 300,
-        'metadata dictionary': {'dict string': 'orange', 'dict int': 400}})
+```python
+# Upload test loss as an artifact. Here, the artifact is numpy array
+task.upload_artifact(
+  'Predictions',
+  artifact_object=np.array(save_test_loss),
+  metadata={
+    'metadata string': 'banana', 
+    'metadata integer': 300,
+    'metadata dictionary': {'dict string': 'orange', 'dict int': 400}
+  }
+)
+```
 
 ## Additional Information
 
 After extending the Python experiment script, run it and view the results in the **ClearML Web UI**.
 
-    python pytorch_mnist_tutorial.py
+```bash
+python pytorch_mnist_tutorial.py
+```
 
 **To view the experiment results, do the following:**
 

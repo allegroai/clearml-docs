@@ -6,19 +6,19 @@ title: Community Resources
 
 For feature requests or bug reports, see **ClearML** [GitHub Issues](https://github.com/allegroai/trains/issues).
 
-If you have any questions, post on the **allegroai-clearml** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg).
+If you have any questions, post on the **ClearML** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg).
 
 Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with the **clearml** tag.
 
 You can always find us at [clearml@allegro.ai](mailto:clearml@allegro.ai?subject=ClearML).
 
-## Allegro AI Resources
+## Additional ClearML Resources
 
-Read the [Allegro Blogs](https://allegro.ai/blog/).
+Read the [ClearML Blog](https://clear.ml/blog/).
 
 Subscribe to the **ClearML** [Youtube Channel](https://www.youtube.com/c/ClearML) and view the tutorials, presentations, and discussions.
 
-Join us on Twitter [@allegroAI](https://twitter.com/clearmlapp) for **ClearML** announcements and community discussions.
+Join us on Twitter [@clearmlapp](https://twitter.com/clearmlapp) for **ClearML** announcements and community discussions.
 
 Follow **ClearML** on [LinkedIn](https://www.linkedin.com/company/clearml).
 
@@ -56,7 +56,7 @@ help maintainers reproduce the problem:
 * **Provide the specific environment setup.** Include the ``pip freeze`` output, specific environment variables, Python version, and other relevant information.
 * **Provide specific examples to demonstrate the steps.** Include links to files or GitHub projects, or copy / paste snippets which you use in those examples.
 * **If you are reporting any  ClearML crash,** include a crash report with a stack trace from the operating system. Make 
-  sure to add the crash report in the issue and place it in a [code block](https://help.github.com/en/articles/getting-started-with-writing-and-formatting-on-github#multiple-lines), 
+  sure to add the crash report in the issue and place it in a [code block](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks), 
   a [file attachment](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests), or just put it in 
   a [gist](https://gist.github.com) (and provide a link to that gist).
 * **Describe the behavior you observed after following the steps** and the exact problem with that behavior.
@@ -74,7 +74,7 @@ Enhancement suggestions are tracked as GitHub issues. After you determine which 
 * **A clear and descriptive title** for the issue to identify the suggestion.
 * **A step-by-step description of the suggested enhancement** in as much detail as possible.
 * **Specific examples to demonstrate the steps.** Include copy / pasteable snippets which you use in those examples as 
-  [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
+  [Markdown code blocks](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks).
 * **Describe the current behavior and explain which behavior you expected to see instead and why.**
 * **Include screenshots or animated GIFs** that help you demonstrate the steps or point out the part of ClearML which the 
   suggestion is related to. You can use [LICEcap](https://www.cockos.com/licecap) to record GIFs on macOS and Windows, and 

@@ -2,6 +2,84 @@
 title: Version 1.1
 ---
 
+### ClearML SDK 1.1.5
+
+**Features**
+* Add support for `jsonargpraser` [ClearML GitHub issue #403](https://github.com/allegroai/clearml/issues/403)
+* Add `HyperParameterOptimizer.get_top_experiments_details()` returns the hparams and metrics of the top performing 
+  experiments of an HPO [ClearML GitHub issue #473](https://github.com/allegroai/clearml/issues/473)
+* Allow overriding initial iteration offset using environment variable (`CLEARML_SET_ITERATION_OFFSET`) or `Task.init(continue_last_task==<offset>)`
+  [ClearML GitHub issue #496](https://github.com/allegroai/clearml/issues/496)
+* Add better input handling for `clearml-init` in colab [ClearML GitHub issue #515](https://github.com/allegroai/clearml/issues/515)
+* Add environment variable for default request method [ClearML GitHub issue #521](https://github.com/allegroai/clearml/issues/521)
+* Add `LocalClearmlJob` as possible option for HPO [ClearML GitHub issue #525](https://github.com/allegroai/clearml/issues/525)
+* Add convenience functionality to `clearml-data` [ClearML GitHub issue #526](https://github.com/allegroai/clearml/issues/526)
+* Add support for `vscode-jupyter` [microsoft/vscode-jupyter#8531](https://github.com/microsoft/vscode-jupyter/pull/8531)
+* Improve detection of running reporting subprocess (including zombie state)
+* Support controlling S3/Google Cloud Storage `_stream_download_pool_connections` using the `stream_connections` configuration 
+  setting in `clearml.conf` (default 128)
+* Add warning when losing reporting subprocess
+* Add `Model.remove()` to allow removing a model from the model repository
+* Add HTTP download timeout control (change default connection timeout to 30 seconds)
+* Add initial setup callback to monitoring class
+* Add `Task.get_reported_plots()`
+* Allow `Monitor.get_query_parameters` to override defaults
+* Add support for Google Cloud Storage `pool_connections` and `pool_maxsize` overrides
+* Add last worker time to `AutoScaler`
+* Add warning when opening an aborted Dataset
+* Store multi-pipeline execution plots on the master pipeline Task
+* Support pipeline return value stored on pipeline Task
+* Add `PipelineDecorator.multi_instance_support`
+* Add `PipelineDecorator` to `clearml` and `clearml.automation` namespaces
+* Documentation and examples
+  * Update docstrings [ClearML GitHub issue #501](https://github.com/allegroai/clearml/issues/501)
+  * Add Markdown in pipeline jupyter notebooks [ClearML GitHub issue #502](https://github.com/allegroai/clearml/issues/502)
+  * Update pipeline example [ClearML GitHub issue #494](https://github.com/allegroai/clearml/issues/494)
+  * Add abseil example [ClearML GitHub issue #509](https://github.com/allegroai/clearml/issues/509)
+  * Change README to dark theme [ClearML GitHub issue #513](https://github.com/allegroai/clearml/issues/513)
+  * Update XGBoost example [ClearML GitHub issue #524](https://github.com/allegroai/clearml/issues/524)
+  * Change example name [ClearML GitHub issue #528](https://github.com/allegroai/clearml/issues/528)
+
+**Bug Fixes**
+* Fix `TriggerScheduler` on Dataset change [ClearML GitHub issue #491](https://github.com/allegroai/clearml/issues/491)
+* Fix links in Jupyter Notebooks [ClearML GitHub issue #505](https://github.com/allegroai/clearml/issues/505)
+* Fix `pandas` delta datetime conversion [ClearML GitHub issue #510](https://github.com/allegroai/clearml/issues/#510)
+* Fix `matplotlib` auto-magic detect bar graph series name [ClearML GitHub issue #518](https://github.com/allegroai/clearml/issues/518)
+* Fix path limitation on storage services (posix, object storage) when storing target artifacts by limiting length of 
+  project name (full path) and task name used for object path [ClearML GitHub issue #516](https://github.com/allegroai/clearml/issues/516)
+* Fix multi-processing context block catching exception
+* Fix Google Cloud Storage with no default project causes a crash
+* Fix main process's reporting subprocess lost, switch back to thread mode
+* Fix forked `StorageHelper` should use its own `ThreadExecuter`
+* Fix local `StorageHelper.delete()` raising exception on non-existent file instead of returning false
+* Fix `StorageHelper` rename partial file throwing errors on multiple access
+* Fix resource monitor fails on permission issues (skip over parts)
+* Fix reusing Task does not reset it
+* Fix support `clearml` PyCharm Plugin 1.0.2 (support partial pycharm git repo sync)
+* Fix `Task.reset()` force argument ineffective
+* Fix PY3.5 compatibility
+* Fix validation error causes infinite loop
+* Fix tasks schema prevents sending null container parts
+* Fix missing `CLEARML_SET_ITERATION_OFFSET` definition
+* Fix `Model.get_weights_package()` returns None on error
+* Fix download progress bar based on `sdk.storage.log.report_download_chunk_size_mb` configuration
+* Fix Conda lists the `CudaToolkit` version installed (for the agent to reproduce)
+* Fix Jupyter kernel shutdown causing nested atexit callbacks leaving Task in running state
+* Fix multi-subprocess can cause Task to hand at close
+* Fix TF 2.7 support (get `logdir` on with multiple TB writers)
+
+
+### ClearML SDK 1.1.4
+
+**Bug Fixes**
+
+- Fix duplicate keyword argument (affects `clearml-data`, `Dataset.get()`) [ClearML GitHub issue #490](https://github.com/allegroai/clearml/issues/490)
+- Fix session raises missing host error when in offline mode [ClearML GitHub issue #489](https://github.com/allegroai/clearml/issues/489)
+- Fix `Task.get_task()` does not load `output_uri` from stored Task
+- Fix `Task.get_models()['input']` returns string instead of `clearml.Model`
+- Fix `tf.saved_model.load()` binding for `TensorFlow>=2.0`
+- Fix hyperparams with `None` value converted to empty string causes inferred type to change to `str` in consecutive `Task.connect()` calls
+
 ### ClearML Agent 1.1.1
 
 **Features and Bug Fixes**

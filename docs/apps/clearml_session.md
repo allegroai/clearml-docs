@@ -37,12 +37,10 @@ VS Code remote sessions use ports 8878 and 8898 respectively.
 </div>
 </details>
 
-<!--![image](../img/clearml_session_jupyter.png)-->
-
 ## How it Works
 
 ClearML allows to leverage a resource (e.g. GPU or CPU machine) by utilizing the [ClearML Agent](../clearml_agent).
-A ClearML Agent will run on a target machine, and ClearML Session will instruct it to execute the Jupyter \ VS Code 
+A ClearML Agent will run on a target machine, and ClearML Session will instruct it to execute the Jupyter / VS Code 
 server to develop remotely.
 After entering a `clearml-session` command with all specifications: 
 
@@ -148,8 +146,8 @@ The Task must be connected to a git repository, since currently single script de
 | `--remote-gateway` | Specify a gateway IP to pass to the interactive session, if an external address needs to be accessed | `none`|
 | `--base-task-id` | Pass the ID of a task that will become the base task, so the session will use its configurations | `none` or the previously entered base task |
 | `--disable-keepalive` | Disable transparent proxy that keep sockets alive to maintain the connection to the remote resource | `false` | 
-| `--queue-excluded-tag` | The queue option list will exclude queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/endpoints#post-queuescreate) API call | `none` |
-| `--queue-include-tag` | The queue option list will include only queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/endpoints#post-queuescreate) API call | `none` |
+| `--queue-excluded-tag` | The queue option list will exclude queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
+| `--queue-include-tag` | The queue option list will include only queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
 | `--skip-docker-network` | Pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
 | `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
 | `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |

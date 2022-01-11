@@ -29,20 +29,24 @@ and lastly we want to create a new version of the data.
 
 ```python
 # create a task for the data processing part
-task = Task.init(project_name='data', task_name='ingest', task_type='data_processing')
+task = Task.init(project_name='data', task_name='create', task_type='data_processing')
 
 # get the v1 dataset
 dataset = Dataset.get(dataset_project='data', dataset_name='dataset_v1')
 
 # get a local mutable copy of the dataset
-dataset_folder = dataset.get_mutable_local_copy(target_folder='work_dataset', overwrite=True)
+dataset_folder = dataset.get_mutable_local_copy(
+    target_folder='work_dataset', 
+    overwrite=True
+)
 # change some files in the `./work_dataset` folder
 ...
 # create a new version of the dataset with the pickle file
 new_dataset = Dataset.create(
     dataset_project='data', dataset_name='dataset_v2', 
     parent_datasets=[dataset], 
-    use_current_task=True,  # this will make sure we have the creation code and the actual dataset artifacts on the same Task
+    use_current_task=True,  
+    # this will make sure we have the creation code and the actual dataset artifacts on the same Task
 )
 new_dataset.sync_folder(local_path=dataset_folder)
 new_dataset.upload()
@@ -54,7 +58,7 @@ new_dataset.tags = ['latest']
 
 We passed the `parents` argument when we created v2 of the Dataset, this inherits all the parent's version content.
 This will not only help us in tracing back dataset changes with full genealogy, but will also make our storage more efficient,
-as it will only store the files that were changed \ added from the parent versions.
+as it will only store the files that were changed / added from the parent versions.
 When we will later need access to the Dataset it will automatically merge the files from all parent versions 
 in a fully automatic and transparent process, as if they were always part of the requested Dataset.
 
@@ -86,20 +90,24 @@ It is important to remember that pipelines are Tasks by themselves and can also 
 
 ```python
 pipe = PipelineController(
-    always_create_task=True,
-    pipeline_project='data', pipeline_name='pipeline demo',
+    project='data', 
+    name='pipeline demo',
+    version="1.0"
 )
 
 pipe.add_step(
     name='step 1 data',
-    base_task_id='cbc84a74288e459c874b54998d650214',  # Put the task ID here
+    base_project_name='data', 
+    base_task_name='create'  
 )
 pipe.add_step(
     name='step 2 train', 
     parents=['step 1 data', ],
-    base_task_id='cbc84a74288e459c874b54998d650214',  # Put the task ID here
+    base_project_name='data', 
+    base_task_name='ingest'
 )
 ```
 
 We could also pass the parameters from one step to the other (for example `Task.id`).
-See more in the full pipeline documentation [here](../../fundamentals/pipelines.md).
+In addition to pipelines made up of Task steps, ClearML also supports pipelines consisting of function steps. See more in the 
+full pipeline documentation [here](../../fundamentals/pipelines.md).

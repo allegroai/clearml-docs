@@ -19,23 +19,20 @@ a shell script when a docker is started, but before an experiment is run.
 ## Steps 
 
 1. Open your ClearML configuration file for editing. Depending upon your operating system, it is:
-* Linux - ~/clearml.conf
-* Mac - $HOME/clearml.conf
-* Windows - \\User\\<username\>\\clearml.conf
+   * Linux - `~/clearml.conf`
+   * Mac - `$HOME/clearml.conf`
+   * Windows - `\User\<username>\clearml.conf`
 
-When you open up the file, the first line should say: `# CLEARML-AGENT configuration file`
-
-
-1. In the file, search for and go to, "extra_docker_shell_script:", which is where we will be putting our extra script. If
-it is commented out, make sure to uncomment the line. We will use the example script that is already there ["apt-get install -y bindfs", ].
+1. In the file, search for and go to, `extra_docker_shell_script:`, which is where we will be putting our extra script. If
+it is commented out, make sure to uncomment the line. We will use the example script that is already there `["apt-get install -y bindfs", ]`.
    
-1. Search for and go to "docker_force_pull" in the document, and make sure that it is set to "true", so that your docker image will 
-be updated. 
+1. Search for and go to `docker_force_pull` in the document, and make sure that it is set to `true`, so that your docker 
+   image will be updated. 
    
 1. Run the `clearml-agent` in docker mode: `clearml-agent daemon --docker --queue default`. The agent  will use the default 
    Cuda/Nvidia Docker Image. 
 
-1. Enqueue any Clearml Task to the default queue, which the Agent is now listening to. The Agent pulls the Task, and then reproduces it, 
+1. Enqueue any ClearML Task to the `default` queue, which the Agent is now listening to. The Agent pulls the Task, and then reproduces it, 
    and now it will execute the `extra_docker_shell_script` that was put in the configuration file. Then the code will be
    executed in the updated docker container. If we look at the console output in the web UI, the third entry should start
    with `Executing: ['docker', 'run', '-t', '--gpus...'`, and towards the end of the entry, where the downloaded packages are 
