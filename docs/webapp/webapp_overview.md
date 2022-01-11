@@ -13,10 +13,8 @@ The **ClearML Web UI** is the graphical user interface for the ClearML platform,
 
 
 The ClearML Web UI is composed of the following pages:
-* The [Home](webapp_home.md) Page <img src="/docs/latest/icons/ico-homepage.svg" alt="Homepage" className="icon size-md" /> - 
-  The dashboard for recent activity and quick access to experiments and projects.
-* The [Projects Page](webapp_projects_page.md) <img src="/docs/latest/icons/ico-projects.svg" alt="Projects page" className="icon size-md" /> - 
-  The main experimentation page. Access your experiments and models as they are organized into projects.
+* [Dashboard](webapp_home.md) - The dashboard for recent activity and quick access to experiments and projects.
+* [Projects](webapp_projects_page.md) - The main experimentation page. Access your experiments and models as they are organized into projects.
   The [experiments](webapp_exp_table.md) and [models](webapp_model_table.md) are displayed in tables
   which let you:
     * [Track ongoing experiments and visualize their results](webapp_exp_track_visual.md)
@@ -26,10 +24,9 @@ The ClearML Web UI is composed of the following pages:
     * [Share experiments and their models](webapp_exp_sharing.md) with other ClearML hosted service users 
     * [Archive experiments and models](webapp_archiving.md)
 
-* The [Workers and Queues](webapp_workers_queues.md) Page <img src="/docs/latest/icons/ico-workers.svg" alt="Workers & Queues page" className="icon size-md" /> - 
-  The resource monitoring and queues management page.
+* [Workers and Queues](webapp_workers_queues.md) - The resource monitoring and queues management page.
   
-* The [Settings Page](webapp_profile.md) <img src="/docs/latest/icons/ico-settings.svg" alt="Settings page" className="icon size-md" /> - 
+* [Settings](webapp_profile.md) (available through the profile menu <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" />) - 
   Manage your ClearML user account:
   * Set WebApp preferences
   * Manage workspace API credentials
@@ -38,9 +35,9 @@ The ClearML Web UI is composed of the following pages:
     * View usage information
     * Manage users and workspaces
     * Manage resource access permissions (Available in the ClearML Enterprise plan)
+  
+![module icons](../img/webapp_module_icons.png)
 
-  To navigate to the Settings page, click the <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> 
-  button in the top right corner of the web UI screen, then click **Settings**.
 
 ## WebApp Menus 
 
