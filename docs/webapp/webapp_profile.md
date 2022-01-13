@@ -117,7 +117,7 @@ in that workspace. You can rejoin the workspace only if you are re-invited.
 ### Configuration Vault
 
 :::note Enterprise Feature
-This feature is only available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan
 :::
 
 Use the configuration vault to store global ClearML configuration entries that can extend the ClearML [configuration file](../configs/clearml_conf.md) 
@@ -170,7 +170,7 @@ user can only rejoin your workspace when you re-invite them.
 ### User Groups
 
 :::important Enterprise Feature
-This feature is only available under the ClearML Enterprise plan, as part of the [Access Rules](#access-rules) 
+This feature is available under the ClearML Enterprise plan, as part of the [Access Rules](#access-rules) 
 feature.
 :::
 
@@ -214,7 +214,7 @@ otherwise provided individually or to another group they are members of).
 ## Access Rules
 
 :::important Enterprise Feature 
-This feature is only available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan
 :::
 
 Workspace administrators can use the **Access Rules** page to manage workspace permissions, by specifying which users 
