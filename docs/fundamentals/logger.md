@@ -42,8 +42,10 @@ Check out some of ClearML's automatic reporting examples for supported packages:
     TensorFlow flags
   * [Tensorboard with PyTorch](../guides/frameworks/pytorch/pytorch_tensorboard.md) - logging TensorBoard scalars, debug samples, and text integrated into 
     code that uses PyTorch
-* [TensorBoardX](../guides/frameworks/tensorboardx/tensorboardx.md) - logging TensorBoardX scalars, debug 
+* TensorBoardX
+  * [TensorBoardX with Pytorch](../guides/frameworks/tensorboardx/tensorboardx.md) - logging TensorBoardX scalars, debug 
   samples, and text in code using PyTorch
+  * [MegEngine MNIST](../guides/frameworks/megengine/megengine_mnist.md) - logging scalars using TensorBoardX's `SummaryWriter`  
 * Matplotlib 
   * [Matplotlib](../guides/frameworks/matplotlib/matplotlib_example.md) - logging scatter diagrams plotted with Matplotlib
   * [Matplotlib with PyTorch](../guides/frameworks/pytorch/pytorch_matplotlib.md) - logging debug images shown 
@@ -69,7 +71,7 @@ ClearML also supports reporting media (such as audio, video and images) for ever
 This section is mostly used for debugging. It's recommended to use [artifacts](artifacts.md#artifacts) for storing script 
 outputs that would be used later on.
 
-Only the last X results of each title \ series are saved to prevent overloading the server.
+Only the last X results of each title / series are saved to prevent overloading the server.
 See details in [Logger.report_media](../references/sdk/logger.md#report_media). 
 
 ![image](../img/fundamentals_logger_reported_images.png)

@@ -1,0 +1,33 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  #push:
+  #  branches: [ main ]
+  #pull_request:
+  #  branches: [ main ]
+  #schedule:
+  #  - cron: "00 18 * * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  tester:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Slack Notification
+        uses: tokorom/action-slack-incoming-webhook@main
+        env:
+          INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        with:
+          text: Link Checker failure in github.com/allegroai/clearl-docs
+          blocks: |
+            [
+              {"type": "section", "text": {"type": "mrkdwn", "text": "Testing!"}}
+            ]
+

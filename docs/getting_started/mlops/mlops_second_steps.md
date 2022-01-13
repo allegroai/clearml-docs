@@ -58,7 +58,7 @@ new_dataset.tags = ['latest']
 
 We passed the `parents` argument when we created v2 of the Dataset, this inherits all the parent's version content.
 This will not only help us in tracing back dataset changes with full genealogy, but will also make our storage more efficient,
-as it will only store the files that were changed \ added from the parent versions.
+as it will only store the files that were changed / added from the parent versions.
 When we will later need access to the Dataset it will automatically merge the files from all parent versions 
 in a fully automatic and transparent process, as if they were always part of the requested Dataset.
 

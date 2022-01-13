@@ -5,18 +5,18 @@ title: Tracking Experiments and Visualizing Results
 While an experiment is running, and any time after it finishes, track it and visualize the results in the **ClearML Web UI**,
 including:
 
-* [Execution details](#execution-details) - Code, the base Docker image used for **[ClearML Agent](../clearml_agent.md)**, output destination for artifacts, and the logging level.
+* [Execution details](#execution-details) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
 * [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
-* [Console](#console) - stdout, stderr, output to the console from libraries, and **ClearML** explicit reporting.
+* [Console](#console) - stdout, stderr, output to the console from libraries, and ClearML explicit reporting.
 * [Scalars](#scalars) - Metric plots.
-* [Plots](#other-plots) - Other plots and data, for example: Matplotlib, Plotly, and **ClearML** explicit reporting.
+* [Plots](#plots) - Other plots and data, for example: Matplotlib, Plotly, and ClearML explicit reporting.
 * [Debug samples](#debug-samples) - Images, audio, video, and HTML.
 
 ## Viewing Modes
 
-The **ClearML Web UI** provides two viewing modes for experiment details:
+The ClearML Web UI provides two viewing modes for experiment details:
 
 * The info panel
 
@@ -29,7 +29,7 @@ table / full screen**.
 
 ### Info Panel
 
-The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table#experiment-actions)
+The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table.md#experiment-actions)
 can be performed from the table (as well as the menu in the info panel).
 
 <details className="cml-expansion-panel screenshot">
@@ -59,7 +59,7 @@ table is not visible when the full screen details view is open. Perform experime
 ## Execution Details
 In the EXECUTION tab of an experiment's detail page, there are records of:
 * Source code
-* **ClearML Agent** configuration
+* ClearML Agent configuration
 * Output details
 * Uncommitted changes
 * Installed Python packages
@@ -73,8 +73,8 @@ The source code details of the EXECUTION tab of an experiment include:
 * Script path
 * Working directory
 
-Additionally, there is information about the **ClearML Agent** configuration.  The **ClearML Agent** base image is a pre-configured Docker
-that **ClearML Agent** will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#building-docker-containers)).
+Additionally, there is information about the ClearML Agent configuration. The ClearML Agent base image is a pre-configured 
+Docker that ClearML Agent will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container)).
 
 The output details include:
 * The output destination used for storing model checkpoints (snapshots) and artifacts (see also, [default_output_uri](../configs/clearml_conf#config_default_output_uri)
@@ -106,7 +106,7 @@ The output details include:
 </details>
 
 
-### Installed Python packages and Their Versions
+### Installed Python Packages and Their Versions
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">
@@ -203,9 +203,9 @@ except experiments whose status is *Published* (read-only).
 
 ### Configuration Objects
 
-**ClearML** tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
+ClearML tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
 These objects include those that are automatically tracked, and those connected to a Task in code (see [Task.connect_configuration](../references/sdk/task.md#connect_configuration)).
-**ClearML** supports providing a name for a Task model configuration object (see the [name](../references/sdk/task.md#connect_configuration)
+ClearML supports providing a name for a Task model configuration object (see the [name](../references/sdk/task.md#connect_configuration)
 parameter in `Task.connect_configuration`).
 
 :::important
@@ -278,7 +278,7 @@ including design, label enumeration, and general information, go to the **MODELS
 
 #### Data Audit
 
-Artifacts which are uploaded and dynamically tracked by **ClearML** appear in the **DATA AUDIT** section. They include the file path, file size, hash, and metadata stored with the artifact.
+Artifacts which are uploaded and dynamically tracked by ClearML appear in the **DATA AUDIT** section. They include the file path, file size, hash, and metadata stored with the artifact.
 
 
 <details className="cml-expansion-panel screenshot">
@@ -362,11 +362,18 @@ is downloadable. To view the end of the log, click **Jump to end**.
 
 ### Scalars
 
-All scalars that **ClearML** automatically logs, as well as those explicitly reported in code, appear in **RESULTS** **>** **SCALARS**.
+All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in **RESULTS** **>** 
+**SCALARS**. Scalar values are presented as time series line chart. To see the series for a metric in high resolution, 
+view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
+
+:::info Full Screen Refresh
+Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-sm space-sm" /> 
+to update the graph. 
+:::
 
 #### Scalar Plot Tools
 
-Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
+Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" alt="Settings gear" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
 * **Group by** - Select one of the following:
   * **Metric** - All variants for a metric on the same plot
@@ -404,7 +411,7 @@ See additional [plot controls](#plot-controls) below.
 
 ### Plots
 Non-time-series plots appear in **RESULTS** **>** **PLOTS**. These include data reported by libraries, visualization 
-tools, and **ClearML** explicit reporting. These may include 2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. 
+tools, and ClearML explicit reporting. These may include 2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. 
 Individual plots can be shown / hidden or filtered by title.
 
 <details className="cml-expansion-panel screenshot">
@@ -439,7 +446,8 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view icon" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
 | <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
 | <img src="/docs/latest/icons/ico-download-json.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | To get metric data for further analysis, download plot data to JSON file. |
-| <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. |
+| <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. When used with scalar graphs, full screen mode displays plots with all data points, as opposed to an averaged plot |
+| <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-sm space-sm" /> | Refresh scalar graphs in full screen mode to update it  | 
 
 #### 3D Plot Controls 
 |Icon|Description|
@@ -455,7 +463,7 @@ View debug samples by metric at any iteration. The most recent iteration appears
 
 * Move to the same sample in a different iteration (move the iteration slider).
 * Show the next or previous iteration's sample.
-* Download the file <img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />.
+* Download the file <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
 * Zoom.
 * View the sample's iteration number, width, height, and coordinates.
 
@@ -487,7 +495,9 @@ View debug samples by metric at any iteration. The most recent iteration appears
 1. Locate debug samples by doing the following:
 
     * Filter by metric. In the **Metric** list, choose a metric.
-    * Show other iterations. Click <img src="/docs/latest/icons/ico-circle-older.svg" className="icon size-md space-sm" /> (Older images), <img src="/docs/latest/icons/ico-circle-newer.svg" className="icon size-md space-sm" /> (New images), or <img src="/docs/latest/icons/ico-circle-newest.svg" className="icon size-md space-sm" /> (Newest images).
+    * Show other iterations. Click <img src="/docs/latest/icons/ico-circle-older.svg" alt="Left arrow" className="icon size-md space-sm" /> 
+      (Older images), <img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (New images), 
+      or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="Skip to newest arrow" className="icon size-md space-sm" /> (Newest images).
 
 **To view a debug sample in the viewer / player:**
 
@@ -496,7 +506,7 @@ View debug samples by metric at any iteration. The most recent iteration appears
 1. Do any of the following:
 
     * Move to the same sample in another iteration - Move the slider, or click **<** (previous) or **>** (next).
-    * Download the file - Click <img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />.
+    * Download the file - Click <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
     * Zoom
     * For images, locate a position on the sample - Hover over the sample and the X, Y coordinates appear in the legend below the sample.
 

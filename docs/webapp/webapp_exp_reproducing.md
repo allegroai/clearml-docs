@@ -13,9 +13,9 @@ Experiments can also be modified and then executed remotely, see [Tuning Experim
 
 **To reproduce an experiment:**
 
-1. Locate the experiment. Open the Project page for the experiment from the Home page or the main Projects page.
+1. Locate the experiment. Open the Project page for the experiment from the Dashboard or the main Projects page.
 
-    * On the Home page, click a recent experiment, project card, or **VIEW ALL** and then click a project card.
+    * On the Dashboard, click a recent experiment, project card, or **VIEW ALL** and then click a project card.
     * On the Projects page, click project card, or the **All projects** card.
 
 1. Reproduce the experiment. In the experiments table, right click and then either:

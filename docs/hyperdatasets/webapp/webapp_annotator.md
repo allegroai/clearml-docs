@@ -91,10 +91,10 @@ depend upon the settings in the annotation task (see [Creating Annotation Tasks]
 
 1. Select an annotation mode and add the bounded area to the frame image.
 
-    * Rectangle mode - Click <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode" className="icon size-md space-sm" /> and then click the image, drag and release. 
-    * Polygon mode - Click <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-md space-sm" /> and then click the image for the first vertex, 
+    * Rectangle mode - Click <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode" className="icon size-sm space-sm" /> and then click the image, drag and release. 
+    * Polygon mode - Click <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-sm space-sm" /> and then click the image for the first vertex, 
       move to another vertex and click, continue until closing the last vertex. 
-    * Key points mode - Click <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-md space-sm" /> and then click each key point.  
+    * Key points mode - Click <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-sm space-sm" /> and then click each key point.  
 
 1. In the new label area, choose or enter a label. 
 1. Optionally, add metadata. 

@@ -23,9 +23,8 @@ Specify a docker container to run the code in by with the `--docker <docker_imag
 The ClearML Agent will pull it from dockerhub or a docker artifactory automatically.
 
 ### Package Dependencies
-If the local script requires packages to be installed installed or the remote repository doesn't have a requirements.txt file,
-specify manually the required python packages using <br/>
-`--packages "<package_name>"`, for example `--packages "keras" "tensorflow>2.2"`.
+If the local script requires packages to be installed, or the remote repository doesn't have a requirements.txt file,
+specify manually the required python packages using `--packages "<package_name>"`, for example `--packages "keras" "tensorflow>2.2"`.
 
 ### Queue
 Tasks are passed to ClearML Agents via [Queues](../fundamentals/agents_and_queues.md). Specify a queue to enqueue the task to.
@@ -33,11 +32,11 @@ If a queue isn't chosen in the `clearml-task` command, the task will not be exec
 and can be enqueued at a later point. 
 
 ### Branch and Working Directory
-A specific branch and commit ID, other than latest commit in master, to be executed can be specified by passing
+To specify a specific branch and commit ID to be executed, pass
 `--branch <branch_name> --commit <commit_id>` flags.
 If unspecified, `clearml-task` will use the latest commit from the master branch.
 
-### Command line options
+### Command Line Options
 
 <div className="tbl-cmd">
 

@@ -47,7 +47,7 @@ The following models-table customizations are saved on a **per project** basis:
 * Active filters
 * Custom columns
 
-If a project has sub-projects, the models can be viewed by their sub-project groupings or together with 
+If a project has subprojects, the models can be viewed by their subproject groupings or together with 
 all the models in the project. The customizations of these two views are saved separately. 
 :::
 
@@ -58,12 +58,13 @@ allow each feature. Model states are *Draft* (editable) and *Published* (read-on
 
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
-| View details | Model details include general information, the model configuration, and label enumeration. Click a model and the info panel slides open. | Any state |
+| View details | Model details include general information, the model configuration, and label enumeration. Click a model, and the info panel slides open. | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
 | Archive | To more easily work with active models, move a model to the archive. See [Archiving](webapp_archiving). | Any state |
 | Tags | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
 | Move to project | To organize work and improve collaboration, move a model to another project. | Any state |
+| Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any state |
 
 These actions can be accessed with the context menu (when right-clicking a model or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
 in a model's info panel).
@@ -90,3 +91,21 @@ experiments execute on, label versions of experiments, or apply team names to or
         * Change a tag's colors - Click **Tag Colors** **>** Click the tag icon **>** **Background** or **Foreground**
           **>** Pick a color **>** **OK** **>** **CLOSE**.
 * To remove a tag - Hover over the tag **>** **X**.
+
+## Filtering Columns
+
+Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
+on a column, and the relevant filter appears.
+
+There are a couple filter types:
+* Value set - Choose which values to include from a list of all values in the column
+* Tags - Choose which tags to filter by from a list of all tags used in the column. 
+  * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These 
+    options appear on the top of the tag list.
+  * Filter by the absence of a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox. 
+  
+Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right 
+(<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
+
+To clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" /> 
+in the top right corner of the table.

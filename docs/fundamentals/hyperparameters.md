@@ -8,9 +8,9 @@ ClearML logs hyperparameters used in experiments from multiple different sources
 In ClearML, parameters are split into 3 sections:
 - User Properties - Modifiable section that can be edited post execution.
 - Hyperparameters - Individual parameters for configuration.
-- Configuration Objects - Usually configuration files (Json \ YAML) or python objects. 
+- Configuration Objects - Usually configuration files (Json / YAML) or python objects. 
   
-These sections are further broken down into sub-sections (General \ Args \ TF_Define) for convenience.
+These sections are further broken down into sub-sections (General / Args / TF_Define) for convenience.
 
 ![image](../img/hyperparameters_sections.png)
 

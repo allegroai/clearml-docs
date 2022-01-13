@@ -18,23 +18,23 @@ If you are afraid of clutter, use the archive option, and set up your own [clean
 
 ## Clone Tasks
 In order to define a Task in ClearML we have two options
-- Run the actual code with `task.init` call. This will create and auto-populate the Task in CleaML (including Git Repo/Python Packages/ Command line etc.).
-- Register local/remote code repository with `clearml-task`. See [details](../../apps/clearml_task.md).
+- Run the actual code with `task.init` call. This will create and auto-populate the Task in CleaML (including Git Repo / Python Packages / Command line etc.).
+- Register local / remote code repository with `clearml-task`. See [details](../../apps/clearml_task.md).
 
 Once we have a Task in ClearML, we can clone and edit its definitions in the UI, then launch it on one of our nodes with [ClearML Agent](../../clearml_agent.md).
 
 ## Advanced Automation
-- Create daily/weekly cron jobs for retraining best performing models on.
+- Create daily / weekly cron jobs for retraining best performing models on.
 - Create data monitoring & scheduling and launch inference jobs to test performance on any new coming dataset.
 - Once there are two or more experiments that run after another, group them together into a [pipeline](../../fundamentals/pipelines.md).
 
 ## Manage Your Data
 Use [ClearML Data](../../clearml_data/clearml_data.md) to version your data, then link it to running experiments for easy reproduction.
-Make datasets machine agnostic (i.e. store original dataset in a shared storage location, e.g. shared-folder/S3/Gs/Azure).
+Make datasets machine agnostic (i.e. store original dataset in a shared storage location, e.g. shared-folder / S3 / Gs / Azure).
 ClearML Data supports efficient Dataset storage and caching, differentiable & compressed.
 
 ## Scale Your Work
-Use [ClearML Agent](../../clearml_agent.md) to scale work. Install the agent machines (Remote or local) and manage
+Use [ClearML Agent](../../clearml_agent.md) to scale work. Install the agent machines (remote or local) and manage
 training workload with it. 
 
 Improve team collaboration by transparent resource monitoring, always know what is running where.
