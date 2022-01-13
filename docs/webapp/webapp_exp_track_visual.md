@@ -106,7 +106,7 @@ The output details include:
 </details>
 
 
-### Installed Python packages and Their Versions
+### Installed Python Packages and Their Versions
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
 <div className="cml-expansion-panel-content">

@@ -23,7 +23,7 @@ The experiments table default and customizable columns are described in the foll
 | **TYPE** | Type of experiment. **ClearML** supports multiple [task types](../fundamentals/task.md#task-types) for experimentation, and a variety of workflows and use cases. | Default |
 | **NAME** | Experiment name.  |  Default |
 | **TAGS** | Descriptive, user-defined, color-coded tags assigned to experiments. Use tags to classify experiments, and filter the list. See [tagging experiments](webapp_exp_track_visual#tagging-experiments). | Default |
-| **STATUS** | Experiment state (status). See a list of the [task states and state transtions](../fundamentals/task.md#task-states-and-state-transitions). |  Default |
+| **STATUS** | Experiment state (status). See a list of the [task states and state transtions](../fundamentals/task.md#task-states). |  Default |
 | **PROJECT** | Name of experiment's project.  |  Default |
 | **USER** | User who created or cloned the experiment.  |  Default (hidden) |
 | **STARTED** | Elapsed time since the experiment started. To view the date and time of start, hover over the elapsed time.  |  Default |
@@ -88,7 +88,7 @@ experiments in the table.
   
 :::note Float Values Display
 By default, the experiments table displays rounded up float values. Hover over a float to view its precise value in the 
-tooltip that appears. To view all precise values in a column, hover over a float and click <img src="/docs/latest/icons/ico-line-exapnd.svg" alt="Expand" className="icon size-md" />.  
+tooltip that appears. To view all precise values in a column, hover over a float and click <img src="/docs/latest/icons/ico-line-expand.svg" alt="Expand" className="icon size-md" />.  
 :::
 
 ### Filtering Columns
