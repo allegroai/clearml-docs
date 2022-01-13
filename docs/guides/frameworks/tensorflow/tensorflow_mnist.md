@@ -3,7 +3,7 @@ title: TensorFlow MNIST
 ---
 
 The [tensorflow_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py) 
-example demonstrates the integration of **ClearML** into code that uses TensorFlow and Keras to train a neural network on 
+example demonstrates the integration of ClearML into code that uses TensorFlow and Keras to train a neural network on 
 the Keras built-in [MNIST](https://www.tensorflow.org/api_docs/python/tf/keras/datasets/mnist) handwritten digits dataset. 
 
 The script builds a TensorFlow Keras model, and trains and tests it with the following:
@@ -24,7 +24,7 @@ The loss and accuracy metric scalar plots appear in the experiment's page in the
 
 ## Hyperparameters
 
-**ClearML** automatically logs TensorFlow Definitions. They appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** 
+ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** 
 **>** **TF_DEFINE**.
 
 ![image](../../../img/examples_tensorflow_mnist_01.png)
@@ -37,18 +37,13 @@ All console output appears in **RESULTS** **>** **CONSOLE**.
 
 ## Artifacts
 
-Model artifacts associated with the experiment appear in the info panel of the **EXPERIMENTS** tab and in the info panel 
-of the **MODELS** tab.  
-
-The experiment info panel shows model tracking, including the model name and design (in this case, no design was stored).
+Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks 
+models and any snapshots created using TensorFlow. 
 
 ![image](../../../img/examples_tensorflow_mnist_03.png)
 
-The model info panel contains the model details, including: 
-* Model design 
-* Label enumeration 
-* Model URL 
-* Framework
-* Snapshot locations.
+Clicking on a model’s name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can 
+view the model’s details and access the model.
+
 
 ![image](../../../img/examples_tensorflow_mnist_10.png)
