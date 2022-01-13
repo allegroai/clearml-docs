@@ -5,7 +5,7 @@ title: Modifying Dataviews
 An experiment that has been executed can be [cloned](../../webapp/webapp_exp_reproducing.md), then the cloned experiment's 
 execution details can be modified, and the modified experiment can be executed. 
 
-In addition to all the [**ClearML** tuning capabilities](../../webapp/webapp_exp_tuning.md), the **ClearML Enterprise WebApp** (UI) 
+In addition to all the [ClearML tuning capabilities](../../webapp/webapp_exp_tuning.md), the **ClearML Enterprise WebApp** (UI) 
 enables modifying [Dataviews](webapp_dataviews.md), including: 
 * [Selected Dataview](#selecting-dataviews)
 * [Dataset versions](#selecting-dataset-versions)

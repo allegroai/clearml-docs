@@ -34,7 +34,7 @@ The ClearML Web UI is composed of the following pages:
   * ClearML Hosted service specific options
     * View usage information
     * Manage users and workspaces
-    * Manage resource access permissions (Available in the ClearML Enterprise plan)
+    * Manage resource access permissions (available in the ClearML Enterprise plan)
   
 ![module icons](../img/webapp_module_icons.png)
 

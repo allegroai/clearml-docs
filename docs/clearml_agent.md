@@ -514,8 +514,8 @@ venvs_cache: {
 
 ## Dynamic GPU Allocation
 
-:::important
-Available with the ClearML Enterprise offering
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan
 :::
 
 The ClearML Enterprise server supports dynamic allocation of GPUs based on queue properties.
@@ -635,8 +635,8 @@ Check out [this tutorial](guides/ide/google_colab.md) on how to run a ClearML Ag
 
 ## Scheduling Working Hours
 
-:::important
-Available with the ClearML Enterprise offering
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan
 :::
 
 The Agent scheduler enables scheduling working hours for each Agent. During working hours, a worker will actively poll 

@@ -1087,8 +1087,8 @@ will not exceed the value of `matplotlib_untitled_history_size`
 
 ## Configuration Vault
 
-:::note
-This feature is only supported by the **ClearML Enterprise Server**
+:::note Enterprise Feature
+This feature is available under the ClearML Enterprise plan
 :::
 
 The ClearML Enterprise Server includes the configuration vault. Users can add configuration sections to the vault and, once 

@@ -2,7 +2,7 @@
 title: Comparing Dataviews
 ---
 
-In addition to [**ClearML**'s comparison features](../../webapp/webapp_exp_comparing.md), the ClearML Enterprise WebApp 
+In addition to [ClearML's comparison features](../../webapp/webapp_exp_comparing.md), the ClearML Enterprise WebApp 
 provides a deep comparison of input data selection criteria of experiment Dataviews, enabling to easily locate, visualize, and analyze differences.
 
 ## Selecting Experiments 
