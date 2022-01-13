@@ -40,8 +40,8 @@ The **DETAILS** tab includes deep comparisons of the following:
 
 ### Artifacts
 
-   * Input model and model design.
-   * Output model and model design.
+   * Input model and model configuration.
+   * Output model and model configuration.
    * Other artifacts, if any.
 
 ### Execution Details
