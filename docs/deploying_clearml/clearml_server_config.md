@@ -9,7 +9,7 @@ This documentation page applies to deploying your own open source ClearML Server
 This page describes the **ClearML Server** [deployment](#clearml-server-deployment-configuration) and [feature](#clearml-server-feature-configurations) configurations. Namely, it contains instructions on how to configure **ClearML Server** for:
 
 * [Sub-domains and load balancers](#sub-domains-and-load-balancers) - An AWS load balancing example
-* [Opening Elasticsearch, MongoDB, and Redis for External Access](#opening-elasticsearch-mongodb-and-redis-for-external-access).
+* [Opening Elasticsearch, MongoDB, and Redis for External Access](#opening-elasticsearch-mongodb-and-redis-for-external-access)
 * [Web login authentication](#web-login-authentication) - Create and manage users and passwords
 * [Using hashed passwords](#using-hashed-passwords) - Option to use hashed passwords instead of plain-text passwords
 * [Non-responsive Task watchdog](#non-responsive-task-watchdog) - For inactive experiments

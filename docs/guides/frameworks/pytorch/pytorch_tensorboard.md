@@ -15,7 +15,8 @@ The example does the following:
 ## Scalars
 
 In the example script, the `train` and `test` functions call the TensorBoard `SummaryWriter.add_scalar` method to log loss. 
-These scalars, along with the resource utilization plots, which are titled **:monitor: machine**, appear in the experiment's page in the **ClearML web UI** under **RESULTS** **>** **SCALARS**, 
+These scalars, along with the resource utilization plots, which are titled **:monitor: machine**, appear in the experiment's 
+page in the [ClearML web UI](../../../webapp/webapp_overview.md) under **RESULTS** **>** **SCALARS**. 
 
 ![image](../../../img/examples_pytorch_tensorboard_07.png)
 

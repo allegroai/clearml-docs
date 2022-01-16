@@ -1,5 +1,5 @@
 ---
-title: Dataviews Table
+title: The Dataviews Table
 ---
 
 [Dataviews](../dataviews.md) appear in the same Project as the experiment that stored the Dataview in the ClearML Enterprise platform, 
