@@ -128,7 +128,7 @@ When a new ClearML Server version is available, the notification is:
 
 **How do I find out ClearML version information?** <a id="versions"></a>
 
-ClearML server version information is available in the ClearML webapp profile page. On the bottom right of the page, 
+ClearML server version information is available in the ClearML webapp Settings page. On the bottom right of the page, 
 it says **Version**, followed by three numbers: the web application version, the API server version, and the API version.
 
 ![Server version information](img/faq_server_versions.png)
@@ -162,7 +162,7 @@ that metric column.
 
 **Can I store more information on the models?** <a id="store-more-model-info"></a>
 
-Yes! For example, you can use the [Task.set_model_label_enumeration](references/sdk/task.md#set_model_label_enumerationenumerationnone) 
+Yes! For example, you can use the [Task.set_model_label_enumeration](references/sdk/task.md#set_model_label_enumeration) 
 method to store label enumeration:
 
 ```python
@@ -176,7 +176,7 @@ For more information about `Task` class methods, see the [Task Class](fundamenta
 
 **Can I store the model configuration file as well?**  <a id="store-model-configuration"></a>
 
-Yes! Use the [Task.set_model_config](references/sdk/task.md#set_model_configconfig_textnone-config_dictnone) 
+Yes! Use the [Task.set_model_config](references/sdk/task.md#set_model_config) 
 method:
 
 ```python
@@ -708,7 +708,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
         
 **Option 2: Install ClearML in your Jupyter Notebook**
 
-1. In the ClearML Web UI, Profile page, create credentials and copy your access key and secret key. These are required in the Step 3.
+1. In the ClearML Web UI > **Settings > Workspace** page, create credentials and copy your access key and secret key. These are required in the Step 3.
 
 1. Install the ClearML Python Package.
 

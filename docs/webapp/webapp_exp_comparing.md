@@ -9,7 +9,7 @@ The **ClearML Web UI** provides a deep experiment comparison, allowing to locate
     - [Artifacts](#artifacts) - Input model, output model, and model design.
     - [Execution](#execution-details) - Installed packages and source code.
     - [Configuration](#configuration) - Configuration objects used by the experiment.
-* [Hyper Parameters](#hyperparameters)
+* [Hyperparameters](#hyperparameters)
     - [Values (table) view](#values-mode) - Key/value of all the arguments used by the experiments.
     - [Parallel coordinates view](#parallel-coordinates-mode) - Impact of each argument on a selected metric
       the experiments reported (see [task.connect_configuration](../references/sdk/task.md#connect_configuration)).

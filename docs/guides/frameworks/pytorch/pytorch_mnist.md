@@ -33,13 +33,14 @@ Logger.current_logger().report_scalar(
 )
 ```    
 
-These scalars can be visualized in plots, which appear in the **ClearML web UI**, in the experiment's
-page **>** **RESULTS** **>** **SCALARS**. 
+These scalars can be visualized in plots, which appear in the ClearML [web UI](../../../webapp/webapp_overview.md), 
+in the experiment's page **>** **RESULTS** **>** **SCALARS**. 
+
 ![image](../../../img/examples_pytorch_mnist_07.png)
 
 ## Hyperparameters
 
-**ClearML** automatically logs command line options defined with `argparse`. They appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
+ClearML automatically logs command line options defined with `argparse`. They appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
 
 ![image](../../../img/examples_pytorch_mnist_01.png)
 
