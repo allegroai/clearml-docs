@@ -7,7 +7,10 @@ Pipelines provide users with a greater level of abstraction and automation, with
 
 Tasks can interface with other Tasks in the pipeline and leverage other Tasks' work products.
 
-We'll go through a scenario where users create a Dataset, process the data then consume it with another task, all running as a pipeline.
+The sections below describe the following scenarios: 
+* Dataset creation
+* Data processing and consumption  
+* Pipeline building
 
 
 ## Building Tasks
@@ -56,11 +59,11 @@ dataset.tags = []
 new_dataset.tags = ['latest']
 ```
 
-We passed the `parents` argument when we created v2 of the Dataset, this inherits all the parent's version content.
-This will not only help us in tracing back dataset changes with full genealogy, but will also make our storage more efficient,
-as it will only store the files that were changed / added from the parent versions.
-When we will later need access to the Dataset it will automatically merge the files from all parent versions 
-in a fully automatic and transparent process, as if they were always part of the requested Dataset.
+We passed the `parents` argument when we created v2 of the Dataset, which inherits all the parent's version content.
+This not only helps trace back dataset changes with full genealogy, but also makes our storage more efficient,
+since it only store the changed and / or added files from the parent versions.
+When we access the Dataset, it automatically merges the files from all parent versions 
+in a fully automatic and transparent process, as if the files were always part of the requested Dataset.
 
 ### Training
 We can now train our model with the **latest** Dataset we have in the system.

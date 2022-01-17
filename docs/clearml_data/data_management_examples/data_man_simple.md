@@ -100,7 +100,7 @@ Total 5 files, 248771 bytes
 
 ## Creating a Child Dataset
 
-In Clear Data, it's possible to create datasets that inherit the content of other datasets, there are called child datasets.
+Using Clear Data, you can create child datasets that inherit the content of other datasets.
 
 1. Create a new dataset, specifying the previously created one as its parent:
 
@@ -111,8 +111,8 @@ In Clear Data, it's possible to create datasets that inherit the content of othe
 You'll need to input the Dataset ID you received when created the dataset above 
 :::
 
-1. Now, we want to add a new file. 
-   * Create a new file: `echo "data data data" > new_data.txt` (this will create the file `new_data.txt`),
+1. Add a new file. 
+   * Create a new file: `echo "data data data" > new_data.txt` 
    * Now add the file to the dataset:  
 
    ```bash
@@ -126,7 +126,7 @@ You'll need to input the Dataset ID you received when created the dataset above
    1 file added
    ```
    
-1. Let's also remove a file. We'll need to specify the file's full path (within the dataset, not locally) to remove it.
+1. Remove a file. We'll need to specify the file's full path (within the dataset, not locally) to remove it.
 
    ```bash
    clearml-data remove --files data_samples/dancing.jpg
@@ -145,7 +145,7 @@ You'll need to input the Dataset ID you received when created the dataset above
    clearml-data close
    ```
    
-1. Let's take a look again at the files in the dataset:
+1. Look again at the files in the dataset:
 
    ```
    clearml-data list --id 8b68686a4af040d081027ba3cf6bbca6
