@@ -1,15 +1,14 @@
 ---
 title: Comparing Experiments
 ---
-It is always useful to be able to do some forensics on what causes an experiment to succeed and to better understand
-performance issues.
+It is always useful to investigate what causes an experiment to succeed.
 The **ClearML Web UI** provides a deep experiment comparison, allowing to locate, visualize, and analyze differences including:
 
 * [Details](#details)
     - [Artifacts](#artifacts) - Input model, output model, and model design.
     - [Execution](#execution-details) - Installed packages and source code.
     - [Configuration](#configuration) - Configuration objects used by the experiment.
-* [Hyper Parameters](#hyperparameters)
+* [Hyperparameters](#hyperparameters)
     - [Values (table) view](#values-mode) - Key/value of all the arguments used by the experiments.
     - [Parallel coordinates view](#parallel-coordinates-mode) - Impact of each argument on a selected metric
       the experiments reported (see [task.connect_configuration](../references/sdk/task.md#connect_configuration)).
@@ -34,15 +33,14 @@ The **ClearML** experiment comparison provides [comparison features](#comparison
 1. In the bottom bar, click **COMPARE**. The comparison page appears, showing a column for each experiment and differences with a highlighted background color. The experiment on the left is the base experiment. Other experiments compare to the base experiment.
 
 
-
 ## Details
 
 The **DETAILS** tab includes deep comparisons of the following:
 
 ### Artifacts
 
-   * Input model and model design.
-   * Output model and model design.
+   * Input model and model configuration.
+   * Output model and model configuration.
    * Other artifacts, if any.
 
 ### Execution Details
@@ -230,7 +228,7 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 
 To assist in experiment analysis, the comparison page supports:
 
-* [Adding experiments to the comparison](#adding-experiments-to-the-comparison) using a partial name search.
+* [Changing compared experiments selection](#changing-compared-experiments-selection) 
 * [Finding the next or previous difference](#finding-the-next-or-previous-difference).
 * [Hiding identical fields](#hiding-identical-fields)
 * [Searching all text](#searching-all-text)
@@ -241,13 +239,16 @@ To assist in experiment analysis, the comparison page supports:
 
 
 
-### Adding Experiments to the Comparison
+### Changing Compared Experiments Selection
 
-Add an experiment to the comparison - Click **Add Experiment** and start typing an experiment name. An experiment search
-and select dialog appears showing matching experiments to choose from. To add an experiment, click **+**. To Remove
-an experiment, click <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-md" />.
+1. Click **+ Add Experiment** in the top left corner of any of the comparison pages. This will open up a window with an
+   experiment table with the currently compared experiments at the top. 
+1. Find the experiments to add by sorting and [filtering](webapp_exp_table.md#filtering-columns) the experiments with 
+   the appropriate column header controls. Alternatively, use the search bar to find experiments by name.
+1. Select experiments to include in the comparison (and / or clear the selection of any experiment you wish to remove).
+1. Click **APPLY**.
 
-![image](../img/webapp_compare_0194.png)
+![image](../img/webapp_compare_add.png)
 
 
 
@@ -273,7 +274,7 @@ Search all text in the comparison.
 ### Choosing a Different Base Experiment
 
 Show differences in other experiments in reference to a new base experiment. To set a new base experiment, do one of the following:
-* Click on <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base" className="icon size-md space-sm" /> on the top right of the experiment that will be the new base.
+* Click on <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> on the top right of the experiment that will be the new base.
 * Click on <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> the new base experiment and drag it all the way to the left
 
 ![image](../img/webapp_compare_22.png)

@@ -220,7 +220,7 @@ List of tags to send with the status reports from the worker that executes a tas
   For example, use `09-13 TUE` to set Tuesday's downtime to 09-13. 
   
 :::info
-* This feature is only supported by the ClearML Enterprise Server 
+* This feature is available under the ClearML Enterprise plan 
 * Make sure to have only one of uptime / downtime configuration and not both.
 ::: 
   
@@ -233,7 +233,7 @@ List of tags to send with the status reports from the worker that executes a tas
   For example: `--dynamic-gpus --queue dual_gpus=2 single_gpu=1`
 
 :::info Enterprise Feature
-This feature is only supported by the ClearML Enterprise Server 
+This feature is available under the ClearML Enterprise plan
 :::
 
 
@@ -355,7 +355,7 @@ This feature is only supported by the ClearML Enterprise Server
   uptime to 17-20
   
 :::info
-* This feature is only supported by the ClearML Enterprise Server 
+* This feature is available under the ClearML Enterprise plan
 * Make sure to have only one of uptime / downtime configuration and not both.
 ::: 
   

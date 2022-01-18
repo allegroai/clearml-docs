@@ -3,7 +3,7 @@ title: Remote Execution
 ---
 
 The [execute_remotely_example](https://github.com/allegroai/clearml/blob/master/examples/advanced/execute_remotely_example.py)
-script demonstrates the use of the [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely/) method. 
+script demonstrates the use of the [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely) method. 
 
 :::note
 Make sure to have at least one [ClearML Agent](../../clearml_agent.md) running and assigned to listen to the `default` queue 
@@ -37,16 +37,19 @@ In the example script's `train` function, the following code explicitly reports 
 
 ```python
 Logger.current_logger().report_scalar(
-    "train", "loss", iteration=(epoch * len(train_loader) + batch_idx), value=loss.item())
+    "train", "loss", iteration=(epoch * len(train_loader) + batch_idx), value=loss.item()
+)
 ```
 
 In the `test` method, the code explicitly reports `loss` and `accuracy` scalars.
 
 ```python
 Logger.current_logger().report_scalar(
-    "test", "loss", iteration=epoch, value=test_loss)
+    "test", "loss", iteration=epoch, value=test_loss
+)
 Logger.current_logger().report_scalar(
-    "test", "accuracy", iteration=epoch, value=(correct / len(test_loader.dataset)))
+    "test", "accuracy", iteration=epoch, value=(correct / len(test_loader.dataset))
+)
 ```    
 
 These scalars can be visualized in plots, which appear in the ClearML web UI, in the experiment's
@@ -68,9 +71,8 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Artifacts
 
-Model artifacts associated with the experiment appear in the info panel of the **EXPERIMENTS** tab and in 
-the info panel of the **MODELS** tab.  
-
+Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks models
+and any snapshots created using PyTorch. 
 
 ![image](../../img/examples_remote_execution_artifacts.png)
 

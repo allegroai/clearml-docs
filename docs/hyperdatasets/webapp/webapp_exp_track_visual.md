@@ -5,7 +5,7 @@ title: Viewing Experiments
 While an experiment is running, and any time after it finishes, results are tracked and can be visualized in the ClearML 
 Enterprise WebApp (UI). 
 
-In addition to all of **ClearML**'s offerings, ClearML Enterprise keeps track of the Dataviews associated with an 
+In addition to all of ClearML's offerings, ClearML Enterprise keeps track of the Dataviews associated with an 
 experiment, which can be viewed and [modified](webapp_exp_modifying.md) in the WebApp.
 
 ## Viewing an Experiment's Dataviews 

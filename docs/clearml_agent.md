@@ -41,7 +41,7 @@ and [configuration options](configs/clearml_conf.md#agent-section).
 ## Installation
 
 :::note
-If **ClearML** was previously configured, follow [this](#adding-clearml-agent-to-a-configuration-file) to add 
+If ClearML was previously configured, follow [this](#adding-clearml-agent-to-a-configuration-file) to add 
 ClearML Agent specific configurations
 :::
 
@@ -61,7 +61,7 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
    clearml-agent init
    ```
 
-    The setup wizard prompts for **ClearML** credentials (see [here](webapp/webapp_profile.md#creating-clearml-credentials) about obtaining credentials).
+    The setup wizard prompts for **ClearML** credentials (see [here](webapp/webapp_profile.md#clearml-credentials) about obtaining credentials).
     
         CLEARML-AGENT setup process
 
@@ -78,7 +78,7 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
         
         Detected credentials key="********************" secret="*******"
         
-1. **Enter** to accept default server URL, which is detected from the credentials or Enter a ClearML web server URL.
+1. **Enter** to accept default server URL, which is detected from the credentials or enter a ClearML web server URL.
 
    A secure protocol, https, must be used. **Do not use http.**
     
@@ -514,8 +514,8 @@ venvs_cache: {
 
 ## Dynamic GPU Allocation
 
-:::important
-Available with the ClearML Enterprise offering
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan
 :::
 
 The ClearML Enterprise server supports dynamic allocation of GPUs based on queue properties.
@@ -531,7 +531,7 @@ clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
 
 ### Example
 
-Let's say there are three queues on a server, named:
+Let's say a server has three queues:
 * `dual_gpu`
 * `quad_gpu`
 * `opportunistic`
@@ -553,7 +553,7 @@ Another option for allocating GPUs:
 clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue dual=2 opportunistic=1-4
 ``` 
 
-Notice that a minimum and maximum value of GPUs was specified for the `opportunistic` queue. This means the agent
+Notice that a minimum and maximum value of GPUs is specified for the `opportunistic` queue. This means the agent
 will pull a Task from the `opportunistic` queue and allocate up to 4 GPUs based on availability (i.e. GPUs not currently
 being used by other agents).
 
@@ -635,8 +635,8 @@ Check out [this tutorial](guides/ide/google_colab.md) on how to run a ClearML Ag
 
 ## Scheduling Working Hours
 
-:::important
-Available with the ClearML Enterprise offering
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan
 :::
 
 The Agent scheduler enables scheduling working hours for each Agent. During working hours, a worker will actively poll 

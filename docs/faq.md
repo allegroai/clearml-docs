@@ -128,7 +128,7 @@ When a new ClearML Server version is available, the notification is:
 
 **How do I find out ClearML version information?** <a id="versions"></a>
 
-ClearML server version information is available in the ClearML webapp profile page. On the bottom right of the page, 
+ClearML server version information is available in the ClearML webapp Settings page. On the bottom right of the page, 
 it says **Version**, followed by three numbers: the web application version, the API server version, and the API version.
 
 ![Server version information](img/faq_server_versions.png)
@@ -162,7 +162,7 @@ that metric column.
 
 **Can I store more information on the models?** <a id="store-more-model-info"></a>
 
-Yes! For example, you can use the [Task.set_model_label_enumeration](references/sdk/task.md#set_model_label_enumerationenumerationnone) 
+Yes! For example, you can use the [Task.set_model_label_enumeration](references/sdk/task.md#set_model_label_enumeration) 
 method to store label enumeration:
 
 ```python
@@ -176,7 +176,7 @@ For more information about `Task` class methods, see the [Task Class](fundamenta
 
 **Can I store the model configuration file as well?**  <a id="store-model-configuration"></a>
 
-Yes! Use the [Task.set_model_config](references/sdk/task.md#set_model_configconfig_textnone-config_dictnone) 
+Yes! Use the [Task.set_model_config](references/sdk/task.md#set_model_config) 
 method:
 
 ```python
@@ -228,7 +228,7 @@ To replace the URL of each model, execute the following commands:
     sudo docker exec -it clearml-mongo /bin/bash
     ```
 
-1. Inside the docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, 
+1. Create the following script inside the Docker shell:  
    as well as the URL protocol if you aren't using `s3`. 
     ```bash
     cat <<EOT >> script.js
@@ -237,7 +237,7 @@ To replace the URL of each model, execute the following commands:
     db.model.save(e);});
     EOT 
     ```
-
+    Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`.
 1. Run the script against the backend DB:
 
    ```bash
@@ -258,7 +258,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
    sudo docker exec -it clearml-mongo /bin/bash
    ```
 
-1. Inside the Docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3. 
+1. Create the following script inside the Docker shell.  
     ```bash
     cat <<EOT >> script.js
     db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
@@ -266,7 +266,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
     db.model.save(e);});
     EOT 
     ```
-
+   Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3.
 1. Run the script against the backend DB:
 
     ```bash
@@ -708,7 +708,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
         
 **Option 2: Install ClearML in your Jupyter Notebook**
 
-1. In the ClearML Web UI, Profile page, create credentials and copy your access key and secret key. These are required in the Step 3.
+1. In the ClearML Web UI > **Settings > Workspace** page, create credentials and copy your access key and secret key. These are required in the Step 3.
 
 1. Install the ClearML Python Package.
 
@@ -930,7 +930,7 @@ If a port conflict occurs, change the MongoDB and / or Elastic ports in the `doc
 To change the MongoDB and / or Elastic ports for your ClearML Server, do the following:
 
 1. Edit the `docker-compose.yml` file.
-1. In the `services/trainsserver/environment` section, add the following environment variable(s):
+1. Add the following environment variable(s) in the `services/trainsserver/environment` section:
 
     * For MongoDB:
     
@@ -994,7 +994,7 @@ Do the following:
 
 1. If a ClearML configuration file (`clearml.conf`) exists, delete it.
 1. Open a terminal session.
-1. In the terminal session, set the system environment variable to `127.0.0.1`, for example:
+1. Set the system environment variable to `127.0.0.1` in the terminal session. For example:
     
     * Linux:
     

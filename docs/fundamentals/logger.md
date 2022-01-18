@@ -8,7 +8,7 @@ member of the [Task](task.md) object.
 ClearML integrates with the leading visualization libraries, and automatically captures reports to them. 
 
 ## Types of Logged Results
-In ClearML, there are four types of reports:
+ClearML supports four types of reports:
 - Text - Mostly captured automatically from stdout and stderr but can be logged manually.
 - Scalars - Time series data. X-axis is always a sequential number, usually iterations but can be epochs or others.
 - Plots - General graphs and diagrams, such as histograms, confusion matrices line plots, and custom plotly charts.

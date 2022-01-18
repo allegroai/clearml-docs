@@ -8,11 +8,12 @@ This documentation page applies to deploying your own open source ClearML Server
 
 This page describes the **ClearML Server** [deployment](#clearml-server-deployment-configuration) and [feature](#clearml-server-feature-configurations) configurations. Namely, it contains instructions on how to configure **ClearML Server** for:
 
-* [Sub-domains and load balancers](#sub-domains-and-load-balancers) - An AWS load balancing example.
-* [Opening Elasticsearch, MongoDB, and Redis for External Access](#opening-elasticsearch-mongodb-and-redis-for-external-access).
-* [Web login authentication](#web-login-authentication) - Create and manage users and passwords.
+* [Sub-domains and load balancers](#sub-domains-and-load-balancers) - An AWS load balancing example
+* [Opening Elasticsearch, MongoDB, and Redis for External Access](#opening-elasticsearch-mongodb-and-redis-for-external-access)
+* [Web login authentication](#web-login-authentication) - Create and manage users and passwords
 * [Using hashed passwords](#using-hashed-passwords) - Option to use hashed passwords instead of plain-text passwords
-* [Non-responsive Task watchdog](#non-responsive-task-watchdog) - For inactive experiments.
+* [Non-responsive Task watchdog](#non-responsive-task-watchdog) - For inactive experiments
+* [Custom UI context menu actions](#custom-ui-context-menu-actions)
 
 For all configuration options, see the [ClearML Configuration Reference](../configs/clearml_conf.md) page.
 
@@ -293,7 +294,7 @@ You can also use hashed passwords instead of plain-text passwords. To do that:
             }
         }
 
-### Non-responsive Task watchdog
+### Non-responsive Task Watchdog
 
 The non-responsive experiment watchdog monitors experiments that were not updated for a specified time interval, and then 
 the watchdog marks them as `aborted`. The non-responsive experiment watchdog is always active.
@@ -324,3 +325,59 @@ Modify the following settings for the watchdog:
         }
         
 1. Restart **ClearML Server**.
+
+### Custom UI Context Menu Actions
+
+:::note Enterprise Feature
+This feature is available under the ClearML Enterprise plan
+:::
+
+Create custom UI context menu actions to be performed on ClearML objects (projects, tasks, models, dataviews, or queues) 
+by defining an HTTP request to issue when clicking on the action from an object’s context menu.
+
+To create a custom action, add the action definitions to the ClearML Server `/opt/clearml/config/services.conf` 
+file, using the following format:
+
+```conf
+organization.ui_actions: {
+  # key is the object type: project / task / model / dataview / queue
+  project: [ 
+    {
+        # name of action which will appear in the context menu
+        name: "Action Item Name"
+        tooltip: "Custom action 1"
+        # action specifies the HTTP request performed by the browser when clicking the action
+        action {  
+           # request method, options are GET / POST / DELETE
+           method: GET  
+           # request URL, may contain ${id} which will be replaced by the object's ID
+           url: "http://example.com/${id}"
+           # Request payload (any string)  
+           payload: "{'foo': 'bar'}"
+           # Request headers, custom key/value header values  
+           headers {  
+              # example: specify to the request target that the payload is in JSON format  
+              "Content-Type": "application/json"  
+           }
+        }
+     }
+  ]
+}
+```
+
+The action will appear in the context menu for the object type in which it was specified:
+* Task, model, dataview - Right-click an object in the [experiments](../webapp/webapp_exp_table.md), [models](../webapp/webapp_model_table.md), 
+  and [dataviews](../hyperdatasets/webapp/webapp_dataviews.md) tables respectively. Alternatively, click the object to 
+  open its info tab, then click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> 
+  to access the context menu. 
+* Project - In the project page > click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> 
+  on a specific project card to access its context menu
+* Queue - In the [Workers and Queues](../webapp/webapp_workers_queues.md) page > **QUEUES** tab, right-click the queue 
+  to access its context menu
+
+The custom action is always performed from a context-menu opened from a specific selected item.
+
+When clicking the custom action, the UI sends the target endpoint (`url`) the appropriate request, injecting the template 
+with the object's ID.
+
+The UI will display a toast message conveying action success or failure.

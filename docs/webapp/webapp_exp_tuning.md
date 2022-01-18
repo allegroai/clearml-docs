@@ -6,9 +6,9 @@ Tune experiments and edit an experiment's execution details, then execute the tu
 
 ## To Tune an Experiment and Execute it Remotely:
 
-1. Locate the experiment. Open the experiment's Project page from the Home page or the main Projects page.
+1. Locate the experiment. Open the experiment's Project page from the Dashboard or the main Projects page.
 
-    * On the Home page,
+    * On the Dashboard,
       * Click on an experiment from RECENT EXPERIMENTS
       * In RECENT PROJECTS **>** click on a project card **>** click experiment
       * In RECENT PROJECTS **>** click **VIEW ALL** **>** click the project card **>** click experiment
