@@ -1,76 +1,56 @@
 ---
-title: Configuring Models
+title: Model Reporting
 ---
 
-The [model_config.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/model_config.py) example demonstrates 
-configuring a model and defining label enumeration. Connect the configuration and label enumeration to a Task and, once 
-connected, **ClearML** tracks any changes to them. When **ClearML** stores a model in any framework, **ClearML** stores 
-the configuration and label enumeration with it. 
+The [model_reporting.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/model_reporting.py) example 
+demonstrates logging a model using the [OutputModel](../../references/sdk/model_outputmodel.md) 
+class. 
 
-When the script runs, it creates an experiment named `Model configuration example`, which is associated with the `examples` project.
+The example does the following:
+* Creates a task named `Model reporting example` in the `examples` project.
+* Uses an OutputModel object to register a previously trained model and log its label enumeration.
 
-## Configuring Models
-
-### Using a Configuration File
-
-Connect a configuration file to a Task by calling the [Task.connect_configuration](../../references/sdk/task.md#connect_configuration) 
-method with the file location and the configuration object's name as arguments. In this example, we connect a JSON file and a YAML file
-to a Task. 
+## Initialization
+An OutputModel object is instantiated for the task. 
 
 ```python
-config_file_json = 'data_samples/sample.json'
-task.connect_configuration(name="json file", configuration=config_file_json)
-config_file_yaml = 'data_samples/config_yaml.yaml'
-task.connect_configuration(configuration=config_file_yaml, name="yaml file")
+from clearml import Task, OutputModel
+
+# Connecting ClearML with the current process,
+task = Task.init(project_name="examples", task_name="Model logging example")
+ 
+# Create output model and connect it to the task
+output_model = OutputModel(task=task)
 ```
-
-The configuration is logged to the ClearML Task and can be viewed in the **ClearML Web UI** experiment details **>** **CONFIGURATION** tab **>** **CONFIGURATION OBJECTS** 
-section. The contents of the JSON file will appear in the **json file** object, and the contents of the YAML file will appear 
-in the **yaml file** object, as specified in the `name` parameter of the `connect_configuration` method. 
-
-![image](../../img/examples_reporting_config.png)
-
-### Configuration Dictionary
-
-Connect a configuration dictionary to a Task by creating a dictionary, and then calling the [Task.connect_configuration](../../references/sdk/task.md#connect_configuration) 
-method with the dictionary and the object name as arguments. After the configuration is connected, **ClearML** tracks changes to it.
-
-```python
-model_config_dict = {
-    'CHANGE ME': 13.37,
-    'dict': {'sub_value': 'string', 'sub_integer': 11},
-    'list_of_ints': [1, 2, 3, 4],
-}
-model_config_dict = task.connect_configuration(
-    name='dictionary', 
-    configuration=model_config_dict
-)
-
-# Update the dictionary after connecting it, and the changes will be tracked as well.
-model_config_dict['new value'] = 10
-model_config_dict['CHANGE ME'] *= model_config_dict['new value']
-```
-The configurations are connected to the ClearML Task and can be viewed in the **ClearML Web UI** **>** experiment details **>** **CONFIGURATION** tab **>** 
-**CONFIGURATION OBJECTS** area **>** **dictionary** object.
-
-![image](../../img/examples_reporting_config_3.png)
 
 ## Label Enumeration
 
-Connect a label enumeration dictionary by creating the dictionary, and then calling the [Task.connect_label_enumeration](../../references/sdk/task.md#connect_label_enumeration) 
-method with the dictionary as an argument.
+Set the model’s label enumeration using the [`OutputModel.update_labels`](../../references/sdk/model_outputmodel.md#update_labels) 
+method.
 
 ```python
-# store the label enumeration of the training model
-labels = {'background': 0, 'cat': 1, 'dog': 2}
-task.connect_label_enumeration(labels)
+labels = {"background": 0, "cat": 1, "dog": 2}
+output_model.update_labels(labels)
 ```
 
-Log a local model file.
+## Registering Models
+Register a previously trained model using the [`OutputModel.update_weights`](../../references/sdk/model_outputmodel.md#update_weights) 
+method. The example code uses a model stored in S3.
+
 ```python
-OutputModel().update_weights('my_best_model.bin')
-```    
+# Manually log a model file, which will have the labels connected above
+output_model.update_weights(register_uri=model_url)
+```
 
-The model which is stored contains the model configuration and the label enumeration. 
+## WebApp
+The model appears in the task’s **ARTIFACTS** tab.
 
-![image](../../img/examples_reporting_config_2.png)
+![Task artifacts](../../img/examples_model_logging_artifacts.png)
+
+Clicking on the model name takes you to the [model’s page](../../webapp/webapp_model_viewing.md), where you can view the 
+model’s details and access the model.
+
+The model’s **LABELS** tab displays its label enumeration.
+
+![Model Labels tab](../../img/examples_model_logging_labels.png)
+
