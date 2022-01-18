@@ -17,7 +17,7 @@ The below is only our opinion. ClearML was designed to fit into any workflow whe
 During early stages of model development, while code is still being modified heavily, this is the usual setup we'd expect to see used by data scientists:
 
   - A local development machine, usually a laptop (and usually using only CPU) with a fraction of the dataset for faster 
-    iterations - use a local machine for writing, training, and debugging pipeline code. 
+    iterations - Use a local machine for writing, training, and debugging pipeline code. 
   - A workstation with a GPU, usually with a limited amount of memory for small batch-sizes - Use this workstation to train 
     the model and ensure that you choose a model that makes sense, and the training procedure works. Can be used to provide initial models for testing. 
 
