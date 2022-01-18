@@ -100,7 +100,7 @@ Total 5 files, 248771 bytes
 
 ## Creating a Child Dataset
 
-Using Clear Data, you can create child datasets that inherit the content of other datasets.
+Using ClearML Data, you can create child datasets that inherit the content of other datasets.
 
 1. Create a new dataset, specifying the previously created one as its parent:
 
