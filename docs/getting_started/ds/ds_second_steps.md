@@ -94,7 +94,7 @@ Check out the [artifacts retrieval](https://github.com/allegroai/clearml/blob/ma
 
 Models are a special kind artifact.
 Models created by popular frameworks (such as Pytorch, Tensorflow, Scikit-learn) are automatically logged by ClearML.
-All snapshots are automatically logged. In order to make sure we also automatically upload the model snapshot (instead of saving its local path)
+All snapshots are automatically logged. In order to make sure we also automatically upload the model snapshot (instead of saving its local path),
 we need to pass a storage location for the model files to be uploaded to. 
 
 For example, upload all snapshots to an S3 bucket:
