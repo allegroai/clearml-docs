@@ -6,3 +6,5 @@ https://files.*
 https://app.community.clear.ml/projects.*
 http://localhost.*
 http://\d.*
+^```.[^```]+```
+`http.+`
