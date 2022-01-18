@@ -1,3 +1,8 @@
-^```.[^```]+```
+https://demo.*
 ^\w*#.*
-`http.+`
+https://s3.*
+https://ex.*
+https://files.*
+https://app.community.clear.ml/projects.*
+http://localhost.*
+http://\d.*
