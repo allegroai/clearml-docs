@@ -115,7 +115,7 @@ Task.enqueue(task=cloned_task, queue_name='default')
 ```
 
 ### Advanced Usage
-Before execution, there are a variety of programmatic methods which can be used to manipulate a task object. 
+Before execution, use a variety of programmatic methods to manipulate a task object. 
 
 #### Modify Hyperparameters
 [Hyperparameters](../../fundamentals/hyperparameters.md) are an integral part of Machine Learning code as they let you 

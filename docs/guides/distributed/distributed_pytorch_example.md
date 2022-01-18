@@ -17,8 +17,7 @@ dataset), and reports (uploads) the following to the main Task:
 Each Task in a subprocess references the main Task by calling [Task.current_task](../../references/sdk/task#taskcurrent_task), which always returns 
 the main Task.
 
-When the script runs, it creates an experiment named `test torch distributed`, which is associated with the `examples` project 
-in the **ClearML Web UI**.
+When the script runs, it creates an experiment named `test torch distributed`, which is associated with the `examples` project.
 
 ## Artifacts
 

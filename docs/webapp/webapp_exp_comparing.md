@@ -1,8 +1,7 @@
 ---
 title: Comparing Experiments
 ---
-It is always useful to be able to do some forensics on what causes an experiment to succeed and to better understand
-performance issues.
+It is always useful to investigate what causes an experiment to succeed.
 The **ClearML Web UI** provides a deep experiment comparison, allowing to locate, visualize, and analyze differences including:
 
 * [Details](#details)
