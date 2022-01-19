@@ -132,7 +132,7 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 * **General** - Parameter dictionaries (from code, connected to the Task by calling the [Task.connect](../references/sdk/task.md#connect)
   method).
 
-* Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq#track-env-vars)).
+* Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq.md#track-env-vars)).
 
 * Custom named parameter groups (see the `name` parameter in [Task.connect](../references/sdk/task.md#connect)).
 

@@ -21,7 +21,7 @@ clearml-init
 
 ## Auto-log Experiment
 
-In ClearML, experiments are organized as [Tasks](../../fundamentals/task). 
+In ClearML, experiments are organized as [Tasks](../../fundamentals/task.md). 
 
 ClearML will automatically log your experiment and code, including outputs and parameters from popular ML frameworks, 
 once you integrate the ClearML [SDK](../../clearml_sdk.md) with your code. To control what ClearML automatically logs, see this [FAQ](../../faq.md#controlling_logging). 
@@ -50,7 +50,7 @@ The console should return the following output:
 ```
 ClearML Task: created new task id=1ca59ef1f86d44bd81cb517d529d9e5a
 2021-07-25 13:59:09
-ClearML results page: https://community/projects/4043a1657f374e9298649c6ba72ad233/experiments/1ca59ef1f86d44bd81cb517d529d9e5a/output/log
+ClearML results page: https://app.community.clear.ml/projects/4043a1657f374e9298649c6ba72ad233/experiments/1ca59ef1f86d44bd81cb517d529d9e5a/output/log
 2021-07-25 13:59:16
 ```
 

@@ -7,7 +7,7 @@ From training models to data processing to deploying to production.
 
 ## Development - Preparing for Automation
 Basically, track everything. There is nothing that is not worth having visibility to.
-If you are afraid of clutter, use the archive option, and set up your own [cleanup service](../../guides/services/cleanup_service).
+If you are afraid of clutter, use the archive option, and set up your own [cleanup service](../../guides/services/cleanup_service.md).
 
 - Track the code base. There is no reason not to add metrics to any process in your workflow, even if it is not directly ML. Visibility is key to iterative improvement of your code / workflow.
 - Create per-project [leaderboards](../../guides/ui/building_leader_board.md) based on custom columns 

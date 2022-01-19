@@ -157,7 +157,7 @@ task = Task.init(project_name='examples', task_name='storing model', output_uri=
 ```
 
 To automatically store all created models from all experiments in a certain storage medium, edit the `clearml.conf` (see
- [ClearML Configuration Reference](../configs/clearml_conf#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` to the desired 
+ [ClearML Configuration Reference](../configs/clearml_conf.md#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` to the desired 
 storage (see [Storage](../integrations/storage.md)).
 This is especially helpful when using [clearml-agent](../clearml_agent.md) to execute code.
 

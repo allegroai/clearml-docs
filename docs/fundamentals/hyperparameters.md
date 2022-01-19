@@ -111,7 +111,7 @@ Relying on environment variables makes an experiment not fully reproducible, sin
 runtime.
 :::
 
-Environment variables can be logged by modifying the [clearml.conf](../configs/clearml_conf) file. Modify the *log_os_environments* 
+Environment variables can be logged by modifying the [clearml.conf](../configs/clearml_conf.md) file. Modify the *log_os_environments* 
 parameter specifying parameters to log.
 
 `log_os_environments: ["AWS_*", "CUDA_VERSION"]`

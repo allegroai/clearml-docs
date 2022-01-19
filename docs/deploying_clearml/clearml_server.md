@@ -3,35 +3,37 @@ title: ClearML Server
 ---
 
 ## What is ClearML Server? 
-The **ClearML Server** is the backend service infrastructure for **ClearML**. It allows multiple users to collaborate and manage their experiments by working seamlessly with the **ClearML Python Package** and [**ClearML Agent**](clearml_agent.md). **ClearML Server** is composed of the following:
+The **ClearML Server** is the backend service infrastructure for ClearML. It allows multiple users to collaborate and 
+manage their experiments by working seamlessly with the ClearML Python package and [ClearML Agent](../clearml_agent.md). 
 
-* Web server including the **ClearML Web UI**, which is the user interface for tracking, comparing, and managing experiments.
-* API server which a RESTful API for:
+ClearML Server is composed of the following:
+* Web server including the [ClearML Web UI](../webapp/webapp_overview.md), which is the user interface for tracking, comparing, and managing experiments.
+* API server which is a RESTful API for:
 
     * Documenting and logging experiments, including information, statistics, and results.
     * Querying experiments history, logs, and results.
 
-* File server which stores media and models making them easily accessible using the **ClearML Web UI**.
+* File server which stores media and models making them easily accessible using the ClearML Web UI.
 
-The [**ClearML Hosted Service**](https://app.community.clear.ml) is essentially the **ClearML Server** maintained for you.
+The [**ClearML Hosted Service**](https://app.community.clear.ml) is essentially the ClearML Server maintained for you.
 
 ![image](../img/ClearML_Server_Diagram.png)
 
-**ClearML Web UI** is the **ClearML** user interface and is part of **ClearML Server**.
+The ClearML Web UI is the ClearML user interface and is part of ClearML Server.
 
-Use the **ClearML Web UI** to:
+Use the ClearML Web UI to:
 
 * Track experiments
 * Compare experiments
 * Manage experiments
 
-For detailed information about the **ClearML Web UI**, see [User Interface](../webapp/webapp_home.md).
+For detailed information about the ClearML Web UI, see [User Interface](../webapp/webapp_overview.md).
 
 ClearML Server also comes with a [services agent](../clearml_agent.md#services-mode) preinstalled.
 
 ## Deployment
 
-The **ClearML Server** can be deployed in any of the formats listed below. Once deployed, configure the server for web login 
+The ClearML Server can be deployed in any of the formats listed below. Once deployed, configure the server for web login 
 authentication, sub-domains, and load balancers, and use any of its many configuration settings.
 
 **To deploy your own ClearML Server:**
