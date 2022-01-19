@@ -2,6 +2,33 @@
 title: Version 1.1
 ---
 
+### ClearML SDK 1.1.6
+
+**Features**
+
+- Add `Task.force_store_standalone_script()` to force storing standalone script instead of a Git repository reference [ClearML Github issue #340](https://github.com/allegroai/clearml/issues/340)
+- Add `Logger.set_default_debug_sample_history()` and `Logger.get_default_debug_sample_history()` to allow controlling 
+  maximum debug samples programmatically
+- Add populate now stores function arg types as part of the hyperparemeters
+- Add `status_message` argument to `Task.mark_stopped()`
+- Change `HTTP` driver timeout and retry codes (connection timeout will now trigger a retry)
+
+**Bug Fixes**
+
+- Fix and upgrade the SlackMonitor [ClearML Github issue #533](https://github.com/allegroai/clearml/issues/533)
+- Fix network issues causing Task to stop on status change when no status change has occurred [ClearML Github issue #535](https://github.com/allegroai/clearml/issues/535)
+- Fix Pipeline controller function support for dict as input argument
+- Fix uploading the same metric/variant from multiple processes in threading mode should create a unique file per process (since global counter is not passed between the subprocesses)
+- Fix resource monitoring should only run in the main process when using threaded logging mode
+- Fix fork patching so that the signal handler (`at_exit`) will be called on time
+- Fix fork (process pool) hangs or drops reports when reports are at the end of the forked function in both threaded and subprocess mode reporting
+- Fix multi-pipeline support
+- Fix delete artifacts after upload
+- Fix artifact preview has no truth value
+- Fix storage cache cleanup does not remove all entries on a silent fail
+- Fix always store session cache in `~/.clearml` (regardless of the cache folder)
+- Fix `StorageManager.download_folder()` fails on Windows path
+
 ### ClearML SDK 1.1.5
 
 **Features**
