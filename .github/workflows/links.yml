@@ -32,8 +32,8 @@ jobs:
         with:
           #format: json
           args: --verbose --no-progress ${{ env.MD_FILES }} --exclude https://s3.* https://files.* https://demo.*  ^\w*#.* https://s3.* https://ex.*
-            https://files.* https://app.community.clear.ml/projects.* http://localhost.* http://\d.* ^```.[^```]+```
-            `http.+`
+            https://files.* (https://app.community.clear.ml|https://app.clear.ml)(/)?(dashboard|profile|projects.*)? (https://clear.ml)(/)?(blog|pricing|docs)(/)?
+            http://localhost.* `http.+` https:.*\/\/[^\/]+\/?.*\/.*\.git https://api.*
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
