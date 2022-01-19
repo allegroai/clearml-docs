@@ -31,7 +31,7 @@ jobs:
         uses: lycheeverse/lychee-action@v1.2.0
         with:
           #format: json
-          args: --verbose --no-progress ${{ env.MD_FILES }}
+          args: --verbose --no-progress ${{ env.MD_FILES }} --exclude https://s3.* https://files.*
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
