@@ -15,7 +15,7 @@ ClearML Server is composed of the following:
 
 * File server which stores media and models making them easily accessible using the ClearML Web UI.
 
-The [**ClearML Hosted Service**](https://app.community.clear.ml) is essentially the ClearML Server maintained for you.
+The [**ClearML Hosted Service**](https://app.clear.ml) is essentially the ClearML Server maintained for you.
 
 ![image](../img/ClearML_Server_Diagram.png)
 

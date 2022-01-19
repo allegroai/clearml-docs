@@ -61,7 +61,7 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
    clearml-agent init
    ```
 
-    The setup wizard prompts for **ClearML** credentials (see [here](webapp/webapp_profile.md#clearml-credentials) about obtaining credentials).
+    The setup wizard prompts for ClearML credentials (see [here](webapp/webapp_profile.md#clearml-credentials) about obtaining credentials).
     
         CLEARML-AGENT setup process
 
@@ -73,7 +73,7 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     If the setup wizard's response indicates that a configuration file already exists, follow the instructions [here](#adding-clearml-agent-to-a-configuration-file). 
    The wizard does not edit or overwrite existing configuration files.
 
-1. At the command prompt `Paste copied configuration here:`, copy and paste the **ClearML** credentials and press **Enter**. 
+1. At the command prompt `Paste copied configuration here:`, copy and paste the ClearML credentials and press **Enter**. 
    The setup wizard confirms the credentials. 
         
         Detected credentials key="********************" secret="*******"

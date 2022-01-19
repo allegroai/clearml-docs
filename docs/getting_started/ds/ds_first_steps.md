@@ -6,14 +6,14 @@ title: First Steps
 ## Install ClearML
 
 
-First, [sign up for free](https://app.community.clear.ml)
+First, [sign up for free](https://app.clear.ml)
 
 Install the clearml python package:
 ```bash
 pip install clearml
 ```
 
-Connect your computer to the server by [creating credentials](https://app.community.clear.ml/profile), then run the below and follow the setup instructions:
+Connect your computer to the server by [creating credentials](https://app.clear.ml/settings/workspace-configuration), then run the below and follow the setup instructions:
 ```bash
 clearml-init
 ```
