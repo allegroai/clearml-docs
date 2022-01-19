@@ -25,7 +25,7 @@ another Task.
 
 ### How Do Pipelines Work? 
 
-Users can automate [Tasks](task) to run consecutively or according to some logic by putting the tasks into a pipeline. 
+Users can automate [Tasks](task.md) to run consecutively or according to some logic by putting the tasks into a pipeline. 
 Tasks in a pipeline can leverage other tasks' work products such as artifacts and parameters. 
 
 Before running a pipeline, we need to configure a Controller Task, in which the pipeline is defined. Pipelines are made 
@@ -47,7 +47,7 @@ create customized, step-specific callbacks.
 ### Simple DAG Pipelines
 
 For a simple, DAG based logic, use the off-the-shelf [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md) class to define the DAG (see an example 
-[here](../guides/pipeline/pipeline_controller)). Once the `PipelineController` object is populated and configured, 
+[here](../guides/pipeline/pipeline_controller.md)). Once the `PipelineController` object is populated and configured, 
 we can start the pipeline, which will begin executing the steps in succession, then it waits until the pipeline is completed. 
 The pipeline control logic is processed in a background thread. 
 

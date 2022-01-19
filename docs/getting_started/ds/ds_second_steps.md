@@ -139,7 +139,7 @@ It's possible to log everything, from time series data to confusion matrices to 
 
 ![image](../../img/report_plotly.png)
 
-Once everything is neatly logged and displayed, using the [comparison tool](../../webapp/webapp_exp_comparing) makes it easy to find the best configuration!
+Once everything is neatly logged and displayed, using the [comparison tool](../../webapp/webapp_exp_comparing.md) makes it easy to find the best configuration!
 
 
 ## Track Experiments

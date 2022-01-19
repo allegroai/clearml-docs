@@ -14,7 +14,7 @@ dataset), and reports (uploads) the following to the main Task:
 * Scalars - Loss reported as a scalar during training in each Task in a subprocess.
 * Hyperparameters - Hyperparameters created in each Task are added to the hyperparameters in the main Task.
 
-Each Task in a subprocess references the main Task by calling [Task.current_task](../../references/sdk/task#taskcurrent_task), which always returns 
+Each Task in a subprocess references the main Task by calling [Task.current_task](../../references/sdk/task.md#taskcurrent_task), which always returns 
 the main Task.
 
 When the script runs, it creates an experiment named `test torch distributed`, which is associated with the `examples` project.
@@ -38,7 +38,7 @@ All of these artifacts appear in the main Task under **ARTIFACTS** **>** **OTHER
 
 ## Scalars
 
-Loss is reported to the main Task by calling the [Logger.report_scalar](../../references/sdk/logger#report_scalar) 
+Loss is reported to the main Task by calling the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
 method on `Task.current_task().get_logger`, which is the logger for the main Task. Since `Logger.report_scalar` is called 
 with the same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are 
 logged together.
@@ -58,7 +58,7 @@ The single scalar plot for loss appears in **RESULTS** **>** **SCALARS**.
 
 ## Hyperparameters
 
-**ClearML** automatically logs the argparse command line options. Since the [`Task.connect`](../../references/sdk/task#connect) 
+**ClearML** automatically logs the argparse command line options. Since the [`Task.connect`](../../references/sdk/task.md#connect) 
 method is called on [`Task.current_task`](../../references/sdk/task.md#taskcurrent_task), they are logged in the main Task. A different hyperparameter key is used in each 
 subprocess, so they do not overwrite each other in the main Task.
 
