@@ -170,7 +170,7 @@ Click the checkbox in the top left corner of the table to select all items curre
 An extended bulk selection tool is available through the down arrow next to the checkbox in the top left corner, enabling 
 selecting items beyond the items currently on-screen:
 * **All** - Select all experiments in the project
-* **None** - Clear Selection
+* **None** - Clear selection
 * **Filtered** - Select **all experiments in the project** that match the current active filters in the project
 
 ## Creating an Experiment Leaderboard

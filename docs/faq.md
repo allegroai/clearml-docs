@@ -228,7 +228,7 @@ To replace the URL of each model, execute the following commands:
     sudo docker exec -it clearml-mongo /bin/bash
     ```
 
-1. Inside the docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, 
+1. Create the following script inside the Docker shell:  
    as well as the URL protocol if you aren't using `s3`. 
     ```bash
     cat <<EOT >> script.js
@@ -237,7 +237,7 @@ To replace the URL of each model, execute the following commands:
     db.model.save(e);});
     EOT 
     ```
-
+    Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`.
 1. Run the script against the backend DB:
 
    ```bash
@@ -258,7 +258,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
    sudo docker exec -it clearml-mongo /bin/bash
    ```
 
-1. Inside the Docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3. 
+1. Create the following script inside the Docker shell.  
     ```bash
     cat <<EOT >> script.js
     db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
@@ -266,7 +266,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
     db.model.save(e);});
     EOT 
     ```
-
+   Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3.
 1. Run the script against the backend DB:
 
     ```bash
@@ -930,7 +930,7 @@ If a port conflict occurs, change the MongoDB and / or Elastic ports in the `doc
 To change the MongoDB and / or Elastic ports for your ClearML Server, do the following:
 
 1. Edit the `docker-compose.yml` file.
-1. In the `services/trainsserver/environment` section, add the following environment variable(s):
+1. Add the following environment variable(s) in the `services/trainsserver/environment` section:
 
     * For MongoDB:
     
@@ -994,7 +994,7 @@ Do the following:
 
 1. If a ClearML configuration file (`clearml.conf`) exists, delete it.
 1. Open a terminal session.
-1. In the terminal session, set the system environment variable to `127.0.0.1`, for example:
+1. Set the system environment variable to `127.0.0.1` in the terminal session. For example:
     
     * Linux:
     

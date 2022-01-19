@@ -6,7 +6,7 @@ The ClearML [AWS autoscaler example](https://github.com/allegroai/clearml/blob/m
 demonstrates how to use the [`clearml.automation.auto_scaler`](https://github.com/allegroai/clearml/blob/master/clearml/automation/auto_scaler.py) 
 module to implement a service that optimizes AWS EC2 instance scaling according to a defined instance budget.
 
-It periodically polls your AWS cluster and automatically stops idle instances based on a defined maximum idle time or spins 
+The autoscaler periodically polls your AWS cluster and automatically stops idle instances based on a defined maximum idle time or spins 
 up new instances when there aren't enough to execute pending tasks.
 
 ## Running the ClearML AWS Autoscaler

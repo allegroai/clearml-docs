@@ -26,7 +26,7 @@ can allocate several GPUs to an agent and use the rest for a different workload,
 
 ## What is a Queue?
 
-A ClearML queue is an ordered list of Tasks scheduled for execution. A queue can be serviced by one or multiple agents. 
+A ClearML queue is an ordered list of Tasks scheduled for execution. One or multiple agents can service a queue. 
 Agents servicing a queue pull the queued tasks in order and execute them. 
 
 A ClearML Agent can service multiple queues in either of the following modes: 
@@ -51,8 +51,8 @@ The diagram above demonstrates a typical flow where an agent executes a task:
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
 
-While the agent is running, it continuously reports system metrics to the ClearML Server (these can be monitored in the 
-[**Workers and Queues**](../webapp/webapp_workers_queues.md) page).  
+While the agent is running, it continuously reports system metrics to the ClearML Server. You can monitor these metrics
+in the [**Workers and Queues**](../webapp/webapp_workers_queues.md) page.  
 
 ## Resource Management
 Installing an Agent on machines allows it to monitor all the machine's status (GPU / CPU / Memory / Network / Disk IO). 
