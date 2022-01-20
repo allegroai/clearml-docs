@@ -56,7 +56,7 @@ ClearML results page: https://app.community.clear.ml/projects/4043a1657f374e9298
 
 **That’s it!** You are done integrating ClearML with your code :)
 
-Now, [command-line arguments](../../fundamentals/hyperparameters.md#command-line-parsing), [console output](../../fundamentals/logger#types-of-logged-results) as well as Tensorboard and Matplotlib will automatically be logged in the UI under the created Task.
+Now, [command-line arguments](../../fundamentals/hyperparameters.md#command-line-parsing), [console output](../../fundamentals/logger.md#types-of-logged-results) as well as Tensorboard and Matplotlib will automatically be logged in the UI under the created Task.
 <br/>
 
 Sit back, relax, and watch your models converge :) or continue to see what else can be done with ClearML [here](ds_second_steps.md).
