@@ -35,8 +35,8 @@ jobs:
             https://files.* https://demo.*  ^\w*#.* https://example.com.* (https://clear.ml)(/)?(blog|pricing|docs)(/)?(latest/docs/index.html)?
             (https://app)(.community.clear.ml|.app.clear.ml)?(/)?(dashboard|profile|projects.*)?
             http://localhost.* `http.+` https://.{10,}\.git https://api.* http://[0-9].*
-            https://allegroai.jfrog.io/clearml/api/pypi/public/simple](https://allegroai.jfrog.io/clearml/api/pypi/public/simple
-            https://allegroai.github.io/clearml-helm-charts](https://allegroai.github.io/clearml-helm-charts
+            https://allegroai.jfrog.io/clearml/api/pypi/public/simple
+            https://allegroai.github.io/clearml-helm-charts
 
       #- name: Read Results
       #  if: ${{ steps.lychee.outputs.exit_code != 0 }}
