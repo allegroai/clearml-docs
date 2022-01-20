@@ -400,7 +400,7 @@ Example:
 ```python
 if __name__ == '__main__':
     PipelineDecorator.run_locally()
-    executing_pipeline(pickle_url='https://exaple.com/iris_dataset.pkl')
+    executing_pipeline(pickle_url='https://example.com/iris_dataset.pkl')
     print('pipeline completed')
 ```
 

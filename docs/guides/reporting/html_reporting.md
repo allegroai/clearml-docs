@@ -21,7 +21,7 @@ See the example script's [report_html_url](https://github.com/allegroai/clearml/
 function, which reports the ClearML documentation's home page.
 
 ```python
-Logger.current_logger().report_media("html", "url_html", iteration=iteration, url="https://clear.ml/docs")
+Logger.current_logger().report_media("html", "url_html", iteration=iteration, url="https://clear.ml/docs/latest/docs/index.html")
 ```
 
 ## Reporting HTML Local Files
