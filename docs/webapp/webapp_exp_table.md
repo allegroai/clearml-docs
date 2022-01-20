@@ -22,7 +22,7 @@ The experiments table default and customizable columns are described in the foll
 |---|---|---|
 | **TYPE** | Type of experiment. **ClearML** supports multiple [task types](../fundamentals/task.md#task-types) for experimentation, and a variety of workflows and use cases. | Default |
 | **NAME** | Experiment name.  |  Default |
-| **TAGS** | Descriptive, user-defined, color-coded tags assigned to experiments. Use tags to classify experiments, and filter the list. See [tagging experiments](webapp_exp_track_visual#tagging-experiments). | Default |
+| **TAGS** | Descriptive, user-defined, color-coded tags assigned to experiments. Use tags to classify experiments, and filter the list. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Default |
 | **STATUS** | Experiment state (status). See a list of the [task states and state transitions](../fundamentals/task.md#task-states). |  Default |
 | **PROJECT** | Name of experiment's project.  |  Default |
 | **USER** | User who created or cloned the experiment.  |  Default (hidden) |
