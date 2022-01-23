@@ -30,19 +30,20 @@ and running, users can send Tasks to be executed on the Google Colab's HW.
    This environment variable makes Matplotlib work in headless mode, so it won't output graphs to the screen.
    
 1. Create new credentials.   
-   Go to your **profile** in the [ClearML WebApp](https://app.clear.ml). Under the **WORKSPACES** section, 
-   go to **App Credentials**, click **+ Create new credentials**, and copy the information that pops up. 
+   Go to your [**Settings**](https://app.clear.ml/settings/workspace-configuration) page > **WORKSPACE** section. 
+   Under **App Credentials**, click **+ Create new credentials**, and copy the information that pops up. 
    
 1. Set the credentials.  
    In the third cell, enter your own credentials:
    ```python
    from clearml import Task
    
-   Task.set_credentials(api_host="https://api.community.clear.ml", 
-                        web_host="https://app.community.clear.ml", 
-                        files_host="https://files.community.clear.ml", 
-                        key='6ZHX9UQMYL874A1NE8', 
-                        secret='=2h6#%@Y&m*tC!VLEXq&JI7QhZPKuJfbaYD4!uUk(t7=9ENv'
+   Task.set_credentials(
+        api_host="https://api.community.clear.ml", 
+        web_host="https://app.community.clear.ml", 
+        files_host="https://files.community.clear.ml", 
+        key='6ZHX9UQMYL874A1NE8', 
+        secret='=2h6#%@Y&m*tC!VLEXq&JI7QhZPKuJfbaYD4!uUk(t7=9ENv'
    )
    ```
    
