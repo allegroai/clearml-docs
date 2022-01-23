@@ -65,7 +65,14 @@ The script supports the following additional command line options:
   * `False` - Monitor only remote experiments.
 * `include_completed_experiments` - If `False` (default), send alerts only for failed tasks. If `True`, send an alert 
   for completed and failed tasks.
+* `include_archived` - If `False` (default), only tasks that are not archived will be reported. This option can be
+  useful if a task is archived between polling.
 * `refresh_rate` - How often to monitor the experiments in seconds. The default value is 10.0.
+* `include_users` - Only report tasks that were initiated by these users (usernames and user IDs are accepted).
+  Mutually exclusive to `exclude_users`.
+* `exclude_users` - Only report tasks that were NOT initiated by these users (usernames and user IDs are accepted).
+  Mutually exclusive to `include_users`.
+* `verbose` - If `True`, will increase verbosity of messages (such as when when tasks are polled but filtered away).
 
 ## Configuration
     
@@ -96,4 +103,4 @@ In `slack_alerts.py`, the class `SlackMonitor` inherits from the `Monitor` class
 The example provides the option to run locally or execute remotely by calling the [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely) 
 method.
 
-To interface to Slack, the example uses `slack.WebClient` and `slack.errors.SlackApiError`.
+To interface to Slack, the example uses `slack_sdk.WebClient` and `slack_sdk.errors.SlackApiError`.

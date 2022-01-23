@@ -10,7 +10,7 @@ Now, we'll learn how to track Hyperparameters, Artifacts and Metrics!
 
 Every previously executed experiment is stored as a Task.
 A Task has a project and a name, both can be changed after the experiment has been executed.
-A Task is also automatically assigned an auto-generated unique identifier (UUID string) that cannot be changed and will always locate the same Task in the system.
+A Task is also automatically assigned an auto-generated unique identifier (UUID string) that cannot be changed and always locates the same Task in the system.
 
 It's possible to retrieve a Task object programmatically by querying the system based on either the Task ID, 
 or project & name combination. It's also possible to query tasks based on their properties, like Tags.
@@ -26,7 +26,7 @@ Once we have a Task object we can query the state of the Task, get its Model, sc
 For full reproducibility, it's paramount to save Hyperparameters for each experiment. Since Hyperparameters can have substantial impact
 on Model performance, saving and comparing these between experiments is sometimes the key to understand model behavior.
 
-ClearML supports logging `argparse` module arguments out of the box, so once integrating it into the code, it will automatically log all parameters provided to the argument parser.
+ClearML supports logging `argparse` module arguments out of the box, so once ClearML is integrated into the code, it automatically logs all parameters provided to the argument parser.
 
 It's also possible to log parameter dictionaries (very useful when parsing an external config file and storing as a dict object), 
 whole configuration files or even custom objects or [Hydra](https://hydra.cc/docs/intro/) configurations!
@@ -46,7 +46,7 @@ Essentially, artifacts are files (or python objects) uploaded from a script and 
 These Artifacts can be easily accessed by the web UI or programmatically. 
 
 Artifacts can be stored anywhere, either on the ClearML server, or any object storage solution or shared folder. 
-See all [storage capabilities](../../integrations/storage).
+See all [storage capabilities](../../integrations/storage.md).
 
 
 ### Adding Artifacts
@@ -84,9 +84,9 @@ local_csv = preprocess_task.artifacts['data'].get_local_copy()
 ```
 
 The `task.artifacts` is a dictionary where the keys are the Artifact names, and the returned object is the Artifact object.
-Calling `get_local_copy()` will return a local cached copy of the artifact, 
-this means that the next time we execute the code we will not need to download the artifact again.
-Calling `get()` will get a deserialized pickled object. 
+Calling `get_local_copy()` returns a local cached copy of the artifact. Therefore, next time we execute the code, we don't 
+need to download the artifact again.
+Calling `get()` gets a deserialized pickled object. 
 
 Check out the [artifacts retrieval](https://github.com/allegroai/clearml/blob/master/examples/reporting/artifacts_retrieval.py) example code.
 
@@ -94,15 +94,15 @@ Check out the [artifacts retrieval](https://github.com/allegroai/clearml/blob/ma
 
 Models are a special kind artifact.
 Models created by popular frameworks (such as Pytorch, Tensorflow, Scikit-learn) are automatically logged by ClearML.
-All snapshots are automatically logged, in order to make sure we also automatically upload the model snapshot (instead of saving its local path)
+All snapshots are automatically logged. In order to make sure we also automatically upload the model snapshot (instead of saving its local path),
 we need to pass a storage location for the model files to be uploaded to. 
 
-For example uploading all snapshots to our S3 bucket:
+For example, upload all snapshots to an S3 bucket:
 ```python
 task = Task.init(project_name='examples', task_name='storing model', output_uri='s3://my_models/')
 ```
 
-From now on, whenever the framework (TF/Keras/PyTorch etc.) will be storing a snapshot, the model file will automatically get uploaded to our bucket under a specific folder for the experiment.
+Now, whenever the framework (TF/Keras/PyTorch etc.) stores a snapshot, the model file is automatically uploaded to the bucket to a specific folder for the experiment.
 
 Loading models by a framework is also logged by the system, these models appear under the “Input Models” section, under the Artifacts tab.
 
@@ -124,7 +124,7 @@ Like before we have to get the instance of the Task training the original weight
 :::note
 Using Tensorflow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing our requested snapshot.
 :::
-As with Artifacts all models are cached, meaning the next time we will run this code, no model will need to be downloaded.
+As with Artifacts, all models are cached, meaning the next time we run this code, no model needs to be downloaded.
 Once one of the frameworks will load the weights file, the running Task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.
 This feature allows you to easily get a full genealogy of every trained and used model by your system!
 
@@ -139,7 +139,7 @@ It's possible to log everything, from time series data to confusion matrices to 
 
 ![image](../../img/report_plotly.png)
 
-Once everything is neatly logged and displayed, using the [comparison tool](../../webapp/webapp_exp_comparing) makes it easy to find the best configuration!
+Once everything is neatly logged and displayed, using the [comparison tool](../../webapp/webapp_exp_comparing.md) makes it easy to find the best configuration!
 
 
 ## Track Experiments
@@ -150,7 +150,7 @@ The experiment table is a powerful tool for creating dashboards and views of you
 
 
 ### Creating Leaderboards
-The [experiments table](../../webapp/webapp_exp_table.md) can be customized to your own needs, adding desired views of parameters, metrics and tags.
+Customize the [experiments table](../../webapp/webapp_exp_table.md) to fit your own needs, adding desired views of parameters, metrics and tags.
 It's possible to  filter and sort based on parameters and metrics, so creating custom views is simple and flexible.
 
 Create a dashboard for a project, presenting the latest Models and their accuracy scores, for immediate insights. 

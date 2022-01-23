@@ -38,7 +38,7 @@ frame.add_annotation(box2d_xywh=(10, 10, 30, 20), labels=['test'])
 The `box2d_xywh` argument specifies the coordinates of the annotation's bounding box, and the `labels` argument specifies
 a list of labels for the annotation.
 
-When adding an annotation there are a few options for entering the annotation's boundaries, including: 
+Enter the annotation's boundaries in one of the following ways: 
 * `poly2d_xy` - A list of floating points (x,y) to create for single polygon, or a list of floating points lists for a 
   complex polygon.
 * `ellipse2d_xyrrt` - A List consisting of cx, cy, rx, ry, and theta for an ellipse. 

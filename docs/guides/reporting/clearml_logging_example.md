@@ -196,7 +196,7 @@ logger.report_media('audio', 'pink panther', iteration=1, local_path=audio_local
 ### HTML
 
 ```python
-logger.report_media("html", "url_html", iteration=1, url="https://allegro.ai/docs/index.html")
+logger.report_media("html", "url_html", iteration=1, url="https://clear.ml/docs/latest/docs/index.html")
 ```
 
 ![HTML sample](../../img/colab_explicit_reporting_09.png)

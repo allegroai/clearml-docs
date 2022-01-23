@@ -6,9 +6,9 @@ Tune experiments and edit an experiment's execution details, then execute the tu
 
 ## To Tune an Experiment and Execute it Remotely:
 
-1. Locate the experiment. Open the experiment's Project page from the Home page or the main Projects page.
+1. Locate the experiment. Open the experiment's Project page from the Dashboard or the main Projects page.
 
-    * On the Home page,
+    * On the Dashboard,
       * Click on an experiment from RECENT EXPERIMENTS
       * In RECENT PROJECTS **>** click on a project card **>** click experiment
       * In RECENT PROJECTS **>** click **VIEW ALL** **>** click the project card **>** click experiment
@@ -132,7 +132,7 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 * **General** - Parameter dictionaries (from code, connected to the Task by calling the [Task.connect](../references/sdk/task.md#connect)
   method).
 
-* Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq#track-env-vars)).
+* Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq.md#track-env-vars)).
 
 * Custom named parameter groups (see the `name` parameter in [Task.connect](../references/sdk/task.md#connect)).
 

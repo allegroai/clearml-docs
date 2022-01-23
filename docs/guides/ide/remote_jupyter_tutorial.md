@@ -32,7 +32,7 @@ clearml-session --docker nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04 --packages 
 * Specify the resource queue `--queue default`. 
 
 :::note
-There is an option to enter a project name using `--project <name>`. If no project is input, the default project 
+Enter a project name using `--project <name>`. If no project is input, the default project 
 name is "DevOps"
 :::
    

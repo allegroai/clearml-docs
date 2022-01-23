@@ -6,13 +6,13 @@ title: Configuring ClearML for Your ClearML Server
 This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
 :::
 
-The **ClearML** configuration file that will be initialized will contain the host URLs of the **ClearML Server**, and 
-**ClearML** credentials, allowing the code to integrate with the server. Later, **ClearML** can be tailored to fit requirements
+The ClearML **configuration file** that will be initialized will contain the host URLs of the **ClearML Server**, and 
+ClearML credentials, allowing the code to integrate with the server. Later, ClearML can be tailored to fit requirements
 by setting [configuration options](../configs/clearml_conf.md).
 
 **To configure ClearML for your ClearML Server:**
 1. If not installed already, install `clearml` (see [install](../getting_started/ds/ds_first_steps.md))
-1. In a terminal session, run the **ClearML** setup wizard. 
+1. In a terminal session, run the ClearML setup wizard. 
    ```
    clearml-init 
    ```
@@ -21,7 +21,7 @@ by setting [configuration options](../configs/clearml_conf.md).
    <summary className="cml-expansion-panel-summary">Learn about creating multiple ClearML configuration files</summary>
    <div className="cml-expansion-panel-content">
 
-   Additional **ClearML** configuration files can be created, for example, to use inside Docker containers when executing 
+   Additional ClearML configuration files can be created, for example, to use inside Docker containers when executing 
    a Task.
    
    Use the `--file` option for `clearml-init`.
@@ -32,7 +32,7 @@ by setting [configuration options](../configs/clearml_conf.md).
         
         CLEARML_CONFIG_FILE = MyOtherClearML.conf
 
-   For more information about running experiments inside Docker containers, see [ClearML Agent Execution](../clearml_agent#execution)
+   For more information about running experiments inside Docker containers, see [ClearML Agent Execution](../clearml_agent.md#execution)
    and [ClearML Agent Reference](../references/clearml_agent_ref.md).
     
    </div>
@@ -42,7 +42,7 @@ by setting [configuration options](../configs/clearml_conf.md).
    If the setup wizard's response indicates that a configuration file already exists, follow the instructions in 
    [here](#add-clearml-to-a-configuration-file). The wizard does not edit or overwrite existing configuration files.
 
-   1. The setup wizard prompts for **ClearML** credentials.
+   1. The setup wizard prompts for ClearML credentials.
     
     
             ClearML SDK setup process
@@ -53,7 +53,7 @@ by setting [configuration options](../configs/clearml_conf.md).
             
             Paste copied configuration here:
 
-   1. Get **ClearML** credentials. Open the **ClearML Web UI** in a browser. On the **PROFILE** page, click 
+   1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the **SETTINGS > WORKSPACE** page, click 
       **Create new credentials** **>** **Copy to clipboard**.
     
    1. At the command prompt `Paste copied configuration here:`, copy and paste the **ClearML** credentials.

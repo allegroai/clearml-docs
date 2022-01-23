@@ -1,18 +1,18 @@
 ---
 title: Configuration File
 ---
-This reference page provides detailed information about the configurable options for **ClearML** and **ClearML Agent**. 
-**ClearML** and **ClearML Agent** use the same configuration file `clearml.conf`. 
+This reference page provides detailed information about the configurable options for ClearML and ClearML Agent. 
+ClearML and ClearML Agent use the same configuration file `clearml.conf`. 
 
 This reference page is organized by configuration file section:
 
-* [agent](#agent-section) - Contains **ClearML Agent** configuration options. If **ClearML Agent** was not installed, the configuration 
+* [agent](#agent-section) - Contains ClearML Agent configuration options. If ClearML Agent was not installed, the configuration 
   file will not have an `agent` section.
-* [api](#api-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Server**.
-* [sdk](#sdk-section) - Contains **ClearML** and **ClearML Agent** configuration options for **ClearML Python Package** and **ClearML Server**.
+* [api](#api-section) - Contains ClearML and ClearML Agent configuration options for ClearML Server.
+* [sdk](#sdk-section) - Contains ClearML and ClearML Agent configuration options for ClearML Python Package and ClearML Server.
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
-in the **ClearML Agent** GitHub repository. 
+in the ClearML Agent GitHub repository. 
 
 :::info
 The values in the ClearML configuration file can be overridden by environment variables, the [configuration vault](../webapp/webapp_profile.md#configuration-vault), 
@@ -23,7 +23,7 @@ and command-line arguments.
 
 To add, change, or delete options, edit your configuration file.
 
-**To edit your **ClearML** configuration file:**
+**To edit your ClearML configuration file:**
 
 1. Open the configuration file for editing, depending upon your operating system:
 
@@ -60,7 +60,7 @@ for information about using environment variables with Windows in the configurat
 
 **`agent`** (*dict*)
         
-* Dictionary of top-level **ClearML Agent** options to configure **ClearML Agent** for Git credentials, package managers, cache management, workers, and Docker for workers.
+* Dictionary of top-level ClearML Agent options to configure ClearML Agent for Git credentials, package managers, cache management, workers, and Docker for workers.
 ---
         
 **`agent.cuda_version`** (*float*)
@@ -538,25 +538,25 @@ Torch Nightly builds are ephemeral and are deleted from time to time.
 
 **`api`** (*dict*)
 
-Dictionary of configuration options for the **ClearML Server** API, web, and file servers and credentials.
+Dictionary of configuration options for the ClearML Server API, web, and file servers and credentials.
 
 ---
 
 **`api.api_server`** (*string*)
         
-* The URL of your **ClearML**  API server. For example, `https://api.MyDomain.com`.
+* The URL of your ClearML API server. For example, `https://api.MyDomain.com`.
         
 ---
         
 **`api.web_server`** (*string*)
         
-* The URL of your **ClearML**  web server. For example, `https://app.MyDomain.com`.
+* The URL of your ClearML web server. For example, `https://app.MyDomain.com`.
         
 ---
 
 **`api.files_server`** (*string*)
         
-* The URL of your **ClearML**  file server. For example, `https://files.MyDomain.com`.
+* The URL of your ClearML file server. For example, `https://files.MyDomain.com`.
         
 :::warning
 You must use a secure protocol. For ``api.web_server``, ``api.files_server``, and ``api.files_server``. You must use a secure protocol, "https". Do not use "http".
@@ -576,13 +576,13 @@ You must use a secure protocol. For ``api.web_server``, ``api.files_server``, an
         
 **`api.credentials.access_key`** (*string*)
         
-* Your **ClearML**  access key.
+* Your ClearML access key.
         
 ---
         
 **`api.credentials.secret_key`** (*string*)
         
-* Your **ClearML**  credentials.
+* Your ClearML credentials.
         
 ---
 
@@ -607,7 +607,7 @@ Set to False only if required.
 
 **`sdk`** (*dict*)
 
-* Dictionary that contains configuration options for the **ClearML Python Package** and related options, including storage, 
+* Dictionary that contains configuration options for the ClearML Python Package and related options, including storage, 
 metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure Storage, log, and development. 
 
 <br/>
@@ -852,7 +852,7 @@ and limitations on bucket naming.
         
 **`sdk.development.worker.report_period_sec`** (*integer*)
         
-* For development mode workers, the interval in seconds for a development mode **ClearML**  worker to report.
+* For development mode workers, the interval in seconds for a development mode ClearML worker to report.
         
 <br/>
 
@@ -1087,8 +1087,8 @@ will not exceed the value of `matplotlib_untitled_history_size`
 
 ## Configuration Vault
 
-:::note
-This feature is only supported by the **ClearML Enterprise Server**
+:::note Enterprise Feature
+This feature is available under the ClearML Enterprise plan
 :::
 
 The ClearML Enterprise Server includes the configuration vault. Users can add configuration sections to the vault and, once 

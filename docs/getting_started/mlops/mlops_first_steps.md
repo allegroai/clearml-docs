@@ -3,7 +3,7 @@ title: First Steps
 ---
 
 :::note
-This tutorial assumes that you've already [signed up](https://app.community.clear.ml) to ClearML
+This tutorial assumes that you've already [signed up](https://app.clear.ml) to ClearML
 :::
 
 ClearML provides tools for **automation**, **orchestration**, and **tracking**, all key in performing effective MLOps. 
@@ -33,7 +33,7 @@ required python packages, and execute & monitor the process.
     pip install clearml-agent
     ```
 
-1. Connect the agent to the server by [creating credentials](https://app.community.clear.ml/profile), then run this:
+1. Connect the agent to the server by [creating credentials](https://app.clear.ml/settings/workspace-configuration), then run this:
 
     ```bash
     clearml-agent init
@@ -115,7 +115,7 @@ Task.enqueue(task=cloned_task, queue_name='default')
 ```
 
 ### Advanced Usage
-Before execution, there are a variety of programmatic methods which can be used to manipulate a task object. 
+Before execution, use a variety of programmatic methods to manipulate a task object. 
 
 #### Modify Hyperparameters
 [Hyperparameters](../../fundamentals/hyperparameters.md) are an integral part of Machine Learning code as they let you 

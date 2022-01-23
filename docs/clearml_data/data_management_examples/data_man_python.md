@@ -56,11 +56,11 @@ This adds the downloaded files to the current dataset.
 dataset.upload()
 ```
 This uploads the dataset to the ClearML Server by default. The dataset's destination can be changed by specifying the 
-target storage with the `output_url` parameter of the [`upload`](../../references/sdk/dataset#upload) method. 
+target storage with the `output_url` parameter of the [`upload`](../../references/sdk/dataset.md#upload) method. 
 
 ### Finalizing the Dataset
 
-Run the [`finalize`](../../references/sdk/dataset#finzalize) command to close the dataset and set that dataset's tasks
+Run the [`finalize`](../../references/sdk/dataset.md#finalize) command to close the dataset and set that dataset's tasks
 status to *completed*. The dataset can only be finalized if it doesn't have any pending uploads. 
 
 ```python

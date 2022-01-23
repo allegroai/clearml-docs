@@ -8,7 +8,7 @@ source data to the ClearML Enterprise platform. That source data is a **mask**.
 Masks are used in deep learning for semantic segmentation.
 
 Masks correspond to raw data where the objects to be detected are marked with colors in the masks. The colors 
-are RGB values and represent the objects, which are labeled for segmentation.
+are RGB values and represent the objects that are labeled for segmentation.
 
 In frames used for semantic segmentation, the metadata connecting the mask files / images to the ClearML Enterprise platform,
 and the RGB values and labels used for segmentation are separate. They are contained in two different dictionaries of 

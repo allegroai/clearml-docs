@@ -9,7 +9,7 @@ to monitor experimentation, and more). The experiments table's auto-refresh allo
 
 :::info
 To assist in focusing on active experimentation, experiments and models can be archived, so they will not appear
-in the active experiments and models tables. See [Archiving](webapp_archiving).
+in the active experiments and models tables. See [Archiving](webapp_archiving.md).
 :::
 
 ![Experiment table](../img/webapp_exp_table_01.png)
@@ -22,8 +22,8 @@ The experiments table default and customizable columns are described in the foll
 |---|---|---|
 | **TYPE** | Type of experiment. **ClearML** supports multiple [task types](../fundamentals/task.md#task-types) for experimentation, and a variety of workflows and use cases. | Default |
 | **NAME** | Experiment name.  |  Default |
-| **TAGS** | Descriptive, user-defined, color-coded tags assigned to experiments. Use tags to classify experiments, and filter the list. See [tagging experiments](webapp_exp_track_visual#tagging-experiments). | Default |
-| **STATUS** | Experiment state (status). See a list of the [task states and state transtions](../fundamentals/task.md#task-states-and-state-transitions). |  Default |
+| **TAGS** | Descriptive, user-defined, color-coded tags assigned to experiments. Use tags to classify experiments, and filter the list. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Default |
+| **STATUS** | Experiment state (status). See a list of the [task states and state transitions](../fundamentals/task.md#task-states). |  Default |
 | **PROJECT** | Name of experiment's project.  |  Default |
 | **USER** | User who created or cloned the experiment.  |  Default (hidden) |
 | **STARTED** | Elapsed time since the experiment started. To view the date and time of start, hover over the elapsed time.  |  Default |
@@ -85,8 +85,13 @@ experiments in the table.
 
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ HYPER PARAMETERS** **>** Expand a section **>** Select the
   hyperparameter checkboxes.
+  
+:::note Float Values Display
+By default, the experiments table displays rounded up float values. Hover over a float to view its precise value in the 
+tooltip that appears. To view all precise values in a column, hover over a float and click <img src="/docs/latest/icons/ico-line-expand.svg" alt="Expand" className="icon size-md" />.  
+:::
 
-### Filtering Experiments
+### Filtering Columns
 
 ![Filtering table gif](../img/gif/filter_screenshots.gif)
 
@@ -97,12 +102,15 @@ There are a few types of filters:
 * Value set - Choose which values to include from a list of all values in the column
 * Numerical ranges - Insert minimum and / or maximum value
 * Date ranges - Insert starting and / or ending date and time
-* Tags - Choose which tags to include from a list of all tags used in the column. Additionally, tags can be filtered using
-  the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These options appear
-    on the top of the tag list. 
+* Tags - Choose which tags to filter by from a list of all tags used in the column. 
+  * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These 
+    options appear on the top of the tag list.
+  * Filter by the absence of a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox.
   
 Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
 
+To clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" /> 
+in the top right corner of the table.
 
 
 
@@ -118,31 +126,33 @@ Once a filter is applied to a column, its filter icon will appear with a highlig
 
 ## Experiment Actions
 
-The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states-and-state-transitions)
+The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states)
 that allow each operation.  
 
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
-| View details | View experiment details in the experiments table, the [info panel](webapp_exp_track_visual#info-panel) (keep the experiments table in view), or the [full screen details view](webapp_exp_track_visual#full-screen-details-view). | Any state |  None  |
-| Manage a queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues) page. | *Enqueued* |  None  |
+| View details | View experiment details in the experiments table, the [info panel](webapp_exp_track_visual.md#info-panel) (keep the experiments table in view), or the [full screen details view](webapp_exp_track_visual.md#full-screen-details-view). | Any state |  None  |
+| Manage a queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
 | View a worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
-| Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
-| Archive | To more easily work with active experiments, move an experiment to the archive. See [Archiving](webapp_archiving). | Any state |  None  |
+| Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
+| Archive | To more easily work with active experiments, move an experiment to the archive. See [Archiving](webapp_archiving.md). | Any state |  None  |
 | Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft* | *Pending* |
 | Dequeue | Remove an experiment from a queue. | *Pending* | *Draft* |
 | Reset  | Delete the log and output from a previous run of an experiment (for example, before rerunning it). | *Completed*, *Aborted*, or *Failed* | *Draft* |
 | Abort | Manually terminate a *Running* experiment. | *Running* | *Aborted* |
+| Abort All Children | Manually terminate all *Running* experiments which have this task as a parent | *Running* or *Aborted* | None for parent experiment, *Aborted* for child experiments |
 | Publish | Publish an experiment to prevent changes to its tracking data, inputs, and outputs. Published experiments and their models are read-only. *Published* experiments cannot be enqueued, but they can be cloned, and their clones can be edited, tuned, and enqueued. | *Completed*, *Aborted*, or *Failed*.  | *Published* |
-| Tags | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual#tagging-experiments). | Any state |  None  |
+| Tags | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
 | Move | Move an experiment to another project. | Any state |  None  |
+| Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any State | None |
 
 These actions can be accessed with the context menu (when right-clicking an experiment or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
 in an experiment's info panel).
 
 
 Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
-Select multiple experiments, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+[Select multiple experiments](#selecting-multiple-experiments), then use either the context menu, or the bar that appears at the bottom of the page, to perform
 operations on the selected experiments. Actions can be performed only on the experiments that match the action criteria 
 (for example, only *Running* experiments can be aborted). The context menu shows the number 
 of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooltip that
@@ -150,6 +160,18 @@ appears when hovering over an action icon.
 
 ![Experiment table batch operations](../img/webapp_exp_table_batch_operations.png)
 
+## Selecting Multiple Experiments
+
+Select multiple experiments by clicking the checkbox on the left of each relevant experiment. Clear any existing selection 
+by clicking the checkbox in the top left corner of the table.
+
+Click the checkbox in the top left corner of the table to select all items currently visible.
+
+An extended bulk selection tool is available through the down arrow next to the checkbox in the top left corner, enabling 
+selecting items beyond the items currently on-screen:
+* **All** - Select all experiments in the project
+* **None** - Clear selection
+* **Filtered** - Select **all experiments in the project** that match the current active filters in the project
 
 ## Creating an Experiment Leaderboard
 
