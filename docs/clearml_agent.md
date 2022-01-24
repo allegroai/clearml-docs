@@ -115,9 +115,9 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
    
    This is needed for installing Python packages not found in pypi. 
 
-       Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
-   
-   The setup wizard completes.
+        Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
+
+    The setup wizard completes.
     
         New configuration stored in /home/<username>/clearml.conf
         CLEARML-AGENT setup completed successfully.
