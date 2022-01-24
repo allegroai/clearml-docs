@@ -13,7 +13,7 @@ The following page provides a reference to `clearml-data`'s CLI commands.
 
 ### Creating a Dataset
 ```bash
-clearml-data create --project <project_name> --name <dataset_name> --parents <existing_dataset_id>`
+clearml-data create --project <project_name> --name <dataset_name> --parents <existing_dataset_id>
 ```
 Creates a new dataset. <br/>
 
@@ -132,7 +132,7 @@ Once a dataset is finalized, it can no longer be modified.
 
 ### Syncing Local Storage
 ```
-clearml-data sync [--id <dataset_id] --folder <folder_location>  [--parents '<parent_id>']`
+clearml-data sync [--id <dataset_id] --folder <folder_location>  [--parents '<parent_id>']
 ```
 This option syncs a folder's content with ClearML. It is useful in case a user has a single point of truth (i.e. a folder) which
 updates from time to time.

@@ -53,7 +53,7 @@ For this example, use a local version of [this script](https://github.com/allegr
 1. Go to the root folder of the cloned repository 
 1. Run the following command:
 
-``` bash
+```bash
 clearml-task --project keras --name local_test --script webinar-0620/keras_mnist.py --requirements webinar-0620/requirements.txt --args epochs=1 --queue default
 ```  
 

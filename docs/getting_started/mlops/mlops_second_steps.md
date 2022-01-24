@@ -43,7 +43,7 @@ dataset_folder = dataset.get_mutable_local_copy(
     overwrite=True
 )
 # change some files in the `./work_dataset` folder
-...
+
 # create a new version of the dataset with the pickle file
 new_dataset = Dataset.create(
     dataset_project='data', dataset_name='dataset_v2', 

@@ -1096,10 +1096,10 @@ For example, to get the metrics for an experiment and to print metrics as a hist
 1. Send a request for a metrics histogram for experiment (task) ID `11` using the `events` service `ScalarMetricsIterHistogramRequest` method and print the histogram.
 
     ```python
-    # Import Session from the trains backend_api
-    from trains.backend_api import Session
+    # Import Session from the clearml backend_api
+    from clearml.backend_api import Session
     # Import the services for tasks, events, and projects
-    from trains.backend_api.services import tasks, events, projects
+    from clearml.backend_api.services import tasks, events, projects
         
     # Create an authenticated session
     session = Session()

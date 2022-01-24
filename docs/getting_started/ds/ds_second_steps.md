@@ -99,7 +99,11 @@ we need to pass a storage location for the model files to be uploaded to.
 
 For example, upload all snapshots to an S3 bucket:
 ```python
-task = Task.init(project_name='examples', task_name='storing model', output_uri='s3://my_models/')
+task = Task.init(
+    project_name='examples', 
+    task_name='storing model', 
+    output_uri='s3://my_models/'
+)
 ```
 
 Now, whenever the framework (TF/Keras/PyTorch etc.) stores a snapshot, the model file is automatically uploaded to the bucket to a specific folder for the experiment.
