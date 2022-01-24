@@ -389,15 +389,15 @@ A single agent can listen to multiple queues. The priority is set by their order
 ```bash
 clearml-agent daemon --detached --queue high_q low_q --gpus 0
 ```
-This ensures the agent first tries to pull a Task from the “hiqh_q” queue, and only if it is empty, the agent will try to pull 
-from the “low_q” queue.
+This ensures the agent first tries to pull a Task from the `hiqh_q` queue, and only if it is empty, the agent will try to pull 
+from the `low_q` queue.
 
 To make sure an agent pulls from all queues equally, add the `--order-fairness` flag.
 ```bash
 clearml-agent daemon --detached --queue group_a group_b --order-fairness  --gpus 0
 ```
-It will make sure the agent will pull from the “group_a” queue, then from “group_b”, then back to “group_a”, etc. This ensures 
-that “group A” or ”group_b” will not be able to starve one another of resources.
+It will make sure the agent will pull from the `group_a` queue, then from `group_b`, then back to `group_a`, etc. This ensures 
+that `group A` or `group_b` will not be able to starve one another of resources.
 
 ### Explicit Task Execution
 
@@ -750,8 +750,8 @@ Currently, these runtime properties can only be set using an ClearML REST API ca
 endpoint, as follows: 
 
 * The body of the request must contain the `worker-id`, and the runtime property to add.
-* An expiry date is optional. Use the format `”expiry”:<time>`. For example,  `”expiry”:86400` will set an expiry of 24 hours.
-* To delete the property, set the expiry date to zero, `'expiry:0'`.
+* An expiry date is optional. Use the format `"expiry":<time>`. For example,  `"expiry":86400` will set an expiry of 24 hours.
+* To delete the property, set the expiry date to zero, `"expiry":0`.
 
 For example, to force a worker on for 24 hours:
 
