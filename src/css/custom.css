@@ -461,7 +461,6 @@ html[data-theme="light"] .footer__link-item[href*="stackoverflow"] {
   pointer-events: none;
 }
 
-
 /* table */
 .markdown table {
   border-spacing: 0;

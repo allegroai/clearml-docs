@@ -464,8 +464,7 @@ ClearML Agent uses the provided default Docker container, which can be overridde
 
 All ClearML Agent flags (Such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
-To execute ClearML Agent in Docker mode, run: 
-
+To execute ClearML Agent in Docker mode, run:
 ```bash
 clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional default docker image to use]
 ```
@@ -528,7 +527,7 @@ needs.
 `dynamic-gpus` enables dynamic allocation of GPUs based on queue properties.
 To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
 
-```bash
+```console
 clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
 ```
 
@@ -542,7 +541,7 @@ Let's say a server has three queues:
 An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple
 queues that are configured to run with a certain amount of resources:
 
-```bash
+```console
 clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue quad_gpu=4 dual_gpu=2 
 ``` 
 
@@ -552,7 +551,7 @@ queue, look for available GPUs again and spin on GPUs 4-5.
 
 Another option for allocating GPUs:
 
-```bash
+```console
 clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue dual=2 opportunistic=1-4
 ``` 
 
@@ -566,11 +565,9 @@ next task without waiting for the previous one to complete. This mode is intende
 are usually idling, such as periodic cleanup services or a [pipeline controller](references/sdk/automation_controller_pipelinecontroller.md). 
 
 To run a `clearml-agent` in services mode, run:
-
 ```bash
 clearml-agent daemon --services-mode --queue services --create-queue --docker <docker_name> --cpu-only
 ```
-
 :::note Notes
 * `services-mode` currently only supports Docker mode. Each service spins on its own Docker image.
 * The default `clearml-server` configuration already runs a single `clearml-agent` in services mode that listens to the 
@@ -601,25 +598,19 @@ CLEARML_API_SECRET_KEY
 
 Build a Docker container that when launched executes a specific experiment, or a clone (copy) of that experiment.
 
-
 - Build a Docker container that at launch will execute a specific Task.
-  
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point reuse_task
   ```
-
 - Build a Docker container that at launch will clone a Task  specified by Task ID, and will execute the newly cloned Task.
-  
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point clone_task
   ```
-
 - Run built Docker by executing:
-
   ```bash
   docker run <new-docker-name>
   ```
-  
+
 ### Base Docker Container
 
 Build a Docker container according to the execution environment of a specific Task.

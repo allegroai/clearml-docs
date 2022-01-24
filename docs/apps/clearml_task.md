@@ -93,7 +93,6 @@ Using `clearml-task` to execute a local script is very similar to using it with 
 clearml-task --project examples --name local_test --script keras_mnist.py --requirements requirements.txt --args epochs=1 --queue default
 ```  
 
-
 The `keras_mnist.py` script on the user's local machine is imported as a ClearML task named `local_test` in the `examples` project.
 
 Its Python requirements are taken from the local `requiremnts.txt` file, and its `epochs` command line argument value is set.

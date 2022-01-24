@@ -49,7 +49,6 @@ To run the monitoring service:
 ```bash
 python slack_alerts.py --channel <Slack-channel-name> --slack-api <Slack-API-token> --local True [...]
 ```
-
    * `channel` - The Slack channel where alerts will be posted.
    * `slack_api` - Slack API key.
    * `local` - If `True`, run monitoring services locally. If `False`, enqueue the task in the queue passed as the 
