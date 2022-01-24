@@ -78,13 +78,9 @@ These commands demonstrate a few useful use cases for `clearml-task`
 
 ### Executing Code from a Remote Repository 
 
-<div className="wb-normal">
-
 ```bash
 clearml-task --project examples --name remote_test --repo https://github.com/allegroai/events.git --script /webinar-0620/keras_mnist.py --args batch_size=64 epochs=1 --queue default
 ```
-
-</div>
 
 The `keras_mnist.py` script from the [events](https://github.com/allegroai/events) GitHub repository is imported as a 
 ClearML task named `remote_test` in the `examples` project. Its command line arguments `batch_size` and `epochs` values 
@@ -93,13 +89,10 @@ are set, and the task is enqueued for execution on the `default` queue.
 ### Executing a Local Script
 Using `clearml-task` to execute a local script is very similar to using it with a [remote repo](#executing-code-from-a-remote-repository).
 
-<div className="wb-normal">
-
 ```bash
 clearml-task --project examples --name local_test --script keras_mnist.py --requirements requirements.txt --args epochs=1 --queue default
 ```  
 
-</div>
 
 The `keras_mnist.py` script on the user's local machine is imported as a ClearML task named `local_test` in the `examples` project.
 
@@ -110,13 +103,9 @@ The task is enqueued for execution on the `default` queue.
 
 ### Pushing a Script to the Server 
 
-<div className="wb-normal">
-
 ```bash
 clearml-task --project examples --name no_execute --script keras_mnist.py --requirements requirements.txt --args epochs=1 
 ```  
-
-</div>
 
 The `keras_mnist.py` script on the user's local machine is imported as a ClearML task named `no_execute` in the `examples` project.
 

@@ -461,9 +461,6 @@ html[data-theme="light"] .footer__link-item[href*="stackoverflow"] {
   pointer-events: none;
 }
 
-.wb-normal [class^='codeBlockLines'] {
-  white-space: normal;
-}
 
 /* table */
 .markdown table {

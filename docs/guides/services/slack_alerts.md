@@ -46,13 +46,9 @@ Run the monitoring service in one of these ways:
 
 To run the monitoring service:
 
-<div className="wb-normal">
-
 ```bash
 python slack_alerts.py --channel <Slack-channel-name> --slack-api <Slack-API-token> --local True [...]
 ```
-
-</div>
 
    * `channel` - The Slack channel where alerts will be posted.
    * `slack_api` - Slack API key.

@@ -21,13 +21,9 @@ where a `clearml-agent` will run and spin an instance of the remote session.
 
 Execute the following command:
 
-<div className="wb-normal">
-
 ```bash
 clearml-session --docker nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04 --packages "clearml" "tensorflow>=2.2" "keras" --queue default
 ```
-
-</div>
 
 This sets the following arguments:
 
