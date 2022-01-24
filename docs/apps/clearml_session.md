@@ -39,7 +39,7 @@ VS Code remote sessions use ports 8878 and 8898 respectively.
 <br/>
 
 :::info Remote PyCharm
-You can work also with PyCharm in a remote session over SSH. Use the [PyCharm Plugin](../guides/ide/integration_pycharm.md) 
+You can also work with PyCharm in a remote session over SSH. Use the [PyCharm Plugin](../guides/ide/integration_pycharm.md) 
 to automatically sync local configurations with a remote session.
 :::
 
