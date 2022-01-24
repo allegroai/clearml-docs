@@ -122,7 +122,7 @@ instructions in the [Security](clearml_server_security.md) page.
 1. Download the ClearML Server docker-compose YAML file.
 
         sudo curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
-   
+
 1. For Linux only, configure the **ClearML Agent Services**. If `CLEARML_HOST_IP` is not provided, then ClearML Agent Services uses the external public address of the **ClearML Server**. If `CLEARML_AGENT_GIT_USER` / `CLEARML_AGENT_GIT_PASS` are not provided, then **ClearML Agent Services** can't access any private repositories for running service tasks.
 
         export CLEARML_HOST_IP=server_host_ip_here

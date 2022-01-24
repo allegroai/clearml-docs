@@ -115,20 +115,18 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
    
    This is needed for installing Python packages not found in pypi. 
 
-   ```console
-   Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
-   ```
+       Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
    
    The setup wizard completes.
     
         New configuration stored in /home/<username>/clearml.conf
         CLEARML-AGENT setup completed successfully.
 
-   The configuration file location depends upon the operating system:
+    The configuration file location depends upon the operating system:
             
-   * Linux - `~/clearml.conf`
-   * Mac - `$HOME/clearml.conf`
-   * Windows - `\User\<username>\clearml.conf`
+    * Linux - `~/clearml.conf`
+    * Mac - `$HOME/clearml.conf`
+    * Windows - `\User\<username>\clearml.conf`
 
 1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
    
@@ -464,7 +462,7 @@ ClearML Agent uses the provided default Docker container, which can be overridde
 
 All ClearML Agent flags (Such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
-To execute ClearML Agent in Docker mode, run:
+To execute ClearML Agent in Docker mode, run: 
 ```bash
 clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional default docker image to use]
 ```
@@ -720,9 +718,7 @@ endpoint, as follows:
 
 For example, to force a worker on for 24 hours:
 
-```bash
-curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"worker":"<worker_id>","runtime_properties":[{"key": "force", "value": "on", "expiry": 86400}]}' http://<api-server-hostname-or-ip>:8008/workers.set_runtime_properties
-```
+    curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"worker":"<worker_id>","runtime_properties":[{"key": "force", "value": "on", "expiry": 86400}]}' http://<api-server-hostname-or-ip>:8008/workers.set_runtime_properties
 
 ### Overriding Worker Schedules Using Queue Tags
 
