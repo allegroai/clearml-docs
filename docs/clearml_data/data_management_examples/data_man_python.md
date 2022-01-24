@@ -36,7 +36,10 @@ This script downloads the data and `dataset_path` contains the path to the downl
 ```python
 from clearml import Dataset
 
-dataset = Dataset.create(dataset_name="cifar_dataset", dataset_project="dataset examples" )
+dataset = Dataset.create(
+    dataset_name="cifar_dataset", 
+    dataset_project="dataset examples"
+)
  ```
 
 This creates a data processing task called `cifar_dataset` in the `dataset examples` project, which

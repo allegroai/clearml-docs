@@ -115,18 +115,23 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
    
    This is needed for installing Python packages not found in pypi. 
 
-        Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
+   <div className="wb-normal">
 
-    The setup wizard completes.
+   ```console
+   Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
+   ```
+   </div>
+   
+   The setup wizard completes.
     
         New configuration stored in /home/<username>/clearml.conf
         CLEARML-AGENT setup completed successfully.
 
-    The configuration file location depends upon the operating system:
+   The configuration file location depends upon the operating system:
             
-    * Linux - `~/clearml.conf`
-    * Mac - `$HOME/clearml.conf`
-    * Windows - `\User\<username>\clearml.conf`
+   * Linux - `~/clearml.conf`
+   * Mac - `$HOME/clearml.conf`
+   * Windows - `\User\<username>\clearml.conf`
 
 1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
    
@@ -463,9 +468,14 @@ ClearML Agent uses the provided default Docker container, which can be overridde
 All ClearML Agent flags (Such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
 To execute ClearML Agent in Docker mode, run: 
+
+<div className="wb-normal">
+
 ```bash
 clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional default docker image to use]
 ```
+
+</div>
 
 To use the current `clearml-agent` version in the Docker container, instead of the latest `clearml-agent` version that is 
 automatically installed, run:
@@ -525,9 +535,13 @@ needs.
 `dynamic-gpus` enables dynamic allocation of GPUs based on queue properties.
 To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
 
-```console
+<div className="wb-normal">
+
+```bash
 clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
 ```
+
+</div>
 
 ### Example
 
@@ -539,9 +553,13 @@ Let's say a server has three queues:
 An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple
 queues that are configured to run with a certain amount of resources:
 
-```console
+<div className="wb-normal">
+
+```bash
 clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue quad_gpu=4 dual_gpu=2 
 ``` 
+
+</div>
 
 The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue.
 The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from `dual_gpu`
@@ -549,9 +567,13 @@ queue, look for available GPUs again and spin on GPUs 4-5.
 
 Another option for allocating GPUs:
 
-```console
+<div className="wb-normal">
+
+```bash
 clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue dual=2 opportunistic=1-4
 ``` 
+
+</div>
 
 Notice that a minimum and maximum value of GPUs is specified for the `opportunistic` queue. This means the agent
 will pull a Task from the `opportunistic` queue and allocate up to 4 GPUs based on availability (i.e. GPUs not currently
@@ -563,9 +585,14 @@ next task without waiting for the previous one to complete. This mode is intende
 are usually idling, such as periodic cleanup services or a [pipeline controller](references/sdk/automation_controller_pipelinecontroller.md). 
 
 To run a `clearml-agent` in services mode, run:
+
+<div className="wb-normal">
+
 ```bash
 clearml-agent daemon --services-mode --queue services --create-queue --docker <docker_name> --cpu-only
 ```
+</div>
+
 :::note Notes
 * `services-mode` currently only supports Docker mode. Each service spins on its own Docker image.
 * The default `clearml-server` configuration already runs a single `clearml-agent` in services mode that listens to the 
@@ -596,18 +623,28 @@ CLEARML_API_SECRET_KEY
 
 Build a Docker container that when launched executes a specific experiment, or a clone (copy) of that experiment.
 
+
+<div className="wb-normal">
+
 - Build a Docker container that at launch will execute a specific Task.
+  
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point reuse_task
   ```
+
 - Build a Docker container that at launch will clone a Task  specified by Task ID, and will execute the newly cloned Task.
+  
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point clone_task
   ```
+
 - Run built Docker by executing:
+
   ```bash
   docker run <new-docker-name>
   ```
+  
+</div>
 
 ### Base Docker Container
 
@@ -718,7 +755,13 @@ endpoint, as follows:
 
 For example, to force a worker on for 24 hours:
 
-    curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"worker":"<worker_id>","runtime_properties":[{"key": "force", "value": "on", "expiry": 86400}]}' http://<api-server-hostname-or-ip>:8008/workers.set_runtime_properties
+<div className="wb-normal">
+
+```bash
+curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"worker":"<worker_id>","runtime_properties":[{"key": "force", "value": "on", "expiry": 86400}]}' http://<api-server-hostname-or-ip>:8008/workers.set_runtime_properties
+```
+
+</div>
 
 ### Overriding Worker Schedules Using Queue Tags
 
@@ -736,10 +779,16 @@ APIClient. The body of the call must contain the ``queue-id`` and the tags to ad
 
 For example, force workers on for a queue using the APIClient:
 
-    from trains.backend_api.session.client import APIClient
+    from clearml.backend_api.session.client import APIClient
     client = APIClient()
-    client.queues.update(queue=”<queue_id>”, tags=["force_workers:on"]
+    client.queues.update(queue="<queue_id>", tags=["force_workers:on"]
 
 Or, force workers on for a queue using the REST API:
 
-    curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"queue":"<queue_id>","tags":["force_workers:on"]}' http://<api-server-hostname-or-ip>:8008/queues.update
+<div className="wb-normal">
+
+```bash
+curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"queue":"<queue_id>","tags":["force_workers:on"]}' http://<api-server-hostname-or-ip>:8008/queues.update
+```
+
+</div>

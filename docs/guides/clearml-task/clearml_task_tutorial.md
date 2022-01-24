@@ -13,9 +13,13 @@ on a remote or local machine, from a remote repository and your local machine.
 
 ### Executing Code from a Remote Repository 
 
+<div className="wb-normal">
+
 ``` bash
 clearml-task --project keras_examples --name remote_test --repo https://github.com/allegroai/events.git --script /webinar-0620/keras_mnist.py --args batch_size=64 epochs=1 --queue default
 ```
+
+</div>
 
 This sets the following arguments: 
 
@@ -53,9 +57,13 @@ For this example, use a local version of [this script](https://github.com/allegr
 1. Go to the root folder of the cloned repository 
 1. Run the following command:
 
+<div className="wb-normal">
+
 ``` bash
 clearml-task --project keras --name local_test --script webinar-0620/keras_mnist.py --requirements webinar-0620/requirements.txt --args epochs=1 --queue default
 ```  
+
+</div>
 
 This sets the following arguments:
 * `--project keras --name local_test` - The project and experiment names 

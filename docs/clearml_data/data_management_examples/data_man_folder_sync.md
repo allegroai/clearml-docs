@@ -56,9 +56,13 @@ Now we'll modify the folder:
 
 We'll repeat the process of creating a new dataset with the previous one as its parent, and syncing the folder.
 
+<div className="wb-normal">
+
 ```bash
 clearml-data sync --project datasets --name second_ds --parents a1ddc8b0711b4178828f6c6e6e994b7c --folder data_samples
 ```
+
+</div>
 
 Expected response:
 ```

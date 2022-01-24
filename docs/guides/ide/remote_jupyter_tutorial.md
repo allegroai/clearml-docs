@@ -19,17 +19,23 @@ where a `clearml-agent` will run and spin an instance of the remote session.
 
 ### Step 1: Launch `clearml-session`
 
-Execute the `clearml-session` command with the following command line options:
+Execute the following command:
+
+<div className="wb-normal">
 
 ```bash
 clearml-session --docker nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04 --packages "clearml" "tensorflow>=2.2" "keras" --queue default
 ```
-   
-* Enter a docker image `--docker nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04` 
+
+</div>
+
+This sets the following arguments:
+
+* `--docker nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04` - Docker image
     
-* Enter required python packages `--packages "clearml" "tensorflow>=2.2" "keras"`
+* `--packages "clearml" "tensorflow>=2.2" "keras"` - Required Python packages
       
-* Specify the resource queue `--queue default`. 
+* `--queue default` - Selected queue to launch the session from 
 
 :::note
 Enter a project name using `--project <name>`. If no project is input, the default project 
