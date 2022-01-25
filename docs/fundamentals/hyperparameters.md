@@ -165,8 +165,6 @@ config_file_yaml = task.connect_configuration(name="yaml file", configuration='p
 Configuration objects can be split into categories in the Configuration section.
 The "name" argument, is the name of the section that the object will go into. If a section name is not specified, the default section is *General*.
 
-See [here](https://github.com/allegroai/clearml/blob/master/examples/reporting/model_config.py) for a detailed example.
-
 ![Configuration objects](../img/fundamentals_hyperparameters_config_objects.png)
 
 ## Manual Parameter Access
