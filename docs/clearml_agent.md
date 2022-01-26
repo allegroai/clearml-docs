@@ -447,6 +447,14 @@ This mode is similar to the PIP mode but uses [Poetry](https://python-poetry.org
 To enable Poetry mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: poetry` in the “package_manager” 
 section.
 
+:::note Using Poetry with Pyenv
+Some versions of poetry (using `install-poetry.py`) do not respect `pyenv global`.  
+If you are using pyenv to control the environment where you use ClearML Agent, you can:
+  * Use poetry v1.2 and above (which [fixes this issue](https://github.com/python-poetry/poetry/issues/5077))
+  * Install poetry with the deprecated `get-poetry.py` installer
+
+:::
+
 ### Docker Mode 
 :::note
 Docker Mode is only supported in linux.<br/>
