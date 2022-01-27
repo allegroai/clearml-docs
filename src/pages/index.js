@@ -120,7 +120,7 @@ function Home() {
               </Link>
               <Link
                 className="button button--primary button--lg button--rounded shadow--md"
-                to="https://app.community.clear.ml">
+                to="https://app.clear.ml">
                 Free Sign Up
               </Link>
               <span className={styles.indexCtasGitHubButtonWrapper}>
