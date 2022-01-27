@@ -56,7 +56,7 @@ For this example, use a local version of [this script](https://github.com/allegr
 
 ```bash
 clearml-task --project keras --name local_test --script webinar-0620/keras_mnist.py --branch master --requirements webinar-0620/requirements.txt --args epochs=1 --queue default
-```
+```  
 
 This sets the following arguments:
 * `--project keras --name local_test` - The project and experiment names 
