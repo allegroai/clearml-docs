@@ -128,7 +128,7 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     * Mac - `$HOME/clearml.conf`
     * Windows - `\User\<username>\clearml.conf`
 
-1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
+1. Optionally, configure ClearML options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
    
 :::note
 The ClearML Enterprise server provides a [configuration vault](webapp/webapp_profile.md#configuration-vault), the contents 
@@ -142,7 +142,7 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 
 **Adding ClearML Agent to a ClearML configuration file:**
 
-1. Open the **ClearML** configuration file for editing. Depending upon the operating system, it is:
+1. Open the ClearML configuration file for editing. Depending upon the operating system, it is:
     * Linux - `~/clearml.conf`
     * Mac - `$HOME/clearml.conf`
     * Windows - `\User\<username>\clearml.conf`
@@ -384,7 +384,7 @@ A single agent can listen to multiple queues. The priority is set by their order
 ```bash
 clearml-agent daemon --detached --queue high_q low_q --gpus 0
 ```
-This ensures the agent first tries to pull a Task from the `hiqh_q` queue, and only if it is empty, the agent will try to pull 
+This ensures the agent first tries to pull a Task from the `high_q` queue, and only if it is empty, the agent will try to pull 
 from the `low_q` queue.
 
 To make sure an agent pulls from all queues equally, add the `--order-fairness` flag.
@@ -392,7 +392,7 @@ To make sure an agent pulls from all queues equally, add the `--order-fairness` 
 clearml-agent daemon --detached --queue group_a group_b --order-fairness  --gpus 0
 ```
 It will make sure the agent will pull from the `group_a` queue, then from `group_b`, then back to `group_a`, etc. This ensures 
-that `group A` or `group_b` will not be able to starve one another of resources.
+that `group_a` or `group_b` will not be able to starve one another of resources.
 
 ### Explicit Task Execution
 
@@ -468,7 +468,7 @@ When executing the ClearML Agent in Docker mode, it will:
    
 ClearML Agent uses the provided default Docker container, which can be overridden from the UI. 
 
-All ClearML Agent flags (Such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
+All ClearML Agent flags (such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
 To execute ClearML Agent in Docker mode, run: 
 ```bash

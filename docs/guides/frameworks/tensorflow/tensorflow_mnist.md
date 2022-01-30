@@ -6,14 +6,7 @@ The [tensorflow_mnist.py](https://github.com/allegroai/clearml/blob/master/examp
 example demonstrates the integration of ClearML into code that uses TensorFlow and Keras to train a neural network on 
 the Keras built-in [MNIST](https://www.tensorflow.org/api_docs/python/tf/keras/datasets/mnist) handwritten digits dataset. 
 
-The script builds a TensorFlow Keras model, and trains and tests it with the following:
-
-* Loss objective function - [tf.keras.metrics.SparseCategoricalCrossentropy](https://www.tensorflow.org/api_docs/python/tf/keras/losses/SparseCategoricalCrossentropy)
-* Accuracy metric - [tf.keras.metrics.SparseCategoricalAccuracy](https://www.tensorflow.org/api_docs/python/tf/keras/metrics/SparseCategoricalAccuracy)
-* Model checkpointing - [tf.clearml.Checkpoint](https://www.tensorflow.org/api_docs/python/tf/train/Checkpoint?hl=ca) and [tf.train.CheckpointManager](https://www.tensorflow.org/api_docs/python/tf/train/CheckpointManager?hl=ca)
-
-When the script runs, it creates an experiment named `Tensorflow v2 mnist with summaries`, which is associated with the 
-`examples` project.
+When the script runs, it creates an experiment named `Tensorflow v2 mnist with summaries` in the `examples` project.
 
 ## Scalars
 

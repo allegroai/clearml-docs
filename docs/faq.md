@@ -717,7 +717,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 1. Use the [Task.set_credentials](references/sdk/task.md#taskset_credentials) 
    method to specify the host, port, access key and secret key (see step 1).
    ```python
-   # Set your credentials using the trains apiserver URI and port, access_key, and secret_key.
+   # Set your credentials using the clearml apiserver URI and port, access_key, and secret_key.
    Task.set_credentials(host='http://localhost:8008',key='<access_key>', secret='<secret_key>')
    ```
    
