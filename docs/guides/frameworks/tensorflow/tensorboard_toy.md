@@ -11,7 +11,7 @@ project.
 
 ## Scalars
 
-The `tf.summary.scalar` output appears in the ClearML wen UI, in the experiment's **RESULTS** **>** 
+The `tf.summary.scalar` output appears in the ClearML web UI, in the experiment's **RESULTS** **>** 
 **SCALARS**. Resource utilization plots, which are titled **:monitor: machine**, also appear in the **SCALARS** tab.
 
 ![image](../../../img/examples_tensorboard_toy_03.png)
