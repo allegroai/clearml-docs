@@ -15,8 +15,8 @@ This documentation page applies to deploying your own open source ClearML Server
 
    For Linux only, if upgrading from <strong>Trains Server</strong> v0.14 or older, configure the <strong>ClearML Agent Services</strong>.
 
-   * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** will use the external public address of the **ClearML Server**.
-   * If ``CLEARML_AGENT_GIT_USER`` / ``CLEARML_AGENT_GIT_PASS`` are not provided, then **ClearML Agent Services** will not be able to access any private repositories for running service tasks.
+   * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** uses the external public address of the **ClearML Server**.
+   * If ``CLEARML_AGENT_GIT_USER`` / ``CLEARML_AGENT_GIT_PASS`` are not provided, then **ClearML Agent Services** can't access any private repositories for running service tasks.
 
 
        export CLEARML_HOST_IP=server_host_ip_here

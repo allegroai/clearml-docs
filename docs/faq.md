@@ -228,7 +228,7 @@ To replace the URL of each model, execute the following commands:
     sudo docker exec -it clearml-mongo /bin/bash
     ```
 
-1. Inside the docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, 
+1. Create the following script inside the Docker shell:  
    as well as the URL protocol if you aren't using `s3`. 
     ```bash
     cat <<EOT >> script.js
@@ -237,7 +237,7 @@ To replace the URL of each model, execute the following commands:
     db.model.save(e);});
     EOT 
     ```
-
+    Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`.
 1. Run the script against the backend DB:
 
    ```bash
@@ -258,7 +258,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
    sudo docker exec -it clearml-mongo /bin/bash
    ```
 
-1. Inside the Docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3. 
+1. Create the following script inside the Docker shell.  
     ```bash
     cat <<EOT >> script.js
     db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
@@ -266,7 +266,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
     db.model.save(e);});
     EOT 
     ```
-
+   Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3.
 1. Run the script against the backend DB:
 
     ```bash
@@ -717,7 +717,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 1. Use the [Task.set_credentials](references/sdk/task.md#taskset_credentials) 
    method to specify the host, port, access key and secret key (see step 1).
    ```python
-   # Set your credentials using the trains apiserver URI and port, access_key, and secret_key.
+   # Set your credentials using the clearml apiserver URI and port, access_key, and secret_key.
    Task.set_credentials(host='http://localhost:8008',key='<access_key>', secret='<secret_key>')
    ```
    
@@ -930,7 +930,7 @@ If a port conflict occurs, change the MongoDB and / or Elastic ports in the `doc
 To change the MongoDB and / or Elastic ports for your ClearML Server, do the following:
 
 1. Edit the `docker-compose.yml` file.
-1. In the `services/trainsserver/environment` section, add the following environment variable(s):
+1. Add the following environment variable(s) in the `services/trainsserver/environment` section:
 
     * For MongoDB:
     
@@ -994,7 +994,7 @@ Do the following:
 
 1. If a ClearML configuration file (`clearml.conf`) exists, delete it.
 1. Open a terminal session.
-1. In the terminal session, set the system environment variable to `127.0.0.1`, for example:
+1. Set the system environment variable to `127.0.0.1` in the terminal session. For example:
     
     * Linux:
     
@@ -1096,10 +1096,10 @@ For example, to get the metrics for an experiment and to print metrics as a hist
 1. Send a request for a metrics histogram for experiment (task) ID `11` using the `events` service `ScalarMetricsIterHistogramRequest` method and print the histogram.
 
     ```python
-    # Import Session from the trains backend_api
-    from trains.backend_api import Session
+    # Import Session from the clearml backend_api
+    from clearml.backend_api import Session
     # Import the services for tasks, events, and projects
-    from trains.backend_api.services import tasks, events, projects
+    from clearml.backend_api.services import tasks, events, projects
         
     # Create an authenticated session
     session = Session()

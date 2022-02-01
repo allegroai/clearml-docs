@@ -41,7 +41,7 @@ and [configuration options](configs/clearml_conf.md#agent-section).
 ## Installation
 
 :::note
-If **ClearML** was previously configured, follow [this](#adding-clearml-agent-to-a-configuration-file) to add 
+If ClearML was previously configured, follow [this](#adding-clearml-agent-to-a-configuration-file) to add 
 ClearML Agent specific configurations
 :::
 
@@ -61,7 +61,7 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
    clearml-agent init
    ```
 
-    The setup wizard prompts for **ClearML** credentials (see [here](webapp/webapp_profile.md#clearml-credentials) about obtaining credentials).
+    The setup wizard prompts for ClearML credentials (see [here](webapp/webapp_profile.md#clearml-credentials) about obtaining credentials).
     
         CLEARML-AGENT setup process
 
@@ -73,12 +73,12 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     If the setup wizard's response indicates that a configuration file already exists, follow the instructions [here](#adding-clearml-agent-to-a-configuration-file). 
    The wizard does not edit or overwrite existing configuration files.
 
-1. At the command prompt `Paste copied configuration here:`, copy and paste the **ClearML** credentials and press **Enter**. 
+1. At the command prompt `Paste copied configuration here:`, copy and paste the ClearML credentials and press **Enter**. 
    The setup wizard confirms the credentials. 
         
         Detected credentials key="********************" secret="*******"
         
-1. **Enter** to accept default server URL, which is detected from the credentials or Enter a ClearML web server URL.
+1. **Enter** to accept default server URL, which is detected from the credentials or enter a ClearML web server URL.
 
    A secure protocol, https, must be used. **Do not use http.**
     
@@ -128,7 +128,7 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     * Mac - `$HOME/clearml.conf`
     * Windows - `\User\<username>\clearml.conf`
 
-1. Optionally, configure **ClearML** options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
+1. Optionally, configure ClearML options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
    
 :::note
 The ClearML Enterprise server provides a [configuration vault](webapp/webapp_profile.md#configuration-vault), the contents 
@@ -142,7 +142,7 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 
 **Adding ClearML Agent to a ClearML configuration file:**
 
-1. Open the **ClearML** configuration file for editing. Depending upon the operating system, it is:
+1. Open the ClearML configuration file for editing. Depending upon the operating system, it is:
     * Linux - `~/clearml.conf`
     * Mac - `$HOME/clearml.conf`
     * Windows - `\User\<username>\clearml.conf`
@@ -384,15 +384,15 @@ A single agent can listen to multiple queues. The priority is set by their order
 ```bash
 clearml-agent daemon --detached --queue high_q low_q --gpus 0
 ```
-This ensures the agent first tries to pull a Task from the “hiqh_q” queue, and only if it is empty, the agent will try to pull 
-from the “low_q” queue.
+This ensures the agent first tries to pull a Task from the `high_q` queue, and only if it is empty, the agent will try to pull 
+from the `low_q` queue.
 
 To make sure an agent pulls from all queues equally, add the `--order-fairness` flag.
 ```bash
 clearml-agent daemon --detached --queue group_a group_b --order-fairness  --gpus 0
 ```
-It will make sure the agent will pull from the “group_a” queue, then from “group_b”, then back to “group_a”, etc. This ensures 
-that “group A” or ”group_b” will not be able to starve one another of resources.
+It will make sure the agent will pull from the `group_a` queue, then from `group_b`, then back to `group_a`, etc. This ensures 
+that `group_a` or `group_b` will not be able to starve one another of resources.
 
 ### Explicit Task Execution
 
@@ -447,6 +447,14 @@ This mode is similar to the PIP mode but uses [Poetry](https://python-poetry.org
 To enable Poetry mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: poetry` in the “package_manager” 
 section.
 
+:::note Using Poetry with Pyenv
+Some versions of poetry (using `install-poetry.py`) do not respect `pyenv global`.  
+If you are using pyenv to control the environment where you use ClearML Agent, you can:
+  * Use poetry v1.2 and above (which [fixes this issue](https://github.com/python-poetry/poetry/issues/5077))
+  * Install poetry with the deprecated `get-poetry.py` installer
+
+:::
+
 ### Docker Mode 
 :::note
 Docker Mode is only supported in linux.<br/>
@@ -460,7 +468,7 @@ When executing the ClearML Agent in Docker mode, it will:
    
 ClearML Agent uses the provided default Docker container, which can be overridden from the UI. 
 
-All ClearML Agent flags (Such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
+All ClearML Agent flags (such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
 To execute ClearML Agent in Docker mode, run: 
 ```bash
@@ -531,7 +539,7 @@ clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
 
 ### Example
 
-Let's say there are three queues on a server, named:
+Let's say a server has three queues:
 * `dual_gpu`
 * `quad_gpu`
 * `opportunistic`
@@ -553,7 +561,7 @@ Another option for allocating GPUs:
 clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue dual=2 opportunistic=1-4
 ``` 
 
-Notice that a minimum and maximum value of GPUs was specified for the `opportunistic` queue. This means the agent
+Notice that a minimum and maximum value of GPUs is specified for the `opportunistic` queue. This means the agent
 will pull a Task from the `opportunistic` queue and allocate up to 4 GPUs based on availability (i.e. GPUs not currently
 being used by other agents).
 
@@ -581,7 +589,7 @@ Do not enqueue training or inference tasks into the services queue. They will pu
 ### Setting Server Credentials
 
 Self hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by default with a services queue.
-By default, the server is open and does not require username and password, but it can be [password-protected](deploying_clearml/clearml_server_security#user-access-security).
+By default, the server is open and does not require username and password, but it can be [password-protected](deploying_clearml/clearml_server_security.md#user-access-security).
 In case it is password-protected, the services agent will need to be configured with server credentials (associated with a user).
 
 To do that, set these environment variables on  the ClearML Server machine with the appropriate credentials:
@@ -713,8 +721,8 @@ Currently, these runtime properties can only be set using an ClearML REST API ca
 endpoint, as follows: 
 
 * The body of the request must contain the `worker-id`, and the runtime property to add.
-* An expiry date is optional. Use the format `”expiry”:<time>`. For example,  `”expiry”:86400` will set an expiry of 24 hours.
-* To delete the property, set the expiry date to zero, `'expiry:0'`.
+* An expiry date is optional. Use the format `"expiry":<time>`. For example,  `"expiry":86400` will set an expiry of 24 hours.
+* To delete the property, set the expiry date to zero, `"expiry":0`.
 
 For example, to force a worker on for 24 hours:
 
@@ -736,10 +744,12 @@ APIClient. The body of the call must contain the ``queue-id`` and the tags to ad
 
 For example, force workers on for a queue using the APIClient:
 
-    from trains.backend_api.session.client import APIClient
+    from clearml.backend_api.session.client import APIClient
     client = APIClient()
-    client.queues.update(queue=”<queue_id>”, tags=["force_workers:on"]
+    client.queues.update(queue="<queue_id>", tags=["force_workers:on"]
 
 Or, force workers on for a queue using the REST API:
 
-    curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"queue":"<queue_id>","tags":["force_workers:on"]}' http://<api-server-hostname-or-ip>:8008/queues.update
+```bash
+curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"queue":"<queue_id>","tags":["force_workers:on"]}' http://<api-server-hostname-or-ip>:8008/queues.update
+```

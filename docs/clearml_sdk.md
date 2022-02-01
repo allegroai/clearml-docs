@@ -21,7 +21,7 @@ In conjunction with the **ClearML Hosted Service** (or self-hosted **ClearML Ser
 
 * [StorageManager](references/sdk/storage.md) - The `storage` module contains the `storage.manager.StorageManager` class which provides support for downloading and uploading from storage, including folders, S3, Google Cloud Storage, Azure Storage, and http(s).
 
-* [Dataset](references/sdk/dataset) - The `dataset` module contains classes that helps manage Dataset. Users can create, modify and delete datasets as well as retrieve them for use in their code
+* [Dataset](references/sdk/dataset.md) - The `dataset` module contains classes that helps manage Dataset. Users can create, modify and delete datasets as well as retrieve them for use in their code
 
 ## Examples 
 

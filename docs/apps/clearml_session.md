@@ -13,8 +13,8 @@ in the UI and send it for long-term training on a remote machine.
 
 ## What Does ClearML Session Do?
 `clearml-session` is a feature that allows to launch a session of JupyterLab and VS Code, and to execute code on a remote 
-machine that better meets resource needs. With this feature, local links are provided, which can be used to access 
-JupyterLab and VS Code on a remote machine over a secure and encrypted SSH connection. By default, the JupyterLab and 
+machine that better meets resource needs. This feature provides local links to access JupyterLab and VS Code on a 
+remote machine over a secure and encrypted SSH connection. By default, the JupyterLab and 
 VS Code remote sessions use ports 8878 and 8898 respectively. 
 
 <details className="cml-expansion-panel screenshot">
@@ -36,11 +36,17 @@ VS Code remote sessions use ports 8878 and 8898 respectively.
 
 </div>
 </details>
+<br/>
+
+:::info Remote PyCharm
+You can also work with PyCharm in a remote session over SSH. Use the [PyCharm Plugin](../guides/ide/integration_pycharm.md) 
+to automatically sync local configurations with a remote session.
+:::
 
 ## How it Works
 
-ClearML allows to leverage a resource (e.g. GPU or CPU machine) by utilizing the [ClearML Agent](../clearml_agent).
-A ClearML Agent will run on a target machine, and ClearML Session will instruct it to execute the Jupyter / VS Code 
+ClearML allows to leverage a resource (e.g. GPU or CPU machine) by utilizing the [ClearML Agent](../clearml_agent.md).
+A ClearML Agent runs on a target machine, and ClearML Session instructs it to execute the Jupyter / VS Code 
 server to develop remotely.
 After entering a `clearml-session` command with all specifications: 
 
@@ -51,8 +57,8 @@ After entering a `clearml-session` command with all specifications:
       launches it.  
    
    1. Once the agent finishes the initial setup of the interactive Task, the local `cleaml-session` connects to the host 
-   machine via SSH, and tunnels both SSH and JupyterLab over the SSH connection. If a specific Docker was specified, the 
-   JupyterLab environment will run inside the Docker. 
+   machine via SSH, and tunnels both SSH and JupyterLab over the SSH connection. If a Docker is specified, the 
+   JupyterLab environment runs inside the Docker. 
    
    1. The CLI outputs access links to the remote JupyterLab and VS Code sessions:  
 
@@ -73,14 +79,15 @@ To run a session inside a Docker container, use the `--docker` flag and enter th
 session.
 
 ### Installing Requirements
-`clearml-session` can install required Python packages when setting up the remote environment. A `requirement.txt` file 
-can be attached to the command using `--requirements </file/location.txt>`.
-Alternatively, packages can be manually specified, using `--packages "<package_name>"` 
+`clearml-session` can install required Python packages when setting up the remote environment. 
+Specify requirements in one of the following ways: 
+* Attach a `requirement.txt` file to the command using `--requirements </file/location.txt>`.
+* Manually specify packages using `--packages "<package_name>"` 
 (for example `--packages "keras" "clearml"`), and they'll be automatically installed.
 
 ### Accessing a Git Repository
-To access a git repository remotely, add a `--git-credentials` flag and set it to `true`, so the local .git-credentials 
-file will be sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless 
+To access a git repository remotely, add a `--git-credentials` flag and set it to `true`, so the local `.git-credentials` 
+file is sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless 
 cloning and tracking of git references, including untracked changes. 
 
 ### Re-launching and Shutting Down Sessions 
@@ -101,11 +108,11 @@ Active sessions:
 Connect to session [0-1] or 'N' to skip
 ```
 
-To shut down a remote session, which will free the `clearml-agent` and close the CLI, enter "Shutdown". If a session 
+To shut down a remote session, which frees the `clearml-agent` and closes the CLI, enter "Shutdown". If a session 
 is shutdown, there is no option to reconnect to it. 
 
 ### Connecting to an Existing Session
-If a `clearml-session` is running remotely, it's possible to continue working on the session from any machine. 
+If a `clearml-session` is running remotely, you can continue working on the session from any machine. 
 When `clearml-session` is launched, it initializes a task with a unique ID in the ClearML Server. 
 
 To connect to an existing session: 
@@ -116,7 +123,7 @@ To connect to an existing session:
 
 
 ### Starting a Debugging Session 
-Previously executed experiments in the ClearML system can be debugged on a remote interactive session. 
+You can debug previously executed experiments registered in the ClearML system on a remote interactive session. 
 Input into `clearml-session` the ID of a Task to debug, then `clearml-session` clones the experiment's git repository and 
 replicates the environment on a remote machine. Then the code can be interactively executed and debugged on JupyterLab / VS Code. 
 
@@ -148,7 +155,7 @@ The Task must be connected to a git repository, since currently single script de
 | `--disable-keepalive` | Disable transparent proxy that keep sockets alive to maintain the connection to the remote resource | `false` | 
 | `--queue-excluded-tag` | The queue option list will exclude queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
 | `--queue-include-tag` | The queue option list will include only queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
-| `--skip-docker-network` | Pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
+| `--skip-docker-network` | Don't pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
 | `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
 | `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
 

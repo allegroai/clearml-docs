@@ -31,9 +31,13 @@ jobs:
         uses: lycheeverse/lychee-action@v1.2.0
         with:
           #format: json
-          args: --verbose --no-progress ${{ env.MD_FILES }}
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          args: --verbose --no-progress ${{ env.MD_FILES }} --github-token ${{secrets.GITHUB_TOKEN}} --exclude https://s3.*
+            https://files.* https://demo.*  ^\w*#.* http(s)?://example.com.* (https://clear.ml)(/)?(blog|pricing|docs)(/)?(latest/docs/index.html)?
+            (https://app)(.community.clear.ml|.app.clear.ml)?(/)?(dashboard|profile|projects.*)?
+            http://localhost.* `http.+` https://.{10,}\.git https://api.* http://[0-9].*
+            https://allegroai.jfrog.io/clearml/api/pypi/public/simple mailto:clearml@allegro.ai
+            https://allegroai.github.io/clearml-helm-charts https://gist.github.com https://twitter.com/clearmlapp
+
 
       #- name: Read Results
       #  if: ${{ steps.lychee.outputs.exit_code != 0 }}

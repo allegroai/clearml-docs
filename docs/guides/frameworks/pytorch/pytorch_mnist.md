@@ -3,7 +3,7 @@ title: PyTorch MNIST
 ---
 
 The [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) example 
-demonstrates the integration of **ClearML** into code that uses PyTorch. 
+demonstrates the integration of ClearML into code that uses PyTorch. 
 
 The example script does the following:
 * Trains a simple deep neural network on the PyTorch built-in [MNIST](https://pytorch.org/vision/stable/datasets.html#mnist)

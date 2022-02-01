@@ -8,37 +8,38 @@ This documentation page applies to deploying your own open source ClearML Server
 
 Deploy the **ClearML Server** in Linux or macOS using the pre-built Docker image.
 
-For **ClearML** docker images, including previous versions, see [https://hub.docker.com/r/allegroai/clearml](https://hub.docker.com/r/allegroai/clearml). 
-However, pulling the **ClearML** Docker image directly is not required. We provide a docker-compose YAML file that does this. 
+For ClearML docker images, including previous versions, see [https://hub.docker.com/r/allegroai/clearml](https://hub.docker.com/r/allegroai/clearml). 
+However, pulling the ClearML Docker image directly is not required. We provide a docker-compose YAML file that does this. 
 The docker-compose file is included in the instructions on this page.
 
-For information about upgrading **ClearML Server** in Linux or macOS, see [here](upgrade_server_linux_mac.md)
+For information about upgrading ClearML Server in Linux or macOS, see [here](upgrade_server_linux_mac.md)
 
 :::important
-If **ClearML Server** is being reinstalled, we recommend clearing browser cookies for **ClearML Server**. For example, 
+If ClearML Server is being reinstalled, we recommend clearing browser cookies for ClearML Server. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
-and delete all cookies under the **ClearML Server** URL.
+and delete all cookies under the ClearML Server URL.
 :::
 
 
 ## Prerequisites
+
 
 For Linux users only:
 
 * Linux distribution must support Docker. For more information, see this [explanation](https://docs.docker.com/engine/install/) in the Docker documentation. 
 * Be logged in as a user with `sudo` privileges.
 * Use `bash` for all command-line instructions in this installation.
-* The ports `8080`, `8081`, and `8008` must be available for the **ClearML Server** services.
+* The ports `8080`, `8081`, and `8008` must be available for the ClearML Server services.
 
 ## Deploying
 
 
 :::warning
-By default, **ClearML Server** launches with unrestricted access. To restrict **ClearML Server** access, follow the 
+By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
 instructions in the [Security](clearml_server_security.md) page.
 :::
 
-**To launch **ClearML Server** on Linux or macOS:**
+**To launch ClearML Server on Linux or macOS:**
 
 1. Install Docker. The instructions depend upon the operating system:
 
@@ -85,7 +86,7 @@ instructions in the [Security](clearml_server_security.md) page.
             screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
             sysctl -w vm.max_map_count=262144
 
-1. Remove any previous installation of **ClearML Server**.
+1. Remove any previous installation of ClearML Server.
 
     **This clears all existing ClearML SDK databases.**
 
@@ -119,11 +120,11 @@ instructions in the [Security](clearml_server_security.md) page.
 
             sudo chown -R $(whoami):staff /opt/clearml
 
-1. Download the **ClearML Server** docker-compose YAML file.
+1. Download the ClearML Server docker-compose YAML file.
 
         sudo curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
 
-1. For Linux only, configure the **ClearML Agent Services**. If `CLEARML_HOST_IP` is not provided, then **ClearML Agent Services** will use the external public address of the **ClearML Server**. If `CLEARML_AGENT_GIT_USER` / `CLEARML_AGENT_GIT_PASS` are not provided, then **ClearML Agent Services** will not be able to access any private repositories for running service tasks.
+1. For Linux only, configure the **ClearML Agent Services**. If `CLEARML_HOST_IP` is not provided, then ClearML Agent Services uses the external public address of the ClearML Server. If `CLEARML_AGENT_GIT_USER` / `CLEARML_AGENT_GIT_PASS` are not provided, then ClearML Agent Services can't access any private repositories for running service tasks.
 
         export CLEARML_HOST_IP=server_host_ip_here
         export CLEARML_AGENT_GIT_USER=git_username_here
@@ -137,7 +138,7 @@ The server is now running on [http://localhost:8080](http://localhost:8080).
  
 ## Port Mapping
 
-After deploying **ClearML Server**, the services expose the following ports:
+After deploying ClearML Server, the services expose the following ports:
 
 * Web server on port `8080`
 * API server on port `8008`

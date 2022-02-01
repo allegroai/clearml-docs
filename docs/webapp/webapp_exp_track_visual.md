@@ -77,7 +77,7 @@ Additionally, there is information about the ClearML Agent configuration. The Cl
 Docker that ClearML Agent will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container)).
 
 The output details include:
-* The output destination used for storing model checkpoints (snapshots) and artifacts (see also, [default_output_uri](../configs/clearml_conf#config_default_output_uri)
+* The output destination used for storing model checkpoints (snapshots) and artifacts (see also, [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
   in the configuration file, and [output_uri](../references/sdk/task.md#taskinit)
   in `Task.init` parameters).
 
@@ -145,7 +145,7 @@ The **Args** parameter group shows automatically logged `argparse` arguments, an
 
 #### Environment Variables
 
-If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group will show environment variables (see [this FAQ](../faq#track-env-vars)).
+If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group will show environment variables (see [this FAQ](../faq.md#track-env-vars)).
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
