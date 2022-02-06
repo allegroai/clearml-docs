@@ -223,5 +223,4 @@ To conclude the upgrade for deployment formats other than Linux, follow their up
 * [Google Cloud Platform custom images](upgrade_server_gcp.md)
 * [Linux and macOS](upgrade_server_linux_mac.md)
 * [Windows](upgrade_server_win.md)
-* [Kubernetes](upgrade_server_kubernetes.md)
-* [Kubernetes Using Helm](upgrade_server_kubernetes_helm.md).
+* [Kubernetes](upgrade_server_kubernetes_helm.md).
