@@ -21,8 +21,8 @@ for the most updated instructions.
 
         helm delete --purge clearml-server
         
-1. If upgrading from **Trains Server** version 0.15 or older to **ClearML Server**, a data migration is required before 
-   upgrading. First follow these [data migration instructions](clearml_server_es7_migration.md), and then continue this upgrade.
+1. If upgrading from ClearML Server version older than 1.2, you need to upgrade MongoDB and migrate your data before upgrading your server. See instructions [here](upgrade_mongo_db.md). 
+If upgrading from Trains Server version 0.15 or older, a data migration is required before continuing this upgrade. See instructions [here](clearml_server_es7_migration.md).
 
 1. Upgrade deployment to match repository version.
     
