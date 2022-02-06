@@ -18,7 +18,7 @@ Use the `build` subcommand to create a worker environment without executing the 
 ```bash
 clearml-agent build [-h] --id TASK_ID [--target TARGET]
                     [--install-globally]
-                    [--docker [DOCKER [DOCKER ...]]]
+                    [--docker [DOCKER [DOCKER ...]]] [--force-docker] 
                     [--python-version PYTHON_VERSION]
                     [--entry-point {reuse_task,clone_task}] [-O]
                     [--git-user GIT_USER] [--git-pass GIT_PASS]
@@ -71,6 +71,15 @@ clearml-agent build [-h] --id TASK_ID [--target TARGET]
     * `reuse` - Overwrite the existing Task data.
     * `clone_task` - Clone the Task, and execute the cloned Task.
         
+---
+
+**`force-docker`**
+
+* Force using the agent-specified docker image (either explicitly in the `--docker` argument or using the agent's 
+  default docker image). If provided, the agent will not use any docker container information stored in the task itself 
+  (default `False`)
+
+
 ---
 
 **`git-pass`** 
