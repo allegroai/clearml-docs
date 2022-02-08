@@ -37,6 +37,11 @@ module.exports = {
                     'webapp/webapp_archiving'
                 ]
             },
+            {
+                'Pipelines':[
+                    'webapp/pipelines/webapp_pipeline_page', 'webapp/pipelines/webapp_pipeline_table', 'webapp/pipelines/webapp_pipeline_viewing'
+                ]
+            },
             'webapp/webapp_workers_queues', 'webapp/webapp_profile']
         },
         {'Configurations': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
