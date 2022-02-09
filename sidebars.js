@@ -44,14 +44,14 @@ module.exports = {
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
                 'Deploying ClearML Server': ['deploying_clearml/clearml_server_aws_ec2_ami', 'deploying_clearml/clearml_server_gcp',
-                    'deploying_clearml/clearml_server_linux_mac', 'deploying_clearml/clearml_server_win', 'deploying_clearml/clearml_server_kubernetes',
+                    'deploying_clearml/clearml_server_linux_mac', 'deploying_clearml/clearml_server_win',
                     'deploying_clearml/clearml_server_kubernetes_helm']
             },
             {
                 'Upgrading ClearML Server':['deploying_clearml/upgrade_server_aws_ec2_ami','deploying_clearml/upgrade_server_gcp',
                     'deploying_clearml/upgrade_server_linux_mac', 'deploying_clearml/upgrade_server_win',
-                    'deploying_clearml/upgrade_server_kubernetes', 'deploying_clearml/upgrade_server_kubernetes_helm',
-                    'deploying_clearml/clearml_server_es7_migration', 'deploying_clearml/upgrade_mongo_db']
+                    'deploying_clearml/upgrade_server_kubernetes_helm',
+                    'deploying_clearml/clearml_server_es7_migration', 'deploying_clearml/clearml_server_mongo44_migration']
             },
             'deploying_clearml/clearml_server_config', 'deploying_clearml/clearml_config_for_clearml_server', 'deploying_clearml/clearml_server_security'
         ]},

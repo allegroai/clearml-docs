@@ -2,10 +2,6 @@
 title: AWS EC2 AMIs
 ---
 
-:::important
-This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
-:::
-
 Deployment of **ClearML Server** on AWS is easily performed using AWS AMIs, which are available in the AWS Marketplace catalog 
 and in the AWS community AMI catalog.
 

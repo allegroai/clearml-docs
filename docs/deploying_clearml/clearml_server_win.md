@@ -2,10 +2,6 @@
 title: Windows 10
 ---
 
-:::important
-This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
-:::
-
 For Windows, we recommend launching the pre-built Docker image on a Linux virtual machine (see [Deploying ClearML Server: Linux or macOS](clearml_server_linux_mac.md)). 
 However, **ClearML Server** can be launched on Windows 10, using Docker Desktop for Windows (see the Docker [System Requirements](https://docs.docker.com/docker-for-windows/install/#system-requirements)).
 
