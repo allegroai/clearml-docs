@@ -2,6 +2,10 @@
 title: Upgrading Server from v0.15 or Older to ClearML Server
 ---
 
+:::important updating to ClearML Server v1.2+
+If you are upgrading your ClearML Server to version 1.2 or newer, you will need to upgrade MongoDB and migrate your data to the new database after performing the migration instructions below. 
+:::
+
 In v0.16, the Elasticsearch subsystem of **Trains Server** was upgraded from version 5.6 to version 7.6. This change necessitates 
 the migration of the database contents to accommodate the change in index structure across the different versions.  
   
@@ -20,10 +24,6 @@ The migration process makes use of a script that automatically performs the foll
 :::warning 
 Once the migration process completes successfully, the data is no longer accessible to the older version of Trains Server, 
 and **ClearML Server** needs to be installed.
-:::
-
-:::important updating to ClearML Server v1.2+
-If you are upgrading your ClearML Server to version 1.2 or newer, you will need to upgrade MongoDB and migrate your data to the new database after performing the migration instructions below. 
 :::
 
 ### Prerequisites
@@ -156,7 +156,7 @@ For help in resolving migration issues, check the **allegro-clearml** [Slack Cha
     
 #### Upgrading to ClearML Server v.1.2 or Newer
 If you are upgrading your ClearML Server to version 1.2 or newer, you first need to upgrade MongoDB and migrate your data. 
-See instructions [here](upgrade_mongo_db.md). Otherwise, continue the instructions below.
+See instructions [here](clearml_server_mongo44_migration.md). Otherwise, continue the instructions below.
 
 #### Completing the Installation
 
@@ -165,4 +165,3 @@ After verifying the data migration completed successfully, continue upgrading yo
     * [Google Cloud Platform custom images](upgrade_server_gcp.md)
     * [Linux and macOS](upgrade_server_linux_mac.md)
     * [Windows](upgrade_server_win.md)
-    * [Kubernetes](upgrade_server_kubernetes_helm.md)
