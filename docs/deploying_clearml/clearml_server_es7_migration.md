@@ -3,7 +3,8 @@ title: Upgrading Server from v0.15 or Older to ClearML Server
 ---
 
 :::important updating to ClearML Server v1.2+
-If you are upgrading your ClearML Server to version 1.2 or newer, you will need to upgrade MongoDB and migrate your data to the new database after performing the migration instructions below. 
+If you are upgrading your ClearML Server to version 1.2 or newer, you will need to migrate your database contents to be compatible with the new version, 
+after performing the migration instructions below. 
 :::
 
 In v0.16, the Elasticsearch subsystem of **Trains Server** was upgraded from version 5.6 to version 7.6. This change necessitates 
@@ -135,7 +136,7 @@ and **ClearML Server** needs to be installed.
 
                 kubectl get jobs -n upgrade-elastic                                   
 
-#### Verifying the Data Migration
+### Verifying the Data Migration
 
 Upon successful completion, the migration script renames the original **Trains Server** directory, which contains the now 
 migrated data, and prints a completion message:
@@ -154,14 +155,14 @@ For help in resolving migration issues, check the **allegro-clearml** [Slack Cha
 [GitHub Issues](https://github.com/allegroai/clearml-server/issues), and the **ClearML Server** sections of the [FAQ](../faq.md).     
 :::
     
-#### Upgrading to ClearML Server v.1.2 or Newer
-If you are upgrading your ClearML Server to version 1.2 or newer, you first need to upgrade MongoDB and migrate your data. 
-See instructions [here](clearml_server_mongo44_migration.md). Otherwise, continue the instructions below.
+### Upgrading to ClearML Server v.1.2 or Newer
+If you are upgrading your ClearML Server to version 1.2 or newer, you will need to migrate your database contents to be 
+compatible with the new version. See instructions [here](clearml_server_mongo44_migration.md). Otherwise, continue the instructions below.
 
-#### Completing the Installation
+### Completing the Installation
 
 After verifying the data migration completed successfully, continue upgrading your server:
-    * [AWS EC2 AMIs](upgrade_server_aws_ec2_ami.md)
-    * [Google Cloud Platform custom images](upgrade_server_gcp.md)
-    * [Linux and macOS](upgrade_server_linux_mac.md)
-    * [Windows](upgrade_server_win.md)
+* [AWS EC2 AMIs](upgrade_server_aws_ec2_ami.md)
+* [Google Cloud Platform custom images](upgrade_server_gcp.md)
+* [Linux and macOS](upgrade_server_linux_mac.md)
+* [Windows](upgrade_server_win.md)

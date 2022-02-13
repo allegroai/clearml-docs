@@ -33,7 +33,7 @@ For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRA
  
         docker-compose -f docker-compose.yml down
         
-1. If upgrading from ClearML Server version older than 1.2, you need to upgrade MongoDB and migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md). 
+1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md). 
    
 1. If upgrading from **Trains Server** version 0.15 or older, a data migration is required before continuing this upgrade. See instructions [here](clearml_server_es7_migration.md).
 
