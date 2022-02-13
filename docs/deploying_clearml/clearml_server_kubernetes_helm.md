@@ -1,15 +1,11 @@
 ---
-title: Kubernetes Using Helm
+title: Kubernetes
 ---
 
 :::important
 **This documentation page is being updated.** Please see the new and improved **[ClearML Helm Charts repository](https://github.com/allegroai/clearml-helm-charts)**
 for the most updated instructions. 
 ::: 
-
-:::note
-This documentation page applies to deploying your own open source **ClearML Server**. It does not apply to **ClearML Hosted Service** users.
-:::
 
 :::warning
 If **ClearML Server** is being reinstalled, we recommend clearing browser cookies for **ClearML Server**. For example, 

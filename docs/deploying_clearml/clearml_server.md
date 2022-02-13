@@ -58,6 +58,6 @@ When necessary, upgrade your ClearML Server on any of the available formats:
 * [Google Cloud Platform](upgrade_server_gcp.md)
 * [Linux or MacOS](upgrade_server_linux_mac.md)
 * [Windows 10](upgrade_server_win.md)
-* [Kubernetes using Helm](upgrade_server_kubernetes_helm.md).
+* [Kubernetes using Helm](upgrade_server_kubernetes_helm.md)
 
 If you are using v0.15 or Older, [upgrade to ClearML Server](clearml_server_es7_migration.md).
