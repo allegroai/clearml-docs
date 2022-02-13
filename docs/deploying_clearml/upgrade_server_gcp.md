@@ -8,7 +8,6 @@ title: Google Cloud Platform
 
         docker-compose -f docker-compose.yml down
    
-1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md). 
 1. If upgrading from **Trains Server** version 0.15 or older to **ClearML Server**, do the following:
 
     1. Follow these [data migration instructions](clearml_server_es7_migration.md), 
@@ -18,6 +17,7 @@ title: Google Cloud Platform
    
             sudo mv /opt/trains /opt/clearml
 
+1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md). 
 1. We recommend [backing up data](clearml_server_gcp.md#backing-up-and-restoring-data-and-configuration) and, if the configuration folder is 
    not empty, backing up the configuration.
 

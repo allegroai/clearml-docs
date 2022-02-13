@@ -16,9 +16,9 @@ title: Windows
 
          docker-compose -f c:\opt\trains\docker-compose-win10.yml down
         
-1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md). 
-   
 1. If upgrading from **Trains Server** version 0.15 or older, a data migration is required before continuing this upgrade. See instructions [here](clearml_server_es7_migration.md).
+
+1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md).
 
 1. We recommend backing up data and, if the configuration folder is not empty, backing up the configuration.
  
