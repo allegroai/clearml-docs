@@ -46,19 +46,23 @@ To avoid data corruption, shut down your ClearML server before applying the migr
   ```
 
 ## Migrating the Data
+
+### Migrating by Script
+A migration script is available to automatically run this process for all supported OSs.  
+[Download the script](https://github.com/allegroai/clearml-server/releases/download/1.2.0/clearml-server-1.2.0-migration.py) and run it on your ClearML server.
+Run `clearml-server-1.2.0-migration.py –help` to see execution options.  
+Note the script will create a backup archive of your data in the original directory.
+
+Once the script finishes successfully, [continue with your upgrade](#completing-the-installation).
+
+### Manual migration
+
 The following are the instructions for migrating your ClearML data from mongodb 3.6 to mongodb 4.4.
 
 The commands are provided for a Linux environment, and assume ClearML is installed in its default paths.
 
 If you are using a different OS, replace the shell and docker commands to the ones appropriate for your OS. If you’ve 
 installed ClearML under a different path, replace the file locations accordingly.
-
-:::info automating your migration 
-A migration script is available to automatically run this process for all supported OSs.
-[Download the script](https://github.com/allegroai/clearml-server/releases/download/1.2.0/clearml-server-1.2.0-migration.py) and run it on your ClearML server.
-Run `clearml-server-1.2.0-migration.py –help` to see execution options.
-Note the script will create a backup archive of your data in the original directory.
-:::
 
 1. Backup the source data folder:
    
@@ -120,7 +124,8 @@ Note the script will create a backup archive of your data in the original direct
    ```bash
    sudo docker stop mongodb_upgrade && sudo docker rm mongodb_upgrade
    ```
-1. Continue upgrading your ClearML Server:
+## Completing the Installation
+Continue upgrading your ClearML Server:
    * [AWS EC2 AMIs](upgrade_server_aws_ec2_ami.md)
    * [Google Cloud Platform custom images](upgrade_server_gcp.md)
    * [Linux and macOS](upgrade_server_linux_mac.md)
