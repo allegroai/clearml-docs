@@ -54,3 +54,7 @@ The model’s **LABELS** tab displays its label enumeration.
 
 ![Model Labels tab](../../img/examples_model_logging_labels.png)
 
+## Additional Example
+
+See [PyTorch Model Updating](../frameworks/pytorch/model_updating.md) for a more robust example, which trains a model, 
+and then logs it with OutputModel.

@@ -1,9 +1,9 @@
 ---
-title: Model Updating
+title: PyTorch Model Updating
 ---
 
-The [model_update_pytorch.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/model_update_pytorch.py) 
-example demonstrates training a model and logging it using the [OutputModel](../../references/sdk/model_outputmodel.md) 
+The [pytorch_model_update.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_model_update.py) 
+example demonstrates training a model and logging it using the [OutputModel](../../../references/sdk/model_outputmodel.md) 
 class. 
 
 The example does the following:
@@ -13,7 +13,7 @@ The example does the following:
 
 :::note Disabling automatic framework logging
 This example disables the default automatic capturing of PyTorch outputs, to demonstrate how to manually control what is 
-logged from PyTorch. See [this FAQ](../../faq.md#controlling_logging) for more information. 
+logged from PyTorch. See [this FAQ](../../../faq.md#controlling_logging) for more information. 
 ::: 
 
 ## Initialization
@@ -32,9 +32,9 @@ output_model = OutputModel(task=task)
 ```
 
 ## Label Enumeration
-The label enumeration dictionary is logged using the [`Task.connect_label_enumeration`](../../references/sdk/task.md#connect_label_enumeration) 
+The label enumeration dictionary is logged using the [`Task.connect_label_enumeration`](../../../references/sdk/task.md#connect_label_enumeration) 
 method which will update the task’s resulting model information. The current running task is accessed using the 
-[`Task.current_task`](../../references/sdk/task.md#taskcurrent_task) class method.
+[`Task.current_task`](../../../references/sdk/task.md#taskcurrent_task) class method.
 
 ```python
 # store the label enumeration of the training model
@@ -44,13 +44,13 @@ Task.current_task().connect_label_enumeration(enumeration)
 ```
 
 :::note Directly Setting Model Enumeration
-You can set a model’s label enumeration directly using the [`OutputModel.update_labels`](../../references/sdk/model_outputmodel.md#update_labels) 
+You can set a model’s label enumeration directly using the [`OutputModel.update_labels`](../../../references/sdk/model_outputmodel.md#update_labels) 
 method
 :::
 
 ## Model Configuration
 
-Add a configuration dictionary to the model using the [`OutputModel.update_design`](../../references/sdk/model_outputmodel.md#update_design) 
+Add a configuration dictionary to the model using the [`OutputModel.update_design`](../../../references/sdk/model_outputmodel.md#update_design) 
 method. 
 
 ```python
@@ -67,8 +67,8 @@ model.update_design(config_dict=model_config_dict)
 ```
 
 ## Updating Models
-To update a model, use the [OutputModel.update_weights](../../references/sdk/model_outputmodel.md#update_weights) method. 
-This uploads the model to the set storage destination (see [Setting Upload Destination](../../fundamentals/artifacts.md#setting-upload-destination)), 
+To update a model, use the [OutputModel.update_weights](../../../references/sdk/model_outputmodel.md#update_weights) method. 
+This uploads the model to the set storage destination (see [Setting Upload Destination](../../../fundamentals/artifacts.md#setting-upload-destination)), 
 and registers that location to the task as the output model. 
 
 ```python
@@ -83,17 +83,18 @@ if CONDITION:
 ## WebApp
 The model appears in the task’s **ARTIFACTS** tab. 
 
-![Task artifacts](../../img/examples_model_update_artifacts.png)
+![Task artifacts](../../../img/examples_model_update_artifacts.png)
 
-Clicking on the model name takes you to the [model’s page](../../webapp/webapp_model_viewing.md), where you can view the 
+Clicking on the model name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can view the 
 model’s details and access the model.
 
-![Model page](../../img/examples_model_update_model.png)
+![Model page](../../../img/examples_model_update_model.png)
 
 The model’s **NETWORK** tab displays its configuration.
 
-![Model network tab](../../img/examples_model_update_network.png)
+![Model network tab](../../../img/examples_model_update_network.png)
 
 The model’s **LABELS** tab displays its label enumeration.
 
-![Model labels](../../img/examples_model_update_labels.png)
+![Model labels](../../../img/examples_model_update_labels.png)
+
