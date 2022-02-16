@@ -13,7 +13,7 @@ For information about upgrading ClearML Server in Kubernetes Clusters using Helm
 ## Prerequisites
 
 * Set up a Kubernetes cluster - For setting up Kubernetes on various platforms refer to the Kubernetes [getting started guide](https://kubernetes.io/docs/setup).
-* Set up a single node LOCAL Kubernetes on laptop/desktop - For setting up Kubernetes on your laptop/desktop we suggest [kind](https://kind.sigs.k8s.io).
+* Set up a single node LOCAL Kubernetes on laptop/desktop - For setting up Kubernetes on your laptop/desktop, we suggest [kind](https://kind.sigs.k8s.io).
 * Install `helm` - Helm is a tool for managing Kubernetes charts. Charts are packages of pre-configured Kubernetes resources.
 To install Helm, refer to the [Helm installation guide](https://helm.sh/docs/using_helm.html#installing-helm) in the Helm documentation.
 Ensure that the `helm` binary is in the PATH of your shell.
