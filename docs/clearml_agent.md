@@ -10,7 +10,7 @@ Its main focus is around:
 **ClearML Agent** executes an experiment or other workflow by reproducing the state of the code from the original machine 
 to a remote machine.
 
-![image](img/clearml_agent_flow_diagram.png)
+![ClearML Agent flow diagram](img/clearml_agent_flow_diagram.png)
 
 The diagram above demonstrates a typical flow where an agent executes a task:  
 
@@ -62,13 +62,14 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
    ```
 
     The setup wizard prompts for ClearML credentials (see [here](webapp/webapp_profile.md#clearml-credentials) about obtaining credentials).
+    ```
+    Please create new clearml credentials through the settings page in your `clearml-server` web app, 
+    or create a free account at https://app.clear.ml/settings/webapp-configuration
     
-        CLEARML-AGENT setup process
+    In the settings > workspace  page, press "Create new credentials", then press "Copy to clipboard".
 
-        Please create new clearml credentials through the profile page in your clearml web app (e.g., https://demoapp.demo.clear.ml/profile)
-        In the profile page, press "Create new credentials", then press "Copy to clipboard".
-
-        Paste copied configuration here:
+    Paste copied configuration here:    
+    ```
     
     If the setup wizard's response indicates that a configuration file already exists, follow the instructions [here](#adding-clearml-agent-to-a-configuration-file). 
    The wizard does not edit or overwrite existing configuration files.
@@ -76,13 +77,17 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
 1. At the command prompt `Paste copied configuration here:`, copy and paste the ClearML credentials and press **Enter**. 
    The setup wizard confirms the credentials. 
         
-        Detected credentials key="********************" secret="*******"
+   ```
+   Detected credentials key="********************" secret="*******"
+   ```
         
 1. **Enter** to accept default server URL, which is detected from the credentials or enter a ClearML web server URL.
 
    A secure protocol, https, must be used. **Do not use http.**
     
-        WEB Host configured to: [https://app.community.clear.ml] 
+   ```
+   WEB Host configured to: [https://app.clear.ml] 
+   ```
         
    :::note
    If you are using a self-hosted ClearML Server, the default URL will use your domain.        
@@ -91,37 +96,41 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
 1. Do as above for API, URL, and file servers.
 
 1. The wizard responds with your configuration:
-    
-        CLEARML Hosts configuration:
-        Web App: https://app.community.clear.ml
-        API: https://demoapi.clearml.allegro.ai
-        File Store: https://demofiles.clearml.allegro.ai
+   ```
+   CLEARML Hosts configuration:
+   Web App: https://app.community.clear.ml
+   API: https://api.clearml.ml
+   File Store: https://files.clear.ml
         
-        Verifying credentials ...
-        Credentials verified!
+   Verifying credentials ...
+   Credentials verified!
+   ```
 
 1. Enter your Git username and password. Leave blank for SSH key authentication or when only using public repositories.
    
    This is needed for cloning repositories by the agent.
-
-        Enter git username for repository cloning (leave blank for SSH key authentication): []
-        Enter password for user '<username>':
-        
-    The setup wizard confirms your git credentials.
-    
-        Git repository cloning will be using user=<username> password=<password>        
-
+   ```
+   Enter git username for repository cloning (leave blank for SSH key authentication): []
+   Enter password for user '<username>':
+   ```     
+   The setup wizard confirms your git credentials.
+   ``` 
+   Git repository cloning will be using user=<username> password=<password>        
+   ```
 1. Enter an additional artifact repository, or press **Enter** if not required.
    
    This is needed for installing Python packages not found in pypi. 
 
-        Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
-
+   ```
+   Enter additional artifact repository (extra-index-url) to use when installing python packages (leave blank if not required):
+   ```
     The setup wizard completes.
-    
-        New configuration stored in /home/<username>/clearml.conf
-        CLEARML-AGENT setup completed successfully.
-
+   
+   ```
+   New configuration stored in /home/<username>/clearml.conf
+   CLEARML-AGENT setup completed successfully.
+   ```
+   
     The configuration file location depends upon the operating system:
             
     * Linux - `~/clearml.conf`
