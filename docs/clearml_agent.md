@@ -98,8 +98,8 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
 1. The wizard responds with your configuration:
    ```
    CLEARML Hosts configuration:
-   Web App: https://app.community.clear.ml
-   API: https://api.clearml.ml
+   Web App: https://app.clear.ml
+   API: https://api.clear.ml
    File Store: https://files.clear.ml
         
    Verifying credentials ...
