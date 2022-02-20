@@ -18,7 +18,10 @@ Just follow the [getting started](/getting_started/ds/ds_first_steps.md) to auto
 - [fastai](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fastai)
 - [lightgbm](https://github.com/allegroai/clearml/tree/master/examples/frameworks/lightgbm)
 - [XGBoost](https://github.com/allegroai/clearml/tree/master/examples/frameworks/xgboost)
+- [MegEngine](https://github.com/allegroai/clearml/tree/master/examples/frameworks/megengine)
+- [CatBoost](https://github.com/allegroai/clearml/tree/master/examples/frameworks)
 - [Hydra](https://github.com/allegroai/clearml/tree/master/examples/frameworks/hydra)
+- [python-fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
 
 **HPO**
 - [Optuna](https://github.com/allegroai/clearml/tree/master/examples/optimization/hyper-parameter-optimization)
