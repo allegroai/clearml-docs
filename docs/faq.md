@@ -951,7 +951,7 @@ To change the MongoDB and / or Elastic ports for your ClearML Server, do the fol
         ELASTIC_SERVICE_PORT: 9201
         ```
     
-1. For MongoDB, in the `services/mongo/ports` section, expose the new MongoDB port:
+1. For MongoDB, in the `services/mongo_4/ports` section, expose the new MongoDB port:
 
     ```bash
     <new-mongodb-port>:27017
