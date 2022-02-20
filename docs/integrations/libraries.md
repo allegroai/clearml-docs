@@ -1,12 +1,12 @@
 ---
-title: Libraries
+title: Integrations
 ---
 
 ClearML integrates with many frameworks and tools out of the box! <br/>
 
 Just follow the [getting started](/getting_started/ds/ds_first_steps.md) to automatically capture metrics, models and artifacts or check out examples for each library.
 
-![image](../img/integration_tools.png)
+![Integration tools](../img/integration_tools.png)
 
 **Frameworks**
 - [Pytorch](https://github.com/allegroai/clearml/tree/master/examples/frameworks/pytorch)
@@ -22,6 +22,7 @@ Just follow the [getting started](/getting_started/ds/ds_first_steps.md) to auto
 - [CatBoost](https://github.com/allegroai/clearml/tree/master/examples/frameworks/catboost)
 - [Hydra](https://github.com/allegroai/clearml/tree/master/examples/frameworks/hydra)
 - [python-fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
+- [click](https://github.com/allegroai/clearml/tree/master/examples/frameworks/click)
 
 **HPO**
 - [Optuna](https://github.com/allegroai/clearml/tree/master/examples/optimization/hyper-parameter-optimization)

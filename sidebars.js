@@ -20,8 +20,8 @@ module.exports = {
         {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
                 {'Workflows': ['clearml_data/data_management_examples/workflows', 'clearml_data/data_management_examples/data_man_simple', 'clearml_data/data_management_examples/data_man_folder_sync', 'clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},]},
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task']},
-        {'Integrations': ['integrations/libraries', 'integrations/storage']},
-
+        'integrations/libraries',
+        'integrations/storage',
         {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
             {
                 'Projects': [
