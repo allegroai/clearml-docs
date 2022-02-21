@@ -182,6 +182,6 @@ or check these pages out:
 
 ## Youtube Playlist
 
-All these tips and tricks are also covered by video 3 of our Youtube Getting Started series, go check it out :)
+All these tips and tricks are also covered by our Youtube Getting Started series, go check it out :)
 
-[![Watch the video](https://img.youtube.com/vi/kyOfwVg05EM/hqdefault.jpg)](https://youtu.be/kyOfwVg05EM)
+[![Watch the video](https://img.youtube.com/vi/kyOfwVg05EM/hqdefault.jpg)](https://www.youtube.com/watch?v=kyOfwVg05EM&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=3)

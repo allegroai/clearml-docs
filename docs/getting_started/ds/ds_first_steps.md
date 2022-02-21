@@ -65,4 +65,4 @@ Sit back, relax, and watch your models converge :) or continue to see what else 
 
 Or watch the Youtube Getting Started Playlist on our Youtube Channel!
 
-[![Watch the video](https://img.youtube.com/vi/bjWwZAzDxTY/hqdefault.jpg)](https://youtu.be/bjWwZAzDxTY)
+[![Watch the video](https://img.youtube.com/vi/bjWwZAzDxTY/hqdefault.jpg)](https://www.youtube.com/watch?v=bjWwZAzDxTY&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=2)
