@@ -2,7 +2,7 @@
 title: Tracking Experiments and Visualizing Results
 ---
 
-While an experiment is running, and any time after it finishes, track it and visualize the results in the **ClearML Web UI**,
+While an experiment is running, and any time after it finishes, track it and visualize the results in the ClearML Web UI,
 including:
 
 * [Execution details](#execution-details) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
@@ -56,65 +56,55 @@ table is not visible when the full screen details view is open. Perform experime
 </details>
 
 
-## Execution Details
-In the EXECUTION tab of an experiment's detail page, there are records of:
+## Execution 
+An experiment's **EXECUTION** tab of lists the following:
 * Source code
-* ClearML Agent configuration
-* Output details
 * Uncommitted changes
 * Installed Python packages
+* Container details
+* Output details
 
+In full-screen mode, the source code and output details are grouped in the **DETAILS** section.
 
-### Source Code, ClearML Agent Configuration, and Output Details
+### Source Code
 
-The source code details of the EXECUTION tab of an experiment include:
+The Source Code section of an experiment's **EXECUTION** tab includes:
 * The experiment's repository
 * Commit ID
 * Script path
 * Working directory
 
-Additionally, there is information about the ClearML Agent configuration. The ClearML Agent base image is a pre-configured 
-Docker that ClearML Agent will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container)).
-
-The output details include:
-* The output destination used for storing model checkpoints (snapshots) and artifacts (see also, [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
-  in the configuration file, and [output_uri](../references/sdk/task.md#taskinit)
-  in `Task.init` parameters).
-
-* The logging level for the experiment, which uses the standard Python [logging levels](https://docs.python.org/3/howto/logging.html#logging-levels).
-
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
-![Execution details section](../img/webapp_tracking_18.png)
-
-</div>
-</details>
-
+![Source code section](../img/webapp_exp_source_code.png)
 
 ### Uncommitted Changes
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
+ClearML displays the git diff of the experiment in the Uncommitted Changes section. 
 
-![Uncommitted changes section](../img/webapp_tracking_19.png)
+![Uncommitted changes section](../img/webapp_exp_uncommitted_changes.png)
 
-</div>
-</details>
+### Installed Packages
+
+The Installed Packages section lists the experiment's installed Python packages and their versions.
+
+![Installed packages section](../img/webapp_exp_installed_packages.png)
+
+### Container
+The Container section list the following information:
+* Image - a pre-configured Docker that ClearML Agent will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container))
+* Arguments - add Docker arguments
+* Setup shell script - a bash script to be executed inside the Docker before setting up the experiment's environment
 
 
-### Installed Python Packages and Their Versions
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
+![Container section](../img/webapp_exp_container.png)
 
-![Installed packages section](../img/webapp_tracking_20.png)
+### Output
+The Output details include:
+* The output destination used for storing model checkpoints (snapshots) and artifacts (see also, [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
+  in the configuration file, and `output_uri` in [`Task.init`](../references/sdk/task.md#taskinit) parameters).
 
-</div>
-</details>
+* The logging level for the experiment, which uses the standard Python [logging levels](https://docs.python.org/3/howto/logging.html#logging-levels).
+
+![Execution details section](../img/webapp_exp_output.png)
 
 ## Configuration
 
@@ -124,65 +114,36 @@ All parameters and configuration objects appear in the **CONFIGURATION** tab.
 ### Hyperparameters
 
 :::important
-In older versions of **ClearML Server**, the **CONFIGURATION** tab was named **HYPER PARAMETERS**, and it contained all parameters. The renamed tab contains a **HYPER PARAMETER** section, and subsections for hyperparameter groups.
+In older versions of ClearML Server, the **CONFIGURATION** tab was named **HYPER PARAMETERS**, and it contained all parameters. The renamed tab contains a **HYPER PARAMETER** section, and subsections for hyperparameter groups.
 :::
 
 Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPER PARAMETERS**.
 
 #### Command Line Arguments
 
-The **Args** parameter group shows automatically logged `argparse` arguments, and all older experiments parameters, except TensorFlow Definitions. Hover over a parameter, and the type, description, and default value appear, if they were provided.
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
+The **Args** parameter group shows automatically logged `argparse` arguments, and all older experiments parameters, except 
+TensorFlow Definitions. Hover over a parameter, and the type, description, and default value appear, if they were provided.
 
 ![Command line arguments configuration group](../img/webapp_tracking_22.png)
-
-</div>
-</details>
-
 
 #### Environment Variables
 
 If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group will show environment variables (see [this FAQ](../faq.md#track-env-vars)).
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
 ![Environment variables configuration group](../img/webapp_tracking_23.png)
-
-</div>
-</details>
-
 
 #### Custom Parameter Groups
 
 Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using the `Task.connect` method,
 with a `name` argument provided.
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
 ![Custom parameters group](../img/webapp_tracking_25.png)
-
-</div>
-</details>
 
 #### TensorFlow Definitions
 
 The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
 ![TF_DEFINE parameter group](../img/webapp_tracking_26.png)
-
-</div>
-</details>
 
 Once an experiment is run and stored in **ClearML Server**, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
@@ -191,45 +152,24 @@ Once an experiment is run and stored in **ClearML Server**, any of these hyperpa
 User properties allow to store any descriptive information in a key-value pair format. They are editable in any experiment,
 except experiments whose status is *Published* (read-only).
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
 ![User properties section](../img/webapp_tracking_21.png)
-
-</div>
-</details>
-
 
 ### Configuration Objects
 
 ClearML tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
 These objects include those that are automatically tracked, and those connected to a Task in code (see [Task.connect_configuration](../references/sdk/task.md#connect_configuration)).
-ClearML supports providing a name for a Task model configuration object (see the [name](../references/sdk/task.md#connect_configuration)
-parameter in `Task.connect_configuration`).
+
+![Configuration objects](../img/webapp_tracking_24.png)
+
+ClearML supports providing a name for a Task model configuration object (see the `name`
+parameter in [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration)).
+
+![Custom configuration objects](../img/webapp_tracking_28.png)
 
 :::important
 In older versions of **ClearML Server**, the Task model configuration appeared in the **ARTIFACTS** tab, **MODEL CONFIGURATION** section. Task model configurations now appear in the **Configuration Objects** section, in the **CONFIGURATION** tab.
 :::
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot - Configuration objects </summary>
-<div className="cml-expansion-panel-content">
-
-![Configuration objects](../img/webapp_tracking_24.png)
-
-</div>
-</details>
-<br/>
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot - Custom configuration object</summary>
-<div className="cml-expansion-panel-content">
-
-![Custom configuration objects](../img/webapp_tracking_28.png)
-
-</div>
-</details>
 
 ## Artifacts
 
@@ -256,55 +196,21 @@ including design, label enumeration, and general information, go to the **MODELS
       if it is in a local file.
 
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
 ![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png)
-
-</div>
-</details>
-
 
 ### Other Artifacts
 
-**To retrieve another artifact:**
+Other artifacts, which are uploaded but not dynamically tracked after the upload, appear in the **OTHER** section. 
+They include the file path, file size, and hash.
 
-1. In the **ARTIFACTS** tab **>** **DATA AUDIT** or **OTHER** **>** Select an artifact **>** Either:
+**To retrieve Other artifacts:**
 
-    * Download the artifact <img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />, if it is stored in remote storage.
-    * Copy its location to the clipboard <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
+In the **ARTIFACTS** tab **>** **OTHER** **>** Select an artifact **>** Either:
+* Download the artifact <img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />, if it is stored in remote storage.
+* Copy its location to the clipboard <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
       if it is in a local file.
 
-#### Data Audit
-
-Artifacts which are uploaded and dynamically tracked by ClearML appear in the **DATA AUDIT** section. They include the file path, file size, hash, and metadata stored with the artifact.
-
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
-![Data audit section](../img/webapp_tracking_29.png)
-
-</div>
-</details>
-
-#### Other
-
-Other artifacts, which are uploaded but not dynamically tracked after the upload, appear in the **OTHER** section. They include the file path, file size, and hash.
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
 ![Other artifacts section](../img/webapp_tracking_30.png)
-
-</div>
-</details>
-
-
-
 
 ## General Information
 
@@ -326,18 +232,7 @@ General experiment details appear in the **INFO** tab. This includes information
   * Processor
   * Python version
     
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
 ![Info tab](../img/webapp_tracking_31.png)
-
-</div>
-</details>
-
-
-
 
 ## Experiment Results
 
@@ -414,14 +309,7 @@ Non-time-series plots appear in **RESULTS** **>** **PLOTS**. These include data 
 tools, and ClearML explicit reporting. These may include 2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. 
 Individual plots can be shown / hidden or filtered by title.
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot</summary>
-<div className="cml-expansion-panel-content">
-
 ![Plots tab](../img/webapp_tracking_35.png)
-
-</div>
-</details>
 
 
 #### Plot Controls
@@ -459,7 +347,11 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 
 ### Debug Samples
 
-View debug samples by metric at any iteration. The most recent iteration appears first. Use the viewer / player to inspect images, audio, video samples and do any of the following:
+View debug samples by metric at any iteration. The most recent iteration appears first. 
+
+![Debug Samples tab](../img/webapp_tracking_43.png)
+
+Use the viewer / player to inspect images, audio, video samples and do any of the following:
 
 * Move to the same sample in a different iteration (move the iteration slider).
 * Show the next or previous iteration's sample.
@@ -467,27 +359,7 @@ View debug samples by metric at any iteration. The most recent iteration appears
 * Zoom.
 * View the sample's iteration number, width, height, and coordinates.
 
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot - Debug samples</summary>
-<div className="cml-expansion-panel-content">
-
-![Debug Samples tab](../img/webapp_tracking_43.png)
-
-</div>
-</details>
-
-<br/>
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">View a screenshot - Viewer </summary>
-<div className="cml-expansion-panel-content">
-
 ![Debug Samples image viewer](../img/webapp_tracking_44.png)
-
-</div>
-</details>
-<br/>
 
 **To view debug samples:**
 

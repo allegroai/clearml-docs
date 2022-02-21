@@ -12,7 +12,7 @@ To assist in focusing on active experimentation, experiments and models can be a
 in the active experiments and models tables. See [Archiving](webapp_archiving.md).
 :::
 
-![Experiment table](../img/webapp_exp_table_01.png)
+![Experiment table](../img/webapp_experiment_table.png)
 
 ## Experiments Table Columns
 
@@ -20,7 +20,7 @@ The experiments table default and customizable columns are described in the foll
 
 | Column | Description | Type |
 |---|---|---|
-| **TYPE** | Type of experiment. **ClearML** supports multiple [task types](../fundamentals/task.md#task-types) for experimentation, and a variety of workflows and use cases. | Default |
+| **TYPE** | Type of experiment. ClearML supports multiple [task types](../fundamentals/task.md#task-types) for experimentation, and a variety of workflows and use cases. | Default |
 | **NAME** | Experiment name.  |  Default |
 | **TAGS** | Descriptive, user-defined, color-coded tags assigned to experiments. Use tags to classify experiments, and filter the list. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Default |
 | **STATUS** | Experiment state (status). See a list of the [task states and state transitions](../fundamentals/task.md#task-states). |  Default |
@@ -53,7 +53,7 @@ Use experiments table customization for various use cases, including:
 * Tracking hyperparameters - Track hyperparameters by adding them as columns, and applying filters and sorting.
 
 Changes are persistent (cached in the browser), and represented in the URL so customized settings can be saved in a browser
-bookmark and shared with other **ClearML** users to collaborate.
+bookmark and shared with other ClearML users to collaborate.
 
 :::note
 The following experiments-table customizations are saved on a **per project** basis: 
@@ -158,7 +158,7 @@ operations on the selected experiments. Actions can be performed only on the exp
 of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooltip that
 appears when hovering over an action icon. 
 
-![Experiment table batch operations](../img/webapp_exp_table_batch_operations.png)
+![Experiment table batch operations](../img/webapp_experiment_table_context_menu.png)
 
 ## Selecting Multiple Experiments
 

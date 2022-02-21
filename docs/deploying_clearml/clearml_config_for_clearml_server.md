@@ -48,7 +48,7 @@ by setting [configuration options](../configs/clearml_conf.md).
             ClearML SDK setup process
             
             Please create new clearml credentials through the profile page in your clearml web app (e.g. http://localhost:8080/profile)
-            Or with the free hosted service at https://app.community.clear.ml/profile
+            Or with the free hosted service at https://app.clear.ml/profile
             In the profile page, press "Create new credentials", then press "Copy to clipboard".
             
             Paste copied configuration here:
@@ -56,18 +56,18 @@ by setting [configuration options](../configs/clearml_conf.md).
    1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the **SETTINGS > WORKSPACE** page, click 
       **Create new credentials** **>** **Copy to clipboard**.
     
-   1. At the command prompt `Paste copied configuration here:`, copy and paste the **ClearML** credentials.
+   1. At the command prompt `Paste copied configuration here:`, copy and paste the ClearML credentials.
         
         The setup wizard confirms the credentials. 
 
             Detected credentials key="********************" secret="*******"
 
-   1. Enter the **ClearML Server** web server URL, or press **Enter** to accept the default which is detected from the 
+   1. Enter the ClearML Server web server URL, or press **Enter** to accept the default which is detected from the 
       credentials.
     
             WEB Host configured to: [https://app.<your-domain>] 
     
-   1. Enter the **ClearML Server** API server URL, or press **Enter** to accept the default value which is based on the previous response:
+   1. Enter the ClearML Server API server URL, or press **Enter** to accept the default value which is based on the previous response:
     
             API Host configured to: [https://api.<your-domain>] 
     
@@ -110,7 +110,7 @@ These may be localhost, the domain, or a sub-domain of the domain.
         
 **To add ClearML settings to an existing ClearML configuration file:**
         
-1. Open the **ClearML** configuration file for editing. Depending upon the operating system, it is:
+1. Open the ClearML configuration file for editing. Depending upon the operating system, it is:
 
     * Linux - `~/clearml.conf`
     * macOS - `$HOME/clearml.conf`
@@ -131,4 +131,4 @@ These may be localhost, the domain, or a sub-domain of the domain.
 ```
 
 
-1. Save the **ClearML** configuration file. **ClearML** is now configured for the **ClearML Server**.
+1. Save the ClearM configuration file. ClearM is now configured for the **ClearML Server**.

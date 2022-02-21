@@ -28,7 +28,7 @@ The models table contains the following columns:
 ## Customizing the Models Table
 
 The models table is customizable. Changes are persistent (cached in the browser) and represented in the URL, so customized settings
-can be saved in a browser bookmark and shared with other **ClearML** users to collaborate.
+can be saved in a browser bookmark and shared with other ClearML users to collaborate.
 
 Customize any combination of the following:
 

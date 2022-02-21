@@ -43,4 +43,4 @@ models and any snapshots created using PyTorch.
 Clicking on the model name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can view 
 the model’s details and access the model.
 
-![image](../../../img/examples_pytorch_tensorboardx_05.png)
+![image](../../../img/examples_pytorch_tensorboardx_model.png)

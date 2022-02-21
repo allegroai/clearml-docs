@@ -2,7 +2,7 @@
 title: Google Cloud Platform
 ---
 
-Deploy **ClearML Server** on the Google Cloud Platform (GCP) using one of the pre-built GCP Custom Images. **ClearML** 
+Deploy **ClearML Server** on the Google Cloud Platform (GCP) using one of the pre-built GCP Custom Images. ClearM 
 provides custom images for each released version of **ClearML Server**. For a list of the pre-built custom images, see 
 [ClearML Server GCP Custom Image](#clearml-server-gcp-custom-image). 
 

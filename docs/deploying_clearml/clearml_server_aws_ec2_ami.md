@@ -90,7 +90,7 @@ Once deployed, **ClearML Server** exposes the following services:
 
 ### Logging in to the Web-App (UI)
 
-**To log in to the **ClearML** Web-App (UI):**
+**To log in to the ClearM Web-App (UI):**
 
 * If **ClearML Server** was launched from an AWS Community AMI, enter any name.
 * If **ClearML Server** was launched through the AWS Marketplace, enter the preconfigured default login credentials, which 

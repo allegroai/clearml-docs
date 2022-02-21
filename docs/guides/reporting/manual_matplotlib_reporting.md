@@ -3,7 +3,7 @@ title: Manual Matplotlib Reporting
 ---
 
 The [matplotlib_manual_reporting.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/matplotlib_manual_reporting.py) 
-example demonstrates reporting using Matplotlib and Seaborn with **ClearML**.
+example demonstrates reporting using Matplotlib and Seaborn with ClearM.
 
 When the script runs, it creates an experiment named `Manual Matplotlib example`, which is associated with the 
 `examples` project.

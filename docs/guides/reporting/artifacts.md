@@ -17,9 +17,9 @@ Artifacts can be uploaded and dynamically tracked, or uploaded without tracking.
 
 <a name="configure_artifact_storage" class="tr_top_negative"></a>
 
-Configure **ClearML** for uploading artifacts to any of the supported types of storage, which include local and shared folders, 
+Configure ClearM for uploading artifacts to any of the supported types of storage, which include local and shared folders, 
 S3 buckets, Google Cloud Storage, and Azure Storage ([debug sample storage](../../references/sdk/logger.md#set_default_upload_destination) 
-is different). Configure **ClearML** in any of the following ways:
+is different). Configure ClearM in any of the following ways:
 
 * In the configuration file, set [default_output_uri](../../configs/clearml_conf.md#sdkdevelopment).
 * In code, when [initializing a Task](../../references/sdk/task.md#taskinit), use the `output_uri` parameter.
@@ -27,14 +27,14 @@ is different). Configure **ClearML** in any of the following ways:
 
 When the script runs, it creates an experiment named `artifacts example`, which is associated with the `examples` project. 
 
-**ClearML** reports artifacts in the **ClearML Web UI** **>** experiment details **>** **ARTIFACTS** tab.
+ClearM reports artifacts in the **ClearML Web UI** **>** experiment details **>** **ARTIFACTS** tab.
 
 ![image](../../img/examples_reporting_03.png)
 
 ## Dynamically Tracked Artifacts
 
-Currently, **ClearML** supports uploading and dynamically tracking Pandas DataFrames. Use the [Task.register_artifact](../../references/sdk/task.md#register_artifact)
-method. If the Pandas DataFrame changes, **ClearML** uploads the changes. The updated artifact is associated with the experiment.
+Currently, ClearM supports uploading and dynamically tracking Pandas DataFrames. Use the [Task.register_artifact](../../references/sdk/task.md#register_artifact)
+method. If the Pandas DataFrame changes, ClearM uploads the changes. The updated artifact is associated with the experiment.
 
 For example:
 
@@ -54,7 +54,7 @@ task.register_artifact('train', df, metadata={'counting': 'legs', 'max legs': 69
 ```
 
 By changing the artifact, and calling the [Task.get_registered_artifacts](../../references/sdk/task.md#get_registered_artifacts) 
-method to retrieve it, we can see that **ClearML** tracked the change.
+method to retrieve it, we can see that ClearM tracked the change.
 
 ```python
 # change the artifact object
@@ -65,7 +65,7 @@ Task.current_task().get_registered_artifacts()['train'].sample(frac=0.5, replace
 
 ## Artifacts Without Tracking
 
-**ClearML** supports several types of objects that can be uploaded and are not tracked. Use the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
+ClearM supports several types of objects that can be uploaded and are not tracked. Use the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
 method. 
 
 Artifacts without tracking include:

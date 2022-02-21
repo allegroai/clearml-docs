@@ -8,7 +8,7 @@ The **Dashboard** provides the following options:
 * Create new projects 
 * Open the [**Workers & Queues**](webapp_workers_queues.md) tab to monitor resource utilization and to manage queues.
 
-![image](../img/0100.png)
+![Dashboard](../img/webapp_dashboard.png)
 
 **To select a project, experiment, or model:**
 

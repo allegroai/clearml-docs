@@ -4,7 +4,7 @@ title: Hyperparameters Reporting
 
 The [hyper_parameters.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/hyper_parameters.py) example 
 script demonstrates: 
-* **ClearML**'s automatic logging of `argparse` command line options and TensorFlow Definitions
+* ClearM's automatic logging of `argparse` command line options and TensorFlow Definitions
 * Logging user-defined hyperparameters with a parameter dictionary and connecting the dictionary to a Task. 
 
 Hyperparameters appear in the **web UI** in the experiment's page, under **CONFIGURATIONS** **>** **HYPER PARAMETERS**. 
@@ -15,7 +15,7 @@ When the script runs, it creates an experiment named `hyper-parameters example`,
 
 ## Argparse Command Line Options
 
-If a code uses argparse and initializes a Task, **ClearML** automatically logs the argparse arguments.
+If a code uses argparse and initializes a Task, ClearM automatically logs the argparse arguments.
  
 ```python
 parser = ArgumentParser()
@@ -34,7 +34,7 @@ Command line options appears in **HYPER PARAMETERS** **>** **Args**.
 
 ## TensorFlow Definitions
 
-**ClearML** automatically logs TensorFlow Definitions, whether they are defined before or after the Task is initialized.
+ClearM automatically logs TensorFlow Definitions, whether they are defined before or after the Task is initialized.
 
 ```python
 flags.DEFINE_string('echo', None, 'Text to echo.')
@@ -55,7 +55,7 @@ TensorFlow Definitions appear in **HYPER PARAMETERS** **>** **TF_DEFINE**.
 ## Parameter Dictionaries
 
 Connect a parameter dictionary to a Task by calling the [Task.connect](../../references/sdk/task.md#connect)
-method, and **ClearML** logs the parameters. **ClearML** also tracks changes to the parameters.
+method, and ClearM logs the parameters. ClearM also tracks changes to the parameters.
 
 ```python
 parameters = {

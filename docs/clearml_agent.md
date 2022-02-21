@@ -639,7 +639,7 @@ It's possible to add the Docker container as the base Docker image to a Task (ex
 
 - Using the **ClearML Web UI** - See [Base Docker image](webapp/webapp_exp_tuning.md#base-docker-image) on the "Tuning
   Experiments" page.
-- In the **ClearML** configuration file - Use the **ClearML** configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
+- In the ClearML configuration file - Use the ClearML configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
   options.
 
 ## Google Colab
