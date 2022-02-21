@@ -28,7 +28,7 @@ After deploying **ClearML Server**, the services expose the following node ports
 
 The persistent storage configuration:
 
-* MongoDB: `/opt/clearml/data/mongo/`
+* MongoDB: `/opt/clearml/data/mongo_4/`
 * Elasticsearch: `/opt/clearml/data/elastic_7/`
 * File Server: `/mnt/fileserver/`
 

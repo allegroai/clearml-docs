@@ -91,8 +91,8 @@ instructions in the [Security](clearml_server_security.md) page.
 1. Create local directories for the databases and storage.
 
         sudo mkdir -p /opt/clearml/data/elastic_7
-        sudo mkdir -p /opt/clearml/data/mongo/db
-        sudo mkdir -p /opt/clearml/data/mongo/configdb
+        sudo mkdir -p /opt/clearml/data/mongo_4/db
+        sudo mkdir -p /opt/clearml/data/mongo_4/configdb
         sudo mkdir -p /opt/clearml/data/redis
         sudo mkdir -p /opt/clearml/logs
         sudo mkdir -p /opt/clearml/config
