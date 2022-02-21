@@ -28,7 +28,7 @@ After deploying **ClearML Server**, the services expose the following node ports
 
 The persistent storage configuration:
 
-* MongoDB: `/opt/clearml/data/mongo/`
+* MongoDB: `/opt/clearml/data/mongo_4/`
 * Elasticsearch: `/opt/clearml/data/elastic_7/`
 * File Server: `/mnt/fileserver/`
 
@@ -108,12 +108,14 @@ If the data and the configuration need to be restored:
 
 The following section contains a list of Custom Image URLs (exported in different formats) for each released **ClearML Server** version.
 
-### Latest Version - v1.0.2
+### Latest Version - v1.2.0
 
 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz)
 
 ### All Release Versions
 
+- v1.2.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-2-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-2-0.tar.gz)
+- v1.1.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-1-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-1-0.tar.gz)
 - v1.0.2 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-2.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-2.tar.gz)
 - v1.0.1 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-1.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-1.tar.gz)
 - v1.0.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-0.tar.gz)
