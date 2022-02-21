@@ -21,12 +21,12 @@ clearml-init
 
 ## Auto-log Experiment
 
-In ClearML, experiments are organized as [Tasks](../../fundamentals/task.md). 
+In ClearML, experiments are organized as [Tasks](../../fundamentals/task.md).
 
-ClearML will automatically log your experiment and code, including outputs and parameters from popular ML frameworks, 
-once you integrate the ClearML [SDK](../../clearml_sdk.md) with your code. To control what ClearML automatically logs, see this [FAQ](../../faq.md#controlling_logging). 
+ClearML will automatically log your experiment and code, including outputs and parameters from popular ML frameworks,
+once you integrate the ClearML [SDK](../../clearml_sdk.md) with your code. To control what ClearML automatically logs, see this [FAQ](../../faq.md#controlling_logging).
 
-At the beginning of your code, import the `clearml` package: 
+At the beginning of your code, import the `clearml` package:
 
 ```python
 from clearml import Task
@@ -60,4 +60,9 @@ Now, [command-line arguments](../../fundamentals/hyperparameters.md#command-line
 <br/>
 
 Sit back, relax, and watch your models converge :) or continue to see what else can be done with ClearML [here](ds_second_steps.md).
- 
+
+## Youtube Playlist
+
+Or watch the Youtube Getting Started Playlist on our Youtube Channel!
+
+[![Watch the video](https://img.youtube.com/vi/bjWwZAzDxTY/hqdefault.jpg)](https://www.youtube.com/watch?v=bjWwZAzDxTY&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=2)
