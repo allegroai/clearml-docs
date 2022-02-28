@@ -44,14 +44,14 @@ module.exports = {
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
                 'Deploying ClearML Server': ['deploying_clearml/clearml_server_aws_ec2_ami', 'deploying_clearml/clearml_server_gcp',
-                    'deploying_clearml/clearml_server_linux_mac', 'deploying_clearml/clearml_server_win', 'deploying_clearml/clearml_server_kubernetes',
+                    'deploying_clearml/clearml_server_linux_mac', 'deploying_clearml/clearml_server_win',
                     'deploying_clearml/clearml_server_kubernetes_helm']
             },
             {
                 'Upgrading ClearML Server':['deploying_clearml/upgrade_server_aws_ec2_ami','deploying_clearml/upgrade_server_gcp',
                     'deploying_clearml/upgrade_server_linux_mac', 'deploying_clearml/upgrade_server_win',
-                    'deploying_clearml/upgrade_server_kubernetes', 'deploying_clearml/upgrade_server_kubernetes_helm',
-                    'deploying_clearml/clearml_server_es7_migration']
+                    'deploying_clearml/upgrade_server_kubernetes_helm',
+                    'deploying_clearml/clearml_server_es7_migration', 'deploying_clearml/clearml_server_mongo44_migration']
             },
             'deploying_clearml/clearml_server_config', 'deploying_clearml/clearml_config_for_clearml_server', 'deploying_clearml/clearml_server_security'
         ]},
@@ -114,7 +114,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
+        'Release Notes': ['release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
             'release_notes/ver_0_13', 'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10',
             'release_notes/ver_0_9',
         ],

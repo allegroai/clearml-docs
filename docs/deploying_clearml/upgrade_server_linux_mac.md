@@ -2,12 +2,6 @@
 title: Linux or macOS
 ---
 
-:::important
-This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
-:::
-
-<br/>
-
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">Important: Upgrading from v0.14 or older</summary>
 <div class="cml-expansion-panel-content">
@@ -35,12 +29,13 @@ For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRA
 
 **To upgrade ClearML Server Docker deployment:**
 
-1. Shutdown **ClearML Server**. Execute the following command (which assumes the configuration file is in the environment path).
+1. Shutdown ClearML Server. Execute the following command (which assumes the configuration file is in the environment path).
  
         docker-compose -f docker-compose.yml down
         
-1. If upgrading from **Trains Server** version 0.15 or older to **ClearML Server**, a data migration is required before 
-   upgrading. First follow these [data migration instructions](clearml_server_es7_migration.md), and then continue this upgrade.
+1. If upgrading from **Trains Server** version 0.15 or older, a data migration is required before continuing this upgrade. See instructions [here](clearml_server_es7_migration.md).
+
+1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md).
 
 1. We recommend [backing up data](clearml_server_linux_mac.md#backing-up-and-restoring-data-and-configuration) and, if the configuration folder is 
    not empty, backing up the configuration.

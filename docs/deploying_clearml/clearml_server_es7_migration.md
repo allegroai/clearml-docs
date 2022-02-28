@@ -2,8 +2,9 @@
 title: Upgrading Server from v0.15 or Older to ClearML Server
 ---
 
-:::important
-This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
+:::important updating to ClearML Server v1.2+
+If you are upgrading your ClearML Server to version 1.2 or newer, you will need to migrate your database contents to be compatible with the new version, 
+after performing the migration instructions below. 
 :::
 
 In v0.16, the Elasticsearch subsystem of **Trains Server** was upgraded from version 5.6 to version 7.6. This change necessitates 
@@ -135,13 +136,7 @@ and **ClearML Server** needs to be installed.
 
                 kubectl get jobs -n upgrade-elastic                                   
 
-### Finishing Up
-
-To finish up: 
-1. Verify the data migration
-1. Conclude the upgrade.
-
-#### Step 1. Verifying the Data Migration
+### Verifying the Data Migration
 
 Upon successful completion, the migration script renames the original **Trains Server** directory, which contains the now 
 migrated data, and prints a completion message:
@@ -160,68 +155,14 @@ For help in resolving migration issues, check the **allegro-clearml** [Slack Cha
 [GitHub Issues](https://github.com/allegroai/clearml-server/issues), and the **ClearML Server** sections of the [FAQ](../faq.md).     
 :::
     
-#### Step 2. Completing the Installation
+### Upgrading to ClearML Server v.1.2 or Newer
+If you are upgrading your ClearML Server to version 1.2 or newer, you will need to migrate your database contents to be 
+compatible with the new version. See instructions [here](clearml_server_mongo44_migration.md). Otherwise, continue the instructions below.
 
-After verifying the data migration completed successfully, conclude the **ClearML Server** installation process.
+### Completing the Installation
 
-##### Linux or macOS
-
-For Linux or macOS, conclude with the steps in this section. For other deployment formats, see [below](#other-deployment-formats).
-
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Important: Upgrading from v0.14 or older</summary>
-<div className="cml-expansion-panel-content">
-   For Linux only, if upgrading from **Trains Server** v0.14 or older, configure the **ClearML Agent Services**.
-
-   * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** will use the external public address of the 
-     **ClearML Server**.
-   * If ``CLEARML_AGENT_GIT_USER`` / ``CLEARML_AGENT_GIT_PASS`` are not provided, then **ClearML Agent Services** will 
-     not be able to access any private repositories for running service tasks.
-
-
-      export CLEARML_HOST_IP=server_host_ip_here
-      export CLEARML_AGENT_GIT_USER=git_username_here
-      export CLEARML_AGENT_GIT_PASS=git_password_here
-
-
-:::note 
-For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRAINS_AGENT_GIT_USER``, and ``TRAINS_AGENT_GIT_PASS`` are supported. 
-:::
-
-</div>
-</details>
-      
-
-1. We recommend backing up data and, if the configuration folder is not empty, backing up the configuration.
-
-    For example, if the data and configuration folders are in `/opt/trains`, then archive all data into `~/trains_backup_data.tgz`, 
-   and the configuration into `~/trains_backup_config.tgz`:
-    
-        sudo tar czvf ~/trains_backup_data.tgz -C /opt/trains/data .
-        sudo tar czvf ~/trains_backup_config.tgz -C /opt/trains/config .
-
-1. Rename `/opt/trains` and its subdirectories to `/opt/clearml`.
-
-        sudo mv /opt/trains /opt/clearml
-    
-1. Download the latest `docker-compose.yml` file.
-
-        curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
-
-1. Startup **ClearML Server**. This automatically pulls the latest **ClearML Server** build.
-        
-        docker-compose -f /opt/clearml/docker-compose.yml pull
-        docker-compose -f /opt/clearml/docker-compose.yml up -d
-
-If issues arise during the upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq.md#common-docker-upgrade-errors).
-
-##### Other Deployment Formats
-
-To conclude the upgrade for deployment formats other than Linux, follow their upgrade instructions: 
- 
+After verifying the data migration completed successfully, continue upgrading your server:
 * [AWS EC2 AMIs](upgrade_server_aws_ec2_ami.md)
 * [Google Cloud Platform custom images](upgrade_server_gcp.md)
 * [Linux and macOS](upgrade_server_linux_mac.md)
 * [Windows](upgrade_server_win.md)
-* [Kubernetes](upgrade_server_kubernetes.md)
-* [Kubernetes Using Helm](upgrade_server_kubernetes_helm.md).

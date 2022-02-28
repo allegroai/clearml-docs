@@ -30,7 +30,7 @@ With the **Workers and Queues** page, users can:
 
     1. In the period list (top right side), select **3 Hours**, **6 Hours**, **12 Hours**, **1 Day**, **1 Week**, or **1 Month**.
 
-![image](../img/4000.png)
+![Worker management](../img/agents_queues_resource_management.png)
 
 
 
