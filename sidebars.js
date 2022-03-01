@@ -158,19 +158,20 @@ module.exports = {
         'hyperdatasets/dataviews',
         'hyperdatasets/task',
         {'WebApp': [
-            {'Dataviews': [
-                'hyperdatasets/webapp/webapp_dataviews',
-                'hyperdatasets/webapp/webapp_exp_modifying',
-                'hyperdatasets/webapp/webapp_exp_track_visual',
-                'hyperdatasets/webapp/webapp_exp_comparing',
-                ]},
-            {'Datasets': [
-                'hyperdatasets/webapp/webapp_datasets',
-                'hyperdatasets/webapp/webapp_datasets_versioning',
-                'hyperdatasets/webapp/webapp_datasets_frames'
-                ]},
-            'hyperdatasets/webapp/webapp_annotator'
-        ]}
+                {'Projects': [
+                        'hyperdatasets/webapp/webapp_dataviews', 'hyperdatasets/webapp/webapp_exp_track_visual',
+                        'hyperdatasets/webapp/webapp_exp_modifying', 'hyperdatasets/webapp/webapp_exp_comparing',
+                        ]
+                },
+                {'Datasets': [
+                    'hyperdatasets/webapp/webapp_datasets',
+                    'hyperdatasets/webapp/webapp_datasets_versioning',
+                    'hyperdatasets/webapp/webapp_datasets_frames'
+                    ]
+                },
+                'hyperdatasets/webapp/webapp_annotator'
+            ]
+        }
     ],
     sdkHyperDataset: [
         {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
