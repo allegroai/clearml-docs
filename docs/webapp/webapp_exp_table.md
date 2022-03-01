@@ -136,6 +136,7 @@ that allow each operation.
 | View a worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
 | Archive | To more easily work with active experiments, move an experiment to the archive. See [Archiving](webapp_archiving.md). | Any state |  None  |
+| Restore |Action available in the archive. Restore a Dataview to the active Dataviews table.| Any State | None |
 | Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft* | *Pending* |
 | Dequeue | Remove an experiment from a queue. | *Pending* | *Draft* |
 | Reset  | Delete the log and output from a previous run of an experiment (for example, before rerunning it). | *Completed*, *Aborted*, or *Failed* | *Draft* |
