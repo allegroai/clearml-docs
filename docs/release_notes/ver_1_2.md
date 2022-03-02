@@ -2,6 +2,12 @@
 title: Version 1.2
 ---
 
+### ClearML SDK 1.2.1
+
+**Bug Fixes**
+
+- Fix HTTP download fails constructing URL [ClearML GitHub issue #593](https://github.com/allegroai/clearml/issues/593)
+
 ### ClearML SDK 1.2.0
 
 **Features**
