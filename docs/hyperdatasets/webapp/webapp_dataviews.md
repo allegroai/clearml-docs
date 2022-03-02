@@ -27,10 +27,10 @@ Save customized settings in a browser bookmark, and share the URL with teammates
 
 Customize the table using any of the following:
 
-* Dynamic column ordering - Drag a column title to a different position.
+* Dynamic column order - Drag a column title to a different position.
+* Resize columns - Drag the column separator to change the width of that column. Double click the column separator for automatic fit.
 * Filter by user and / or status
 * Sort columns - By experiment name and / or elapsed time since creation.
-* Column autofit - In the column heading, double click a resizer (column separator).
 
 :::note
 The following Dataviews-table customizations are saved on a **per project** basis: 
