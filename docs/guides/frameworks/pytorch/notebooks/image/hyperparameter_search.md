@@ -3,15 +3,15 @@ title: Image Hyperparameter Optimization - Jupyter Notebook
 ---
 
 [hyperparameter_search.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/hyperparameter_search.ipynb) 
-demonstrates integrating ClearM into a Jupyter Notebook which performs automated hyperparameter optimization. This 
-is an example of ClearM automation. It creates a ClearM 
+demonstrates integrating ClearML into a Jupyter Notebook which performs automated hyperparameter optimization. This 
+is an example of ClearML automation. It creates a ClearML 
 [HyperParameterOptimizer](../../../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object, which is a search controller. The search controller's search strategy optimizer is [OptimizerBOHB](../../../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md) 
-The example maximizes total accuracy by finding an optimal batch size, base learning rate, and dropout. ClearM 
+The example maximizes total accuracy by finding an optimal batch size, base learning rate, and dropout. ClearML 
 automatically logs the optimization's top performing experiments.
 
 The experiment whose hyperparameters are optimized is named `image_classification_CIFAR10`. It is created by running another 
-ClearM example, [image_classification_CIFAR10.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/image_classification_CIFAR10.ipynb), which must run before `hyperparameter_search.ipynb`.
+ClearML example, [image_classification_CIFAR10.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/image_classification_CIFAR10.ipynb), which must run before `hyperparameter_search.ipynb`.
 
 When `hyperparameter_search.py` runs, it creates an experiment named `Hyper-Parameter Optimization` which is associated 
 with the `Hyper-Parameter Search` project.
@@ -24,7 +24,7 @@ The optimizer Task, `Hyper-Parameter Optimization`, and the experiments appear i
 
 Scalars for total accuracy and remaining budget by iteration, and a plot of total accuracy by iteration appear in **RESULTS** **>** **SCALARS**. Remaining budget indicates the percentage of total iterations for all jobs left before that total is reached.
 
-These scalars are reported automatically by ClearM from `HyperParameterOptimizer` when it runs.
+These scalars are reported automatically by ClearML from `HyperParameterOptimizer` when it runs.
 
 ![image](../../../../../img/examples_hyperparameter_search_04.png)
 
@@ -32,7 +32,7 @@ These scalars are reported automatically by ClearM from `HyperParameterOptimizer
 
 A plot for the optimization of total accuracy by job appears in **RESULTS** **>** **SCALARS**.
 
-This is also reported automatically by ClearM when `HyperParameterOptimizer` runs.
+This is also reported automatically by ClearML when `HyperParameterOptimizer` runs.
 
 ![image](../../../../../img/examples_hyperparameter_search_05.png)
 
@@ -79,7 +79,7 @@ All console output from `Hyper-Parameter Optimization` appears in **RESULTS** ta
 
 ## Experiments Comparison
 
-ClearM automatically logs each job, meaning each experiment that executes with a set of hyperparameters, separately. Each appears as an individual experiment in the **ClearML Web UI**, where the Task name is `image_classification_CIFAR10` and the hyperparameters appended.
+ClearML automatically logs each job, meaning each experiment that executes with a set of hyperparameters, separately. Each appears as an individual experiment in the **ClearML Web UI**, where the Task name is `image_classification_CIFAR10` and the hyperparameters appended.
 
 For example:
 

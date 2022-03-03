@@ -3,7 +3,7 @@ title: Hyperparameter Optimization
 ---
 
 The [hyper_parameter_optimizer.py](https://github.com/allegroai/clearml/blob/master/examples/optimization/hyper-parameter-optimization/hyper_parameter_optimizer.py) 
-example script demonstrates hyperparameter optimization, which is automated by using ClearM 
+example script demonstrates hyperparameter optimization, which is automated by using ClearML 
 
 ## Set the Search Strategy for Optimization
 
@@ -18,13 +18,13 @@ The following search strategies can be used:
   BOHB performs robust and efficient hyperparameter optimization at scale by combining the speed of Hyperband searches 
   with the guidance and guarantees of convergence of Bayesian Optimization.
     
-    ClearM implements BOHB for automation with HpBandSter's [bohb.py](https://github.com/automl/HpBandSter/blob/master/hpbandster/optimizers/bohb.py). 
+    ClearML implements BOHB for automation with HpBandSter's [bohb.py](https://github.com/automl/HpBandSter/blob/master/hpbandster/optimizers/bohb.py). 
   For more information about HpBandSter BOHB, see the [HpBandSter](https://automl.github.io/HpBandSter/build/html/index.html) 
   documentation.
      
 * Random uniform sampling of hyperparameter strategy - [automation.RandomSearch](../../../references/sdk/hpo_optimization_randomsearch.md)
 * Full grid sampling strategy of every hyperparameter combination - Grid search [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
-* Custom - Use a custom class and inherit from the ClearM automation base strategy class, automation.optimization.SearchStrategy.
+* Custom - Use a custom class and inherit from the ClearML automation base strategy class, automation.optimization.SearchStrategy.
 
 The search strategy class that is chosen will be passed to the [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object later.
@@ -122,7 +122,7 @@ an_optimizer = HyperParameterOptimizer(
     base_task_id=args['template_task_id'],
 ```
 
-Set the hyperparameter ranges to sample, instantiating them as ClearM automation objects using [automation.UniformIntegerParameterRange](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
+Set the hyperparameter ranges to sample, instantiating them as ClearML automation objects using [automation.UniformIntegerParameterRange](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
 and [automation.DiscreteParameterRange](../../../references/sdk/hpo_parameters_discreteparameterrange.md).
 
 ```python

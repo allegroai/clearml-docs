@@ -7,7 +7,7 @@ example demonstrates reporting a series as a surface plot and as a 3D scatter pl
 
 When the script runs, it creates an experiment named `3D plot reporting`, which is associated with the `examples` project.
 
-ClearM reports these plots in the **ClearML Web UI** **>** experiment page **>** **RESULTS** tab **>** **PLOTS** sub-tab. 
+ClearML reports these plots in the **ClearML Web UI** **>** experiment page **>** **RESULTS** tab **>** **PLOTS** sub-tab. 
 
 ## Surface Plot
 

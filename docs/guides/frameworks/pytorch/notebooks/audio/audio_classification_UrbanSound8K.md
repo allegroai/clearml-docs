@@ -2,7 +2,7 @@
 title: Audio Classification - Jupyter Notebooks
 ---
 
-The example [audio_classification_UrbanSound8K.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/audio/audio_classifier_UrbanSound8K.ipynb) demonstrates integrating ClearM into a Jupyter Notebook which uses PyTorch, TensorBoard, and TorchVision to train a neural network on the UrbanSound8K dataset for audio classification. The example calls TensorBoard methods in training and testing to report scalars, audio debug samples, and spectrogram visualizations. The spectrogram visualizations are plotted by calling Matplotlib methods. In the example, we also demonstrate connecting parameters to a Task and logging them. When the script runs, it creates an experiment named `audio classification UrbanSound8K` which is associated with the `Audio Example` project.
+The example [audio_classification_UrbanSound8K.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/audio/audio_classifier_UrbanSound8K.ipynb) demonstrates integrating ClearML into a Jupyter Notebook which uses PyTorch, TensorBoard, and TorchVision to train a neural network on the UrbanSound8K dataset for audio classification. The example calls TensorBoard methods in training and testing to report scalars, audio debug samples, and spectrogram visualizations. The spectrogram visualizations are plotted by calling Matplotlib methods. In the example, we also demonstrate connecting parameters to a Task and logging them. When the script runs, it creates an experiment named `audio classification UrbanSound8K` which is associated with the `Audio Example` project.
 
 ## Scalars
 
@@ -30,7 +30,7 @@ By doubling clicking a thumbnail, you can view a spectrogram plot in the image v
 
 ## Hyperparameters
 
-ClearM automatically logs TensorFlow Definitions. A parameter dictionary is logged by connecting it to the Task using 
+ClearML automatically logs TensorFlow Definitions. A parameter dictionary is logged by connecting it to the Task using 
 a call to the [Task.connect](../../../../../references/sdk/task.md#connect) method. 
 
     configuration_dict = {'number_of_epochs': 10, 'batch_size': 4, 'dropout': 0.25, 'base_lr': 0.001}

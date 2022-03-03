@@ -15,7 +15,7 @@ The example script does the following:
   
 ## Scalars
 
-In the example script's `train` function, the following code explicitly reports scalars to ClearM:
+In the example script's `train` function, the following code explicitly reports scalars to ClearML:
 
 ```python
 Logger.current_logger().report_scalar(

@@ -131,4 +131,4 @@ These may be localhost, the domain, or a sub-domain of the domain.
 ```
 
 
-1. Save the ClearM configuration file. ClearM is now configured for the **ClearML Server**.
+1. Save the ClearML configuration file. ClearML is now configured for the **ClearML Server**.
