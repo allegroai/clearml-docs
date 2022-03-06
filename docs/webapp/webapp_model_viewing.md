@@ -36,9 +36,9 @@ Hover over the model configuration area to access the following actions:
 ![Model config actions](../img/webapp_model_config_actions.png)
 
 * <img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-sm space-sm" /> Search 
-* <img src="/docs/latest/icons/ico-trash.svg" alt="Copy" className="icon size-sm space-sm" /> Copy configuration 
-* <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" />CLEAR (for *Draft* models) - Delete the configuration 
-* EDIT (for *Draft* models) - Modify / Add model configuration
+* <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-sm space-sm" /> Copy configuration 
+* <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" />CLEAR (for Draft models) - Delete the configuration 
+* EDIT (for Draft models) - Modify / Add model configuration
 
 ## Label Enumeration
 

@@ -60,7 +60,7 @@ In the **Web App Cloud Access** section, enter the following credentials:
 Multiple workspaces is only available on the ClearML Hosted Service
 :::
 
-ClearML Hosted Service users can be members of multiple workspaces, which are listed under **WORKSPACES**. 
+ClearML Hosted Service users can be members of multiple workspaces, which are listed under **WORKSPACE**. 
 
 To switch to another workspace, click on the **SWITCH TO WORKSPACE** button next to the name of the workspace you want 
 to switch to. 
@@ -114,7 +114,7 @@ in that workspace. You can rejoin the workspace only if you are re-invited.
 
 **To leave a workspace:**
 
-1. In **WORKSPACES**, expand the desired workspace's panel 
+1. In **WORKSPACE**, expand the desired workspace's panel 
 1. In **Members** **>** Click **LEAVE WORKSPACE**.
 
 
