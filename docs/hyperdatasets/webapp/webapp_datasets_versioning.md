@@ -5,8 +5,6 @@ title: Dataset Versions
 Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying, and 
 deleting [Dataset versions](../dataset.md#dataset-versioning).
 
-From the [Datasets page](webapp_datasets.md), click on one of the Datasets in order to see and work with its versions. 
-
 ## Dataset Version History
 The WebApp (UI) will present your dataset version structure in one of two ways, depending on the structure implemented.
 
