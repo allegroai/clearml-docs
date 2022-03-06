@@ -16,7 +16,7 @@ to a new position.
 
 * **DATAVIEW** - Dataview name.
 * **USER** - User who created the Dataview.
-* **Status** - The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only).  
+* **STATUS** - The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only).  
 * **CREATED** - Elapsed time since the Dataview was created.
 * **DESCRIPTION**
 
