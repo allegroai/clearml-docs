@@ -99,7 +99,7 @@ that allow each operation.
 
 These actions can be accessed with the context menu, when right-clicking a run.
 
-![pipeline run context menu](../../img/webapp_pipelines_context_menu)
+![pipeline run context menu](../../img/webapp_pipelines_context_menu.png)
 
 Most of the actions mentioned in the chart above can be performed on multiple runs at once.
 [Select multiple runs](#selecting-multiple-runs), then use either the context menu, or the bar that appears at the bottom 

@@ -8,7 +8,7 @@ Use the **Pipelines** Page to navigate between and manage pipelines. The page sh
 Click on a pipeline card to navigate to its [Pipeline Runs Table](webapp_pipeline_table.md), where you can view the 
 pipeline structure, configuration and outputs for all of the pipeline’s runs, as well as create new runs.
 
-![Projects page](../../img/webapp_pipeline_table.png)
+![Pipelines page](../../img/webapp_pipeline_table.png)
 
 
 ## Pipeline Cards
