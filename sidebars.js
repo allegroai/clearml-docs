@@ -32,9 +32,14 @@ module.exports = {
                             'webapp/webapp_exp_comparing', 'webapp/webapp_exp_sharing']
                     },
                     {
-                        'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing', 'webapp/webapp_model_modifying']
+                        'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing']
                     },
                     'webapp/webapp_archiving'
+                ]
+            },
+            {
+                'Pipelines':[
+                    'webapp/pipelines/webapp_pipeline_page', 'webapp/pipelines/webapp_pipeline_table', 'webapp/pipelines/webapp_pipeline_viewing'
                 ]
             },
             'webapp/webapp_workers_queues', 'webapp/webapp_profile']
@@ -158,19 +163,20 @@ module.exports = {
         'hyperdatasets/dataviews',
         'hyperdatasets/task',
         {'WebApp': [
-            {'Dataviews': [
-                'hyperdatasets/webapp/webapp_dataviews',
-                'hyperdatasets/webapp/webapp_exp_modifying',
-                'hyperdatasets/webapp/webapp_exp_track_visual',
-                'hyperdatasets/webapp/webapp_exp_comparing',
-                ]},
-            {'Datasets': [
-                'hyperdatasets/webapp/webapp_datasets',
-                'hyperdatasets/webapp/webapp_datasets_versioning',
-                'hyperdatasets/webapp/webapp_datasets_frames'
-                ]},
-            'hyperdatasets/webapp/webapp_annotator'
-        ]}
+                {'Projects': [
+                        'hyperdatasets/webapp/webapp_dataviews', 'hyperdatasets/webapp/webapp_exp_track_visual',
+                        'hyperdatasets/webapp/webapp_exp_modifying', 'hyperdatasets/webapp/webapp_exp_comparing',
+                        ]
+                },
+                {'Datasets': [
+                    'hyperdatasets/webapp/webapp_datasets',
+                    'hyperdatasets/webapp/webapp_datasets_versioning',
+                    'hyperdatasets/webapp/webapp_datasets_frames'
+                    ]
+                },
+                'hyperdatasets/webapp/webapp_annotator'
+            ]
+        }
     ],
     sdkHyperDataset: [
         {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
