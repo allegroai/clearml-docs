@@ -11,7 +11,7 @@ pipeline structure, configuration and outputs for all of the pipeline’s runs, 
 ![Projects page](../../img/webapp_pipeline_table.png)
 
 
-## Pipeline Info Cards
+## Pipeline Cards
 
 The pipeline cards display summarized pipeline information:  
 

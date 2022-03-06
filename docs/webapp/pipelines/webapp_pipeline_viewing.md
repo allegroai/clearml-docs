@@ -14,7 +14,7 @@ Each step shows:
 * Step name
 * Step status
 * Step execution time
-* Step log button - Hover over the step and click <img src="/docs/latest/icons/ico-console.svg" alt="console" className="icon size-sm space-sm" /> 
+* Step log button - Hover over the step and click <img src="/docs/latest/icons/ico-console.svg" alt="console" className="icon size-md space-sm" /> 
   to view the step’s [console log and code](#run-and-step-log) 
 
 While the pipeline is running, the steps’ details and colors are updated.
@@ -45,7 +45,7 @@ The panel displays the step’s name, task type, and status, as well as its para
 
 To return to viewing the run’s information, click the pipeline graph, outside any of the steps.  
 
-## Run and Step Log
+### Run and Step Log
 
 Click on **DETAILS** on the top left of the info panel to view a run’s full console log. The log contains everything printed 
 to stdout and stderr.  

@@ -15,7 +15,7 @@ The models table contains the following columns:
 | Column | Description | Type |
 |---|---|---|
 | **RUN** | Pipeline run identifier  |  String |
-| **VERSION** | The pipeline version number. Corresponds to the [PipelineController](../../fundamentals/pipelines.md#pipelines-from-tasks) ’s and PipelineDecorator’s `version` parameter | Version string |
+| **VERSION** | The pipeline version number. Corresponds to the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md#class-pipelinecontroller) ’s and [PipelineDecorator](../../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator)’s `version` parameter | Version string |
 | **TAGS** | Descriptive, user-defined, color-coded tags assigned to run. | Tag |
 | **STATUS** | Pipeline run's status. See a list of the [task states and state transitions](../../fundamentals/task.md#task-states). |  String |
 | **USER** | User who created the run.  |  String |
