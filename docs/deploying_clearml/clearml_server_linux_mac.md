@@ -2,10 +2,6 @@
 title: Linux and macOS
 ---
 
-:::important
-This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
-:::
-
 Deploy the **ClearML Server** in Linux or macOS using the pre-built Docker image.
 
 For ClearML docker images, including previous versions, see [https://hub.docker.com/r/allegroai/clearml](https://hub.docker.com/r/allegroai/clearml). 
@@ -95,8 +91,8 @@ instructions in the [Security](clearml_server_security.md) page.
 1. Create local directories for the databases and storage.
 
         sudo mkdir -p /opt/clearml/data/elastic_7
-        sudo mkdir -p /opt/clearml/data/mongo/db
-        sudo mkdir -p /opt/clearml/data/mongo/configdb
+        sudo mkdir -p /opt/clearml/data/mongo_4/db
+        sudo mkdir -p /opt/clearml/data/mongo_4/configdb
         sudo mkdir -p /opt/clearml/data/redis
         sudo mkdir -p /opt/clearml/logs
         sudo mkdir -p /opt/clearml/config

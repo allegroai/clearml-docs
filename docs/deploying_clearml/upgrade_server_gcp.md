@@ -2,25 +2,22 @@
 title: Google Cloud Platform
 ---
 
-:::important
-This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
-:::
-
 **To upgrade ClearML Server Docker deployment:**
 
 1. Shut down the docker containers with the following command:
 
         docker-compose -f docker-compose.yml down
-        
+   
 1. If upgrading from **Trains Server** version 0.15 or older to **ClearML Server**, do the following:
 
-    1. A data migration is required before upgrading. First follow these [data migration instructions](clearml_server_es7_migration.md), 
+    1. Follow these [data migration instructions](clearml_server_es7_migration.md), 
        and then continue this upgrade.
        
     1. Rename `/opt/trains` and its subdirectories to `/opt/clearml`.
    
             sudo mv /opt/trains /opt/clearml
 
+1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md). 
 1. We recommend [backing up data](clearml_server_gcp.md#backing-up-and-restoring-data-and-configuration) and, if the configuration folder is 
    not empty, backing up the configuration.
 

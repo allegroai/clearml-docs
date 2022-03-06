@@ -18,6 +18,12 @@ Dataviews are lazy and optimize processing. When an experiment script runs in a 
 are initialized. If the experiment is cloned or extended, and that newly cloned or extended experiment is tuned and run, 
 only changed pointers are initialized. The pointers that did not change are reused.
 
+## Dataview State
+Dataviews can be in either *Draft* or *Published* state.
+
+A *Draft* Dataview is editable. A *Published* Dataview is read-only, which ensures reproducible experiments and 
+preserves the Dataview's settings. 
+
 ## Filtering
 
 A Dataview filters experiment input data, using one or more frame filters. A frame filter defines the criteria for the 

@@ -13,31 +13,36 @@ The models table contains the following columns:
 
 | Column | Description | Type |
 |---|---|---|
-| **FRAMEWORK** | The model framework. The list includes all frameworks, including custom frameworks. | Default |
-| **NAME** | Model name. | Default |
-| **TAGS** | User-defined labels added to models for grouping and organization. | Default |
-| **STATUS** | The status of the model, which can be *Draft* (editable) or *Published* (read-only). | Default |
-| **PROJECT** | The project with which the model is associated.| Default |
-| **USER** | The user who ran the experiment that created the model, or the user who imported the model.| Default |
-| **TASK** | The experiment (Task) name that created the model. | Default |
-| **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Default |
-| **DESCRIPTION** | The model description. | Default (hidden) |
-
+| **FRAMEWORK** | The model framework. The list includes all frameworks, including custom frameworks. | String |
+| **NAME** | Model name. | String |
+| **TAGS** | User-defined labels added to models for grouping and organization. | Tag |
+| **STATUS** | The status of the model, which can be *Draft* (editable) or *Published* (read-only). | String |
+| **PROJECT** | The project with which the model is associated.| String |
+| **USER** | The user who ran the experiment that created the model, or the user who imported the model.| String |
+| **TASK** | The experiment (Task) name that created the model. | String |
+| **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Date-time |
+| **DESCRIPTION** | The model description (not shown by default). | String |
+| *Metadata*| User defined metadata key column. Available options depend upon the models in the table. | String |
 
 
 ## Customizing the Models Table
 
 The models table is customizable. Changes are persistent (cached in the browser) and represented in the URL, so customized settings
-can be saved in a browser bookmark and shared with other **ClearML** users to collaborate.
+can be saved in a browser bookmark and shared with other ClearML users to collaborate.
 
-Customize any combination of the following:
+Customize the table using any of the following:
 
-* Dynamic column ordering - Drag a column title to a different position.
-* Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
-  **>** select or clear the checkboxes of columns to show or hide.
-* Filter columns - Type of experiment, experiment status (state), user
-* Sort columns - Metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
-* Column autofit - In the column heading, double click a resizer (column separator).
+* Dynamic column order - Drag a column title to a different position.
+* Resize columns - Drag the column separator to change the width of that column. Double click the column separator for 
+  automatic fit.
+* Changing table columns
+    * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
+  **>** mark or clear the checkboxes of columns to show or hide.
+    * Add custom columns - Click **+ ADD CUSTOM METADATA COLUMN** to add metadata columns to the main column list. Added 
+      columns are by default displayed in the table. You can remove the metadata columns from the main column list or the 
+      column addition window. 
+* Filter columns - By ML framework, tags, user
+* Sort columns - By metadata, ML framework, description, and last update elapsed time.
 
 :::note
 The following models-table customizations are saved on a **per project** basis: 
@@ -61,6 +66,7 @@ allow each feature. Model states are *Draft* (editable) and *Published* (read-on
 | View details | Model details include general information, the model configuration, and label enumeration. Click a model, and the info panel slides open. | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
 | Archive | To more easily work with active models, move a model to the archive. See [Archiving](webapp_archiving.md). | Any state |
+| Restore | Action available in the archive. Restore a Dataview to the active Dataviews table. | Any state |
 | Tags | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
 | Move to project | To organize work and improve collaboration, move a model to another project. | Any state |

@@ -38,11 +38,18 @@ The experiments table default and customizable columns are described in the foll
 
 ## Customizing the Experiments Table
 
-The experiments table can be customized by:
-* Showing / hiding default columns
-* Adding metrics and hyperparameters
-* Sorting
-* Filtering
+Customize the table using any of the following:
+* Dynamic column order - Drag a column title to a different position.
+* Resize columns - Drag the column separator to change the width of that column. Double click the column separator for 
+  automatic fit.
+* Changing table columns
+    * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
+  **>** mark or clear the checkboxes of columns to show or hide.
+    * Add custom columns - Click **+ METRICS** or **+ HYPER PARAMETERS** to add metric / hyperparameter columns to the 
+      main column list. Added columns are by default displayed in the table. You can remove the custom columns from the 
+      main column list or the column addition windows. 
+* [Filter columns](#filtering-columns)
+* Sort columns - According to metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
 
 Use experiments table customization for various use cases, including:
 
@@ -114,16 +121,6 @@ in the top right corner of the table.
 
 
 
-### Using Other Customization Features
-
-**To use other customization features:**
-
-* Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** select or clear the checkboxes of columns to show or hide.
-* Sort columns - According to metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
-* Dynamic column ordering - Drag a column title to a different position.
-* Column resizing - In the column heading, drag to a new size.
-* Column autofit - In the column heading, double click a column separator.
-
 ## Experiment Actions
 
 The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states)
@@ -136,6 +133,7 @@ that allow each operation.
 | View a worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
 | Archive | To more easily work with active experiments, move an experiment to the archive. See [Archiving](webapp_archiving.md). | Any state |  None  |
+| Restore |Action available in the archive. Restore a Dataview to the active Dataviews table.| Any State | None |
 | Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft* | *Pending* |
 | Dequeue | Remove an experiment from a queue. | *Pending* | *Draft* |
 | Reset  | Delete the log and output from a previous run of an experiment (for example, before rerunning it). | *Completed*, *Aborted*, or *Failed* | *Draft* |

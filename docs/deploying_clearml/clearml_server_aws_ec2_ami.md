@@ -2,10 +2,6 @@
 title: AWS EC2 AMIs
 ---
 
-:::important
-This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
-:::
-
 Deployment of **ClearML Server** on AWS is easily performed using AWS AMIs, which are available in the AWS Marketplace catalog 
 and in the AWS community AMI catalog.
 
@@ -110,7 +106,7 @@ on the "Configuring Your Own ClearML Server" page.
 
 The pre-built **ClearML Server** storage configuration is the following:
 
-* MongoDB: `/opt/clearml/data/mongo/`
+* MongoDB: `/opt/clearml/data/mongo_4/`
 * Elasticsearch: `/opt/clearml/data/elastic_7/`
 * File Server: `/mnt/fileserver/`
 
@@ -155,25 +151,25 @@ The following section contains a list of AMI Image IDs per region for the latest
 
 ### Latest Version
 
-#### v1.1.1
+#### v1.2.0
 
-* **eu-north-1** : ami-06833570c4f3e3852 
-* **ap-south-1** : ami-003c92550f0883688 
-* **eu-west-3** : ami-066c3b09c77ad818e 
-* **eu-west-2** : ami-0cc7694d2a9930cdb 
-* **eu-west-1** : ami-0bf0008b101d5a65e 
-* **ap-northeast-3** : ami-09f8fdb9be8bf222c 
-* **ap-northeast-2** : ami-0794d10bc2bab11e5 
-* **ap-northeast-1** : ami-04a0defce217de812 
-* **sa-east-1** : ami-0c8c3c36f3854b129 
-* **ca-central-1** : ami-0fc8d4042bb8ad486 
-* **ap-southeast-1** : ami-0ba7a6304bbdc5334 
-* **ap-southeast-2** : ami-09bcbb1a6f3d7eb09 
-* **eu-central-1** : ami-05b663d803a327cf9 
-* **us-east-2** : ami-0d950238960aee8d7 
-* **us-west-1** : ami-01b5a350bd3c07ce6 
-* **us-west-2** : ami-0f908183deb153e73 
-* **us-east-1** : ami-02b88185a2c89d72
+* **eu-north-1** : ami-07f05bf730359ae3f 
+* **ap-south-1** : ami-077e2d1212f5e5589 
+* **eu-west-3** : ami-0b8b2e687be75bfa5 
+* **eu-west-2** : ami-0d6b75eab5955e353 
+* **eu-west-1** : ami-09f8c61f45d6b60c6 
+* **ap-northeast-3** : ami-0571fb4e469f98474 
+* **ap-northeast-2** : ami-0e23852e16c4004e7 
+* **ap-northeast-1** : ami-02e2b44f2fbb95c03 
+* **sa-east-1** : ami-0571b02cd440ff142 
+* **ca-central-1** : ami-03c7d82907dee95fe 
+* **ap-southeast-1** : ami-05b96652d20e95411 
+* **ap-southeast-2** : ami-0a21e52c69e20617b 
+* **eu-central-1** : ami-0d4078ec9c85a629f 
+* **us-east-2** : ami-0da9f26079f3be4f3 
+* **us-west-1** : ami-085cf8ae7fcc79314 
+* **us-west-2** : ami-089af8e3fee2f9d0b 
+* **us-east-1** : ami-0ae3e2a3a98584659 
 
 ## Next Step
 

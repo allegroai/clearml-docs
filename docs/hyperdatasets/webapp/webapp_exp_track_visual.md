@@ -1,5 +1,5 @@
 ---
-title: Viewing Experiments
+title: Experiment Dataviews
 ---
 
 While an experiment is running, and any time after it finishes, results are tracked and can be visualized in the ClearML 
@@ -11,7 +11,7 @@ experiment, which can be viewed and [modified](webapp_exp_modifying.md) in the W
 ## Viewing an Experiment's Dataviews 
 
 In an experiment's page, go to the **DATAVIEWS** tab to view all the experiment's Dataview details, including:
-* Input data [selection](#dataset-versions) and [filtering](#filtering)
+* Input data [selection](#input) and [filtering](#filtering)
 * ROI [mapping](#mapping) (label translation)
 * [Label enumeration](#label-enumeration)
 * On-the-fly [data augmentation](#augmentation)

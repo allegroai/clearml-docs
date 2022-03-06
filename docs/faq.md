@@ -780,24 +780,24 @@ To override your configuration file / defaults, set the following OS environment
 
 **How can I track OS environment variables with experiments?**  <a id="track-env-vars"></a>
 
-Set the OS environment variable `ClearML_LOG_ENVIRONMENT` with the variables you need track, either:
+Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you need track, either:
 
 * All environment variables:
 
   ```
-  export ClearML_LOG_ENVIRONMENT="*"
+  export CLEARML_LOG_ENVIRONMENT="*"
   ```
     
 * Specific environment variables, for example, log `PWD` and `PYTHONPATH`:
 
   ```
-  export ClearML_LOG_ENVIRONMENT="PWD,PYTHONPATH"
+  export CLEARML_LOG_ENVIRONMENT="PWD,PYTHONPATH"
   ```
     
 * No environment variables:
 
   ```
-  export ClearML_LOG_ENVIRONMENT=
+  export CLEARML_LOG_ENVIRONMENT=
   ```
 
 ## ClearML Hosted Service
@@ -951,7 +951,7 @@ To change the MongoDB and / or Elastic ports for your ClearML Server, do the fol
         ELASTIC_SERVICE_PORT: 9201
         ```
     
-1. For MongoDB, in the `services/mongo/ports` section, expose the new MongoDB port:
+1. For MongoDB, in the `services/mongo_4/ports` section, expose the new MongoDB port:
 
     ```bash
     <new-mongodb-port>:27017

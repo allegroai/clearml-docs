@@ -132,7 +132,7 @@ def step_two(data_frame, test_size=0.21, random_state=421):
         X, y, test_size=test_size, random_state=random_state)
     return X_train, X_test, y_train, y_test
 
-def step_three(data, X_train, y_train):
+def step_three(X_train, y_train):
     print('step_three')
     # make sure we have pandas for this step, we need it to use the data_frame
     import pandas as pd  # noqa
@@ -145,7 +145,7 @@ def step_four(model, X_data, Y_data):
     from sklearn.linear_model import LogisticRegression  # noqa
     from sklearn.metrics import accuracy_score
     Y_pred = model.predict(X_data)
-    return accuracy_score(Y_data, Y_pred, normalize=False)
+    return accuracy_score(Y_data, Y_pred, normalize=True)
 
 def main(pickle_url, mock_parameter='mock'):
     data_frame = step_one(pickle_url)
@@ -197,7 +197,7 @@ def step_two(data_frame, test_size=0.21, random_state=421):
     return X_train, X_test, y_train, y_test
 
 @PipelineDecorator.component(return_values=['model'], cache=True, task_type=TaskTypes.training)
-def step_three(data, X_train, y_train):
+def step_three(X_train, y_train):
     print('step_three')
     # make sure we have pandas for this step, we need it to use the data_frame
     import pandas as pd  # noqa
@@ -211,7 +211,7 @@ def step_four(model, X_data, Y_data):
     from sklearn.linear_model import LogisticRegression  # noqa
     from sklearn.metrics import accuracy_score
     Y_pred = model.predict(X_data)
-    return accuracy_score(Y_data, Y_pred, normalize=False)
+    return accuracy_score(Y_data, Y_pred, normalize=True)
 
 @PipelineDecorator.pipeline(name='pipeline', project='examples', version='0.1')
 def main(pickle_url, mock_parameter='mock'):

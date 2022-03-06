@@ -20,8 +20,8 @@ module.exports = {
         {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
                 {'Workflows': ['clearml_data/data_management_examples/workflows', 'clearml_data/data_management_examples/data_man_simple', 'clearml_data/data_management_examples/data_man_folder_sync', 'clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},]},
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task']},
-        {'Integrations': ['integrations/libraries', 'integrations/storage']},
-
+        'integrations/libraries',
+        'integrations/storage',
         {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
             {
                 'Projects': [
@@ -32,7 +32,7 @@ module.exports = {
                             'webapp/webapp_exp_comparing', 'webapp/webapp_exp_sharing']
                     },
                     {
-                        'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing', 'webapp/webapp_model_modifying']
+                        'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing']
                     },
                     'webapp/webapp_archiving'
                 ]
@@ -49,14 +49,14 @@ module.exports = {
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
                 'Deploying ClearML Server': ['deploying_clearml/clearml_server_aws_ec2_ami', 'deploying_clearml/clearml_server_gcp',
-                    'deploying_clearml/clearml_server_linux_mac', 'deploying_clearml/clearml_server_win', 'deploying_clearml/clearml_server_kubernetes',
+                    'deploying_clearml/clearml_server_linux_mac', 'deploying_clearml/clearml_server_win',
                     'deploying_clearml/clearml_server_kubernetes_helm']
             },
             {
                 'Upgrading ClearML Server':['deploying_clearml/upgrade_server_aws_ec2_ami','deploying_clearml/upgrade_server_gcp',
                     'deploying_clearml/upgrade_server_linux_mac', 'deploying_clearml/upgrade_server_win',
-                    'deploying_clearml/upgrade_server_kubernetes', 'deploying_clearml/upgrade_server_kubernetes_helm',
-                    'deploying_clearml/clearml_server_es7_migration']
+                    'deploying_clearml/upgrade_server_kubernetes_helm',
+                    'deploying_clearml/clearml_server_es7_migration', 'deploying_clearml/clearml_server_mongo44_migration']
             },
             'deploying_clearml/clearml_server_config', 'deploying_clearml/clearml_config_for_clearml_server', 'deploying_clearml/clearml_server_security'
         ]},
@@ -119,7 +119,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
+        'Release Notes': ['release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
             'release_notes/ver_0_13', 'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10',
             'release_notes/ver_0_9',
         ],
@@ -163,19 +163,20 @@ module.exports = {
         'hyperdatasets/dataviews',
         'hyperdatasets/task',
         {'WebApp': [
-            {'Dataviews': [
-                'hyperdatasets/webapp/webapp_dataviews',
-                'hyperdatasets/webapp/webapp_exp_modifying',
-                'hyperdatasets/webapp/webapp_exp_track_visual',
-                'hyperdatasets/webapp/webapp_exp_comparing',
-                ]},
-            {'Datasets': [
-                'hyperdatasets/webapp/webapp_datasets',
-                'hyperdatasets/webapp/webapp_datasets_versioning',
-                'hyperdatasets/webapp/webapp_datasets_frames'
-                ]},
-            'hyperdatasets/webapp/webapp_annotator'
-        ]}
+                {'Projects': [
+                        'hyperdatasets/webapp/webapp_dataviews', 'hyperdatasets/webapp/webapp_exp_track_visual',
+                        'hyperdatasets/webapp/webapp_exp_modifying', 'hyperdatasets/webapp/webapp_exp_comparing',
+                        ]
+                },
+                {'Datasets': [
+                    'hyperdatasets/webapp/webapp_datasets',
+                    'hyperdatasets/webapp/webapp_datasets_versioning',
+                    'hyperdatasets/webapp/webapp_datasets_frames'
+                    ]
+                },
+                'hyperdatasets/webapp/webapp_annotator'
+            ]
+        }
     ],
     sdkHyperDataset: [
         {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
