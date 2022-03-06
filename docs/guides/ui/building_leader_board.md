@@ -18,7 +18,6 @@ Bookmark the leaderboard in the browser to reuse and share the leaderboard URL w
 For this tutorial, use one of the following as a project:
 
 * Recommended: One of your projects with more than one experiment. 
-* A project on the demo **ClearML Server** ([https://demoapp.demo.clear.ml/profile](https://demoapp.demo.clear.ml/profile)).
 * Clone the [clearml](https://github.com/allegroai/clearml) repository and execute some of the example scripts.
 
 ## Step 1: Select a Project
