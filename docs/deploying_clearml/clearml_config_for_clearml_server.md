@@ -47,11 +47,11 @@ by setting [configuration options](../configs/clearml_conf.md).
     
             ClearML SDK setup process
             
-            Please create new clearml credentials through the profile page in your clearml web app (e.g. http://localhost:8080/profile)
-            Or with the free hosted service at https://app.community.clear.ml/profile
-            In the profile page, press "Create new credentials", then press "Copy to clipboard".
+           Please create new clearml credentials through the settings page in your `clearml-server` web app, 
+           or create a free account at https://app.clear.ml/settings/webapp-configuration
             
-            Paste copied configuration here:
+           In the settings > workspace  page, press "Create new credentials", then press "Copy to clipboard".
+           Paste copied configuration here: 
 
    1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the **SETTINGS > WORKSPACE** page, click 
       **Create new credentials** **>** **Copy to clipboard**.
