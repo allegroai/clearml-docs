@@ -23,7 +23,8 @@ The ClearML Web UI is composed of the following pages:
     * [Compare experiments](webapp_exp_comparing.md)
     * [Share experiments and their models](webapp_exp_sharing.md) with other ClearML hosted service users 
     * [Archive experiments and models](webapp_archiving.md)
-
+ 
+* [Pipelines](pipelines/webapp_pipeline_page.md) - View and manage your pipelines.
 * [Workers and Queues](webapp_workers_queues.md) - The resource monitoring and queues management page.
   
 * [Settings](webapp_profile.md) (available through the profile menu <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" />) - 

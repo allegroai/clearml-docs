@@ -5,8 +5,6 @@ title: Dataset Versions
 Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying, and 
 deleting [Dataset versions](../dataset.md#dataset-versioning).
 
-From the [Datasets page](webapp_datasets.md), click on one of the Datasets in order to see and work with its versions. 
-
 ## Dataset Version History
 The WebApp (UI) will present your dataset version structure in one of two ways, depending on the structure implemented.
 
@@ -244,10 +242,10 @@ Use the **Grouping** menu to select one of the following options:
 #### Preview Source
 When using multi-source FrameGroups, users can choose which of the FrameGroups’ sources will be displayed as the preview. 
 
-Use the **PREVIEW SOURCE** menu to select from the list of sources.
+Select a source from the **PREVIEW SOURCE** menu.
 Choose the `Default preview source` option to present the first available source.
 
-:::note
-If a FrameGroup doesn't have the selected preview source, the next available source will be used for the preview.  
+:::note Unavailable Source
+If a FrameGroup doesn't have the selected preview source, the preview displays the "Source not available" message.
 ::: 
 

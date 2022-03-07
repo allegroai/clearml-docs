@@ -66,17 +66,26 @@ Optimize worker use by monitoring worker utilization in the **Workers** tab.
 
 ## Queue Management
 
-In the **Queues** tab, do any of the following:
+The **Queues** tab lets you manage your queues and their contents:
 
-* Create a queue - Click **+ NEW QUEUE** (top right) **>** Type a queue name **>** **CREATE**.
-* Do any of the following by right-clicking a queue in the queues list (lower right):
-    * Delete a queue - Click **Delete**.
-    * Rename a queue - Click **RENAME** > Type a queue name **>** **RENAME**, or click **DELETE**.
+* Create a queue - Click **+ NEW QUEUE** (top right)
+* Right-click on a queue in the queues list to modify the queue:
+  
+  ![Queue context menu](../img/webapp_workers_queues_context.png)
+  
+    * Delete - Delete the queue. Any pending tasks will be dequeued.
+    * Rename - Change the queue’s name
+    * Clear - Remove all pending tasks from the queue
     * Custom action - The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
-      appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).
-* Do any of the following by right-clicking an experiment in a queue's **EXPERIMENTS** tab (lower right):
-    * Reorder experiments in a queue - Drag an experiment to a new position in the queue, or click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Menu button" className="icon size-md space-sm" />
-      (menu) and then select **Move to top** or **Move to bottom**.
-    * Move to a new queue - Click  <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Menu button" className="icon size-md space-sm" />  (menu) **>** **Move to queue...** **>** Select a queue **>** **ENQUEUE**.
-    * Remove an experiment - Click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Menu button" className="icon size-md space-sm" />  (menu) **>** **Move to queue...** **>** Select a queue **>** **ENQUEUE**.
-
+      appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions)
+* Click on a queue to select it and see its task and worker information. Click on a
+  task’s menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Menu button" className="icon size-md space-sm" />
+  in the **EXPERIMENTS** tab to reorganize your queue. 
+  
+  ![Queue experiment's menu](../img/workers_queues_experiment_actions.png)  
+  
+    * Move a task to the top or bottom of the queue
+    * Move the task to a different queue
+    * Dequeue the task
+    
+  You can also reorder experiments in a queue by dragging an experiment to a new position in the queue
