@@ -337,7 +337,7 @@ This feature is available under the ClearML Enterprise plan
   as a new node in the system, providing tracking and transparency capabilities. Start up and shutdown of each Docker is 
   verified. Use in CPU mode (`--cpu-only`), only. 
 
-* To limit the number of simultaneous tasks run in services mode, pass a maximum number immediately after the 
+* To limit the number of simultaneous tasks run in services mode, pass the maximum number immediately after the 
 `--services-mode` option (e.g. `--services-mode 5`)
    
         
