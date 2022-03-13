@@ -191,7 +191,7 @@ Compare debug samples at any iteration to verify that an experiment is running a
 first. Use the viewer / player to inspect images, audio, video samples and do any of the following:
 * Move to the same sample in a different iteration (move the iteration slider).
 * Show the next or previous iteration's sample.
-* Download the file <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />.
+* Download the file <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
 * Zoom.
 * View the sample's iteration number, width, height, and coordinates.
 
@@ -220,7 +220,7 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 1. Do any of the following:
 
     * Move to the same sample in another iteration - Move the slider, or click **<** (previous) or **>** (next).
-    * Download the file - Click  <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />.
+    * Download the file - Click  <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
     * Zoom
     * For images, locate a position on the sample - Hover over the sample and the X, Y coordinates appear in the legend below the sample.
 
