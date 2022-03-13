@@ -3,7 +3,7 @@ title: PyTorch Distributed
 ---
 
 The [pytorch_distributed_example.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_distributed_example.py) 
-script demonstrates integrating **ClearML** into code that uses the [PyTorch Distributed Communications Package](https://pytorch.org/docs/stable/distributed.html) 
+script demonstrates integrating ClearML into code that uses the [PyTorch Distributed Communications Package](https://pytorch.org/docs/stable/distributed.html) 
 (`torch.distributed`). 
 
 The script initializes a main Task and spawns subprocesses, each for an instance of that Task. 
@@ -34,7 +34,7 @@ Task.current_task().upload_artifact(
 
 All of these artifacts appear in the main Task under **ARTIFACTS** **>** **OTHER**.
 
-![image](../../img/examples_pytorch_distributed_example_09.png)
+![Experiment artifacts](../../img/examples_pytorch_distributed_example_09.png)
 
 ## Scalars
 
@@ -54,11 +54,11 @@ Task.current_task().get_logger().report_scalar(
 
 The single scalar plot for loss appears in **RESULTS** **>** **SCALARS**.
 
-![image](../../img/examples_pytorch_distributed_example_08.png)
+![Experiment scalars](../../img/examples_pytorch_distributed_example_08.png)
 
 ## Hyperparameters
 
-**ClearML** automatically logs the argparse command line options. Since the [`Task.connect`](../../references/sdk/task.md#connect) 
+ClearML automatically logs the argparse command line options. Since the [`Task.connect`](../../references/sdk/task.md#connect) 
 method is called on [`Task.current_task`](../../references/sdk/task.md#taskcurrent_task), they are logged in the main Task. A different hyperparameter key is used in each 
 subprocess, so they do not overwrite each other in the main Task.
 
@@ -69,12 +69,12 @@ Task.current_task().connect(param)
 
 All the hyperparameters appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS**.
 
-![image](../../img/examples_pytorch_distributed_example_01.png)
+![Experiment hyperparameters Args](../../img/examples_pytorch_distributed_example_01.png)
 
-![image](../../img/examples_pytorch_distributed_example_01a.png)
+![Experiment hyperparameters General ](../../img/examples_pytorch_distributed_example_01a.png)
 
 ## Console
 
 Output to the console, including the text messages printed from the main Task object and each subprocess appear in **RESULTS** **>** **CONSOLE**.
 
-![image](../../img/examples_pytorch_distributed_example_06.png)
+![Experiment console log](../../img/examples_pytorch_distributed_example_06.png)

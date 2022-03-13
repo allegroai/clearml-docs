@@ -42,7 +42,7 @@ View the scalars in the experiment's page in the **ClearML Web UI**, in **RESULT
 
 ## Model Snapshots
 
-**ClearML** automatically captures the model logged with Torch, and saves it as an artifact. 
+ClearML automatically captures the model logged with Torch, and saves it as an artifact. 
 
 View saved snapshots in the experiment's **ARTIFACTS** tab.
 

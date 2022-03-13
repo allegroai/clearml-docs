@@ -7,7 +7,7 @@ of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFram
 Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
 filtering logic. 
 
-![Dataset page](../../img/hyperdatasets/frames_01.png)
+![Dataset page](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
 
 ## Frame Viewer
 

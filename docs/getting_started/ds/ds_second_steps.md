@@ -150,7 +150,7 @@ Once everything is neatly logged and displayed, using the [comparison tool](../.
 
 The experiment table is a powerful tool for creating dashboards and views of your own projects, your team's projects, or the entire development.
 
-![image](../../img/webapp_exp_table_01.png)
+![image](../../img/webapp_experiment_table.png)
 
 
 ### Creating Leaderboards

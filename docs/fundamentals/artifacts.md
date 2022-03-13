@@ -74,7 +74,7 @@ This property makes Models a standalone entry that can be used as an artifactory
 When models are saved using certain frameworks (for instance, by calling the `torch.save()` method), ClearML automatically 
 logs the models and all snapshot paths.
 
-![image](../img/fundamentals_artifacts_logging_models.png)
+![image](../img/examples_model_update_model.png)
 
 See automatic model logging examples: 
 * [TF](../guides/frameworks/tensorflow/tensorflow_mnist.md)

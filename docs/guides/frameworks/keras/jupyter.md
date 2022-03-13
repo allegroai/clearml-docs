@@ -3,7 +3,7 @@ title: Keras with Matplotlib - Jupyter Notebook
 ---
 
 The [jupyter.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/jupyter.ipynb) example 
-demonstrates **ClearML**'s automatic logging of code running in a Jupyter Notebook that uses Keras and Matplotlib. 
+demonstrates ClearML's automatic logging of code running in a Jupyter Notebook that uses Keras and Matplotlib. 
 
 The example does the following: 
 1. Trains a simple deep neural network on the Keras built-in [MNIST](https://keras.io/api/datasets/mnist/#load_data-function) 
@@ -39,7 +39,7 @@ The example calls Matplotlib methods to log debug sample images. They appear in 
 
 ## Hyperparameters
 
-**ClearML** automatically logs TensorFlow Definitions. A parameter dictionary is logged by connecting it to the Task, by 
+ClearML automatically logs TensorFlow Definitions. A parameter dictionary is logged by connecting it to the Task, by 
 calling the [Task.connect](../../../references/sdk/task.md#connect) method. 
 
 ```python

@@ -129,13 +129,13 @@ We recommend using the container ports (``8080``, ``8008``, and ``8081``), or a 
 
     For example, `clearml.app.mydomainname.com` points to your node on port `30080`.
     
-    * The record to access the **ClearML** API:
+    * The record to access the ClearML API:
 
             *api.<your domain name>.* 
 
     For example, `clearml.api.mydomainname.com` points to your node on port `30008`.
     
-    * The record to access the **ClearML** file server:
+    * The record to access the ClearML file server:
 
             *files.<your domain name>.*
 
