@@ -336,6 +336,10 @@ This feature is available under the ClearML Enterprise plan
 * Launch multiple long-term docker services. Spin multiple, simultaneous Tasks, each in its own Docker container, on the same machine. Each Task will be registered 
   as a new node in the system, providing tracking and transparency capabilities. Start up and shutdown of each Docker is 
   verified. Use in CPU mode (`--cpu-only`), only. 
+
+* To limit the number of simultaneous tasks run in services mode, pass a maximum number immediately after the 
+`--services-mode` option (e.g. `--services-mode 5`)
+   
         
 ---
 
