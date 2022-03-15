@@ -11,14 +11,19 @@ can be filtered by name or name fragments and / or ID, by using the search bar.
 
 ![Dataviews table](../../img/hyperdatasets/webapp_dataviews_table.png)
 
-The Dataviews table columns in their default order are below. Dynamically order the columns by dragging a column heading 
-to a new position.
+The Dataviews table includes the following columns: 
 
-* **DATAVIEW** - Dataview name.
-* **USER** - User who created the Dataview.
-* **STATUS** - The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only).  
-* **CREATED** - Elapsed time since the Dataview was created.
-* **DESCRIPTION**
+|Column|Description|Type|
+|--|--|--|
+|**DATAVIEW** | Dataview name | String|
+|**USER** | User who created the Dataview | String|
+|**STATUS** | The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only)| String| 
+|**PROJECT** | The project name with which the dataview is associated| String|
+|**CREATED** | Elapsed time since the Dataview was created| Date-time|
+|**DESCRIPTION**| A description of the Dataview | String| 
+
+Dynamically order the columns by dragging a column heading 
+to a new position.
 
 ## Customizing the Dataviews Table
 
