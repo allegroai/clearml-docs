@@ -12,7 +12,7 @@ This example accomplishes the automated random parameter search by doing the fol
 script. This experiment must be executed first, so it will be stored in the server, and then it can be accessed, cloned, 
    and modified by another Task. 
 1. Creating a parameter dictionary, which is connected to the Task by calling [Task.connect](../../references/sdk/task.md#connect) 
-   so that the parameters are logged by **ClearML**.
+   so that the parameters are logged by ClearML.
 1. Adding the random search hyperparameters and parameters defining the search (e.g., the experiment name, and number of 
    times to run the experiment).
 1. Creating a Task object referencing the template experiment, `Keras HP optimization base`. See [Task.get_task](../../references/sdk/task.md#taskget_task).

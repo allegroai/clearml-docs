@@ -134,9 +134,9 @@ and the script prints a hyperlink to the Task's log.
 ```console
 CLEARML Task: created new task id=d0ee5309a9a3471d8802f2561da60dfa
 CLEARML Monitor: GPU monitoring failed getting GPU reading, switching off GPU monitoring
-CLEARML results page: https://app.community.clear.ml/projects/142a598b5d234bebb37a57d692f5689f/experiments/d0ee5309a9a3471d8802f2561da60dfa/output/log
+CLEARML results page: https://app.clear.ml/projects/142a598b5d234bebb37a57d692f5689f/experiments/d0ee5309a9a3471d8802f2561da60dfa/output/log
 Running AWS auto-scaler as a service
-Execution log https://app.community.clear.ml/projects/142a598b5d234bebb37a57d692f5689f/experiments/d0ee5309a9a3471d8802f2561da60dfa/output/log    
+Execution log https://app.clear.ml/projects/142a598b5d234bebb37a57d692f5689f/experiments/d0ee5309a9a3471d8802f2561da60dfa/output/log    
 ```
 
 ### Remote Execution

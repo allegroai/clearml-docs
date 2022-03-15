@@ -9,12 +9,10 @@ projects in your workspace. Projects that contain nested subprojects are identif
 An exception is the **All Experiments** folder, which shows all projects’ and subprojects’  contents in a single, flat
 list.
 
-![Projects page](../img/webapp_projects_page.png)
+![Projects page](../img/webapp_project_page.png)
 
 If a project has any subprojects, clicking its folder will open its own project page. Access the projects’ top-level 
 contents (i.e. experiments, models etc.) via the folder with the bracketed (`[ ]`) project name.
-
-![Subprojects in projects](../img/webapp_projects_inside.png)
 
 If a project does not contain any subprojects, clicking on its folder will open its experiment table (or [Project Overview](webapp_project_overview.md)
 page when relevant).
@@ -23,7 +21,7 @@ page when relevant).
 
 Project folders display summarized project information.  
 
-![Project card](../img/webapp_projects_card.png)
+![Project card](../img/webapp_project_card.png)
 
 When relevant, the folder has a tab which displays the number of subprojects in the project. Click the tab to view a list of 
 subprojects. Click on a subproject's name to navigate to it.  

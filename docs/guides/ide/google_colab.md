@@ -39,9 +39,9 @@ and running, users can send Tasks to be executed on the Google Colab's HW.
    from clearml import Task
    
    Task.set_credentials(
-        api_host="https://api.community.clear.ml", 
-        web_host="https://app.community.clear.ml", 
-        files_host="https://files.community.clear.ml", 
+        api_host="https://api.clear.ml", 
+        web_host="https://app.clear.ml", 
+        files_host="https://files.clear.ml", 
         key='6ZHX9UQMYL874A1NE8', 
         secret='=2h6#%@Y&m*tC!VLEXq&JI7QhZPKuJfbaYD4!uUk(t7=9ENv'
    )
