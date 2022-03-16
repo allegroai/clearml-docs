@@ -151,25 +151,25 @@ The following section contains a list of AMI Image IDs per region for the latest
 
 ### Latest Version
 
-#### v1.2.0
+#### v1.3.0
 
-* **eu-north-1** : ami-07f05bf730359ae3f 
-* **ap-south-1** : ami-077e2d1212f5e5589 
-* **eu-west-3** : ami-0b8b2e687be75bfa5 
-* **eu-west-2** : ami-0d6b75eab5955e353 
-* **eu-west-1** : ami-09f8c61f45d6b60c6 
-* **ap-northeast-3** : ami-0571fb4e469f98474 
-* **ap-northeast-2** : ami-0e23852e16c4004e7 
-* **ap-northeast-1** : ami-02e2b44f2fbb95c03 
-* **sa-east-1** : ami-0571b02cd440ff142 
-* **ca-central-1** : ami-03c7d82907dee95fe 
-* **ap-southeast-1** : ami-05b96652d20e95411 
-* **ap-southeast-2** : ami-0a21e52c69e20617b 
-* **eu-central-1** : ami-0d4078ec9c85a629f 
-* **us-east-2** : ami-0da9f26079f3be4f3 
-* **us-west-1** : ami-085cf8ae7fcc79314 
-* **us-west-2** : ami-089af8e3fee2f9d0b 
-* **us-east-1** : ami-0ae3e2a3a98584659 
+* **eu-north-1** : ami-0c41bbdc7c248d39e 
+* **ap-south-1** : ami-0210c19fcd8ca2d1f 
+* **eu-west-3** : ami-0962154b35f625381 
+* **eu-west-2** : ami-0f11b381a1351c136 
+* **eu-west-1** : ami-01579d4f346cf7334 
+* **ap-northeast-3** : ami-099fc4cc7c8ed6d17 
+* **ap-northeast-2** : ami-0306c1e487be4effc 
+* **ap-northeast-1** : ami-052d270be95334898 
+* **sa-east-1** : ami-05adc4414f2b666aa 
+* **ca-central-1** : ami-0684fc6f317096b10 
+* **ap-southeast-1** : ami-0af549bc38d303802 
+* **ap-southeast-2** : ami-0310ff330aea0d9f8 
+* **eu-central-1** : ami-0ef4a56e97aa5b1fa 
+* **us-east-2** : ami-017cf1145142b230b 
+* **us-west-1** : ami-02f5f45685ec58aca 
+* **us-west-2** : ami-0214ddd1df7543a1e 
+* **us-east-1** : ami-0c720ce4060566cbe 
 
 ## Next Step
 
