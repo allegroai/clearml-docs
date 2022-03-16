@@ -235,7 +235,7 @@ To open external access to the Elasticsearch, MongoDB, and Redis ports:
 ### Web Login Authentication
 
 Web login authentication can be configured in the **ClearML Server** in order to permit only users provided 
-with credentials to access the **ClearML** system. Those credentials are a username and password. 
+with credentials to access the ClearML system. Those credentials are a username and password. 
 
 Without web login authentication, **ClearML Server** does not restrict access (by default).
 

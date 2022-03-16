@@ -2,8 +2,8 @@
 title: Matplotlib
 ---
 
-The example below demonstrates integrating **ClearML** into code that uses `matplotlib` to plot scatter diagrams, and 
-show images. **ClearML** automatically logs the diagrams and images. 
+The example below demonstrates integrating ClearML into code that uses `matplotlib` to plot scatter diagrams, and 
+show images. ClearML automatically logs the diagrams and images. 
 
 View the example in [script](https://github.com/allegroai/clearml/blob/master/examples/frameworks/matplotlib/matplotlib_example.py) 
 or in [Jupyter Notebook](https://github.com/allegroai/clearml/blob/master/examples/frameworks/matplotlib/jupyter_matplotlib_example.ipynb).

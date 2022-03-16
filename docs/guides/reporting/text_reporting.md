@@ -6,7 +6,7 @@ The [text_reporting.py](https://github.com/allegroai/clearml/blob/master/example
 demonstrates reporting explicit text, by calling the [Logger.report_text](../../references/sdk/logger.md#report_text)
 method. 
 
-**ClearML** reports these tables in the **ClearML Web UI**, experiment details, **RESULTS** tab, **CONSOLE** sub-tab. 
+ClearML reports these tables in the **ClearML Web UI**, experiment details, **RESULTS** tab, **CONSOLE** sub-tab. 
 
 When the script runs, it creates an experiment named `text reporting`, which is associated with the `examples` project.
 

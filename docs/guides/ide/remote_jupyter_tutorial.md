@@ -70,7 +70,7 @@ Waiting for remote machine allocation [id=35c0af81ae6541589dbae1efb747f388]
 ...Status [in_progress]
 Remote machine allocated
 Setting remote environment [Task id=35c0af81ae6541589dbae1efb747f388]
-Setup process details: https://app.community.clear.ml/projects/60893b87b0b642679fde00db96e90359/experiments/35c0af81ae6541589dbae1efb747f388/output/log
+Setup process details: https://app.clear.ml/projects/60893b87b0b642679fde00db96e90359/experiments/35c0af81ae6541589dbae1efb747f388/output/log
 Waiting for environment setup to complete [usually about 20-30 seconds]
 ```
 

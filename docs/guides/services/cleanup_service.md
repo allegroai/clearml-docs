@@ -34,7 +34,7 @@ A new task called `Cleanup Service` is created in the `DevOps` project on your C
 look similar to: 
 ```console
 ClearML Task: created new task id=8126c0af800f4903be07421aa344d7b3
-ClearML results page: https://app.community.clear.ml/projects/608e9039/experiments/81261aa34d7b3/output/log
+ClearML results page: https://app.clear.ml/projects/608e9039/experiments/81261aa34d7b3/output/log
 Cleanup service started
 Starting cleanup
 Deleting 100 tasks

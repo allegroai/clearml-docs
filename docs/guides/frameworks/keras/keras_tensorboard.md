@@ -2,7 +2,7 @@
 title: Keras with TensorBoard
 ---
 
-The example below demonstrates the integration of **ClearML** into code which uses Keras and TensorBoard.
+The example below demonstrates the integration of ClearML into code which uses Keras and TensorBoard.
 View it in [script](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py)
 or in [Jupyter Notebook](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/jupyter_keras_TB_example.ipynb).
 
@@ -35,7 +35,7 @@ Histograms for layer density appear in **RESULTS** **>** **PLOTS**.
 
 ## Hyperparameters
 
-**ClearML** automatically logs command line options generated with `argparse`, and TensorFlow Definitions.
+ClearML automatically logs command line options generated with `argparse`, and TensorFlow Definitions.
 
 Command line options appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
 

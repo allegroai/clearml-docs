@@ -2,20 +2,20 @@
 title: Keras Tuner Integration
 ---
 
-Integrate **ClearML** into code that uses [Keras Tuner](https://www.tensorflow.org/tutorials/keras/keras_tuner). By 
+Integrate ClearML into code that uses [Keras Tuner](https://www.tensorflow.org/tutorials/keras/keras_tuner). By 
 specifying `ClearMLTunerLogger` (see [kerastuner.py](https://github.com/allegroai/clearml/blob/master/clearml/external/kerastuner.py)) 
-as the Keras Tuner logger, **ClearML** automatically logs scalars and hyperparameter optimization.  
+as the Keras Tuner logger, ClearML automatically logs scalars and hyperparameter optimization.  
 
 ## ClearMLTunerLogger
 
 Take a look at [keras_tuner_cifar.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/kerastuner/keras_tuner_cifar.py) 
-example script, which demonstrates the integration of **ClearML** in a code that uses Keras Tuner. 
+example script, which demonstrates the integration of ClearML in a code that uses Keras Tuner. 
 
 The script does the following:
 1. Creates a `Hyperband` object, which uses Keras Tuner's `Hyperband` tuner. It finds the best hyperparameters to train a 
    network on a CIFAR10 dataset.
 1. When the `Hyperband` object is created, instantiates a `ClearMLTunerLogger` object and assigns it to the `Hyperband` logger.
-The `ClearMLTunerLogger` class provides the required binding for **ClearML** automatic logging. 
+The `ClearMLTunerLogger` class provides the required binding for ClearML automatic logging. 
 
 ```python
 tuner = kt.Hyperband(
@@ -35,21 +35,21 @@ When the script runs, it logs:
 
 ## Scalars
 
-**ClearML** logs the scalars from training each network. They appear in the project's page in the **ClearML web UI**, under
+ClearML logs the scalars from training each network. They appear in the project's page in the **ClearML web UI**, under
 **RESULTS** **>** **SCALARS**.
 
 ![image](../../../img/integration_keras_tuner_06.png)
 
 ## Summary of Hyperparameter Optimization
 
-**ClearML** automatically logs the parameters of each experiment run in the hyperparameter search. They appear in tabular 
+ClearML automatically logs the parameters of each experiment run in the hyperparameter search. They appear in tabular 
 form in **RESULTS** **>** **PLOTS**.
 
 ![image](../../../img/integration_keras_tuner_07.png)
 
 ## Artifacts
 
-**ClearML** automatically stores the output model. It appears in **ARTIFACTS** **>** **Output Model**.
+ClearML automatically stores the output model. It appears in **ARTIFACTS** **>** **Output Model**.
 
 ![image](../../../img/integration_keras_tuner_03.png)
 
@@ -65,7 +65,7 @@ The model configuration is stored with the model.
 
 ### Hyperparameters
 
-**ClearML** automatically logs the TensorFlow Definitions, which appear in **RESULTS** **>** **CONFIGURATION** **>** **HYPER PARAMETERS**.
+ClearML automatically logs the TensorFlow Definitions, which appear in **RESULTS** **>** **CONFIGURATION** **>** **HYPER PARAMETERS**.
 
 ![image](../../../img/integration_keras_tuner_01.png)
 

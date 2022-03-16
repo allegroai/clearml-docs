@@ -43,7 +43,7 @@ Your output should look something like this:
 ```console
 New task created id=2f96ee95b05d4693b360d0fcbb26b727
 Task id=2f96ee95b05d4693b360d0fcbb26b727 sent for execution on queue default
-Execution log at: https://app.community.clear.ml/projects/552d5399112d47029c146d5248570295/experiments/2f96ee95b05d4693b360d0fcbb26b727/output/log
+Execution log at: https://app.clear.ml/projects/552d5399112d47029c146d5248570295/experiments/2f96ee95b05d4693b360d0fcbb26b727/output/log
 ```
 
 

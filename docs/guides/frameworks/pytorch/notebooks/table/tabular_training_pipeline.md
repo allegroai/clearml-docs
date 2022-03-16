@@ -83,7 +83,7 @@ configuration_dict = {
 configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
 ```
 
-**ClearML** tracks and reports each instance of the preprocessing Task.
+ClearML tracks and reports each instance of the preprocessing Task.
 
 The raw data appears as a table in **RESULTS** **>** **PLOTS**.
 
@@ -157,9 +157,9 @@ configuration_dict = {
 configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
    ```
     
-**ClearML** tracks and reports the training step with each instance of the newly cloned and executed training Task.
+ClearML tracks and reports the training step with each instance of the newly cloned and executed training Task.
 
-**ClearML** automatically logs training loss and learning. They appear in **RESULTS** **>** **SCALARS**.
+ClearML automatically logs training loss and learning. They appear in **RESULTS** **>** **SCALARS**.
 
 The following images show one of the two training Tasks.
 
