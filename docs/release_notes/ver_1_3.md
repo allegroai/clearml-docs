@@ -32,3 +32,19 @@ title: Version 1.3
 * Fix UI table plot tools only appear when hovering over the end of the plot
 * Fix resizing UI table column causes subsequent columns to thin 
 * Fix "Tip of the day" window continues appearing after user-requested removal
+
+
+### ClearML SDK 1.3.0
+
+**New Features and Improvements** 
+
+* Add new pipeline visualization support (requires ClearML Server v1.3)
+* Support IAM Instance Profile in AWS auto-scaler
+* Remove old server API versions support (pre-ClearML Server)
+* Restructure FastAI examples
+
+**Bug Fixes**
+
+* Fix failed catboost bind on GPU [ClearML GitHub issue #592](https://github.com/allegroai/clearml/issues/592)
+* Fix Optuna `n_jobs` deprecation warning
+* Fix invalid method called on `delete()` error
