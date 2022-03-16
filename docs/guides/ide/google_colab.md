@@ -16,7 +16,7 @@ and running, users can send Tasks to be executed on the Google Colab's HW.
 
 
 ## Steps 
-1. Open up [this Google Colab notebook](https://colab.research.google.com/github/pollfly/clearml/blob/master/examples/clearml_agent/clearml_colab_agent.ipynb).
+1. Open up [this Google Colab notebook](https://colab.research.google.com/github/allegroai/clearml/blob/master/examples/clearml_agent/clearml_colab_agent.ipynb).
 
 1. Run the first cell, which installs all the necessary packages:
     ```
