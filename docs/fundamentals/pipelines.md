@@ -314,7 +314,7 @@ All imports are automatically logged, and will appear as required packages for t
 
 For local imports (e.g. `from my_helper_functions import foo`) you need to make sure these local files are available to 
 the standalone script at runtime. The only way to do this for now is to use the `repo`, `repo_branch` and `repo_commit`
-arguments detailed below. This does mean the helper functions should be committed to that repository at runtime.
+arguments detailed above. This does mean the helper functions should be committed to that repository at runtime.
 :::
 
 ### @PipelineDecorator.pipeline
