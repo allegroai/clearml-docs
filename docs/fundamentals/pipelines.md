@@ -151,8 +151,8 @@ def main(pickle_url, mock_parameter='mock'):
     data_frame = step_one(pickle_url)
     X_train, X_test, y_train, y_test = step_two(data_frame)
     model = step_three(X_train, y_train)
- accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
- print(f"Accuracy={accuracy}%")
+    accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
+    print(f"Accuracy={accuracy}%")
 ```
 
 Notice that the driver is the `main` function, calling ("launching") the different steps. Next we add the decorators over 
