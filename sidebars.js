@@ -76,6 +76,7 @@ module.exports = {
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
                 {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
+                'guides/frameworks/catboost/catboost',
                 'guides/frameworks/fastai/fastai_with_tensorboard',
                 {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},
                 'guides/frameworks/lightgbm/lightgbm_example',
