@@ -15,7 +15,7 @@ Just follow the [getting started](/getting_started/ds/ds_first_steps.md) to auto
 - [TensorFlow](https://github.com/allegroai/clearml/tree/master/examples/frameworks/tensorflow)
 - [Keras](https://github.com/allegroai/clearml/tree/master/examples/frameworks/keras)
 - [scikit-learn](https://github.com/allegroai/clearml/tree/master/examples/frameworks/scikit-learn)
-- [fast.ai](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fastai)
+- [FastAI](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fastai)
 - [LightGBM](https://github.com/allegroai/clearml/tree/master/examples/frameworks/lightgbm)
 - [XGBoost](https://github.com/allegroai/clearml/tree/master/examples/frameworks/xgboost)
 - [MegEngine](https://github.com/allegroai/clearml/tree/master/examples/frameworks/megengine)

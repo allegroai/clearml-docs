@@ -82,7 +82,7 @@ See automatic model logging examples:
 * [Keras](../guides/frameworks/keras/keras_tensorboard.md)
 * [Scikit-Learn](../guides/frameworks/scikit-learn/sklearn_joblib_example.md)
 * [XGBoost](../guides/frameworks/xgboost/xgboost_sample.md)
-* [fast.ai](../guides/frameworks/fastai/fastai_with_tensorboard.md)
+* [FastAI](../guides/frameworks/fastai/fastai_with_tensorboard.md)
 
 
 ### Manual Model Logging 
@@ -171,7 +171,7 @@ This is especially helpful when using [clearml-agent](../clearml_agent.md) to ex
 - scikit-learn (only using joblib)
 - XGBoost (only using joblib)
 - AutoKeras
-- fast.ai
+- FastAI
 - LightGBM
 - MegEngine 
 - CatBoost
