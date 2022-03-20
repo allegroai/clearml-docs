@@ -9,19 +9,19 @@ Just follow the [getting started](/getting_started/ds/ds_first_steps.md) to auto
 ![Integration tools](../img/integration_tools.png)
 
 **Frameworks**
-- [Pytorch](https://github.com/allegroai/clearml/tree/master/examples/frameworks/pytorch)
-- [pytorch-lightning](https://github.com/allegroai/clearml/tree/master/examples/frameworks/pytorch-lightning)
-- [ignite](https://github.com/allegroai/clearml/tree/master/examples/frameworks/ignite)
-- [Tensorflow](https://github.com/allegroai/clearml/tree/master/examples/frameworks/tensorflow)
+- [PyTorch](https://github.com/allegroai/clearml/tree/master/examples/frameworks/pytorch)
+- [PyTorch Lightning](https://github.com/allegroai/clearml/tree/master/examples/frameworks/pytorch-lightning)
+- [PyTorch Ignite](https://github.com/allegroai/clearml/tree/master/examples/frameworks/ignite)
+- [TensorFlow](https://github.com/allegroai/clearml/tree/master/examples/frameworks/tensorflow)
 - [Keras](https://github.com/allegroai/clearml/tree/master/examples/frameworks/keras)
 - [scikit-learn](https://github.com/allegroai/clearml/tree/master/examples/frameworks/scikit-learn)
-- [fastai](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fastai)
-- [lightgbm](https://github.com/allegroai/clearml/tree/master/examples/frameworks/lightgbm)
+- [fast.ai](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fastai)
+- [LightGBM](https://github.com/allegroai/clearml/tree/master/examples/frameworks/lightgbm)
 - [XGBoost](https://github.com/allegroai/clearml/tree/master/examples/frameworks/xgboost)
 - [MegEngine](https://github.com/allegroai/clearml/tree/master/examples/frameworks/megengine)
 - [CatBoost](https://github.com/allegroai/clearml/tree/master/examples/frameworks/catboost)
 - [Hydra](https://github.com/allegroai/clearml/tree/master/examples/frameworks/hydra)
-- [python-fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
+- [Python Fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
 - [click](https://github.com/allegroai/clearml/tree/master/examples/frameworks/click)
 
 **HPO**
