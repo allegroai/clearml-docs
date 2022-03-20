@@ -2,6 +2,39 @@
 title: Version 1.2
 ---
 
+### ClearML Agent v1.2.0
+
+**New Features and Improvements**
+
+- Update S3 bucket verify option for minio [ClearML Agent GitHub PR #83](https://github.com/allegroai/clearml-agent/pull/83) (thanks @pshowbs!)
+- Add environment variable for request method [ClearML Agent GitHub PR #91](https://github.com/allegroai/clearml-agent/pull/91) (thanks @mmiller-max!)
+- Add additional k8s-glue dockerfiles [ClearML Agent GitHub PR #94](https://github.com/allegroai/clearml-agent/pull/94) (thanks @xadcoh!)
+- Update default docker image to `nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04`
+- Add support for custom docker image resolving using the `agent.default_docker.match_rules` configuration setting (see [here](https://github.com/allegroai/clearml-agent/blob/8712c5e636d9a02e939a9759348d29521a3939a9/docs/clearml.conf#L169))
+- Add `agent.force_git_root_python_path` configuration setting to force adding the git repository root folder to the `PYTHONPATH` (if set working directory is not added to the `PYHTONPATH`)
+- Add `build --force-docker` command line argument to the to allow ignoring task container data
+- Add `agent.poetry_version` configuration setting to specify poetry version (and force installation of poetry if missing, see [here](https://github.com/allegroai/clearml-agent/blob/8712c5e636d9a02e939a9759348d29521a3939a9/docs/clearml.conf#L65))
+- Add custom build script support
+- Add extra configurations when starting daemon
+
+**Bug Fixes**
+
+- Fix virtualenv python interpreter used [ClearML Agent GitHub PR #98](https://github.com/allegroai/clearml-agent/pull/98) (thanks @idantene!)
+- Fix symbolic links not copied from cached VCS into working copy (windows platform will result with default copy content instead of original symbolic link) [ClearML Agent GitHub PR #89](https://github.com/allegroai/clearml-agent/pull/89)
+- Fix agent fails to check out code from main branch when branch/commit is not explicitly specified [ClearML GitHub issue #551](https://github.com/allegroai/clearml/issues/551)
+- Fix `git+git://` requirements
+- Fix `default_python` calculation (and verbosity)
+- Fix using deprecated `abc` support (Python 3.10 compatibility)
+- Fix no default value for `CLEARML_API_DEFAULT_REQ_METHOD` causes `ValueError` if not specified
+- Fix `agent.hide_docker_command_env_vars` mode to include URL passwords and handle environment vars containing docker commands
+- Fix conda package manager listed packages with local links (`@ file://`) should ignore the local package if it does not exist
+- Fix cuda patch version support in conda
+- Fix agent attempts to check out code when in standalone mode
+- Fix `FORCE_LOCAL_CLEARML_AGENT_WHEEL` environment variable handling when running from a Windows host
+- Fix user-provided `"` is unnecessarily replaced to `\\"`
+- Fix token is not propagated to docker in case credentials are not available
+- Fix PyTorch aarch64 and windows support
+
 ### ClearML SDK 1.2.1
 
 **Bug Fixes**
