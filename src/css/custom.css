@@ -60,6 +60,19 @@ html[data-theme="dark"] {
 }
 
 /* ===LAYOUT=== */
+
+.max-w-75 {
+  max-width: 75%;
+}
+
+.max-w-50 {
+  max-width: 50%;
+}
+
+.max-w-25 {
+  max-width: 25%;
+}
+
 /* sidebar & content in the center of the page */
 
 .navbar__inner,

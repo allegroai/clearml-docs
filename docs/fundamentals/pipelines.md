@@ -151,8 +151,8 @@ def main(pickle_url, mock_parameter='mock'):
     data_frame = step_one(pickle_url)
     X_train, X_test, y_train, y_test = step_two(data_frame)
     model = step_three(X_train, y_train)
- accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
- print(f"Accuracy={accuracy}%")
+    accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
+    print(f"Accuracy={accuracy}%")
 ```
 
 Notice that the driver is the `main` function, calling ("launching") the different steps. Next we add the decorators over 
@@ -218,8 +218,8 @@ def main(pickle_url, mock_parameter='mock'):
     data_frame = step_one(pickle_url)
     X_train, X_test, y_train, y_test = step_two(data_frame)
     model = step_three(X_train, y_train)
- accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
- print(f"Accuracy={accuracy}%")
+    accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
+    print(f"Accuracy={accuracy}%")
 ```
 
 We wrap each pipeline component with `@PipelineDecorator.component`, and the main pipeline logic with 
@@ -310,7 +310,11 @@ function) are not transferred into the standalone Task. This means that any pack
 should be imported inside the function itself. 
 
 All imports are automatically logged, and will appear as required packages for the remote Task. This means the 
-`clearml-agent` will install the requested environment automatically
+`clearml-agent` will install the requested environment automatically.
+
+For local imports (e.g. `from my_helper_functions import foo`) you need to make sure these local files are available to 
+the standalone script at runtime. The only way to do this for now is to use the `repo`, `repo_branch` and `repo_commit`
+arguments detailed above. This does mean the helper functions should be committed to that repository at runtime.
 :::
 
 ### @PipelineDecorator.pipeline
