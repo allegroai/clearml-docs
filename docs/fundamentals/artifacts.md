@@ -163,7 +163,7 @@ This is especially helpful when using [clearml-agent](../clearml_agent.md) to ex
 
 ### List of Supported Frameworks
 
-- Tensorflow 
+- TensorFlow 
 - Keras 
 - PyTorch 
 - PyTorch Ignite
