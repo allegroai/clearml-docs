@@ -189,7 +189,11 @@ The system includes three pre-configured groups that can't be removed:
 
 The user group table lists all the active user groups. Each row includes a group's name, description, and member list. 
 
+<div class="max-w-50">
+
 ![User Management Page](../img/settings_user_management_table.png)
+
+</div>
 
 #### To create a user group:
 1. Click **+ ADD GROUP**
