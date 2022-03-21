@@ -118,9 +118,8 @@ These may be localhost, the domain, or a sub-domain of the domain.
 
 1. In the `sdk.development` section, add the logging of environment variables option (see ``log_os_environments`` in an 
    [example configuration file](https://github.com/allegroai/clearml/blob/master/docs/clearml.conf#L178)).
-
-
-```editorconfig
+   
+    ```editorconfig
         # Log specific environment variables. OS environments are enlisted in the "Environment" section
         # of the Hyper-Parameters.
         # multiple selected variables are supported including the suffix '*'.
@@ -128,7 +127,6 @@ These may be localhost, the domain, or a sub-domain of the domain.
         # This value can be overwritten with os environment variable CLEARML_LOG_ENVIRONMENT="[AWS_*, CUDA_VERSION]"
         # Example: log_os_environments: ["AWS_*", "CUDA_VERSION"]
         log_os_environments: []
-```
-
+    ```
 
 1. Save the ClearML configuration file. ClearML is now configured for the ClearML Server.
