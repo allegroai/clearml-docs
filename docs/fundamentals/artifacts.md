@@ -163,8 +163,15 @@ This is especially helpful when using [clearml-agent](../clearml_agent.md) to ex
 
 ### List of Supported Frameworks
 
-- Tensorflow 
+- TensorFlow 
 - Keras 
-- Pytorch 
+- PyTorch 
+- PyTorch Ignite
+- PyTorch Lightning  
 - scikit-learn (only using joblib)
 - XGBoost (only using joblib)
+- AutoKeras
+- FastAI
+- LightGBM
+- MegEngine 
+- CatBoost
