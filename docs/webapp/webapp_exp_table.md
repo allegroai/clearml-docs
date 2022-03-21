@@ -6,6 +6,11 @@ The experiments table is a [customizable](#customizing-the-experiments-table) li
 table, view experiment details, and work with experiments (reset, clone, enqueue, create [tracking leaderboards](../guides/ui/building_leader_board.md)
 to monitor experimentation, and more). The experiments table's auto-refresh allows users to continually monitor experiment progress.
 
+View the experiments table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
+or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
+using the buttons on the top left of the page. Use the table view for a comparative view of your experiments according 
+to columns of interest. Use the details view to access a selected experiment’s details, while keeping the experiment list 
+in view. 
 
 :::info
 To assist in focusing on active experimentation, experiments and models can be archived, so they will not appear
@@ -126,11 +131,16 @@ in the top right corner of the table.
 The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states)
 that allow each operation.  
 
+Access these actions with the context menu in any of the following ways:
+* In the experiments table,right click an experiment  or hover over an experiment and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In an experiment info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
+
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
-| View details | View experiment details in the experiments table, the [info panel](webapp_exp_track_visual.md#info-panel) (keep the experiments table in view), or the [full screen details view](webapp_exp_track_visual.md#full-screen-details-view). | Any state |  None  |
-| Manage a queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
-| View a worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
+| Details | Open the experiment's [info panel](webapp_exp_track_visual.md#info-panel) (keeps the experiments list in view). | Any state |  None  |
+| View Full Screen | View experiment details in [full screen](webapp_exp_track_visual.md#full-screen-details-view). | Any state |  None  |
+| Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
+| View Worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
 | Archive | To more easily work with active experiments, move an experiment to the archive. See [Archiving](webapp_archiving.md). | Any state |  None  |
 | Restore |Action available in the archive. Restore a Dataview to the active Dataviews table.| Any State | None |
@@ -140,14 +150,10 @@ that allow each operation.
 | Abort | Manually terminate a *Running* experiment. | *Running* | *Aborted* |
 | Abort All Children | Manually terminate all *Running* experiments which have this task as a parent | *Running* or *Aborted* | None for parent experiment, *Aborted* for child experiments |
 | Publish | Publish an experiment to prevent changes to its tracking data, inputs, and outputs. Published experiments and their models are read-only. *Published* experiments cannot be enqueued, but they can be cloned, and their clones can be edited, tuned, and enqueued. | *Completed*, *Aborted*, or *Failed*.  | *Published* |
-| Tags | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Any state |  None  |
+| Add Tag | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
-| Move | Move an experiment to another project. | Any state |  None  |
+| Move to Project | Move an experiment to another project. | Any state |  None  |
 | Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any State | None |
-
-These actions can be accessed with the context menu (when right-clicking an experiment or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
-in an experiment's info panel).
-
 
 Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
 [Select multiple experiments](#selecting-multiple-experiments), then use either the context menu, or the bar that appears at the bottom of the page, to perform
@@ -176,7 +182,7 @@ selecting items beyond the items currently on-screen:
 Filter & sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
 updates in real time with experiment performance and outputs.
 
-Modify the experiment table in the following ways to create a customized leaderboard:
+Modify the experiments table in the following ways to create a customized leaderboard:
 * Add experiment configuration ([hyperparameters](#to-add-hyperparameters))
 * Edit and add experiments [properties](webapp_exp_track_visual.md#user-properties)
 * Add reported [metrics](#to-add-metrics), any time series reported metric can be selected, then select the last reported
