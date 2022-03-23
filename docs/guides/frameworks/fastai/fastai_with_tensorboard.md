@@ -14,7 +14,6 @@ The example code does the following:
 1. Uses the fastai `LearnerTensorboardWriter` callback, and ClearML automatically logs TensorBoard through the callback. 
 1. During script execution, creates an experiment named `fastai with tensorboard callback`, which is associated with the `examples` project.
 
-
 ## Scalars
 
 ClearML automatically logs the histogram output to TensorBoard. They appear in **RESULTS** **>** **PLOTS**.
