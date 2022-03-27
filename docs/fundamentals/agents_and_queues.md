@@ -1,15 +1,15 @@
 ---
-title: Agent & Queue
+title: Workers & Queues
 ---
 
-Two major components of MLOps is experiment reproducibility, and the ability to scale work to multiple machines. ClearML Agent, 
-coupled with execution queues, addresses both these needs. 
+Two major components of MLOps are experiment reproducibility, and the ability to scale work to multiple machines. ClearML workers, 
+coupled with execution queues, address both these needs. 
 
-The ClearML Agent is the base for **Automation** in ClearML and can be leveraged to build automated pipelines, launch custom services 
+A ClearML worker is instantiated by launching a ClearML Agent, which is the base for **Automation** in ClearML and can be leveraged to build automated pipelines, launch custom services 
 (e.g. a [monitor and alert service](https://github.com/allegroai/clearml/tree/master/examples/services/monitoring)) and more.
 
 ## What Does a ClearML Agent Do?
-An agent (also referred to as a worker) allows users to execute code on any machine it's installed on, thus facilitating the 
+The ClearML agent allows users to execute code on any machine it's installed on, thus facilitating the 
 scaling of data science work beyond one's own machine.
 
 The agent takes care of deploying the code to the target machine as well as setting up the entire execution environment: 
