@@ -15,7 +15,11 @@ pipeline structure, configuration and outputs for all of the pipeline’s runs, 
 
 The pipeline cards display summarized pipeline information:  
 
+<div class="max-w-50">
+
 ![Project card](../../img/webapp_pipeline_card.png)
+
+</div>
 
 * Pipeline name
 * Time since the pipeline’s most recent run
@@ -28,7 +32,11 @@ The pipeline cards display summarized pipeline information:
 Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> on the top right
 of a pipeline card to open its context menu and access pipeline actions.  
 
+<div class="max-w-50">
+
 ![Project context menu](../../img/webapp_pipeline_context_menu.png)
+
+</div>
 
 * Rename - Change the pipeline’s name
 * Add Tag - Add label to the pipeline to help easily classify groups of pipelines.
