@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
+  <defs>
+    <clipPath id="clip-path">
+      <circle id="checkers-ellipse-mask" cx="5" cy="5" r="5" transform="translate(1248 414)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="mask-color" transform="translate(-1246 -412)">
+    <g id="mask-color-border" transform="translate(1246 412)" fill="none" stroke="#a7b2d8" stroke-width="1">
+      <circle cx="7" cy="7" r="7" stroke="none"/>
+      <circle cx="7" cy="7" r="6.5" fill="none"/>
+    </g>
+    <g id="checkers" clip-path="url(#clip-path)">
+      <path id="checkers-2" data-name="checkers" d="M-254,69V67h2v2Zm-4,0V67h2v2Zm-4,0V67h2v2Zm6-2V65h2v2Zm-4,0V65h2v2Zm6-2V63h-2V61h2v2h2v2Zm-4,0V63h2v2Zm-4,0V63h2v2Zm2-2V61h-2V59h2v2h2v2Zm6-2V59h2v2Zm-4,0V59h2v2Z" transform="translate(1510 355)" fill="#ccc"/>
+      <path id="checkers-ellipse-mask-w" d="M-256,69V67h2v2Zm-4,0V67h2v2Zm6-2V65h2v2Zm-4,0V65h2v2Zm-4,0V65h2v2Zm6-2V63h2v2Zm-4,0V63h-2V61h2v2h2v2Zm6-2V61h2v2Zm-4,0V61h2v2Zm2-2V59h2v2Zm-4,0V59h2v2Z" transform="translate(1510 355)" fill="#fff"/>
+    </g>
+    <circle id="color" cx="5" cy="5" r="5" transform="translate(1248 414)" fill="#7f2c83" opacity="0.5"/>
+  </g>
+</svg>
