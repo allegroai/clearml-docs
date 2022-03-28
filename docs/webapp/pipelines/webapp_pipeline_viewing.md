@@ -55,7 +55,7 @@ To view a step’s console log, click **DETAILS** and then click on a step.
 ![Step console](../../img/webapp_pipeline_step_console.png)
 
 For pipelines steps generated from functions using either [`PipelineController.add_function_step`](../../references/sdk/automation_controller_pipelinecontroller.md#add_function_step)
-pr [`PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md##pipelinedecoratorcomponent), 
+or [`PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md##pipelinedecoratorcomponent), 
 you can also view the selected step’s code. On the top center 
 of the console panel, click **Code**. 
 
