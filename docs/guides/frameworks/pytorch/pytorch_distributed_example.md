@@ -13,7 +13,7 @@ The script does the following:
    dataset), and reports the following to the main Task:
     * Artifacts - A dictionary containing different key-value pairs is uploaded from the Task in each subprocess to the main Task.
     * Scalars - Loss reported as a scalar during training in each subprocess Task is logged in the main Task.
-    * Hyperparameters - Hyperparameters created in each subprocess Task are added to the main Task's hyperparametersy.  
+    * Hyperparameters - Hyperparameters created in each subprocess Task are added to the main Task's hyperparameters.  
       
     
   Each Task in a subprocess references the main Task by calling [Task.current_task](../../../references/sdk/task.md#taskcurrent_task), 
