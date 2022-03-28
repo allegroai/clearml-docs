@@ -50,11 +50,13 @@ To return to viewing the run’s information, click the pipeline graph, outside 
 Click on **DETAILS** on the top left of the info panel to view a run’s full console log. The log contains everything printed 
 to stdout and stderr.  
 
-![Step console](../../img/webapp_pipeline_step_console.png)
-
 To view a step’s console log, click **DETAILS** and then click on a step. 
 
-You can also view the selected step’s code. On the top right of the console panel, click **Console**, then click **Code** 
-in the menu. 
+![Step console](../../img/webapp_pipeline_step_console.png)
+
+For pipelines steps generated from functions using either [`PipelineController.add_function_step`](../../references/sdk/automation_controller_pipelinecontroller.md#add_function_step)
+or [`PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md##pipelinedecoratorcomponent), 
+you can also view the selected step’s code. On the top center 
+of the console panel, click **Code**. 
 
 ![Step code](../../img/webapp_pipeline_step_code.png)
