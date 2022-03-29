@@ -16,7 +16,7 @@ These sections are further broken down into sub-sections (General / Args / TF_De
 
 ## Command Line Parsing 
 ClearML captures any command line parameters passed when invoking code that uses standard python packages such as 
-argparse or [click](https://click.palletsprojects.com). This happens automatically with no additional code required beyond 
+argparse, [click](https://click.palletsprojects.com), or [Python Fire](https://github.com/google/python-fire). This happens automatically with no additional code required beyond 
 initializing ClearML.
 
 ### Argparse Example 
