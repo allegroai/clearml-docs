@@ -2,6 +2,25 @@
 title: Version 1.3
 ---
 
+### ClearML SDK 1.3.2
+
+**New Features and Improvements**
+
+* Add support for setting reported values for `NaN` and `Inf` [ClearML GitHub issue #604](https://github.com/allegroai/clearml/issues/604)
+* Add reserved OS environments warning
+* Add git credentials to colab example [ClearML GitHub PR #621](https://github.com/allegroai/clearml/pull/621)
+* Add jsonargparse support [ClearML GitHub issue #403](https://github.com/allegroai/clearml/issue/403)
+* Update autokeras example
+
+**Bug Fixes**
+
+* Fix sub-project separators are incorrectly quoted in generated URLs [ClearML GitHub PR #584](https://github.com/allegroai/clearml/pull/584)
+* Revert Optuna deprecation fix [ClearML GitHub PR #613](https://github.com/allegroai/clearml/pull/613)
+* Fix HPO randomly aborts running tasks before the time limit
+* Fix cloud driver overwrites `agent.extra_docker_arguments`
+* Fix Pipeline Controller auto-magic framework connect
+* Fix unused scroll is not cleared in `Task.get_reported_plots()`
+
 ### ClearML SDK 1.3.1
 
 **New Features and Improvements** 
