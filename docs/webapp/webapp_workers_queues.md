@@ -10,82 +10,91 @@ With the **Workers and Queues** page, users can:
 * Create and rename queues; delete empty queues; monitor queue utilization
 * Reorder, move, and remove experiments from queues
 
+## Workers
+
+Use the **WORKERS** tab to track worker activity and monitor worker utilization.
+The page shows a worker activity graph and a worker details table. The graph time span can be controlled through the menu 
+at its top right corner. Hover over any plot point to see its data. By default, the **WORKER UTILIZATION** graph displays the 
+number of active and total workers over time.
+
+The worker table shows the currently available workers and their current execution information: 
+* Current running experiment
+* Current execution time 
+* Training iteration.
 
 
-## Resources Utilization
+Clicking on a worker will open the worker’s details panel and replace the graph with that worker’s resource utilization 
+information.  The resource metric being monitored can be selected through the menu at the graph’s top left corner:
+* CPU and GPU Usage
+* Memory Usage
+* Video Memory Usage
+* Network Usage.
 
-**To monitor resource utilization:**
-
-1. In the **WORKERS** tab, click a worker. The chart refreshes showing resource utilization over time for that worker. The
-   worker **INFO** slides open, showing information about the worker:
-   * Name
-   * Current experiment
-   * Current runtime
-   * Last iteration
-   * Last update time.
-
-1. Select a metric and time frame:
-
-    1. In the list of resources (top left side), select **CPU and GPU Usage**, **Memory Usage**, **Video Memory Usage**, or **Network Usage**.
-
-    1. In the period list (top right side), select **3 Hours**, **6 Hours**, **12 Hours**, **1 Day**, **1 Week**, or **1 Month**.
+The worker’s details panel includes the following two tabs:
+* **INFO** - worker information:
+    * Worker Name
+    * Update time - The last time the worker reported data
+    * Current Experiment - The experiment currently being executed by the worker
+    * Experiment Runtime - How long the currently executing experiment has been running
+    * Experiment iteration - The last reported training iteration for the experiment
+* **QUEUES** -  information about the queues that the worker is assigned to:
+    * Queue - The name of the Queue
+    * Next experiment - The next experiment available in this queue
+    * In Queue - The number of experiments currently enqueued
 
 ![Worker management](../img/agents_queues_resource_management.png)
 
 
 
-## Worker Utilization
+## Queues
 
-Optimize worker use by monitoring worker utilization in the **Workers** tab.
+Use the **QUEUES** tab to manage queues and monitor their statistics. The page shows graphs of the average experiment 
+wait time and the number of queued experiments, and a queue details table. Hover over any plot point to view its data. 
+By default, the graphs display the overall information of all queues. 
 
-**To monitor worker utilization:**
+The queue table shows the following queue information: 
+* Queue - Queue name 
+* Next Experiment - The next experiment available in this queue
+* Last Updated - The last time queue contents were modified
+* In Queue - Number of experiments currently enqueued in the queue
 
-* Open the **Workers** tab in the **Workers & Queues** page. The worker utilization chart
-  appears. Hover over any data point and see average workers and total workers.
+To create a new queue - Click **+ NEW QUEUE** (top left).
 
-
-
-## Queue Utilization
-
-**To monitor all queues:**
-
-* Open the **Queues** tab in the **Workers & Queues** page. The queue utilization chart appears and shows
- average wait time (seconds) and number of experiments queued for all queues.
-* Hover over any data point and see average wait time and number of experiments.
+Hover over a queue and click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-sm space-sm" /> 
+to copy the queue’s ID. 
 
 ![image](../img/4100.png)
 
-**To monitor a queue:**
+Right-click on a queue or hover and click its action button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> 
+to access queue actions:
 
-1. In the queues list (below the plot on the left), click a queue.
-1. The chart refreshes, showing metrics for the selected queue. The info panel slides open with two tabs:
-   1. To see the enqueued experiments on the queue, click the **EXPERIMENTS** tab.
-   2. To view information about the workers listening to the queue, click the **WORKERS** tab.
-
-
-
-## Queue Management
-
-The **Queues** tab lets you manage your queues and their contents:
-
-* Create a queue - Click **+ NEW QUEUE** (top right)
-* Right-click on a queue in the queues list to modify the queue:
+![Queue context menu](../img/webapp_workers_queues_context.png)
+   
+* Delete - Delete the queue. Any pending tasks will be dequeued.
+* Rename - Change the queue’s name
+* Clear - Remove all pending tasks from the queue
+* Custom action - The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
+  appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions)
   
-  ![Queue context menu](../img/webapp_workers_queues_context.png)
+Clicking on a queue will open the queue’s details panel and replace the graphs with that queue’s statistics.
+
+The queue’s details panel includes the following two tabs: 
+* **EXPERIMENTS** - A list of experiments in the queue. You can reorder and remove enqueued experiments. See 
+  [Controlling Queue Contents](#controlling-queue-contents).
+* **WORKERS**  - Information about the workers assigned to the queue:
+  * Name - Worker name
+  * IP - Worker’s IP
+  * Currently Executing - The experiment currently being executed by the worker
+
+### Controlling Queue Contents
+
+Click on an experiment’s menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> 
+in the **EXPERIMENTS** tab to reorganize your queue:
+
+![Queue experiment's menu](../img/workers_queues_experiment_actions.png)  
   
-    * Delete - Delete the queue. Any pending tasks will be dequeued.
-    * Rename - Change the queue’s name
-    * Clear - Remove all pending tasks from the queue
-    * Custom action - The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
-      appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions)
-* Click on a queue to select it and see its task and worker information. Click on a
-  task’s menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Menu button" className="icon size-md space-sm" />
-  in the **EXPERIMENTS** tab to reorganize your queue. 
-  
-  ![Queue experiment's menu](../img/workers_queues_experiment_actions.png)  
-  
-    * Move a task to the top or bottom of the queue
-    * Move the task to a different queue
-    * Dequeue the task
-    
-  You can also reorder experiments in a queue by dragging an experiment to a new position in the queue
+* Move a task to the top or bottom of the queue
+* Move the task to a different queue
+* Dequeue the task
+
+You can also reorder experiments in a queue by dragging an experiment to a new position in the queue.
