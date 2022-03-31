@@ -2,6 +2,11 @@
 title: Version 1.3
 ---
 
+### ClearML Server 1.3.1
+
+**Bug Fixes**
+* Fix scalar graph smoothing [ClearML Server GitHub issue #127](https://github.com/allegroai/clearml-server/issues/127)
+
 ### ClearML SDK 1.3.2
 
 **New Features and Improvements**
