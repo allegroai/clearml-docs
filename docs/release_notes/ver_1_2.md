@@ -2,6 +2,13 @@
 title: Version 1.2
 ---
 
+### ClearML Agent 1.2.2
+
+**Bug Fixes**
+
+- Fix `CLEARML_AGENT_SKIP_PIP_VENV_INSTALL` fails to find python executable
+- Fix `apt-get update` failure causes `apt-get install` not to be executed
+
 ### ClearML Agent 1.2.1
 
 **New Features and Improvements**
