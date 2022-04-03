@@ -19,6 +19,7 @@ module.exports = {
         'clearml_agent',
         {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
                 {'Workflows': ['clearml_data/data_management_examples/workflows', 'clearml_data/data_management_examples/data_man_simple', 'clearml_data/data_management_examples/data_man_folder_sync', 'clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},]},
+        {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task']},
         'integrations/libraries',
         'integrations/storage',
