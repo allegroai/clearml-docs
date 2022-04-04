@@ -6,6 +6,8 @@ title: ClearML Serving
 It enables model deployment including serving and preprocessing code to a Kubernetes cluster or custom container based 
 solution.
 
+![ClearML Serving](https://github.com/allegroai/clearml-serving/raw/main/docs/design_diagram.png?raw=true)
+
 ## Features
 
 * Easy to deploy & configure
