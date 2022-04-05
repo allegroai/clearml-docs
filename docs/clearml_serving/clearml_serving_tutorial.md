@@ -39,7 +39,7 @@ clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_mo
 :::info Service ID
 Make sure that you have executed `clearml-servings`'s
 [initial setup](clearml_serving.md#initial-setup), in which you create a Serving Service. 
-The Serving Service's ID is required to register a model, and to execute all `clearml-serving` commands (except `clearml-serving create`) 
+The Serving Service's ID is required to register a model, and to execute `clearml-serving`'s `metrics` and `config` commands 
 :::
 
   
