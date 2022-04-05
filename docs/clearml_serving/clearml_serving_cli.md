@@ -4,8 +4,8 @@ title: CLI
 
 The `clearml-serving` utility is a CLI tool for model deployment and orchestration. 
 
-The following page provides a reference for `clearml-serving`'s CLI commands, including:
-* [list](#list) -  List running Serving Service
+The following page provides a reference for `clearml-serving`'s CLI commands:
+* [list](#list) -  List running Serving Services
 * [create](#create) - Create a new Serving Service
 * [metrics](#metrics) - Configure inference metrics Service
 * [config](#config) - Configure a new Serving Service
@@ -22,8 +22,8 @@ clearml-serving [-h] [--debug] [--id ID] {list,create,metrics,config,model}
 
 |Name|Description|Optional|
 |---|---|---|
+|`--id`|Control plane Task ID to configure (if not provided automatically detect the running control plane Task) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 |`--debug` |  Print debug messages | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
-|`--id`|Control plane Task ID to configure (if not provided automatically detect the running control plane Task) | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 
 </div>
 

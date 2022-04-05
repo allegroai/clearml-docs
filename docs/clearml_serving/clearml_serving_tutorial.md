@@ -12,9 +12,9 @@ The tutorial will also go over these additional options that you can use with `c
 * Canary endpoints
 * Model performance monitoring 
 
-## Prerequisites
-* Clone the `clearml-serving` repository `git clone https://github.com/allegroai/clearml-serving.git`
-* Install the `clearml` and `clearml-serving` packages `pip install clearml clearml-serving`
+## Prerequisite
+
+Before executing the steps below, make sure you have completed `clearml-serving`'s [initial setup](clearml_serving.md#initial-setup).
 
 ##  Steps
 ### Step 1: Train Model
@@ -30,14 +30,17 @@ For Manual model registration see [here](#registering--deploying-new-models-manu
 
 ### Step 2: Register Model
 
-Register the new Model on the Serving Service
+Register the new Model on the Serving Service. Make sure that you have executed `clearml-servings`'s
+[initial setup](clearml_serving.md#initial-setup), in which you create a Serving Service. 
+You need the Serving Service's ID to register a model. 
+
 
 ```bash
 clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --name "train sklearn model" --project "serving examples"
 ```
   
 :::note
-The preprocessing python code is packaged and uploaded to the "Serving Service", to be used by any inference container, 
+The preprocessing python code is packaged and uploaded to the Serving Service, to be used by any inference container, 
 and downloaded in realtime when updated
 :::
 

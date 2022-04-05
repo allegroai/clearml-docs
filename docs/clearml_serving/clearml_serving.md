@@ -1,12 +1,11 @@
 ---
-title: ClearML Serving
+title: Introduction
 ---
 
 `clearml-serving` is a command line utility for model deployment and orchestration.
 It enables model deployment including serving and preprocessing code to a Kubernetes cluster or custom container based 
 solution.
 
-![ClearML Serving](https://github.com/allegroai/clearml-serving/raw/main/docs/design_diagram.png?raw=true)
 
 ## Features
 
@@ -38,7 +37,9 @@ solution.
     * Model performance metric
     * Model performance Dashboard
 
-## Concepts
+## Components
+
+![ClearML Serving](https://github.com/allegroai/clearml-serving/raw/main/docs/design_diagram.png?raw=true)
 
 * **CLI** - Secure configuration interface for on-line model upgrade/deployment on running Serving Services
 
@@ -60,13 +61,16 @@ solution.
 
 ## Installation
 ### Prerequisites
-* ClearML Server - Set up your [ClearML Server](../deploying_clearml/clearml_server.md) or use the 
-  [Free tier Hosting](https://app.clear.ml)
-* Connect `clearml` SDK to the server, see instructions [here](../getting_started/ds/ds_first_steps.md#install-clearml)
 
+* ClearML-Server : Model repository, Service Health, Control plane
 * Kubernetes / Single-instance Machine : Deploying containers
+* CLI : Configuration & model deployment interface
 
 ### Initial Setup
+1. Set up your [ClearML Server](../deploying_clearml/clearml_server.md) or use the 
+  [free hosted service](https://app.clear.ml)
+1. Connect `clearml` SDK to the server, see instructions [here](../getting_started/ds/ds_first_steps.md#install-clearml)
+
 1. Install clearml-serving CLI:
    
    ```bash
@@ -107,7 +111,7 @@ solution.
     CLEARML_SERVING_TASK_ID="<serving_service_id_here>"
    ```
 
-1. Spin the `clearml-serving` containers with `docker-compose` (or if running on Kubernetes, use the helm chart)
+1. Spin up the `clearml-serving` containers with `docker-compose` (or if running on Kubernetes, use the helm chart)
    
    ```bash
    cd docker && docker-compose --env-file example.env -f docker-compose.yml up
@@ -124,7 +128,7 @@ solution.
    ```
     
 :::note
-Any model that registers with "Triton" engine will run the pre/post processing code on the Inference service container, 
+Any model that registers with Triton engine will run the pre/post processing code on the Inference service container, 
 and the model inference itself will be executed on the Triton Engine container.
 :::
 
