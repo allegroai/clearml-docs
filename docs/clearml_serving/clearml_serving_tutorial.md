@@ -30,14 +30,18 @@ For Manual model registration see [here](#registering--deploying-new-models-manu
 
 ### Step 2: Register Model
 
-Register the new Model on the Serving Service. Make sure that you have executed `clearml-servings`'s
-[initial setup](clearml_serving.md#initial-setup), in which you create a Serving Service. 
-You need the Serving Service's ID to register a model. 
-
+Register the new Model on the Serving Service. 
 
 ```bash
 clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --name "train sklearn model" --project "serving examples"
 ```
+
+:::info Service ID
+Make sure that you have executed `clearml-servings`'s
+[initial setup](clearml_serving.md#initial-setup), in which you create a Serving Service. 
+The Serving Service's ID is required to register a model, and to execute all `clearml-serving` commands (except `clearml-serving create`) 
+:::
+
   
 :::note
 The preprocessing python code is packaged and uploaded to the Serving Service, to be used by any inference container, 

@@ -22,11 +22,14 @@ clearml-serving [-h] [--debug] [--id ID] {list,create,metrics,config,model}
 
 |Name|Description|Optional|
 |---|---|---|
-|`--id`|Control plane Task ID to configure (if not provided automatically detect the running control plane Task) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+|`--id`|Serving Service (Control plane) Task ID to configure (if not provided automatically detect the running control plane Task) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 |`--debug` |  Print debug messages | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 
 </div>
 
+:::info Service ID
+The Serving Service's ID (`--id`) is required to execute all `clearml-serving` commands, except `clearml-serving create`
+:::
 
 ### list
 ```bash
