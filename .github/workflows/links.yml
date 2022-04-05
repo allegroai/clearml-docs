@@ -51,6 +51,6 @@ jobs:
       #  with:
       #    blocks: |
       #      [
-      #        {"type": "section", "text": {"type": "mrkdwn", "text": ":warning: Link Checker failure in github.com/allegroai/clearl-docs "}},
+      #        {"type": "section", "text": {"type": "mrkdwn", "text": ":warning: Link Checker failure in github.com/allegroai/clearml-docs "}},
       #        {"type": "section", "text": {"type": "mrkdwn", "text": "$FAILED_URLS"}}
       #      ]
