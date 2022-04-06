@@ -24,7 +24,7 @@ jobs:
 
       - name: Find all markdown files
         id: find_files
-        run: echo "MD_FILES=$(find . -name '*.md' -type f -not -path '*/docs/release_notes*' | sed 's|^./||' | tr '\n' ' ')" >> $GITHUB_ENV
+        run: echo "MD_FILES=$(find . -name '*.md' -type f | sed 's|^./||' | tr '\n' ' ')" >> $GITHUB_ENV
 
       - name: Link Checker
         id: lychee
