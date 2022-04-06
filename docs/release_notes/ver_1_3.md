@@ -14,7 +14,7 @@ title: Version 1.3
 * Add support for setting reported values for `NaN` and `Inf` [ClearML GitHub issue #604](https://github.com/allegroai/clearml/issues/604)
 * Add reserved OS environments warning
 * Add git credentials to colab example [ClearML GitHub PR #621](https://github.com/allegroai/clearml/pull/621)
-* Add jsonargparse support [ClearML GitHub issue #403](https://github.com/allegroai/clearml/issue/403)
+* Add jsonargparse support [ClearML GitHub issue #403](https://github.com/allegroai/clearml/issues/403)
 * Update autokeras example
 
 **Bug Fixes**

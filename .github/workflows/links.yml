@@ -20,29 +20,28 @@ jobs:
   linkChecker:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Find all markdown files
         id: find_files
         run: echo "MD_FILES=$(find . -name '*.md' -type f | sed 's|^./||' | tr '\n' ' ')" >> $GITHUB_ENV
-        
+
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@v1.2.0
+        uses: lycheeverse/lychee-action@v1.4.1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          #format: json
-          args: --verbose --no-progress ${{ env.MD_FILES }} --github-token ${{secrets.GITHUB_TOKEN}} --exclude https://s3.*
-            https://files.* https://demo.*  ^\w*#.* http(s)?://example.com.* (https://clear.ml)(/)?(blog|pricing|docs)(/)?(latest/docs/index.html)?
-            (https://app)(.community.clear.ml|.app.clear.ml)?(/)?(dashboard|profile|projects.*)?
-            http://localhost.* `http.+` https://.{10,}\.git https://api.* http://[0-9].*
-            https://allegroai.jfrog.io/clearml/api/pypi/public/simple mailto:clearml@allegro.ai
-            https://allegroai.github.io/clearml-helm-charts https://gist.github.com https://twitter.com/clearmlapp
-
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
 
       #- name: Read Results
       #  if: ${{ steps.lychee.outputs.exit_code != 0 }}
       #  run: echo "FAILED_URLS=$(jq -r '.fail_map[] | .[] | .url' ./lychee/out.md)" >> $GITHUB_ENV
-    
+
       #- name: Slack Notification
       #  if: ${{ steps.lychee.outputs.exit_code != 0 }}
       #  uses: tokorom/action-slack-incoming-webhook@main
@@ -51,6 +50,6 @@ jobs:
       #  with:
       #    blocks: |
       #      [
-      #        {"type": "section", "text": {"type": "mrkdwn", "text": ":warning: Link Checker failure in github.com/allegroai/clearl-docs "}},
+      #        {"type": "section", "text": {"type": "mrkdwn", "text": ":warning: Link Checker failure in github.com/allegroai/clearml-docs "}},
       #        {"type": "section", "text": {"type": "mrkdwn", "text": "$FAILED_URLS"}}
       #      ]
