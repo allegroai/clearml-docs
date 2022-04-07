@@ -2,9 +2,14 @@
 title: The Pipeline Runs Table
 ---
 
-The pipeline runs table is a [customizable](#customizing-the-runs-table) list of the pipeline’s runs. From the table, 
-you can view a run’s details, and manage runs (create, continue, or abort). The runs table's auto-refresh allows users 
+The pipeline runs table is a [customizable](#customizing-the-runs-table) list of the pipeline’s runs. Use it to
+view a run’s details, and manage runs (create, continue, or abort). The runs table's auto-refresh allows users 
 to continually monitor run progress.
+
+View the runs table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
+or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, 
+using the buttons on the top left of the page. Use the table view for a comparative view of your runs according to 
+columns of interest. Use the details view to access a selected run’s details, while keeping the pipeline runs list in view. 
 
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
 
@@ -88,18 +93,25 @@ After clicking **RUN**, the new pipeline run is enqueued in the specified queue,
 The following table describes the actions that can be done from the run table, including the [states](../../fundamentals/task.md#task-states)
 that allow each operation.  
 
+Access these actions with the context menu in any of the following ways:
+* In the pipeline runs table, right click a run, or hover over a pipeline and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In a pipeline info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
+
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
-| Archive | To more easily work with active runs, archive a run. See [Archiving](../webapp_archiving.md). | Any state |  None  |
-| Restore | Action available in the archive. Restore a run to the active pipeline runs table. | Any state | None |
+| Details | View pipeline details. | Any state |  None  |
 | Run | Create a new pipeline run. Configure and enqueue it for execution. See [Create Run](#create-run).  | Any State | *Pending* |
 | Abort | Manually stop / cancel a run. | *Running* / *Pending* | *Aborted* |
-| Continue | Rerun with the same parameters |  *Aborted* | *Pending* |
-| Tags | User-defined labels added to runs for grouping and organization. | Any state |  None  |
+| Continue | Rerun with the same parameters. |  *Aborted* | *Pending* |
+| Add Tag | User-defined labels added to runs for grouping and organization. | Any state |  None  |
+| Archive | To more easily work with active runs, archive a run. See [Archiving](../webapp_archiving.md). | Any state |  None  |
+| Restore | Action available in the archive. Restore a run to the active pipeline runs table. | Any state | None |
 
-These actions can be accessed with the context menu, when right-clicking a run.
+<div class="max-w-50">
 
 ![pipeline run context menu](../../img/webapp_pipelines_context_menu.png)
+
+</div> 
 
 Most of the actions mentioned in the chart above can be performed on multiple runs at once.
 [Select multiple runs](#selecting-multiple-runs), then use either the context menu, or the bar that appears at the bottom 

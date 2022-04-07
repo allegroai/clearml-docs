@@ -44,9 +44,10 @@ The ClearML Web UI is composed of the following pages:
 
 Click the help menu button <img src="/docs/latest/icons/ico-help-outlined.svg" alt="Help menu" className="icon size-lg space-sm" />
 in the top right corner of the web UI screen to access the self-help resources including: 
-* **ClearML Documentation**
-* **Pro Tips** - Tips for working with ClearML efficiently
 * **ClearML Python Package setup** - Instruction to get started with the `clearml` Python package
+* **ClearML on Youtube** - Instructional videos on integrating ClearML into your workflow
+* **Online Documentation**
+* **Pro Tips** - Tips for working with ClearML efficiently
 * **Contact Us** - Quick access to ClearML contact form
 
 Click the profile menu button <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> 

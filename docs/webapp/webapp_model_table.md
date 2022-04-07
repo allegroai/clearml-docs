@@ -5,6 +5,12 @@ title: The Models Table
 The models table is a [customizable](#customizing-the-models-table) list of models associated with the experiments in a project. From the models table,
 view model details, and modify, publish, archive, tag, and move models to other projects.
 
+View the models table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
+or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
+using the buttons on the top left of the page. Use the table view for a comparative view of your models according to 
+columns of interest. Use the details view to access a selected model’s details, while keeping the model list in view. 
+
+
 ![Models table](../img/webapp_models_01.png)
 
 ## Models Table Columns
@@ -61,19 +67,20 @@ all the models in the project. The customizations of these two views are saved s
 The following table describes the actions that can be done from the models table, including the states that
 allow each feature. Model states are *Draft* (editable) and *Published* (read-only). 
 
+Access these actions with the context menu in any of the following ways:
+* In the models table, right click a model, or hover over a model and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In a model's info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
+
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
-| View details | Model details include general information, the model configuration, and label enumeration. Click a model, and the info panel slides open. | Any state |
+| Details | Model details include general information, the model configuration, and label enumeration. | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
 | Archive | To more easily work with active models, move a model to the archive. See [Archiving](webapp_archiving.md). | Any state |
-| Restore | Action available in the archive. Restore a model to the active models table. | Any state |
-| Tags | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
+| Restore | Action available in the archive. Restore a model to the active model table. | Any state |
+| Add Tag | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
-| Move to project | To organize work and improve collaboration, move a model to another project. | Any state |
+| Move to Project | To organize work and improve collaboration, move a model to another project. | Any state |
 | Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any state |
-
-These actions can be accessed with the context menu (when right-clicking a model or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
-in a model's info panel).
 
 Some actions mentioned in the chart above can be performed on multiple models at once.
 Select multiple models, then use either the context menu, or the bar that appears at the bottom of the page, to perform
