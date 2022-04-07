@@ -102,7 +102,7 @@ Access these actions with the context menu in any of the following ways:
 | Details | View pipeline details. | Any state |  None  |
 | Run | Create a new pipeline run. Configure and enqueue it for execution. See [Create Run](#create-run).  | Any State | *Pending* |
 | Abort | Manually stop / cancel a run. | *Running* / *Pending* | *Aborted* |
-| Continue | Rerun with the same parameters |  *Aborted* | *Pending* |
+| Continue | Rerun with the same parameters. |  *Aborted* | *Pending* |
 | Add Tag | User-defined labels added to runs for grouping and organization. | Any state |  None  |
 | Archive | To more easily work with active runs, archive a run. See [Archiving](../webapp_archiving.md). | Any state |  None  |
 | Restore | Action available in the archive. Restore a run to the active pipeline runs table. | Any state | None |

@@ -252,7 +252,7 @@ In order to view all masks, click **Show all** / **Hide all**.
 
 Masks are applied over the image either by pixel segmentation or as an alpha channel:
 * <img src="/docs/latest/icons/ico-segmentation.svg" alt="Pixel segmentation mode" className="icon size-md space-sm" /> Pixel 
-segmentation - Class labels are mapped onto the mask according to their [pixel value definitions](../masks.md), and each 
+segmentation - Class labels are mapped onto the mask according to their pixel value definitions, and each 
 class is assigned a unique color. 
 * <img src="/docs/latest/icons/ico-alpha-mask.svg" alt="Alpha channel mode" className="icon size-md space-sm" /> Alpha 
 channel - Mask pixel values are translated to transparency. Additionally, a color can be applied to the mask to help 

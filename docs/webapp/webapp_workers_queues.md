@@ -60,7 +60,7 @@ The queue table shows the following queue information:
 
 To create a new queue - Click **+ NEW QUEUE** (top left).
 
-Hover over a queue and click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-sm space-sm" /> 
+Hover over a queue and click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-md space-sm" /> 
 to copy the queue’s ID. 
 
 ![image](../img/4100.png)
