@@ -103,28 +103,28 @@ Use the ClearML Web UI [experiment comparison](../../../../../webapp/webapp_exp_
 
 In the experiment comparison window, **HYPER PARAMETERS** tab, select **Values** in the list (the right of **+ Add Experiment**), and hyperparameter differences appear with a different background color.
 
-![image](../../../../../img/examples_hyperparameter_search_06.png)
+![Hyperparameter comaprison](../../../../../img/examples_hyperparameter_search_06.png)
 
 ### Metric Comparison by Hyperparameter
 
 Select **Parallel Coordinates** in the list, click a **Performance Metric**, and then select the checkboxes of the hyperparameters.
 
-![image](../../../../../img/examples_hyperparameter_search_07.png)
+![Metric comaprison](../../../../../img/examples_hyperparameter_search_07.png)
 
 ### Scalar Values Comparison
 
 In the **SCALARS** tab, select **Last Values**, **Min Values**, or **Max Values**. Value differences appear with a different background color.
 
-![image](../../../../../img/examples_hyperparameter_search_09.png)
+![Scalar value comparison](../../../../../img/examples_hyperparameter_search_09.png)
 
 ### Scalar Series Comparison
 
 Select **Graph** and the scalar series for the jobs appears, where each scalar plot shows the series for all jobs.
 
-![image](../../../../../img/examples_hyperparameter_search_08.png)
+![Scalar series comparison](../../../../../img/examples_hyperparameter_search_08.png)
 
 ### Debug Samples Comparison
 
 In the **DEBUG SAMPLES** tab, debug images appear.
 
-![image](../../../../../img/examples_hyperparameter_search_10.png)
+![Debug sample comparison](../../../../../img/examples_hyperparameter_search_10.png)
