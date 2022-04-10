@@ -103,13 +103,13 @@ Use the ClearML Web UI [experiment comparison](../../../../../webapp/webapp_exp_
 
 In the experiment comparison window, **HYPER PARAMETERS** tab, select **Values** in the list (the right of **+ Add Experiment**), and hyperparameter differences appear with a different background color.
 
-![Hyperparameter comaprison](../../../../../img/examples_hyperparameter_search_06.png)
+![Hyperparameter comparison](../../../../../img/examples_hyperparameter_search_06.png)
 
 ### Metric Comparison by Hyperparameter
 
 Select **Parallel Coordinates** in the list, click a **Performance Metric**, and then select the checkboxes of the hyperparameters.
 
-![Metric comaprison](../../../../../img/examples_hyperparameter_search_07.png)
+![Metric comparison](../../../../../img/examples_hyperparameter_search_07.png)
 
 ### Scalar Values Comparison
 
