@@ -12,7 +12,7 @@ Every previously executed experiment is stored as a Task.
 A Task has a project and a name, both can be changed after the experiment has been executed.
 A Task is also automatically assigned an auto-generated unique identifier (UUID string) that cannot be changed and always locates the same Task in the system.
 
-It's possible to retrieve a Task object programmatically by querying the system based on either the Task ID, 
+It's possible to retrieve a Task object programmatically by querying the system based on either the Task ID,
 or project & name combination. It's also possible to query tasks based on their properties, like Tags.
 
 ```python
@@ -28,7 +28,7 @@ on Model performance, saving and comparing these between experiments is sometime
 
 ClearML supports logging `argparse` module arguments out of the box, so once ClearML is integrated into the code, it automatically logs all parameters provided to the argument parser.
 
-It's also possible to log parameter dictionaries (very useful when parsing an external config file and storing as a dict object), 
+It's also possible to log parameter dictionaries (very useful when parsing an external config file and storing as a dict object),
 whole configuration files or even custom objects or [Hydra](https://hydra.cc/docs/intro/) configurations!
 
 ```python
@@ -40,12 +40,12 @@ Check [this](../../fundamentals/hyperparameters.md) out for all Hyperparameter l
 
 ## Log Artifacts
 
-ClearML allows you to easily store the output products of an experiment -  Model snapshot / weights file, a preprocessing of your data, feature representation of data and more! 
+ClearML allows you to easily store the output products of an experiment -  Model snapshot / weights file, a preprocessing of your data, feature representation of data and more!
 
 Essentially, artifacts are files (or python objects) uploaded from a script and are stored alongside the Task.
-These Artifacts can be easily accessed by the web UI or programmatically. 
+These Artifacts can be easily accessed by the web UI or programmatically.
 
-Artifacts can be stored anywhere, either on the ClearML server, or any object storage solution or shared folder. 
+Artifacts can be stored anywhere, either on the ClearML server, or any object storage solution or shared folder.
 See all [storage capabilities](../../integrations/storage.md).
 
 
@@ -73,7 +73,7 @@ Check out all [artifact logging](../../fundamentals/artifacts.md) options.
 ### Using Artifacts
 
 Logged Artifacts can be used by other Tasks, whether it's a pre-trained Model or processed data.
-To use an Artifact, first we have to get an instance of the Task that originally created it, 
+To use an Artifact, first we have to get an instance of the Task that originally created it,
 then we either download it and get its path, or get the Artifact object directly.
 
 For example, using a previously generated preprocessed data.
@@ -84,9 +84,9 @@ local_csv = preprocess_task.artifacts['data'].get_local_copy()
 ```
 
 The `task.artifacts` is a dictionary where the keys are the Artifact names, and the returned object is the Artifact object.
-Calling `get_local_copy()` returns a local cached copy of the artifact. Therefore, next time we execute the code, we don't 
+Calling `get_local_copy()` returns a local cached copy of the artifact. Therefore, next time we execute the code, we don't
 need to download the artifact again.
-Calling `get()` gets a deserialized pickled object. 
+Calling `get()` gets a deserialized pickled object.
 
 Check out the [artifacts retrieval](https://github.com/allegroai/clearml/blob/master/examples/reporting/artifacts_retrieval.py) example code.
 
@@ -95,13 +95,13 @@ Check out the [artifacts retrieval](https://github.com/allegroai/clearml/blob/ma
 Models are a special kind artifact.
 Models created by popular frameworks (such as Pytorch, Tensorflow, Scikit-learn) are automatically logged by ClearML.
 All snapshots are automatically logged. In order to make sure we also automatically upload the model snapshot (instead of saving its local path),
-we need to pass a storage location for the model files to be uploaded to. 
+we need to pass a storage location for the model files to be uploaded to.
 
 For example, upload all snapshots to an S3 bucket:
 ```python
 task = Task.init(
-    project_name='examples', 
-    task_name='storing model', 
+    project_name='examples',
+    task_name='storing model',
     output_uri='s3://my_models/'
 )
 ```
@@ -110,9 +110,9 @@ Now, whenever the framework (TF/Keras/PyTorch etc.) stores a snapshot, the model
 
 Loading models by a framework is also logged by the system, these models appear under the “Input Models” section, under the Artifacts tab.
 
-Check out model snapshots examples for [TF](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py), 
-[PyTorch](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py), 
-[Keras](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py), 
+Check out model snapshots examples for [TF](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py),
+[PyTorch](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py),
+[Keras](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py),
 [Scikit-Learn](https://github.com/allegroai/clearml/blob/master/examples/frameworks/scikit-learn/sklearn_joblib_example.py).
 
 #### Loading Models
@@ -150,21 +150,21 @@ Once everything is neatly logged and displayed, using the [comparison tool](../.
 
 The experiment table is a powerful tool for creating dashboards and views of your own projects, your team's projects, or the entire development.
 
-![image](../../img/webapp_exp_table_01.png)
+![image](../../img/webapp_experiment_table.png)
 
 
 ### Creating Leaderboards
 Customize the [experiments table](../../webapp/webapp_exp_table.md) to fit your own needs, adding desired views of parameters, metrics and tags.
 It's possible to  filter and sort based on parameters and metrics, so creating custom views is simple and flexible.
 
-Create a dashboard for a project, presenting the latest Models and their accuracy scores, for immediate insights. 
+Create a dashboard for a project, presenting the latest Models and their accuracy scores, for immediate insights.
 
 It can also be used as a live leaderboard, showing the best performing experiments' status, updated in real time.
 This is helpful to monitor your projects' progress, and share it across the organization.
 
 Any page is sharable by copying the URL from the address bar, allowing you to bookmark leaderboards or send an exact view of a specific experiment or a comparison view.
 
-It's also possible to tag Tasks for visibility and filtering allowing you to add more information on the execution of the experiment. 
+It's also possible to tag Tasks for visibility and filtering allowing you to add more information on the execution of the experiment.
 Later you can search based on task name and tag in the search bar, and filter experiments based on their tags, parameters, status and more.
 
 ## What's Next?
@@ -180,4 +180,8 @@ or check these pages out:
 - Improve your experiments with [HyperParameter Optimization](../../fundamentals/hpo.md)
 - Check out ClearML's integrations to [external libraries](../../integrations/libraries.md).
 
- 
+## Youtube Playlist
+
+All these tips and tricks are also covered by our Youtube Getting Started series, go check it out :)
+
+[![Watch the video](https://img.youtube.com/vi/kyOfwVg05EM/hqdefault.jpg)](https://www.youtube.com/watch?v=kyOfwVg05EM&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=3)

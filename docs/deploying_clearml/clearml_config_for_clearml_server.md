@@ -6,7 +6,7 @@ title: Configuring ClearML for Your ClearML Server
 This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
 :::
 
-The ClearML **configuration file** that will be initialized will contain the host URLs of the **ClearML Server**, and 
+The ClearML **configuration file** that will be initialized will contain the host URLs of the ClearML Server, and 
 ClearML credentials, allowing the code to integrate with the server. Later, ClearML can be tailored to fit requirements
 by setting [configuration options](../configs/clearml_conf.md).
 
@@ -47,35 +47,35 @@ by setting [configuration options](../configs/clearml_conf.md).
     
             ClearML SDK setup process
             
-            Please create new clearml credentials through the profile page in your clearml web app (e.g. http://localhost:8080/profile)
-            Or with the free hosted service at https://app.community.clear.ml/profile
-            In the profile page, press "Create new credentials", then press "Copy to clipboard".
+           Please create new clearml credentials through the settings page in your `clearml-server` web app, 
+           or create a free account at https://app.clear.ml/settings/webapp-configuration
             
-            Paste copied configuration here:
+           In the settings > workspace  page, press "Create new credentials", then press "Copy to clipboard".
+           Paste copied configuration here: 
 
    1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the **SETTINGS > WORKSPACE** page, click 
       **Create new credentials** **>** **Copy to clipboard**.
     
-   1. At the command prompt `Paste copied configuration here:`, copy and paste the **ClearML** credentials.
+   1. At the command prompt `Paste copied configuration here:`, copy and paste the ClearML credentials.
         
         The setup wizard confirms the credentials. 
 
             Detected credentials key="********************" secret="*******"
 
-   1. Enter the **ClearML Server** web server URL, or press **Enter** to accept the default which is detected from the 
+   1. Enter the ClearML Server web server URL, or press **Enter** to accept the default which is detected from the 
       credentials.
     
             WEB Host configured to: [https://app.<your-domain>] 
     
-   1. Enter the **ClearML Server** API server URL, or press **Enter** to accept the default value which is based on the previous response:
+   1. Enter the ClearML Server API server URL, or press **Enter** to accept the default value which is based on the previous response:
     
             API Host configured to: [https://api.<your-domain>] 
     
-   1. Enter the **ClearML Server** file server URL, or press **Enter** to accept the default value which is based on the previous response:
+   1. Enter the ClearML Server file server URL, or press **Enter** to accept the default value which is based on the previous response:
     
             File Store Host configured to: [files.<your-domain>] 
     
-       The wizard responds with a configuration and directs to the **ClearML Server**.
+       The wizard responds with a configuration and directs to the ClearML Server.
     
             CLEARML Hosts configuration:
             Web App: https://app.<your-domain>
@@ -100,17 +100,17 @@ The configuration file's location depends upon the operating system:
 The setup wizard may indicate that a configuration file already exists. For example, if a **ClearML Agent** was previously 
 configured, then a configuration file was created. The wizard does not edit or overwrite existing configuration files. 
     
-The host URLs for the **ClearML Server** are required:
+The host URLs for the ClearML Server are required:
 
-* **ClearML Server** web server
-* **ClearML Server** API server
-* **ClearML Server** file server
+* ClearML Server web server
+* ClearML Server API server
+* ClearML Server file server
 
 These may be localhost, the domain, or a sub-domain of the domain.
         
 **To add ClearML settings to an existing ClearML configuration file:**
         
-1. Open the **ClearML** configuration file for editing. Depending upon the operating system, it is:
+1. Open the ClearML configuration file for editing. Depending upon the operating system, it is:
 
     * Linux - `~/clearml.conf`
     * macOS - `$HOME/clearml.conf`
@@ -118,9 +118,8 @@ These may be localhost, the domain, or a sub-domain of the domain.
 
 1. In the `sdk.development` section, add the logging of environment variables option (see ``log_os_environments`` in an 
    [example configuration file](https://github.com/allegroai/clearml/blob/master/docs/clearml.conf#L178)).
-
-
-```editorconfig
+   
+    ```editorconfig
         # Log specific environment variables. OS environments are enlisted in the "Environment" section
         # of the Hyper-Parameters.
         # multiple selected variables are supported including the suffix '*'.
@@ -128,7 +127,6 @@ These may be localhost, the domain, or a sub-domain of the domain.
         # This value can be overwritten with os environment variable CLEARML_LOG_ENVIRONMENT="[AWS_*, CUDA_VERSION]"
         # Example: log_os_environments: ["AWS_*", "CUDA_VERSION"]
         log_os_environments: []
-```
+    ```
 
-
-1. Save the **ClearML** configuration file. **ClearML** is now configured for the **ClearML Server**.
+1. Save the ClearML configuration file. ClearML is now configured for the ClearML Server.

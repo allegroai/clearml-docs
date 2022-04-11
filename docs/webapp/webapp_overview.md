@@ -9,7 +9,7 @@ The **ClearML Web UI** is the graphical user interface for the ClearML platform,
 * Profile management
 * Direct access to the ClearML community (Slack Channel, Youtube, and GitHub).
 
-![image](../img/webapp_screenshots.gif)
+![WebApp screenshots gif](../img/gif/webapp_screenshots.gif)
 
 
 The ClearML Web UI is composed of the following pages:
@@ -23,7 +23,8 @@ The ClearML Web UI is composed of the following pages:
     * [Compare experiments](webapp_exp_comparing.md)
     * [Share experiments and their models](webapp_exp_sharing.md) with other ClearML hosted service users 
     * [Archive experiments and models](webapp_archiving.md)
-
+ 
+* [Pipelines](pipelines/webapp_pipeline_page.md) - View and manage your pipelines.
 * [Workers and Queues](webapp_workers_queues.md) - The resource monitoring and queues management page.
   
 * [Settings](webapp_profile.md) (available through the profile menu <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" />) - 
@@ -43,9 +44,10 @@ The ClearML Web UI is composed of the following pages:
 
 Click the help menu button <img src="/docs/latest/icons/ico-help-outlined.svg" alt="Help menu" className="icon size-lg space-sm" />
 in the top right corner of the web UI screen to access the self-help resources including: 
-* **ClearML Documentation**
-* **Pro Tips** - Tips for working with ClearML efficiently
 * **ClearML Python Package setup** - Instruction to get started with the `clearml` Python package
+* **ClearML on Youtube** - Instructional videos on integrating ClearML into your workflow
+* **Online Documentation**
+* **Pro Tips** - Tips for working with ClearML efficiently
 * **Contact Us** - Quick access to ClearML contact form
 
 Click the profile menu button <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> 

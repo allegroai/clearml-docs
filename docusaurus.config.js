@@ -104,7 +104,7 @@ module.exports = {
             },
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_2',
+              to: '/docs/release_notes/ver_1_3',
             },
             {
               label: 'Community Resources',
@@ -220,6 +220,11 @@ module.exports = {
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
+        },
+        gtag: {
+          trackingID: 'none',
+          // Optional fields.
+          anonymizeIP: true, // Should IPs be anonymized?
         },
       },
     ],

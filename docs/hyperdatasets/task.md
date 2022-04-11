@@ -2,7 +2,7 @@
 title: Tasks
 ---
  
-Hyper-Datasets extend the **ClearML** [**Task**](../fundamentals/task.md) with [Dataviews](dataviews.md)
+Hyper-Datasets extend the ClearML [**Task**](../fundamentals/task.md) with [Dataviews](dataviews.md)
 
 ## Usage 
 

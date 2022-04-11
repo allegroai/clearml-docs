@@ -27,13 +27,13 @@ the settings in the ClearML configuration file.
 
 **To set ClearML configuration parameters:**
 
-1. In PyCharm, open **Settings** **>** **Tools** **>** **ClearML**.
+1. In PyCharm, open **Settings** **>** **Tools** **>** ClearML.
 
 1. Configure your ClearML server information:
     1. API server (for example: ``http://localhost:8008``)
     1. Web server (for example: ``http://localhost:8080``)
     1. File server  (for example: ``http://localhost:8081``)
     
-1. Add **ClearML** user credentials key/secret.
+1. Add ClearML user credentials key/secret.
 
 ![image](../../img/ide_pycharm_config_params.png)

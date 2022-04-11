@@ -60,7 +60,7 @@ In the **Web App Cloud Access** section, enter the following credentials:
 Multiple workspaces is only available on the ClearML Hosted Service
 :::
 
-ClearML Hosted Service users can be member of multiple workspaces, which are listed under **WORKSPACES**. 
+ClearML Hosted Service users can be members of multiple workspaces, which are listed under **WORKSPACE**. 
 
 To switch to another workspace, click on the **SWITCH TO WORKSPACE** button next to the name of the workspace you want 
 to switch to. 
@@ -76,10 +76,14 @@ You can create credentials for any workspace that you are a member of.
 
 **To create ClearML credentials:**
 
-1. In **WORKSPACES**, expand the desired workspace's panel (self-deployed ClearML Server users have one workspace)
+1. In **WORKSPACE**, expand the desired workspace's panel (self-deployed ClearML Server users have one workspace)
 
-1. In **App Credentials**, click **+ Create new credentials**. A dialog pops up with the new credentials formatted as a
-ready-to-copy configuration file section (including server configuration information)
+1. In **App Credentials**, click **+ Create new credentials**
+
+1. In the dialog that pops up, you can input a label for the new credentials 
+
+The dialog displays new credentials, formatted as a ready-to-copy configuration file section (including server configuration 
+information).
 
 ![ClearML credentials](../img/settings_configuration_creation.png)
 
@@ -110,7 +114,7 @@ in that workspace. You can rejoin the workspace only if you are re-invited.
 
 **To leave a workspace:**
 
-1. In **WORKSPACES**, expand the desired workspace's panel 
+1. In **WORKSPACE**, expand the desired workspace's panel 
 1. In **Members** **>** Click **LEAVE WORKSPACE**.
 
 

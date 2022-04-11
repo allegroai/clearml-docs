@@ -50,7 +50,7 @@ To avoid data corruption, shut down your ClearML server before applying the migr
 ### Migrating by Script
 A migration script is available to automatically run this process for all supported OSs.  
 [Download the script](https://github.com/allegroai/clearml-server/releases/download/1.2.0/clearml-server-1.2.0-migration.py) and run it on your ClearML server.
-Run `clearml-server-1.2.0-migration.py –help` to see execution options.  
+Run `clearml-server-1.2.0-migration.py -–help` to see execution options.  
 Note the script will create a backup archive of your data in the original directory.
 
 Once the script finishes successfully, [continue with your upgrade](#completing-the-installation).

@@ -583,6 +583,10 @@ To run a `clearml-agent` in services mode, run:
 ```bash
 clearml-agent daemon --services-mode --queue services --create-queue --docker <docker_name> --cpu-only
 ```
+
+To limit the number of simultaneous tasks run in services mode, pass the maximum number immediately after the 
+`--services-mode` option (e.g. `--services-mode 5`)
+
 :::note Notes
 * `services-mode` currently only supports Docker mode. Each service spins on its own Docker image.
 * The default `clearml-server` configuration already runs a single `clearml-agent` in services mode that listens to the 
@@ -639,7 +643,7 @@ It's possible to add the Docker container as the base Docker image to a Task (ex
 
 - Using the **ClearML Web UI** - See [Base Docker image](webapp/webapp_exp_tuning.md#base-docker-image) on the "Tuning
   Experiments" page.
-- In the **ClearML** configuration file - Use the **ClearML** configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
+- In the ClearML configuration file - Use the ClearML configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
   options.
 
 ## Google Colab

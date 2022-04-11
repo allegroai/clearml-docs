@@ -7,7 +7,7 @@ of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFram
 Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
 filtering logic. 
 
-![Dataset page](../../img/hyperdatasets/frames_01.png)
+![Dataset page](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
 
 ## Frame Viewer
 
@@ -245,10 +245,19 @@ Use Lucene queries in ROI label filters and frame rules.
 
 ## Masks 
 
-Use the **MASKS** panel to select a mask or multiple masks to apply over the frame. 
+Use the **MASKS** panel to select which masks to apply over the frame. 
 
 To view / hide a specific mask, click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" />.
 In order to view all masks, click **Show all** / **Hide all**. 
+
+Masks are applied over the image either by pixel segmentation or as an alpha channel:
+* <img src="/docs/latest/icons/ico-segmentation.svg" alt="Pixel segmentation mode" className="icon size-md space-sm" /> Pixel 
+segmentation - Class labels are mapped onto the mask according to their pixel value definitions, and each 
+class is assigned a unique color. 
+* <img src="/docs/latest/icons/ico-alpha-mask.svg" alt="Alpha channel mode" className="icon size-md space-sm" /> Alpha 
+channel - Mask pixel values are translated to transparency. Additionally, a color can be applied to the mask to help 
+distinguish multiple masks. Click <img src="/docs/latest/icons/ico-mask-color-preview.svg" alt="Alpha color" className="icon size-md space-sm" /> to select 
+a color. 
 
 To adjust the transparency of a mask, use its opacity slider. 
 

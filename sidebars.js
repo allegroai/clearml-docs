@@ -19,6 +19,7 @@ module.exports = {
         'clearml_agent',
         {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
                 {'Workflows': ['clearml_data/data_management_examples/workflows', 'clearml_data/data_management_examples/data_man_simple', 'clearml_data/data_management_examples/data_man_folder_sync', 'clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},]},
+        {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task']},
         'integrations/libraries',
         'integrations/storage',
@@ -32,9 +33,14 @@ module.exports = {
                             'webapp/webapp_exp_comparing', 'webapp/webapp_exp_sharing']
                     },
                     {
-                        'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing', 'webapp/webapp_model_modifying']
+                        'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing']
                     },
                     'webapp/webapp_archiving'
+                ]
+            },
+            {
+                'Pipelines':[
+                    'webapp/pipelines/webapp_pipeline_page', 'webapp/pipelines/webapp_pipeline_table', 'webapp/pipelines/webapp_pipeline_viewing'
                 ]
             },
             'webapp/webapp_workers_queues', 'webapp/webapp_profile']
@@ -71,6 +77,7 @@ module.exports = {
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
                 {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
+                'guides/frameworks/catboost/catboost',
                 'guides/frameworks/fastai/fastai_with_tensorboard',
                 {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},
                 'guides/frameworks/lightgbm/lightgbm_example',
@@ -114,7 +121,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
+        'Release Notes': ['release_notes/ver_1_3', 'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
             'release_notes/ver_0_13', 'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10',
             'release_notes/ver_0_9',
         ],
@@ -158,19 +165,20 @@ module.exports = {
         'hyperdatasets/dataviews',
         'hyperdatasets/task',
         {'WebApp': [
-            {'Dataviews': [
-                'hyperdatasets/webapp/webapp_dataviews',
-                'hyperdatasets/webapp/webapp_exp_modifying',
-                'hyperdatasets/webapp/webapp_exp_track_visual',
-                'hyperdatasets/webapp/webapp_exp_comparing',
-                ]},
-            {'Datasets': [
-                'hyperdatasets/webapp/webapp_datasets',
-                'hyperdatasets/webapp/webapp_datasets_versioning',
-                'hyperdatasets/webapp/webapp_datasets_frames'
-                ]},
-            'hyperdatasets/webapp/webapp_annotator'
-        ]}
+                {'Projects': [
+                        'hyperdatasets/webapp/webapp_dataviews', 'hyperdatasets/webapp/webapp_exp_track_visual',
+                        'hyperdatasets/webapp/webapp_exp_modifying', 'hyperdatasets/webapp/webapp_exp_comparing',
+                        ]
+                },
+                {'Datasets': [
+                    'hyperdatasets/webapp/webapp_datasets',
+                    'hyperdatasets/webapp/webapp_datasets_versioning',
+                    'hyperdatasets/webapp/webapp_datasets_frames'
+                    ]
+                },
+                'hyperdatasets/webapp/webapp_annotator'
+            ]
+        }
     ],
     sdkHyperDataset: [
         {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},

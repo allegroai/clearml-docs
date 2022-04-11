@@ -3,89 +3,95 @@ title: Image Hyperparameter Optimization - Jupyter Notebook
 ---
 
 [hyperparameter_search.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/hyperparameter_search.ipynb) 
-demonstrates integrating **ClearML** into a Jupyter Notebook which performs automated hyperparameter optimization. This 
-is an example of **ClearML** automation. It creates a **ClearML** 
-[HyperParameterOptimizer](../../../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
-object, which is a search controller. The search controller's search strategy optimizer is [OptimizerBOHB](../../../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md) 
-The example maximizes total accuracy by finding an optimal batch size, base learning rate, and dropout. **ClearML** 
+demonstrates using ClearML's [HyperParameterOptimizer](../../../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md)
+class to perform automated hyperparameter optimization. 
+
+The code creates a HyperParameterOptimizer object, which is a search controller. The search controller uses the
+[Optuna](../../../../../references/sdk/hpo_optuna_optuna_optimizeroptuna.md) search strategy optimizer. 
+The example maximizes total accuracy by finding an optimal number of epochs, batch size, base learning rate, and dropout. ClearML 
 automatically logs the optimization's top performing experiments.
 
 The experiment whose hyperparameters are optimized is named `image_classification_CIFAR10`. It is created by running another 
-**ClearML** example, [image_classification_CIFAR10.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/image_classification_CIFAR10.ipynb), which must run before `hyperparameter_search.ipynb`.
+ClearML example, [image_classification_CIFAR10.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/image_classification_CIFAR10.ipynb), 
+which must run before `hyperparameter_search.ipynb`.
 
-When `hyperparameter_search.py` runs, it creates an experiment named `Hyper-Parameter Optimization` which is associated 
-with the `Hyper-Parameter Search` project.
-
-The optimizer Task, `Hyper-Parameter Optimization`, and the experiments appear individually in the **ClearML Web UI**.
+The optimizer Task, `Hyperparameter Optimization`, and the experiments appear individually in the [ClearML Web UI](../../../../../webapp/webapp_overview.md).
 
 ## Optimizer Task
 
-### Scalars
-
-Scalars for total accuracy and remaining budget by iteration, and a plot of total accuracy by iteration appear in **RESULTS** **>** **SCALARS**. Remaining budget indicates the percentage of total iterations for all jobs left before that total is reached.
-
-These scalars are reported automatically by **ClearML** from `HyperParameterOptimizer` when it runs.
-
-![image](../../../../../img/examples_hyperparameter_search_04.png)
-
-### Plots
-
-A plot for the optimization of total accuracy by job appears in **RESULTS** **>** **SCALARS**.
-
-This is also reported automatically by **ClearML** when `HyperParameterOptimizer` runs.
-
-![image](../../../../../img/examples_hyperparameter_search_05.png)
-
 ### Hyperparameters
 
-`HyperParameterOptimizer` hyperparameters, including the optimizer parameters appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS**.
+The `HyperParameterOptimizer`'s configuration, which is provided when the object instantiated, are stored under the 
+optimizer task's **CONFIGURATIONS** **>** **HYPER PARAMETERS**.
 
-These hyperparameters are those in the optimizer Task, where the `HyperParameterOptimizer` object is created.
+```python
+optimizer = HyperParameterOptimizer(
+    base_task_id=TEMPLATE_TASK_ID,  # This is the experiment we want to optimize
+    # here we define the hyper-parameters to optimize
+    hyper_parameters=[
+        UniformIntegerParameterRange('number_of_epochs', min_value=2, max_value=12, step_size=2),
+        UniformIntegerParameterRange('batch_size', min_value=2, max_value=16, step_size=2),
+        UniformParameterRange('dropout', min_value=0, max_value=0.5, step_size=0.05),
+        UniformParameterRange('base_lr', min_value=0.00025, max_value=0.01, step_size=0.00025),
+    ],
+    # setting the objective metric we want to maximize/minimize
+    objective_metric_title='accuracy',
+    objective_metric_series='total',
+    objective_metric_sign='max',  # maximize or minimize the objective metric
 
-    optimizer = HyperParameterOptimizer(
-        base_task_id=TEMPLATE_TASK_ID,  # This is the experiment we want to optimize
-        # here we define the hyper-parameters to optimize
-        hyper_parameters=[
-            UniformIntegerParameterRange('number_of_epochs', min_value=5, max_value=15, step_size=1),
-            UniformIntegerParameterRange('batch_size', min_value=2, max_value=12, step_size=2),
-            UniformParameterRange('dropout', min_value=0, max_value=0.5, step_size=0.05),
-            UniformParameterRange('base_lr', min_value=0.0005, max_value=0.01, step_size=0.0005),
-        ],
-        # this is the objective metric we want to maximize/minimize
-        objective_metric_title='accuracy',
-        objective_metric_series='total',
-        objective_metric_sign='max',  # maximize or minimize the objective metric
-        max_number_of_concurrent_tasks=3,  # number of concurrent experiments
-        # setting optimizer - clearml supports GridSearch, RandomSearch or OptimizerBOHB
-        optimizer_class=OptimizerBOHB,  # can be replaced with OptimizerBOHB
-        execution_queue='default',  # queue to schedule the experiments for execution
-        optimization_time_limit=30.,  # time limit for each experiment (optional, ignored by OptimizerBOHB)
-        pool_period_min=1,  # Check the experiments every x minutes
-        # set the maximum number of experiments for the optimization.
-        # OptimizerBOHB sets the total number of iteration as total_max_jobs * max_iteration_per_job
-        total_max_jobs=12,
-        # setting OptimizerBOHB configuration (ignored by other optimizers)
-        min_iteration_per_job=15000,  # minimum number of iterations per experiment, till early stopping
-        max_iteration_per_job=150000,  # maximum number of iterations per experiment
-    )
+    # setting optimizer - clearml supports GridSearch, RandomSearch, OptimizerBOHB and OptimizerOptuna
+    optimizer_class=OptimizerOptuna,
+    
+    # Configuring optimization parameters
+    execution_queue='dan_queue',  # queue to schedule the experiments for execution
+    max_number_of_concurrent_tasks=2,  # number of concurrent experiments
+    optimization_time_limit=60.,  # set the time limit for the optimization process
+    compute_time_limit=120,  # set the compute time limit (sum of execution time on all machines)
+    total_max_jobs=20,  # set the maximum number of experiments for the optimization. 
+                        # Converted to total number of iteration for OptimizerBOHB
+    min_iteration_per_job=15000,  # minimum number of iterations per experiment, till early stopping
+    max_iteration_per_job=150000,  # maximum number of iterations per experiment
+)
+```
 
-![image](../../../../../img/examples_hyperparameter_search_01.png)
+![Experiment hyperparameters](../../../../../img/examples_hyperparameter_search_01.png)
 
 ### Console
 
-All console output from `Hyper-Parameter Optimization` appears in **RESULTS** tab, **CONSOLE** sub-tab.
+All console output appears in the optimizer task's **RESULTS > CONSOLE**.
 
-![image](../../../../../img/examples_hyperparameter_search_03.png)
+![Experiment console](../../../../../img/examples_hyperparameter_search_03.png)
+
+### Scalars
+
+Scalar metrics for total accuracy and remaining budget by iteration, and a plot of total accuracy by iteration appear in the 
+experiment's **RESULTS** **>** **SCALARS**. Remaining budget indicates the percentage of total iterations for all jobs left before that total is reached.
+
+ClearML automatically reports the scalars generated by `HyperParameterOptimizer`.
+
+![Experiment Scalars](../../../../../img/examples_hyperparameter_search_04.png)
+
+### Plots
+
+The optimization task automatically records and monitors the different trial tasks' configuration and execution details, and 
+provides a summary of the optimization results in tabular and parallel coordinate formats. View these plots in the task's **RESULTS** **>** 
+**PLOTS**. 
+
+![Experiment scatter plot](../../../../../img/examples_hyperparameter_search_05.png)
+
+![Experiment parallel coordinates](../../../../../img/examples_hyperparameter_search_02a.png)
+
+![Experiment summary plot](../../../../../img/examples_hyperparameter_search_02b.png)
+
 
 ## Experiments Comparison
 
-**ClearML** automatically logs each job, meaning each experiment that executes with a set of hyperparameters, separately. Each appears as an individual experiment in the **ClearML Web UI**, where the Task name is `image_classification_CIFAR10` and the hyperparameters appended.
+## Experiments Comparison
 
-For example:
+ClearML automatically logs each job, meaning each experiment that executes with a set of hyperparameters, separately. Each appears as an individual experiment in the ClearML Web UI, where the Task name is `image_classification_CIFAR10` and the hyperparameters appended.
+For example: `image_classification_CIFAR10: base_lr=0.0075 batch_size=12 dropout=0.05 number_of_epochs=6`
 
-`image_classification_CIFAR10: base_lr=0.0075 batch_size=12 dropout=0.05 number_of_epochs=6`
-
-Use the **ClearML Web UI** [experiment comparison](../../../../../webapp/webapp_exp_comparing.md) to visualize the following:
+Use the ClearML Web UI [experiment comparison](../../../../../webapp/webapp_exp_comparing.md) to visualize the following:
 
 * Side by side hyperparameter value comparison
 * Metric comparison by hyperparameter
@@ -97,28 +103,28 @@ Use the **ClearML Web UI** [experiment comparison](../../../../../webapp/webapp_
 
 In the experiment comparison window, **HYPER PARAMETERS** tab, select **Values** in the list (the right of **+ Add Experiment**), and hyperparameter differences appear with a different background color.
 
-![image](../../../../../img/examples_hyperparameter_search_06.png)
+![Hyperparameter comparison](../../../../../img/examples_hyperparameter_search_06.png)
 
 ### Metric Comparison by Hyperparameter
 
 Select **Parallel Coordinates** in the list, click a **Performance Metric**, and then select the checkboxes of the hyperparameters.
 
-![image](../../../../../img/examples_hyperparameter_search_07.png)
+![Metric comparison](../../../../../img/examples_hyperparameter_search_07.png)
 
 ### Scalar Values Comparison
 
 In the **SCALARS** tab, select **Last Values**, **Min Values**, or **Max Values**. Value differences appear with a different background color.
 
-![image](../../../../../img/examples_hyperparameter_search_09.png)
+![Scalar value comparison](../../../../../img/examples_hyperparameter_search_09.png)
 
 ### Scalar Series Comparison
 
 Select **Graph** and the scalar series for the jobs appears, where each scalar plot shows the series for all jobs.
 
-![image](../../../../../img/examples_hyperparameter_search_08.png)
+![Scalar series comparison](../../../../../img/examples_hyperparameter_search_08.png)
 
 ### Debug Samples Comparison
 
 In the **DEBUG SAMPLES** tab, debug images appear.
 
-![image](../../../../../img/examples_hyperparameter_search_10.png)
+![Debug sample comparison](../../../../../img/examples_hyperparameter_search_10.png)

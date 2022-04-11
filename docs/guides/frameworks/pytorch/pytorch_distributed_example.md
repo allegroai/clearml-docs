@@ -3,7 +3,7 @@ title: PyTorch Distributed
 ---
 
 The [pytorch_distributed_example.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_distributed_example.py) 
-script demonstrates integrating **ClearML** into a code that uses the [PyTorch Distributed Communications Package](https://pytorch.org/docs/stable/distributed.html) 
+script demonstrates integrating ClearML into a code that uses the [PyTorch Distributed Communications Package](https://pytorch.org/docs/stable/distributed.html) 
 (`torch.distributed`). 
 
 The script does the following: 
@@ -13,7 +13,7 @@ The script does the following:
    dataset), and reports the following to the main Task:
     * Artifacts - A dictionary containing different key-value pairs is uploaded from the Task in each subprocess to the main Task.
     * Scalars - Loss reported as a scalar during training in each subprocess Task is logged in the main Task.
-    * Hyperparameters - Hyperparameters created in each subprocess Task are added to the main Task's hyperparametersy.  
+    * Hyperparameters - Hyperparameters created in each subprocess Task are added to the main Task's hyperparameters.  
       
     
   Each Task in a subprocess references the main Task by calling [Task.current_task](../../../references/sdk/task.md#taskcurrent_task), 

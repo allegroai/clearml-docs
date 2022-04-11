@@ -5,6 +5,12 @@ title: The Models Table
 The models table is a [customizable](#customizing-the-models-table) list of models associated with the experiments in a project. From the models table,
 view model details, and modify, publish, archive, tag, and move models to other projects.
 
+View the models table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
+or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
+using the buttons on the top left of the page. Use the table view for a comparative view of your models according to 
+columns of interest. Use the details view to access a selected model’s details, while keeping the model list in view. 
+
+
 ![Models table](../img/webapp_models_01.png)
 
 ## Models Table Columns
@@ -13,31 +19,36 @@ The models table contains the following columns:
 
 | Column | Description | Type |
 |---|---|---|
-| **FRAMEWORK** | The model framework. The list includes all frameworks, including custom frameworks. | Default |
-| **NAME** | Model name. | Default |
-| **TAGS** | User-defined labels added to models for grouping and organization. | Default |
-| **STATUS** | The status of the model, which can be *Draft* (editable) or *Published* (read-only). | Default |
-| **PROJECT** | The project with which the model is associated.| Default |
-| **USER** | The user who ran the experiment that created the model, or the user who imported the model.| Default |
-| **TASK** | The experiment (Task) name that created the model. | Default |
-| **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Default |
-| **DESCRIPTION** | The model description. | Default (hidden) |
-
+| **FRAMEWORK** | The model framework. The list includes all frameworks, including custom frameworks. | String |
+| **NAME** | Model name. | String |
+| **TAGS** | User-defined labels added to models for grouping and organization. | Tag |
+| **STATUS** | The status of the model, which can be *Draft* (editable) or *Published* (read-only). | String |
+| **PROJECT** | The project with which the model is associated.| String |
+| **USER** | The user who ran the experiment that created the model, or the user who imported the model.| String |
+| **TASK** | The experiment (Task) name that created the model. | String |
+| **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Date-time |
+| **DESCRIPTION** | The model description (not shown by default). | String |
+| *Metadata*| User defined metadata key column. Available options depend upon the models in the table. | String |
 
 
 ## Customizing the Models Table
 
 The models table is customizable. Changes are persistent (cached in the browser) and represented in the URL, so customized settings
-can be saved in a browser bookmark and shared with other **ClearML** users to collaborate.
+can be saved in a browser bookmark and shared with other ClearML users to collaborate.
 
-Customize any combination of the following:
+Customize the table using any of the following:
 
-* Dynamic column ordering - Drag a column title to a different position.
-* Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
-  **>** select or clear the checkboxes of columns to show or hide.
-* Filter columns - Type of experiment, experiment status (state), user
-* Sort columns - Metrics and hyperparameters, type of experiment, experiment name, start and last update elapsed time, and last iteration.
-* Column autofit - In the column heading, double click a resizer (column separator).
+* Dynamic column order - Drag a column title to a different position.
+* Resize columns - Drag the column separator to change the width of that column. Double click the column separator for 
+  automatic fit.
+* Changing table columns
+    * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
+  **>** mark or clear the checkboxes of columns to show or hide.
+    * Add custom columns - Click **+ ADD CUSTOM METADATA COLUMN** to add metadata columns to the main column list. Added 
+      columns are by default displayed in the table. You can remove the metadata columns from the main column list or the 
+      column addition window. 
+* Filter columns - By ML framework, tags, user
+* Sort columns - By metadata, ML framework, description, and last update elapsed time.
 
 :::note
 The following models-table customizations are saved on a **per project** basis: 
@@ -56,18 +67,20 @@ all the models in the project. The customizations of these two views are saved s
 The following table describes the actions that can be done from the models table, including the states that
 allow each feature. Model states are *Draft* (editable) and *Published* (read-only). 
 
+Access these actions with the context menu in any of the following ways:
+* In the models table, right click a model, or hover over a model and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In a model's info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
+
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
-| View details | Model details include general information, the model configuration, and label enumeration. Click a model, and the info panel slides open. | Any state |
+| Details | Model details include general information, the model configuration, and label enumeration. | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
 | Archive | To more easily work with active models, move a model to the archive. See [Archiving](webapp_archiving.md). | Any state |
-| Tags | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
+| Restore | Action available in the archive. Restore a model to the active model table. | Any state |
+| Add Tag | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
-| Move to project | To organize work and improve collaboration, move a model to another project. | Any state |
+| Move to Project | To organize work and improve collaboration, move a model to another project. | Any state |
 | Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any state |
-
-These actions can be accessed with the context menu (when right-clicking a model or clicking the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />
-in a model's info panel).
 
 Some actions mentioned in the chart above can be performed on multiple models at once.
 Select multiple models, then use either the context menu, or the bar that appears at the bottom of the page, to perform

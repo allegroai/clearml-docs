@@ -22,7 +22,7 @@ The **ClearML Web UI** provides a deep experiment comparison, allowing to locate
     - Examine samples with a viewer (for images and video), and a player (for audio) (see [reporting media](../guides/reporting/media_reporting.md)).
 
 
-The **ClearML** experiment comparison provides [comparison features](#comparison-features) making it easy to compare experiments.
+The ClearML experiment comparison provides [comparison features](#comparison-features) making it easy to compare experiments.
 
 ## Selecting Experiments to Compare
 
@@ -166,7 +166,7 @@ This image shows scalars grouped by metric and variant.
 
 ## Plots
 
-Visualize the comparison of any data that **ClearML** automatically captures or that is explicitly reported in experiments,
+Visualize the comparison of any data that ClearML automatically captures or that is explicitly reported in experiments,
 in the **PLOTS** tab.
 
 **To compare plots:**
@@ -191,7 +191,7 @@ Compare debug samples at any iteration to verify that an experiment is running a
 first. Use the viewer / player to inspect images, audio, video samples and do any of the following:
 * Move to the same sample in a different iteration (move the iteration slider).
 * Show the next or previous iteration's sample.
-* Download the file <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />.
+* Download the file <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
 * Zoom.
 * View the sample's iteration number, width, height, and coordinates.
 
@@ -220,7 +220,7 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 1. Do any of the following:
 
     * Move to the same sample in another iteration - Move the slider, or click **<** (previous) or **>** (next).
-    * Download the file - Click  <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />.
+    * Download the file - Click  <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
     * Zoom
     * For images, locate a position on the sample - Hover over the sample and the X, Y coordinates appear in the legend below the sample.
 
@@ -277,22 +277,14 @@ Show differences in other experiments in reference to a new base experiment. To 
 * Click on <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> on the top right of the experiment that will be the new base.
 * Click on <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> the new base experiment and drag it all the way to the left
 
-![image](../img/webapp_compare_22.png)
-
-
-
 ### Dynamic Ordering of the Compared Experiments
 
 To reorder the experiments being compared, press <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> on the top right of the experiment that
-  needs to be moved, and drag the experiment to its new position.
-
-![image](../img/webapp_compare_21.png)
+needs to be moved, and drag the experiment to its new position.
 
 ### Removing an Experiment from the Comparison
 Remove an experiment from the comparison, by pressing <img src="/docs/latest/icons/ico-remove-compare.svg" alt="Minus" className="icon size-md space-sm" />
 on the top right of the experiment that needs to be removed.
-
-![image](../img/webapp_compare_23.png)
 
 ### Sharing Experiments
 
