@@ -215,7 +215,7 @@ that you will be able to visualize on Grafana.
 :::info time-series values
 You can also log time-series values with `--variable-value x2` or discrete results (e.g. classifications strings) with 
 `--variable-enum animal=cat,dog,sheep`. Additional custom variables can be added in the preprocess and postprocess with 
-a call to `collect_custom_statistics_fn({'new_var': 1.337})`. See [`preprocess_template.py`](https://github.com/allegroai/clearml-serving/blob/main/clearml_serving/preprocess/preprocess_template.py).
+a call to `collect_custom_statistics_fn({'new_var': 1.337})`. See [preprocess_template.py](https://github.com/allegroai/clearml-serving/blob/main/clearml_serving/preprocess/preprocess_template.py).
 :::
 
 With the new metrics logged, you can create a visualization dashboard over the latency of the calls, and the output distribution. 
@@ -234,5 +234,17 @@ With the new metrics logged, you can create a visualization dashboard over the l
 :::note
 If not specified all serving requests will be logged, which can be changed with the `CLEARML_DEFAULT_METRIC_LOG_FREQ` 
 environment variable. For example `CLEARML_DEFAULT_METRIC_LOG_FREQ=0.2` means only 20% of all requests will be logged. 
-You can also specify per-endpoint log frequency with the `clearml-serving` CLI. See [`clearml-serving metrics`](clearml_serving_cli.md#metrics)
+You can also specify per-endpoint log frequency with the `clearml-serving` CLI. See [clearml-serving metrics](clearml_serving_cli.md#metrics)
 :::
+
+## Further Examples
+
+See examples of ClearML Serving with other supported frameworks:
+
+* [Scikit-Learn](https://github.com/allegroai/clearml-serving/blob/main/examples/sklearn/readme.md) - random data
+* [Scikit-Learn Model Ensemble](https://github.com/allegroai/clearml-serving/blob/main/examples/ensemble/readme.md) - random data
+* [XGBoost](https://github.com/allegroai/clearml-serving/blob/main/examples/xgboost/readme.md) - iris dataset
+* [LightGBM](https://github.com/allegroai/clearml-serving/blob/main/examples/lightgbm/readme.md) - iris dataset
+* [PyTorch](https://github.com/allegroai/clearml-serving/blob/main/examples/pytorch/readme.md) - mnist dataset
+* [TensorFlow/Keras](https://github.com/allegroai/clearml-serving/blob/main/examples/keras/readme.md) - mnist dataset
+* [Model Pipeline](https://github.com/allegroai/clearml-serving/blob/main/examples/pipeline/readme.md) - random data
