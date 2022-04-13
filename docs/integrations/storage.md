@@ -25,8 +25,8 @@ The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/
 Modify these parts of the clearml.conf file and add the key, secret, and region of the s3 bucket.
 It's possible to also give access to specific s3 buckets. 
 
-You can also enable using a credentials chain to let Boto3 to pick 
-the right credentials. This includes picking credentials from environment variables, a credential file, and metadata service 
+You can also enable using a credentials chain to let Boto3 
+pick the right credentials. This includes picking credentials from environment variables, a credential file, and metadata service 
 with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
 
 ```
@@ -57,7 +57,6 @@ aws {
     }
 }
 ```
-  
 
 AWS's S3 access parameters can be specified by referencing the standard environment variables if already defined.
 
