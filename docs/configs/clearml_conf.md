@@ -559,7 +559,7 @@ Dictionary of configuration options for the ClearML Server API, web, and file se
 * The URL of your ClearML file server. For example, `https://files.MyDomain.com`.
         
 :::warning
-You must use a secure protocol. For ``api.web_server``, ``api.files_server``, and ``api.files_server``. You must use a secure protocol, "https". Do not use "http".
+You must use a secure protocol with ``api.web_server``, ``api.files_server``, and ``api.api_server``. Use `https`, not `http`. 
 :::
   
 <br/>
