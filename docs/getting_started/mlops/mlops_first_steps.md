@@ -154,7 +154,7 @@ a_numpy = executed_task.artifacts['numpy'].get()
 ```
 
 By facilitating the communication of complex objects between tasks, artifacts serve as the foundation of ClearML's [Data Management](../../clearml_data/clearml_data.md) 
-and [pipeline](../../fundamentals/pipelines.md) solutions.
+and [pipeline](../../pipelines/pipelines.md) solutions.
 
 #### Log Models
 Logging models into the model repository is the easiest way to integrate the development process directly with production. 

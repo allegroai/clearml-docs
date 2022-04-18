@@ -14,9 +14,15 @@ module.exports = {
                 {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
         }, 'getting_started/architecture']},
         {'ClearML Fundamentals': ['fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
-            'fundamentals/hpo', 'fundamentals/pipelines']},
+            'fundamentals/hpo']},
         'clearml_sdk',
         'clearml_agent',
+        {'ClearML Pipelines':['pipelines/pipelines',
+                {"Building Pipelines":
+                        ['pipelines/pipelines_sdk_tasks', 'pipelines/pipelines_sdk_function_decorators']
+                }
+                ]
+        },
         {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
                 {'Workflows': ['clearml_data/data_management_examples/workflows', 'clearml_data/data_management_examples/data_man_simple', 'clearml_data/data_management_examples/data_man_folder_sync', 'clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},]},
         {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
