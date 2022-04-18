@@ -17,7 +17,6 @@ title: Version 1.4
 
 **Bug Fixes**
 
-- Fix UI scalar plots smoothing not working [ClearML Server GitHub issue #127](https://github.com/allegroai/clearml-server/issues/127)
 - Fix server limiting image and artifact upload size [ClearML GitHub issue #606](https://github.com/allegroai/clearml/issues/606)
 - Fix server unnecessarily displays deletion error message [ClearML Server GitHub issue #112](https://github.com/allegroai/clearml-server/issues/112)
 - Fix UI experiment comparison sections overly wide for many tag experiments [ClearML GitHub issue #594](https://github.com/allegroai/clearml/issues/594)
