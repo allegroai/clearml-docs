@@ -26,7 +26,7 @@ Once we have a Task in ClearML, we can clone and edit its definitions in the UI,
 ## Advanced Automation
 - Create daily / weekly cron jobs for retraining best performing models on.
 - Create data monitoring & scheduling and launch inference jobs to test performance on any new coming dataset.
-- Once there are two or more experiments that run after another, group them together into a [pipeline](../../fundamentals/pipelines.md).
+- Once there are two or more experiments that run after another, group them together into a [pipeline](../../pipelines/pipelines.md).
 
 ## Manage Your Data
 Use [ClearML Data](../../clearml_data/clearml_data.md) to version your data, then link it to running experiments for easy reproduction.
