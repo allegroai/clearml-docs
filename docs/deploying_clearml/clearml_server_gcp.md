@@ -114,6 +114,7 @@ The following section contains a list of Custom Image URLs (exported in differen
 
 ### All Release Versions
 
+- v1.4.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-4-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-4-0.tar.gz)
 - v1.3.1 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-3-1.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-3-1.tar.gz)
 - v1.3.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-3-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-3-0.tar.gz)
 - v1.2.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-2-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-2-0.tar.gz)

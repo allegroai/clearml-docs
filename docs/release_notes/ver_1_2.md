@@ -2,6 +2,15 @@
 title: Version 1.2
 ---
 
+### ClearML Agent 1.2.3
+
+**Bug Fixes**
+
+- Fix PYTHONPATH is overwritten when executing a task (append to it instead)
+- Fix pytorch package is reinstalled when the same version is already installed
+- Fix copying configuration sets an empty worker name
+- Protect dynamic GPUs from failing to parse worker GPU index
+
 ### ClearML Agent 1.2.2
 
 **Bug Fixes**

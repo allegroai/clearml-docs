@@ -664,6 +664,15 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
     
 * For AWS S3, the default secret access key for any bucket that is not specified in the `sdk.aws.s3.credentials` section.
     
+---
+
+**`sdk.aws.s3.use_credentials_chain`** (*bool*)
+
+* Instead of using default credentials for an unspecified bucket, enable credentials chain to let Boto3 pick the right 
+  credentials. This includes picking credentials from environment variables,
+  a credential file, and metadata service with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials)
+  
+
 <br/>
 
 ###### sdk.aws.s3.credentials

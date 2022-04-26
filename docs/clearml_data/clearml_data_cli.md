@@ -11,16 +11,13 @@ The `clearml-data` utility is a CLI tool for controlling and managing your data 
 
 The following page provides a reference to `clearml-data`'s CLI commands. 
 
-### Creating a Dataset
+## create
+
+Creates a new dataset. 
+
 ```bash
 clearml-data create --project <project_name> --name <dataset_name> --parents <existing_dataset_id>
 ```
-Creates a new dataset. <br/>
-
-:::tip Locating Dataset ID
-To locate a dataset's ID, go to the dataset task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
-to the right of the dataset task name, click `ID` and the dataset ID appears
-:::
 
 **Parameters**
 
@@ -36,18 +33,23 @@ to the right of the dataset task name, click `ID` and the dataset ID appears
 </div>
 
 
-:::info
-clearml-data works in a stateful mode so once a new dataset is created, the following commands
+:::tip Dataset ID
+* To locate a dataset's ID, go to the dataset task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
+to the right of the dataset task name, click `ID` and the dataset ID appears.
+
+* clearml-data works in a stateful mode so once a new dataset is created, the following commands
 do not require the `--id` flag.
 :::
 
 <br/>
 
-### Adding Files
+## add
+
+Add individual files or complete folders to the dataset.
+
 ```bash
 clearml-data add --id <dataset_id> --files <filenames/folders_to_add>
 ```
-It's possible to add individual files or complete folders.<br/>
 
 **Parameters**
 
@@ -65,7 +67,10 @@ It's possible to add individual files or complete folders.<br/>
 
 <br/>
 
-### Removing Files
+## remove
+
+Remove files from the dataset.
+
 ```bash
 clearml-data remove --id <dataset_id_to_remove_from> --files <filenames/folders_to_remove>
 ```
@@ -85,12 +90,14 @@ clearml-data remove --id <dataset_id_to_remove_from> --files <filenames/folders_
 
 <br/>
 
-### Uploading Dataset Content
+## upload
+
+Upload the local dataset changes to the server. By default, it's uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). It's possible to specify a different storage
+medium by entering an upload destination, such as `s3://bucket`, `gs://`, `azure://`, `/mnt/shared/`.
+
 ```bash
 clearml-data upload [--id <dataset_id>] [--storage <upload_destination>]
 ```
-Uploads added files to [ClearML Server](../deploying_clearml/clearml_server.md) by default. It's possible to specify a different storage
-medium by entering an upload destination, such as `s3://bucket`, `gs://`, `azure://`, `/mnt/shared/`.
 
 
 **Parameters**
@@ -107,13 +114,14 @@ medium by entering an upload destination, such as `s3://bucket`, `gs://`, `azure
 
 <br/>
 
-### Finalizing a Dataset
+## close
+
+Finalize the dataset and makes it ready to be consumed. This automatically uploads all files that were not previously uploaded.
+Once a dataset is finalized, it can no longer be modified.
+
 ```bash
 clearml-data close --id <dataset_id>
 ```
-Finalizes the dataset and makes it ready to be consumed.
-It automatically uploads all files that were not previously uploaded.
-Once a dataset is finalized, it can no longer be modified.
 
 **Parameters**
 
@@ -130,18 +138,19 @@ Once a dataset is finalized, it can no longer be modified.
 
 <br/>
 
-### Syncing Local Storage
-```
-clearml-data sync [--id <dataset_id] --folder <folder_location>  [--parents '<parent_id>']
-```
-This option syncs a folder's content with ClearML. It is useful in case a user has a single point of truth (i.e. a folder) which
+## sync
+
+Sync a folder's content with ClearML. This option is useful in case a user has a single point of truth (i.e. a folder) which
 updates from time to time.
 
-
-Once an update should be reflected into ClearML's system, users can call `clearml-data sync`, create a new dataset, enter the folder,
+Once an update should be reflected in ClearML's system, call `clearml-data sync` and pass the folder path,
 and the changes (either file addition, modification and removal) will be reflected in ClearML.
 
 This command also uploads the data and finalizes the dataset automatically.
+
+```bash
+clearml-data sync [--id <dataset_id] --folder <folder_location>  [--parents '<parent_id>']
+```
 
 **Parameters**
 
@@ -163,7 +172,10 @@ This command also uploads the data and finalizes the dataset automatically.
 
 <br/>
 
-### Listing Dataset Content
+## list
+
+List a dataset's contents.
+
 ```bash
 clearml-data list [--id <dataset_id>]
 ```
@@ -184,13 +196,16 @@ clearml-data list [--id <dataset_id>]
 
 <br/>
 
-###  Deleting a Dataset
+## delete
+
+Delete an entire dataset from ClearML. This can also be used to delete a newly created dataset.
+
+This does not work on datasets with children.
+
 ```
 clearml-data delete [--id <dataset_id_to_delete>]
 ```
-Deletes an entire dataset from ClearML. This can also be used to delete a newly created dataset.
 
-This does not work on datasets with children.
 
 **Parameters**
 
@@ -205,13 +220,15 @@ This does not work on datasets with children.
 
 <br/>
 
-### Searching for a Dataset
-```
-clearml-data search [--name <name>] [--project <project_name>] [--tags <tag>]
-```
-Lists all datasets in the system that match the search request.
+## search
 
-Datasets can be searched by project, name, ID, and tags. 
+Search datasets in the system by project, name, ID, and/or tags.
+
+Returns list of all datasets in the system that match the search request, sorted by creation time.
+
+```bash
+clearml-data search [--name <name>] [--ids [IDS [IDS ...]]] [--project <project_name>] [--tags <tag>]
+```
 
 **Parameters**
 
@@ -228,17 +245,16 @@ Datasets can be searched by project, name, ID, and tags.
 
 <br/>
 
-### Comparing Two Datasets 
+## compare 
 
-```
+
+Compare two datasets (target vs. source). The command returns a comparison summary that looks like this:
+`Comparison summary: 4 files removed, 3 files modified, 0 files added`
+
+```bash
 clearml-data compare [--source SOURCE] [--target TARGET] 
 ```
 
-Compare two datasets (target vs. source). The command returns a comparison summary that looks like this:
-
-```
-Comparison summary: 4 files removed, 3 files modified, 0 files added
-```
 
 **Parameters**
 
@@ -246,19 +262,19 @@ Comparison summary: 4 files removed, 3 files modified, 0 files added
 
 |Name|Description|Optional|
 |---|---|---|
-|`--source`|Source dataset id (used as baseline)|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
-|`--target`|Target dataset id (compare against the source baseline dataset)|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--source`|Source dataset ID (used as baseline)|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--target`|Target dataset ID (compare against the source baseline dataset)|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--verbose`|Verbose report all file changes (instead of summary)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 </div>
 
-### Merging Datasets
+## squash
 
-```
+Squash multiple datasets into a single dataset version (merge down).
+
+```bash
 clearml-data squash --name NAME --ids [IDS [IDS ...]] 
 ```
-
-Squash (merge) multiple datasets into a single dataset version.
 
 **Parameters**
 
@@ -273,13 +289,13 @@ Squash (merge) multiple datasets into a single dataset version.
 
 </div>
 
-### Verifying a Dataset
-
-```
-clearml-data verify [--id ID] [--folder FOLDER] 
-```
+## verify
 
 Verify that the dataset content matches the data from the local source.  
+
+```bash
+clearml-data verify [--id ID] [--folder FOLDER] 
+```
 
 **Parameters**
 
@@ -289,19 +305,19 @@ Verify that the dataset content matches the data from the local source.
 |---|---|---|
 |`--id`|Specify dataset ID. Default: previously created/accessed dataset|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--folder`|Specify dataset local copy (if not provided the local cache folder will be verified)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--filesize`| If True, only verify file size and skip hash checks (default: false)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--filesize`| If `True`, only verify file size and skip hash checks (default: `False`)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--verbose`|Verbose report all file changes (instead of summary)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 </div>
 
-### Getting a Dataset 
-
-```
-clearml-data get [--id ID] [--copy COPY] [--link LINK] [--overwrite]
-```
+## get
 
 Get a local copy of a dataset. By default, you get a read only cached folder, but you can get a mutable copy by using the 
 `--copy` flag. 
+
+```bash
+clearml-data get [--id ID] [--copy COPY] [--link LINK] [--overwrite]
+```
 
 **Parameters**
 
@@ -312,19 +328,18 @@ Get a local copy of a dataset. By default, you get a read only cached folder, bu
 |`--id`| Specify dataset ID. Default: previously created / accessed dataset|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--copy`| Get a writable copy of the dataset to a specific output folder|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--link`| Create a soft link (not supported on Windows) to a read-only cached folder containing the dataset|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--overwrite`| If True, overwrite the target folder|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--overwrite`| If `True`, overwrite the target folder|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--verbose`| Verbose report all file changes (instead of summary)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 </div>
 
-### Publishing a Dataset
+## publish
 
-```
+Publish the dataset for public use. The dataset must be [finalized](#close) before it is published.
+
+```bash
 clearml-data publish --id ID
 ```
-
-Publish the dataset for public use. The dataset must be [finalized](#finalizing-a-dataset) before it is published.
-
 
 **Parameters**
 
@@ -332,6 +347,6 @@ Publish the dataset for public use. The dataset must be [finalized](#finalizing-
 
 |Name|Description|Optional|
 |---|---|---|
-|`--id`| The dataset task id to be published.|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--id`| The dataset task ID to be published.|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 
 </div>
