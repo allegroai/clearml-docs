@@ -23,6 +23,11 @@ default; they are only open internally in the docker network.
 Configure **ClearML Server** to use Web Login authentication, which requires a username and password for user access 
 (see [Web Login Authentication](clearml_server_config.md#web-login-authentication)).
 
+## File Server Security
+
+By default, the File Server is not secured even if [Web Login Authentication](clearml_server_config.md#web-login-authentication)
+has been configured. We recommend using an [object storage solution](../integrations/storage.md) that has built-in security.
+
 ## Server Credentials and Secrets
 
 By default, **ClearML Server** comes with default values that are designed to allow to set it up quickly and to start working 

@@ -104,7 +104,7 @@ module.exports = {
             },
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_3',
+              to: '/docs/release_notes/ver_1_4',
             },
             {
               label: 'Community Resources',
