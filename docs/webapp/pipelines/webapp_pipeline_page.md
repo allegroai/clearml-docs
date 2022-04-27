@@ -3,7 +3,7 @@ title: Pipelines Page
 ---
 
 Use the **Pipelines** Page to navigate between and manage pipelines. The page shows execution summaries for all 
-[ClearML Pipelines](../../fundamentals/pipelines.md).
+[ClearML Pipelines](../../pipelines/pipelines.md).
 
 Click on a pipeline card to navigate to its [Pipeline Runs Table](webapp_pipeline_table.md), where you can view the 
 pipeline structure, configuration and outputs for all of the pipeline’s runs, as well as create new runs.

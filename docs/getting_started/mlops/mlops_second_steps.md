@@ -113,4 +113,4 @@ pipe.add_step(
 
 We could also pass the parameters from one step to the other (for example `Task.id`).
 In addition to pipelines made up of Task steps, ClearML also supports pipelines consisting of function steps. See more in the 
-full pipeline documentation [here](../../fundamentals/pipelines.md).
+full pipeline documentation [here](../../pipelines/pipelines.md).
