@@ -371,8 +371,6 @@ match_rules: [
 ```
 
 
----
-
 <br/>
 
 #### agent.package_manager
