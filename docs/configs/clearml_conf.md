@@ -124,6 +124,13 @@ Compatible with Docker versions 0.6.5 and above
 
 ---
 
+**`agent.docker_install_opencv_libs`** (*bool*)
+
+* Install the required packages for opencv libraries (libsm6 libxext6 libxrender-dev libglib2.0-0), for backwards 
+  compatibility reasons. Change to `false` to skip installation and decrease docker spin-up time.
+
+---
+
 **`agent.docker_internal_mounts`** (*dict*)
 
 * Set internal mount points inside the Docker. This is especially useful for non-root Docker container images.  
@@ -231,11 +238,15 @@ For example:
   
   * To mask additional environment variables, add their keys to the `extra_keys` list.  
   For example, to hide the value of a custom environment variable named `MY_SPECIAL_PASSWORD`, set `extra_keys: ["MY_SPECIAL_PASSWORD"]`
-  
+
+  * By default, `parse_embedded_urls` is set to `true`, so agent will also hide passwords in URLs and handle environment variables
+    containing docker commands
+
   ```
   hide_docker_command_env_vars {
     enabled: true 
     extra_keys: ["MY_SPECIAL_PASSWORD"]
+    parse_embedded_urls: true
   }
   ```
 
@@ -320,6 +331,46 @@ ___
         
 * If running a worker in Docker mode, this option specifies the default Docker image to use.
         
+---
+
+**`agent.match_rules`** (*[dict]*)
+
+:::note Enterprise Feature
+This feature is available under the ClearML Enterprise plan
+:::
+
+* Lookup table of rules for default container. The first matched rule will be picked, according to rule order. 
+  
+* Each dictionary in the list lays out rules, and the container to be used if the rules are matched. The
+rules can be script requirements, Git details, and/or Python binary, and/or the task's project. 
+
+```console
+match_rules: [
+      {
+          image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
+          arguments: "-e define=value"
+          match: {
+              script{
+                  # Optional: must match all requirements (not partial)
+                  requirements: {
+                      # version selection matching PEP-440
+                      pip: {
+                          tensorflow: "~=2.6"
+                      },
+                  }
+                  # Optional: matching based on regular expression, example: "^exact_match$"
+                  repository: "/my_repository/"
+                  branch: "main"
+                  binary: "python3.6"
+              }
+              # Optional: matching based on regular expression, example: "^exact_match$"
+              project: "project/sub_project"
+          }
+      },
+  ]
+```
+
+
 <br/>
 
 #### agent.package_manager
@@ -370,6 +421,12 @@ ___
 **`agent.package_manager.pip_version`** (*string*)
 
 * The `pip` version to use. For example, `"<20"`, `"==19.3.1"`, `""` (empty string will install the latest version).
+
+---
+
+**`agent.package_manager.poetry_version`** (*string*)
+
+* The `poetry` version to use. For example, `"<2"`, `"==1.1.1"`, `""` (empty string will install the latest version).
 
 ---
         
@@ -433,9 +490,16 @@ Torch Nightly builds are ephemeral and are deleted from time to time.
 
     The values are:
     
-    * `pip` - use pip as the package manager or, if a `poetry.lock` file exists in the repository, use poetry as the package manager
-    * `conda` - use conda as the package manager
-    
+    * `pip`
+    * `conda`
+    * `poetry`
+  
+* If `pip` or `conda` are used, the agent installs the required packages based on the "installed packages" section of the 
+  Task. If the "installed packages" is empty, it will revert to using `requirements.txt` from the repository's root 
+  directory. If `poetry` is selected, and the root repository contains `poetry.lock` or `pyproject.toml`, the "installed 
+  packages" section is ignored, and `poetry` is used. If `poetry` is selected and no lock file is found, it reverts to 
+  `pip` package manager behaviour.
+  
 <br/>
 
 #### agent.pip_download_cache
@@ -791,12 +855,52 @@ and limitations on bucket naming.
   when calling the `Task.init` method, then use the destination in `default_output_uri`.
     
 
+--
+ 
+**`sdk.development.detailed_import_report`** (*bool*)
+
+* If `true` (default is `false`), provide a detailed report of all python package imports as comments inside the "Installed packages" section.
+
 ---
 
+**`sdk.development.detect_with_conda_freeze`** (*bool*)
+
+* If `true` (default is `false`), instead of analyzing the code with Pigar, analyze with `conda freeze`
+
+---
+
+**`sdk.development.detect_with_pip_freeze`** (*bool*)
+
+* If `true` (default is `false`), instead of analyzing the code with Pigar, analyze with `pip freeze`
+
+---
+
+
+**`sdk.development.force_analyze_entire_repo`** (*bool*)
+      
+* Default auto-generated requirements optimize for smaller requirements.
+
+ The values are:        
+    * `true` - Analyze the entire repository regardless of the entry point.
+    * `false`- First analyze the entry point script, if it does not contain other local files, 
+   do not analyze the entire repository.
+
+---
+
+**`sdk.development.log_os_environments`** (*[string]*)
+
+* Log specific environment variables. OS environments are listed in the UI, under an experiment's  
+  **CONFIGURATION > HYPER PARAMETERS > Environment** section. 
+  Multiple selected variables are supported including the suffix "\*". For example: "AWS\_\*" will log any OS environment 
+  variable starting with "AWS\_". Example: `log_os_environments: ["AWS_*", "CUDA_VERSION"]`
+        
+* This value can be overwritten with OS environment variable `CLEARML_LOG_ENVIRONMENT="[AWS_*, CUDA_VERSION]"`. 
+
+---
     
 **`sdk.development.store_uncommitted_code_diff_on_train`** (*bool*)
     
-* For development mode, indicates whether to store the uncommitted `git diff` or `hg diff` in the experiment manifest 
+* For development mode, indicates whether to store the uncommitted `git diff` or `hg diff` in the experiment manifest. 
 
     The values are:
 
@@ -804,7 +908,15 @@ and limitations on bucket naming.
     * `false` - Do not store the diff.
     
 ---
-    
+
+**`sdk.development.suppress_update_message`** (*bool*)
+
+* If `true` (default `false`), *clearml* update messages will not be printed to the console. 
+  
+* This value can be overwritten with OS environment variable `CLEARML_SUPPRESS_UPDATE_MESSAGE=1`
+        
+---
+
 **`sdk.development.support_stopping`** (*bool*)
     
 * For development mode, indicates whether to allow stopping an experiment if the experiment was aborted externally, its status was changed, or it was reset.
@@ -859,6 +971,16 @@ and limitations on bucket naming.
 ---
 
         
+**`sdk.development.worker.report_global_mem_used`** (*bool*)
+
+* Compatibility feature to report memory usage for the entire machine
+  
+  The values are: 
+  * `true` - Report memory usage for the entire machine
+  * `false` (default) - Report memory usage only on the running process and its sub-processes
+
+---
+
 **`sdk.development.worker.report_period_sec`** (*integer*)
         
 * For development mode workers, the interval in seconds for a development mode ClearML worker to report.
@@ -1032,7 +1154,7 @@ will not exceed the value of `matplotlib_untitled_history_size`
         
 ---
         
-**`sdk.network.iteration.retry_backoff_factor_sec`**
+**`sdk.network.iteration.retry_backoff_factor_sec`** (*integer*)
         
 * For retries when getting frames from the server, this is backoff factor for consecutive retry attempts. This is used to 
   determine the number of seconds between retries. The retry backoff factor is calculated as {backoff factor} * (2 ^ ({number of total retries} - 1)).
