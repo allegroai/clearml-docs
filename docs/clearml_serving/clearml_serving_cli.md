@@ -176,7 +176,7 @@ clearml-serving model remove [-h] [--endpoint ENDPOINT]
 |Name|Description|Optional|
 |---|---|---|
 |`--endpoint` | Model endpoint name | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
-``
+
 </div>
 
 ### upload 

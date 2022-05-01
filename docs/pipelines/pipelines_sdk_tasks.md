@@ -54,7 +54,7 @@ Creating a pipeline step from an existing ClearML task means that when the step 
 new task will be launched through the configured execution queue (the original task is unmodified). The new task’s 
 parameters can be [specified](#parameter_override).
 
-Task steps are added using the [PipelineController.add_step](../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
+Task steps are added using the [`PipelineController.add_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
 method:
 
 ```python
@@ -213,8 +213,8 @@ methods respectively.
 
 The [`PipelineController.set_default_execution_queue`](../references/sdk/automation_controller_pipelinecontroller.md#set_default_execution_queue) 
 method lets you set a default queue through which all pipeline steps will be executed. Once set, step-specific overrides 
-can be specified through `execution_queue` of the [PipelineController.add_step](../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
-or [PipelineController.add_function_step](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) 
+can be specified through `execution_queue` of the [`PipelineController.add_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
+or [`PipelineController.add_function_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) 
 methods.
 
 ### Running the Pipeline
