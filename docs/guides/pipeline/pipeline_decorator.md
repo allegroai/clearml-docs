@@ -35,6 +35,11 @@ In the example script, the controller defines the interactions between the pipel
 1. The second step's output, `preprocessed_data`, is modified within the pipeline execution logic 
 1. The modified data is passed to the third step, `step_three`.
 
+:::info Local Execution
+In this example, the pipeline is set to run in local mode by using the [PipelineDecorator.run_locally](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorrun_locally) 
+method before calling the pipeline function. See pipeline execution options [here](../../pipelines/pipelines_sdk_function_decorators.md#running-the-pipeline). 
+:::
+
 ## Pipeline Steps 
 Using the `@PipelineDecorator.component` decorator will make the function a pipeline component that can be called from the 
 pipeline controller, which implements the pipeline's execution logic. For detailed information, see [`@PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent). 
