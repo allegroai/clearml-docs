@@ -95,8 +95,10 @@ add updated files or remove unnecessary files.
 
 ### add_files()
 
-To add files or folders into the current dataset, use the [`Dataset.add_files`](../references/sdk/dataset.md#add_files) 
-method. If a file is already in a dataset, but it has been modified, it can be added again, and ClearML will 
+To add local files or folders into the current dataset, use the [`Dataset.add_files`](../references/sdk/dataset.md#add_files) 
+method. 
+
+If a file is already in a dataset, but it has been modified, it can be added again, and ClearML will 
 upload the file diff.
 
 ```python
@@ -117,9 +119,39 @@ dataset.add_files(
 )
 ```
  
+### add_external_files()
+
+To add files or folders to the current leaving them in their original location, use [`Dataset.add_external_files`](../references/sdk/dataset.md#add_external_files) 
+method. Input the `source_url` argument, which can be a link from cloud storage (`s3://`, `gs://`, `azure://`) 
+or local / network storage (`file://`). 
+
+If a file is already in a dataset, but it has been modified, it can be added again, and ClearML will 
+upload the file diff.
+
+```python
+dataset = Dataset.create()
+dataset.add_external_files(
+  source_url="s3://my/bucket/path_to_folder_or_file", 
+  dataset_path="/my_dataset/new_folder/"
+) 
+```
+
+There is an option to add a set of files based on wildcard matching of a single string or a list of wildcards, using the 
+`wildcard` parameter. Specify whether to match the wildcard files recursively using the `recursive` parameter.
+
+```python
+# Add all jpg files located in s3 bucket called "my_bucket" to the dataset:
+dataset.add_external_files(
+  source_url="s3://my/bucket/", 
+  wildcard = "*.jpg",
+  dataset_path="/my_dataset/new_folder/"
+)
+```
+
 ### remove_files()
 To remove files from a current dataset, use the [`Dataset.remove_files`](../references/sdk/dataset.md#remove_files) method.
-Input the path to the folder or file to be removed in the `dataset_path` parameter. The path is relative to the dataset. 
+Input the path to the folder or file to be removed in the `dataset_path` parameter. The path is relative to the dataset.
+External files can also be removed using their links (e.g. `s3://bucket/file`)
 
 There is also an option to input a wildcard into `dataset_path` in order to remove a set of files matching the wildcard. 
 Set the `recursive` parameter to `True` in order to match all wildcard files recursively
