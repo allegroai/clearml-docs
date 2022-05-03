@@ -62,7 +62,7 @@ decorator overrides the default queue value for the specific step for which it w
 
 :::note Execution Modes
 ClearML provides different pipeline execution modes to accommodate development and production use cases. For additional 
-details, see [Execution Modes](../../pipelines/pipelines.md#pipeline-controller-execution-options).
+details, see [Execution Modes](../../pipelines/pipelines.md#running-your-pipelines).
 :::
 
 To run the pipeline, call the pipeline controller function.
