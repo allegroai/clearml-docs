@@ -48,7 +48,9 @@ do not require the `--id` flag.
 Add individual files or complete folders to the dataset.
 
 ```bash
-clearml-data add --id <dataset_id> --files <filenames/folders_to_add>
+clearml-data add [-h] [--id ID] [--dataset-folder DATASET_FOLDER]
+                 [--files [FILES [FILES ...]]] [--links [LINKS [LINKS ...]]] [--non-recursive]
+                 [--verbose]
 ```
 
 **Parameters**
@@ -59,6 +61,7 @@ clearml-data add --id <dataset_id> --files <filenames/folders_to_add>
 |---|---|---|
 |`--id` | Dataset's ID. Default: previously created / accessed dataset| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--files`|Files / folders to add. Wildcard selection is supported, for example: `~/data/*.jpg ~/data/json` | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+|`--links`|Links to files / folders to add. Supports s3, gs, azure links. Example: `s3://bucket/data` `azure://bucket/folder`| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 |`--dataset-folder` | Dataset base folder to add the files to in the dataset. Default: dataset root| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--non-recursive` | Disable recursive scan of files | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--verbose` | Verbose reporting | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -69,7 +72,7 @@ clearml-data add --id <dataset_id> --files <filenames/folders_to_add>
 
 ## remove
 
-Remove files from the dataset.
+Remove files/links from the dataset.
 
 ```bash
 clearml-data remove --id <dataset_id_to_remove_from> --files <filenames/folders_to_remove>
