@@ -8,7 +8,7 @@ The **ClearML Web UI** provides a deep experiment comparison, allowing to locate
     - Artifacts - Input model, output model, and model design.
     - Execution - Installed packages and source code.
     - Configuration - Configuration objects used by the experiment.
-    - Info - General experiment details
+    - Info - General experiment details.
 * [Hyperparameters](#hyperparameters)
     - [Values (table) view](#values-mode) - Key/value of all the arguments used by the experiments.
     - [Parallel coordinates view](#parallel-coordinates-mode) - Impact of each argument on a selected metric
@@ -43,6 +43,7 @@ The **DETAILS** tab includes deep comparisons of the following:
 * Info - General experiment details. This includes information describing the stored experiment. See details [here](webapp_exp_track_visual.md#general-information). 
 
 **To Locate the Source Differences:**
+
 Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
 (Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
 
