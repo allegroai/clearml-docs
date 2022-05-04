@@ -19,6 +19,7 @@ and delete all cookies under the ClearML Server URL.
 
 ## Prerequisites
 
+
 For Linux users only:
 
 * Linux distribution must support Docker. For more information, see this [explanation](https://docs.docker.com/engine/install/) in the Docker documentation. 
@@ -27,6 +28,7 @@ For Linux users only:
 * The ports `8080`, `8081`, and `8008` must be available for the ClearML Server services.
 
 ## Deploying
+
 
 :::warning
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
