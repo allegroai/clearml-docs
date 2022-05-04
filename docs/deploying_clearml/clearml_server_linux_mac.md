@@ -19,7 +19,6 @@ and delete all cookies under the ClearML Server URL.
 
 ## Prerequisites
 
-
 For Linux users only:
 
 * Linux distribution must support Docker. For more information, see this [explanation](https://docs.docker.com/engine/install/) in the Docker documentation. 
@@ -29,10 +28,13 @@ For Linux users only:
 
 ## Deploying
 
-
 :::warning
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
 instructions in the [Security](clearml_server_security.md) page.
+:::
+
+:::info Memory Requirement
+Deploying the server requires a minimum of 4 GB of memory, but we recommend 8 GB.  
 :::
 
 **To launch ClearML Server on Linux or macOS:**

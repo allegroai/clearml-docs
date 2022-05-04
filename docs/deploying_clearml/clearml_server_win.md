@@ -19,6 +19,10 @@ and delete all cookies under the **ClearML Server** URL.
 By default, **ClearML Server** launches with unrestricted access. To restrict **ClearML Server** access, follow the instructions in the [Security](clearml_server_security.md) page.
 :::
 
+:::info Memory Requirement
+Deploying the server requires a minimum of 4 GB of memory, but we recommend 8 GB.  
+:::
+
 **To deploy ClearML Server on Windows 10:**
 
 1. Install the Docker Desktop for Windows application by either:
