@@ -2,11 +2,16 @@
 title: Logger
 ---
 
-The ClearML **Logger** object is used to report experiments' results such as metrics, graphs, and debug samples. It is a 
-member of the [Task](task.md) object. 
+The ClearML Logger class is used to report experiments' results such as metrics, graphs, and debug samples. It is provided 
+through the ClearML [Task](task.md) object. 
 
-ClearML integrates with the leading visualization libraries, and automatically captures reports to them. 
-
+A Logger object is used to do the following:
+* [Manual reporting](#manual-reporting), complementing ClearML's [automatic reporting](#automatic-reporting)
+* [Logging configuration](#logger-configuration)
+    * Set upload destination for debug sample storage
+    * Control ClearML's automatic logging
+    * Set default NaN and Inf values
+    
 ## Types of Logged Results
 ClearML supports four types of reports:
 - Text - Mostly captured automatically from stdout and stderr but can be logged manually.
@@ -18,8 +23,8 @@ ClearML supports four types of reports:
 
 ## Automatic Reporting
 
-ClearML automatically captures metrics reported to tools, such as TensorBoard and Matplotlib, with no additional code
-necessary.
+ClearML automatically captures metrics reported to leading visualization libraries, such as TensorBoard and Matplotlib, 
+with no additional code necessary.
 
 In addition, ClearML will capture and log everything written to standard output, from debug messages to errors to 
 library warning messages.
@@ -50,9 +55,7 @@ Check out some of ClearML's automatic reporting examples for supported packages:
   * [Matplotlib](../guides/frameworks/matplotlib/matplotlib_example.md) - logging scatter diagrams plotted with Matplotlib
   * [Matplotlib with PyTorch](../guides/frameworks/pytorch/pytorch_matplotlib.md) - logging debug images shown 
     by Matplotlib
-
-
-
+    
 ## Manual Reporting
 
 ClearML also supports manually reporting multiple types of metrics and plots, such as line plots, histograms, and even plotly 
@@ -99,3 +102,30 @@ Check out ClearML's explicit reporting examples for various types of results:
     - [HTML](../guides/reporting/html_reporting.md)
     - [Media - images, audio, video](../guides/reporting/media_reporting.md)
 - Explicit reporting in Jupyter Notebook [example](../guides/reporting/clearml_logging_example.md)
+
+## Logger Configuration
+The Logger class provides methods to control aspects of ClearML's logging.
+
+### Upload Destination
+Set the default storage URI for uploading debug samples and artifacts using the [`Logger.set_default_upload_destination`](../references/sdk/logger.md#set_default_upload_destination) method.
+The images are uploaded separately. A link to each image is reported.
+
+For artifacts, this upload destination is overridden by the [default_output_uri](../configs/clearml_conf.md#config_default_output_uri) 
+setting in the `clearml.conf`, and the `output_uri` parameter of the [Task.init](../references/sdk/task.md#taskinit).
+
+:::note DESTINATION STORAGE CREDENTIALS
+Credentials for the destination storage are specified in the [ClearML configuration file](../configs/clearml_conf.md#sdk-section). 
+:::
+
+### Automatic Logging Settings
+The Logger class provides methods for fine-tuning ClearML's automatic logging behavior with Matplotlib and Tensorboard. 
+For example, use the [Logger.matplotlib_force_report_non_interactive](../references/sdk/logger.md#loggermatplotlib_force_report_non_interactive) 
+class method to control how matplotlib objects are logged. See the [Logger.tensorboard_auto_group_scalars](../references/sdk/logger.md#loggertensorboard_auto_group_scalars) 
+and [Logger.tensorboard_single_series_per_graph](../references/sdk/logger.md#loggertensorboard_single_series_per_graph) 
+methods.  
+
+
+### Set Default NaN and Inf Values
+When you report metrics that include NaN or Inf values, ClearML logs them as `0` by default. You can specify
+different default values for NaN and Inf using the [`Logger.set_reporting_nan_value`](../references/sdk/logger.md#loggerset_reporting_nan_value) 
+and the [`Logger.set_reporting_inf_value`](../references/sdk/logger.md#loggerset_reporting_inf_value) class methods respectively. 
