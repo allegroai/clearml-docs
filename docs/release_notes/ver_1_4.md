@@ -6,7 +6,7 @@ title: Version 1.4
 ### ClearML SDK 1.4.0
 
 **New Features**
-* Add OpenMMLab example [ClearML GitHub PR #655](https://github.com/allegroai/clearml/pull/655) 
+* Add OpenMMLab example [ClearML GitHub issue #654](https://github.com/allegroai/clearml/issues/654) 
 * Add support for saving artifacts with different formats [ClearML GitHub issue #634](https://github.com/allegroai/clearml/issues/634)
 * Add support for setting reported values for `NaN` and `Inf` [ClearML GitHub issue #604](https://github.com/allegroai/clearml/issues/604)
 * Support more than 500 results in `Task.get_tasks()` using the `fetch_only_first_page` argument [ClearML GitHub issue #612](https://github.com/allegroai/clearml/issues/612)
@@ -30,7 +30,7 @@ title: Version 1.4
     * Update Pytorch Lightning example for `pytorch-lightning>=v1.6.0` [ClearML GitHub PR #650](https://github.com/allegroai/clearml/pull/650)
 
 **Bug Fixes**
-* Fix Keras model config serialization in `PatchKerasModelIO` [ClearML GitHub PR #616](https://github.com/allegroai/clearml/pull/616)
+* Fix Keras model config serialization in `PatchKerasModelIO` [ClearML GitHub issue #614](https://github.com/allegroai/clearml/issues/614)
 * Fix `task.get_parameters_as_dict(cast=True)` casts `False` to `True` [ClearML GitHub PR #622](https://github.com/allegroai/clearml/pull/622)
 * Fix Fire integration is not compatible with typing library [ClearML GitHub issue #610](https://github.com/allegroai/clearml/issues/610)
 * Fix remote execution with `argparse` mutually exclusive groups raises "required" error even when no argument is required
