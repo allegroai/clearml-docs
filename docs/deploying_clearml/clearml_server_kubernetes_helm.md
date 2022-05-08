@@ -5,7 +5,7 @@ title: Kubernetes
 To upgrade an existing ClearML Server Kubernetes deployment, see [here](upgrade_server_kubernetes_helm.md).
 
 :::info
-If ClearML Server is being reinstalled, we recommend clearing browser cookies for ClearML Server. For example, 
+If ClearML Server is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
 and delete all cookies under the ClearML Server URL.
 :::
@@ -13,7 +13,7 @@ and delete all cookies under the ClearML Server URL.
 ## Prerequisites
 
 * Set up a Kubernetes cluster - For setting up Kubernetes on various platforms refer to the Kubernetes [getting started guide](https://kubernetes.io/docs/setup).
-* Set up a single node LOCAL Kubernetes on laptop / desktop - For setting up Kubernetes on your laptop/desktop, we suggest [kind](https://kind.sigs.k8s.io).
+* Set up a single node LOCAL Kubernetes on laptop / desktop - For setting up Kubernetes on your laptop/desktop, [kind](https://kind.sigs.k8s.io) is recommended.
 * Install `helm` - Helm is a tool for managing Kubernetes charts. Charts are packages of pre-configured Kubernetes resources.
 To install Helm, refer to the [Helm installation guide](https://helm.sh/docs/using_helm.html#installing-helm) in the Helm documentation.
 Ensure that the `helm` binary is in the PATH of your shell.

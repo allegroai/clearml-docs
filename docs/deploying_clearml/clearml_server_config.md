@@ -18,7 +18,7 @@ This page describes the **ClearML Server** [deployment](#clearml-server-deployme
 For all configuration options, see the [ClearML Configuration Reference](../configs/clearml_conf.md) page.
 
 :::important 
-We recommend using the latest version of **ClearML Server**.
+Using the latest version of **ClearML Server** is recommended.
 :::
 
 ## ClearML Server Deployment Configuration
@@ -151,7 +151,7 @@ the default secret for the system's apiserver component can be overridden by set
 
 ### Sub-domains and Load Balancers
 
-To illustrate this configuration, we provide the following example based on AWS load balancing: 
+The following example based on AWS load balancing illustrate the configuration: 
 
 1. In the **ClearML Server** `/opt/clearml/config/apiserver.conf` file, add the following `auth.cookies` section:
 

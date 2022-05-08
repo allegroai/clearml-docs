@@ -11,9 +11,9 @@ After deploying **ClearML Server**, configure the **ClearML Python Package** for
 For information about upgrading ClearML server on GCP, see [here](upgrade_server_gcp.md).
 
 :::important
-If **ClearML Server** is being reinstalled, we recommend clearing browser cookies for **ClearML Server**. For example, 
+If **ClearML Server** is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
-and delete all cookies under the **ClearML Server** URL.
+and delete all cookies under the ClearML Server URL.
 :::
 
 ## Default ClearML Server Service Ports
@@ -38,7 +38,7 @@ Before launching an instance using a **ClearML Server** GCP Custom Image, import
 
 
 :::note 
-No upload of the image file is required. We provide links to image files stored in Google Storage.
+No upload of the image file is required. Links to image files stored in Google Storage are provided.
 :::
 
 

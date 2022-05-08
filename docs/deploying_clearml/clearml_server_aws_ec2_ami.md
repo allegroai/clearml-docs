@@ -12,7 +12,7 @@ best matches the workflow.
 For information about upgrading a ClearML Server in an AWS instance, see [here](upgrade_server_aws_ec2_ami.md).
 
 :::important
-If ClearML Server is being reinstalled, we recommend clearing browser cookies for ClearML Server. For example, 
+If ClearML Server is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
 and delete all cookies under the ClearML Server URL.
 :::

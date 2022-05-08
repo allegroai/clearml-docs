@@ -6,7 +6,7 @@ title: Securing ClearML Server
 This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
 :::
 
-To ensure deployment is properly secure, we recommend you follow the following best practices.
+To ensure deployment is properly secure, follow the following best practices.
 
 ## Network Security
 
@@ -26,7 +26,7 @@ Configure **ClearML Server** to use Web Login authentication, which requires a u
 ## File Server Security
 
 By default, the File Server is not secured even if [Web Login Authentication](clearml_server_config.md#web-login-authentication)
-has been configured. We recommend using an [object storage solution](../integrations/storage.md) that has built-in security.
+has been configured. Using an [object storage solution](../integrations/storage.md) that has built-in security is recommended.
 
 ## Server Credentials and Secrets
 
