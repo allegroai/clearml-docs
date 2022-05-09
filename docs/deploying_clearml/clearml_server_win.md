@@ -2,13 +2,13 @@
 title: Windows 10
 ---
 
-For Windows, we recommend launching the pre-built Docker image on a Linux virtual machine (see [Deploying ClearML Server: Linux or macOS](clearml_server_linux_mac.md)). 
+For Windows, launching the pre-built Docker image on a Linux virtual machine is recommended (see [Deploying ClearML Server: Linux or macOS](clearml_server_linux_mac.md)). 
 However, **ClearML Server** can be launched on Windows 10, using Docker Desktop for Windows (see the Docker [System Requirements](https://docs.docker.com/docker-for-windows/install/#system-requirements)).
 
 For information about upgrading **ClearML Server** on Windows, see [here](upgrade_server_win.md).
 
 :::important
-If **ClearML Server** is being reinstalled, we recommend clearing browser cookies for **ClearML Server**. For example, 
+If **ClearML Server** is being reinstalled, clearing browser cookies for **ClearML Server** is recommended. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
 and delete all cookies under the **ClearML Server** URL.
 :::
