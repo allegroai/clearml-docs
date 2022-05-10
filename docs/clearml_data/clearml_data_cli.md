@@ -16,7 +16,7 @@ The following page provides a reference to `clearml-data`'s CLI commands.
 Creates a new dataset. 
 
 ```bash
-clearml-data create [-h] [--parents [PARENTS [PARENTS ...]]] [--project PROJECT] --name NAME [--tags [TAGS [TAGS ...]]]
+clearml-data create --project <project_name> --name <dataset_name> --parents <existing_dataset_id>
 ```
 
 **Parameters**
@@ -49,8 +49,8 @@ Add individual files or complete folders to the dataset.
 
 ```bash
 clearml-data add [-h] [--id ID] [--dataset-folder DATASET_FOLDER]
-                 [--files [FILES [FILES ...]]] [--links [LINKS [LINKS ...]]] 
-                 [--non-recursive] [--verbose]
+                 [--files [FILES [FILES ...]]] [--links [LINKS [LINKS ...]]] [--non-recursive]
+                 [--verbose]
 ```
 
 **Parameters**
@@ -75,7 +75,7 @@ clearml-data add [-h] [--id ID] [--dataset-folder DATASET_FOLDER]
 Remove files/links from the dataset.
 
 ```bash
-clearml-data remove [-h] [--id ID] [--files [FILES [FILES ...]]] [--non-recursive] [--verbose]
+clearml-data remove --id <dataset_id_to_remove_from> --files <filenames/folders_to_remove>
 ```
 
 **Parameters**
