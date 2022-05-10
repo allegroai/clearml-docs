@@ -121,12 +121,9 @@ dataset.add_files(
  
 ### add_external_files()
 
-To add files or folders to the current leaving them in their original location, use [`Dataset.add_external_files`](../references/sdk/dataset.md#add_external_files) 
+To add files or folders to the current dataset, leaving them in their original location, use [`Dataset.add_external_files`](../references/sdk/dataset.md#add_external_files) 
 method. Input the `source_url` argument, which can be a link from cloud storage (`s3://`, `gs://`, `azure://`) 
 or local / network storage (`file://`). 
-
-If a file is already in a dataset, but it has been modified, it can be added again, and ClearML will 
-upload the file diff.
 
 ```python
 dataset = Dataset.create()
