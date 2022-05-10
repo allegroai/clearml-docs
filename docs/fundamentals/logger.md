@@ -107,11 +107,8 @@ Check out ClearML's explicit reporting examples for various types of results:
 The Logger class provides methods to control aspects of ClearML's logging.
 
 ### Upload Destination
-Set the default storage URI for uploading debug samples and artifacts using the [`Logger.set_default_upload_destination`](../references/sdk/logger.md#set_default_upload_destination) method.
+Set the default storage URI for uploading debug samples using the [`Logger.set_default_upload_destination`](../references/sdk/logger.md#set_default_upload_destination) method.
 The debug samples are uploaded separately. A link to each sample is reported.
-
-For artifacts, this upload destination is overridden by the [default_output_uri](../configs/clearml_conf.md#config_default_output_uri) 
-setting in the `clearml.conf`, and the `output_uri` parameter of the [Task.init](../references/sdk/task.md#taskinit) method.
 
 :::note DESTINATION STORAGE CREDENTIALS
 Credentials for the destination storage are specified in the [ClearML configuration file](../configs/clearml_conf.md#sdk-section). 
