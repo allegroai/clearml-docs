@@ -148,7 +148,7 @@ dataset.add_external_files(
 ### remove_files()
 To remove files from a current dataset, use the [`Dataset.remove_files`](../references/sdk/dataset.md#remove_files) method.
 Input the path to the folder or file to be removed in the `dataset_path` parameter. The path is relative to the dataset.
-External files can also be removed using their links (e.g. `s3://bucket/file`)
+To remove links, specify their URL (e.g. `s3://bucket/file`).
 
 There is also an option to input a wildcard into `dataset_path` in order to remove a set of files matching the wildcard. 
 Set the `recursive` parameter to `True` in order to match all wildcard files recursively
