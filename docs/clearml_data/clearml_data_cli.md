@@ -193,7 +193,6 @@ List a dataset's contents.
 ```bash
 clearml-data list [-h] [--id ID] [--project PROJECT] [--name NAME]
                   [--filter [FILTER [FILTER ...]]] [--modified]
-
 ```
 
 **Parameters**
