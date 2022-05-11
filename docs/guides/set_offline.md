@@ -35,23 +35,33 @@ session's zip folder's location is `~/.clearml/cache/offline/<task_id>.zip`.
 
 ## Uploading Local Session
 
-In order to upload to the ClearML Server the local execution data that the Task captured offline, use the 
-[Task.import_offline_session](../references/sdk/task.md#taskimport_offline_session) method. This method will upload the 
-Task's full execution details and outputs. 
+Upload the local execution data that the Task captured offline to the ClearML Server using one of the following:
 
-```python
-from clearml import Task
+* [Task.import_offline_session](../references/sdk/task.md#taskimport_offline_session) method. 
 
-Task.import_offline_session(session_folder_zip="path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip")
-```
+  ```python
+  from clearml import Task
 
-In the `session_folder_zip` argument, insert the path to the zip folder containing the session.
+  Task.import_offline_session(session_folder_zip="path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip")
+  ```
 
-This method returns a link to the Task's results page on the ClearML Server:
+  In the `session_folder_zip` argument, insert the path to the zip folder containing the session.
+
+* `clearml-task` CLI
+    
+  ```bash
+  clearml-task --import-offline-session "path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip"
+  ```
+
+  Input the path to the zip folder
+
+
+Both options will upload the Task's full execution details and outputs and return a link to the Task's results page on 
+the ClearML Server:
 
 ```console
 ClearML: Importing offline session from /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
-ClearML results page: https://app.community.clear.ml/projects/4043a1657f374e9298649c6ba72ad233/experiments/bb8b0f6fa0f94536a0d27fb55f02d3a5/output/log
+ClearML results page: https://app.clear.ml/projects/4043a1657f374e9298649c6ba72ad233/experiments/bb8b0f6fa0f94536a0d27fb55f02d3a5/output/log
 ```
 
 The session details can be viewed in the ClearML WebApp, in the "my_task" experiment of the "examples" 

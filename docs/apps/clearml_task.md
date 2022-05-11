@@ -75,6 +75,7 @@ errors in identifying the correct default branch.
 | `--task-type` | Set the task type. Optional values: training, testing, inference, data_processing, application, monitor, controller, optimizer, service, qc, custom | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--skip-task-init` | If set, `Task.init()` call is not added to the entry point, and is assumed to be called within the script | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--base-task-id` | Use a pre-existing task in the system, instead of a local repo / script. Essentially clones an existing task and overrides arguments / requirements | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--import-offline-session`| Specify the path to the offline session you want to import.| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 
 </div>
 
