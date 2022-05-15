@@ -21,7 +21,7 @@ task = Task.init(project_name="examples", task_name="my_task")
 # Rest of code is executed. All data is logged locally and not onto the server
 ```
 
-The method returns the Task ID and a path to the local session folder:
+The method returns the Task ID and a path to the session folder:
 
 ```console
 ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
@@ -33,27 +33,30 @@ ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b78684
 All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. The 
 session's zip folder's location is `~/.clearml/cache/offline/<task_id>.zip`.
 
-## Uploading Local Session
+## Uploading Session Data
 
-Upload the local execution data that the Task captured offline to the ClearML Server using one of the following:
+Upload the session's execution data that the Task captured offline to the ClearML Server using one of the following:
 
+
+* `clearml-task` CLI
+    
+  ```bash
+  clearml-task --import-offline-session "/home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip"
+  ```
+
+  Pass the path to the zip folder containing the session with the `--import-offline-session` parameter.
+  
 * [Task.import_offline_session](../references/sdk/task.md#taskimport_offline_session) method. 
 
   ```python
   from clearml import Task
 
-  Task.import_offline_session(session_folder_zip="path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip")
+  Task.import_offline_session(
+      session_folder_zip="/home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip"
+  )
   ```
 
   In the `session_folder_zip` argument, insert the path to the zip folder containing the session.
-
-* `clearml-task` CLI
-    
-  ```bash
-  clearml-task --import-offline-session "path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip"
-  ```
-
-  Input the path to the zip folder
 
 
 Both options will upload the Task's full execution details and outputs and return a link to the Task's results page on 
