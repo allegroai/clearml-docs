@@ -2,7 +2,7 @@
 title: Projects
 ---
 
-Projects are contextual containers for [tasks](task.md) and [models](artifacts.md#models) (as well as [dataviews](../hyperdatasets/dataviews.md) 
+Projects are contextual containers for [tasks](task.md) and [models](artifacts.md) (as well as [dataviews](../hyperdatasets/dataviews.md) 
 when Hyper-Datasets are enabled), providing a logical structure similar to file system folders. 
 An often useful method is to categorize components into projects according to models or objectives. 
 Grouping into projects helps in identifying tasks, models, and dataviews when queried.
@@ -27,7 +27,7 @@ models, and dataviews, can be viewed in the project's [experiments table](../web
 
 ### Creating Subprojects
 
-When [initializing a task](task.md#task-creation), its project needs to be specified. If the project entered does not exist, it will be created. 
+When [initializing a task](../clearml_sdk/task_sdk.md#task-creation), its project needs to be specified. If the project entered does not exist, it will be created. 
 Projects can contain subprojects, just like folders can contain sub-folders. Input into the `project_name` 
 parameter a target project path. The project path should follow the project tree hierarchy, in which the project and 
 subprojects are slash (`/`) delimited.

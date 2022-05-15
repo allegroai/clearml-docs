@@ -49,7 +49,7 @@ The **DETAILS** tab includes deep comparisons of the following:
    * Installed Python packages and versions, sorted by package name.
 
 ### Configuration
-   * Configuration objects used by the experiment (see [configuration objects](../fundamentals/hyperparameters.md#connecting-objects)),
+   * Configuration objects used by the experiment (see [configuration objects](../fundamentals/hyperparameters.md#connecting-configuration-objects)),
 sorted by sections.
 
 

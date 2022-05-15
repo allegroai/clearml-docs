@@ -68,7 +68,7 @@ If the object type is unknown ClearML pickles it and uploads the pickle file.
 task.upload_artifacts(my_numpy_matrix, name='features')
 ```
 
-Check out all [artifact logging](../../fundamentals/artifacts.md) options.
+Check out all [artifact logging](../../clearml_sdk/task_sdk.md#artifacts) options.
 
 ### Using Artifacts
 

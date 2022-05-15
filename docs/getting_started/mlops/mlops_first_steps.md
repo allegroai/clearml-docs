@@ -131,7 +131,7 @@ cloned_task.set_parameter(name='internal/magic', value=42)
 ```
 
 #### Report Artifacts
-Artifacts are files created by your task. Users can upload [multiple types of data](../../fundamentals/artifacts.md#logging-artifacts), 
+Artifacts are files created by your task. Users can upload [multiple types of data](../../clearml_sdk/task_sdk.md#logging-artifacts), 
 objects and files to a task anywhere from code. 
 
 ```python
@@ -141,7 +141,7 @@ Task.current_task().upload_artifact(name='a_file', artifact_object='local_file.b
 Task.current_task().upload_artifact(name='numpy', artifact_object=np.ones(4,4))
 ```
 
-Artifacts serve as a great way to pass and reuse data between tasks. Artifacts can be [retrieved](../../fundamentals/artifacts.md#using-artifacts) 
+Artifacts serve as a great way to pass and reuse data between tasks. Artifacts can be [retrieved](../../clearml_sdk/task_sdk.md#using-artifacts) 
 by accessing the Task that created them. These artifacts can be modified and uploaded to other tasks.
 
 ```python

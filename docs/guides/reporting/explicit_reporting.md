@@ -298,5 +298,5 @@ python pytorch_mnist_tutorial.py
 ## Next Steps
 
 * See the [User Interface](../../webapp/webapp_overview.md) section to learn about its features.
-* See the [ClearML Python Package Reference](../../clearml_sdk.md) to learn about 
+* See the [ClearML Python Package Reference](../../clearml_sdk/clearml_sdk.md) to learn about 
   all the available classes and methods.

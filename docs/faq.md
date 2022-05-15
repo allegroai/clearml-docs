@@ -302,7 +302,7 @@ parameters_dict = Task.current_task().connect(parameters_dict)
 
 **I noticed that all of my experiments appear as "Training" Are there other options?** <a id="other-experiment-types"></a>
 
-Yes! When creating experiments and calling [Task.init](fundamentals/task.md#usage), 
+Yes! When creating experiments and calling [Task.init](references/sdk/task.md#taskinit), 
 you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
 
 ```python
