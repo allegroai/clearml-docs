@@ -20,7 +20,7 @@ you can work with tasks in Offline Mode, in which all information is saved in a 
 In the UI and code, tasks are grouped into [projects](projects.md), which are logical entities similar to folders. Users can decide
 how to group tasks, though different models or objectives are usually grouped into different projects.
 
-Tasks that are in the system can be accessed and utilized with code. To [access a task](#accessing-tasks), it can be identified either by a 
+Tasks that are in the system can be accessed and utilized with code. To [access a task](../clearml_sdk/task_sdk.md#accessing-tasks), it can be identified either by a 
 project name & task name combination or by a unique ID. 
 
 It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task multiple times and to modify it for re-execution.  
@@ -33,7 +33,7 @@ The sections of **ClearML Task** are made up of the information that a task capt
 execution details and execution outputs. This information is used for tracking 
 and visualizing results, reproducing, tuning, and comparing experiments, and executing workflows. 
 
-The captured [code execution information](../webapp/webapp_exp_track_visual.md#execution-details) includes: 
+The captured [code execution information](../webapp/webapp_exp_track_visual.md#execution) includes: 
 * Git information 
 * Uncommitted code modifications
 * Python environment

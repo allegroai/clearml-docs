@@ -25,8 +25,6 @@ frameworks:
 When a supported framework loads a weights file, the running task will be automatically updated, with its input model 
 pointing directly to the original training task's model.
 
-![Input Model](../img/examples_model_update_model.png) 
-
 ## Manually Logging Models
 
 ### Output Models
@@ -69,7 +67,7 @@ label enumeration, and general information, click the model name, which is a hyp
 Models can also be accessed through their associated project's [Model Table](../webapp/webapp_model_table.md), where all 
 the models associated with a project are listed.
 
-![image](../img/fundamentals_artifacts_logging_models.png)
+![WebApp Model](../img/examples_model_update_model.png) 
 
 ## Model SDK 
 

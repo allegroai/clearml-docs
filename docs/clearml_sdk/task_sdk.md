@@ -76,6 +76,12 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * Matplotlib (see [code example](../guides/frameworks/matplotlib/matplotlib_example.md))
     * Tensorboard (see [code example](../guides/frameworks/pytorch/pytorch_tensorboardx.md))
     * TensorboardX (see [code example](../guides/frameworks/tensorboardx/tensorboardx.md))
+  
+* **Execution details** including:
+    * Git information
+    * Uncommitted code modifications
+    * Python environment
+    * Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration) 
 
 To control a task's framework logging, use the `auto_connect_framworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
 method. Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
@@ -540,11 +546,7 @@ task.connect(me)
 task.connect(params_dictionary)
 ```
 
-<div class="max-w-50">
-
 ![Task parameters](../img/fundamentals_task_config_hyperparams.png)
-
-</div>
 
 ### Configuration Objects
 
@@ -563,11 +565,7 @@ model_config_dict = task.connect_configuration(name='dictionary', configuration=
 config_file_yaml = task.connect_configuration(name="yaml file", configuration='path/to/configuration/file.yaml', )
 ```
 
-<div class="max-w-50">
-
 ![Task configuration objects](../img/fundamentals_task_config_object.png)
-
-</div>
 
 ### User Properties
 A task’s user properties do not impact task execution so you can add / modify the properties at any stage. Add user 
@@ -581,11 +579,7 @@ task.set_user_properties(
 
 The above example sets the "backbone" property in a task.
 
-<div class="max-w-50">
-
-[Task user properties](../img/fundamentals_task_config_properties.png)
-
-</div>
+![Task user properties](../img/fundamentals_task_config_properties.png)
 
 ## SDK Reference
 For detailed information, see the complete [Task SDK reference page](../references/sdk/task.md) 
