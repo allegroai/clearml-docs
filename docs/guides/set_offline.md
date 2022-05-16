@@ -21,7 +21,7 @@ task = Task.init(project_name="examples", task_name="my_task")
 # Rest of code is executed. All data is logged locally and not onto the server
 ```
 
-The method returns the Task ID and a path to the local session folder:
+The method returns the Task ID and a path to the session folder:
 
 ```console
 ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
@@ -33,25 +33,38 @@ ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b78684
 All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. The 
 session's zip folder's location is `~/.clearml/cache/offline/<task_id>.zip`.
 
-## Uploading Local Session
+## Uploading Session Data
 
-In order to upload to the ClearML Server the local execution data that the Task captured offline, use the 
-[Task.import_offline_session](../references/sdk/task.md#taskimport_offline_session) method. This method will upload the 
-Task's full execution details and outputs. 
+Upload the session's execution data that the Task captured offline to the ClearML Server using one of the following:
 
-```python
-from clearml import Task
 
-Task.import_offline_session(session_folder_zip="path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip")
-```
+* `clearml-task` CLI
+    
+  ```bash
+  clearml-task --import-offline-session "/home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip"
+  ```
 
-In the `session_folder_zip` argument, insert the path to the zip folder containing the session.
+  Pass the path to the zip folder containing the session with the `--import-offline-session` parameter.
+  
+* [Task.import_offline_session](../references/sdk/task.md#taskimport_offline_session) method. 
 
-This method returns a link to the Task's results page on the ClearML Server:
+  ```python
+  from clearml import Task
+
+  Task.import_offline_session(
+      session_folder_zip="/home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip"
+  )
+  ```
+
+  In the `session_folder_zip` argument, insert the path to the zip folder containing the session.
+
+
+Both options will upload the Task's full execution details and outputs and return a link to the Task's results page on 
+the ClearML Server:
 
 ```console
 ClearML: Importing offline session from /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
-ClearML results page: https://app.community.clear.ml/projects/4043a1657f374e9298649c6ba72ad233/experiments/bb8b0f6fa0f94536a0d27fb55f02d3a5/output/log
+ClearML results page: https://app.clear.ml/projects/4043a1657f374e9298649c6ba72ad233/experiments/bb8b0f6fa0f94536a0d27fb55f02d3a5/output/log
 ```
 
 The session details can be viewed in the ClearML WebApp, in the "my_task" experiment of the "examples" 
