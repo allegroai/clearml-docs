@@ -205,6 +205,33 @@ task = Task.create(
 
 See [`Task.create`](../references/sdk/task.md#taskcreate) in the Python SDK reference.
 
+### Tracking Task Progress
+Track a task’s progress by setting the task progress property using the [`Task.set_progress`](../references/sdk/task.md#set_progress) method. 
+Set a task’s progress to a numeric value between 0 - 100. Access the task’s current progress, using the 
+[`Task.get_progress`](../references/sdk/task.md#get_progress) method. 
+
+```python
+task = Task.init(project_name="examples", task_name="Track experiment progress")
+task.set_progress(0)
+# task doing stuff
+task.set_progress(50)
+print(task.get_progress())
+# task doing more stuff
+task.set_progress(100)
+```
+
+While the task is running, the WebApp will show the task’s progress indication in the experiment table, next to the 
+task’s status. If a task failed or was aborted, you can view how much progress it had made. 
+
+<div class="max-w-50">
+
+![Experiment table progress indication](../img/fundamentals_task_progress.png)
+
+</div>
+
+Additionally, you can view a task’s progress in its [INFO](../webapp/webapp_exp_track_visual.md#general-information) tab 
+in the WebApp. 
+
 ### Accessing Tasks
 A Task can be identified by its project and name, and by a unique identifier (UUID string). The name and project of 
 a Task can be changed after an experiment has been executed, but its ID can't be changed.
