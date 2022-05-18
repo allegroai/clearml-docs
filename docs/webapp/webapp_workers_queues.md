@@ -52,8 +52,9 @@ Use the **QUEUES** tab to manage queues and monitor their statistics. The page s
 wait time and the number of queued experiments, and a queue details table. Hover over any plot point to view its data. 
 By default, the graphs display the overall information of all queues. 
 
-The queue table shows the following queue information: 
+The queue table shows the following queue information:
 * Queue - Queue name 
+* Workers - Number of workers servicing the queue
 * Next Experiment - The next experiment available in this queue
 * Last Updated - The last time queue contents were modified
 * In Queue - Number of experiments currently enqueued in the queue

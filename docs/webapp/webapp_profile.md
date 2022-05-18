@@ -87,6 +87,16 @@ information).
 
 ![ClearML credentials](../img/settings_configuration_creation.png)
 
+You can edit the labels of credentials in your own workspace, or credentials that you created in other workspaces.
+
+**To edit the credentials label:** hover over the desired credentials, and click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> 
+
+You can revoke any credentials in your own workspace, or credentials that you created in other workspaces. Once revoked, 
+these credentials cannot be recovered.
+
+**To revoke ClearML credentials:** hover over the desired credentials, and click <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" />
+
+
 ### Changing Your Workspace Name
 To change the name of your own workspace, click **Edit workspace name**  <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> 
 (under App credentials) **>** modify the name **>** click <img src="/docs/latest/icons/ico-save.svg" alt="Check Mark" className="icon size-md" />. 
