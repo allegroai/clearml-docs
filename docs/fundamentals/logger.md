@@ -71,7 +71,7 @@ logger = task.get_logger()
 ### Media Reporting
 
 ClearML also supports reporting media (such as audio, video and images) for every iteration.
-This section is mostly used for debugging. It's recommended to use [artifacts](artifacts.md#artifacts) for storing script 
+This section is mostly used for debugging. It's recommended to use [artifacts](task.md#artifacts) for storing script 
 outputs that would be used later on.
 
 Only the last X results of each title / series are saved to prevent overloading the server.

@@ -5,7 +5,7 @@ title: Tracking Experiments and Visualizing Results
 While an experiment is running, and any time after it finishes, track it and visualize the results in the ClearML Web UI,
 including:
 
-* [Execution details](#execution-details) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
+* [Execution details](#execution) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
 * [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.

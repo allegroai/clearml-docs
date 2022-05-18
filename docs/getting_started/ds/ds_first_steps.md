@@ -81,7 +81,7 @@ Now you can integrate ClearML into your code!
 In ClearML, experiments are organized as [Tasks](../../fundamentals/task.md).
 
 ClearML will automatically log your experiment and code, including outputs and parameters from popular ML frameworks,
-once you integrate the ClearML [SDK](../../clearml_sdk.md) with your code. To control what ClearML automatically logs, see this [FAQ](../../faq.md#controlling_logging).
+once you integrate the ClearML [SDK](../../clearml_sdk/clearml_sdk.md) with your code. To control what ClearML automatically logs, see this [FAQ](../../faq.md#controlling_logging).
 
 At the beginning of your code, import the `clearml` package:
 
@@ -113,7 +113,7 @@ ClearML results page: https://app.clear.ml/projects/4043a1657f374e9298649c6ba72a
 
 **That’s it!** You are done integrating ClearML with your code :)
 
-Now, [command-line arguments](../../fundamentals/hyperparameters.md#command-line-parsing), [console output](../../fundamentals/logger.md#types-of-logged-results) as well as Tensorboard and Matplotlib will automatically be logged in the UI under the created Task.
+Now, [command-line arguments](../../fundamentals/hyperparameters.md#tracking-hyperparameters), [console output](../../fundamentals/logger.md#types-of-logged-results) as well as Tensorboard and Matplotlib will automatically be logged in the UI under the created Task.
 <br/>
 
 Sit back, relax, and watch your models converge :) or continue to see what else can be done with ClearML [here](ds_second_steps.md).
