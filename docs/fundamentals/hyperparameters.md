@@ -99,7 +99,7 @@ To get all of a task's parameters and properties (hyperparameters, configuration
 [Task.get_parameters](../references/sdk/task.md#get_parameters) method, which will return a dictionary with the parameters, 
 including their sub-sections (see [WebApp sections](#webapp-access) below). 
 
-## WebApp Access
+## WebApp Interface
 
 Configurations can be viewed in web UI experiment pages, in the **CONFIGURATIONS** panel. 
 
@@ -112,7 +112,7 @@ These sections are further broken down into sub-sections based on how the parame
 
 ![Task hyperparameters sections](../img/hyperparameters_sections.png)
 
-## SDK
+## SDK Interface
 
 See the [Configuration section](../clearml_sdk/task_sdk.md#configuration) of the Task SDK page for an overview of basic Pythonic 
 methods for working with hyperparameters.

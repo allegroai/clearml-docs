@@ -156,8 +156,8 @@ The following table describes the task states and state transitions.
 | *Aborted* | The experiment ran, and was manually or programmatically terminated. | The same as *Completed*. |
 | *Published* | The experiment is read-only. Publish an experiment to prevent changes to its inputs and outputs. | A *Published* experiment cannot be reset. If it is cloned, the state of the newly cloned experiment becomes *Draft*. |
 
-## Task SDK
+## SDK Interface
 
-See [Task SDK](../clearml_sdk/task_sdk.md) for an overview for using the most basic Pythonic methods of the `Task`class. 
+See [the task SDK interface](../clearml_sdk/task_sdk.md) for an overview for using the most basic Pythonic methods of the `Task`class. 
 See the [Task reference page](../references/sdk/task.md) for a complete list of available list. 
 

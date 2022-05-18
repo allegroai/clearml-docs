@@ -55,23 +55,23 @@ ClearML provides flexibility for explicitly connecting input models and experime
 * Upload destinations can be specified explicitly on a per OutputModel or per experiment basis. Alternatively, the upload 
   destination of all OutputModels can be specified in the ClearML [configuration file](../configs/clearml_conf.md). 
 
-## WebApp
+## WebApp Interface
 
 In the ClearML's web UI, model information can be located through a project's Model Table or through the model's creating 
 task.
 
 Models associated with a task appear in the task's **ARTIFACTS** tab. To see further model details, including design, 
 label enumeration, and general information, click the model name, which is a hyperlink to the 
-[model's detail page](../webapp/webapp_model_viewing.md)..
+[model's detail page](../webapp/webapp_model_viewing.md).
 
 Models can also be accessed through their associated project's [Model Table](../webapp/webapp_model_table.md), where all 
 the models associated with a project are listed.
 
 ![WebApp Model](../img/examples_model_update_model.png) 
 
-## Model SDK 
+## SDK Interface
 
-See [Model SDK](../clearml_sdk/model_sdk.md) for an overview for using the most basic Pythonic methods of the model 
+See [the Models SDK interface](../clearml_sdk/model_sdk.md) for an overview for using the most basic Pythonic methods of the model 
 classes. See a detailed list of all available methods  in the [Model](../references/sdk/model_model.md), [OutputModel](../references/sdk/model_outputmodel.md), and [InputModel](../references/sdk/model_inputmodel.md) 
 reference pages. 
 
