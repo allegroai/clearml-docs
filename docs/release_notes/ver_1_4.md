@@ -2,6 +2,10 @@
 title: Version 1.4
 ---
 
+### ClearML SDK 1.4.1 
+
+**Bug Fixes**
+* Fix Process Pool hangs at exit [ClearML GitHub issue #674](https://github.com/allegroai/clearml/issues/674)
 
 ### ClearML SDK 1.4.0
 
