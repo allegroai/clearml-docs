@@ -5,9 +5,10 @@ It is always useful to investigate what causes an experiment to succeed.
 The **ClearML Web UI** provides a deep experiment comparison, allowing to locate, visualize, and analyze differences including:
 
 * [Details](#details)
-    - [Artifacts](#artifacts) - Input model, output model, and model design.
-    - [Execution](#execution-details) - Installed packages and source code.
-    - [Configuration](#configuration) - Configuration objects used by the experiment.
+    - Artifacts - Input model, output model, and model design.
+    - Execution - Installed packages and source code.
+    - Configuration - Configuration objects used by the experiment.
+    - Info - General experiment details.
 * [Hyperparameters](#hyperparameters)
     - [Values (table) view](#values-mode) - Key/value of all the arguments used by the experiments.
     - [Parallel coordinates view](#parallel-coordinates-mode) - Impact of each argument on a selected metric
@@ -36,30 +37,18 @@ The ClearML experiment comparison provides [comparison features](#comparison-fea
 ## Details
 
 The **DETAILS** tab includes deep comparisons of the following:
+* Artifacts - Input/output models and their configuration, and other artifacts, if any.
+* Execution Details - Source code, uncommitted changes, and installed python packages. See details [here](webapp_exp_track_visual.md#execution). 
+* Configuration - Configuration objects used by the experiment, sorted by sections. See details [here](webapp_exp_track_visual.md#configuration).
+* Info - General experiment details. This includes information describing the stored experiment. See details [here](webapp_exp_track_visual.md#general-information). 
 
-### Artifacts
+**To Locate the Source Differences:**
 
-   * Input model and model configuration.
-   * Output model and model configuration.
-   * Other artifacts, if any.
+Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
+(Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
 
-### Execution Details
-   * The Source code - repository, branch, commit ID, script file name, and working directory.
-   * Uncommitted changes, sorted by file name.
-   * Installed Python packages and versions, sorted by package name.
-
-### Configuration
-   * Configuration objects used by the experiment (see [configuration objects](../fundamentals/hyperparameters.md#connecting-configuration-objects)),
-sorted by sections.
-
-
-### To Locate the Source Differences:
-
-* Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
-  (Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
-
-For example, in the image below, expanding **ARTIFACTS** **>** **Output Model** **>** **Model** shows that the model ID
-and name are different.
+For example, in the image below, expanding **ARTIFACTS** **>** **Output Model** **>** **Model** shows that the model names 
+are different.
 
 ![image](../img/webapp_compare_05.png)
 

@@ -169,10 +169,12 @@ combination is used, and multiple tasks have the exact same name, the function w
 
 For example:
 * Accessing a task object with a task ID:
+  
     ```python
     a_task = Task.get_task(task_id='123456deadbeef')
     ```
 * Accessing a task with a project and name:
+  
     ```python
     a_task = Task.get_task(project_name='examples', task_name='artifacts')
     ```

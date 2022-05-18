@@ -1,5 +1,5 @@
 ---
-title: Task
+title: Tasks
 ---
 
 **ClearML Task** lies at the heart of ClearML's experiment manager. 

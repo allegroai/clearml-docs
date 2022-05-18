@@ -1,5 +1,5 @@
 ---
-title: Model
+title: Models
 ---
 
 ClearML supports tracking, updating, and visualizing models.

@@ -92,8 +92,8 @@ See reference page [here](../references/sdk/automation_job_clearmljob.md).
 
 ### AutoScaler
 The `AutoScaler` class facilitates implementing resource budgeting. See class methods [here](https://github.com/allegroai/clearml/blob/master/clearml/automation/auto_scaler.py).
-ClearML also provides a class specifically for AWS autoscaling (see [code](https://github.com/allegroai/clearml/blob/master/clearml/automation/aws_auto_scaler.py#L22)
-and [example script](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py)). 
+ClearML also provides a class specifically for AWS autoscaling. See [code](https://github.com/allegroai/clearml/blob/master/clearml/automation/aws_auto_scaler.py#L22)
+and [example script](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py). 
 
 ### TaskScheduler
 The `TaskScheduler` class supports methods for scheduling periodic execution (like cron jobs). See the [code](https://github.com/allegroai/clearml/blob/master/clearml/automation/scheduler.py#L481)
