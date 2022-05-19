@@ -9,7 +9,7 @@ title: Linux or macOS
 
    For Linux only, if upgrading from <strong>Trains Server</strong> v0.14 or older, configure the <strong>ClearML Agent Services</strong>.
 
-   * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** uses the external public address of the **ClearML Server**.
+   * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** uses the external public address of the ClearML Server.
    * If ``CLEARML_AGENT_GIT_USER`` / ``CLEARML_AGENT_GIT_PASS`` are not provided, then **ClearML Agent Services** can't access any private repositories for running service tasks.
 
 
@@ -37,7 +37,7 @@ For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRA
 
 1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md).
 
-1. We recommend [backing up data](clearml_server_linux_mac.md#backing-up-and-restoring-data-and-configuration) and, if the configuration folder is 
+1. [Backing up data](clearml_server_linux_mac.md#backing-up-and-restoring-data-and-configuration) is recommended and, if the configuration folder is 
    not empty, backing up the configuration.
 
 1. If upgrading from **Trains Server** to **ClearML Server**, rename `/opt/trains` and its subdirectories to `/opt/clearml`.
@@ -48,7 +48,7 @@ For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRA
 
         curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
 
-1. Startup **ClearML Server**. This automatically pulls the latest **ClearML Server** build.
+1. Startup ClearML Server. This automatically pulls the latest ClearML Server build.
         
         docker-compose -f /opt/clearml/docker-compose.yml pull
         docker-compose -f /opt/clearml/docker-compose.yml up -d

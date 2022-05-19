@@ -20,5 +20,6 @@ See the [clearml-helm-charts repository](https://github.com/allegroai/clearml-he
 to view the up-to-date charts. 
 
 :::tip
-When changing values, make sure to set the chart version (`--version`) to avoid a chart update. We recommend keeping separate procedures between version and value updates to separate potential concerns.
+When changing values, make sure to set the chart version (`--version`) to avoid a chart update. Keeping separate procedures 
+between version and value updates is recommended to separate potential concerns.
 :::

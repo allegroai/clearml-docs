@@ -6,37 +6,37 @@ title: Securing ClearML Server
 This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
 :::
 
-To ensure deployment is properly secure, we recommend you follow the following best practices.
+To ensure deployment is properly secure, follow the following best practices.
 
 ## Network Security
 
 If the deployment is in an open network that allows public access, only allow access to the specific ports used by 
-**ClearML Server** (see [ClearML Server configurations](clearml_server_config.md#clearml-server-deployment-configuration)).
+ClearML Server (see [ClearML Server configurations](clearml_server_config.md#clearml-server-deployment-configuration)).
 
 If HTTPS access is configured for the instance, allow access to port `443`. 
 
-For improved security, the ports for **ClearML Server** Elasticsearch, MongoDB, and Redis servers are not exposed by 
+For improved security, the ports for ClearML Server Elasticsearch, MongoDB, and Redis servers are not exposed by 
 default; they are only open internally in the docker network.
 
 ## User Access Security
 
-Configure **ClearML Server** to use Web Login authentication, which requires a username and password for user access 
+Configure ClearML Server to use Web Login authentication, which requires a username and password for user access 
 (see [Web Login Authentication](clearml_server_config.md#web-login-authentication)).
 
 ## File Server Security
 
 By default, the File Server is not secured even if [Web Login Authentication](clearml_server_config.md#web-login-authentication)
-has been configured. We recommend using an [object storage solution](../integrations/storage.md) that has built-in security.
+has been configured. Using an [object storage solution](../integrations/storage.md) that has built-in security is recommended.
 
 ## Server Credentials and Secrets
 
-By default, **ClearML Server** comes with default values that are designed to allow to set it up quickly and to start working 
+By default, ClearML Server comes with default values that are designed to allow to set it up quickly and to start working 
 with the ClearML SDK.
 
 However, this also means that the **server must be secured** by either preventing any external access, or by changing 
 defaults so that the server's credentials are not publicly known.
 
-The **ClearML Server** default secrets can be found [here](https://github.com/allegroai/clearml-server/blob/master/apiserver/config/default/secure.conf), and can be changed using the `secure.conf` configuration file or using environment variables
+The ClearML Server default secrets can be found [here](https://github.com/allegroai/clearml-server/blob/master/apiserver/config/default/secure.conf), and can be changed using the `secure.conf` configuration file or using environment variables
 (see [ClearML Server Feature Configurations](clearml_server_config.md#clearml-server-feature-configurations)).
 
 Specifically, the relevant settings are:

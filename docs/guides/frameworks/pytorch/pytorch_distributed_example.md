@@ -35,7 +35,9 @@ All of these artifacts appear in the main Task, **ARTIFACTS** **>** **OTHER**.
 
 ## Scalars
 
-We report loss to the main Task by calling the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method on `Task.current_task().get_logger`, which is the logger for the main Task. Since we call `Logger.report_scalar` with the same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are logged together.
+Report loss to the main Task by calling the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method 
+on `Task.current_task().get_logger`, which is the logger for the main Task. Since `Logger.report_scalar` is called with the 
+same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are logged together.
 
     Task.current_task().get_logger().report_scalar(
         'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i)

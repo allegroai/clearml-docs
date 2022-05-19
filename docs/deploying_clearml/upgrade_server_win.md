@@ -8,7 +8,7 @@ title: Windows
    
 1. Execute one of the following commands, depending upon the version that is being upgraded:
    
-   * Upgrading **ClearML Server** version:
+   * Upgrading ClearML Server version:
 
          docker-compose -f c:\opt\clearml\docker-compose-win10.yml down
    
@@ -20,7 +20,7 @@ title: Windows
 
 1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md).
 
-1. We recommend backing up data and, if the configuration folder is not empty, backing up the configuration.
+1. Backing up data is recommended, and if the configuration folder is not empty, backing up the configuration.
  
     :::note
     For example, if the configuration is in ``c:\opt\clearml``, then backup ``c:\opt\clearml\config`` and ``c:\opt\clearml\data``. 
@@ -33,7 +33,7 @@ title: Windows
 
         curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose-win10.yml -o c:\opt\clearml\docker-compose-win10.yml
         
-1. Startup **ClearML Server**. This automatically pulls the latest **ClearML Server** build.
+1. Startup ClearML Server. This automatically pulls the latest ClearML Server build.
         
         docker-compose -f c:\opt\clearml\docker-compose-win10.yml pull
         docker-compose -f c:\opt\clearml\docker-compose-win10.yml up -d

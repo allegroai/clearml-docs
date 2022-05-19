@@ -145,7 +145,7 @@ The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
 ![TF_DEFINE parameter group](../img/webapp_tracking_26.png)
 
-Once an experiment is run and stored in **ClearML Server**, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
+Once an experiment is run and stored in ClearML Server, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
 ### User Properties
 
@@ -167,7 +167,7 @@ parameter in [`Task.connect_configuration`](../references/sdk/task.md#connect_co
 ![Custom configuration objects](../img/webapp_tracking_28.png)
 
 :::important
-In older versions of **ClearML Server**, the Task model configuration appeared in the **ARTIFACTS** tab, **MODEL CONFIGURATION** section. Task model configurations now appear in the **Configuration Objects** section, in the **CONFIGURATION** tab.
+In older versions of ClearML Server, the Task model configuration appeared in the **ARTIFACTS** tab, **MODEL CONFIGURATION** section. Task model configurations now appear in the **Configuration Objects** section, in the **CONFIGURATION** tab.
 :::
 
 

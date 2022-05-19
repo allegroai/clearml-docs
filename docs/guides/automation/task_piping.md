@@ -10,7 +10,7 @@ example demonstrates:
 
 This example accomplishes a task pipe by doing the following:
 
-1. Creating the template Task which is named `Toy Base Task`. It must be stored in **ClearML Server** before instances of 
+1. Creating the template Task which is named `Toy Base Task`. It must be stored in ClearML Server before instances of 
    it can be created. To create it, run another ClearML example script, [toy_base_task.py](https://github.com/allegroai/clearml/blob/master/examples/automation/toy_base_task.py).
    The template Task has a parameter dictionary, which is connected to the Task: `{'Example_Param': 1}`. 
 1. Back in `programmatic_orchestration.py`, creating a parameter dictionary, which is connected to the Task by calling [Task.connect](../../references/sdk/task.md#connect) 
