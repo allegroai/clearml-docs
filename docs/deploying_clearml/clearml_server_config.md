@@ -6,7 +6,7 @@ title: Configuring ClearML Server
 This documentation page applies to deploying your own open source ClearML Server. It does not apply to ClearML Hosted Service users.
 :::
 
-This page describes the **ClearML Server** [deployment](#clearml-server-deployment-configuration) and [feature](#clearml-server-feature-configurations) configurations. Namely, it contains instructions on how to configure **ClearML Server** for:
+This page describes the ClearML Server [deployment](#clearml-server-deployment-configuration) and [feature](#clearml-server-feature-configurations) configurations. Namely, it contains instructions on how to configure ClearML Server for:
 
 * [Sub-domains and load balancers](#sub-domains-and-load-balancers) - An AWS load balancing example
 * [Opening Elasticsearch, MongoDB, and Redis for External Access](#opening-elasticsearch-mongodb-and-redis-for-external-access)
@@ -18,12 +18,12 @@ This page describes the **ClearML Server** [deployment](#clearml-server-deployme
 For all configuration options, see the [ClearML Configuration Reference](../configs/clearml_conf.md) page.
 
 :::important 
-We recommend using the latest version of **ClearML Server**.
+Using the latest version of ClearML Server is recommended.
 :::
 
 ## ClearML Server Deployment Configuration
 
-**ClearML Server** supports two deployment configurations: single IP (domain) and sub-domains.
+ClearML Server supports two deployment configurations: single IP (domain) and sub-domains.
     
 ### Single IP (Domain) Configuration
 
@@ -41,8 +41,8 @@ Sub-domain configuration with default http/s ports (`80` or `443`):
 * API service on sub-domain: `api.*.*`
 * File storage service on sub-domain: `files.*.*`
 
-When [configuring sub-domains](#sub-domains-and-load-balancers) for **ClearML Server**, they will map to the **ClearML Server**'s 
-internally configured ports for the Dockers. As a result, **ClearML Server** Dockers remain accessible if, for example, 
+When [configuring sub-domains](#sub-domains-and-load-balancers) for ClearML Server, they will map to the ClearML Server's 
+internally configured ports for the Dockers. As a result, ClearML Server Dockers remain accessible if, for example, 
 some type of port forwarding is implemented.   
 
 :::important 
@@ -59,11 +59,11 @@ Accessing the **ClearML Web UI** with `app.clearml.mydomain.com` will automatica
 
 ## ClearML Server Feature Configurations
 
-**ClearML Server** features can be configured using either configuration files or environment variables.
+ClearML Server features can be configured using either configuration files or environment variables.
 
 ### Configuration Files
 
-The **ClearML Server** uses the following configuration files:
+The ClearML Server uses the following configuration files:
 
 * `apiserver.conf`
 * `hosts.conf`
@@ -71,7 +71,7 @@ The **ClearML Server** uses the following configuration files:
 * `secure.conf`
 * `services.conf`
 
-When starting up, the **ClearML Server** will look for these configuration files, in the `/opt/clearml/config` directory
+When starting up, the ClearML Server will look for these configuration files, in the `/opt/clearml/config` directory
 (this path can be modified using the `CLEARML_CONFIG_DIR` environment variable). 
 The default configuration files are in the [clearml-server](https://github.com/allegroai/clearml-server/tree/master/apiserver/config/default) repository.
 
@@ -91,7 +91,7 @@ tasks {
 
 ### Environment Variables
 
-The **ClearML Server** supports several fixed environment variables that affect its behavior,
+The ClearML Server supports several fixed environment variables that affect its behavior,
 as well as dynamic environment variable that can be used to override any configuration file setting.
 
 #### Fixed Environment Variables
@@ -151,9 +151,9 @@ the default secret for the system's apiserver component can be overridden by set
 
 ### Sub-domains and Load Balancers
 
-To illustrate this configuration, we provide the following example based on AWS load balancing: 
+The following example, which is based on AWS load balancing, demonstrates the configuration: 
 
-1. In the **ClearML Server** `/opt/clearml/config/apiserver.conf` file, add the following `auth.cookies` section:
+1. In the ClearML Server `/opt/clearml/config/apiserver.conf` file, add the following `auth.cookies` section:
 
         auth {
           cookies {
@@ -186,13 +186,13 @@ To illustrate this configuration, we provide the following example based on AWS 
         * Instances: make sure the load balancers are able to access the instances, using the relevant ports (Security 
           groups definitions).
 
-1. Restart **ClearML Server**.
+1. Restart ClearML Server.
 
 
 
 ### Opening Elasticsearch, MongoDB, and Redis for External Access 
 
-For improved security, the ports for **ClearML Server** Elasticsearch, MongoDB, and Redis servers are not exposed by default; 
+For improved security, the ports for ClearML Server Elasticsearch, MongoDB, and Redis servers are not exposed by default; 
 they are only open internally in the docker network. If external access is needed, open these ports (but make sure to 
 understand the security risks involved with doing so).
 
@@ -204,7 +204,7 @@ opening ports for external access.
 
 To open external access to the Elasticsearch, MongoDB, and Redis ports:
     
-1. Shutdown **ClearML Server**. Execute the following command (which assumes the configuration file is in the environment path). 
+1. Shutdown ClearML Server. Execute the following command (which assumes the configuration file is in the environment path). 
 
         docker-compose down
 
@@ -225,7 +225,7 @@ To open external access to the Elasticsearch, MongoDB, and Redis ports:
             ports:
             - "6379:6379"
 
-1. Startup **ClearML Server**.
+1. Startup ClearML Server.
 
         docker-compose -f docker-compose.yml pull
         docker-compose -f docker-compose.yml up -d
@@ -234,14 +234,14 @@ To open external access to the Elasticsearch, MongoDB, and Redis ports:
 
 ### Web Login Authentication
 
-Web login authentication can be configured in the **ClearML Server** in order to permit only users provided 
+Web login authentication can be configured in the ClearML Server in order to permit only users provided 
 with credentials to access the ClearML system. Those credentials are a username and password. 
 
-Without web login authentication, **ClearML Server** does not restrict access (by default).
+Without web login authentication, ClearML Server does not restrict access (by default).
 
 **To add web login authentication to the ClearML Server:**
 
-1. In **ClearML Server** `/opt/clearml/config/apiserver.conf`, add the `auth.fixed_users` section and specify the users.
+1. In ClearML Server `/opt/clearml/config/apiserver.conf`, add the `auth.fixed_users` section and specify the users.
 
     For example:
 
@@ -266,7 +266,7 @@ Without web login authentication, **ClearML Server** does not restrict access (b
             }
         }
 
-1. Restart **ClearML Server**.
+1. Restart ClearML Server.
 
 ### Using Hashed Passwords
 You can also use hashed passwords instead of plain-text passwords. To do that:
@@ -307,7 +307,7 @@ Modify the following settings for the watchdog:
  
 **To configure the non-responsive watchdog for the ClearML Server:**
 
-1. In the **ClearML Server** `/opt/clearml/config/services.conf` file, add or edit the `tasks.non_responsive_tasks_watchdog` 
+1. In the ClearML Server `/opt/clearml/config/services.conf` file, add or edit the `tasks.non_responsive_tasks_watchdog` 
    and specify the watchdog settings.
 
     For example:
@@ -324,7 +324,7 @@ Modify the following settings for the watchdog:
             }
         }
         
-1. Restart **ClearML Server**.
+1. Restart ClearML Server.
 
 ### Custom UI Context Menu Actions
 

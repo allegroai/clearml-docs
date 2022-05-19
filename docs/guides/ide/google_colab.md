@@ -7,7 +7,7 @@ compute provided by google.
 
 Users can transform a Google Colab instance into an available resource in ClearML using [ClearML Agent](../../clearml_agent.md).
 
-In this tutorial, we will go over how to create a ClearML worker node in a Google Colab notebook. Once the worker is up 
+This tutorial goes over how to create a ClearML worker node in a Google Colab notebook. Once the worker is up 
 and running, users can send Tasks to be executed on the Google Colab's HW.
 
 ## Prerequisites

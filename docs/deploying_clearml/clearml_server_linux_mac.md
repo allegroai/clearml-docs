@@ -2,7 +2,7 @@
 title: Linux and macOS
 ---
 
-Deploy the **ClearML Server** in Linux or macOS using the pre-built Docker image.
+Deploy the ClearML Server in Linux or macOS using the pre-built Docker image.
 
 For ClearML docker images, including previous versions, see [https://hub.docker.com/r/allegroai/clearml](https://hub.docker.com/r/allegroai/clearml). 
 However, pulling the ClearML Docker image directly is not required. We provide a docker-compose YAML file that does this. 
@@ -11,7 +11,7 @@ The docker-compose file is included in the instructions on this page.
 For information about upgrading ClearML Server in Linux or macOS, see [here](upgrade_server_linux_mac.md)
 
 :::important
-If ClearML Server is being reinstalled, we recommend clearing browser cookies for ClearML Server. For example, 
+If ClearML Server is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
 and delete all cookies under the ClearML Server URL.
 :::
