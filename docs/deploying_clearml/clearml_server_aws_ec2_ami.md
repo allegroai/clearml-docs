@@ -2,7 +2,7 @@
 title: AWS EC2 AMIs
 ---
 
-Deployment of **ClearML Server** on AWS is easily performed using AWS AMIs, which are available in the AWS community AMI catalog.
+Deployment of ClearML Server on AWS is easily performed using AWS AMIs, which are available in the AWS community AMI catalog.
 The [ClearML Server community AMIs](#clearml-server-aws-community-amis) are configured by default without authentication
 to allow quick access and onboarding.
 
@@ -20,7 +20,7 @@ and delete all cookies under the ClearML Server URL.
 ## Launching
 
 :::warning
-By default, **ClearML Server** deploys as an open network. To restrict **ClearML Server** access, follow the instructions 
+By default, ClearML Server deploys as an open network. To restrict ClearML Server access, follow the instructions 
 in the [Security](clearml_server_security.md) page.
 :::
 
@@ -34,7 +34,7 @@ and see:
 
 ## Accessing ClearML Server
 
-Once deployed, **ClearML Server** exposes the following services:
+Once deployed, ClearML Server exposes the following services:
 
 * Web server on `TCP port 8080`
 * API server on `TCP port 8008`

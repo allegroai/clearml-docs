@@ -9,7 +9,7 @@ title: Linux or macOS
 
    For Linux only, if upgrading from <strong>Trains Server</strong> v0.14 or older, configure the <strong>ClearML Agent Services</strong>.
 
-   * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** uses the external public address of the **ClearML Server**.
+   * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** uses the external public address of the ClearML Server.
    * If ``CLEARML_AGENT_GIT_USER`` / ``CLEARML_AGENT_GIT_PASS`` are not provided, then **ClearML Agent Services** can't access any private repositories for running service tasks.
 
 
@@ -48,7 +48,7 @@ For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRA
 
         curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
 
-1. Startup **ClearML Server**. This automatically pulls the latest **ClearML Server** build.
+1. Startup ClearML Server. This automatically pulls the latest ClearML Server build.
         
         docker-compose -f /opt/clearml/docker-compose.yml pull
         docker-compose -f /opt/clearml/docker-compose.yml up -d

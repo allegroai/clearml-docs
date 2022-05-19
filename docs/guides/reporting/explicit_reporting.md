@@ -9,7 +9,7 @@ example script from ClearML's GitHub repo:
 
 * Setting an output destination for model checkpoints (snapshots).
 * Explicitly logging a scalar, other (non-scalar) data, and logging text.
-* Registering an artifact, which is uploaded to **ClearML Server**, and ClearML logs changes to it.
+* Registering an artifact, which is uploaded to [ClearML Server](../../deploying_clearml/clearml_server.md), and ClearML logs changes to it.
 * Uploading an artifact, which is uploaded, but changes to it are not logged.
 
 ## Prerequisites
@@ -202,7 +202,7 @@ logger.report_text(
 
 ## Step 3: Registering Artifacts
 
-Registering an artifact uploads it to **ClearML Server**, and if it changes, the change is logged in **ClearML Server**. 
+Registering an artifact uploads it to ClearML Server, and if it changes, the change is logged in ClearML Server. 
 Currently, ClearML supports Pandas DataFrames as registered artifacts.
 
 ### Register the Artifact
@@ -249,7 +249,7 @@ sample = Task.current_task().get_registered_artifacts()['Test_Loss_Correct'].sam
     
 ## Step 4: Uploading Artifacts
 
-Artifact can be uploaded to the **ClearML Server**, but changes are not logged.
+Artifact can be uploaded to the ClearML Server, but changes are not logged.
 
 Supported artifacts include: 
 * Pandas DataFrames

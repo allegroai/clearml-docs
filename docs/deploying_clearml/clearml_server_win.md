@@ -3,20 +3,20 @@ title: Windows 10
 ---
 
 For Windows, launching the pre-built Docker image on a Linux virtual machine is recommended (see [Deploying ClearML Server: Linux or macOS](clearml_server_linux_mac.md)). 
-However, **ClearML Server** can be launched on Windows 10, using Docker Desktop for Windows (see the Docker [System Requirements](https://docs.docker.com/docker-for-windows/install/#system-requirements)).
+However, ClearML Server can be launched on Windows 10, using Docker Desktop for Windows (see the Docker [System Requirements](https://docs.docker.com/docker-for-windows/install/#system-requirements)).
 
-For information about upgrading **ClearML Server** on Windows, see [here](upgrade_server_win.md).
+For information about upgrading ClearML Server on Windows, see [here](upgrade_server_win.md).
 
 :::important
-If **ClearML Server** is being reinstalled, clearing browser cookies for **ClearML Server** is recommended. For example, 
+If ClearML Server is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
-and delete all cookies under the **ClearML Server** URL.
+and delete all cookies under the ClearML Server URL.
 :::
 
 ## Deploying
 
 :::warning
-By default, **ClearML Server** launches with unrestricted access. To restrict **ClearML Server** access, follow the instructions in the [Security](clearml_server_security.md) page.
+By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the instructions in the [Security](clearml_server_security.md) page.
 :::
 
 :::info Memory Requirement
@@ -38,7 +38,7 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
    
     1. Click **Apply**.
     
-1. Remove any previous installation of **ClearML Server**.
+1. Remove any previous installation of ClearML Server.
 
     **This clears all existing ClearML SDK databases.**
 
@@ -50,7 +50,7 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
         mkdir c:\opt\clearml\data
         mkdir c:\opt\clearml\logs
 
-1. Save the **ClearML Server** docker-compose YAML file.
+1. Save the ClearML Server docker-compose YAML file.
  
         curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose-win10.yml -o c:\opt\clearml\docker-compose-win10.yml
  
@@ -62,7 +62,7 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
  
 ## Port Mapping
 
-After deploying **ClearML Server**, the services expose the following node ports:
+After deploying ClearML Server, the services expose the following node ports:
 
 * Web server on port `8080`
 * API server on port `8008`

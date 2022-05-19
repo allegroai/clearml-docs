@@ -269,7 +269,7 @@ By hovering over a step or path between nodes, you can view information about it
 1. Run the pipeline controller one of the following two ways:
 
     * Run the notebook [tabular_ml_pipeline.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/tabular_ml_pipeline.ipynb).
-    * Remotely execute the Task - If the Task `tabular training pipeline` which is associated with the project `Tabular Example` already exists in **ClearML Server**, clone it and enqueue it to execute.  
+    * Remotely execute the Task - If the Task `tabular training pipeline` which is associated with the project `Tabular Example` already exists in ClearML Server, clone it and enqueue it to execute.  
       
 
 :::note 

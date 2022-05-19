@@ -3,7 +3,7 @@ title: ClearML Server
 ---
 
 ## What is ClearML Server? 
-The **ClearML Server** is the backend service infrastructure for ClearML. It allows multiple users to collaborate and 
+The ClearML Server is the backend service infrastructure for ClearML. It allows multiple users to collaborate and 
 manage their experiments by working seamlessly with the ClearML Python package and [ClearML Agent](../clearml_agent.md). 
 
 ClearML Server is composed of the following:

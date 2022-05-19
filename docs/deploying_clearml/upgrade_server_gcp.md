@@ -25,7 +25,7 @@ title: Google Cloud Platform
 
         curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
 
-1. Startup **ClearML Server**. This automatically pulls the latest **ClearML Server** build.
+1. Startup ClearML Server. This automatically pulls the latest ClearML Server build.
         
         docker-compose -f /opt/clearml/docker-compose.yml pull
         docker-compose -f /opt/clearml/docker-compose.yml up -d
