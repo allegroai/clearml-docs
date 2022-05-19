@@ -4,7 +4,9 @@ title: Monitoring Service Posting Slack Alerts
 
 The [Slack alerts example](https://github.com/allegroai/clearml/blob/master/examples/services/monitoring/slack_alerts.py) 
 demonstrates how to use the `clearml.automation.monitor` class to implement a service that monitors the completion and 
-failure of tasks, and posts alert messages on a Slack channel. 
+failure of tasks, and posts alert messages on a Slack channel.
+
+![Slack alert example](../../img/examples_slack_alerts.png)
 
 ## Creating a Slack Bot
 
@@ -60,9 +62,10 @@ The script supports the following additional command line options:
 * `message_prefix` - A message prefix for Slack alerts. For example, to alert all channel members use: "Hey <!here>". 
 * `min_num_iterations` - Minimal iteration threshold below which experiments are ignored. Use this option to eliminate 
   debug sessions that fail quickly. The default value is 0.
+* `project` - The name of the project to monitor. By default, all projects are monitored.  
 * `include_manual_experiments` - Whether to include experiments that are running locally:
-  * `True` (default) - Monitor all experiments (both local and remote, executed by ClearML Agent).
-  * `False` - Monitor only remote experiments.
+  * `True` - Monitor all experiments (both local and remote, executed by ClearML Agent).
+  * `False` (default) - Monitor only remote experiments.
 * `include_completed_experiments` - If `False` (default), send alerts only for failed tasks. If `True`, send an alert 
   for completed and failed tasks.
 * `include_archived` - If `False` (default), only tasks that are not archived will be reported. This option can be
