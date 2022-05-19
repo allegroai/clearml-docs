@@ -10,7 +10,7 @@ method to upload from:
 * URL of media already uploaded to some storage
 
 ClearML uploads media to the bucket specified in the ClearML configuration file or ClearML can be configured for image storage, see [Logger.set_default_upload_destination](../../references/sdk/logger.md#set_default_upload_destination)
-(storage for [artifacts](../../fundamentals/artifacts.md#setting-upload-destination) is different). Set credentials for storage in the ClearML 
+(storage for [artifacts](../../clearml_sdk/task_sdk.md#setting-upload-destination) is different). Set credentials for storage in the ClearML 
 [configuration file](../../configs/clearml_conf.md).
 
 ClearML reports media in the **ClearML Web UI** **>** experiment details **>** **RESULTS** tab **>** **DEBUG SAMPLES** 

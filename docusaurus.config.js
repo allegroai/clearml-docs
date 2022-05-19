@@ -104,7 +104,7 @@ module.exports = {
             },
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_4',
+              to: '/docs/release_notes/ver_1_5',
             },
             {
               label: 'Community Resources',
@@ -231,6 +231,12 @@ module.exports = {
   ],
   plugins: [
     // ... Your other plugins.
+    [
+      require.resolve('docusaurus-gtm-plugin'),
+      {
+        id: 'none', // GTM Container ID
+      }
+    ],
     [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {

@@ -1,177 +1,77 @@
 ---
-title: Artifacts & Models
+title: Models
 ---
 
-ClearML allows easy storage of experiments' output products as **artifacts** that can later be accessed easily 
-and used, through the web UI or programmatically. 
+ClearML supports tracking, updating, and visualizing models.
 
-A few examples of artifacts are: 
-* Model snapshot / weights file 
-* Data preprocessing
-* Feature representation of data
-* and more!
+Models are stored in ClearML as experiment artifacts, but unlike other artifacts that are dependent on their creating 
+task, models are independent entities with their own unique ID. Models can be accessed directly with a model object or 
+indirectly via their creating task. This property makes Models a standalone entry that can be used as an artifactory 
+interface.
 
-## Artifacts
-### Logging Artifacts
-To log any type of artifact to a Task, use the `upload_artifact()` method. For example:
+## Automatically Logging Models 
 
-* Upload a local file containing the preprocessing results of the data.
-```python
-task.upload_artifact(name='data', artifact_object='/path/to/preprocess_data.csv')
-```
-* Upload an entire folder with all its content by passing the folder, which will be zipped and uploaded as a single 
-  zip file:
-```python
-task.upload_artifact(name='folder', artifact_object='/path/to/folder/')
-```
-* Upload an instance of an object, Numpy / Pandas / PIL (converted to npz / csv.gz / jpg formats accordingly). If the 
-  object type is unknown, it is pickled and uploaded.
-```python
-person_dict = {'name': 'Erik', 'age': 30}
-task.upload_artifact(name='person dictionary', artifact_object=person_dict)
-```
+Once integrated into code, ClearML automatically logs and tracks models and any snapshots created by the following 
+frameworks:
+- Tensorflow (see [code example](../guides/frameworks/tensorflow/tensorflow_mnist.md))
+- Keras (see [code example](../guides/frameworks/keras/keras_tensorboard.md))
+- Pytorch (see [code example](../guides/frameworks/pytorch/pytorch_mnist.md))
+- scikit-learn (only using joblib) (see [code example](../guides/frameworks/scikit-learn/sklearn_joblib_example.md))
+- XGBoost (only using joblib) (see [code example](../guides/frameworks/xgboost/xgboost_sample.md))
+- FastAI (see [code example](../guides/frameworks/fastai/fastai_with_tensorboard.md))
+- MegEngine (see [code example](../guides/frameworks/megengine/megengine_mnist.md))
+- CatBoost (see [code example](../guides/frameworks/catboost/catboost.md))
 
-See more details in the artifacts [example](../guides/reporting/artifacts.md).
+When a supported framework loads a weights file, the running task will be automatically updated, with its input model 
+pointing directly to the original training task's model.
 
-### Using Artifacts
-To access a Task's artifact in order to use it:
-1. Get the Task that created the artifact (see more details on [querying](task.md#querying--searching-tasks) 
-Tasks).
+## Manually Logging Models
 
-1. Retrieve all the Task's artifacts with the *artifact* property, which is essentially a dictionary, 
-where the key is the artifact name, and the value is the artifact itself.
-1. Access a specific artifact using one of the following methods:
-   - Access files by calling `get_local_copy()`, which caches the files for later use and returns a path to the cached 
-  file
-   - Access object artifacts by using the `get()` method that returns the Python object.
-    
-The code below demonstrates how to access a file artifact using the previously generated preprocessed data:
-```python
-# get instance of Task that created artifact, using Task ID
-preprocess_task = Task.get_task(task_id='the_preprocessing_task_id')
-# access artifact
-local_csv = preprocess_task.artifacts['data'].get_local_copy()
-```
+### Output Models
 
-See more details in the using artifacts [example](../guides/reporting/using_artifacts.md).
+ClearML stores training results as output models. The `OutputModel` object is instantiated with a task object as an 
+argument (see [`task`](../references/sdk/model_outputmodel.md) parameter), so it's automatically registered as the Task’s 
+output model. Since OutputModel objects are connected to tasks, the models are traceable in experiments.
 
-### List of Supported Artifacts
+Output models are read-write so weights can be updated throughout training. Additionally, users can specify a model's 
+network design and label enumeration. Once an output model is registered, it can be used as the input model for another 
+experiment.
 
-- Numpy array (as npz file)
-- Pandas dataframe
-- PIL (converted to jpg)
-- Files and folders
-- Python objects (pickled)
+The snapshots of manually uploaded models aren't automatically captured, but ClearML provides methods to update them 
+through a `Task` or `OutputModel` object.
 
-## Models 
-Models are a special kind of artifact and, unlike regular artifacts, which can only be accessed with the creating Task's ID,
-Models are entities with their own unique ID that can be accessed directly or via the creating task.
+### Input Models  
 
-This property makes Models a standalone entry that can be used as an artifactory interface.
+ClearML provides flexibility for explicitly connecting input models and experimentation, including:
 
-### Automatic Model Logging
-
-When models are saved using certain frameworks (for instance, by calling the `torch.save()` method), ClearML automatically 
-logs the models and all snapshot paths.
-
-![image](../img/examples_model_update_model.png)
-
-See automatic model logging examples: 
-* [TF](../guides/frameworks/tensorflow/tensorflow_mnist.md)
-* [PyTorch](../guides/frameworks/pytorch/pytorch_mnist.md)
-* [Keras](../guides/frameworks/keras/keras_tensorboard.md)
-* [Scikit-Learn](../guides/frameworks/scikit-learn/sklearn_joblib_example.md)
-* [XGBoost](../guides/frameworks/xgboost/xgboost_sample.md)
-* [FastAI](../guides/frameworks/fastai/fastai_with_tensorboard.md)
-
-
-### Manual Model Logging 
-
-To manually log a model, create an instance of OutputModel class:
-```python
-from clearml import OutputModel, Task
-
-# Instantiate a Task 
-task = Task.init(project_name="myProject", task_name="myTask")
-
-# Instantiate an OutputModel, with a Task object argument
-output_model = OutputModel(task=task, framework="PyTorch")
-```
-
-The OutputModel object is always connected to a Task object as it's instantiated with a Task object as an argument. 
-It is, therefore, automatically registered as the Task’s output model.
-
-The snapshots of manually uploaded models aren't automatically captured, but there are two methods
-to update an output model. 
-
-#### Updating Via Task Object
-Using the [Task.update_output_model](../references/sdk/task.md#update_output_model) method:
+* Importing pre-trained models from external sources such as Amazon AWS, GIT repositories, PyTorch, and TensorFlow.
+* Using standalone models already registered in ClearML by previously run experiments. 
+* Defining your own input models in scripts
   
-```python
-task.update_output_model(model_path='path/to/model')
-```
-It's possible to modify the following parameters:
-* Weights file / folder - Uploads the files specified with the `model_path`.
-  If a remote storage is provided (S3 / GS / Https etc...), it saves the URL.
-* Model Metadata - Model name, description, iteration number of model, and tags. 
+## Setting Upload Destination
 
-#### Updating Via Model Object
-Using the [OutputModel.update_weights](../references/sdk/model_outputmodel.md#update_weights) method:
-  
-```python
-output_model.update_weights()
-```
-* Specify either the name of a locally stored weights file to upload (`weights_filename`), or the URI of a storage destination
-for model weight upload (`registered_uri`).
-* Model Metadata - Model description and iteration number. 
+* ClearML automatically captures the storage path of Models created by supported frameworks. By default, it stores the 
+  local path they are saved to.
+* Upload destinations can be specified explicitly on a per OutputModel or per experiment basis. Alternatively, the upload 
+  destination of all OutputModels can be specified in the ClearML [configuration file](../configs/clearml_conf.md). 
 
-See [Model Configuration](../guides/reporting/model_config.md) example.
+## WebApp Interface
 
-### Using Models
+In the ClearML's web UI, model information can be located through a project's Model Table or through the model's creating 
+task.
 
-Loading a previously trained model is quite similar to loading artifacts.
+Models associated with a task appear in the task's **ARTIFACTS** tab. To see further model details, including design, 
+label enumeration, and general information, click the model name, which is a hyperlink to the 
+[model's detail page](../webapp/webapp_model_viewing.md).
 
-```python
-prev_task = Task.get_task(task_id='the_training_task')
-last_snapshot = prev_task.models['output'][-1]
-local_weights_path = last_snapshot.get_local_copy()
-```
-1. Get the instance of the Task that created the original weights files
-2. Query the Task on its output models (a list of snapshots)
-3. Get the latest snapshot (if using Tensorflow, the snapshots are stored in a folder, so the `local_weights_path` will point to a folder containing the requested snapshot).
+Models can also be accessed through their associated project's [Model Table](../webapp/webapp_model_table.md), where all 
+the models associated with a project are listed.
 
-Notice that if one of the frameworks will load the weights file, the running Task will automatically update, with 
-"Input Model" pointing directly to the original training Task's model. With this feature, it's easy to get a full genealogy 
-of every trained and used model in our system!
+![WebApp Model](../img/examples_model_update_model.png) 
 
-Loading framework models appear under the "Input Models" section, under the Artifacts tab in the ClearML UI.
+## SDK Interface
 
-### Setting Upload Destination
+See [the Models SDK interface](../clearml_sdk/model_sdk.md) for an overview for using the most basic Pythonic methods of the model 
+classes. See a detailed list of all available methods  in the [Model](../references/sdk/model_model.md), [OutputModel](../references/sdk/model_outputmodel.md), and [InputModel](../references/sdk/model_inputmodel.md) 
+reference pages. 
 
-ClearML automatically captures the storage path of Models created by frameworks such as TF, Pytorch, and scikit-learn. By default, 
-it stores the local loading path they are saved to.
-
-To automatically store all created models by a specific experiment, modify the `Task.init()` function as such:
-```python
-task = Task.init(project_name='examples', task_name='storing model', output_uri='s3://my_models/')
-```
-
-To automatically store all created models from all experiments in a certain storage medium, edit the `clearml.conf` (see
- [ClearML Configuration Reference](../configs/clearml_conf.md#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` to the desired 
-storage (see [Storage](../integrations/storage.md)).
-This is especially helpful when using [clearml-agent](../clearml_agent.md) to execute code.
-
-### List of Supported Frameworks
-
-- TensorFlow 
-- Keras 
-- PyTorch 
-- PyTorch Ignite
-- PyTorch Lightning  
-- scikit-learn (only using joblib)
-- XGBoost (only using joblib)
-- AutoKeras
-- FastAI
-- LightGBM
-- MegEngine 
-- CatBoost

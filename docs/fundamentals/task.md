@@ -1,5 +1,5 @@
 ---
-title: Task / Experiment
+title: Tasks
 ---
 
 **ClearML Task** lies at the heart of ClearML's experiment manager. 
@@ -20,7 +20,7 @@ you can work with tasks in Offline Mode, in which all information is saved in a 
 In the UI and code, tasks are grouped into [projects](projects.md), which are logical entities similar to folders. Users can decide
 how to group tasks, though different models or objectives are usually grouped into different projects.
 
-Tasks that are in the system can be accessed and utilized with code. To [access a task](#accessing-tasks), it can be identified either by a 
+Tasks that are in the system can be accessed and utilized with code. To [access a task](../clearml_sdk/task_sdk.md#accessing-tasks), it can be identified either by a 
 project name & task name combination or by a unique ID. 
 
 It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task multiple times and to modify it for re-execution.  
@@ -33,7 +33,7 @@ The sections of **ClearML Task** are made up of the information that a task capt
 execution details and execution outputs. This information is used for tracking 
 and visualizing results, reproducing, tuning, and comparing experiments, and executing workflows. 
 
-The captured [code execution information](../webapp/webapp_exp_track_visual.md#execution-details) includes: 
+The captured [code execution information](../webapp/webapp_exp_track_visual.md#execution) includes: 
 * Git information 
 * Uncommitted code modifications
 * Python environment
@@ -42,17 +42,53 @@ The captured [code execution information](../webapp/webapp_exp_track_visual.md#e
 The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-results) includes:
 * [Console output](../webapp/webapp_exp_track_visual.md#console)
 * [Scalars](../webapp/webapp_exp_track_visual.md#scalars)
-* [Plots](../webapp/webapp_exp_track_visual.md#other-plots)
+* [Plots](../webapp/webapp_exp_track_visual.md#plots)
 * [Debug samples](../webapp/webapp_exp_track_visual.md#debug-samples)
-* [Models](artifacts.md#models) 
+* [Models](artifacts.md) 
 
 To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
 
-## Task Types
+### Artifacts
 
+ClearML allows easy storage of experiments' output products as artifacts that can later be accessed easily and used, 
+through the [web UI](../webapp/webapp_overview.md) or programmatically.
+
+ClearML provides methods to easily track files generated throughout your experiments’ execution such as:
+
+- Numpy objects 
+- Pandas DataFrames
+- PIL
+- Files and folders
+- Python objects
+- and more!
+
+Most importantly, ClearML also logs experiments’ input and output models as well as interim model snapshots (see 
+[Models](artifacts.md)).
+
+#### Logging Artifacts 
+ClearML provides an explicit logging interface that supports manually reporting a variety of artifacts. Any type of 
+artifact can be logged to a task using the [`Task.upload_artifact`](../references/sdk/task.md#upload_artifacts) method. 
+See more details in the [Artifacts Reporting example](../guides/reporting/artifacts.md).
+
+ClearML can be configured to upload artifacts to any of the supported types of storage, which include local and shared 
+folders, AWS S3 buckets, Google Cloud Storage, and Azure Storage. For more information, see [Storage](../integrations/storage.md). 
+
+:::note Debug Sample Storage
+Debug samples are handled differently, see [`Logger.set_default_upload_destination`](../references/sdk/logger.md#set_default_upload_destination)
+:::
+
+#### Accessing Artifacts
+Artifacts that have been logged can be accessed by other tasks [through the task](../clearml_sdk/task_sdk.md#accessing-tasks) 
+they are attached to, and then retrieving the artifact with one of its following methods:
+* `get_local_copy()` - caches the files for later use and returns a path to the cached file. 
+* `get()` - use for Python objects. The method that returns the Python object.
+   
+See more details in the [Using Artifacts example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
+
+## Task Types
 Tasks have a *type* attribute, which denotes their purpose (Training / Testing / Data processing). This helps to further 
-organize projects and ensure tasks are easy to [search and find](#querying--searching-tasks). The default task type is *training*.
-Available task types are: 
+organize projects and ensure tasks are easy to [search and find](../clearml_sdk/task_sdk.md#querying--searching-tasks). 
+The default task type is *training*. Available task types are: 
 - Experimentation
 
     - *training*, *testing*, *inference*
@@ -67,7 +103,7 @@ Available task types are:
 ## Task Lifecycle 
 
 ClearML Tasks are created in one of the following methods:
-* Manually running code that is instrumented with the ClearML SDK and invokes `Task.init()`.
+* Manually running code that is instrumented with the ClearML SDK and invokes [`Task.init`](../references/sdk/task.md#taskinit).
 * Cloning an existing task.
 * Creating a task via CLI using [clearml-task](../apps/clearml_task.md).
 
@@ -104,11 +140,11 @@ The above diagram demonstrates how a previously run task can be used as a baseli
 
 ## Task States
 
-The state of a Task represents its stage in the Task lifecycle. It indicates whether the Task is read-write (editable) or 
+The state of a task represents its stage in the task lifecycle. It indicates whether the task is read-write (editable) or 
 read-only. For each state, a state transition indicates which actions can be performed on an experiment, and the new state 
 after performing an action.
 
-The following table describes the Task states and state transitions. 
+The following table describes the task states and state transitions. 
 
 | State | Description / Usage | State Transition |
 |---|---|---|
@@ -120,222 +156,8 @@ The following table describes the Task states and state transitions.
 | *Aborted* | The experiment ran, and was manually or programmatically terminated. | The same as *Completed*. |
 | *Published* | The experiment is read-only. Publish an experiment to prevent changes to its inputs and outputs. | A *Published* experiment cannot be reset. If it is cloned, the state of the newly cloned experiment becomes *Draft*. |
 
+## SDK Interface
 
-## Usage
-
-### Task Creation
-
-`Task.init()` is the main method used to create Tasks in ClearML. It will create a Task, and populate it with:
-* A link to the running git repository (including commit ID and  local uncommitted changes)
-* Python packages used (i.e. directly imported Python packages, and the versions available on the machine)
-* Argparse arguments (default and specific to the current execution)
-* Reports to Tensorboard & Matplotlib and model checkpoints.
-
-:::note
-ClearML object (e.g. task, project) names are required to be at least 3 characters long
-:::
-
-```python
-from clearml import Task
-
-
-task = Task.init(
-    project_name='example',    # project name of at least 3 characters
-    task_name='task template', # task name of at least 3 characters
-    task_type=None,
-    tags=None,
-    reuse_last_task_id=True,
-    continue_last_task=False,
-    output_uri=None,
-    auto_connect_arg_parser=True,
-    auto_connect_frameworks=True,
-    auto_resource_monitoring=True,
-    auto_connect_streams=True,    
-)
-```
-
-When a Task is initialized, it automatically captures parameters and outputs from supported frameworks. To control what ClearML
-automatically logs, see this [FAQ](../faq.md#controlling_logging).
-
-Once a Task is created, the Task object can be accessed from anywhere in the code by calling [`Task.current_task`](../references/sdk/task.md#taskcurrent_task).
-
-If multiple Tasks need to be created in the same process (for example, for logging multiple manual runs), 
-make sure to close a Task, before initializing a new one. To close a task simply call `task.close` 
-(see example [here](../guides/advanced/multiple_tasks_single_process.md)).
-
-When initializing a Task, its project needs to be specified. If the project entered does not exist, it will be created. 
-Projects can be divided into subprojects, just like folders are broken into sub-folders.
-For example:
-```python
-Task.init(project_name='main_project/sub_project', task_name='test')
-```
-
-Nesting projects works on multiple levels. For example: `project_name=main_project/sub_project/sub_sub_project` 
-
-
-#### Task Reuse
-Every `Task.init` call will create a new Task for the current execution.
-In order to mitigate the clutter that a multitude of debugging Tasks might create, a Task will be reused if:
-* The last time it was executed (on this machine) was under 72 hours ago (configurable, see 
-  `sdk.development.task_reuse_time_window_in_hours` in the [`sdk.development` section](../configs/clearml_conf.md#sdkdevelopment) of 
-  the ClearML configuration reference)
-* The previous Task execution did not have any artifacts / models
-
-It's possible to always create a new Task by passing `reuse_last_task_id=False`.
-
-See full `Task.init` documentation [here](../references/sdk/task.md#taskinit).
-
-### Empty Task Creation
-
-A Task can also be created without the need to execute the code itself.
-Unlike the runtime detections, all the environment and configuration details needs to be provided explicitly.
-
-For example:
-```python
-task = Task.create(
-    project_name='example', 
-    task_name='task template',
-    repo='https://github.com/allegroai/clearml.git',
-    branch='master',
-    script='examples/reporting/html_reporting.py',
-    working_directory='.',
-    docker=None,
-)
-```
-
-See [`Task.create`](../references/sdk/task.md#taskcreate) in the Python SDK reference.
-
-### Accessing Tasks
-A Task can be identified by its project and name, and by a unique identifier (UUID string). The name and project of 
-a Task can be changed after an experiment has been executed, but its ID can't be changed.
-
-:::tip Locating Task IDs
-To locate a task ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
-to the right of the task name, click `ID` and the task ID appears
-:::
-
-Programmatically, Task objects can be retrieved by querying the system based on either the Task ID or a project and name 
-combination. If a project / name combination is used, and multiple Tasks have the exact same name, the function will return
-the *last modified Task*.
-
-For example:
-* Accessing a Task object with a Task ID:
-```python
-a_task = Task.get_task(task_id='123456deadbeef')
-```
-* Accessing a Task with a project / name:
-```python
-a_task = Task.get_task(project_name='examples', task_name='artifacts')
-```
-
-Once a Task object is obtained, it's possible to query the state of the Task, reported scalars, etc.
-The Task's outputs, such as artifacts and models, can also be retrieved. 
-
-### Querying / Searching Tasks
-
-Searching and filtering Tasks can be done via the [web UI](../webapp/webapp_overview.md), but also programmatically.
-Input search parameters into the `Task.get_tasks` method, which returns a list of Task objects that match the search. 
-
-For example:
-```python
-task_list = Task.get_tasks(
-    task_ids=None,  # type Optional[Sequence[str]]
-    project_name=None,  # Optional[str]
-    task_name=None,  # Optional[str]
-    task_filter=None  # Optional[Dict]
-)
-```
-
-It's possible to also filter Tasks by passing filtering rules to `task_filter`. 
-  For example:
-```python
-task_filter={
-    # only Tasks with tag `included_tag` and without tag `excluded_tag`
-    'tags': ['included_tag', '-excluded_tag'],
-    # filter out archived Tasks
-    'system_tags': ['-archived'],
-    # only completed & published Tasks
-    'status': ['completed', 'published'],
-    # only training type Tasks
-    'type': ['training'],
-    # match text in Task comment or task name
-    'search_text': 'reg_exp_text'
-}
-```
-
-### Cloning & Executing Tasks
-
-Once a Task object is created, it can be a copied (cloned). `Task.clone` returns a copy of the original Task (`source_task`). 
-By default, the cloned Task is added to the same project as the original, and it's called "Clone Of ORIGINAL_NAME", but 
-the name / project / comment of the cloned Task can be directly overridden.
-
-```python
-cloned = Task.clone(
-    source_task=task,  # type: Optional[Union[Task, str]]
-    # override default name
-    name='newly created task',  # type: Optional[str]
-    comment=None,  # type: Optional[str]
-    # insert cloned Task into a different project
-    project=None,  # type: Optional[str]
-)
-```
-
-A cloned Task starts in [draft](#task-states) mode, so its Task configurations can be edited (see 
-[Task.set_parameters](../references/sdk/task.md#set_parameters)).
-Once a Task is modified, launch it by pushing it into an execution queue, then a [ClearML Agent](../clearml_agent.md) will pull 
-it from the queue and execute the Task.
-
-```python
-Task.enqueue(
-    task=task,  # type: Union[Task, str]
-    queue_name='default',  # type: Optional[str] 
-    queue_id=None  # type: Optional[str]
-)
-```
-
-See enqueue [example](https://github.com/allegroai/clearml/blob/master/examples/automation/programmatic_orchestration.py).
-
-### Advanced Remote Execution
-
-A compelling workflow is:
-1. Running code on the development machine for a few iterations, or just setting up the environment.
-1. Moving the execution to a beefier remote machine for the actual training.
-
-For example, to stop the current manual execution, and then re-run it on a remote machine, simply add the following 
-function call to the code:
-```python
-task.execute_remotely(
-    queue_name='default',  # type: Optional[str]
-    clone=False,  # type: bool
-    exit_process=True  # type: bool
-)
-```
-
-Once the function is called on the machine, it will stop the local process and enqueue the current Task into the *default* 
-queue. From there, an agent will be able to pick it up and launch it.
-
-See the [Remote Execution](https://github.com/allegroai/clearml/blob/master/examples/advanced/execute_remotely_example.py) example. 
-
-#### Remote Function Execution
-A specific function can also be launched on a remote machine with `create_function_task`.
-
-For example:
-```python
-def run_me_remotely(some_argument):
-    print(some_argument)
-
-a_func_task = task.create_function_task(
-    func=run_me_remotely,  # type: Callable
-    func_name='func_id_run_me_remotely',  # type:Optional[str]
-    task_name='a func task',  # type:Optional[str]
-    # everything below will be passed directly to our function as arguments
-    some_argument=123
-)
-```
-Arguments passed to the function will be automatically logged under the `Function` section in the Hyperparameters tab. 
-Like any other arguments, they can be changed from the UI or programmatically.
-
-:::note
-Function Tasks must be created from within a regular Task, created by calling `Task.init()`
-:::
+See [the task SDK interface](../clearml_sdk/task_sdk.md) for an overview for using the most basic Pythonic methods of the `Task`class. 
+See the [Task reference page](../references/sdk/task.md) for a complete list of available list. 
 
