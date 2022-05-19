@@ -507,10 +507,10 @@ See [Storing Task Data Offline](guides/set_offline.md).
 
 **The first log lines are missing from the experiment console tab. Where did they go?** <a id="first-log-lines-missing"></a>
 
-Due to speed/optimization issues, we opted to display only the last several hundred log lines.
+Due to speed/optimization issues, the console displays only the last several hundred log lines.
 
 You can always download the full log as a file using the ClearML Web UI. In the ClearML Web UI > experiment 
-info panel > RESULTS tab > CONSOLE sub-tab, use the *Download full log* feature.
+info panel > CONSOLE tab, use the *Download full log* feature.
 
 <br/>
 
@@ -636,7 +636,7 @@ see [ClearML Configuration Reference](configs/clearml_conf.md).
 
 **When using PyCharm to remotely debug a machine, the Git repo is not detected. Do you have a solution?**
 
-Yes! Since this is such a common occurrence, we created a PyCharm plugin that allows a remote debugger to grab your local 
+Yes! ClearML provides a PyCharm plugin that allows a remote debugger to grab your local 
 repository / commit ID. For detailed information about using the plugin, see the [ClearML PyCharm Plugin](guides/ide/integration_pycharm.md).
 
 <br/>
@@ -900,7 +900,7 @@ For detailed instructions, see [Modifying non-responsive Task watchdog settings]
 
 **I did a reinstall. Why can't I create credentials in the Web-App (UI)?** <a id="clearml-server-reinstall-cookies"></a>
 
-The issue is likely your browser cookies for ClearML Server. We recommend clearing your browser cookies for ClearML Server. 
+The issue is likely your browser cookies for ClearML Server. Clearing your browser cookies for ClearML Server is recommended. 
 For example: 
 * For Firefox - go to Developer Tools > Storage > Cookies > delete all cookies under the ClearML Server URL.
 * For Chrome - Developer Tools > Application > Cookies > delete all cookies under the ClearML Server URL.
