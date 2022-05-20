@@ -21,6 +21,9 @@ title: Version 1.5
 **Bug Fixes**
 * Fix UI experiment debug samples disappearing after refresh [ClearML Server GitHub issue #136](https://github.com/allegroai/clearml-server/issues/136)
 * Fix deleting tasks sometimes raises errors [ClearML GitHub issue #632](https://github.com/allegroai/clearml/issues/632)
+* Fix Only partial task log shown when running on ES with multiple shards
+* Fix move task to trash is not thread-safe
+* Fix UI Project overview metric snapshot not showing
 * Fix no progress indicator when performing off-screen selection in UI experiments table
 * Fix removing long pipeline tags doesn't work
 * Fix UI experiment scalar comparison graph titles are cropped with no available tooltips
