@@ -13,6 +13,6 @@ The example does the following:
 
 ## Plots
 
-The learning curve plots appear in the **ClearML web UI** under **RESULTS** **>** **PLOTS**.
+The learning curve plots appear in the **ClearML web UI** under **PLOTS**.
 
 ![image](../../../img/examples_sklearn_matplotlib_example_01.png)

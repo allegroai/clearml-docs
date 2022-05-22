@@ -53,7 +53,7 @@ Logger.current_logger().report_scalar(
 ```    
 
 These scalars can be visualized in plots, which appear in the ClearML web UI, in the experiment's
-page **>** **RESULTS** **>** **SCALARS**. 
+page **>** **SCALARS**. 
 
 ![Experiment Scalars](../../img/examples_pytorch_mnist_07.png)
 
@@ -65,7 +65,7 @@ ClearML automatically logs command line options defined with `argparse`. They ap
 
 ## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![Experiment console log](../../img/examples_pytorch_mnist_06.png)
 

@@ -465,7 +465,11 @@ By default, it stores the local path they are saved at.
 To automatically store all created models by a specific experiment, modify the `Task.init` function as such:
 
 ```python
-task = Task.init(project_name='examples', task_name='storing model', output_uri='s3://my_models/')
+task = Task.init(
+  project_name='examples', 
+  task_name='storing model', 
+  output_uri='s3://my_models/'
+)
 ```
 
 To automatically store all models created by any experiment at a specific location, edit the `clearml.conf` (see
@@ -563,10 +567,14 @@ This method saves configuration objects as blobs (i.e. ClearML is not aware of t
 model_config_dict = {
    'value': 13.37,  'dict': {'sub_value': 'string'},  'list_of_ints': [1, 2, 3, 4],
 }
-model_config_dict = task.connect_configuration(name='dictionary', configuration=model_config_dict)
+model_config_dict = task.connect_configuration(
+  name='dictionary', configuration=model_config_dict
+)
  
 # connect a configuration file
-config_file_yaml = task.connect_configuration(name="yaml file", configuration='path/to/configuration/file.yaml', )
+config_file_yaml = task.connect_configuration(
+  name="yaml file", configuration='path/to/configuration/file.yaml'
+)
 ```
 
 ![Task configuration objects](../img/fundamentals_task_config_object.png)

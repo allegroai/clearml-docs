@@ -35,7 +35,7 @@ into a script which uses `TensorboardLogger`, all information logged through the
 
 ClearML automatically captures scalars logged through `TensorboardLogger`. 
 
-View the scalars in the experiment's page in the **ClearML Web UI**, in **RESULTS** **>** **SCALARS**.
+View the scalars in the experiment's page in the **ClearML Web UI**, in **SCALARS**.
 
 ![image](../../../img/examples_cifar_scalars.png)
 
@@ -55,7 +55,7 @@ To view the model, in the **ARTIFACTS** tab, click the model name (or download i
 
 ## Debug Samples
 
-ClearML automatically tracks images logged to TensorboardLogger. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
+ClearML automatically tracks images logged to TensorboardLogger. They appear in **DEBUG SAMPLES**.
 
 ![image](../../../img/examples_integration_pytorch_ignite_debug.png)
 

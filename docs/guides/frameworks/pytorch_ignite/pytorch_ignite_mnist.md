@@ -142,7 +142,7 @@ When the code runs, the experiment results can be viewed in the [ClearML Web UI]
 ### Scalars
 
 View the scalars, including training and validation metrics, in the experiment's page in the ClearML Web UI, under 
-**RESULTS** **>** **SCALARS**.
+**SCALARS**.
 
 ![image](../../../img/ignite_training.png)
 

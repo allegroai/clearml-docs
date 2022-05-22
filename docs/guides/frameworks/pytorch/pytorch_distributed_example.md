@@ -42,7 +42,7 @@ same title (`loss`), but a different series name (containing the subprocess' `ra
     Task.current_task().get_logger().report_scalar(
         'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i)
 
-The single scalar plot for loss appears in **RESULTS** **>** **SCALARS**.
+The single scalar plot for loss appears in **SCALARS**.
 
 ![image](../../../img/examples_pytorch_distributed_example_08.png)
 
@@ -73,6 +73,6 @@ Task.current_task().connect(param)
 
 ## Log
 
-Output to the console, including the text messages printed from the main Task object and each subprocess, appears in **RESULTS** **>** **CONSOLE**.
+Output to the console, including the text messages printed from the main Task object and each subprocess, appears in **CONSOLE**.
 
 ![image](../../../img/examples_pytorch_distributed_example_06.png)

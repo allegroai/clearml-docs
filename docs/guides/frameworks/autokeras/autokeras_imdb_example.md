@@ -13,7 +13,7 @@ the autokeras [TextClassifier](https://autokeras.com/text_classifier/) class, an
 
 ## Scalars
 
-The loss and accuracy metric scalar plots appear in **RESULTS** **>** **SCALARS**, along with the resource utilization plots, 
+The loss and accuracy metric scalar plots appear in **SCALARS**, along with the resource utilization plots, 
 which are titled **:monitor: machine**.
 
 ![image](../../../img/examples_keras_14.png)
@@ -26,7 +26,7 @@ ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATIO
 
 ## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![image](../../../img/examples_keras_15.png)
 

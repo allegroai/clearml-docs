@@ -6,8 +6,8 @@ The [html_reporting.py](https://github.com/allegroai/clearml/blob/master/example
 demonstrates reporting local HTML files and HTML by URL, using the [Logger.report_media](../../references/sdk/logger.md#report_media) 
 method. 
 
-ClearML reports these HTML debug samples in the **ClearML Web UI** **>** experiment details **>** **RESULTS** tab **>** 
-**DEBUG SAMPLES** sub-tab. 
+ClearML reports these HTML debug samples in the **ClearML Web UI** **>** experiment details **>** 
+**DEBUG SAMPLES** tab. 
 
 When the script runs, it creates an experiment named `html samples reporting`, which is associated with the `examples` project.
 

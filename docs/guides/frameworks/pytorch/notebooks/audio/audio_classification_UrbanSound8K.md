@@ -6,13 +6,13 @@ The example [audio_classification_UrbanSound8K.ipynb](https://github.com/allegro
 
 ## Scalars
 
-The accuracy, learning rate, and training loss scalars are automatically logged, along with the resource utilization plots (titled **:monitor: machine**), and appear **RESULTS** **>** **SCALARS**.
+The accuracy, learning rate, and training loss scalars are automatically logged, along with the resource utilization plots (titled **:monitor: machine**), and appear in **SCALARS**.
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_03.png)
 
 ## Debug Samples
 
-The audio samples and spectrogram plots are automatically logged and appear in **RESULTS** **>** **DEBUG SAMPLES**.
+The audio samples and spectrogram plots are automatically logged and appear in **DEBUG SAMPLES**.
 
 ### Audio Samples
 
@@ -46,6 +46,6 @@ TensorFlow Definitions appear in the **TF_DEFINE** subsection.
 
 ## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_02.png)

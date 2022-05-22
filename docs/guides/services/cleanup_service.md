@@ -60,6 +60,6 @@ The task can be reused. Clone the task, edit its parameters, and enqueue the tas
 ![Cleanup service configuration](../../img/example_cleanup_configuration.png)
 
 ## Console
-All console output appears in the experiment’s **RESULTS > CONSOLE**.
+All console output appears in the experiment’s **CONSOLE**.
 
 ![Cleanup service console](../../img/examples_cleanup_console.png)

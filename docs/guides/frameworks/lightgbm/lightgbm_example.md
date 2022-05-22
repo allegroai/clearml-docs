@@ -13,7 +13,7 @@ The example script does the following:
 
 ## Scalars
 
-The scalars logged in the experiment can be visualized in a plot, which appears in the ClearML web UI, in the **experiment's page > RESULTS > SCALARS**.
+The scalars logged in the experiment can be visualized in a plot, which appears in the ClearML web UI, in the **experiment's page > SCALARS**.
 
 ![LightGBM scalars](../../../img/examples_lightgbm_scalars.png)
 
@@ -32,7 +32,7 @@ models and any snapshots created using LightGBM.
 
 ## Console
 
-All other console output appears in **RESULTS > CONSOLE**.
+All other console output appears in **CONSOLE**.
 
 ![LightGBM console](../../../img/examples_lightgbm_console.png)
 

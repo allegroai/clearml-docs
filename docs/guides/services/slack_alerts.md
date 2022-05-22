@@ -86,7 +86,7 @@ execution (you’ll typically want to use a ClearML Agent running in [services m
 for such service tasks).
 
 ## Console
-All console output appears in the experiment’s **RESULTS > CONSOLE** page.
+All console output appears in the experiment’s **CONSOLE** page.
 
 ## Additional Information about slack_alerts.py
 

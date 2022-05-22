@@ -12,7 +12,7 @@ The example does the following:
 
 ## Debug Samples
 
-The images shown in the example script's `imshow` function appear according to metric in **RESULTS** **>** **DEBUG SAMPLES**.
+The images shown in the example script's `imshow` function appear according to metric in **DEBUG SAMPLES**.
 
 ![image](../../../img/examples_pytorch_matplotlib_02.png)
 

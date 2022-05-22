@@ -16,18 +16,18 @@ The example code does the following:
 
 ## Scalars
 
-ClearML automatically logs the histogram output to TensorBoard. They appear in **RESULTS** **>** **PLOTS**.
+ClearML automatically logs the histogram output to TensorBoard. They appear in **PLOTS**.
 
 ![image](../../../img/examples_reporting_fastai_01.png)
 
 ## Plots
 
-Histograms output to TensorBoard. They appear in **RESULTS** **>** **PLOTS**.
+Histograms output to TensorBoard. They appear in **PLOTS**.
 
 ![image](../../../img/examples_reporting_fastai_02.png)
 
 ## Logs
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![image](../../../img/examples_reporting_fastai_03.png)

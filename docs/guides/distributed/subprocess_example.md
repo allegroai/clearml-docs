@@ -34,6 +34,6 @@ Parameter dictionaries appear in **General**.
 
 ## Console
 
-Output to the console, including the text messages from the Task in each subprocess, appear in **RESULTS** **>** **CONSOLE**.
+Output to the console, including the text messages from the Task in each subprocess, appear in **CONSOLE**.
 
 ![image](../../img/examples_subprocess_example_02.png)

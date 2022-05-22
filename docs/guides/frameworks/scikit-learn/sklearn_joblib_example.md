@@ -10,7 +10,7 @@ and `matplotlib` to create a scatter diagram. When the script runs, it creates a
 ## Plots
 
 ClearML automatically logs the scatter plot, which appears in the [experiment's page](../../../webapp/webapp_exp_track_visual.md) 
-in the ClearML web UI, under **RESULTS** **>** **PLOTS**.
+in the ClearML web UI, under **PLOTS**.
 
 ![image](../../../img/examples_sklearn_joblib_example_06.png)
 

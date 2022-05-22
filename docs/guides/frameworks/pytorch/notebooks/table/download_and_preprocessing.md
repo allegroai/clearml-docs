@@ -29,7 +29,7 @@ For example, the raw data is read into a Pandas DataFrame named `train_set`, and
     train_set = pd.read_csv(Path(path_to_ShelterAnimal) / 'train.csv')
     Logger.current_logger().report_table(title='ClearMLet - raw',series='pandas DataFrame',iteration=0, table_plot=train_set.head())
     
-The tables appear in **RESULTS** **>** **PLOTS**.    
+The tables appear in **PLOTS**.    
 
 ![image](../../../../../img/download_and_preprocessing_07.png)
 
@@ -48,6 +48,6 @@ Parameter dictionaries appear in the **General** subsection.
 
 ## Console
 
-Output to the console appears in **RESULTS** **>** **CONSOLE**.
+Output to the console appears in **CONSOLE**.
 
 ![image](../../../../../img/download_and_preprocessing_06.png)

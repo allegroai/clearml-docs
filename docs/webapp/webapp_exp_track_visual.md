@@ -259,7 +259,7 @@ is downloadable. To view the end of the log, click **Jump to end**.
 
 ### Scalars
 
-All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in **RESULTS** **>** 
+All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in
 **SCALARS**. Scalar values are presented as time series line chart. To see the series for a metric in high resolution, 
 view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
 
@@ -307,7 +307,7 @@ are on the left side of the window. The tools include:
 See additional [plot controls](#plot-controls) below.
 
 ### Plots
-Non-time-series plots appear in **RESULTS** **>** **PLOTS**. These include data reported by libraries, visualization 
+Non-time-series plots appear in **PLOTS**. These include data reported by libraries, visualization 
 tools, and ClearML explicit reporting. These may include 2D and 3D plots, tables (Pandas and CSV files), and Plotly plots. 
 Individual plots can be shown / hidden or filtered by title.
 

@@ -16,14 +16,14 @@ The example does the following:
 
 ## Scalars
 
-The loss and accuracy metric scalar plots appear in **RESULTS** **>** **SCALARS**, along with the resource utilization plots, which are titled **:monitor: machine**.
+The loss and accuracy metric scalar plots appear in **SCALARS**, along with the resource utilization plots, which are titled **:monitor: machine**.
 
 ![image](../../../img/examples_keras_jupyter_08.png)
 
 ## Plots
 
 The example calls Matplotlib methods to create several sample plots, and TensorBoard methods to plot histograms for layer density. 
-They appear in **RESULTS** **>** **PLOTS**.
+They appear in **PLOTS**.
 
 ![image](../../../img/examples_keras_jupyter_03.png)
 
@@ -33,7 +33,7 @@ They appear in **RESULTS** **>** **PLOTS**.
 
 ## Debug Samples
 
-The example calls Matplotlib methods to log debug sample images. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
+The example calls Matplotlib methods to log debug sample images. They appear in **DEBUG SAMPLES**.
 
 ![image](../../../img/examples_keras_jupyter_04.png)
 
@@ -65,7 +65,7 @@ The TensorFlow Definitions appear in the **TF_DEFINE** subsection.
 
 ## Console
 
-Text printed to the console for training appears in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training appears in **CONSOLE**.
 
 ![image](../../../img/examples_keras_jupyter_07.png)
 

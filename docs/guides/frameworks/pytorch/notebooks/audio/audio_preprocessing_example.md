@@ -7,13 +7,13 @@ demonstrates integrating ClearML into a Jupyter Notebook which uses PyTorch and 
 
 ## Plots
 
-ClearML automatically logs the waveform which the example reports by calling a Matplotlib method. These appear in **RESULTS** **>** **PLOTS**.
+ClearML automatically logs the waveform which the example reports by calling a Matplotlib method. These appear in **PLOTS**.
 
 ![image](../../../../../img/examples_audio_preprocessing_example_08.png)
 
 ## Debug Samples
 
-ClearML automatically logs the audio samples which the example reports by calling TensorBoard methods, and the spectrogram visualizations reported by calling Matplotlib methods. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
+ClearML automatically logs the audio samples which the example reports by calling TensorBoard methods, and the spectrogram visualizations reported by calling Matplotlib methods. They appear in **DEBUG SAMPLES**.
 
 ### Audio Samples
 
