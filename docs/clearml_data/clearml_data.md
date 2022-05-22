@@ -53,7 +53,7 @@ next to the **FILE PATH**.
 
 The full dataset listing (all files included) is available in the **CONFIGURATION** section under **Dataset Content**. 
 This allows you to quickly compare two dataset contents and visually see the difference.
-The dataset genealogy DAG and change-set summary table is visualized in **RESULTS > PLOTS**
+The dataset genealogy DAG and change-set summary table is visualized in **PLOTS**
 
 
 <details className="cml-expansion-panel screenshot">
@@ -80,7 +80,7 @@ View a DAG of the dataset dependencies (all previous dataset versions and their 
 
 
 Once a dataset has been finalized, view its genealogy in the dataset's
-page **>** **RESULTS** **>** **PLOTS**
+page **>** **PLOTS**
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">Dataset Genealogy</summary>

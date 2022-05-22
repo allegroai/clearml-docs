@@ -16,7 +16,7 @@ The example script does the following:
 
 ## Plots
 
-In the **ClearML Web UI**, the PR Curve summaries appear in the experiment's page under **RESULTS** **>** **PLOTS**.
+In the **ClearML Web UI**, the PR Curve summaries appear in the experiment's page under **PLOTS**.
 
 * Blue PR curves
     ![image](../../../img/examples_tensorboard_pr_curve_01.png)
@@ -33,6 +33,6 @@ ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATIO
 
 ## Console
 
-All other console output appears in **RESULTS** **>** **CONSOLE**.
+All other console output appears in **CONSOLE**.
 
 ![image](../../../img/examples_tensorboard_pr_curve_05.png)

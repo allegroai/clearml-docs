@@ -7,7 +7,7 @@ example demonstrates reporting a series as a surface plot and as a 3D scatter pl
 
 When the script runs, it creates an experiment named `3D plot reporting`, which is associated with the `examples` project.
 
-ClearML reports these plots in the **ClearML Web UI** **>** experiment page **>** **RESULTS** tab **>** **PLOTS** sub-tab. 
+ClearML reports these plots in the **ClearML Web UI** **>** experiment page **>** **PLOTS** tab. 
 
 ## Surface Plot
 
@@ -27,7 +27,7 @@ Logger.current_logger().report_surface(
     zaxis="title Z",
 )
 ```
-Visualize the reported surface plot in **RESULTS** **>** **PLOTS**.
+Visualize the reported surface plot in **PLOTS**.
 
 ![Surface plot](../../img/examples_reporting_02.png)
 
@@ -49,5 +49,5 @@ Logger.current_logger().report_scatter3d(
 )
 ```
 
-Visualize the reported 3D scatter plot in **RESULTS** **>** **PLOTS**.
+Visualize the reported 3D scatter plot in **PLOTS**.
 ![3d scatter plot](../../img/examples_reporting_01.png)

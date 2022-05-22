@@ -15,14 +15,14 @@ classification dataset using XGBoost
 
 ## Plots
 
-The feature importance plot and tree plot appear in the project's page in the **ClearML web UI**, under **RESULTS** **>** 
+The feature importance plot and tree plot appear in the project's page in the **ClearML web UI**, under 
 **PLOTS**.
 
 ![image](../../../img/examples_xgboost_sample_06.png)
 
 ## Console
 
-All other console output appear in **RESULTS** **>** **CONSOLE**.
+All other console output appear in **CONSOLE**.
 
 ![image](../../../img/examples_xgboost_sample_05.png)
 

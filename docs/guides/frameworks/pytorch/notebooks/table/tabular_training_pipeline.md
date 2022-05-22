@@ -85,7 +85,7 @@ configuration_dict = task.connect(configuration_dict)  # enabling configuration 
 
 ClearML tracks and reports each instance of the preprocessing Task.
 
-The raw data appears as a table in **RESULTS** **>** **PLOTS**.
+The raw data appears as a table in **PLOTS**.
 
 These images are from one of the two preprocessing Tasks.
    
@@ -159,7 +159,7 @@ configuration_dict = task.connect(configuration_dict)  # enabling configuration 
     
 ClearML tracks and reports the training step with each instance of the newly cloned and executed training Task.
 
-ClearML automatically logs training loss and learning. They appear in **RESULTS** **>** **SCALARS**.
+ClearML automatically logs training loss and learning. They appear in **SCALARS**.
 
 The following images show one of the two training Tasks.
 
@@ -209,7 +209,7 @@ configuration_dict = {
 configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
 ```
 
-The logs show the Task ID and accuracy for the best model in **RESULTS** **>** **LOGS**.
+The logs show the Task ID and accuracy for the best model in **CONSOLE**.
    
 ![image](../../../../../img/tabular_training_pipeline_02.png)
    
@@ -242,7 +242,7 @@ pipe.stop()
 <summary className="cml-expansion-panel-summary">ClearML tracks and reports the pipeline's execution</summary>
 <div className="cml-expansion-panel-content">
 
-ClearML reports the pipeline with its steps in **RESULTS** **>** **PLOTS**.
+ClearML reports the pipeline with its steps in **PLOTS**.
    
 ![image](../../../../../img/tabular_training_pipeline_01.png)
    

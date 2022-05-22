@@ -166,6 +166,6 @@ in [services mode](../../clearml_agent.md#services-mode) for such service tasks)
 
 ### Console
 
-All other console output appears in the experiment’s **RESULTS > CONSOLE**.
+All other console output appears in the experiment’s **CONSOLE**.
 
 ![Autoscaler console](../../img/examples_aws_autoscaler_console.png)

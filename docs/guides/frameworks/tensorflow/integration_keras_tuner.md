@@ -36,14 +36,14 @@ When the script runs, it logs:
 ## Scalars
 
 ClearML logs the scalars from training each network. They appear in the project's page in the **ClearML web UI**, under
-**RESULTS** **>** **SCALARS**.
+**SCALARS**.
 
 ![image](../../../img/integration_keras_tuner_06.png)
 
 ## Summary of Hyperparameter Optimization
 
 ClearML automatically logs the parameters of each experiment run in the hyperparameter search. They appear in tabular 
-form in **RESULTS** **>** **PLOTS**.
+form in **PLOTS**.
 
 ![image](../../../img/integration_keras_tuner_07.png)
 
@@ -65,13 +65,13 @@ The model configuration is stored with the model.
 
 ### Hyperparameters
 
-ClearML automatically logs the TensorFlow Definitions, which appear in **RESULTS** **>** **CONFIGURATION** **>** **HYPER PARAMETERS**.
+ClearML automatically logs the TensorFlow Definitions, which appear in **CONFIGURATION** **>** **HYPER PARAMETERS**.
 
 ![image](../../../img/integration_keras_tuner_01.png)
 
 ### Configuration
 
-The Task configuration appears in **RESULTS** **>** **CONFIGURATION** **>** **General**.
+The Task configuration appears in **CONFIGURATION** **>** **General**.
 
 ![image](../../../img/integration_keras_tuner_02.png)
 

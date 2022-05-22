@@ -13,13 +13,13 @@ Another example optimizes the hyperparameters for this image classification exam
 
 ## Scalars
 
-The accuracy, accuracy per class, and training loss scalars are automatically logged, along with the resource utilization plots (titled **:monitor: machine**), and appear **RESULTS** **>** **SCALARS**.
+The accuracy, accuracy per class, and training loss scalars are automatically logged, along with the resource utilization plots (titled **:monitor: machine**), and appear **SCALARS**.
 
 ![image](../../../../../img/examples_image_classification_CIFAR10_05.png)
 
 ## Debug Samples
 
-The image samples are automatically logged and appear in **RESULTS** **>** **DEBUG SAMPLES**.
+The image samples are automatically logged and appear in **DEBUG SAMPLES**.
 
 ![image](../../../../../img/examples_image_classification_CIFAR10_07.png)
 
@@ -45,6 +45,6 @@ TensorFlow Definitions appear in the **TF_DEFINE** subsection.
 
 ## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![image](../../../../../img/examples_image_classification_CIFAR10_04.png)

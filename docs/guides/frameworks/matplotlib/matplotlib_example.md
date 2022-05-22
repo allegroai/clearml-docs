@@ -20,7 +20,7 @@ which is associated with the `examples` project (in script) or the `Colab notebo
 
 ## Plots
 
-The scatter plots appear in the **ClearML Web UI**, in **RESULTS** **>** **PLOTS**.
+The scatter plots appear in the **ClearML Web UI**, in **PLOTS**.
 
 ![image](../../../img/examples_matplotlib_example_01.png)
 
@@ -30,7 +30,7 @@ The scatter plots appear in the **ClearML Web UI**, in **RESULTS** **>** **PLOTS
 
 ## Debug Samples
 
-The images appear in **RESULTS** **>** **DEBUG SAMPLES**. Each debug sample image is associated with a metric.
+The images appear in **DEBUG SAMPLES**. Each debug sample image is associated with a metric.
 
 ![image](../../../img/examples_matplotlib_example_04.png)
 

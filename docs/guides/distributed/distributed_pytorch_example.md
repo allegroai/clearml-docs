@@ -52,7 +52,7 @@ Task.current_task().get_logger().report_scalar(
 )
 ```
 
-The single scalar plot for loss appears in **RESULTS** **>** **SCALARS**.
+The single scalar plot for loss appears in **SCALARS**.
 
 ![Experiment scalars](../../img/examples_pytorch_distributed_example_08.png)
 
@@ -75,6 +75,6 @@ All the hyperparameters appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS**.
 
 ## Console
 
-Output to the console, including the text messages printed from the main Task object and each subprocess appear in **RESULTS** **>** **CONSOLE**.
+Output to the console, including the text messages printed from the main Task object and each subprocess appear in **CONSOLE**.
 
 ![Experiment console log](../../img/examples_pytorch_distributed_example_06.png)

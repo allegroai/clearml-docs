@@ -8,7 +8,7 @@ to classify text in the `torchtext` [AG_NEWS](https://pytorch.org/text/stable/da
 
 ## Scalars
 
-Accuracy, learning rate, and training loss appear in **RESULTS** **>** **SCALARS**, along with the resource utilization plots, which are titled **:monitor: machine**.
+Accuracy, learning rate, and training loss appear in **SCALARS**, along with the resource utilization plots, which are titled **:monitor: machine**.
 
 ![image](../../../../../img/text_classification_AG_NEWS_03.png)
 
@@ -36,7 +36,7 @@ Parameter dictionaries appear in the **General** subsection.
 
 ## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![image](../../../../../img/text_classification_AG_NEWS_02.png)
 

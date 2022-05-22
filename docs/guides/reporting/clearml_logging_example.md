@@ -18,7 +18,7 @@ In the ``clearml`` GitHub repository, this example includes a clickable icon to 
 ## Scalars
 
 To reports scalars, call the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
-method. The scalar plots appear in the **web UI** in **RESULTS** **>** **SCALARS**.
+method. The scalar plots appear in the **web UI** in **SCALARS**.
 
 ```python
 # report two scalar series on two different graphs
@@ -40,7 +40,7 @@ for i in range(10):
 
 ## Plots
 
-Plots appear in **RESULTS** **>** **PLOTS**.
+Plots appear in **PLOTS**.
 
 ### 2D Plots
 
@@ -171,7 +171,7 @@ logger.report_histogram(
 ## Media
 
 Report audio, HTML, image, and video by calling the [Logger.report_media](../../references/sdk/logger.md#report_media) 
-method using the `local_path` parameter. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
+method using the `local_path` parameter. They appear in **DEBUG SAMPLES**.
 
 The media for these examples is downloaded using the [StorageManager.get_local_copy](../../references/sdk/storage.md#storagemanagerget_local_copy) 
 method.

@@ -25,7 +25,7 @@ The example script's `train` function calls TensorBoardX's `SummaryWriter.add_sc
 ClearML automatically captures the data that is added to the `SummaryWriter` object.  
 
 These scalars can be visualized in plots, which appear in the ClearML [WebApp](../../../webapp/webapp_home.md), in the 
-experiment's **RESULTS** **>** **SCALARS** page.
+experiment's **SCALARS** page.
 
 
 ![Scalars tab](../../../img/examples_megengine_mnist_scalars.png)
@@ -49,6 +49,6 @@ The model info panel contains the model details, including:
 
 ## Console
 
-All console output during the script’s execution appears in the experiment’s **RESULTS > CONSOLE** page.
+All console output during the script’s execution appears in the experiment’s **CONSOLE** page.
 ![Console tab](../../../img/examples_megengine_console.png)
 

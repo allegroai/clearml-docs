@@ -10,8 +10,8 @@ When the script runs, it creates an experiment named `Tensorflow v2 mnist with s
 
 ## Scalars
 
-The loss and accuracy metric scalar plots appear in the experiment's page in the **ClearML web UI** under **RESULTS** 
-**>** **SCALARS**. Resource utilization plots, which are titled **:monitor: machine**, also appear in the **SCALARS** tab.
+The loss and accuracy metric scalar plots appear in the experiment's page in the **ClearML web UI** under 
+**SCALARS**. Resource utilization plots, which are titled **:monitor: machine**, also appear in the **SCALARS** tab.
 
 ![image](../../../img/examples_tensorflow_mnist_06.png)
 
@@ -24,7 +24,7 @@ ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATIO
 
 ## Console
 
-All console output appears in **RESULTS** **>** **CONSOLE**.
+All console output appears in **CONSOLE**.
 
 ![image](../../../img/examples_tensorflow_mnist_05.png)
 

@@ -22,14 +22,14 @@ The example script does the following:
 
 ## Scalars
 
-The loss and accuracy metric scalar plots appear in **RESULTS** **>** **SCALARS**, along with the resource utilization plots, 
+The loss and accuracy metric scalar plots appear in **SCALARS**, along with the resource utilization plots, 
 which are titled **:monitor: machine**.
 
 ![image](../../../img/examples_keras_01.png)
 
 ## Histograms
 
-Histograms for layer density appear in **RESULTS** **>** **PLOTS**.
+Histograms for layer density appear in **PLOTS**.
 
 ![image](../../../img/examples_keras_02.png)
 
@@ -47,7 +47,7 @@ TensorFlow Definitions appear in **TF_DEFINE**.
 
 ## Console
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![image](../../../img/keras_colab_01.png)
 

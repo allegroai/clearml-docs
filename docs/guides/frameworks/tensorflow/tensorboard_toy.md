@@ -11,20 +11,20 @@ project.
 
 ## Scalars
 
-The `tf.summary.scalar` output appears in the ClearML web UI, in the experiment's **RESULTS** **>** 
+The `tf.summary.scalar` output appears in the ClearML web UI, in the experiment's 
 **SCALARS**. Resource utilization plots, which are titled **:monitor: machine**, also appear in the **SCALARS** tab.
 
 ![image](../../../img/examples_tensorboard_toy_03.png)
 
 ## Plots
 
-The `tf.summary.histogram` output appears in **RESULTS** **>** **PLOTS**.
+The `tf.summary.histogram` output appears in **PLOTS**.
 
 ![image](../../../img/examples_tensorboard_toy_04.png)
 
 ## Debug Samples
 
-ClearML automatically tracks images and text output to TensorFlow. They appear in **RESULTS** **>** **DEBUG SAMPLES**.
+ClearML automatically tracks images and text output to TensorFlow. They appear in **DEBUG SAMPLES**.
 
 ![image](../../../img/examples_tensorboard_toy_05.png)
 

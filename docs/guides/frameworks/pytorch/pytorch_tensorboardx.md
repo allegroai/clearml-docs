@@ -15,7 +15,7 @@ The example does the following:
 ## Scalars
 
 The loss and accuracy metric scalar plots, along with the resource utilization plots, which are titled **:monitor: machine**, 
-appear in the experiment's page in the [web UI](../../../webapp/webapp_overview.md), under **RESULTS** **>** **SCALARS**.
+appear in the experiment's page in the [web UI](../../../webapp/webapp_overview.md), under **SCALARS**.
 
 
 ![image](../../../img/examples_pytorch_tensorboardx_03.png)
@@ -29,7 +29,7 @@ ClearML automatically logs command line options defined with `argparse`. They ap
 
 ## Log
 
-Text printed to the console for training progress, as well as all other console output, appear in **RESULTS** **>** **CONSOLE**.
+Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
 ![image](../../../img/examples_pytorch_tensorboardx_02.png)
 
