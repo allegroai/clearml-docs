@@ -209,7 +209,7 @@ configuration_dict = {
 configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
 ```
 
-The logs show the Task ID and accuracy for the best model in **LOGS**.
+The logs show the Task ID and accuracy for the best model in **CONSOLE**.
    
 ![image](../../../../../img/tabular_training_pipeline_02.png)
    
