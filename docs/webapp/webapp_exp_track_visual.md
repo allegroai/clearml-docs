@@ -406,4 +406,4 @@ on, label versions of experiments, or apply team names to organize experimentati
 
 ## Locating the Experiment (Task) ID
 
-* In the info panel, in the top area, to the right of the Task name, click **ID**. The Task ID appears.
+The task ID appears in the experiment page's header. 

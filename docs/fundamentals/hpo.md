@@ -118,8 +118,8 @@ optimization.
 <br/>
 
 :::tip Locating Task ID
-To locate the base task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). In the top of the panel, 
-to the right of the task name, click `ID` and the task ID appears
+To locate the base task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). The ID appears 
+in the task header.
 :::
 
 
