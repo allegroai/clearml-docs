@@ -377,7 +377,7 @@ Use the viewer / player to inspect images, audio, video samples and do any of th
 
 **To view a debug sample in the viewer / player:**
 
-1. Click the debug sample click the thumbnail.
+1. Click the debug sample thumbnail.
 
 1. Do any of the following:
 
