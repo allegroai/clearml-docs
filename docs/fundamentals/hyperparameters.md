@@ -97,7 +97,7 @@ ClearML provides methods to directly access a task’s logged parameters.
 
 To get all of a task's parameters and properties (hyperparameters, configuration objects, and user properties), use the 
 [Task.get_parameters](../references/sdk/task.md#get_parameters) method, which will return a dictionary with the parameters, 
-including their sub-sections (see [WebApp sections](#webapp-access) below). 
+including their sub-sections (see [WebApp sections](#webapp-interface) below). 
 
 ## WebApp Interface
 
