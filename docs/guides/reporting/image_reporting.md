@@ -48,7 +48,7 @@ Logger.current_logger().report_image(
 )
 ```
 
-ClearML reports these images as debug samples in the **ClearML Web UI** **>** experiment details **>**
+ClearML reports these images as debug samples in the **ClearML Web UI**, under the experiment's
 **DEBUG SAMPLES** tab. 
 
 ![image](../../img/examples_reporting_07.png)

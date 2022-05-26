@@ -26,7 +26,7 @@ configuration_dict = {
 configuration_dict = task.connect(configuration_dict)  
 ```
     
-Command line options appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
+Command line options appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args**.
 
 ![image](../../../../../img/text_classification_AG_NEWS_01.png)
 

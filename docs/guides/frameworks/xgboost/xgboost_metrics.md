@@ -11,7 +11,7 @@ the `examples` project.
 
 ## Scalars
 ClearML automatically captures scalars logged with XGBoost, which can be visualized in plots in the 
-ClearML WebApp, in the experiment's **SCALARS** page.
+ClearML WebApp, in the experiment's **SCALARS** tab.
 
 ![Scalars](../../../img/examples_xgboost_metric_scalars.png)
 

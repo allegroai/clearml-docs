@@ -58,7 +58,7 @@ param = {'worker_{}_stuff'.format(dist.get_rank()): 'some stuff ' + str(randint(
 Task.current_task().connect(param)
 ```
 
-Command line options appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
+Command line options appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args**.
 
 ![image](../../../img/examples_pytorch_distributed_example_01.png)
 

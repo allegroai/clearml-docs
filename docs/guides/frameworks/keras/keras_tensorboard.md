@@ -37,7 +37,7 @@ Histograms for layer density appear in **PLOTS**.
 
 ClearML automatically logs command line options generated with `argparse`, and TensorFlow Definitions.
 
-Command line options appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args**.
+Command line options appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args**.
 
 ![image](../../../img/examples_keras_00.png)
 
@@ -60,6 +60,6 @@ method.
 task.connect_configuration({'test': 1337, 'nested': {'key': 'value', 'number': 1}})
 ```
 
-It appears in **CONFIGURATIONS** **>** **CONFIGURATION OBJECTS** **>** **General**. 
+It appears in **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** **General**. 
 
 ![image](../../../img/keras_colab_02.png)

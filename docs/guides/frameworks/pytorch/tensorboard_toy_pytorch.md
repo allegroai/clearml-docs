@@ -9,12 +9,12 @@ associated with the `examples` project.
 
 ## Debug Samples
 
-The debug sample images appear according to metric, in the experiment page in the **ClearML web UI** under **DEBUG SAMPLES**.
+The debug sample images appear according to metric, in the experiment's **DEBUG SAMPLES** tab.
 
 ![image](../../../img/examples_tensorboard_toy_pytorch_02.png)
 
 ## Hyperparameters
 
-ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **TF_DEFINE**.
+ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **TF_DEFINE**.
 
 ![image](../../../img/examples_tensorboard_toy_pytorch_00.png)

@@ -101,7 +101,7 @@ including their sub-sections (see [WebApp sections](#webapp-access) below).
 
 ## WebApp Interface
 
-Configurations can be viewed in web UI experiment pages, in the **CONFIGURATIONS** panel. 
+Configurations can be viewed in web UI experiment pages, in the **CONFIGURATION** tab. 
 
 The configuration panel is split into three sections according to type:
 - **User Properties** - Modifiable section that can be edited post-execution.
