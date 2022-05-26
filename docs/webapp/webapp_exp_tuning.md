@@ -97,9 +97,9 @@ and formats for specifying locations include:
 
 :::note Set Output Destination for Artifacts
 Also set the output destination for artifacts in code (see the `output_uri` parameter of the
-[Task.init](../references/sdk/task.md#taskinit)
+[`Task.init`](../references/sdk/task.md#taskinit)
 method), and in the ClearML configuration file 
-for all experiments (see [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
+for all experiments (see [`default_output_uri`](../configs/clearml_conf.md#config_default_output_uri)
 on the ClearML Configuration Reference page).
 :::
 
