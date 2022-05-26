@@ -36,7 +36,7 @@ a call to the [Task.connect](../../../../../references/sdk/task.md#connect) meth
     configuration_dict = {'number_of_epochs': 10, 'batch_size': 4, 'dropout': 0.25, 'base_lr': 0.001}
     configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
 
-Parameter dictionaries appear in **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **General**.
+Parameter dictionaries appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **General**.
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_01.png)
 

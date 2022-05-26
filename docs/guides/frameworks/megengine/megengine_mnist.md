@@ -14,8 +14,8 @@ The example script does the following:
 
 ## Hyperparameters
 
-ClearML automatically logs command line options defined with `argparse`. They appear in the experiment's **CONFIGURATIONS** 
-page under **HYPER PARAMETERS** **>** **Args**.
+ClearML automatically logs command line options defined with `argparse`. They appear in the experiment's **CONFIGURATION** 
+tab under **HYPER PARAMETERS** **>** **Args**.
 
 ![Configuration tab](../../../img/examples_megengine_mnist_config.png)
 
@@ -25,7 +25,7 @@ The example script's `train` function calls TensorBoardX's `SummaryWriter.add_sc
 ClearML automatically captures the data that is added to the `SummaryWriter` object.  
 
 These scalars can be visualized in plots, which appear in the ClearML [WebApp](../../../webapp/webapp_home.md), in the 
-experiment's **SCALARS** page.
+experiment's **SCALARS** tab.
 
 
 ![Scalars tab](../../../img/examples_megengine_mnist_scalars.png)
