@@ -138,7 +138,7 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 
 **To add, change, or delete hyperparameters:**
 
-* In the **CONFIGURATIONS** tab **>** **HYPER PARAMETERS** > **General** **>** hover **>** **EDIT** **>** add, change,
+* In the **CONFIGURATION** tab **>** **HYPER PARAMETERS** > **General** **>** hover **>** **EDIT** **>** add, change,
   or delete keys and /or values **>** **SAVE**.
 
 
@@ -150,7 +150,7 @@ except experiments whose status is *Published* (read-only).
 
 **To add, change, or delete user properties:**
 
-* In **CONFIGURATIONS** **>** **USER PROPERTIES** > **Properties** **>** hover **>** **EDIT** **>** add, change, or delete
+* In **CONFIGURATION** **>** **USER PROPERTIES** > **Properties** **>** hover **>** **EDIT** **>** add, change, or delete
   keys and /or values **>** **SAVE**.
 
 
@@ -164,7 +164,7 @@ CONFIGURATION** section. Task model configurations now appear in **CONFIGURATION
 
 **To add, change, or delete the Task model configurations:**
 
-* In **CONFIGURATIONS** **>** **CONFIGURATION OBJECTS** **>** **GENERAL** **>** hover **>** **EDIT** or **CLEAR** (if the
+* In **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** **GENERAL** **>** hover **>** **EDIT** or **CLEAR** (if the
   configuration is not empty).
 
 ### Artifacts

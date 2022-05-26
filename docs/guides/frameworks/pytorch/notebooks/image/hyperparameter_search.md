@@ -22,7 +22,7 @@ The optimizer Task, `Hyperparameter Optimization`, and the experiments appear in
 ### Hyperparameters
 
 The `HyperParameterOptimizer`'s configuration, which is provided when the object instantiated, are stored under the 
-optimizer task's **CONFIGURATIONS** **>** **HYPER PARAMETERS**.
+optimizer task's **CONFIGURATION** **>** **HYPER PARAMETERS**.
 
 ```python
 optimizer = HyperParameterOptimizer(

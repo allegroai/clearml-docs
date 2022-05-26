@@ -20,7 +20,7 @@ The loss and accuracy metric scalar plots appear in the experiment's page in the
 
 ## Hyperparameters
 
-ClearML automatically logs command line options defined with `argparse`. They appear in **CONFIGURATIONS** **>** 
+ClearML automatically logs command line options defined with `argparse`. They appear in **CONFIGURATION** **>** 
 **HYPER PARAMETERS** **>** **Args**.
 
 ![image](../../../img/examples_pytorch_tensorboardx_01.png)

@@ -32,7 +32,7 @@ Clone the experiment to create an editable copy for tuning.
 
 To demonstrate tuning, change two hyperparameter values.
 
-1. In the info panel, **CONFIGURATIONS** **>** **HYPER PARAMETERS** **>** **Args** **>** Hover and click **EDIT**.
+1. In the info panel, **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args** **>** Hover and click **EDIT**.
 
 1. Change the value of `batch_size` from `64` to `32`.
 
