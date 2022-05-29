@@ -711,6 +711,14 @@ html[data-theme="dark"] .markdown hr {
 .admonition-content code {
   font-size: 0.75rem;
 }
+
+.admonition-content .link-code a {
+  color:  var(--ifm-color-primary);
+  text-decoration: none;
+}
+.admonition-content .link-code a:hover {
+  text-decoration: underline;
+}
 /* danger (red) */
 .alert--danger {
   --ifm-alert-background-color: var(--ifm-color-danger-light);
