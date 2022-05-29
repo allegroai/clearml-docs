@@ -536,6 +536,11 @@ html[data-theme="dark"] .markdown table td {
   vertical-align: middle;
   transform: translateY(-2px);
 }
+
+.icon.lt {
+   filter: brightness(0.5);
+}
+
 .size-sm {
   width: 16px;
   height: 16px;
@@ -705,6 +710,14 @@ html[data-theme="dark"] .markdown hr {
 }
 .admonition-content code {
   font-size: 0.75rem;
+}
+
+.admonition-content .link-code a {
+  color:  var(--ifm-color-primary);
+  text-decoration: none;
+}
+.admonition-content .link-code a:hover {
+  text-decoration: underline;
 }
 /* danger (red) */
 .alert--danger {

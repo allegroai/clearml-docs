@@ -707,7 +707,7 @@ For example:
 Set a schedule for a worker using configuration file options. The options are:
 
 :::warning
-Only use one of these properties
+Use only one of these properties
 :::
 
 * ``agent.uptime``
