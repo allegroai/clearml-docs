@@ -159,5 +159,5 @@ The following table describes the task states and state transitions.
 ## SDK Interface
 
 See [the task SDK interface](../clearml_sdk/task_sdk.md) for an overview for using the most basic Pythonic methods of the `Task` class. 
-See the [Task reference page](../references/sdk/task.md) for a complete list of available list. 
+See the [Task reference page](../references/sdk/task.md) for a complete list of available methods. 
 
