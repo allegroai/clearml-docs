@@ -536,6 +536,11 @@ html[data-theme="dark"] .markdown table td {
   vertical-align: middle;
   transform: translateY(-2px);
 }
+
+.icon.lt {
+   filter: brightness(0.5);
+}
+
 .size-sm {
   width: 16px;
   height: 16px;
