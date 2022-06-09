@@ -13,8 +13,10 @@ The **ClearML Web UI** is the graphical user interface for the ClearML platform,
 
 
 The ClearML Web UI is composed of the following pages:
-* [Dashboard](webapp_home.md) - The dashboard for recent activity and quick access to experiments and projects.
-* [Projects](webapp_projects_page.md) - The main experimentation page. Access your experiments and models as they are organized into projects.
+* [Dashboard](webapp_home.md) <img src="/docs/latest/icons/ico-bars-homepage.svg" className="icon size-md space-sm" /> - 
+  The dashboard for recent activity and quick access to experiments and projects.
+* [Projects](webapp_projects_page.md) <img src="/docs/latest/icons/ico-bars-projects.svg" className="icon size-md space-sm" /> - 
+  The main experimentation page. Access your experiments and models as they are organized into projects.
   The [experiments](webapp_exp_table.md) and [models](webapp_model_table.md) are displayed in tables
   which let you:
     * [Track ongoing experiments and visualize their results](webapp_exp_track_visual.md)
@@ -23,7 +25,7 @@ The ClearML Web UI is composed of the following pages:
     * [Compare experiments](webapp_exp_comparing.md)
     * [Share experiments and their models](webapp_exp_sharing.md) with other ClearML hosted service users 
     * [Archive experiments and models](webapp_archiving.md)
- 
+* [Datasets](datasets$$$$$$$$$$$$$$$$$$4) <img src="/docs/latest/icons/ico-bars-input-data.svg" className="icon size-md space-sm" /> 
 * [Pipelines](pipelines/webapp_pipeline_page.md) - View and manage your pipelines.
 * [Workers and Queues](webapp_workers_queues.md) - The resource monitoring and queues management page.
   
