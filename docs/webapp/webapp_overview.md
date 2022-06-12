@@ -48,7 +48,7 @@ in the top right corner of the web UI screen to access the self-help resources i
 * **[ClearML on Youtube](https://www.youtube.com/c/ClearML/featured)** <img src="/docs/latest/icons/ico-youtube.svg" alt="YouTube" className="icon size-md" /> - Instructional videos on integrating ClearML into your workflow
 * **Online Documentation**
 * **Pro Tips** - Tips for working with ClearML efficiently
-* **Contact Us** - Quick access to ClearML contact form
+* **[Contact Us](https://clear.ml/contact-us)** - Quick access to ClearML contact form
 
 Click the profile menu button <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> 
   in the top right corner of the web UI screen to access the following: 
