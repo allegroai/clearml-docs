@@ -29,8 +29,6 @@ They appear in **PLOTS**.
 
 ![image](../../../img/examples_keras_jupyter_03a.png)
 
-![image](../../../img/examples_keras_jupyter_03b.png)
-
 ## Debug Samples
 
 The example calls Matplotlib methods to log debug sample images. They appear in **DEBUG SAMPLES**.

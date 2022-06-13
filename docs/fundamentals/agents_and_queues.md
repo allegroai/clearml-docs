@@ -36,7 +36,7 @@ A ClearML Agent can service multiple queues in either of the following modes:
 
 ## Agent and Queue Workflow 
 
-![image](../img/clearml_agent_flow_diagram.png)
+![Agent flow diagram](../img/clearml_agent_flow_diagram.png)
 
 The diagram above demonstrates a typical flow where an agent executes a task:  
 
