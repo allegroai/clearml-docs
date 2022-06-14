@@ -28,5 +28,4 @@ We also have a video series that can get you started, if you're more of a video 
 ## Who We Are
 ClearML is supported by you :heart: and by the team behind [allegro.ai](https://www.allegro.ai), where we build even more MLOps for enterprise companies.
 
-You can contribute, ask questions, and get involved in a whole manner of ways. See ****
-Your contributions are always welcome. For more information, see [Community Resources](../community.md)  
+Join the ClearML community! Your contributions, questions, and input are always welcome. For more information, see [Community Resources](../community.md)  
