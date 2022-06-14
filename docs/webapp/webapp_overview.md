@@ -25,7 +25,7 @@ The ClearML Web UI is composed of the following pages:
     * [Compare experiments](webapp_exp_comparing.md)
     * [Share experiments and their models](webapp_exp_sharing.md) with other ClearML hosted service users 
     * [Archive experiments and models](webapp_archiving.md)
-* [Datasets](datasets$$$$$$$$$$$$$$$$$$4) <img src="/docs/latest/icons/ico-bars-input-data.svg" className="icon size-md space-sm" /> 
+* [Datasets](datasets/webapp_dataset_page.md) <img src="/docs/latest/icons/ico-bars-input-data.svg" className="icon size-md space-sm" /> - View and manage your datasets. 
 * [Pipelines](pipelines/webapp_pipeline_page.md) - View and manage your pipelines.
 * [Workers and Queues](webapp_workers_queues.md) - The resource monitoring and queues management page.
   
@@ -39,8 +39,6 @@ The ClearML Web UI is composed of the following pages:
     * Manage users and workspaces
     * Manage resource access permissions (available in the ClearML Enterprise plan)
   
-![module icons](../img/webapp_module_icons.png)
-
 
 ## WebApp Menus 
 
