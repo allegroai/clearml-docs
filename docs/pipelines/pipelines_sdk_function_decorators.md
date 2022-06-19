@@ -15,7 +15,10 @@ Using the [`@PipelineDecorator.pipeline`](../references/sdk/automation_controlle
 decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller
 
 ```python
-@PipelineDecorator.pipeline(name='pipeline', project='examples', version='0.1')
+@PipelineDecorator.pipeline(
+  name='pipeline', project='examples', version='0.1', 
+  args_map={'General':['pickle_url'], 'Mock':['mock_parameter']}
+)
 def main(pickle_url, mock_parameter='mock'):
     data_frame = step_one(pickle_url)
     X_train, X_test, y_train, y_test = step_two(data_frame)
@@ -31,6 +34,10 @@ def main(pickle_url, mock_parameter='mock'):
 * `version` -  Numbered version string (e.g. 1.2.3). If `auto_version_bump` is set to `True`, the version number is 
   automatically bumped if the same version already exists and the pipeline code has changed
 * `default_queue` - The default [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) in which to enqueue all pipeline steps (unless otherwise specified in the pipeline step).
+* `args_map` - Map arguments to their [configuration section](../fundamentals/hyperparameters.md#webapp-interface) in 
+  the following format: `{'section_name':['param_name']]}`. For example, the pipeline in the code above will store the 
+  `pickle_url` parameter in the `General` section and `mock_parameter` in the `Mock` section. By default, arguments will 
+  be stored in the `Args` section.  
 * `pool_frequency` - The pooling frequency (in minutes) for monitoring experiments / states.
 * `add_pipeline_tags` - If `True`, add `pipe: <pipeline_task_id>` tag to all steps (Tasks) created by this pipeline 
   (this is useful to create better visibility in projects with multiple pipelines, and for easy selection) (default: 
