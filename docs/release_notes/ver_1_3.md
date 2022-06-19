@@ -1,4 +1,3 @@
-
 ---
 title: Version 1.3
 ---
