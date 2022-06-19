@@ -156,201 +156,25 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
     * Mac - `$HOME/clearml.conf`
     * Windows - `\User\<username>\clearml.conf`
 
-1. After the `api` section, add your `agent` section
-     <details className="cml-expansion-panel configuration">
-     <summary className="cml-expansion-panel-summary">View sample agent section</summary>
-     <div className="cml-expansion-panel-content">
+1. After the `api` section, add your `agent` section. For example:
+   ```
+   agent {
+       # Set GIT user/pass credentials (if user/pass are set, GIT protocol will be set to https)
+       git_user=""
+       git_pass=""
+       # all other domains will use public access (no user/pass). Default: always send user/pass for any VCS domain
+       git_host=""
+   
+       # Force GIT protocol to use SSH regardless of the git url (Assumes GIT user/pass are blank)
+       force_git_ssh_protocol: false
+   
+       # unique name of this worker, if None, created based on hostname:process_id
+       # Overridden with os environment: CLEARML_WORKER_NAME
+       worker_id: ""
+   }   
+   ```
+   View a complete ClearML Agent configuration file sample including an `agent` section [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf).
 
-         agent {
-            # Set GIT user/pass credentials (if user/pass are set, GIT protocol will be set to https)
-            # leave blank for GIT SSH credentials (set force_git_ssh_protocol=true to force SSH protocol)
-            git_user=""
-            git_pass=""
-            # Limit credentials to a single domain, for example: github.com,
-            # all other domains will use public access (no user/pass). Default: always send user/pass for any VCS domain
-            git_host=""
-   
-            # Force GIT protocol to use SSH regardless of the git url (Assumes GIT user/pass are blank)
-            force_git_ssh_protocol: false
-            # Force a specific SSH port when converting http to ssh links (the domain is kept the same)
-            # force_git_ssh_port: 0
-            # Force a specific SSH username when converting http to ssh links (the default username is 'git')
-            # force_git_ssh_user: git
-   
-            # unique name of this worker, if None, created based on hostname:process_id
-            # Overridden with os environment: CLEARML_WORKER_NAME
-            # worker_id: "clearml-agent-machine1:gpu0"
-            worker_id: ""
-   
-            # worker name, replaces the hostname when creating a unique name for this worker
-            # Overridden with os environment: CLEARML_WORKER_ID
-            # worker_name: "clearml-agent-machine1"
-            worker_name: ""
-   
-            # Set the python version to use when creating the virtual environment and launching the experiment
-            # Example values: "/usr/bin/python3" or "/usr/local/bin/python3.6"
-            # The default is the python executing the clearml_agent
-            python_binary: ""
-            # ignore any requested python version (Default: False, if a Task was using a
-            # specific python version and the system supports multiple python the agent will use the requested python version)
-            # ignore_requested_python_version: true
-   
-            # select python package manager:
-            # currently supported: pip, conda and poetry
-            # if "pip" or "conda" are used, the agent installs the required packages
-            # based on the "installed packages" section of the Task. If the "installed packages" is empty,
-            # it will revert to using `requirements.txt` from the repository's root directory.
-            # If Poetry is selected and the root repository contains `poetry.lock` or `pyproject.toml`,
-            # the "installed packages" section is ignored, and poetry is used.
-            # If Poetry is selected and no lock file is found, it reverts to "pip" package manager behaviour.
-            package_manager: {
-               # supported options: pip, conda, poetry
-               type: pip,
-               
-               # specify pip version to use (examples "<20", "==19.3.1", "", empty string will install the latest version)
-               # pip_version: "<20"
-               
-               # virtual environment inheres packages from system
-               system_site_packages: false,
-               # install with --upgrade
-               force_upgrade: false,
-               
-               # additional artifact repositories to use when installing python packages
-               # extra_index_url: ["https://allegroai.jfrog.io/clearml/api/pypi/public/simple"]
-               extra_index_url: []
-   
-               # additional conda channels to use when installing with conda package manager
-               conda_channels: ["pytorch", "conda-forge", "defaults", ]
-               # conda_full_env_update: false
-               # conda_env_as_base_docker: false
-               
-               # set the priority packages to be installed before the rest of the required packages
-               # priority_packages: ["cython", "numpy", "setuptools", ]
-               
-               # set the optional priority packages to be installed before the rest of the required packages,
-               # In case a package installation fails, the package will be ignored,
-               # and the virtual environment process will continue
-               # priority_optional_packages: ["pygobject", ]
-               
-               # set the post packages to be installed after all the rest of the required packages
-               # post_packages: ["horovod", ]
-   
-               # set the optional post packages to be installed after all the rest of the required packages,
-               # In case a package installation fails, the package will be ignored,
-               # and the virtual environment process will continue
-               # post_optional_packages: []
-   
-               # set to True to support torch nightly build installation,
-               # notice: torch nightly builds are ephemeral and are deleted from time to time
-               torch_nightly: false,
-            },
-   
-            # target folder for virtual environments builds, created when executing experiment
-            venvs_dir = ~/.clearml/venvs-builds
-   
-            # cached virtual environment folder
-            venvs_cache: {
-               # maximum number of cached venvs
-               max_entries: 10
-               # minimum required free space to allow for cache entry, disable by passing 0 or negative value
-               free_space_threshold_gb: 2.0
-               # unmark to enable virtual environment caching
-               # path: ~/.clearml/venvs-cache
-            },
-   
-            # cached git clone folder
-            vcs_cache: {
-            enabled: true,
-            path: ~/.clearml/vcs-cache
-            },
-   
-            # DEPRECATED: please use `venvs_cache` and set `venvs_cache.path`
-            # use venv-update in order to accelerate python virtual environment building
-            # Still in beta, turned off by default
-            # venv_update: {
-            #     enabled: false,
-            # },
-   
-            # cached folder for specific python package download (mostly pytorch versions)
-            pip_download_cache {
-            enabled: true,
-            path: ~/.clearml/pip-download-cache
-            },
-   
-            translate_ssh: true,
-            # reload configuration file every daemon execution
-            reload_config: false,
-   
-            # pip cache folder mapped into docker, used for python package caching
-            docker_pip_cache = ~/.clearml/pip-cache
-            # apt cache folder mapped into docker, used for ubuntu package caching
-            docker_apt_cache = ~/.clearml/apt-cache
-   
-            # optional arguments to pass to docker image
-            # these are local for this agent and will not be updated in the experiment's docker_cmd section
-            # extra_docker_arguments: ["--ipc=host", "-v", "/mnt/host/data:/mnt/data"]
-   
-            # optional shell script to run in docker when started before the experiment is started
-            # extra_docker_shell_script: ["apt-get install -y bindfs", ]
-   
-            # Install the required packages for opencv libraries (libsm6 libxext6 libxrender-dev libglib2.0-0),
-            # for backwards compatibility reasons, true as default,
-            # change to false to skip installation and decrease docker spin up time
-            # docker_install_opencv_libs: true
-   
-            # set to true in order to force "docker pull" before running an experiment using a docker image.
-            # This makes sure the docker image is updated.
-            docker_force_pull: false
-   
-            default_docker: {
-                # default docker image to use when running in docker mode
-                image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
-   
-                # optional arguments to pass to docker image
-                # arguments: ["--ipc=host"]
-            }
-   
-            # set the OS environments based on the Task's Environment section before launching the Task process.
-            enable_task_env: false
-   
-            # CUDA versions used for Conda setup & solving PyTorch wheel packages
-            # it Should be detected automatically. Override with os environment CUDA_VERSION / CUDNN_VERSION
-            # cuda_version: 10.1
-            # cudnn_version: 7.6
-   
-            # Hide docker environment variables containing secrets when printing out the docker command by replacing their
-            # values with "********". Turning this feature on will hide the following environment variables values:
-            #   CLEARML_API_SECRET_KEY, CLEARML_AGENT_GIT_PASS, AWS_SECRET_ACCESS_KEY, AZURE_STORAGE_KEY
-            # To include more environment variables, add their keys to the "extra_keys" list. E.g. to make sure the value of
-            # your custom environment variable named MY_SPECIAL_PASSWORD will not show in the logs when included in the
-            # docker command, set:
-            #   extra_keys: ["MY_SPECIAL_PASSWORD"]
-            hide_docker_command_env_vars {
-               enabled: true
-               extra_keys: []
-            }
-   
-            # allow to set internal mount points inside the docker,
-            # especially useful for non-root docker container images.
-            # docker_internal_mounts {
-            #     sdk_cache: "/clearml_agent_cache"
-            #     apt_cache: "/var/cache/apt/archives"
-            #     ssh_folder: "/root/.ssh"
-            #     pip_cache: "/root/.cache/pip"
-            #     poetry_cache: "/root/.cache/pypoetry"
-            #     vcs_cache: "/root/.clearml/vcs-cache"
-            #     venv_build: "/root/.clearml/venvs-builds"
-            #     pip_download: "/root/.clearml/pip-download-cache"
-            # }
-   
-            # Name docker containers created by the daemon using the following string format (supported from Docker 0.6.5)
-            # Allowed variables are task_id, worker_id and rand_string (random lower-case letters string, up to 32 characters)
-            # Note: resulting name must start with an alphanumeric character and
-            #       continue with alphanumeric characters, underscores (_), dots (.) and/or dashes (-)
-            # docker_container_name_format: "clearml-id-{task_id}-{rand_string:.8}"
-        }
-
-   </div></details>   
 1. Save the configuration.
 
 ## Execution
