@@ -16,7 +16,8 @@ decorator transforms the function which implements your pipeline's execution log
 
 ```python
 @PipelineDecorator.pipeline(
-  name='pipeline', project='examples', version='0.1', args_map={'General':['pickle_url'], 'Mock':['mock_parameter']}
+  name='pipeline', project='examples', version='0.1', 
+  args_map={'General':['pickle_url'], 'Mock':['mock_parameter']}
 )
 def main(pickle_url, mock_parameter='mock'):
     data_frame = step_one(pickle_url)
