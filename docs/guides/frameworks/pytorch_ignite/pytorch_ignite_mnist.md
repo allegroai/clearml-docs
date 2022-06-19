@@ -35,10 +35,12 @@ Integrate ClearML with the following steps:
    
   For example, attach the `OutputHandler` to log training loss at each iteration:
   ```python
-    clearml_logger.attach(trainer,
-        log_handler=OutputHandler(tag="training",
-        output_transform=lambda loss: {"loss": loss}),
-        event_name=Events.ITERATION_COMPLETED)
+  clearml_logger.attach(
+    trainer,
+    log_handler=OutputHandler(tag="training",
+    output_transform=lambda loss: {"loss": loss}),
+    event_name=Events.ITERATION_COMPLETED
+  )
   ```
 
 ### Parameters
@@ -57,19 +59,23 @@ To log scalars, ignite engine's output and / or metrics, use the `OutputHandler`
 
 * Log training loss at each iteration:
 ```python
-clearml_logger.attach(trainer,
+clearml_logger.attach(
+    trainer,
     log_handler=OutputHandler(tag="training",
     output_transform=lambda loss: {"loss": loss}),
-    event_name=Events.ITERATION_COMPLETED)
+    event_name=Events.ITERATION_COMPLETED
+)
 ```
 
 * Log metrics for training:
     
 ```python
 clearml_logger.attach(train_evaluator,
-    log_handler=OutputHandler(tag="training",
+    log_handler=OutputHandler(
+        tag="training",
         metric_names=["nll", "accuracy"],
-        global_step_transform=global_step_from_engine(trainer)),
+        global_step_transform=global_step_from_engine(trainer)
+    ),
     event_name=Events.EPOCH_COMPLETED)
 ```
 
@@ -77,17 +83,20 @@ clearml_logger.attach(train_evaluator,
                     
 ```python
 clearml_logger.attach(evaluator,
-    log_handler=OutputHandler(tag="validation",
+    log_handler=OutputHandler(
+        tag="validation",
         metric_names=["nll", "accuracy"],
-        global_step_transform=global_step_from_engine(trainer)),
+        global_step_transform=global_step_from_engine(trainer)
+    ),
     event_name=Events.EPOCH_COMPLETED)
 ```
 
 To log optimizer parameters, use the `attach_opt_params_handler` method:
 ```python
-# Attach the logger to the trainer to log optimizer's parameters, e.g., learning rate at each iteration
+# Attach the logger to the trainer to log optimizer's parameters, e.g. learning rate at each iteration
 clearml_logger.attach_opt_params_handler(
         trainer, event_name=Events.ITERATION_COMPLETED(every=100), optimizer=optimizer
+)
 ```
  
 ### Model Weights
@@ -97,9 +106,11 @@ To log model weights as scalars, use `WeightsScalarHandler`:
 ```python
 from ignite.contrib.handlers.clearml_logger import WeightsScalarHandler
 
-clearml_logger.attach(trainer,
+clearml_logger.attach(
+    trainer,
     log_handler=WeightsScalarHandler(model, reduction=torch.norm),
-    event_name=Events.ITERATION_COMPLETED)
+    event_name=Events.ITERATION_COMPLETED
+)
 ```
 
 To log model weights as histograms, use `WeightsHistHandler`:
@@ -107,9 +118,11 @@ To log model weights as histograms, use `WeightsHistHandler`:
 ```python
 from ignite.contrib.handlers.clearml_logger import WeightsHistHandler
 
-clearml_logger.attach(trainer,
+clearml_logger.attach(
+    trainer,
     log_handler=WeightsHistHandler(model),
-    event_name=Events.ITERATION_COMPLETED)
+    event_name=Events.ITERATION_COMPLETED
+)
 ```
     
 
