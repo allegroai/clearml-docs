@@ -106,6 +106,7 @@ Access these actions with the context menu in any of the following ways:
 | Add Tag | User-defined labels added to runs for grouping and organization. | Any state |  None  |
 | Archive | To more easily work with active runs, archive a run. See [Archiving](../webapp_archiving.md). | Any state |  None  |
 | Restore | Action available in the archive. Restore a run to the active pipeline runs table. | Any state | None |
+| Delete | Action available in the archive. Delete a run, which will also remove all of the run's logs, results, artifacts and debug samples | Any State | N/A |
 
 <div class="max-w-50">
 
