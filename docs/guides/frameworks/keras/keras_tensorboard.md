@@ -57,9 +57,12 @@ In the experiment code, a configuration dictionary is connected to the Task by c
 method. 
 
 ```python
-task.connect_configuration({'test': 1337, 'nested': {'key': 'value', 'number': 1}})
+task.connect_configuration(
+   name="MyConfig" 
+   configuration={'test': 1337, 'nested': {'key': 'value', 'number': 1}}
+)
 ```
 
-It appears in **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** **General**. 
+It appears in **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** **MyConfig**. 
 
 ![image](../../../img/keras_colab_02.png)
