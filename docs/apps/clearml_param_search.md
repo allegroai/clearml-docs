@@ -2,8 +2,9 @@
 title: ClearML Param Search
 ---
 
-Using only the command line 
-Use `clearml-param-search` CLI tool 
+Using only the command line, you can search for experiment parameters that yield the best models.  
+
+The `clearml-param-search` CLI tool allows you to configure 
 search for the best parameters for your models
 
 ## What Does `clearml-param-search` Do?
