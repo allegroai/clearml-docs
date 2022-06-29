@@ -5,7 +5,7 @@ title: Version 1.6
 ### ClearML SDK 1.6.0
 
 **New Features and Improvements**
-* New HyperParameter Optimization CLI `clearml-param-search`
+* New Hyperparameter Optimization CLI `clearml-param-search`
 * Improvements to ClearML Data
 * Add support for a new ClearML Data UI in the ClearML WebApp
 * Add `clearml-data` new options set-description and rename
