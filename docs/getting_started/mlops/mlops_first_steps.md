@@ -17,8 +17,7 @@ are fully utilized at all times become daunting tasks.
 
 This can create overhead that derails you from your core work!
 
-ClearML Agent was designed to deal with such issues and more! It is a tool responsible for executing experiments on r
-emote machines: on-premises or in the cloud! ClearML Agent provides the means to reproduce and track experiments in your 
+ClearML Agent was designed to deal with such issues and more! It is a tool responsible for executing experiments on remote machines: on-premises or in the cloud! ClearML Agent provides the means to reproduce and track experiments in your 
 machine of choice through the ClearML WebApp with no need for additional code.
 
 The agent will set up the environment for a specific Task’s execution (inside a Docker, or bare-metal), install the 
