@@ -33,7 +33,7 @@ For Manual model registration see [here](#registering--deploying-new-models-manu
 Register the new Model on the Serving Service. 
 
 ```bash
-clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --name "train sklearn model" --project "serving examples"
+clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --name "train sklearn model - sklearn-model" --project "serving examples"
 ```
 
 :::info Service ID
