@@ -7,8 +7,8 @@ title: Version 1.6
 **New Features and Improvements**
 * New Hyperparameter Optimization CLI `clearml-param-search`
 * Improvements to ClearML Data
-* Add support for a new ClearML Data UI in the ClearML WebApp
-* Add `clearml-data` new options set-description and rename
+  * Add support for a new ClearML Data UI in the ClearML WebApp
+  * Add `clearml-data` new options set-description and rename
 * Add random seed control using `Task.set_random_seed()` allowing to set a new random seed for task initialization or 
   to disable it
 * Improve error messages when failing to download an artifact
