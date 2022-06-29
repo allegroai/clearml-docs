@@ -88,6 +88,10 @@ Once a specific dataset object has been obtained, get a local copy of the datase
 of an entire dataset. This method downloads the dataset to a specific folder (non-cached), specified with the `target_folder` parameter. If 
 the specified folder already has contents, specify whether to overwrite its contents with the dataset contents, using the `overwrite` parameter.
 
+ClearML supports parallel downloading of datasets. Use the `max_workers` parameter of the `Dataset.get_local_copy` or 
+`Dataset.get_mutable_copy` methods to specify the number of threads to use when downloading the dataset. By default, it’s 
+the number of your machine’s logical cores.
+
 ## Modifying Datasets
 
 Once a dataset has been created, its contents can be modified and replaced. When your data is changed, you can 
@@ -162,8 +166,12 @@ dataset.remove_files(dataset_path="*.csv", recursive=True)
 ## Uploading Files
 
 To upload the dataset files to network storage, use the [`Dataset.upload`](../references/sdk/dataset.md#upload) method. 
+
 Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://bucket/data` , `/mnt/share/data`). 
 By default, the dataset uploads to ClearML's file server. 
+
+ClearML supports parallel uploading of datasets. Use the `max_workers` parameter to specify the number of threads to use 
+when uploading the dataset. By default, it’s the number of your machine’s logical cores.
 
 Dataset files must be uploaded before a dataset is [finalized](#finalizing-a-dataset). 
 

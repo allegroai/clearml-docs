@@ -45,10 +45,10 @@ The ClearML Web UI is composed of the following pages:
 Click the help menu button <img src="/docs/latest/icons/ico-help-outlined.svg" alt="Help menu" className="icon size-lg space-sm" />
 in the top right corner of the web UI screen to access the self-help resources including: 
 * **ClearML Python Package setup** - Instruction to get started with the `clearml` Python package
-* **ClearML on Youtube** - Instructional videos on integrating ClearML into your workflow
+* **[ClearML on Youtube](https://www.youtube.com/c/ClearML/featured)** <img src="/docs/latest/icons/ico-youtube.svg" alt="YouTube" className="icon size-md" /> - Instructional videos on integrating ClearML into your workflow
 * **Online Documentation**
 * **Pro Tips** - Tips for working with ClearML efficiently
-* **Contact Us** - Quick access to ClearML contact form
+* **[Contact Us](https://clear.ml/contact-us)** - Quick access to ClearML contact form
 
 Click the profile menu button <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" /> 
   in the top right corner of the web UI screen to access the following: 
@@ -59,16 +59,3 @@ email > click **ADD** > page will redirect to the [Users & Groups](webapp_profil
 * **Switch to Workspace** - Hosted service users can be members of multiple workspaces. These workspaces are listed here. 
   Click a workspace to switch to.
 * **Logout** of the workspace 
-
-## Community 
-
-In addition, from the **ClearML Web UI**, use these buttons to access the ClearML community resources:
-
-* The **ClearML** <img src="/docs/latest/icons/ico-slack-c.svg" alt="Slack Channel" className="icon size-md" /> Slack channel. 
-  Ask questions about **ClearML**.
-* The **ClearML** <img src="/docs/latest/icons/ico-youtube.svg" alt="YouTube" className="icon size-md" /> YouTube Channel. 
-  View our tutorials, presentations, and discussions.
-* The **ClearML** <img src="/docs/latest/icons/ico-github.svg" alt="GitHub" className="icon size-md" /> GitHub repository.
-
-
-For more information, see the [Community page](../community.md).
