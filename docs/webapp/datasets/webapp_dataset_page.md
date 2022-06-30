@@ -5,10 +5,10 @@ title: Datasets Page
 Use the **Datasets** Page to navigate between and manage datasets. The page shows summaries 
 for all datasets created using [ClearML Data](../../clearml_data/clearml_data.md).
 
-Click on a dataset card to navigate to its [Dataset Versions Table](webapp_dataset_table.md), where you can view the 
-dataset’s versions and history. 
+Click on a dataset card to navigate to its [Version List](webapp_dataset_viewing.md), where you can view the 
+dataset versions' lineage and contents. 
 
-$$$NEW IMAGE ![Pipelines page](../../img/webapp_pipeline_table.png)
+![Dataset page](../../img/webapp_dataset_page.png)
 
 
 ## Dataset Cards
@@ -17,7 +17,7 @@ The dataset cards display summarized dataset information:
 
 <div class="max-w-50">
 
-IMAGE - DATASET CARD
+![Dataset card](../../img/webapp_dataset_card.png)
 
 </div>
 
@@ -36,11 +36,11 @@ of a dataset card to open its context menu and access dataset actions.
 
 <div class="max-w-50">
 
-![Project context menu](../../img/webapp_pipeline_context_menu.png)
+![Dataset context menu](../../img/webapp_dataset_card_context_menu.png)
 
 </div>
 
 * **Rename** - Change the dataset’s name
 * **Add Tag** - Add label to the dataset to help easily classify groups of dataset.
-* **Delete** - Delete the dataset: delete all its versions$$$. To delete a dataset, all its versions must first be 
+* **Delete** - Delete the dataset and all of its versions. To delete a dataset, all its versions must first be 
   [archived](../webapp_archiving.md). 

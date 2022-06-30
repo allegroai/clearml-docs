@@ -2,23 +2,25 @@
 title: Dataset Details
 ---
 
-The dataset version panel shows the dataset’s history and details of every version. 
+The dataset page lists the dataset's versions. For a selected version, the **Dataset Version Panel** shoes its lineage 
+in graph form. 
 
-![Pipeline structure](../../img/webapp_pipeline_DAG.png)
+![Dataset lineage](../../img/webapp_dataset_lineage.png)
 
-The version panel displays a version history graph. 
-Each node in the graph represents a version in the dataset, and shows the following details: 
+Each node in the graph represents a dataset version, and shows the following details:
 
-![Pipeline step info](../../img/webapp_pipeline_node.png)
+<div class="max-w-50">
 
-* Version name/number$$
+![Dataset node info](../../img/webapp_dataset_node.png)
+
+</div>
+
+* Version name and number
 * Version size 
 * Version update time
-* Content panel button - Hover over the version and click <img src="/docs/latest/icons/ico-console.svg" alt="console" className="icon size-md space-sm" /> 
-  to view the version’s [content panel](#version-content-panel) 
-
-While the dataset is in $$progress, the versions’ details and colors are updated.
-
+* Version details button - Hover over the version and click <img src="/docs/latest/icons/ico-console.svg" alt="console" className="icon size-md space-sm" /> 
+  to view the version’s [details panel](#version-details-panel) 
+  
 ## Version Details
 ### Version Info
 
@@ -28,32 +30,62 @@ On the right side of the dataset version panel, view the **VERSION INFO** which 
 * Version file size 
 * Number of files
 * Number of links
-* Version changes from previous version 
+* Changes from previous version 
   * Number of files added 
   * Number of files modified 
   * Number of files removed 
-  * Version size change
+  * Change in size
 
-![Run info](../../img/webapp_pipeline_run_info.png)
+<div class="max-w-50">
 
-To view a version’s complete information, click **Full details**, which will open the dataset version’s [task page](../webapp_exp_track_visual.md).
+![Version info](../../img/webapp_dataset_version_info.png)
 
-![Pipeline task info](../../img/webapp_pipeline_task_info.png)
+</div>
 
-To view a specific version’s information, click the version node step on the genealogy graph, and the info panel displays 
-its **VERSION INFO**. 
+To view a version’s detailed information, click **Full details**, which will open the dataset version’s [task page](../webapp_exp_track_visual.md).
 
-![Step info](../../img/webapp_pipeline_step_info.png)
+![Dataset task info](../../img/webapp_dataset_task_page.png)
 
-### Version Content Panel
+To view the information for any version in the lineage graph, click its node, and the **VERSION INFO** panel displays
+that version's details. 
 
-Click on **DETAILS** on the top left of the info panel of hover over a version node and click $$ICON$$ to view a version’s 
-content panel. 
+### Version Details Panel
 
-The content panel consists of the following sections:
+Click on **DETAILS** on the top left of the info panel or hover over a version node and click <img src="/docs/latest/icons/ico-console.svg" alt="details" className="icon size-md space-sm" /> 
+to view:
 * **CONTENT** - Table summarizing version contents, including file names, file sizes, and hashes 
-* **PREVIEW** - Preview of dataset contents, including its tabular data and debug samples. Hover over tables to 
+* **PREVIEW** - A preview of the dataset version's contents 
   access [plot tools](../webapp_exp_track_visual.md#scalar-plot-tools). Click on a debug sample to expand it. 
-* **CONSOLE** - A log of the dataset version’s console output
+* **CONSOLE** - The dataset version’s console output
 
-Click $$ICON$$ to on the content panel header to view the panel in full screen. 
+Click <img src="/docs/latest/icons/ico-max-panel.svg" alt="Expand" className="icon size-md space-sm" /> to on the content panel header to view the panel in full screen. 
+
+## Dataset Actions
+The following table describes the actions that can be done from the dataset versions list.
+
+Access these actions with the context menu by right-clicking a version on the dataset versions list.
+
+| Action | Description | 
+|-----|----|
+|Add Tag |User-defined labels added to versions for grouping and organization. |
+|Archive| To more easily work with active dataset versions, archive a version. [See Archiving](../webapp_archiving.md).| 
+|Restore|Action available in the archive. Restore a version to the active dataset versions table.|
+|Delete| Delete an archived version and its artifacts. This action is available only from the dataset’s archive |
+
+![Dataset actions](../../img/webapp_dataset_actions.png)
+
+The actions mentioned in the chart above can be performed on multiple versions at once. [Select multiple versions](#selecting-multiple-versions), 
+then use either the context menu, or the bar that appears at the bottom of the page, to perform operations on the 
+selected versions.
+
+## Selecting Multiple Versions
+Select multiple versions by clicking the checkbox on the left of each relevant version. Clear any existing selection by 
+clicking the checkbox in the top left corner of the list.
+
+Click the checkbox in the top left corner of the list to select all items currently visible.
+
+An extended bulk selection tool is available through the down arrow next to the checkbox in the top left corner, enabling selecting items beyond the items currently on-screen:
+* All - Select all versions in the dataset
+* None - Clear selection
+* Filtered - Select all versions in the dataset that match the current active filters
+

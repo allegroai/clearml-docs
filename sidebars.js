@@ -46,7 +46,7 @@ module.exports = {
             },
             {
                 'Datasets':[
-                    'webapp/datasets/webapp_dataset_page', 'webapp/datasets/webapp_dataset_table', 'webapp/datasets/webapp_dataset_viewing'
+                    'webapp/datasets/webapp_dataset_page', 'webapp/datasets/webapp_dataset_viewing'
                 ]
             },
             {

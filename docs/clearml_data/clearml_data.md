@@ -26,8 +26,8 @@ Dataset changes are stored using differentiable storage, meaning a version will 
 Local copies of datasets are always cached, so the same data never needs to be downloaded twice.
 When a dataset is pulled it will automatically pull all parent datasets and merge them into one output folder for you to work with.
 
-The [Dataset Versions](../webapp/pipelines/webapp_pipeline_viewing.md) page in the web UI displays a dataset's genealogy
-and version details. See [dataset UI](../webapp/datasets/webapp_dataset_page.md) for more details.
+The [Dataset Versions](../webapp/pipelines/webapp_pipeline_viewing.md) page in the web UI displays dataset versions' 
+lineage and content information. See [dataset UI](../webapp/datasets/webapp_dataset_page.md) for more details.
 
 ## Setup
 
@@ -43,7 +43,7 @@ ClearML Data offers two interfaces:
 For an overview of our recommendations for ClearML Data workflows and practices, see [Best Practices](best_practices.md).
 
 ## Dataset Version States
-The following table displays all the possible statuses of a dataset. 
+The following table displays the possible states for a dataset version. 
 
 
 | State | Description |
