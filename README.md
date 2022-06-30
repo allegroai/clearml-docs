@@ -10,7 +10,7 @@
 
 # ClearML Documentation Website
 
-The ClearML documentation website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+The [ClearML documentation website](https://clear.ml/docs/latest/docs) is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 
 ## Contributing (yes please!)
