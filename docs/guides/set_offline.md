@@ -58,7 +58,18 @@ Upload the session's execution data that the Task captured offline to the ClearM
 
   In the `session_folder_zip` argument, insert the path to the zip folder containing the session.
 
-
+  You can also use the offline task to update the execution of an existing previously executed task by providing the 
+  previously executed task’s ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
+  `iteratiion_offset`.   
+  
+  ```python
+  Task.import_offline_session(
+    session_folder_zip="path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip", 
+    previous_task_id="12345679", 
+    iteration_offset=1500
+  )
+  ```
+  
 Both options will upload the Task's full execution details and outputs and return a link to the Task's results page on 
 the ClearML Server:
 
