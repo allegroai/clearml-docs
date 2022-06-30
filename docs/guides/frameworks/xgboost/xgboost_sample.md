@@ -18,7 +18,10 @@ classification dataset using XGBoost
 The feature importance plot and tree plot appear in the project's page in the **ClearML web UI**, under 
 **PLOTS**.
 
-![image](../../../img/examples_xgboost_sample_06.png)
+![Feature importance plot](../../../img/examples_xgboost_sample_06.png)
+
+![Tree plot](../../../img/examples_xgboost_sample_06a.png)
+
 
 ## Console
 

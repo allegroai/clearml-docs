@@ -45,6 +45,11 @@ module.exports = {
                 ]
             },
             {
+                'Datasets':[
+                    'webapp/datasets/webapp_dataset_page', 'webapp/datasets/webapp_dataset_viewing'
+                ]
+            },
+            {
                 'Pipelines':[
                     'webapp/pipelines/webapp_pipeline_page', 'webapp/pipelines/webapp_pipeline_table', 'webapp/pipelines/webapp_pipeline_viewing'
                 ]

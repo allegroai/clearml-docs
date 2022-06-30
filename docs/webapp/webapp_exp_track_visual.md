@@ -313,6 +313,11 @@ Individual plots can be shown / hidden or filtered by title.
 
 ![Plots tab](../img/webapp_tracking_35.png)
 
+The last iteration of each plot is displayed. Viewing a plot in full 
+screen (<img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />) 
+provides navigation to plots from previous iterations.  
+
+![Plots maximize tab](../img/webapp_tracking_35a.png)
 
 #### Plot Controls
 
