@@ -118,8 +118,9 @@ method. This will retain all of its previous artifacts / models / logs.
 The task will continue reporting its outputs based on the iteration in which it had left off. For example: a task’s last 
 train/loss scalar reported was for iteration 100, when continued, the next report will be as iteration 101.  
 
-:::note
-Continued tasks are not reproducible
+:::note Reproducibility
+Continued tasks may not be reproducible. In order to guarantee task reproducibility, you must ensure that all steps are 
+done in the same order (e.g. maintaining learning rate profile, ensuring data is fed in same order).
 :::
 
 Pass one of the following in the `continue_last_task` parameter:
