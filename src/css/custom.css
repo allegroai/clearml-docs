@@ -468,6 +468,9 @@ html[data-theme="light"] .footer__link-item[href*="stackoverflow"] {
   white-space: unset; /* allow wrap text when minimize */
 }
 
+.wb-normal [class^='codeBlockLines'] {
+  white-space: normal;
+}
 
 /* disable medium-zoom-image on svg icons */
 .markdown img.medium-zoom-image[src*="svg"] {

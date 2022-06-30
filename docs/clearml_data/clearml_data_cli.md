@@ -17,7 +17,8 @@ Creates a new dataset.
 
 ```bash
 clearml-data create [-h] [--parents [PARENTS [PARENTS ...]]] [--project PROJECT] 
-                    --name NAME [--tags [TAGS [TAGS ...]]]
+                    --name NAME [--version VERSION] [--output-uri OUTPUT_URI] 
+                    [--tags [TAGS [TAGS ...]]]
 ```
 
 **Parameters**
@@ -28,7 +29,9 @@ clearml-data create [-h] [--parents [PARENTS [PARENTS ...]]] [--project PROJECT]
 |---|---|---|
 |`--name` |Dataset's name| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 |`--project`|Dataset's project| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+|`--version` |Dataset version. If not specified a version will automatically be assigned | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--parents`|IDs of the dataset's parents. The dataset inherits all of its parents' content. Multiple parents can be entered, but they are merged in the order they were entered| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+|`--output-uri`| Sets where dataset and its previews are uploaded to| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--tags` |Dataset user tags. The dataset can be labeled, which can be useful for organizing datasets| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 </div>
@@ -160,8 +163,8 @@ This command also uploads the data and finalizes the dataset automatically.
 ```bash
 clearml-data sync [-h] [--id ID] [--dataset-folder DATASET_FOLDER] --folder FOLDER
                   [--parents [PARENTS [PARENTS ...]]] [--project PROJECT] [--name NAME]
-                  [--tags [TAGS [TAGS ...]]] [--storage STORAGE] [--skip-close]
-                  [--chunk-size CHUNK_SIZE] [--verbose]
+                  [--version VERSION] [--output-uri OUTPUT_URI] [--tags [TAGS [TAGS ...]]]
+                  [--storage STORAGE] [--skip-close] [--chunk-size CHUNK_SIZE] [--verbose]
 ```
 
 **Parameters**
@@ -173,10 +176,11 @@ clearml-data sync [-h] [--id ID] [--dataset-folder DATASET_FOLDER] --folder FOLD
 |`--id`| Dataset's ID. Default: previously created / accessed dataset| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--dataset-folder`|Dataset base folder to add the files to (default: Dataset root)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--folder`|Local folder to sync. Wildcard selection is supported, for example: `~/data/*.jpg ~/data/json`|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
-|`--storage`|Remote storage to use for the dataset files. Default: files_server |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--storage`|Remote storage to use for the dataset files. Default: files server |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--parents`|IDs of the dataset's parents (i.e. merge all parents). All modifications made to the folder since the parents were synced will be reflected in the dataset|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--project`|If creating a new dataset, specify the dataset's project name|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--name`|If creating a new dataset, specify the dataset's name|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--version`|Specify the dataset’s version. Default: `1.0.0`|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--tags`|Dataset user tags|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--skip-close`|Do not auto close dataset after syncing folders|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--chunk-size`| Set dataset artifact upload chunk size in MB. Default 512, (pass -1 for a single chunk). Example: 512, dataset will be split and uploaded in 512 MB chunks. |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -191,7 +195,7 @@ clearml-data sync [-h] [--id ID] [--dataset-folder DATASET_FOLDER] --folder FOLD
 List a dataset's contents.
 
 ```bash
-clearml-data list [-h] [--id ID] [--project PROJECT] [--name NAME]
+clearml-data list [-h] [--id ID] [--project PROJECT] [--name NAME] [--version VERSION]
                   [--filter [FILTER [FILTER ...]]] [--modified]
 ```
 
@@ -204,6 +208,7 @@ clearml-data list [-h] [--id ID] [--project PROJECT] [--name NAME]
 |`--id`|Dataset ID whose contents will be shown (alternatively, use project / name combination). Default: previously accessed dataset|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--project`|Specify dataset project name (if used instead of ID, dataset name is also required)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--name`|Specify dataset name (if used instead of ID, dataset project is also required)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--version`|Specify dataset version. Default: most recent version |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--filter`|Filter files based on folder / wildcard. Multiple filters are supported. Example: `folder/date_*.json folder/sub-folder`|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--modified`|Only list file changes (add / remove / modify) introduced in this version|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
@@ -211,16 +216,13 @@ clearml-data list [-h] [--id ID] [--project PROJECT] [--name NAME]
 
 <br/>
 
-## delete
+## set-description
 
-Delete an entire dataset from ClearML. This can also be used to delete a newly created dataset.
-
-This does not work on datasets with children.
+Sets the description of an existing dataset.
 
 ```bash
-clearml-data delete [-h] [--id ID] [--force]
+clearml-data set-description [-h] [--id ID] [--description DESCRIPTION]
 ```
-
 
 **Parameters**
 
@@ -228,8 +230,89 @@ clearml-data delete [-h] [--id ID] [--force]
 
 |Name|Description|Optional|
 |---|---|---|
-|`--id`|ID of dataset to be deleted. Default: previously created / accessed dataset that hasn't been finalized yet|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--force`|Force dataset deletion even if other dataset versions depend on it|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />||
+|`--id`|Dataset’s ID|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--description`|Description to be set|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+
+
+</div>
+
+<br/>
+
+
+## delete
+
+Deletes dataset(s). Pass any of the attributes of the dataset(s) you want to delete. Multiple datasets matching the 
+request will raise an exception, unless you pass `--entire-dataset` and `--force`. In this case, all matching datasets 
+will be deleted. 
+
+If a dataset is a parent to a dataset(s), you must pass `--force` in order to delete it. 
+
+:::warning
+Deleting a parent dataset may cause child datasets to lose data!
+:::
+
+```bash
+clearml-data delete [-h] [--id ID] [--project PROJECT] [--name NAME] 
+                    [--version VERSION] [--force] [--entire-dataset]
+```
+
+**Parameters**
+
+<div className="tbl-cmd">
+
+|Name|Description|Optional|
+|---|---|---|
+|`--id`|ID of the dataset to delete (alternatively, use project / name combination).|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--project`|Specify dataset project name (if used instead of ID, dataset name is also required)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--name`|Specify dataset name (if used instead of ID, dataset project is also required)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--version`|Specify dataset version|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`-–force`|Force dataset deletion even if other dataset versions depend on it. Must also be used if `--entire-dataset` flag is used|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--entire-dataset`|Delete all found datasets|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+
+</div>
+
+<br/>
+
+## rename
+
+Rename a dataset (and all of its versions).
+
+```bash
+clearml-data rename [-h] --new-name NEW_NAME --project PROJECT --name NAME
+```
+
+**Parameters**
+
+<div className="tbl-cmd">
+
+|Name|Description|Optional|
+|---|---|---|
+|`--new-name`|The new name of the dataset|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--project`|The project the dataset to be renamed belongs to|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--name`|The current name of the dataset(s) to be renamed|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+
+</div>
+
+<br/>
+
+
+## move
+
+Moves a dataset to another project 
+
+```bash
+clearml-data move [-h] --new-project NEW_PROJECT --project PROJECT --name NAME
+```
+
+**Parameters**
+
+<div className="tbl-cmd">
+
+|Name|Description|Optional|
+|---|---|---|
+|`--new-project`|The new project of the dataset|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--project`|The current project the dataset to be move belongs to|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--name`|The name of the dataset to be moved|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 
 </div>
 
@@ -252,10 +335,10 @@ clearml-data search [-h] [--ids [IDS [IDS ...]]] [--project PROJECT]
 
 |Name|Description|Optional|
 |---|---|---|
-|`--ids`|A list of dataset IDs|<img src="/docs/latest/icons/ico-optional-yes.svg" className="icon size-md center-md" />|
-|`--project`|The project name of the datasets|<img src="/docs/latest/icons/ico-optional-yes.svg" className="icon size-md center-md" />|
-|`--name`|A dataset name or a partial name to filter datasets by|<img src="/docs/latest/icons/ico-optional-yes.svg" className="icon size-md center-md" />|
-|`--tags`|A list of dataset user tags|<img src="/docs/latest/icons/ico-optional-yes.svg" className="icon size-md center-md" />|
+|`--ids`|A list of dataset IDs|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--project`|The project name of the datasets|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--name`|A dataset name or a partial name to filter datasets by|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--tags`|A list of dataset user tags|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 </div>
 
