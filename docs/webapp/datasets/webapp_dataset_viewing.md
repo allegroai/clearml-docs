@@ -2,8 +2,9 @@
 title: Dataset Details
 ---
 
-:::tip version compatibility 
-To use the WebApp's Dataset pages, you must use `clearml` and `clearml-server` versions 1.6+.  
+:::tip SDK version compatibility
+The datasets page shows datasets created with `clearml` v1.6 or newer.  
+Datasets created with earlier versions of `clearml` are available in their original project.  
 :::
 
 The dataset page lists the dataset's versions. For a selected version, the **Dataset Version Panel** shoes its lineage 

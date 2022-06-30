@@ -7,11 +7,6 @@ This page covers `clearml-data`, ClearML's file-based data management solution.
 See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced queryable dataset management solution.
 :::
 
-:::tip version compatibility 
-To use the WebApp's [Dataset pages](../webapp/datasets/webapp_dataset_page.md), you must use `clearml` and 
-`clearml-server` versions 1.6+.  
-:::
-
 The `clearml-data` utility is a CLI tool for controlling and managing your data with ClearML.  
 
 The following page provides a reference to `clearml-data`'s CLI commands. 
@@ -43,9 +38,8 @@ clearml-data create [-h] [--parents [PARENTS [PARENTS ...]]] [--project PROJECT]
 
 
 :::tip Dataset ID
-* To locate a dataset's ID, go to the dataset version’s info panel in the [Dataset UI](../webapp/datasets/webapp_dataset_viewing.md) 
-  where the ID is listed. If using `clearml` or `clearml-server` versions older than 1.6, go to the [dataset task's info 
-  panel](../webapp/webapp_exp_track_visual.md), where the ID is displayed in the task header.  
+* For datasets created with `clearml` v1.6 or newer on ClearML Server v1.6 or newer, find the ID in the dataset version’s info panel in the [Dataset UI](../webapp/datasets/webapp_dataset_viewing.md).  
+  For datasets created with earlier versions of `clearml`, or if using an earlier version of ClearML Server, find the ID in the task header of the [dataset task's info panel](../webapp/webapp_exp_track_visual.md).  
 * clearml-data works in a stateful mode so once a new dataset is created, the following commands
 do not require the `--id` flag.
 :::
