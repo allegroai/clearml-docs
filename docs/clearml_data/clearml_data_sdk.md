@@ -111,7 +111,7 @@ dataset the task is using. If you use `alias` with `overridable=True`, you can o
 remotely. 
 
 In case you want to get a modifiable dataset, you can get a newly created mutable dataset with the current one as its 
-parent, by passing `writable_copy=True` .
+parent, by passing `writable_copy=True`.
 
 Once a specific dataset object has been obtained, get a local copy of the dataset using one of the following options:
 * [`Dataset.get_local_copy()`](../references/sdk/dataset.md#get_local_copy) - get a read-only local copy of an entire dataset. 

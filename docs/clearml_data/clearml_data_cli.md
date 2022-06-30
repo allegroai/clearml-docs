@@ -241,7 +241,7 @@ clearml-data set-description [-h] [--id ID] [--description DESCRIPTION]
 
 ## delete
 
-Deletes dataset(s).  Pass any of the attributes of the dataset(s) you want to delete. Multiple datasets matching the 
+Deletes dataset(s). Pass any of the attributes of the dataset(s) you want to delete. Multiple datasets matching the 
 request will raise an exception, unless you pass `--entire-dataset` and `--force`. In this case, all matching datasets 
 will be deleted. 
 
