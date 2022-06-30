@@ -2,6 +2,10 @@
 title: Datasets Page
 ---
 
+:::tip version compatibility 
+To use the WebApp's Dataset pages, you must use `clearml` and `clearml-server` versions 1.6+.  
+:::
+
 Use the **Datasets** Page to navigate between and manage datasets. The page shows summaries 
 for all datasets created using [ClearML Data](../../clearml_data/clearml_data.md).
 

@@ -2,6 +2,10 @@
 title: Dataset Details
 ---
 
+:::tip version compatibility 
+To use the WebApp's Dataset pages, you must use `clearml` and `clearml-server` versions 1.6+.  
+:::
+
 The dataset page lists the dataset's versions. For a selected version, the **Dataset Version Panel** shoes its lineage 
 in graph form. 
 
