@@ -26,7 +26,7 @@ Dataset changes are stored using differentiable storage, meaning a version will 
 Local copies of datasets are always cached, so the same data never needs to be downloaded twice.
 When a dataset is pulled it will automatically pull all parent datasets and merge them into one output folder for you to work with.
 
-The [Dataset Versions](../webapp/pipelines/webapp_pipeline_viewing.md) page in the web UI displays dataset versions' 
+The [Dataset Versions](../webapp/datasets/webapp_dataset_viewing.md) page in the web UI displays dataset versions' 
 lineage and content information. See [dataset UI](../webapp/datasets/webapp_dataset_page.md) for more details.
 
 ## Setup
