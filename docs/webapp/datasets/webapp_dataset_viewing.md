@@ -61,7 +61,7 @@ to view:
 * **CONTENT** - Table summarizing version contents, including file names, file sizes, and hashes 
 
 <details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Dataset Content</summary>
+<summary className="cml-expansion-panel-summary">Version Content</summary>
 <div className="cml-expansion-panel-content">
 
 ![content](../../img/webapp_dataset_content.png)
@@ -74,7 +74,7 @@ to view:
   access [plot tools](../webapp_exp_track_visual.md#scalar-plot-tools). Click on a debug sample to expand it. 
 
 <details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Dataset Preview</summary>
+<summary className="cml-expansion-panel-summary">Version Preview</summary>
 <div className="cml-expansion-panel-content">
 
 ![preview](../../img/webapp_dataset_preview.png)
@@ -86,7 +86,7 @@ to view:
 * **CONSOLE** - The dataset version’s console output
 
 <details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Dataset Consolenp</summary>
+<summary className="cml-expansion-panel-summary">Version Console</summary>
 <div className="cml-expansion-panel-content">
 
 ![console](../../img/webapp_dataset_console.png)
