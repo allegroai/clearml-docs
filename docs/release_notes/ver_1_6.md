@@ -5,7 +5,7 @@ title: Version 1.6
 ### ClearML SDK 1.6.1
 
 **Bug Fixes**
-* Fix Task.get_tasks() fails when sending search_hidden=False
+* Fix `Task.get_tasks()` fails when sending `search_hidden=False`
 * Fix LightGBM example shows UserWarning
 
 ### ClearML SDK 1.6.0
