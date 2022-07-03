@@ -49,8 +49,8 @@ For datasets created with earlier versions of `clearml`, or if using an earlier 
 
 Use the `output_uri` parameter to specify a network storage target to upload the dataset files, and associated information 
 (such as previews) to (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://bucket/data`, `file:///mnt/share/data`). 
-By default, the dataset uploads to ClearML's file server. The `output_uri` parameter of [`Dataset.upload`](#uploading-files), 
-and the storage parameter of [`Dataset.sync_folder`](../references/sdk/dataset.md#sync_folder) overrides this parameter’s value.
+By default, the dataset uploads to ClearML's file server. The `output_uri` parameter of the [`Dataset.upload`](#uploading-files)
+method overrides this parameter’s value.
 
 The created dataset inherits the content of the `parent_datasets`. When multiple dataset parents are listed, 
 they are merged in order of specification. Each parent overrides any overlapping files from a previous parent dataset.
