@@ -117,11 +117,6 @@ Set a logging level for the experiment (see the standard Python [logging levels]
 
 #### Hyperparameters
 
-:::important
-In older versions of ClearML Server, the **CONFIGURATION** tab was named **HYPER PARAMETERS**, and it contained all
-parameters. The renamed tab contains a **HYPER PARAMETER** section, and subsections for hyperparameter groups.
-:::
-
 Add, change, or delete hyperparameters, which are organized in the **ClearML Web UI** in the following sections:
 
 * **Args** - Command line arguments and all older experiments parameters, except TensorFlow definitions (logged from code,
@@ -156,11 +151,6 @@ except experiments whose status is *Published* (read-only).
 
 
 #### Configuration Objects
-
-:::important
-In older versions of ClearML Server, the Task model configuration appeared in the **ARTIFACTS** tab **>** **MODEL
-CONFIGURATION** section. Task model configurations now appear in **CONFIGURATION** **>** **Configuration Objects**.
-:::
 
 **To add, change, or delete the Task model configurations:**
 
