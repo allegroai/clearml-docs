@@ -38,9 +38,8 @@ clearml-data create [-h] [--parents [PARENTS [PARENTS ...]]] [--project PROJECT]
 
 
 :::tip Dataset ID
-* To locate a dataset's ID, go to the dataset task's info panel in the [WebApp](../webapp/webapp_exp_track_visual.md). In the top of the panel, 
-to the right of the dataset task name, click `ID` and the dataset ID appears.
-
+* For datasets created with `clearml` v1.6 or newer on ClearML Server v1.6 or newer, find the ID in the dataset version’s info panel in the [Dataset UI](../webapp/datasets/webapp_dataset_viewing.md).  
+  For datasets created with earlier versions of `clearml`, or if using an earlier version of ClearML Server, find the ID in the task header of the [dataset task's info panel](../webapp/webapp_exp_track_visual.md).  
 * clearml-data works in a stateful mode so once a new dataset is created, the following commands
 do not require the `--id` flag.
 :::

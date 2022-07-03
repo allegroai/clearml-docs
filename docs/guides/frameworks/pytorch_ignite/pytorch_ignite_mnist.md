@@ -159,10 +159,6 @@ View the scalars, including training and validation metrics, in the experiment's
 
 ![image](../../../img/ignite_training.png)
 
-<br/>
-
-![image](../../../img/ignite_validation.png)
-
 ### Model Snapshots
  
 

@@ -26,6 +26,9 @@ Dataset changes are stored using differentiable storage, meaning a version will 
 Local copies of datasets are always cached, so the same data never needs to be downloaded twice.
 When a dataset is pulled it will automatically pull all parent datasets and merge them into one output folder for you to work with.
 
+The [Dataset Versions](../webapp/datasets/webapp_dataset_viewing.md) page in the web UI displays dataset versions' 
+lineage and content information. See [dataset UI](../webapp/datasets/webapp_dataset_page.md) for more details.
+
 ## Setup
 
 `clearml-data` comes built-in with the `clearml` python package! Just check out the [Getting Started](../getting_started/ds/ds_first_steps.md) 
@@ -39,59 +42,15 @@ ClearML Data offers two interfaces:
 
 For an overview of our recommendations for ClearML Data workflows and practices, see [Best Practices](best_practices.md).
 
-## WebApp 
-
-ClearML's WebApp provides a visual interface to your datasets through dataset tasks. Dataset tasks are categorized 
-as data-processing [task type](../fundamentals/task.md#task-types), and they are labeled with a `DATASET` system tag.
-
-Full log (calls / CLI) of the dataset creation process can be found in a dataset's **EXECUTION** section.
-
-Listing of the dataset differential snapshot, summary of files added / modified / removed and details of files in the 
-differential snapshot (location / size / hash), is available in the **ARTIFACTS** section. Download the dataset 
-by clicking  <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" />,
-next to the **FILE PATH**.
-
-The full dataset listing (all files included) is available in the **CONFIGURATION** section under **Dataset Content**. 
-This allows you to quickly compare two dataset contents and visually see the difference.
-The dataset genealogy DAG and change-set summary table is visualized in **PLOTS**
+## Dataset Version States
+The following table displays the possible states for a dataset version. 
 
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Dataset Contents</summary>
-<div className="cml-expansion-panel-content">
-
-![Dataset data WebApp](../img/dataset_data.png)
-
-</div>
-</details>
-
-<br/>
-
-View a DAG of the dataset dependencies (all previous dataset versions and their parents) in the dataset's page **> ARTIFACTS > state**.
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Data Dependency DAG</summary>
-<div className="cml-expansion-panel-content">
-
-![Dataset state WebApp](../img/dataset_data_state.png)
-
-</div>
-</details>
-
-
-Once a dataset has been finalized, view its genealogy in the dataset's
-page **>** **PLOTS**
-
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Dataset Genealogy</summary>
-<div className="cml-expansion-panel-content">
-
-![Dataset genealogy and summary](../img/dataset_genealogy_summary.png)
-
-</div>
-</details>
-
-
-
-
+| State | Description |
+|---|---|
+|*Uploading*| Dataset creation is in progress  |
+|*Failed*| Dataset creation was terminated with an error|
+|*Aborted*| Dataset creation was aborted by user before it was finalization |
+|*Final*| A dataset was created and finalized successfully | 
+|*Published*| The dataset is read-only. Publish a dataset to prevent changes to it | 
 
