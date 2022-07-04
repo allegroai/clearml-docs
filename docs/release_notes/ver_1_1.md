@@ -190,7 +190,7 @@ title: Version 1.1
 
 **Bug Fix**
 
-Fix PyJWT issue (limit dependency to `<2.2.0`) 
+- Fix PyJWT issue (limit dependency to `<2.2.0`) 
 
 ### ClearML SDK 1.1.1
 
