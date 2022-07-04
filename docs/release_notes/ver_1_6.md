@@ -2,6 +2,12 @@
 title: Version 1.6
 ---
 
+### ClearML SDK 1.6.2
+
+**Bug Fix**
+
+Fix format string construction sometimes causing delayed evaluation errors [ClearML GitHub issue #706](https://github.com/allegroai/clearml/issues/706)
+
 ### ClearML SDK 1.6.1
 
 **Bug Fixes**
