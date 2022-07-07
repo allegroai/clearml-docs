@@ -51,6 +51,12 @@ title: Version 1.6
 * Fix long loading time in UI experiment comparison
 * Fix slow performance of UI experiment plots and scalars in Chrome
 * Fix Delete action not appearing in bottom bar of UI pipeline runs table archive
+* Fix UI experiments not displaying dataset tasks created with `clearml` version lower than 1.6 
+* Fix UI projects with dataset tasks created with `clearml` version lower than 1.6 display incorrect statistics 
+* Fix maximizing image-plot chart in UI causes CORS error
+* Fix UI experiment's “Select A Public Model” modal missing "Updated" and "Description" column data
+* Fix UI experiments table's project filter displays duplicates
+* Fix UI projects display incorrect statistics
 * Fix clicking project with only hidden sub-projects doesn't navigate to the project's UI page
 * Fix passing empty string parameter name to `Task.set_parameters` causes a 500 error
 * Fix UI model page General tab's layout
@@ -58,7 +64,6 @@ title: Version 1.6
 * Fix example pipeline project created with "Generate Example" is empty
 * Fix example pipeline created with "Generate Example" is not displayed in project dashboard when "Show hidden projects" is enabled
 * Fix UI table/info-panel toggle doesn't update when switching viewing modes
-
 
 ### ClearML SDK 1.6.2
 
