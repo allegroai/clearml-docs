@@ -108,12 +108,13 @@ If the data and the configuration need to be restored:
 
 The following section contains a list of Custom Image URLs (exported in different formats) for each released ClearML Server version.
 
-### Latest Version - v1.5.0
+### Latest Version - v1.6.0
 
 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz)
 
 ### All Release Versions
 
+- v1.6.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-6-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-6-0.tar.gz)
 - v1.5.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-5-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-5-0.tar.gz)
 - v1.4.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-4-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-4-0.tar.gz)
 - v1.3.1 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-3-1.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-3-1.tar.gz)
