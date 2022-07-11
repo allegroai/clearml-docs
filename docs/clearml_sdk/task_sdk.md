@@ -523,7 +523,7 @@ To define parameters manually use the [`Task.set_parameters`](../references/sdk/
 name-value pairs in a parameter dictionary.
 
 Parameters can be designated into sections: specify a parameter’s section by prefixing its name, delimited with a slash 
-(i.e. `section_name/parameter_name’:value`). `General` is the default section.
+(i.e. `section_name/parameter_name:value`). `General` is the default section.
 
 Call the [`set_parameter`](../references/sdk/task.md#set_parameter) method to set a single parameter. 
 
@@ -566,7 +566,15 @@ print(task.get_parameters())
 ```
 
 Access a specific parameter with the [`Task.get_parameter`](../references/sdk/task.md#get_parameter) method specifying 
-the parameter name.
+the parameter name and section.
+
+```python
+param = task.get_parameter(name="Args/batch_size")
+```
+
+:::note Case sensitivity
+The parameters and their section names are case-sensitive 
+:::
 
 ### Tracking Python Objects
 
