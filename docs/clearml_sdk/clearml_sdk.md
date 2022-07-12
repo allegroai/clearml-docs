@@ -84,6 +84,11 @@ including local folders, S3, Google Cloud Storage, Azure Storage, and http(s).
 
 See the [StorageManager SDK reference page](../references/sdk/storage.md).
 
+### APIClient
+The `APIClient` class provides a Pythonic interface to access ClearML's backend REST API.
+
+See an [overview](apiclient_sdk.md) for APIClient usage. 
+
 ### ClearmlJob 
 Use the ClearmlJob to create and manage jobs based on existing tasks. The class supports changing a job's parameters, 
 configurations, and other execution details. 
