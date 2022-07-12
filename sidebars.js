@@ -206,6 +206,7 @@ module.exports = {
         'references/api/queues',
         'references/api/workers',
         'references/api/events',
+        'references/api/models',
         'references/api/tasks',
     ]
 };
