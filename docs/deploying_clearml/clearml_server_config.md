@@ -328,7 +328,8 @@ Modify the following settings for the watchdog:
 
 ### CORS Configuration
 
-In the ClearML Server's `/opt/clearml/config/apiserver.conf` file's `cors` section, you can configure CORS settings:
+To enable CORS on your ClearML File Server, edit the ClearML Server's `/opt/clearml/config/apiserver.conf` file's `cors` 
+section. For example:
 
 ```
 cors {
@@ -339,7 +340,8 @@ cors {
 }
 ```    
 
-See the [Flask-Cors documentation](https://flask-cors.corydolphin.com/en/latest/api.html) for all initialization options.
+See the [Flask-Cors documentation](https://flask-cors.corydolphin.com/en/latest/api.html) for detailed initialization 
+options.
 
 ### Custom UI Context Menu Actions
 
