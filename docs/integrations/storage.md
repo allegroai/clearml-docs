@@ -131,7 +131,7 @@ azure.storage {
 ```
 
 ### Configuring Google Storage
-To configure Google Storage, specify the project and the path to the credentials json file.
+To configure Google Storage, specify the project and the path to the credentials JSON file.
 It's also possible to specify credentials for a specific bucket.
 
 ```
