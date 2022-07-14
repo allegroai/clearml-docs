@@ -5,7 +5,7 @@ slug: /guides
 ---
 
 
-To help learn and use ClearML, we provide example scripts that demonstrates how to use ClearML's various features. 
+To help learn and use ClearML, we provide example scripts that demonstrate how to use ClearML's various features. 
 
 Examples scripts are in the [examples](https://github.com/allegroai/clearml/tree/master/examples) folder of the GitHub `clearml` 
 repository. They are also pre-loaded in the **ClearML Server**:
