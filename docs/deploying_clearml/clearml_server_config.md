@@ -308,7 +308,7 @@ Modify the following settings for the watchdog:
 **To configure the non-responsive watchdog for the ClearML Server:**
 
 1. In the ClearML Server `/opt/clearml/config/services.conf` file, add or edit the `tasks.non_responsive_tasks_watchdog` 
-   and specify the watchdog settings.
+   section and specify the watchdog settings.
 
     For example:
 
