@@ -72,8 +72,10 @@ The ClearML Server uses the following configuration files:
 * `services.conf`
 
 When starting up, the ClearML Server will look for these configuration files, in the `/opt/clearml/config` directory
-(this path can be modified using the `CLEARML_CONFIG_DIR` environment variable). If these files don't exist, you can add
-them manually. The default configuration files are in the [clearml-server](https://github.com/allegroai/clearml-server/tree/master/apiserver/config/default) repository.
+(this path can be modified using the `CLEARML_CONFIG_DIR` environment variable). The default configuration files are in the [clearml-server](https://github.com/allegroai/clearml-server/tree/master/apiserver/config/default) repository.
+
+If you want to modify server configuration, and the relevant configuration file doesn't exist, you can create the file, 
+and input the relevant modified configuration. 
 
 :::note
  Within the default structure, the `services.conf` file is represented by a subdirectory with service-specific `.conf` files.
@@ -135,7 +137,8 @@ For example, given the default `secure.conf` file contents:
 ```
 
 :::tip
-If the `secure.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+If the `secure.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
+the modified configuration
 :::
 
 the default secret for the system's apiserver component can be overridden by setting the following environment variable: 
@@ -169,7 +172,8 @@ The following example, which is based on AWS load balancing, demonstrates the co
         }
 
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
+   the modified configuration
    :::
 
 1. Use the following load balancer configuration:
@@ -275,7 +279,8 @@ Without web login authentication, ClearML Server does not restrict access (by de
         }
 
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
+   the modified configuration
    :::
 
 1. Restart ClearML Server.
@@ -308,7 +313,8 @@ You can also use hashed passwords instead of plain-text passwords. To do that:
    ```
    
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
+   the modified configuration
    :::
 
 ### Non-responsive Task Watchdog
@@ -342,7 +348,8 @@ Modify the following settings for the watchdog:
         }
    
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
+   the modified configuration
    :::
         
 1. Restart ClearML Server.
@@ -362,7 +369,8 @@ cors {
 ```    
 
 :::tip
-If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
+the modified configuration
 :::
 
 See the [Flask-Cors documentation](https://flask-cors.corydolphin.com/en/latest/api.html) for detailed initialization 
@@ -408,7 +416,8 @@ organization.ui_actions: {
 ```
 
 :::tip
-If the `services.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+If the `services.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
+the modified configuration
 :::
 
 The action will appear in the context menu for the object type in which it was specified:
