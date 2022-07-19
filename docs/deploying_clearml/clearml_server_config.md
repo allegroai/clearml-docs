@@ -365,7 +365,6 @@ cors {
 If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
 :::
 
-
 See the [Flask-Cors documentation](https://flask-cors.corydolphin.com/en/latest/api.html) for detailed initialization 
 options.
 
