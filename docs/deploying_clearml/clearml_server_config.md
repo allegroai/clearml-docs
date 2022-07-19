@@ -137,7 +137,7 @@ For example, given the default `secure.conf` file contents:
 ```
 
 :::tip
-If the `secure.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+If the `secure.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or
 an alternate folder you configured), and input the modified configuration
 :::
 
@@ -172,7 +172,7 @@ The following example, which is based on AWS load balancing, demonstrates the co
         }
 
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or
    an alternate folder you configured), and input the modified configuration
    :::
 
@@ -279,7 +279,7 @@ Without web login authentication, ClearML Server does not restrict access (by de
         }
 
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or 
    an alternate folder you configured), and input the modified configuration
    :::
 
@@ -313,7 +313,7 @@ You can also use hashed passwords instead of plain-text passwords. To do that:
    ```
    
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or 
    an alternate folder you configured), and input the modified configuration
    :::
 
@@ -348,7 +348,7 @@ Modify the following settings for the watchdog:
         }
    
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or 
    an alternate folder you configured), and input the modified configuration
    :::
         
@@ -369,7 +369,7 @@ cors {
 ```    
 
 :::tip
-If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or
 an alternate folder you configured), and input the modified configuration
 :::
 
@@ -416,7 +416,7 @@ organization.ui_actions: {
 ```
 
 :::tip
-If the `services.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+If the `services.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or 
 an alternate folder you configured), and input the modified configuration
 :::
 
