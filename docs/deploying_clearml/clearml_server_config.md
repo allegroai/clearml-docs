@@ -134,6 +134,10 @@ For example, given the default `secure.conf` file contents:
     }
 ```
 
+:::tip
+If the `secure.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+:::
+
 the default secret for the system's apiserver component can be overridden by setting the following environment variable: 
 `CLEARML__SECURE__CREDENTIALS__APISERVER__USER_SECRET="my-new-secret"`
 
@@ -163,6 +167,10 @@ The following example, which is based on AWS load balancing, demonstrates the co
             max_age: 99999999999
           }
         }
+
+   :::tip
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+   :::
 
 1. Use the following load balancer configuration:
 
@@ -266,6 +274,10 @@ Without web login authentication, ClearML Server does not restrict access (by de
             }
         }
 
+   :::tip
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+   :::
+
 1. Restart ClearML Server.
 
 ### Using Hashed Passwords
@@ -277,22 +289,27 @@ You can also use hashed passwords instead of plain-text passwords. To do that:
    b'JDJiJDEyJDk3OHBFcHFlNEsxTkFoZDlPcGZsbC5sU1pmM3huZ1RpeHc0ay5WUjlzTzN5WE1WRXJrUmhp'
    ```
  - Use the command's output as the user's password. Resulting `apiserver.conf` file should look as follows:
-
-        auth {
-            # Fixed users login credentials
-            # No other user will be able to login
-            fixed_users {
-                enabled: true
-                pass_hashed: true
-                users: [
-                    {
-                        username: "jane"
-                        password: "JDJiJDEyJDk3OHBFcHFlNEsxTkFoZDlPcGZsbC5sU1pmM3huZ1RpeHc0ay5WUjlzTzN5WE1WRXJrUmhp"
-                        name: "Jane Doe"
-                    }
-                ]
-            }
+   ```
+   auth {
+        # Fixed users login credentials
+        # No other user will be able to login
+        fixed_users {
+            enabled: true
+            pass_hashed: true
+            users: [
+                {
+                    username: "jane"
+                    password: "JDJiJDEyJDk3OHBFcHFlNEsxTkFoZDlPcGZsbC5sU1pmM3huZ1RpeHc0ay5WUjlzTzN5WE1WRXJrUmhp"
+                    name: "Jane Doe"
+                }
+            ]
         }
+    }
+   ```
+   
+   :::tip
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+   :::
 
 ### Non-responsive Task Watchdog
 
@@ -323,6 +340,10 @@ Modify the following settings for the watchdog:
                 watch_interval_sec: 900
             }
         }
+   
+   :::tip
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+   :::
         
 1. Restart ClearML Server.
 
@@ -339,6 +360,11 @@ cors {
    supports_credentials: true
 }
 ```    
+
+:::tip
+If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+:::
+
 
 See the [Flask-Cors documentation](https://flask-cors.corydolphin.com/en/latest/api.html) for detailed initialization 
 options.
@@ -381,6 +407,10 @@ organization.ui_actions: {
   ]
 }
 ```
+
+:::tip
+If the `services.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory
+:::
 
 The action will appear in the context menu for the object type in which it was specified:
 * Task, model, dataview - Right-click an object in the [experiments](../webapp/webapp_exp_table.md), [models](../webapp/webapp_model_table.md), 
