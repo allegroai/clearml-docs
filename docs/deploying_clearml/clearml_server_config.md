@@ -137,8 +137,8 @@ For example, given the default `secure.conf` file contents:
 ```
 
 :::tip
-If the `secure.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
-the modified configuration
+If the `secure.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+an alternate folder you configured), and input the modified configuration
 :::
 
 the default secret for the system's apiserver component can be overridden by setting the following environment variable: 
@@ -172,8 +172,8 @@ The following example, which is based on AWS load balancing, demonstrates the co
         }
 
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
-   the modified configuration
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+   an alternate folder you configured), and input the modified configuration
    :::
 
 1. Use the following load balancer configuration:
@@ -279,8 +279,8 @@ Without web login authentication, ClearML Server does not restrict access (by de
         }
 
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
-   the modified configuration
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+   an alternate folder you configured), and input the modified configuration
    :::
 
 1. Restart ClearML Server.
@@ -313,8 +313,8 @@ You can also use hashed passwords instead of plain-text passwords. To do that:
    ```
    
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
-   the modified configuration
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+   an alternate folder you configured), and input the modified configuration
    :::
 
 ### Non-responsive Task Watchdog
@@ -348,8 +348,8 @@ Modify the following settings for the watchdog:
         }
    
    :::tip
-   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
-   the modified configuration
+   If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+   an alternate folder you configured), and input the modified configuration
    :::
         
 1. Restart ClearML Server.
@@ -369,8 +369,8 @@ cors {
 ```    
 
 :::tip
-If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
-the modified configuration
+If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+an alternate folder you configured), and input the modified configuration
 :::
 
 See the [Flask-Cors documentation](https://flask-cors.corydolphin.com/en/latest/api.html) for detailed initialization 
@@ -416,8 +416,8 @@ organization.ui_actions: {
 ```
 
 :::tip
-If the `services.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory, and input
-the modified configuration
+If the `services.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or in 
+an alternate folder you configured), and input the modified configuration
 :::
 
 The action will appear in the context menu for the object type in which it was specified:
