@@ -54,7 +54,14 @@ module.exports = {
                     'webapp/pipelines/webapp_pipeline_page', 'webapp/pipelines/webapp_pipeline_table', 'webapp/pipelines/webapp_pipeline_viewing'
                 ]
             },
-            'webapp/webapp_workers_queues', 'webapp/webapp_profile']
+            'webapp/webapp_workers_queues',
+            {
+                'ClearML Applications': [
+                    'webapp/applications/apps_overview'
+                ]
+
+            }
+                , 'webapp/webapp_profile']
         },
         {'Configurations': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
         //'References': ['references/clearml_ref','references/clearml_agent_ref'],
