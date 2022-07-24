@@ -60,8 +60,8 @@ module.exports = {
                     'webapp/applications/apps_overview'
                 ]
 
-            }
-                , 'webapp/webapp_profile']
+            },
+            'webapp/webapp_profile']
         },
         {'Configurations': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
         //'References': ['references/clearml_ref','references/clearml_agent_ref'],
