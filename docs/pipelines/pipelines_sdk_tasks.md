@@ -50,7 +50,7 @@ or [functions in your code](#steps-from-functions). When the pipeline runs, the 
 to the specified structure. 
 
 ### Steps from Tasks
-Creating a pipeline step from an existing ClearML task means that when the step is run,  the task will be cloned, and a 
+Creating a pipeline step from an existing ClearML task means that when the step is run, the task will be cloned, and a 
 new task will be launched through the configured execution queue (the original task is unmodified). The new task’s 
 parameters can be [specified](#parameter_override).
 
@@ -108,6 +108,11 @@ Examples:
 ### Steps from Functions
 Creating a pipeline step from a function means that when the function is called, it will be transformed into a ClearML task, 
 translating its arguments into parameters, and returning values into artifacts.  
+
+:::info Function to ClearML Task conversion
+As each function is transformed into an independently executed step, it needs to be self-contained. To facilitate this, 
+all package imports inside the function are automatically logged as required packages for the pipeline step. 
+:::
 
 Function steps are added using the  [`PipelineController.add_function_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) 
 method:
