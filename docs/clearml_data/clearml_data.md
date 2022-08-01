@@ -17,14 +17,17 @@ ClearML Data Management solves two important challenges:
 **We believe Data is not code**. It should not be stored in a git tree, because progress on datasets is not always linear.
 Moreover, it can be difficult and inefficient to find on a git tree the commit associated with a certain version of a dataset.
 
-A `clearml-data` dataset is a collection of files, stored on a central storage location (S3 / GS / Azure / Network Storage).
-Datasets can be set up to inherit from other datasets, so data lineages can be created,
-and users can track when and how their data changes.
+Use ClearML Data to create, manage, and version your datasets. Store your files in any storage location of your choice 
+(S3 / GS / Azure / Network Storage) by setting the dataset’s upload destination (see [`--storage`](clearml_data_cli.md#upload) 
+CLI option or [`output_url`](clearml_data_sdk.md#uploading-files) parameter). 
 
-Dataset changes are stored using differentiable storage, meaning a version will store the change-set from its previous dataset parents.
+Datasets can be set up to inherit from other datasets, so data lineages can be created, and users can track when and how 
+their data changes. Dataset changes are stored using differentiable storage, meaning a version will store the change-set 
+from its previous dataset parents.
 
-Local copies of datasets are always cached, so the same data never needs to be downloaded twice.
-When a dataset is pulled it will automatically pull all parent datasets and merge them into one output folder for you to work with.
+You can get a local copy of your dataset on any machine. Local copies of datasets are always cached, so the same data 
+never needs to be downloaded twice. When a dataset is pulled it will automatically pull all parent datasets and merge 
+them into one output folder for you to work with.
 
 The [Dataset Versions](../webapp/datasets/webapp_dataset_viewing.md) page in the web UI displays dataset versions' 
 lineage and content information. See [dataset UI](../webapp/datasets/webapp_dataset_page.md) for more details.

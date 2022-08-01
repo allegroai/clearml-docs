@@ -180,6 +180,9 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 ## Execution
 
 ### Spinning Up an Agent
+You can spin up an agent on any machine: on-prem and/or cloud instance. When spinning up an agent, you assign it to 
+service a queue(s). Utilize the machine by enqueuing tasks to the queue that the agent is servicing, and the agent will 
+pull and execute the tasks. 
 
 #### Executing an Agent
 To execute an agent, listening to a queue, run:
