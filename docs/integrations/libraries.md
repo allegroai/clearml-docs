@@ -20,6 +20,7 @@ Just follow the [getting started](/getting_started/ds/ds_first_steps.md) to auto
 - [XGBoost](https://github.com/allegroai/clearml/tree/master/examples/frameworks/xgboost)
 - [MegEngine](https://github.com/allegroai/clearml/tree/master/examples/frameworks/megengine)
 - [CatBoost](https://github.com/allegroai/clearml/tree/master/examples/frameworks/catboost)
+- [OpenMMLab](https://github.com/allegroai/clearml/tree/master/examples/frameworks/openmmlab)  
 - [Hydra](https://github.com/allegroai/clearml/tree/master/examples/frameworks/hydra)
 - [Python Fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
 - [click](https://github.com/allegroai/clearml/tree/master/examples/frameworks/click)

@@ -638,4 +638,4 @@ The above example sets the "backbone" property in a task.
 ![Task user properties](../img/fundamentals_task_config_properties.png)
 
 ## SDK Reference
-For detailed information, see the complete [Task SDK reference page](../references/sdk/task.md) 
+For detailed information, see the complete [Task SDK reference page](../references/sdk/task.md). 
