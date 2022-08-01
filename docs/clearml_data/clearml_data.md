@@ -18,8 +18,8 @@ ClearML Data Management solves two important challenges:
 Moreover, it can be difficult and inefficient to find on a git tree the commit associated with a certain version of a dataset.
 
 Use ClearML Data to create, manage, and version your datasets. Store your files in any storage location of your choice 
-(S3 / GS / Azure / Network Storage) by setting the dataset’s upload destination (see [--storage](clearml_data_cli.md#upload) 
-CLI option or [output_url](clearml_data_sdk.md#uploading-files) parameter). 
+(S3 / GS / Azure / Network Storage) by setting the dataset’s upload destination (see [`--storage`](clearml_data_cli.md#upload) 
+CLI option or [`output_url`](clearml_data_sdk.md#uploading-files) parameter). 
 
 Datasets can be set up to inherit from other datasets, so data lineages can be created, and users can track when and how 
 their data changes. Dataset changes are stored using differentiable storage, meaning a version will store the change-set 

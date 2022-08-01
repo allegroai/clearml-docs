@@ -8,8 +8,8 @@ See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced querya
 :::
 
 `clearml-data` is a data management CLI tool that comes as part of the `clearml` python package. Use `clearml-data` to 
-create, modify, and manage your datasets. You can upload your dataset to any storage service of your choice  (S3 / GS / 
-Azure / Network Storage) by setting the dataset’s upload destination (see [--storage](#upload)).  Once you have uploaded 
+create, modify, and manage your datasets. You can upload your dataset to any storage service of your choice (S3 / GS / 
+Azure / Network Storage) by setting the dataset’s upload destination (see [`--storage`](#upload)). Once you have uploaded 
 your dataset, you can access it from any machine. 
 
 The following page provides a reference to `clearml-data`'s CLI commands. 
