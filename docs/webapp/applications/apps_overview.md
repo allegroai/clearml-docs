@@ -13,7 +13,7 @@ Use ClearML’s GUI Applications to manage ML workloads and automatically run yo
 Configure and launch app instances, then track their execution from the app dashboard.
 
 ClearML provides the following applications:
-* **AWS Autoscaler** - Optimize AWS EC2 instance usage according to a defined instance budget
+* [**AWS Autoscaler**](apps_aws_autoscaler.md) - Optimize AWS EC2 instance usage according to a defined instance budget
 * **GCP Autoscaler** - Optimize  GCP instance usage according to a defined instance budget
 * **Hyperparameter Optimization** - Find the parameter values that yield the best performing models
 * **Nvidia Clara** - Train models using Nvidia’s Clara framework

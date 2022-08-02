@@ -57,7 +57,8 @@ module.exports = {
             'webapp/webapp_workers_queues',
             {
                 'ClearML Applications': [
-                    'webapp/applications/apps_overview'
+                    'webapp/applications/apps_overview',
+                    'webapp/applications/apps_aws_autoscaler'
                 ]
 
             },
