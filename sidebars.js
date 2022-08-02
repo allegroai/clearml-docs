@@ -58,7 +58,8 @@ module.exports = {
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',
-                    'webapp/applications/apps_aws_autoscaler'
+                    'webapp/applications/apps_aws_autoscaler',
+                    'webapp/applications/apps_gcp_autoscaler'
                 ]
 
             },
