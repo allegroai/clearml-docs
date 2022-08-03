@@ -67,5 +67,5 @@ The HPO dashboard shows:
 * Optimization Objective - Objective metric values per experiment
 * Parallel coordinates - A visualization of parameter value impact on optimization objective
 * Summary - Experiment summary table: experiment execution information, objective metric and parameter values.
-* Budget - Remaining budget percentage for iterations and optimization jobs
-* Resources - Number of workers listening to the execution queue, and the number of currently running optimization tasks
+* Budget - Available iterations and tasks budget (percentage, out of the values defined in the HPO instance's advanced configuration)
+* Resources - Number of workers servicing the HPO execution queue, and the number of currently running optimization tasks
