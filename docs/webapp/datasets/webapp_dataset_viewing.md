@@ -7,7 +7,7 @@ The datasets page shows datasets created with `clearml` v1.6 or newer.
 Datasets created with earlier versions of `clearml` are available in their original project.  
 :::
 
-The dataset page lists the dataset's versions. For a selected version, the **Dataset Version Panel** shoes its lineage 
+The dataset page lists the dataset's versions. For a selected version, the **Dataset Version Panel** shows its lineage 
 in graph form. 
 
 ![Dataset lineage](../../img/webapp_dataset_lineage.png)
