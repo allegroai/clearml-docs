@@ -18,9 +18,9 @@ queue (until reaching the defined maximum number of instances). You can add an i
 each instance is spun up. 
 
 ## Autoscaler Instance Configuration
-* **AWS Credentials** 
+* **AWS Credentials** - Credentials with which the autoscaler can access your AWS account. See [Generating AWS IAM Credentials](#generating-aws-iam-credentials)
     * Use IAM role - Select if you are running your autoscalers on your own EC2 instances which are attached to an [IAM 
-      role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html). In such a case, no AWS keys are required.
+      role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html). In such a case, no AWS IAM credentials are required.
     * AWS Region - [AWS Region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.Regions) 
       where the EC2 instances will be spun up
     * AWS Access Key ID and AWS Secret Access Key - The credentials with which the autoscaler will access your AWS 
@@ -93,3 +93,52 @@ The autoscaler dashboard shows:
 * Console: the application log containing everything printed to stdout and stderr appears in the console log. The log 
   shows polling results of the autoscaler’s associated queues, including the number of tasks enqueued, and updates EC2 
   instances being spun up/down.  
+
+## Generating AWS IAM Credentials
+
+The autoscaler app accesses your AWS account with the credentials you provide. 
+
+You will need to create an AWS policy which grants the autoscaler app the required access privileges, attach the policy 
+to an IAM user, and create credentials keys for that user to configure in the autoscaler app: 
+
+1. In your AWS account, go to Services **Menu > IAM > Policies** 
+    
+   ![AWS Policies](../../img/apps_aws_permissions_1.png)
+
+1. Under policies, click **Create Policy** 
+
+   ![AWS create policy](../../img/apps_aws_permissions_2.png)
+
+1. In the **Create Policy** modal, click on the JSON option
+
+   ![AWS create policy JSON](../../img/apps_aws_permissions_3.png)
+
+1. Insert the following policy into the text box: 
+
+    ```
+    {                  
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "VisualEditor0",
+                "Effect": "Allow",
+                "Action": [
+                    "ec2:DescribeInstances",
+                    "ec2:TerminateInstances",
+                    "ec2:RequestSpotInstances",
+                    "ec2:DeleteTags",
+                    "ec2:CreateTags",
+                    "ec2:RunInstances",
+                    "ec2:DescribeSpotInstanceRequests",
+                    "ec2:GetConsoleOutput"
+                ],
+                "Resource": "*"
+            }
+        ]
+    }
+    ```
+   
+1. Complete creating the policy
+1. Attach the created policy to an IAM user/group whose credentials will be used in the autoscaler app (you can create a 
+   new IAM user/group for this purpose)
+1. Obtain a set of AWS IAM credentials for the user/group to which  you have attached the created policy in the previous step  
