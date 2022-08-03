@@ -28,7 +28,7 @@ The ClearML Web UI is composed of the following pages:
 * [Datasets](datasets/webapp_dataset_page.md) <img src="/docs/latest/icons/ico-side-bar-datasets.svg" alt="Datasets" className="icon size-md space-sm" /> - View and manage your datasets. 
 * [Pipelines](pipelines/webapp_pipeline_page.md) <img src="/docs/latest/icons/ico-pipelines.svg" className="icon size-md space-sm" /> - View and manage your pipelines.
 * [Workers and Queues](webapp_workers_queues.md) <img src="/docs/latest/icons/ico-workers.svg" alt="Workers and Queues" className="icon size-md space-sm" /> - The resource monitoring and queues management page.
-  
+* [Applications](applications/apps_overview.md)  <img src="/docs/latest/icons/ico-applications.svg" alt="ClearML Apps" className="icon size-md space-sm" /> - ClearML's GUI applications for no-code workflow execution.
 * [Settings](webapp_profile.md) (available through the profile menu <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" />) - 
   Manage your ClearML user account:
   * Set WebApp preferences
