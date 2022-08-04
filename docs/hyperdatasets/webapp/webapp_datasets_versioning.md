@@ -6,7 +6,14 @@ Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying
 deleting [Dataset versions](../dataset.md#dataset-versioning).
 
 ## Dataset Version History
-The WebApp (UI) will present your dataset version structure in one of two ways, depending on the structure implemented.
+The WebApp (UI) presents your dataset version structure in [simple view](#simple-view) or [advanced view](#advanced-view), 
+depending on the structure implemented. 
+
+Use the search bar to find specific versions. You can query by version name or version description. The search returns
+all versions that match the query. If a version matching the query is a child or snapshot version, its parent 
+versions also appear in the results in a muted color.
+
+![Dataset version search](../../img/hyperdatasets/hyperdataset_search_2.png)
 
 ## Simple View 
 While your dataset maintains a simple (linear) [version structure](../dataset.md#dataset-version-structure), the WebApp 
