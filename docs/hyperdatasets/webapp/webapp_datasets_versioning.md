@@ -9,9 +9,10 @@ deleting [Dataset versions](../dataset.md#dataset-versioning).
 The WebApp (UI) presents your dataset version structure in [simple view](#simple-view) or [advanced view](#advanced-view), 
 depending on the structure implemented. 
 
-Use the search bar to find specific versions. You can query by version name or version description. The search returns
-all versions that match the query. If a version matching the query is a child or snapshot version, its parent 
-versions also appear in the results in a muted color.
+Use the search bar to find specific versions. You can query by version name or version description. The search returns 
+all versions that match the query.
+
+In advanced view, parent versions that do not match the query where a child version does appear in a muted color.
 
 ![Dataset version search](../../img/hyperdatasets/hyperdataset_search_2.png)
 
