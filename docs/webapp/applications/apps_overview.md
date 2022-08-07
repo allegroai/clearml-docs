@@ -15,9 +15,9 @@ Configure and launch app instances, then track their execution from the app dash
 ClearML provides the following applications:
 * [**AWS Autoscaler**](apps_aws_autoscaler.md) - Optimize AWS EC2 instance usage according to a defined instance budget
 * [**GCP Autoscaler**](apps_gcp_autoscaler.md) - Optimize  GCP instance usage according to a defined instance budget
-* [**Hyperparameter Optimization**](apps_hpo) - Find the parameter values that yield the best performing models
+* [**Hyperparameter Optimization**](apps_hpo.md) - Find the parameter values that yield the best performing models
 * **Nvidia Clara** - Train models using Nvidia’s Clara framework
-* **Project Dashboard** - High-level project monitoring with Slack alerts
+* [**Project Dashboard**](apps_dashboard.md) - High-level project monitoring with Slack alerts
 
 ## App Pages Layout
 Each application’s page is split into two sections:
