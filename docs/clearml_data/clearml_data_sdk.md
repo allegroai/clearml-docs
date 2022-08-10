@@ -42,7 +42,8 @@ dataset = Dataset.create(
   dataset_project='dataset project', 
   parent_datasets=[PARENT_DS_ID_1, PARENT_DS_ID_2],
   dataset_version="1.0",
-  output_uri="gs://bucket-name/folder"	
+  output_uri="gs://bucket-name/folder",
+  description='my dataset description'
 )
 ```
 
@@ -142,7 +143,7 @@ If a file is already in a dataset, but it has been modified, it can be added aga
 upload the file diff.
 
 ```python
-dataset = Dataset.create()
+dataset = Dataset.create(dataset_name="my dataset", dataset_project="example project")
 dataset.add_files(path="path/to/folder_or_file")
 ```
 
@@ -166,7 +167,7 @@ method. Input the `source_url` argument, which can be a link from cloud storage 
 or local / network storage (`file://`). 
 
 ```python
-dataset = Dataset.create()
+dataset = Dataset.create(dataset_name="my dataset", dataset_project="example project")
 dataset.add_external_files(
   source_url="s3://my/bucket/path_to_folder_or_file", 
   dataset_path="/my_dataset/new_folder/"
