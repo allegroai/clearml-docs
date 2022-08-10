@@ -220,6 +220,7 @@ To assist in experiment analysis, the comparison page supports:
 * [Changing compared experiments selection](#changing-compared-experiments-selection) 
 * [Finding the next or previous difference](#finding-the-next-or-previous-difference).
 * [Hiding identical fields](#hiding-identical-fields)
+* [Searching all text](#searching-all-text)
 * [Choosing a different base experiment](#choosing-a-different-base-experiment)
 * [Dynamic ordering](#dynamic-ordering-of-the-compared-experiments) of the compared experiments
 * [Sharing experiments](#sharing-experiments)
@@ -250,6 +251,14 @@ To assist in experiment analysis, the comparison page supports:
 ### Hiding Identical Fields
 
 Move the **Hide Identical Fields** slider to "on" mode to see only fields that are different.
+
+
+
+### Searching All Text
+
+Search all text in the comparison.
+
+
 
 ### Choosing a Different Base Experiment
 
