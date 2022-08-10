@@ -52,7 +52,6 @@ aws {
                 secret: ""
                 verify: "/path/to/ca/bundle.crt" OR false to not verify
                 use_credentials_chain: false
-                
             },
                 
         ]
