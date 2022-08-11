@@ -29,6 +29,9 @@ You can also enable using a credentials chain to let Boto3
 pick the right credentials. This includes picking credentials from environment variables, a credential file, and metadata service 
 with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
 
+You can specify additional [ExtraArgs](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#the-extraargs-parameter) 
+to pass to boto3 when uploading files. You can set this on a per-bucket basis. 
+
 ```
 aws {
     s3 {
@@ -38,7 +41,9 @@ aws {
         key: ""
         secret: ""
         region: ""
-
+        use_credentials_chain: false
+        extra_args: {}
+        
         credentials: [
             # specifies key/secret credentials to use when handling s3 urls (read or write)
             {
