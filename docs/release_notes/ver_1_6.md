@@ -2,6 +2,11 @@
 title: Version 1.6
 ---
 
+### ClearML SDK 1.6.4
+
+**Bug Fix**
+* Fix `APIClient` fails when calling `get_all` endpoints with API 2.20 (affects CLI tools such as `clearml-session`)
+
 ### ClearML SDK 1.6.3
 
 **New Features and Improvements**
