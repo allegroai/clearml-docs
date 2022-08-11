@@ -25,7 +25,7 @@ the following types of parameters:
   * [click](https://click.palletsprojects.com) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py).
   * [argparse](https://docs.python.org/3/library/argparse.html) - see code example [here](../guides/frameworks/pytorch/pytorch_tensorboardx.md).
   * [Python Fire](https://github.com/google/python-fire)  - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
-  * [LightningCLI](https://pytorch-lightning.readthedocs.io/en/stable/common/lightning_cli.html) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
+  * [LightningCLI](https://pytorch-lightning.readthedocs.io/en/stable/api/pytorch_lightning.utilities.cli.html) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
 * TensorFlow Definitions (`absl-py`). See examples of ClearML's automatic logging of TF Defines:
     * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
     * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
