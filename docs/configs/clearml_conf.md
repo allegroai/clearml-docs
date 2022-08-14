@@ -715,7 +715,7 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
 **`sdk.aws.s3.extra_args`** (*dict*)
 
 * Additional [ExtraArgs](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#the-extraargs-parameter) 
-  passed to boto3 when uploading files. This can be set on a per-bucket under `sdk.aws.s3.credentials`.
+  passed to boto3 when uploading files. This can be set per-bucket under `sdk.aws.s3.credentials`.
 
 ---
     
