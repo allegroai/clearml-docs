@@ -1,5 +1,5 @@
 ---
-title: ClearML Agent
+title: ClearML Agent Overview
 ---
 
 **ClearML Agent** is a virtual environment and execution manager for DL / ML solutions on GPU machines. It integrates with the **ClearML Python Package** and ClearML Server to provide a full AI cluster solution. <br/>
@@ -33,7 +33,7 @@ automated workflows in one (or both) of the following ways:
 * By using the **ClearML Web UI** (without directly working with code), by enqueuing experiments 
 to the queue that a **ClearML Agent** is listening to.
 
-For more information, see [ClearML Agent Reference](references/clearml_agent_ref.md), 
+For more information, see [ClearML Agent Reference](clearml_agent/clearml_agent_ref.md), 
 and [configuration options](configs/clearml_conf.md#agent-section).
 
 
