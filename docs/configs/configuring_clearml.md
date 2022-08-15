@@ -17,7 +17,7 @@ from the vault are applied on top of the configuration specified in `clearml.con
 
 The different ClearML configuration methods take precedence as summarized in the following list (higher ordered methods 
 override the lower ones):
-1. Command-line arguments (e.g. [clearml-task](../apps/clearml_task.md#command-line-options), [clearml-agent](../references/clearml_agent_ref.md), 
+1. Command-line arguments (e.g. [clearml-task](../apps/clearml_task.md#command-line-options), [clearml-agent](../clearml_agent/clearml_agent_ref.md), 
    [clearml-session](../apps/clearml_session.md#command-line-options), [clearml-data](../clearml_data/clearml_data_cli.md) 
    arguments) 
 1. Environment variables

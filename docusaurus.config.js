@@ -88,10 +88,6 @@ module.exports = {
               label: 'Server API',
               to: '/docs/references/api/index',
             },
-            {
-              label: 'Agent Reference',
-              to: '/docs/references/clearml_agent_ref',
-            },
           ],
         },
         {
