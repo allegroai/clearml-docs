@@ -218,7 +218,9 @@ task_list = Task.get_tasks(
     task_ids=None,  # type Optional[Sequence[str]]
     project_name=None,  # Optional[str]
     task_name=None,  # Optional[str]
-    task_filter=None  # Optional[Dict]
+    task_filter=None,  # Optional[Dict]#
+    # tasks with tag `included_tag` and without tag `excluded_tag`
+    tags=['included_tag', '-excluded_tag'] 
 )
 ```
 
@@ -227,8 +229,6 @@ It's possible to also filter tasks by passing filtering rules to `task_filter`.
 For example:
 ```python
 task_filter={
-    # only tasks with tag `included_tag` and without tag `excluded_tag`
-    'tags': ['included_tag', '-excluded_tag'],
     # filter out archived tasks
     'system_tags': ['-archived'],
     # only completed & published tasks
