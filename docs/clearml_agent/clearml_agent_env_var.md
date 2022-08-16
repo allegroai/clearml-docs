@@ -14,9 +14,9 @@ but can be overridden by command-line arguments.
 |**CLEARML_DOCKER_IMAGE** | Default ClearML Agent docker image|
 |**CLEARML_WORKER_NAME** | Sets the Worker's name|
 |**CLEARML_WORKER_ID** | Sets the Worker ID|
-|**CLEARML_CUDA_VERSION** | Sets the CUDA version to be used|
-|**CLEARML_CUDNN_VERSION** | Sets the CUDNN version to be used|
-|**CLEARML_CPU_ONLY** | Force CPU only mode|
+|**CLEARML_CUDA_VERSION** | Sets the CUDA version to be used. ClearML also supports using the standard `CUDA_VERSION` environment variable.|
+|**CLEARML_CUDNN_VERSION** | Sets the CUDNN version to be used. ClearML also supports using the standard `CUDNN_VERSION` environment variable.|
+|**CLEARML_CPU_ONLY** | Force CPU only mode. ClearML also supports using the standard `CPU_ONLY` environment variable.|
 |**CLEARML_DOCKER_SKIP_GPUS_FLAG**| Skips the GPUs flag (support for docker V18|
 |**CLEARML_AGENT_DISABLE_SSH_MOUNT**| Disables the auto `.ssh` mount into the docker|
 |**CLEARML_AGENT_GIT_USER** | Sets the Git user for ClearML Agent|
