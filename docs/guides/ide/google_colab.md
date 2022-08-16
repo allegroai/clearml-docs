@@ -53,7 +53,7 @@ and running, users can send Tasks to be executed on the Google Colab's HW.
    !clearml-agent daemon --queue default
    ```
    
-   For additional options for running `clearml-agent`, see the [clearml-agent reference](../../references/clearml_agent_ref.md).  
+   For additional options for running `clearml-agent`, see the [clearml-agent reference](../../clearml_agent/clearml_agent_ref.md).  
    
    After cell 4 is executed, the worker should now appear in the [**Workers & Queues**](../../webapp/webapp_workers_queues.md) 
    page of your server. Clone experiments and enqueue them to your hearts content! The `clearml-agent` will fetch 

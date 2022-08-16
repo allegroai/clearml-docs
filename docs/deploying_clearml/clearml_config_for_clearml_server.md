@@ -33,7 +33,7 @@ by setting [configuration options](../configs/clearml_conf.md).
         CLEARML_CONFIG_FILE = MyOtherClearML.conf
 
    For more information about running experiments inside Docker containers, see [ClearML Agent Execution](../clearml_agent.md#execution)
-   and [ClearML Agent Reference](../references/clearml_agent_ref.md).
+   and [ClearML Agent Reference](../clearml_agent/clearml_agent_ref.md).
     
    </div>
    </details>
