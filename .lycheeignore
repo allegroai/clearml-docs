@@ -2,6 +2,7 @@ s3://.*
 gs://.*
 https://files.*
 https://demo.*
+https://s3*
 ^\w*#.*
 http(s)?://example.com.*
 (https://clear.ml)(/)?(blog|pricing|docs)(/)?(latest/docs/index.html)?
