@@ -17,14 +17,43 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  linkChecker:
+  FindingAllFiles:
     runs-on: ubuntu-latest
+    env:
+      ARTIFACTS_DIR: /tmp/tmp_artifacts_directory/
+      MD_FILES_ENV_FILE: /tmp/tmp_artifacts_directory/MD_FILES.env
     steps:
       - uses: actions/checkout@v3
 
+      - name: Creating artifacts directory
+        id: create_artifacts_dir
+        run: mkdir -pv "$ARTIFACTS_DIR"
+
       - name: Find all markdown files
-        id: find_files
-        run: echo "MD_FILES=$(find . -name '*.md' -type f | sed 's|^./||' | tr '\n' ' ')" >> $GITHUB_ENV
+        id: find_md_files
+        run: echo "$(find . -name '*.md' -type f | sed 's|^./||')" >> "$MD_FILES_ENV_FILE"
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifacts-markdown-files-env-file
+          path: ${{ env.MD_FILES_ENV_FILE }}
+
+  LinkChecker:
+    runs-on: ubuntu-latest
+    needs: [FindingAllFiles]
+    env:
+      ARTIFACTS_DIR: /tmp/tmp_artifacts_directory/
+      MD_FILES_ENV_FILE: /tmp/tmp_artifacts_directory/MD_FILES.env
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown-files-env-file
+          path: ${{ env.ARTIFACTS_DIR }}
+
+      - name: Putting content of artifacts-markdown-files-env-file into github env
+        run: echo "MD_FILES=$(cat ${MD_FILES_ENV_FILE} | tr '\n' ' ')" >> $GITHUB_ENV
 
       - name: Link Checker
         id: lychee
@@ -39,19 +68,28 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
 
-  linkCheckerExcluded:
+  LinkCheckerExcluded:
     runs-on: ubuntu-latest
+    needs: [FindingAllFiles]
+    env:
+      ARTIFACTS_DIR: /tmp/tmp_artifacts_directory/
+      MD_FILES_ENV_FILE: /tmp/tmp_artifacts_directory/MD_FILES.env
     steps:
       - uses: actions/checkout@v3
 
-      - name: Find all markdown files
-        id: find_files
-        run: echo "MD_FILES=$(find . -name '*.md' -type f | sed 's|^./||' | tr '\n' ' ')" >> $GITHUB_ENV
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown-files-env-file
+          path: ${{ env.ARTIFACTS_DIR }}
 
-      - name: Renaming .lycheeignore
-        id: renaming_lycheeignore
-        # if: ${{ false }}  # disable for now
-        run: mv -v .lycheeignore lychee_include_file
+      - name: Putting content of artifacts-markdown-files-env-file into github env
+        run: echo "MD_FILES=$(cat ${MD_FILES_ENV_FILE} | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Creating lychee include file
+        run: cp -vf .lycheeignore /tmp/lychee_include_file
+
+      - name: Removing .lycheeignore
+        run: rm -vf .lycheeignore
 
       - name: Link Checker (Excluded ones only)
         id: lychee-dev
@@ -64,7 +102,7 @@ jobs:
           fail: true
           # Use json as output format (instead of markdown)
           # format: json
-          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat lychee_include_file | tr '\n' ' ')
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
 
       #- name: Read Results
       #  if: ${{ steps.lychee.outputs.exit_code != 0 }}
