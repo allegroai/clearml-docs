@@ -86,19 +86,22 @@ they are attached to, and then retrieving the artifact with one of its following
 See more details in the [Using Artifacts example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
 
 ## Task Types
-Tasks have a *type* attribute, which denotes their purpose (Training / Testing / Data processing). This helps to further 
+Tasks have a *type* attribute, which denotes their purpose (e.g. training / testing / data processing). This helps to further 
 organize projects and ensure tasks are easy to [search and find](../clearml_sdk/task_sdk.md#querying--searching-tasks). 
-The default task type is *training*. Available task types are: 
-- Experimentation
-
-    - *training*, *testing*, *inference*
-    
-- Other workflows
-     
-    - *controller*, *optimizer*
-    - *monitor*, *service*, *application*
-    - *data_processing*, *qc* 
-    - *custom*
+Available task types are: 
+* *training* (default) - Training a model 
+* *testing* - Testing a component, for example model performance
+* *inference* - Model inference job (e.g. offline / batch model execution)
+* *controller* - A task that lays out the logic for other tasks’ interactions, manual or automatic (e.g. a pipeline 
+  controller) 
+* *optimizer* - A specific type of controller for optimization tasks (e.g. [hyperparameter optimization](hpo.md))
+* *service* - Long lasting or recurring service (e.g. server cleanup, auto ingress, sync services etc)
+* *monitor* - A specific type of service for monitoring
+* *application* - A task implementing  custom applicative logic, like [auto-scaler](../guides/services/aws_autoscaler.md) 
+  or [clearml-session](../apps/clearml_session.md)
+* *data_processing* - Any data ingress / preprocessing (see [ClearML Data](../clearml_data/clearml_data.md))
+* *qc* - Quality Control (e.g. evaluating model performance vs. blind dataset)
+* *custom* - A task not matching any of the above
 
 ## Task Lifecycle 
 
