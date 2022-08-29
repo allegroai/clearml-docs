@@ -81,8 +81,8 @@ The panel below describes the details contained within a `frame`:
     * `confidence` (*float*) - Confidence level of the ROI label (between 0 and 1.0). 
     * `labels` (*[string]*)
     
-        * For [FrameGroup objects](#frame-objects) (Regions of Interest), these are the labels applied to the ROI. 
-        * For [FrameGroup labels](#frame-labels), this is the label applied to the entire frame. 
+        * For [FrameGroup objects](annotations.md#frame-objects) (Regions of Interest), these are the labels applied to the ROI. 
+        * For [FrameGroup labels](annotations.md#frame-labels), this is the label applied to the entire frame. 
         
     * `mask` (*dict*) - RGB value of the mask applied to the ROI, if a mask is used (for example, for semantic segmentation). 
       The ID points to the source of the mask.
