@@ -18,6 +18,8 @@ queue (until reaching the defined maximum number of instances). You can add an i
 each instance is spun up. 
 
 ## Autoscaler Instance Configuration
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **AWS Credentials** - Credentials with which the autoscaler can access your AWS account. See [Generating AWS IAM Credentials](#generating-aws-iam-credentials)
     * Use IAM role - Select if you are running your autoscalers on your own EC2 instances which are attached to an [IAM 
       role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html). In such a case, no AWS IAM credentials are required.
@@ -64,6 +66,8 @@ each instance is spun up.
 * **Init script** (Optional) - A bash script to execute after launching the EC2 instance 
 * **Additional ClearML Configuration** (Optional) - A ClearML configuration file to use by the ClearML Agent when 
   executing your experiments
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration. 
 
 ![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
 

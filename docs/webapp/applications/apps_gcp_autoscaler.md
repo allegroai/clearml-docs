@@ -19,6 +19,8 @@ in a queue (until reaching the defined maximum number of instances). You can add
 when each VM instance is spun up. 
 
 ## Autoscaler Instance Configuration
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **GCP Configuration**
     * GCP Project ID - Project used for spinning up VM instances
     * GCP Zone - The GCP zone where the VM instances will be spun up. See [Regions and zones](https://cloud.google.com/compute/docs/regions-zones)
@@ -47,7 +49,9 @@ when each VM instance is spun up.
 * **Polling Interval** (Optional) - Time period in minutes at which the designated queue is polled for new tasks
 * **Init Script** (Optional) - A bash script to execute after launching the VM instance
 * **Additional ClearML Configuration** (Optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
-
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration. 
+  
 ![GCP autoscaler wizard](../../img/apps_gcp_autoscaler_wizard.png)
 
 :::note Enterprise Feature
