@@ -12,6 +12,7 @@ View the Dataviews table in table view <img src="/docs/latest/icons/ico-table-vi
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your Dataviews according to 
 columns of interest. Use the details view to access a selected Dataview’s details, while keeping the Dataview list in view.
+Details view can also be accessed by double clicking a specific Dataview in the table view to open its details view. 
 
 ![Dataviews table](../../img/hyperdatasets/webapp_dataviews_table.png)
 
@@ -66,7 +67,7 @@ Access these actions with the context menu in any of the following ways:
 
 | ClearML Action | Description |
 |---|---|
-| Details | Dataview details, including input datasets, label mapping, augmentation operations, and iteration control. |
+| Details | View Dataview details, including input datasets, label mapping, augmentation operations, and iteration control. Can also be accessed by double clicking a Dataview in the Dataviews table. |
 | Archive | To more easily work with active Dataviews, move a Dataview to the archive, removing it from the active Dataview table. | 
 | Restore | Action available in the archive. Restore a Dataview to the active Dataviews table. |
 | Clone | Make an exact copy of a Dataview that is editable. |
