@@ -106,7 +106,7 @@ with that label.
 * In the **Version Browser**, choose a label on the label list.
 
 For example: 
-* Before filtering, the **Version Browser** in the image below contains seven frames.
+* The **version browser** in the image below contains 101 frames.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -120,7 +120,7 @@ For example:
 </details>
 <br/>  
 
-* A simple label filter for `person` shows three frames with each containing at least one ROI labeled `person`.
+* A simple label filter for `teddy bear` shows three frames with each containing at least one ROI labeled `teddy bear`.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -160,7 +160,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 #### ROI Rules
 
 
-* Create one ROI rule for <code>person</code> shows the same three frames as the simple frame filter (above).
+* Create one ROI rule for the `teddy bear` label, which shows the same three frames as the simple frame filter (above).
   <details className="cml-expansion-panel screenshot">
   <summary className="cml-expansion-panel-summary">View a screenshot</summary>
   <div className="cml-expansion-panel-content">
@@ -171,7 +171,8 @@ where each frame filter can be a combination of ROI, frame, and source rules.
   </details>            
   <br/>
 
-* In the ROI rule, add a second label. Add `partially_occluded`. Only frames containing at least one ROI labeled as both <code>person</code> and <code>partially_occluded</code> match the filter.
+* In the ROI rule, add a second label. Add `partially_occluded`. Only frames containing at least one ROI labeled as both 
+  `teddy bear` and `partially_occluded` match the filter.
 <details className="cml-expansion-panel screenshot">
    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
    <div className="cml-expansion-panel-content">
@@ -199,7 +200,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 
 Filter by metadata using Lucene queries.
 
-* Add a frame rule to filter by the metadata key <code>dangerous</code> for the value of <code>no</code>.
+* Add a frame rule to filter by the metadata key `dangerous` for the value of `yes`.
 
     <details className="cml-expansion-panel screenshot">
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -228,7 +229,7 @@ Filter by metadata using Lucene queries.
 
 Filter by sources using Lucene queries.    
 
-* Add a source rule to filter for sources URIs with a wildcards.
+* Add a source rule to filter for sources URIs with wildcards.
 
     <details className="cml-expansion-panel screenshot">
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -240,8 +241,7 @@ Filter by sources using Lucene queries.
     </details>            
     <br/>
 
-Use Lucene queries in ROI label filters and frame rules.
-        
+Lucene queries can also be used in ROI label filters and frame rules.        
 
 ## Masks 
 
