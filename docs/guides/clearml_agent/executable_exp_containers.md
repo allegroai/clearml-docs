@@ -43,7 +43,7 @@ script.
    If the container will not make use of a GPU, add the `--cpu-only` flag
    :::
 
-   This command will create a docker container, set up with the execution environment for this experiment in the 
+   This command will create a Docker container, set up with the execution environment for this experiment in the 
    specified `--target` folder. When the Docker container is launched, it will clone the task specified with `id` and 
    execute the clone (as designated by the `--entry-point` parameter).
 

@@ -47,7 +47,8 @@ If the container will not make use of a GPU, add the `--cpu-only` flag
 :::
 
 This will create a container with the specified task’s execution environment in the `--target` folder. 
-When the docker build completes, the console output shows:
+When the Docker build completes, the console output shows:
+
 ```console
 Docker build done
 Committing docker container to: new_docker
@@ -61,7 +62,7 @@ Make use of the container you've just built by having a ClearML agent make use o
    example" task (the one executed [above](#creating-the-clearml-experiment)).
 1. [Clone](../../webapp/webapp_exp_reproducing.md) the experiment.
 1. In the cloned experiment, go to the **EXECUTION** tab **>** **CONTAINER** section. Under **IMAGE**, insert the name 
-   of the new docker image, `new_docker`. See [Tuning Experiments](../../webapp/webapp_exp_tuning.md) for more task 
+   of the new Docker image, `new_docker`. See [Tuning Experiments](../../webapp/webapp_exp_tuning.md) for more task 
    modification options. 
 1. Enqueue the cloned experiment to the `default` queue.
 1. Launch a `clearml-agent` in [Docker Mode](../../clearml_agent.md#docker-mode) and assign it to the `default` queue:

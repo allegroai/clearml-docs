@@ -478,7 +478,6 @@ It's possible to add the Docker container as the base Docker image to a task (ex
 Check out [this tutorial](guides/clearml_agent/exp_environment_containers) for building a Docker container 
 replicating the execution environment of an existing task.
 
-
 ## Google Colab
 
 ClearML Agent can run on a [Google Colab](https://colab.research.google.com/) instance. This helps users to leverage 
