@@ -13,6 +13,13 @@ populate it with:
 * Argparse arguments (default and specific to the current execution)
 * Reports to Tensorboard & Matplotlib and model checkpoints.
 
+:::tip Ensuring Reproducibility 
+To ensure every run will provide the same results, ClearML controls the deterministic behaviors of the `tensorflow`, 
+`pytorch`, and `random` packages by setting a fixed initial seed. See [Setting Random Seed](#setting-random-seed).
+:::
+
+
+
 :::note
 ClearML object (e.g. task, project) names are required to be at least 3 characters long
 :::
@@ -372,6 +379,15 @@ Upload the execution data that the Task captured offline to the ClearML Server u
 
 Both options will upload the Task's full execution details and outputs and return a link to the Task's results page on 
 the ClearML Server.
+
+### Setting Random Seed
+To ensure task reproducibility, ClearML controls the deterministic behaviors of the `tensorflow`, `pytorch`, and `random` 
+packages by setting a fixed initial seed. 
+
+ClearML uses `1337` as the default initial seed. To set a different value for your task, use the [`Task.set_random_seed`](../references/sdk/task.md#taskset_random_seed) 
+class method and provide the new seed value, before initializing the task. 
+
+You can disable the deterministic behavior entirely by passing `Task.set_random_seed(None)`. 
 
 ## Artifacts
 Artifacts are the output files created by a task. ClearML uploads and logs these products so they can later be easily 
