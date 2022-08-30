@@ -18,7 +18,8 @@ be used when running optimization tasks.
 1. Set up the experiment’s execution environment:
    
    ```console
-   pip install "tensorflow>=2.0" clearml
+   cd clearml/examples/frameworks/keras
+   pip install -r requirements.txt
    ```
 
 1. Run the experiment:
