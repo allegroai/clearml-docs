@@ -106,6 +106,7 @@ module.exports = {
             {'Advanced': ['guides/advanced/execute_remotely', 'guides/advanced/multiple_tasks_single_process']},
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
             {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
+            {'ClearML Agent': ['guides/clearml_agent/executable_exp_containers', 'guides/clearml_agent/exp_environment_containers']},
             {'Datasets': ['guides/datasets/data_man_cifar_classification', 'guides/datasets/data_man_python']},
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
