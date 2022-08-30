@@ -18,8 +18,6 @@ To ensure every run will provide the same results, ClearML controls the determin
 `pytorch`, and `random` packages by setting a fixed initial seed. See [Setting Random Seed](#setting-random-seed).
 :::
 
-
-
 :::note
 ClearML object (e.g. task, project) names are required to be at least 3 characters long
 :::
