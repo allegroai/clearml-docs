@@ -13,6 +13,11 @@ populate it with:
 * Argparse arguments (default and specific to the current execution)
 * Reports to Tensorboard & Matplotlib and model checkpoints.
 
+:::tip Ensuring Reproducibility 
+To ensure every run will provide the same results, ClearML controls the deterministic behaviors of the `tensorflow`, 
+`pytorch`, and `random` packages by setting a fixed initial seed. See [Setting Random Seed](#setting-random-seed).
+:::
+
 :::note
 ClearML object (e.g. task, project) names are required to be at least 3 characters long
 :::
@@ -240,6 +245,61 @@ task_filter={
 }
 ```
 
+See [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) for all `task_filter` options.
+
+### Tag Filters
+The tags field supports advanced queries through combining tag names and operators into a list. 
+
+The supported operators are: 
+* `not` 
+* `and`
+* `or`
+
+Input the operators in the following format: `"__$<op>"`. To exclude a tag, you can also use the `-` prefix before the 
+tag name, unless the tag name begins with the dash character (`-`), in which case you can use `"__$not"`. 
+
+The `or`, and `and` operators apply to all tags that follow them until another operator is specified. The `not` operator 
+applies only to the immediately following tag.
+
+The default operator for a query is `or`, unless `and` is placed at the beginning of the query.
+
+#### Examples
+
+* The following query will return tasks that have at least one of the provided tags, since the default operator is 
+  `or` (`"a" OR "b" OR "c"`)
+  ```python
+  task_list = Task.get_tasks(tags=["a", "b", "c"])
+  ```
+  
+* The following query will return tasks that have all three provided tags, since the `and` operator was placed in the 
+  beginning of the list, making it the default operator (`"a" AND "b" AND "c"`). 
+  ```python
+  task_list = Task.get_tasks(tags=["__$and", "a", "b", "c"])
+  ```
+
+* The following query will return tasks that have neither tag `a` nor tag `c`, but do have tag `b` 
+  (`NOT "a" AND "b" AND NOT "c"`).
+  ```python
+  task_list = Task.get_tasks(tags=["__$not", "a", "b", "__$not" "c"])
+  ```
+
+  This is equivalent to `task_list = Task.get_tasks(tags=["-a", "b", "-c"])`
+
+
+* The following query will return tasks with either tag `a` or tag `b` or both `c` and `d` tags 
+  (`"a" OR "b" OR ("c" AND "d")`).
+  ```python
+  task_list = Task.get_tasks(tags=["a", "b", "__$and", "c", "d"])
+  ```
+
+* The following query will return tasks that have either tag `a` or tag `b` and both tag `c` and tag `d` 
+  (`("a" OR "b") AND "c" AND "d"` ).
+  ```python
+  task_list = Task.get_tasks(
+    tags=["__$and", "__$or", "a", "b", "__$and", "c", "d"]
+  )
+  ```
+
 ## Cloning & Executing Tasks
 
 Once a task object is created, it can be copied (cloned). [`Task.clone`](../references/sdk/task.md#taskclone) returns 
@@ -372,6 +432,15 @@ Upload the execution data that the Task captured offline to the ClearML Server u
 
 Both options will upload the Task's full execution details and outputs and return a link to the Task's results page on 
 the ClearML Server.
+
+### Setting Random Seed
+To ensure task reproducibility, ClearML controls the deterministic behaviors of the `tensorflow`, `pytorch`, and `random` 
+packages by setting a fixed initial seed. 
+
+ClearML uses `1337` as the default initial seed. To set a different value for your task, use the [`Task.set_random_seed`](../references/sdk/task.md#taskset_random_seed) 
+class method and provide the new seed value, before initializing the task. 
+
+You can disable the deterministic behavior entirely by passing `Task.set_random_seed(None)`. 
 
 ## Artifacts
 Artifacts are the output files created by a task. ClearML uploads and logs these products so they can later be easily 

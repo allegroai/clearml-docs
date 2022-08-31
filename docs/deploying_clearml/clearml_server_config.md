@@ -94,7 +94,7 @@ tasks {
 ### Environment Variables
 
 The ClearML Server supports several fixed environment variables that affect its behavior,
-as well as dynamic environment variable that can be used to override any configuration file setting.
+as well as dynamic environment variables that can be used to override any configuration file setting.
 
 #### Fixed Environment Variables
 
@@ -127,7 +127,7 @@ For example, given the default `secure.conf` file contents:
     credentials {
         apiserver {
             role: "system"
-            user_key: "defualt-key"
+            user_key: "default-key"
             user_secret: "default-secret"
         }
         
