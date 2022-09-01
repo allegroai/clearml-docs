@@ -133,8 +133,8 @@ Label usage stats for this dataset version.
 The **Version Frame Browser** displays a preview of the contents of the selected dataset version.
 
 View the version's frames as thumbnails or in a table. Use the view toggle to switch between thumbnail 
-view <img src="/docs/latest/icons/ico-table-view.svg" alt="thumbnail view" className="icon size-md space-sm" /> and 
-table view <img src="/docs/latest/icons/ico-grid-view.svg" alt="table view" className="icon size-md space-sm" /> . 
+view <img src="/docs/latest/icons/ico-grid-view.svg" alt="thumbnail view" className="icon size-md space-sm" /> and 
+table view <img src="/docs/latest/icons/ico-table-view.svg" alt="table view" className="icon size-md space-sm" /> . 
 
 Use the thumbnail view for a visual preview of the version's frames:
 

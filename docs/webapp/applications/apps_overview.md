@@ -51,6 +51,8 @@ Access app instance actions, by right clicking an instance, or through the menu 
 
 * **Rename** - Rename the instance 
 * **Configuration** - View an instance’s configuration 
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration.   
 * **Stop** - Shutdown the instance
 * **Clone** - Launch a new instance with same configuration prefilled
 * **Delete** - Delete the instance
