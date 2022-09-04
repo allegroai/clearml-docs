@@ -34,7 +34,7 @@ ClearML Server also comes with a [services agent](../clearml_agent.md#services-m
 ## Deployment
 
 The ClearML Server can be deployed in any of the formats listed below. Once deployed, configure the server for web login 
-authentication, sub-domains, and load balancers, and use any of its many configuration settings.
+authentication, subdomains, and load balancers, and use any of its many configuration settings.
 
 **To deploy your own ClearML Server:**
 
@@ -46,7 +46,7 @@ authentication, sub-domains, and load balancers, and use any of its many configu
       [Windows 10](clearml_server_win.md)
     * [Kubernetes using Helm](clearml_server_kubernetes_helm.md)
 
-1. Optionally, [configure ClearML Server](clearml_server_config.md) for additional features, including sub-domains and load balancers, 
+1. Optionally, [configure ClearML Server](clearml_server_config.md) for additional features, including subdomains and load balancers, 
    web login authentication, and the non-responsive task watchdog.
 
 1. [Configure ClearML for ClearML Server](clearml_config_for_clearml_server.md)

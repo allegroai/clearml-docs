@@ -16,7 +16,7 @@ A Logger object is used to do the following:
 ClearML supports four types of reports:
 - Text - Mostly captured automatically from stdout and stderr but can be logged manually.
 - Scalars - Time series data. X-axis is always a sequential number, usually iterations but can be epochs or others.
-- Plots - General graphs and diagrams, such as histograms, confusion matrices line plots, and custom plotly charts.
+- Plots - General graphs and diagrams, such as histograms, confusion matrices, line plots, and custom plotly charts.
 - Debug Samples - Images, audio, and videos. Can be reported per iteration.
 
 ![image](../img/fundamentals_logger_results.png)

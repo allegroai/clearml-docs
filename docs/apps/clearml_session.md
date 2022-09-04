@@ -45,7 +45,7 @@ to automatically sync local configurations with a remote session.
 
 ## How it Works
 
-ClearML allows to leverage a resource (e.g. GPU or CPU machine) by utilizing the [ClearML Agent](../clearml_agent.md).
+ClearML allows you to leverage a resource (e.g. GPU or CPU machine) by utilizing the [ClearML Agent](../clearml_agent.md).
 A ClearML Agent runs on a target machine, and ClearML Session instructs it to execute the Jupyter / VS Code 
 server to develop remotely.
 After entering a `clearml-session` command with all specifications: 

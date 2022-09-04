@@ -8,7 +8,7 @@ This documentation page applies to deploying your own open source ClearML Server
 
 This page describes the ClearML Server [deployment](#clearml-server-deployment-configuration) and [feature](#clearml-server-feature-configurations) configurations. Namely, it contains instructions on how to configure ClearML Server for:
 
-* [Sub-domains and load balancers](#sub-domains-and-load-balancers) - An AWS load balancing example
+* [Subdomains and load balancers](#subdomains-and-load-balancers) - An AWS load balancing example
 * [Opening Elasticsearch, MongoDB, and Redis for External Access](#opening-elasticsearch-mongodb-and-redis-for-external-access)
 * [Web login authentication](#web-login-authentication) - Create and manage users and passwords
 * [Using hashed passwords](#using-hashed-passwords) - Option to use hashed passwords instead of plain-text passwords
@@ -23,7 +23,7 @@ Using the latest version of ClearML Server is recommended.
 
 ## ClearML Server Deployment Configuration
 
-ClearML Server supports two deployment configurations: single IP (domain) and sub-domains.
+ClearML Server supports two deployment configurations: single IP (domain) and subdomains.
     
 ### Single IP (Domain) Configuration
 
@@ -33,23 +33,23 @@ Single IP (domain) with the following open ports:
 * API service on port `8008`
 * File storage service on port `8081`
 
-### Sub-domain Configuration
+### Subdomain Configuration
     
-Sub-domain configuration with default http/s ports (`80` or `443`):
+Subdomain configuration with default http/s ports (`80` or `443`):
 
-* Web application on sub-domain: `app.*.*`
-* API service on sub-domain: `api.*.*`
-* File storage service on sub-domain: `files.*.*`
+* Web application on subdomain: `app.*.*`
+* API service on subdomain: `api.*.*`
+* File storage service on subdomain: `files.*.*`
 
-When [configuring sub-domains](#sub-domains-and-load-balancers) for ClearML Server, they will map to the ClearML Server's 
+When [configuring subdomains](#subdomains-and-load-balancers) for ClearML Server, they will map to the ClearML Server's 
 internally configured ports for the Dockers. As a result, ClearML Server Dockers remain accessible if, for example, 
 some type of port forwarding is implemented.   
 
 :::important 
-``app``, ``api``, and ``files`` as the sub-domain labels must be used.
+``app``, ``api``, and ``files`` as the subdomain labels must be used.
 :::
 
-For example, a domain is called `mydomain.com`, and a sub-domain named `clearml.mydomain.com` is created, use the following:
+For example, a domain is called `mydomain.com`, and a subdomain named `clearml.mydomain.com` is created, use the following:
 
 * `app.clearml.mydomain.com` (web server)
 * `api.clearml.mydomain.com` (API server)
@@ -156,7 +156,7 @@ the default secret for the system's apiserver component can be overridden by set
 
 
 
-### Sub-domains and Load Balancers
+### Subdomains and Load Balancers
 
 The following example, which is based on AWS load balancing, demonstrates the configuration: 
 
