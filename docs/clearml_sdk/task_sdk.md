@@ -248,7 +248,7 @@ task_filter={
 See [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) for all `task_filter` options.
 
 ### Tag Filters
-The tags field supports advanced queries through combining tag names and operators into a list. 
+The `tags` field supports advanced queries through combining tag names and operators into a list. 
 
 The supported operators are: 
 * `not` 
@@ -438,7 +438,7 @@ To ensure task reproducibility, ClearML controls the deterministic behaviors of 
 packages by setting a fixed initial seed. 
 
 ClearML uses `1337` as the default initial seed. To set a different value for your task, use the [`Task.set_random_seed`](../references/sdk/task.md#taskset_random_seed) 
-class method and provide the new seed value, before initializing the task. 
+class method and provide the new seed value, **before initializing the task**. 
 
 You can disable the deterministic behavior entirely by passing `Task.set_random_seed(None)`. 
 
@@ -488,7 +488,7 @@ See more details in the [Artifacts Reporting example](../guides/reporting/artifa
 ### Using Artifacts
 A task's artifacts are accessed through the task’s *artifact* property which lists the artifacts’ locations.
 
-The artifacts can subsequently be retrieved  from their respective locations by using:
+The artifacts can subsequently be retrieved from their respective locations by using:
 * `get_local_copy()`- Downloads the artifact and caches it for later use, returning the path to the cached copy.
 * `get()` - Returns a Python object constructed from the downloaded artifact file.
 
@@ -557,7 +557,7 @@ local_weights_path = last_snapshot.get_local_copy()
 ```
 
 Notice that if one of the frameworks loads an existing weights file, the running task will automatically update its 
-"Input Model", pointing directly to the original training task's model. This makes it  easy to get the full lineage of 
+"Input Model", pointing directly to the original training task's model. This makes it easy to get the full lineage of 
 every trained and used model in our system!
 
 Models loaded by the ML framework appear under the "Input Models" section, under the Artifacts tab in the ClearML UI.

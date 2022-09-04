@@ -40,7 +40,7 @@ of the optimization results in table and graph forms.
 |`--pool-period-min`|The time between two consecutive polls (minutes).|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--total-max-jobs`|The total maximum jobs for the optimization process. The default value is `None` for unlimited.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--min-iteration-per-job`|The minimum iterations (of the objective metric) per single job.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--max-iteration-per-job`|The maximum iterations (of the objective metric) per single job. When maximum iterations is exceeded, the job is aborted.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--max-iteration-per-job`|The maximum iterations (of the objective metric) per single job. When iteration maximum is exceeded, the job is aborted.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--save-top-k-tasks-only`| Keep only the top \<k\> performing tasks, and archive the rest of the experiments. Input `-1` to keep all tasks. Default: `10`.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--time-limit-per-job`|Maximum execution time per single job in minutes. When time limit is exceeded, the job is aborted. Default: no time limit.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
