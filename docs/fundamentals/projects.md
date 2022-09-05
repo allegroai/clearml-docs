@@ -52,7 +52,7 @@ To view all projects in the system, use the `Task` class method `get_projects`:
 project_list = Task.get_projects()
 ```
 
-This returns a list of project sorted by last update time.
+This returns a list of projects sorted by last update time.
 
 ### More Actions
 

@@ -457,21 +457,26 @@ Build a Docker container that when launched executes a specific experiment, or a
   docker run <new-docker-name>
   ```
 
+Check out [this tutorial](guides/clearml_agent/executable_exp_containers.md) for building executable experiment 
+containers.
+
 ### Base Docker Container
 
-Build a Docker container according to the execution environment of a specific Task.
+Build a Docker container according to the execution environment of a specific task.
 
 ```bash
 clearml-agent build --id <task-id> --docker --target <new-docker-name>
 ```
 
-
-It's possible to add the Docker container as the base Docker image to a Task (experiment), using one of the following methods:
+It's possible to add the Docker container as the base Docker image to a task (experiment), using one of the following methods:
 
 - Using the **ClearML Web UI** - See [Base Docker image](webapp/webapp_exp_tuning.md#base-docker-image) on the "Tuning
   Experiments" page.
 - In the ClearML configuration file - Use the ClearML configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
   options.
+
+Check out [this tutorial](guides/clearml_agent/exp_environment_containers.md) for building a Docker container 
+replicating the execution environment of an existing task.
 
 ## Google Colab
 
