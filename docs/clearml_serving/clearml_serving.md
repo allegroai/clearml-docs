@@ -60,6 +60,11 @@ solution.
 * **Dashboards** - Customizable dashboard solution on top of the collected statistics, e.g. Grafana
 
 ## Installation
+
+:::important Updating ClearML Serving
+To update to from ClearML Serving version 1.0 to 1.1, see instructions [here](../release_notes/ver_1_1.md#clearml-serving-110).
+:::
+
 ### Prerequisites
 
 * ClearML-Server : Model repository, Service Health, Control plane
