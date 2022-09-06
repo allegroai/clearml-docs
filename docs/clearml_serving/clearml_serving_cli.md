@@ -14,7 +14,7 @@ The following page provides a reference for `clearml-serving`'s CLI commands:
 ## Global Parameters
 
 ```bash
-clearml-serving [-h] [--debug] [--id ID] {list,create,metrics,config,model} 
+clearml-serving [-h] [--debug] [--yes] [--id ID] {list,create,metrics,config,model} 
 ```
 
 <div className="tbl-cmd">
@@ -23,6 +23,7 @@ clearml-serving [-h] [--debug] [--id ID] {list,create,metrics,config,model}
 |---|---|---|
 |`--id`|Serving Service (Control plane) Task ID to configure (if not provided automatically detect the running control plane Task) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 |`--debug` |  Print debug messages | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+|`--yes` |Always answer YES on interactive inputs| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 
 </div>
 
