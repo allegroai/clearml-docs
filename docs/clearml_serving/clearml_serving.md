@@ -61,8 +61,8 @@ solution.
 
 ## Installation
 
-:::important Updating ClearML Serving
-To update to ClearML Serving version 1.1, see instructions [here](../release_notes/ver_1_1.md#clearml-serving-110).
+:::important Upgrading ClearML Serving
+To upgrade to ClearML Serving version 1.1, see instructions [here](../release_notes/ver_1_1.md#clearml-serving-110).
 :::
 
 ### Prerequisites
