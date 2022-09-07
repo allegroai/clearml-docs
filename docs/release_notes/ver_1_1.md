@@ -119,7 +119,7 @@ clearml-serving module --id <serving_session_id> add --preprocess /path/to/prepr
 **Bug Fixes**
 * Fix `TriggerScheduler` on Dataset change [ClearML GitHub issue #491](https://github.com/allegroai/clearml/issues/491)
 * Fix links in Jupyter Notebooks [ClearML GitHub issue #505](https://github.com/allegroai/clearml/issues/505)
-* Fix `pandas` delta datetime conversion [ClearML GitHub issue #510](https://github.com/allegroai/clearml/issues/#510)
+* Fix `pandas` delta datetime conversion [ClearML GitHub issue #510](https://github.com/allegroai/clearml/issues/510)
 * Fix `matplotlib` auto-magic detect bar graph series name [ClearML GitHub issue #518](https://github.com/allegroai/clearml/issues/518)
 * Fix path limitation on storage services (posix, object storage) when storing target artifacts by limiting length of 
   project name (full path) and task name used for object path [ClearML GitHub issue #516](https://github.com/allegroai/clearml/issues/516)
