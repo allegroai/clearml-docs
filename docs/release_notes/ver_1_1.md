@@ -17,32 +17,8 @@ This release is not backwards compatible - see notes below on upgrading
 * Triton engine support for variable request (matrix) sizes
 * Triton support, fix `--aux-config` to support more configurations elements
 * Huggingface Transformer support
-* `Preprocess` class as module (see note below)
+* `Preprocess` class as module 
 
-:::important Preprocess Class
-To add a `Preprocess` class from a module (the entire module folder will be packaged)
-
-```
-preprocess_folder
-├── __init__.py  # from .sub.some_file import Preprocess
-└── sub
-    └── some_file.py
-```
-Pass the top folder as a path for --preprocess, for example:
-
-```bash
-clearml-serving module --id <serving_session_id> add --preprocess /path/to/preprocess_folder ...
-```
-:::
-
-**Upgrading from v1.0**
-
-1. Take down the serving containers (`docker-compose` or k8s)
-1. Update the `clearml-serving` CLI `pip3 install -U clearml-serving`
-1. Re-add a single existing endpoint with `clearml-serving module add ... ` (press yes when asked). It will upgrade the 
-   `clearml-serving` session definitions
-1. Pull the latest serving containers (`docker-compose pull ...` or k8s)
-1. Re-spin serving containers (`docker-compose` or k8s)
 
 
 ### ClearML Agent 1.1.2
