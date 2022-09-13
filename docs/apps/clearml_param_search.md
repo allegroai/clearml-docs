@@ -25,7 +25,7 @@ of the optimization results in table and graph forms.
 |Name | Description| Optional |
 |---|----|---|
 |`--project-name`|Name of the project in which the optimization task will be created. If the project does not exist, it is created. If unspecified, the repository name is used.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--task-name`|The name of optimization task. If unspecified, the base Python script's file name is used.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--task-name`|Name of the optimization task. If unspecified, the base Python script's file name is used.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--task-id`|ID of an existing ClearML task whose hyperparameters will be optimized. Required unless `--script` is specified.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--script`|Script to run the parameter search on. Required unless `--task-id` is specified.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--queue`|Queue to enqueue the experiments on.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
