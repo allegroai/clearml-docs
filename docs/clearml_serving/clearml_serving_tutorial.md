@@ -14,7 +14,7 @@ The tutorial will also go over these additional options that you can use with `c
 
 ## Prerequisite
 
-Before executing the steps below, make sure you have completed `clearml-serving`'s [initial setup](clearml_serving.md#initial-setup).
+Before executing the steps below, make sure you have completed `clearml-serving`'s [initial setup](clearml_serving_setup.md#initial-setup).
 
 ##  Steps
 ### Step 1: Train Model
