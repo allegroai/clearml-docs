@@ -55,7 +55,7 @@ For datasets created with earlier versions of `clearml`, or if using an earlier 
 :::info Dataset Version
 Input the dataset's version using the [semantic versioning](https://semver.org) scheme (e.g. `1.0.1`, `2.0`). If a version 
 is not input, the method tries finding the latest dataset version with the specified `dataset_name` and `dataset_project` 
-and auto-increment the version number. 
+and auto-increments the version number. 
 :::
 
 Use the `output_uri` parameter to specify a network storage target to upload the dataset files, and associated information 
