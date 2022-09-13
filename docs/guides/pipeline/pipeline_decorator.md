@@ -2,7 +2,7 @@
 title: Pipeline from Decorators
 ---
 
-The [pipeline_from_decorator.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_from_decorator.py)
+The [pipeline_from_decorator.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/pipeline_from_decorator.py) 
 example demonstrates the creation of a pipeline in ClearML using the [`PipelineDecorator`](../../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator)
 class. 
 
@@ -17,8 +17,8 @@ The pipeline steps, defined in the `step_one`, `step_two`, `step_three`, and `st
 [`@PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent) 
 decorator, which creates a ClearML pipeline step for each one when the pipeline is executed.
 
-The logic that executes these steps and controls the interaction between them is implemented in the `executing_pipeline`
-function. This function is wrapped with the [`@PipelineDecorator.pipeline`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline)
+The logic that executes these steps and controls the interaction between them is implemented in the `executing_pipeline` 
+function. This function is wrapped with the [`@PipelineDecorator.pipeline`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline) 
 decorator which creates the ClearML pipeline task when it is executed.
 
 The sections below describe in more detail what happens in the pipeline controller and steps.
@@ -28,7 +28,7 @@ The sections below describe in more detail what happens in the pipeline controll
 In this example, the pipeline controller is implemented by the `executing_pipeline` function.
 
 Using the `@PipelineDecorator.pipeline` decorator creates a ClearML Controller Task from the function when it is executed. 
-For detailed information, see [`@PipelineDecorator.pipeline`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline).
+For detailed information, see [`@PipelineDecorator.pipeline`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline). 
 
 In the example script, the controller defines the interactions between the pipeline steps in the following way:
 1. The controller function passes its argument, `pickle_url`, to the pipeline's first step (`step_one`)
@@ -40,7 +40,7 @@ In the example script, the controller defines the interactions between the pipel
 :::info Local Execution
 In this example, the pipeline is set to run in local mode by using 
 the <span class="link-code"><a href="../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorrun_locally"><code>PipelineDecorator.run_locally</code></a></span>
-method before calling the pipeline function. See pipeline execution options [here](../../pipelines/pipelines_sdk_function_decorators.md#running-the-pipeline).
+method before calling the pipeline function. See pipeline execution options [here](../../pipelines/pipelines_sdk_function_decorators.md#running-the-pipeline). 
 :::
 
 ## Pipeline Steps 
@@ -70,7 +70,7 @@ decorator overrides the default queue value for the specific step for which it w
 
 :::note Execution Modes
 ClearML provides different pipeline execution modes to accommodate development and production use cases. For additional 
-details, see [Execution Modes](../../pipelines/pipelines.md#running-your-pipelines). 
+details, see [Execution Modes](../../pipelines/pipelines.md#running-your-pipelines).
 :::
 
 To run the pipeline, call the pipeline controller function.
