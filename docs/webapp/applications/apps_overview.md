@@ -52,7 +52,7 @@ Access app instance actions, by right clicking an instance, or through the menu 
 * **Rename** - Rename the instance 
 * **Configuration** - View an instance’s configuration 
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
-  a new instance with the same configuration.   
+  a new instance with the same configuration   
 * **Stop** - Shutdown the instance
 * **Clone** - Launch a new instance with same configuration prefilled
 * **Delete** - Delete the instance
@@ -68,5 +68,5 @@ on the instance list header:
   prefilled according to the imported file. You can modify the configuration before launching the instance.  
 
 * **Clear Completed** - Delete all app instances that have completed their execution. This action only 
-deletes instances in the current instance list view (i.e. My instances / All)
+deletes instances in the current instance list view (i.e. My instances / All).
 
