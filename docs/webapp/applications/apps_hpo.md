@@ -19,8 +19,10 @@ Control the optimization process with the advanced configuration options, which 
 limits.
 
 ## HPO Instance Configuration
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **Initial Task to Optimize** - ID of an existing ClearML task to optimize. This task will be cloned, and each clone will 
-  sample a different set of hyperparameters values.
+  sample a different set of hyperparameters values
 * **Optimization Configuration**
     * Optimization Method - The optimization strategy to employ (e.g. random, grid, hyperband)
     * Optimization Objective Metric’s Title - Title of metric to optimize
@@ -38,15 +40,15 @@ limits.
         * Discrete Parameters - A set of values to sample
             * Values - Comma separated list of values to sample
     * Name - The original task’s configuration parameter name (including section name e.g. `Args/lr`)
-* **Optimization Job Title** (Optional) - Name for the HPO instance. This will appear in the instance list. 
+* **Optimization Job Title** (Optional) - Name for the HPO instance. This will appear in the instance list 
 * **Optimization Experiments Destination Project** (Optional) - The project where optimization tasks will be saved. 
   Leave empty to use the same project as the Initial task. 
 * **Maximum Concurrent Tasks** - The maximum number of simultaneously running optimization experiments
 * **Advanced Configuration** (Optional)
     * Limit Total HPO Experiments - Maximum total number of optimization experiments
-    * Number of Top Experiments to Save - Number of best performing experiments to save (the rest are archived).
+    * Number of Top Experiments to Save - Number of best performing experiments to save (the rest are archived)
     * Limit Single Experiment Running Time (Minutes) - Time limit per optimization experiment. Experiments will be 
-      stopped after the specified time elapsed.
+      stopped after the specified time elapsed
     * Minimal Number of Iterations Per Single Experiment - Some search methods, such as Optuna, prune underperforming 
       experiments. This is the minimum number of iterations per experiment before it can be stopped. Iterations are 
       based on the experiments' own reporting (for example, if experiments report every epoch, then iterations=epochs)
@@ -54,7 +56,9 @@ limits.
       stopped. Iterations are based on the experiments' own reporting (for example, if experiments report every epoch, 
       then iterations=epochs)
     * Limit Total Optimization Instance Time (Minutes) - Time limit for the whole optimization process (in minutes)
-
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration. 
+  
 ![HPO app wizard](../../img/apps_hpo_wizard.png)
  
 ## Dashboard
