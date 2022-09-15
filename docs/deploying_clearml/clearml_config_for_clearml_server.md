@@ -106,7 +106,7 @@ The host URLs for the ClearML Server are required:
 * ClearML Server API server
 * ClearML Server file server
 
-These may be localhost, the domain, or a sub-domain of the domain.
+These may be localhost, the domain, or a subdomain of the domain.
         
 **To add ClearML settings to an existing ClearML configuration file:**
         

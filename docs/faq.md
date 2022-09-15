@@ -85,7 +85,7 @@ title: FAQ
 
 **ClearML Server Configuration**
 
-* [How do I configure ClearML Server for sub-domains and load balancers?](#sub-domains)
+* [How do I configure ClearML Server for subdomains and load balancers?](#subdomains)
 * [Can I add web login authentication to ClearML Server?](#web-auth)
 * [Can I modify a non-responsive task settings?](#watchdog)
 
@@ -868,9 +868,9 @@ If you are using SELinux, run the following command (see this [discussion](https
 
 ## ClearML Server Configuration
 
-**How do I configure ClearML Server for sub-domains and load balancers?** <a id="sub-domains"></a>
+**How do I configure ClearML Server for subdomains and load balancers?** <a id="subdomains"></a>
 
-For detailed instructions, see [Configuring Sub-domains and load balancers](deploying_clearml/clearml_server_config.md#sub-domains-and-load-balancers) 
+For detailed instructions, see [Configuring Subdomains and load balancers](deploying_clearml/clearml_server_config.md#subdomains-and-load-balancers) 
 on the "Configuring Your Own ClearML Server" page.
 
 <br/>

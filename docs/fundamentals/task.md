@@ -97,7 +97,7 @@ Available task types are:
 * *optimizer* - A specific type of controller for optimization tasks (e.g. [hyperparameter optimization](hpo.md))
 * *service* - Long lasting or recurring service (e.g. server cleanup, auto ingress, sync services etc)
 * *monitor* - A specific type of service for monitoring
-* *application* - A task implementing  custom applicative logic, like [auto-scaler](../guides/services/aws_autoscaler.md) 
+* *application* - A task implementing custom applicative logic, like [auto-scaler](../guides/services/aws_autoscaler.md) 
   or [clearml-session](../apps/clearml_session.md)
 * *data_processing* - Any data ingress / preprocessing (see [ClearML Data](../clearml_data/clearml_data.md))
 * *qc* - Quality Control (e.g. evaluating model performance vs. blind dataset)

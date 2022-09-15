@@ -52,6 +52,12 @@ For datasets created with `clearml` v1.6 or newer on ClearML Server v1.6 or newe
 For datasets created with earlier versions of `clearml`, or if using an earlier version of ClearML Server, find the ID in the task header of the [dataset task's info panel](../webapp/webapp_exp_track_visual.md).  
 :::
 
+:::info Dataset Version
+Input the dataset's version using the [semantic versioning](https://semver.org) scheme (e.g. `1.0.1`, `2.0`). If a version 
+is not input, the method tries finding the latest dataset version with the specified `dataset_name` and `dataset_project` 
+and auto-increments the version number. 
+:::
+
 Use the `output_uri` parameter to specify a network storage target to upload the dataset files, and associated information 
 (such as previews) to (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://bucket/data`, `file:///mnt/share/data`). 
 By default, the dataset uploads to ClearML's file server. The `output_uri` parameter of the [`Dataset.upload`](#uploading-files)

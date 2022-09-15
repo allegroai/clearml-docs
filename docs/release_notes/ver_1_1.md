@@ -2,6 +2,25 @@
 title: Version 1.1
 ---
 
+### ClearML Serving 1.1.0 
+
+:::warning Backwards Compatibility
+This release is not backwards compatible - see notes below on upgrading
+:::
+
+**Breaking Changes**
+* Triton engine size supports variable request size (-1)
+
+**Features & Bug Fixes**
+
+* Add version number of serving session task
+* Triton engine support for variable request (matrix) sizes
+* Triton support, fix `--aux-config` to support more configurations elements
+* Huggingface Transformer support
+* `Preprocess` class as module 
+
+
+
 ### ClearML Agent 1.1.2
 
 **Bug Fixes**
@@ -76,7 +95,7 @@ title: Version 1.1
 **Bug Fixes**
 * Fix `TriggerScheduler` on Dataset change [ClearML GitHub issue #491](https://github.com/allegroai/clearml/issues/491)
 * Fix links in Jupyter Notebooks [ClearML GitHub issue #505](https://github.com/allegroai/clearml/issues/505)
-* Fix `pandas` delta datetime conversion [ClearML GitHub issue #510](https://github.com/allegroai/clearml/issues/#510)
+* Fix `pandas` delta datetime conversion [ClearML GitHub issue #510](https://github.com/allegroai/clearml/issues/510)
 * Fix `matplotlib` auto-magic detect bar graph series name [ClearML GitHub issue #518](https://github.com/allegroai/clearml/issues/518)
 * Fix path limitation on storage services (posix, object storage) when storing target artifacts by limiting length of 
   project name (full path) and task name used for object path [ClearML GitHub issue #516](https://github.com/allegroai/clearml/issues/516)

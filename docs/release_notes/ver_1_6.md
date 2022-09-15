@@ -26,7 +26,7 @@ title: Version 1.6
 
 **Bug Fixes**
 * Fix dataset download [ClearML GitHub issue #713](https://github.com/allegroai/clearml/issues/713)
-* Fix lock is not released after dataset cache is downloaded [ClearML GitHub issue #671](https://github.com/allegroai/clearml/issues/708)
+* Fix lock is not released after dataset cache is downloaded [ClearML GitHub issue #671](https://github.com/allegroai/clearml/issues/671)
 * Fix deadlock might occur when using process pool large number processes [ClearML GitHub issue #674](https://github.com/allegroai/clearml/issues/674)
 * Fix 'series' not appearing on UI when using `logger.report_table()` [ClearML GitHub issue #684](https://github.com/allegroai/clearml/issues/684)
 * Fix `Task.init()` docstring to include behavior when executing remotely [ClearML GitHub PR #737](https://github.com/allegroai/clearml/pull/737)
