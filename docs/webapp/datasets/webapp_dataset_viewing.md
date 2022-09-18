@@ -98,7 +98,7 @@ to view:
 
 <br/>
 
-Click <img src="/docs/latest/icons/ico-max-panel.svg" alt="Expand" className="icon size-md space-sm" /> to on the content panel header to view the panel in full screen. 
+Click <img src="/docs/latest/icons/ico-max-panel.svg" alt="Expand" className="icon size-md space-sm" /> on the content panel header to view the panel in full screen. 
 
 ## Dataset Actions
 The following table describes the actions that can be done from the dataset versions list.
