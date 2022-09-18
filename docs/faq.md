@@ -283,10 +283,13 @@ to reproduce. You can see uncommitted changes in the ClearML Web UI, in the EXEC
 
 **I do not use argparse for hyperparameters. Do you have a solution?** <a id="dont-want-argparser"></a>
 
-Yes! ClearML supports connecting hyperparameter dictionaries to experiments, using the [Task.connect](references/sdk/task.md#connect) method.
+Yes! ClearML also automatically captures and tracks command line parameters created using [click](https://click.palletsprojects.com/), 
+[Python Fire](https://github.com/google/python-fire), and/or [LightningCLI](https://pytorch-lightning.readthedocs.io/en/stable/api/pytorch_lightning.utilities.cli.html).
 
-For example, to log the hyperparameters `learning_rate`, `batch_size`, `display_step`,
-`model_path`, `n_hidden_1`, and `n_hidden_2`:
+Additionally, ClearML supports connecting hyperparameter dictionaries to experiments, using the [Task.connect](references/sdk/task.md#connect) method.
+
+For example, the code below connects hyperparameters (`learning_rate`, `batch_size`, `display_step`,
+`model_path`, `n_hidden_1`, and `n_hidden_2`) to a task:
 
 ```python
 # Create a dictionary of parameters
@@ -296,6 +299,8 @@ parameters_dict = { 'learning_rate': 0.001, 'batch_size': 100, 'display_step': 1
 # Connect the dictionary to your CLEARML Task
 parameters_dict = Task.current_task().connect(parameters_dict)
 ```
+
+See more information about logging of hyperparameters [here](fundamentals/hyperparameters.md). 
     
 
 <br/>
