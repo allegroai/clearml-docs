@@ -70,7 +70,7 @@ to switch to.
 ### ClearML Credentials
 
 Generate ClearML credentials, made up of an access and secret key pair, and insert them into your [configuration file](../configs/clearml_conf.md) 
-to grant the ClearML SDK and the ClearML Agent API access to the server. 
+or Jupyter Notebook to grant the ClearML SDK and the ClearML Agent API access to the server. 
 
 You can create credentials for any workspace that you are a member of. 
 

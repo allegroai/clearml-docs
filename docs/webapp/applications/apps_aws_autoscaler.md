@@ -18,9 +18,11 @@ queue (until reaching the defined maximum number of instances). You can add an i
 each instance is spun up. 
 
 ## Autoscaler Instance Configuration
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **AWS Credentials** - Credentials with which the autoscaler can access your AWS account. See [Generating AWS IAM Credentials](#generating-aws-iam-credentials)
     * Use IAM role - Select if you are running your autoscalers on your own EC2 instances which are attached to an [IAM 
-      role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html). In such a case, no AWS IAM credentials are required.
+      role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html). In such a case, no AWS IAM credentials are required
     * AWS Region - [AWS Region](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.Regions) 
       where the EC2 instances will be spun up
     * AWS Access Key ID and AWS Secret Access Key - The credentials with which the autoscaler will access your AWS 
@@ -53,17 +55,19 @@ each instance is spun up.
       for full list of types
     * Instance Key Pair (Optional) - AWS key pair that is provided to the spun EC2 instances for connecting to them via 
       SSH. Provide the Key Pair's name, as was created in AWS. See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) 
-      for more details. 
+      for more details
     * Security Group ID (Optional) - Comma separated list of AWS VPC Security Group IDs to attach to the launched 
       instance. Read more [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) 
     * \+ Add Item - Define another resource type
 * **IAM Instance Profile** (Optional) - Set an IAM instance profile for all instances spun by the Autoscaler 
     * Arn - Amazon Resource Name specifying the instance profile
     * Name - Name identifying the instance profile
-* **Autoscaler Instance Name** (Optional) - Name for the Autoscaler instance. This will appear in the instance list. 
+* **Autoscaler Instance Name** (Optional) - Name for the Autoscaler instance. This will appear in the instance list
 * **Init script** (Optional) - A bash script to execute after launching the EC2 instance 
 * **Additional ClearML Configuration** (Optional) - A ClearML configuration file to use by the ClearML Agent when 
   executing your experiments
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration 
 
 ![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
 

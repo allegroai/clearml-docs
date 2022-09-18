@@ -14,6 +14,8 @@ pip install clearml
 ```
 
 ## Connect ClearML SDK to the Server 
+
+### Local Python
 1. Execute the following command to run the ClearML setup wizard:
 
    ```bash
@@ -35,7 +37,10 @@ pip install clearml
    ```
       
 1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the [**SETTINGS > WORKSPACE**](https://app.clear.ml/settings/workspace-configuration) 
-   page, click **Create new credentials** **>** **Copy to clipboard**.
+   page, click **Create new credentials**.
+   
+   The **LOCAL PYTHON** tab shows the data required by the setup wizard (a copy to clipboard action is available on 
+   hover)
     
 1. At the command prompt `Paste copied configuration here:`, copy and paste the ClearML credentials.
    The setup wizard confirms the credentials. 
@@ -74,7 +79,17 @@ pip install clearml
    CLEARML setup completed successfully.
    ```
    
-Now you can integrate ClearML into your code!
+Now you can integrate ClearML into your code! Continue [here](#auto-log-experiment).
+
+### Jupyter Notebook
+To use ClearML with Jupyter Notebook, you need to configure ClearML Server access credentials for your notebook.
+
+1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the [**SETTINGS > WORKSPACE**](https://app.clear.ml/settings/workspace-configuration) 
+   page, click **Create new credentials**. The **JUPYTER NOTEBOOK** tab shows the commands required to configure your 
+   notebook (a copy to clipboard action is available on hover)
+1. Add these commands to your notebook
+
+Now you can use ClearML in your notebook!
 
 ## Auto-log Experiment
 
@@ -99,7 +114,6 @@ Then initialize the Task object in your `main()` function, or the beginning of t
 task = Task.init(project_name='great project', task_name='best experiment')
 ```
 
-Task name is not unique, it's possible to have multiple experiments with the same name.
 If the project does not already exist, a new one will be created automatically.
 
 The console should return the following output:
