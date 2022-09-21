@@ -87,7 +87,7 @@ title: FAQ
 
 * [How do I configure ClearML Server for subdomains and load balancers?](#subdomains)
 * [Can I add web login authentication to ClearML Server?](#web-auth)
-* [Can I modify a non-responsive task settings?](#watchdog)
+* [Can I modify non-responsive task settings?](#watchdog)
 
 **ClearML Server Troubleshooting**
 
@@ -432,7 +432,11 @@ client.tasks.delete(task='123456789')
 
 **Can I change the random seed my experiment uses?**
 
-Yes! By default, ClearML initializes Tasks with a default seed. You change that seed by calling the [make_deterministic](https://github.com/allegroai/clearml/blob/2f5b519cd8c4df9d3db397604f5b8097c23ccc40/trains/utilities/seed.py) method.
+Yes! By default, ClearML initializes Tasks with an initial seed of `1337` to ensure reproducibility. To set a different 
+value for your task, use the [`Task.set_random_seed`](references/sdk/task.md#taskset_random_seed) class method and 
+provide the new seed value, **before initializing the task**.
+
+You can disable the deterministic behavior entirely by passing `Task.set_random_seed(None)`.
 
 <a id="access_files"></a>
 

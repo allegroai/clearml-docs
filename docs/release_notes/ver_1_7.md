@@ -31,4 +31,4 @@ title: Version 1.7
 * Fix table reporting - when using `logger.report_table(title, series, iteration, etc)`, the `series` arg does not appear in UI [ClearML GitHub issue 684](https://github.com/allegroai/clearml/issues/684)
 * Fix artifacts (and models) use task's original name and not new name
 * Fix very long filenames from s3 can't be downloaded (with `get_local_copy()`)
-* Fix overwrite of existing output models on pipeline task with `monitor_models` [ClearML GitHub issue #758](https://github.com/allegroai/clearml/issues/758)
+* Fix overwrite of existing output models on pipeline task with `monitor_models` [ClearML GitHub issue #757](https://github.com/allegroai/clearml/issues/757)
