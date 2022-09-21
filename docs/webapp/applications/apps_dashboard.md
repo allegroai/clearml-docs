@@ -11,6 +11,8 @@ chosen metric over the project's iterations, as well as project GPU and worker u
 on failed Tasks via Slack integration.
 
 ## Project Dashboard Instance Configuration
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **Monitored Project** - Name of the ClearML project to monitor
 * **Monitored Metric**
     * Monitored Metric - Title - Metric title to track
@@ -21,7 +23,9 @@ on failed Tasks via Slack integration.
     * API Token - Slack workspace access token 
     * Channel Name - Slack channel to which task failure alerts will be posted
     * Fail Iteration Threshold - Minimum number of iterations to trigger Slack alerts about task failure (failed tasks that do not meet the threshold will be ignored)
-
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration.
+  
 ![Dashboard app wizard](../../img/apps_dashboard_wizard.png)
 
 ## Dashboard
