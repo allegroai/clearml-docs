@@ -368,7 +368,7 @@ myDataView.add_query(
 ROI label translation (label mapping) enables combining labels for training, combining disparate datasets, and hiding 
 certain labels for training.
 
-This example demonstrates consolidating two disparate Datasets. Two Dataset versions use `car` (lower case "c"), but a 
+This example demonstrates consolidating two disparate Datasets. Two Dataset versions use `car` (lower case "c"), but the
 third uses `Car` (upper case "C"). 
 The example maps `Car` (upper case "C") to `car` (lower case "c").
 

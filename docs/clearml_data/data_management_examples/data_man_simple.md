@@ -165,5 +165,5 @@ You'll need to input the Dataset ID you received when created the dataset above
    ```
 
 By using `clearml-data`, a clear lineage is created for the data. As seen in this example, when a dataset is closed, the 
-only way to add or remove data is to create a new dataset, and using the previous dataset as a parent. This way, the data 
+only way to add or remove data is to create a new dataset, and to use the previous dataset as a parent. This way, the data 
 is not reliant on the code and is reproducible. 

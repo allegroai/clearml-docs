@@ -129,7 +129,7 @@ clearml-data upload [-h] [--id ID] [--storage STORAGE] [--chunk-size CHUNK_SIZE]
 
 ## close
 
-Finalize the dataset and makes it ready to be consumed. This automatically uploads all files that were not previously uploaded.
+Finalize the dataset and make it ready to be consumed. This automatically uploads all files that were not previously uploaded.
 Once a dataset is finalized, it can no longer be modified.
 
 ```bash
