@@ -37,7 +37,7 @@ module.exports = {
         },
         {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
                 {'Workflows': ['clearml_data/data_management_examples/workflows', 'clearml_data/data_management_examples/data_man_simple', 'clearml_data/data_management_examples/data_man_folder_sync', 'clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},]},
-        {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
+        {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_setup', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
         'integrations/libraries',
         'integrations/storage',
@@ -156,7 +156,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3', 'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
+        'Release Notes': ['release_notes/ver_1_7', 'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3', 'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
             'release_notes/ver_0_13', 'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10',
             'release_notes/ver_0_9',
         ],

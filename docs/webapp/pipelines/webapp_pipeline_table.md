@@ -10,6 +10,7 @@ View the runs table in table view <img src="/docs/latest/icons/ico-table-view.sv
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, 
 using the buttons on the top left of the page. Use the table view for a comparative view of your runs according to 
 columns of interest. Use the details view to access a selected run’s details, while keeping the pipeline runs list in view. 
+Details view can also be accessed by double clicking a specific pipeline run in the table view to open its details view. 
 
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
 
@@ -99,7 +100,7 @@ Access these actions with the context menu in any of the following ways:
 
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
-| Details | View pipeline details. | Any state |  None  |
+| Details | View pipeline details. Can also be accessed by double clicking a run in the pipeline runs table. | Any state |  None  |
 | Run | Create a new pipeline run. Configure and enqueue it for execution. See [Create Run](#create-run).  | Any State | *Pending* |
 | Abort | Manually stop / cancel a run. | *Running* / *Pending* | *Aborted* |
 | Continue | Rerun with the same parameters. |  *Aborted* | *Pending* |
