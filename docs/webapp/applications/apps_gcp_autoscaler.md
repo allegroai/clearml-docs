@@ -24,9 +24,8 @@ when each VM instance is spun up.
 * **GCP Configuration**
     * GCP Project ID - Project used for spinning up VM instances
     * GCP Zone - The GCP zone where the VM instances will be spun up. See [Regions and zones](https://cloud.google.com/compute/docs/regions-zones)
-    * GCP Credentials - Project credentials, see [here](https://cloud.google.com/docs/authentication/production) for 
-      more details
-    * GCP Credentials - Credentials with which the autoscaler can access your GCP account. See [Generating GCP Credentials](#generating-gcp-credentials).
+    * GCP Credentials - Credentials with which the autoscaler can access your GCP account for spinning VM instances 
+      up/down. See [Generating GCP Credentials](#generating-gcp-credentials).
 * **Git Configuration** - Git credentials with which the ClearML Agents running on your VM instances will access your 
   repositories to retrieve the code for their jobs
     * Git User 
@@ -124,3 +123,5 @@ account to configure the autoscaler app:
    ![GCP credential key creation](../../img/apps_gcp_autoscaler_credentials_6.png)
    
 1. Copy the contents of the JSON file and paste them into the **GCP Credentials** field in the autoscaler's wizard. 
+
+   ![GCP credential wizard input](../../img/apps_gcp_autoscaler_credentials_7.png)
