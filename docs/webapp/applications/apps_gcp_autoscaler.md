@@ -24,8 +24,8 @@ when each VM instance is spun up.
 * **GCP Configuration**
     * GCP Project ID - Project used for spinning up VM instances
     * GCP Zone - The GCP zone where the VM instances will be spun up. See [Regions and zones](https://cloud.google.com/compute/docs/regions-zones)
-    * GCP Credentials - Project credentials, see [here](https://cloud.google.com/docs/authentication/production) for 
-      more details
+    * GCP Credentials - Credentials with which the autoscaler can access your GCP account for spinning VM instances 
+      up/down. See [Generating GCP Credentials](#generating-gcp-credentials).
 * **Git Configuration** - Git credentials with which the ClearML Agents running on your VM instances will access your 
   repositories to retrieve the code for their jobs
     * Git User 
@@ -86,3 +86,42 @@ The autoscaler dashboard shows:
 * Console: the application log containing everything printed to stdout and stderr appears in the console log. The log 
   shows polling results of the autoscaler’s associated queues, including the number of tasks enqueued, and updates VM 
   instances being spun up/down.   
+
+
+## Generating GCP Credentials
+
+The autoscaler app accesses your GCP account with the credentials you provide. 
+
+You will need to create a service account with the required access privileges. Then generate credential keys for that 
+account to configure the autoscaler app: 
+
+1. In your GCP account, in the project of your choice, go to **APIs & Services** > **Credentials** 
+    
+1. Click **+ CREATE CREDENTIALS** and choose the **Service account** option
+
+   ![GCP create credentials](../../img/apps_gcp_autoscaler_credentials_1.png)
+
+1. In the **Create service account** window that is opened, fill out the service account details 
+   
+   ![GCP service account details](../../img/apps_gcp_autoscaler_credentials_2.png)
+
+1. Assign the `Service Account User` and `Compute Admin` roles to your service account
+
+   ![GCP service account roles](../../img/apps_gcp_autoscaler_credentials_3.png)
+
+1. Complete creating the account 
+   
+   ![GCP service account creation completion](../../img/apps_gcp_autoscaler_credentials_4.png)
+   
+1. In the **API & Services** > **Credentials** page, under **Service Accounts**, click on the service account you just 
+   created and go to its **KEYS** tab 
+   
+   ![GCP credential keys](../../img/apps_gcp_autoscaler_credentials_5.png)
+
+1. Click **ADD KEY** and create a key in JSON format 
+   
+   ![GCP credential key creation](../../img/apps_gcp_autoscaler_credentials_6.png)
+   
+1. Copy the contents of the JSON file and paste them into the **GCP Credentials** field in the autoscaler's wizard. 
+
+   ![GCP credential wizard input](../../img/apps_gcp_autoscaler_credentials_7.png)
