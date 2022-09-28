@@ -156,7 +156,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3', 'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
+        'Release Notes': ['release_notes/ver_1_7', 'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3', 'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
             'release_notes/ver_0_13', 'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10',
             'release_notes/ver_0_9',
         ],

@@ -106,7 +106,7 @@ with that label.
 * In the **Version Browser**, choose a label on the label list.
 
 For example: 
-* Before filtering, the **Version Browser** in the image below contains seven frames.
+* The **version browser** in the image below contains 101 frames.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -120,7 +120,7 @@ For example:
 </details>
 <br/>  
 
-* A simple label filter for `person` shows three frames with each containing at least one ROI labeled `person`.
+* A simple label filter for `teddy bear` shows three frames with each containing at least one ROI labeled `teddy bear`.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -160,7 +160,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 #### ROI Rules
 
 
-* Create one ROI rule for <code>person</code> shows the same three frames as the simple frame filter (above).
+* Create one ROI rule for the `teddy bear` label, which shows the same three frames as the simple frame filter (above).
   <details className="cml-expansion-panel screenshot">
   <summary className="cml-expansion-panel-summary">View a screenshot</summary>
   <div className="cml-expansion-panel-content">
@@ -171,7 +171,8 @@ where each frame filter can be a combination of ROI, frame, and source rules.
   </details>            
   <br/>
 
-* In the ROI rule, add a second label. Add `partially_occluded`. Only frames containing at least one ROI labeled as both <code>person</code> and <code>partially_occluded</code> match the filter.
+* In the ROI rule, add a second label. Add `partially_occluded`. Only frames containing at least one ROI labeled as both 
+  `teddy bear` and `partially_occluded` match the filter.
 <details className="cml-expansion-panel screenshot">
    <summary className="cml-expansion-panel-summary">View a screenshot</summary>
    <div className="cml-expansion-panel-content">
@@ -199,7 +200,7 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 
 Filter by metadata using Lucene queries.
 
-* Add a frame rule to filter by the metadata key <code>dangerous</code> for the value of <code>no</code>.
+* Add a frame rule to filter by the metadata key `dangerous` for the value of `yes`.
 
     <details className="cml-expansion-panel screenshot">
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -228,7 +229,7 @@ Filter by metadata using Lucene queries.
 
 Filter by sources using Lucene queries.    
 
-* Add a source rule to filter for sources URIs with a wildcards.
+* Add a source rule to filter for sources URIs with wildcards.
 
     <details className="cml-expansion-panel screenshot">
     <summary className="cml-expansion-panel-summary">View a screenshot</summary>
@@ -240,8 +241,7 @@ Filter by sources using Lucene queries.
     </details>            
     <br/>
 
-Use Lucene queries in ROI label filters and frame rules.
-        
+Lucene queries can also be used in ROI label filters and frame rules.        
 
 ## Masks 
 
@@ -273,13 +273,13 @@ The panel presents labels only from masks that are currently displayed.
 1. Click **OK**
 
 ## Annotations
-### Frame Objects (Regions of Interest)
+### Adding Frame Objects (Regions of Interest)
 
 You can add annotations by drawing new bounding areas, and copying existing annotations in the same or other frames.
 
-**To draw a bounding area for a new annotation:**
+#### Creating New Frame Objects
 
-1. Optionally, select a default label in the Default ROI Label(s) list. New annotations are automatically assigned this label.
+To draw a bounding area for a new annotation:
 
 1. Click one of the following modes and create a bounding area in the frame:   
    
@@ -297,72 +297,55 @@ You can add annotations by drawing new bounding areas, and copying existing anno
 
     A new annotation is created. 
 
-1. In the newly created annotation, select or type a label. 
-1. Optionally, add metadata. This is metadata for the annotation, not the entire frame. 
-1. Optionally, lock the annotation.
-1. If you move to another frame, the frame editor automatically saves changes. Otherwise, if you exit the frame editor, 
-   you are prompted to save.
+1. In the newly created annotation, select or type-in a label(s). Click the circle in the label name to select a 
+   different label color. 
 
-**To copy an annotation:**
+You can use the **Default ROI Label(s)** list to automatically set labels to all new annotations. 
 
-1. Click the annotation or bounded area in the image or video clip.
-1. In the annotation, click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy annotation icon" className="icon size-md space-sm" /> 
-   (copy annotation)   
-1. Optionally, navigate to a different frame.
-1. Click **PASTE**. The new annotation appears in the same location as the one you copied.
-1. Optionally, to paste the same annotation, click **PASTE** again in the desired frame.
+#### Copying Frame Objects 
+You can copy existing annotations, and paste them to any frame of your choice:
+1. Click the annotation or bounded area in the frame.
+1. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy annotation" className="icon size-md space-sm" /> 
+   (copy annotation).
+1. Navigate to the frame of your choice (you can remain in the same frame).
+1. Click **PASTE**. The new annotation appears in the same location as the one you copied. You can paste the annotation
+   multiple times.
+   
+Copy all annotations in a frame by clicking the **COPY ALL** button.
 
-**To copy all annotations:**
+### Annotation Actions
 
-1. Click **COPY ALL**.
-1. Optionally, navigate to a different frame.
-1. Click **PASTE**.
+The following table describes the actions that can be performed on existing annotations. The frame editor automatically 
+saves changes when you move to another frame using the frame navigation controls 
+(<img src="/docs/latest/icons/ico-arrow-right.svg" alt="Next frame icon" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-skip-next.svg" alt="Jump to next unfiltered annotation" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-skip-forward.svg" alt="Jump forwards icon" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-arrow-left.svg" alt="Previous frame icon" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-skip-previous.svg" alt="Jump to previous unfiltered annotation" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-skip-backward.svg" alt="Jump backwards icon" className="icon size-md space-sm" />,
+or the arrow keys on the keyboard). Closing the frame editor will prompt you to save any changes.
+
+| Icon (when applicable) | Action | Description |
+|---|---|---|
+|| Move annotation | Click on a bounded area and drag it. |
+|| Resize annotation| Select an annotation, then click on a bounded area’s vertex and drag it. |	
+|<img src="/docs/latest/icons/ico-metadata.svg" alt="edit metadata" className="icon size-md space-sm" />|Edit metadata|Hover over an annotation in the list and click the icon to open the edit window. Input the metadata dictionary in JSON format. This metadata is specific to the selected annotation, not the entire frame.|
+|<img src="/docs/latest/icons/ico-lock-open.svg" alt="Lock annotation" className="icon size-md space-sm" />|Lock / Unlock annotation |Click the button on a specific annotation to make it uneditable. You can also click the button on top of the annotations list to lock all annotations in the frame.|
+|<img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" />|Delete annotation|Click the annotation or bounded area in the frame and then click the button to delete the annotation.|
+|<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />|Show/hide all annotations |Click the button to view the frame without annotations. When annotations are hidden, they can’t be modified. |
+||Delete label |In the relevant annotation, click **x** on the label you want to remove.| 
 
 ### Frame Labels
 
+You can add labels which describe the whole frame, with no specific coordinates. 
+
 **To add frame labels:**
 
-1. Expand the **FRAME LABELS** area.
-1. Click **+ Add new**.
-1. Enter a label.
-1. Optionally, click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" />.
-
-### Annotation Management
-
-**To move annotations:**
-
-* Move a bounded area by clicking on it and dragging.
-
-**To resize annotations:**
-
-* Resize a bounded area by clicking on a vertex and dragging.
-
-**To modify annotation metadata:**
- 
-* In the label, click edit and then in the popup modify the metadata dictionary (in JSON format).
-
-**To modify annotation colors:**
-    
-* Modify the color of an area by clicking the circle in the label name and select a new color.
- 
-**To lock annotations:**
-
-* All annotations - Above the annotations, click the lock / unlock.
-* A specific annotation - In an annotation, click the lock / unlock.
-
-**To delete annotations:**
-
-1. Click the annotation or bounded area in the image or video clip.
-1. Press the **DELETE** key, or in the annotation, click **X**.
-
-**To add, change, or delete labels to annotations labels:**
-
-* Add - Click in the annotation and choose a label from the label list, or type a new label.
-* Change - In the annotation label textbox, choose a label from the list or type a new label.
-* Delete - In the annotation, in the label area, click the label's **X**.
+1. Expand the **FRAME LABELS** area (below **OBJECTS**)
+1. Click **+ Add new**
+1. Enter a label(s)
 
 ## Frame Metadata
 
 **To edit frame metadata:** 
+1. Expand the **FRAME METADATA** area 
+1. Click edit <img src="/docs/latest/icons/ico-metadata.svg" alt="edit metadata" className="icon size-md space-sm" /> 
+   which will open an editing window
+1. Modify the metadata dictionary in JSON format
 
-* Expand the **FRAME METADATA** area, click edit, and then in the popup modify the metadata dictionary (in JSON format).
+

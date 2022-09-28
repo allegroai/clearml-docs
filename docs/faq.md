@@ -87,7 +87,7 @@ title: FAQ
 
 * [How do I configure ClearML Server for subdomains and load balancers?](#subdomains)
 * [Can I add web login authentication to ClearML Server?](#web-auth)
-* [Can I modify a non-responsive task settings?](#watchdog)
+* [Can I modify non-responsive task settings?](#watchdog)
 
 **ClearML Server Troubleshooting**
 
@@ -213,7 +213,7 @@ and [OutputModel](references/sdk/model_outputmodel.md) classes.
 
 <br/>
 
-**Models are not accessible the UI after I migrated ClearML Server to a new domain. How do I fix this?** <a id="migrate_server_models"></a>
+**Models are not accessible from the UI after I migrated ClearML Server to a new domain. How do I fix this?** <a id="migrate_server_models"></a>
 
 This can happen if your models were uploaded to the ClearML files server, since the value registered was their full URL 
 at the time of registration (e.g. `https://files.<OLD_DOMAIN>/path/to/model`).
@@ -283,10 +283,15 @@ to reproduce. You can see uncommitted changes in the ClearML Web UI, in the EXEC
 
 **I do not use argparse for hyperparameters. Do you have a solution?** <a id="dont-want-argparser"></a>
 
-Yes! ClearML supports connecting hyperparameter dictionaries to experiments, using the [Task.connect](references/sdk/task.md#connect) method.
+Yes! ClearML provides multiple ways to configure your task and track your parameters! 
 
-For example, to log the hyperparameters `learning_rate`, `batch_size`, `display_step`,
-`model_path`, `n_hidden_1`, and `n_hidden_2`:
+In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](https://click.palletsprojects.com/), 
+[Python Fire](https://github.com/google/python-fire), and/or [LightningCLI](https://pytorch-lightning.readthedocs.io/en/stable/api/pytorch_lightning.utilities.cli.html).
+
+ClearML also supports tracking code-level configuration dictionaries using the [Task.connect](references/sdk/task.md#connect) method.
+
+For example, the code below connects hyperparameters (`learning_rate`, `batch_size`, `display_step`,
+`model_path`, `n_hidden_1`, and `n_hidden_2`) to a task:
 
 ```python
 # Create a dictionary of parameters
@@ -296,6 +301,8 @@ parameters_dict = { 'learning_rate': 0.001, 'batch_size': 100, 'display_step': 1
 # Connect the dictionary to your CLEARML Task
 parameters_dict = Task.current_task().connect(parameters_dict)
 ```
+
+See more task configuration options [here](fundamentals/hyperparameters.md). 
     
 
 <br/>
@@ -392,7 +399,7 @@ Conda and the [typing](https://pypi.org/project/typing/) package may have some c
 
 However, [since Python 3.5](https://docs.python.org/3.5/library/typing.html), the `typing` package is part of the standard library. 
 
-To resolve the error, uninstall `typing` and rerun you script. If this does not fix the issue, create a [new ClearML issue](https://github.com/allegroai/clearml/issues/new), including the full error, and your environment details.  
+To resolve the error, uninstall `typing` and rerun your script. If this does not fix the issue, create a [new ClearML issue](https://github.com/allegroai/clearml/issues/new), including the full error, and your environment details.  
 
 <a id="delete_exp"></a>
 
@@ -425,7 +432,11 @@ client.tasks.delete(task='123456789')
 
 **Can I change the random seed my experiment uses?**
 
-Yes! By default, ClearML initializes Tasks with a default seed. You change that seed by calling the [make_deterministic](https://github.com/allegroai/clearml/blob/2f5b519cd8c4df9d3db397604f5b8097c23ccc40/trains/utilities/seed.py) method.
+Yes! By default, ClearML initializes Tasks with an initial seed of `1337` to ensure reproducibility. To set a different 
+value for your task, use the [`Task.set_random_seed`](references/sdk/task.md#taskset_random_seed) class method and 
+provide the new seed value, **before initializing the task**.
+
+You can disable the deterministic behavior entirely by passing `Task.set_random_seed(None)`.
 
 <a id="access_files"></a>
 
@@ -713,7 +724,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
         
 **Option 2: Install ClearML in your Jupyter Notebook**
 
-1. In the ClearML Web UI > **Settings > Workspace** page, create credentials and copy your access key and secret key. These are required in the Step 3.
+1. In the ClearML Web UI > **Settings > Workspace** page, create credentials and copy your access key and secret key. These are required for Step 3.
 
 1. Install the ClearML Python Package.
 
@@ -733,7 +744,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 1. You can now use ClearML.
    ```python
    # create a task and start training
-   task = Task.init('juptyer project', 'my notebook')
+   task = Task.init('jupyter project', 'my notebook')
    ```
         
 
@@ -884,7 +895,7 @@ on the "Configuring Your Own ClearML Server" page in the "Deploying ClearML" sec
 
 <br/>
 
-**Can I modify a non-responsive task settings?** <a id="watchdog"></a>
+**Can I modify non-responsive task settings?** <a id="watchdog"></a>
 
 The non-responsive experiment watchdog monitors experiments that were not updated for a specified time interval, and 
 marks them as `aborted`. The watchdog is always active.

@@ -34,6 +34,16 @@ Each application’s page is split into two sections:
 1. Fill in the configuration details
 1. **Launch**
 
+:::tip Configuration shortcuts
+You can also launch an app instance with the configuration of a previously launched instance:
+* Cloning a previously launched app instance will open the launch wizard with the original instance's configuration 
+  prefilled.
+* Importing an app configuration file. You can export an existing app instance's configuration as a JSON file when 
+  viewing its configuration.
+
+The prefilled configuration wizard can be edited before launching the new app instance.
+:::
+  
 ## App Instance Actions
 Access app instance actions, by right clicking an instance, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
 
@@ -41,6 +51,22 @@ Access app instance actions, by right clicking an instance, or through the menu 
 
 * **Rename** - Rename the instance 
 * **Configuration** - View an instance’s configuration 
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration   
 * **Stop** - Shutdown the instance
 * **Clone** - Launch a new instance with same configuration prefilled
 * **Delete** - Delete the instance
+
+## Instance List Actions 
+
+Access the instance list actions by clicking the action menu ( <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> ) 
+on the instance list header:
+
+![Instance list actions](../../img/apps_instance_list_actions.png)
+
+* **Import Configuration** - Import an app instance's configuration file. This opens the app configuration wizard 
+  prefilled according to the imported file. You can modify the configuration before launching the instance.  
+
+* **Clear Completed** - Delete all app instances that have completed their execution. This action only 
+deletes instances in the current instance list view (i.e. My instances / All).
+
