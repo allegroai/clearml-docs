@@ -52,6 +52,11 @@ required python packages, and execute & monitor the process.
    queue (`default` in this case), and execute them one after the other. Multiple agents can listen to the same queue 
    (or even multiple queues), but only a single agent will pull a Task to be executed.
 
+:::tip Docker Mode
+ClearML Agents can also be deployed in docker mode, in which the agent spins a docker image based on a [task](../../fundamentals/task.md)’s 
+configuration, and, inside the docker, the agent will clone the specified repository/code, apply the original execution’s 
+uncommitted changes, install the required python packages and start executing. See more information [here](../../clearml_agent.md#docker-mode).
+:::
 
 ## Clone an Experiment
 Experiments already in the system can be reproduced for validation, or used as a baseline for further experimentation. 
