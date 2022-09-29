@@ -54,8 +54,8 @@ required python packages, and execute & monitor the process.
 
 :::tip Docker Mode
 ClearML Agents can also be deployed in docker mode, in which the agent spins a docker image based on a [task](../../fundamentals/task.md)’s 
-configuration, and, inside the docker, the agent will clone the specified repository/code, apply the original execution’s 
-uncommitted changes, install the required python packages and start executing. See more information [here](../../clearml_agent.md#docker-mode).
+configuration. Inside the docker, an agent will clone the specified repository/code, apply the original execution’s 
+uncommitted changes, install the required python packages and start executing a task. See more information [here](../../clearml_agent.md#docker-mode).
 :::
 
 ## Clone an Experiment
