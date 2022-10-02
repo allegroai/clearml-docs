@@ -32,6 +32,20 @@ title: Version 1.7
 * Fix can't dequeue experiments from deleted queue.
 * Fix UI Dataset content previews displays "No preview" message while previews are loading
 
+### ClearML SDK 1.7.1
+
+**New Features and Improvements**
+* Add callback option for pipeline step retry
+
+**Bug Fixes**
+* Fix Python Fire binding
+* Fix Dataset failing to load helper packages should not crash
+* Fix `Dataset.get_local_copy()` is allowed for a non-finalized dataset
+* Fix `Task.upload_artifact()` does not upload empty lists/tuples
+* Fix pipeline retry mechanism interface
+* Fix Python <3.5 compatibility
+* Fix local cache warning (should be a debug message)
+
 ### ClearML SDK 1.7.0
 
 **New Features and Improvements**
