@@ -11,8 +11,9 @@ This example creates a pipeline incorporating four tasks, each of which is creat
 * `step_one` - Downloads and processes data.
 * `step_two` - Further processes the data from `step_one`.
 * `step_three` - Uses the processed data from `step_two` to train a model.
+* `step_four` - Uses data from `step_two` and the model from `step_three` to make a prediction.
 
-The pipeline steps, defined in the `step_one`, `step_two`, and `step_three` functions, are each wrapped with the 
+The pipeline steps, defined in the `step_one`, `step_two`, `step_three`, and `step_four` functions, are each wrapped with the 
 [`@PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent) 
 decorator, which creates a ClearML pipeline step for each one when the pipeline is executed.
 
@@ -32,8 +33,9 @@ For detailed information, see [`@PipelineDecorator.pipeline`](../../references/s
 In the example script, the controller defines the interactions between the pipeline steps in the following way:
 1. The controller function passes its argument, `pickle_url`, to the pipeline's first step (`step_one`)
 1. The returned data from the first step, `data_frame`, is passed to `step_two`
-1. The second step's output, `preprocessed_data`, is modified within the pipeline execution logic 
-1. The modified data is passed to the third step, `step_three`.
+1. Returned data from the second step's output, `X_train` and `y_train`, is passed to `step_three`
+1. Returned data from the second step's output, `X_test` and `y_test`, and the output from the third step `model` is
+  passed to `step_four`.
 
 :::info Local Execution
 In this example, the pipeline is set to run in local mode by using 

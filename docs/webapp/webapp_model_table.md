@@ -9,7 +9,7 @@ View the models table in table view <img src="/docs/latest/icons/ico-table-view.
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your models according to 
 columns of interest. Use the details view to access a selected model’s details, while keeping the model list in view. 
-
+Details view can also be accessed by double clicking a specific model in the table view to open its details view. 
 
 ![Models table](../img/webapp_models_01.png)
 
@@ -73,7 +73,7 @@ Access these actions with the context menu in any of the following ways:
 
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
-| Details | Model details include general information, the model configuration, and label enumeration. | Any state |
+| Details | View model details, which include general information, the model configuration, and label enumeration. Can also be accessed by double clicking a model in the models table | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
 | Archive | To more easily work with active models, move a model to the archive. See [Archiving](webapp_archiving.md). | Any state |
 | Restore | Action available in the archive. Restore a model to the active model table. | Any state |

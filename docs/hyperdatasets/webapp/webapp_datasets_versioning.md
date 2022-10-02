@@ -6,7 +6,15 @@ Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying
 deleting [Dataset versions](../dataset.md#dataset-versioning).
 
 ## Dataset Version History
-The WebApp (UI) will present your dataset version structure in one of two ways, depending on the structure implemented.
+The WebApp (UI) presents your dataset version structure in [simple view](#simple-view) or [advanced view](#advanced-view), 
+depending on the structure implemented. 
+
+Use the search bar to find specific versions. You can query by version name or version description. The search returns 
+all versions that match the query.
+
+In advanced view, parent versions that do not match the query where a child version does appear in a muted color.
+
+![Dataset version search](../../img/hyperdatasets/hyperdataset_search_2.png)
 
 ## Simple View 
 While your dataset maintains a simple (linear) [version structure](../dataset.md#dataset-version-structure), the WebApp 
@@ -123,7 +131,22 @@ Label usage stats for this dataset version.
   
 ## Version Frame Browser
 The **Version Frame Browser** displays a preview of the contents of the selected dataset version.
-The dataset version can be filtered by multiple criteria. The resulting frames can be exported as a JSON file.  
+
+View the version's frames as thumbnails or in a table. Use the view toggle to switch between thumbnail 
+view <img src="/docs/latest/icons/ico-grid-view.svg" alt="thumbnail view" className="icon size-md space-sm" /> and 
+table view <img src="/docs/latest/icons/ico-table-view.svg" alt="table view" className="icon size-md space-sm" /> . 
+
+Use the thumbnail view for a visual preview of the version's frames:
+
+![Frame browser thumbnails](../../img/hyperdatasets/frame_browser_thumbnails.png)
+
+Use the table view to list the version’s frames in a customizable table. Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
+for column customization options.
+
+![Frame browser list](../../img/hyperdatasets/frame_browser_list.png)
+
+
+The dataset version can be filtered by multiple criteria. The resulting frames can be exported as a JSON file. 
 
 To view further details about a specific frame, click on its preview, which will open the [Frame Viewer](webapp_datasets_frames.md#frame-viewer).
 
@@ -137,12 +160,12 @@ with that label.
 <summary className="cml-expansion-panel-summary">Simple filter example</summary>
 <div className="cml-expansion-panel-content">
 
-* Before filtering, the **Version Browser** in the image below contains seven frames.
+* The **version browser** in the image below contains 101 frames.
 
 
 ![Unfiltered version browser](../../img/hyperdatasets/frame_filtering_01.png)
 
-* A simple label filter for `person` shows three frames, each containing at least one ROI labeled `person`.
+* A simple label filter for `teddy bear` shows three frames, each containing at least one ROI labeled `teddy bear`.
 
 ![Filtered version browser](../../img/hyperdatasets/frame_filtering_02.png)
 
@@ -173,12 +196,12 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 <summary className="cml-expansion-panel-summary">ROI Rules</summary>
 <div className="cml-expansion-panel-content">      
 
-* Create one ROI rule for `person` shows the same three frames as the simple frame filter (above).
+* Create one ROI rule for the `teddy bear` label, which shows the same three frames as the simple frame filter (above).
 
 ![Adding an ROI rule](../../img/hyperdatasets/frame_filtering_03.png)
 
 * In the ROI rule, add a second label. Add `partially_occluded`. Only frames containing at least one ROI labeled as both 
-  `person` and `partially_occluded` match the filter.
+  `teddy bear` and `partially_occluded` match the filter.
   
 ![Add label to ROI rule](../../img/hyperdatasets/frame_filtering_04.png)
    
@@ -196,9 +219,9 @@ where each frame filter can be a combination of ROI, frame, and source rules.
 
 Filter by metadata using Lucene queries.
 
-* Add a frame rule to filter by the metadata key `dangerous` for the value of `no`.
+* Add a frame rule to filter by the metadata key `dangerous` for the value of `yes`.
   
-![Filter by metadata ](../../img/hyperdatasets/frame_filtering_08.png)
+![Filter by metadata](../../img/hyperdatasets/frame_filtering_08.png)
 
 * Open a frame in the frame viewer to see its metadata.
   
@@ -214,7 +237,7 @@ Filter by metadata using Lucene queries.
 
 Filter by sources using Lucene queries.    
 
-* Add a source rule to filter for sources URIs with a wildcards.
+* Add a source rule to filter for sources URIs with wildcards.
   
 ![Filter by source](../../img/hyperdatasets/frame_filtering_10.png)
 
@@ -225,11 +248,13 @@ Lucene queries can also be used in ROI label filters and frame rules.
 
 ### Exporting Frames
 
-To export (download) filtered datasets as a JSON file, click **EXPORT FRAMES**. 
+To export (download) the filtered frames as a JSON file, click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> > **EXPORT FRAMES**. 
 
 ### Frame Browser Configuration
-Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />  to open the
+Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" />  to open the
 frame browser configuration settings. 
+
+![Frame browser config menu](../../img/hyperdatasets/frame_browser_menu.png)
 
 #### Grouping Previews
 FrameGroups or SingleFrames can share the same `context_id` (URL). For example, users can set the same `context_id` 

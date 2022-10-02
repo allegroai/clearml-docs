@@ -88,25 +88,20 @@ module.exports = {
               label: 'Server API',
               to: '/docs/references/api/index',
             },
-          ],
-        },
-        {
-          label: 'Resources',
-          position: 'left', // or 'right'
-          items: [
-            {
-              label: 'FAQ',
-              to: '/docs/faq',
-            },
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_6',
+              to: '/docs/release_notes/ver_1_7',
             },
             {
               label: 'Community Resources',
               to: '/docs/community',
-            },
+            }
           ],
+        },
+        {
+          label: 'FAQ',
+          position: 'left', // or 'right'
+          to: '/docs/faq'
         },
         {
           href: 'https://clearml.slack.com',
