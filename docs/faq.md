@@ -37,7 +37,7 @@ title: FAQ
 **Graphs and Logs**
 
 * [The first log lines are missing from the experiment console tab. Where did they go?](#first-log-lines-missing)
-* [Can I create a graph comparing hyperparameters vs model accuracy?](#compare-graph-parameters)
+* [How do I create a graph comparing hyperparameters vs model accuracy?](#compare-graph-parameters)
 * [I want to add more graphs, not just with TensorBoard. Is this supported?](#more-graph-types)
 * [How can I report more than one scatter 2D series on the same plot?](#multiple-scatter2D)
 
@@ -525,20 +525,21 @@ info panel > CONSOLE tab, use the *Download full log* feature.
 
 <br/>
 
-**Can I create a graph comparing hyperparameters vs. model accuracy?** <a id="compare-graph-parameters"></a>
+**How do I create a graph comparing hyperparameters vs. model accuracy?** <a id="compare-graph-parameters"></a>
 
-Yes! You can manually create a plot with a single point X-axis for the hyperparameter value, and Y-axis for the accuracy. 
+You can manually create a plot with a single point X-axis for the hyperparameter value, and Y-axis for the accuracy. 
 For example:
 
 ```python
-number_layers = 10
-accuracy = 0.95
+number_layers = [10, 12, 14]
+accuracy = [0.95, 0.90, 0.94]
+scatter = zip(number_layers, accuracy)
 Task.current_task().get_logger().report_scatter2d(
     "performance", 
     "accuracy", 
     iteration=0, 
     mode='markers', 
-    scatter=[(number_layers, accuracy)]
+    scatter=scatter
 )
 ```
 
