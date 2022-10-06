@@ -538,7 +538,7 @@ The image below show a parallel coordinates plot which displays the values of se
 
 ![Parallel Coordinates](img/clearml_faq_screenshots/compare_parallel_coordinates.png)
 
-You can also visualize the differences in a scatter plot. In each experiment whose values wil compared, report a plot 
+You can also visualize the differences in a scatter plot. In each experiment whose values will be compared, report a plot 
 with a single point, x-axis for the hyperparameter value, and Y-axis for the accuracy. 
 
 In the code below, the task reports a single-point scatter plot with `number_layers` as the x-axis and
