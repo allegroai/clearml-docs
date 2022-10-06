@@ -527,23 +527,38 @@ info panel > CONSOLE tab, use the *Download full log* feature.
 
 **How do I create a graph comparing hyperparameters vs. model accuracy?** <a id="compare-graph-parameters"></a>
 
-You can manually create a plot with a single point X-axis for the hyperparameter value, and Y-axis for the accuracy. 
-For example:
+You can use the UI's [experiment comparison features](webapp/webapp_exp_comparing.md) to compare the logged hyperparameter 
+and accuracy values of several experiments. 
+
+In an experiment comparison page, under the **HYPER PARAMETERS** tab, you can view the experiments' hyperparameter values 
+in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
+
+The image below show a parallel coordinates plot which displays the hyperparameter 
+values (`base_lr`, `batch_size`, and `number_of_epochs`) and the values of a selected performance 
+metric (`accuracy`) of three experiments. 
+
+![Parallel Coordinates](img/clearml_faq_screenshots/compare_parallel_coordinates.png)
+
+You can also visualize the differences in a scatter plot. In each experiment whose values wil compared, report a plot 
+with a single point, x-axis for the hyperparameter value, and Y-axis for the accuracy. 
+
+For example, in the code below, the task reports a single-point scatter plot with `number_layers` as the x-axis and
+`accuracy` as the Y-axis :
 
 ```python
-number_layers = [10, 12, 14]
-accuracy = [0.95, 0.90, 0.94]
-scatter = zip(number_layers, accuracy)
+number_layers = 10
+accuracy = 0.95
 Task.current_task().get_logger().report_scatter2d(
-    "performance", 
-    "accuracy", 
+    title="performance", 
+    series="accuracy", 
     iteration=0, 
     mode='markers', 
-    scatter=scatter
+    scatter=[(number_layers, accuracy)]
 )
 ```
 
-Assuming the hyperparameter is `number_layers` with current value `10`, and the `accuracy` for the trained model is `0.95`. Then, the experiment comparison graph shows:
+When these experiments are compared in the UI's experiment comparison, all the reported `performance/accuracy` values 
+are displayed in a single plot.
 
 ![image](img/clearml_faq_screenshots/compare_plots.png)
 
@@ -553,14 +568,13 @@ Another option is a histogram chart:
 number_layers = 10
 accuracy = 0.95
 Task.current_task().get_logger().report_vector(
-    "performance", 
-    "accuracy", 
+    title="performance", 
+    series="accuracy", 
     iteration=0, 
     labels=['accuracy'],
     values=[accuracy], 
     xlabels=['number_layers %d' % number_layers]
 )
-
 ```
 
 ![image](img/clearml_faq_screenshots/compare_plots_hist.png)
