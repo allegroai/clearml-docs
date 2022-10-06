@@ -67,7 +67,7 @@ Most importantly, ClearML also logs experiments’ input and output models as we
 
 #### Logging Artifacts 
 ClearML provides an explicit logging interface that supports manually reporting a variety of artifacts. Any type of 
-artifact can be logged to a task using the [`Task.upload_artifact`](../references/sdk/task.md#upload_artifacts) method. 
+artifact can be logged to a task using the [`Task.upload_artifact`](../references/sdk/task.md#upload_artifact) method. 
 See more details in the [Artifacts Reporting example](../guides/reporting/artifacts.md).
 
 ClearML can be configured to upload artifacts to any of the supported types of storage, which include local and shared 
