@@ -533,16 +533,15 @@ and accuracy values of several experiments.
 In an experiment comparison page, under the **HYPER PARAMETERS** tab, you can view the experiments' hyperparameter values 
 in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
 
-The image below show a parallel coordinates plot which displays the hyperparameter 
-values (`base_lr`, `batch_size`, and `number_of_epochs`) and the values of a selected performance 
-metric (`accuracy`) of three experiments. 
+The image below show a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
+`batch_size`, and `number_of_epochs`) and a performance metric (`accuracy`) of three experiments. 
 
 ![Parallel Coordinates](img/clearml_faq_screenshots/compare_parallel_coordinates.png)
 
 You can also visualize the differences in a scatter plot. In each experiment whose values wil compared, report a plot 
 with a single point, x-axis for the hyperparameter value, and Y-axis for the accuracy. 
 
-For example, in the code below, the task reports a single-point scatter plot with `number_layers` as the x-axis and
+In the code below, the task reports a single-point scatter plot with `number_layers` as the x-axis and
 `accuracy` as the Y-axis :
 
 ```python
