@@ -184,6 +184,18 @@ You can spin up an agent on any machine: on-prem and/or cloud instance. When spi
 service a queue(s). Utilize the machine by enqueuing tasks to the queue that the agent is servicing, and the agent will 
 pull and execute the tasks. 
 
+:::tip cross-platform execution
+ClearML Agent is platform agnostic. When using the ClearML Agent to execute experiments cross-platform, set platform 
+specific environment variables before launching the agent.
+
+For example, to run an agent on an ARM device, set the core type environment variable before spinning up the agent:
+
+```bash
+export OPENBLAS_CORETYPE=ARMV8
+clearml-agent daemon --queue <queue_name>
+```
+:::
+
 #### Executing an Agent
 To execute an agent, listening to a queue, run:
 
