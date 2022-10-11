@@ -27,6 +27,9 @@ but can be overridden by command-line arguments.
 |**CLEARML_AGENT_EXTRA_PYTHON_PATH**| Sets extra python path|
 |**CLEARML_AGENT_INITIAL_CONNECT_RETRY_OVERRIDE**| Overrides initial server connection behavior (true by default), allows explicit number to specify number of connect retries) | 
 |**CLEARML_AGENT_K8S_HOST_MOUNT / CLEARML_AGENT_DOCKER_HOST_MOUNT**| Specifies Agent's mount point for Docker / K8s|
+|**CLEARML_K8S_GLUE_START_AGENT_SCRIPT_PATH**| Allow customizing the agent startup script location|
+|**CLEARML_AGENT_DEBUG_INFO**| Debug environment variable|
+|**CLEARML_AGENT_CHILD_AGENTS_COUNT_CMD**|Allow overriding child agent count command in k8s|
 |**CLEARML_AGENT_SKIP_PIP_VENV_INSTALL**| Skips Python virtual env installation on execute and provides a custom venv binary |
 |**CLEARML_AGENT_SKIP_PYTHON_ENV_INSTALL**| Skips entire Python venv installation and assumes python as well as every dependency is preinstalled|
 |**CLEARML_AGENT_VENV_CACHE_PATH**|Overrides venv cache folder configuration|

@@ -84,6 +84,11 @@ for information about using environment variables with Windows in the configurat
     Alternatively, override this option with the environment variable `CUDNN_VERSION`.
 
 ---
+
+**`agent.disable_ssh_mount`** (*bool*)
+
+* Set to `true` to disables the auto `.ssh` mount into the docker
+___
         
 **`agent.docker_apt_cache`** (*string*)
         
@@ -157,6 +162,10 @@ For example:
         
 * The pip (Python package tool) cache folder for mapping Python package caching into Docker.
         
+---
+
+**`agent.enable_git_ask_pass`** (*bool*)
+$$$$$
 ---
 
 **`agent.enable_task_env`** (*bool*)
