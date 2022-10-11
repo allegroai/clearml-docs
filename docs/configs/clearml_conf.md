@@ -87,7 +87,9 @@ for information about using environment variables with Windows in the configurat
 
 **`agent.disable_ssh_mount`** (*bool*)
 
-* Set to `true` to disables the auto `.ssh` mount into the docker
+* Set to `true` to disables the auto `.ssh` mount into the docker. The environment variable `CLEARML_AGENT_DISABLE_SSH_MOUNT` 
+  overrides this configuration option.
+
 ___
         
 **`agent.docker_apt_cache`** (*string*)
@@ -165,7 +167,15 @@ For example:
 ---
 
 **`agent.enable_git_ask_pass`** (*bool*)
-$$$$$
+
+:::note
+`enable_git_ask_pass` is supported only on Linux systems
+:::
+
+* If enabled, uses `GIT_ASKPASS` to pass Git user/pass when cloning/fetching repositories
+* It solves passing user/token to git submodules.
+* This is a safer way to ensure multiple users using the same repository will not accidentally leak credentials
+
 ---
 
 **`agent.enable_task_env`** (*bool*)
