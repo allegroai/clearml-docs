@@ -2,6 +2,16 @@
 title: Version 1.4
 ---
 
+### ClearML Agent 1.4.1
+
+**New Features and Improvements**
+* Add warning if venv cache is disabled
+* Add `agent.disable_ssh_mount` configuration option (same as the `CLEARML_AGENT_DISABLE_SSH_MOUNT` environment variable)
+
+**Bug Fixes**
+* Fix docker command for monitoring child agents
+* Fix `--gpus all` not reporting GPU stats on worker machine
+
 ### ClearML Agent 1.4.0
 
 **New Features and Improvements**
