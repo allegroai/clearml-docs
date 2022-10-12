@@ -671,8 +671,8 @@ task.connect(params_dictionary)
 
 ### Configuration Objects
 
-Configuration objects more elaborate than a key-value dictionary (such as nested dictionaries or configuration files), 
-can be logged to a task using the [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration) method. 
+To log configuration more elaborate than a key-value dictionary (such as nested dictionaries or configuration files), 
+use the [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration) method. 
 This method saves configuration objects as blobs (i.e. ClearML is not aware of their internal structure).
 
 ```python
