@@ -65,7 +65,7 @@ module.exports = {
         },
         {
           to:'/docs/hyperdatasets/overview',
-          label: 'Hyper Datasets',
+          label: 'Hyper-Datasets',
           position: 'left',
         },
         // {to: 'tutorials', label: 'Tutorials', position: 'left'},
