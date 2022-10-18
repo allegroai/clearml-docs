@@ -6,22 +6,27 @@ Use the Dataset versioning WebApp (UI) features for viewing, creating, modifying
 deleting [Dataset versions](../dataset.md#dataset-versioning).
 
 ## Dataset Version History
-The WebApp (UI) presents your dataset version structure in [simple view](#simple-view) or [advanced view](#advanced-view), 
-depending on the structure implemented. 
+The WebApp (UI) presents your dataset version structure in list view or tree view. 
+
+In list view, the version history is presented  as a table of historic snapshots
+$$$ NEW IMAGE
+![image](../../img/hyperdatasets/web-app/dataset_simple_adv_01.png)
+
+In tree view, the WebApp presents the version history as a tree of versions.
+$$$ NEW IMAGE
+![image](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
 
 Use the search bar to find specific versions. You can query by version name or version description. The search returns 
 all versions that match the query.
 
-In advanced view, parent versions that do not match the query where a child version does appear in a muted color.
+In tree view, parent versions that do not match the query where a child version does appear in a muted color.
 
+
+$$NEW IMAGE
 ![Dataset version search](../../img/hyperdatasets/hyperdataset_search_2.png)
 
-## Simple View 
-While your dataset maintains a simple (linear) [version structure](../dataset.md#dataset-version-structure), the WebApp 
-(UI) will present the version history as a table of historic snapshots:
 
-![image](../../img/hyperdatasets/web-app/dataset_simple_adv_01.png)
-
+$$$Remove section?
 ### Creating Snapshots
 
 To create a snapshot, you must be in the simple (version table) view. 
@@ -49,10 +54,7 @@ To modify a Dataset version name:
         
 ## Advanced View
 
-When employing a non-trivial [version structure](../dataset.md#dataset-version-structure) of your dataset, the WebApp 
-(UI) presents the version history as a tree of versions.
 
-![image](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
 
 ### Creating Versions
 
