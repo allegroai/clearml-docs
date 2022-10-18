@@ -65,7 +65,8 @@ Lastly, we can upload an instance of an object; Numpy/Pandas/PIL Images are supp
 If the object type is unknown ClearML pickles it and uploads the pickle file.
 
 ```python
-task.upload_artifacts(my_numpy_matrix, name='features')
+numpy_object = np.eye(100, 100)
+task.upload_artifact(name='features', artifact_object=numpy_object)
 ```
 
 Check out all [artifact logging](../../clearml_sdk/task_sdk.md#artifacts) options.
