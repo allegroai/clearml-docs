@@ -137,7 +137,8 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     * Mac - `$HOME/clearml.conf`
     * Windows - `\User\<username>\clearml.conf`
 
-1. Optionally, configure ClearML options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
+1. Optionally, configure ClearML options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md)
+   and the [ClearML Agent Environment Variables reference](clearml_agent/clearml_agent_env_var.md). 
    
 :::note
 The ClearML Enterprise server provides a [configuration vault](webapp/webapp_profile.md#configuration-vault), the contents 
@@ -241,6 +242,16 @@ clearml-agent daemon --detached --queue group_a group_b --order-fairness  --gpus
 ```
 It will make sure the agent will pull from the `group_a` queue, then from `group_b`, then back to `group_a`, etc. This ensures 
 that `group_a` or `group_b` will not be able to starve one another of resources.
+
+#### SSH Access
+To make SSH keys available to an agent running in Docker mode, use the `SSH_AUTH_SOCK` environment variable. 
+
+The command below will execute an agent in Docker mode and assign it to service a queue. The agent will have access to 
+the SSH keys provided in the environment variable.
+
+```
+SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <your queue name>  --docker
+```
 
 ### Explicit Task Execution
 
