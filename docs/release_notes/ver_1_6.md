@@ -64,10 +64,10 @@ title: Version 1.6
   * Plots page shows last reported plot for each metric/variation combination
   * Single plot view provides history navigation slider
 * Add single value scalar reporting: Single value scalars are aggregated into a summary table in the experiment’s scalars 
-  UI page [ClearML GitHub issues #400](https://github.com/allegroai/clearml/issues/400)
-* Add "show hidden projects" control [ClearML GitHub issues #694](https://github.com/allegroai/clearml/issues/694)
-* Improve UI projects page setting persistence - User's last chosen setting for recent/name sorting and team/personal 
-  filter is saved [ClearML GitHub issues #353](https://github.com/allegroai/clearml/issues/353)
+  UI page [ClearML GitHub issue #400](https://github.com/allegroai/clearml/issues/400)
+* Add "show hidden projects" control [ClearML GitHub issue #694](https://github.com/allegroai/clearml/issues/694)
+* Improve UI projects page setting persistence - User's last chosen settings for recent/name sorting and team/personal 
+  filter is saved [ClearML GitHub issue #353](https://github.com/allegroai/clearml/issues/353)
 * Improve UI presentation for object IDs:
   * Display shortened ID next to task name 
   * Display full ID in tooltip  
@@ -81,9 +81,9 @@ title: Version 1.6
 * Maintain UI viewing mode when restoring archived items
 
 **Bug Fixes**
-* Fix experiment selection with 'Shift' key in UI experiment table not working [ClearML Server GitHub issues #139](https://github.com/allegroai/clearml-server/issues/139)
-* Fix UI search error message interferes with inputting search query [ClearML Server GitHub issues #138](https://github.com/allegroai/clearml-server/issues/138)
-* Fix refresh breaks UI breadcrumbs ClearML Server [ClearML Server GitHub issues #142](https://github.com/allegroai/clearml-server/issues/142)
+* Fix experiment selection with 'Shift' key in UI experiment table not working [ClearML Server GitHub issue #139](https://github.com/allegroai/clearml-server/issues/139)
+* Fix UI search error message interferes with inputting search query [ClearML Server GitHub issue #138](https://github.com/allegroai/clearml-server/issues/138)
+* Fix refresh breaks UI breadcrumbs ClearML Server [ClearML Server GitHub issue #142](https://github.com/allegroai/clearml-server/issues/142)
 * Fix UI Workers and Queues page displays incorrect queue metrics
 * Fix failure to publish models whose generating task was reset
 * Fix listed models in UI pipeline run info panel doesn't link to model 
