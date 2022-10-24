@@ -2,6 +2,29 @@
 title: Version 1.7
 ---
 
+### ClearML SDK 1.7.2
+**New Features and Improvements**
+* Support running Jupyter Notebook inside a git repository (repository will be referenced without uncommitted changes 
+  and Jupyter Notebook will be stored on plain code as uncommitted changes)
+* Add Jupyter Notebook fail warning
+* Allow pipeline steps to return string paths without them being treated as a folder artifact and zipped [ClearML GitHub issue #780](https://github.com/allegroai/clearml/issues/780)
+* Remove `future` from Python 3 requirements
+
+**Bug Fixes**
+* Fix exception raised when using `ThreadPool` [ClearML GitHub issue #790](https://github.com/allegroai/clearml/issues/790)
+* Fix Pyplot/Matplotlib binding reports incorrect line labels and colors [ClearML GitHub issue #791](https://github.com/allegroai/clearml/issues/791)
+* Pipelines
+    * Fix crash when running cloned pipeline that invokes a step twice [ClearML GitHub issue #769](https://github.com/allegroai/clearml/issues/769)
+    * Fix pipeline argument becomes `None` if default value is not set
+    * Fix `retry_on_failure` callback does nothing when specified on `PipelineController.add_step()`
+    * Fix pipeline clone logic
+* Jupyter Notebook
+    * Fix support for multiple Jupyter servers running on the same machine
+    * Fix issue with old/new notebook packages installed
+* Fix local cache with access rules disabling partial local access
+* Fix `Task.upload_artifact()` fails uploading pandas `DataFrame`
+* Fix relative paths in examples [ClearML GitHub PR #787](https://github.com/allegroai/clearml/issues/787)
+
 ### ClearML Server 1.7.0
 **New Features and Improvements**
 * Add “Sync comparison” to UI experiment debug samples comparison: Control metric/iteration for all compared experiments [ClearML GitHub issue #691](https://github.com/allegroai/clearml/issues/691)
