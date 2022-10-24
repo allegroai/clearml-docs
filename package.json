@@ -23,7 +23,7 @@
     "@docusaurus/plugin-google-gtag": "^2.1.0",
     "@docusaurus/preset-classic": "2.1.0",
     "@easyops-cn/docusaurus-search-local": "^0.16.3",
-    "@mdx-js/react": "^1.6.21",
+    "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",
     "medium-zoom": "^1.0.6",
     "prism-react-renderer": "^1.2.0",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.1",
+    "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-header": "^3.0.0",
