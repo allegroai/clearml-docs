@@ -28,7 +28,8 @@
     "medium-zoom": "^1.0.6",
     "prism-react-renderer": "^1.2.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "joi": "^17.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
@@ -41,7 +42,8 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "prettier": "^2.0.2",
-    "stylelint": "^13.2.1"
+    "stylelint": "^13.2.1",
+    "joi": "^17.4.0"
   },
   "browserslist": {
     "production": [
