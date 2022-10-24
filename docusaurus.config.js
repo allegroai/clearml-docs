@@ -177,11 +177,6 @@ module.exports = {
       // Please do not remove the credits, help to publicize Docusaurus :)
       copyright: `Copyright © ${new Date().getFullYear()} allegro.ai. Built with Docusaurus.`,
     },
-    gtag: {
-      trackingID: 'none',
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
   },
   presets: [
     [
