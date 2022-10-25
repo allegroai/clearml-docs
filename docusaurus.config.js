@@ -183,6 +183,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
+          breadcrumbs: false,
           editUrl:
             'https://github.com/allegroai/clearml-docs/edit/main/',
         },
