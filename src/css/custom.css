@@ -544,16 +544,16 @@ html[data-theme="dark"] .markdown table td {
    filter: brightness(0.5);
 }
 
-.size-sm {
+.icon.size-sm {
   width: 16px;
   height: 16px;
 }
-.size-md {
+.icon.size-md {
   width: 24px;
   height: 24px;
 }
-.size-lg  {
-  width: 32x;
+.icon.size-lg  {
+  width: 32px;
   height: 32px;
 }
 html[data-theme="light"] .icon {
@@ -575,12 +575,21 @@ html[data-theme="light"] .icon {
 /* expansion panel */
 .cml-expansion-panel {
   position: relative;
-  padding: 0;
+  padding: 0 0 0 40px !important;
   background-color: var(--ifm-toc-background-color);
-  border-left: 4px solid transparent;
+  /*border-left: 4px solid transparent;*/
   border-radius: 4px;
   transition: border-left 0.4s ease;
+  border: none !important;
+
 }
+
+div[class^="collapsibleContent"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-top: none !important;
+}
+
 .cml-expansion-panel-summary {
   outline: none;
   color: #8f9dc9;
@@ -599,11 +608,12 @@ html[data-theme="light"] .icon {
   height: 24px;
   line-height: 16px;
   position: absolute;
-  left: 8px;
-  top: 8px;
+  left: -40px !important;
+  top: 4px !important;
   background-color: var(--ifm-toc-background-color);
   background-repeat: no-repeat;
   background-position: center;
+  transform: rotate(0deg) !important;
 }
 .cml-expansion-panel-summary:after {
   content:"";
