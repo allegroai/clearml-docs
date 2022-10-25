@@ -31,18 +31,16 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: true,
-      switchConfig: {
-        darkIcon: '\u{1F319}',
-        lightIcon: '\u{1F315}',
-        // React inline style object
-        // see https://reactjs.org/docs/dom-elements.html#style
-        darkIconStyle: {
-          marginLeft: '2px',
-        },
-        lightIconStyle: {
-          marginLeft: '1px',
-        },
-      },
+      // switchConfig: {
+        // darkIcon: '\u{1F319}',
+        // lightIcon: '\u{1F315}',
+        // darkIconStyle: {
+          // marginLeft: '2px',
+        // },
+        // lightIconStyle: {
+          // marginLeft: '1px',
+        // },
+      // },
     },
     announcementBar: {
       id: 'supportus',
@@ -177,11 +175,6 @@ module.exports = {
       // Please do not remove the credits, help to publicize Docusaurus :)
       copyright: `Copyright © ${new Date().getFullYear()} allegro.ai. Built with Docusaurus.`,
     },
-    gtag: {
-      trackingID: 'none',
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
   },
   presets: [
     [
@@ -193,12 +186,12 @@ module.exports = {
           editUrl:
             'https://github.com/allegroai/clearml-docs/edit/main/',
         },
-        API: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/allegroai/clearml-docs/edit/main/',
-        },
+        // API: {
+          // sidebarPath: require.resolve('./sidebars.js'),
+          // // Please change this to your repo.
+          // editUrl:
+            // 'https://github.com/allegroai/clearml-docs/edit/main/',
+        // },
         blog: {
           blogTitle: 'ClearML Tutorials',
           blogDescription: 'ClearML tutorials and documentation',

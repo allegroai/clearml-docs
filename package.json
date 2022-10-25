@@ -17,22 +17,23 @@
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^0.6.2",
-    "@docusaurus/core": "^2.0.0-beta.0",
-    "@docusaurus/plugin-content-blog": "^2.0.0-beta.0",
-    "@docusaurus/plugin-google-analytics": "^2.0.0-beta.0",
-    "@docusaurus/plugin-google-gtag": "^2.0.0-beta.0",
-    "@docusaurus/preset-classic": "2.0.0-beta.0",
+    "@docusaurus/core": "^2.1.0",
+    "@docusaurus/plugin-content-blog": "^2.1.0",
+    "@docusaurus/plugin-google-analytics": "^2.1.0",
+    "@docusaurus/plugin-google-gtag": "^2.1.0",
+    "@docusaurus/preset-classic": "2.1.0",
     "@easyops-cn/docusaurus-search-local": "^0.16.3",
-    "@mdx-js/react": "^1.6.21",
+    "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",
     "medium-zoom": "^1.0.6",
     "prism-react-renderer": "^1.2.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "react-dom": "^16.8.4",
+    "joi": "^17.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.1",
+    "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-header": "^3.0.0",
@@ -41,7 +42,8 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "prettier": "^2.0.2",
-    "stylelint": "^13.2.1"
+    "stylelint": "^13.2.1",
+    "joi": "^17.4.0"
   },
   "browserslist": {
     "production": [
