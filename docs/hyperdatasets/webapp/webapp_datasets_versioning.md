@@ -11,11 +11,11 @@ deleting [Dataset versions](../dataset.md#dataset-versioning).
 The WebApp (UI) presents your dataset version structure in list view <img src="/docs/latest/icons/ico-list-view.svg" alt="List view" className="icon size-md space-sm" /> 
 or tree view <img src="/docs/latest/icons/ico-tree-view.svg" alt="Tree view" className="icon size-md space-sm" />. 
 
-In list view, the version history is listed chronologically by update time.
+The list view lists the dataset's versions chronologically by last update time.
 
 ![Versions list view](../../img/hyperdatasets/web-app/dataset_simple_adv_01.png)
 
-In tree view, the version history is presented as a tree of versions.
+The tree view shows the lineage of the dataset's versions.
 
 ![Versions tree view](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
 
@@ -31,14 +31,13 @@ In tree view, parent versions that do not match the query where a child version 
 Access dataset version actions, by right clicking a version, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
 
 * **Rename** - Change the version’s name
-* **Create New Version** -  Creates a child version of a *Published* dataset version. The child version inherits all the 
-  parent version's frames
+* **Create New Version** - Creates a child version of a *Published* dataset version. The new version is created in a *draft*
+  state, and inherits all the parent version's frames
 * **Delete** - Delete the version. Only *Draft* versions can be deleted.  
-* **Publish** - Make a *Draft* version read-only to preserve its contents. When publishing, you are given the option to 
-create an editable copy of the version.
+* **Publish** - Make a *Draft* version read-only to preserve its contents. 
  
-## Version Information
-A selected dataset version's information and contents is presented on the main section of the page, to the right of 
+## Version Data
+A selected dataset version's information and contents are presented on the main section of the page, to the right of 
 the dataset's version list.
 
 The version information is presented in the following tabs:
@@ -48,9 +47,9 @@ The version information is presented in the following tabs:
 * [Info](#info) 
    
 ## Frames
-The **Frames**  tab displays a preview of the contents of the selected dataset version.
+The **Frames**  tab displays the contents of the selected dataset version.
 
-View the version's frames as thumbnails or in a table. Use the view toggle to switch between thumbnail 
+View the version's frames as thumbnail previews or in a table. Use the view toggle to switch between thumbnail 
 view <img src="/docs/latest/icons/ico-grid-view.svg" alt="thumbnail view" className="icon size-md space-sm" /> and 
 table view <img src="/docs/latest/icons/ico-table-view.svg" alt="table view" className="icon size-md space-sm" /> . 
 
@@ -65,13 +64,12 @@ for column customization options.
 
 ![Frame browser list](../../img/hyperdatasets/frame_browser_list.png)
 
-The dataset version can be filtered by multiple criteria. The resulting frames can be exported as a JSON file. 
+The dataset version's frames can be filtered by multiple criteria. The resulting frames can be exported as a JSON file. 
 
-To view further details about a specific frame, click on its preview, which will open the [Frame Viewer](webapp_datasets_frames.md#frame-viewer).
+To view the details of a specific frame, click on its preview, which will open the [Frame Viewer](webapp_datasets_frames.md#frame-viewer).
 
 ### Simple Frame Filtering
-Simple frame filtering applies one annotation object (ROI) label and returns frames containing at least one annotation 
-with that label. 
+Simple frame filtering returns frames containing at least one annotation with a specified label.
 
 **To apply a simple frame filter,**  select a label from the **LABEL FILTER** list.
 
@@ -93,8 +91,8 @@ with that label.
 
 ### Advanced Frame Filtering
 
-Advanced frame filtering applies sophisticated filtering logic, which is composed of as many frame filters as needed, 
-where each frame filter can be a combination of ROI, frame, and source rules. 
+Alternatively, a combination of ROI, frame, and source rules can be specified to apply more elaborate and specific 
+filters.
 * ROI rules use include and exclude logic to match frames by ROI label; an ROI label can match frames containing at least 
   one annotation object (ROI) with all labels in the rule.
 * Frame rules and source rules use Lucene queries with AND, OR, and NOT logic. Frame rules apply to frame metadata.
@@ -206,7 +204,7 @@ The **Statistics** tab displays a dataset version's label usage stats.
 ![Version label statistics](../../img/hyperdatasets/dataset_version_statistics.png)
 
 ## Metadata 
-The **Metadata** tab presents any version-specific metadata in JSON format.
+The **Metadata** tab presents any additional metadata that has been attached to the dataset version.
 
 **To edit a version's metadata,**
 
