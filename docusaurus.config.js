@@ -80,7 +80,7 @@ module.exports = {
             },
             {
               label: 'HyperDatasets',
-              to: '/docs/references/hyperdataset/hyperdataset',
+              to: '/docs/references/hyperdataset',
             },
             {
               label: 'Server API',
