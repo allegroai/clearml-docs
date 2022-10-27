@@ -84,7 +84,7 @@ module.exports = {
             },
             {
               label: 'Server API',
-              to: '/docs/references/api/index',
+              to: '/docs/references/api',
             },
             {
               label: 'Release Notes',
