@@ -169,8 +169,8 @@ dataset.add_files(
 ### add_external_files()
 
 To add files or folders to the current dataset, leaving them in their original location, use the [`Dataset.add_external_files`](../references/sdk/dataset.md#add_external_files) 
-method. Input the `source_url` argument, which can be a link from cloud storage (`s3://`, `gs://`, `azure://`) 
-or local / network storage (`file://`). 
+method. Input the `source_url` argument, which can be a link or a list of links from cloud storage (`s3://`, `gs://`, `azure://`) 
+or local / network storage (`file://`).
 
 ```python
 dataset = Dataset.create(dataset_name="my dataset", dataset_project="example project")
@@ -190,6 +190,17 @@ dataset.add_external_files(
   wildcard = "*.jpg",
   dataset_path="/my_dataset/new_folder/"
 )
+```
+
+There is also the option to pass in a list of links.
+```python
+dataset.add_external_files(
+  source_url=[
+    "s3://my/bucket/path_to_folder_or_file",
+    "s3://my/bucket/path_to_another_folder_or_file", 
+  ],
+  dataset_path="/my_dataset/new_folder/"
+) 
 ```
 
 ### remove_files()
