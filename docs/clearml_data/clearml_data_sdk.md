@@ -177,7 +177,14 @@ dataset = Dataset.create(dataset_name="my dataset", dataset_project="example pro
 dataset.add_external_files(
   source_url="s3://my/bucket/path_to_folder_or_file", 
   dataset_path="/my_dataset/new_folder/"
-) 
+)
+dataset.add_external_files(
+  source_url=[
+    "s3://my/bucket/path_to_folder_or_file",
+    "s3://my/bucket/path_to_another_folder_or_file", 
+  ],
+  dataset_path="/my_dataset/new_folder/"
+)
 ```
 
 There is an option to add a set of files based on wildcard matching of a single string or a list of wildcards, using the 
@@ -190,17 +197,6 @@ dataset.add_external_files(
   wildcard = "*.jpg",
   dataset_path="/my_dataset/new_folder/"
 )
-```
-
-There is also the option to pass in a list of links.
-```python
-dataset.add_external_files(
-  source_url=[
-    "s3://my/bucket/path_to_folder_or_file",
-    "s3://my/bucket/path_to_another_folder_or_file", 
-  ],
-  dataset_path="/my_dataset/new_folder/"
-) 
 ```
 
 ### remove_files()
