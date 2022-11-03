@@ -156,7 +156,7 @@ The following table describes the task states and state transitions.
 | *Running* | The experiment is running locally or remotely. | If the experiment is manually or programmatically terminated, the state becomes *Aborted*. |
 | *Completed* | The experiment ran and terminated successfully. | If the experiment is reset or cloned, the state of the cloned experiment or newly cloned experiment becomes *Draft*. Resetting deletes the logs and output of a previous run. Cloning creates an exact, editable copy. |
 | *Failed* | The experiment ran and terminated with an error. | The same as *Completed*. |
-| *Aborted* | The experiment ran, and was manually or programmatically terminated. | The same as *Completed*. |
+| *Aborted* | The experiment ran, and was manually or programmatically terminated. The server's [non-responsive task monitor](../deploying_clearml/clearml_server_config.md#non-responsive-task-watchdog) aborts a task automatically after no activity has been detected for a specified time interval (configurable) | The same as *Completed*. |
 | *Published* | The experiment is read-only. Publish an experiment to prevent changes to its inputs and outputs. | A *Published* experiment cannot be reset. If it is cloned, the state of the newly cloned experiment becomes *Draft*. |
 
 ## SDK Interface
