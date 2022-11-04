@@ -26,6 +26,6 @@ We also have a video series that can get you started, if you're more of a video 
 [![Watch the video](https://img.youtube.com/vi/s3k9ntmQmD4/hqdefault.jpg)](https://www.youtube.com/watch?v=s3k9ntmQmD4&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=1)
 
 ## Who We Are
-ClearML is supported by you :heart: and by the team behind [allegro.ai](https://www.allegro.ai), where we build even more MLOps for enterprise companies.
+ClearML is supported by you :heart: and by the team behind [clear.ml](https://clear.ml), where we help enterprise companies build scalable MLOps.
 
 Join the ClearML community! Your contributions, questions, and input are always welcome. For more information, see [Community Resources](../community.md).  
