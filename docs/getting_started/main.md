@@ -15,7 +15,7 @@ while ClearML ensures your work is reproducible and scalable.
 
 - Track and upload metrics and models with only 2 lines of code
 - Create a bot that sends you a Slack message whenever your model improves in accuracy
-- Automatically scale AWS instances according to your resources needs
+- Automatically scale AWS instances according to your resource needs
 - Reproduce experiments with 3 mouse clicks
 - Much more!
 
