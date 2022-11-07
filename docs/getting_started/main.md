@@ -15,7 +15,7 @@ while ClearML ensures your work is reproducible and scalable.
 
 - Track and upload metrics and models with only 2 lines of code
 - Create a bot that sends you a Slack message whenever your model improves in accuracy
-- Automatically scale AWS instances according to your resources needs
+- Automatically scale AWS instances according to your resource needs
 - Reproduce experiments with 3 mouse clicks
 - Much more!
 
@@ -26,6 +26,6 @@ We also have a video series that can get you started, if you're more of a video 
 [![Watch the video](https://img.youtube.com/vi/s3k9ntmQmD4/hqdefault.jpg)](https://www.youtube.com/watch?v=s3k9ntmQmD4&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=1)
 
 ## Who We Are
-ClearML is supported by you :heart: and by the team behind [clear.ml](https://clear.ml), where we help enterprise companies build scalable MLOps.
+ClearML is supported by you :heart: and the [clear.ml](https://clear.ml) team, which helps enterprise companies build scalable MLOps.
 
 Join the ClearML community! Your contributions, questions, and input are always welcome. For more information, see [Community Resources](../community.md).  
