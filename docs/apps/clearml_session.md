@@ -144,6 +144,8 @@ The Task must be connected to a git repository, since currently single script de
 
 | Command line options | Description | Default value |
 |-----|---|---|
+| `--debug ` | Increase verbosity of logging | `none` |
+| `--docker-args ` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--jupyter-lab` | Download a JupyterLab environment | `true` |
 | `--vscode-server` | Download a VSCode environment | `true` |
 | `--public-ip` | Register the public IP of the remote machine (if you are running the session on a public cloud) | Session runs on the machine whose agent is executing the session|
