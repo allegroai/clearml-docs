@@ -74,7 +74,7 @@ auto_scaler.v1 {
 
 ## Dashboard
 
-Once an autoscaler is launched, The autoscaler's dashboard provides information about available VM instances and their 
+Once an autoscaler is launched, the autoscaler's dashboard provides information about available VM instances and their 
 status.
 
 ![GCP autoscaler dashboard](../../img/apps_gcp_autoscaler.png)

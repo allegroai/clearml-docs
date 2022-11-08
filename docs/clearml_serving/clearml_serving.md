@@ -20,7 +20,7 @@ solution.
 * Scalable
     * Multi model per container
     * Multi models per serving service
-    * Multi-service support (fully seperated multiple serving service running independently)
+    * Multi-service support (fully separated multiple serving service running independently)
     * Multi cluster support
     * Out-of-the-box node auto-scaling based on load/usage
 * Efficient
