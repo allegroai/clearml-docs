@@ -21,7 +21,7 @@ private credentials (assuming the entire code base, including `.git` already exi
 
 1. Install the plugin in PyCharm from local disk:
 
-![image](../../img/ide_pycharm_plugin_from_disk.png)
+![PyCharm plugin installation](../../img/ide_pycharm_plugin_from_disk.png)
 
 ## Optional: ClearML Configuration Parameters
 
