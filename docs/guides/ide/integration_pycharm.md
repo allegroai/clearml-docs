@@ -4,9 +4,14 @@ title: Integration for PyCharm
 
 The **ClearML PyCharm plugin** enables syncing a local execution configuration to a remote executor machine:
 
-* Sync local repository information to a remote debug machine.
+* Sync local repository information to a remote machine - When using PyCharm to run/debug code remotely using 
+an SSH connection, PyCharm copies the code base into the remote machine and runs it there. PyCharm does not copy 
+the `.git` folder into the remote machine, so ClearML can't detect the correct git repository details when running on the 
+remote machine. The ClearML PyCharm plugin detects the git details on the local 
+machine, and passes that information to the remote machine to be registered to a [task](../../fundamentals/task.md).
 
-* Multiple users can use the same resource for execution without compromising private credentials.
+* Pass user credentials to a remote machine - Multiple users can use the same resource for execution without compromising 
+private credentials (assuming the entire code base, including `.git` already exists on the remote machine)
 
 * Run the [ClearML Agent](../../clearml_agent.md) on default VMs/Containers.
 
@@ -16,7 +21,7 @@ The **ClearML PyCharm plugin** enables syncing a local execution configuration t
 
 1. Install the plugin in PyCharm from local disk:
 
-![image](../../img/ide_pycharm_plugin_from_disk.png)
+![PyCharm plugin installation](../../img/ide_pycharm_plugin_from_disk.png)
 
 ## Optional: ClearML Configuration Parameters
 
@@ -36,4 +41,11 @@ the settings in the ClearML configuration file.
     
 1. Add ClearML user credentials key/secret.
 
-![image](../../img/ide_pycharm_config_params.png)
+1. Check box to disable SSL certificate verification (for on-prem `clearml-server` installations).
+
+1. Check box to disable local git detection. The PyCharm plugin is often used to run git detection on the local machine 
+since there is no `.git` folder on the remote machine. In the case that the plugin is used just for passing configuration 
+to a remote SSH machine, there is no need to run the git detection on the local machine.
+
+
+![PyCharm configuration](../../img/ide_pycharm_config_params.png)
