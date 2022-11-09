@@ -16,7 +16,7 @@ The **ClearML PyCharm plugin** enables syncing a local execution configuration t
 
 1. Install the plugin in PyCharm from local disk:
 
-![PyCharm Plugin installation](../../img/ide_pycharm_plugin_from_disk.png)
+![image](../../img/ide_pycharm_plugin_from_disk.png)
 
 ## Optional: ClearML Configuration Parameters
 
