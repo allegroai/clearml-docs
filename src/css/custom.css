@@ -424,6 +424,14 @@ html[data-theme="dark"] .footer__copyright {
   color: rgba(255,255,255,0.4);
 }
 
+/* GLOBAL SEARCH PAGE */
+html[data-theme="dark"] input[class^="searchQueryInput"] {
+    color: #fff;
+    background-color: #141722;
+    border-color: #fff3;
+    padding: 1rem;
+}
+
 /* social links icons */
 .footer__link-item[href*="slack"] {
   padding-left: 1.4rem;
