@@ -101,5 +101,5 @@ The following is an example of preview metadata.
 
 Here's an example of Previews in the ClearML Enterprise WebApp (UI). Each thumbnail is a Preview.
 
-![image](../img/hyperdatasets/web-app/previews.png)
+![Previews](../img/hyperdatasets/web-app/dataset_versions.png)
 
