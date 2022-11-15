@@ -996,6 +996,11 @@ and limitations on bucket naming.
         
 ---
 
+**`sdk.development.worker.report_event_flush_threshold`** (*integer*)
+
+* The number of events that trigger a report 
+
+---
         
 **`sdk.development.worker.report_global_mem_used`** (*bool*)
 
