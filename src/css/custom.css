@@ -746,6 +746,10 @@ html[data-theme="light"] .alert.alert--secondary {
     background-color: #efefef;
 }
 
+html[data-theme="dark"] .alert.alert--secondary {
+    background-color: var(--ifm-toc-background-color);
+}
+
 /* show visual identification for external links */
 .markdown a[href^="https://"] {
   background: url('/icons/ico-open-in-new.svg') center right no-repeat;
