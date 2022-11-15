@@ -54,7 +54,7 @@ view <img src="/docs/latest/icons/ico-grid-view.svg" alt="thumbnail view" classN
 table view <img src="/docs/latest/icons/ico-table-view.svg" alt="table view" className="icon size-md space-sm" /> . 
 
 Use the thumbnail view for a visual preview of the version's frames. You can increase <img src="/docs/latest/icons/ico-zoom-in.svg" alt="Zoom in" className="icon size-md space-sm" /> 
-and decrease <img src="/docs/latest/icons/ico-zoom-out" alt="Zoom out" className="icon size-md space-sm" /> the size of 
+and decrease <img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out" className="icon size-md space-sm" /> the size of 
 the previews.
 
 ![Frame browser thumbnails](../../img/hyperdatasets/frame_browser_thumbnails.png)
