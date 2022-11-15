@@ -84,11 +84,11 @@ module.exports = {
             },
             {
               label: 'Server API',
-              to: '/docs/references/api/index',
+              to: '/docs/references/api',
             },
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_7',
+              to: '/docs/release_notes/ver_1_8',
             },
             {
               label: 'Community Resources',
