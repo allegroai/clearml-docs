@@ -741,6 +741,10 @@ html[data-theme="dark"] .markdown hr {
   text-decoration: underline;
 }
 
+/* admonition note */
+html[data-theme="light"] .alert.alert--secondary {
+    background-color: #efefef;
+}
 
 /* show visual identification for external links */
 .markdown a[href^="https://"] {
