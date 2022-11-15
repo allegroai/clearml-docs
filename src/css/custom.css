@@ -740,21 +740,6 @@ html[data-theme="dark"] .markdown hr {
 .admonition-content .link-code a:hover {
   text-decoration: underline;
 }
-/* danger (red) */
-.alert--danger {
-  --ifm-alert-background-color: var(--ifm-color-danger-light);
-}
-html[data-theme="dark"] .admonition.alert--danger {
-  --ifm-alert-background-color: var(--ifm-color-danger-lightest);
-}
-
-/* info (blue) */
-.alert--info {
-  --ifm-alert-background-color: var(--ifm-color-info-darker);
-}
-html[data-theme="dark"] .alert--info {
-  --ifm-alert-background-color: var(--ifm-color-info);
-}
 
 
 /* show visual identification for external links */
