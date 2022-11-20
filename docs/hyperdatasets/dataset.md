@@ -114,7 +114,21 @@ Delete a Dataset even if it contains versions whose status is *Published*.
 ```python
 Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=True)
 ```
-    
+  
+### Tagging Datasets
+
+Tags can be added to datasets, allowing to easily identify and group experiments.
+
+Add tags to a dataset:
+```python
+MyDataset.add_tags(["coco", "dogs"])
+```
+
+Remove tags from a dataset:
+
+```python
+MyDataset.remove_tags(["dogs"])
+```
 
 ## Dataset Versioning
 
