@@ -119,7 +119,7 @@ to an IAM user, and create credentials keys for that user to configure in the au
 
 1. Insert the following policy into the text box: 
 
-   ```
+   ```json
    {                  
        "Version": "2012-10-17",
        "Statement": [

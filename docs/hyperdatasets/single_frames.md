@@ -56,7 +56,7 @@ For more information, see [Custom Metadata](custom_metadata.md).
 
 The panel below describes the details contained within a `frame`:
 
-<details className="cml-expansion-panel info">
+<details className="cml-expansion-panel configuration">
 <summary className="cml-expansion-panel-summary">Frame Structure</summary>
 <div className="cml-expansion-panel-content">
 
@@ -141,7 +141,7 @@ This image shows a SingleFrame in the ClearML Enterprise WebApp (UI) [frame view
 </details>
 <br/>
 
-<details className="cml-expansion-panel info">
+<details className="cml-expansion-panel configuration">
 <summary className="cml-expansion-panel-summary">SingleFrame details represented in the WebApp</summary>
 <div className="cml-expansion-panel-content">
 
