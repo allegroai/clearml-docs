@@ -19,7 +19,7 @@ The following is an example of preview metadata.
         "timestamp": 0
     }
 ```
-<details className="cml-expansion-panel info">
+<details className="cml-expansion-panel configuration">
 <summary className="cml-expansion-panel-summary">View an entire frame containing a preview</summary>
 <div className="cml-expansion-panel-content">
 

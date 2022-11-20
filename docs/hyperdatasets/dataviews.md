@@ -471,7 +471,9 @@ my_dataview = DataView.get(dataview_id='12344kg2p3hf8')
 
 Access the Dataview's frames as a python list, dictionary, or through a pythonic iterator.
 
-The `DataView.to_dict` method returns a list of dictionaries, where each dictionary represents a frame. Use the 
+The [`DataView.to_list`](../references/hyperdataset/dataview.md#to_list) method returns the Dataview queries result as a python list . 	
+
+The [`DataView.to_dict`](../references/hyperdataset/dataview.md#to_dict) method returns a list of dictionaries, where each dictionary represents a frame. Use the 
 `projection` parameter to specify a subset of the frame fields to be included in the result. Input a list of strings, 
 where each string represents a frame field or subfield (using dot-separated notation). 
 
