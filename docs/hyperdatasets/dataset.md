@@ -43,6 +43,18 @@ from allegroai import DatasetVersion
 myDataset = DatasetVersion.create_new_dataset(dataset_name='myDataset Two')
 ```
 
+When creating a dataset, you can put it into a project. In this case, the dataset will adhere to the [access rules](../webapp/webapp_profile.md#access-rules) 
+specified for its containing project. Use `dataset_project` parameter in `Dataset.create` or `DatasetVersion.create_new_dataset` 
+to specify a project name. 
+
+```python
+myDataset_1 = Dataset.create(dataset_name="myDataset", dataset_project="myDataset Project")
+
+myDataset_2 = DatasetVersion.create_new_dataset(
+  dataset_name="myDataset_2", dataset_project="myDatasetProject_2"
+)
+```
+
 To raise a `ValueError` exception if the Dataset exists, specify the `raise_if_exists` parameters as `True`.
 
 * With `Dataset.create`
@@ -102,7 +114,33 @@ Delete a Dataset even if it contains versions whose status is *Published*.
 ```python
 Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=True)
 ```
-    
+  
+Delete a Dataset and the sources associated with its deleted frames:
+
+```python
+Dataset.delete(
+  dataset_name='MyDataset', delete_all_versions=True, force=True, delete_sources=True
+)
+```
+
+This supports deleting sources located in AWS S3, GCP, and Azure Storage (not local storage). The `delete_sources` 
+parameter is ignored if `delete_all_versions` is `False`.  You can view the deletion process’ progress by passing 
+`show_progress=True` (`tqdm` required).  
+
+### Tagging Datasets
+
+Tags can be added to datasets, allowing to easily identify and group experiments.
+
+Add tags to a dataset:
+```python
+MyDataset.add_tags(["coco", "dogs"])
+```
+
+Remove tags from a dataset:
+
+```python
+MyDataset.remove_tags(["dogs"])
+```
 
 ## Dataset Versioning
 
