@@ -43,6 +43,18 @@ from allegroai import DatasetVersion
 myDataset = DatasetVersion.create_new_dataset(dataset_name='myDataset Two')
 ```
 
+When creating a dataset, you can put it into a project. In this case, the dataset will adhere to the [access rules](../webapp/webapp_profile.md#access-rules) 
+specified for its containing project. Use `dataset_project` parameter in `Dataset.create` or `DatasetVersion.create_new_dataset` 
+to specify a project name. 
+
+```python
+myDataset_1 = Dataset.create(dataset_name="myDataset", dataset_project="myDataset Project")
+
+myDataset_2 = DatasetVersion.create_new_dataset(
+  dataset_name="myDataset_2", dataset_project="myDatasetProject_2"
+)
+```
+
 To raise a `ValueError` exception if the Dataset exists, specify the `raise_if_exists` parameters as `True`.
 
 * With `Dataset.create`
