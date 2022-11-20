@@ -115,6 +115,18 @@ Delete a Dataset even if it contains versions whose status is *Published*.
 Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=True)
 ```
   
+Delete a Dataset and the sources associated with its deleted frames:
+
+```python
+Dataset.delete(
+  dataset_name='MyDataset', delete_all_versions=True, force=True, delete_sources=True
+)
+```
+
+This supports deleting sources located in AWS S3, GCP, and Azure Storage (not local storage). The `delete_sources` 
+parameter is ignored if `delete_all_versions` is `False`.  You can view the deletion process’ progress by passing 
+`show_progress=True` (`tqdm` required).  
+
 ### Tagging Datasets
 
 Tags can be added to datasets, allowing to easily identify and group experiments.
