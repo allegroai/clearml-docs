@@ -363,49 +363,6 @@ myDataView.add_query(
 )
 ```
 
-### Mapping ROI Labels
-
-ROI label translation (label mapping) enables combining labels for training, combining disparate datasets, and hiding 
-certain labels for training.
-
-This example demonstrates consolidating two disparate Datasets. Two Dataset versions use `car` (lower case "c"), but the
-third uses `Car` (upper case "C"). 
-The example maps `Car` (upper case "C") to `car` (lower case "c").
-
-```python
-# Create a Dataview object for an iterator that randomly returns frames according to queries 
-myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
-
-# The 1st Dataset (version) - "car" with lowercase "c"
-myDataView.add_query(
-    dataset_name='myDataset', 
-    version_name='myVersion', 
-    roi_query='car'
-)
-
-# The 2nd Dataset (version) - "car" with lowercase "c"
-myDataView.add_query(
-    dataset_name='dataset_2', 
-    version_name='aVersion',  
-    roi_query='car'
-)
-
-# A 3rd Dataset (version) - "Car" with uppercase "C"
-myDataView.add_query(
-    dataset_name='dataset_3', 
-    version_name='training',
-    roi_query='Car'
-)
-
-# Use a mapping rule to translate "Car" (uppercase) to "car" (lowercase)
-myDataView.add_mapping_rule(
-    dataset_name='dataset_3',
-    version_name='training', 
-    from_labels=['Car'], 
-    to_label='car'
-)
-```
-
 ### Setting Label Enumeration Values
 
 Set label enumeration values to maintain data conformity across multiple codebases and datasets. 
@@ -459,3 +416,98 @@ myDataView.set_labels(
     {"cat": 1, "dog": 2, "bird": 3, "sheep": 4, "cow": 5, "ignore": -1,}
 )
 ```
+
+### Mapping ROI Labels
+
+ROI label translation (label mapping) enables combining labels for training, combining disparate datasets, and hiding 
+certain labels for training.
+
+This example demonstrates consolidating two disparate Datasets. Two Dataset versions use `car` (lower case "c"), but the
+third uses `Car` (upper case "C"). 
+The example maps `Car` (upper case "C") to `car` (lower case "c").
+
+```python
+# Create a Dataview object for an iterator that randomly returns frames according to queries 
+myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
+
+# The 1st Dataset (version) - "car" with lowercase "c"
+myDataView.add_query(
+    dataset_name='myDataset', 
+    version_name='myVersion', 
+    roi_query='car'
+)
+
+# The 2nd Dataset (version) - "car" with lowercase "c"
+myDataView.add_query(
+    dataset_name='dataset_2', 
+    version_name='aVersion',  
+    roi_query='car'
+)
+
+# A 3rd Dataset (version) - "Car" with uppercase "C"
+myDataView.add_query(
+    dataset_name='dataset_3', 
+    version_name='training',
+    roi_query='Car'
+)
+
+# Use a mapping rule to translate "Car" (uppercase) to "car" (lowercase)
+myDataView.add_mapping_rule(
+    dataset_name='dataset_3',
+    version_name='training', 
+    from_labels=['Car'], 
+    to_label='car'
+)
+```
+
+### Accessing Frames
+
+Dataview objects can be retrieved by the Dataview ID or name using the [DataView.get](../references/hyperdataset/dataview.md#dataviewget) 
+class method.
+
+```python
+my_dataview = DataView.get(dataview_id='12344kg2p3hf8')
+```
+
+Access the Dataview's frames as a python list, dictionary, or through a pythonic iterator.
+
+The `DataView.to_dict` method returns a list of dictionaries, where each dictionary represents a frame. Use the 
+`projection` parameter to specify a subset of the frame fields to be included in the result. Input a list of strings, 
+where each string represents a frame field or subfield (using dot-separated notation). 
+
+For example, the code below specifies that the frame dictionaries should include only the `id` and `sources` fields and 
+the `dataset.id` subfield:  
+
+```python
+my_dataview = DataView.get(dataview_id='<dataview_id>')
+my_dataview.to_dict(projection=['id', 'dataset.id', 'sources'])
+```
+
+The method returns a list of dictionaries that looks something like this:
+
+```json
+[   
+  {
+    "id": "<dataview_id>",
+    "dataset": {
+      "id": "<dataset_id>"
+    },
+    "sources": [
+      {
+        "id": "<id>",
+        "uri": "<uri>",
+        "timestamp": <timestamp>,
+        "preview": {
+          "uri": "<uri>",
+          "timestamp": <timestamp>
+        }
+      }
+    ]
+  },
+  #   additional dictionaries with the same format here
+]
+```
+
+Since the `to_list`/`to_dict` methods return all the frames in the dataview, it is recommended to use the [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator) 
+method, which returns an iterator of the dataview. You can also specify the desired frame fields in this method using 
+the `projection` parameter, just like in the `DataView.to_dict` method, as described above.
