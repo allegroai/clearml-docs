@@ -12,7 +12,19 @@ module.exports = {
         {'Getting Started': ['getting_started/main', {
             'Where do I start?': [{'Data Scientists': ['getting_started/ds/ds_first_steps', 'getting_started/ds/ds_second_steps', 'getting_started/ds/best_practices']},
                 {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
-        }, 'getting_started/architecture']},
+        }, 'getting_started/architecture', {'Video Tutorials': 
+        [
+            'getting_started/video_tutorials/quick_introduction.md',
+            'getting_started/video_tutorials/core_component_overview.md',
+            'getting_started/video_tutorials/experiment_manager_hands-on.md',
+            'getting_started/video_tutorials/agent_remote_execution_and_automation.md',
+            'getting_started/video_tutorials/hyperparameter_optimization.md',
+            'getting_started/video_tutorials/pipelines_from_code.md',
+            'getting_started/video_tutorials/pipelines_from_tasks.md',
+            'getting_started/video_tutorials/clearml-data.md',
+            'getting_started/video_tutorials/the_clearml_autoscaler.md',
+            'getting_started/video_tutorials/hyperdatasets_data_versioning.md'            
+        ]}]},
         {'ClearML Fundamentals': ['fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
             'fundamentals/hpo']},
         {'ClearML SDK': ['clearml_sdk/clearml_sdk', 'clearml_sdk/task_sdk', 'clearml_sdk/model_sdk', 'clearml_sdk/apiclient_sdk']},
