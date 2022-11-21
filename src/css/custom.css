@@ -424,6 +424,14 @@ html[data-theme="dark"] .footer__copyright {
   color: rgba(255,255,255,0.4);
 }
 
+/* GLOBAL SEARCH PAGE */
+html[data-theme="dark"] input[class^="searchQueryInput"] {
+    color: #fff;
+    background-color: #141722;
+    border-color: #fff3;
+    padding: 1rem;
+}
+
 /* social links icons */
 .footer__link-item[href*="slack"] {
   padding-left: 1.4rem;
@@ -732,22 +740,15 @@ html[data-theme="dark"] .markdown hr {
 .admonition-content .link-code a:hover {
   text-decoration: underline;
 }
-/* danger (red) */
-.alert--danger {
-  --ifm-alert-background-color: var(--ifm-color-danger-light);
-}
-html[data-theme="dark"] .admonition.alert--danger {
-  --ifm-alert-background-color: var(--ifm-color-danger-lightest);
+
+/* admonition note */
+html[data-theme="light"] .alert.alert--secondary {
+    background-color: #efefef;
 }
 
-/* info (blue) */
-.alert--info {
-  --ifm-alert-background-color: var(--ifm-color-info-darker);
+html[data-theme="dark"] .alert.alert--secondary {
+    background-color: var(--ifm-toc-background-color);
 }
-html[data-theme="dark"] .alert--info {
-  --ifm-alert-background-color: var(--ifm-color-info);
-}
-
 
 /* show visual identification for external links */
 .markdown a[href^="https://"] {

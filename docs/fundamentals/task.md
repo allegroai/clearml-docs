@@ -29,7 +29,7 @@ It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task mult
 
 ## Task Sections
 
-The sections of **ClearML Task** are made up of the information that a task captures and stores, which consists of code 
+The sections of ClearML Task are made up of the information that a task captures and stores, which consists of code 
 execution details and execution outputs. This information is used for tracking 
 and visualizing results, reproducing, tuning, and comparing experiments, and executing workflows. 
 
@@ -37,7 +37,7 @@ The captured [code execution information](../webapp/webapp_exp_track_visual.md#e
 * Git information 
 * Uncommitted code modifications
 * Python environment
-* Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration)
+* [Execution configuration](#execution-configuration) and hyperparameters
 
 The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-results) includes:
 * [Console output](../webapp/webapp_exp_track_visual.md#console)
@@ -47,6 +47,21 @@ The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-
 * [Models](artifacts.md) 
 
 To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
+
+### Execution Configuration
+ClearML logs a task’s hyperparameters specified as command line arguments, environment or code level variables. This 
+allows experiments to be reproduced, and their hyperparameters and results can be saved and compared, which is key to 
+understanding model behavior.
+
+Hyperparameters can be added from anywhere in your code, and ClearML provides multiple ways to log them. If you specify 
+your parameters using popular python packages, such as [argparse](https://docs.python.org/3/library/argparse.html) and 
+[click](https://click.palletsprojects.com/), all you need to do is [initialize](../references/sdk/task#taskinit) a task, and 
+ClearML will automatically log the parameters. ClearML also provides methods to explicitly report parameters.
+
+When executing a task through a ClearML agent, the ClearML instrumentation of your code allows for using the ClearML UI 
+to override the original specified values of your parameters.
+
+See [Hyperparameters](hyperparameters.md) for more information.
 
 ### Artifacts
 
