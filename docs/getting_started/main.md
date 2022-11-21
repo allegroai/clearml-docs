@@ -20,7 +20,7 @@ while ClearML ensures your work is reproducible and scalable.
 - [Create a bot](../guides/services/slack_alerts.md) that sends you a Slack message whenever your model improves in accuracy
 - Store, track, and version control your [data](../clearml_data/clearml_data.md)
 - Remotely execute experiments on any compute resource you have available with [ClearML Agent](../clearml_agent.md)  
-- Automatically scale remote workers according to your resource needs with ClearML's [GPU Compute](../webapp/applications/apps_gpu_compute.md), 
+- Automatically scale cloud instances according to your resource needs with ClearML's [GPU Compute](../webapp/applications/apps_gpu_compute.md), 
 [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md), and [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md)
 GUI applications
 - Run [hyperparameter optimization](../fundamentals/hpo.md) 
