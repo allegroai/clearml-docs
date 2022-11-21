@@ -13,18 +13,17 @@ while ClearML ensures your work is reproducible and scalable.
 
 ## What Can You Do with ClearML?
 
-- Manage your experiments:
-  - [Track and upload](../fundamentals/task.md) all of your code configuration and outputs--parameters, models, metrics, and more--with only 2 lines of code
-  - [Reproduce](../webapp/webapp_exp_reproducing.md) experiments with 3 mouse clicks
-  - [Compare](../webapp/webapp_exp_comparing.md) experiment setups and results
-- [Create a bot](../guides/services/slack_alerts.md) that sends you a Slack message whenever your model improves in accuracy
-- Store, track, and version control your [data](../clearml_data/clearml_data.md)
+- [Track and upload](../fundamentals/task.md) metrics and models with only 2 lines of code
+- [Reproduce](../webapp/webapp_exp_reproducing.md) experiments with 3 mouse clicks
+- [Create bots](../guides/services/slack_alerts.md) that send you Slack messages based on experiment behavior (for example,
+alert you whenever your model improves in accuracy)
+- Manage your [data](../clearml_data/clearml_data.md) - store, track, and version control 
 - Remotely execute experiments on any compute resource you have available with [ClearML Agent](../clearml_agent.md)  
 - Automatically scale cloud instances according to your resource needs with ClearML's [GPU Compute](../webapp/applications/apps_gpu_compute.md), 
 [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md), and [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md)
 GUI applications
 - Run [hyperparameter optimization](../fundamentals/hpo.md) 
-- Orchestrate [pipelines](../pipelines/pipelines.md) from code 
+- Build [pipelines](../pipelines/pipelines.md) from code 
 - Much more!
 
 ## Getting started on YouTube (Playlist)
