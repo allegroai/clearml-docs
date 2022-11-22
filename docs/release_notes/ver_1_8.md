@@ -2,6 +2,25 @@
 title: Version 1.8
 ---
 
+### ClearML SDK 1.8.1
+
+**New Features and Improvements**
+* Raise error on failed uploads [ClearML GitHub issue #810](https://github.com/allegroai/clearml/issues/819)
+* Add hyperdataset examples [ClearML GitHub PR #823](https://github.com/allegroai/clearml/commit/f6b9efe54e1246adba4036c56bc6e8a0bdb99948)
+* Change `report_event_flush_threshold` default to 100
+* Add `ModelInfo.weights_object()` to store callback access to the actual model object being stored (valid for both 
+pre/post save calls, otherwise `None`)
+* Support `num_workers` in dataset operation
+* Support max connections setting for Azure storage using the `sdk.azure.storage.max_connection` configuration option
+
+**Bug Fixes**
+* Fix clearml logger default level cannot be changed [ClearML GitHub issue #741](https://github.com/allegroai/clearml/issues/741)
+* Fix Hydra doesn't get overridden information from ClearML [ClearML GitHub issue #751](https://github.com/allegroai/clearml/issues/751)
+* Fix `StorageManager.list(“s3://..”, with_metadata=True)` doesn't work
+* Fix `ModelsList.keys()` is missing
+* Fix `CLEARML_DEFERRED_TASK_INIT=1` doesn't work
+* Fix default API method does not work when set in configuration
+
 ### ClearML SDK 1.8.0
 
 **New Features and Improvements**
