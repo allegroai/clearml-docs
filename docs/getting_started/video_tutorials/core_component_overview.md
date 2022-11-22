@@ -2,9 +2,6 @@
 title: Core Component Overview
 ---
 
-
-## Youtube video
-
 <iframe width="560" height="315" 
         src="https://www.youtube.com/embed/s3k9ntmQmD4" 
         title="YouTube video player" 
@@ -13,7 +10,9 @@ title: Core Component Overview
         allowfullscreen>
 </iframe>
 
-## Transcript
+<details className="cml-expansion-panel info">
+<summary className="cml-expansion-panel-summary">Read the transcript</summary>
+<div className="cml-expansion-panel-content">
 
 Welcome to clearML! This video will serve as an overview of the complete clearML stack. We’ll introduce you to the most important concepts and show you how everything fits together, so you can dive deep into the next videos, which will cover the clearML functionality in more detail.
 
@@ -47,3 +46,5 @@ As a final example on how you could use the agents functionality, clearml provid
 
 As you can see clearML is a large toolbox, stuffed with the most useful components for both data scientists and mlops engineers. We’re diving deeper into each component in the following videos if you need more details, but feel free to get started now at clear.ml 
 
+</div>
+</details>
