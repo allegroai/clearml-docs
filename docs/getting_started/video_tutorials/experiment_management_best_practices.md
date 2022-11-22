@@ -4,15 +4,15 @@ title: Experiment Management Best Practices
 
 
 ## Youtube video
-
-<iframe width="560" height="315" 
+<div style="position: relative; overflow: hidden; width: 100%; padding-top: 56.25%;">
+<iframe style="position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%;" 
         src="https://www.youtube.com/embed/kyOfwVg05EM" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen>
 </iframe>
-
+</div>
 ## Transcript
 
 Welcome to clearml. In this video, we’ll go deeper into some of the best practices and advanced tricks you can use while working with clearml for experiment management.
