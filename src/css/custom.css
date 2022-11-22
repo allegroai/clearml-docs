@@ -644,11 +644,11 @@ div[class^="collapsibleContent"] {
 /* icon types */
 /* ->  info  */
 .cml-expansion-panel.info .cml-expansion-panel-summary:before {
-  background-image: url('/icons/ico-info-circle.svg');
+  background-image: url('/icons/ico-info-circle.svg') !important;
 }
 /* ->  tips  */
 .cml-expansion-panel.tips .cml-expansion-panel-summary:before {
-  background-image: url('/icons/ico-tips.svg');
+  background-image: url('/icons/ico-tips.svg') !important;
 }
 /* ->  alert  */
 .cml-expansion-panel.alert .cml-expansion-panel-summary:before {
