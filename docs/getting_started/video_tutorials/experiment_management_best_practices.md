@@ -3,20 +3,24 @@ title: Experiment Management Best Practices
 ---
 
 
-## Youtube video
+## Video Tutorial
 
 <div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/kyOfwVg05EM" 
         title="YouTube video player" 
         frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
         allowfullscreen>
 </iframe>
 </div>
 
-## Transcript
 
+
+
+<details className="cml-expansion-panel info">
+<summary className="cml-expansion-panel-summary">Read the transcript</summary>
+<div className="cml-expansion-panel-content">
 Welcome to clearml. In this video, we’ll go deeper into some of the best practices and advanced tricks you can use while working with clearml for experiment management.
 
 The first thing to know is that the Task object is the central pillar of both the experiment manager and the orchestration and automation components. This means that if you manage the task well in the experiment phase, it will be much easier to scale to production later down the line. 
@@ -64,3 +68,5 @@ And then we’re not even talking about all the ways to automate tasks using the
 For the next videos we’ll finally cover automation and orchestration as well as ClearML data, our data versioning tool.
 
 Feel free to check out and test all of these features at app.clear.ml or using our self hosted server on github and don’t forget to join our slack channel if you need any help.
+</div>
+</details>
