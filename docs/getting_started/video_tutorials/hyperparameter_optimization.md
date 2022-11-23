@@ -3,18 +3,21 @@ title: Hyperparameter Optimization
 ---
 
 
-## Youtube video
+## Video Tutorial
 
-<iframe width="560" height="315" 
+<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/dLkP7y4USFg" 
         title="YouTube video player" 
         frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
         allowfullscreen>
 </iframe>
+</div>
 
-## Transcript
-
+<details className="cml-expansion-panel info">
+<summary className="cml-expansion-panel-summary">Read the transcript</summary>
+<div className="cml-expansion-panel-content">
 Hello and welcome to ClearML, in this video we’ll take a look at one cool way of using the agent other than rerunning a task remotely: hyperparameter optimization.
 
 By now, we know that ClearML can easily capture our hyperparameters and scalars as part of the experiment tracking. We also know we can clone any task and change its hyperparameters so they’ll be injected into the original code at runtime. In the last video, we learnt how to make a remote machine execute this task automatically by using the agent. 
@@ -68,3 +71,5 @@ Next to that, we have a graph that tells us the most recent and maximum values o
 And don’t forget about autoscaling! You can run it for free using code of course, but with clearml pro you can set it up in the UI as well. Which means that, starting from scratch, you can have an autoscaling cluster of cloud VMs running hyperparameter optimization on your experiment tasks in just a few minutes.
 
 How cool is that? In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at app.clear.ml and don’t forget to join our slack channel, if you need any help.
+</div>
+</details>
