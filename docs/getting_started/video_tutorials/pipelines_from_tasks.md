@@ -3,18 +3,21 @@ title: Pipelines from tasks
 ---
 
 
-## Youtube video
+## Video Tutorial
 
-<iframe width="560" height="315" 
+<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/prZ_eiv_y3c" 
         title="YouTube video player" 
         frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
         allowfullscreen>
 </iframe>
+</div>
 
-## Transcript
-
+<details className="cml-expansion-panel info">
+<summary className="cml-expansion-panel-summary">Read the transcript</summary>
+<div className="cml-expansion-panel-content">
 Hello and welcome to ClearML, in this video we’ll take a look at how pipelines can be created from tasks instead of from code like we saw in the last video.
 
 The tasks themselves are already in the system by using the experiment manager. What’s important to note here though is that hyperparameters, scalars and artifacts should be reported correctly because the pipeline will consider them to be the inputs and outputs of each step. In that way, a step can easily access for example the artifacts from a previous step.
@@ -56,3 +59,5 @@ When we select a specific step, we can see its inputs and outputs as well as its
 Finally, we can also clone the whole pipeline and change its parameters by clicking on the new run button. This is the most powerful feature of all, as it allows us to really quickly rerun the whole pipeline with different parameters from the UI. The agents will take care of the rest!
 
 In the next video of this getting started series, we’ll take a look at ClearML data, for realz this time. In the meantime, spin up some pipelinecontrollers yourself for free at app.clear.ml and don’t forget to join our slack channel, if you need any help.
+</div>
+</details>
