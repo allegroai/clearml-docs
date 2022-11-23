@@ -9,6 +9,6 @@ title: Quick Introduction
         src="https://www.youtube.com/embed/-9vqxF2UfFU" 
         title="YouTube video player" 
         frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
         allowfullscreen>
 </iframe>
