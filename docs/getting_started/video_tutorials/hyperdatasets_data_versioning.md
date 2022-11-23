@@ -3,18 +3,21 @@ title: Hyperdatasets Data Versioning
 ---
 
 
-## Youtube video
+## Video Tutorial
 
-<iframe width="560" height="315" 
+<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/1VliYRexeLU" 
         title="YouTube video player" 
         frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
         allowfullscreen>
 </iframe>
+</div>
 
-## Transcript
-
+<details className="cml-expansion-panel info">
+<summary className="cml-expansion-panel-summary">Read the transcript</summary>
+<div className="cml-expansion-panel-content">
 Hello and welcome to ClearML. In this video, we're taking a closer look at hyperdatasets, a supercharged version of ClearML-Data.
 
 Hyperdatasets is a data management system that’s designed for unstructured data like text, audio or visual data. It is part of the ClearML paid offering, which means it brings along quite a bit of upgrades over the open source clearml-data.
@@ -68,3 +71,5 @@ After the remote machine has executed the experiment on the new dataview, we can
 If you’ve been following along with the other getting started videos, you should already start to see the potential this approach can have. For example: we could now run hyperparameter optimization on the data itself, because all of the filters and settings previously shown are just parameters on a task. The whole process could be running in parallel on a cloud autoscaler for example. Imagine finding the best training data confidence threshold for each class to optimize the model performance.
 
 If you’re interested in using Hyperdatasets for your team, then contact us using our website and we’ll get you going in no time. In the meantime, you can enjoy the power of the open source components at app.clear.ml and don’t forget to join our slack channel, if you need any help!
+</div>
+</details>
