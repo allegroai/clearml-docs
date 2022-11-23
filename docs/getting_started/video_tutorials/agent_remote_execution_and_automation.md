@@ -2,6 +2,7 @@
 title: Agent Remote Execution and Automation
 ---
 
+
 ## Video Tutorial
 
 <div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
@@ -13,7 +14,6 @@ title: Agent Remote Execution and Automation
         allowfullscreen>
 </iframe>
 </div>
-
 
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">Read the transcript</summary>
