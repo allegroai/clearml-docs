@@ -17,6 +17,7 @@ module.exports = {
             'getting_started/video_tutorials/quick_introduction',
             'getting_started/video_tutorials/core_component_overview',
             'getting_started/video_tutorials/experiment_manager_hands-on',
+            'getting_started/video_tutorials/experiment_management_best_practices',
             'getting_started/video_tutorials/agent_remote_execution_and_automation',
             'getting_started/video_tutorials/hyperparameter_optimization',
             'getting_started/video_tutorials/pipelines_from_code',
