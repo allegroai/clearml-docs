@@ -3,18 +3,21 @@ title: Pipelines from code
 ---
 
 
-## Youtube video
+## Video Tutorial
 
-<iframe width="560" height="315" 
+<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/UVBk337xzZo" 
         title="YouTube video player" 
         frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
         allowfullscreen>
 </iframe>
+</div>
 
-## Transcript
-
+<details className="cml-expansion-panel info">
+<summary className="cml-expansion-panel-summary">Read the transcript</summary>
+<div className="cml-expansion-panel-content">
 Hello and welcome to ClearML, in this video we’ll take a look at how pipelines can be used as a way to easily automate and orchestrate multiple tasks.
 
 Essentially pipelines are a way to automate and orchestrate the execution of multiple tasks in a scalable way. Each task in the context of a ClearML pipeline is called a step or component and it doesn’t necessarily have to be an existing *ClearML* task, it can be any code.
@@ -60,3 +63,5 @@ If we select a step from our pipeline, we can see much of the same details, but 
 But now comes the most powerful feature of all. Again, a pipeline controller is a task like any other, so… we can clone it like any other. Pressing the “new run” button will allow us to do that from the UI! We can even change our global pipeline parameters here and, just like normal tasks, these will be injected into the original task and overwrite the original parameters. In this way, you can very quickly run many pipelines each with different parameters.
 
 In the next video of this getting started series, we’ll get a long-overdue look at ClearML data, our data versioning tool. In the meantime, slap some pipeline decorators on your own functions for free at app.clear.ml and don’t forget to join our slack channel, if you need any help.
+</div>
+</details>
