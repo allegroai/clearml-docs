@@ -8,6 +8,4 @@ jobs:
       - uses: redkubes/docusaurus-deploy-action@v1
         with:
           source-folder: .
-          git-user: ${{ secrets.GH_USER }}
-          git-password: ${{ secrets.GH_TOKEN }}
           deployment-branch: gh-pages
