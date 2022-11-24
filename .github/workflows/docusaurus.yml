@@ -9,5 +9,5 @@ jobs:
         with:
           source-folder: .
           git-user: $SOME_USERNAME
-          git-password: ${{ secrets.GITHUB_TOKEN }}
+          git-password: ${{ secrets.GH_TOKEN }}
           deployment-branch: gh-pages
