@@ -30,7 +30,7 @@ If you don’t know what Hyperparameter Optimization is yet, you can find a link
 
 Let’s say we’ve been working on this model here, and we were tracking our experiments with it anyway. We can see we have some hyperparameters to work with in the hyperparameters tab of the webUI. They are logged by using the `task.connect` function in our code. These are our inputs. We also have a scaler called `validation/epoch_accuracy`, that we want to get as high as possible. This is our output. We could also select to minimize the `epoch_loss` for example, that is something you can decide yourself.
 
-We can see that no code was used to log the scalar. It's done automaticall because we are using TensorBoard.
+We can see that no code was used to log the scalar. It's done automatically because we are using TensorBoard.
 
 We are using a training script as our task in our example here, but the optimizer doesn’t actually care what’s in our task, it just wants inputs and outputs. So you can optimize basically anything you want.
 
