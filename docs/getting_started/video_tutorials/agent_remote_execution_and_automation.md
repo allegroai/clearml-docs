@@ -47,7 +47,7 @@ Now that our configuration is ready, we can start our agent in docker mode by ru
 
 After running the command, we can see it pop up in our workers table. Now the agent will start listening for tasks in the `default` queue and it’s ready to go!
 
-Let's give out workers something to do. Say you have a task that you already ran on your local machine and you tracked it using the 2 magic lines that we saw before. Just like in the last video, we can right click it and clone it, so it’s now in draft mode. We can easily change some of the hyperparameters on-the-fly and *enqueue* the task.
+Let's give our workers something to do. Say you have a task that you already ran on your local machine and you tracked it using the 2 magic lines that we saw before. Just like in the last video, we can right click it and clone it, so it’s now in draft mode. We can easily change some of the hyperparameters on-the-fly and *enqueue* the task.
 
 The agent will immediately detect that we enqueued a task and start working on it. Like we saw before, it will spin up a docker container, install the required packages and dependencies and run the code.
 
