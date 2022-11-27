@@ -1,5 +1,5 @@
 ---
-title: Pipelines from tasks
+title: Pipelines from Tasks
 ---
 
 
@@ -18,6 +18,7 @@ title: Pipelines from tasks
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">Read the transcript</summary>
 <div className="cml-expansion-panel-content">
+
 Hello and welcome to ClearML. In this video we’ll take a look at how pipelines can be created from tasks instead of from code like we saw in the last video.
 
 The tasks themselves are already in the system by using the experiment manager. What’s important to note here though is that hyperparameters, scalars, and artifacts should be reported correctly because the pipeline will consider them to be the inputs and outputs of each step. In that way, a step can easily access for example the artifacts from a previous step.
@@ -26,7 +27,7 @@ So with the tasks as our steps this time, we really only need to add our control
 
 Our example pipeline will consist of three distinct tasks. The first task downloads some data and then uploads it to ClearML as an artifact.
 
-In a future video, I’ll introduce you to Clearml Data which is actually our preferred way to handle data instead of uploading it as an artifact. So keep watching this getting started playlist if you want to know more.
+In a future video, I’ll introduce you to ClearML Data which is actually our preferred way to handle data instead of uploading it as an artifact. So keep watching this getting started playlist if you want to know more.
 
 The next task will preprocess that data. It has some hyperparameters here that configure the way the preprocessing is done. As you can see, the dataset `url` parameter is still empty. When the pipeline is run, these hyperparameters can be overwritten by the output of the previous step. We’ll see how that’s done a little later in the video. After the preprocessing, we’ll upload the resulting training and test data as an artifact again. 
 

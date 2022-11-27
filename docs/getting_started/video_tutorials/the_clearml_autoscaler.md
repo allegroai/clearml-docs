@@ -18,11 +18,12 @@ title: The ClearML Autoscaler
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">Read the transcript</summary>
 <div className="cml-expansion-panel-content">
+
 Hello and welcome to ClearML. In this video we’ll go a little more advanced and introduce autoscalers, the easiest way to build your very own flock of ClearML Agents.
 
-Data science is inherently very inconsistent in its demand for compute resources. One moment you’re just researching papers and need no compute at all, another moment you’re making 16 GPUs scream and wished you had more. Especially when running Hyperparameter Optimization or Pipelines, it can be very handy to have some extra hardware for a short time.
+Data science is inherently very inconsistent in its demand for compute resources. One moment you’re just researching papers and need no compute at all, another moment you’re making 16 GPUs scream and wishing you had more. Especially when running Hyperparameter Optimization or Pipelines, it can be very handy to have some extra hardware for a short time.
 
-Remote machines are easy to get from any cloud provider, and you only pay for the time you use them… as long as you don’t forget the shut them down after you’re done. Seriously, I’m pretty sure at least 30% of GPU usage is people forgetting to shut down their remote machines. 
+Remote machines are easy to get from any cloud provider, and you only pay for the time you use them… as long as you don’t forget to shut them down after you’re done. Seriously, I’m pretty sure at least 30% of GPU usage is people forgetting to shut down their remote machines. 
 
 Anyway, that’s what an autoscaler takes care of for you: spinning up as many machines as you need, when you need them and automatically shutting them down again when you don’t.
 

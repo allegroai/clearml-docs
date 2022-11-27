@@ -51,16 +51,16 @@ Let's give our workers something to do. Say you have a task that you already ran
 
 The agent will immediately detect that we enqueued a task and start working on it. Like we saw before, it will spin up a docker container, install the required packages and dependencies and run the code.
 
-The task itself is reported to the experiment manager just like any other task and you can browse its outputs like normal, albeit with the changed parameters we edited earlier during draft mode.
+The task itself is reported to the experiment manager just like any other task, and you can browse its outputs like normal, albeit with the changed parameters we edited earlier during draft mode.
 
 On the left we can see a button labeled “Workers and Queues”. Under the workers tab we can see that our worker is indeed busy with our task and we can see its resource utilization as well. If we click on the current experiment, we end up in our experiment view again. Now, imagine we see in the scalar output that our model isn’t training the way we want it to, we can abort the task here and the agent will start working on the next task in the queue.
 
 Back to our workers overview. Over in the Queues tab, we get some extra information about which experiments are currently in the queue and we can even change their order by dragging them in the correct position like so. Finally, we have graphs of the overall waiting time and overall amount of enqueued tasks over time.
 
-Talking of which, let’s say your wait times are very long because all data scientists have collectively decided that now is a perfect time to train their models and your on-premise servers are at capacity. We have built-in autoscalers for AWS and GCP (in the works) which will automatically spin up new clearml agent VMs when the queue wait time becomes too long. If you go for the premium tiers of ClearML, you’ll even get a really nice dashboard to go along with it.
+Talking of which, let’s say your wait times are very long because all data scientists have collectively decided that now is a perfect time to train their models and your on-premise servers are at capacity. We have built-in autoscalers for AWS and GCP (in the works) which will automatically spin up new `clearml-agent` VMs when the queue wait time becomes too long. If you go for the premium tiers of ClearML, you’ll even get a really nice dashboard to go along with it.
 
 In the following video we’ll go a little deeper yet into this newly discovered automation thing we just saw and introduce things like automatic hyperparameter optimization and pipelines.
 
-But for now, feel free to start spinning up some agents on your own machines completely for free at app.clear.ml or by using our self-hosted server on github, and don’t forget to join our Slack channel if you need any help.
+But for now, feel free to start spinning up some agents on your own machines completely for free at app.clear.ml or by using our self-hosted server on GitHub, and don’t forget to join our Slack channel if you need any help.
 </div>
 </details>

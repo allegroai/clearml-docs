@@ -1,5 +1,5 @@
 ---
-title: ClearML-Data
+title: ClearML Data
 ---
 
 
@@ -18,6 +18,7 @@ title: ClearML-Data
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">Read the transcript</summary>
 <div className="cml-expansion-panel-content">
+
 Hello and welcome to ClearML. In this video we’ll take a look at both the command line and python interfaces of our data versioning tool called `clearml-data`. 
 
 In the world of machine learning, you are very likely dealing with large amounts of data that you need to put into a dataset. ClearML Data solves 2 important challenges that occur in this situation:
@@ -54,7 +55,7 @@ Using the command line tool, you can download a dataset version locally by using
 
 That path will be a local cached folder, which means that if you try to get the same dataset again, or any other dataset that’s based on this one, it will check which files are already on your system, and it will not download these again.
 
-The python interface is similar, with one major difference. You can also get a dataset using any combination of name, project, ID or tags, but  _getting_ the dataset does not mean it is downloaded, we simply got all of the metadata, which we can now access from the dataset object. This is important, as it means you don’t have to download the dataset to make changes to it, or to add files. More on that in just a moment.
+The python interface is similar, with one major difference. You can also get a dataset using any combination of name, project, ID or tags, but _getting_ the dataset does not mean it is downloaded, we simply got all of the metadata, which we can now access from the dataset object. This is important, as it means you don’t have to download the dataset to make changes to it, or to add files. More on that in just a moment.
 
 If you do want to download a local copy of the dataset, it has to be done explicitly, by calling `get_local_copy` which will return the path to which the data was downloaded for you.
 

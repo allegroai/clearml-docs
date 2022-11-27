@@ -21,13 +21,14 @@ title: Experiment Manager Hands-on
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">Read the transcript</summary>
 <div className="cml-expansion-panel-content">
-Welcome to ClearML! In this video, you’ll learn how to quickly get started with experiment manager by adding 2 simple lines of Python code to your existing project.
+
+Welcome to ClearML! In this video, you’ll learn how to quickly get started with the experiment manager by adding 2 simple lines of Python code to your existing project.
 
 This is the experiment manager's UI, and every row you can see here, is a single run of your code. So let’s set everything up in the code first, and then we’ll come back to this UI later in the video.
 
 We’re currently in our project folder. As you can see, we have our very basic toy example here that we want to keep track of by using ClearML’s experiment manager.
 
-The first thing to do is to install the `clearml` python package in our virtual environment. Installing the package itself, will add 3 commands for you. We’ll cover the `clearml-data` and `clearml-task` commands later, for now the one we need is `clearml-init`
+The first thing to do is to install the `clearml` python package in our virtual environment. Installing the package itself, will add 3 commands for you. We’ll cover the `clearml-data` and `clearml-task` commands later. For now the one we need is `clearml-init`
 
 If you paid attention in the first video of this series, you’d remember that we need to connect to a ClearML Server to save all our tracked data. The server is where we saw the list of experiments earlier. This connection is what `clearml-init` will set up for us. When running the command it’ll ask for your server API credentials.
 

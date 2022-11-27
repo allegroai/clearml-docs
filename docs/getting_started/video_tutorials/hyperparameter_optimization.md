@@ -36,7 +36,7 @@ We are using a training script as our task in our example here, but the optimize
 
 The only thing we have to do to start optimizing this model is to write a small python file detailing what exactly we want our optimizer to do.
 
-When you’re a ClearML pro user, you can just start the optimizer straight from the UI, but more on that later.
+When you’re a ClearML Pro user, you can just start the optimizer straight from the UI, but more on that later.
 
 First of all, everything in ClearML is a task. The optimizer itself is one too, so we let the server know that, by using the `task_type` argument.
 
@@ -44,7 +44,7 @@ Next, we choose which task we want to optimize by providing its ID.
 
 Now the optimizer needs its inputs and outputs. For the inputs, we can tell it to choose a parameter either from a discrete list of options, or within certain boundaries. The name of the hyperparameter consists of the section it’s reported to, followed by a slash and then its name.
 
-For the outputs, we tell the optimizer what the scalar is that we want to optimize. You can find the necessary information in your original task, under scalars. The metric title is the title of the plot, the metric series is the trace, and the sign is whether we want to minimize or maximise this scalar.
+For the outputs, we tell the optimizer what the scalar is that we want to optimize. You can find the necessary information in your original task, under scalars. The metric title is the title of the plot, the metric series is the trace, and the sign is whether we want to minimize or maximize this scalar.
 
 There are many more parameters that you can tune, but if you want to go deeper, check out our other HPO blogpost on the website and in the description.
 

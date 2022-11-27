@@ -67,6 +67,6 @@ And then we’re not even talking about all the ways to automate tasks using the
 
 For the next videos we’ll finally cover automation and orchestration as well as ClearML Data, our data versioning tool.
 
-Feel free to check out and test all of these features at app.clear.ml, or using our self hosted server on github and don’t forget to join our Slack channel if you need any help.
+Feel free to check out and test all of these features at app.clear.ml, or using our self-hosted server on GitHub and don’t forget to join our Slack channel if you need any help.
 </div>
 </details>

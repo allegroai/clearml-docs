@@ -1,5 +1,5 @@
 ---
-title: Pipelines from code
+title: Pipelines from Code
 ---
 
 
@@ -18,6 +18,7 @@ title: Pipelines from code
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">Read the transcript</summary>
 <div className="cml-expansion-panel-content">
+
 Hello and welcome to ClearML. In this video we’ll take a look at how pipelines can be used as a way to easily automate and orchestrate multiple tasks.
 
 Essentially, pipelines are a way to automate and orchestrate the execution of multiple tasks in a scalable way. Each task in the context of a ClearML pipeline is called a step or component, and it doesn’t necessarily have to be an existing ClearML *task*, it can be any code.
@@ -28,7 +29,7 @@ Pipelines are highly scalable too. Just like any object in the ClearML ecosystem
 
 Ok, but how do we make one? In ClearML there are 2 main ways. 
 
-One is you can easily chain existing ClearML tasks together to create a single pipeline. This means each step in the pipeline is a task that you tracked before using the experiment manager. On the other hand, you could go a little deeper and create pipelines straight from your codebase, which is what we’ll focus on in this video. But don’t worry, the end result is the same in both cases: a clearml pipeline. 
+One is you can easily chain existing ClearML tasks together to create a single pipeline. This means each step in the pipeline is a task that you tracked before using the experiment manager. On the other hand, you could go a little deeper and create pipelines straight from your codebase, which is what we’ll focus on in this video. But don’t worry, the end result is the same in both cases: a ClearML pipeline. 
 
 Let’s say we have some functions that we already use to run ETL and another function that trains a model on the preprocessed data. We already have a main function too, that orchestrates when and how these other components should be run.
 
