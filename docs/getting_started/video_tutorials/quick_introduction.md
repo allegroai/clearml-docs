@@ -29,7 +29,7 @@ a data versioning tool that can track changes to your data sets and makes them e
 
 Orchestrate pipelines from code.
 
-Run hyper parameter optimization and auto skill remote workers on AWS, GCP and Azure.
+Run hyper parameter optimization and auto scale remote workers on AWS, GCP and Azure.
 
 Doesn't matter if you're starting small or already in production, there's always a ClearML tool that can make your life easier.
 
