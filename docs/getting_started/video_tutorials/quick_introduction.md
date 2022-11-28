@@ -14,3 +14,25 @@ title: Quick Introduction
         allowfullscreen>
 </iframe>
 </div>
+
+<details className="cml-expansion-panel info">
+<summary className="cml-expansion-panel-summary">Read the transcript</summary>
+<div className="cml-expansion-panel-content">
+        
+ClearML is an open source MLOPS platform.
+
+It's essentially a toolbox stuffed with everything you'll need to go from experimentation to production.
+
+There's a fully fledged experiment manager that can log, compare and automatically reproduce any experiment you do, 
+        
+a data versioning tool that can track changes to your data sets and makes them easily accessible to anyone on any machine.
+
+Orchestrate pipelines from code.
+
+Run hyper parameter optimization and auto skill remote workers on AWS, GCP and Azure.
+
+Doesn't matter if you're starting small or already in production, there's always a ClearML tool that can make your life easier.
+
+Start for free at app.clear.ml or host your own server from our Github page.
+</div>
+</details>
