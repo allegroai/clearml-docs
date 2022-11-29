@@ -81,8 +81,8 @@ To draw a new annotation
    Each click sets polygon vertices on the frame. Click again on the initial vertex to close the polygon.
      
     * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode icon" className="icon size-md space-sm" /> - Key points mode: 
-   Each click adds a keypoint to the frame. After clicking the last keypoint, click  <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> or 
-   `Enter` to save the annotation. Click `Esc` to cancel the annotation.
+   Each click adds a keypoint to the frame. After clicking the last keypoint, click  <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> 
+   or <code>Enter</code> to save the annotation. Click <code>Esc</code> to cancel the annotation.
 
     A new annotation is created. 
 
