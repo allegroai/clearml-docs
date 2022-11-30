@@ -3,19 +3,40 @@ title: Annotation Tasks
 ---
 
 Use the Annotations page to access and manage annotation Tasks.  
+
 Use annotation tasks to efficiently organize the annotation of frames in Dataset versions and manage the work of annotators 
 (see [Annotating Images and Videos](#annotating-images-and-video)).
 
-## Managing Annotation Tasks
+![Annotations page](../../img/annotation_page.png) 
 
-### Creating Annotation Tasks
+Click on an annotation task card to open the frame viewer, where you can view the task’s frames and annotate them.
 
+## Annotation Task Actions
+Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> on the top right 
+of an annotation task card to open its context menu and access annotation task actions.  
 
-![image](../../img/hyperdatasets/annotation_task_01.png)
+![Annotation task card](../../img/annotation_task_card.png)
+
+* **Annotate** - Go to annotation task frame viewer
+* **Info** - View annotation task’s definitions: dataset versions, filters, and frame iteration specification
+* **Complete** - Mark annotation task as Completed
+* **Delete** - Delete annotation task
+
+## Page View Options 
+The following are options for filtering annotation tasks:
+* Active / Completed Filter - Toggle to show annotation tasks that are either Active or Completed
+* Dataset Filter - Use to view only the annotation tasks for a specific Dataset
+* My / Team Work - Toggle to show annotation tasks that either only you created or any team member created
+
+Sort the annotation tasks by either using **RECENT** or **NAME** option.
+
+## Creating Annotation Tasks
+
+![Annotation task creation modal](../../img/hyperdatasets/annotation_task_01.png)
 
 **To create an annotation task:**
 
-1. On the Annotator page, click **+ ADD NEW ANNOTATION**.
+1. On the Annotator page, click **+ NEW ANNOTATION**.
 1. Enter a name for your new annotation task. 
 1. Choose a Dataset version to annotate. If the selected Dataset version's status is *Published*, then creating this 
    annotation task also creates a child version of the selected version. The new child version's status is *Draft*, and 
@@ -26,9 +47,7 @@ Use annotation tasks to efficiently organize the annotation of frames in Dataset
     
         * **All Frames** - Include all frames in this task.
         * **Empty Frames** - Include only frames without any annotations in this task.
-        * **By Label** - Include only frames with specific labels, and optionally filter these frames by confidence level and
-         the number of instances. You can also click <img src="/docs/latest/icons/ico-code.svg" alt="Code" className="icon size-md space-sm" /> and then add a Lucene query for this ROI label filter.
-
+        * **Custom Filters** - Apply any combination of ROI, frame, and source filtering rules. See [Advanced Frame Filtering](webapp_datasets_versioning.md#advanced-frame-filtering). 
 1. Choose the iteration parameters specifying how frames in this version are presented to the annotator.
         
     1. In **ITERATION**, in the **ORDER** list, choose either:
@@ -42,121 +61,80 @@ Use annotation tasks to efficiently organize the annotation of frames in Dataset
             
 1. Click **Create**.
 
-### Completing Annotation Tasks
-
-To mark an annotation task as **Completed**:
-
-* In the annotation task card, click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> (menu) **>** **Complete** **>** **CONFIRM**.
-
-### Deleting Annotation Tasks
-
-To delete an annotation task:
-
-* In the annotation task card, click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> (menu) **>** **Delete** **>** **CONFIRM**.
-
-### Filtering Annotation Tasks
-
-There are two option for filtering annotation tasks:
-
-* Active / Completed Filter - Toggle to show annotation tasks that are either **Active** or **Completed**
-* Dataset Filter - Use to view only the annotation tasks for a specific Dataset.
-
-### Sorting annotation Tasks
-
-Sort the annotation tasks by either using **RECENT** or **NAME** from the drop-down menu on the top left of the page.  
-
-### Viewing Annotation Task Information
-
-To View the Dataset version, filters, and iteration information:
-
-* In the annotation task card, click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> (menu) **>** **Info**
-
-
-## Annotating Images and Video
-
+## Annotating Images and Video 
 Annotate images and video by labeling regions of interest in Dataset version frames. The frames presented for annotation 
 depend upon the settings in the annotation task (see [Creating Annotation Tasks](#creating-annotation-tasks)).
 
+### Creating New Frame Objects
 
-### Annotating Frames
+To draw a new annotation
 
-**To annotate frames:**
+1. Click one of the following modes to choose what annotation to create:   
+   
+    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode icon" className="icon size-md space-sm" /> - Rectangle mode: 
+   Click then drag the cursor to create a rectangle annotation on the frame.
+    
+    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" alt="Ellipse mode icon" className="icon size-md space-sm" /> - Ellipse mode: 
+   Click then drag the cursor to create an ellipse annotation on the frame.
+ 
+    * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode icon" className="icon size-md space-sm" /> - Polygon mode: 
+   Each click sets polygon vertices on the frame. Click again on the initial vertex to close the polygon.
+     
+    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode icon" className="icon size-md space-sm" /> - Key points mode: 
+   Each click adds a keypoint to the frame. After clicking the last keypoint, click  <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> 
+   or <code>Enter</code> to save the annotation. Click <code>Esc</code> to cancel the annotation.
 
-1. On the Annotator page, click the annotation task card, or click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> (menu)
-   and then click **Annotate**.
-1. See instructions below about annotating frames.
+    A new annotation is created. 
+
+1. In the newly created annotation, select or type-in a label(s). Click the circle in the label name to select a 
+   different label color. 
+
+You can use the **Default ROI Label(s)** list to automatically set labels to all new annotations. 
+
+#### Copying Frame Objects 
+You can copy existing annotations, and paste them to any frame of your choice:
+1. Click the annotation or bounded area in the frame.
+1. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy annotation" className="icon size-md space-sm" /> 
+   (copy annotation).
+1. Navigate to the frame of your choice (you can remain in the same frame).
+1. Click **PASTE**. The new annotation appears in the same location as the one you copied. You can paste the annotation
+   multiple times.
+   
+Copy all annotations in a frame by clicking the **COPY ALL** button.
+
+### Annotation Actions
+
+The following table describes the actions that can be performed on existing annotations. The frame editor automatically 
+saves changes when you move to another frame using the frame navigation controls 
+(<img src="/docs/latest/icons/ico-arrow-right.svg" alt="Next frame icon" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-skip-next.svg" alt="Jump to next unfiltered annotation" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-skip-forward.svg" alt="Jump forwards icon" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-arrow-left.svg" alt="Previous frame icon" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-skip-previous.svg" alt="Jump to previous unfiltered annotation" className="icon size-md space-sm" />, <img src="/docs/latest/icons/ico-skip-backward.svg" alt="Jump backwards icon" className="icon size-md space-sm" />,
+or the arrow keys on the keyboard). Closing the frame editor will prompt you to save any changes.
+
+| Icon (when applicable) | Action | Description |
+|---|---|---|
+|| Move annotation | Click on a bounded area and drag it. |
+|| Resize annotation| Select an annotation, then click on a bounded area’s vertex and drag it. |	
+|<img src="/docs/latest/icons/ico-metadata.svg" alt="edit metadata" className="icon size-md space-sm" />|Edit metadata|Hover over an annotation in the list and click the icon to open the edit window. Input the metadata dictionary in JSON format. This metadata is specific to the selected annotation, not the entire frame.|
+|<img src="/docs/latest/icons/ico-lock-open.svg" alt="Lock annotation" className="icon size-md space-sm" />|Lock / Unlock annotation |Click the button on a specific annotation to make it uneditable. You can also click the button on top of the annotations list to lock all annotations in the frame.|
+|<img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" />|Delete annotation|Click the annotation or bounded area in the frame and then click the button to delete the annotation.|
+|<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />|Show/hide all annotations |Click the button to view the frame without annotations. When annotations are hidden, they can’t be modified. |
+||Delete label |In the relevant annotation, click **x** on the label you want to remove.| 
+
+### Frame Labels
+
+You can add labels which describe the whole frame, with no specific coordinates. 
+
+**To add frame labels:**
+
+1. Expand the **FRAME LABELS** area (below **OBJECTS**)
+1. Click **+ Add new**
+1. Enter a label(s)
+
+## Frame Metadata
+
+**To edit frame metadata:** 
+1. Expand the **FRAME METADATA** area 
+1. Click edit <img src="/docs/latest/icons/ico-metadata.svg" alt="edit metadata" className="icon size-md space-sm" /> 
+   which will open an editing window
+1. Modify the metadata dictionary in JSON format
 
 
-#### Add FrameGroup Objects
-
-1. Select an annotation mode and add the bounded area to the frame image.
-
-    * Rectangle mode - Click <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode" className="icon size-sm space-sm" /> and then click the image, drag and release. 
-    * Polygon mode - Click <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode" className="icon size-sm space-sm" /> and then click the image for the first vertex, 
-      move to another vertex and click, continue until closing the last vertex. 
-    * Key points mode - Click <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode" className="icon size-sm space-sm" /> and then click each key point.  
-
-1. In the new label area, choose or enter a label. 
-1. Optionally, add metadata. 
-1. Optionally, lock the annotation.
-
-#### Add Frame Labels
-
-1. In **FRAME LABEL**, click **+ Add new**.
-1. In the new label area, choose or enter a label. 
-1. Optionally, add metadata. 
-1. Optionally, lock the annotation.
-
-#### Copy / Paste an Annotations
-
-1. Click the annotation or bounded area in the image or video clip.
-1. Optionally, navigate to a different frame.
-1. Click **PASTE**. The new annotation appears in the same location as the one you copied.
-1. Optionally, to paste the same annotation, again, click **PASTE**.
-
-#### Copy / Paste All Annotations
-
-1. Click **COPY ALL**.
-1. Optionally, navigate to a different frame.
-1. Click **PASTE**.
-
-#### Move Annotations
-
-* Move a bounded area by clicking on it and dragging.
-
-#### Resize Annotations
-
-* Resize a bounded area by clicking on a vertex and dragging.
-
-#### Delete Annotations
-
-1. Click the annotation or bounded area in the image or video clip.
-1. Press **DELETE** or in the annotation, click **>X**.
-
-#### Add Labels
-
-* Click in the annotation and choose a label from the label list, or type a new label.
-
-#### Modify Labels
-
-* In the annotation label textbox, choose a label from the list or type a new label.
-
-#### Delete Labels
-
-* In the annotation, in the label area, click the label's **X**.
-
-#### Modify Annotation Metadata
-
-* In the label, click edit and then in the popup modify the metadata dictionary (in JSON format).
-
-#### Modify Annotation Color
-
-* Modify the color of an area by clicking the circle in the label name and select a new color.
-
-#### Lock / Unlock Annotations
-
-* Click the lock.
-
-#### Modify Frame Metadata
-
-* Expand the **FRAME METADATA** area, click edit, and then in the popup modify the metadata dictionary (in JSON format).

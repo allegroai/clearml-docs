@@ -9,6 +9,8 @@ See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced querya
 
 The following are some recommendations for using ClearML Data. 
 
+![Dataset UI gif](../img/dataset.gif)
+
 ## Versioning Datasets
 
 Use ClearML Data to version your datasets. Once a dataset is finalized, it can no longer be modified. This makes clear

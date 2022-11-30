@@ -178,7 +178,7 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 
 1. Save the configuration.
 
-## Execution
+## Deployment
 
 ### Spinning Up an Agent
 You can spin up an agent on any machine: on-prem and/or cloud instance. When spinning up an agent, you assign it to 
@@ -252,6 +252,17 @@ the SSH keys provided in the environment variable.
 ```
 SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <your queue name>  --docker
 ```
+
+### Kubernetes 
+Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML Agent adds the missing scheduling 
+capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent’s 
+features (scheduling, job prioritization, and more).
+
+There are two options for deploying the ClearML Agent to a Kubernetes cluster:
+* Spin ClearML Agent as a long-lasting service pod
+* Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
+
+See more details [here](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
 
 ### Explicit Task Execution
 

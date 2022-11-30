@@ -2,6 +2,50 @@
 title: Version 1.8
 ---
 
+### ClearML Server 1.8.0
+
+**New Features and Improvements**
+* Support `/` delimited project names for on-the-fly nested project creation in UI operations [ClearML Server GitHub issue #151](https://github.com/allegroai/clearml-server/issues/151) 
+* Add keyboard shortcut iteration navigation in full screen view of debug samples and plots
+* Add "Don't show again" option for UI notification when archiving tasks [ClearML Server GitHub issue #149](https://github.com/allegroai/clearml-server/issues/149)
+* Add task reset/delete modal automatically closes when no additional information is provided
+* Add parent project name in UI dataset and pipeline cards
+* Move UI plot legends to bottom of plot
+
+**Bug Fixes**
+* Fix task artifacts not deleted from file server when task deleted via UI [ClearML GitHub issue #801](https://github.com/allegroai/clearml/issues/801)
+* Fix deleting pipeline projects via UI fails [ClearML GitHub issue #798](https://github.com/allegroai/clearml/issues/798)
+* Fix multiple selection with `Shift` key in UI experiment table not working [ClearML Server GitHub issue #139](https://github.com/allegroai/clearml-server/issues/139)
+* Fix disappearing user filter in UI "All Experiments" table [ClearML Web GitHub issue #33](https://github.com/allegroai/clearml-web/issues/33)
+* Fix UI Dashboard missing My Work / Team Work filter
+* Fix navigating to Scalars and Plots tabs in UI experiment comparison freezes browser
+* Fix project stats do not exclude dataset and annotation tasks
+* Fix subproject with no experiments displayed as "undefined" in parent project page 
+* Fix maximizing UI combined scalar plots displays split scalar plots 
+* Fix adding description to UI dataset does not work
+* Fix empty "parent" field in task cloned in UI
+* Fix running UI application instances can be deleted
+* Fix queue option list does not open in UI enqueue modal
+
+### ClearML SDK 1.8.1
+
+**New Features and Improvements**
+* Raise error on failed uploads [ClearML GitHub issue #810](https://github.com/allegroai/clearml/issues/819)
+* Add hyperdataset examples [ClearML GitHub PR #823](https://github.com/allegroai/clearml/commit/f6b9efe54e1246adba4036c56bc6e8a0bdb99948)
+* Change `report_event_flush_threshold` default to 100
+* Add `ModelInfo.weights_object()` to store callback access to the actual model object being stored (valid for both 
+pre/post save calls, otherwise `None`)
+* Support `num_workers` in dataset operation
+* Support max connections setting for Azure storage using the `sdk.azure.storage.max_connection` configuration option
+
+**Bug Fixes**
+* Fix clearml logger default level cannot be changed [ClearML GitHub issue #741](https://github.com/allegroai/clearml/issues/741)
+* Fix Hydra doesn't get overridden information from ClearML [ClearML GitHub issue #751](https://github.com/allegroai/clearml/issues/751)
+* Fix `StorageManager.list(“s3://..”, with_metadata=True)` doesn't work
+* Fix `ModelsList.keys()` is missing
+* Fix `CLEARML_DEFERRED_TASK_INIT=1` doesn't work
+* Fix default API method does not work when set in configuration
+
 ### ClearML SDK 1.8.0
 
 **New Features and Improvements**

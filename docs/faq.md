@@ -533,7 +533,7 @@ and accuracy values of several experiments.
 In an experiment comparison page, under the **HYPER PARAMETERS** tab, you can view the experiments' hyperparameter values 
 in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
 
-The image below show a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
+The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
 `batch_size`, and `number_of_epochs`) and a performance metric (`accuracy`) of three experiments. 
 
 ![Parallel Coordinates](img/clearml_faq_screenshots/compare_parallel_coordinates.png)
