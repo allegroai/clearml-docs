@@ -125,4 +125,36 @@ class methods.
 ### Set Default NaN and Inf Values
 When you report metrics that include NaN or Inf values, ClearML logs them as `0` by default. You can specify
 different default values for NaN and Inf using the [`Logger.set_reporting_nan_value`](../references/sdk/logger.md#loggerset_reporting_nan_value) 
-and the [`Logger.set_reporting_inf_value`](../references/sdk/logger.md#loggerset_reporting_inf_value) class methods respectively. 
+and the [`Logger.set_reporting_inf_value`](../references/sdk/logger.md#loggerset_reporting_inf_value) class methods respectively.
+
+
+## Log Levels
+ClearML uses the python logging class and thus adheres to its log levels.
+
+### Getting current log level
+By calling the method before, you can get your current log level. Log level adheres to [Python log levels](https://docs.python.org/3/library/logging.html)
+```python
+logging.getLogger('clearml').getEffectiveLevel()
+```
+
+### Setting current log level
+Log levels adhere to python log levels (CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET), all in capital letters.
+To set current log level there are 2 options:
+1. Setting the ClearML environment variable CLEARML_LOG_LEVEL
+1. By calling
+   ```python
+   import logging
+   logging.getLogger("clearml").setLevel(logging.ERROR)
+   ```
+1. Setting log level in clearml.conf:
+   ```bash
+   logging {
+       loggers {
+           clearml {
+               level: WARNING
+           }
+       }
+   }
+   ```
+   
+  
