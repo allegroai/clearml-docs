@@ -2,6 +2,15 @@
 title: Version 1.8
 ---
 
+### ClearML SDK 1.8.2
+
+**New Features and Improvements**
+* Added `VCS_ENTRY_POINT` environment variable that overrides ClearML's entrypoint auto-detection
+
+**Bug Fixes**
+* Fix all parameters returned from a pipeline are considered strings
+* Fix `Task.set_parameters()` does not add parameter type when parameter exists but does not have a type
+
 ### ClearML Server 1.8.0
 
 **New Features and Improvements**
