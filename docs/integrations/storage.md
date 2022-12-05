@@ -185,9 +185,10 @@ content directly from code.
 See [Storage Examples](../guides/storage/examples_storagehelper.md).
 
 ### Path Substitution
-The ClearML StorageManager supports local path substitution when fetching files.<br/>
-This is especially useful when managing data using [clearml-data](https://clear.ml/docs/latest/docs/clearml_data/clearml_data_cli)! If different data consumers have the data physically stored in different locations, path 
-substitution allows for registering the data into clearml-data once, and then storing it, and accessing it, in multiple locations.
+The ClearML StorageManager supports local path substitution when fetching files.
+
+This is especially useful when managing data using [`clearml-data`](../clearml_data/clearml_data_cli.md)! If different data consumers have the data physically stored in different locations, path 
+substitution allows for registering the data into `clearml-data` once, and then storing and accessing it in multiple locations.
 
 To enable path substitution, modify the clearml.conf file and configure:
 
