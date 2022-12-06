@@ -53,9 +53,9 @@ The following table displays the possible states for a dataset version.
 
 | State | Description |
 |---|---|
-|*Uploading*| Dataset creation is in progress  |
-|*Failed*| Dataset creation was terminated with an error|
-|*Aborted*| Dataset creation was aborted by user before it was finalization |
-|*Final*| A dataset was created and finalized successfully | 
-|*Published*| The dataset is read-only. Publish a dataset to prevent changes to it | 
+|*Uploading* | Dataset creation is in progress  |
+|*Failed* | Dataset creation was terminated with an error|
+|*Aborted* | Dataset creation was aborted by user before it was finalization |
+|*Final* | A dataset was created and finalized successfully | 
+|*Published* | The dataset is read-only. Publish a dataset to prevent changes to it | 
 

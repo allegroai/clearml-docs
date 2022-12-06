@@ -25,7 +25,7 @@ The Dataviews table includes the following columns:
 |**STATUS** | The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only)| String| 
 |**PROJECT** | The project name with which the dataview is associated| String|
 |**CREATED** | Elapsed time since the Dataview was created| Date-time|
-|**DESCRIPTION**| A description of the Dataview | String| 
+|**DESCRIPTION** | A description of the Dataview | String| 
 
 Dynamically order the columns by dragging a column heading 
 to a new position.
