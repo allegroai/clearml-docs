@@ -4,7 +4,7 @@ title: Version 1.8
 
 ### ClearML SDK 1.8.3
 
-**Bug fixes**
+**Bug Fixes**
 * Set GCS credentials to `None` if invalid service account credentials are provided [ClearML GitHub issue #840](https://github.com/allegroai/clearml/issues/840)
 * Fix a sync issue when loading deferred configuration
 
