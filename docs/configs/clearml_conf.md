@@ -62,6 +62,13 @@ for information about using environment variables with Windows in the configurat
         
 * Dictionary of top-level ClearML Agent options to configure ClearML Agent for Git credentials, package managers, cache management, workers, and Docker for workers.
 ---
+
+**`agent.crash_on_exception`** (*bool*)
+
+* By default, when encountering an exception while running a task, the agent will catch the exception, log it, and 
+continue running. When set to `true`, the agent crashes when encountering an exception.
+
+---
         
 **`agent.cuda_version`** (*float*)
         
@@ -242,6 +249,8 @@ For example:
     * If not using Git SSH credentials, use this option to specify a Git password for cloning your repositories.
         
 ---
+
+<id="hide_docker"> 
 
 **`agent.hide_docker_command_env_vars`** (*dict*)
 
