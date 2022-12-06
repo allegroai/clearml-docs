@@ -250,7 +250,7 @@ For example:
         
 ---
 
-<id="hide_docker"> 
+<a id="hide_docker"/> 
 
 **`agent.hide_docker_command_env_vars`** (*dict*)
 
