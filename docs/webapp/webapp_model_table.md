@@ -28,7 +28,7 @@ The models table contains the following columns:
 | **TASK** | The experiment (Task) name that created the model. | String |
 | **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Date-time |
 | **DESCRIPTION** | The model description (not shown by default). | String |
-| *Metadata*| User defined metadata key column. Available options depend upon the models in the table. | String |
+| *Metadata* | User defined metadata key column. Available options depend upon the models in the table. | String |
 
 
 ## Customizing the Models Table
