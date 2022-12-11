@@ -98,7 +98,15 @@ continue running. When set to `true`, the agent crashes when encountering an exc
   overrides this configuration option.
 
 ___
-        
+
+**`agent.disable_task_docker_override`** (*bool*)
+
+* If set to `true`, agent uses the default docker image and ignores any docker image and arguments specified in the 
+task's container section (if setup shell script is specified in task container section, it is used 
+in either case).         
+
+---
+
 **`agent.docker_apt_cache`** (*string*)
         
 * The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
@@ -484,6 +492,8 @@ ___
 * A list of packages with priority to be installed before the rest of the required packages. For example: `["cython", "numpy", "setuptools", ]`
 
 ---
+
+<a id="system_site_packages"/>
 
 **`agent.package_manager.system_site_packages`** (*bool*)
         
