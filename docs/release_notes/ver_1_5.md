@@ -2,6 +2,20 @@
 title: Version 1.5
 ---
 
+### ClearML Agent 1.5.1
+
+**New Features and Improvements**
+* Upgrade requirements for `attrs`, `jsonschema`, `pyparsing`, `six`, and `pyjwt` [ClearML Agent GitHub issue #129](https://github.com/allegroai/clearml-agent/issues/129)
+* Add default output URI selection to `clearml-agent init`
+* Add `agent.disable_task_docker_override` configuration option to disable docker override specified in executing tasks
+* Add `CLEARML_AGENT_FORCE_SYSTEM_SITE_PACKAGES` env var (default `true`) to allow overriding default `system_site_packages: true` 
+behavior when running tasks in containers (docker mode and k8s-glue)
+
+**Bug Fixes**
+* Fix using deprecated types validator argument raises an error (deprecated even before `jsonschema` 3.0.0 and unsupported 
+since 4.0.0)
+* Fix pip support allowing multiple pip version constraints (by default, one for < Python 3.10 and one for >= Python 3.10)
+
 ### ClearML Agent 1.5.0
 
 **New Features and Improvements**
