@@ -48,7 +48,7 @@ make sure to close a task, before initializing a new one. To close a task simply
 (see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a task, its project needs to be specified. If the project entered does not exist, it will be created on-the-fly. 
-Projects can be divided into sub-projects, just like folders are broken into sub-folders.
+Projects can be divided into subprojects, just like folders are broken into sub-folders.
 
 For example:
 ```python
@@ -420,7 +420,7 @@ Upload the execution data that the Task captured offline to the ClearML Server u
 
   You can also use the offline task to update the execution of an existing previously executed task by providing the 
   previously executed task’s ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
-  `iteratiion_offset`.   
+  `iteration_offset`.   
   
   ```python
   Task.import_offline_session(
