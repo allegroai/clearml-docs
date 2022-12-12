@@ -60,7 +60,7 @@ Upload the session's execution data that the Task captured offline to the ClearM
 
   You can also use the offline task to update the execution of an existing previously executed task by providing the 
   previously executed task’s ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
-  `iteratiion_offset`.   
+  `iteration_offset`.   
   
   ```python
   Task.import_offline_session(
