@@ -91,9 +91,7 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration) 
   
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
-method. Turn off all automatic logging by setting the parameter to `False`. 
-
-For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
+method. Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
 
 For example: 
 
