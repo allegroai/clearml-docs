@@ -95,6 +95,7 @@ method. Turn off all automatic logging by setting the parameter to `False`. For 
 input a dictionary, with framework-boolean pairs. 
 
 For example: 
+
 ```python
 auto_connect_frameworks={
     'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
@@ -104,6 +105,23 @@ auto_connect_frameworks={
 }
 ```
 
+You can also input wildcards as dictionary values. ClearML will log a model created by a framework only if its local path 
+matches at least one wildcard. 
+
+For example, in the code below, ClearML will log PyTorch models only if their paths have the 
+`.pt` extension. The unspecified frameworks' values default to `true` so all their models are automatically logged. 
+
+```python
+auto_connect_frameworks={'pytorch' : '*.pt'}
+```
+
+For TensorBoard, you can specify whether to log hyperparameters. By default, ClearML automatically logs TensorBoard's 
+parameters, but you can disable the logging with the following code:
+
+```python
+auto_connect_frameworks={'tensorboard': {'report_hparams': False}} 
+```
+ 
 ### Task Reuse
 Every `Task.init` call will create a new task for the current execution.
 In order to mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
