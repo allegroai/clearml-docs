@@ -115,10 +115,11 @@ For example, in the code below, ClearML will log PyTorch models only if their pa
 auto_connect_frameworks={'pytorch' : '*.pt'}
 ```
 
-For TensorBoard, you can specify whether to log hyperparameters:
+For TensorBoard, you can specify whether to log hyperparameters. By default, ClearML automatically logs TensorBoard's 
+parameters, but you can disable the logging with the following code:
 
 ```python
-auto_connect_frameworks={'tensorboard': {'report_hparams': bool}} 
+auto_connect_frameworks={'tensorboard': {'report_hparams': False}} 
 ```
  
 ### Task Reuse
