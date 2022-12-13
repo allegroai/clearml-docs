@@ -91,10 +91,12 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration) 
   
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
-method. Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
-input a dictionary, with framework-boolean pairs. 
+method. Turn off all automatic logging by setting the parameter to `False`. 
+
+For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
 
 For example: 
+
 ```python
 auto_connect_frameworks={
     'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
@@ -104,6 +106,22 @@ auto_connect_frameworks={
 }
 ```
 
+You can also input wildcards as dictionary values. ClearML will log a model created by a framework only if its local path 
+matches at least one wildcard. 
+
+For example, in the code below, ClearML will log PyTorch models only if their paths have the 
+`.pt` extension. The unspecified frameworks' values default to `true` so all their models are automatically logged. 
+
+```python
+auto_connect_frameworks={'pytorch' : '*.pt'}
+```
+
+For TensorBoard, you can specify whether to log hyperparameters:
+
+```python
+auto_connect_frameworks={'tensorboard': {'report_hparams': bool}} 
+```
+ 
 ### Task Reuse
 Every `Task.init` call will create a new task for the current execution.
 In order to mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
