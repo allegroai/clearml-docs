@@ -35,7 +35,7 @@ experiment tracking and management tools, and more!
 * **MLOps Engineers** start [here](mlops/mlops_first_steps.md) - learn how to use ClearML's 
 automation, orchestration, and tracking tools
 
-* **DevOps Engineers** start [here](../deploying_clearml/clearml_server.md#deployment) - go over how 
+* **DevOps Engineers** start [here](../deploying_clearml/clearml_server.md#deployment) - learn how 
 to deploy and configure a ClearML Server 
 
 ### Getting Started on YouTube (Playlist)
