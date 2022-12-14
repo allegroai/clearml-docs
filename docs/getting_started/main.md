@@ -30,7 +30,7 @@ GUI applications
 
 Choose where you want get started with ClearML: 
 * **Data Scientists** start [here](ds/ds_first_steps.md) - learn how to use ClearML's
-experiment tracking and managemtn tools, and more!
+experiment tracking and management tools, and more!
 
 * **MLOps Engineers** start [here](mlops/mlops_first_steps.md) - learn how to use ClearML's 
 automation, orchestration, and tracking tools
