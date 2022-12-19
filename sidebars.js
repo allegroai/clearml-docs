@@ -27,9 +27,9 @@ module.exports = {
             'getting_started/video_tutorials/hyperdatasets_data_versioning',
             {
                 'Hands-on MLOps Tutorials':[
-                    'getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_a_data_scientist.md',
-                    'getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer.md',
-                    'getting_started/video_tutorials/hands-on_mlops_tutorials/ml_ci_cd_using_github_actions_and_clearml.md'
+                    'getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_a_data_scientist',
+                    'getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer',
+                    'getting_started/video_tutorials/hands-on_mlops_tutorials/ml_ci_cd_using_github_actions_and_clearml'
                 ]
             }        
         ]}]},
