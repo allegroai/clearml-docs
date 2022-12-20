@@ -1,5 +1,7 @@
 ---
 title: Agent Remote Execution and Automation
+description: Learn about the ClearML agent.
+keywords: [mlops, components, ClearML agent]
 ---
 
 

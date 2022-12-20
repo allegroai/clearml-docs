@@ -1,5 +1,7 @@
 ---
 title: Experiment Manager Hands-on
+description: Learn more about the ClearML Experiment Manager.
+keywords: [mlops, components, Experiment Manager]
 ---
 
 

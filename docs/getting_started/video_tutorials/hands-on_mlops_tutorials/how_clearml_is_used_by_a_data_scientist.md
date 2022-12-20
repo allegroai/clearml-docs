@@ -1,5 +1,7 @@
 ---
 title: How ClearML is used by a Data Scientist
+description: An overview of how you can use ClearML as a data scientist.
+keywords: [mlops, components, machine learning, data scientist]
 ---
 
 

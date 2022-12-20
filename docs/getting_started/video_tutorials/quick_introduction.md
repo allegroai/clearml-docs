@@ -1,5 +1,7 @@
 ---
 title: Quick Introduction
+description: Get an overview of ClearML's features in this quick video.
+keywords: [mlops, components, features, ClearML]
 ---
 
 
