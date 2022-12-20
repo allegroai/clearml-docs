@@ -1,5 +1,7 @@
 ---
 title: Hyperparameter Optimization
+description: Learn more about hyperparameter optimization.
+keywords: [mlops, components, hyperparameter optimization, hyperparameter]
 ---
 
 

@@ -1,5 +1,7 @@
 ---
 title: Machine Learning CI/CD using GitHub Actions and ClearML
+description: Multiple examples on how to use GitHub Actions CI/CD and ClearML.
+keywords: [mlops, components, GitHub Actions, CI/CD]
 ---
 
 
