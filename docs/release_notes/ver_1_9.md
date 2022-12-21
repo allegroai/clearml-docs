@@ -1,5 +1,5 @@
 ---
-title: Version 1.8
+title: Version 1.9
 ---
 
 ### ClearML Server 1.9.0
