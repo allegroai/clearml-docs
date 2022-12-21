@@ -88,7 +88,7 @@ module.exports = {
             },
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_8',
+              to: '/docs/release_notes/ver_1_9',
             },
             {
               label: 'Community Resources',
