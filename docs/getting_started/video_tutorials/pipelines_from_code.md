@@ -1,5 +1,7 @@
 ---
 title: Pipelines from Code
+description: Learn more about automation and orchestration of multiple tasks with ClearML.
+keywords: [mlops, components, automation, orchestration, pipeline]
 ---
 
 

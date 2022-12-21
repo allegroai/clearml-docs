@@ -1,5 +1,7 @@
 ---
 title: The ClearML Autoscaler
+description: Learn more about the ClearML Autoscaler.
+keywords: [mlops, components, Autoscaler]
 ---
 
 

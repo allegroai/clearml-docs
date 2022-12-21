@@ -1,5 +1,7 @@
 ---
 title: Experiment Management Best Practices
+description: Learn about the ClearML Experiment Manager best practices.
+keywords: [mlops, components, Experiment Manager]
 ---
 
 

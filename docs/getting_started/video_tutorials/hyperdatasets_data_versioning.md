@@ -1,5 +1,7 @@
 ---
 title: Hyperdatasets Data Versioning
+description: Learn more about the hyperdatasets, a supercharged version of ClearML Data.
+keywords: [mlops, components, hyperdatasets]
 ---
 
 

@@ -1,5 +1,7 @@
 ---
 title: ClearML Data
+description: Learn about ClearML data.
+keywords: [mlops, components, ClearML data]
 ---
 
 

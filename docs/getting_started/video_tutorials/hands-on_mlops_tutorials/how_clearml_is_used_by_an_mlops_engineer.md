@@ -1,5 +1,7 @@
 ---
 title: How ClearML is used by an MLOps Engineer
+description: An overview of how you can use ClearML as an MLOps Engineer.
+keywords: [mlops, components, machine learning, mlops engineer]
 ---
 
 
