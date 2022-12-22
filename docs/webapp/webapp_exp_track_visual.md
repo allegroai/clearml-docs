@@ -230,8 +230,11 @@ General experiment details appear in the **INFO** tab. This includes information
 
 ## Experiment Results
 
-
-
+:::tip Embedding ClearML Visualization
+You can embed experiment plots and debug samples into ClearML [Reports](webapp_reports.md). These visualizations are 
+updated live as the experiment(s) updates. The Enterprise Plan supports embedding resources in external documents. See 
+[Plot Controls](#plot-controls).  
+:::
 
 ### Console
 
@@ -296,6 +299,10 @@ are on the left side of the window. The tools include:
   * **WALL** - Local clock time
 * Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
+To embed scalar plots in your [Reports](webapp_reports.md), hover over a plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md center-md" />, 
+which will copy to clipboard the embed code to put in your Reports. In contrast to static screenshots, embedded resources 
+are retrieved when the report is displayed allowing your reports to show the latest up-to-date data.
+
 See additional [plot controls](#plot-controls) below.
 
 ### Plots
@@ -340,7 +347,9 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-download-json-plot.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | Download plot data as a JSON file. |
 | <img src="/docs/latest/icons/ico-download-csv.svg" alt="Download CSV icon" className="icon size-sm space-sm" /> | Download plot data as a CSV file. |
 | <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. When used with scalar graphs, full screen mode displays plots with all data points, as opposed to an averaged plot |
-| <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-sm space-sm" /> | Refresh scalar graphs in full screen mode to update it  | 
+| <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-sm space-sm" /> | Refresh scalar graphs in full screen mode to update it.  | 
+| <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md center-md" /> | Copy to clipboard the resource embed code to put in your [Reports](webapp_reports.md). In contrast to static screenshots, embedded resources are retrieved when the report is displayed allowing your reports to show the latest up-to-date data. |
+| <img src="/docs/latest/icons/ico-uri-copy.svg" alt="Embed code externally" className="icon size-md center-md" /> | Copy to clipboard the resource embed code to put in external editors (e.g. Notion). In contrast to static screenshots, embedded resources are retrieved when the report is displayed allowing your reports to show the latest up-to-date data (available in the ClearML Enterprise plan). |
 
 #### 3D Plot Controls 
 |Icon|Description|
