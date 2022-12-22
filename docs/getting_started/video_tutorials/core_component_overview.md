@@ -1,5 +1,7 @@
 ---
 title: Core Component Overview
+description: Get an overview of ClearML's core MLOps components in this quick video tutorial. See the most useful components for data science and MLOps.
+keywords: [mlops, components]
 ---
 
 ## Video Tutorial

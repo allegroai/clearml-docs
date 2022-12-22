@@ -26,7 +26,19 @@ GUI applications
 - Build [pipelines](../pipelines/pipelines.md) from code 
 - Much more!
 
-## Getting started on YouTube (Playlist)
+## Getting Started 
+
+Choose where you want get started with ClearML: 
+* **Data Scientists** start [here](ds/ds_first_steps.md) - learn how to use ClearML's
+experiment tracking and management tools, and more!
+
+* **MLOps Engineers** start [here](mlops/mlops_first_steps.md) - learn how to use ClearML's 
+automation, orchestration, and tracking tools
+
+* **DevOps Engineers** start [here](../deploying_clearml/clearml_server.md#deployment) - learn how 
+to deploy and configure a ClearML Server 
+
+### Getting Started on YouTube (Playlist)
 
 We also have a video series that can get you started, if you're more of a video type of person :)
 
