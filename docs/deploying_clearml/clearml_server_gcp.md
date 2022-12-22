@@ -110,7 +110,7 @@ The following section contains a list of Custom Image URLs (exported in differen
 
 ### Latest Version - v1.9.0
 
-- [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-9-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-9-0.tar.gz)
+- [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz)
 
 ### All Release Versions
 
