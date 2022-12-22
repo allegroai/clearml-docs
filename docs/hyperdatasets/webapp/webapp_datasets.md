@@ -7,6 +7,13 @@ Use the Hyper-Datasets Page to navigate between and manage hyper-datasets.
 Click on a Hyper-Dataset card to open the dataset’s [version list](webapp_datasets_versioning.md), where you can view 
 and manage the dataset versions' lineage and contents. 
 
+Filter the hyper-datasets to find the one you’re looking for more easily. These filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />:
+* My Work - Show only hyper-datasets that you created
+* Tags - Choose which tags to filter by from a list of tags used in the hyper-datasets.
+  * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" 
+  respectively. These options appear on the top of the tag list.
+  * Filter by the absence of a tag (logical "NOT") by clicking its checkbox twice. An X will appear in the tag's checkbox.
+
 
 ![Hyper-Dataset page](../../img/hyperdatasets/datasets_01.png)
 

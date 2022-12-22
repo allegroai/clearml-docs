@@ -86,6 +86,7 @@ module.exports = {
                     'webapp/pipelines/webapp_pipeline_page', 'webapp/pipelines/webapp_pipeline_table', 'webapp/pipelines/webapp_pipeline_viewing'
                 ]
             },
+            'webapp/webapp_reports',
             'webapp/webapp_workers_queues',
             {
                 'ClearML Applications': [
