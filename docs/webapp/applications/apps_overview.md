@@ -47,7 +47,7 @@ The prefilled configuration wizard can be edited before launching the new app in
 :::
   
 ## App Instance Actions
-Access app instance actions, by right clicking an instance, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
+Access app instance actions, by right-clicking an instance, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
 
 ![App context menu](../../img/app_context_menu.png)
 

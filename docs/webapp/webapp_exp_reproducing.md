@@ -18,7 +18,7 @@ Experiments can also be modified and then executed remotely, see [Tuning Experim
     * On the Dashboard, click a recent experiment, project card, or **VIEW ALL** and then click a project card.
     * On the Projects page, click project card, or the **All projects** card.
 
-1. Reproduce the experiment. In the experiments table, right click and then either:
+1. Reproduce the experiment. In the experiments table, right-click and then either:
 
     * Clone (make an exact copy) 
     

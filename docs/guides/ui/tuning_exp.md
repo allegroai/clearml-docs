@@ -24,7 +24,7 @@ Clone the experiment to create an editable copy for tuning.
 
 1. In the **ClearML Web-App (UI)**, on the Projects page, click the `examples` project card.
 
-1. In the experiments table, right click the experiment `pytorch mnist train`.
+1. In the experiments table, right-click the experiment `pytorch mnist train`.
 
 1. In the context menu, click **Clone** **>** **CLONE**. The newly cloned experiment appears and its info panel slides open.
 
@@ -82,7 +82,7 @@ Run the worker daemon on the local development machine.
 
 Enqueue the tuned experiment.
 
-1. In the **ClearML Web-App (UI)**, experiments table, right click the experiment `Clone Of pytorch mnist train`.
+1. In the **ClearML Web-App (UI)**, experiments table, right-click the experiment `Clone Of pytorch mnist train`.
 
 1. In the context menu, click **Enqueue**.
 

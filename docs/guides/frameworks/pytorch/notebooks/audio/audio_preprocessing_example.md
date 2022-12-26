@@ -17,7 +17,7 @@ ClearML automatically logs the audio samples which the example reports by callin
 
 ### Audio Samples
 
-You can play the audio samples by double clicking the audio thumbnail.
+You can play the audio samples by double-clicking the audio thumbnail.
 
 ![image](../../../../../img/examples_audio_preprocessing_example_03.png)
 
