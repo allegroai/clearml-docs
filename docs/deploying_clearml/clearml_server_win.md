@@ -32,7 +32,7 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
 
 1. Increase the memory allocation in Docker Desktop to `4GB`.
 
-    1. In the Windows notification area (system tray), right click the Docker icon.
+    1. In the Windows notification area (system tray), right-click the Docker icon.
 
     1. Click **Settings** **>** **Advanced**, and then set the memory to at least `4096`.
    

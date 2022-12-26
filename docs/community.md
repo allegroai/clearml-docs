@@ -16,7 +16,7 @@ You can always find us at [clearml@allegro.ai](mailto:clearml@allegro.ai?subject
 
 Read the [ClearML Blog](https://clear.ml/blog/).
 
-Subscribe to the **ClearML** [Youtube Channel](https://www.youtube.com/c/ClearML) and view the tutorials, presentations, and discussions.
+Subscribe to the **ClearML** [YouTube Channel](https://www.youtube.com/c/ClearML) and view the tutorials, presentations, and discussions.
 
 Join us on Twitter [@clearmlapp](https://twitter.com/clearmlapp) for **ClearML** announcements and community discussions.
 

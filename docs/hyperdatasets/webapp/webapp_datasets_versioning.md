@@ -28,7 +28,7 @@ In tree view, parent versions that do not match the query where a child version 
 
 ### Version Actions 
 
-Access dataset version actions, by right clicking a version, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
+Access dataset version actions, by right-clicking a version, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
 
 * **Rename** - Change the version’s name
 * **Create New Version** - Creates a child version of a *Published* dataset version. The new version is created in a *draft*

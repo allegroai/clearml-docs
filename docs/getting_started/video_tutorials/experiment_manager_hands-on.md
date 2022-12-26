@@ -60,7 +60,7 @@ Next to automatic logging, it is super easy to manually add anything you want to
 
 Just take a look at our documentation for more info.
 
-If you want to show colleagues or friends how well your models are performing, you can easily share a task by right clicking it and choosing share to make it accessible with a link. Anyone visiting that link will get the detail view in fullscreen mode and the task itself will get a tag showing that it’s now shared.
+If you want to show colleagues or friends how well your models are performing, you can easily share a task by right-clicking it and choosing share to make it accessible with a link. Anyone visiting that link will get the detail view in fullscreen mode and the task itself will get a tag showing that it’s now shared.
 
 In many cases, we also want to compare multiple versions of our experiments directly, this is easily done by selecting the tasks you’re interested in and clicking on compare in the bottom ribbon.
 

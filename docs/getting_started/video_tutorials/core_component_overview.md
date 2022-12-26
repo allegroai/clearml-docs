@@ -30,7 +30,7 @@ After running `pip install clearml` we can add 2 simple lines of python code to 
 
 The pip package also includes `clearml-data`. It can help you keep track of your ever-changing datasets and provides an easy way to store, track and version control your data. It’s also an easy way to share your dataset with colleagues over multiple machines while keeping track of who has which version. ClearML Data can even keep track of your data’s ancestry, making sure you can always figure out where specific parts of your data came from.
 
-Both the 2 magic lines and the data tool will send all of their information to a ClearML server. This server then keeps an overview of your experiment runs and data sets over time, so you can always go back to a previous experiment, see how it was created and even recreate it exactly. Keep track of your best models by creating leaderboards based on your own metrics and you can even directly compare multiple experiment runs, helping you to figure out the best way forward for your models. 
+Both the 2 magic lines and the data tool will send all of their information to a ClearML server. This server then keeps an overview of your experiment runs and data sets over time, so you can always go back to a previous experiment, see how it was created and even recreate it exactly. Keep track of your best models by creating leaderboards based on your own metrics, and you can even directly compare multiple experiment runs, helping you to figure out the best way forward for your models. 
 
 To get started with a server right away, you can make use of the free tier. And when your needs grow, we’ve got you covered too! Just check out our website to find a tier that fits your organisation best. But, because we’re open source, you can also host your own completely for free. We have AWS images, Google Cloud images, you can run it on docker-compose locally or even, if you really hate yourself, run it on a self-hosted kubernetes cluster using our helm charts.
 
@@ -40,7 +40,7 @@ The `clearml-agent` is a daemon that you can run on 1 or multiple machines and t
 
 Now that we have this remote execution capability, the possibilities are near endless.
 
-For example, It’s easy to set up an agent on a either a CPU or a GPU machine, so you can easily run all of your experiments on any compute resource you have available. And if you spin up your agents in the cloud, they’ll even support auto scaling out of the box. 
+For example, It’s easy to set up an agent on either a CPU or a GPU machine, so you can easily run all of your experiments on any compute resource you have available. And if you spin up your agents in the cloud, they’ll even support auto scaling out of the box. 
 
 You can set up multiple machines as agents to support large teams with their complex projects and easily configure a queuing system to get the most out of your available hardware.
 
@@ -48,7 +48,7 @@ Talking about using multiple machines, say you have an experiment and want to op
 
 You can even use a Google Colab instance as a ClearML Agent to get free GPU power, just sayin!
 
-As a final example of how you could use the agent's functionality, ClearML provides a `PipelineController`, which allows you to chain together tasks by plugging the output of one task as the input of another. Each of the tasks are of course run on your army of agents for full automation.
+As a final example of how you could use the agent's functionality, ClearML provides a `PipelineController`, which allows you to chain together tasks by plugging the output of one task as the input of another. Each of the tasks is of course run on your army of agents for full automation.
 
 As you can see ClearML is a large toolbox, stuffed with the most useful components for both data scientists and MLOps engineers. We’re diving deeper into each component in the following videos if you need more details, but feel free to get started now at clear.ml. 
 

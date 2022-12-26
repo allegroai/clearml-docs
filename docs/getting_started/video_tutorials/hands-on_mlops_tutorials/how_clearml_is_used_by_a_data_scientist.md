@@ -48,7 +48,7 @@ I've collapsed a lot of the functions here so that it's a lot easier to take a l
 I'm going through these files is the `Task.init` command and essentially this is what ClearML uses to keep track of every 
 time you run this specific script. So you'll see it in `get_data.py`, you'll see it in `preprocessing.py`, and you'll 
 see it in `training.py` as well. And so this line is all you need to get started. It will already start capturing 
-everything that you'll need and that the program produces like plots or hyper parameters, you name it. 
+everything that you'll need and that the program produces like plots or hyperparameters, you name it. 
 
 So let's take a look in depth first at what `get_data.py` does for me. So getting data is very simple, but what I used 
 to do is I would get the data from like a remote location, You download a zip file or whatever, and then you extract it 
@@ -69,8 +69,8 @@ don't change the name, you overwrite it. so that's all the thing of the past. No
 it to you later in the UI, we have a nice and clear overview of all of the different versions. 
 
 I'll add some dataset statistics that's also something you can do and ClearML is just add some, for example, class 
-distribution or other kind of plots that could be interesting and then I'm actually building the ClearML dataset here. 
-Also, an an extra thing that is really really useful if you use ClearML datasets is you can actually share it as well. 
+distribution or other kind of plots that could be interesting, and then I'm actually building the ClearML dataset here. 
+Also, an an extra thing that is really, really useful if you use ClearML datasets is you can actually share it as well. 
 So not only with colleagues and friends, for example. You can share the data with them, and they can add to the data, and 
 always you will always have the latest version, you will always know what happened before that. 
 
@@ -199,7 +199,7 @@ learning something, it's doing something so that actually is very interesting.
 And then you have debug samples as well, which you can use to show actually whatever kind of media you need. So these 
 are for example, the images that I generated that are the mel spectrograms so that the preprocessing outputs uh, and you 
 can just show them here with the name of what the label was and what to predict it was. So I can just have a very quick 
-overview of how this is working and then I can actually even do it with audio samples as well. So I can for example here 
+overview of how this is working, and then I can actually even do it with audio samples as well. So I can for example here 
 say this is labeled "dog", and it is predicted as "children playing". So then I can listen to it and get an idea on, is 
 this correct? Is it not correct? In this case, obviously it's not correct, but then I can go further into the iterations 
 and then hopefully it will get better and better over time. But this is a quick way that I can just validate that what 
@@ -253,7 +253,7 @@ also use these differences to then go back to the original code.
 
 Of course, hyperparameters. There weren't any differences. We didn't actually change any of the hyperparameters here, 
 but if we did, that would also be highlighted in red in this section. So if we're going to look at the scalars, this is 
-where it gets really interesting because now the plots are overlaid on top of each other and you can change the color 
+where it gets really interesting because now the plots are overlaid on top of each other, and you can change the color 
 if you don't if you don't like the color. I think green is a bit ugly. So let's take red for example. We can just 
 change that here. And then we have a quick overview of two different compared experiments and then how their scalars did 
 over time. And because they have the same X-axis the iterations, we can actually compare them immediately to each other, 
@@ -311,7 +311,7 @@ us the full range of experiments that we trained this way on the full dataset, a
 it got the most or the highest F1 score on the subset, we don't actually have the highest score on the full dataset yet. 
 However, even though it is not the best model, it might be interesting to get a colleague or a friend to take a look at 
 it and see what we could do better or just show off the new model that you made. So the last thing I want to show you is 
-that you can now easily click it, right click, and then go to share, and you can share it publicly. If you create a 
+that you can now easily click it, right-click, and then go to share, and you can share it publicly. If you create a 
 link, you can send this link to your friend, colleague, whatever, and they will be able to see the complete details of 
 the whole experiment, of everything you did, you can see the graphs, they can see the hyperparameters, and I can help 
 you find the best ways forward for your own models. 

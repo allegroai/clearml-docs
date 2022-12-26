@@ -321,7 +321,7 @@ task = Task.init(project_name, task_name, Task.TaskTypes.testing)
 
 **Sometimes I see experiments as running when in fact they are not. What's going on?** <a id="experiment-running-but-stopped"></a>
 
-ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right click the experiment in the Web-App and abort it.
+ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right-click the experiment in the Web-App and abort it.
 
 <br/>
 
