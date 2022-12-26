@@ -1193,6 +1193,11 @@ will not exceed the value of `matplotlib_untitled_history_size`
 <br/>
 
 #### sdk.network
+
+**`sdk.network.file_upload_retries`** (*int*)
+* Number of retries before failing to upload a file
+
+---
         
 **`sdk.network.iteration`** (*dict*)
         
@@ -1267,6 +1272,18 @@ will not exceed the value of `matplotlib_untitled_history_size`
     
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
+
+##### sdk.storage.log
+
+**`sdk.storage.log.report_download_chunk_size_mb`** (*int*)
+* Specify how often in MB the `StorageManager` reports its download progress to the console. By default, it reports 
+every 5MB
+
+---
+
+**`sdk.storage.log.report_upload_chunk_size_mb`** (*int*)
+* Specify how often in MB the `StorageManager` reports its upload progress to the console. By default, it reports every 
+5MB
 
 ## Configuration Vault
 

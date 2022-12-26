@@ -38,6 +38,9 @@ To download a non-compressed file, set the `extract_archive` argument to `False`
 
     manager.get_local_copy(remote_url="s3://MyBucket/MyFolder/file.ext", extract_archive=False)
 
+By default, the `StorageManager` reports its download progress to the console every 5MB. You can change this using the 
+[`StorageManager.set_report_download_chunk_size`](../../references/sdk/storage.md#storagemanagerset_report_download_chunk_size) 
+class method, and specifying the chunk size in MB (not supported for Azure and GCP storage).
 
 ### Uploading a File
 
@@ -46,6 +49,12 @@ method. Specify the full path of the local file as the `local_file` argument, an
 argument.
 
     manager.upload_file(local_file="/mnt/data/also_file.ext", remote_url="s3://MyBucket/MyFolder")
+
+Use the `retries parameter` to set the number of times file upload should be retried in case of failure.
+
+By default, the `StorageManager` reports its upload progress to the console every 5MB. You can change this using the 
+[`StorageManager.set_report_upload_chunk_size`](../../references/sdk/storage.md#storagemanagerset_report_upload_chunk_size) 
+class method, and specifying the chunk size in MB (not supported for Azure and GCP storage).
 
 
 ### Setting Cache Limits

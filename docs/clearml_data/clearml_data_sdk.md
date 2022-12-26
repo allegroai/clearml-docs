@@ -28,6 +28,9 @@ ClearML Data supports multiple ways to create datasets programmatically, which p
   will inherit its data
 * [`Dataset.squash()`](#datasetsquash)  - Generate a new dataset from by squashing together a set of related datasets
 
+You can add metadata to your datasets using the `Dataset.set_metadata` method, and access the metadata using the
+`Dataset.get_metadata` method. See [`set_metadata`](../references/sdk/dataset.md#set_metadata) and [`get_metadata`](../references/sdk/dataset.md#get_metadata).
+
 ### Dataset.create()
 
 Use the [`Dataset.create`](../references/sdk/dataset.md#datasetcreate) class method to create a dataset.

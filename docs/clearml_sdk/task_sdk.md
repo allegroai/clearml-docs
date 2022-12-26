@@ -231,9 +231,10 @@ The task's outputs, such as artifacts and models, can also be retrieved.
 
 ## Querying / Searching Tasks
 
-Searching and filtering tasks can be done via the [web UI](../webapp/webapp_overview.md) and programmatically.
-Input search parameters into the [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) method, which returns a 
-list of task objects that match the search. 
+Search and filter tasks programmatically. Input search parameters into the [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) 
+method, which returns a list of task objects that match the search. Pass `allow_archived=False` to filter out archived 
+tasks.
+
 
 For example:
 ```python
@@ -241,6 +242,7 @@ task_list = Task.get_tasks(
     task_ids=None,  # type Optional[Sequence[str]]
     project_name=None,  # Optional[str]
     task_name=None,  # Optional[str]
+    allow_archived=True, # [bool]
     task_filter=None,  # Optional[Dict]#
     # tasks with tag `included_tag` and without tag `excluded_tag`
     tags=['included_tag', '-excluded_tag'] 
