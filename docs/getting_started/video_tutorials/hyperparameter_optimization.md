@@ -22,9 +22,9 @@ keywords: [mlops, components, hyperparameter optimization, hyperparameter]
 <div className="cml-expansion-panel-content">
 Hello and welcome to ClearML. In this video we’ll take a look at one cool way of using the agent other than rerunning a task remotely: hyperparameter optimization.
 
-By now, we know that ClearML can easily capture our hyperparameters and scalars as part of the experiment tracking. We also know we can clone any task and change its hyperparameters so they’ll be injected into the original code at runtime. In the last video, we learnt how to make a remote machine execute this task automatically by using the agent. 
+By now, we know that ClearML can easily capture our hyperparameters and scalars as part of the experiment tracking. We also know we can clone any task and change its hyperparameters, so they’ll be injected into the original code at runtime. In the last video, we learnt how to make a remote machine execute this task automatically by using the agent. 
 
-Soooo… Can we just clone a task like a 100 times, inject different hyperparameters in every clone, run the clones on 10 agents and then sort the results based on a specific scalar?
+Soooo… Can we just clone a task like 100 times, inject different hyperparameters in every clone, run the clones on 10 agents and then sort the results based on a specific scalar?
 
 Yeah, yeah we can, it's called hyperparameter optimization. And we can do all of this automatically too! No way you were going to clone and edit those 100 tasks yourself, right?
 

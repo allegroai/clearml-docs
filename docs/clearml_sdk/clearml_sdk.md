@@ -114,5 +114,5 @@ and [usage example](https://github.com/allegroai/clearml/blob/master/examples/sc
 The `clearml` GitHub repository includes an [examples folder](https://github.com/allegroai/clearml/tree/master/examples)
 with example scripts demonstrating how to use the various functionalities of the ClearML SDK. 
 
-These examples are pre-loaded in the [ClearML Hosted Service](https://app.clear.ml), and can be viewed, cloned, 
+These examples are preloaded in the [ClearML Hosted Service](https://app.clear.ml), and can be viewed, cloned, 
 and edited in the ClearML Web UI's `ClearML Examples` project. The examples are each explained in the [examples section](../guides/main.md). 

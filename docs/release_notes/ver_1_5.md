@@ -48,7 +48,7 @@ for user/password when cloning/fetching repositories)
 ### ClearML SDK 1.5.0
 
 **New Features and Improvements**
-* Add support for single value metric reporting ClearML GitHub issue [ClearML Github issue #400](https://github.com/allegroai/clearml/issues/400)
+* Add support for single value metric reporting ClearML GitHub issue [ClearML GitHub issue #400](https://github.com/allegroai/clearml/issues/400)
 * Add support for specifying parameter sections in `PipelineDecorator` [ClearML GitHub issue #629](https://github.com/allegroai/clearml/issues/629)
 * Add support for parallel uploads and downloads (upload / download and zip / unzip of artifacts)
 * Add support for specifying execution details (repository, branch, commit, packages, image) in `PipelineDecorator`

@@ -144,7 +144,7 @@ file entries will be overridden by the vault values.
 Fill in values using any of ClearML supported configuration formats: HOCON / JSON / YAML.
 
 **To edit vault contents:**
-1. Click **EDIT** or double click the vault box
+1. Click **EDIT** or double-click the vault box
 1. Insert / edit the configurations in the vault 
 1. Press **OK**
 

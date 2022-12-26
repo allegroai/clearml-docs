@@ -462,7 +462,7 @@ Do not enqueue training or inference tasks into the services queue. They will pu
 
 ### Setting Server Credentials
 
-Self hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by default with a services queue.
+Self-hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by default with a services queue.
 By default, the server is open and does not require username and password, but it can be [password-protected](deploying_clearml/clearml_server_security.md#user-access-security).
 In case it is password-protected, the services agent will need to be configured with server credentials (associated with a user).
 

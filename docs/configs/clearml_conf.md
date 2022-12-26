@@ -973,6 +973,8 @@ and limitations on bucket naming.
     
 ---
     
+<a id="task_reuse"/>
+
 **`sdk.development.task_reuse_time_window_in_hours`** (*float*)
     
 * For development mode, the number of hours after which an experiment with the same project name and experiment name is reused.
@@ -1061,7 +1063,7 @@ and limitations on bucket naming.
 
 **`sdk.google.storage.credentials`** (*[dict]*)
 
-* A list of dictionaries, with specific credentials per bucket and sub-directory
+* A list of dictionaries, with specific credentials per bucket and subdirectory
 
 ---
 

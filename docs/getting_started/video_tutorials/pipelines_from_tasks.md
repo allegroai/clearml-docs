@@ -47,7 +47,7 @@ The structure of your pipeline will be derived from looking at this `parents` ar
 
 Now we do the same for the final step. However, remember the empty hyperparameters we saw before? We still have to overwrite these. We can use the `parameter_override` argument to do just that.
 
-For example we can tell the first step to use the global pipeline parameter raw data url like so. But we can also reference output artifacts from a previous step by using its name and we can of course also just overwrite a parameter with a normal value. Finally, we can even pass along the unique task ID of a previous step, so you can get the task object based on that ID and access anything and everything within that task.
+For example, we can tell the first step to use the global pipeline parameter raw data url like so. But we can also reference output artifacts from a previous step by using its name and we can of course also just overwrite a parameter with a normal value. Finally, we can even pass along the unique task ID of a previous step, so you can get the task object based on that ID and access anything and everything within that task.
 
 And that’s it! We now have our first pipeline!
 
