@@ -53,7 +53,7 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Configuration Objects
 
-In the experiment code, a configuration dictionary is connected to the Task by calling the [Task.connect](../../../references/sdk/task.md#connect) 
+In the experiment code, a configuration dictionary is connected to the Task by calling the [`Task.connect`](../../../references/sdk/task.md#connect) 
 method. 
 
 ```python

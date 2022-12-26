@@ -76,7 +76,7 @@ Docker container image to be used, or change the hyperparameters and configurati
 Once you have set up an experiment, it is now time to execute it. 
 
 **To execute an experiment through the ClearML WebApp:**
-1. Right click your draft experiment (the context menu is also available through the <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> 
+1. Right-click your draft experiment (the context menu is also available through the <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> 
    button on the top right of the experiment’s info panel)
 1. Click **ENQUEUE,** which will open the **ENQUEUE EXPERIMENT** window
 1. In the window, select `default` in the queue menu

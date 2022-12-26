@@ -157,8 +157,8 @@ arguments.
 #### pre_execute_callback & post_execute_callback
 Callbacks can be utilized to control pipeline execution flow.
 
-A `pre_execute_callback` function is called when the step is created and before it is sent for execution. This allows a 
-user to modify the task before launch. Use node.job to access the [ClearmlJob](../references/sdk/automation_job_clearmljob.md) 
+A `pre_execute_callback` function is called when the step is created, and before it is sent for execution. This allows a 
+user to modify the task before launch. Use `node.job` to access the [ClearmlJob](../references/sdk/automation_job_clearmljob.md) 
 object, or node.job.task to directly access the Task object. Parameters are the configuration arguments passed to the 
 ClearmlJob.
 

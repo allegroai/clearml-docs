@@ -46,7 +46,7 @@ solution.
 * **Serving Service Task** - Control plane object storing configuration on all the endpoints. Support multiple separated 
   instance, deployed on multiple clusters.
 
-* **Inference Services** - Inference containers, performing model serving pre/post processing. Also supports CPU model 
+* **Inference Services** - Inference containers, performing model serving pre/post-processing. Also supports CPU model 
   inferencing.
 
 * **Serving Engine Services** - Inference engine containers (e.g. Nvidia Triton, TorchServe etc.) used by the Inference 

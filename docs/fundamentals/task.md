@@ -7,11 +7,11 @@ title: Tasks
 A Task is a single code execution session, which can represent an experiment, a step in a workflow, a workflow controller, 
 or any custom implementation you choose.
 
-To transform an existing script into a **ClearML Task**, one must call the [Task.init()](../references/sdk/task.md#taskinit) method 
+To transform an existing script into a **ClearML Task**, one must call the [`Task.init()`](../references/sdk/task.md#taskinit) method 
 and specify a task name and its project. This creates a Task object that automatically captures code execution 
 information as well as execution outputs.
 
-All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
+All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) ,
 and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
 model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). Additionally, 
 you can work with tasks in Offline Mode, in which all information is saved in a local folder (see 
@@ -110,7 +110,7 @@ Available task types are:
 * *controller* - A task that lays out the logic for other tasks’ interactions, manual or automatic (e.g. a pipeline 
   controller) 
 * *optimizer* - A specific type of controller for optimization tasks (e.g. [hyperparameter optimization](hpo.md))
-* *service* - Long lasting or recurring service (e.g. server cleanup, auto ingress, sync services etc)
+* *service* - Long lasting or recurring service (e.g. server cleanup, auto ingress, sync services etc.)
 * *monitor* - A specific type of service for monitoring
 * *application* - A task implementing custom applicative logic, like [auto-scaler](../guides/services/aws_autoscaler.md) 
   or [clearml-session](../apps/clearml_session.md)
