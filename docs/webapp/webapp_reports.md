@@ -39,7 +39,7 @@ experiment comparison)
    
    ![Reports step 2](../img/reports_step_2.png)
 
-3. Click `Embed in ClearML report`. This generates the embed code for accessing the resource from a reports, and copies 
+3. Click `Embed in ClearML report`. This generates the embed code for accessing the resource, and copies 
    it to your clipboard. 
  
    ![Reports step 3](../img/reports_step_3.png)
