@@ -26,7 +26,7 @@ Tune experiments and edit an experiment's execution details, then execute the tu
 
 1. Edit the experiment. See [modifying experiments](#modifying-experiments).
 
-1. Enqueue the experiment for execution. Right click the experiment **>** **Enqueue** **>** Select a queue **>**
+1. Enqueue the experiment for execution. Right-click the experiment **>** **Enqueue** **>** Select a queue **>**
    **ENQUEUE**.
 
     The experiment's status becomes *Pending*. When the worker assigned to the queue fetches the Task (experiment), the
