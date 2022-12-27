@@ -495,7 +495,7 @@ myDataView.add_mapping_rule(
 
 ### Accessing Frames
 
-Dataview objects can be retrieved by the Dataview ID or name using the [DataView.get](../references/hyperdataset/dataview.md#dataviewget) 
+Dataview objects can be retrieved by the Dataview ID or name using the [`DataView.get`](../references/hyperdataset/dataview.md#dataviewget) 
 class method.
 
 ```python
