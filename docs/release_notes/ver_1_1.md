@@ -31,7 +31,7 @@ This release is not backwards compatible - see notes below on upgrading
 
 **Features**
 
-- Add `Task.force_store_standalone_script()` to force storing standalone script instead of a Git repository reference [ClearML Github issue #340](https://github.com/allegroai/clearml/issues/340)
+- Add `Task.force_store_standalone_script()` to force storing standalone script instead of a Git repository reference [ClearML GitHub issue #340](https://github.com/allegroai/clearml/issues/340)
 - Add `Logger.set_default_debug_sample_history()` and `Logger.get_default_debug_sample_history()` to allow controlling 
   maximum debug samples programmatically
 - Add populate now stores function arg types as part of the hyperparemeters
@@ -40,8 +40,8 @@ This release is not backwards compatible - see notes below on upgrading
 
 **Bug Fixes**
 
-- Fix and upgrade the SlackMonitor [ClearML Github issue #533](https://github.com/allegroai/clearml/issues/533)
-- Fix network issues causing Task to stop on status change when no status change has occurred [ClearML Github issue #535](https://github.com/allegroai/clearml/issues/535)
+- Fix and upgrade the SlackMonitor [ClearML GitHub issue #533](https://github.com/allegroai/clearml/issues/533)
+- Fix network issues causing Task to stop on status change when no status change has occurred [ClearML GitHub issue #535](https://github.com/allegroai/clearml/issues/535)
 - Fix Pipeline controller function support for dict as input argument
 - Fix uploading the same metric/variant from multiple processes in threading mode should create a unique file per process (since global counter is not passed between the subprocesses)
 - Fix resource monitoring should only run in the main process when using threaded logging mode

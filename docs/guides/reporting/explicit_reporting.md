@@ -37,7 +37,7 @@ experiment runs. Some possible destinations include:
   * Google Cloud Storage
   * Azure Storage. 
     
-Specify the output location in the `output_uri` parameter of the [Task.init](../../references/sdk/task.md#taskinit) method. 
+Specify the output location in the `output_uri` parameter of the [`Task.init`](../../references/sdk/task.md#taskinit) method. 
 In this tutorial, we specify a local folder destination.
 
 In `pytorch_mnist_tutorial.py`, change the code from:

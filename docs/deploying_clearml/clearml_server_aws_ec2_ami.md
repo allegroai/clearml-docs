@@ -108,26 +108,34 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.8.0
+#### v1.9.0
 
-* **ap-northeast-1** : ami-0269e1730f2932d44 
-* **ap-northeast-2** : ami-0f24c6e7d1d1d4664 
-* **ap-northeast-3** : ami-092037c76d32cdee6 
-* **ap-south-1** : ami-01f1cd36a8715b3bb 
-* **ap-southeast-1** : ami-0a2d516ae068306e8 
-* **ap-southeast-2** : ami-00f496bb6e8c30458 
-* **ca-central-1** : ami-0ebdb900f4819cfa0 
-* **eu-central-1** : ami-0fb58e92bf76addf5 
-* **eu-north-1** : ami-0a6f109c2c616e91e 
-* **eu-south-1** : ami-0871bbf1fb742b3dd 
-* **eu-west-1** : ami-02112b4c145a35e7c 
-* **eu-west-2** : ami-0b6db6b2de9ceec3a 
-* **eu-west-3** : ami-05bb93c2b854204bf 
-* **sa-east-1** : ami-09bc2e9ca9c0cab4e 
-* **us-east-1** : ami-069805c55000edbf1 
-* **us-east-2** : ami-010b4f10098492338 
-* **us-west-1** : ami-03eef07890e042b77 
-* **us-west-2** : ami-0ae2ef0e35f437648 
+* **af-south-1** : ami-0c8a0d519c0899ff7 
+* **ap-east-1** : ami-0e1d519f431c188cc 
+* **ap-northeast-1** : ami-0f208e02d120d52c4 
+* **ap-northeast-2** : ami-0e561eb3769cc9d81 
+* **ap-northeast-3** : ami-09711ebc0397b6821 
+* **ap-south-1** : ami-0c061d628d27c85f8 
+* **ap-south-2** : ami-02887b3538ca1fb67 
+* **ap-southeast-1** : ami-0f79d04c14fc3177b 
+* **ap-southeast-2** : ami-05448640b722d58c7 
+* **ap-southeast-3** : ami-08b97c334dc62635f 
+* **ca-central-1** : ami-0ad888ef835f3b472 
+* **eu-central-1** : ami-0806ed398229dc150 
+* **eu-central-2** : ami-0b3000298770dfe4e 
+* **eu-north-1** : ami-0cdd5cbd4581b3e14 
+* **eu-south-1** : ami-07a25a8604362f891 
+* **eu-south-2** : ami-02a89956bfc8e5aaa 
+* **eu-west-1** : ami-0c443b8bb761c2757 
+* **eu-west-2** : ami-05eb33f3e459e9a7e 
+* **eu-west-3** : ami-027c9436891786ebb 
+* **me-central-1** : ami-0793feafc6fdec682 
+* **me-south-1** : ami-08710245e747b9585 
+* **sa-east-1** : ami-01e6aa85f348dfcb5 
+* **us-east-2** : ami-0fa3ff48f124b3c02 
+* **us-west-1** : ami-0a20134fb79384371 
+* **us-west-2** : ami-048abf434ff5566e2 
+* **us-east-1** : ami-0734f8f2790c906e1 
 
 ## Next Step
 

@@ -10,7 +10,7 @@ View the experiments table in table view <img src="/docs/latest/icons/ico-table-
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your experiments according 
 to columns of interest. Use the details view to access a selected experiment’s details, while keeping the experiment list 
-in view. Details view can also be accessed by double clicking a specific experiment in the table view to open its details view. 
+in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view. 
 
 :::info
 To assist in focusing on active experimentation, experiments and models can be archived, so they will not appear
@@ -45,7 +45,7 @@ The experiments table default and customizable columns are described in the foll
 
 Customize the table using any of the following:
 * Dynamic column order - Drag a column title to a different position.
-* Resize columns - Drag the column separator to change the width of that column. Double click the column separator for 
+* Resize columns - Drag the column separator to change the width of that column. Double-click the column separator for 
   automatic fit.
 * Changing table columns
     * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
@@ -68,7 +68,7 @@ Changes are persistent (cached in the browser), and represented in the URL so cu
 bookmark and shared with other ClearML users to collaborate.
 
 :::note
-The following experiments-table customizations are saved on a **per project** basis: 
+The following experiments-table customizations are saved on a **per-project** basis: 
 * Columns order
 * Column width
 * Active sort order
@@ -132,12 +132,12 @@ The following table describes the actions that can be done from the experiments 
 that allow each operation.  
 
 Access these actions with the context menu in any of the following ways:
-* In the experiments table,right click an experiment  or hover over an experiment and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In the experiments table, right-click an experiment  or hover over an experiment and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
 * In an experiment info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
 
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
-| Details | Open the experiment's [info panel](webapp_exp_track_visual.md#info-panel) (keeps the experiments list in view). Can also be accessed by double clicking an experiment in the experiments table. | Any state |  None  |
+| Details | Open the experiment's [info panel](webapp_exp_track_visual.md#info-panel) (keeps the experiments list in view). Can also be accessed by double-clicking an experiment in the experiments table. | Any state |  None  |
 | View Full Screen | View experiment details in [full screen](webapp_exp_track_visual.md#full-screen-details-view). | Any state |  None  |
 | Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
 | View Worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |

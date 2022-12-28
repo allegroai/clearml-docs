@@ -1,5 +1,7 @@
 ---
 title: The ClearML Autoscaler
+description: Learn more about the ClearML Autoscaler.
+keywords: [mlops, components, Autoscaler]
 ---
 
 
@@ -55,7 +57,7 @@ After filling in all these settings, let’s launch the autoscaler now, so we ca
 
 We immediately start in the autoscaler dashboard, and we can see the amount of machines that are running, the amount that are doing nothing, how many machines we have available per queue and all the autoscaler logs. Right now we have no machines running at all because our queues are empty.
 
-So if we go to one of our projects, clone these tasks here, and then enqueue them in the CPU queue and clone this task here as well. We can edit the parameters like we saw before and even change which container it should be run in. We then enqueue it in the GPU queue and we should now see the autoscaler kicking into action.
+So if we go to one of our projects, clone these tasks here, and then enqueue them in the CPU queue and clone this task here as well. We can edit the parameters like we saw before and even change which container it should be run in. We then enqueue it in the GPU queue, and we should now see the autoscaler kicking into action.
 
 The autoscaler has detected the tasks in the queue and has started booting up remote machines to process them. We can follow along with the process in our autoscaler dashboard.
 

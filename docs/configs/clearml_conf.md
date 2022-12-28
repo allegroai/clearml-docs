@@ -62,6 +62,13 @@ for information about using environment variables with Windows in the configurat
         
 * Dictionary of top-level ClearML Agent options to configure ClearML Agent for Git credentials, package managers, cache management, workers, and Docker for workers.
 ---
+
+**`agent.crash_on_exception`** (*bool*)
+
+* By default, when encountering an exception while running a task, the agent will catch the exception, log it, and 
+continue running. When set to `true`, the agent crashes when encountering an exception.
+
+---
         
 **`agent.cuda_version`** (*float*)
         
@@ -91,7 +98,15 @@ for information about using environment variables with Windows in the configurat
   overrides this configuration option.
 
 ___
-        
+
+**`agent.disable_task_docker_override`** (*bool*)
+
+* If set to `true`, agent uses the default docker image and ignores any docker image and arguments specified in the 
+task's container section (if setup shell script is specified in task container section, it is used 
+in either case).         
+
+---
+
 **`agent.docker_apt_cache`** (*string*)
         
 * The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
@@ -242,6 +257,8 @@ For example:
     * If not using Git SSH credentials, use this option to specify a Git password for cloning your repositories.
         
 ---
+
+<a id="hide_docker"/> 
 
 **`agent.hide_docker_command_env_vars`** (*dict*)
 
@@ -397,7 +414,7 @@ match_rules: [
 **`agent.package_manager`** (*dict*)
         
 * Dictionary containing the options for the Python package manager. The currently supported package managers are pip, conda, 
-  and, if the repository contains a poetry.lock file, poetry.
+  and, if the repository contains a `poetry.lock` file, poetry.
         
 ---
         
@@ -475,6 +492,8 @@ ___
 * A list of packages with priority to be installed before the rest of the required packages. For example: `["cython", "numpy", "setuptools", ]`
 
 ---
+
+<a id="system_site_packages"/>
 
 **`agent.package_manager.system_site_packages`** (*bool*)
         
@@ -954,6 +973,8 @@ and limitations on bucket naming.
     
 ---
     
+<a id="task_reuse"/>
+
 **`sdk.development.task_reuse_time_window_in_hours`** (*float*)
     
 * For development mode, the number of hours after which an experiment with the same project name and experiment name is reused.
@@ -1042,7 +1063,7 @@ and limitations on bucket naming.
 
 **`sdk.google.storage.credentials`** (*[dict]*)
 
-* A list of dictionaries, with specific credentials per bucket and sub-directory
+* A list of dictionaries, with specific credentials per bucket and subdirectory
 
 ---
 
@@ -1172,6 +1193,11 @@ will not exceed the value of `matplotlib_untitled_history_size`
 <br/>
 
 #### sdk.network
+
+**`sdk.network.file_upload_retries`** (*int*)
+* Number of retries before failing to upload a file
+
+---
         
 **`sdk.network.iteration`** (*dict*)
         
@@ -1246,6 +1272,18 @@ will not exceed the value of `matplotlib_untitled_history_size`
     
 * Specify a list of direct access objects using glob patterns which matches sets of files using wildcards. Direct access 
   objects are not downloaded or cached, and any download request will return a direct reference.
+
+##### sdk.storage.log
+
+**`sdk.storage.log.report_download_chunk_size_mb`** (*int*)
+* Specify how often in MB the `StorageManager` reports its download progress to the console. By default, it reports 
+every 5MB
+
+---
+
+**`sdk.storage.log.report_upload_chunk_size_mb`** (*int*)
+* Specify how often in MB the `StorageManager` reports its upload progress to the console. By default, it reports every 
+5MB
 
 ## Configuration Vault
 

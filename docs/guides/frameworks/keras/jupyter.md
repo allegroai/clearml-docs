@@ -38,7 +38,7 @@ The example calls Matplotlib methods to log debug sample images. They appear in 
 ## Hyperparameters
 
 ClearML automatically logs TensorFlow Definitions. A parameter dictionary is logged by connecting it to the Task, by 
-calling the [Task.connect](../../../references/sdk/task.md#connect) method. 
+calling the [`Task.connect`](../../../references/sdk/task.md#connect) method. 
 
 ```python
 task_params = {'num_scatter_samples': 60, 'sin_max_value': 20, 'sin_steps': 30}

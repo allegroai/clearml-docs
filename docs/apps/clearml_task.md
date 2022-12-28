@@ -45,7 +45,7 @@ To specify your code's branch and commit ID, pass the `--branch <branch_name> --
 If unspecified, `clearml-task` will use the latest commit from the 'master' branch.
 
 :::note Github Default Branch
-For Github repositories, it is recommended to explicitly specify your default branch (e.g. `--branch main`) to avoid
+For GitHub repositories, it is recommended to explicitly specify your default branch (e.g. `--branch main`) to avoid
 errors in identifying the correct default branch.
 :::
 

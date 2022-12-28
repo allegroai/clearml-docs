@@ -321,7 +321,7 @@ task = Task.init(project_name, task_name, Task.TaskTypes.testing)
 
 **Sometimes I see experiments as running when in fact they are not. What's going on?** <a id="experiment-running-but-stopped"></a>
 
-ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right click the experiment in the Web-App and abort it.
+ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right-click the experiment in the Web-App and abort it.
 
 <br/>
 
@@ -533,7 +533,7 @@ and accuracy values of several experiments.
 In an experiment comparison page, under the **HYPER PARAMETERS** tab, you can view the experiments' hyperparameter values 
 in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
 
-The image below show a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
+The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
 `batch_size`, and `number_of_epochs`) and a performance metric (`accuracy`) of three experiments. 
 
 ![Parallel Coordinates](img/clearml_faq_screenshots/compare_parallel_coordinates.png)

@@ -86,7 +86,7 @@ of a report card to open its context menu and access report actions:
 ### Create New Reports
 
 To create a new project, click the **+ NEW REPORT** button in the top right of the page, 
-which will open a **New Report** modal. 
+which will open a **New Report** modal.
 
 ![New project modal](../img/webapp_report_new_report.png)
 

@@ -160,6 +160,10 @@ specify the queries.
 Multiple queries can be added to the same or different Dataset versions, each query with the same or different ROI 
 and / or frame queries.
 
+You can retrieve the Dataview frames using [`DataView.to_list`](../references/hyperdataset/dataview.md#to_list), 
+[`DataView.to_dict`](../references/hyperdataset/dataview.md#to_dict), or [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator)
+(see [Accessing Frames](#accessing-frames)).
+
 #### ROI Queries: 
 
 * ROI query for a single label
@@ -176,6 +180,10 @@ myDataView.add_query(
     version_name='myVersion', 
     roi_query='cat'
 )
+
+# retrieving the actual SingleFrames / FrameGroups 
+# you can also iterate over the frames with `for frame in myDataView.get_iterator():`
+list_of_frames = myDataView.to_list()
 ```
 
 * ROI query for one label OR another
@@ -195,6 +203,10 @@ myDataView.add_query(
     version_name='myVersion',
     roi_query='dog'
 )
+
+# retrieving the actual SingleFrames / FrameGroups 
+# you can also iterate over the frames with `for frame in myDataView.get_iterator():`
+list_of_frames = myDataView.to_list()
 ```
 
 * ROI query for one label AND another label  
@@ -206,7 +218,12 @@ This example is an ROI query filtering for frames containing at least one ROI wi
 myDataView.add_query(
     dataset_name='myDataset', 
     version_name='training',
-    roi_query=['Car','partly_occluded'])
+    roi_query=['Car','partly_occluded']
+)
+
+# retrieving the actual SingleFrames / FrameGroups 
+# you can also iterate over the frames with `for frame in myDataView.get_iterator():`
+list_of_frames = myDataView.to_list()
 ```
 
 * ROI query for one label AND NOT another (Lucene query).    
@@ -224,6 +241,10 @@ myDataView.add_query(
     version_name='training',
     roi_query='label.keyword:\"Car\" AND NOT label.keyword:\"partly_occluded\"'
 )
+
+# retrieving the actual SingleFrames / FrameGroups 
+# you can also iterate over the frames with `for frame in myDataView.get_iterator():`
+list_of_frames = myDataView.to_list()
 ```
 
 #### Querying Multiple Datasets and Versions
@@ -257,12 +278,16 @@ myDataView.add_query(
     roi_query='label.keyword:\"car\" OR label.keyword:\"truck\" OR '
                                'label.keyword:\"bicycle\"'
 )
+
+# retrieving the actual SingleFrames / FrameGroups 
+# you can also iterate over the frames with `for frame in myDataView.get_iterator():`
+list_of_frames = myDataView.to_list()
 ```
 
 #### Frame Queries
 
 Use frame queries to filter frames by ROI labels and / or frame metadata key-value pairs that a frame must include or 
-exclude for the DataView to return the frame. 
+exclude for the Dataview to return the frame. 
 
 **Frame queries** match frame meta key-value pairs, ROI labels, or both.
 They use the same logical OR, AND, NOT AND matching as ROI queries.
@@ -276,6 +301,10 @@ myDataView.add_query(
     version_name='version',
     frame_query='meta.city:"bremen"'
 )
+
+# retrieving the actual SingleFrames / FrameGroups 
+# you can also iterate over the frames with `for frame in myDataView.get_iterator():`
+list_of_frames = myDataView.to_list()
 ```
 
 
@@ -317,10 +346,14 @@ myDataView.add_query(
     version_name='myVersion', 
     roi_query='cat'
 )
+
+# retrieving the actual SingleFrames / FrameGroups 
+# you can also iterate over the frames with `for frame in myDataView.get_iterator():`
+list_of_frames = myDataView.to_list()
 ```
 
 #### Iterate a Maximum Number of Frames
-This example demonstrates creating a DataView and setting its parameters to iterate a specific number of frames. If the 
+This example demonstrates creating a Dataview and setting its parameters to iterate a specific number of frames. If the 
 Dataset version contains fewer than that number of frames matching the query, then fewer are returned by the iterator.
 
 ```python
@@ -462,7 +495,7 @@ myDataView.add_mapping_rule(
 
 ### Accessing Frames
 
-Dataview objects can be retrieved by the Dataview ID or name using the [DataView.get](../references/hyperdataset/dataview.md#dataviewget) 
+Dataview objects can be retrieved by the Dataview ID or name using the [`DataView.get`](../references/hyperdataset/dataview.md#dataviewget) 
 class method.
 
 ```python
@@ -510,6 +543,6 @@ The method returns a list of dictionaries that looks something like this:
 ]
 ```
 
-Since the `to_list`/`to_dict` methods return all the frames in the dataview, it is recommended to use the [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator) 
-method, which returns an iterator of the dataview. You can also specify the desired frame fields in this method using 
+Since the `to_list`/`to_dict` methods return all the frames in the Dataview, it is recommended to use the [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator) 
+method, which returns an iterator of the Dataview. You can also specify the desired frame fields in this method using 
 the `projection` parameter, just like in the `DataView.to_dict` method, as described above.

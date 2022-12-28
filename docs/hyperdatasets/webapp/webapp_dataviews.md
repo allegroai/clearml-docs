@@ -12,7 +12,7 @@ View the Dataviews table in table view <img src="/docs/latest/icons/ico-table-vi
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your Dataviews according to 
 columns of interest. Use the details view to access a selected Dataview’s details, while keeping the Dataview list in view.
-Details view can also be accessed by double clicking a specific Dataview in the table view to open its details view. 
+Details view can also be accessed by double-clicking a specific Dataview in the table view to open its details view. 
 
 ![Dataviews table](../../img/hyperdatasets/webapp_dataviews_table.png)
 
@@ -25,7 +25,7 @@ The Dataviews table includes the following columns:
 |**STATUS** | The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only)| String| 
 |**PROJECT** | The project name with which the dataview is associated| String|
 |**CREATED** | Elapsed time since the Dataview was created| Date-time|
-|**DESCRIPTION**| A description of the Dataview | String| 
+|**DESCRIPTION** | A description of the Dataview | String| 
 
 Dynamically order the columns by dragging a column heading 
 to a new position.
@@ -38,7 +38,7 @@ Save customized settings in a browser bookmark, and share the URL with teammates
 Customize the table using any of the following:
 
 * Dynamic column order - Drag a column title to a different position.
-* Resize columns - Drag the column separator to change the width of that column. Double click the column separator for automatic fit.
+* Resize columns - Drag the column separator to change the width of that column. Double-click the column separator for automatic fit.
 * Filter by user and / or status - When a filter is applied to a column, its filter icon will appear with a highlighted 
   dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ). To 
   clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" />
@@ -46,7 +46,7 @@ Customize the table using any of the following:
 * Sort columns - By experiment name and / or elapsed time since creation.
 
 :::note
-The following Dataviews-table customizations are saved on a **per project** basis: 
+The following Dataviews-table customizations are saved on a **per-project** basis: 
 * Column order
 * Column width
 * Active sort order
@@ -62,12 +62,12 @@ all the Dataviews in the project. The customizations of these two views are save
 The following table describes the actions that can be performed from the Dataviews table. 
 
 Access these actions with the context menu in any of the following ways:
-* In the Dataviews table, right click a Dataview, or hover over a Dataview and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In the Dataviews table, right-click a Dataview, or hover over a Dataview and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
 * In a Dataview info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
 
 | ClearML Action | Description |
 |---|---|
-| Details | View Dataview details, including input datasets, label mapping, augmentation operations, and iteration control. Can also be accessed by double clicking a Dataview in the Dataviews table. |
+| Details | View Dataview details, including input datasets, label mapping, augmentation operations, and iteration control. Can also be accessed by double-clicking a Dataview in the Dataviews table. |
 | Archive | To more easily work with active Dataviews, move a Dataview to the archive, removing it from the active Dataview table. | 
 | Restore | Action available in the archive. Restore a Dataview to the active Dataviews table. |
 | Clone | Make an exact copy of a Dataview that is editable. |

@@ -184,6 +184,32 @@ content directly from code.
 
 See [Storage Examples](../guides/storage/examples_storagehelper.md).
 
+### Path Substitution
+The ClearML StorageManager supports local path substitution when fetching files.
+
+This is especially useful when managing data using [`clearml-data`](../clearml_data/clearml_data_cli.md)! If different data consumers have the data physically stored in different locations, path 
+substitution allows for registering the data into `clearml-data` once, and then storing and accessing it in multiple locations.
+
+To enable path substitution, modify the clearml.conf file and configure:
+
+```bash
+sdk{
+    storage{
+        path_substitution = [
+            # Replace registered links with local prefixes,
+            # Solve mapping issues, and allow for external resource caching.
+            # {
+            #     registered_prefix = "s3://bucket/research"
+            #     local_prefix = "file:///mnt/shared/bucket/research
+            # },
+            # {
+            #     registered_prefix = "file:///mnt/shared/folder/"
+            #     local_prefix = "file:///home/user/shared/folder"
+            # }
+        ]
+    }
+}
+```
 
 ## Caching
 ClearML also manages a cache of all downloaded content so nothing is duplicated, and code won't need to download the same
@@ -214,4 +240,3 @@ Some storage mediums (NFS / Local storage) allows for direct access,
 which means that the code would work with the object where it's originally stored and not downloaded to cache first.
 
 To enable direct access, specify the urls to access directly.
-

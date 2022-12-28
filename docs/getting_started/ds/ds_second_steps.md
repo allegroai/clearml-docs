@@ -181,8 +181,8 @@ or check these pages out:
 - Improve your experiments with [HyperParameter Optimization](../../fundamentals/hpo.md)
 - Check out ClearML's integrations to [external libraries](../../integrations/libraries.md).
 
-## Youtube Playlist
+## YouTube Playlist
 
-All these tips and tricks are also covered by our Youtube Getting Started series, go check it out :)
+All these tips and tricks are also covered by our YouTube Getting Started series, go check it out :)
 
 [![Watch the video](https://img.youtube.com/vi/kyOfwVg05EM/hqdefault.jpg)](https://www.youtube.com/watch?v=kyOfwVg05EM&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=3)

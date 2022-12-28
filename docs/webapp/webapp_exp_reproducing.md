@@ -18,7 +18,7 @@ Experiments can also be modified and then executed remotely, see [Tuning Experim
     * On the Dashboard, click a recent experiment, project card, or **VIEW ALL** and then click a project card.
     * On the Projects page, click project card, or the **All projects** card.
 
-1. Reproduce the experiment. In the experiments table, right click and then either:
+1. Reproduce the experiment. In the experiments table, right-click and then either:
 
     * Clone (make an exact copy) 
     
@@ -33,7 +33,7 @@ Experiments can also be modified and then executed remotely, see [Tuning Experim
 
     The experiment's status becomes *Draft*.
 
-1. Enqueue the experiment for execution. Right click the experiment **>** **Enqueue** **>** Select a queue **>** **ENQUEUE**. 
+1. Enqueue the experiment for execution. Right-click the experiment **>** **Enqueue** **>** Select a queue **>** **ENQUEUE**. 
 
     The experiment's status becomes *Pending*. When a worker fetches the Task (experiment), the status becomes *Running*. 
    The experiment can now be tracked and its results visualized.

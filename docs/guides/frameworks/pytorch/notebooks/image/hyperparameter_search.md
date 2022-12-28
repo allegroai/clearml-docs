@@ -27,7 +27,7 @@ optimizer task's **CONFIGURATION** **>** **HYPER PARAMETERS**.
 ```python
 optimizer = HyperParameterOptimizer(
     base_task_id=TEMPLATE_TASK_ID,  # This is the experiment we want to optimize
-    # here we define the hyper-parameters to optimize
+    # here we define the hyperparameters to optimize
     hyper_parameters=[
         UniformIntegerParameterRange('number_of_epochs', min_value=2, max_value=12, step_size=2),
         UniformIntegerParameterRange('batch_size', min_value=2, max_value=16, step_size=2),

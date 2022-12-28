@@ -98,7 +98,7 @@ Since the arguments dictionary is connected to the Task, after the code runs onc
 to optimize a different experiment.
 
 ```python
-# experiment template to optimize in the hyper-parameter optimization
+# experiment template to optimize in the hyperparameter optimization
 args = {
     'template_task_id': None,
     'run_as_service': False,
