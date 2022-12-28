@@ -72,7 +72,7 @@ The following page goes over how to set up and upgrade `clearml-serving`.
    ```
     
 :::note
-Any model that registers with Triton engine will run the pre/post processing code on the Inference service container, 
+Any model that registers with Triton engine will run the pre/post-processing code on the Inference service container, 
 and the model inference itself will be executed on the Triton Engine container.
 :::
 

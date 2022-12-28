@@ -87,7 +87,7 @@ if there is a change in the pipeline code. If there is no change, the pipeline r
 ### Tracking Pipeline Progress
 ClearML automatically tracks a pipeline’s progress percentage: the number of pipeline steps completed out of the total
 number of steps. For example, if a pipeline consists of 4 steps, after the first step completes, ClearML automatically 
-sets its progress value to 25. Once a pipeline has started to run but is yet to successfully finish, , the WebApp will 
+sets its progress value to 25. Once a pipeline has started to run but is yet to successfully finish, the WebApp will 
 show the pipeline’s progress indication in the pipeline runs table, next to the run’s status.
 
 ## Examples

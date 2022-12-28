@@ -126,7 +126,7 @@ auto_connect_frameworks={'tensorboard': {'report_hparams': False}}
 Every `Task.init` call will create a new task for the current execution.
 In order to mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
 * The last time it was executed (on this machine) was under 72 hours ago (configurable, see 
-  [`sdk.development.task_reuse_time_window_in_hours`](../configs/clearml_conf.md#task_reuse) of 
+  [`sdk.development.task_reuse_time_window_in_hours`](../configs/clearml_conf.md#task_reuse) in 
   the ClearML configuration reference)
 * The previous task execution did not have any artifacts / models
 

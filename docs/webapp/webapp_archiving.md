@@ -33,7 +33,7 @@ When archiving an experiment:
 
     * Restore an experiment or model from either the:
 
-        * Experiments or models table - Right click the experiment or model **>** **Restore**.
+        * Experiments or models table - Right-click the experiment or model **>** **Restore**.
         * Info panel or full screen details view - Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" />
           (menu) **>** **Restore from Archive**.
 

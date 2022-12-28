@@ -75,7 +75,7 @@ The script supports the following additional command line options:
   Mutually exclusive to `exclude_users`.
 * `exclude_users` - Only report tasks that were NOT initiated by these users (usernames and user IDs are accepted).
   Mutually exclusive to `include_users`.
-* `verbose` - If `True`, will increase verbosity of messages (such as when when tasks are polled but filtered away).
+* `verbose` - If `True`, will increase verbosity of messages (such as when tasks are polled but filtered away).
 
 ## Configuration
     

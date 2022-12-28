@@ -40,7 +40,7 @@ ClearML automatically logs TensorFlow Definitions, whether they are defined befo
 flags.DEFINE_string('echo', None, 'Text to echo.')
 flags.DEFINE_string('another_str', 'My string', 'A string', module_name='test')
 
-task = Task.init(project_name='examples', task_name='hyper-parameters example')
+task = Task.init(project_name='examples', task_name='hyperparameters example')
     
 flags.DEFINE_integer('echo3', 3, 'Text to echo.')
     
@@ -54,7 +54,7 @@ TensorFlow Definitions appear in **HYPER PARAMETERS** **>** **TF_DEFINE**.
 
 ## Parameter Dictionaries
 
-Connect a parameter dictionary to a Task by calling the [Task.connect](../../references/sdk/task.md#connect)
+Connect a parameter dictionary to a Task by calling the [`Task.connect`](../../references/sdk/task.md#connect)
 method, and ClearML logs the parameters. ClearML also tracks changes to the parameters.
 
 ```python

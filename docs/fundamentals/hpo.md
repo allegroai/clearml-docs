@@ -90,7 +90,7 @@ optimization.
   optimizer = HyperParameterOptimizer(
         # specifying the task to be optimized, task must be in system already so it can be cloned
         base_task_id=TEMPLATE_TASK_ID,  
-        # setting the hyper-parameters to optimize
+        # setting the hyperparameters to optimize
         hyper_parameters=[
             UniformIntegerParameterRange('number_of_epochs', min_value=2, max_value=12, step_size=2),
             UniformIntegerParameterRange('batch_size', min_value=2, max_value=16, step_size=2),

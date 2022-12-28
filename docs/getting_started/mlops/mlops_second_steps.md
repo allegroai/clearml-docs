@@ -27,7 +27,7 @@ clearml-data sync --folder ./from_production
 We could also add a Tag `latest` to the Dataset, marking it as the latest version.
 
 ### Preprocessing Data
-The second step is to preprocess the date. First we need to access it, then we want to modify it
+The second step is to preprocess the date. First we need to access it, then we want to modify it,
 and lastly we want to create a new version of the data.
 
 ```python

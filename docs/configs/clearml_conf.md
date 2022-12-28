@@ -414,7 +414,7 @@ match_rules: [
 **`agent.package_manager`** (*dict*)
         
 * Dictionary containing the options for the Python package manager. The currently supported package managers are pip, conda, 
-  and, if the repository contains a poetry.lock file, poetry.
+  and, if the repository contains a `poetry.lock` file, poetry.
         
 ---
         
