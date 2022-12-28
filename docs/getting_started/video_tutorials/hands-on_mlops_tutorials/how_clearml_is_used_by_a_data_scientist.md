@@ -100,7 +100,7 @@ really annoying. And that is what ClearML Data does for you is it will keep trac
 of which run of your code actually produced this, and that allows you to always go back and see if you made any mistakes. 
 You can always go back, which allows you to iterate a lot faster. 
 
-And then finally we have the training script. If I go to the training script, you also again see the `task.init`, so we 
+And then finally we have the training script. If I go to the training script, you also again see the `Task.init`, so we 
 want to capture every single time that we run this code, and then you can also see that I made a huge configuration dict. 
 So essentially every parameter that I use in my code is in this dictionary, and then I connect it to the task. and we'll 
 see later why that is really, really useful. But for now at the very least what it will do is it will keep track of all 

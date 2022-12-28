@@ -55,7 +55,7 @@ and we have our task as well.
 Now, I'll start with the task because that's the thing we're going to run as the experiment you want to keep track of 
 in your Git, and in ClearML, and in this case, we'll just take like a dummy task. We'll take a very, very simple example 
 here, so we just do `from clearml import Task`. If you're familiar with ClearML this will be very familiar to you as
-well. It's just the `task.init`, give it a project, give it a name, and then I basically always set `reuse_last_task_id` 
+well. It's just the `Task.init`, give it a project, give it a name, and then I basically always set `reuse_last_task_id` 
 to `false`, which basically means that it will never override the previous task if it didn't complete properly. It's more
 or less a thing of taste. Then I set the random seed to do something completely random. Then for 10 times basically we're 
 going to be reporting a scalar, which is called performance metric in series "Series 1" and it will have a random value, 
@@ -67,7 +67,7 @@ also have the commit ID, which will come in handy later, and then we also have t
 directory. As you might know, we also keep track of any uncommitted changes, so if you add anything in the code that 
 isn't already tracked by Git, we also take care of that. But that will come in handy a little bit later as well. We also 
 keep track of installed packages and stuff like that. In this case, of course, we don't really keep track of very much, 
-it's only the `task.init` and then just reporting some scalars. 
+it's only the `Task.init` and then just reporting some scalars. 
 
 What we do have is some scalars, so this is what it would look like, and we'll be using this one later down the line. 
 Right, so if I go back here to my code you can also see we have a GitHub folder with the workflow sub-folder in there. 
