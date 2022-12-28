@@ -18,7 +18,7 @@ If you are afraid of clutter, use the archive option, and set up your own [clean
 
 ## Clone Tasks
 In order to define a Task in ClearML we have two options
-- Run the actual code with `task.init` call. This will create and auto-populate the Task in CleaML (including Git Repo / Python Packages / Command line etc.).
+- Run the actual code with `Task.init` call. This will create and auto-populate the Task in CleaML (including Git Repo / Python Packages / Command line etc.).
 - Register local / remote code repository with `clearml-task`. See [details](../../apps/clearml_task.md).
 
 Once we have a Task in ClearML, we can clone and edit its definitions in the UI, then launch it on one of our nodes with [ClearML Agent](../../clearml_agent.md).

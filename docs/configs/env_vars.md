@@ -15,14 +15,14 @@ but can be overridden by command-line arguments.
 ### General
 |Name| Description                                                                    |
 |---|--------------------------------------------------------------------------------|
-|**CLEARML_LOG_ENVIRONMENT** | List of Environment variables to log                                           |
-|**CLEARML_TASK_NO_REUSE** | Control Task reuse                                                             |
-|**CLEARML_CACHE_DIR** | Sets the location of the cache directory                                       |
-|**CLEARML_DOCKER_IMAGE** | Sets the default docker image to run from                                      |
-|**CLEARML_LOG_LEVEL** | debug / warning / error / info - Sets the ClearML package's log verbosity      |
-|**CLEARML_SUPPRESS_UPDATE_MESSAGE** | Suppresses the message that notifies users of new ClearML package version      |
-|**CLEARML_DEFAULT_OUTPUT_URI** | The default output destination for model checkpoints (snapshots) and artifacts |
-|**CLEARML_SET_ITERATION_OFFSET** | Initial iteration offset                                                   |
+|**CLEARML_LOG_ENVIRONMENT** | List of Environment variable names. These environment variables will be logged in the ClearML task’s configuration hyperparameters `Environment` section. When executed by a ClearML agent, these values will be set in the task’s execution environment. |
+|**CLEARML_TASK_NO_REUSE** | Boolean. <br/> When set to `true`, a new task is created for every execution (see Task [reuse](../clearml_sdk/task_sdk#task_reuse).                                                              |
+|**CLEARML_CACHE_DIR** | Set the path for the ClearML cache directory, where ClearML stores all downloaded content.   |
+|**CLEARML_DOCKER_IMAGE** | Sets the default docker image to use when running an agent in [Docker mode](../clearml_agent.md#docker-mode).  |
+|**CLEARML_LOG_LEVEL** | Sets the ClearML package's log verbosity. Log levels adhere to [Python log levels](https://docs.python.org/3/library/logging.config.html#configuration-file-format): CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET |
+|**CLEARML_SUPPRESS_UPDATE_MESSAGE** | Boolean. <br/> When set to `1`, suppresses new ClearML package version availability message. |
+|**CLEARML_DEFAULT_OUTPUT_URI** | The default output destination for model checkpoints (snapshots) and artifacts. |
+|**CLEARML_SET_ITERATION_OFFSET** | Set initial iteration value for the executed task. The task will report its iterations starting with the specified value +1. Specify `0` to force resetting the iteration count.|
 
 ### VCS
 Overrides Repository Auto-logging
