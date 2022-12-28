@@ -32,12 +32,19 @@ experiment(s) updates.
 To add a graphic resource: 
 1. Go to the resource you want to embed in your report (a plot or debug sample from an individual experiment or 
 experiment comparison) 
-2. Hover over the resource and 
-click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Generate embed code" className="icon size-md space-sm" />. 
-This generates the embed code for accessing the resource and copies it to your clipboard.
+2. Hover over the resource and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Generate embed code" className="icon size-md space-sm" />. 
+   
+   ![Reports step 2](../img/reports_step_2.png)
+
+   Click `Embed in ClearML report`. This generates the embed code for accessing the resource, and copies 
+   it to your clipboard. 
+ 
+   ![Reports step 2a](../img/reports_step_2a.png)
+
 3. Return to your report page and paste the code snippet
 
-
+   ![Reports step 3](../img/reports_step_3.png)
+   
 ## Reports Page
 Use the Reports Page to navigate between and manage reports. The page shows summaries 
 for all reports.
