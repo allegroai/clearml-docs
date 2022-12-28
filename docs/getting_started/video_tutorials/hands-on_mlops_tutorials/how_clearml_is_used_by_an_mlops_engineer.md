@@ -215,7 +215,7 @@ then you could go and clone the experiment and then enqueue it. This is somethin
 
 Now, another way of doing this is to actually use what you can see here, which is `task.execute_remotely`. What this line 
 specifically will do, is when you run the file right here. Let me just do that real quick. So if we do 
-`python setup/example_task_CPU.py` what will happen is ClearML will do the `task.init` like it would always do, but then 
+`python setup/example_task_CPU.py` what will happen is ClearML will do the `Task.init` like it would always do, but then 
 it would encounter the `task.execute_remotely` and what that will tell ClearML is say okay, take all of this code, take 
 all of the packages that are installed, take all of the things that you would normally take as part of the experiment 
 manager, but stop executing right here and then send the rest, send everything through to a ClearML agent or to the queue 
