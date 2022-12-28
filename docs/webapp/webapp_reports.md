@@ -148,8 +148,6 @@ To nest lists, indent nested items 2 spaces more than their parent list item.
 | <code>+ Item 1<br/>+ Item 2<br/>&nbsp;&nbsp;- Sub-item a:<br/>&nbsp;&nbsp;&nbsp;&nbsp;\* Sub-sub-item x<br/>&nbsp;&nbsp;&nbsp;&nbsp;+ Sub-sub-item y<br/>&nbsp;&nbsp;&nbsp;&nbsp;- Sub-sub-item z<br/>\* [x] A checkmark </code>|![Report unordered list](../img/reports_unordered_list.png)|
 
 
- 
-
 ### Tables
 
 MarkDown code for a table looks like this:
