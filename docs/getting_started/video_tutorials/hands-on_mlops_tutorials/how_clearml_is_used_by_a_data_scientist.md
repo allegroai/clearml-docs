@@ -70,7 +70,7 @@ it to you later in the UI, we have a nice and clear overview of all of the diffe
 
 I'll add some dataset statistics that's also something you can do and ClearML is just add some, for example, class 
 distribution or other kind of plots that could be interesting, and then I'm actually building the ClearML dataset here. 
-Also, an an extra thing that is really, really useful if you use ClearML datasets is you can actually share it as well. 
+Also, an extra thing that is really, really useful if you use ClearML datasets is you can actually share it as well. 
 So not only with colleagues and friends, for example. You can share the data with them, and they can add to the data, and 
 always you will always have the latest version, you will always know what happened before that. 
 
