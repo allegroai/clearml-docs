@@ -348,8 +348,9 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-download-csv.svg" alt="Download CSV icon" className="icon size-sm space-sm" /> | Download plot data as a CSV file. |
 | <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. When used with scalar graphs, full screen mode displays plots with all data points, as opposed to an averaged plot |
 | <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-sm space-sm" /> | Refresh scalar graphs in full screen mode to update it.  | 
-| <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-sm space-sm" /> | Copy to clipboard the resource embed code to put in your [Reports](webapp_reports.md). In contrast to static screenshots, embedded resources are retrieved when the report is displayed allowing your reports to show the latest up-to-date data. |
-| <img src="/docs/latest/icons/ico-uri-copy.svg" alt="Embed code externally" className="icon size-sm space-sm" /> | Copy to clipboard the resource embed code to put in external tools (e.g. Notion). In contrast to static screenshots, embedded resources are retrieved when the report is displayed allowing your reports to show the latest up-to-date data (available in the ClearML Enterprise plan and Hosted Service). |
+| <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-sm space-sm" /> | Copy to clipboard the resource embed code. This opens the following options: <ul><li>**Embed in External tool** (available in the ClearML Enterprise plan and Hosted Service) - Copy code to add to external tools (e.g. Notion). </li><li>**Embed in ClearML report** - Copy code to add to a [report](webapp_reports.md)</li></ul> In contrast to static screenshots, embedded resources are retrieved when the tool/report is displayed allowing your tools/reports to show the latest up-to-date data. |
+
+ 
 
 #### 3D Plot Controls 
 |Icon|Description|
