@@ -77,8 +77,8 @@ The minimum requirements for ClearML Server are:
 
 * Stop and then restart the Docker containers by executing the following commands:
 
-        docker-compose -f /opt/clearml/docker-compose.yml down
-        docker-compose -f /opt/clearml/docker-compose.yml up -d
+      docker-compose -f /opt/clearml/docker-compose.yml down
+      docker-compose -f /opt/clearml/docker-compose.yml up -d
 
 
 ## Backing Up and Restoring Data and Configuration

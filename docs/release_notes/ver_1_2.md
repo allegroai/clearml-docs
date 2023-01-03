@@ -103,7 +103,7 @@ title: Version 1.2
 - Fix extra_layout not passed to report_matrix [ClearML GitHub issue #559](https://github.com/allegroai/clearml/issues/559)
 - Fix group arguments in click [ClearML GitHub PR #561](https://github.com/allegroai/clearml/pull/561)
 - Fix no warning when failing to patch argparse [ClearML GitHub PR #576](https://github.com/allegroai/clearml/pull/576)
-- Fix crash in Dataset.upload() when there is nothing to upload [ClearML GitHub PR #579](https://github.com/allegroai/clearml/pull/579)
+- Fix crash in `Dataset.upload()` when there is nothing to upload [ClearML GitHub PR #579](https://github.com/allegroai/clearml/pull/579)
 - Fix requirements, refactor and reformat examples [ClearML GitHub PR #567](https://github.com/allegroai/clearml/pull/567), [#573](https://github.com/allegroai/clearml/pull/573), [#582](https://github.com/allegroai/clearml/pull/582)
 - Auto-scaler
   - Change confusing log message

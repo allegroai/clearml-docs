@@ -93,14 +93,14 @@ title: Version 1.4
     * Fix uploading 3D plots with matplotlib plt shows 2D plot on task results page 
     * Fix wrong Histogram plotting using when matplotlib
 * Fix PyTorch `ScriptModule` autobind
-* Fix PyTorch auto-magic logging torchscript models
+* Fix PyTorch auto-magic logging TorchScript models
 * Fix forked process will not call `_at_exit` and flush all outstanding reports
 * Fix matplotlib to plotly conversion fails on subplots (convert as image if figure has subplots)
 * Fix Windows sub process might end up waiting forever for uploads to finish if subprocess is very shot lived
 * Fix `StorageManager.get_local_copy()` returning None for a valid path in Windows
 * Fix Jupyter notebook cannot be detected
 * Fix PipelineController does not change node Task name, only pipeline step name
-* Fix Task.query_tasks() specifying page size or page number
+* Fix `Task.query_tasks()` specifying page size or page number
 
 ### ClearML Server 1.4.0
 

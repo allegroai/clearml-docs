@@ -74,8 +74,8 @@ After deploying ClearML Server, the services expose the following node ports:
 
 * Stop and then restart the Docker containers by executing the following commands:
 
-        docker-compose -f c:\opt\clearml\docker-compose-win10.yml down
-        docker-compose -f c:\opt\clearml\docker-compose-win10.yml up -d
+      docker-compose -f c:\opt\clearml\docker-compose-win10.yml down
+      docker-compose -f c:\opt\clearml\docker-compose-win10.yml up -d
 
 
 ## Next Step
