@@ -2,6 +2,19 @@
 title: Version 1.9
 ---
 
+### ClearML Server 1.9.1
+
+**New Features and Improvements**
+* Add collapsible description panel for UI reports 
+* Add in-app markdown guide for UI reports
+
+**Bug Fixes**
+* Fix can't generate new pipeline runs from UI [ClearML Server GitHub issue #169](https://github.com/allegroai/clearml-server/issues/169)
+* Fix plot legend texts overlap in UI reports
+* Fix UI embedded plot colors are sometimes obscure
+* Fix `ctrl z` doesn't undo codeblocks in UI reports
+* Fix "Getting Started" popup wrongfully showing when enqueuing tasks
+
 ### ClearML SDK 1.9.0 
 
 **New Features and Improvements**
