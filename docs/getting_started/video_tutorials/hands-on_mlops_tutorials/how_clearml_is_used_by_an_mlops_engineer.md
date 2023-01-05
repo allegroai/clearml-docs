@@ -374,7 +374,7 @@ to run if the trigger is triggered, which is in this case `training_task.id` is 
 task. We have the schedule queue, so we want to obviously schedule it in any of the queues. We can use CPU queue in 
 this case, and then we can give it a name as well. And just to make it clear that this training is not actually training 
 from Alice herself, but it's training on the new data of Bob. It's an automated training. We can give it a specific name 
-so that Alice knows this was triggered automatically, and then we can use `trigger_on_tags` where we should look to to 
+so that Alice knows this was triggered automatically, and then we can use `trigger_on_tags` where we should look to 
 actually trigger the trigger. Damn this is a lot of trigger. 
 
 So what happens here is we look in the Project Bob folder and then if a new tag production is found that wasn't there 

@@ -97,7 +97,8 @@ function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Turn your code into MLOps with only 2 lines of code with ClearML! Easily develop, orchestrate, and automate ML workflows at scale"
+    >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
 

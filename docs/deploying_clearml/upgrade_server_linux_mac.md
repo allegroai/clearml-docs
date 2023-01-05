@@ -42,7 +42,7 @@ For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRA
 
 1. If upgrading from **Trains Server** to **ClearML Server**, rename `/opt/trains` and its subdirectories to `/opt/clearml`.
 
-         sudo mv /opt/trains /opt/clearml
+        sudo mv /opt/trains /opt/clearml
 
 1. Download the latest `docker-compose.yml` file.
 
