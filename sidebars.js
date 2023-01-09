@@ -240,7 +240,7 @@ module.exports = {
         }
     ],
     sdkHyperDataset: [
-        {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
+        {'Hyper-Dataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
         {'DataFrame': ['references/hyperdataset/singleframe',
             'references/hyperdataset/framegroup', 'references/hyperdataset/annotation',]},
         'references/hyperdataset/dataview',

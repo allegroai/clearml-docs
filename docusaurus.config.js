@@ -79,7 +79,7 @@ module.exports = {
               to: '/docs/references/sdk/task',
             },
             {
-              label: 'HyperDatasets',
+              label: 'Hyper-Datasets',
               to: '/docs/references/hyperdataset',
             },
             {
