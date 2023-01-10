@@ -340,7 +340,7 @@ ___
         
 **`agent.worker_name`** (*string*)
             
-* Use to replace the hostname when creating a worker, if `agent.worker_id` is not specified. For example, if `worker_name` 
+* Use to replace the hostname when creating a worker if `agent.worker_id` is not specified. For example, if `worker_name` 
   is `MyMachine` and the `process_id` is `12345`, then the worker is named `MyMachine.12345`.
 
     Alternatively, specify the environment variable `CLEARML_WORKER_ID` to override this worker name.
