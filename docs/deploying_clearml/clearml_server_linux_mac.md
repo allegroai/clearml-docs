@@ -114,11 +114,11 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
 
     * Linux:
 
-            sudo chown -R 1000:1000 /opt/clearml
+          sudo chown -R 1000:1000 /opt/clearml
 
     * macOS:
 
-            sudo chown -R $(whoami):staff /opt/clearml
+          sudo chown -R $(whoami):staff /opt/clearml
 
 1. Download the ClearML Server docker-compose YAML file.
 

@@ -21,11 +21,11 @@ Some legacy **Trains Server** AMIs provided an auto-upgrade on restart capabilit
 
 1. Shutdown the ClearML Server executing the following command (which assumes the configuration file is in the environment path). 
     
-        docker-compose -f /opt/clearml/docker-compose.yml down
+       docker-compose -f /opt/clearml/docker-compose.yml down
 
    If you are upgrading from **Trains Server**, use this command:
 
-        docker-compose -f /opt/trains/docker-compose.yml down
+       docker-compose -f /opt/trains/docker-compose.yml down
 
 1. [Backing up your data](clearml_server_aws_ec2_ami.md#backing-up-and-restoring-data-and-configuration) is recommended, 
    and if your configuration folder is not empty, backing up your configuration.

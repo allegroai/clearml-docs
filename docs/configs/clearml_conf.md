@@ -94,7 +94,7 @@ continue running. When set to `true`, the agent crashes when encountering an exc
 
 **`agent.disable_ssh_mount`** (*bool*)
 
-* Set to `true` to disables the auto `.ssh` mount into the docker. The environment variable `CLEARML_AGENT_DISABLE_SSH_MOUNT` 
+* Set to `true` to disable the auto `.ssh` mount into the docker. The environment variable `CLEARML_AGENT_DISABLE_SSH_MOUNT` 
   overrides this configuration option.
 
 ___
@@ -340,8 +340,8 @@ ___
         
 **`agent.worker_name`** (*string*)
             
-* Use to replace the hostname when creating a worker, if `agent.worker_id` is not specified. For example, if `worker_name` 
-  is `MyMachine` and the process_id is `12345`, then the worker is name `MyMachine.12345`.
+* Use to replace the hostname when creating a worker if `agent.worker_id` is not specified. For example, if `worker_name` 
+  is `MyMachine` and the `process_id` is `12345`, then the worker is named `MyMachine.12345`.
 
     Alternatively, specify the environment variable `CLEARML_WORKER_ID` to override this worker name.
         
@@ -420,7 +420,7 @@ match_rules: [
         
 **`agent.package_manager.conda_channels`** (*[string]*)
         
-* If conda is used, then this is list of conda channels to use when installing Python packages.
+* If conda is used, then this is the list of conda channels to use when installing Python packages.
         
 ---
 
@@ -875,13 +875,13 @@ and limitations on bucket naming.
 
 **`sdk.azure.storage.containers.account_name`** (*string*)
     
-* For Azure Storage, this is account name.
+* For Azure Storage, this is the account name.
     
 ---
 
 **`sdk.azure.storage.containers.container_name`** (*string*)
     
-* For Azure Storage, this the container name.
+* For Azure Storage, this is the container name.
 
 <br/>
 
