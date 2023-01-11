@@ -17,7 +17,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  FindingAllFiles:
+  Splitting_files_into_batches:
     runs-on: ubuntu-latest
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
@@ -28,7 +28,7 @@ jobs:
         id: create_artifacts_dir
         run: mkdir -pv "$MD_ARTIFACTS_DIR"
 
-      - name: Find all markdown files
+      - name: Find all markdown files and create batch
         id: find_md_files
         run: |
           export md_files_arr=($(find . -name '*.md' -type f | sed 's|^./||'))
@@ -38,16 +38,21 @@ jobs:
           echo "${md_files_arr[@]:100:50}" | tr ' ' '\n' > "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_3.txt"
           echo "${md_files_arr[@]:150:50}" | tr ' ' '\n' > "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_4.txt"
           echo "${md_files_arr[@]:200}" | tr ' ' '\n' > "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_5.txt"
+          echo "First batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_1.txt" | wc -l) file."
+          echo "Second batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_2.txt" | wc -l) file."
+          echo "Third batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_3.txt" | wc -l) file."
+          echo "Fourth batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_4.txt" | wc -l) file."
+          echo "Fifth batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_5.txt" | wc -l) file."
 
       - uses: actions/upload-artifact@v3
         with:
           name: artifacts-markdown
           path: ${{ env.MD_ARTIFACTS_DIR }}
 
-# Link Cheker Jobs
-  LinkChecker_1:
+# Link Checker Jobs
+  Link_checking_batch_one:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -74,9 +79,9 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
 
-  LinkChecker_2:
+  Link_checking_batch_two:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -103,9 +108,9 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
 
-  LinkChecker_3:
+  Link_checking_batch_three:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -132,9 +137,9 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
 
-  LinkChecker_4:
+  Link_checking_batch_four:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -161,9 +166,9 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
 
-  LinkChecker_5:
+  Link_checking_batch_five:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -190,10 +195,10 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
 
-# Link Checker Excluded
-  LinkChecker_Excluded_1:
+# Link Checker (Excluded) Jobs
+  Link_checking_excluded_batch_one:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -226,9 +231,9 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
 
-  LinkChecker_Excluded_2:
+  Link_checking_excluded_batch_two:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -261,9 +266,9 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
 
-  LinkChecker_Excluded_3:
+  Link_checking_excluded_batch_three:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -296,9 +301,9 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
 
-  LinkChecker_Excluded_4:
+  Link_checking_excluded_batch_four:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
@@ -331,9 +336,9 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
 
-  LinkChecker_Excluded_5:
+  Link_checking_excluded_batch_five:
     runs-on: ubuntu-latest
-    needs: [FindingAllFiles]
+    needs: [Splitting_files_into_batches]
     env:
       MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
