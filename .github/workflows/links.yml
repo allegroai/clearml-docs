@@ -64,7 +64,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -93,7 +93,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -122,7 +122,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -151,7 +151,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -180,7 +180,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -216,7 +216,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -251,7 +251,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -286,7 +286,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -321,7 +321,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -356,7 +356,7 @@ jobs:
       - name: Link Checker
         id: lychee
         # if: ${{ false }}  # disable for now
-        uses: lycheeverse/lychee-action@v1.5.1
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
