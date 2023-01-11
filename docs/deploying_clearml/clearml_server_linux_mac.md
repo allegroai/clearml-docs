@@ -76,15 +76,15 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
 
     * Linux:
 
-            echo "vm.max_map_count=262144" > /tmp/99-clearml.conf
-            sudo mv /tmp/99-clearml.conf /etc/sysctl.d/99-clearml.conf
-            sudo sysctl -w vm.max_map_count=262144
-            sudo service docker restart
+          echo "vm.max_map_count=262144" > /tmp/99-clearml.conf
+          sudo mv /tmp/99-clearml.conf /etc/sysctl.d/99-clearml.conf
+          sudo sysctl -w vm.max_map_count=262144
+          sudo service docker restart
 
     * macOS:
     
-            screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
-            sysctl -w vm.max_map_count=262144
+          screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+          sysctl -w vm.max_map_count=262144
 
 1. Remove any previous installation of ClearML Server.
 
@@ -114,11 +114,11 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
 
     * Linux:
 
-            sudo chown -R 1000:1000 /opt/clearml
+          sudo chown -R 1000:1000 /opt/clearml
 
     * macOS:
 
-            sudo chown -R $(whoami):staff /opt/clearml
+          sudo chown -R $(whoami):staff /opt/clearml
 
 1. Download the ClearML Server docker-compose YAML file.
 
@@ -150,8 +150,8 @@ After deploying ClearML Server, the services expose the following ports:
 
 * Stop and then restart the Docker containers by executing the following commands:
 
-        docker-compose -f /opt/clearml/docker-compose.yml down
-        docker-compose -f /opt/clearml/docker-compose.yml up -d
+      docker-compose -f /opt/clearml/docker-compose.yml down
+      docker-compose -f /opt/clearml/docker-compose.yml up -d
 
 
 
@@ -178,11 +178,11 @@ If needed, restore data and configuration by doing the following:
 
     * Linux:
 
-            sudo chown -R 1000:1000 /opt/clearml
+          sudo chown -R 1000:1000 /opt/clearml
 
     * macOS:
 
-            sudo chown -R $(whoami):staff /opt/clearml
+          sudo chown -R $(whoami):staff /opt/clearml
 ## Next Step
 
 * [Configuring ClearML for ClearML Server](clearml_config_for_clearml_server.md).

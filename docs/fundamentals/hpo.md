@@ -2,14 +2,14 @@
 title: Hyperparameter Optimization
 ---
 
-## What is HyperParameter Optimization?
+## What is Hyperparameter Optimization?
 Hyperparameters are variables that directly control the behaviors of training algorithms, and have a significant effect on 
 the performance of the resulting machine learning models. Finding the hyperparameter values that yield the best 
 performing models can be complicated. Manually adjusting hyperparameters over the course of many training trials can be 
 slow and tedious. Luckily, you can automate and boost hyperparameter optimization with ClearML's 
 [**`HyperParameterOptimizer`**](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class.
 
-## ClearML's HyperParameter Optimization
+## ClearML's Hyperparameter Optimization
 
 ClearML provides the `HyperParameterOptimizer` class, which takes care of the entire optimization process for users 
 with a simple interface.  
@@ -90,7 +90,7 @@ optimization.
   optimizer = HyperParameterOptimizer(
         # specifying the task to be optimized, task must be in system already so it can be cloned
         base_task_id=TEMPLATE_TASK_ID,  
-        # setting the hyper-parameters to optimize
+        # setting the hyperparameters to optimize
         hyper_parameters=[
             UniformIntegerParameterRange('number_of_epochs', min_value=2, max_value=12, step_size=2),
             UniformIntegerParameterRange('batch_size', min_value=2, max_value=16, step_size=2),
@@ -115,17 +115,35 @@ optimization.
         max_iteration_per_job=150000,  
         )
   ```
-<br/>
 
-:::tip Locating Task ID
-To locate the base task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). The ID appears 
-in the task header.
-:::
+  :::tip Locating Task ID
+  To locate the base task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). The ID appears 
+  in the task header.
+  :::
 
 
-For more information about `HyperParameterOptimizer` and supported optimization modules, see the [HyperParameterOptimizer class reference](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
+## Optimizer Execution Options
+The `HyperParameterOptimizer` provides options to launch the optimization tasks locally or through a ClearML [queue](agents_and_queues.md#what-is-a-queue).
+Start a `HyperParameterOptimizer` instance using either [`HyperParameterOptimizer.start`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md#start) 
+or [`HyperParameterOptimizer.start_locally`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md#start_locally). 
+Both methods run the optimizer controller locally. The `start` method launches the base task clones through a queue 
+specified when instantiating the controller, while `start_locally` runs the tasks locally.
+
+:::tip Remote Execution
+You can also launch the optimizer controller through a queue by using the [`Task.execute_remotely`](../references/sdk/task.md#execute_remotely) 
+method before starting the optimizer.  
+::: 
+
 
 ## Tutorial
 
 Check out the [Hyperparameter Optimization tutorial](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) for a step-by-step guide.
 
+## Hyperparameter Optimization CLI
+
+ClearML also provides `clearml-param-search`, a CLI utility for managing the hyperparameter optimization process. See 
+[ClearML Param Search](../apps/clearml_param_search.md) for more information. 
+
+## SDK Reference
+
+For detailed information, see the complete [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).

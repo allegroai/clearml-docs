@@ -14,7 +14,7 @@ title: FAQ
 * [Can I store the model configuration file as well?](#store-model-configuration)
 * [I am training multiple models at the same time, but I only see one of them. What happened?](#only-last-model-appears)
 * [Can I log input and output models manually?](#manually-log-models)
-* [Models are not accessible from the UI after I migrated ClearML Server to a new domain. How do I fix this?](#migrate_server_models)
+* [Models are not accessible from the UI after I migrated ClearML Server to a new address. How do I fix this?](#migrate_server_models)
 * [Models are not accessible from the UI after I moved them (different bucket / server). How do I fix this?](#relocate_models)
 
 **Experiments**
@@ -46,7 +46,7 @@ title: FAQ
 * [Is there something ClearML can do about uncommitted code running?](#help-uncommitted-code)
 * [I read there is a feature for centralized model storage. How do I use it?](#centralized-model-storage)
 * [When using PyCharm to remotely debug a machine, the Git repo is not detected. Do you have a solution?](#pycharm-remote-debug-detect-git)
-* [Debug images and / or artifacts are not loading in the UI after I migrated ClearML Server to a new domain. How do I fix this?](#migrate_server_debug)
+* [Debug images and / or artifacts are not loading in the UI after I migrated ClearML Server to a new address. How do I fix this?](#migrate_server_debug)
 
 
 **Remote Debugging (ClearML PyCharm Plugin)**
@@ -213,10 +213,10 @@ and [OutputModel](references/sdk/model_outputmodel.md) classes.
 
 <br/>
 
-**Models are not accessible from the UI after I migrated ClearML Server to a new domain. How do I fix this?** <a id="migrate_server_models"></a>
+**Models are not accessible from the UI after I migrated ClearML Server to a new address. How do I fix this?** <a id="migrate_server_models"></a>
 
 This can happen if your models were uploaded to the ClearML files server, since the value registered was their full URL 
-at the time of registration (e.g. `https://files.<OLD_DOMAIN>/path/to/model`).
+at the time of registration (e.g. `https://files.<OLD_ADDRESS>/path/to/model`).
 
 To fix this, the registered URL of each model needs to be replaced with its current URL.
 
@@ -248,7 +248,7 @@ To replace the URL of each model, execute the following commands:
 **Models are not accessible from the UI after I moved them (different bucket / server). How do I fix this?** <a id="relocate_models"></a>
 
 This can happen if your models were uploaded to the ClearML files server, since the value registered was their full URL 
-at the time of registration (e.g. `https://files.<OLD_DOMAIN>/path/to/model`).
+at the time of registration (e.g. `https://files.<OLD_ADDRESS>/path/to/model`).
 
 To fix this, the registered URL of each model needs to be replaced with its current URL:
 
@@ -321,7 +321,7 @@ task = Task.init(project_name, task_name, Task.TaskTypes.testing)
 
 **Sometimes I see experiments as running when in fact they are not. What's going on?** <a id="experiment-running-but-stopped"></a>
 
-ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right click the experiment in the Web-App and abort it.
+ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right-click the experiment in the Web-App and abort it.
 
 <br/>
 
@@ -533,7 +533,7 @@ and accuracy values of several experiments.
 In an experiment comparison page, under the **HYPER PARAMETERS** tab, you can view the experiments' hyperparameter values 
 in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
 
-The image below show a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
+The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
 `batch_size`, and `number_of_epochs`) and a performance metric (`accuracy`) of three experiments. 
 
 ![Parallel Coordinates](img/clearml_faq_screenshots/compare_parallel_coordinates.png)
@@ -666,20 +666,20 @@ repository / commit ID. For detailed information about using the plugin, see the
 
 <br/>
 
-**Debug images and/or artifacts are not loading in the UI after I migrated ClearML Server to a new domain. How do I fix this?**  <a id="migrate_server_debug"></a>  
+**Debug images and/or artifacts are not loading in the UI after I migrated ClearML Server to a new address. How do I fix this?**  <a id="migrate_server_debug"></a>  
 
 This can happen if your debug images and / or artifacts were uploaded to the ClearML file server, since the value
-registered was their full URL at the time of registration (e.g. `https://files.<OLD_DOMAIN>/path/to/artifact`).
+registered was their full URL at the time of registration (e.g. `https://files.<OLD_ADDRESS>/path/to/artifact`).
 
 To fix this, the registered URL of each debug image and / or artifact needs to be replaced with its current URL.
 
-* For **debug images**, use the following command. Make sure to insert the old domain and the new domain that will replace it
+* For **debug images**, use the following command. Make sure to insert the old address and the new address that will replace it
     ```bash
     curl --header "Content-Type: application/json" \
     --request POST \
     --data '{
         "script": {
-            "source": "ctx._source.url = ctx._source.url.replace('https://files.<OLD_DOMAIN>', 'https://files.<NEW_DOMAIN>')",
+            "source": "ctx._source.url = ctx._source.url.replace('https://files.<OLD_ADDRESS>', 'https://files.<NEW_ADDRESS>')",
             "lang": "painless"
         },
         "query": {

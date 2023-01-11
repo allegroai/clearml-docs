@@ -12,7 +12,27 @@ module.exports = {
         {'Getting Started': ['getting_started/main', {
             'Where do I start?': [{'Data Scientists': ['getting_started/ds/ds_first_steps', 'getting_started/ds/ds_second_steps', 'getting_started/ds/best_practices']},
                 {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
-        }, 'getting_started/architecture']},
+        }, 'getting_started/architecture', {'Video Tutorials': 
+        [
+            'getting_started/video_tutorials/quick_introduction',
+            'getting_started/video_tutorials/core_component_overview',
+            'getting_started/video_tutorials/experiment_manager_hands-on',
+            'getting_started/video_tutorials/experiment_management_best_practices',
+            'getting_started/video_tutorials/agent_remote_execution_and_automation',
+            'getting_started/video_tutorials/hyperparameter_optimization',
+            'getting_started/video_tutorials/pipelines_from_code',
+            'getting_started/video_tutorials/pipelines_from_tasks',
+            'getting_started/video_tutorials/clearml-data',
+            'getting_started/video_tutorials/the_clearml_autoscaler',
+            'getting_started/video_tutorials/hyperdatasets_data_versioning',
+            {
+                'Hands-on MLOps Tutorials':[
+                    'getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_a_data_scientist',
+                    'getting_started/video_tutorials/hands-on_mlops_tutorials/how_clearml_is_used_by_an_mlops_engineer',
+                    'getting_started/video_tutorials/hands-on_mlops_tutorials/ml_ci_cd_using_github_actions_and_clearml'
+                ]
+            }        
+        ]}]},
         {'ClearML Fundamentals': ['fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
             'fundamentals/hpo']},
         {'ClearML SDK': ['clearml_sdk/clearml_sdk', 'clearml_sdk/task_sdk', 'clearml_sdk/model_sdk', 'clearml_sdk/apiclient_sdk']},
@@ -66,10 +86,12 @@ module.exports = {
                     'webapp/pipelines/webapp_pipeline_page', 'webapp/pipelines/webapp_pipeline_table', 'webapp/pipelines/webapp_pipeline_viewing'
                 ]
             },
+            'webapp/webapp_reports',
             'webapp/webapp_workers_queues',
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',
+                    'webapp/applications/apps_gpu_compute',
                     'webapp/applications/apps_aws_autoscaler',
                     'webapp/applications/apps_gcp_autoscaler',
                     'webapp/applications/apps_hpo',
@@ -156,9 +178,11 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_7', 'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3', 'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17', 'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14',
-            'release_notes/ver_0_13', 'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10',
-            'release_notes/ver_0_9',
+        'Release Notes': ['release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
+            'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3',
+            'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17',
+            'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14', 'release_notes/ver_0_13',
+            'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10', 'release_notes/ver_0_9',
         ],
     },
     sdkSidebar: [
@@ -216,7 +240,7 @@ module.exports = {
         }
     ],
     sdkHyperDataset: [
-        {'HyperDataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
+        {'Hyper-Dataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
         {'DataFrame': ['references/hyperdataset/singleframe',
             'references/hyperdataset/framegroup', 'references/hyperdataset/annotation',]},
         'references/hyperdataset/dataview',

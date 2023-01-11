@@ -53,6 +53,6 @@ ClearML reports these images as debug samples in the **ClearML Web UI**, under t
 
 ![image](../../img/examples_reporting_07.png)
 
-Double click a thumbnail, and the image viewer opens.
+Double-click a thumbnail, and the image viewer opens.
 
 ![image](../../img/examples_reporting_07a.png)

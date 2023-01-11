@@ -31,18 +31,16 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: false,
       respectPrefersColorScheme: true,
-      switchConfig: {
-        darkIcon: '\u{1F319}',
-        lightIcon: '\u{1F315}',
-        // React inline style object
-        // see https://reactjs.org/docs/dom-elements.html#style
-        darkIconStyle: {
-          marginLeft: '2px',
-        },
-        lightIconStyle: {
-          marginLeft: '1px',
-        },
-      },
+      // switchConfig: {
+        // darkIcon: '\u{1F319}',
+        // lightIcon: '\u{1F315}',
+        // darkIconStyle: {
+          // marginLeft: '2px',
+        // },
+        // lightIconStyle: {
+          // marginLeft: '1px',
+        // },
+      // },
     },
     announcementBar: {
       id: 'supportus',
@@ -81,16 +79,16 @@ module.exports = {
               to: '/docs/references/sdk/task',
             },
             {
-              label: 'HyperDatasets',
-              to: '/docs/references/hyperdataset/hyperdataset',
+              label: 'Hyper-Datasets',
+              to: '/docs/references/hyperdataset',
             },
             {
               label: 'Server API',
-              to: '/docs/references/api/index',
+              to: '/docs/references/api',
             },
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_7',
+              to: '/docs/release_notes/ver_1_9',
             },
             {
               label: 'Community Resources',
@@ -137,7 +135,7 @@ module.exports = {
           items: [
             {
               label: 'Slack',
-              href: 'https://join.slack.com/t/allegroai-trains/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg',
+              href: 'https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg',
             },
             {
               label: 'Youtube',
@@ -177,11 +175,6 @@ module.exports = {
       // Please do not remove the credits, help to publicize Docusaurus :)
       copyright: `Copyright © ${new Date().getFullYear()} allegro.ai. Built with Docusaurus.`,
     },
-    gtag: {
-      trackingID: 'none',
-      // Optional fields.
-      anonymizeIP: true, // Should IPs be anonymized?
-    },
   },
   presets: [
     [
@@ -190,15 +183,16 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
+          breadcrumbs: false,
           editUrl:
             'https://github.com/allegroai/clearml-docs/edit/main/',
         },
-        API: {
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/allegroai/clearml-docs/edit/main/',
-        },
+        // API: {
+          // sidebarPath: require.resolve('./sidebars.js'),
+          // // Please change this to your repo.
+          // editUrl:
+            // 'https://github.com/allegroai/clearml-docs/edit/main/',
+        // },
         blog: {
           blogTitle: 'ClearML Tutorials',
           blogDescription: 'ClearML tutorials and documentation',

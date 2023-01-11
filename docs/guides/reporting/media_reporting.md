@@ -38,7 +38,7 @@ Logger.current_logger().report_media(
 )
 ```
 
-The reported audio can be viewed in the **DEBUG SAMPLES** tab. Double click a thumbnail, and the audio player opens.
+The reported audio can be viewed in the **DEBUG SAMPLES** tab. Double-click a thumbnail, and the audio player opens.
 
 ![image](../../img/examples_reporting_08.png)
 
@@ -55,6 +55,6 @@ Logger.current_logger().report_media(
 )
 ```
     
-The reported video can be viewed in the **DEBUG SAMPLES** tab. Double click a thumbnail, and the video player opens.
+The reported video can be viewed in the **DEBUG SAMPLES** tab. Double-click a thumbnail, and the video player opens.
 
 ![image](../../img/examples_reporting_09.png)

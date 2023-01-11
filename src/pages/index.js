@@ -22,8 +22,7 @@ const features = [
     imageUrl: 'img/ico-data-science.svg',
     description: (
       <>
-        <code>ClearML</code> is designed to be as easily integrated as possible.
-        <b>Add 2-lines of code</b> and everything is logged &amp; reported!
+        <code>ClearML</code> is designed to be as easily integrated as possible. <b>Add 2-lines of code</b> and everything is logged &amp; reported!
       </>
     ),
   },
@@ -98,22 +97,25 @@ function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Turn your code into MLOps with only 2 lines of code with ClearML! Easily develop, orchestrate, and automate ML workflows at scale"
+    >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
-            <h1 className={styles.heroProjectTagline}>
-              <img
-                alt={siteConfig.title}
-                className={styles.heroLogo}
-                src={useBaseUrl('/img/logo.svg')}
-              />
-              <span
-                className={styles.heroTitleTextHtml}
-                dangerouslySetInnerHTML={{
-                  __html: siteConfig.tagline,
-                }}
-              />
-            </h1>
+
+            <div className="hero-intro">
+              <div className="hero-title">
+                <h1 className={styles.heroProjectTagline}>
+                  <span className={styles.heroTitleTextHtml} dangerouslySetInnerHTML={{__html: siteConfig.tagline}}/>
+                </h1>
+              </div>
+              <div className="hero-figure">
+                <img
+                    alt={siteConfig.title}
+                    src={useBaseUrl('/img/infinity.svg')}
+                  />
+              </div>
+            </div>
+
             <div className={styles.indexCtas}>
               <Link className="button button--outline button--secondary button--lg button--rounded" to="/docs">
                 Get Started

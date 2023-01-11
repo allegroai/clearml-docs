@@ -14,6 +14,8 @@ ClearML Data Management solves two important challenges:
 - Accessibility - Making data easily accessible from every machine,
 - Versioning - Linking data and experiments for better **traceability**.
 
+![Dataset lineage](../img/webapp_dataset_lineage.png)
+
 **We believe Data is not code**. It should not be stored in a git tree, because progress on datasets is not always linear.
 Moreover, it can be difficult and inefficient to find on a git tree the commit associated with a certain version of a dataset.
 
@@ -51,9 +53,9 @@ The following table displays the possible states for a dataset version.
 
 | State | Description |
 |---|---|
-|*Uploading*| Dataset creation is in progress  |
-|*Failed*| Dataset creation was terminated with an error|
-|*Aborted*| Dataset creation was aborted by user before it was finalization |
-|*Final*| A dataset was created and finalized successfully | 
-|*Published*| The dataset is read-only. Publish a dataset to prevent changes to it | 
+|*Uploading* | Dataset creation is in progress  |
+|*Failed* | Dataset creation was terminated with an error|
+|*Aborted* | Dataset creation was aborted by user before it was finalization |
+|*Final* | A dataset was created and finalized successfully | 
+|*Published* | The dataset is read-only. Publish a dataset to prevent changes to it | 
 

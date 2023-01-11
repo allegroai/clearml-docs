@@ -50,7 +50,7 @@ The single scalar plot for loss appears in **SCALARS**.
 
 ClearML automatically logs the command line options defined using `argparse`. 
 
-A parameter dictionary is logged by connecting it to the Task using a call to the [Task.connect](../../../references/sdk/task.md#connect) 
+A parameter dictionary is logged by connecting it to the Task using a call to the [`Task.connect`](../../../references/sdk/task.md#connect) 
 method.
 
 ```python

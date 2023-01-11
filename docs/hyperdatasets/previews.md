@@ -19,7 +19,7 @@ The following is an example of preview metadata.
         "timestamp": 0
     }
 ```
-<details className="cml-expansion-panel info">
+<details className="cml-expansion-panel configuration">
 <summary className="cml-expansion-panel-summary">View an entire frame containing a preview</summary>
 <div className="cml-expansion-panel-content">
 
@@ -101,5 +101,5 @@ The following is an example of preview metadata.
 
 Here's an example of Previews in the ClearML Enterprise WebApp (UI). Each thumbnail is a Preview.
 
-![image](../img/hyperdatasets/web-app/previews.png)
+![Previews](../img/hyperdatasets/web-app/dataset_versions.png)
 

@@ -1,66 +1,64 @@
 ---
-title: Datasets Page
+title: Hyper-Datasets Page
 ---
 
-The Datasets page offers the following functionalities: 
-* Managing the ClearML Enterprise **Datasets** and **versions**, which connect raw data to the ClearML Enterprise platform
-* Using ClearML Enterprise's Git-like Dataset versioning features
-* Managing SingleFrames and FrameGroups.
+Use the Hyper-Datasets Page to navigate between and manage hyper-datasets. 
+
+Click on a Hyper-Dataset card to open the dataset’s [version list](webapp_datasets_versioning.md), where you can view 
+and manage the dataset versions' lineage and contents. 
+
+Filter the hyper-datasets to find the one you’re looking for more easily. These filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />:
+* My Work - Show only hyper-datasets that you created
+* Tags - Choose which tags to filter by from a list of tags used in the hyper-datasets.
+  * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" 
+  respectively. These options appear on the top of the tag list.
+  * Filter by the absence of a tag (logical "NOT") by clicking its checkbox twice. An X will appear in the tag's checkbox.
 
 
-![image](../../img/hyperdatasets/datasets_01.png)
+![Hyper-Dataset page](../../img/hyperdatasets/datasets_01.png)
 
-## Dataset Cards
+## Hyper-Dataset Cards
 
-Dataset cards show summary information about versions: 
+The Hyper-Dataset cards display summarized dataset information: 
+
+![Hyper-Dataset card](../../img/hyperdatasets/hyperdataset_card.png)
+
 * Dataset name
-* Elapsed time since the last update. Hover over elapsed time and view date of last update.
+* Time since last update. Hover over elapsed time to view date of last update
 * User updating the Dataset
 * If the dataset contains dataset-level metadata, the card displays the <img src="/docs/latest/icons/ico-status-completed.svg" alt="Check mark" className="icon size-md space-sm" /> 
-    `Metadata` indicator, which is also a shortcut to [edit the Dataset's metadata](#editing-dataset-level-metadata) 
+    `Metadata` indicator, which opens the Metadata editor on click 
 * The number of versions in the Dataset
-* The total number of frames in all versions of the Dataset. If an asterisk (\*) appears next to **FRAMES**, then you can hover over it and see the name of the version whose frames were last updated.
-* The percentage of frames annotated in all versions of the Dataset. If an asterisk (\*) appears next to **ANNOTATED**, then you can hover over it and see the name of the version whose frames were last annotated.
+* The total number of frames in all versions of the Dataset. If an asterisk (\*) appears next to **FRAMES**, then you can hover over it and see the name of the version whose frames were last updated
+* The percentage of frames annotated in all versions of the Dataset. If an asterisk (\*) appears next to **ANNOTATED**, then you can hover over it and see the name of the version whose frames were last annotated
 * If the Dataset version's status is *Published*, then the Dataset's top labels appear (colors are editable). If the 
-  Dataset version is *Draft*, then no labels appear.
-
-Dataset cards allow you to open a specific Dataset to perform Dataset versioning and frames management.
+  Dataset version is *Draft*, then no labels appear
+* Tags
 
 :::note Change Label Color
 To change the label color coding, hover over a label color, click the hand pointer, and then select a new color.
 :::
 
-### Renaming a Dataset
-1. Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" />
-1. Click **Rename** <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" /> 
-1. Edit the name 
-1. Click <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> 
+### Hyper-Dataset Actions
 
-### Editing Dataset-level Metadata
-To edit the dataset-level metadata 
-1. Open the metadata edit window in one the following ways:
-    * Click <img src="/docs/latest/icons/ico-status-completed.svg" alt="Check mark" className="icon size-md space-sm" /> 
-    `Metadata`
-    * Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" />, then click **Edit Metadata** <img src="/docs/latest/icons/ico-metadata.svg" alt="Edit metadata" className="icon size-md space-sm" />
-1. Edit the section contents (JSON format) 
-1. Click **OK**
+Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> on the top right
+of a dataset card to open its context menu and access dataset actions:  
 
-        
+<div class="max-w-50">
 
+![Hyper-Dataset context menu](../../img/webapp_hyperdataset_card_context_menu.png)
 
-## Creating New Datasets
+</div>
 
-Create a new Dataset which will contain one version named `Current`. The new version will not contain any frames. 
+* **Rename** - Change the dataset’s name
+* **Add Tag** - Add label to the dataset to help easily classify groups of datasets.
+* **Edit Metadata** - Modify dataset-level metadata. This will open the metadata edit window, where you can edit the section
 
-* Click **+ NEW DATASET** **>** Enter a name and optionally a description **>** **CREATE DATASET**.
+## Create New Hyper-Datasets
 
+To create a new Hyper-Dataset, click the **+ NEW DATASET** button in the top right of the page, which will open a 
+**New Dataset** modal.
 
-## Sort Datasets
+![Hyper-Dataset creation modal](../../img/webapp_hyperdataset_creation.png)
 
-* In **RECENT**, choose either:
-
-    * **RECENT** - Sort by update time
-    * **NAME** - Sort alphabetically by Dataset name.
-  
-
-
+This creates a new Hyper-Dataset that contains a single, empty draft version.

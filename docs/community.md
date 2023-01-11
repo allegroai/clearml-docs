@@ -4,9 +4,9 @@ title: Community Resources
 
 ## Join the ClearML Conversation
 
-For feature requests or bug reports, see **ClearML** [GitHub Issues](https://github.com/allegroai/trains/issues).
+For feature requests or bug reports, see **ClearML** [GitHub Issues](https://github.com/allegroai/clearml/issues).
 
-If you have any questions, post on the **ClearML** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg).
+If you have any questions, post on the **ClearML** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg).
 
 Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with the **clearml** tag.
 
@@ -16,7 +16,7 @@ You can always find us at [clearml@allegro.ai](mailto:clearml@allegro.ai?subject
 
 Read the [ClearML Blog](https://clear.ml/blog/).
 
-Subscribe to the **ClearML** [Youtube Channel](https://www.youtube.com/c/ClearML) and view the tutorials, presentations, and discussions.
+Subscribe to the **ClearML** [YouTube Channel](https://www.youtube.com/c/ClearML) and view the tutorials, presentations, and discussions.
 
 Join us on Twitter [@clearmlapp](https://twitter.com/clearmlapp) for **ClearML** announcements and community discussions.
 
@@ -30,7 +30,7 @@ Contribution comes in many forms:
 
 * Reporting [issues](https://github.com/allegroai/clearml/issues) you've come upon
 * Participating in issue discussions in the [issue tracker](https://github.com/allegroai/clearml/issues) and the
-  [ClearML community slack space](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg)
+  [ClearML community slack space](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg)
 * Suggesting new features or enhancements
 * Implementing new features or fixing outstanding issues
 
@@ -86,7 +86,7 @@ Enhancement suggestions are tracked as GitHub issues. After you determine which 
 Before you submit a new PR:
 
 * Verify that the work you plan to merge addresses an existing [issue](https://github.com/allegroai/clearml/issues) (If not, open a new one)
-* Check related discussions in the [ClearML slack community](https://join.slack.com/t/clearml/shared_invite/zt-c0t13pty-aVUZZW1TSSSg2vyIGVPBhg) 
+* Check related discussions in the [ClearML slack community](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) 
   (Or start your own discussion on the ``#clearml-dev`` channel)
 * Make sure your code conforms to the ClearML coding standards by running:
   

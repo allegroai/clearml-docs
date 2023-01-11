@@ -52,12 +52,12 @@ title: Version 1.3
 **Bug Fixes**
 
 * Update Slack SDK requirement [ClearML GitHub issue #597](https://github.com/allegroai/clearml/issues/597)
-* Fix fork after task.close() is called [ClearML GitHub issue #605](https://github.com/allegroai/clearml/issues/605)
+* Fix fork after `task.close()` is called [ClearML GitHub issue #605](https://github.com/allegroai/clearml/issues/605)
 * Fix Azure storage upload [ClearML GitHub issue #598](https://github.com/allegroai/clearml/issues/598)
 * Fix offline mode crash
 * Fix task delete response not checked
 * Fix pipeline controller kwargs with list
-* Fix PipelineDecorator.debug_pipeline()
+* Fix `PipelineDecorator.debug_pipeline()`
 * Fix PipelineDecorator example
 * Fix Python 3.10 issues
 * Fix handling of legacy fileserver (files.community.clear.ml)

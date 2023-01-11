@@ -13,6 +13,8 @@ Use ClearML’s GUI Applications to manage ML workloads and automatically run yo
 Configure and launch app instances, then track their execution from the app dashboard.
 
 ClearML provides the following applications:
+* [**GPU Compute**](apps_gpu_compute.md) - Launch cloud machines on demand and optimize their usage according to a 
+  defined budget--no previous setup necessary
 * [**AWS Autoscaler**](apps_aws_autoscaler.md) - Optimize AWS EC2 instance usage according to a defined instance budget
 * [**GCP Autoscaler**](apps_gcp_autoscaler.md) - Optimize  GCP instance usage according to a defined instance budget
 * [**Hyperparameter Optimization**](apps_hpo.md) - Find the parameter values that yield the best performing models
@@ -45,7 +47,7 @@ The prefilled configuration wizard can be edited before launching the new app in
 :::
   
 ## App Instance Actions
-Access app instance actions, by right clicking an instance, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
+Access app instance actions, by right-clicking an instance, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
 
 ![App context menu](../../img/app_context_menu.png)
 

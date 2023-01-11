@@ -144,8 +144,18 @@ The Task must be connected to a git repository, since currently single script de
 
 | Command line options | Description | Default value |
 |-----|---|---|
-| `--jupyter-lab` | Download a JupyterLab environment | `true` |
-| `--vscode-server` | Download a VSCode environment | `true` |
+| `--attach`| Attach to running interactive session | Previous session|
+| `--project`| Set the project name to the iteractive session task| `DevOps` |
+| `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
+| `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
+| `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
+| `--verbose ` | Increase verbosity of logging | `none` |
+| `--docker`| Select the docker image to use in the interactive session on |`None` or previously used docker image|
+| `--debugging` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging <task_id>`| `none`|
+| `--queue`| Select the queue to launch the interactive session on | Previously used queue|
+| `--docker-args ` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
+| `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
+| `--vscode-server` | Install VSCode on interactive session | `true` |
 | `--public-ip` | Register the public IP of the remote machine (if you are running the session on a public cloud) | Session runs on the machine whose agent is executing the session|
 | `--init-script` | Specify a BASH init script file to be executed when the interactive session is being set up | `none` or previously entered BASH script |
 | `--user-folder` | Specify the path for the session's remote base folder for the session | Home folder(`~/`) or previously entered user folder path |

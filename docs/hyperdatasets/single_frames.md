@@ -56,7 +56,7 @@ For more information, see [Custom Metadata](custom_metadata.md).
 
 The panel below describes the details contained within a `frame`:
 
-<details className="cml-expansion-panel info">
+<details className="cml-expansion-panel configuration">
 <summary className="cml-expansion-panel-summary">Frame Structure</summary>
 <div className="cml-expansion-panel-content">
 
@@ -141,7 +141,7 @@ This image shows a SingleFrame in the ClearML Enterprise WebApp (UI) [frame view
 </details>
 <br/>
 
-<details className="cml-expansion-panel info">
+<details className="cml-expansion-panel configuration">
 <summary className="cml-expansion-panel-summary">SingleFrame details represented in the WebApp</summary>
 <div className="cml-expansion-panel-content">
 
@@ -222,8 +222,14 @@ For more information, see the `SingleFrame` class description.
 
 ### Adding SingleFrames to a Dataset Version
 
-Use the `DatasetVersion.add_frames` method to add SingleFrames to a [Dataset version](dataset.md#dataset-versioning)
-(see [Creating snapshots](dataset.md#creating-snapshots) or [Creating child versions](dataset.md#creating-child-versions)).
+Use the [`DatasetVersion.add_frames`](../references/hyperdataset/hyperdatasetversion.md#add_frames) method to add 
+SingleFrames to a [Dataset version](dataset.md#dataset-versioning) (see [Creating snapshots](dataset.md#creating-snapshots) 
+or [Creating child versions](dataset.md#creating-child-versions)). Frames that are already a part of the dataset version 
+will only be updated. 
+
+Use the `upload_retries` parameter to set the number of times the upload of a frame should be retried in case of failure, 
+before marking the frame as failed and continuing to upload the next frames. The method returns a list of frames that 
+were not successfully registered or uploaded. 
 
 ```python
 from allegroai import DatasetVersion, SingleFrame

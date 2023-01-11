@@ -121,7 +121,9 @@ model_list = Model.query_models(
     # If `True`, include archived models
     include_archived=True,
     # Maximum number of models returned
-    max_results=5
+    max_results=5,
+    # Only models with matching metadata
+    metadata={"key":"value"}
 )
 ```
 

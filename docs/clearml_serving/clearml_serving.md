@@ -20,7 +20,7 @@ solution.
 * Scalable
     * Multi model per container
     * Multi models per serving service
-    * Multi-service support (fully seperated multiple serving service running independently)
+    * Multi-service support (fully separated multiple serving service running independently)
     * Multi cluster support
     * Out-of-the-box node auto-scaling based on load/usage
 * Efficient
@@ -46,7 +46,7 @@ solution.
 * **Serving Service Task** - Control plane object storing configuration on all the endpoints. Support multiple separated 
   instance, deployed on multiple clusters.
 
-* **Inference Services** - Inference containers, performing model serving pre/post processing. Also supports CPU model 
+* **Inference Services** - Inference containers, performing model serving pre/post-processing. Also supports CPU model 
   inferencing.
 
 * **Serving Engine Services** - Inference engine containers (e.g. Nvidia Triton, TorchServe etc.) used by the Inference 

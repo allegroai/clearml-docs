@@ -9,7 +9,7 @@ View the models table in table view <img src="/docs/latest/icons/ico-table-view.
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your models according to 
 columns of interest. Use the details view to access a selected model’s details, while keeping the model list in view. 
-Details view can also be accessed by double clicking a specific model in the table view to open its details view. 
+Details view can also be accessed by double-clicking a specific model in the table view to open its details view. 
 
 ![Models table](../img/webapp_models_01.png)
 
@@ -28,7 +28,7 @@ The models table contains the following columns:
 | **TASK** | The experiment (Task) name that created the model. | String |
 | **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Date-time |
 | **DESCRIPTION** | The model description (not shown by default). | String |
-| *Metadata*| User defined metadata key column. Available options depend upon the models in the table. | String |
+| *Metadata* | User defined metadata key column. Available options depend upon the models in the table. | String |
 
 
 ## Customizing the Models Table
@@ -39,7 +39,7 @@ can be saved in a browser bookmark and shared with other ClearML users to collab
 Customize the table using any of the following:
 
 * Dynamic column order - Drag a column title to a different position.
-* Resize columns - Drag the column separator to change the width of that column. Double click the column separator for 
+* Resize columns - Drag the column separator to change the width of that column. Double-click the column separator for 
   automatic fit.
 * Changing table columns
     * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
@@ -51,7 +51,7 @@ Customize the table using any of the following:
 * Sort columns - By metadata, ML framework, description, and last update elapsed time.
 
 :::note
-The following models-table customizations are saved on a **per project** basis: 
+The following models-table customizations are saved on a **per-project** basis: 
 * Columns order
 * Column width
 * Active sort order
@@ -68,12 +68,12 @@ The following table describes the actions that can be done from the models table
 allow each feature. Model states are *Draft* (editable) and *Published* (read-only). 
 
 Access these actions with the context menu in any of the following ways:
-* In the models table, right click a model, or hover over a model and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In the models table, right-click a model, or hover over a model and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
 * In a model's info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
 
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
-| Details | View model details, which include general information, the model configuration, and label enumeration. Can also be accessed by double clicking a model in the models table | Any state |
+| Details | View model details, which include general information, the model configuration, and label enumeration. Can also be accessed by double-clicking a model in the models table | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
 | Archive | To more easily work with active models, move a model to the archive. See [Archiving](webapp_archiving.md). | Any state |
 | Restore | Action available in the archive. Restore a model to the active model table. | Any state |

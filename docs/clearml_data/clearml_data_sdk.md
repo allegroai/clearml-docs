@@ -28,6 +28,9 @@ ClearML Data supports multiple ways to create datasets programmatically, which p
   will inherit its data
 * [`Dataset.squash()`](#datasetsquash)  - Generate a new dataset from by squashing together a set of related datasets
 
+You can add metadata to your datasets using the `Dataset.set_metadata` method, and access the metadata using the
+`Dataset.get_metadata` method. See [`set_metadata`](../references/sdk/dataset.md#set_metadata) and [`get_metadata`](../references/sdk/dataset.md#get_metadata).
+
 ### Dataset.create()
 
 Use the [`Dataset.create`](../references/sdk/dataset.md#datasetcreate) class method to create a dataset.
@@ -169,15 +172,22 @@ dataset.add_files(
 ### add_external_files()
 
 To add files or folders to the current dataset, leaving them in their original location, use the [`Dataset.add_external_files`](../references/sdk/dataset.md#add_external_files) 
-method. Input the `source_url` argument, which can be a link from cloud storage (`s3://`, `gs://`, `azure://`) 
-or local / network storage (`file://`). 
+method. Input the `source_url` argument, which can be a link or a list of links from cloud storage (`s3://`, `gs://`, `azure://`) 
+or local / network storage (`file://`).
 
 ```python
 dataset = Dataset.create(dataset_name="my dataset", dataset_project="example project")
 dataset.add_external_files(
   source_url="s3://my/bucket/path_to_folder_or_file", 
   dataset_path="/my_dataset/new_folder/"
-) 
+)
+dataset.add_external_files(
+  source_url=[
+    "s3://my/bucket/path_to_folder_or_file",
+    "s3://my/bucket/path_to_another_folder_or_file", 
+  ],
+  dataset_path="/my_dataset/new_folder/"
+)
 ```
 
 There is an option to add a set of files based on wildcard matching of a single string or a list of wildcards, using the 

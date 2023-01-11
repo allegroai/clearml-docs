@@ -137,7 +137,8 @@ Install ClearML Agent as a system Python package and not in a Python virtual env
     * Mac - `$HOME/clearml.conf`
     * Windows - `\User\<username>\clearml.conf`
 
-1. Optionally, configure ClearML options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md). 
+1. Optionally, configure ClearML options for **ClearML Agent** (default docker, package manager, etc.). See the [ClearML Configuration Reference](configs/clearml_conf.md)
+   and the [ClearML Agent Environment Variables reference](clearml_agent/clearml_agent_env_var.md). 
    
 :::note
 The ClearML Enterprise server provides a [configuration vault](webapp/webapp_profile.md#configuration-vault), the contents 
@@ -177,7 +178,7 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 
 1. Save the configuration.
 
-## Execution
+## Deployment
 
 ### Spinning Up an Agent
 You can spin up an agent on any machine: on-prem and/or cloud instance. When spinning up an agent, you assign it to 
@@ -241,6 +242,27 @@ clearml-agent daemon --detached --queue group_a group_b --order-fairness  --gpus
 ```
 It will make sure the agent will pull from the `group_a` queue, then from `group_b`, then back to `group_a`, etc. This ensures 
 that `group_a` or `group_b` will not be able to starve one another of resources.
+
+#### SSH Access
+To make SSH keys available to an agent running in Docker mode, use the `SSH_AUTH_SOCK` environment variable. 
+
+The command below will execute an agent in Docker mode and assign it to service a queue. The agent will have access to 
+the SSH keys provided in the environment variable.
+
+```
+SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <your queue name>  --docker
+```
+
+### Kubernetes 
+Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML Agent adds the missing scheduling 
+capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent’s 
+features (scheduling, job prioritization, and more).
+
+There are two options for deploying the ClearML Agent to a Kubernetes cluster:
+* Spin ClearML Agent as a long-lasting service pod
+* Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
+
+See more details [here](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
 
 ### Explicit Task Execution
 
@@ -440,7 +462,7 @@ Do not enqueue training or inference tasks into the services queue. They will pu
 
 ### Setting Server Credentials
 
-Self hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by default with a services queue.
+Self-hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by default with a services queue.
 By default, the server is open and does not require username and password, but it can be [password-protected](deploying_clearml/clearml_server_security.md#user-access-security).
 In case it is password-protected, the services agent will need to be configured with server credentials (associated with a user).
 

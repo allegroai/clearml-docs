@@ -108,25 +108,34 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.7.0
+#### v1.9.1
 
-* **eu-north-1** : ami-03ee969287d8b1a47 
-* **ap-south-1** : ami-073c5dea0beec36c0 
-* **eu-west-3** : ami-0cb567cf433b299ad 
-* **eu-west-2** : ami-0ef38a2ccf5c364de 
-* **eu-west-1** : ami-019d260fd4b6db5e7 
-* **ap-northeast-3** : ami-01e475dbc65dc0d4a 
-* **ap-northeast-2** : ami-0e221a2fb4ade84d9 
-* **ap-northeast-1** : ami-07d7dc7f42635969e 
-* **sa-east-1** : ami-043eabce410297328 
-* **ca-central-1** : ami-0b9d4e0956bce9845 
-* **ap-southeast-1** : ami-01fc0fde77f01216f 
-* **ap-southeast-2** : ami-06ffb982d248a789a 
-* **eu-central-1** : ami-0af6285c987ad5908 
-* **us-east-2** : ami-0025b1c46aeb6df3a 
-* **us-west-1** : ami-0c8ea443571b6cf1d 
-* **us-west-2** : ami-05cbc8cc29efeb4fe 
-* **us-east-1** : ami-0beea2cf9e3d9639b 
+* **af-south-1** : ami-021539f5fc8f94f65 
+* **ap-east-1** : ami-0516b793043df0085 
+* **ap-northeast-1** : ami-0e00a0fe6d6afe749 
+* **ap-northeast-2** : ami-0b0974059ee2e2a90 
+* **ap-northeast-3** : ami-0d82430702001bb83 
+* **ap-south-1** : ami-0ad45d6e3dfbc41f9 
+* **ap-south-2** : ami-07ea3a5f2c313d49e 
+* **ap-southeast-1** : ami-0ff02771ee1fa7c4d 
+* **ap-southeast-2** : ami-016902f5f81fa4258 
+* **ap-southeast-3** : ami-0e82ce3c647a40473 
+* **ca-central-1** : ami-04ffbaf003ede08d7 
+* **eu-central-1** : ami-03c42792758f73d96 
+* **eu-central-2** : ami-0b7f8ffb4bd79bc21 
+* **eu-north-1** : ami-071bc56a4c0b6ab54 
+* **eu-south-1** : ami-0943b2d594e7b65da 
+* **eu-south-2** : ami-0f983ee3b07ad255f 
+* **eu-west-1** : ami-00bc04dbfcc0514a3 
+* **eu-west-2** : ami-01357fee0019ad70a 
+* **eu-west-3** : ami-072a69d99e2adb5e2 
+* **me-central-1** : ami-0957aaee4fbdcf15d 
+* **me-south-1** : ami-0e95901f43ad9f319 
+* **sa-east-1** : ami-098108afe569918c4 
+* **us-east-2** : ami-00e47ff4bac1d4c1a 
+* **us-west-1** : ami-0e74c3c896a6fd9d7 
+* **us-west-2** : ami-056db56d1423936e9 
+* **us-east-1** : ami-042b84d4a4b5c4813
 
 ## Next Step
 

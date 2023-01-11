@@ -7,11 +7,11 @@ title: Tasks
 A Task is a single code execution session, which can represent an experiment, a step in a workflow, a workflow controller, 
 or any custom implementation you choose.
 
-To transform an existing script into a **ClearML Task**, one must call the [Task.init()](../references/sdk/task.md#taskinit) method 
+To transform an existing script into a **ClearML Task**, one must call the [`Task.init()`](../references/sdk/task.md#taskinit) method 
 and specify a task name and its project. This creates a Task object that automatically captures code execution 
 information as well as execution outputs.
 
-All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md) 
+All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md),
 and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
 model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). Additionally, 
 you can work with tasks in Offline Mode, in which all information is saved in a local folder (see 
@@ -29,7 +29,7 @@ It's possible to copy ([clone](../webapp/webapp_exp_reproducing.md)) a task mult
 
 ## Task Sections
 
-The sections of **ClearML Task** are made up of the information that a task captures and stores, which consists of code 
+The sections of ClearML Task are made up of the information that a task captures and stores, which consists of code 
 execution details and execution outputs. This information is used for tracking 
 and visualizing results, reproducing, tuning, and comparing experiments, and executing workflows. 
 
@@ -37,7 +37,7 @@ The captured [code execution information](../webapp/webapp_exp_track_visual.md#e
 * Git information 
 * Uncommitted code modifications
 * Python environment
-* Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration)
+* [Execution configuration](#execution-configuration) and hyperparameters
 
 The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-results) includes:
 * [Console output](../webapp/webapp_exp_track_visual.md#console)
@@ -47,6 +47,21 @@ The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-
 * [Models](artifacts.md) 
 
 To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
+
+### Execution Configuration
+ClearML logs a task’s hyperparameters specified as command line arguments, environment or code level variables. This 
+allows experiments to be reproduced, and their hyperparameters and results can be saved and compared, which is key to 
+understanding model behavior.
+
+Hyperparameters can be added from anywhere in your code, and ClearML provides multiple ways to log them. If you specify 
+your parameters using popular python packages, such as [argparse](https://docs.python.org/3/library/argparse.html) and 
+[click](https://click.palletsprojects.com/), all you need to do is [initialize](../references/sdk/task#taskinit) a task, and 
+ClearML will automatically log the parameters. ClearML also provides methods to explicitly report parameters.
+
+When executing a task through a ClearML agent, the ClearML instrumentation of your code allows for using the ClearML UI 
+to override the original specified values of your parameters.
+
+See [Hyperparameters](hyperparameters.md) for more information.
 
 ### Artifacts
 
@@ -95,7 +110,7 @@ Available task types are:
 * *controller* - A task that lays out the logic for other tasks’ interactions, manual or automatic (e.g. a pipeline 
   controller) 
 * *optimizer* - A specific type of controller for optimization tasks (e.g. [hyperparameter optimization](hpo.md))
-* *service* - Long lasting or recurring service (e.g. server cleanup, auto ingress, sync services etc)
+* *service* - Long lasting or recurring service (e.g. server cleanup, auto ingress, sync services etc.)
 * *monitor* - A specific type of service for monitoring
 * *application* - A task implementing custom applicative logic, like [auto-scaler](../guides/services/aws_autoscaler.md) 
   or [clearml-session](../apps/clearml_session.md)
@@ -156,7 +171,7 @@ The following table describes the task states and state transitions.
 | *Running* | The experiment is running locally or remotely. | If the experiment is manually or programmatically terminated, the state becomes *Aborted*. |
 | *Completed* | The experiment ran and terminated successfully. | If the experiment is reset or cloned, the state of the cloned experiment or newly cloned experiment becomes *Draft*. Resetting deletes the logs and output of a previous run. Cloning creates an exact, editable copy. |
 | *Failed* | The experiment ran and terminated with an error. | The same as *Completed*. |
-| *Aborted* | The experiment ran, and was manually or programmatically terminated. | The same as *Completed*. |
+| *Aborted* | The experiment ran, and was manually or programmatically terminated. The server's [non-responsive task monitor](../deploying_clearml/clearml_server_config.md#non-responsive-task-watchdog) aborts a task automatically after no activity has been detected for a specified time interval (configurable). | The same as *Completed*. |
 | *Published* | The experiment is read-only. Publish an experiment to prevent changes to its inputs and outputs. | A *Published* experiment cannot be reset. If it is cloned, the state of the newly cloned experiment becomes *Draft*. |
 
 ## SDK Interface

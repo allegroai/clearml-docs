@@ -10,7 +10,7 @@ View the runs table in table view <img src="/docs/latest/icons/ico-table-view.sv
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, 
 using the buttons on the top left of the page. Use the table view for a comparative view of your runs according to 
 columns of interest. Use the details view to access a selected run’s details, while keeping the pipeline runs list in view. 
-Details view can also be accessed by double clicking a specific pipeline run in the table view to open its details view. 
+Details view can also be accessed by double-clicking a specific pipeline run in the table view to open its details view. 
 
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
 
@@ -39,7 +39,7 @@ Customize the table using any of the following:
   to view and select columns to show. Click **Metric** and **Hyper Parameter** to add the respective custom columns
 * [Filter columns](#filtering-columns)
 * Sort columns
-* Resize columns - Drag the column separator to change the width of that column. Double click the column separator for 
+* Resize columns - Drag the column separator to change the width of that column. Double-click the column separator for 
   automatic fit.
 
 Changes are persistent (cached in the browser) and represented in the URL, so customized settings can be saved in a 
@@ -70,7 +70,7 @@ To clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset
 in the top right corner of the table.
 
 :::note
-The following table customizations are saved on a per pipeline basis:
+The following table customizations are saved on a per-pipeline basis:
 * Columns order
 * Column width
 * Active sort order
@@ -95,12 +95,12 @@ The following table describes the actions that can be done from the run table, i
 that allow each operation.  
 
 Access these actions with the context menu in any of the following ways:
-* In the pipeline runs table, right click a run, or hover over a pipeline and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In the pipeline runs table, right-click a run, or hover over a pipeline and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
 * In a pipeline info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
 
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
-| Details | View pipeline details. Can also be accessed by double clicking a run in the pipeline runs table. | Any state |  None  |
+| Details | View pipeline details. Can also be accessed by double-clicking a run in the pipeline runs table. | Any state |  None  |
 | Run | Create a new pipeline run. Configure and enqueue it for execution. See [Create Run](#create-run).  | Any State | *Pending* |
 | Abort | Manually stop / cancel a run. | *Running* / *Pending* | *Aborted* |
 | Continue | Rerun with the same parameters. |  *Aborted* | *Pending* |

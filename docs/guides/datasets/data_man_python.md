@@ -72,10 +72,10 @@ dataset.finalize()
 
 After a dataset has been closed, it can no longer be modified. This ensures future reproducibility. 
 
-The information about the dataset, including a list of files and their sizes, can be viewed
-in the WebApp, in the dataset task's **ARTIFACTS** tab.
+Information about the dataset can be viewed in the WebApp, in the dataset's [details panel](../../webapp/datasets/webapp_dataset_viewing.md#version-details-panel). 
+In the panel's **CONTENT** tab, you can see a table summarizing version contents, including file names, file sizes, and hashes.
 
-![image](../../img/examples_data_management_cifar_dataset.png)
+![Dataset content tab](../../img/examples_data_management_cifar_dataset.png)
 
 ## Data Ingestion
 

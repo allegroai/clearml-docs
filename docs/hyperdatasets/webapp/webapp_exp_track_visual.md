@@ -17,7 +17,7 @@ In an experiment's page, go to the **DATAVIEWS** tab to view all the experiment'
 * On-the-fly [data augmentation](#augmentation)
 * [Iteration controls](#iteration-control)
 
-![image](../../img/hyperdatasets/web-app/dataview_tab.png)
+![Dataview tab](../../img/hyperdatasets/web-app/dataview_tab.png)
 
 ### Input
 

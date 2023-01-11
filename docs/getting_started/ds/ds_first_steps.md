@@ -132,8 +132,8 @@ Now, [command-line arguments](../../fundamentals/hyperparameters.md#tracking-hyp
 
 Sit back, relax, and watch your models converge :) or continue to see what else can be done with ClearML [here](ds_second_steps.md).
 
-## Youtube Playlist
+## YouTube Playlist
 
-Or watch the Youtube Getting Started Playlist on our Youtube Channel!
+Or watch the YouTube Getting Started Playlist on our YouTube Channel!
 
 [![Watch the video](https://img.youtube.com/vi/bjWwZAzDxTY/hqdefault.jpg)](https://www.youtube.com/watch?v=bjWwZAzDxTY&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=2)

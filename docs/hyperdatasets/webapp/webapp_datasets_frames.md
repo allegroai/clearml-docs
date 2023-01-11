@@ -7,7 +7,7 @@ of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFram
 Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
 filtering logic. 
 
-![Dataset page](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
+![Dataset page](../../img/hyperdatasets/web-app/dataset_versions.png)
 
 ## Frame Viewer
 
@@ -275,25 +275,27 @@ The panel presents labels only from masks that are currently displayed.
 ## Annotations
 ### Adding Frame Objects (Regions of Interest)
 
-You can add annotations by drawing new bounding areas, and copying existing annotations in the same or other frames.
+Annotate images and video by labeling regions of interest in Dataset version frames. You can create new annotations
+and copy existing annotations.
 
 #### Creating New Frame Objects
 
-To draw a bounding area for a new annotation:
+To draw a new annotation:
 
-1. Click one of the following modes and create a bounding area in the frame:   
+1. Click one of the following modes to choose what annotation to create:
    
-    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode icon" className="icon size-md space-sm" /> - Rectangle mode: Drag a 
-   rectangle onto the frame.   
+    * <img src="/docs/latest/icons/ico-rectangle-icon-purple.svg" alt="Rectangle mode icon" className="icon size-md space-sm" /> - Rectangle mode: 
+   Click then drag the cursor to create a rectangle annotation on the frame.  
     
-    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" alt="Ellipse mode icon" className="icon size-md space-sm" /> - Ellipse mode: Drag an ellipse 
-   onto the frame.   
+    * <img src="/docs/latest/icons/ico-ellipse-icon-purple.svg" alt="Ellipse mode icon" className="icon size-md space-sm" /> - Ellipse mode: 
+   Click then drag the cursor to create an ellipse annotation on the frame. 
     
-    * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode icon" className="icon size-md space-sm" /> - Polygon mode: Click the polygon
-   vertices onto the frame.       
+    * <img src="/docs/latest/icons/ico-polygon-icon-purple.svg" alt="Polygon mode icon" className="icon size-md space-sm" /> - Polygon mode: 
+   Each click sets polygon vertices on the frame. Click again on the initial vertex to close the polygon. 
     
-    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode icon" className="icon size-md space-sm" /> - Key points mode: Click each 
-   keypoint onto the frame. After the clicking the last keypoint, click the first again to close the bounding area.   
+    * <img src="/docs/latest/icons/ico-keypoint-icon-purple.svg" alt="Key points mode icon" className="icon size-md space-sm" /> - Key points mode: 
+   Each click adds a keypoint to the frame. After clicking the last keypoint, click  <img src="/docs/latest/icons/ico-save.svg" alt="Check mark" className="icon size-md space-sm" /> 
+   or <code>Enter</code> to save the annotation. Click <code>Esc</code> to cancel the annotation.
 
     A new annotation is created. 
 

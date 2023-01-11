@@ -48,7 +48,7 @@ make sure to close a task, before initializing a new one. To close a task simply
 (see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a task, its project needs to be specified. If the project entered does not exist, it will be created on-the-fly. 
-Projects can be divided into sub-projects, just like folders are broken into sub-folders.
+Projects can be divided into subprojects, just like folders are broken into sub-folders.
 
 For example:
 ```python
@@ -90,11 +90,12 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * Python environment
     * Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration) 
   
-To control a task's framework logging, use the `auto_connect_framworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
+To control a task's framework logging, use the `auto_connect_frameworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
 method. Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
 input a dictionary, with framework-boolean pairs. 
 
 For example: 
+
 ```python
 auto_connect_frameworks={
     'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
@@ -104,11 +105,28 @@ auto_connect_frameworks={
 }
 ```
 
+You can also input wildcards as dictionary values. ClearML will log a model created by a framework only if its local path 
+matches at least one wildcard. 
+
+For example, in the code below, ClearML will log PyTorch models only if their paths have the 
+`.pt` extension. The unspecified frameworks' values default to `true` so all their models are automatically logged. 
+
+```python
+auto_connect_frameworks={'pytorch' : '*.pt'}
+```
+
+For TensorBoard, you can specify whether to log hyperparameters. By default, ClearML automatically logs TensorBoard's 
+parameters, but you can disable the logging with the following code:
+
+```python
+auto_connect_frameworks={'tensorboard': {'report_hparams': False}} 
+```
+ 
 ### Task Reuse
 Every `Task.init` call will create a new task for the current execution.
 In order to mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
 * The last time it was executed (on this machine) was under 72 hours ago (configurable, see 
-  `sdk.development.task_reuse_time_window_in_hours` in the [`sdk.development` section](../configs/clearml_conf.md#sdkdevelopment) of 
+  [`sdk.development.task_reuse_time_window_in_hours`](../configs/clearml_conf.md#task_reuse) in 
   the ClearML configuration reference)
 * The previous task execution did not have any artifacts / models
 
@@ -213,9 +231,10 @@ The task's outputs, such as artifacts and models, can also be retrieved.
 
 ## Querying / Searching Tasks
 
-Searching and filtering tasks can be done via the [web UI](../webapp/webapp_overview.md) and programmatically.
-Input search parameters into the [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) method, which returns a 
-list of task objects that match the search. 
+Search and filter tasks programmatically. Input search parameters into the [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) 
+method, which returns a list of task objects that match the search. Pass `allow_archived=False` to filter out archived 
+tasks.
+
 
 For example:
 ```python
@@ -223,6 +242,7 @@ task_list = Task.get_tasks(
     task_ids=None,  # type Optional[Sequence[str]]
     project_name=None,  # Optional[str]
     task_name=None,  # Optional[str]
+    allow_archived=True, # [bool]
     task_filter=None,  # Optional[Dict]#
     # tasks with tag `included_tag` and without tag `excluded_tag`
     tags=['included_tag', '-excluded_tag'] 
@@ -420,7 +440,7 @@ Upload the execution data that the Task captured offline to the ClearML Server u
 
   You can also use the offline task to update the execution of an existing previously executed task by providing the 
   previously executed task’s ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
-  `iteratiion_offset`.   
+  `iteration_offset`.   
   
   ```python
   Task.import_offline_session(
@@ -443,7 +463,7 @@ class method and provide the new seed value, **before initializing the task**.
 You can disable the deterministic behavior entirely by passing `Task.set_random_seed(None)`. 
 
 ## Artifacts
-Artifacts are the output files created by a task. ClearML uploads and logs these products so they can later be easily 
+Artifacts are the output files created by a task. ClearML uploads and logs these products, so they can later be easily 
 accessed, modified, and used.
 
 ### Logging Artifacts
@@ -693,7 +713,7 @@ config_file_yaml = task.connect_configuration(
 ![Task configuration objects](../img/fundamentals_task_config_object.png)
 
 ### User Properties
-A task’s user properties do not impact task execution so you can add / modify the properties at any stage. Add user 
+A task’s user properties do not impact task execution, so you can add / modify the properties at any stage. Add user 
 properties to a task with the [Task.set_user_properties](../references/sdk/task.md#set_user_properties) method.
 
 ```python

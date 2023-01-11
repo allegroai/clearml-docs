@@ -15,7 +15,7 @@ which always returns the main Task.
 ## Hyperparameters
 
 ClearML automatically logs the command line options defined with `argparse`. A parameter dictionary is logged by 
-connecting it to the Task using a call to the [Task.connect](../../references/sdk/task.md#connect) method.
+connecting it to the Task using a call to the [`Task.connect`](../../references/sdk/task.md#connect) method.
 
 ```python
 additional_parameters = {
