@@ -17,8 +17,6 @@ http[s]?://allegroai.github.io/clearml-helm-charts
 http[s]?://gist.github.com
 http[s]?://twitter.com/clearmlapp
 http[s]?://s3\.amazonaws\.com.*
-http[s]?://github\.com/.*/issues/.*
-http[s]?://github\.com/.*/pull/.*
 http[s]?://.*\.linkedin\.com/.*
 [$]\(uname
 http[s]?://github\.com/.*\#L\d*$
