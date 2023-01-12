@@ -53,7 +53,7 @@ task_params['nb_epoch'] = 6
 task_params['hidden_dim'] = 512
 ```
 
-Parameter dictionaries appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **General**.
+Parameter dictionaries appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **General**.
 
 ![image](../../../img/examples_keras_jupyter_20.png)
 

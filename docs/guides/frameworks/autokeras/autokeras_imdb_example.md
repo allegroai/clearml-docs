@@ -20,7 +20,7 @@ which are titled **:monitor: machine**.
 
 ## Hyperparameters
 
-ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **TF_DEFINE**.
+ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **TF_DEFINE**.
 
 ![image](../../../img/examples_keras_16.png)
 

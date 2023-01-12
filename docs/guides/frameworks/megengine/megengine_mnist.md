@@ -15,7 +15,7 @@ The example script does the following:
 ## Hyperparameters
 
 ClearML automatically logs command line options defined with `argparse`. They appear in the experiment's **CONFIGURATION** 
-tab under **HYPER PARAMETERS** **>** **Args**.
+tab under **HYPERPARAMETERS** **>** **Args**.
 
 ![Configuration tab](../../../img/examples_megengine_mnist_config.png)
 

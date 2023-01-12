@@ -79,7 +79,7 @@ recent), minimum, and / or maximum values.
 1. Click settings. 
 1. For metrics, click **+ METRIC**, expand a metric category, and then select the metric checkboxes of those to show in 
    the leaderboard, and select the metric values (min / max / last).
-1. For hyperparameters, click **+ HYPER PARAMETERS**, and then select the hyperparameter checkboxes of those to show in the leaderboard.
+1. For hyperparameters, click **+ HYPERPARAMETERS**, and then select the hyperparameter checkboxes of those to show in the leaderboard.
 
 ## Step 5: Enable Auto Refresh
 

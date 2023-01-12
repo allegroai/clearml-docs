@@ -48,7 +48,7 @@ the experiment's **SCALARS** tab.
 ## Hyperparameters
 
 ClearML automatically logs command line options defined with abseil flags. They appear in **CONFIGURATION** **>** 
-**HYPER PARAMETERS** **>** **TF_DEFINE**.
+**HYPERPARAMETERS** **>** **TF_DEFINE**.
 
 ![image](../../../img/examples_pytorch_abseil_params.png)
 

@@ -42,7 +42,7 @@ configuration_dict = {
 }
 configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
 ```
-Parameter dictionaries appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **General**.
+Parameter dictionaries appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **General**.
 
 ![image](../../../../../img/examples_audio_classification_UrbanSound8K_01.png)
 
