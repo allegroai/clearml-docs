@@ -52,7 +52,7 @@ See the [Logger SDK reference page](../references/sdk/logger.md).
 
 ### Hyperparameter Optimization 
 
-ClearML's `optimization` module includes classes that support hyperparameter optimization:
+ClearML's `optimization` module includes classes that support hyperparameter optimization (HPO):
 * [HyperParameterOptimizer](../references/sdk/automation_controller_pipelinecontroller.md) - Hyperparameter search 
   controller class 
 * Optimization search strategy classes including [Optuna](../references/sdk/hpo_optuna_optuna_optimizeroptuna.md), [HpBandSter](../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md),

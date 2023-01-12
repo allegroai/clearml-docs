@@ -6,7 +6,7 @@ title: Hyperparameter Optimization
 Hyperparameters are variables that directly control the behaviors of training algorithms, and have a significant effect on 
 the performance of the resulting machine learning models. Finding the hyperparameter values that yield the best 
 performing models can be complicated. Manually adjusting hyperparameters over the course of many training trials can be 
-slow and tedious. Luckily, you can automate and boost hyperparameter optimization with ClearML's 
+slow and tedious. Luckily, you can automate and boost hyperparameter optimization (HPO) with ClearML's 
 [**`HyperParameterOptimizer`**](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class.
 
 ## ClearML's Hyperparameter Optimization

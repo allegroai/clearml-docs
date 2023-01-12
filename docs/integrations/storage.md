@@ -22,9 +22,9 @@ The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/
 
 ### Configuring AWS S3
 
-Modify these parts of the clearml.conf file and add the key, secret, and region of the s3 bucket.
+Modify these parts of the clearml.conf file and add the key, secret, and region of the S3 bucket.
 
-It's possible to also give access to specific s3 buckets in the `aws.s3.credentials` section. The default configuration 
+It's possible to also give access to specific S3 buckets in the `aws.s3.credentials` section. The default configuration 
 provided in the `aws.s3` section is applied to any bucket without a bucket-specific configuration. 
 
 You can also enable using a credentials chain to let Boto3 

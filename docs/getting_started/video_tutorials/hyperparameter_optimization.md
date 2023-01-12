@@ -20,7 +20,7 @@ keywords: [mlops, components, hyperparameter optimization, hyperparameter]
 <details className="cml-expansion-panel info">
 <summary className="cml-expansion-panel-summary">Read the transcript</summary>
 <div className="cml-expansion-panel-content">
-Hello and welcome to ClearML. In this video we’ll take a look at one cool way of using the agent other than rerunning a task remotely: hyperparameter optimization.
+Hello and welcome to ClearML. In this video we’ll take a look at one cool way of using the agent other than rerunning a task remotely: hyperparameter optimization (HPO).
 
 By now, we know that ClearML can easily capture our hyperparameters and scalars as part of the experiment tracking. We also know we can clone any task and change its hyperparameters, so they’ll be injected into the original code at runtime. In the last video, we learnt how to make a remote machine execute this task automatically by using the agent. 
 

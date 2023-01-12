@@ -4,7 +4,7 @@ title: Image Hyperparameter Optimization - Jupyter Notebook
 
 [hyperparameter_search.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/image/hyperparameter_search.ipynb) 
 demonstrates using ClearML's [HyperParameterOptimizer](../../../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md)
-class to perform automated hyperparameter optimization. 
+class to perform automated hyperparameter optimization (HPO). 
 
 The code creates a HyperParameterOptimizer object, which is a search controller. The search controller uses the
 [Optuna](../../../../../references/sdk/hpo_optuna_optuna_optimizeroptuna.md) search strategy optimizer. 

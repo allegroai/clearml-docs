@@ -68,7 +68,7 @@ clearml-data add [-h] [--id ID] [--dataset-folder DATASET_FOLDER]
 |`--id` | Dataset's ID. Default: previously created / accessed dataset| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--files`| Files / folders to add. Items will be uploaded to the dataset’s designated storage.  | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--wildcard`|  Add specific set of files, denoted by these wildcards. For example: `~/data/*.jpg ~/data/json`. Multiple wildcards can be passed. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
-|`--links`| Files / folders link to add. Supports s3, gs, azure links. Example: `s3://bucket/data` `azure://bucket/folder`. Items remain in their original location. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+|`--links`| Files / folders link to add. Supports S3, GS, Azure links. Example: `s3://bucket/data` `azure://bucket/folder`. Items remain in their original location. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--dataset-folder` | Dataset base folder to add the files to in the dataset. Default: dataset root| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--non-recursive` | Disable recursive scan of files | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--verbose` | Verbose reporting | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
