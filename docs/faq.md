@@ -530,7 +530,7 @@ info panel > CONSOLE tab, use the *Download full log* feature.
 You can use the UI's [experiment comparison features](webapp/webapp_exp_comparing.md) to compare the logged hyperparameter 
 and accuracy values of several experiments. 
 
-In an experiment comparison page, under the **HYPER PARAMETERS** tab, you can view the experiments' hyperparameter values 
+In an experiment comparison page, under the **HYPERPARAMETERS** tab, you can view the experiments' hyperparameter values 
 in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
 
 The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 

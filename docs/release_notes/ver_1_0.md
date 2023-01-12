@@ -258,7 +258,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
 * Improve experiment table columns 
   * Add filter by user
   * Add filters time columns
-  * Add filters for custom columns (metrics and hyper parameters)
+  * Add filters for custom columns (metrics and hyperparameters)
   * Add secondary nested sorting
 * Add worker<->queue clickable reference in workers and queues tables
 * Add presenting all metric debug samples concurrently
@@ -270,7 +270,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
 * Fix UI storage credentials input missing for HTML artifacts
 * Fix sorting custom metric columns sort treats empty fields as zeroes
 * Fix UI experiments table redundant rendering on auto refresh
-* Fix missing URL encoding for hyper parameters key names
+* Fix missing URL encoding for hyperparameters key names
 * Fix UI experiment section edit opens outside viewable screen
 * Fix UI missing default selection of artifacts in full screen view
 * Fix UI variant name not shown in plots

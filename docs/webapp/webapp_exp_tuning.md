@@ -133,7 +133,7 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 
 **To add, change, or delete hyperparameters:**
 
-* In the **CONFIGURATION** tab **>** **HYPER PARAMETERS** > **General** **>** hover **>** **EDIT** **>** add, change,
+* In the **CONFIGURATION** tab **>** **HYPERPARAMETERS** > **General** **>** hover **>** **EDIT** **>** add, change,
   or delete keys and /or values **>** **SAVE**.
 
 

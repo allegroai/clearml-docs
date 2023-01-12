@@ -65,7 +65,7 @@ The model configuration is stored with the model.
 
 ### Hyperparameters
 
-ClearML automatically logs the TensorFlow Definitions, which appear in **CONFIGURATION** **>** **HYPER PARAMETERS**.
+ClearML automatically logs the TensorFlow Definitions, which appear in **CONFIGURATION** **>** **HYPERPARAMETERS**.
 
 ![image](../../../img/integration_keras_tuner_01.png)
 

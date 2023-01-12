@@ -22,7 +22,7 @@ plots are automatically captured by ClearML.
 ## Hyperparameters
 
 ClearML automatically logs command line options defined with argparse and TensorFlow Definitions, which appear in 
-**CONFIGURATIONS > HYPER PARAMETERS > Args** and **TF_DEFINE** respectively. 
+**CONFIGURATIONS > HYPERPARAMETERS > Args** and **TF_DEFINE** respectively. 
 
 ![PyTorch Lightning parameters](../../../img/examples_pytorch_lightning_params.png)
 

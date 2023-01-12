@@ -15,6 +15,6 @@ The debug sample images appear according to metric, in the experiment's **DEBUG 
 
 ## Hyperparameters
 
-ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **TF_DEFINE**.
+ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **TF_DEFINE**.
 
 ![image](../../../img/examples_tensorboard_toy_pytorch_00.png)

@@ -17,7 +17,7 @@ The loss and accuracy metric scalar plots appear in the experiment's page in the
 
 ## Hyperparameters
 
-ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPER PARAMETERS** 
+ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPERPARAMETERS** 
 **>** **TF_DEFINE**.
 
 ![image](../../../img/examples_tensorflow_mnist_01.png)

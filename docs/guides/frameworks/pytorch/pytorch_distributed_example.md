@@ -58,11 +58,11 @@ param = {'worker_{}_stuff'.format(dist.get_rank()): 'some stuff ' + str(randint(
 Task.current_task().connect(param)
 ```
 
-Command line options appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args**.
+Command line options appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **Args**.
 
 ![image](../../../img/examples_pytorch_distributed_example_01.png)
 
-Parameter dictionaries appear in the **General** section of **HYPER PARAMETERS**.
+Parameter dictionaries appear in the **General** section of **HYPERPARAMETERS**.
 
 ```python
 param = {'worker_{}_stuff'.format(dist.get_rank()): 'some stuff ' + str(randint(0, 100))}

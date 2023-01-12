@@ -24,7 +24,7 @@ additional_parameters = {
 Task.current_task().connect(additional_parameters)
 ```
 
-Command line options appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args**.
+Command line options appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **Args**.
 
 ![image](../../img/examples_subprocess_example_01.png)
 

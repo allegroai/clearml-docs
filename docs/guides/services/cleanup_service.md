@@ -53,7 +53,7 @@ an `APIClient` object that establishes a session with the ClearML Server, and ac
 
 ## Configuration
 The experiment’s hyperparameters are explicitly logged to ClearML using the [`Task.connect`](../../references/sdk/task.md#connect) 
-method. View them in the WebApp, in the experiment’s **CONFIGURATION** page under **HYPER PARAMETERS > General**.
+method. View them in the WebApp, in the experiment’s **CONFIGURATION** page under **HYPERPARAMETERS > General**.
 
 The task can be reused. Clone the task, edit its parameters, and enqueue the task to run in ClearML Agent [services mode](../../clearml_agent.md#services-mode).
 

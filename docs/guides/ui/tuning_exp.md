@@ -32,7 +32,7 @@ Clone the experiment to create an editable copy for tuning.
 
 To demonstrate tuning, change two hyperparameter values.
 
-1. In the info panel, **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args** **>** Hover and click **EDIT**.
+1. In the info panel, **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **Args** **>** Hover and click **EDIT**.
 
 1. Change the value of `batch_size` from `64` to `32`.
 
@@ -104,12 +104,12 @@ To compare the original and tuned experiments:
     * **DETAILS** - The **ARTIFACTS** section, including input and output models with their network designs, and other artifacts;
         the **EXECUTION** section execution, including source code control, installed Python packages and versions, 
       uncommitted changes, and the Docker image name which, in this case, is empty.
-    * **HYPER PARAMETERS** - The hyperparameters and their values.
+    * **HYPERPARAMETERS** - The hyperparameters and their values.
     * **SCALARS** - Scalar metrics with the option to view them as charts or values.
     * **PLOTS** - Plots of any data with the option to view them as charts or values.
     * **DEBUG SAMPLES** - Media including images, audio, and video uploaded by your experiment shown as thumbnails.
 1. Examine the differences.
-    1. Compare the hyperparameters. In the **HYPER PARAMETERS** tab, expand **ARGS**. The hyperparameters `batch_size` 
+    1. Compare the hyperparameters. In the **HYPERPARAMETERS** tab, expand **ARGS**. The hyperparameters `batch_size` 
        and `lr` are shown with a different background color. The values are different.
     1. Compare the metrics. In the **SCALARS** tab, to the right of **Add Experiment**, select the plot or value comparison:
         * **Graph** - The scalar metrics plots show `pytorch mnist train` and `Clone of pytorch mnist train`.

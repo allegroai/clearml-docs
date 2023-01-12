@@ -23,7 +23,7 @@ appear in the experiment's page in the [web UI](../../../webapp/webapp_overview.
 ## Hyperparameters
 
 ClearML automatically logs command line options defined with `argparse`. They appear in **CONFIGURATION** **>** 
-**HYPER PARAMETERS** **>** **Args**.
+**HYPERPARAMETERS** **>** **Args**.
 
 ![image](../../../img/examples_pytorch_tensorboardx_01.png)
 

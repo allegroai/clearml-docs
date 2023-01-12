@@ -22,7 +22,7 @@ The optimizer Task, `Hyperparameter Optimization`, and the experiments appear in
 ### Hyperparameters
 
 The `HyperParameterOptimizer`'s configuration, which is provided when the object instantiated, are stored under the 
-optimizer task's **CONFIGURATION** **>** **HYPER PARAMETERS**.
+optimizer task's **CONFIGURATION** **>** **HYPERPARAMETERS**.
 
 ```python
 optimizer = HyperParameterOptimizer(
@@ -101,7 +101,7 @@ Use the ClearML Web UI [experiment comparison](../../../../../webapp/webapp_exp_
 
 ### Side by Side Hyperparameter Value Comparison
 
-In the experiment comparison window, **HYPER PARAMETERS** tab, select **Values** in the list (the right of **+ Add Experiment**), and hyperparameter differences appear with a different background color.
+In the experiment comparison window, **HYPERPARAMETERS** tab, select **Values** in the list (the right of **+ Add Experiment**), and hyperparameter differences appear with a different background color.
 
 ![Hyperparameter comparison](../../../../../img/examples_hyperparameter_search_06.png)
 
