@@ -59,6 +59,8 @@ solution.
 
 * **Dashboards** - Customizable dashboard solution on top of the collected statistics, e.g. Grafana
 
+![Grafana dashboard](../img/clearml_serving_grafana.png)
+
 ## Next Steps
 
 See ClearML Serving setup instructions [here](clearml_serving_setup.md). For further details, see the ClearML Serving 
