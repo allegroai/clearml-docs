@@ -59,7 +59,7 @@ solution.
 
 * **Dashboards** - Customizable dashboard solution on top of the collected statistics, e.g. Grafana
 
-![Grafana dashboard](../img/clearml_serving_grafana.png)
+![Grafana dashboard](../img/gif/clearml_serving_fragana_gif.gif)
 
 ## Next Steps
 
