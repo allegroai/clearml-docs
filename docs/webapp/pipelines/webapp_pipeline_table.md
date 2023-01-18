@@ -36,7 +36,7 @@ The models table contains the following columns:
 Customize the table using any of the following:
 * Dynamic column ordering - Drag a column title to a different position.
 * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> 
-  to view and select columns to show. Click **Metric** and **Hyper Parameter** to add the respective custom columns
+  to view and select columns to show. Click **Metric** and **Hyperparameter** to add the respective custom columns
 * [Filter columns](#filtering-columns)
 * Sort columns
 * Resize columns - Drag the column separator to change the width of that column. Double-click the column separator for 
