@@ -255,7 +255,7 @@ This release is not backwards compatible - see notes below on upgrading
 
 **Bug Fixes**
 
-- Fix poltly plots converting `NaN` to `nan` instead of `null` [ClearML GitHub issue #373](https://github.com/allegroai/clearml/issues/373)
+- Fix plotly plots converting `NaN` to `nan` instead of `null` [ClearML GitHub issue #373](https://github.com/allegroai/clearml/issues/373)
 - Fix deprecation warning [ClearML GitHub issue #376](https://github.com/allegroai/clearml/issues/376)
 - Fix plotly multi-index without index names [ClearML GitHub issue #399](https://github.com/allegroai/clearml/issues/399)
 - Fix click support [ClearML GitHub issue #437](https://github.com/allegroai/clearml/issues/437)

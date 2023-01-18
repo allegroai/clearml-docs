@@ -672,12 +672,12 @@ your task’s configuration using the [`Task.connect`](../references/sdk/task.md
 to a task, ClearML automatically logs all object elements (e.g. class members, dictionary key-values pairs).
 
 ```python
-class person:
+class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
         
-me = person('Erik', 5)
+me = Person('Erik', 5)
 
 params_dictionary = {'epochs': 3, 'lr': 0.4}
 
