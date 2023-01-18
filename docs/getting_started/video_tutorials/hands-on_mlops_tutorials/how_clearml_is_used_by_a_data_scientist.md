@@ -29,8 +29,8 @@ You can see the overview of the code, so I'm not going to dive into the code imm
 context, and then we'll go deeper from there. 
 
 So the idea is that I'm doing audio classification here. I have a client who I want to give like a proof of concept on 
-how well it can work, and I'm doing that on the Urbansound dataset. So the first thing I'll do, and you'll see that 
-later is I'll get the data from the Urbansound servers. I'm using a script called `get_data.py` for that, and then for 
+how well it can work, and I'm doing that on the UrbanSound dataset. So the first thing I'll do, and you'll see that 
+later is I'll get the data from the UrbanSound servers. I'm using a script called `get_data.py` for that, and then for 
 reasons I'll go further into in the video I'm actually putting all of that data into a ClearML dataset which is a special 
 kind of dataset task or like a special kind of ClearML task that can keep track of your data. Then the `preprocessing.py` 
 script will get that data and then convert the WAV files or like the audio files to spectrum images. Essentially you're 
@@ -60,7 +60,7 @@ of this data is flowing. It's a lot easier to use a ClearML dataset instead.
 
 So what I'm doing here and this is actually really cool. I'm using a single link to a zip file that I made, which is a 
 subset of the complete data, so it only has like 120 samples or something, and then we use that to iterate really quickly. 
-We also have the part to the Urbansounds full dataset, which we then label as `full dataset` and that will give us the 
+We also have the part to the UrbanSounds full dataset, which we then label as `full dataset` and that will give us the 
 freedom to switch between subset and full dataset. So I will essentially create two ClearML data versions, one with the 
 subset, one with the full dataset, and that will allow me to very quickly change without having the whole thing, with 
 different versions on my desk all the time. What I used to do is then have different versions or different 
@@ -197,7 +197,7 @@ closer to this diagonal shape that we're trying to get to. So this is showing me
 learning something, it's doing something so that actually is very interesting. 
 
 And then you have debug samples as well, which you can use to show actually whatever kind of media you need. So these 
-are for example, the images that I generated that are the mel spectrograms so that the preprocessing outputs uh, and you 
+are for example, the images that I generated that are the mel spectrogram's so that the preprocessing outputs, and you 
 can just show them here with the name of what the label was and what to predict it was. So I can just have a very quick 
 overview of how this is working, and then I can actually even do it with audio samples as well. So I can for example here 
 say this is labeled "dog", and it is predicted as "children playing". So then I can listen to it and get an idea on, is 
