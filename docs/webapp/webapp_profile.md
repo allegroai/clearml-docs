@@ -37,7 +37,7 @@ Under **USER PREFERENCES**, users can set a few web UI options:
   Enabled by default.
 * **Don't show pro tips periodically** - Stop showing ClearML usage tips on login. Disabled by default.
 
-:::note Self-hosted ClearML Server 
+:::info Self-hosted ClearML Server 
 The self-hosted ClearML Server has an additional option to enable sharing anonymous telemetry data with the ClearML 
 engineering team.
 :::
@@ -56,7 +56,7 @@ In the **Web App Cloud Access** section, enter the following credentials:
 
 ### Multiple Workspaces
 
-:::note ClearML Hosted Service Feature
+:::info ClearML Hosted Service Feature
 Multiple workspaces is only available on the ClearML Hosted Service
 :::
 
@@ -130,7 +130,7 @@ in that workspace. You can rejoin the workspace only if you are re-invited.
 
 ### Configuration Vault
 
-:::note Enterprise Feature
+:::info Enterprise Feature
 This feature is available under the ClearML Enterprise plan
 :::
 
@@ -152,11 +152,13 @@ Fill in values using any of ClearML supported configuration formats: HOCON / JSO
 * Click the toggle atop the vault to enable / disable the configurations
 * Once enabled, the configurations will be merged to the configuration file during ClearML and ClearML Agent usage 
 
+![Configuration vault](../img/settings_configuration_vault.png)
+
 ## Users & Groups  
 
 ClearML Hosted Service users can add users to their workspace.
 
-:::note Hosted Service Feature
+:::info Hosted Service Feature
 Inviting new teammates is only available on the ClearML Hosted Service
 :::
 
@@ -167,6 +169,8 @@ Each row of the table includes:
 * User status (`Active` or `Pending`) 
 * If the user's invitation is pending, the date the user was added
 * [User groups](#user-groups) (ClearML Enterprise feature)
+
+![Users table](../img/settings_user_table.png)
 
 #### Inviting New Teammates
 
