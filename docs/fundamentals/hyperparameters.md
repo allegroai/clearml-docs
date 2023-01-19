@@ -25,7 +25,7 @@ the following types of parameters:
   * [click](https://click.palletsprojects.com) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py).
   * [argparse](https://docs.python.org/3/library/argparse.html) - see code example [here](../guides/frameworks/pytorch/pytorch_tensorboardx.md).
   * [Python Fire](https://github.com/google/python-fire)  - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
-  * [LightningCLI](https://pytorch-lightning.readthedocs.io/en/stable/api/pytorch_lightning.utilities.cli.html) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
+  * [LightningCLI](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.cli.LightningCLI.html) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
 * TensorFlow Definitions (`absl-py`). See examples of ClearML's automatic logging of TF Defines:
     * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
     * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
@@ -66,7 +66,7 @@ connect Python objects and configuration objects, as well as manually set and up
 
 #### Connecting Python Objects 
 Users can directly connect Python objects, such as dictionaries and custom classes, to tasks, using the 
-[Task.connect](../references/sdk/task.md#connect) method. Once objects are connected to a task, all object elements 
+[`Task.connect`](../references/sdk/task.md#connect) method. Once objects are connected to a task, all object elements 
 (e.g. class members, dictionary key-values pairs) are automatically logged by ClearML. Additionally, ClearML tracks these 
 values as they change through your code.
 
@@ -75,12 +75,12 @@ pair in a parameter dictionary).
 
 #### Connecting Configuration Objects
 Configuration objects are dictionaries or configuration files connected to the task using the 
-[Task.connect_configuration](../references/sdk/task.md#connect_configuration) method. With this method, configuration 
+[`Task.connect_configuration`](../references/sdk/task.md#connect_configuration) method. With this method, configuration 
 objects are saved as blobs i.e. ClearML is not aware of their internal structure.
 
 #### Setting and Updating Parameters
-ClearML provides methods to set and update task parameters manually. Use the [Task.set_parameters](../references/sdk/task.md#set_parameters) 
-method to define parameters manually. To update the parameters in an experiment, use the [Task.set_parameters_as_dict](../references/sdk/task.md#set_parameters_as_dict) 
+ClearML provides methods to set and update task parameters manually. Use the [`Task.set_parameters`](../references/sdk/task.md#set_parameters) 
+method to define parameters manually. To update the parameters in an experiment, use the [`Task.set_parameters_as_dict`](../references/sdk/task.md#set_parameters_as_dict) 
 method. The `set_parameters_as_dict` method updates parameters while the `set_parameters` method overrides the parameters.
 
 ClearML does not automatically track changes to explicitly set parameters.
@@ -89,14 +89,14 @@ ClearML does not automatically track changes to explicitly set parameters.
 User properties do not impact tasks execution and so can be modified at any stage. They offer the convenience of setting 
 helpful values which then be displayed in the [experiment table](../webapp/webapp_exp_table.md) (i.e. customize columns), 
 making it easier to search / filter experiments. Add user properties to an experiment with the 
-[Task.set_user_properties](../references/sdk/task.md#set_user_properties) method.
+[`Task.set_user_properties`](../references/sdk/task.md#set_user_properties) method.
 
 ### Accessing Parameters
 
 ClearML provides methods to directly access a task’s logged parameters.
 
 To get all of a task's parameters and properties (hyperparameters, configuration objects, and user properties), use the 
-[Task.get_parameters](../references/sdk/task.md#get_parameters) method, which will return a dictionary with the parameters, 
+[`Task.get_parameters`](../references/sdk/task.md#get_parameters) method, which will return a dictionary with the parameters, 
 including their sub-sections (see [WebApp sections](#webapp-interface) below). 
 
 ## WebApp Interface
