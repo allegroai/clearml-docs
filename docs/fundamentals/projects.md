@@ -46,7 +46,7 @@ Projects can also be created using the [`projects.create`](../references/api/pro
 
 ### View All Projects in System
 
-To view all projects in the system, use the `Task` class method `get_projects`:
+To view all projects in the system, use the `Task.get_projects` class method:
 
 ```python
 project_list = Task.get_projects()

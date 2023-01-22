@@ -153,7 +153,9 @@ Compatible with Docker versions 0.6.5 and above
 
 ---
 
-**`agent.docker_internal_mounts`** (*dict*)
+<a id="docker_internal_mounts"/> 
+
+**`agent.docker_internal_mounts`** (*dict*) 
 
 * Set internal mount points inside the Docker. This is especially useful for non-root Docker container images.  
 
