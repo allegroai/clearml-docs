@@ -9,6 +9,7 @@ title: Version 1.9
 metadata [ClearML GitHub issue #890](https://github.com/allegroai/clearml/issues/890)
 * Fix `StorageManager.list(with_metadata=True)` returns metadata dictionaries missing the `size` values [ClearML GitHub issue #865](https://github.com/allegroai/clearml/issues/865)
 * Fix `UniformParameterRange.to_list` throws error when step size is not defined [ClearML GitHub issue #859](https://github.com/allegroai/clearml/issues/859)
+* Fix Azure storage upload not working [ClearML GitHub issue #868](https://github.com/allegroai/clearml/issues/868)
 * Fix Dataset previews are not uploaded to specified `output_uri`
 * Fix TriggerScheduler docstrings [ClearML GitHub issue #881](https://github.com/allegroai/clearml/issues/881)
 * Fix numpy 1.24 support
