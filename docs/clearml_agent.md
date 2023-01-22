@@ -262,6 +262,15 @@ You should see a path to a temporary file, something like this:
 Then run your `clearml-agent` in Docker mode, which will automatically detect the `SSH_AGENT_SOCK` environment variable, 
 and mount the socket into any container it spins. 
 
+You can also explicitly set the `SSH_AGENT_SOCK` environment variable when executing an agent. The command below will 
+execute an agent in Docker mode and assign it to service a queue. The agent will have access to 
+the SSH keys provided in the environment variable.
+
+```
+SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <your queue name>  --docker
+```
+
+
 ### Kubernetes 
 Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML Agent adds the missing scheduling 
 capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent’s 
