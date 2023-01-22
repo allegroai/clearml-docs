@@ -250,7 +250,7 @@ see [clearml.conf](configs/clearml_conf.md#docker_internal_mounts)).
 If you want to use existing auth sockets with ssh-agent, you can verify your host ssh-agent is working correctly with:
 
 ```commandline
-echo $SSH_AGENT_SOCK
+echo $SSH_AUTH_SOCK
 ```
 
 You should see a path to a temporary file, something like this:
@@ -259,12 +259,12 @@ You should see a path to a temporary file, something like this:
 /tmp/ssh-<random>/agent.<random>
 ```
 
-Then run your `clearml-agent` in Docker mode, which will automatically detect the `SSH_AGENT_SOCK` environment variable, 
+Then run your `clearml-agent` in Docker mode, which will automatically detect the `SSH_AUTH_SOCK` environment variable, 
 and mount the socket into any container it spins. 
 
-You can also explicitly set the `SSH_AGENT_SOCK` environment variable when executing an agent. The command below will 
+You can also explicitly set the `SSH_AUTH_SOCK` environment variable when executing an agent. The command below will 
 execute an agent in Docker mode and assign it to service a queue. The agent will have access to 
-the SSH keys provided in the environment variable.
+the SSH socket provided in the environment variable.
 
 ```
 SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <your queue name>  --docker
