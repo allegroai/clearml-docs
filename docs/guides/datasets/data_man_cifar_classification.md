@@ -85,7 +85,9 @@ from clearml import Dataset
 
 dataset_path = Dataset.get(
     dataset_name=dataset_name, 
-    dataset_project=dataset_project).get_local_copy()
+    dataset_project=dataset_project,
+    alias="Cifar dataset"
+).get_local_copy()
 
 trainset = datasets.CIFAR10(
     root=dataset_path,
@@ -94,6 +96,12 @@ trainset = datasets.CIFAR10(
     transform=transform
 )
 ```
+
+In cases like this, where you use a dataset in a task, you can have the dataset's ID stored in the task’s 
+hyperparameters. Passing `alias=<dataset_alias_string>` stores the dataset’s ID in the 
+`dataset_alias_string` parameter in the experiment's **CONFIGURATION > HYPERPARAMETERS > Datasets** section. This way 
+you can easily track which dataset the task is using. 
+
 The Dataset's [`get_local_copy`](../../references/sdk/dataset.md#get_local_copy) method will return a path to the cached, 
 downloaded dataset. Then we provide the path to Pytorch's dataset object.
 
