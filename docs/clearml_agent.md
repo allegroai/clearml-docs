@@ -270,7 +270,6 @@ the SSH keys provided in the environment variable.
 SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <your queue name>  --docker
 ```
 
-
 ### Kubernetes 
 Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML Agent adds the missing scheduling 
 capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent’s 
