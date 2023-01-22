@@ -2,6 +2,21 @@
 title: Version 1.9
 ---
 
+### ClearML SDK 1.9.1
+
+**Bug Fixes**
+* Fix `Model.get_metadata()`, `Model.get_all_metadata()`, and `Model.get_metadata_casted()` methods not returning 
+metadata [ClearML GitHub issue #890](https://github.com/allegroai/clearml/issues/890)
+* Fix `StorageManager.list(with_metadata=True)` returns metadata dictionaries missing the `size` values [ClearML GitHub issue #865](https://github.com/allegroai/clearml/issues/865)
+* Fix `UniformParameterRange.to_list` throws error when step size is not defined [ClearML GitHub issue #859](https://github.com/allegroai/clearml/issues/859)
+* Fix Dataset previews are not uploaded to specified `output_uri`
+* Fix TriggerScheduler docstrings [ClearML GitHub issue #881](https://github.com/allegroai/clearml/issues/881)
+* Fix numpy 1.24 support
+* Fix casting `None` to `int` fails uploads and permission checks
+* Fix `task.connect` list of dicts parsed incorrectly in remote
+* Add Python 3.11 support
+* Fix IDE info when running in pure Python console
+
 ### ClearML Server 1.9.2
 
 **Bug Fixes**
