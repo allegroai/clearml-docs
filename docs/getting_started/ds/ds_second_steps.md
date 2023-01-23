@@ -24,7 +24,7 @@ Once we have a Task object we can query the state of the Task, get its Model, sc
 ## Log Hyperparameters
 
 For full reproducibility, it's paramount to save Hyperparameters for each experiment. Since Hyperparameters can have substantial impact
-on Model performance, saving and comparing these between experiments is sometimes the key to understand model behavior.
+on Model performance, saving and comparing these between experiments is sometimes the key to understanding model behavior.
 
 ClearML supports logging `argparse` module arguments out of the box, so once ClearML is integrated into the code, it automatically logs all parameters provided to the argument parser.
 
@@ -93,8 +93,8 @@ Check out the [artifacts retrieval](https://github.com/allegroai/clearml/blob/ma
 
 ### Models
 
-Models are a special kind artifact.
-Models created by popular frameworks (such as Pytorch, Tensorflow, Scikit-learn) are automatically logged by ClearML.
+Models are a special kind of artifact.
+Models created by popular frameworks (such as PyTorch, TensorFlow, Scikit-learn) are automatically logged by ClearML.
 All snapshots are automatically logged. In order to make sure we also automatically upload the model snapshot (instead of saving its local path),
 we need to pass a storage location for the model files to be uploaded to.
 
@@ -107,11 +107,12 @@ task = Task.init(
 )
 ```
 
-Now, whenever the framework (TF/Keras/PyTorch etc.) stores a snapshot, the model file is automatically uploaded to the bucket to a specific folder for the experiment.
+Now, whenever the framework (TensorFlow/Keras/PyTorch etc.) stores a snapshot, the model file is automatically uploaded to the bucket to a specific folder for the experiment.
 
-Loading models by a framework is also logged by the system, these models appear under the “Input Models” section, under the Artifacts tab.
+Loading models by a framework is also logged by the system; these models appear in an experiment's **Artifacts** tab,
+under the "Input Models" section.
 
-Check out model snapshots examples for [TF](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py),
+Check out model snapshots examples for [TensorFlow](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py),
 [PyTorch](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py),
 [Keras](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py),
 [Scikit-Learn](https://github.com/allegroai/clearml/blob/master/examples/frameworks/scikit-learn/sklearn_joblib_example.py).
@@ -127,7 +128,7 @@ local_weights_path = last_snapshot.get_local_copy()
 
 Like before we have to get the instance of the Task training the original weights files, then we can query the task for its output models (a list of snapshots), and get the latest snapshot.
 :::note
-Using Tensorflow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing our requested snapshot.
+Using TensorFlow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing our requested snapshot.
 :::
 As with Artifacts, all models are cached, meaning the next time we run this code, no model needs to be downloaded.
 Once one of the frameworks will load the weights file, the running Task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.

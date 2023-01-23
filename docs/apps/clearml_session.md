@@ -96,7 +96,7 @@ To reconnect to a previous session, execute `clearml-session` with no additional
 to an existing session will show up: 
 
 ```console
-Connect to active session id=c7302b564aa945408aaa40ac5c69399c [Y]/n?`
+Connect to active session id=c7302b564aa945408aaa40ac5c69399c [Y]/n?
 ```
 
 If multiple sessions were launched from a local machine and are still active, choose the desired session:

@@ -48,7 +48,7 @@ Check out some of ClearML's automatic reporting examples for supported packages:
   * [Tensorboard with PyTorch](../guides/frameworks/pytorch/pytorch_tensorboard.md) - logging TensorBoard scalars, debug samples, and text integrated into 
     code that uses PyTorch
 * TensorBoardX
-  * [TensorBoardX with Pytorch](../guides/frameworks/tensorboardx/tensorboardx.md) - logging TensorBoardX scalars, debug 
+  * [TensorBoardX with PyTorch](../guides/frameworks/tensorboardx/tensorboardx.md) - logging TensorBoardX scalars, debug 
   samples, and text in code using PyTorch
   * [MegEngine MNIST](../guides/frameworks/megengine/megengine_mnist.md) - logging scalars using TensorBoardX's `SummaryWriter`  
 * Matplotlib 
