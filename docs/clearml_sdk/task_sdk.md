@@ -396,8 +396,8 @@ a_func_task = task.create_function_task(
     some_argument=123
 )
 ```
-Arguments passed to the function will be automatically logged under the **HYPERPARAMETER > Function** section in the 
-experiment's **CONFIGURATION** tab. 
+Arguments passed to the function will be automatically logged in the 
+experiment's **CONFIGURATION** tab under the **HYPERPARAMETER > Function** section . 
 Like any other arguments, they can be changed from the UI or programmatically.
 
 :::note Function Task Creation
