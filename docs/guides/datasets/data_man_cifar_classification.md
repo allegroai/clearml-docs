@@ -103,6 +103,6 @@ hyperparameters. Passing `alias=<dataset_alias_string>` stores the dataset’s I
 you can easily track which dataset the task is using. 
 
 The Dataset's [`get_local_copy`](../../references/sdk/dataset.md#get_local_copy) method will return a path to the cached, 
-downloaded dataset. Then we provide the path to Pytorch's dataset object.
+downloaded dataset. Then we provide the path to PyTorch's dataset object.
 
 The script then trains a neural network to classify images using the dataset created above.

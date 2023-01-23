@@ -29,7 +29,7 @@ the following types of parameters:
 * TensorFlow Definitions (`absl-py`). See examples of ClearML's automatic logging of TF Defines:
     * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
     * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
-* [Hydra](https://github.com/facebookresearch/hydra) - ClearML logs the `Omegaconf` which holds all the configuration files, 
+* [Hydra](https://github.com/facebookresearch/hydra) - ClearML logs the `OmegaConf` which holds all the configuration files, 
   as well as values overridden during runtime. See code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/hydra/hydra_example.py).
     
 :::tip Disabling Automatic Logging
@@ -47,7 +47,7 @@ Environment variables can be logged by modifying the [clearml.conf](../configs/c
 parameter specifying parameters to log.
 
 ```editorconfig
-log_os_environments: ["AWS_*", "CUDA_VERSION"]`
+log_os_environments: ["AWS_*", "CUDA_VERSION"]
 ```
 
 It's also possible to specify environment variables using the `CLEARML_LOG_ENVIRONMENT` variable.

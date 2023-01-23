@@ -73,7 +73,7 @@ title: Version 1.4
     * Add manual seaborn logging example [ClearML GitHub PR #628](https://github.com/allegroai/clearml/pull/628)
     * Change package author
     * Change pipeline example to run locally [ClearML GitHub PR #642](https://github.com/allegroai/clearml/pull/642)
-    * Update Pytorch Lightning example for `pytorch-lightning>=v1.6.0` [ClearML GitHub PR #650](https://github.com/allegroai/clearml/pull/650)
+    * Update PyTorch Lightning example for `pytorch-lightning>=v1.6.0` [ClearML GitHub PR #650](https://github.com/allegroai/clearml/pull/650)
 
 **Bug Fixes**
 * Fix Keras model config serialization in `PatchKerasModelIO` [ClearML GitHub issue #614](https://github.com/allegroai/clearml/issues/614)

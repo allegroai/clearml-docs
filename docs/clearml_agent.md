@@ -307,7 +307,7 @@ clearml-agent execute --id <task-id> --docker
 
 ### Debugging
 
-* Run a `clearml-agent` daemon in foreground mode, sending all output to the console.
+Run a `clearml-agent` daemon in foreground mode, sending all output to the console.
 ```bash
 clearml-agent daemon --queue default --foreground
 ```

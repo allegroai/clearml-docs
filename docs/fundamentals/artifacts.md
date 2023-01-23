@@ -13,9 +13,9 @@ interface.
 
 Once integrated into code, ClearML automatically logs and tracks models and any snapshots created by the following 
 frameworks:
-- Tensorflow (see [code example](../guides/frameworks/tensorflow/tensorflow_mnist.md))
+- TensorFlow (see [code example](../guides/frameworks/tensorflow/tensorflow_mnist.md))
 - Keras (see [code example](../guides/frameworks/keras/keras_tensorboard.md))
-- Pytorch (see [code example](../guides/frameworks/pytorch/pytorch_mnist.md))
+- PyTorch (see [code example](../guides/frameworks/pytorch/pytorch_mnist.md))
 - scikit-learn (only using joblib) (see [code example](../guides/frameworks/scikit-learn/sklearn_joblib_example.md))
 - XGBoost (only using joblib) (see [code example](../guides/frameworks/xgboost/xgboost_sample.md))
 - FastAI (see [code example](../guides/frameworks/fastai/fastai_with_tensorboard.md))
