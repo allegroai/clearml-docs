@@ -64,7 +64,7 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
         * [click](https://click.palletsprojects.com) (see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py)).
         * argparse (see argparse logging example [here](../guides/reporting/hyper_parameters.md).)
         * [Python Fire](https://github.com/google/python-fire)  - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
-        * [LightningCLI](https://pytorch-lightning.readthedocs.io/en/stable/api/pytorch_lightning.utilities.cli.html) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
+        * [LightningCLI](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.cli.LightningCLI.html) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
     * TensorFlow Definitions (`absl-py`)
     * [Hydra](https://github.com/facebookresearch/hydra) - the Omegaconf which holds all the configuration files, as well as overridden values. 
 * **Models** - ClearML automatically logs and updates the models and all snapshot paths saved with the following frameworks:
@@ -672,12 +672,12 @@ your task’s configuration using the [`Task.connect`](../references/sdk/task.md
 to a task, ClearML automatically logs all object elements (e.g. class members, dictionary key-values pairs).
 
 ```python
-class person:
+class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
         
-me = person('Erik', 5)
+me = Person('Erik', 5)
 
 params_dictionary = {'epochs': 3, 'lr': 0.4}
 

@@ -32,6 +32,12 @@ Organizing your datasets into projects by use-case makes it easier to access the
 If only a project is specified when using [`Dataset.get`](../references/sdk/dataset.md#datasetget), the method returns the 
 most recent dataset in a project. The same is true with tags; if a tag is specified, the method will return the most recent dataset that is labeled with that tag.
 
+In cases where you use a dataset in a task (e.g. consuming a dataset), you can easily track which dataset the task is 
+using by using `Dataset.get`'s `alias` parameter. Pass `alias=<dataset_alias_string>`, and the task using the dataset 
+will store the dataset’s ID in the `dataset_alias_string` parameter under the task's **CONFIGURATION > HYPERPARAMETERS >
+Datasets` section.
+
+
 ## Document your Datasets 
 
 Attach informative metrics or debug samples to the Dataset itself. Use the [`get_logger`](../references/sdk/dataset.md#get_logger)

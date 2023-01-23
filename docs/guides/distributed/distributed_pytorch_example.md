@@ -67,7 +67,7 @@ param = {'worker_{}_stuff'.format(dist.get_rank()): 'some stuff ' + str(randint(
 Task.current_task().connect(param)
 ```
 
-All the hyperparameters appear in **CONFIGURATION** **>** **HYPER PARAMETERS**.
+All the hyperparameters appear in **CONFIGURATION** **>** **HYPERPARAMETERS**.
 
 ![Experiment hyperparameters Args](../../img/examples_pytorch_distributed_example_01.png)
 

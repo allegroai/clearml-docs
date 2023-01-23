@@ -40,7 +40,7 @@ in the experiment's page **>** **SCALARS**.
 
 ## Hyperparameters
 
-ClearML automatically logs command line options defined with `argparse`. They appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args**.
+ClearML automatically logs command line options defined with `argparse`. They appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **Args**.
 
 ![image](../../../img/examples_pytorch_mnist_01.png)
 

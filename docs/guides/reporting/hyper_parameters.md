@@ -7,7 +7,7 @@ script demonstrates:
 * ClearML's automatic logging of `argparse` command line options and TensorFlow Definitions
 * Logging user-defined hyperparameters with a parameter dictionary and connecting the dictionary to a Task. 
 
-Hyperparameters appear in the **web UI** in the experiment's page, under **CONFIGURATION** **>** **HYPER PARAMETERS**. 
+Hyperparameters appear in the **web UI** in the experiment's page, under **CONFIGURATION** **>** **HYPERPARAMETERS**. 
 Each type is in its own subsection. Parameters from older experiments are grouped together with the ``argparse`` command 
 line options (in the **Args** subsection).
 
@@ -28,7 +28,7 @@ parser.add_argument('--argparser_str_value', help='string value', default='a str
 args = parser.parse_args()
 ```
 
-Command line options appears in **HYPER PARAMETERS** **>** **Args**.
+Command line options appears in **HYPERPARAMETERS** **>** **Args**.
 
 ![image](../../img/examples_reporting_hyper_param_01.png)
 
@@ -48,7 +48,7 @@ flags.DEFINE_string('echo5', '5', 'Text to echo.', module_name='test')
 
 ```    
 
-TensorFlow Definitions appear in **HYPER PARAMETERS** **>** **TF_DEFINE**.
+TensorFlow Definitions appear in **HYPEPARAMETERS** **>** **TF_DEFINE**.
 
 ![image](../../img/examples_reporting_hyper_param_03.png)
 
@@ -77,7 +77,7 @@ parameters['float'] = '9.9'
 
 ```
 
-Parameters from dictionaries connected to Tasks appear in **HYPER PARAMETERS** **>** **General**.
+Parameters from dictionaries connected to Tasks appear in **HYPERPARAMETERS** **>** **General**.
 
 ![image](../../img/examples_reporting_hyper_param_02.png)
 

@@ -16,7 +16,7 @@ The sections below describe the following scenarios:
 ## Building Tasks
 ### Dataset Creation
 
-Let's assume we have some code that extracts data from a production Database into a local folder.
+Let's assume we have some code that extracts data from a production database into a local folder.
 Our goal is to create an immutable copy of the data to be used by further steps:
 
 ```bash
@@ -24,7 +24,7 @@ clearml-data create --project data --name dataset
 clearml-data sync --folder ./from_production 
 ```
 
-We could also add a Tag `latest` to the Dataset, marking it as the latest version.
+We could also add a tag `latest` to the Dataset, marking it as the latest version.
 
 ### Preprocessing Data
 The second step is to preprocess the date. First we need to access it, then we want to modify it,

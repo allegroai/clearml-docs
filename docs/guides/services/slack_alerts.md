@@ -80,7 +80,7 @@ The script supports the following additional command line options:
 ## Configuration
     
 ClearML automatically logs command line options defined with argparse. They appear in the experiment’s **CONFIGURATION** 
-page under **HYPER PARAMETERS > Args**.
+page under **HYPERPARAMETERS > Args**.
 
 ![Monitoring configuration](../../img/examples_slack_config.png)
 

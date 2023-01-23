@@ -2,6 +2,17 @@
 title: Version 1.9
 ---
 
+### ClearML Server 1.9.2
+
+**Bug Fixes**
+* Fix "Unable to load image" error in UI experiment debug samples after entering storage credentials [ClearML Web GitHub issue #46](https://github.com/allegroai/clearml-web/issues/46)
+* Fix incorrect default project name displayed in UI "Clone Experiment" modal [ClearML Server GitHub issue #171](https://github.com/allegroai/clearml-server/issues/171) 
+* Fix UI experiment debug sample viewer iteration slider not working
+* Fix UI experiment console log jumps backwards unnecessarily on refresh
+* Fix UI published report is not expandable
+* Fix UI published report's description is not editable
+* Fix UI experiment-reset popup displays incorrect experiment count 
+
 ### ClearML Server 1.9.1
 
 **New Features and Improvements**

@@ -117,11 +117,11 @@ dataset = Dataset.get(
 Pass `auto_create=True`, and a dataset will be created on-the-fly with the input attributes (project name, dataset name, 
 and tags) if no datasets match the query. 
 
-In cases where you use a dataset in a task (e.g. consuming a dataset), you can have its ID stored in the task’s hyper 
-parameters: pass `alias=<dataset_alias_string>`, and the task using the dataset will store the dataset’s ID in the 
-`dataset_alias_string` parameter under the `Datasets` hyper parameters section. This way you can easily track which 
+In cases where you use a dataset in a task (e.g. consuming a dataset), you can have its ID stored in the task’s 
+hyperparameters: pass `alias=<dataset_alias_string>`, and the task using the dataset will store the dataset’s ID in the 
+`dataset_alias_string` parameter under the `Datasets` hyperparameters section. This way you can easily track which 
 dataset the task is using. If you use `alias` with `overridable=True`, you can override the dataset ID from the UI’s 
-**CONFIGURATION > HYPER PARAMETERS >** `Datasets` section, allowing you to change the dataset used when running a task 
+**CONFIGURATION > HYPERPARAMETERS >** `Datasets` section, allowing you to change the dataset used when running a task 
 remotely. 
 
 In case you want to get a modifiable dataset, you can get a newly created mutable dataset with the current one as its 

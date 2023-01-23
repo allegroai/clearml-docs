@@ -39,7 +39,21 @@ limits.
             * Step Size - Step size between samples
         * Discrete Parameters - A set of values to sample
             * Values - Comma separated list of values to sample
-    * Name - The original task’s configuration parameter name (including section name e.g. `Args/lr`)
+    * Name - The original task’s configuration parameter name (including section name e.g. `Args/lr`)  <br/>
+    :::tip Hydra Parameters
+    For experiments using Hydra, input parameters from the OmegaConf in the following format:
+    `Hydra/<param>`. Specify `<param>` using dot notation. For example, if your OmegaConf looks like this: 
+    ```
+    dataset:
+      user: root
+      main:
+        number: 80
+    ```
+    Specify the `number` parameter with `Hydra/dataset.main.number`.
+
+    Additionally, make sure that the initial experiment's `_allow_omegaconf_edit_` parameter is set to `False` (in experiment's 
+    **CONFIGURATION > HYPERPARAMETERS > Hydra**).
+    :::
 * **Optimization Job Title** (Optional) - Name for the HPO instance. This will appear in the instance list 
 * **Optimization Experiments Destination Project** (Optional) - The project where optimization tasks will be saved. 
   Leave empty to use the same project as the Initial task. 

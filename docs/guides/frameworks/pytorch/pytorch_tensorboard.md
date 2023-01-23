@@ -28,7 +28,7 @@ ClearML automatically tracks images and text output to TensorFlow. They appear i
 
 ## Hyperparameters
 
-ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **TF_DEFINE**.
+ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **TF_DEFINE**.
 
 ![image](../../../img/examples_pytorch_tensorboard_01.png)
 

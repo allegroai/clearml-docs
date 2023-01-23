@@ -19,7 +19,7 @@ The scalars logged in the experiment can be visualized in a plot, which appears 
 
 ## Hyperparameters
 
-ClearML automatically logs the configurations applied to LightGBM. They appear in **CONFIGURATIONS > HYPER PARAMETERS > GENERAL**.
+ClearML automatically logs the configurations applied to LightGBM. They appear in **CONFIGURATIONS > HYPERPARAMETERS > GENERAL**.
 
 ![LightGBM hyperparameters](../../../img/examples_lightgbm_config.png)
 

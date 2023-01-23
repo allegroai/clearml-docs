@@ -153,7 +153,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
   
 **Features**
 
-* Add OS environemt variable `CLEARML_DEFAULT_OUTPUT_URI` to override default `output_uri` for automatic models upload - [ClearML GitHub issue 328](https://github.com/allegroai/clearml/issues/328)
+* Add OS environment variable `CLEARML_DEFAULT_OUTPUT_URI` to override default `output_uri` for automatic models upload - [ClearML GitHub issue 328](https://github.com/allegroai/clearml/issues/328)
 * Add `Task.force_requirements_env_freeze()` forcing `pip freeze` instead of package analysis - [ClearML GitHub issue 304](https://github.com/allegroai/clearml/issues/304)
 * Improve pipeline support
   * Add Task parameters override in `ClearmlJob` - [ClearML GitHub issue 214](https://github.com/allegroai/clearml/issues/214)
@@ -167,7 +167,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
 * Add `docker_args` and `docker_bash_setup_script` arguments to `Task.create()`
 * Change Logger plot iteration argument default to 0 (or `None`)
 * Add task filtering in `Task.get_task()` using the `allow_archived` and `task_filter` arguments
-* Add `Task.get_configuration_objects()` for reteriving configuration object as a blob of text in automation use-cases (instead of using `Task.connect_configuration()`)
+* Add `Task.get_configuration_objects()` for retrieving configuration object as a blob of text in automation use-cases (instead of using `Task.connect_configuration()`)
 * Improved pipeline support
   * Add pipeline step caching
   * Add Pipeline controller caching
@@ -250,7 +250,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
 * Add Context menu batch operations - [ClearML GitHub issue 286](https://github.com/allegroai/clearml/issues/286)
 * Add global search regex support - [ClearML GitHub issue 81](https://github.com/allegroai/clearml/issues/81#issuecomment-735003956)
 * Add support for extended container (docker) configuration and init script
-* Add special character support ("." (dot) and "$") in Hyper Paramters
+* Add special character support ("." (dot) and "$") in Hyperparameters
 * Add new context menu icons
 * Add deleting experiments and models through UI - ClearML GitHub issues [53](https://github.com/allegroai/clearml-server/issues/53), [61](https://github.com/allegroai/clearml-server/issues/61) and [81](https://github.com/allegroai/clearml/issues/81#issuecomment-706907718)
 * Improve Project deletion: deletes project's experiments and models.
@@ -258,7 +258,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
 * Improve experiment table columns 
   * Add filter by user
   * Add filters time columns
-  * Add filters for custom columns (metrics and hyper parameters)
+  * Add filters for custom columns (metrics and hyperparameters)
   * Add secondary nested sorting
 * Add worker<->queue clickable reference in workers and queues tables
 * Add presenting all metric debug samples concurrently
@@ -270,7 +270,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
 * Fix UI storage credentials input missing for HTML artifacts
 * Fix sorting custom metric columns sort treats empty fields as zeroes
 * Fix UI experiments table redundant rendering on auto refresh
-* Fix missing URL encoding for hyper parameters key names
+* Fix missing URL encoding for hyperparameters key names
 * Fix UI experiment section edit opens outside viewable screen
 * Fix UI missing default selection of artifacts in full screen view
 * Fix UI variant name not shown in plots

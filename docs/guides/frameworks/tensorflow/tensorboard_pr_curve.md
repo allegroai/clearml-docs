@@ -27,7 +27,7 @@ In the **ClearML Web UI**, the PR Curve summaries appear in the experiment's pag
 
 ## Hyperparameters
 
-ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **TF_DEFINE**.
+ClearML automatically logs TensorFlow Definitions. They appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **TF_DEFINE**.
 
 ![image](../../../img/examples_tensorboard_pr_curve_04.png)
 

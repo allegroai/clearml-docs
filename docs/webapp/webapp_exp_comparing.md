@@ -64,7 +64,7 @@ The Values mode is a side-by-side comparison that shows hyperparameter value dif
 
 **To view a side by side values comparison:**
 
-1. Click the **HYPER PARAMETERS** tab.
+1. Click the **HYPERPARAMETERS** tab.
 1. In the dropdown menu (on the upper left, next to **+ Add Experiments**), choose **Values**.
 1. To show only differences, move the **Hide Identical Fields** slider to on.
 1. Locate differences by either:
@@ -82,7 +82,7 @@ In the Parallel Coordinates mode, compare a metric to any combination of hyperpa
 
 **To compare by metric:**
 
-1. Click the **HYPER PARAMETERS** tab.
+1. Click the **HYPERPARAMETERS** tab.
 1. In the dropdown menu (on the upper left, next to **+ Add Experiments**), choose **Parallel Coordinates**.
 1. In **Performance Metric**, expand a metric or monitored resource, and then click a variant.
 1. Select the metric values to use. Choose one of the following:

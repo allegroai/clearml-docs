@@ -3,7 +3,7 @@ title: Hyperparameter Optimization
 ---
 
 The [hyper_parameter_optimizer.py](https://github.com/allegroai/clearml/blob/master/examples/optimization/hyper-parameter-optimization/hyper_parameter_optimizer.py) 
-example script demonstrates hyperparameter optimization, which is automated by using ClearML 
+example script demonstrates hyperparameter optimization (HPO), which is automated by using ClearML. 
 
 ## Set the Search Strategy for Optimization
 

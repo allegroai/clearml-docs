@@ -153,7 +153,9 @@ Compatible with Docker versions 0.6.5 and above
 
 ---
 
-**`agent.docker_internal_mounts`** (*dict*)
+<a id="docker_internal_mounts"/> 
+
+**`agent.docker_internal_mounts`** (*dict*) 
 
 * Set internal mount points inside the Docker. This is especially useful for non-root Docker container images.  
 
@@ -935,7 +937,7 @@ and limitations on bucket naming.
 **`sdk.development.log_os_environments`** (*[string]*)
 
 * Log specific environment variables. OS environments are listed in the UI, under an experiment's  
-  **CONFIGURATION > HYPER PARAMETERS > Environment** section. 
+  **CONFIGURATION > HYPERPARAMETERS > Environment** section. 
   Multiple selected variables are supported including the suffix "\*". For example: "AWS\_\*" will log any OS environment 
   variable starting with "AWS\_". Example: `log_os_environments: ["AWS_*", "CUDA_VERSION"]`
         

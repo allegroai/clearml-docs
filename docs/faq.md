@@ -286,7 +286,7 @@ to reproduce. You can see uncommitted changes in the ClearML Web UI, in the EXEC
 Yes! ClearML provides multiple ways to configure your task and track your parameters! 
 
 In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](https://click.palletsprojects.com/), 
-[Python Fire](https://github.com/google/python-fire), and/or [LightningCLI](https://pytorch-lightning.readthedocs.io/en/stable/api/pytorch_lightning.utilities.cli.html).
+[Python Fire](https://github.com/google/python-fire), and/or [LightningCLI](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.cli.LightningCLI.html).
 
 ClearML also supports tracking code-level configuration dictionaries using the [Task.connect](references/sdk/task.md#connect) method.
 
@@ -530,7 +530,7 @@ info panel > CONSOLE tab, use the *Download full log* feature.
 You can use the UI's [experiment comparison features](webapp/webapp_exp_comparing.md) to compare the logged hyperparameter 
 and accuracy values of several experiments. 
 
-In an experiment comparison page, under the **HYPER PARAMETERS** tab, you can view the experiments' hyperparameter values 
+In an experiment comparison page, under the **HYPERPARAMETERS** tab, you can view the experiments' hyperparameter values 
 in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
 
 The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 

@@ -35,7 +35,7 @@ a call to the [Task.connect](../../../../../references/sdk/task.md#connect) meth
     configuration_dict = {'number_of_epochs': 3, 'batch_size': 4, 'dropout': 0.25, 'base_lr': 0.001}
     configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
 
-Parameter dictionaries appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **General**.
+Parameter dictionaries appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **General**.
 
 ![image](../../../../../img/examples_image_classification_CIFAR10_01.png)
 

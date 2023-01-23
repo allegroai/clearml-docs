@@ -113,7 +113,7 @@ All parameters and configuration objects appear in the **CONFIGURATION** tab.
 
 ### Hyperparameters
 
-Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPER PARAMETERS**.
+Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPERPARAMETERS**.
 
 #### Command Line Arguments
 

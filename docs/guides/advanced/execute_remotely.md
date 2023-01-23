@@ -58,7 +58,7 @@ These scalars can be visualized in plots, which appear in the ClearML web UI, in
 
 ## Hyperparameters
 
-ClearML automatically logs command line options defined with `argparse`. They appear in **CONFIGURATION** **>** **HYPER PARAMETERS** **>** **Args**.
+ClearML automatically logs command line options defined with `argparse`. They appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **Args**.
 
 ![Experiment hyperparameters](../../img/examples_pytorch_mnist_01.png)
 

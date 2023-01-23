@@ -50,7 +50,7 @@ Customize the table using any of the following:
 * Changing table columns
     * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
   **>** mark or clear the checkboxes of columns to show or hide.
-    * Add custom columns - Click **+ METRICS** or **+ HYPER PARAMETERS** to add metric / hyperparameter columns to the 
+    * Add custom columns - Click **+ METRICS** or **+ HYPERPARAMETERS** to add metric / hyperparameter columns to the 
       main column list. Added columns are by default displayed in the table. You can remove the custom columns from the 
       main column list or the column addition windows. 
 * [Filter columns](#filtering-columns)
@@ -95,7 +95,7 @@ experiments in the table.
 
 #### To Add Hyperparameters:
 
-* Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ HYPER PARAMETERS** **>** Expand a section **>** Select the
+* Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ HYPERPARAMETERS** **>** Expand a section **>** Select the
   hyperparameter checkboxes.
   
 :::note Float Values Display
