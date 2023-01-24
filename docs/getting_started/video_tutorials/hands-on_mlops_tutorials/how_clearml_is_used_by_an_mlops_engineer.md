@@ -282,7 +282,7 @@ going to take a look, the query date here is a specific date, but that's not tod
 want to do is rerun this, get data every single day or week or month depending on how quickly they can get their data 
 labeled. 
 
-So this could be done manually relatively easily. You could just do every week, Click, go here, and it will just put a 
+So this could be done manually relatively easily. You could just do every week, click, go here, and it will just put a 
 new entry in the experiment list, or you could of course automate it. And that's essentially what we're going to do with 
 the task scheduler. So you just get the task scheduler object from the automation module. You say the amount of sync 
 frequency. So this is essentially just when you change something in the configuration of the task scheduler, it will 

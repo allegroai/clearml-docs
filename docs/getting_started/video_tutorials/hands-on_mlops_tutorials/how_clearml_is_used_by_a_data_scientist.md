@@ -244,7 +244,7 @@ than what we had before. So it seems that the atom optimizer in fact does have a
 just to make sure that we didn't overlook anything, what I can do is I can select both my new model, my new best model, 
 and the previous model that I had and then compare them. So it's what I have right here and everything that you just saw 
 that was tracked, be it hyperparameters or plots or whatever, can all be compared between different training runs. So 
-what we can see here if we click on execution, we have some uncommitted changes that are obviously different, and then 
+what we can see here if we click on **Execution**, we have some uncommitted changes that are obviously different, and then 
 if we scroll down, what we can see is that for example, here the atom optimizer was added and the optimizer SGD was 
 removed. So this already gives us the idea of okay, this is what changed. This is really interesting and we can always 
 also use these differences to then go back to the original code. 
