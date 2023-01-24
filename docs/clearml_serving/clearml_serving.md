@@ -11,7 +11,7 @@ solution.
 
 * Easy to deploy & configure
     * Support Machine Learning Models (Scikit Learn, XGBoost, LightGBM)
-    * Support Deep Learning Models (Tensorflow, PyTorch, ONNX)
+    * Support Deep Learning Models (TensorFlow, PyTorch, ONNX)
     * Customizable RestAPI for serving (i.e. allow per model pre/post-processing for easy integration)
 * Flexible
     * On-line model deployment

@@ -269,7 +269,7 @@ This release is not backwards compatible - see notes below on upgrading
 - Fix `PY3.x` fails calling `SemLock._after_fork` with forkserver context, forking while lock is acquired [ClearML Agent GitHub issue #73](https://github.com/allegroai/clearml-agent/issues/73)
 - Fix wrong download path in `StorageManager.download_folder()`
 - Fix jupyter notebook `display(...)` convert to `print(...)`
-- Fix Tensorflow `add_image()` with `description='text'`
+- Fix TensorFlow `add_image()` with `description='text'`
 - Fix `Task.close()` should remove `current_task()` reference
 - Fix `TaskScheduler` weekdays, change default `execute_immediately` to `False`
 - Fix Python2 compatibility

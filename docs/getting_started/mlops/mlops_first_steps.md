@@ -162,7 +162,7 @@ and [pipeline](../../pipelines/pipelines.md) solutions.
 
 #### Log Models
 Logging models into the model repository is the easiest way to integrate the development process directly with production. 
-Any model stored by a supported framework (Keras / TF / PyTorch / Joblib etc.) will be automatically logged into ClearML.
+Any model stored by a supported framework (Keras / TensorFlow / PyTorch / Joblib etc.) will be automatically logged into ClearML.
 
 ClearML also offers methods to explicitly log models. Models can be automatically stored on a preferred storage medium 
 (s3 bucket, google storage, etc.). 

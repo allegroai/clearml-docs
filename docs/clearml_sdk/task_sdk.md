@@ -66,11 +66,11 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
         * [Python Fire](https://github.com/google/python-fire)  - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
         * [LightningCLI](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.cli.LightningCLI.html) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
     * TensorFlow Definitions (`absl-py`)
-    * [Hydra](https://github.com/facebookresearch/hydra) - the Omegaconf which holds all the configuration files, as well as overridden values. 
+    * [Hydra](https://github.com/facebookresearch/hydra) - the OmegaConf which holds all the configuration files, as well as overridden values. 
 * **Models** - ClearML automatically logs and updates the models and all snapshot paths saved with the following frameworks:
-    * Tensorflow (see [code example](../guides/frameworks/tensorflow/tensorflow_mnist.md))
+    * TensorFlow (see [code example](../guides/frameworks/tensorflow/tensorflow_mnist.md))
     * Keras (see [code example](../guides/frameworks/keras/keras_tensorboard.md))
-    * Pytorch (see [code example](../guides/frameworks/pytorch/pytorch_mnist.md))
+    * PyTorch (see [code example](../guides/frameworks/pytorch/pytorch_mnist.md))
     * scikit-learn (only using joblib) (see [code example](../guides/frameworks/scikit-learn/sklearn_joblib_example.md))
     * XGBoost (only using joblib) (see [code example](../guides/frameworks/xgboost/xgboost_sample.md))
     * FastAI (see [code example](../guides/frameworks/fastai/fastai_with_tensorboard.md))
@@ -143,7 +143,7 @@ train/loss scalar reported was for iteration 100, when continued, the next repor
 
 :::note Reproducibility
 Continued tasks may not be reproducible. In order to guarantee task reproducibility, you must ensure that all steps are 
-done in the same order (e.g. maintaining learning rate profile, ensuring data is fed in same order).
+done in the same order (e.g. maintaining learning rate profile, ensuring data is fed in the same order).
 :::
 
 Pass one of the following in the `continue_last_task` parameter:
@@ -396,7 +396,8 @@ a_func_task = task.create_function_task(
     some_argument=123
 )
 ```
-Arguments passed to the function will be automatically logged under the `Function` section in the Hyperparameters tab. 
+Arguments passed to the function will be automatically logged in the 
+experiment's **CONFIGURATION** tab under the **HYPERPARAMETER > Function** section . 
 Like any other arguments, they can be changed from the UI or programmatically.
 
 :::note Function Task Creation
@@ -567,7 +568,7 @@ Accessing a task’s previously trained model is quite similar to accessing task
 through the task’s models property which lists the input models and output model snapshots’ locations.
 
 The models can subsequently be retrieved from their respective locations by using `get_local_copy()` which downloads the 
-model and caches it for later use, returning the path to the cached copy (if using Tensorflow, the snapshots are stored 
+model and caches it for later use, returning the path to the cached copy (if using TensorFlow, the snapshots are stored 
 in a folder, so the `local_weights_path` will point to a folder containing the requested snapshot).
 
 ```python
@@ -584,7 +585,7 @@ Models loaded by the ML framework appear under the "Input Models" section, under
 
 ### Setting Upload Destination
 
-ClearML automatically captures the storage location of Models created by frameworks such as TF, Pytorch, and scikit-learn. 
+ClearML automatically captures the storage location of Models created by frameworks such as TensorFlow, PyTorch, and scikit-learn. 
 By default, it stores the local path they are saved at.
 
 To automatically store all created models by a specific experiment, modify the `Task.init` function as such:
