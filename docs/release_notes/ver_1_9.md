@@ -12,7 +12,7 @@ title: Version 1.9
 **Bug Fixes**
 * Fix `UniformParameterRange.to_list` throws error when step size is not defined [ClearML GitHub issue #859](https://github.com/allegroai/clearml/issues/859)
 * Fix `StorageManager.list()` does not return size metadata [ClearML GitHub issue #865](https://github.com/allegroai/clearml/issues/865)
-* Fix storage with path substitutions [ClearML GitHub issue #877](https://github.com/allegroai/clearml/issues/825)
+* Fix storage with path substitutions [ClearML GitHub issue #825](https://github.com/allegroai/clearml/issues/825)
 * Fix extras in ClearML installation prevents clearml from being included in requirements [ClearML GitHub issue #867](https://github.com/allegroai/clearml/issues/867)
 * Fix metadata set on an uploaded model object is not accessible [ClearML GitHub issue #890](https://github.com/allegroai/clearml/issues/890)
 * Fix Azure storage upload not working [ClearML GitHub issue #868](https://github.com/allegroai/clearml/issues/868)
