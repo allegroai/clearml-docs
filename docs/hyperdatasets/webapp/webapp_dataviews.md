@@ -2,8 +2,8 @@
 title: The Dataviews Table
 ---
 
-[Dataviews](../dataviews.md) appear in the same Project as the experiment that stored the Dataview in the ClearML Enterprise platform, 
-as well as the **DATAVIEWS** tab in the **All Projects** page.
+[Dataviews](../dataviews.md) that were created in an experiment appear in experiment's **Dataview** tab in the ClearML Enterprise platform, 
+as well as the **DATAVIEWS** tab in the **Projects** pages.
 
 The **Dataviews table** is a [customizable](#customizing-the-dataviews-table) list of Dataviews associated with a project.
 Use it to view, create, and edit Dataviews in the info panel. 
