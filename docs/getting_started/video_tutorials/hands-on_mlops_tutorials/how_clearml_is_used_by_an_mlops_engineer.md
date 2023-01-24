@@ -17,24 +17,22 @@ keywords: [mlops, components, machine learning, mlops engineer]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 Hello again and welcome to ClearML. In this video we'll be going over a workflow of a potential MLOps Engineer. Now an 
-MLOps Engineer is a vague term. This might be a specific person in your team that is doing only the Ops part of the 
+MLOps Engineer is a vague term. This might be a specific person in your team that is doing only the Ops part of 
 machine learning. So the infrastructure and all of the workers and whatnot. Or it could be you as a data scientist. It 
 could be just the data scientist of the team that is most into things like docker and deployments. And that person now 
 has the job of a MLOps Engineer. So it really doesn't matter who you are. This video is going to be about what this kind 
-of person will be doing and what ClearML can do to make the life of them a little easier. Just a little. 
+of person will be doing and what ClearML can do to make their life a little easier. Just a little. 
 
-So what we're going to do here is take a look or get started at the very least with our Workers and Queues tab. So if 
+So what we're going to do here is take a look or get started at the very least with our Workers and **Queues** tab. So if 
 you've followed along with the Getting Started videos, this is actually something you've probably seen before. but I'm 
 going to go a little bit more into depth in this video. 
 
-So the workers and queues tab, what does it do? So we have what we can expect. We have the workers tab, and we have the 
-queues tab. Workers in ClearML are actually called agents. So you can see here that we have a bunch of available workers 
-which are spun up by using the ClearML agent. I'll go more in depth in that in a minute. So we have a few available 
+So the **Workers and Queues** tab, what does it do? So we have what we can expect. We have the **Workers** tab, and we have the 
+**Queues** tab. Workers in ClearML are actually called agents. So you can see here that we have a bunch of available workers 
+which are spun up by using the ClearML Agent. I'll go more in depth in that in a minute. So we have a few available 
 workers. We have Beast Zero, One, Two, and Three. I'm the person that called my own computer Beast. So my own computer 
 is running a few workers here. And then we also have Apps Agents, and I'll go a little bit more into detail what that 
 means later. Essentially, what it means is you have the applications right here and what that's going to do is give you 
@@ -48,13 +46,13 @@ So we have example: Task 0 1, 2 and 3, programmer terms of course. We see the ex
 iterations. In this case, it's a classical machine learning model, so we don't really have iterations, but if you have a 
 deep learning model, this is where your amount of iterations would come into play. 
 
-If we click on any of these, we can see the worker name, and we can see its utilization over time in here as well. All 
+If we click on any of these, we can see the worker name, and we can see its utilization over time here as well. All 
 right, so we can obviously make this longer. I've only been running this for a few hours or for an hour. So we have the 
-worker name right here. We have the update time, so just to know that when was the last time that the worker actually 
+worker name right here. We have the update time, so just to know when was the last time that the worker actually 
 sent in any new data. We have the current experiment on which we can click through, so I'll do that in a minute, and we 
 have the experiment runtime, and experiment iterations here as well. 
 
-We also have the queues, which means that we can actually find out what queues this worker listening to. I should 
+We also have the queues, which means that we can actually find out what queues this worker is listening to. I should 
 give some more context here. So if we go into the queues, ClearML works with a system of queues as well as workers. So 
 this actually comes from the fact that originally people were just giving out SSH keys to everyone to get them to work 
 on a remote system. And this is far far far from perfect, right? So you have several people SSHing in, you have several 
@@ -62,7 +60,7 @@ people running their own workloads on the same GPUs. They have to share everythi
 are also running their stuff on the GPU, you actually have no idea how long your own task will take, so that's something. 
 You can't have any priorities. So if everyone is just running their stuff and actually probably killing your stuff as 
 well because it's out of memory, because too many people are using it. So that's just a disaster, right? If you have a 
-large GPU machine that you have to share with multiple people, or just even want to orchestrate several different tasks 
+large GPU machine that you have to share with multiple people, or just want to orchestrate several different tasks 
 on, with different priorities, it becomes a real hassle. So that's actually why ClearML has workers and queues to try 
 and deal with that a little bit. And this is actually what we're calling orchestration. So if you look at our website, 
 you'll see orchestration and automation. Those terms might not mean very much. So this is what I'm going to be talking 
@@ -77,8 +75,8 @@ worthless, right? But you can make however many of them you want. I can delete t
 queue how many workers it has. So I'll show you that in a minute when we spin up a new worker. But we can actually 
 pretty easily see how many workers are serving a specific queue. So listening to that queue and that actually has an 
 effect on the overall waiting time. So for example, here we have four workers that we saw here before, right? So these 
-are these four workers. They're all listening to the CPU queue. They're all running a CPU experiment. But then we have a 
-bunch of other experiments in the queue still. So this is just a list of the next, like, essentially the order in which 
+are these four workers. They're all listening to the CPU queue. They're all running a CPU experiment. But then we still 
+have a bunch of other experiments in the queue. So this is just a list of the next, like, essentially the order in which 
 the next example tasks will be executed. So we see here that the next experiment is task four. We see that it was last 
 updated there, and now we see the queue experiment time rising rapidly. Because people are waiting in queue here, there 
 are many more tasks to be executed. We also have CPU queued experiments, which is just the amount of queued experiments 
@@ -89,7 +87,7 @@ bit more into depth on that later because we don't actually have zero workers th
 listening to this. Then we have the default queue, and we have the services queue and I should stop a little bit on the 
 services queue because the services queue is relatively special in ClearML. You have all of your custom queues that you 
 can create however you want CPU queue, GPU queue, whatever. The services queue is actually meant to host specific, not 
-very heavy workloads, but that do this kind of orchestration that I was talking about. So imagine you have a pipeline 
+very heavy workloads, but that does this kind of orchestration that I was talking about. So imagine you have a pipeline 
 for example, if you don't know what a pipeline does in ClearML, you can look at the Getting Started video that we made 
 on pipelines. And if you want to run a pipeline, you will need a pipeline controller. Essentially, it's a very small 
 piece of code that tells ClearML now you should run this step, then take that output, give it to the other step, run the 
@@ -102,7 +100,7 @@ we can choose to just enqueue tasks or experiments that do simply that. So that'
 when compared to other user-made queues. 
 
 We can see here that we have a bunch of workers, so we have the Beast 0, 1, 2 and 3 that are assigned to this services 
-queue. But as we can see if we go and take a look at the CPU queue, we have a whole bunch of tasks here. So there is a 
+queue. But as we can see if we go and take a look at the CPU queue, we have a whole bunch of tasks here. So there are a 
 lot of people waiting for their turn. So actually one thing that we can do is we can already change the priority. So 
 imagine we have example Person 19 that has a very, very tight deadline, and they actually need to be first. So we can 
 just drag them all the way up, let me scroll there, all the way up and now. There we go, all the way up top. So now we 
@@ -123,7 +121,7 @@ bunch of output here. I can actually abort it as well. And if I abort it, what w
 executing. Essentially, it will send a `ctrl c`, so a quit command or a terminate command, to the original task on the \
 remote machine. So the remote machine will say okay, I'm done here. I will just quit it right here. If, for example, 
 your model is not performing very well, or you see like oh, something is definitely wrong here, you can always just 
-abort it. And the cool thing is if we go back to the workers and queues, we'll see that the Beast 0 has given up working 
+abort it. And the cool thing is if we go back to the **Workers and Queues**, we'll see that the `Beast 0` has given up working 
 on task 0 and has now picked task 18 instead. Which is the task that we put in there in terms of priority. So this has the 
 next priority. Work has already started on task 18. So this is really, really cool. 
 
@@ -144,7 +142,7 @@ hosted version. You can also host your own open source server if you so require.
 that I have already done this of course, but in this case you should be able to just add your credentials from the 
 server, and it should connect no problem. If you want more information on that, we have tutorial videos on that as well. 
 And then the next thing we should do is `clearml-agent daemon --queue` Now we can decide which queues we want this 
-ClearML agent to listen to. So in this case, if we go and take a look at queues, we have CPU queue, which is by far the 
+ClearML agent to listen to. So in this case, if we go and take a look at queues, we have a CPU queue, which is by far the 
 most requested queue. So in this case, imagine we have an extra machine on hand in the faculty or in the company you're 
 working with, and you should just add this machine or its resources to the pool. So in this case we're just going to say 
 `CPU Queue` and that's everything. So we just want a simple extra machine for the CPU queue. Then we're going to 
@@ -154,17 +152,17 @@ depending on either the default image that I give here or the image that is atta
 data scientists that are creating their remote tasks or their experiments, they can also assign a docker file or a 
 docker image to that, that it should be running. So if you have very specific package requirements or very specific 
 needs, you can, as a data scientist, already say I want to attach this docker image to it, and it will be run like such 
-on the ClearML agent. So that's that gives you a lot of power. But in this case I will just say if the data scientists 
+on the ClearML agent. So that gives you a lot of power. But in this case I will just say if the data scientists 
 gave no indication of what docker container to use, just use Python 3.7. This is the standard in our company, let's say, 
 and this is what we want to use. Okay, so if I run this, it should start up a new ClearML agent. So in this case you can 
 see it's running in docker mode, it's using default image Python 3.7, and it's listening to the CPU queue. Now if we go 
-back to our workers and queues tab. We can see that here `any-remote-machine:0`. So we can actually see that we now 
+back to our **Workers and Queues** tab. We can see that here `any-remote-machine:0`. So we can actually see that we now 
 immediately have a new remote worker, and it's actually already started on the next task. So now we're currently running 
 five workers on the CPU queue instead of four. So this was very, very easy to handle, very, very easy to set up. So this 
 is one part of what an MLOps engineer could be doing. 
 
 Now this is very, very manual to set up and the MLOps engineer is king of the automation after all. So we want some kind 
-of some kind of way to automate all of this, right? So what we can do here is go to applications. And what we have is AWS 
+of way to automate all of this, right? So what we can do here is go to applications. And what we have is AWS 
 Autoscaler and GCP Autoscaler in essence. Also, Azure will come later so that will be out soon. So if we go into the 
 AWS Autoscaler. What we see here is we have an MLOps GPU scaler and what that means is, we don't always have fixed 
 demand for GPU resources, right? So imagine you have a company in this case that has a lot of demand for CPU compute 
@@ -244,7 +242,7 @@ it will say `clearml WARNING - Terminating local execution process`, so in this 
 machine. Now if we're going to take a look at the remote machine, we can see that we have our Model Training GPU in 
 `pending` state and remember we had no workers at all in our GPU queue. We have zero workers and the next experiment is 
 our Model Training GPU. But remember again that we also have the autoscaler. So if I go to Applications and go to 
-autoscaler, you'll see here that we have indeed one task in the GPU queue. And we also see that the `GPU_machines` 
+autoscaler, you'll see here that we indeed have one task in the GPU queue. And we also see that the `GPU_machines` 
 Running Instances is one as well. So we can follow along with the logs here. And it actually detected that there is a 
 task in a GPU queue, and it's now spinning up a new machine, a new GPU machine to be running that specific task, and then 
 it will shut that back down again when it's done. So this is just one example of how you can use `task.execute_remotely` 
@@ -284,7 +282,7 @@ going to take a look, the query date here is a specific date, but that's not tod
 want to do is rerun this, get data every single day or week or month depending on how quickly they can get their data 
 labeled. 
 
-So this could be done manually relatively easily. You could just do every week, Click, go here, and it will just put a 
+So this could be done manually relatively easily. You could just do every week, click, go here, and it will just put a 
 new entry in the experiment list, or you could of course automate it. And that's essentially what we're going to do with 
 the task scheduler. So you just get the task scheduler object from the automation module. You say the amount of sync 
 frequency. So this is essentially just when you change something in the configuration of the task scheduler, it will 
@@ -297,7 +295,9 @@ can do. You could easily just clone a task. This is essentially what the task sc
 Getting Started videos, you know that we can actually clone any of the experiments that are in the system and then 
 change the parameters and rerun it. So we could get the data or clone the `get data` and then do a task parameter 
 override of the query date with the current date today. That's very valid, but the NASA team actually made something 
-really cool. If we go to pipelines here, you see that there is a NASA pipeline as well and the NASA pipeline is actually 
+really cool. 
+
+If we go to pipelines here, you see that there is a NASA pipeline as well and the NASA pipeline is actually 
 the exact steps that we saw before, but they train three different models with three different parameters and then pick 
 the best model from there. And what we see is that the query date is actually a parameter of the pipeline as well. And 
 if you remember correctly, pipelines are also tasks in ClearML, everything is a task, so that means that you can use 
@@ -305,7 +305,9 @@ this the task scheduler also to schedule a complete pipeline run. And then overw
 just as easily as you could do with any other task. So if I go into the full details of this task here, you will see 
 that this is actually the pipeline itself. The pipeline has just as any other task, these different tabs with info, 
 consoles, scalars, etc. and it has an ID as well. And this ID, if we copy it, we can actually use that instead. So let 
-me paste it, it's already there. So the task to schedule is in fact the pipeline that we want to schedule. And then if I 
+me paste it, it's already there. 
+
+So the task to schedule is in fact the pipeline that we want to schedule. And then if I 
 do `scheduler.add_task`, I take the ID of the task to schedule, which is the pipeline in this case, I want to enqueue it 
 in the CPU queue. I want it to be at the hour 08:30 every Friday. So every week at 08:30, this will be run. So the 
 pipeline will be cloned and run using this parameter override. And the parameter override says essentially, take the 
@@ -344,14 +346,14 @@ on the dataset of another data scientist in another project. So if we're going t
 it's called Bob. So Bob is the other data scientist which is in charge of producing the dataset that is required. 
 So essentially, he uses the production tag to tell Alice this is the kind of dataset that you want. This is the dataset 
 that you want to use. This is the best so far. He has more recent datasets, but hasn't tagged them as production yet 
-because he says they're not ready. So he can just keep continue to experiment, and do all the kind of things that he 
+because he says they're not ready. So he can just keep continuing to experiment, and do all the kinds of things that he 
 wants while Alice is still firmly using production. So what Alice is doing is she's essentially querying on the dataset 
 of production. But it's annoying because they're in a different time zone, for example. And when Bob publishes a new 
 dataset, Alice has to be notified by using a chat application or whatever. And then Alice has to re-run everything 
 remotely so that her training is using the latest version. So this is not ideal, we can automate all of this. And this 
 is essentially what the task trigger is trying to do. 
 
-So again, we make a scheduler just like we did with task scheduler. Pooling frequency in minutes is again to poll the 
+So again, we make a scheduler just like we did with task scheduler. Polling frequency in minutes is again to poll the 
 configuration as well as sync frequency minutes. We put again the scheduler itself. We put it in the Project MLOps. 
 We call it Alice-Bob Trigger instead of the scheduler before. And then we get the task that we want to actually trigger. 
 So not the task that triggers, but the task that we want to create when the trigger is triggered, if that makes sense. So 
@@ -371,16 +373,16 @@ Now we have to add a trigger. And you can add a dataset trigger, you can add a t
 trigger that you wish. In this case it will be a dataset trigger. If we have a different dataset, a new kind of dataset 
 that fits this description, we want to trigger this task. So essentially the scheduled task ID is the task that we want 
 to run if the trigger is triggered, which is in this case `training_task.id` is the Project Alice task, the Model Training 
-task. We have the schedule queue, so we want to obviously schedule it in any of the queues. We can use CPU queue in 
+task. We have the schedule queue, so we want to obviously schedule it in any of the queues. We can use the CPU queue in 
 this case, and then we can give it a name as well. And just to make it clear that this training is not actually training 
 from Alice herself, but it's training on the new data of Bob. It's an automated training. We can give it a specific name 
 so that Alice knows this was triggered automatically, and then we can use `trigger_on_tags` where we should look to 
 actually trigger the trigger. Damn this is a lot of trigger. 
 
 So what happens here is we look in the Project Bob folder and then if a new tag production is found that wasn't there 
-before we trigger, and in this case, this means we create a new task project Alice. So if we're going to run this so 
+before we trigger, and in this case, this means we create a new task project Alice. So if we're going to run this 
 automation, not task scheduler but task trigger, this will again create a new specific let's call it orchestration task 
-or automation task. And these are kind of tasks that you want in the services queue. These are the tasks that 
+or automation task. And these are the kind of tasks that you want in the services queue. These are the tasks that 
 essentially just keep track of, is there a new data set version or not and it's very light to do so. This is typically 
 something you want in the services queue. 
 
@@ -426,7 +428,7 @@ just add to your Slack if you want it, and it will essentially just tell you wha
 are succeeded or failed. You can set, I want only alerts from this project, I want only alerts that are failed, only 
 alerts that are completed, will give you a bunch of output as well, which is really, really useful to see, etc. So this 
 is just a very small extra thing that you can take a look at to have some monitoring as well so that you don't even have
-to wait or take a look yourself at when your tasks finished. 
+to wait or take a look yourself when your tasks are finished. 
 
 Another thing that I want to show you is a cool way to just get a little bit more of that juicy GPU power. One way you 
 can add agents next to Kubernetes spinning up themselves, spinning up a ClearML agent on your own machines or the auto 
@@ -442,7 +444,7 @@ version than you, it's a bit annoying, you can't spin up a different container. 
 downside. So this is just a quick way. The actual notebook you can find on our GitHub. But this is just a really cool 
 way to get some extra GPU power as well. 
 
-Now, all of these agents is one thing. You have the queues now, finally. Now, thank you for making it through this far. 
+Now, all of these agents are one thing. You have the queues now, finally. Now, thank you for making it through this far. 
 We haven't actually even covered everything that ClearML can automate for you. There is HPO, which is hyperparameter 
 optimization. There are pipelines as well that can chain everything together. You saw a little bit when I showed you the 
 NASA project, but yeah, we're not there yet. There's also even a ClearML Session that you can use to run on a specific 
@@ -450,7 +452,4 @@ machine, on a remote machine, and it will give you a remote interactive Jupyter 
 instance so that you can always code already on the remote machine. So that's also really, really cool. It's something 
 we're going to cover soon, but I think the video is already long enough. So thank you very, very much for watching. 
 Thank you very, very much for your attention. Let me know in the comments: if you want to see videos of these 
-hyperparameters, and pipelines, and sessions and don't forget to join our Slack channel if you need any help.
-
-</div>
-</details>
+hyperparameters, and pipelines, and sessions, and don't forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) if you need any help.

@@ -17,12 +17,8 @@ keywords: [mlops, components, Experiment Manager]
 </iframe>
 </div>
 
+### Video Transcript 
 
-
-
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
 Welcome to ClearML. In this video, we’ll go deeper into some of the best practices and advanced tricks you can use while working with ClearML experiment management.
 
 The first thing to know is that the Task object is the central pillar of both the experiment manager and the orchestration and automation components. This means that if you manage the task well in the experiment phase, it will be much easier to scale to production later down the line. 
@@ -69,6 +65,5 @@ And then we’re not even talking about all the ways to automate tasks using the
 
 For the next videos we’ll finally cover automation and orchestration as well as ClearML Data, our data versioning tool.
 
-Feel free to check out and test all of these features at app.clear.ml, or using our self-hosted server on GitHub and don’t forget to join our Slack channel if you need any help.
-</div>
-</details>
+Feel free to check out and test all of these features at [app.clear.ml](https://app.clear.ml), or using our self-hosted server on GitHub and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) if you need any help.
+
