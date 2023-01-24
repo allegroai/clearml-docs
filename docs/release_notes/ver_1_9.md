@@ -16,7 +16,6 @@ title: Version 1.9
 * Fix extras in ClearML installation prevents clearml from being included in requirements [ClearML GitHub issue #867](https://github.com/allegroai/clearml/issues/867)
 * Fix metadata set on an uploaded model object is not accessible [ClearML GitHub issue #890](https://github.com/allegroai/clearml/issues/890)
 * Fix Azure storage upload not working [ClearML GitHub issue #868](https://github.com/allegroai/clearml/issues/868)
-* Fix IDE info when running in pure Python console
 * Fix `task.connect` list of dicts parsed incorrectly in remote
 * Fix casting `None` to `int` fails uploads and permission checks
 * Fix numpy 1.24 support
