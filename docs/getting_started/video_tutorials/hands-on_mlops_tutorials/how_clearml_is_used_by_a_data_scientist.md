@@ -17,9 +17,7 @@ keywords: [mlops, components, machine learning, data scientist]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 Welcome to ClearML! In this video, I'll try to walk you through a day in my life where I try to optimize a model, and 
 I'll be teaching you how I used to do it before I was working for ClearML, and then now that I'm using ClearML all the 
@@ -28,12 +26,12 @@ time, what kind of problems it solved and what, how it made my life easier. So l
 You can see the overview of the code, so I'm not going to dive into the code immediately, I'm just going to give you some 
 context, and then we'll go deeper from there. 
 
-So the idea is that I'm doing audio classification here. I have a client who I want to give like a proof of concept on 
+So the idea is that I'm doing audio classification here. I have a client who I want to give a proof of concept on 
 how well it can work, and I'm doing that on the UrbanSound dataset. So the first thing I'll do, and you'll see that 
 later is I'll get the data from the UrbanSound servers. I'm using a script called `get_data.py` for that, and then for 
 reasons I'll go further into in the video I'm actually putting all of that data into a ClearML dataset which is a special 
-kind of dataset task or like a special kind of ClearML task that can keep track of your data. Then the `preprocessing.py` 
-script will get that data and then convert the WAV files or like the audio files to spectrum images. Essentially you're 
+kind of dataset task or a special kind of ClearML task that can keep track of your data. Then the `preprocessing.py` 
+script will get that data and then convert the WAV files or the audio files to spectrum images. Essentially you're 
 turning all your data into image data because the models that do image data are actually very, very easy to work with and 
 are pretty good, so you can actually do the classification by classifying an image from your audio instead of classifying 
 your audio as a whole. Really cool stuff. 
@@ -51,7 +49,7 @@ see it in `training.py` as well. And so this line is all you need to get started
 everything that you'll need and that the program produces like plots or hyperparameters, you name it. 
 
 So let's take a look in depth first at what `get_data.py` does for me. So getting data is very simple, but what I used 
-to do is I would get the data from like a remote location, You download a zip file or whatever, and then you extract it 
+to do is I would get the data from a remote location. You download a zip file or whatever, and then you extract it 
 to your local folder, and then you start working on that. Now the problem with that is it's really difficult to keep 
 that thing clean. So, how would I version that right if I add data to it? For example, the preprocessed data we'll see 
 later. How can I keep my correct version? How did I? How do I know if the data changes over time? When did I do that? 
@@ -68,8 +66,8 @@ folders and then probably different folders with different names as well for eve
 don't change the name, you overwrite it. so that's all the thing of the past. Now we have nice and clear. I'll show 
 it to you later in the UI, we have a nice and clear overview of all of the different versions. 
 
-I'll add some dataset statistics that's also something you can do and ClearML is just add some, for example, class 
-distribution or other kind of plots that could be interesting, and then I'm actually building the ClearML dataset here. 
+I'll add some dataset statistics that's also something you can do and ClearML is just adding some, for example, class 
+distribution or other kinds of plots that could be interesting, and then I'm actually building the ClearML dataset here. 
 Also, an extra thing that is really, really useful if you use ClearML datasets is you can actually share it as well. 
 So not only with colleagues and friends, for example. You can share the data with them, and they can add to the data, and 
 always you will always have the latest version, you will always know what happened before that. 
@@ -83,7 +81,7 @@ tries to solve. So that's what the dataset or the `get_data.py` does for you.
 Then we have the `preprocessing.py` which is relatively simple. Essentially, what I'm doing is, I'll get the data from 
 the `get_data.py` So the previous dataset version. I'll get that data and then each line by line. So each, every, each 
 and every sample in that dataset will then be preprocessed using the preprocessing class, which will just calculate a 
-mel spectrogram if you're into that kind of thing. but I won't go into depth in about it here. Essentially, we'll create 
+mel spectrogram if you're into that kind of thing. but I won't go into depth about it here. Essentially, we'll create 
 a mel spectrogram for each sample that will give us an image, and then we take that image and put it into a different 
 dataset, which now has the same structure as the previous dataset, but now also with images there. And because the WAV 
 files, or the audio files, are already in the previous dataset, this new version will only upload the images that we 
@@ -91,7 +89,7 @@ just produced. It won't duplicate the data because it knows it's already in a pr
 instead. So that also saves a bit of disk space, if you're trying to put it on the cloud as well. 
 
 Now how I used to do this before ClearML is actually creating a new folder with a unique name for that specific run and 
-then putting all of the images in there. But that's that's just a huge mess, right? We've all done this. But then you 
+then putting all of the images in there. But that's just a huge mess, right? We've all done this. But then you 
 forget to change the name, and then you overwrite your previous samples. But you also don't know if you're just running 
 through it. You don't know what kind of code or like what the code was that created your previous versions right? So 
 they're not saved together which is a huge mess. It gets out of hand really quickly. You end up with a huge folder full 
@@ -118,7 +116,7 @@ automatically captured by ClearML. So that's again something that I don't have t
 saved together with my code together with those hyperparameters you just saw together with the output, which is really 
 handy. 
 
-But then there is a last thing that I want to focus on. And that is the model files. So again, before I used ClearML, 
+But then there is one last thing that I want to focus on. And that is the model files. So again, before I used ClearML, 
 the model files, I would essentially create one long name for the file with just underscores and all of the different 
 parameters in there, so that in every model file, I could easily see what the parameters were that I used over time to 
 create those model files. But that's just a huge mess because the amount of parameters that you use changes over time, 
@@ -148,9 +146,9 @@ models or training runs that I did that failed or that I made a code mistake or 
 They just clutter the whole thing. You can do whatever you want of course, but this is my preference. 
 
 And then there is the option to sort as well. So in any of these columns you can just sort on that property and in this 
-case I'm going to sort on name and then quick tip for you. If you use shift click you can sort secondarily on that 
-column as well. So right now I'm sorted on name first and then all of the experiments that have the same name are 
-secondarily sorted on their started time, which will give me the most recent one of each batch. And then you can see 
+case I'm going to sort by name, and then a quick tip for you. If you use shift click you can sort secondarily on that 
+column as well. So right now I'm sorted by name first and then all of the experiments that have the same name are 
+secondarily sorted by their started time, which will give me the most recent one of each batch. And then you can see 
 here the last training that I did was 18 hours ago and if I scroll down a while ago I did some preprocessing. I did 
 some downloading of the data and that is also sorted quite nicely. You can also see on the tag that this is specifically 
 dataset, and then you can also see if I go to this dataset which is really cool. 
@@ -194,7 +192,7 @@ iterations, I plot the confusion matrix again just so I can see over time how we
 you can see here, a perfect confusion matrix will be a diagonal line because every true label will be combined with the 
 exact same predicted label. And in this case, it's horribly wrong. But then over time it starts getting closer and 
 closer to this diagonal shape that we're trying to get to. So this is showing me that at least in this point it's 
-learning something, it's doing something so that actually is very interesting. 
+learning something, it's doing something, so that actually is very interesting. 
 
 And then you have debug samples as well, which you can use to show actually whatever kind of media you need. So these 
 are for example, the images that I generated that are the mel spectrogram's so that the preprocessing outputs, and you 
@@ -214,13 +212,13 @@ that, I can see the max F1 score of every single training run in this list, and 
 leaderboard essentially which will give me a nice overview of the best models that I have, and then I can just dive in 
 deeper to figure out why they were so good. 
 
-So, But now it's time to actually start changing some stuff. So this is the beginning of my day. I've just gotten my 
+But now it's time to actually start changing some stuff. So this is the beginning of my day. I've just gotten my 
 bearings, I know what the latest models were, and the score to beat here is 0.571429, and that's the F1 score we're 
 trying to beat on the subset and if the moment that we find a combination of parameters or a change of the code that 
 does better than this or that is in the general ballpark of this, we can actually then run it on the full dataset as 
 well. But I'll tell you more about that later. 
 
-So the first thing we're going to do is going back to training the `training.py` script. I might want to change several 
+So the first thing we're going to do is go back to training the `training.py` script. I might want to change several 
 parameters here, but what I've read something that I've been interested in and while getting the model, I see that here 
 I still use the optimizer stochastic gradient descent, and it could be really interesting to see how it compares if I 
 change this to atom. Now the atom optimizer is a really, really good one, so maybe it can give me an edge here. Of 
@@ -230,10 +228,10 @@ all will be well. So you can see here that ClearML created a new task, and it's 
 using a specific dataset ID which you can find in the configuration dict. I set it to this dataset tag, use the latest 
 dataset using a subset tag so in that case it will get the latest data that is only in the subset. So that's what we're 
 training on here. You can see I have 102 samples in the training set, only seven in the test set. This is why it's 
-subset, and now you can see that it's training in the app box and if I go to the experiment overview and I take a look 
+subset, and now you can see that its training in the app box and if I go to the experiment overview and I take a look 
 at what is here, I can see that the training run, here, I'll sort it on started up front so that we have it up top. 
 I can see that the training run here is in status running, which means it's essentially reporting to ClearML which is 
-what exactly what we want. And if I go to the Details tab, I can go to Results and see the console output being logged 
+exactly what we want. And if I go to the **Details** tab, I can go to Results and see the console output being logged 
 here in real time and the causal output might not be this interesting to keep staring at, but what is interesting to 
 keep staring at is the scalars. So here you can see the F1 score and the training loss go up or down before your eyes 
 and that's really cool because then I can keep track of it or like have it as a dashboard somewhere just so that I know 
@@ -243,10 +241,10 @@ into more in-depth analysis of this whole thing.
 So right now we see that it's completed and if we go back to what we had before and I sort again by the F1 score, we see 
 that the newest training run that we just did two minutes ago, and it was updated a few seconds ago is actually better 
 than what we had before. So it seems that the atom optimizer in fact does have a big effect on what we're doing. And 
-just to make sure that we didn't overlook anything, what I can do is I can select both my new model my new best model 
+just to make sure that we didn't overlook anything, what I can do is I can select both my new model, my new best model, 
 and the previous model that I had and then compare them. So it's what I have right here and everything that you just saw 
 that was tracked, be it hyperparameters or plots or whatever, can all be compared between different training runs. So 
-what we can see here if we click on execution, we have some uncommitted changes that are obviously different, and then 
+what we can see here if we click on **Execution**, we have some uncommitted changes that are obviously different, and then 
 if we scroll down, what we can see is that for example, here the atom optimizer was added and the optimizer SGD was 
 removed. So this already gives us the idea of okay, this is what changed. This is really interesting and we can always 
 also use these differences to then go back to the original code. 
@@ -256,7 +254,7 @@ but if we did, that would also be highlighted in red in this section. So if we'r
 where it gets really interesting because now the plots are overlaid on top of each other, and you can change the color 
 if you don't if you don't like the color. I think green is a bit ugly. So let's take red for example. We can just 
 change that here. And then we have a quick overview of two different compared experiments and then how their scalars did 
-over time. And because they have the same X-axis the iterations, we can actually compare them immediately to each other, 
+over time. And because they have the same X-axis as the iterations, we can actually compare them immediately to each other, 
 which is really, really cool. We can actually even see how the GPU memory usage or the GPU utilization has fared over 
 time, which is really interesting. And then things come up like for example, in this case, the higher F1 score which is 
 in our case, the atom optimizer, had a higher loss as well, which is really interesting and we might want to take a look 
@@ -288,10 +286,10 @@ these bars there and then say enqueue and what that will do is it will put that 
 stronger machine, a machine with a GPU as a ClearML Agent. And that agent is currently listening to a queue, and it will 
 grab experiments that are enqueued and start running them. And because we tracked everything, the code, the 
 hyperparameters, the original packages. The agent, the different machine, has no issues with completely reproducing my 
-experiment, but just on a different dataset. And so now I can click on enqueue. I just want to enqueue it in the default 
+experiment, but just on a different dataset. And so now I can click on **Enqueue**. I just want to enqueue it in the default 
 queue because my agent is listening to the default queue, and it is currently pending. As we can see here. 
 
-If I now go to Workers and Queues, what you can see is that I have my available worker here, and it is currently running 
+If I now go to **Workers and Queues**, what you can see is that I have my available worker here, and it is currently running 
 my training experiment. So if I click on the training experiment, it will get me back to the experiment that we just 
 edited. So if I go to the configuration we see that the batch sizes and the full dataset is right here. And it's 
 currently running, but it's not running on this machine. It's running on a different machine that is hosting the 
@@ -300,7 +298,7 @@ the output of this agent is essentially right now, just showing that it's trying
 had before. So now the agent is installing all the packages and is installing the whole environment to be able to run 
 your code without any issues on its own. And then we'll be able to follow along with the scalars as well and the plots 
 just as we would on any other task. How cool is that? That's awesome. So I'm going to let this run for a while, and 
-we'll come back. We'll keep it on the scalars tab so that you can see the progress being made, and then we can see the 
+we'll come back. We'll keep it on the **Scalars** tab so that you can see the progress being made, and then we can see the 
 whole loss and F1 score grow and go down over time, but on the full dataset this time, and then I'll come back when 
 it's done. 
 
@@ -316,9 +314,7 @@ link, you can send this link to your friend, colleague, whatever, and they will 
 the whole experiment, of everything you did, you can see the graphs, they can see the hyperparameters, and I can help 
 you find the best ways forward for your own models. 
 
-So I hope this kind of inspired you a little bit to try out ClearML. It's free to try at [app.clear.ml](https://app.clear.ml/), 
+So I hope this kind of inspired you a little bit to try out ClearML. It's free to try at [app.clear.ml](https://app.clear.ml), 
 or you can even host your own open source server with the interface that you can see right now. So why not have a go at 
 it? And thank you for watching.
 
-</div>
-</details>

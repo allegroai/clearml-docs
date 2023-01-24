@@ -17,9 +17,8 @@ keywords: [mlops, components, hyperparameter optimization, hyperparameter]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
+
 Hello and welcome to ClearML. In this video we’ll take a look at one cool way of using the agent other than rerunning a task remotely: hyperparameter optimization (HPO).
 
 By now, we know that ClearML can easily capture our hyperparameters and scalars as part of the experiment tracking. We also know we can clone any task and change its hyperparameters, so they’ll be injected into the original code at runtime. In the last video, we learnt how to make a remote machine execute this task automatically by using the agent. 
@@ -30,7 +29,7 @@ Yeah, yeah we can, it's called hyperparameter optimization. And we can do all of
 
 If you don’t know what Hyperparameter Optimization is yet, you can find a link to our blog post on the topic in the description below. But in its most basic form, hyperparameter optimization tries to optimize a certain output by changing a set of inputs. 
 
-Let’s say we’ve been working on this model here, and we were tracking our experiments with it anyway. We can see we have some hyperparameters to work with in the hyperparameters tab of the webUI. They are logged by using the `task.connect` function in our code. These are our inputs. We also have a scaler called `validation/epoch_accuracy`, that we want to get as high as possible. This is our output. We could also select to minimize the `epoch_loss` for example, that is something you can decide yourself.
+Let’s say we’ve been working on this model here, and we were tracking our experiments with it anyway. We can see we have some hyperparameters to work with in the **Hyperparameters** tab of the web UI. They are logged by using the `task.connect` function in our code. These are our inputs. We also have a scaler called `validation/epoch_accuracy`, that we want to get as high as possible. This is our output. We could also select to minimize the `epoch_loss` for example, that is something you can decide yourself.
 
 We can see that no code was used to log the scalar. It's done automatically because we are using TensorBoard.
 
@@ -54,7 +53,7 @@ That’s it! With just a few lines of code, we can optimize a task. If we take a
 
 And that’s really cool! Instead of inserting the HPO process in our original code, like you would do with most optimization libraries, we’ve now put it on top of it instead. So we can keep our code completely separate from the optimization process. Which, again, means we can optimize anything we want.
 
-We can now follow the progress of our optimization process by looking at the optimizer task under the plots section. Here we can see several interesting things happening.
+We can now follow the progress of our optimization process by looking at the optimizer task under the **Plots** section. Here we can see several interesting things happening.
 
 Every point in this graph is a task, or a single run of your code using a specific hyperparameter configuration. It will give you a quick glimpse into how all tasks are performing.
 
@@ -66,6 +65,4 @@ As we saw earlier, if you’re a ClearML pro user, you can even launch your opti
 
 And don’t forget about autoscaling! You can run it for free using code of course, but with ClearML Pro you can set it up in the UI as well. Which means that, starting from scratch, you can have an autoscaling cluster of cloud VMs running hyperparameter optimization on your experiment tasks in just a few minutes. How cool is that? 
 
-In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at app.clear.ml, and don’t forget to join our Slack channel, if you need any help.
-</div>
-</details>
+In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), if you need any help.

@@ -16,9 +16,7 @@ keywords: [mlops, components]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 Welcome to ClearML! This video will serve as an overview of the complete ClearML stack. We’ll introduce you to the most important concepts and show you how everything fits together, so you can deep dive into the next videos, which will cover the ClearML functionality in more detail.
 
@@ -40,7 +38,7 @@ The `clearml-agent` is a daemon that you can run on 1 or multiple machines and t
 
 Now that we have this remote execution capability, the possibilities are near endless.
 
-For example, It’s easy to set up an agent on either a CPU or a GPU machine, so you can easily run all of your experiments on any compute resource you have available. And if you spin up your agents in the cloud, they’ll even support auto scaling out of the box. 
+For example, It’s easy to set up an agent on either a CPU or a GPU machine, so you can easily run all of your experiments on any compute resource you have available. And if you spin up your agents in the cloud, they’ll even support autoscaling out of the box. 
 
 You can set up multiple machines as agents to support large teams with their complex projects and easily configure a queuing system to get the most out of your available hardware.
 
@@ -52,5 +50,3 @@ As a final example of how you could use the agent's functionality, ClearML provi
 
 As you can see ClearML is a large toolbox, stuffed with the most useful components for both data scientists and MLOps engineers. We’re diving deeper into each component in the following videos if you need more details, but feel free to get started now at clear.ml. 
 
-</div>
-</details>

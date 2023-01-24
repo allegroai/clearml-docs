@@ -17,9 +17,7 @@ keywords: [mlops, components, automation, orchestration, pipeline]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 Hello and welcome to ClearML. In this video we’ll take a look at how pipelines can be used as a way to easily automate and orchestrate multiple tasks.
 
@@ -61,8 +59,6 @@ When no step is selected, we can see our global pipeline info on the right. By c
 
 If we select a step from our pipeline, we can see much of the same details, but this time for that specific step. On the right we can see any inputs or outputs our step produced and below, we can see the steps console output as well as the original code.
 
-But now comes the most powerful feature of all. Again, a pipeline controller is a task like any other, so… we can clone it like any other. Pressing the "new run" button will allow us to do that from the UI! We can even change our global pipeline parameters here and, just like normal tasks, these will be injected into the original task and overwrite the original parameters. In this way, you can very quickly run many pipelines each with different parameters.
+But now comes the most powerful feature of all. Again, a pipeline controller is a task like any other, so… we can clone it like any other. Pressing the **+ New Run** button will allow us to do that from the UI! We can even change our global pipeline parameters here and, just like normal tasks, these will be injected into the original task and overwrite the original parameters. In this way, you can very quickly run many pipelines each with different parameters.
 
-In the next video of this Getting Started series, we’ll get a long-overdue look at ClearML Data, our data versioning tool. In the meantime, slap some pipeline decorators on your own functions for free at app.clear.ml, and don’t forget to join our Slack channel, if you need any help.
-</div>
-</details>
+In the next video of this Getting Started series, we’ll get a long-overdue look at ClearML Data, our data versioning tool. In the meantime, slap some pipeline decorators on your own functions for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), if you need any help.
