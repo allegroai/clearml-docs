@@ -17,9 +17,7 @@ keywords: [mlops, components, ClearML data]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 Hello and welcome to ClearML. In this video we’ll take a look at both the command line and python interfaces of our data versioning tool called `clearml-data`. 
 
@@ -47,9 +45,9 @@ A really useful thing we can do with the python interface is adding some interes
 
 Finally, upload the dataset and then finalize it, or just set `auto_upload` to `true` to make it a one liner.
 
-In the webUI, we can now see the details of our dataset version by clicking on the Dataset button on the left. When we click on our newly created dataset here, we get an overview of our latest version, of course we have only one for now.
+In the web UI, we can now see the details of our dataset version by clicking on the Dataset button on the left. When we click on our newly created dataset here, we get an overview of our latest version, of course we have only one for now.
 
-At a glance you can see things like the dataset ID, its size, and which files have been changed in this particular version. If you click on details, you’ll get a list of those files in the content tab. Let’s make the view a little larger with this button, so it’s easier to see. When we switch to the preview tab, we can see the histogram we made before as well as an automatically generated preview of some of the files in our dataset version. Feel free to add anything you want in here! Finally, you can check out the original console logs that can be handy for debugging.
+At a glance you can see things like the dataset ID, its size, and which files have been changed in this particular version. If you click on details, you’ll get a list of those files in the **Content** tab. Let’s make the view a little larger with this button, so it’s easier to see. When we switch to the preview tab, we can see the histogram we made before as well as an automatically generated preview of some of the files in our dataset version. Feel free to add anything you want in here! Finally, you can check out the original console logs that can be handy for debugging.
 
 Now imagine we’re on a different machine. Maybe one from a team member, a classmate, or just one of your remote agents, and you want to get the dataset to do something cool with it.
 
@@ -83,10 +81,8 @@ Now we can take a look again at the dataset UI. We’ll see our original dataset
 
 When we click on our newest version in the lineage view, we can see that we indeed added 4 files and removed 3.
 
-If we now click on details again to look at the content, we can see that our chocolate cakes have been added correctly. You’ll also notice that when we go to the preview tab, we only see chocolate cakes. This is because a dataset version only stores the differences between itself and its parents. So in this case, only chocolate cakes were added.
+If we now click on details again to look at the content, we can see that our chocolate cakes have been added correctly. You’ll also notice that when we go to the **Preview** tab, we only see chocolate cakes. This is because a dataset version only stores the differences between itself and its parents. So in this case, only chocolate cakes were added.
 
 In this video, we’ve covered the most important uses of ClearML Data, so hopefully you have a good intuition into what’s possible now and how valuable it can be. Building and updating your dataset versions from code is the best way to keep everything updated and make sure no data is ever lost. You’re highly encouraged to explore ways to automate as much of this process as possible, take a look at our documentation to find the full range of possibilities.
 
-So what are you waiting for? Start tracking your datasets with `clearml-data` and don’t forget to join our Slack channel if you need any help.
-</div>
-</details>
+So what are you waiting for? Start tracking your datasets with `clearml-data` and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) if you need any help.

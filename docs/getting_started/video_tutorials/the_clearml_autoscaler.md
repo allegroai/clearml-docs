@@ -17,9 +17,7 @@ keywords: [mlops, components, Autoscaler]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 Hello and welcome to ClearML. In this video we’ll go a little more advanced and introduce autoscalers, the easiest way to build your very own flock of ClearML Agents.
 
@@ -37,7 +35,7 @@ Obviously, you also configure a maximum budget by limiting the number of machine
 
 Now that the theory is taken care of, let’s take a look at how to set up an autoscaler on ClearML.
 
-To launch the autoscaler, go to app.clear.ml and open the Applications page. There you’ll find the autoscalers for each of the large cloud providers. To launch the autoscaler this way requires ClearML Pro, but it’s cheap enough that forgetting to shut down a remote GPU machine for 3 days costs more than a year of ClearML Pro, so…
+To launch the autoscaler, go to [app.clear.ml](https://app.clear.ml) and open the Applications page. There you’ll find the autoscalers for each of the large cloud providers. To launch the autoscaler this way requires ClearML Pro, but it’s cheap enough that forgetting to shut down a remote GPU machine for 3 days costs more than a year of ClearML Pro, so…
 
 We’ll go into the AWS wizard in this video, but the other autoscalers have a very similar setup. First are the credentials for your cloud provider of choice, make sure you assign the correct access rights because the autoscaler will use these credentials to launch the machines and shut them down again when they are idle.
 
@@ -61,12 +59,10 @@ So if we go to one of our projects, clone these tasks here, and then enqueue the
 
 The autoscaler has detected the tasks in the queue and has started booting up remote machines to process them. We can follow along with the process in our autoscaler dashboard.
 
-Once the machines are spinned up, the ClearML agents will register as available workers in the workers and queues tab. From here, they behave just like any other agent we’ve seen before.
+Once the machines are spinned up, the ClearML agents will register as available workers in the **Workers and Queues** tab. From here, they behave just like any other agent we’ve seen before.
 
 Finally, when everything is done and the remote machines are idle, they will be shut down automatically and the workers list will be empty again.
 
 You can see that this functionality is very powerful when combined with for example hyperparameter optimization or pipelines that launch a lot of tasks at once. Obviously, it can be used as the primary way to get access to remote compute, but it can even be used as an extra layer on top of the machines you already have on-premise to spillover in case of large demand spikes for example. You don’t pay when you don’t use it, so there isn’t really a good reason not to have one running at all times.
 
-Get started right now for free at app.clear.ml and start spinning up remote machines with ClearML Pro if you want to save some money and effort by automating the boring stuff. If you run into any issues along the way, join our Slack channel, and we’ll help you out.
-</div>
-</details>
+Get started right now for free at [app.clear.ml](https://app.clear.ml) and start spinning up remote machines with ClearML Pro if you want to save some money and effort by automating the boring stuff. If you run into any issues along the way, join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), and we’ll help you out.

@@ -17,9 +17,7 @@ keywords: [mlops, components, features, ClearML]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 ClearML is an open source MLOPS platform.
 
@@ -33,7 +31,5 @@ It's essentially a toolbox stuffed with everything you'll need to go from experi
 
 Doesn't matter if you're starting small or already in production, there's always a ClearML tool that can make your life easier.
 
-Start for free at app.clear.ml or host your own server from our GitHub page.
+Start for free at [app.clear.ml](https://app.clear.ml) or host your own server from our GitHub page.
 
-</div>
-</details>

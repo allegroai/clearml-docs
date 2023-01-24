@@ -17,9 +17,7 @@ keywords: [mlops, components, hyperdatasets]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 Hello and welcome to ClearML. In this video, we're taking a closer look at Hyper-Datasets, a supercharged version of ClearML Data.
 
@@ -39,7 +37,7 @@ Let’s take a look at an example that will show you how to use Hyper-Datasets t
 
 When you open Hyper-Datasets to explore a dataset, you can find the version history of that dataset here. Datasets can have multiple versions, which in turn can have multiple child versions. Each of the child versions will inherit the contents of their parents.
 
-By default, a dataset version will be in draft mode, meaning it can still be modified. You can press the publish button to essentially lock it to make sure it will not change anymore. If you want to make changes to a published dataset version, make a new version that’s based on it.
+By default, a dataset version will be in draft mode, meaning it can still be modified. You can press the **Publish** button to essentially lock it to make sure it will not change anymore. If you want to make changes to a published dataset version, make a new version that’s based on it.
 
 You’ll find automatically generated label statistics here, that give you a quick overview of the label distribution in your dataset as well as some version metadata and other version information. 
 
@@ -57,7 +55,7 @@ As an example, imagine you have created an experiment that tries to train a mode
 
 To get the data you need to train on, you can easily create a dataview from code like so. Then you can add all sorts of constraints, like class filters, metadata filters, and class weights which will over or under sample the data as is required.
 
-After running the task, we can see it in the experiment manager. The model is reporting scalars and training as we would expect. When using Hyper-Datasets, there is also a dataviews tab with all of the possibilities at your disposal. You can see which input datasets and versions that you used and can see the querying system that is used to subset them. This will already give you a nice, clean way to train your models on a very specific subset of the data, but there is more!
+After running the task, we can see it in the experiment manager. The model is reporting scalars and training as we would expect. When using Hyper-Datasets, there is also a **Dataviews** tab with all of the possibilities at your disposal. You can see which input datasets and versions that you used and can see the querying system that is used to subset them. This will already give you a nice, clean way to train your models on a very specific subset of the data, but there is more!
 
 If you want to remap labels, or enumerate them to integers on-the-fly, ClearML will keep track of all the transformations that are done and make sure they are reproducible. There is, of course, more still, so if you’re interested check out our documentation on Hyper-Datasets.
 
@@ -73,6 +71,5 @@ After the remote machine has executed the experiment on the new dataview, we can
 
 If you’ve been following along with the other Getting Started videos, you should already start to see the potential this approach can have. For example: we could now run hyperparameter optimization on the data itself, because all of the filters and settings previously shown are just parameters on a task. The whole process could be running in parallel on a cloud autoscaler for example. Imagine finding the best training data confidence threshold for each class to optimize the model performance.
 
-If you’re interested in using Hyper-Datasets for your team, then contact us using our website and we’ll get you going in no time. In the meantime, you can enjoy the power of the open source components at app.clear.ml, and don’t forget to join our Slack channel, if you need any help!
-</div>
-</details>
+If you’re interested in using Hyper-Datasets for your team, then contact us using our website, and we’ll get you going in no time. In the meantime, you can enjoy the power of the open source components at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), if you need any help!
+

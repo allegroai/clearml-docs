@@ -17,9 +17,7 @@ keywords: [mlops, components, GitHub Actions, CI/CD]
 </iframe>
 </div>
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Read the transcript</summary>
-<div className="cml-expansion-panel-content">
+### Video Transcript 
 
 Hello, welcome back to ClearML my name is Victor and in this video I'll be going through some CI/CD tips and tricks you 
 can do with ClearML. For this video, I'm going to assume that you already know about ClearML and CI/CD.
@@ -48,12 +46,12 @@ is remotely runnable right.
 So those were the three jobs that I want to talk about in this video. Let's get started.
 
 So as you can see, I have here my example project with me and there's a few things immediately apparent. So one is we 
-have the `.github` folder with workflows. We're using GitHub actions in this specific video again you don't have to use 
-GitHub actions if you don't want to. It's just as an example for General CI/CD stuff. Then we have a few scripts here, 
+have the `.github` folder with workflows. We're using GitHub actions in this specific video. Again, you don't have to use 
+GitHub actions if you don't want to. It's just an example for General CI/CD stuff. Then we have a few scripts here, 
 and we have our task as well. 
 
 Now, I'll start with the task because that's the thing we're going to run as the experiment you want to keep track of 
-in your Git, and in ClearML, and in this case, we'll just take like a dummy task. We'll take a very, very simple example 
+in your Git, and in ClearML, and in this case, we'll just take a dummy task. We'll take a very, very simple example 
 here, so we just do `from clearml import Task`. If you're familiar with ClearML this will be very familiar to you as
 well. It's just the `Task.init`, give it a project, give it a name, and then I basically always set `reuse_last_task_id` 
 to `false`, which basically means that it will never override the previous task if it didn't complete properly. It's more
@@ -76,10 +74,10 @@ if it has to do any kind of checks. In this case, we'll call it ClearML checks, 
 Now, most of the time that you're using ClearML, it's going to be interesting to do checks on a pull request because it 
 can take some time. It's machine learning after all, but it highly depends on what you want to do, of course. Now, 
 I'll be setting it to pull requests specifically to branch `main`. So if I want to do a pull request to my `main` 
-branch, I will want those checks being fired, and then I wanted them to be added to several different actions there, 
+branch, I will want those checks being fired, and then I want them to be added to several different actions there, 
 specifically the edited and opened are the ones that I'm interested in. So, every time I open a PR, but also every 
 time I update a PR, like send a new commit to it, it will trigger, and then what do we actually want to trigger. So this is 
-the meat of the story this is the jobs. 
+the meat of the story; this is the jobs. 
 
 In this video, we're going to run three specific jobs. One is `task-stats-to-comment`, the other one is `compare-models`, 
 and the third one is `test-remote-runnable`. 
@@ -89,14 +87,14 @@ trying to merge, and then add a comment on the PR with the different performance
 kind of neat; you can easily see what the task is doing, how good it is, stuff like that. So that's what we're going 
 to do first. 
 
-Now, how this is built up? I'll run down this and I will go into the code later in a second, but then to start with we 
+Now, how is this built up? I'll run down this and I will go into the code later in a second, but then to start with we 
 have the environment variables. Now, to be sure that the GitHub action worker or the gitlab runner or whatever you're 
 going to run these actions on has access to ClearML, you have to give it the ClearML credentials. You can do that with 
 the environment variable `CLEARML_API_ACCESS_KEY` and `CLEARML_API_SECRET_KEY`, these are the keys you get when you 
 create new credentials in the main UI. In this case I'll get them from the secrets; I've added them to GitHub as a
-secret, and we can gather them from there. Same thing with the ClearML API host. in our case it will just be 
-`app.clear.ml`, which is the free tier version pf ClearML. You also want a GitHub token because we want to actually
-add a comment to a PR, so we also need to GitHub token, which is very easy to generate. I'll put a link for that down 
+secret, and we can gather them from there. Same thing with the ClearML API host. In our case it will just be 
+`app.clear.ml`, which is the free tier version of ClearML. You also want a GitHub token because we want to actually
+add a comment to a PR, so we also need a GitHub token, which is very easy to generate. I'll put a link for that down 
 in the description. Then we also have the comment commit ID. So, specifically we want the pull request headshot, which 
 is the latest commit in the pull request. We're going to do some things with that. 
 
@@ -138,7 +136,7 @@ the task, there could be multiple, but again they're sorted on last update, so w
 then if not `task[script.diff]`, basically if there's not any uncommitted changes, we know the exact code that was 
 used there then we can just return the task, and that's it. 
 
-So now we have our task object. We know for sure that was run with the same code as was done in the PR, and we also know 
+So now we have our task object. We know for sure that it was run with the same code as was done in the PR, and we also know 
 that it was completed successfully. So we want to add a tag for example `main_branch`, just in your ClearML, you will be 
 able to see a tag there `main_branch`.
 
@@ -169,7 +167,7 @@ everything, install ClearML, and then run the task. Now no task based on this co
 just changed the code, it has an uncommitted change, remember? So there is no task in ClearML yet with the change that 
 we just made. So in order to get that running, we have to go into the task, run this first with this new PR, and now we 
 actually get a new task right here with the exact commits in branch `video_example`, without any uncommitted changes, 
-and if we now rerun our pipeline we should be good to go. So let me just go there it is almost done here. Yep, it's done 
+and if we now rerun our pipeline we should be good to go. So let me just go there. It is almost done here. Yep, it's done 
 so this should now be completed. And if I go back to our tests here, we can see that some of them have failed, so let's 
 rerun the failed jobs. Now, in this case we should actually find a task in ClearML that has all our 
 code changes, and it should work just nicely.
@@ -179,15 +177,17 @@ which of the tasks you run, but `task_stats_to_comment` was successful, so this 
 request, we see our little checkbox here that all the checks worked out perfectly fine, and if I go in
 here, you can see that the actual performance metric of series 1 is right there, so that's really, really cool. We
 just changed it and there's already an example there. So that was actually the first one, `task_stats_to_comment`, which 
-is really handy. You can just slap it on any task, and you'll always get the output there, if you add a new commit to 
+is really handy. You can just slap it on any task, and you'll always get the output there. If you add a new commit to 
 your PR, you'll just get a new comment from these checks just to be sure that it's always up-to-date.
 
 So let's get to the second part. So we had our `task_stats_to_comment`, what else might you want to do with GitHub CI/CD? 
-Another thing you might want to do is compare models, basically compare the output of the model or like the last metric 
+Another thing you might want to do is compare models, basically compare the output of the model or the last metric 
 that we just pulled from the current task, which is the task connected to the PR that we want to open, or that we've 
 just opened, and compare its performance to the performance of the best model before it. So we can always know that it's 
-either equal or better performance than the last commit. So if we go to `compare-models` here, and we have our 
-environments again, so this is all the same thing. We run again on Ubuntu 20.04, we check out the code we set up Python, 
+either equal or better performance than the last commit. 
+
+So if we go to `compare-models` here, and we have our 
+environments again, so this is all the same thing. We run again on Ubuntu 20.04, we check out the code we set up in Python, 
 we install our packages, and then we run `compare_models.py`. `compare_models.py` is very, very similar. It is very 
 simple. So here we print "running on Commit hash" which we get from the environment variable that we just gave to 
 GitHub, and then we run `compare_and_tag_task`. So what we want to do is basically compare and then if it's better, tag 
@@ -258,7 +258,7 @@ nice because we don't want the timer to be triggered because it's waiting in the
 to it, so we only want the timer to be started whenever it's actually being executed by ClearML agent. So we've reset 
 the timer. At some point the task status will change from `queued` to anything else. If this task status is `failed` or 
 `stopped`, it means we did have an error which is not ideal which is exactly what we want to catch in this case, so 
-we'll raise a value error saying "Task did not return correctly, check the logs in the web UI." You'll see probably in 
+we'll raise a value error saying "Task did not return correctly, check the logs in the web UI." You'll probably see in 
 ClearML that the task will actually have failed, and then you can check and debug there. Also raising a value error 
 will actually fail the pipeline as well, which is exactly what we want. We don't want this PR to go through if the 
 pipeline fails, because of a task that can't be run remotely, this is exactly what we want to catch. 
@@ -267,9 +267,9 @@ But, if the task status is in progress, we go into a next loop, in which we say,
 basically if we get only one iteration, it means that the whole setups process was successful, the model is training, 
 and we're good to go. So in that case, we just clean up, we've just checked everything is good, so we set the task as 
 `mark_stopped`, we set the task as `set_archived`, and we return `true`, which basically says get the task out of the 
-way, it shouldn't be in the project anymore. We just checked everything works get it out of my sight. 
+way, it shouldn't be in the project anymore. We just checked everything works. Get it out of my sight! 
 
-So that was the last of the three checks that I wanted to cover today. I hope you found this interesting I mean if we 
+So that was the last of the three checks that I wanted to cover today. I hope you found this interesting. I mean, if we 
 go back to the PR here, it's really nice to see all of these checks coming back green. It's very easy to just use the 
 ClearML API and even ClearML task for example to launch stuff remotely. It's not that far of a fetch either to just 
 think why not use ClearML agent as for example a test bed for GPU tests. So you could very easily add things to the 
@@ -278,10 +278,7 @@ you could actually run tests that are supposed to be run on GPU machines this wa
 or out-of-the-box allow you to run on GPU workers. 
 
 So it's just one of the very many ways that you can use ClearML to do 
-these kind of things and I hope you learned something valuable today. All of the code that you saw in this example 
-will be available in the link in the description, and if you need any help, join our Slack Channel, we're always there, 
+these kinds of things and I hope you learned something valuable today. All of the code that you saw in this example 
+will be available in the link in the description, and if you need any help, join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), we're always there, 
 always happy to help and thank you for watching.
 
-
-</div>
-</details>
