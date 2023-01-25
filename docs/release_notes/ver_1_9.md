@@ -10,7 +10,7 @@ title: Version 1.9
 * Add Python 3.11 support
 
 **Bug Fixes**
-* Fix `UniformParameterRange.to_list` throws error when step size is not defined [ClearML GitHub issue #859](https://github.com/allegroai/clearml/issues/859)
+* Fix `UniformParameterRange.to_list` throws error when step size is not defined [ClearML GitHub issue #858](https://github.com/allegroai/clearml/issues/858)
 * Fix `StorageManager.list()` does not return size metadata [ClearML GitHub issue #865](https://github.com/allegroai/clearml/issues/865)
 * Fix storage with path substitutions [ClearML GitHub issue #825](https://github.com/allegroai/clearml/issues/825)
 * Fix extras in ClearML installation prevents clearml from being included in requirements [ClearML GitHub issue #867](https://github.com/allegroai/clearml/issues/867)
