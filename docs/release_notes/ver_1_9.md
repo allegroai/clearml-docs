@@ -2,6 +2,30 @@
 title: Version 1.9
 ---
 
+### ClearML SDK 1.9.1
+
+**New Features and Improvements**
+* Add signature version to `boto3` configuration [ClearML GitHub issue #883](https://github.com/allegroai/clearml/issues/883)
+* Allow requesting custom token expiration using the `api.auth.req_token_expiration_sec` configuration setting
+* Add Python 3.11 support
+
+**Bug Fixes**
+* Fix `UniformParameterRange.to_list` throws error when step size is not defined [ClearML GitHub issue #858](https://github.com/allegroai/clearml/issues/858)
+* Fix `StorageManager.list()` does not return size metadata [ClearML GitHub issue #865](https://github.com/allegroai/clearml/issues/865)
+* Fix storage with path substitutions [ClearML GitHub issue #825](https://github.com/allegroai/clearml/issues/825)
+* Fix extras in ClearML installation prevents clearml from being included in requirements [ClearML GitHub issue #867](https://github.com/allegroai/clearml/issues/867)
+* Fix metadata set on an uploaded model object is not accessible [ClearML GitHub issue #890](https://github.com/allegroai/clearml/issues/890)
+* Fix Azure storage upload not working [ClearML GitHub issue #868](https://github.com/allegroai/clearml/issues/868)
+* Fix `task.connect` list of dicts parsed incorrectly in remote
+* Fix casting `None` to `int` fails uploads and permission checks
+* Fix numpy 1.24 support
+* Fix `clearml-data` previews are saved on file server even when `output_uri` is specified
+* Fix connecting a dictionary to task sometimes raises an exception 
+* Fix authentication headers are not set on substituted fileserver URLs
+* Fix `Task.get_project_id()` cannot find hidden projects
+* Fix TriggerScheduler docstrings [ClearML GitHub issue #881](https://github.com/allegroai/clearml/issues/881)
+
+
 ### ClearML Server 1.9.2
 
 **Bug Fixes**
