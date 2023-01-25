@@ -18,8 +18,8 @@ to your needs, and enqueue it for execution directly from the ClearML UI.
 Configure the task execution by modifying the `args` dictionary:
 * `delete_threshold_days` - Tasks older than this number of days will be deleted. The default value is 30 days.
 * `cleanup_period_in_days` - Repeat the cleanup service at this interval, in days. The default value is 1.0 (run once a day).
-* `force_delete` - If `False` (default), delete only Draft tasks. If `True`,  allows deletion of  tasks in any status. 
-* `run_as_service` - If `True` (default),  the task will be enqueued for remote execution (default queue: "services"). Otherwise, the script will execute locally. 
+* `force_delete` - If `False` (default), delete only Draft tasks. If `True`, allows deletion of tasks in any status. 
+* `run_as_service` - If `True` (default), the task will be enqueued for remote execution (default queue: "services"). Otherwise, the script will execute locally. 
 
 :::note Remote Execution
 If `run_as_service` is set to `True`, make sure a `clearml-agent` is assigned to the `services` queue.
@@ -48,7 +48,7 @@ This is followed by details from the cleanup.
 an `APIClient` object that establishes a session with the ClearML Server, and accomplishes the cleanup by calling:
 * [`Tasks.get_all`](../../references/api/tasks.md#post-tasksget_all) to get a list of Tasks to delete, providing the following parameters:
     * `system_tags` - Get only Tasks tagged as `archived`.
-    * `status_changed` - Get Tasks whose last status change is older than then delete threshold (in seconds).
+    * `status_changed` - Get Tasks whose last status change is older than the delete threshold (in seconds).
 * [`Task.delete`](../../references/sdk/task.md#delete) - Delete a Task.  
 
 ## Configuration

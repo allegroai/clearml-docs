@@ -111,11 +111,11 @@ def step_one(pickle_data_url: str, extra: int = 43):
   Example, assuming we have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 
-Additionally, you can enable automatic logging of a step’s metrics / artifacts / models  to the pipeline task using the 
+Additionally, you can enable automatic logging of a step’s metrics / artifacts / models to the pipeline task using the 
 following arguments:
 * `monitor_metrics` (Optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
   format is one of the following:
-  * List of pairs metric (title, series) to log: [(step_metric_title, step_metric_series), ].  Example: `[('test', 'accuracy'), ]`
+  * List of pairs metric (title, series) to log: [(step_metric_title, step_metric_series), ]. Example: `[('test', 'accuracy'), ]`
   * List of tuple pairs, to specify a different target metric to use on the pipeline Task: [((step_metric_title, step_metric_series), (target_metric_title, target_metric_series)), ].
   Example: `[[('test', 'accuracy'), ('model', 'accuracy')], ]`
 * `monitor_artifacts` (Optional) - Automatically log the step's artifacts on the pipeline Task. 

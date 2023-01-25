@@ -148,7 +148,7 @@ configuration [here](#aws-iam-restricted-access-policy).
 1. Complete creating the policy
 1. Attach the created policy to an IAM user/group whose credentials will be used in the autoscaler app (you can create a 
    new IAM user/group for this purpose)
-1. Obtain a set of AWS IAM credentials for the user/group to which  you have attached the created policy in the previous step  
+1. Obtain a set of AWS IAM credentials for the user/group to which you have attached the created policy in the previous step  
 
 
 ### AWS IAM Restricted Access Policy

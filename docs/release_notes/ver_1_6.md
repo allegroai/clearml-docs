@@ -89,7 +89,7 @@ title: Version 1.6
 * Fix listed models in UI pipeline run info panel doesn't link to model 
 * Fix "Load more" button disappears from UI experiment page 	
 * Fix breadcrumb link to parent project does not navigate to the parent's project page
-* Fix spaces deleted while typing query in UI  search bars
+* Fix spaces deleted while typing query in UI search bars
 * Fix UI plots not loading in experiments 
 * Fix UI experiment debug sample full screen failing to display multiple metrics
 * Fix using search in UI tables removes custom columns

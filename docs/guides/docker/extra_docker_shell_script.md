@@ -29,7 +29,7 @@ it is commented out, make sure to uncomment the line. We will use the example sc
 1. Search for and go to `docker_force_pull` in the document, and make sure that it is set to `true`, so that your docker 
    image will be updated. 
    
-1. Run the `clearml-agent` in docker mode: `clearml-agent daemon --docker --queue default`. The agent  will use the default 
+1. Run the `clearml-agent` in docker mode: `clearml-agent daemon --docker --queue default`. The agent will use the default 
    Cuda/Nvidia Docker Image. 
 
 1. Enqueue any ClearML Task to the `default` queue, which the Agent is now listening to. The Agent pulls the Task, and then reproduces it, 

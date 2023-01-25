@@ -188,7 +188,7 @@ This example demonstrates `sources` for video, `masks`, and `preview`.
 
 This frame shows the `masks` section in `sources`, and the top-level `rois` array.
 
-In `sources`,  the `masks` subsection contains the sources for the two masks associated with the raw data. 
+In `sources`, the `masks` subsection contains the sources for the two masks associated with the raw data. 
 
 The raw mask data is located in:
 

@@ -37,7 +37,7 @@ clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_mo
 ```
 
 :::info Service ID
-Make sure that you have executed `clearml-servings`'s
+Make sure that you have executed `clearml-serving`'s
 [initial setup](clearml_serving.md#initial-setup), in which you create a Serving Service. 
 The Serving Service's ID is required to register a model, and to execute `clearml-serving`'s `metrics` and `config` commands 
 :::
@@ -92,7 +92,7 @@ or with the `clearml-serving` CLI.
    ```
     
   You now have a new Model named `manual sklearn model` in the `serving examples` project. The CLI output prints 
-  the UID of the new model, which you will use it to register a new endpoint. 
+  the UID of the new model, which you will use to register a new endpoint. 
 
   In the [ClearML web UI](../webapp/webapp_overview.md), the new model is listed under the **Models** tab of its project. 
   You can also download the model file itself directly from the web UI. 
@@ -105,7 +105,7 @@ or with the `clearml-serving` CLI.
 :::info Model Storage
 You can also provide a different storage destination for the model, such as S3/GS/Azure, by passing
 `--destination="s3://bucket/folder"`, `gs://bucket/folder`, `azure://bucket/folder`. There is no need to provide a unique 
-path tp the destination argument, the location of the model will be a unique path based on the serving service ID and the 
+path to the destination argument, the location of the model will be a unique path based on the serving service ID and the 
 model name
 :::
 
@@ -116,7 +116,7 @@ model name
 The ClearML Serving Service supports automatic model deployment and upgrades, which is connected with the model 
 repository and API. When the model auto-deploy is configured, new model versions will be automatically deployed when you 
 `publish` or `tag` a new model in the ClearML model repository. This automation interface allows for simpler CI/CD model 
-deployment process, as a single API automatically deploy (or remove) a model from the Serving Service.
+deployment process, as a single API automatically deploys (or removes) a model from the Serving Service.
 
 #### Automatic Model Deployment Example
 
@@ -142,7 +142,7 @@ deployment process, as a single API automatically deploy (or remove) a model fro
 
 ### Canary Endpoint Setup
 
-Canary endpoint deployment add a new endpoint where the actual request is sent to a preconfigured set of endpoints with 
+Canary endpoint deployment adds a new endpoint where the actual request is sent to a preconfigured set of endpoints with 
 pre-provided distribution. For example, let's create a new endpoint "test_model_sklearn_canary", you can provide a list 
 of endpoints and probabilities (weights).
 
@@ -195,13 +195,13 @@ Example:
 ClearML serving instances send serving statistics (count/latency) automatically to Prometheus and Grafana can be used 
 to visualize and create live dashboards. 
 
-The default docker-compose installation is preconfigured with Prometheus and Grafana, do notice that by default data/ate 
+The default docker-compose installation is preconfigured with Prometheus and Grafana. Notice that by default data/ate 
 of both containers is *not* persistent. To add persistence, we recommend adding a volume mount.
 
 You can also add many custom metrics on the input/predictions of your models. Once a model endpoint is registered, 
 adding custom metric can be done using the CLI.
 
-For example, assume the mock scikit-learn model is deployed on endpoint `test_model_sklearn`,  you can log the requests 
+For example, assume the mock scikit-learn model is deployed on endpoint `test_model_sklearn`, you can log the requests 
 inputs and outputs (see examples/sklearn/preprocess.py example):
 
 ```bash

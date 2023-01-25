@@ -6,7 +6,7 @@ The [cifar_ignite.py](https://github.com/allegroai/clearml/blob/master/examples/
 script integrates ClearML into code that uses [PyTorch Ignite](https://github.com/pytorch/ignite). 
 
 The example script does the following:
-* Trains a  neural network on the CIFAR10 dataset for image classification.
+* Trains a neural network on the CIFAR10 dataset for image classification.
 * Creates a [ClearML Task](../../../fundamentals/task.md) named `image classification CIFAR10`, which is associated with 
   the `examples` project.
 * Calls the [`Task.connect`](../../../references/sdk/task.md#connect) method to track experiment configuration.

@@ -132,7 +132,7 @@ The following table describes the actions that can be done from the experiments 
 that allow each operation.  
 
 Access these actions with the context menu in any of the following ways:
-* In the experiments table, right-click an experiment  or hover over an experiment and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In the experiments table, right-click an experiment or hover over an experiment and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
 * In an experiment info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
 
 | Action | Description | States Valid for the Action | State Transition |

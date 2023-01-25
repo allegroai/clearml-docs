@@ -58,7 +58,7 @@ when creating a pipeline step.
 
 ### Pipeline Step Caching
 The Pipeline controller also offers step caching, meaning, reusing outputs of previously executed pipeline steps, in the 
-case of  exact same step code, and the same step input values. By default, pipeline steps are not cached. Enable caching
+case of exact same step code, and the same step input values. By default, pipeline steps are not cached. Enable caching
 when creating a pipeline step.
 
 When a step is cached, the step code is hashed, alongside the step’s parameters (as passed in runtime), into a single 

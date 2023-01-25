@@ -73,7 +73,7 @@ The minimum requirements for ClearML Server are:
 
 ## Restarting
 
-**To restart  ClearML Server Docker deployment:**
+**To restart ClearML Server Docker deployment:**
 
 * Stop and then restart the Docker containers by executing the following commands:
 

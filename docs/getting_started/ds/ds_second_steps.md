@@ -40,7 +40,7 @@ Check [this](../../fundamentals/hyperparameters.md) out for all Hyperparameter l
 
 ## Log Artifacts
 
-ClearML allows you to easily store the output products of an experiment -  Model snapshot / weights file, a preprocessing of your data, feature representation of data and more!
+ClearML allows you to easily store the output products of an experiment - Model snapshot / weights file, a preprocessing of your data, feature representation of data and more!
 
 Essentially, artifacts are files (or python objects) uploaded from a script and are stored alongside the Task.
 These Artifacts can be easily accessed by the web UI or programmatically.
@@ -157,7 +157,7 @@ The experiment table is a powerful tool for creating dashboards and views of you
 
 ### Creating Leaderboards
 Customize the [experiments table](../../webapp/webapp_exp_table.md) to fit your own needs, adding desired views of parameters, metrics and tags.
-It's possible to  filter and sort based on parameters and metrics, so creating custom views is simple and flexible.
+It's possible to filter and sort based on parameters and metrics, so creating custom views is simple and flexible.
 
 Create a dashboard for a project, presenting the latest Models and their accuracy scores, for immediate insights.
 

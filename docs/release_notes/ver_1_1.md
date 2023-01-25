@@ -239,7 +239,7 @@ This release is not backwards compatible - see notes below on upgrading
 - Add support for uploading artifacts with a list of files using `Task.upload_artifcats(name, [Path(), Path()])`
 - Add missing *clearml-task* parameters `--docker_args`, `--docker_bash_setup_script` and `--output-uri`
 - Change `CreateAndPopulate` will auto list packages imported but not installed locally
-- Add `clearml.task.populate.create_task_from_function()` to create a Task from a function,  wrapping function input arguments into hyper-parameter section as kwargs and storing function results as named artifacts
+- Add `clearml.task.populate.create_task_from_function()` to create a Task from a function, wrapping function input arguments into hyper-parameter section as kwargs and storing function results as named artifacts
 - Add support for Task serialization (e.g. for pickle)
 - Add `Task.get_configuration_object_as_dict()`
 - Add `docker_image` argument to `Task.set_base_docker()` (deprecate `docker_cmd`)
@@ -367,7 +367,7 @@ ClearML k8s glue default pod label was changed to `CLEARML=agent` (instead of `T
 **Bug Fixes**
 
 - Fix experiment details UI failure opening hyperparameter sections beginning with `#` [ClearML Server GitHub issue #79](https://github.com/allegroai/clearml-server/issues/79)
-- Fix performance issues with UI comparison of  large experiments [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1621698235159800)
+- Fix performance issues with UI comparison of large experiments [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1621698235159800)
 - Fix filtering on hyperparameters [ClearML GitHub issue #385](https://github.com/allegroai/clearml/issues/385) [Slack Channel](https://clearml.slack.com/archives/CTK20V944/p1626600582284700)
 - Fix profile page user options toggle control area of effect
 - Fix browser resizing affecting plot zoom

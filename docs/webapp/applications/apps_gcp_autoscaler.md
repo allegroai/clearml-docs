@@ -6,7 +6,7 @@ title: GCP Autoscaler
 The ClearML GCP Autoscaler App is available under the ClearML Pro plan
 :::
 
-The GCP Autoscaler Application optimizes GCP VM instance usage according to a user defined instance  budget: Define your 
+The GCP Autoscaler Application optimizes GCP VM instance usage according to a user defined instance budget: Define your 
 budget by specifying the type and amount of available compute resources.
 
 Each resource type is associated with a ClearML [queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) whose 

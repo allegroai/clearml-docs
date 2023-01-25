@@ -47,7 +47,7 @@ The version information is presented in the following tabs:
 * [Info](#info) 
    
 ## Frames
-The **Frames**  tab displays the contents of the selected dataset version.
+The **Frames** tab displays the contents of the selected dataset version.
 
 View the version's frames as thumbnail previews or in a table. Use the view toggle to switch between thumbnail 
 view <img src="/docs/latest/icons/ico-grid-view.svg" alt="thumbnail view" className="icon size-md space-sm" /> and 
@@ -71,7 +71,7 @@ To view the details of a specific frame, click on its preview, which will open t
 ### Simple Frame Filtering
 Simple frame filtering returns frames containing at least one annotation with a specified label.
 
-**To apply a simple frame filter,**  select a label from the **LABEL FILTER** list.
+**To apply a simple frame filter,** select a label from the **LABEL FILTER** list.
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">Simple filter example</summary>

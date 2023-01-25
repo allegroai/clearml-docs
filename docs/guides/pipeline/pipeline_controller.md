@@ -68,7 +68,7 @@ The sections below describe in more detail what happens in the controller task a
    Custom configuration values specific to this step execution are defined through the `parameter_override` parameter, 
    where the first step’s artifact is fed into the second step.
 
-   Special pre-execution and post-execution logic is added for this step  through the use of `pre_execute_callback` 
+   Special pre-execution and post-execution logic is added for this step through the use of `pre_execute_callback` 
    and  `post_execute_callback` respectively. 
 
    ```python

@@ -10,7 +10,7 @@ This release is not backwards compatible
 
 **Breaking Changes**
 * `preprocess` and `postprocess` class functions get 3 arguments
-* Add support for per-request state storage, passing information between the pre/post processing functions
+* Add support for per-request state storage, passing information between the pre/post-processing functions
 
 **Features & Bug Fixes**
 

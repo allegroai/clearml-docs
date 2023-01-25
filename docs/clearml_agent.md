@@ -483,7 +483,7 @@ Self-hosted [ClearML Server](deploying_clearml/clearml_server.md) comes by defau
 By default, the server is open and does not require username and password, but it can be [password-protected](deploying_clearml/clearml_server_security.md#user-access-security).
 In case it is password-protected, the services agent will need to be configured with server credentials (associated with a user).
 
-To do that, set these environment variables on  the ClearML Server machine with the appropriate credentials:
+To do that, set these environment variables on the ClearML Server machine with the appropriate credentials:
 ```
 CLEARML_API_ACCESS_KEY
 CLEARML_API_SECRET_KEY
@@ -499,7 +499,7 @@ Build a Docker container that when launched executes a specific experiment, or a
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point reuse_task
   ```
-- Build a Docker container that at launch will clone a Task  specified by Task ID, and will execute the newly cloned Task.
+- Build a Docker container that at launch will clone a Task specified by Task ID, and will execute the newly cloned Task.
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point clone_task
   ```
