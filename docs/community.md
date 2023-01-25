@@ -55,7 +55,7 @@ help maintainers reproduce the problem:
 * **Describe the exact steps necessary to reproduce the problem** in as much detail as possible. Please do not just summarize what you did. Make sure to explain how you did it.
 * **Provide the specific environment setup.** Include the ``pip freeze`` output, specific environment variables, Python version, and other relevant information.
 * **Provide specific examples to demonstrate the steps.** Include links to files or GitHub projects, or copy / paste snippets which you use in those examples.
-* **If you are reporting any  ClearML crash,** include a crash report with a stack trace from the operating system. Make 
+* **If you are reporting any ClearML crash,** include a crash report with a stack trace from the operating system. Make 
   sure to add the crash report in the issue and place it in a [code block](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks), 
   a [file attachment](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests), or just put it in 
   a [gist](https://gist.github.com) (and provide a link to that gist).

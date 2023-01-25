@@ -80,7 +80,7 @@ The following are the parameter type options and their corresponding fields:
     - `"values": List[Any]`- A list of valid parameter values to sample from
 
 For example: to specify a parameter search over uniform ranges of layer_1 and layer_2 sizes between 128 and 512 
-(in jumps of 128)  with varying batch sizes of 96, 128, and 160, use the following command:
+(in jumps of 128) with varying batch sizes of 96, 128, and 160, use the following command:
 
 <div className="wb-normal">
 

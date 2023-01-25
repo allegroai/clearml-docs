@@ -26,7 +26,7 @@ a SingleFrame:
   * Metadata and data for the labeled area of an image
   
   
-See [Example 1](#example-1), which shows `masks` in `sources`, `mask` in `rois`,  and the key-value pairs used to relate 
+See [Example 1](#example-1), which shows `masks` in `sources`, `mask` in `rois`, and the key-value pairs used to relate 
 a mask to its source in a frame.
 
 

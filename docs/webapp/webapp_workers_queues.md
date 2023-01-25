@@ -24,7 +24,7 @@ The worker table shows the currently available workers and their current executi
 
 
 Clicking on a worker will open the worker’s details panel and replace the graph with that worker’s resource utilization 
-information.  The resource metric being monitored can be selected through the menu at the graph’s top left corner:
+information. The resource metric being monitored can be selected through the menu at the graph’s top left corner:
 * CPU and GPU Usage
 * Memory Usage
 * Video Memory Usage
@@ -37,7 +37,7 @@ The worker’s details panel includes the following two tabs:
     * Current Experiment - The experiment currently being executed by the worker
     * Experiment Runtime - How long the currently executing experiment has been running
     * Experiment iteration - The last reported training iteration for the experiment
-* **QUEUES** -  information about the queues that the worker is assigned to:
+* **QUEUES** -  Information about the queues that the worker is assigned to:
     * Queue - The name of the Queue
     * Next experiment - The next experiment available in this queue
     * In Queue - The number of experiments currently enqueued

@@ -2,11 +2,11 @@
 title: The Dataviews Table
 ---
 
-[Dataviews](../dataviews.md) appear in the same Project as the experiment that stored the Dataview in the ClearML Enterprise platform, 
-as well as the **DATAVIEWS** tab in the **All Projects** page.
-
 The **Dataviews table** is a [customizable](#customizing-the-dataviews-table) list of Dataviews associated with a project.
-Use it to view, create, and edit Dataviews in the info panel. 
+Use it to view and create Dataviews, and access their info panels. 
+
+The table lists independent Dataview objects. To see Dataviews logged by a task, go
+to the specific task's **DATAVIEWS** tab (see [Experiment Dataviews](webapp_exp_track_visual.md)).
 
 View the Dataviews table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
@@ -84,7 +84,7 @@ The same information can be found in the bottom menu, in a tooltip that appears 
 
 ## Creating a Dataview 
 
-Create a new Dataview by clicking the **+ NEW DATAVIEW** button at the top right of the table, which open a 
+Create a new Dataview by clicking the **+ NEW DATAVIEW** button at the top right of the table, which opens a 
 **NEW DATAVIEW** window. 
 
 ![New Dataview window](../../img/webapp_dataview_new.png)

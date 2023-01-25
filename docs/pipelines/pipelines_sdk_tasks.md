@@ -187,7 +187,7 @@ def step_completed_callback(
 
 #### Models, Artifacts, and Metrics 
 
-You can enable automatic logging of a step’s metrics /artifacts / models  to the pipeline task using the following arguments:
+You can enable automatic logging of a step’s metrics /artifacts / models to the pipeline task using the following arguments:
 
 * `monitor_metrics` (Optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
   format is one of the following:

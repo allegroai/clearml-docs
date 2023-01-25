@@ -38,7 +38,7 @@ def main(pickle_url, mock_parameter='mock'):
   the following format: `{'section_name':['param_name']]}`. For example, the pipeline in the code above will store the 
   `pickle_url` parameter in the `General` section and `mock_parameter` in the `Mock` section. By default, arguments will 
   be stored in the `Args` section.  
-* `pool_frequency` - The pooling frequency (in minutes) for monitoring experiments / states.
+* `pool_frequency` - The polling frequency (in minutes) for monitoring experiments / states.
 * `add_pipeline_tags` - If `True`, add `pipe: <pipeline_task_id>` tag to all steps (Tasks) created by this pipeline 
   (this is useful to create better visibility in projects with multiple pipelines, and for easy selection) (default: 
   `False`).
@@ -111,11 +111,11 @@ def step_one(pickle_data_url: str, extra: int = 43):
   Example, assuming we have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 
-Additionally, you can enable automatic logging of a step’s metrics / artifacts / models  to the pipeline task using the 
+Additionally, you can enable automatic logging of a step’s metrics / artifacts / models to the pipeline task using the 
 following arguments:
 * `monitor_metrics` (Optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
   format is one of the following:
-  * List of pairs metric (title, series) to log: [(step_metric_title, step_metric_series), ].  Example: `[('test', 'accuracy'), ]`
+  * List of pairs metric (title, series) to log: [(step_metric_title, step_metric_series), ]. Example: `[('test', 'accuracy'), ]`
   * List of tuple pairs, to specify a different target metric to use on the pipeline Task: [((step_metric_title, step_metric_series), (target_metric_title, target_metric_series)), ].
   Example: `[[('test', 'accuracy'), ('model', 'accuracy')], ]`
 * `monitor_artifacts` (Optional) - Automatically log the step's artifacts on the pipeline Task. 

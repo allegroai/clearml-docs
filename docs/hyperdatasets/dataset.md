@@ -124,7 +124,7 @@ Dataset.delete(
 ```
 
 This supports deleting sources located in AWS S3, GCP, and Azure Storage (not local storage). The `delete_sources` 
-parameter is ignored if `delete_all_versions` is `False`.  You can view the deletion process’ progress by passing 
+parameter is ignored if `delete_all_versions` is `False`. You can view the deletion process’ progress by passing 
 `show_progress=True` (`tqdm` required).  
 
 ### Tagging Datasets
@@ -147,7 +147,7 @@ MyDataset.remove_tags(["dogs"])
 Dataset versioning refers to the group of ClearML Enterprise SDK and WebApp (UI) features for creating, 
 modifying, and deleting Dataset versions.
 
-ClearML Enterprise supports simple and advanced Dataset versioning paradigms.  A **simple version structure** consists of 
+ClearML Enterprise supports simple and advanced Dataset versioning paradigms. A **simple version structure** consists of 
 a single evolving version, with historic static snapshots. Continuously push your changes to your single dataset version, 
 and take a snapshot to record the content of your dataset at a specific point in time.
 
