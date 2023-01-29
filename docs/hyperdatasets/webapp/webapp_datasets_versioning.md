@@ -93,19 +93,34 @@ Simple frame filtering returns frames containing at least one annotation with a 
 
 Alternatively, a combination of ROI, frame, and source rules can be specified to apply more elaborate and specific 
 filters.
-* ROI rules use include and exclude logic to match frames by ROI label; an ROI label can match frames containing at least 
-  one annotation object (ROI) with all labels in the rule.
-* Frame rules and source rules use Lucene queries with AND, OR, and NOT logic. Frame rules apply to frame metadata.
-* Source rules apply to frame source information.
 
 **To apply advanced filters:**
 1. In the **FRAMES** tab, click **Advanced filters**.
 1. In a **FRAME FILTER**, create one of the following rules:
-    * ROI rule
-        * Choose **Include** or **Exclude**, select ROI labels, and optionally set the confidence level range.
-        * To switch from the ROI dropdown list to a Lucene query mode, click <img src="/docs/latest/icons/ico-edit.svg" alt="Setting Gear" className="icon size-md space-sm" />.
-    * Frame rule - Enter a Lucene query using frame metadata fields in the format `meta.<key>:<value>`.
-    * Source rule - Enter a Lucene query using frame metadata fields in the format `sources.<key>:<value>`.            
+   * ROI rule - Use "Include" and "Exclude" conditions to match frames by ROI label; frames match the rule when 
+   containing at least one annotation object (ROI) with **all** labels in the rule. Click <img src="/docs/latest/icons/ico-code.svg" alt="Lucene query mode" className="icon size-md space-sm" /> 
+   to explicitly specify your rule with Lucene 
+   * Frame rule - Query frame metadata. Enter a Lucene query of frame metadata fields in the format `meta.<key>:<value>` 
+   (can use AND, OR, and NOT operators).
+   * Source rule - Query frame source information. Enter a Lucene query of frame metadata fields in the format 
+   `sources.<key>:<value>` (can use AND, OR, and NOT operators).
+   
+A frame filter can contain a number of rules. For each frame filter, the rules are applied with a logical AND operator. For example, the dataset version in the image below has one filter. “Frame Filter 1” has two rules: 
+1. ROI rule - the frame must include an ROI with the `cat` label
+2. Source rule - the frames must be 640 pixels wide. 
+
+The returned frames are those that match the first rule AND the second rule within the frame filter.
+
+![Multiple rules filter](../../img/hyperdatasets/multiple_rules.png)
+
+Create additional frame filters by clicking <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" />. 
+Multiple frame filters are applied with a logical OR operator. 
+
+For example, the dataset version in the image below has two frame filters. "Frame Filter 1" has the same two rules 
+described in the example above. "Frame Filter 2" specifies an ROI rule for the frame to contain an ROI with the label 
+`dog`. So the frames returned are those that match ALL of Frame Filter 1’s rules OR ALL of Frame Filter 2’s rules.  
+
+![Multiple filters](../../img/hyperdatasets/multiple_filters.png)
 
 To clear all filters click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" />. 
 
