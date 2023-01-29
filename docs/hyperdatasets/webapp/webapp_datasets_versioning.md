@@ -125,7 +125,7 @@ described in the example above. "Frame Filter 2" specifies an ROI rule for the f
 To clear all filters click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" />. 
 
 
-### Filtering Examples
+#### Filtering Examples
 
 <details className="cml-expansion-panel screenshot">
 <summary className="cml-expansion-panel-summary">ROI Rules</summary>
