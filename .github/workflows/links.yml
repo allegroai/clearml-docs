@@ -17,18 +17,59 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  linkChecker:
+  Splitting_files_into_batches:
     runs-on: ubuntu-latest
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
     steps:
       - uses: actions/checkout@v3
 
-      - name: Find all markdown files
-        id: find_files
-        run: echo "MD_FILES=$(find . -name '*.md' -type f | sed 's|^./||' | tr '\n' ' ')" >> $GITHUB_ENV
+      - name: Creating artifacts directory
+        id: create_artifacts_dir
+        run: mkdir -pv "$MD_ARTIFACTS_DIR"
+
+      - name: Find all markdown files and create batch
+        id: find_md_files
+        run: |
+          export md_files_arr=($(find . -name '*.md' -type f | sed 's|^./||'))
+          echo "${md_files_arr}" > "${MD_ARTIFACTS_DIR}/MD_FILES.txt"
+          echo "${md_files_arr[@]:0:50}" | tr ' ' '\n' > "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_1.txt"
+          echo "${md_files_arr[@]:50:50}" | tr ' ' '\n' > "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_2.txt"
+          echo "${md_files_arr[@]:100:50}" | tr ' ' '\n' > "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_3.txt"
+          echo "${md_files_arr[@]:150:50}" | tr ' ' '\n' > "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_4.txt"
+          echo "${md_files_arr[@]:200}" | tr ' ' '\n' > "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_5.txt"
+          echo "First batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_1.txt" | wc -l) file."
+          echo "Second batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_2.txt" | wc -l) file."
+          echo "Third batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_3.txt" | wc -l) file."
+          echo "Fourth batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_4.txt" | wc -l) file."
+          echo "Fifth batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_5.txt" | wc -l) file."
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+# Link Checker Jobs
+  Link_checking_batch_one:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_1.txt" | tr '\n' ' ')" >> $GITHUB_ENV
 
       - name: Link Checker
         id: lychee
-        uses: lycheeverse/lychee-action@v1.4.1
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
@@ -38,18 +79,294 @@ jobs:
           # format: json
           args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
 
-      #- name: Read Results
-      #  if: ${{ steps.lychee.outputs.exit_code != 0 }}
-      #  run: echo "FAILED_URLS=$(jq -r '.fail_map[] | .[] | .url' ./lychee/out.md)" >> $GITHUB_ENV
+  Link_checking_batch_two:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
 
-      #- name: Slack Notification
-      #  if: ${{ steps.lychee.outputs.exit_code != 0 }}
-      #  uses: tokorom/action-slack-incoming-webhook@main
-      #  env:
-      #    INCOMING_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
-      #  with:
-      #    blocks: |
-      #      [
-      #        {"type": "section", "text": {"type": "mrkdwn", "text": ":warning: Link Checker failure in github.com/allegroai/clearml-docs "}},
-      #        {"type": "section", "text": {"type": "mrkdwn", "text": "$FAILED_URLS"}}
-      #      ]
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_2.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
+
+  Link_checking_batch_three:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_3.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
+
+  Link_checking_batch_four:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_4.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
+
+  Link_checking_batch_five:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_5.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose
+
+# Link Checker (Excluded) Jobs
+  Link_checking_excluded_batch_one:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_1.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Creating lychee include file
+        run: cp -vf .lycheeignore /tmp/lychee_include_file
+
+      - name: Removing .lycheeignore
+        run: rm -vf .lycheeignore
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
+
+  Link_checking_excluded_batch_two:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_2.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Creating lychee include file
+        run: cp -vf .lycheeignore /tmp/lychee_include_file
+
+      - name: Removing .lycheeignore
+        run: rm -vf .lycheeignore
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
+
+  Link_checking_excluded_batch_three:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_3.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Creating lychee include file
+        run: cp -vf .lycheeignore /tmp/lychee_include_file
+
+      - name: Removing .lycheeignore
+        run: rm -vf .lycheeignore
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
+
+  Link_checking_excluded_batch_four:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_4.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Creating lychee include file
+        run: cp -vf .lycheeignore /tmp/lychee_include_file
+
+      - name: Removing .lycheeignore
+        run: rm -vf .lycheeignore
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
+
+  Link_checking_excluded_batch_five:
+    runs-on: ubuntu-latest
+    needs: [Splitting_files_into_batches]
+    env:
+      MD_ARTIFACTS_DIR: /tmp/md_artifacts
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: artifacts-markdown
+          path: ${{ env.MD_ARTIFACTS_DIR }}
+
+      - name: Creating MD_FILES env variable
+        run: echo "MD_FILES=$(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_5.txt" | tr '\n' ' ')" >> $GITHUB_ENV
+
+      - name: Creating lychee include file
+        run: cp -vf .lycheeignore /tmp/lychee_include_file
+
+      - name: Removing .lycheeignore
+        run: rm -vf .lycheeignore
+
+      - name: Link Checker
+        id: lychee
+        # if: ${{ false }}  # disable for now
+        uses: lycheeverse/lychee-action@v1.5.4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          # Fail action on broken links
+          fail: true
+          # Use json as output format (instead of markdown)
+          # format: json
+          args: ${{ env.MD_FILES }} --max-concurrency 1 --no-progress --verbose --include $(cat /tmp/lychee_include_file | tr '\n' ' ')
