@@ -102,7 +102,7 @@ module.exports = {
           to: '/docs/faq'
         },
         {
-          href: 'https://clearml.slack.com',
+          href: 'https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg',
           position: 'right',
           className: 'header-ico header-ico--slack',
           'aria-label': 'Slack Channel',
