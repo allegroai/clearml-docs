@@ -2,7 +2,7 @@
 title: Experiment Environment Containers
 ---
 
-This tutorial demonstrates using [`clearml-agent`](../../clearml_agent.md)’s [`build`](../../clearml_agent/clearml_agent_build.md) 
+This tutorial demonstrates using [`clearml-agent`](../../clearml_agent.md)’s [`build`](../../clearml_agent/clearml_agent_ref.md#build) 
 command to build a Docker container replicating the execution environment of an existing task. ClearML Agents can make 
 use of such containers to execute tasks without having to set up their environment every time. 
 
