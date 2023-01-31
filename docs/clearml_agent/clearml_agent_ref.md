@@ -12,7 +12,12 @@ The following page provides a reference to `clearml-agent`'s CLI commands:
 
 ## build
 
-Create a worker environment without executing the experiment.
+Use the `build` command to create worker environments without executing tasks. 
+
+You can build Docker containers according to the execution environments of specific tasks, which an agent can later
+use to execute tasks without setting up their environments each time. See tutorial [here](../guides/clearml_agent/exp_environment_containers.md).
+
+You can also create a Docker container that executes a specific task when launched. See tutorial [here](../guides/clearml_agent/executable_exp_containers.md). 
 
 ```bash
 clearml-agent build [-h] --id TASK_ID [--target TARGET]
@@ -53,7 +58,11 @@ clearml-agent config [-h]
 
 ## daemon 
 
-Run a worker, optionally in a Docker container, listening to a queue.
+Use the `daemon` command to spin up an agent on any machine: on-prem and/or cloud instance. When spinning up an agent, 
+assign it a queue(s) to service, and when experiments are added to its queues, the agent will pull and execute them. 
+
+With the `daemon` command you can configure your agent's behavior: allocate resources, prioritize queues, set it to run 
+in Docker, and more. 
 
 ```bash
 clearml-agent daemon [-h] [--foreground] [--queue QUEUES [QUEUES ...]] [--order-fairness] 
@@ -99,7 +108,8 @@ clearml-agent daemon [-h] [--foreground] [--queue QUEUES [QUEUES ...]] [--order-
 
 ## execute
 
-Build and execute an experiment without a queue.
+Use the `execute` command to have an agent execute specific tasks directly without listening to a queue.
+
 
 ```bash
 clearml-agent execute [-h] --id TASK_ID [--log-file LOG_FILE] [--disable-monitoring] 
