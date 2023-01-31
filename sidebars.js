@@ -36,19 +36,7 @@ module.exports = {
         {'ClearML Fundamentals': ['fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
             'fundamentals/hpo']},
         {'ClearML SDK': ['clearml_sdk/clearml_sdk', 'clearml_sdk/task_sdk', 'clearml_sdk/model_sdk', 'clearml_sdk/apiclient_sdk']},
-        {'ClearML Agent':
-                [
-                    'clearml_agent',
-                    {'Reference':
-                            [
-                                'clearml_agent/clearml_agent_ref', 'clearml_agent/clearml_agent_build',
-                                'clearml_agent/clearml_agent_config', 'clearml_agent/clearml_agent_daemon',
-                                'clearml_agent/clearml_agent_execute', 'clearml_agent/clearml_agent_list',
-                                'clearml_agent/clearml_agent_env_var'
-                            ]
-                    }
-                ]
-        },
+        'clearml_agent',
         {'ClearML Pipelines':['pipelines/pipelines',
                 {"Building Pipelines":
                         ['pipelines/pipelines_sdk_tasks', 'pipelines/pipelines_sdk_function_decorators']
@@ -207,6 +195,9 @@ module.exports = {
                 'references/sdk/hpo_parameters_uniformparameterrange',
                 'references/sdk/hpo_parameters_parameterset',
                 ]},
+    ],
+    clearmlAgentSidebar: [
+        'clearml_agent/clearml_agent_ref', 'clearml_agent/clearml_agent_env_var'
     ],
     hyperdatasetsSidebar: [
         'hyperdatasets/overview',
