@@ -329,14 +329,14 @@ ___
         
 **`agent.worker_id`** (*string*)
         
-* When creating a worker, assign the worker a name.
+* When creating a worker, assign the worker an ID.
 
     * If specified, a unique name for the worker. For example, `clearml-agent-machine1:gpu0`.
     * If not specified, the following is used: `<hostname>:<process_id>`.
 
         For example, `MyHost:12345`.
         
-        Alternatively, specify the environment variable `CLEARML_WORKER_NAME` to override this worker name.
+        Alternatively, specify the environment variable `CLEARML_WORKER_ID` to override this worker name.
         
 ---
         
@@ -345,7 +345,7 @@ ___
 * Use to replace the hostname when creating a worker if `agent.worker_id` is not specified. For example, if `worker_name` 
   is `MyMachine` and the `process_id` is `12345`, then the worker is named `MyMachine.12345`.
 
-    Alternatively, specify the environment variable `CLEARML_WORKER_ID` to override this worker name.
+    Alternatively, specify the environment variable `CLEARML_WORKER_NAME` to override this worker name.
         
 <br/>
 
