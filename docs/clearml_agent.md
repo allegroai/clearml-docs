@@ -1,5 +1,5 @@
 ---
-title: ClearML Agent Overview
+title: ClearML Agent
 ---
 
 **ClearML Agent** is a virtual environment and execution manager for DL / ML solutions on GPU machines. It integrates with the **ClearML Python Package** and ClearML Server to provide a full AI cluster solution. <br/>
@@ -649,3 +649,9 @@ Or, force workers on for a queue using the REST API:
 ```bash
 curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"queue":"<queue_id>","tags":["force_workers:on"]}' http://<api-server-hostname-or-ip>:8008/queues.update
 ```
+
+## References
+
+* See [ClearML Agent CLI](clearml_agent/clearml_agent_ref.md) for a reference for `clearml-agent`'s CLI commands. 
+* See [ClearML Agent Environment Variables](clearml_agent/clearml_agent_env_var.md) for a list of environment variables
+to configure ClearML Agent

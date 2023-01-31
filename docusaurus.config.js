@@ -79,13 +79,18 @@ module.exports = {
               to: '/docs/references/sdk/task',
             },
             {
-              label: 'Hyper-Datasets',
-              to: '/docs/references/hyperdataset',
+              label: 'ClearML Agent',
+              to: '/docs/clearml_agent/clearml_agent_ref',
             },
             {
               label: 'Server API',
               to: '/docs/references/api',
             },
+            {
+              label: 'Hyper-Datasets',
+              to: '/docs/references/hyperdataset',
+            },
+
             {
               label: 'Release Notes',
               to: '/docs/release_notes/ver_1_9',
