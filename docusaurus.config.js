@@ -80,7 +80,7 @@ module.exports = {
             },
             {
               label: 'ClearML Agent',
-              to: 'docs/clearml_agent/clearml_agent_ref',
+              to: '/docs/clearml_agent/clearml_agent_ref',
             },
             {
               label: 'Server API',
