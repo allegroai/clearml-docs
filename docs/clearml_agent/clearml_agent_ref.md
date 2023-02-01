@@ -15,7 +15,7 @@ The following page provides a reference to `clearml-agent`'s CLI commands:
 Use the `build` command to create worker environments without executing tasks. 
 
 You can build Docker containers according to the execution environments of specific tasks, which an agent can later
-use to execute tasks without setting up their environments each time. See tutorial [here](../guides/clearml_agent/exp_environment_containers.md).
+use to execute other tasks. See tutorial [here](../guides/clearml_agent/exp_environment_containers.md).
 
 You can also create a Docker container that executes a specific task when launched. See tutorial [here](../guides/clearml_agent/executable_exp_containers.md). 
 
@@ -36,7 +36,7 @@ clearml-agent build [-h] --id TASK_ID [--target TARGET]
 |---|----|---|
 |`--id`| Build a worker environment for this Task ID.|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--cpu-only`| Disable GPU access for the Docker container.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--docker`| Run agent in Docker mode. Specify Docker container that a worker will execute at launch. To specify the image name and optional arguments, use one of the following: <ul><li>`--docker <image_name> <args>` on the command line</li><li>`--docker` on the command line, and specify the default image name and arguments in the configuration file.</li></ul> Environment variable settings for Docker containers: <ul><li>`CLEARML_DOCKER_SKIP_GPUS_FLAG` - Ignore the `--gpus` flag inside the Docker container. This also allows you to execute ClearML Agent using Docker versions earlier than 19.03.</li><li>`NVIDIA_VISIBLE_DEVICES` - Limit GPU visibility for the Docker container.</li><li> `CLEARML_AGENT_GIT_USER` and `CLEARML_AGENT_GIT_PASS` - Pass these credentials to the Docker container at execution.</li></ul> To limit GPU visibility for Docker, set the `NVIDIA_VISIBLE_DEVICES` environment variable.| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|      
+|`--docker`| Run agent in Docker mode. Specify a Docker container that a worker will execute at launch. To specify the image name and optional arguments, use one of the following: <ul><li>`--docker <image_name> <args>` on the command line</li><li>`--docker` on the command line, and specify the default image name and arguments in the configuration file.</li></ul> Environment variable settings for Docker containers: <ul><li>`CLEARML_DOCKER_SKIP_GPUS_FLAG` - Ignore the `--gpus` flag inside the Docker container. This also allows you to execute ClearML Agent using Docker versions earlier than 19.03.</li><li>`NVIDIA_VISIBLE_DEVICES` - Limit GPU visibility for the Docker container.</li><li> `CLEARML_AGENT_GIT_USER` and `CLEARML_AGENT_GIT_PASS` - Pass these credentials to the Docker container at execution.</li></ul> To limit GPU visibility for Docker, set the `NVIDIA_VISIBLE_DEVICES` environment variable.| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|      
 |`--entry-point`| Used in conjunction with `--docker`, indicates how to run the Task specified by `--task-id` on Docker startup. The `--entry-point` options are: <ul><li>`reuse` - Overwrite the existing Task data.</li><li>`clone_task` - Clone the Task, and execute the cloned Task.</li></ul>|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--force-docker`| Force using the agent-specified docker image (either explicitly in the `--docker` argument or using the agent's default docker image). If provided, the agent will not use any docker container information stored in the task itself (default `False`)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--git-pass`| Git password for repository access.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -62,7 +62,7 @@ Use the `daemon` command to spin up an agent on any machine: on-prem and/or clou
 assign it a queue(s) to service, and when experiments are added to its queues, the agent will pull and execute them. 
 
 With the `daemon` command you can configure your agent's behavior: allocate resources, prioritize queues, set it to run 
-in Docker, and more. 
+in a Docker, and more. 
 
 ```bash
 clearml-agent daemon [-h] [--foreground] [--queue QUEUES [QUEUES ...]] [--order-fairness] 
