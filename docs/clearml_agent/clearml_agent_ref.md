@@ -108,7 +108,7 @@ clearml-agent daemon [-h] [--foreground] [--queue QUEUES [QUEUES ...]] [--order-
 
 ## execute
 
-Use the `execute` command to have an agent execute specific tasks directly without listening to a queue.
+Use the `execute` command to set an agent to build and execute specific tasks directly without listening to a queue.
 
 
 ```bash
