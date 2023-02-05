@@ -58,21 +58,23 @@ to find your ClearML resources.
 To search using regex, click the `.*` icon on the search bar. 
 
 Search results are returned for the different ClearML objects:
-* Experiments - Searching an experiment table looks for matches in the experiments’ name, id, description and input and 
-output models. The enterprise version also includes experiment Dataviews’ hyper-datasets and versions. 
-* Models - Searching a Model table looks for matches in the models’ name, id and description.
-* Dataviews (Enterprise only) - Searching a Dataviews table looks for matches in the Dataviews’ name, ID, description, 
+* Experiments - Searching an experiment table looks for matches in the experiments' name, ID, description and input and 
+output models. The enterprise version also includes experiment Dataviews' hyper-datasets and versions. 
+* Models - Searching a Model table looks for matches in the models' name, ID and description.
+* Dataviews (Enterprise only) - Searching a Dataviews table looks for matches in the Dataviews' name, ID, description, 
 hyper-datasets, and versions.
-* Datasets - Searching the datasets page looks for matches in the datasets’ name, ID, and description.
-* Pipelines - Searching the pipelines page looks for matches in the datasets’ name, ID, and description.
-* Reports - Searching the reports page looks for matches in the reports’ name, ID, tags, project, description, and 
+* Datasets - Searching the datasets page looks for matches in the datasets' name, ID, and description. In a dataset's
+version table, a search looks for matches in the versions' name, ID, and description. 
+* Pipelines - Searching the pipelines page looks for matches in the datasets' name, ID, and description. In a pipeline
+run's table, a search looks for matches in the runs' name and ID. 
+* Reports - Searching the reports page looks for matches in the reports' name, ID, tags, project, description, and 
 report content.
 
 The search bar in the [Dashboard](webapp_home.md) page searches the whole WebApp for objects that match queries as 
 specified above and returns results divided by object type (projects, experiments, models, etc.). 
 
 :::tip Additional filtering
-ClearML’s object tables (e.g. [experiments](webapp_exp_table.md), [models](webapp_model_table.md), [pipelines](pipelines/webapp_pipeline_table.md), 
+ClearML's object tables (e.g. [experiments](webapp_exp_table.md), [models](webapp_model_table.md), [pipelines](pipelines/webapp_pipeline_table.md), 
 and [datasets](datasets/webapp_dataset_page.md)) provide column filters to easily focus your search by object properties
 (e.g status, creation/update time, metric values, etc.).
 :::
