@@ -14,6 +14,7 @@ A `SingleFrame` contains the following components:
 * [Masks](#masks)
 * [Previews](#previews)
 * [Metadata](#metadata)
+* [Context ID](#context-id)
 
 ### Sources
 Every `SingleFrame` includes a [`sources`](sources.md) dictionary, which contains attributes of the raw data, including:
@@ -51,6 +52,18 @@ For more information, see [Previews](previews.md).
 `metadata` is a dictionary with general information about the `SingleFrame`.
 
 For more information, see [Custom Metadata](custom_metadata.md).
+
+### Context ID
+Frames' `context_id` property facilitates grouping SingleFrames and FrameGroups. When a `context_id` is not explicitly 
+defined, the frame's source URI is used instead.
+
+When you query the server for frames (e.g. with the [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator) 
+method), the returned frames are grouped together according to their `context_id`, and within their context group are 
+ordered according to their `timestamp`. 
+
+Use the WebApp's dataset version frame browser "Group by URL" option to display a single preview for all frames with the 
+same context ID. Click the preview to view the context group's frames in the frame viewer in order of their timestamps. 
+This is useful when working with a video. You can give all the video frames the same context ID, and then view them in order.
 
 ## Frame Structure
 
@@ -218,7 +231,7 @@ There are also options to populate the instance with:
 * A dictionary of annotation objects - `annotations`
 * A URI link to a mask file for the frame - `mask_source`
 
-For more information, see the `SingleFrame` class description.
+For more information, see the [`SingleFrame`](../references/hyperdataset/singleframe.md) class description.
 
 ### Adding SingleFrames to a Dataset Version
 
