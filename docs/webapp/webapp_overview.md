@@ -52,7 +52,7 @@ email > click **ADD** > page redirects to the [Users & Groups](webapp_profile.md
 * **Logout** of ClearML 
 
 ### Finding What You're Looking for
-Use the search bar <img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-sm space-sm" />
+Use the search bar <img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" />
 to find your ClearML resources.
 
 To search using regex, click the `.*` icon on the search bar. 
@@ -80,10 +80,10 @@ and [datasets](datasets/webapp_dataset_page.md)) provide column filters to easil
 :::
 
 ### Helpful Resources 
-Click the help menu button <img src="/docs/latest/icons/ico-help-outlined.svg" alt="Help menu" className="icon size-sm space-sm" /> 
+Click the help menu button <img src="/docs/latest/icons/ico-help-outlined.svg" alt="Help menu" className="icon size-md space-sm" /> 
 in the top right corner of the web UI screen to access the self-help resources including:
 * ClearML Python Package setup - Instruction to get started with the `clearml` Python package
-* [ClearML on YouTube](https://www.youtube.com/c/ClearML/featured) <img src="/docs/latest/icons/ico-youtube.svg" alt="Youtube" className="icon size-sm space-sm" />  - Instructional videos on integrating ClearML into your workflow
+* [ClearML on YouTube](https://www.youtube.com/c/ClearML/featured) <img src="/docs/latest/icons/ico-youtube.svg" alt="Youtube" className="icon size-md space-sm" />  - Instructional videos on integrating ClearML into your workflow
 * Online Documentation
 * Pro Tips - Tips for working with ClearML efficiently
 * [Contact Us](https://clear.ml/contact-us) - Quick access to ClearML contact form
