@@ -22,7 +22,7 @@ solution.
     * Multi models per serving service
     * Multi-service support (fully separated multiple serving service running independently)
     * Multi cluster support
-    * Out-of-the-box node auto-scaling based on load/usage
+    * Out-of-the-box node autoscaling based on load/usage
 * Efficient
     * Multi-container resource utilization
     * Support for CPU & GPU nodes
