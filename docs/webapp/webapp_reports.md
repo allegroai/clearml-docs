@@ -18,7 +18,8 @@ With ClearML’s Reports you can write up notes, experiment findings, or really 
 in any of your ClearML projects.
 
 In addition to its main document, a report also contains a description field, which will appear in the report's card in 
-the [Reports Page](#reports-page).
+the [Reports Page](#reports-page). Reports are searchable based on their description, so adding a description 
+can make it easier to find the report later. 
 
 Reports are editable Markdown documents, supporting:
 * Multi-level headings
@@ -97,7 +98,7 @@ of a report card to open its context menu and access report actions:
 
 * **Rename** - Change the report’s name
 * **Share** - Copy URL to share report
-* **Add Tag** - Add label to the report to help easily classify groups of reports.
+* **Add Tag** - Add labels to the report to help easily classify groups of reports.
 * **Move to** - Move the report into another project. If the target project does not exist, it is created on-the-fly.
 * **Archive** - Move report from active reports page to archive
 * **Delete** - Delete the report. To delete a report, it must first be archived. 
