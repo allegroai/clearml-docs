@@ -52,6 +52,8 @@ pip install clearml-agent
 
 :::info
 Install ClearML Agent as a system Python package and not in a Python virtual environment.
+An agent that runs in Virtual Environment Mode or Conda Environment Mode needs to create virtual environments, and
+it can't do that when running from a virtual environment.
 :::
 
 ## Configuration

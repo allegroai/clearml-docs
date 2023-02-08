@@ -72,7 +72,7 @@ Task to one of your queues, according to the amount of resources you want to all
 With queues and ClearML Agent, you can easily add and remove machines from the cluster, and you can 
 reuse machines without the need for any dedicated containers or images.
 
-## Additional Features
+## Running Modes
 
 Agents can be deployed bare-metal, with multiple instances allocating 
 specific GPUs to the agents. They can also be deployed as dockers in a Kubernetes cluster.
@@ -86,6 +86,12 @@ The Agent has three running modes:
   executes the code while monitoring it.
 - Conda Environment Mode: Similar to the Virtual Environment mode, only instead of using pip, it uses conda install and 
   pip combination. Notice this mode is quite brittle due to the Conda package version support table.
+
+:::tip Agents and virtual environments 
+An agent that runs in Virtual Environment Mode or Conda Environment Mode needs to create virtual environments, and
+it can't do that when running from a virtual environment. You can run agents in these modes with 
+system Python.
+:::
 
 ## Services Mode
 
