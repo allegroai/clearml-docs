@@ -19,7 +19,7 @@ and delete all cookies under the ClearML Server URL.
 
 ## Launching
 
-:::warning
+:::caution
 By default, ClearML Server deploys as an open network. To restrict ClearML Server access, follow the instructions 
 in the [Security](clearml_server_security.md) page.
 :::

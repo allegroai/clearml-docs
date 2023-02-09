@@ -59,7 +59,7 @@ For more information see [Import the image to your custom images list](https://c
 ## Launching
 
 
-:::warning
+:::caution
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
 instructions in the [Security](clearml_server_security.md) page.
 :::

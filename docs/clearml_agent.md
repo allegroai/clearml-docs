@@ -475,7 +475,7 @@ To limit the number of simultaneous tasks run in services mode, pass the maximum
 
 Launch a service task like any other task, by enqueuing it to the appropriate queue.
 
-:::warning
+:::caution
 Do not enqueue training or inference tasks into the services queue. They will put an unnecessary load on the server.
 :::
 
@@ -562,7 +562,7 @@ Override worker schedules by:
 
 Set a schedule for a worker from the command line when running `clearml-agent`. Two properties enable setting working hours:
 
-:::warning
+:::caution
 Use only one of these properties
 :::
 
@@ -591,7 +591,7 @@ For example:
 
 Set a schedule for a worker using configuration file options. The options are:
 
-:::warning
+:::caution
 Use only one of these properties
 :::
 
@@ -608,7 +608,7 @@ For example, set a worker's schedule from 5 PM to 8 PM on Sunday through Tuesday
 
 Runtime properties override the command line uptime / downtime properties. The runtime properties are:
 
-:::warning
+:::caution
 Use only one of these properties
 :::
 
@@ -630,7 +630,7 @@ For example, to force a worker on for 24 hours:
 
 Queue tags override command line and runtime properties. The queue tags are the following:
 
-:::warning
+:::caution
 Use only one of these properties
 :::
 
