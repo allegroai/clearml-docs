@@ -40,6 +40,10 @@ html {
   --max-page-width: 1600px;
   --docusaurus-announcement-bar-height: 40px !important;
   --ifm-link-color: var(--ifm-color-primary-darker);
+
+  --ifm-code-font-size: 85%;
+  --ifm-code-padding-horizontal: 0.3rem;
+  --ifm-code-padding-vertical: 0.2rem;
 }
 
 html[data-theme="dark"] {
