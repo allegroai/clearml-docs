@@ -22,7 +22,7 @@ The migration process makes use of a script that automatically performs the foll
 * Renames the original data directory to avoid accidental reuse.
 
 
-:::warning 
+:::caution 
 Once the migration process completes successfully, the data is no longer accessible to the older version of Trains Server, 
 and ClearML Server needs to be installed.
 :::

@@ -627,7 +627,7 @@ task.set_parameters({'Args/epochs':7, 'lr': 0.5})
 task.set_parameter(name='decay',value=0.001)
 ```
 
-:::warning Overwriting Parameters
+:::caution Overwriting Parameters
 The `set_parameters` method replaces any existing hyperparameters in the task.
 :::
 

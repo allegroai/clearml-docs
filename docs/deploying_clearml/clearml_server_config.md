@@ -208,7 +208,7 @@ For improved security, the ports for ClearML Server Elasticsearch, MongoDB, and 
 they are only open internally in the docker network. If external access is needed, open these ports (but make sure to 
 understand the security risks involved with doing so).
 
-:::warning 
+:::caution 
 Opening the ports for Elasticsearch, MongoDB, and Redis for external access may pose a security concern and is not recommended 
 unless you know what you're doing. Network security measures, such as firewall configuration, should be considered when 
 opening ports for external access.
