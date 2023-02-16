@@ -41,7 +41,7 @@ guide for more info!
 
 ## Using ClearML Data
 
-ClearML Data offers two interfaces:
+ClearML Data supports two interfaces:
 - `clearml-data` - A CLI utility for creating, uploading, and managing datasets. See [CLI](clearml_data_cli.md) for a reference of `clearml-data` commands.
 - `clearml.Dataset` - A python interface for creating, retrieving, managing, and using datasets. See [SDK](clearml_data_sdk.md) for an overview of the basic methods of the `Dataset` module.
 
