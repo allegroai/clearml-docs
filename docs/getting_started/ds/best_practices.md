@@ -34,7 +34,7 @@ The goal of this phase is to get a code, dataset, and environment setup, so you 
 ## Train Remotely
 
 In this phase, you scale your training efforts, and try to come up with the best code / parameter / data combination that 
-yields the best performing model for our task!
+yields the best performing model for your task!
 
   - The real training (usually) should **not** be executed on your development machine.
   - Training sessions should be launched and monitored from a web UI.

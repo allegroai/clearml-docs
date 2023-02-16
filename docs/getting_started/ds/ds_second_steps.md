@@ -2,7 +2,7 @@
 title: Next Steps
 ---
 
-So, we've already [installed ClearML's python package](ds_first_steps.md) and ran our first experiment!
+So, you've already [installed ClearML's python package](ds_first_steps.md) and run your first experiment!
 
 Now, we'll learn how to track Hyperparameters, Artifacts and Metrics!
 
@@ -128,7 +128,7 @@ local_weights_path = last_snapshot.get_local_copy()
 
 Like before we have to get the instance of the Task training the original weights files, then we can query the task for its output models (a list of snapshots), and get the latest snapshot.
 :::note
-Using TensorFlow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing our requested snapshot.
+Using TensorFlow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing your requested snapshot.
 :::
 As with Artifacts, all models are cached, meaning the next time we run this code, no model needs to be downloaded.
 Once one of the frameworks will load the weights file, the running Task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.
