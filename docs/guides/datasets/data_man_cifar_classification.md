@@ -2,13 +2,13 @@
 title: Dataset Management with CLI and SDK
 ---
 
-In this tutorial, we are going to manage the CIFAR dataset with `clearml-data` CLI, and then use ClearML's [`Dataset`](../../references/sdk/dataset.md) 
+In this tutorial, you are going to manage the CIFAR dataset with `clearml-data` CLI, and then use ClearML's [`Dataset`](../../references/sdk/dataset.md) 
 class to ingest the data.
 
 ## Creating the Dataset
 
 ### Downloading the Data
-Before we can register the CIFAR dataset with `clearml-data`, we need to obtain a local copy of it.
+Before registering the CIFAR dataset with `clearml-data`, you need to obtain a local copy of it.
 
 Execute this python script to download the data
 ```python
@@ -43,7 +43,7 @@ New dataset created id=ee1c35f60f384e65bc800f42f0aca5ec
 Where `ee1c35f60f384e65bc800f42f0aca5ec` is the dataset ID.
 
 ## Adding Files
-Add the files we just downloaded to the dataset: 
+Add the files that were just downloaded to the dataset: 
 
 ```
 clearml-data add --files <dataset_path>
@@ -72,7 +72,7 @@ In the panel's **CONTENT** tab, you can see a table summarizing version contents
 
 ## Using the Dataset
 
-Now that we have a new dataset registered, we can consume it.
+Now that a new dataset is registered, you can consume it.
 
 The [data_ingestion.py](https://github.com/allegroai/clearml/blob/master/examples/datasets/data_ingestion.py) example 
 script demonstrates using the dataset within Python code.
@@ -103,6 +103,6 @@ hyperparameters. Passing `alias=<dataset_alias_string>` stores the dataset’s I
 you can easily track which dataset the task is using. 
 
 The Dataset's [`get_local_copy`](../../references/sdk/dataset.md#get_local_copy) method will return a path to the cached, 
-downloaded dataset. Then we provide the path to PyTorch's dataset object.
+downloaded dataset. Then the dataset path is input to PyTorch's `datasets` object.
 
 The script then trains a neural network to classify images using the dataset created above.

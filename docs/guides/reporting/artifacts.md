@@ -51,7 +51,7 @@ task.register_artifact('train', df, metadata={'counting': 'legs', 'max legs': 69
 ```
 
 By changing the artifact, and calling the [Task.get_registered_artifacts](../../references/sdk/task.md#get_registered_artifacts) 
-method to retrieve it, we can see that ClearML tracked the change.
+method to retrieve it, you can see that ClearML tracked the change.
 
 ```python
 # change the artifact object

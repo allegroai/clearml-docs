@@ -164,7 +164,7 @@ and [pipeline](../../pipelines/pipelines.md) solutions.
 Logging models into the model repository is the easiest way to integrate the development process directly with production. 
 Any model stored by a supported framework (Keras / TensorFlow / PyTorch / Joblib etc.) will be automatically logged into ClearML.
 
-ClearML also offers methods to explicitly log models. Models can be automatically stored on a preferred storage medium 
+ClearML also supports methods to explicitly log models. Models can be automatically stored on a preferred storage medium 
 (s3 bucket, google storage, etc.). 
 
 #### Log Metrics
@@ -208,7 +208,7 @@ tasks = Task.get_tasks(
 Data is probably one of the biggest factors that determines the success of a project. Associating a model’s data with 
 the model's configuration, code, and results (such as accuracy) is key to deducing meaningful insights into model behavior.
 
-[ClearML Data](../../clearml_data/clearml_data.md) allows you to version your data, so it's never lost, fetch it from every 
+[ClearML Data](../../clearml_data/clearml_data.md) lets you version your data, so it's never lost, fetch it from every 
 machine with minimal code changes, and associate data to experiment results.
 
 Logging data can be done via command line, or programmatically. If any preprocessing code is involved, ClearML logs it 

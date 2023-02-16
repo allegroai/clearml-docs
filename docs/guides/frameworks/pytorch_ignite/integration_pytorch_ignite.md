@@ -62,7 +62,7 @@ ClearML automatically tracks images logged to TensorboardLogger. They appear in 
 
 ## Ignite ClearMLLogger
 
-PyTorch Ignite also offers a dedicated `ClearMLLogger` handler to log metrics, text, model / optimizer parameters, plots, and model 
+PyTorch Ignite also supports a dedicated `ClearMLLogger` handler to log metrics, text, model / optimizer parameters, plots, and model 
 checkpoints during training and validation.
 
 For more information, see the [PyTorch Ignite ClearMLLogger](pytorch_ignite_mnist.md)

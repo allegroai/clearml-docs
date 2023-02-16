@@ -11,7 +11,7 @@ filtering logic.
 
 ## Frame Viewer
 
-Frame viewer allows you to view and edit annotations which can be FrameGroup objects (Regions of Interest) and FrameGroup 
+Frame viewer lets you view and edit annotations which can be FrameGroup objects (Regions of Interest) and FrameGroup 
 labels applied to the entire frame not a region of the frame, the frame details (see [frames](../frames.md)), 
 frame metadata, the raw data source URI, as well as providing navigation and viewing tools. 
 

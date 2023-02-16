@@ -16,19 +16,19 @@ The sections below describe the following scenarios:
 ## Building Tasks
 ### Dataset Creation
 
-Let's assume we have some code that extracts data from a production database into a local folder.
-Our goal is to create an immutable copy of the data to be used by further steps:
+Let's assume you have some code that extracts data from a production database into a local folder.
+Your goal is to create an immutable copy of the data to be used by further steps:
 
 ```bash
 clearml-data create --project data --name dataset
 clearml-data sync --folder ./from_production 
 ```
 
-We could also add a tag `latest` to the Dataset, marking it as the latest version.
+You can add a tag `latest` to the Dataset, marking it as the latest version.
 
 ### Preprocessing Data
-The second step is to preprocess the data. First we need to access it, then we want to modify it,
-and lastly we want to create a new version of the data.
+The second step is to preprocess the data. First access the data, then modify it,
+and lastly create a new version of the data.
 
 ```python
 # create a task for the data processing part
@@ -59,10 +59,10 @@ dataset.tags = []
 new_dataset.tags = ['latest']
 ```
 
-We passed the `parents` argument when we created v2 of the Dataset, which inherits all the parent's version content.
-This not only helps trace back dataset changes with full genealogy, but also makes our storage more efficient,
+The new dataset inherits the contents of the datasets specified in `Dataset.create`'s `parents` argument.
+This not only helps trace back dataset changes with full genealogy, but also makes the storage more efficient,
 since it only stores the changed and / or added files from the parent versions.
-When we access the Dataset, it automatically merges the files from all parent versions 
+When you access the Dataset, it automatically merges the files from all parent versions 
 in a fully automatic and transparent process, as if the files were always part of the requested Dataset.
 
 ### Training

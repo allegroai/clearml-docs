@@ -175,7 +175,7 @@ def step_created_callback(
     pass
 ```
 
-A `post_execute_callback` function is called when a step is completed. It allows you to modify the step’s status after completion.
+A `post_execute_callback` function is called when a step is completed. It lets you modify the step’s status after completion.
 
 ```python
 def step_completed_callback(

@@ -86,8 +86,8 @@ method. The `set_parameters_as_dict` method updates parameters while the `set_pa
 ClearML does not automatically track changes to explicitly set parameters.
 
 ### User Properties
-User properties do not impact tasks execution and so can be modified at any stage. They offer the convenience of setting 
-helpful values which then be displayed in the [experiment table](../webapp/webapp_exp_table.md) (i.e. customize columns), 
+User properties do not impact tasks execution and can be modified at any stage. They are convenient for setting 
+helpful values which are displayed in the [experiment table](../webapp/webapp_exp_table.md) (i.e. customize columns), 
 making it easier to search / filter experiments. Add user properties to an experiment with the 
 [`Task.set_user_properties`](../references/sdk/task.md#set_user_properties) method.
 
