@@ -23,7 +23,7 @@ Ensure that the `helm` binary is in the PATH of your shell.
 You will create a multi-node Kubernetes cluster using Helm, and then install ClearML in your cluster. For deployment 
 instructions with up-to-date Helms charts, see the [clearml-helm-charts repository](https://github.com/allegroai/clearml-helm-charts/tree/main/charts/clearml#local-environment).
 
-:::warning Server Access
+:::caution Server Access
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
 instructions in the [Security](clearml_server_security.md) page.
 :::

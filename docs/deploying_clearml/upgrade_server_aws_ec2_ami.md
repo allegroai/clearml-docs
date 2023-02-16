@@ -13,7 +13,7 @@ to upgrade and migrate to a [new AWS instance](#upgrading-and-migrating-to-a-new
 
 This section contains the steps to upgrade ClearML Server on the same AWS instance.
 
-:::warning
+:::caution
 Some legacy **Trains Server** AMIs provided an auto-upgrade on restart capability. This functionality is now deprecated.
 :::
 

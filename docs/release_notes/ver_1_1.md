@@ -4,7 +4,7 @@ title: Version 1.1
 
 ### ClearML Serving 1.1.0 
 
-:::warning Backwards Compatibility
+:::caution Backwards Compatibility
 This release is not backwards compatible - see notes below on upgrading
 :::
 

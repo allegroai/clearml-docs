@@ -25,7 +25,7 @@ private credentials (assuming the entire code base, including `.git` already exi
 
 ## Optional: ClearML Configuration Parameters
 
-:::warning
+:::caution
 If you set ClearML configuration parameters (ClearML Server and ClearML credentials) in the plugin, they will override 
 the settings in the ClearML configuration file.
 :::

@@ -342,7 +342,7 @@ Your firewall may be preventing the connection. Try one of the following solutio
 * Direct python "requests" to use the enterprise certificate file by setting the OS environment variables CURL_CA_BUNDLE or REQUESTS_CA_BUNDLE. For a detailed discussion of this topic, see [https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module](https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module).
 * Disable certificate verification   
   
-  :::warning
+  :::caution
   For security reasons, it is not recommended to disable certificate verification
   :::
     1. Upgrade ClearML to the current version:
@@ -414,7 +414,7 @@ In rare instances, however, such as high disk usage for a privately-hosted Clear
 You can use the `APIClient` provided by ClearML Agent and
 `client.tasks.delete()` to delete an experiment. 
 
-:::warning
+:::caution
 You cannot undo the deletion of an experiment.
 :::
 
