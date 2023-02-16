@@ -9,8 +9,7 @@ ClearML provides the following classes to work with models:
 so the models are traceable to experiments. 
 * `InputModel` - Use this class to load a model from ClearML's model store or to import a pre-trained 
 model from an external resource to use as an experiment's initial starting point.
-* `Model`- This class is the basic interface to the ClearML model store. Use it to programmatically access and manage 
-the model store.
+* `Model`- Use this class to programmatically access and manage the ClearML model store.
 
 ## Output Models
 
