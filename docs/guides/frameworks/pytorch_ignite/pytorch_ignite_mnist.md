@@ -5,7 +5,7 @@ title: PyTorch Ignite ClearMLLogger
 The `ignite` repository contains the [mnist_with_clearml_logger.py](https://github.com/pytorch/ignite/blob/master/examples/contrib/mnist/mnist_with_clearml_logger.py)
 example script that uses [ignite](https://github.com/pytorch/ignite) and integrates **ClearMLLogger** and its [helper handlers](https://pytorch.org/ignite/generated/ignite.contrib.handlers.clearml_logger.html). 
 
-PyTorch Ignite offers a `ClearMLLogger` handler to log metrics, text, model / optimizer parameters, plots, and model 
+PyTorch Ignite supports a `ClearMLLogger` handler to log metrics, text, model / optimizer parameters, plots, and model 
 checkpoints during training and validation. 
 
 The example script does the following:

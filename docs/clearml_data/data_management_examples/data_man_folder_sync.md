@@ -78,4 +78,4 @@ Upload completed (742 bytes)
 Dataset closed and finalized
 ```
 
-We can see that 2 files were added or modified, just as we expected!
+See that 2 files were added or modified, just as expected!

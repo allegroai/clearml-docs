@@ -50,7 +50,7 @@ Each pipeline step can log additional artifacts and metrics on the step task wit
 Additionally, pipeline steps can directly report metrics or upload artifacts / models to the pipeline using these 
 PipelineController and PipelineDecorator class methods: `get_logger`, `upload_model`, `upload_artifact`.
 
-The pipeline controller also offers automation for logging step metrics / artifacts / models on the pipeline task itself. 
+The pipeline controller also supports automation for logging step metrics / artifacts / models on the pipeline task itself. 
 Each pipeline step can specify metrics / artifacts / models to also automatically log to the pipeline Task. The idea is 
 that pipeline steps report metrics internally while the pipeline automatically collects them into a unified view on the 
 pipeline Task. To enable the automatic logging, use the `monitor_metrics`, `monitor_artifacts`, `monitor_models` arguments 

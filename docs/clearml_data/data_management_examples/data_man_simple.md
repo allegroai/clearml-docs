@@ -48,7 +48,7 @@ to captures all files and sub-folders:
    
    
 :::note
-After creating a dataset, we don't have to specify its ID when running commands, such as *add*, *remove* or *list*
+After creating a dataset, its ID doesn't need to be specified when running commands, such as `add`, `remove`, or `list`
 :::
 
 3. Close the dataset - this command uploads the files. By default, the files are uploaded to the file server, but  
@@ -151,7 +151,7 @@ You'll need to input the Dataset ID you received when created the dataset above
    clearml-data list --id 8b68686a4af040d081027ba3cf6bbca6
    ```
 
-   And we see that our changes have been made! `new_data.txt` has been added, and `dancing.jpg` has been removed. 
+   And see that the changes have been made! `new_data.txt` has been added, and `dancing.jpg` has been removed. 
 
    ```
    file name                                                        | size       | hash                                                            

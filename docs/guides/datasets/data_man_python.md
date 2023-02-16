@@ -18,7 +18,7 @@ demonstrates how to do the following:
 
 ### Downloading the Data
 
-We first need to obtain a local copy of the CIFAR dataset.
+You first need to obtain a local copy of the CIFAR dataset.
 
  ```python
  from clearml import StorageManager
@@ -79,7 +79,7 @@ In the panel's **CONTENT** tab, you can see a table summarizing version contents
 
 ## Data Ingestion
 
-Now that we have a new dataset registered, we can consume it!
+Now that a new dataset is registered, you can consume it!
 
 The [data_ingestion.py](https://github.com/allegroai/clearml/blob/master/examples/datasets/data_ingestion.py) script 
 demonstrates data ingestion using the dataset created in the first script.

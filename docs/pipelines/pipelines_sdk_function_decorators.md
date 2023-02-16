@@ -108,7 +108,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
 * `repo_branch` (Optional) - Specify the remote repository branch (Ignored, if local repo path is used)
 * `repo_commit` (Optional) - Specify the repository commit ID (Ignored, if local repo path is used)
 * `helper_functions` (Optional) - A list of helper functions to make available for the standalone pipeline step. By default, the pipeline step function has no access to any of the other functions, by specifying additional functions here, the remote pipeline step could call the additional functions.
-  Example, assuming we have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
+  Example, assuming you have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 
 Additionally, you can enable automatic logging of a step’s metrics / artifacts / models to the pipeline task using the 
