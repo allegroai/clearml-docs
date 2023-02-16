@@ -5,9 +5,9 @@ title: Model
 The following page provides an overview of the basic Pythonic interface to ClearML Models.
 
 ClearML provides the following classes to work with models:
-* `Model` - represents an experiment's output model (training results). An OutputModel is always connected to a [task](../fundamentals/task.md). 
+* `Model` - represents a ClearML model, regardless of any task connection.
 * `InputModel` - represents an existing ClearML model to be used in an experiment.
-* `OutputModel` - represents a ClearML model, regardless of any task connection.
+* `OutputModel` - represents an experiment's output model (training results). An OutputModel is always connected to a [task](../fundamentals/task.md). 
 
 ## Output Models
 
