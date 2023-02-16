@@ -60,9 +60,10 @@ when creating a pipeline step.
 The Pipeline controller supports step caching, meaning, reusing outputs of previously executed pipeline steps. 
 
 Cached pipeline steps are reused when they meet the following criteria:
-* The step code is the same, including environment setup (components in the task's [Execution](../webapp/webapp_exp_track_visual.md) 
+* The step code is the same, including environment setup (components in the task's [Execution](../webapp/webapp_exp_track_visual.md#execution) 
 section, like required packages and docker image)
-* The step input arguments are unchanged
+* The step input arguments are unchanged, including step arguments and parameters (anything logged to the task's [Configuration](../webapp/webapp_exp_track_visual.md#configuration) 
+section)
 
 By default, pipeline steps are not cached. Enable caching when creating a pipeline step (for example, see [@PipelineDecorator.component](pipelines_sdk_function_decorators.md#pipelinedecoratorcomponent)).
 
