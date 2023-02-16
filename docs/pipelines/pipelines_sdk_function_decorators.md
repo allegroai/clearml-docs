@@ -89,7 +89,8 @@ def step_one(pickle_data_url: str, extra: int = 43):
   In the example above, a single object is returned and stored as an artifact named `data_frame`
 * `name` (Optional) - The name for the pipeline step. If not provided, the function name is used 
 * `cache` - If `True`, the pipeline controller checks if an identical step with the same parameters was already executed.
-  If found, its outputs are used instead of rerunning the step.
+  If a step with the identical code (including setup, e.g. required packages, docker image, etc.) and input arguments is 
+  found, its outputs are used instead of rerunning the step. 
 * `packages` - A list of required packages or a local requirements.txt file. Example: `["tqdm>=2.1", "scikit-learn"]` or 
   `"./requirements.txt"`. If not provided, packages are automatically added based on the imports used inside the function.
 * `execution_queue` (Optional) - Queue in which to enqueue the specific step. This overrides the queue set with the 
