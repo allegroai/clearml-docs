@@ -10,7 +10,7 @@ If you have any questions, post on the **ClearML** [Slack Channel](https://join.
 
 Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with the **clearml** tag.
 
-You can always find us at [clearml@allegro.ai](mailto:clearml@allegro.ai?subject=ClearML).
+You can always find us at [support@clear.ml](mailto:support@clear.ml?subject=ClearML).
 
 ## Additional ClearML Resources
 
