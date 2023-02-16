@@ -64,7 +64,7 @@ Cached pipeline steps are reused when they meet the following criteria:
 section, like required packages and docker image)
 * The step input arguments are unchanged
 
-By default, pipeline steps are not cached. Enable caching when creating a pipeline step.
+By default, pipeline steps are not cached. Enable caching when creating a pipeline step (for example, see [@PipelineDecorator.component](pipelines_sdk_function_decorators.md#pipelinedecoratorcomponent)).
 
 When a step is cached, the step code is hashed, alongside the step’s parameters (as passed in runtime), into a single 
 representing hash string. The pipeline first checks if a cached step exists in the system (archived Tasks will not be used 
