@@ -88,8 +88,8 @@ def step_one(pickle_data_url: str, extra: int = 43):
 * `return_values` - The artifact names for the step’s corresponding ClearML task to store the step’s returned objects. 
   In the example above, a single object is returned and stored as an artifact named `data_frame`
 * `name` (Optional) - The name for the pipeline step. If not provided, the function name is used 
-* `cache` - If `True`, the pipeline controller checks if a step with the same code (including setup, e.g. required 
-  packages, docker image, etc.) and input arguments was already executed. If found, the cached step's outputs are used 
+* `cache` - If `True`, the pipeline controller checks if a step with the same code (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
+  section) and input arguments was already executed. If found, the cached step's outputs are used 
   instead of rerunning the step. 
 * `packages` - A list of required packages or a local requirements.txt file. Example: `["tqdm>=2.1", "scikit-learn"]` or 
   `"./requirements.txt"`. If not provided, packages are automatically added based on the imports used inside the function.
