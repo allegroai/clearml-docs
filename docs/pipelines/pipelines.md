@@ -57,9 +57,15 @@ pipeline Task. To enable the automatic logging, use the `monitor_metrics`, `moni
 when creating a pipeline step.
 
 ### Pipeline Step Caching
-The Pipeline controller also offers step caching, meaning, reusing outputs of previously executed pipeline steps, in the 
-case of exact same step code, and the same step input values. By default, pipeline steps are not cached. Enable caching
-when creating a pipeline step.
+The Pipeline controller supports step caching, meaning, reusing outputs of previously executed pipeline steps. 
+
+Cached pipeline steps are reused when they meet the following criteria:
+* The step code is the same, including environment setup (components in the task's [Execution](../webapp/webapp_exp_track_visual.md#execution) 
+section, like required packages and docker image)
+* The step input arguments are unchanged, including step arguments and parameters (anything logged to the task's [Configuration](../webapp/webapp_exp_track_visual.md#configuration) 
+section)
+
+By default, pipeline steps are not cached. Enable caching when creating a pipeline step (for example, see [@PipelineDecorator.component](pipelines_sdk_function_decorators.md#pipelinedecoratorcomponent)).
 
 When a step is cached, the step code is hashed, alongside the step’s parameters (as passed in runtime), into a single 
 representing hash string. The pipeline first checks if a cached step exists in the system (archived Tasks will not be used 
