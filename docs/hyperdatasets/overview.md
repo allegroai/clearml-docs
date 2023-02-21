@@ -27,7 +27,7 @@ A Hyper-Dataset is composed of the following components:
 These components interact in a way that enables revising data and tracking and accessing all of its versions. 
 
 Frames are the basic units of data in ClearML Enterprise. SingleFrames and FrameGroups make up a Dataset version. 
-Dataset versions can be created, modified, and removed. The different version are recorded and available, 
+Dataset versions can be created, modified, and removed. The different versions are recorded and available, 
 so experiments, and their data are reproducible and traceable. 
 
 Lastly, Dataviews manage views of the dataset with queries, so the input data to an experiment can be defined from a 

@@ -29,7 +29,7 @@ The goal of this phase is to get a code, dataset, and environment setup, so you 
 - [ClearML Agent](../../clearml_agent.md) helps moving your work to other machines without the hassle of rebuilding the environment every time, 
   while also creating an easy queue interface that easily lets you just drop your experiments to be executed one by one
   (great for ensuring that the GPUs are churning during the weekend).
-- [ClearML Session](../../apps/clearml_session.md) helps with developing on remote machines, just like you'd develop on you local laptop!
+- [ClearML Session](../../apps/clearml_session.md) helps with developing on remote machines, just like you'd develop on your local laptop!
 
 ## Train Remotely
 
@@ -58,7 +58,7 @@ that we need.
 Track everything--from obscure parameters to weird metrics, it's impossible to know what will end up
 improving your results later on!
 
-- Make sure experiments are reproducible! ClearML logs code, parameters, environment in a single, easily searchable place. 
+- Make sure experiments are reproducible! ClearML logs code, parameters, and environment in a single, easily searchable place. 
 - Development is not linear. Configuration / Parameters should not be stored in your git, as
   they are temporary and constantly changing. They still need to be logged because who knows, one day...
 - Uncommitted changes to your code should be stored for later forensics in case that magic number actually saved the day. Not every line change should be committed.
@@ -72,7 +72,7 @@ everything under the same roof has its benefits!
 Being able to track experiment progress and compare experiments, and based on that send experiments to execution on remote
 machines (that also build the environment themselves) has tremendous benefits in terms of visibility and ease of integration.
 
-Being able to have visibility in your pipeline, while using experiments already defined in the platform 
+Being able to have visibility in your pipeline, while using experiments already defined in the platform, 
 enables users to have a clearer picture of the pipeline's status 
 and makes it easier to start using pipelines earlier in the process by simplifying chaining tasks.
 
