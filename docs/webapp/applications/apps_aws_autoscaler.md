@@ -91,7 +91,7 @@ status.
 ![Autoscaler dashboard](../../img/app_aws_autoscaler.png)
 
 The autoscaler dashboard shows:
-* Number of idle Instances
+* Number of idle instances
 * Queues and the resource type associated with them
 * Number of current running instances 
 * Console: the application log containing everything printed to stdout and stderr appears in the console log. The log 

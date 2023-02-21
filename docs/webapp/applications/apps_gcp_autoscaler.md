@@ -118,10 +118,15 @@ account to configure the autoscaler app:
    
    ![GCP credential keys](../../img/apps_gcp_autoscaler_credentials_5.png)
 
-1. Click **ADD KEY** and create a key in JSON format 
+1. Click **ADD KEY** and create a key in JSON format. Copy the contents of the JSON file. 
    
    ![GCP credential key creation](../../img/apps_gcp_autoscaler_credentials_6.png)
    
-1. Copy the contents of the JSON file and paste them into the **GCP Credentials** field in the autoscaler's wizard. 
+1. Go to the GCP Autoscaler wizard **>** open the **GCP Configuration** panel **>** click *Edit* in the 
+   **GCP Credentials** field.
+
+   ![GCP credentials field](../../img/apps_gcp_autoscaler_credentials_6a.png)   
+   
+   Paste the contents of the JSON file from the previous step into the **GCP Credentials** popup. 
 
    ![GCP credential wizard input](../../img/apps_gcp_autoscaler_credentials_7.png)
