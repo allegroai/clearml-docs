@@ -67,7 +67,7 @@ is the source with the ID `front` and the other is the source with the ID `rear`
 * `meta` - Additional metadata is included for the angle of the camera (`angle`) and its field of vision (`fov`).
 
 :::note
-Sources includes a variety of content types. This example shows mp4 video.
+Sources includes a variety of content types. This example shows an mp4 video.
 :::
 
 ### Example 2: Images Sources

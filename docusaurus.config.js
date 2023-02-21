@@ -143,7 +143,7 @@ module.exports = {
               href: 'https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg',
             },
             {
-              label: 'Youtube',
+              label: 'YouTube',
               href: 'https://www.youtube.com/c/ClearML',
             },
             {
