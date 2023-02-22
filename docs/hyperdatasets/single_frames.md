@@ -69,9 +69,7 @@ This is useful when working with a video. You can give all the video frames the 
 
 The panel below describes the details contained within a `frame`:
 
-<details className="cml-expansion-panel configuration">
-<summary className="cml-expansion-panel-summary">Frame Structure</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="configuration" title="Frame Structure">
 
 * `id` (*string*) - The unique ID of this frame. 
 * `blob` (*string*) - Raw data.
@@ -130,9 +128,7 @@ The panel below describes the details contained within a `frame`:
 * `saved` - The epoch time that the frame was saved.
 * `timestamp` - For images from video, a timestamp that indicates the absolute position of this frame from the source (video).
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 ## WebApp 
 
@@ -142,21 +138,16 @@ WebApp (UI).
 When viewing a frame on the WebApp, all the information associated with it can be viewed, including its frame labels and
 object annotations, its metadata, and other details.
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">SingleFrame in the WebApp frame viewer</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="screenshot" title="SingleFrame in the WebApp frame viewer">
 
 This image shows a SingleFrame in the ClearML Enterprise WebApp (UI) [frame viewer](webapp/webapp_datasets_frames.md#frame-viewer). 
     
 ![image](../img/hyperdatasets/frame_overview_01.png)
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
-<details className="cml-expansion-panel configuration">
-<summary className="cml-expansion-panel-summary">SingleFrame details represented in the WebApp</summary>
-<div className="cml-expansion-panel-content">
+
+<Collapsible type="configuration" title="SingleFrame details represented in the WebApp">
 
     
     id : "287024"
@@ -197,9 +188,7 @@ This image shows a SingleFrame in the ClearML Enterprise WebApp (UI) [frame view
     saved_in_version : "6ad8b10c668e419f9dd40422f667592c"
     num_frames : 1
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 For more information about using Frames in the WebApp, see [Working with Frames](webapp/webapp_datasets_frames.md). 
 

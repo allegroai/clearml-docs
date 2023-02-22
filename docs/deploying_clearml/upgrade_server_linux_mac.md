@@ -2,12 +2,9 @@
 title: Linux or macOS
 ---
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Important: Upgrading from v0.14 or older</summary>
-<div class="cml-expansion-panel-content">
+<Collapsible title="Important: Upgrading from v0.14 or older" type="info">
   
-
-   For Linux only, if upgrading from <strong>Trains Server</strong> v0.14 or older, configure the <strong>ClearML Agent Services</strong>.
+For Linux only, if upgrading from <strong>Trains Server</strong> v0.14 or older, configure the <strong>ClearML Agent Services</strong>.
 
    * If ``CLEARML_HOST_IP`` is not provided, then **ClearML Agent Services** uses the external public address of the ClearML Server.
    * If ``CLEARML_AGENT_GIT_USER`` / ``CLEARML_AGENT_GIT_PASS`` are not provided, then **ClearML Agent Services** can't access any private repositories for running service tasks.
@@ -16,15 +13,13 @@ title: Linux or macOS
        export CLEARML_HOST_IP=server_host_ip_here
        export CLEARML_AGENT_GIT_USER=git_username_here
        export CLEARML_AGENT_GIT_PASS=git_password_here
-       
 
 :::note
 For backwards compatibility, the environment variables ``TRAINS_HOST_IP``, ``TRAINS_AGENT_GIT_USER``, and ``TRAINS_AGENT_GIT_PASS`` are supported.          
 :::
     
-</div>
-</details>
-   
+</Collapsible>
+
 <br/>
 
 **To upgrade ClearML Server Docker deployment:**

@@ -62,39 +62,28 @@ Click on **DETAILS** on the top left of the info panel or hover over a version n
 to view:
 * **CONTENT** - Table summarizing version contents, including file names, file sizes, and hashes 
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Version Content</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="screenshot" title="Version Content">
 
 ![content](../../img/webapp_dataset_content.png)
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 * **PREVIEW** - A preview of the dataset version's contents 
   access [plot tools](../webapp_exp_track_visual.md#scalar-plot-tools). Click on a debug sample to expand it. 
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Version Preview</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="screenshot" title="Version Preview">
 
 ![preview](../../img/webapp_dataset_preview.png)
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 * **CONSOLE** - The dataset version’s console output
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Version Console</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="screenshot" title="Version Console">
 
 ![console](../../img/webapp_dataset_console.png)
 
-</div>
-</details>
+</Collapsible>
 
 <br/>
 
