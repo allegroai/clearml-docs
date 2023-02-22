@@ -17,9 +17,7 @@ by setting [configuration options](../configs/clearml_conf.md).
    clearml-init 
    ```
 
-   <details className="cml-expansion-panel info">
-   <summary className="cml-expansion-panel-summary">Learn about creating multiple ClearML configuration files</summary>
-   <div className="cml-expansion-panel-content">
+   <Collapsible type="info" title="Learn about creating multiple ClearML configuration files">
 
    Additional ClearML configuration files can be created, for example, to use inside Docker containers when executing 
    a Task.
@@ -35,10 +33,8 @@ by setting [configuration options](../configs/clearml_conf.md).
    For more information about running experiments inside Docker containers, see [ClearML Agent Deployment](../clearml_agent.md#deployment)
    and [ClearML Agent Reference](../clearml_agent/clearml_agent_ref.md).
     
-   </div>
-   </details>
-   <br/>
-
+   </Collapsible>
+   
    If the setup wizard's response indicates that a configuration file already exists, follow the instructions in 
    [here](#add-clearml-to-a-configuration-file). The wizard does not edit or overwrite existing configuration files.
 

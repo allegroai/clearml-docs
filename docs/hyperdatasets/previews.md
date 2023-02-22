@@ -19,9 +19,8 @@ The following is an example of preview metadata.
         "timestamp": 0
     }
 ```
-<details className="cml-expansion-panel configuration">
-<summary className="cml-expansion-panel-summary">View an entire frame containing a preview</summary>
-<div className="cml-expansion-panel-content">
+
+<Collapsible type="configuration" title="View an entire frame containing a preview">
 
 ```json
 {
@@ -95,9 +94,7 @@ The following is an example of preview metadata.
 }
 ```
 
-</div>
-</details> 
-<br/>
+</Collapsible>
 
 Here's an example of Previews in the ClearML Enterprise WebApp (UI). Each thumbnail is a Preview.
 

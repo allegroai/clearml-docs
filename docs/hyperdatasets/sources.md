@@ -23,9 +23,7 @@ The examples below demonstrate the `sources` section of a Frame for different ty
 
 This example demonstrates `sources` for video.
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Example 1</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="info" title="Example 1">
 
 ```json
 /* video from one of four cameras on car */
@@ -51,9 +49,7 @@ This example demonstrates `sources` for video.
     
 ```
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 The `sources` example above details a video from a car that has two cameras. One camera
 is the source with the ID `front` and the other is the source with the ID `rear`.
@@ -73,9 +69,8 @@ Sources includes a variety of content types. This example shows an mp4 video.
 ### Example 2: Images Sources
 
 This example demonstrates `sources` images.
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Example 2</summary>
-<div className="cml-expansion-panel-content">        
+
+<Collapsible type="info" title="Example 2">        
 
 ```json
 /* camera images */
@@ -90,9 +85,7 @@ This example demonstrates `sources` images.
     }
 ```
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 The `sources` of this frame contains the following information:
 * `content_type` - This frame contains an image in `png` format. 
@@ -105,9 +98,7 @@ The `sources` of this frame contains the following information:
 
 This example demonstrates `sources` for video, `masks`, and `preview`. 
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Example 3</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="info" title="Example 3">
 
 ```json
 
@@ -182,9 +173,7 @@ This example demonstrates `sources` for video, `masks`, and `preview`.
 }
 ```
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 This frame shows the `masks` section in `sources`, and the top-level `rois` array.
 
