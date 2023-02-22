@@ -17,8 +17,9 @@ keywords: [mlops, components, automation, orchestration, pipeline]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Hello and welcome to ClearML. In this video we’ll take a look at how pipelines can be created from tasks instead of from code like we saw in the last video.
 
 The tasks themselves are already in the system by using the experiment manager. What’s important to note here though is that hyperparameters, scalars, and artifacts should be reported correctly because the pipeline will consider them to be the inputs and outputs of each step. In that way, a step can easily access for example the artifacts from a previous step.
@@ -60,3 +61,4 @@ When we select a specific step, we can see its inputs and outputs as well as its
 Finally, we can also clone the whole pipeline and change its parameters by clicking on the **+ New Run** button. This is the most powerful feature of all, as it allows us to really quickly rerun the whole pipeline with different parameters from the UI. The agents will take care of the rest!
 
 In the next video of this Getting Started series, we’ll take a look at ClearML Data, for real this time. In the meantime, spin up some pipeline controllers yourself for free at [app.clear.ml](https://app.clear.ml) and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), if you need any help.
+</Collapsible>

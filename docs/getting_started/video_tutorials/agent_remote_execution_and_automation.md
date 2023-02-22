@@ -17,8 +17,9 @@ keywords: [mlops, components, ClearML agent]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Welcome to ClearML. In this video we’ll take a look at the ClearML Agent, which will allow you to run your tasks remotely and open the door for automating your workflows.
 
 Remember our overview from the previous video? We talked about the pip package that allows us to run experiments and data management as well as the server, which stores everything we track. Today we add a third component: the ClearML Agent.
@@ -63,3 +64,5 @@ Talking of which, let’s say your wait times are very long because all data sci
 In the following video we’ll go a little deeper yet into this newly discovered automation thing we just saw and introduce things like automatic hyperparameter optimization and pipelines.
 
 But for now, feel free to start spinning up some agents on your own machines completely for free at [app.clear.ml](https://app.clear.ml) or by using our self-hosted server on GitHub, and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) if you need any help.
+
+</Collapsible>
