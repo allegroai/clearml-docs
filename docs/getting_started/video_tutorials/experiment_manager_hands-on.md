@@ -17,8 +17,9 @@ keywords: [mlops, components, Experiment Manager]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Welcome to ClearML! In this video, you’ll learn how to quickly get started with the experiment manager by adding 2 simple lines of Python code to your existing project.
 
 This is the experiment manager's UI, and every row you can see here, is a single run of your code. So let’s set everything up in the code first, and then we’ll come back to this UI later in the video.
@@ -68,3 +69,4 @@ Scalars such as loss or accuracy will be plotted on the same axes which makes co
 Finally, plots such as a confusion matrix and debug samples can be compared too. For those times when you just want to confirm that the new model is better with your own eyes.
 
 Now that you’re ready to start tracking and managing your experiments, we’ll cover some more advanced features and concepts of the experiment manager in the next video. But if you want to get started right now, head over to clear.ml and join our community [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) if you need any help.
+</Collapsible>

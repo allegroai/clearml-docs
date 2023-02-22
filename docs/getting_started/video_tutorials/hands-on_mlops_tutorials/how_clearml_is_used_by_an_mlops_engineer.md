@@ -17,8 +17,9 @@ keywords: [mlops, components, machine learning, mlops engineer]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Hello again and welcome to ClearML. In this video we'll be going over a workflow of a potential MLOps Engineer. Now an 
 MLOps Engineer is a vague term. This might be a specific person in your team that is doing only the Ops part of 
 machine learning. So the infrastructure and all of the workers and whatnot. Or it could be you as a data scientist. It 
@@ -453,3 +454,4 @@ instance so that you can always code already on the remote machine. So that's al
 we're going to cover soon, but I think the video is already long enough. So thank you very, very much for watching. 
 Thank you very, very much for your attention. Let me know in the comments: if you want to see videos of these 
 hyperparameters, and pipelines, and sessions, and don't forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) if you need any help.
+</Collapsible>

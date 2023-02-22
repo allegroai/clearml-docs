@@ -17,8 +17,9 @@ keywords: [mlops, components, hyperparameter optimization, hyperparameter]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Hello and welcome to ClearML. In this video we’ll take a look at one cool way of using the agent other than rerunning a task remotely: hyperparameter optimization (HPO).
 
 By now, we know that ClearML can easily capture our hyperparameters and scalars as part of the experiment tracking. We also know we can clone any task and change its hyperparameters, so they’ll be injected into the original code at runtime. In the last video, we learnt how to make a remote machine execute this task automatically by using the agent. 
@@ -66,3 +67,4 @@ As we saw earlier, if you’re a ClearML pro user, you can even launch your opti
 And don’t forget about autoscaling! You can run it for free using code of course, but with ClearML Pro you can set it up in the UI as well. Which means that, starting from scratch, you can have an autoscaling cluster of cloud VMs running hyperparameter optimization on your experiment tasks in just a few minutes. How cool is that? 
 
 In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), if you need any help.
+</Collapsible>

@@ -17,8 +17,9 @@ keywords: [mlops, components, ClearML data]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Hello and welcome to ClearML. In this video we’ll take a look at both the command line and python interfaces of our data versioning tool called `clearml-data`. 
 
 In the world of machine learning, you are very likely dealing with large amounts of data that you need to put into a dataset. ClearML Data solves 2 important challenges that occur in this situation:
@@ -86,3 +87,5 @@ If we now click on details again to look at the content, we can see that our cho
 In this video, we’ve covered the most important uses of ClearML Data, so hopefully you have a good intuition into what’s possible now and how valuable it can be. Building and updating your dataset versions from code is the best way to keep everything updated and make sure no data is ever lost. You’re highly encouraged to explore ways to automate as much of this process as possible, take a look at our documentation to find the full range of possibilities.
 
 So what are you waiting for? Start tracking your datasets with `clearml-data` and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) if you need any help.
+
+</Collapsible>

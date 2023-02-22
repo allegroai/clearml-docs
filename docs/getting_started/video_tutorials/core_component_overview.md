@@ -16,8 +16,9 @@ keywords: [mlops, components]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Welcome to ClearML! This video will serve as an overview of the complete ClearML stack. We’ll introduce you to the most important concepts and show you how everything fits together, so you can deep dive into the next videos, which will cover the ClearML functionality in more detail.
 
 ClearML is designed to get you up and running in less than 10 minutes and 2 magic lines of code. But if you start digging, you’ll quickly find out that it has a lot of functionality to offer. So let’s break it down, shall we?
@@ -50,3 +51,4 @@ As a final example of how you could use the agent's functionality, ClearML provi
 
 As you can see ClearML is a large toolbox, stuffed with the most useful components for both data scientists and MLOps engineers. We’re diving deeper into each component in the following videos if you need more details, but feel free to get started now at clear.ml. 
 
+</Collapsible>
