@@ -17,11 +17,11 @@ If you are afraid of clutter, use the archive option, and set up your own [clean
   These metrics can later be part of your own in-house monitoring solution, don't let good data go to waste :)
 
 ## Clone Tasks
-In order to define a Task in ClearML we have two options
+Define a ClearML Task with one of the following options:
 - Run the actual code with `Task.init` call. This will create and auto-populate the Task in CleaML (including Git Repo / Python Packages / Command line etc.).
 - Register local / remote code repository with `clearml-task`. See [details](../../apps/clearml_task.md).
 
-Once we have a Task in ClearML, we can clone and edit its definitions in the UI, then launch it on one of our nodes with [ClearML Agent](../../clearml_agent.md).
+Once you have a Task in ClearML, you can clone and edit its definitions in the UI, then launch it on one of your nodes with [ClearML Agent](../../clearml_agent.md).
 
 ## Advanced Automation
 - Create daily / weekly cron jobs for retraining best performing models on.

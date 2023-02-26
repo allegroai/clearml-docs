@@ -342,7 +342,7 @@ Your firewall may be preventing the connection. Try one of the following solutio
 * Direct python "requests" to use the enterprise certificate file by setting the OS environment variables CURL_CA_BUNDLE or REQUESTS_CA_BUNDLE. For a detailed discussion of this topic, see [https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module](https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module).
 * Disable certificate verification   
   
-  :::warning
+  :::caution
   For security reasons, it is not recommended to disable certificate verification
   :::
     1. Upgrade ClearML to the current version:
@@ -364,7 +364,7 @@ Your firewall may be preventing the connection. Try one of the following solutio
 
 **How do I modify experiment names once they have been created?**
 
-An experiment's name is a user-controlled property, which can be accessed via the `Task.name` variable. This allows you to use meaningful naming schemes for easily filtering and comparing of experiments.
+An experiment's name is a user-controlled property, which can be accessed via the `Task.name` variable. This lets you use meaningful naming schemes for easily filtering and comparing of experiments.
 
 For example, to distinguish between different experiments, you can append the task ID to the task name:
 ```python
@@ -414,7 +414,7 @@ In rare instances, however, such as high disk usage for a privately-hosted Clear
 You can use the `APIClient` provided by ClearML Agent and
 `client.tasks.delete()` to delete an experiment. 
 
-:::warning
+:::caution
 You cannot undo the deletion of an experiment.
 :::
 
@@ -469,7 +469,7 @@ After thirty minutes, it remains unchanged.
 
 **Can I control what ClearML automatically logs?** <a id="controlling_logging"></a>
 
-Yes! ClearML allows you to control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
+Yes! ClearML lets you control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
 by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
 
 To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
@@ -629,7 +629,7 @@ experiment info panel > EXECUTION tab.
 **I read there is a feature for centralized model storage. How do I use it?** <a id="centralized-model-storage"></a>
 
 When calling [Task.init](references/sdk/task.md#taskinit), 
-providing the `output_uri` parameter allows you to specify the location in which model checkpoints (snapshots) will be stored.
+providing the `output_uri` parameter lets you specify the location in which model checkpoints (snapshots) will be stored.
 
 For example, to store model checkpoints (snapshots) in `/mnt/shared/folder`:
 

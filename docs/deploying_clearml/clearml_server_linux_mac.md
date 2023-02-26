@@ -5,7 +5,7 @@ title: Linux and macOS
 Deploy the ClearML Server in Linux or macOS using the pre-built Docker image.
 
 For ClearML docker images, including previous versions, see [https://hub.docker.com/r/allegroai/clearml](https://hub.docker.com/r/allegroai/clearml). 
-However, pulling the ClearML Docker image directly is not required. We provide a docker-compose YAML file that does this. 
+However, pulling the ClearML Docker image directly is not required. ClearML provides a docker-compose YAML file that does this. 
 The docker-compose file is included in the instructions on this page.
 
 For information about upgrading ClearML Server in Linux or macOS, see [here](upgrade_server_linux_mac.md)
@@ -30,7 +30,7 @@ For Linux users only:
 ## Deploying
 
 
-:::warning
+:::caution
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
 instructions in the [Security](clearml_server_security.md) page.
 :::

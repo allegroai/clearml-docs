@@ -75,7 +75,9 @@ pipe.add_step(
 * One of the following:
     * `base_task_project` and `base_task_name` - Project and name of the base task to clone
     * `base_task_id` - ID of the base task to clone
-* `cache_executed_step` – If `True`, the controller will check if an identical task with the same parameters was already executed. If it was found, its outputs will be used instead of launching a new task.
+* `cache_executed_step` – If `True`, the controller will check if an identical task with the same code (including setup, 
+  e.g. required packages, docker image, etc.) and input arguments was already executed. If found, the cached step's 
+  outputs are used instead of launching a new task.
 * `execution_queue` (Optional) - the queue to use for executing this specific step. If not provided, the task will be sent to the default execution queue, as defined on the class
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 * `parameter_override` - Dictionary of parameters and values to override in the current step. See [parameter_override](#parameter_override).
@@ -141,8 +143,10 @@ pipe.add_function_step(
 * `function_kwargs` (optional) - A dictionary of function arguments and default values which are translated into task 
   hyperparameters. If not provided, all function arguments are translated into hyperparameters.
 * `function_return` - The names for storing the pipeline step’s returned objects as artifacts in its ClearML task.
-* `cache_executed_step` - If `True`, the controller checks if an identical task with the same parameters was already 
-  executed. If it was found, its outputs are used instead of launching a new task.
+* `cache_executed_step` -  If `True`, the controller will check if an identical task with the same code 
+  (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
+  section) and input arguments was already executed. If found, the cached step's 
+  outputs are used instead of launching a new task.
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution 
   only after all the parent steps have been executed successfully.
 * `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
@@ -175,7 +179,7 @@ def step_created_callback(
     pass
 ```
 
-A `post_execute_callback` function is called when a step is completed. It allows you to modify the step’s status after completion.
+A `post_execute_callback` function is called when a step is completed. It lets you modify the step’s status after completion.
 
 ```python
 def step_completed_callback(

@@ -2,7 +2,7 @@
 title: Tutorial
 ---
 
-In this tutorial, we will go over the model lifecycle -- from training to serving -- in the following steps:
+In this tutorial, you will go over the model lifecycle -- from training to serving -- in the following steps:
 * Training a model using the [sklearn example script](https://github.com/allegroai/clearml-serving/blob/main/examples/sklearn/train_model.py) 
 * Serving the model using **ClearML Serving**  
 * Spinning the inference container

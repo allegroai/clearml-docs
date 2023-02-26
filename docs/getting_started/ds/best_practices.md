@@ -22,19 +22,19 @@ During early stages of model development, while code is still being modified hea
     the model and ensure that you choose a model that makes sense, and the training procedure works. Can be used to provide initial models for testing. 
 
 The abovementioned setups might be folded into each other and that's great! If you have a GPU machine for each researcher, that's awesome! 
-The goal of this phase is to get a code, dataset and environment setup, so we can start digging to find the best model!
+The goal of this phase is to get a code, dataset, and environment setup, so you can start digging to find the best model!
 
 -  [ClearML SDK](../../clearml_sdk/clearml_sdk.md) should be integrated into your code (check out our [getting started](ds_first_steps.md)). 
   This helps visualizing the results and tracking progress.
 - [ClearML Agent](../../clearml_agent.md) helps moving your work to other machines without the hassle of rebuilding the environment every time, 
-  while also creating an easy queue interface that easily allows you to just drop your experiments to be executed one by one
+  while also creating an easy queue interface that easily lets you just drop your experiments to be executed one by one
   (great for ensuring that the GPUs are churning during the weekend).
-- [ClearML Session](../../apps/clearml_session.md) helps with developing on remote machines, just like you'd develop on you local laptop!
+- [ClearML Session](../../apps/clearml_session.md) helps with developing on remote machines, just like you'd develop on your local laptop!
 
 ## Train Remotely
 
-In this phase, we scale our training efforts, and try to come up with the best code / parameter / data combination that 
-yields the best performing model for our task!
+In this phase, you scale your training efforts, and try to come up with the best code / parameter / data combination that 
+yields the best performing model for your task!
 
   - The real training (usually) should **not** be executed on your development machine.
   - Training sessions should be launched and monitored from a web UI.
@@ -55,10 +55,10 @@ that we need.
 
 ## Track EVERYTHING
 
-We believe that you should track everything! From obscure parameters to weird metrics, it's impossible to know what will end up
-improving our results later on!
+Track everything--from obscure parameters to weird metrics, it's impossible to know what will end up
+improving your results later on!
 
-- Make sure experiments are reproducible! ClearML logs code, parameters, environment in a single, easily searchable place. 
+- Make sure experiments are reproducible! ClearML logs code, parameters, and environment in a single, easily searchable place. 
 - Development is not linear. Configuration / Parameters should not be stored in your git, as
   they are temporary and constantly changing. They still need to be logged because who knows, one day...
 - Uncommitted changes to your code should be stored for later forensics in case that magic number actually saved the day. Not every line change should be committed.
@@ -72,7 +72,7 @@ everything under the same roof has its benefits!
 Being able to track experiment progress and compare experiments, and based on that send experiments to execution on remote
 machines (that also build the environment themselves) has tremendous benefits in terms of visibility and ease of integration.
 
-Being able to have visibility in your pipeline, while using experiments already defined in the platform 
+Being able to have visibility in your pipeline, while using experiments already defined in the platform, 
 enables users to have a clearer picture of the pipeline's status 
 and makes it easier to start using pipelines earlier in the process by simplifying chaining tasks.
 

@@ -88,8 +88,9 @@ def step_one(pickle_data_url: str, extra: int = 43):
 * `return_values` - The artifact names for the step’s corresponding ClearML task to store the step’s returned objects. 
   In the example above, a single object is returned and stored as an artifact named `data_frame`
 * `name` (Optional) - The name for the pipeline step. If not provided, the function name is used 
-* `cache` - If `True`, the pipeline controller checks if an identical step with the same parameters was already executed.
-  If found, its outputs are used instead of rerunning the step.
+* `cache` - If `True`, the pipeline controller checks if a step with the same code (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
+  section) and input arguments was already executed. If found, the cached step's outputs are used 
+  instead of rerunning the step. 
 * `packages` - A list of required packages or a local requirements.txt file. Example: `["tqdm>=2.1", "scikit-learn"]` or 
   `"./requirements.txt"`. If not provided, packages are automatically added based on the imports used inside the function.
 * `execution_queue` (Optional) - Queue in which to enqueue the specific step. This overrides the queue set with the 
@@ -108,7 +109,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
 * `repo_branch` (Optional) - Specify the remote repository branch (Ignored, if local repo path is used)
 * `repo_commit` (Optional) - Specify the repository commit ID (Ignored, if local repo path is used)
 * `helper_functions` (Optional) - A list of helper functions to make available for the standalone pipeline step. By default, the pipeline step function has no access to any of the other functions, by specifying additional functions here, the remote pipeline step could call the additional functions.
-  Example, assuming we have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
+  Example, assuming you have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 
 Additionally, you can enable automatic logging of a step’s metrics / artifacts / models to the pipeline task using the 

@@ -179,7 +179,7 @@ google.storage {
 
 ## Storage Manager
 
-ClearML offers the [StorageManager](../references/sdk/storage.md) class to manage downloading, uploading, and caching of 
+ClearML provides the [StorageManager](../references/sdk/storage.md) class to manage downloading, uploading, and caching of 
 content directly from code.
 
 See [Storage Examples](../guides/storage/examples_storagehelper.md).

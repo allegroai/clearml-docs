@@ -50,16 +50,22 @@ Each pipeline step can log additional artifacts and metrics on the step task wit
 Additionally, pipeline steps can directly report metrics or upload artifacts / models to the pipeline using these 
 PipelineController and PipelineDecorator class methods: `get_logger`, `upload_model`, `upload_artifact`.
 
-The pipeline controller also offers automation for logging step metrics / artifacts / models on the pipeline task itself. 
+The pipeline controller also supports automation for logging step metrics / artifacts / models on the pipeline task itself. 
 Each pipeline step can specify metrics / artifacts / models to also automatically log to the pipeline Task. The idea is 
 that pipeline steps report metrics internally while the pipeline automatically collects them into a unified view on the 
 pipeline Task. To enable the automatic logging, use the `monitor_metrics`, `monitor_artifacts`, `monitor_models` arguments 
 when creating a pipeline step.
 
 ### Pipeline Step Caching
-The Pipeline controller also offers step caching, meaning, reusing outputs of previously executed pipeline steps, in the 
-case of exact same step code, and the same step input values. By default, pipeline steps are not cached. Enable caching
-when creating a pipeline step.
+The Pipeline controller supports step caching, meaning, reusing outputs of previously executed pipeline steps. 
+
+Cached pipeline steps are reused when they meet the following criteria:
+* The step code is the same, including environment setup (components in the task's [Execution](../webapp/webapp_exp_track_visual.md#execution) 
+section, like required packages and docker image)
+* The step input arguments are unchanged, including step arguments and parameters (anything logged to the task's [Configuration](../webapp/webapp_exp_track_visual.md#configuration) 
+section)
+
+By default, pipeline steps are not cached. Enable caching when creating a pipeline step (for example, see [@PipelineDecorator.component](pipelines_sdk_function_decorators.md#pipelinedecoratorcomponent)).
 
 When a step is cached, the step code is hashed, alongside the step’s parameters (as passed in runtime), into a single 
 representing hash string. The pipeline first checks if a cached step exists in the system (archived Tasks will not be used 

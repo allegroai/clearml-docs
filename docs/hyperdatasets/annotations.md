@@ -39,14 +39,14 @@ The `box2d_xywh` argument specifies the coordinates of the annotation's bounding
 a list of labels for the annotation.
 
 Enter the annotation's boundaries in one of the following ways: 
-* `poly2d_xy` - A list of floating points (x,y) to create for single polygon, or a list of floating points lists for a 
+* `poly2d_xy` - A list of floating points (x,y) to create a single polygon, or a list of floating points lists for a 
   complex polygon.
 * `ellipse2d_xyrrt` - A List consisting of cx, cy, rx, ry, and theta for an ellipse. 
 * And more! See [`SingleFrame.add_annotation`](../references/hyperdataset/singleframe.md#add_annotation) for further options. 
 
 ### Adding a Frame Label
 
-Adding a frame label is similar to creating a frame objects, except that coordinates don't need to be specified, since 
+Adding a frame label is similar to creating a frame object, except that coordinates don't need to be specified, since 
 the whole frame is being referenced. 
 
 Use the `SingleFrame.add_annotation` method, but use only the `labels` parameter. 

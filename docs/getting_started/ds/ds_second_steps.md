@@ -2,7 +2,7 @@
 title: Next Steps
 ---
 
-So, we've already [installed ClearML's python package](ds_first_steps.md) and ran our first experiment!
+So, you've already [installed ClearML's python package](ds_first_steps.md) and run your first experiment!
 
 Now, we'll learn how to track Hyperparameters, Artifacts and Metrics!
 
@@ -19,7 +19,7 @@ or project & name combination. It's also possible to query tasks based on their 
 prev_task = Task.get_task(task_id='123456deadbeef')
 ```
 
-Once we have a Task object we can query the state of the Task, get its Model, scalars, parameters, etc.
+Once you have a Task object you can query the state of the Task, get its model, scalars, parameters, etc.
 
 ## Log Hyperparameters
 
@@ -40,7 +40,7 @@ Check [this](../../fundamentals/hyperparameters.md) out for all Hyperparameter l
 
 ## Log Artifacts
 
-ClearML allows you to easily store the output products of an experiment - Model snapshot / weights file, a preprocessing of your data, feature representation of data and more!
+ClearML lets you easily store the output products of an experiment - Model snapshot / weights file, a preprocessing of your data, feature representation of data and more!
 
 Essentially, artifacts are files (or python objects) uploaded from a script and are stored alongside the Task.
 These Artifacts can be easily accessed by the web UI or programmatically.
@@ -56,12 +56,12 @@ Uploading a local file containing the preprocessed results of the data:
 task.upload_artifact('/path/to/preprocess_data.csv', name='data')
 ```
 
-We can also upload an entire folder with all its content by passing the folder (the folder will be zipped and uploaded as a single zip file).
+You can also upload an entire folder with all its content by passing the folder (the folder will be zipped and uploaded as a single zip file).
 ```python
 task.upload_artifact('/path/to/folder/', name='folder')
 ```
 
-Lastly, we can upload an instance of an object; Numpy/Pandas/PIL Images are supported with npz/csv.gz/jpg formats accordingly.
+Lastly, you can upload an instance of an object; Numpy/Pandas/PIL Images are supported with npz/csv.gz/jpg formats accordingly.
 If the object type is unknown ClearML pickles it and uploads the pickle file.
 
 ```python
@@ -128,11 +128,11 @@ local_weights_path = last_snapshot.get_local_copy()
 
 Like before we have to get the instance of the Task training the original weights files, then we can query the task for its output models (a list of snapshots), and get the latest snapshot.
 :::note
-Using TensorFlow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing our requested snapshot.
+Using TensorFlow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing your requested snapshot.
 :::
 As with Artifacts, all models are cached, meaning the next time we run this code, no model needs to be downloaded.
 Once one of the frameworks will load the weights file, the running Task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.
-This feature allows you to easily get a full genealogy of every trained and used model by your system!
+This feature lets you easily get a full genealogy of every trained and used model by your system!
 
 ## Log Metrics
 

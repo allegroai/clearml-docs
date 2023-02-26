@@ -15,7 +15,7 @@ and delete all cookies under the ClearML Server URL.
 
 ## Deploying
 
-:::warning
+:::caution
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the instructions in the [Security](clearml_server_security.md) page.
 :::
 
