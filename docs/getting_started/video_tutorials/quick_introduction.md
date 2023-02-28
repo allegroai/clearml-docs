@@ -17,8 +17,9 @@ keywords: [mlops, components, features, ClearML]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 ClearML is an open source MLOPS platform.
 
 It's essentially a toolbox stuffed with everything you'll need to go from experimentation to production:
@@ -33,3 +34,4 @@ Doesn't matter if you're starting small or already in production, there's always
 
 Start for free at [app.clear.ml](https://app.clear.ml) or host your own server from our GitHub page.
 
+</Collapsible>

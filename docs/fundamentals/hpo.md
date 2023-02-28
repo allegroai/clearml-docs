@@ -33,16 +33,13 @@ The diagram above demonstrates the typical flow of hyperparameter optimization w
 
 ![Optimization results summary chart](../img/fundamentals_hpo_summary.png)
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Parallel coordinate and scalar plots</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible title="Parallel coordinate and scalar plots" type="screenshot">
 
 ![Parallel Coordinates](../img/fundamentals_hpo_parallel_coordinates.png)
 
 ![Scalars](../img/fundamentals_hpo_scalars.png)
 
-</div>
-</details>
+</Collapsible>
 
 ### Supported Optimizers
 

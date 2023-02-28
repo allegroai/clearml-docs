@@ -17,8 +17,9 @@ keywords: [mlops, components, Autoscaler]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Hello and welcome to ClearML. In this video we’ll go a little more advanced and introduce autoscalers, the easiest way to build your very own flock of ClearML Agents.
 
 Data science is inherently very inconsistent in its demand for compute resources. One moment you’re just researching papers and need no compute at all, another moment you’re making 16 GPUs scream and wishing you had more. Especially when running Hyperparameter Optimization or Pipelines, it can be very handy to have some extra hardware for a short time.
@@ -66,3 +67,4 @@ Finally, when everything is done and the remote machines are idle, they will be 
 You can see that this functionality is very powerful when combined with for example hyperparameter optimization or pipelines that launch a lot of tasks at once. Obviously, it can be used as the primary way to get access to remote compute, but it can even be used as an extra layer on top of the machines you already have on-premise to spillover in case of large demand spikes for example. You don’t pay when you don’t use it, so there isn’t really a good reason not to have one running at all times.
 
 Get started right now for free at [app.clear.ml](https://app.clear.ml) and start spinning up remote machines with ClearML Pro if you want to save some money and effort by automating the boring stuff. If you run into any issues along the way, join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), and we’ll help you out.
+</Collapsible>

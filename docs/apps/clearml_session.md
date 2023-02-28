@@ -17,26 +17,19 @@ machine that better meets resource needs. This feature provides local links to a
 remote machine over a secure and encrypted SSH connection. By default, the JupyterLab and 
 VS Code remote sessions use ports 8878 and 8898 respectively. 
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">JupyterLab Window</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible title="JupyterLab Window" type="screenshot">
 
 ![image](../img/session_jupyter.png)
 
-</div>
-</details>
+</Collapsible>
 
 <br/>
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">VS Code Window</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="screenshot" title="VS Code Window">
 
 ![image](../img/session_vs_code.png)
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 :::info Remote PyCharm
 You can also work with PyCharm in a remote session over SSH. Use the [PyCharm Plugin](../guides/ide/integration_pycharm.md) 

@@ -48,11 +48,8 @@ section of a Frame).
 
 This example demonstrates an original image, its masks, and its frame containing
 the `sources` and ROI metadata. 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Example 1: View the frame</summary>
-<div className="cml-expansion-panel-content">
 
-
+<Collapsible type="info" title="Example 1: View the frame">
 This frame contains the `masks` list of dictionaries in `sources`, 
 and the `rois` array, as well as several top-level key-value pairs.
 
@@ -137,9 +134,7 @@ and the `rois` array, as well as several top-level key-value pairs.
 }
 ```
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 
 * In `sources`:
@@ -153,10 +148,7 @@ and the `rois` array, as well as several top-level key-value pairs.
 
   
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Example image and masks</summary>
-<div className="cml-expansion-panel-content">
-
+<Collapsible type="screenshot" title="Example image and masks">
 Original Image 
 
 ![image](../img/hyperdatasets/concepts_masks_image_only.png)
@@ -165,19 +157,13 @@ Mask image
 
 ![image](../img/hyperdatasets/concepts_masks.png)
 
-</div>
-</details>
-<br/>
-
+</Collapsible>
 
 ### Example 2 
 
 This example shows two masks for video from a camera. The masks label cars and the road.
 
-<details className="cml-expansion-panel info">
-<summary className="cml-expansion-panel-summary">Example 2: View the frame</summary>
-<div className="cml-expansion-panel-content">
-
+<Collapsible type="info" title="Example 2: View the frame">
 
 ```json
 "sources": [
@@ -227,9 +213,7 @@ This example shows two masks for video from a camera. The masks label cars and t
     }
 ```
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
 * In `sources`:
   * The source ID is `front`.

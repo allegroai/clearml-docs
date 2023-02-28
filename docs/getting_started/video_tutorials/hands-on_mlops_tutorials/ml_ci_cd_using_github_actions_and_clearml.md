@@ -17,8 +17,9 @@ keywords: [mlops, components, GitHub Actions, CI/CD]
 </iframe>
 </div>
 
-### Video Transcript 
+<br/>
 
+<Collapsible type="info" title="Video Transcript">
 Hello, welcome back to ClearML my name is Victor and in this video I'll be going through some CI/CD tips and tricks you 
 can do with ClearML. For this video, I'm going to assume that you already know about ClearML and CI/CD.
 In general, the CI/CD stuff will be relatively easy to understand but if this is your first time working with ClearML, 
@@ -282,3 +283,4 @@ these kinds of things and I hope you learned something valuable today. All of th
 will be available in the link in the description, and if you need any help, join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), we're always there, 
 always happy to help and thank you for watching.
 
+</Collapsible>

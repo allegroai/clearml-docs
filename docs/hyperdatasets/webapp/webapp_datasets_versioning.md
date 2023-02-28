@@ -73,9 +73,7 @@ Simple frame filtering returns frames containing at least one annotation with a 
 
 **To apply a simple frame filter,** select a label from the **LABEL FILTER** list.
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Simple filter example</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="screenshot" title="Simple filter example">
 
 * The **FRAMES** tab in the image below contains 101 frames.
 
@@ -86,8 +84,7 @@ Simple frame filtering returns frames containing at least one annotation with a 
 
 ![Filtered version browser](../../img/hyperdatasets/frame_filtering_02.png)
 
-</div>
-</details>
+</Collapsible>
 
 ### Advanced Frame Filtering
 
@@ -127,9 +124,7 @@ To clear all filters click <img src="/docs/latest/icons/ico-filter-reset.svg" al
 
 #### Filtering Examples
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">ROI Rules</summary>
-<div className="cml-expansion-panel-content">      
+<Collapsible type="screenshot" title="ROI Rules"> 
 
 * Create one ROI rule for the `teddy bear` label, which shows the same three frames as the simple frame filter (above).
 
@@ -144,13 +139,9 @@ To clear all filters click <img src="/docs/latest/icons/ico-filter-reset.svg" al
 
 ![Labeled ROIs in frame viewer](../../img/hyperdatasets/frame_filtering_05.png)
 
-</div>
-</details>
-<br/>
+</Collapsible>
 
-<details className="cml-expansion-panel screenshot">
-    <summary className="cml-expansion-panel-summary">Frame Rules</summary>
-    <div className="cml-expansion-panel-content">
+<Collapsible type="screenshot" title="Frame Rules">
 
 Filter by metadata using Lucene queries.
 
@@ -162,13 +153,9 @@ Filter by metadata using Lucene queries.
   
 ![Frame metadata in frame viewer](../../img/hyperdatasets/frame_filtering_09.png)
 
-</div>
-</details>            
-<br/>
+</Collapsible>
 
-<details className="cml-expansion-panel screenshot">
-<summary className="cml-expansion-panel-summary">Source Rules</summary>
-<div className="cml-expansion-panel-content">
+<Collapsible type="screenshot" title="Source Rules">
 
 Filter by sources using Lucene queries.    
 
@@ -178,8 +165,7 @@ Filter by sources using Lucene queries.
 
 Lucene queries can also be used in ROI label filters and frame rules.
 
-</div>
-</details>      
+</Collapsible>      
 
 ### Exporting Frames
 
