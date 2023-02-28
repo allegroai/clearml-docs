@@ -2,6 +2,21 @@
 title: Version 1.9
 ---
 
+### ClearML SDK 1.9.2
+
+**New Features and Improvements**
+* Add pre/post execution callbacks to pipeline steps through `@PipelineDecorator.component`
+* Add status-change callback to pipeline steps through `PipelineController.add_step()`, `PipelineController.add_function_step()`, 
+and `@PipelineDecorator.component`
+
+**Bug Fixes**
+* Fix pipelines from tasks don't propagate `parameter_override` values in `PipelineController.add_step()`
+* Fix `Task.connect_configuration()` doesn't work with non-string dictionary keys 
+* Fix folders and files uploaded to S3 and Azure with `StorageManager.upload_file()` receive wrong MIME types
+* Fix `lightgbm_example` deprecation warning 
+* Fix the CSV file preview in Datasets
+
+
 ### ClearML SDK 1.9.1
 
 **New Features and Improvements**
