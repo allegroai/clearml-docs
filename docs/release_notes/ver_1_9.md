@@ -5,16 +5,23 @@ title: Version 1.9
 ### ClearML SDK 1.9.2
 
 **New Features and Improvements**
+* Support parsing queue name when providing execution queue in pipelines code [ClearML GitHub PR #857](https://github.com/allegroai/clearml/pull/857)
+* Ignore `None` values for keys in the `click` argument parser [ClearML GitHub issue #902](https://github.com/allegroai/clearml/issues/902)
+* Improve docstrings for `Task.mark_completed()` and `Task.close()` - ClearML GitHub PRs [#920](https://github.com/allegroai/clearml/pull/920) & [#921](https://github.com/allegroai/clearml/pull/921)
 * Add pre/post execution callbacks to pipeline steps through `@PipelineDecorator.component`
 * Add status-change callback to pipeline steps through `PipelineController.add_step()`, `PipelineController.add_function_step()`, 
 and `@PipelineDecorator.component`
 
 **Bug Fixes**
+* Fix missing debug samples when reporting using TensorBoard [ClearML GitHub issue #923](https://github.com/allegroai/clearml/issues/923)
+* Fix wrong Jupyter API token during repository detection [ClearML GitHub PR #904](https://github.com/allegroai/clearml/pull/904)
+* Fix typo in the warning for very large git diffs [ClearML GitHub PR #932](https://github.com/allegroai/clearml/pull/932)
 * Fix pipelines from tasks don't propagate `parameter_override` values in `PipelineController.add_step()`
-* Fix `Task.connect_configuration()` doesn't work with non-string dictionary keys 
 * Fix folders and files uploaded to S3 and Azure with `StorageManager.upload_file()` receive wrong MIME types
-* Fix `lightgbm_example` deprecation warning 
 * Fix the CSV file preview in Datasets
+* Fix `Task.connect_configuration()` doesn't work with non-string dictionary keys 
+* Fix `lightgbm_example` deprecation warning 
+* Fix potential race condition in `get_or_create_project()`
 
 
 ### ClearML SDK 1.9.1
