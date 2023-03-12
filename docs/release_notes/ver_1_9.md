@@ -2,6 +2,12 @@
 title: Version 1.9
 ---
 
+### ClearML SDK 1.9.3
+
+**Bug Fixes**
+* Fix broken `Task._get_status()`, which was breaking `clearml-session` in the latest version
+* Fix path substitution, making it possible to store unsubstituted URL for models [ClearML GitHub PR #935](https://github.com/allegroai/clearml/pull/935a)
+
 ### ClearML SDK 1.9.2
 
 **New Features and Improvements**
