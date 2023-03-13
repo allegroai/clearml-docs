@@ -54,7 +54,6 @@ def main(pickle_url, mock_parameter='mock'):
   `services` queue. To run the pipeline logic locally while the components are executed remotely, pass 
   `pipeline_execution_queue=None`
 
-
 When the function is called, a corresponding ClearML Controller Task is created: its arguments are logged as the task’s 
 parameters. When launching a new pipeline run from the [UI](../webapp/pipelines/webapp_pipeline_page.md), you can modify their values for the new run.  
 
@@ -168,15 +167,12 @@ following arguments:
 You can also control a pipeline component's automatic logging using the following parameters: 
 * `auto_connect_frameworks` - Control a component's framework logging. You can completely disable framework logging, or
 specify which frameworks to log. See `Task.init`'s [`auto_connect_framework` parameter](../references/sdk/task.md#taskinit)
-* `auto_connect_arg_parser` See `Task.init`'s [`auto_connect_arg_parser` parameter](../references/sdk/task.md#taskinit) - control
-automatic logging of argparse objects. 
+* `auto_connect_arg_parser` - control automatic logging of argparse objects. See `Task.init`'s [`auto_connect_arg_parser` parameter](../references/sdk/task.md#taskinit) 
 
 You can also directly upload a model or an artifact from the step to the pipeline controller, using the 
 [`PipelineDecorator.upload_model`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorupload_model) 
 and [`PipelineDecorator.upload_artifact`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorupload_artifact) 
 methods respectively. 
-
-
 
 
 ## Controlling Pipeline Execution
