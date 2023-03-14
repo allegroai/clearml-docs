@@ -5,6 +5,11 @@ title: Pipelines Page
 Use the **Pipelines** Page to navigate between and manage pipelines. The page shows execution summaries for all 
 [ClearML Pipelines](../../pipelines/pipelines.md).
 
+You can view the Pipelines page in Project view <img src="/docs/latest/icons/ico-project-view.svg" alt="Project view" className="icon size-md" /> 
+or in List view <img src="/docs/latest/icons/ico-flat-view.svg" alt="List view" className="icon size-md" />. In List 
+view, all pipelines are shown side-by-side. In Project view, pipelines are organized according to their projects, and 
+top-level projects are displayed. Click on a project card to view the project's pipelines.
+
 Click on a pipeline card to navigate to its [Pipeline Runs Table](webapp_pipeline_table.md), where you can view the 
 pipeline structure, configuration, and outputs of all the pipeline’s runs, as well as create new runs.
 
@@ -18,14 +23,21 @@ Filter the pipelines to find the one you’re looking for more easily. These fil
 
 ![Pipelines page](../../img/webapp_pipeline_table.png)
 
+## Project Cards
+In Project view, project cards display a project's summarized pipeline information:
+
+![Pipeline project card](../../img/webapp_pipeline_project_card.png)
+
+Click on a project card to view its pipelines.
+
 
 ## Pipeline Cards
 
-The pipeline cards display summarized pipeline information:  
+In List view, the pipeline cards display summarized pipeline information:  
 
 <div class="max-w-50">
 
-![Project card](../../img/webapp_pipeline_card.png)
+![Pipeline card](../../img/webapp_pipeline_card.png)
 
 </div>
 
