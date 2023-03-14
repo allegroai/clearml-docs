@@ -205,7 +205,7 @@ The system includes three pre-configured groups that can't be removed:
   permissions to workspace resources
 * `Queue admins` -  Can create / delete / rename queues
 
-The user group table lists all the active user groups. Each row includes a group's name, description, and member list. 
+The user group table lists all the active user groups. Each row includes a group's name, description, member list, and ID. 
 
 ![User Management Page](../img/settings_user_management_table.png)
 
