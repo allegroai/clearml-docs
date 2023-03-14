@@ -62,3 +62,15 @@ To modify / add / delete model metadata items, hover over Metadata, then click E
 window.
 
 ![Model metadata editing](../img/webapp_model_metadata_edit.png)
+
+## Lineage
+
+![Model lineage](../img/webapp_model_lineage.png)
+
+## Plots 
+
+![Model plots](../img/webapp_model_plots.png)
+
+## Scalars
+
+![Model scalars](../img/webapp_model_scalars.png)
