@@ -28,6 +28,7 @@ Reports are editable Markdown documents, supporting:
 * Tables
 * Code blocks
 * Text and image hyperlinks
+* Embedded images uploaded from your computer
 * Embedded ClearML task content
 
 ![Report](../img/webapp_report.png)
