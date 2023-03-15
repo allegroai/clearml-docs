@@ -28,6 +28,7 @@ Reports are editable Markdown documents, supporting:
 * Tables
 * Code blocks
 * Text and image hyperlinks
+* Embedded images uploaded from your computer
 * Embedded ClearML task content
 
 ![Report](../img/webapp_report.png)
@@ -59,17 +60,25 @@ experiment comparison)
    ![Reports step 3](../img/reports_step_3.png)
    
 ## Reports Page
-Use the Reports Page to navigate between and manage reports. The page shows summaries 
-for all reports.
+Use the Reports Page to navigate between and manage reports. 
 
-Click on a report card to access it.
+You can view the reports page in Project view <img src="/docs/latest/icons/ico-project-view.svg" alt="Project view" className="icon size-md" /> 
+or in List view <img src="/docs/latest/icons/ico-flat-view.svg" alt="List view" className="icon size-md" />. In List 
+view, all reports are shown side-by-side. In Project view, reports are organized according to their projects, and 
+top-level projects are displayed. Click on a project card to view the project's reports.
 
 ![Report page](../img/webapp_report_page.png)
 
+## Project Cards
+In Project view, project cards display a project’s summarized report information:
+
+![Report project card](../img/webapp_report_project_card.png)
+
+Click on a project card to view its reports.
 
 ### Report Cards
 
-The report cards display summarized report information:
+In List view, the report cards display summarized report information:
 
 <div class="max-w-50">
 
