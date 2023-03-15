@@ -1,5 +1,5 @@
 ---
-title: ClearML Param Search
+title: ClearML Hyperparameter Search - HPO
 ---
 
 Use the `clearml-param-search` CLI tool to launch ClearML's automated hyperparameter optimization (HPO). This process finds 
