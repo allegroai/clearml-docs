@@ -32,7 +32,8 @@ The profile tab presents user information.
 ### Customizing UI Behavior
 
 Under **USER PREFERENCES**, users can set a few web UI options:
-* **Show Hidden Projects** - Show ClearML infrastructure projects alongside your own projects. Disabled by default.
+* **Show Hidden Projects** - Show ClearML infrastructure projects alongside your own projects. Disabled by default. When 
+enabled, these projects are labeled with <img src="/docs/latest/icons/ico-ghost.svg" alt="Hidden project" className="icon size-md space-sm" />.
 * **Don't show ClearML Examples** - Hide the preloaded ClearML example content (project, pipeline, dataset, etc.) 
 * **HiDPI browser scale override** - Adjust scaling on High-DPI monitors to improve the web UI experience. 
   Enabled by default.
