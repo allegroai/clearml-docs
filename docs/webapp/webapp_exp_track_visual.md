@@ -246,13 +246,18 @@ is downloadable. To view the end of the log, click **Jump to end**.
 ### Scalars
 
 All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in
-**SCALARS**. Scalar values are presented as time series line chart. To see the series for a metric in high resolution, 
+**SCALARS**. 
+
+Scalar series are presented in a line chart. To see the series for a metric in high resolution, 
 view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
 
 :::info Full Screen Refresh
 Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon lt size-md space-sm medium-zoom-image" /> 
 to update the graph. 
 :::
+
+Reported single value scalars are aggregated into a table plot displaying scalar names and values (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value). 
+
 
 #### Scalar Plot Tools
 
