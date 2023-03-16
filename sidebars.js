@@ -83,7 +83,8 @@ module.exports = {
                     'webapp/applications/apps_aws_autoscaler',
                     'webapp/applications/apps_gcp_autoscaler',
                     'webapp/applications/apps_hpo',
-                    'webapp/applications/apps_dashboard'
+                    'webapp/applications/apps_dashboard',
+                    'webapp/applications/apps_task_scheduler'
                 ]
 
             },
