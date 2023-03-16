@@ -40,10 +40,18 @@ Once a Task Scheduler instance is launched, the dashboard displays a summary of 
 
 The Task Scheduler dashboard shows:
 * Scheduled Tasks - Table of tasks scheduled for execution. The table displays the ID of the task scheduled for execution,
-  the queue where it will be enqueued, and when it is scheduled to be executed. In the image below, the task in the first
-  row is scheduled to be launched on Sunday at 07:20 UTC (`minute=20, hour=7, day=1`). 
+  the queue where it will be enqueued, and when it is scheduled to be executed. Each row presents a specific time that 
+  the task is scheduled to be executed (both recurring and not). In the image below, the task in the first row is 
+  scheduled to be launched daily (`day=1`) at 06:20 UTC (`minute=20, hour=6`).
+  The task in the third row is scheduled to be launched every month (`month=1`) on the 15th at 12:00 UTC (`day=15, hour=12`).
+  
   ![TaskScheduler scheduler tasks](../../img/apps_taskscheduler_scheduled_tasks.png)
 * Executed Tasks - Table of tasks that have been executed. The table displays the `started` time, which is the time
   the task was enqueued, and its `finished` time, which is the time the task's execution was completed. If it says `None`,
   under the `finished` column, the task has not yet completed its execution. 
+  
   ![TaskScheduler executed tasks](../../img/apps_taskscheduler_executed_tasks.png)
+
+* Scheduler Log - Application console log containing everything printed to stdout and stderr. The log 
+  includes when the scheduler syncs, and when it launches tasks for execution.   
+ 
