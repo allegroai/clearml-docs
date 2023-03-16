@@ -4,6 +4,11 @@ title: Hyper-Datasets Page
 
 Use the Hyper-Datasets Page to navigate between and manage hyper-datasets. 
 
+You can view the Hyper-Datasets page in Project view <img src="/docs/latest/icons/ico-project-view.svg" alt="Project view" className="icon size-md" /> 
+or in List view <img src="/docs/latest/icons/ico-flat-view.svg" alt="List view" className="icon size-md" />. In List 
+view, all hyper-datasets are shown side-by-side. In Project view, hyper-datasets are organized according to their projects, and 
+top-level projects are displayed. Click on a project card to view the project's hyper-datasets.
+
 Click on a Hyper-Dataset card to open the dataset’s [version list](webapp_datasets_versioning.md), where you can view 
 and manage the dataset versions' lineage and contents. 
 
@@ -17,9 +22,22 @@ Filter the hyper-datasets to find the one you’re looking for more easily. Thes
 
 ![Hyper-Dataset page](../../img/hyperdatasets/datasets_01.png)
 
+## Project Cards
+
+In Project view, project cards display a project’s summarized hyper-dataset information:
+
+![Hyper-Dataset project card](../../img/hyperdatasets/hyperdataset_project_card.png)
+
+* Project name
+* Number of hyper-datasets in project
+* Tags used by hyper-datasets in project
+
+Click on a project card to view its hyper-datasets.
+
+
 ## Hyper-Dataset Cards
 
-The Hyper-Dataset cards display summarized dataset information: 
+In List view, the Hyper-Dataset cards display summarized dataset information: 
 
 ![Hyper-Dataset card](../../img/hyperdatasets/hyperdataset_card.png)
 

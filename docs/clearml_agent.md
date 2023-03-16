@@ -27,11 +27,18 @@ The diagram above demonstrates a typical flow where an agent executes a task:
 
 While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Workers and Queues** page).  
 
-Continue using **ClearML Agent** once it is running on a target machine. Reproduce experiments and execute 
+Continue using ClearML Agent once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
-* Programmatically
-* By using the **ClearML Web UI** (without directly working with code), by enqueuing experiments 
-to the queue that a **ClearML Agent** is listening to.
+* Programmatically (using [`Task.enqueue`](references/sdk/task.md#taskenqueue) or [`Task.execute_remotely`](references/sdk/task.md#execute_remotely))
+* Through the ClearML Web UI (without working directly with code), by cloning experiments and enqueuing them to the 
+  queue that a ClearML Agent is servicing.
+
+  The agent facilitates [overriding task execution detail](webapp/webapp_exp_tuning.md) values through the UI without 
+  code modification. Modifying a task clone’s configuration will have the ClearML agent executing it override the 
+  original values:
+  * Modified package requirements will have the experiment script run with updated packages
+  * Modified recorded command line arguments will have the ClearML agent inject the new values in their stead
+  * Code-level configuration instrumented with [`Task.connect`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
 
 For more information, see [ClearML Agent Reference](clearml_agent/clearml_agent_ref.md), 
 and [configuration options](configs/clearml_conf.md#agent-section).

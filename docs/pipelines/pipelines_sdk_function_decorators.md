@@ -111,6 +111,36 @@ def step_one(pickle_data_url: str, extra: int = 43):
 * `helper_functions` (Optional) - A list of helper functions to make available for the standalone pipeline step. By default, the pipeline step function has no access to any of the other functions, by specifying additional functions here, the remote pipeline step could call the additional functions.
   Example, assuming you have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
+* `retry_on_failure` - Number of times to retry step in case of failure. You can also input a callable function in the 
+   following format:
+
+  ```python
+  def example_retry_on_failure_callback(pipeline, node, retries):
+    print(node.name, ' failed')
+    # allow up to 5 retries (total of 6 runs)
+    return retries
+  ```
+  The callback function takes the following parameters:
+  * PipelineController instance
+  * PipelineController.Node that failed 
+  * Number of times to retry the step if it fails
+  
+  The function must return a boolean value. If it returns `True`, the node is retried, and the number of retries is 
+  decremented by 1. If the function returns `False`, the node is not retried.
+  
+* Callbacks - Control pipeline execution flow with callback functions 
+  * `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+    before and/or after a step’s execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback--post_execute_callback).
+  * `status_change_callback` - Callback function called when the status of a step changes. Use `node.job` to access the 
+  `ClearmlJob` object, or `node.job.task` to directly access the Task object. The signature of the function must look like this:
+    ```python
+    def status_change_callback(
+      pipeline,             # type: PipelineController,
+      node,                 # type: PipelineController.Node,
+      previous_status       # type: str
+    ):
+      pass
+    ```
 
 Additionally, you can enable automatic logging of a step’s metrics / artifacts / models to the pipeline task using the 
 following arguments:
@@ -133,6 +163,11 @@ following arguments:
   * Alternatively, provide a list of pairs (source_model_name, target_model_name), where the first string is the model 
     name as it appears on the component Task, and the second is the target model name to put on the Pipeline Task. 
     Example: `[('model_weights', 'final_model_weights'), ]`
+
+You can also control a pipeline component's automatic logging using the following parameters: 
+* `auto_connect_frameworks` - Control a component's framework logging. You can completely disable framework logging, or
+specify which frameworks to log. See `Task.init`'s [`auto_connect_framework` parameter](../references/sdk/task.md#taskinit)
+* `auto_connect_arg_parser` - control automatic logging of argparse objects. See `Task.init`'s [`auto_connect_arg_parser` parameter](../references/sdk/task.md#taskinit) 
 
 You can also directly upload a model or an artifact from the step to the pipeline controller, using the 
 [`PipelineDecorator.upload_model`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorupload_model) 

@@ -62,3 +62,33 @@ To modify / add / delete model metadata items, hover over Metadata, then click E
 window.
 
 ![Model metadata editing](../img/webapp_model_metadata_edit.png)
+
+## Lineage
+
+The **LINEAGE** tab displays the model's creating experiment (the ClearML experiment that generated the model) and lists 
+all the tasks where the model is used as an input model. Click an experiment to navigate to its page.
+
+You can filter the task list by tags and task status.
+
+Use the search bar to look for experiments based on their name, ID, or description.
+
+
+![Model lineage](../img/webapp_model_lineage.png)
+
+## Scalars
+
+The **SCALARS** tab displays all scalar plots attached to a model. Scalar values are presented as time series line 
+charts. To see the series for a metric in high resolution, view it in full screen mode by hovering over the graph and 
+clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
+For better plot analysis, see [Plot Controls](webapp_exp_track_visual.md#plot-controls).
+
+Reported single value scalars are aggregated into a table plot displaying scalar names and values. 
+
+![Model scalars](../img/webapp_model_scalars.png)
+
+## Plots 
+
+The **PLOTS** tab displays plots attached to a model. For better plot analysis, see [Plot Controls](webapp_exp_track_visual.md#plot-controls).
+
+![Model plots](../img/webapp_model_plots.png)
+
