@@ -10,6 +10,11 @@ Datasets created with earlier versions of `clearml` are available in their origi
 Use the **Datasets** Page to navigate between and manage datasets. The page shows summaries 
 for all datasets created using [ClearML Data](../../clearml_data/clearml_data.md).
 
+You can view the datasets page in Project view <img src="/docs/latest/icons/ico-project-view.svg" alt="Project view" className="icon size-md" /> 
+or in List view <img src="/docs/latest/icons/ico-flat-view.svg" alt="List view" className="icon size-md" />. In List 
+view, all datasets are shown side-by-side. In Project view, datasets are organized according to their projects, and 
+top-level projects are displayed. Click on a project card to view the project's datasets.
+
 Click on a dataset card to navigate to its [Version List](webapp_dataset_viewing.md), where you can view the 
 dataset versions' lineage and contents. 
 
@@ -22,10 +27,23 @@ Filter the datasets to find the one you’re looking for more easily. These filt
 
 ![Dataset page](../../img/webapp_dataset_page.png)
 
+## Project Cards
+
+In Project view, project cards display a project’s summarized dataset information:
+
+![Project card](../../img/webapp_dataset_project_card.png)
+
+* Project name
+* Number of datasets in project
+* Tags used by datasets in project
+
+Click on a project card to view its datasets.
+
+
 
 ## Dataset Cards
 
-The dataset cards display summarized dataset information:
+In List view, the dataset cards display summarized dataset information:
 
 <div class="max-w-50">
 
