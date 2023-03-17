@@ -63,6 +63,6 @@ Talking of which, let’s say your wait times are very long because all data sci
 
 In the following video we’ll go a little deeper yet into this newly discovered automation thing we just saw and introduce things like automatic hyperparameter optimization and pipelines.
 
-But for now, feel free to start spinning up some agents on your own machines completely for free at [app.clear.ml](https://app.clear.ml) or by using our self-hosted server on GitHub, and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg) if you need any help.
+But for now, feel free to start spinning up some agents on your own machines completely for free at [app.clear.ml](https://app.clear.ml) or by using our self-hosted server on GitHub, and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A) if you need any help.
 
 </Collapsible>
