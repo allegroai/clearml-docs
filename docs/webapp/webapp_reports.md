@@ -72,7 +72,11 @@ top-level projects are displayed. Click on a project card to view the project's 
 ## Project Cards
 In Project view, project cards display a project’s summarized report information:
 
+<div class="max-w-50">
+
 ![Report project card](../img/webapp_report_project_card.png)
+
+</div>
 
 Click on a project card to view its reports.
 

@@ -31,7 +31,11 @@ Filter the datasets to find the one you’re looking for more easily. These filt
 
 In Project view, project cards display a project’s summarized dataset information:
 
+<div class="max-w-50">
+
 ![Project card](../../img/webapp_dataset_project_card.png)
+
+</div>
 
 * Project name
 * Number of datasets in project

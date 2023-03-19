@@ -33,12 +33,12 @@ automated workflows in one (or both) of the following ways:
 * Through the ClearML Web UI (without working directly with code), by cloning experiments and enqueuing them to the 
   queue that a ClearML Agent is servicing.
 
-  The agent facilitates [overriding task execution detail](webapp/webapp_exp_tuning.md) values through the UI without 
-  code modification. Modifying a task clone’s configuration will have the ClearML agent executing it override the 
-  original values:
-  * Modified package requirements will have the experiment script run with updated packages
-  * Modified recorded command line arguments will have the ClearML agent inject the new values in their stead
-  * Code-level configuration instrumented with [`Task.connect`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
+The agent facilitates [overriding task execution detail](webapp/webapp_exp_tuning.md) values through the UI without 
+code modification. Modifying a task clone’s configuration will have the ClearML agent executing it override the 
+original values:
+* Modified package requirements will have the experiment script run with updated packages
+* Modified recorded command line arguments will have the ClearML agent inject the new values in their stead
+* Code-level configuration instrumented with [`Task.connect`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
 
 For more information, see [ClearML Agent Reference](clearml_agent/clearml_agent_ref.md), 
 and [configuration options](configs/clearml_conf.md#agent-section).

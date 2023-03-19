@@ -28,13 +28,13 @@ subprojects. Click on a subproject's name to navigate to it.
 
 ![Subproject tab](../img/webapp_sub_project_card.png)
 
-:::note Hidden Projects
+<Collapsible title="Hidden Projects" type="configuration">
 By default, ClearML infrastructure projects (i.e. dataset, pipeline, reports, application projects) are not shown in the 
 projects page. You can enable viewing them in **Settings > Configuration > User Preferences**. When enabled, all infrastructure projects 
 are labeled with <img src="/docs/latest/icons/ico-ghost.svg" alt="Hidden project" className="icon size-md space-sm" />
 
 ![Hidden project configurtion](../img/settings_hidden_projects.png)
-:::
+</Collapsible>
 
 ### Project Actions
 
