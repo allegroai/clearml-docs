@@ -20,6 +20,7 @@ ClearML provides the following applications:
 * [**Hyperparameter Optimization**](apps_hpo.md) - Find the parameter values that yield the best performing models
 * **Nvidia Clara** - Train models using Nvidia’s Clara framework
 * [**Project Dashboard**](apps_dashboard.md) - High-level project monitoring with Slack alerts
+* [**Task Scheduler**](apps_task_scheduler.md) - Schedule tasks for one-shot and/or periodic execution at specified times (available under ClearML Enterprise Plan)
 
 ## App Pages Layout
 Each application’s page is split into two sections:
