@@ -26,7 +26,11 @@ Filter the pipelines to find the one you’re looking for more easily. These fil
 ## Project Cards
 In Project view, project cards display a project's summarized pipeline information:
 
+<div class="max-w-50">
+
 ![Pipeline project card](../../img/webapp_pipeline_project_card.png)
+
+</div>
 
 Click on a project card to view its pipelines.
 
