@@ -60,5 +60,5 @@ When we select a specific step, we can see its inputs and outputs as well as its
 
 Finally, we can also clone the whole pipeline and change its parameters by clicking on the **+ New Run** button. This is the most powerful feature of all, as it allows us to really quickly rerun the whole pipeline with different parameters from the UI. The agents will take care of the rest!
 
-In the next video of this Getting Started series, we’ll take a look at ClearML Data, for real this time. In the meantime, spin up some pipeline controllers yourself for free at [app.clear.ml](https://app.clear.ml) and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1kvcxu5hf-SRH_rmmHdLL7l2WadRJTQg), if you need any help.
+In the next video of this Getting Started series, we’ll take a look at ClearML Data, for real this time. In the meantime, spin up some pipeline controllers yourself for free at [app.clear.ml](https://app.clear.ml) and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A), if you need any help.
 </Collapsible>
