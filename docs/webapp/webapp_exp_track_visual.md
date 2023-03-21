@@ -256,7 +256,7 @@ Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/lat
 to update the graph. 
 :::
 
-Reported single value scalars are aggregated into a table plot displaying scalar names and values (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value). 
+Reported single value scalars are aggregated into a table plot displaying scalar names and values (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value)). 
 
 
 #### Scalar Plot Tools
