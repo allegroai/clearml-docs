@@ -26,7 +26,11 @@ Filter the hyper-datasets to find the one you’re looking for more easily. Thes
 
 In Project view, project cards display a project’s summarized hyper-dataset information:
 
+<div class="max-w-50">
+
 ![Hyper-Dataset project card](../../img/hyperdatasets/hyperdataset_project_card.png)
+
+</div>
 
 * Project name
 * Number of hyper-datasets in project
@@ -39,7 +43,11 @@ Click on a project card to view its hyper-datasets.
 
 In List view, the Hyper-Dataset cards display summarized dataset information: 
 
+<div class="max-w-50">
+
 ![Hyper-Dataset card](../../img/hyperdatasets/hyperdataset_card.png)
+
+</div>
 
 * Dataset name
 * Time since last update. Hover over elapsed time to view date of last update
