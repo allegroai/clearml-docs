@@ -58,6 +58,94 @@ experiment comparison)
 3. Return to your report page and paste the code snippet
 
    ![Reports step 3](../img/reports_step_3.png)
+
+### Customizing Embed Code
+
+You can customize embed codes to make more elaborate queries for what you want to display in your reports. 
+A standard embed code is formatted like this: 
+
+```
+<iframe
+  src="<web_server>/widgets/?type=sample&tasks=<task_id>&metrics=<metric_name>&variants=Plot%20as%20an%20image&company=<company/workspace_id>"
+  width="100%" height="400"
+></iframe>
+```
+
+The `src` parameter is made up of the following components: 
+* Your web server’s URL (e.g. `app.clear.ml`)
+* `/widget/` - The endpoint that serves the embedded data.
+* The query parameters for your visualization (the path and query are separated by a question mark `?`)
+
+The query is formatted like a standard query string: `<parameter>=<parameter_value>`. Multiple parameter-value pairs are 
+delimited with a `&`: `<parameter_1>=<parameter_value_1>&<parameter_2>=<parameter_value_2>`.
+
+The query string usually includes the following parameters:
+* `type` - The type of resource to fetch. The options are: 
+    * `plot`
+    * `scalar`
+    * `sample` (debug sample)
+    * `parcoords` (hyperparameter comparison plots) - for this option, you need to also specify the following parameters:
+      * `metrics` - Unique metric/variant ID formatted like `metric_id.variant_id` (find with your browser's inspect. See note [below](#event_id)). 
+      * `variants` - Parameters to include in the plot (write in following format `<section_name>.<parameter_1>&<section_name>.<parameter_2>`)
+      * `value_type` - Specify which metric values to use. The options are:
+        * `min_value`
+        * `max_value`
+        * `value` (last value).
+* `tasks` - Task IDs. Specify multiple IDs like this:  `tasks=<id>&tasks=<id>&tasks=<id>`. Alternatively, you can 
+specify a task query which will use its results as the tasks to display. See [Dynamic Task Queries](#dynamic-task-queries) below.
+* `metrics` - Metric name 
+* `variants` - Variant’s name
+* `company` - Workspace ID. Applicable to the ClearML hosted service, for embedding content from a different workspace 
+* `light` - add parameter to switch visualization to light theme
+
+:::tip URL encoding
+For strings, make sure to use the appropriate URL encoding. For example, if the metric name is “Metric Name”, 
+write `Metric%20Name`
+:::
+
+### Dynamic Task Queries
+You can create more complex queries by specifying task criteria (e.g. tags, statuses, projects, etc.) instead of 
+specific task IDs, with parameters from the [`tasks.get_all`](../references/api/tasks.md#post-tasksget_all) API call. 
+
+For these parameters, use the following syntax:
+* `key=value` for non-array fields
+* `key[]=<value1>,<value2>` for array fields. 
+Delimit the fields with `&`s. 
+
+**Examples:**
+* Request the scalars plot of a specific metric variant for the latest experiment in a project:
+  ```
+  src="<web_server>/widgets/?type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
+  ```
+  Notice that the `project` parameter is specified. In order to get the most recent single experiment, 
+  `page_size=1&page=0&order_by[]=-last_update` is added. `page_size` specifies how many results are returned in each 
+  page, and `page` specifies which page to return (in this case the first page)--this way you can specify how many 
+  experiments you want in your graph. `order_by[]=-last_update` orders the results by update time in descending order 
+  (most recent first).    
+* Request the scalars plot of a specific metric variant for the experiments with a specific tag:  
+  ```
+  src="<web_server>/widgets/?type=scalar&metrics=<metric_name>&variants=<variant>&tags[]=__$or,<tag>
+  ```
+  A list of tags that the experiment should contain is specified in the `tags` argument. You can also specify tags that 
+  exclude experiments. See tag filter syntax examples [here](../clearml_sdk/task_sdk.md#tag-filters).    
+* Request the `training/accuracy` scalar plot of the 5 experiments with the best accuracy scores
+  ```
+  src="<web_server>?type=scalar&metrics=training&variants=accuracy&project=4043a1657f374e9298649c6ba72ad233&page_size=5&page=0&order_by[]=-last_metrics.<metric_event_id>.<variant_event_id>.value"
+  ```
+  
+<a id="event_id"><a/>
+
+:::tip Event IDs
+The `tasks.get_all` API calls’ parameters sometimes need event IDs, instead of names. To find event IDs: 
+1. Go to the relevant Experiments table > Open the **Developer Tools** window (inspect) > click **Network**. 
+1. Execute the action you want the embed code to do (e.g. sort by update time, sort by accuracy). 
+1. Click on the API call `task.get_all_ex` that appears in the **Network** tab. 
+1. Click on the **Payload** panel. 
+1. Click on the relevant parameter to see the relevant event's ID. For example, if you sorted by experiment accuracy, 
+you will see the metric’s event ID under the `order_by` parameter.  
+:::
+
+
    
 ## Reports Page
 Use the Reports Page to navigate between and manage reports. 
