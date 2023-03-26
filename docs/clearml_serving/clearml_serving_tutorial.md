@@ -88,7 +88,7 @@ or with the `clearml-serving` CLI.
    the path to a local model file.
 
    ```bash
-   clearml-serving --id <service_id> model upload --name "manual sklearn model" --project "serving examples" --framework "scikit-learn" --path examples/sklearn/sklearn-model.pkl
+   clearml-serving --id <service_id> model upload --name "manual sklearn model" --project "serving examples" --framework "scikitlearn" --path examples/sklearn/sklearn-model.pkl
    ```
     
   You now have a new Model named `manual sklearn model` in the `serving examples` project. The CLI output prints 
