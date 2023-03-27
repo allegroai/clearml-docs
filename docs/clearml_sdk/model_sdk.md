@@ -129,7 +129,7 @@ model_list = Model.query_models(
 )
 ```
 
-## Attach Additional Data to the Model $$$$
+## Attaching Additional Data to Models
 
 You can attach additional data to your model, including scalar values and series and data plots. 
 
