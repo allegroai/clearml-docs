@@ -35,7 +35,7 @@ Overrides Repository Auto-logging
 |**CLEARML_VCS_ROOT** | Repository's Root directory    |
 |**CLEARML_VCS_WORK_DIR** | Repository's working directory |
 |**CLEARML_VCS_STATUS** | Repository status              |
-|**CLEARML_VCS_DIFF** |  Base64 encoded string. Handles repo/script diff logged to a task. If set to an empty string, task does not log the code's uncommitted changes. Note: Overriding CLEARML_VCS_DIFF voids remote task execution. |
+|**CLEARML_VCS_DIFF** |  Base64 encoded string. Handles repo/script diff logged to a task. If set to an empty string, task does not log the code's uncommitted changes. Note: Overriding CLEARML_VCS_DIFF voids possibility for remote task execution. |
 |**CLEARML_VCS_ENTRY_POINT** | Entry point script             |
 
 ### Server Connection
