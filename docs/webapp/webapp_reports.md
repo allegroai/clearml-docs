@@ -114,6 +114,7 @@ Delimit the fields with `&`s.
 
 **Examples:**
 * Request the scalars plot of a specific metric variant for the latest experiment in a project:
+
   ```
   src="<web_server>/widgets/?type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
   ```
@@ -122,18 +123,20 @@ Delimit the fields with `&`s.
   page, and `page` specifies which page to return (in this case the first page)--this way you can specify how many 
   experiments you want in your graph. `order_by[]=-last_update` orders the results by update time in descending order 
   (most recent first).    
-* Request the scalars plot of a specific metric variant for the experiments with a specific tag:  
+* Request the scalars plot of a specific metric variant for the experiments with a specific tag: 
+
   ```
   src="<web_server>/widgets/?type=scalar&metrics=<metric_name>&variants=<variant>&tags[]=__$or,<tag>
   ```
   A list of tags that the experiment should contain is specified in the `tags` argument. You can also specify tags that 
   exclude experiments. See tag filter syntax examples [here](../clearml_sdk/task_sdk.md#tag-filters).    
 * Request the `training/accuracy` scalar plot of the 5 experiments with the best accuracy scores
+
   ```
   src="<web_server>?type=scalar&metrics=training&variants=accuracy&project=4043a1657f374e9298649c6ba72ad233&page_size=5&page=0&order_by[]=-last_metrics.<metric_event_id>.<variant_event_id>.value"
   ```
   
-<a id="event_id"><a/>
+<a id="event_id"></a>
 
 :::tip Event IDs
 The `tasks.get_all` API calls’ parameters sometimes need event IDs, instead of names. To find event IDs: 
