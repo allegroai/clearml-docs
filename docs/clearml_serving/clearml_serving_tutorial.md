@@ -38,7 +38,7 @@ clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_mo
 
 :::info Service ID
 Make sure that you have executed `clearml-serving`'s
-[initial setup](clearml_serving.md#initial-setup), in which you create a Serving Service. 
+[initial setup](clearml_serving_setup.md#initial-setup), in which you create a Serving Service. 
 The Serving Service's ID is required to register a model, and to execute `clearml-serving`'s `metrics` and `config` commands 
 :::
 
@@ -85,10 +85,10 @@ Uploading an existing model file into the model repository can be done via the `
 or with the `clearml-serving` CLI. 
 
 1. Upload the model file to the `clearml-server` file storage and register it. The `--path` parameter is used to input 
-   the path to a local model file.
+   the path to a local model file (local model created in [step 1](#step-1--train-model) located in `./sklearn-model.pkl`).
 
    ```bash
-   clearml-serving --id <service_id> model upload --name "manual sklearn model" --project "serving examples" --framework "scikitlearn" --path examples/sklearn/sklearn-model.pkl
+   clearml-serving --id <service_id> model upload --name "manual sklearn model" --project "serving examples" --framework "scikitlearn" --path ./sklearn-model.pkl
    ```
     
   You now have a new Model named `manual sklearn model` in the `serving examples` project. The CLI output prints 
