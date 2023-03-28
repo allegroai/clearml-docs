@@ -85,12 +85,12 @@ The query string usually includes the following parameters:
     * `scalar`
     * `sample` (debug sample)
     * `parcoords` (hyperparameter comparison plots) - for this option, you need to also specify the following parameters:
-      * `metrics` - Unique metric/variant ID formatted like `metric_id.variant_id` (find with your browser's inspect. See note [below](#event_id)). 
+      * `metrics` - Unique metric/variant ID formatted like `metric_id.variant_id` (find with your browser's inspect. See note [below](#event_id)) 
       * `variants` - Parameters to include in the plot (write in following format `<section_name>.<parameter_1>&<section_name>.<parameter_2>`)
       * `value_type` - Specify which metric values to use. The options are:
         * `min_value`
         * `max_value`
-        * `value` (last value).
+        * `value` (last value)
 * `tasks` - Task IDs. Specify multiple IDs like this:  `tasks=<id>&tasks=<id>&tasks=<id>`. Alternatively, you can 
 specify a task query which will use its results as the tasks to display. See [Dynamic Task Queries](#dynamic-task-queries) below.
 * `metrics` - Metric name 
@@ -99,7 +99,7 @@ specify a task query which will use its results as the tasks to display. See [Dy
 * `light` - add parameter to switch visualization to light theme
 
 :::tip URL encoding
-For strings, make sure to use the appropriate URL encoding. For example, if the metric name is “Metric Name”, 
+For strings, make sure to use the appropriate URL encoding. For example, if the metric name is "Metric Name", 
 write `Metric%20Name`
 :::
 
