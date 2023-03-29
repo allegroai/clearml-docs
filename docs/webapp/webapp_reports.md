@@ -110,6 +110,7 @@ specific task IDs, with parameters from the [`tasks.get_all`](../references/api/
 For these parameters, use the following syntax:
 * `key=value` for non-array fields
 * `key[]=<value1>,<value2>` for array fields. 
+
 Delimit the fields with `&`s. 
 
 **Examples:**
