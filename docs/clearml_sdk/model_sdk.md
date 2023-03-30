@@ -114,7 +114,7 @@ model_list = Model.query_models(
     project_name='examples', 
     # Only models with input name
     model_name=None,
-    # Only models with `demo` tag but without `TF` tag
+    # Only models with `demo` tag or models without `TF` tag
     tags=['demo', '-TF'],
     # If `True`, only published models
     only_published=False,
@@ -143,6 +143,39 @@ applies only to the immediately following tag.
 
 The default operator for a query is `or`, unless `and` is placed at the beginning of the query.
 
+#### Examples
+
+* The following query will return models that have at least one of the provided tags, since the default operator is 
+  `or` (`"a" OR "b" OR "c"`)
+  ```python
+  model_list = Model.query_models(tags=["a", "b", "c"])
+  ```
+  
+* The following query will return models that have all three provided tags, since the `and` operator was placed in the 
+  beginning of the list, making it the default operator (`"a" AND "b" AND "c"`). 
+  ```python
+  model_list = Model.query_models(tags=["__$and", "a", "b", "c"])
+  ```
+
+* The following query will return models that have neither tag `a` nor tag `c`, but do have tag `b` 
+  (`NOT "a" AND "b" AND NOT "c"`).
+  ```python
+  model_list = Model.query_models(tags=["__$not", "a", "b", "__$not" "c"])
+  ```
+
+* The following query will return models with either tag `a` or tag `b` or both `c` and `d` tags 
+  (`"a" OR "b" OR ("c" AND "d")`).
+  ```python
+  model_list = Model.query_models(tags=["a", "b", "__$and", "c", "d"])
+  ```
+
+* The following query will return models that have either tag `a` or tag `b` and both tag `c` and tag `d` 
+  (`("a" OR "b") AND "c" AND "d"` ).
+  ```python
+  model_list = Model.query_models(
+    tags=["__$and", "__$or", "a", "b", "__$and", "c", "d"]
+  )
+  ```
 
 ## SDK Reference
 
