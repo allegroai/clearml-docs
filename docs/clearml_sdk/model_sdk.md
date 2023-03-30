@@ -108,8 +108,6 @@ the [`InputModel.query_models`](../references/sdk/model_inputmodel.md#inputmodel
 methods return a list of model objects that match the queries. The list is ordered according to the models’ last update 
 time.
 
-When you query models by tags, use the `-` prefix in order to filter out models with that tag.
-
 ```python
 model_list = Model.query_models(
     # Only models from `examples` project
@@ -128,6 +126,23 @@ model_list = Model.query_models(
     metadata={"key":"value"}
 )
 ```
+
+### Tag Filters
+The `tags` field supports advanced queries through combining tag names and operators into a list. 
+
+The supported operators are: 
+* `not` 
+* `and`
+* `or`
+
+Input the operators in the following format: `"__$<op>"`. To exclude a tag, you can also use the `-` prefix before the 
+tag name, unless the tag name begins with the dash character (`-`), in which case you can use `"__$not"`. 
+
+The `or`, and `and` operators apply to all tags that follow them until another operator is specified. The `not` operator 
+applies only to the immediately following tag.
+
+The default operator for a query is `or`, unless `and` is placed at the beginning of the query.
+
 
 ## SDK Reference
 
