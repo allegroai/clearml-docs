@@ -244,7 +244,7 @@ task_list = Task.get_tasks(
     task_name=None,  # Optional[str]
     allow_archived=True, # [bool]
     task_filter=None,  # Optional[Dict]#
-    # tasks with tag `included_tag` and without tag `excluded_tag`
+    # tasks with tag `included_tag` or without tag `excluded_tag`
     tags=['included_tag', '-excluded_tag'] 
 )
 ```
