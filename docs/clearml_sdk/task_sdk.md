@@ -303,9 +303,6 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
   task_list = Task.get_tasks(tags=["__$not", "a", "b", "__$not" "c"])
   ```
 
-  This is equivalent to `task_list = Task.get_tasks(tags=["-a", "b", "-c"])`
-
-
 * The following query will return tasks with either tag `a` or tag `b` or both `c` and `d` tags 
   (`"a" OR "b" OR ("c" AND "d")`).
   ```python
