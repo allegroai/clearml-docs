@@ -185,7 +185,7 @@ Upload and register model files/folder.
 
 ```bash
 clearml-serving model upload [-h] --name NAME [--tags TAGS [TAGS ...]] --project PROJECT
-                             [--framework {scikit-learn,xgboost,lightgbm,tensorflow,pytorch}]
+                             [--framework {tensorflow,tensorflowjs,tensorflowlite,pytorch,torchscript,caffe,caffe2,onnx,keras,mknet,cntk,torch,darknet,paddlepaddle,scikitlearn,xgboost,lightgbm,parquet,megengine,catboost,tensorrt,openvino,custom}]
                              [--publish] [--path PATH] [--url URL]
                              [--destination DESTINATION]
 ```
@@ -198,7 +198,7 @@ clearml-serving model upload [-h] --name NAME [--tags TAGS [TAGS ...]] --project
 |`--name`|Specifying the model name to be registered in| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--tags`| Add tags to the newly created model| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--project`| Specify the project for the model to be registered in| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
-|`--framework`| Specify the model framework. Options are: "scikitlearn", "xgboost", "lightgbm", "tensorflow", "pytorch" | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--framework`| Specify the model framework. Options are: 'tensorflow', 'tensorflowjs', 'tensorflowlite', 'pytorch', 'torchscript', 'caffe', 'caffe2', 'onnx', 'keras', 'mknet', 'cntk' , 'torch', 'darknet', 'paddlepaddle', 'scikitlearn', 'xgboost', 'lightgbm', 'parquet', 'megengine', 'catboost', 'tensorrt', 'openvino', 'custom' | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--publish`| Publish the newly created model (change model state to "published" (i.e. locked and ready to deploy)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--path`|Specify a model file/folder to be uploaded and registered| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--url`| Specify an already uploaded model url (e.g. `s3://bucket/model.bin`, `gs://bucket/model.bin`)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
