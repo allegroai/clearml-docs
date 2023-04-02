@@ -5,7 +5,7 @@ title: Version 1.5
 ### ClearML Agent 1.5.2
 
 **New Features and Improvements**
-* Switch services agent entrypoint shell from sh to bash [ClearML Agent GitHub issue #141](https://github.com/allegroai/clearml-agent/issues/140)
+* Switch services agent entrypoint shell from sh to bash [ClearML Agent GitHub issue #140](https://github.com/allegroai/clearml-agent/issues/140)
 * Improve poetry support
 * Add poetry cwd support [ClearML Agent GitHub issue #138](https://github.com/allegroai/clearml-agent/issues/138)
 * Add `agent.package_manager.poetry_install_extra_args` configuration option
