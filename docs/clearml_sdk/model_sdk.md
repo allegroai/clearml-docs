@@ -108,15 +108,13 @@ the [`InputModel.query_models`](../references/sdk/model_inputmodel.md#inputmodel
 methods return a list of model objects that match the queries. The list is ordered according to the models’ last update 
 time.
 
-When you query models by tags, use the `-` prefix in order to filter out models with that tag.
-
 ```python
 model_list = Model.query_models(
     # Only models from `examples` project
     project_name='examples', 
     # Only models with input name
     model_name=None,
-    # Only models with `demo` tag but without `TF` tag
+    # Only models with `demo` tag or models without `TF` tag
     tags=['demo', '-TF'],
     # If `True`, only published models
     only_published=False,
@@ -128,6 +126,56 @@ model_list = Model.query_models(
     metadata={"key":"value"}
 )
 ```
+
+### Tag Filters
+The `tags` field supports advanced queries through combining tag names and operators into a list. 
+
+The supported operators are: 
+* `not` 
+* `and`
+* `or`
+
+Input the operators in the following format: `"__$<op>"`. To exclude a tag, you can also use the `-` prefix before the 
+tag name, unless the tag name begins with the dash character (`-`), in which case you can use `"__$not"`. 
+
+The `or`, and `and` operators apply to all tags that follow them until another operator is specified. The `not` operator 
+applies only to the immediately following tag.
+
+The default operator for a query is `or`, unless `and` is placed at the beginning of the query.
+
+#### Examples
+
+* The following query will return models that have at least one of the provided tags, since the default operator is 
+  `or` (`"a" OR "b" OR "c"`)
+  ```python
+  model_list = Model.query_models(tags=["a", "b", "c"])
+  ```
+  
+* The following query will return models that have all three provided tags, since the `and` operator was placed in the 
+  beginning of the list, making it the default operator (`"a" AND "b" AND "c"`). 
+  ```python
+  model_list = Model.query_models(tags=["__$and", "a", "b", "c"])
+  ```
+
+* The following query will return models that have neither tag `a` nor tag `c`, but do have tag `b` 
+  (`NOT "a" AND "b" AND NOT "c"`).
+  ```python
+  model_list = Model.query_models(tags=["__$not", "a", "b", "__$not" "c"])
+  ```
+
+* The following query will return models with either tag `a` or tag `b` or both `c` and `d` tags 
+  (`"a" OR "b" OR ("c" AND "d")`).
+  ```python
+  model_list = Model.query_models(tags=["a", "b", "__$and", "c", "d"])
+  ```
+
+* The following query will return models that have either tag `a` or tag `b` and both tag `c` and tag `d` 
+  (`("a" OR "b") AND "c" AND "d"` ).
+  ```python
+  model_list = Model.query_models(
+    tags=["__$and", "__$or", "a", "b", "__$and", "c", "d"]
+  )
+  ```
 
 ## SDK Reference
 
