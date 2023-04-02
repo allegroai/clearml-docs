@@ -244,7 +244,7 @@ task_list = Task.get_tasks(
     task_name=None,  # Optional[str]
     allow_archived=True, # [bool]
     task_filter=None,  # Optional[Dict]#
-    # tasks with tag `included_tag` and without tag `excluded_tag`
+    # tasks with tag `included_tag` or without tag `excluded_tag`
     tags=['included_tag', '-excluded_tag'] 
 )
 ```
@@ -302,9 +302,6 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
   ```python
   task_list = Task.get_tasks(tags=["__$not", "a", "b", "__$not" "c"])
   ```
-
-  This is equivalent to `task_list = Task.get_tasks(tags=["-a", "b", "-c"])`
-
 
 * The following query will return tasks with either tag `a` or tag `b` or both `c` and `d` tags 
   (`"a" OR "b" OR ("c" AND "d")`).
