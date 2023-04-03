@@ -101,7 +101,8 @@ input_model = InputModel.import_model(
 task.connect(input_model)
 ```
 
-## Querying Models
+## Accessing Models
+### Querying Models
 Retrieve a list of model objects by querying the system by model names, projects, tags, and more, using the 
 [`Model.query_models`](../references/sdk/model_model.md#modelquery_models) and / or 
 the [`InputModel.query_models`](../references/sdk/model_inputmodel.md#inputmodelquery_models) class methods. These 
@@ -127,7 +128,7 @@ model_list = Model.query_models(
 )
 ```
 
-### Tag Filters
+#### Tag Filters
 The `tags` field supports advanced queries through combining tag names and operators into a list. 
 
 The supported operators are: 
@@ -177,6 +178,31 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
   )
   ```
 
+### Retrieving Models 
+Retrieve a local copy of a ClearML model through a `Model`/`InputModel` object's [`get_local_copy()`](../references/sdk/model_outputmodel.md#get_local_copy). 
+The method returns a path to a cached local copy of the model. In the case that the model is already cached, you can set 
+`force_download` to `True` in order to download a fresh version.
+
+## Logging Metrics and Plots
+
+Use the following methods to explicitly log additional information to your models. 
+These methods can be used on `Model`, `InputModel`, and/or `OutputModel` objects:
+* Scalars 
+  * Scalar series plots - [`report_scalar`](../references/sdk/model_outputmodel.md#report_scalar) 
+  * Single metric values - [`report_single_value`](../references/sdk/model_outputmodel.md#report_single_value)
+* Plots
+  * 2d plots
+    * Histogram - [`report_histogram`](../references/sdk/model_outputmodel.md#report_historgram)
+    * Vector as histogram plot - [`report_vector`](../references/sdk/model_outputmodel.md#report_vector)
+    * Table - [`report_table`](../references/sdk/model_outputmodel.md#report_table)
+    * Line plot - [`report_line_plot`](../references/sdk/model_outputmodel.md#report_line_plot)
+    * Scatter plot - [`report_scatter2d`](../references/sdk/model_outputmodel.md#report_scatter2d)
+    * Confusion matrix (heat map) - [`report_confusion_matrix`](../references/sdk/model_outputmodel.md#report_confusion_matrix) & [`report_matrix`](../references/sdk/model_outputmodel.md#report_matrix)
+  * 3d plots 
+    * Scatter plot - [`report_scatter3d`](../references/sdk/model_outputmodel.md#report_scatter3d) 
+    * Surface plot - [`report_surface`](../references/sdk/model_outputmodel.md#report_surface)
+
+  
 ## SDK Reference
 
 For information about all model methods, see the following SDK reference pages:
