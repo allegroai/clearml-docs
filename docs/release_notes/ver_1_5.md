@@ -2,6 +2,26 @@
 title: Version 1.5
 ---
 
+### ClearML Agent 1.5.2
+
+**New Features and Improvements**
+* Switch services agent entrypoint shell from sh to bash [ClearML Agent GitHub issue #140](https://github.com/allegroai/clearml-agent/issues/140)
+* Improve poetry support
+* Add poetry cwd support [ClearML Agent GitHub issue #138](https://github.com/allegroai/clearml-agent/issues/138)
+* Add `agent.package_manager.poetry_install_extra_args` configuration option
+* Do not allow request exceptions (keep retrying, throw error only on the initial login call)
+
+**Bug Fixes**
+* Fix agent update version [ClearML Agent GitHub PR #132](https://github.com/allegroai/clearml-agent/pull/132)
+* Fix login uses `GET` with payload, which breaks when trying to connect a server running in GCP
+* Fix `clearml-agent build --docker` stuck on certain containers
+* Fix build fails when target is relative path
+* Fix pinging running task (change default to once a minute)
+* Fix `_` is allowed in k8s label names
+* Fix k8s glue does not delete pending pods if the tasks they represent were aborted
+* Reintroduce `CLEARML_AGENT_SERVICES_DOCKER_RESTART` accidentally reverted by a previous merge
+* Fix `git+ssh://` links inside installed packages not being converted properly to HTTPS-authenticated links
+
 ### ClearML Agent 1.5.1
 
 **New Features and Improvements**
