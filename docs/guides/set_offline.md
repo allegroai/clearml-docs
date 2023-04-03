@@ -11,6 +11,12 @@ local folder, which can be later uploaded to the [ClearML Server](../deploying_c
 Before initializing a Task, use the [Task.set_offline](../references/sdk/task.md#taskset_offline) class method and set the 
 `offline_mode` argument to `True`.
 
+:::caution 
+Notice that the `Task.set_offline` method only works with tasks created using `Task.init` and not with those created 
+using the `Task.create` method. 
+:::
+
+
 ```python
 from clearml import Task
 # Use the set_offline class method before initializing a Task
@@ -57,7 +63,18 @@ Upload the session's execution data that the Task captured offline to the ClearM
   ```
 
   In the `session_folder_zip` argument, insert the path to the zip folder containing the session.
-
+  
+  To upload the session from the same script that created it, first close the task then disable offline mode: 
+  
+  ```python
+  Task.set_offline(offline_mode=True)
+  task = Task.init(project_name="examples", task_name="my_task")
+  # task code
+  task.close()
+  Task.set_offline(False)
+  Task.import_offline_session(task.get_offline_mode_folder())
+  ```
+    
   You can also use the offline task to update the execution of an existing previously executed task by providing the 
   previously executed task’s ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
   `iteration_offset`.   
