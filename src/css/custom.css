@@ -666,30 +666,7 @@ html[data-theme="light"] .icon {
   left: calc(50% - 10px);
 }
 
-
-/* light mode */
-html[data-theme="light"] .cml-expansion-panel[open] {
-  border-left-color: var(--ifm-color-primary);
-}
-html[data-theme="light"] .cml-expansion-panel,
-html[data-theme="light"] .cml-expansion-panel-summary:before {
-  background-color: #f2f2f2;
-}
-html[data-theme="light"] .cml-expansion-panel-summary {
-  color: #5a668d;
-}
-
-
-/* opened expansion */
-.cml-expansion-panel[open] {
-  border-left-color: var(--ifm-color-primary-dark);
-}
-.cml-expansion-panel[open] .cml-expansion-panel-summary:after {
-  transform: rotate(-180deg);
-}
-
-
-/* md headding style */
+/* md heading style */
 
 /* <h3> */
 .markdown h3 {
@@ -838,8 +815,21 @@ html[data-theme="dark"] .panel.configuration {
   text-align: left;
   background-color: inherit;
   border: none;
+  border-radius: var(--ifm-global-radius);
   color: var(--ifm-font-color-base);
 }
+
+html[data-theme="light"] .panel-title:hover {
+  background-color: var(--ifm-hover-overlay);
+}
+html[data-theme="dark"] .panel-title:hover {
+  background-color: var(--ifm-hover-overlay);
+}
+
+.panel-open .panel-title {
+  border-radius: var(--ifm-global-radius) var(--ifm-global-radius) 0 0;
+}
+
 .panel-title:after {
   content:"";
   position: absolute;
