@@ -185,7 +185,7 @@ Upload and register model files/folder.
 
 ```bash
 clearml-serving model upload [-h] --name NAME [--tags TAGS [TAGS ...]] --project PROJECT
-                             [--framework {scikit-learn,xgboost,lightgbm,tensorflow,pytorch}]
+                             [--framework {tensorflow,tensorflowjs,tensorflowlite,pytorch,torchscript,caffe,caffe2,onnx,keras,mknet,cntk,torch,darknet,paddlepaddle,scikitlearn,xgboost,lightgbm,parquet,megengine,catboost,tensorrt,openvino,custom}]
                              [--publish] [--path PATH] [--url URL]
                              [--destination DESTINATION]
 ```
@@ -198,7 +198,7 @@ clearml-serving model upload [-h] --name NAME [--tags TAGS [TAGS ...]] --project
 |`--name`|Specifying the model name to be registered in| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--tags`| Add tags to the newly created model| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--project`| Specify the project for the model to be registered in| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
-|`--framework`| Specify the model framework. Options are: "scikit-learn", "xgboost", "lightgbm", "tensorflow", "pytorch" | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--framework`| Specify the model framework. Options are: 'tensorflow', 'tensorflowjs', 'tensorflowlite', 'pytorch', 'torchscript', 'caffe', 'caffe2', 'onnx', 'keras', 'mknet', 'cntk' , 'torch', 'darknet', 'paddlepaddle', 'scikitlearn', 'xgboost', 'lightgbm', 'parquet', 'megengine', 'catboost', 'tensorrt', 'openvino', 'custom' | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--publish`| Publish the newly created model (change model state to "published" (i.e. locked and ready to deploy)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--path`|Specify a model file/folder to be uploaded and registered| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--url`| Specify an already uploaded model url (e.g. `s3://bucket/model.bin`, `gs://bucket/model.bin`)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -294,7 +294,7 @@ clearml-serving model add [-h] --engine ENGINE --endpoint ENDPOINT [--version VE
 |`--engine`| Model endpoint serving engine (triton, sklearn, xgboost, lightgbm)| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--endpoint`|   Base model endpoint (must be unique)| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--version`|Model endpoint version (default: None) | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`model-id`|Specify a model ID to be served|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--model-id`|Specify a model ID to be served|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--preprocess` |Specify Pre/Post processing code to be used with the model (point to local file / folder) - this should hold for all the models |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--input-size`| Specify the model matrix input size [Rows x Columns X Channels etc ...] | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--input-type`| Specify the model matrix input type. Examples: uint8, float32, int16, float16 etc. |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -303,10 +303,10 @@ clearml-serving model add [-h] --engine ENGINE --endpoint ENDPOINT [--version VE
 |`--output_type`| Specify the model matrix output type. Examples: uint8, float32, int16, float16 etc. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />| 
 |`--output-name`|Specify the model layer pulling results from. Examples: layer_99| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--aux-config`| Specify additional engine specific auxiliary configuration in the form of key=value. Example: `platform=onnxruntime_onnx response_cache.enable=true max_batch_size=8`. Notice: you can also pass a full configuration file (e.g. Triton "config.pbtxt")|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--name`| Instead of specifying `model-id` select based on model name | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--name`| Instead of specifying `--model-id` select based on model name | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--tags`|Specify tags to be selected and auto-updated |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--project`|Instead of specifying `model-id` select based on model project | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--published`| Instead of specifying `model-id` select based on model published |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--project`|Instead of specifying `--model-id` select based on model project | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--published`| Instead of specifying `--model-id` select based on model published |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 </div>
 
