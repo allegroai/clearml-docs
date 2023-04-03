@@ -666,6 +666,88 @@ html[data-theme="light"] .icon {
   left: calc(50% - 10px);
 }
 
+/* expansion panel */
+.cml-expansion-panel {
+  position: relative;
+  padding: 0 0 0 40px !important;
+  background-color: var(--ifm-toc-background-color);
+  /*border-left: 4px solid transparent;*/
+  border-radius: 4px;
+  transition: border-left 0.4s ease;
+  border: none !important;
+
+}
+
+div[class^="collapsibleContent"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  border-top: none !important;
+}
+
+.cml-expansion-panel-summary {
+  outline: none;
+  color: #8f9dc9;
+  padding: 8px 24px 8px 32px;
+  line-height: 1.6rem;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.4s ease;
+}
+.cml-expansion-panel-summary:before {
+  content:"";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 24px;
+  line-height: 16px;
+  position: absolute;
+  left: -40px !important;
+  top: 4px !important;
+  background-color: var(--ifm-toc-background-color);
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(0deg) !important;
+}
+.cml-expansion-panel-summary:after {
+  content:"";
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  width: 24px;
+  height: 24px;
+  transform: rotate(0);
+  transition: 0.25s;
+  background: url('/icons/ico-chevron-down.svg') no-repeat center;
+}
+
+/* expansion content */
+.cml-expansion-panel-content {
+  padding:16px;
+}
+
+
+/* icon types */
+/* ->  info  */
+.cml-expansion-panel.info .cml-expansion-panel-summary:before {
+  background-image: url('/icons/ico-info-circle.svg') !important;
+}
+/* ->  tips  */
+.cml-expansion-panel.tips .cml-expansion-panel-summary:before {
+  background-image: url('/icons/ico-tips.svg') !important;
+}
+/* ->  alert  */
+.cml-expansion-panel.alert .cml-expansion-panel-summary:before {
+  background-image: url('/icons/ico-alert.svg');
+}
+/* ->  screenshot  */
+.cml-expansion-panel.screenshot .cml-expansion-panel-summary:before {
+  background-image: url('/icons/ico-image.svg');
+}
+/* ->  configuration  */
+.cml-expansion-panel.configuration .cml-expansion-panel-summary:before {
+  background-image: url('/icons/ico-config.svg');
+}
 
 /* light mode */
 html[data-theme="light"] .cml-expansion-panel[open] {
@@ -838,8 +920,21 @@ html[data-theme="dark"] .panel.configuration {
   text-align: left;
   background-color: inherit;
   border: none;
+  border-radius: var(--ifm-global-radius);
   color: var(--ifm-font-color-base);
 }
+
+html[data-theme="light"] .panel-title:hover {
+  background-color: var(--ifm-hover-overlay);
+}
+html[data-theme="dark"] .panel-title:hover {
+  background-color: var(--ifm-hover-overlay);
+}
+
+.panel-open .panel-title {
+  border-radius: var(--ifm-global-radius) var(--ifm-global-radius) 0 0;
+}
+
 .panel-title:after {
   content:"";
   position: absolute;
