@@ -19,21 +19,21 @@ while ClearML ensures your work is reproducible and scalable.
 
 ### Video Tutorials 
 
-We have a video series that can get you started with ClearML!
+We have a video series where you can learn all the ClearML basics!
 
 [![Watch the video](https://img.youtube.com/vi/s3k9ntmQmD4/hqdefault.jpg)](https://www.youtube.com/watch?v=s3k9ntmQmD4&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=1)
 
-### Notebooks
+### Interactive Tutorials 
 
-Friendly tutorials to get you started
+Try out ClearML with these interactive Google Colab notebooks: 
 
-* [Step 1](https://colab.research.google.com/github/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_1_Experiment_Management.ipynb) - Experiment management
-* [Step 2](https://colab.research.google.com/github/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_2_Setting_Up_Agent.ipynb) - Remote agent
-* [Step 3](https://colab.research.google.com/github/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_3_Remote_Execution.ipynb) - Remote task execution 
+* [Step 1](https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_1_Experiment_Management.ipynb) - Experiment management
+* [Step 2](https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_2_Setting_Up_Agent.ipynb) - Remote agent
+* [Step 3](https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_3_Remote_Execution.ipynb) - Remote task execution 
 
-### Getting Started *****Diff name
+### Read a Little More
 
-Choose where you want get started with ClearML: 
+Want a more in depth introduction to ClearML? Choose where you want to get started: 
 * **Data Scientists** start [here](ds/ds_first_steps.md) - learn how to use ClearML's
 experiment tracking and management tools, and more!
 
