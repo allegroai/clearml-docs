@@ -31,7 +31,7 @@ The **FILTERING** section lists the SingleFrame filters iterated by a Dataview, 
 
 Each frame filter is composed of: 
 * A Dataset version to input from 
-* ROI Rules for SingleFrames to include and / or exclude certain criteria.
+* ROI Rules for SingleFrames to include and/or exclude certain criteria.
 * Weights for debiasing input data. 
   
 Combinations of frame filters can implement complex querying. 

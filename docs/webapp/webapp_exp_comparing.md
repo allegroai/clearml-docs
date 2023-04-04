@@ -236,7 +236,7 @@ To assist in experiment analysis, the comparison page supports:
    experiment table with the currently compared experiments at the top. 
 1. Find the experiments to add by sorting and [filtering](webapp_exp_table.md#filtering-columns) the experiments with 
    the appropriate column header controls. Alternatively, use the search bar to find experiments by name.
-1. Select experiments to include in the comparison (and / or clear the selection of any experiment you wish to remove).
+1. Select experiments to include in the comparison (and/or clear the selection of any experiment you wish to remove).
 1. Click **APPLY**.
 
 ![image](../img/webapp_compare_add.png)

@@ -28,7 +28,7 @@ The models table contains the following columns:
 | **STARTED** | Elapsed time since the run started. To view the date and time of start, hover over the elapsed time.  |  Date-time |
 | **UPDATED** | Elapsed time since the last update to the run. To view the date and time of update, hover over the elapsed time. |  Date-time |
 | **RUN TIME** | The current / total running time of the run. | Time |
-| **_Metrics_** | Add metrics column (last, minimum, and / or maximum values). Available options depend upon the runs in the table. | Varies according to runs in table |
+| **_Metrics_** | Add metrics column (last, minimum, and/or maximum values). Available options depend upon the runs in the table. | Varies according to runs in table |
 | **_Hyperparameters_** | Add hyperparameters. Available options depend upon the runs in the table. | Varies according to runs in table |
 
 ## Customizing the Runs Table
@@ -57,8 +57,8 @@ on a column, and the relevant filter appears.
 
 There are a few types of filters:
 * Value set - Choose which values to include from a list of all values in the column
-* Numerical ranges - Insert minimum and / or maximum value
-* Date ranges - Insert starting and / or ending date and time
+* Numerical ranges - Insert minimum and/or maximum value
+* Date ranges - Insert starting and/or ending date and time
 * Tags - Choose which tags to filter by from a list of all tags used in the column. 
   * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These 
     options appear on the top of the tag list.

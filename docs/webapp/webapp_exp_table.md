@@ -36,7 +36,7 @@ The experiments table default and customizable columns are described in the foll
 | **ITERATION** | Last or most recent iteration of the experiment. |  Default |
 | **DESCRIPTION** | A description of the experiment. For cloned experiments, the description indicates it was auto generated with a timestamp. |  Default (hidden) |
 | **RUN TIME** | The current / total running time of the experiment. | Default (hidden) |
-| **_Metrics_** | Add metrics column (last, minimum, and / or maximum values). The metrics depend upon the experiments in the table. See [adding metrics](#to-add-metrics). | Customizable |
+| **_Metrics_** | Add metrics column (last, minimum, and/or maximum values). The metrics depend upon the experiments in the table. See [adding metrics](#to-add-metrics). | Customizable |
 | **_Hyperparameters_** | Add hyperparameters. The hyperparameters depend upon the experiments in the table. See [adding hyperparameters](#to-add-hyperparameters). | Customizable |
 
 
@@ -61,7 +61,7 @@ Use experiments table customization for various use cases, including:
 * Creating a [leaderboard](#creating-an-experiment-leaderboard) that will update in real time with experiment
   performance, which can be shared and stored.
 * Sorting models by metrics - Models are associated with the experiments that created them. For each metric, use the last
-  value, the minimal value, and / or the maximal value.
+  value, the minimal value, and/or the maximal value.
 * Tracking hyperparameters - Track hyperparameters by adding them as columns, and applying filters and sorting.
 
 Changes are persistent (cached in the browser), and represented in the URL so customized settings can be saved in a browser
@@ -81,17 +81,17 @@ all the experiments in the project. The customizations of these two views are sa
 
 
 
-### Adding Metrics and / or Hyperparameters
+### Adding Metrics and/or Hyperparameters
 
 ![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
 
-Add metrics and / or hyperparameters columns to the experiments table. The metrics and hyperparameters depend upon the
+Add metrics and/or hyperparameters columns to the experiments table. The metrics and hyperparameters depend upon the
 experiments in the table.
 
 #### To Add Metrics:
 
 * Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> **>** **+ METRICS** **>** Expand a metric **>** Select the **LAST** (value),
-  **MIN** (minimal value), and / or **MAX** (maximal value) checkboxes.
+  **MIN** (minimal value), and/or **MAX** (maximal value) checkboxes.
 
 #### To Add Hyperparameters:
 
@@ -112,8 +112,8 @@ on a column, and the relevant filter appears.
 
 There are a few types of filters:
 * Value set - Choose which values to include from a list of all values in the column
-* Numerical ranges - Insert minimum and / or maximum value
-* Date ranges - Insert starting and / or ending date and time
+* Numerical ranges - Insert minimum and/or maximum value
+* Date ranges - Insert starting and/or ending date and time
 * Tags - Choose which tags to filter by from a list of all tags used in the column. 
   * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" respectively. These 
     options appear on the top of the tag list.
