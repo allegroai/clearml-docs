@@ -37,6 +37,16 @@ module.exports = {
             'fundamentals/hpo']},
         {'ClearML SDK': ['clearml_sdk/clearml_sdk', 'clearml_sdk/task_sdk', 'clearml_sdk/model_sdk', 'clearml_sdk/apiclient_sdk']},
         'clearml_agent',
+        {'Cloud Autoscaling': [
+            'cloud_autoscaling/autoscaling_overview',
+             {'Autoscaler Apps': [
+                    {type: 'ref', id: 'webapp/applications/apps_gpu_compute'},
+                    {type: 'ref', id: 'webapp/applications/apps_aws_autoscaler'},
+                    {type: 'ref', id: 'webapp/applications/apps_gcp_autoscaler'},
+                 ]
+             }
+             ]
+        },
         {'ClearML Pipelines':['pipelines/pipelines',
                 {"Building Pipelines":
                         ['pipelines/pipelines_sdk_tasks', 'pipelines/pipelines_sdk_function_decorators']
