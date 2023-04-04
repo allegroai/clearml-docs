@@ -90,9 +90,9 @@ executed tasks will have access to your storage service.
 #### Additional Configuration
 
 Go to a specific app’s documentation page to view all configuration options
-* [GPU Compute](autoscaling_gpu_compute.md)
-* [AWS Autoscaler](autoscaling_aws.md)
-* [GCP Autoscaler](autoscaling_gcp.md) 
+* [GPU Compute](../webapp/applications/apps_gpu_compute.md)
+* [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md)
+* [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md) 
 
 ## Kubernetes 
 ClearML offers an option to install `clearml-agent` through a Helm chart. 
