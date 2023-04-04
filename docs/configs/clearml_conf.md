@@ -127,7 +127,7 @@ Compatible with Docker versions 0.6.5 and above
   * `rand_string` - random lower-case letters string (up to 32 characters)
 
 * The resulting name must start with an alphanumeric character, while the rest of the name may contain alphanumeric characters, 
-  underscores (`_`), dots (`.`) and / or dashes (`-`)
+  underscores (`_`), dots (`.`) and/or dashes (`-`)
   
 * For example: `clearml-id-{task_id}-{rand_string:.8}`
 
@@ -1294,7 +1294,7 @@ This feature is available under the ClearML Enterprise plan
 :::
 
 The ClearML Enterprise Server includes the configuration vault. Users can add configuration sections to the vault and, once 
-the vault is enabled, the configurations will be merged into the ClearML and ClearML Agent configurations upon code execution and / or agent launch. 
+the vault is enabled, the configurations will be merged into the ClearML and ClearML Agent configurations upon code execution and/or agent launch. 
 
 These configurations override the configurations written in the configuration file. 
 

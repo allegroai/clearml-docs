@@ -72,7 +72,7 @@ Customize the columns on the tracking leaderboard by hiding any of the default c
 ## Step 4: Show Metrics or Hyperparameters
 
 The leaderboard can contain any combination of metrics and hyperparameters. For each metric, choose whether to view the last (most 
-recent), minimum, and / or maximum values.
+recent), minimum, and/or maximum values.
 
 **To select metrics or hyperparameters:**
 

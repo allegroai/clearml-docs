@@ -35,7 +35,7 @@ A frame filter contains the following criteria:
 * Any combination of the following rules:
 
     * ROI rule - Include or exclude frames containing at least one ROI with any combination of labels in the Dataset version. 
-      Optionally, limit the number of matching ROIs (instances) per frame, and / or limit the confidence level of the label.  
+      Optionally, limit the number of matching ROIs (instances) per frame, and/or limit the confidence level of the label.  
       For example: include frames containing two to four ROIs labeled `cat` and `dog`, with a confidence level from `0.8` to `1.0`.
     * Frame rule - Filter by frame metadata key-value pairs, or ROI labels.   
       For example: if some frames contain the metadata 
@@ -150,7 +150,7 @@ myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=
 ### Adding Queries
 
 To add a query to a DataView, use the [`DataView.add_query`](../references/hyperdataset/dataview.md#add_query) method 
-and specify Dataset versions, ROI and / or frame queries, and other criteria. 
+and specify Dataset versions, ROI and/or frame queries, and other criteria. 
 
 The `dataset_name` and `version_name` arguments specify the Dataset Version. The `roi_query` and `frame_query` arguments 
 specify the queries. 
@@ -158,7 +158,7 @@ specify the queries.
 * `frame_query` must be assigned a Lucene query. 
   
 Multiple queries can be added to the same or different Dataset versions, each query with the same or different ROI 
-and / or frame queries.
+and/or frame queries.
 
 You can retrieve the Dataview frames using [`DataView.to_list`](../references/hyperdataset/dataview.md#to_list), 
 [`DataView.to_dict`](../references/hyperdataset/dataview.md#to_dict), or [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator)
@@ -286,7 +286,7 @@ list_of_frames = myDataView.to_list()
 
 #### Frame Queries
 
-Use frame queries to filter frames by ROI labels and / or frame metadata key-value pairs that a frame must include or 
+Use frame queries to filter frames by ROI labels and/or frame metadata key-value pairs that a frame must include or 
 exclude for the Dataview to return the frame. 
 
 **Frame queries** match frame meta key-value pairs, ROI labels, or both.
