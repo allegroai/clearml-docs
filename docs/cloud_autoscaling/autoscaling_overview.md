@@ -28,9 +28,9 @@ and have the apps automatically manage your resource consumption as needed–wit
 
 ## Autoscaler Applications
 ClearML provides the following GUI autoscaler applications:
-* [GPU Compute](autoscaling_gpu_compute.md) (powered by Genesis Cloud)
-* [AWS Autoscaler](autoscaling_aws.md)
-* [GCP Autoscaler](autoscaling_gcp.md)
+* [GPU Compute](../webapp/applications/apps_gpu_compute.md) (powered by Genesis Cloud)
+* [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md)
+* [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md)
 
 The autoscalers automatically spin up or down cloud instances as needed and according to a budget that you set, so you 
 pay only for the time that you actually use the machines. 
