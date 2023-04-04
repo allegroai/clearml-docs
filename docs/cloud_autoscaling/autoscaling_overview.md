@@ -42,7 +42,7 @@ The **GPU Compute** application provides on-demand GPU instances powered by Gene
 
 ## How ClearML Autoscaler Apps Work 
 
-![Autoscaler gif](../img/gif/autoscaler.gif)
+![Autoscaler diagram](../img/autoscaler_single_queue_diagram.png)
 
 The diagram above demonstrates a typical flow for executing tasks through an autoscaler app:
 1. [Create a queue](../webapp/webapp_workers_queues.md#queues) to attach the autoscaler to 
