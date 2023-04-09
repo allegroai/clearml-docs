@@ -69,7 +69,7 @@ understanding model behavior.
 
 Hyperparameters can be added from anywhere in your code, and ClearML provides multiple ways to log them. If you specify 
 your parameters using popular python packages, such as [argparse](https://docs.python.org/3/library/argparse.html) and 
-[click](https://click.palletsprojects.com/), all you need to do is [initialize](../references/sdk/task#taskinit) a task, and 
+[click](https://click.palletsprojects.com/), all you need to do is [initialize](../references/sdk/task.md#taskinit) a task, and 
 ClearML will automatically log the parameters. ClearML also provides methods to explicitly report parameters.
 
 When executing a task through a ClearML agent, the ClearML instrumentation of your code allows for using the ClearML UI 
