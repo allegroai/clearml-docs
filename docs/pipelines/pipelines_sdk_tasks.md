@@ -48,7 +48,8 @@ You can connect configuration dictionaries or files to a pipeline controller usi
 [PipelineController.connect_configuration](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
 method by providing the configuration object, or file path. 
 
-For files, call `connect_configuration()` before reading the configuration file: 
+For files, call `connect_configuration()` before reading the configuration file. If it's a local files, input a relative 
+path.
 
 ```python
 config_file = pipe.connect_configuration(configuration=config_file_path, name="My Configuration", description="configuraiton for pipeline")
