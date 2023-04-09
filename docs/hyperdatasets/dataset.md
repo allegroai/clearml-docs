@@ -9,7 +9,7 @@ and functionality for the following purposes:
 * Integrating the powerful features of [Dataviews](dataviews.md) with an experiment
 * [Annotating](webapp/webapp_datasets_frames.md#annotations) images and videos
 
-Datasets consist of versions with SingleFrames and / or FrameGroups. Each Dataset can contain multiple versions, which 
+Datasets consist of versions with SingleFrames and/or FrameGroups. Each Dataset can contain multiple versions, which 
 can have multiple children that inherit their parent's contents. 
 
 Mask-labels can be defined globally, for a DatasetVersion. When defined this way, they will be applied to all masks in 
@@ -158,7 +158,7 @@ versions are locked for further changes and which can be modified. See details [
 
 Dataset versions can have either *Draft* or *Published* state. 
 
-A *Draft* version is editable, so frames can be added to and deleted and / or modified. 
+A *Draft* version is editable, so frames can be added to and deleted and/or modified. 
  
 A *Published* version is read-only, which ensures reproducible experiments and preserves the Dataset version contents. 
 Child versions can only be created from *Published* versions, as they inherit their predecessor version contents.
@@ -236,7 +236,7 @@ myDataset = DatasetVersion.create_snapshot(
 
 #### Adding Metadata and Comments
 
-Add a metadata dictionary and / or comment to a snapshot.
+Add a metadata dictionary and/or comment to a snapshot.
 
 For example:
  

@@ -223,7 +223,7 @@ The user group table lists all the active user groups. Each row includes a group
 #### To edit a user group:
 1. Hover over the user group's row on the table
 1. Click the <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> button
-1. Edit the group's name and / or description
+1. Edit the group's name and/or description
 1. Edit group members (see details [here](#to-create-a-user-group))
 1. Click **Save**
 
@@ -241,7 +241,7 @@ This feature is available under the ClearML Enterprise plan
 :::
 
 Workspace administrators can use the **Access Rules** page to manage workspace permissions, by specifying which users 
-and / or user groups have access permissions to the following workspace resources:
+and/or user groups have access permissions to the following workspace resources:
  
 * [Projects](../fundamentals/projects.md)
 * [Tasks](../fundamentals/task.md) 
@@ -260,7 +260,7 @@ Access privileges can be viewed, defined, and edited in the **Access Rules** tab
    specific project or task), click the input box, and select the object from the list that appears. Filter the 
    list by typing part of the desired object name
 1. Select the permission type - **Read Only** or **Read & Modify**
-1. Assign users and / or [user groups](#user-groups) to be given access. Click the desired input box, and select the 
+1. Assign users and/or [user groups](#user-groups) to be given access. Click the desired input box, and select the 
    users / groups from the list that appears. Filter the list by typing part of the desired object name. To revoke 
    access, hover over a user's or group's row and click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> 
    button

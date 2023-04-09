@@ -75,7 +75,7 @@ allowing the pipeline logic to reuse the step outputs.
 
 ### Callbacks
 
-Callbacks can be utilized to control pipeline execution flow. A callback can be defined to be called before and / or after 
+Callbacks can be utilized to control pipeline execution flow. A callback can be defined to be called before and/or after 
 the execution of every task in a pipeline. Additionally, you can create customized, step-specific callbacks.
 
 ### Pipeline Reusing 

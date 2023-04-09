@@ -34,7 +34,7 @@ enables modifying [Dataviews](webapp_dataviews.md), including:
       select **Import to current dataview** or **Import as aux dataview**.
       
 :::note
-After importing a Dataview, it can be renamed and / or removed. 
+After importing a Dataview, it can be renamed and/or removed. 
 :::
 
 ### Selecting Dataset Versions

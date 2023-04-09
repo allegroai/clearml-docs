@@ -37,6 +37,16 @@ module.exports = {
             'fundamentals/hpo']},
         {'ClearML SDK': ['clearml_sdk/clearml_sdk', 'clearml_sdk/task_sdk', 'clearml_sdk/model_sdk', 'clearml_sdk/apiclient_sdk']},
         'clearml_agent',
+        {'Cloud Autoscaling': [
+            'cloud_autoscaling/autoscaling_overview',
+             {'Autoscaler Apps': [
+                    {type: 'ref', id: 'webapp/applications/apps_gpu_compute'},
+                    {type: 'ref', id: 'webapp/applications/apps_aws_autoscaler'},
+                    {type: 'ref', id: 'webapp/applications/apps_gcp_autoscaler'},
+                 ]
+             }
+             ]
+        },
         {'ClearML Pipelines':['pipelines/pipelines',
                 {"Building Pipelines":
                         ['pipelines/pipelines_sdk_tasks', 'pipelines/pipelines_sdk_function_decorators']
@@ -118,7 +128,7 @@ module.exports = {
             {'Automation': ['guides/automation/manual_random_param_search_example', 'guides/automation/task_piping']},
             {'ClearML Task': ['guides/clearml-task/clearml_task_tutorial']},
             {'ClearML Agent': ['guides/clearml_agent/executable_exp_containers', 'guides/clearml_agent/exp_environment_containers']},
-            {'Datasets': ['guides/datasets/data_man_cifar_classification', 'guides/datasets/data_man_python']},
+            {'Datasets': ['clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
