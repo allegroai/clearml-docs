@@ -55,7 +55,7 @@ The following are the `ClearMLLogger` parameters:
 * `histogram_granularity` - Histogram sampling granularity. Default is 50.
 
 ### Logging 
-To log scalars, ignite engine's output and / or metrics, use the `OutputHandler`. 
+To log scalars, ignite engine's output and/or metrics, use the `OutputHandler`. 
 
 * Log training loss at each iteration:
 ```python

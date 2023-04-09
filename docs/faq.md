@@ -46,7 +46,7 @@ title: FAQ
 * [Is there something ClearML can do about uncommitted code running?](#help-uncommitted-code)
 * [I read there is a feature for centralized model storage. How do I use it?](#centralized-model-storage)
 * [When using PyCharm to remotely debug a machine, the Git repo is not detected. Do you have a solution?](#pycharm-remote-debug-detect-git)
-* [Debug images and / or artifacts are not loading in the UI after I migrated ClearML Server to a new address. How do I fix this?](#migrate_server_debug)
+* [Debug images and/or artifacts are not loading in the UI after I migrated ClearML Server to a new address. How do I fix this?](#migrate_server_debug)
 
 
 **Remote Debugging (ClearML PyCharm Plugin)**
@@ -668,10 +668,10 @@ repository / commit ID. For detailed information about using the plugin, see the
 
 **Debug images and/or artifacts are not loading in the UI after I migrated ClearML Server to a new address. How do I fix this?**  <a id="migrate_server_debug"></a>  
 
-This can happen if your debug images and / or artifacts were uploaded to the ClearML file server, since the value
+This can happen if your debug images and/or artifacts were uploaded to the ClearML file server, since the value
 registered was their full URL at the time of registration (e.g. `https://files.<OLD_ADDRESS>/path/to/artifact`).
 
-To fix this, the registered URL of each debug image and / or artifact needs to be replaced with its current URL.
+To fix this, the registered URL of each debug image and/or artifact needs to be replaced with its current URL.
 
 * For **debug images**, use the following command. Make sure to insert the old address and the new address that will replace it
     ```bash
@@ -946,7 +946,7 @@ try removing deprecated images:
 
 **Why is web login authentication not working?** <a className="tr_top_negative" id="port-conflict"></a>
 
-A port conflict between the ClearML Server MongoDB and / or Elastic instances, and other instances running on your system may prevent web login authentication from working correctly. 
+A port conflict between the ClearML Server MongoDB and/or Elastic instances, and other instances running on your system may prevent web login authentication from working correctly. 
 
 ClearML Server uses the following default ports which may be in conflict with other instances:
 
@@ -955,9 +955,9 @@ ClearML Server uses the following default ports which may be in conflict with ot
 
 You can check for port conflicts in the logs in `/opt/clearml/log`.
 
-If a port conflict occurs, change the MongoDB and / or Elastic ports in the `docker-compose.yml`, and then run the Docker compose commands to restart the ClearML Server instance.
+If a port conflict occurs, change the MongoDB and/or Elastic ports in the `docker-compose.yml`, and then run the Docker compose commands to restart the ClearML Server instance.
 
-To change the MongoDB and / or Elastic ports for your ClearML Server, do the following:
+To change the MongoDB and/or Elastic ports for your ClearML Server, do the following:
 
 1. Edit the `docker-compose.yml` file.
 1. Add the following environment variable(s) in the `services/trainsserver/environment` section:

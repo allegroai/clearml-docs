@@ -104,7 +104,7 @@ task.connect(input_model)
 ## Accessing Models
 ### Querying Models
 Retrieve a list of model objects by querying the system by model names, projects, tags, and more, using the 
-[`Model.query_models`](../references/sdk/model_model.md#modelquery_models) and / or 
+[`Model.query_models`](../references/sdk/model_model.md#modelquery_models) and/or 
 the [`InputModel.query_models`](../references/sdk/model_inputmodel.md#inputmodelquery_models) class methods. These 
 methods return a list of model objects that match the queries. The list is ordered according to the models’ last update 
 time.

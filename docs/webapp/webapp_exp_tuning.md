@@ -60,7 +60,7 @@ User parameters are editable in any experiment, except experiments whose status 
 Select source code by changing any of the following:
 
 * Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, and /or working directory.
-* Installed Python packages and / or versions - Edit or clear (remove) them all.
+* Installed Python packages and/or versions - Edit or clear (remove) them all.
 * Uncommitted changes - Edit or clear (remove) them all.
 
 **To select different source code:**

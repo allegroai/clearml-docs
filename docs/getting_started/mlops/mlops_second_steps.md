@@ -61,7 +61,7 @@ new_dataset.tags = ['latest']
 
 The new dataset inherits the contents of the datasets specified in `Dataset.create`'s `parents` argument.
 This not only helps trace back dataset changes with full genealogy, but also makes the storage more efficient,
-since it only stores the changed and / or added files from the parent versions.
+since it only stores the changed and/or added files from the parent versions.
 When you access the Dataset, it automatically merges the files from all parent versions 
 in a fully automatic and transparent process, as if the files were always part of the requested Dataset.
 
