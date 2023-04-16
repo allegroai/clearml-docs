@@ -35,8 +35,8 @@ For more information, see [Annotations](annotations.md).
 
 
 ### Masks
-A `SingleFrame` includes a URI link to a mask file if applicable. Masks correspond to raw data where the objects to be 
-detected in raw data are marked with colors in the masks.
+A `SingleFrame` can include a URI link to masks file if applicable. Masks correspond to raw data where the objects to be 
+detected are marked with colors or different opacity levels in the masks.
 
 For more information, see [Masks](masks.md).
 
@@ -100,7 +100,12 @@ The panel below describes the details contained within a `frame`:
     
         * `id` - ID of the mask dictionary in `sources`.
         * `value` - RGB value of the mask.
-        
+    
+      :::info
+      The `mask` dictionary is deprecated. Mask labels and their associated pixel values are now stored in the dataset 
+      version’s metadata. See [Masks](masks.md).
+      :::
+  
     * `poly` (*[int]*) - Bounding area vertices.
     * `sources` (*[string]*) - The `id` in the `sources` dictionary which relates an annotation to its raw data source.
 
@@ -112,11 +117,11 @@ The panel below describes the details contained within a `frame`:
     * `uri` - URI of the raw data.
     * `width` - Width of the image or video.
     * `height` - Height of the image or video.
-    * `mask` - Sources of masks used in the `rois`.
+    * `masks` - List of available masks.
     
-        * `id` - ID of the mask source. This relates a mask source to an ROI.
-        * `content_type` - The type of mask source. For example, `image/jpeg`.
-        * `uri` - URI of the mask source.
+        * `id` - Mask ID
+        * `content_type` - Mask type. For example, `image/jpeg`.
+        * `uri` - Mask URI
         * `timestamp`
              
     * `preview` - URI of the thumbnail preview image used in the ClearML Enterprise WebApp (UI)
