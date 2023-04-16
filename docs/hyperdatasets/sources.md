@@ -7,12 +7,9 @@ Each frame contains `sources`, a list of dictionaries containing:
 * A `URI` pointing to the source data (image or video)
 * Sources for [masks](masks.md) used in semantic segmentation
 * Image [previews](previews.md), which are thumbnails used in the ClearML Enterprise WebApp (UI).
-
-`sources` does not contain: 
-* `rois` even though ROIs are directly associated with the images and `masks` in `sources`
-* ROI metadata, because ROIs can be used over multiple frames. 
-  
-Instead, frames contain a top-level `rois` array, which is a list of ROI dictionaries, where each dictionary contains a 
+ 
+`sources` does not contain ROI metadata, because ROIs can be used over multiple frames. Instead, frames contain a 
+top-level `rois` array, which is a list of ROI dictionaries, where each dictionary contains a 
 list of source IDs. Those IDs connect `sources` to ROIs.
 
 ## Examples 
