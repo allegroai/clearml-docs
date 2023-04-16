@@ -45,7 +45,7 @@ The **DETAILS** tab includes deep comparisons of the following:
 **To Locate the Source Differences:**
 
 Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
-(previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
+(previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (next diff).
 
 For example, in the image below, expanding **ARTIFACTS** **>** **Output Model** **>** **Model** shows that the model names 
 are different.
