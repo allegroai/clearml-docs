@@ -151,7 +151,7 @@ Pass one of the following in the `continue_last_task` parameter:
   [Task Reuse](#task-reuse)). 
 * `True` - Continue the previously run Task. 
 * Task ID (string) - The ID of the task to be continued. 
-* Initial iteration offset (Integer) - Specify the initial iteration offset. By default, the task will continue one 
+* Initial iteration offset (integer) - Specify the initial iteration offset. By default, the task will continue one 
   iteration after the last reported one. Pass `0`, to disable the automatic last iteration offset. To also specify a 
   task ID, use the `reuse_last_task_id` parameter .
 

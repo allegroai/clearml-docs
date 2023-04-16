@@ -54,11 +54,11 @@ limits.
     Additionally, make sure that the initial experiment's `_allow_omegaconf_edit_` parameter is set to `False` (in experiment's 
     **CONFIGURATION > HYPERPARAMETERS > Hydra**).
     :::
-* **Optimization Job Title** (Optional) - Name for the HPO instance. This will appear in the instance list 
-* **Optimization Experiments Destination Project** (Optional) - The project where optimization tasks will be saved. 
+* **Optimization Job Title** (optional) - Name for the HPO instance. This will appear in the instance list 
+* **Optimization Experiments Destination Project** (optional) - The project where optimization tasks will be saved. 
   Leave empty to use the same project as the Initial task. 
 * **Maximum Concurrent Tasks** - The maximum number of simultaneously running optimization experiments
-* **Advanced Configuration** (Optional)
+* **Advanced Configuration** (optional)
     * Limit Total HPO Experiments - Maximum total number of optimization experiments
     * Number of Top Experiments to Save - Number of best performing experiments to save (the rest are archived)
     * Limit Single Experiment Running Time (Minutes) - Time limit per optimization experiment. Experiments will be 

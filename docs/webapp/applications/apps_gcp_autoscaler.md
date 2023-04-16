@@ -30,7 +30,7 @@ when each VM instance is spun up.
   repositories to retrieve the code for their jobs
     * Git User 
     * Git Password / Personal Access Token
-* **Base Docker Image** (Optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored in a 
+* **Base Docker Image** (optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored in a 
   Docker artifactory so VM instances can automatically fetch it
 * **Compute Resources**
     * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
@@ -40,15 +40,15 @@ when each VM instance is spun up.
     * Use Preemptible Instance - Choose whether VM instances of this type will be [preemptible](https://cloud.google.com/compute/docs/instances/preemptible)
     * Max Number of Instances - Maximum number of concurrent running VM instances of this type allowed
     * Monitored Queue - Queue associated with this VM instance type. The tasks enqueued to this queue will be executed on VM instances of this type
-    * Machine Image (Optional) - The GCP machine image to launch 
-    * Disc Size (in GB) (Optional) 
+    * Machine Image (optional) - The GCP machine image to launch 
+    * Disc Size (in GB) (optional) 
     * \+ Add Item - Define another resource type
-* **Autoscaler Instance Name** (Optional) - Name for the Autoscaler instance. This will appear in the instance list
-* **Max Idle Time** (Optional) - Maximum time in minutes that a VM instance can be idle before the autoscaler spins it down
-* **Workers Prefix** (Optional) - A Prefix added to workers’ names, associating them with this autoscaler
-* **Polling Interval** (Optional) - Time period in minutes at which the designated queue is polled for new tasks
-* **Init Script** (Optional) - A bash script to execute after launching the VM instance
-* **Additional ClearML Configuration** (Optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
+* **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
+* **Max Idle Time** (optional) - Maximum time in minutes that a VM instance can be idle before the autoscaler spins it down
+* **Workers Prefix** (optional) - A Prefix added to workers’ names, associating them with this autoscaler
+* **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
+* **Init Script** (optional) - A bash script to execute after launching the VM instance
+* **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration. 
   

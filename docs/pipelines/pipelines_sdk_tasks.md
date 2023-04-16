@@ -94,7 +94,7 @@ pipe.add_step(
 * `cache_executed_step` – If `True`, the controller will check if an identical task with the same code (including setup, 
   e.g. required packages, docker image, etc.) and input arguments was already executed. If found, the cached step's 
   outputs are used instead of launching a new task.
-* `execution_queue` (Optional) - the queue to use for executing this specific step. If not provided, the task will be sent to the default execution queue, as defined on the class
+* `execution_queue` (optional) - the queue to use for executing this specific step. If not provided, the task will be sent to the default execution queue, as defined on the class
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 * `parameter_override` - Dictionary of parameters and values to override in the current step. See [parameter_override](#parameter_override).
 * `configuration_overrides` - Dictionary of configuration objects and values to override in the current step. See [configuration_overrides](#configuration_overrides)
@@ -209,19 +209,19 @@ def step_completed_callback(
 
 You can enable automatic logging of a step’s metrics /artifacts / models to the pipeline task using the following arguments:
 
-* `monitor_metrics` (Optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
+* `monitor_metrics` (optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
   format is one of the following:
     * List of pairs metric (title, series) to log: [(step_metric_title, step_metric_series), ]. Example: `[('test', 'accuracy'), ]`
     * List of tuple pairs, to specify a different target metric to use on the pipeline Task: [((step_metric_title, step_metric_series), (target_metric_title, target_metric_series)), ]. 
       Example: `[[('test', 'accuracy'), ('model', 'accuracy')], ]`
-* `monitor_artifacts` (Optional) - Automatically log the step's artifacts on the pipeline Task.
+* `monitor_artifacts` (optional) - Automatically log the step's artifacts on the pipeline Task.
     * Provided a list of artifact names created by the step function, these artifacts will be logged automatically also 
       on the Pipeline Task itself. Example: `['processed_data', ]` (target artifact name on the Pipeline Task will have 
       the same name as the original artifact).
     * Alternatively, provide a list of pairs (source_artifact_name, target_artifact_name), where the first string is the 
       artifact name as it appears on the step Task, and the second is the target artifact name to put on the Pipeline 
       Task. Example: `[('processed_data', 'final_processed_data'), ]`
-* `monitor_models` (Optional) - Automatically log the step's output models on the pipeline Task.
+* `monitor_models` (optional) - Automatically log the step's output models on the pipeline Task.
     * Provided a list of model names created by the step's Task, they will also appear on the Pipeline itself. Example: `['model_weights', ]`
     * To select the latest (lexicographic) model, use `model_*`, or the last created model with just `*`. Example: `['model_weights_*', ]`
     * Alternatively, provide a list of pairs (source_model_name, target_model_name), where the first string is the model 

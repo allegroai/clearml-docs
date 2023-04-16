@@ -434,7 +434,7 @@ match_rules: [
 
 **`agent.package_manager.conda_env_as_base_docker`** (*bool*)
 
-* Uses conda environment for execution (Like a docker)
+* Uses conda environment for execution (like a docker)
 
 ___
 

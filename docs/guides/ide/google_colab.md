@@ -11,7 +11,7 @@ This tutorial goes over how to create a ClearML worker node in a Google Colab no
 and running, users can send Tasks to be executed on Google Colab's HW.
 
 ## Prerequisites
-* Be signed up for ClearML (Or have a server deployed).
+* Be signed up for ClearML (or have a server deployed).
 * Have a Google account to access Google Colab
 
 

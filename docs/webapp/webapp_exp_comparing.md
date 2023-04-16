@@ -45,7 +45,7 @@ The **DETAILS** tab includes deep comparisons of the following:
 **To Locate the Source Differences:**
 
 Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
-(Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
+(previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
 
 For example, in the image below, expanding **ARTIFACTS** **>** **Output Model** **>** **Model** shows that the model names 
 are different.
@@ -68,8 +68,8 @@ The Values mode is a side-by-side comparison that shows hyperparameter value dif
 1. In the dropdown menu (on the upper left, next to **+ Add Experiments**), choose **Values**.
 1. To show only differences, move the **Hide Identical Fields** slider to on.
 1. Locate differences by either:
-    * Clicking <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md space-sm" /> (Previous diff) or
-      <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (Next diff).
+    * Clicking <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md space-sm" /> (previous diff) or
+      <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (next diff).
     * Scrolling to see highlighted hyperparameters.
 
 For example, expanding **General** shows that the `batch_size` and `epochs` differ between the experiments.
@@ -190,8 +190,8 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 1. Locate debug samples by doing the following:
 
     * Filter by metric. In the **Metric** list, choose a metric.
-    * Show other iterations. Click <img src="/docs/latest/icons/ico-circle-older.svg" alt="Left arrow" className="icon size-md space-sm" /> (Older images),
-      <img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (New images), or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="right arrow, newest image" className="icon size-md space-sm" /> (Newest images).
+    * Show other iterations. Click <img src="/docs/latest/icons/ico-circle-older.svg" alt="Left arrow" className="icon size-md space-sm" /> (older images),
+      <img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (new images), or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="right arrow, newest image" className="icon size-md space-sm" /> (Newest images).
     * Click <img src="/docs/latest/icons/ico-disconnect.svg" alt="Sync selection" className="icon size-md space-sm" /> in 
       order to synchronize iteration and metric selection across experiments. For example, if you select a metric for 
       one experiment’s debug samples, the same metric will be automatically selected for the rest of the experiments in the comparison.   
