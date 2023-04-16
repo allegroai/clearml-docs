@@ -162,7 +162,7 @@ that metric column.
 
 **Can I store more information on the models?** <a id="store-more-model-info"></a>
 
-Yes! For example, you can use the [Task.set_model_label_enumeration](references/sdk/task.md#set_model_label_enumeration) 
+Yes! For example, you can use the [`Task.set_model_label_enumeration`](references/sdk/task.md#set_model_label_enumeration) 
 method to store label enumeration:
 
 ```python
@@ -176,7 +176,7 @@ For more information about `Task` class methods, see the [Task Class](fundamenta
 
 **Can I store the model configuration file as well?**  <a id="store-model-configuration"></a>
 
-Yes! Use the [Task.set_model_config](references/sdk/task.md#set_model_config) 
+Yes! Use the [`Task.set_model_config`](references/sdk/task.md#set_model_config) 
 method:
 
 ```python
@@ -196,9 +196,9 @@ This will be improved in a future version.
 
 **Can I log input and output models manually?** <a id="manually-log-models"></a>
 
-Yes! Use the [InputModel.import_model](references/sdk/model_inputmodel.md#inputmodelimport_model) 
-and [Task.connect](references/sdk/task.md#connect) methods to manually connect an input model. Use the 
-[OutputModel.update_weights](references/sdk/model_outputmodel.md#update_weights) 
+Yes! Use the [`InputModel.import_model`](references/sdk/model_inputmodel.md#inputmodelimport_model) 
+and [`Task.connect`](references/sdk/task.md#connect) methods to manually connect an input model. Use the 
+[`OutputModel.update_weights`](references/sdk/model_outputmodel.md#update_weights) 
 method to manually connect a model weights file.
 
 ```python
@@ -288,7 +288,7 @@ Yes! ClearML provides multiple ways to configure your task and track your parame
 In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](https://click.palletsprojects.com/), 
 [Python Fire](https://github.com/google/python-fire), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
 
-ClearML also supports tracking code-level configuration dictionaries using the [Task.connect](references/sdk/task.md#connect) method.
+ClearML also supports tracking code-level configuration dictionaries using the [`Task.connect`](references/sdk/task.md#connect) method.
 
 For example, the code below connects hyperparameters (`learning_rate`, `batch_size`, `display_step`,
 `model_path`, `n_hidden_1`, and `n_hidden_2`) to a task:
@@ -309,7 +309,7 @@ See more task configuration options [here](fundamentals/hyperparameters.md).
 
 **I noticed that all of my experiments appear as "Training" Are there other options?** <a id="other-experiment-types"></a>
 
-Yes! When creating experiments and calling [Task.init](references/sdk/task.md#taskinit), 
+Yes! When creating experiments and calling [`Task.init`](references/sdk/task.md#taskinit), 
 you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
 
 ```python
@@ -503,12 +503,12 @@ See [`Task.init`](references/sdk/task.md#taskinit).
 Yes! You can use ClearML's Offline Mode, in which all the data and logs that a task captures from the code are stored in a 
 local folder. 
 
-Before initializing a task, use the [Task.set_offline](references/sdk/task.md#taskset_offline) 
+Before initializing a task, use the [`Task.set_offline`](references/sdk/task.md#taskset_offline) 
 class method and set the `offline_mode` argument to `True`. When executed, this returns the Task ID and a path to the 
 session folder. In order to upload to the ClearML Server the execution data that the Task captured offline, do one of the
 following:
 * Use the `import-offline-session <session_path>` option of the [clearml-task](apps/clearml_task.md) CLI
-* Use the [Task.import_offline_session](references/sdk/task.md#taskimport_offline_session) method. 
+* Use the [`Task.import_offline_session`](references/sdk/task.md#taskimport_offline_session) method. 
   
 See [Storing Task Data Offline](guides/set_offline.md).
 
@@ -589,7 +589,7 @@ tutorial, which includes a list of methods for explicit reporting.
 
 **How can I report more than one scatter 2D series on the same plot?**  <a id="multiple-scatter2D"></a>
 
-The [`Logger.report_scatter2d()`](references/sdk/logger.md#report_scatter2dtitle-series-scatter-iteration-xaxisnone-yaxisnone-labelsnone-modelines-commentnone-extra_layoutnone) 
+The [`Logger.report_scatter2d`](references/sdk/logger.md#report_scatter2d) 
 method reports all series with the same `title` and `iteration` parameter values on the same plot.
 
 For example, the following two scatter2D series are reported on the same plot, because both have a `title` of `example_scatter` and an `iteration` of `1`:
@@ -628,7 +628,7 @@ experiment info panel > EXECUTION tab.
 
 **I read there is a feature for centralized model storage. How do I use it?** <a id="centralized-model-storage"></a>
 
-When calling [Task.init](references/sdk/task.md#taskinit), 
+When calling [`Task.init`](references/sdk/task.md#taskinit), 
 providing the `output_uri` parameter lets you specify the location in which model checkpoints (snapshots) will be stored.
 
 For example, to store model checkpoints (snapshots) in `/mnt/shared/folder`:
@@ -744,7 +744,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
         pip install clearml
 
-1. Use the [Task.set_credentials](references/sdk/task.md#taskset_credentials) 
+1. Use the [`Task.set_credentials`](references/sdk/task.md#taskset_credentials) 
    method to specify the host, port, access key and secret key (see step 1).
    ```python
    # Set your credentials using the clearml apiserver URI and port, access_key, and secret_key.

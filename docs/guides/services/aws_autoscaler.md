@@ -23,7 +23,7 @@ The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-4
 ### Running the Script
 
 :::info Self deployed ClearML server
-A template  `AWS Auto-Scaler` task is available in the `DevOps Services` project.
+A template `AWS Auto-Scaler` task is available in the `DevOps Services` project.
 You can clone it, adapt its [configuration](#configuration) to your needs, and enqueue it for execution directly from the ClearML UI. 
 :::
 
@@ -140,7 +140,7 @@ Execution log https://app.clear.ml/projects/142a598b5d234bebb37a57d692f5689f/exp
 ```
 
 ### Remote Execution
-Using the  `--remote` command line option will enqueue the autoscaler to your [`services` queue](../../clearml_agent.md#services-mode)
+Using the `--remote` command line option will enqueue the autoscaler to your [`services` queue](../../clearml_agent.md#services-mode)
 once the configuration wizard is complete:
 
 ```bash

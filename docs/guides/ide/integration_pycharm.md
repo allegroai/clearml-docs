@@ -37,7 +37,7 @@ the settings in the ClearML configuration file.
 1. Configure your ClearML server information:
     1. API server (for example: ``http://localhost:8008``)
     1. Web server (for example: ``http://localhost:8080``)
-    1. File server  (for example: ``http://localhost:8081``)
+    1. File server (for example: ``http://localhost:8081``)
     
 1. Add ClearML user credentials key/secret.
 

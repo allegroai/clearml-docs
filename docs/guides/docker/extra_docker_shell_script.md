@@ -36,5 +36,5 @@ it is commented out, make sure to uncomment the line. We will use the example sc
    and now it will execute the `extra_docker_shell_script` that was put in the configuration file. Then the code will be
    executed in the updated docker container. If we look at the console output in the web UI, the third entry should start
    with `Executing: ['docker', 'run', '-t', '--gpus...'`, and towards the end of the entry, where the downloaded packages are 
-   mentioned, we can see the additional shell-script  `apt-get install -y bindfs`. 
+   mentioned, we can see the additional shell-script `apt-get install -y bindfs`. 
    

@@ -24,7 +24,7 @@ the following types of parameters:
 * Command line parsing - command line parameters passed when invoking code that uses standard python packages, including:
   * [click](https://click.palletsprojects.com) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py).
   * [argparse](https://docs.python.org/3/library/argparse.html) - see code example [here](../guides/frameworks/pytorch/pytorch_tensorboardx.md).
-  * [Python Fire](https://github.com/google/python-fire)  - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
+  * [Python Fire](https://github.com/google/python-fire) - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
   * [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
 * TensorFlow Definitions (`absl-py`). See examples of ClearML's automatic logging of TF Defines:
     * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)

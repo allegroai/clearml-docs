@@ -8,7 +8,7 @@ See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced querya
 :::
 
 Datasets can be created, modified, and managed with ClearML Data's python interface. You can upload your dataset to any 
-storage service of your choice  (S3 / GS / Azure / Network Storage) by setting the dataset’s upload destination (see 
+storage service of your choice (S3 / GS / Azure / Network Storage) by setting the dataset’s upload destination (see 
 [`output_url`](#uploading-files) parameter of `Dataset.upload` method). Once you have uploaded your dataset, you can access 
 it from any machine.  
 
@@ -26,7 +26,7 @@ from clearml import Dataset
 ClearML Data supports multiple ways to create datasets programmatically, which provides for a variety of use-cases:
 * [`Dataset.create()`](#datasetcreate) - Create a new dataset. Parent datasets can be specified, from which the new dataset 
   will inherit its data
-* [`Dataset.squash()`](#datasetsquash)  - Generate a new dataset from by squashing together a set of related datasets
+* [`Dataset.squash()`](#datasetsquash) - Generate a new dataset from by squashing together a set of related datasets
 
 You can add metadata to your datasets using the `Dataset.set_metadata` method, and access the metadata using the
 `Dataset.get_metadata` method. See [`set_metadata`](../references/sdk/dataset.md#set_metadata) and [`get_metadata`](../references/sdk/dataset.md#get_metadata).

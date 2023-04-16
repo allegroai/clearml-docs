@@ -69,7 +69,7 @@ The sections below describe in more detail what happens in the controller task a
    where the first step’s artifact is fed into the second step.
 
    Special pre-execution and post-execution logic is added for this step through the use of `pre_execute_callback` 
-   and  `post_execute_callback` respectively. 
+   and `post_execute_callback` respectively. 
 
    ```python
    pipe.add_step(
@@ -110,7 +110,7 @@ does the following:
        remote_url='https://github.com/allegroai/events/raw/master/odsc20-east/generic/iris_dataset.pkl'
    )
    ```    
-1. Store the data as an artifact named `dataset` using  [`Task.upload_artifact`](../../references/sdk/task.md#upload_artifact)
+1. Store the data as an artifact named `dataset` using [`Task.upload_artifact`](../../references/sdk/task.md#upload_artifact)
    ```python
    # add and upload local file containing our toy dataset
    task.upload_artifact('dataset', artifact_object=local_iris_pkl)

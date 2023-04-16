@@ -40,7 +40,7 @@ when each VM instance is spun up.
     * Use Preemptible Instance - Choose whether VM instances of this type will be [preemptible](https://cloud.google.com/compute/docs/instances/preemptible)
     * Max Number of Instances - Maximum number of concurrent running VM instances of this type allowed
     * Monitored Queue - Queue associated with this VM instance type. The tasks enqueued to this queue will be executed on VM instances of this type
-    * Machine Image (Optional)  - The GCP machine image to launch 
+    * Machine Image (Optional) - The GCP machine image to launch 
     * Disc Size (in GB) (Optional) 
     * \+ Add Item - Define another resource type
 * **Autoscaler Instance Name** (Optional) - Name for the Autoscaler instance. This will appear in the instance list
