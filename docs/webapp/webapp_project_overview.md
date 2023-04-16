@@ -29,7 +29,7 @@ or any network resource such as issue tracker, web repository, etc.
 
 ### Editing the Description
 
-To edit the description in the **OVERVIEW** tab, hover over the description section, and press the  **EDIT** button that
+To edit the description in the **OVERVIEW** tab, hover over the description section, and press the **EDIT** button that
 appears on the top right of the window. 
 
 When using the Markdown editor, you can make use of features such as bullets, 

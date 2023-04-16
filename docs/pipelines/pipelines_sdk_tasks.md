@@ -132,7 +132,7 @@ As each function is transformed into an independently executed step, it needs to
 all package imports inside the function are automatically logged as required packages for the pipeline step. 
 :::
 
-Function steps are added using the  [`PipelineController.add_function_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) 
+Function steps are added using the [`PipelineController.add_function_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) 
 method:
 
 ```python

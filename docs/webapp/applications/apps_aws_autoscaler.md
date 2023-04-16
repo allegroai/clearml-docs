@@ -52,7 +52,7 @@ each instance is spun up.
     * EC2 Tags (Optional) - AWS instance tags to attach to launched EC2 instances. Insert key=value pairs, separated by 
       commas 
     * EBS Device (Optional) - Disk mount point
-    * EBS Volume Size (Optional) - Disk size  (GB)
+    * EBS Volume Size (Optional) - Disk size (GB)
     * EBS Volume Type (Optional) - See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html) 
       for full list of types
     * Instance Key Pair (Optional) - AWS key pair that is provided to the spun EC2 instances for connecting to them via 

@@ -63,7 +63,7 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * Command Line Parsing - ClearML captures any command line parameters passed when invoking code that uses standard python packages, including:
         * [click](https://click.palletsprojects.com) (see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py)).
         * argparse (see argparse logging example [here](../guides/reporting/hyper_parameters.md).)
-        * [Python Fire](https://github.com/google/python-fire)  - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
+        * [Python Fire](https://github.com/google/python-fire) - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
         * [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
     * TensorFlow Definitions (`absl-py`)
     * [Hydra](https://github.com/facebookresearch/hydra) - the OmegaConf which holds all the configuration files, as well as overridden values. 
@@ -151,7 +151,7 @@ Pass one of the following in the `continue_last_task` parameter:
   [Task Reuse](#task-reuse)). 
 * `True` - Continue the previously run Task. 
 * Task ID (string) - The ID of the task to be continued. 
-* Initial iteration offset  (Integer) - Specify the initial iteration offset. By default, the task will continue one 
+* Initial iteration offset (Integer) - Specify the initial iteration offset. By default, the task will continue one 
   iteration after the last reported one. Pass `0`, to disable the automatic last iteration offset. To also specify a 
   task ID, use the `reuse_last_task_id` parameter .
 
@@ -337,7 +337,7 @@ cloned = Task.clone(
 
 A newly cloned task has a [draft](../fundamentals/task.md#task-states) status, so it's modifiable.
 
-Once a task is modified, launch it by pushing it into an execution queue with the [Task.enqueue](../references/sdk/task.md#taskenqueue)
+Once a task is modified, launch it by pushing it into an execution queue with the [`Task.enqueue`](../references/sdk/task.md#taskenqueue)
 class method. Then a [ClearML Agent](../clearml_agent.md) assigned to the queue will pull the task from the queue and execute
 it. 
 
@@ -359,7 +359,7 @@ A compelling workflow is:
 1. Run code on a development machine for a few iterations, or just set up the environment.
 1. Move the execution to a beefier remote machine for the actual training.
 
-Use the [Task.execute_remotely](../references/sdk/task.md#execute_remotely) method to implement this workflow. This method 
+Use the [`Task.execute_remotely`](../references/sdk/task.md#execute_remotely) method to implement this workflow. This method 
 stops the current manual execution, and then re-runs it on a remote machine.
 
 For example:
@@ -406,7 +406,7 @@ Function tasks must be created from within a regular task, created by calling `T
 You can work with tasks in Offline Mode, in which all the data and logs that the Task captures are stored in a local 
 folder, which can later be uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). 
 
-Before initializing a Task, use the [Task.set_offline](../references/sdk/task.md#taskset_offline) class method and set 
+Before initializing a Task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
 the `offline_mode` argument to `True`. The method returns the Task ID and a path to the session folder. 
 
 :::caution 
@@ -433,7 +433,7 @@ Upload the execution data that the Task captured offline to the ClearML Server u
   ```  
   Pass the path to the zip folder containing the session with the `--import-offline-session` parameter
 
-* [Task.import_offline_session](../references/sdk/task.md#taskimport_offline_session) class method
+* [`Task.import_offline_session`](../references/sdk/task.md#taskimport_offline_session) class method
   ```python
   from clearml import Task
   Task.import_offline_session(session_folder_zip="path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip")
@@ -560,7 +560,7 @@ output_model = OutputModel(task=task, framework="PyTorch")
 ### Updating Models Manually
 
 The snapshots of manually uploaded models aren't automatically captured. To update a task's model, use the 
-[Task.update_output_model](../references/sdk/task.md#update_output_model) method:
+[`Task.update_output_model`](../references/sdk/task.md#update_output_model) method:
   
 ```python
 task.update_output_model(model_path='path/to/model')
@@ -728,7 +728,7 @@ config_file_yaml = task.connect_configuration(
 
 ### User Properties
 A task’s user properties do not impact task execution, so you can add / modify the properties at any stage. Add user 
-properties to a task with the [Task.set_user_properties](../references/sdk/task.md#set_user_properties) method.
+properties to a task with the [`Task.set_user_properties`](../references/sdk/task.md#set_user_properties) method.
 
 ```python
 task.set_user_properties(

@@ -157,7 +157,7 @@ Specify the queue to use for remote execution. This is overridden if the optimiz
 Specify the remaining parameters, including the time limit per Task (minutes), period for checking the optimization (minutes), maximum number of jobs to launch, minimum and maximum number of iterations for each Task.
 ```python
     # Optional: Limit the execution time of a single experiment, in minutes.
-    # (this is optional, and if using  OptimizerBOHB, it is ignored)
+    # (this is optional, and if using OptimizerBOHB, it is ignored)
     time_limit_per_job=10.,
     # Check the experiments every 6 seconds is way too often, we should probably set it to 5 min,
     # assuming a single experiment is usually hours...
@@ -179,7 +179,7 @@ Specify the remaining parameters, including the time limit per Task (minutes), p
 
 ## Running as a Service
 
-The optimization can run as a service, if the `run_as_service` argument is set to  `true`. For more information about 
+The optimization can run as a service, if the `run_as_service` argument is set to `true`. For more information about 
 running as a service, see [Services Mode](../../../clearml_agent.md#services-mode).
 
 ```python

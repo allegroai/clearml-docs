@@ -51,7 +51,7 @@ to captures all files and sub-folders:
 After creating a dataset, its ID doesn't need to be specified when running commands, such as `add`, `remove`, or `list`
 :::
 
-3. Close the dataset - this command uploads the files. By default, the files are uploaded to the file server, but  
+3. Close the dataset - this command uploads the files. By default, the files are uploaded to the file server, but 
 this can be configured with the `--storage` flag to any of ClearML's supported storage mediums (see [storage](../../integrations/storage.md)).
 The command also finalizes the dataset, making it immutable and ready to be consumed.
 
