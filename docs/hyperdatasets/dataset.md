@@ -5,15 +5,14 @@ title: Datasets and Dataset Versions
 ClearML Enterprise's **Datasets** and **Dataset versions** provide the internal data structure 
 and functionality for the following purposes:
 * Connecting source data to the ClearML Enterprise platform
-* Using ClearML Enterprise's GIT-like [Dataset versioning](#dataset-versioning)
+* Using ClearML Enterprise's Git-like [Dataset versioning](#dataset-versioning)
 * Integrating the powerful features of [Dataviews](dataviews.md) with an experiment
 * [Annotating](webapp/webapp_datasets_frames.md#annotations) images and videos
 
 Datasets consist of versions with SingleFrames and/or FrameGroups. Each Dataset can contain multiple versions, which 
 can have multiple children that inherit their parent's contents. 
 
-Mask-labels can be defined globally, for a DatasetVersion. When defined this way, they will be applied to all masks in 
-that version.
+Mask-labels are defined at the DatasetVersion level, and are applied to all masks in a DatasetVersion.
 
 ## Example Datasets
 

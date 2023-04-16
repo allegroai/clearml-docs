@@ -70,14 +70,6 @@ The following is an example of preview metadata.
     ],
     "rois": [
         {
-            "sources":["front"],
-            "label": ["right_lane"],
-            "mask": {
-                "id": "seg",
-                "value": [-1, 1, 255]
-            }
-        },
-        {
             "sources": ["front"],
             "label": ["bike"],
             "poly":[30, 50, 50,50, 100,50, 100,100],
