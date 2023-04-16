@@ -191,7 +191,7 @@ first. Use the viewer / player to inspect images, audio, video samples and do an
 
     * Filter by metric. In the **Metric** list, choose a metric.
     * Show other iterations. Click <img src="/docs/latest/icons/ico-circle-older.svg" alt="Left arrow" className="icon size-md space-sm" /> (older images),
-      <img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (new images), or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="right arrow, newest image" className="icon size-md space-sm" /> (Newest images).
+      <img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (new images), or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="right arrow, newest image" className="icon size-md space-sm" /> (newest images).
     * Click <img src="/docs/latest/icons/ico-disconnect.svg" alt="Sync selection" className="icon size-md space-sm" /> in 
       order to synchronize iteration and metric selection across experiments. For example, if you select a metric for 
       one experiment’s debug samples, the same metric will be automatically selected for the rest of the experiments in the comparison.   
