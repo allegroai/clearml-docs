@@ -179,7 +179,7 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
   ```
 
 ### Retrieving Models 
-Retrieve a local copy of a ClearML model through a `Model`/`InputModel` object's [`get_local_copy()`](../references/sdk/model_outputmodel.md#get_local_copy). 
+Retrieve a local copy of a ClearML model through a `Model`/`InputModel` object's [`get_local_copy()`](../references/sdk/model_model.md#get_local_copy). 
 The method returns a path to a cached local copy of the model. In the case that the model is already cached, you can set 
 `force_download` to `True` in order to download a fresh version.
 
@@ -192,7 +192,7 @@ These methods can be used on `Model`, `InputModel`, and/or `OutputModel` objects
   * Single metric values - [`report_single_value`](../references/sdk/model_outputmodel.md#report_single_value)
 * Plots
   * 2d plots
-    * Histogram - [`report_histogram`](../references/sdk/model_outputmodel.md#report_historgram)
+    * Histogram - [`report_histogram`](../references/sdk/model_outputmodel.md#report_histogram)
     * Vector as histogram plot - [`report_vector`](../references/sdk/model_outputmodel.md#report_vector)
     * Table - [`report_table`](../references/sdk/model_outputmodel.md#report_table)
     * Line plot - [`report_line_plot`](../references/sdk/model_outputmodel.md#report_line_plot)

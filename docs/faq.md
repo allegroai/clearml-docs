@@ -286,7 +286,7 @@ to reproduce. You can see uncommitted changes in the ClearML Web UI, in the EXEC
 Yes! ClearML provides multiple ways to configure your task and track your parameters! 
 
 In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](https://click.palletsprojects.com/), 
-[Python Fire](https://github.com/google/python-fire), and/or [LightningCLI](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.cli.LightningCLI.html).
+[Python Fire](https://github.com/google/python-fire), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
 
 ClearML also supports tracking code-level configuration dictionaries using the [Task.connect](references/sdk/task.md#connect) method.
 

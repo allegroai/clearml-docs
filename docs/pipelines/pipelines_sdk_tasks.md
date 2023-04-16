@@ -43,6 +43,22 @@ values for the new run.
 
 ![Pipeline new run](../img/pipelines_new_run.png)
 
+### Additional Configuration 
+You can connect configuration dictionaries or files to a pipeline controller using the 
+[PipelineController.connect_configuration](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
+method by providing the configuration object, or file path. 
+
+For files, call `connect_configuration()` before reading the configuration file. If it's a local files, input a relative 
+path.
+
+```python
+config_file = pipe.connect_configuration(configuration=config_file_path, name="My Configuration", description="configuraiton for pipeline")
+my_params = json.load(open(config_file,'rt'))
+```
+
+You can view the configuration in the pipeline’s task page's **CONFIGURATION** tab, in the section specified in the 
+`name` parameter.
+
 
 ## Pipeline Steps
 Once you have a PipelineController object, add steps to it. These steps can be [existing ClearML tasks](#steps-from-tasks) 

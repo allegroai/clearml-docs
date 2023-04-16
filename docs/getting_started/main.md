@@ -9,29 +9,56 @@ for thousands of data science teams all over the world.
 It is designed as an end-to-end MLOps suite allowing you to focus on developing your ML code & automation,
 while ClearML ensures your work is reproducible and scalable.
 
+
+## Getting Started
+
+<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
+        src="https://www.youtube.com/embed/s3k9ntmQmD4" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+        allowfullscreen>
+</iframe>
+</div>
+
+<br/>
+    
+
+**Friendly tutorials to get you started:**
+
+<table>
+<tbody>
+  <tr>
+    <td><a href="https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_1_Experiment_Management.ipynb"><b>Step 1</b></a> - Experiment Management</td>
+    <td><a target="_blank" href="https://colab.research.google.com/github/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_1_Experiment_Management.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_2_Setting_Up_Agent.ipynb"><b>Step 2</b></a> - Remote Execution Agent Setup</td>
+    <td><a target="_blank" href="https://colab.research.google.com/github/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_2_Setting_Up_Agent.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_3_Remote_Execution.ipynb"><b>Step 3</b></a> - Remotely Execute Tasks</td>
+    <td><a target="_blank" href="https://colab.research.google.com/github/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_3_Remote_Execution.ipynb">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a></td>
+  </tr>
+</tbody>
+</table>
+
+![Webapp gif](../img/gif/webapp_screenshots.gif)
+
+### Read a Little More
+
 <div class="max-w-75">
 
 ![Architecture diagram](../img/clearml_architecture.png)
 
 </div>
-
-## Getting Started
-
-### Video Tutorials 
-
-We have a video series where you can learn all the ClearML basics!
-
-[![Watch the video](https://img.youtube.com/vi/s3k9ntmQmD4/hqdefault.jpg)](https://www.youtube.com/watch?v=s3k9ntmQmD4&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=1)
-
-### Interactive Tutorials 
-
-Try out ClearML with these interactive Google Colab notebooks: 
-
-* [Step 1](https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_1_Experiment_Management.ipynb) - Experiment management
-* [Step 2](https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_2_Setting_Up_Agent.ipynb) - Remote agent
-* [Step 3](https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_3_Remote_Execution.ipynb) - Remote task execution 
-
-### Read a Little More
 
 Want a more in depth introduction to ClearML? Choose where you want to get started: 
 * **Data Scientists** start [here](ds/ds_first_steps.md) - learn how to use ClearML's
