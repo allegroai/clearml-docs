@@ -31,11 +31,11 @@ each instance is spun up.
   repositories to retrieve the code for their jobs
     * Git User 
     * Git Password / Personal Access Token
-* **Max Idle Time** (Optional) - Maximum time in minutes that an EC2 instance can be idle before the autoscaler spins it 
+* **Max Idle Time** (optional) - Maximum time in minutes that an EC2 instance can be idle before the autoscaler spins it 
   down 
-* **Workers Prefix** (Optional) - A Prefix added to workers’ names, associating them with this autoscaler
-* **Polling Interval** (Optional) - Time period in minutes at which the designated queue is polled for new tasks
-* **Base Docker Image** (Optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
+* **Workers Prefix** (optional) - A Prefix added to workers’ names, associating them with this autoscaler
+* **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
+* **Base Docker Image** (optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
   in a Docker artifactory so instances can automatically fetch it
 * **Compute Resources**
     * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
@@ -49,24 +49,24 @@ each instance is spun up.
     * Max Number of Instances - Maximum number of concurrent running instances of this type allowed
     * Monitored Queue - Queue associated with this instance type. The tasks enqueued to this queue will be executed on 
       instances of this type
-    * EC2 Tags (Optional) - AWS instance tags to attach to launched EC2 instances. Insert key=value pairs, separated by 
+    * EC2 Tags (optional) - AWS instance tags to attach to launched EC2 instances. Insert key=value pairs, separated by 
       commas 
-    * EBS Device (Optional) - Disk mount point
-    * EBS Volume Size (Optional) - Disk size (GB)
-    * EBS Volume Type (Optional) - See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html) 
+    * EBS Device (optional) - Disk mount point
+    * EBS Volume Size (optional) - Disk size (GB)
+    * EBS Volume Type (optional) - See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html) 
       for full list of types
-    * Instance Key Pair (Optional) - AWS key pair that is provided to the spun EC2 instances for connecting to them via 
+    * Instance Key Pair (optional) - AWS key pair that is provided to the spun EC2 instances for connecting to them via 
       SSH. Provide the Key Pair's name, as was created in AWS. See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) 
       for more details
-    * Security Group ID (Optional) - Comma separated list of AWS VPC Security Group IDs to attach to the launched 
+    * Security Group ID (optional) - Comma separated list of AWS VPC Security Group IDs to attach to the launched 
       instance. Read more [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) 
     * \+ Add Item - Define another resource type
-* **IAM Instance Profile** (Optional) - Set an IAM instance profile for all instances spun by the Autoscaler 
+* **IAM Instance Profile** (optional) - Set an IAM instance profile for all instances spun by the Autoscaler 
     * Arn - Amazon Resource Name specifying the instance profile
     * Name - Name identifying the instance profile
-* **Autoscaler Instance Name** (Optional) - Name for the Autoscaler instance. This will appear in the instance list
-* **Init script** (Optional) - A bash script to execute after launching the EC2 instance 
-* **Additional ClearML Configuration** (Optional) - A ClearML configuration file to use by the ClearML Agent when 
+* **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
+* **Init script** (optional) - A bash script to execute after launching the EC2 instance 
+* **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when 
   executing your experiments
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration 

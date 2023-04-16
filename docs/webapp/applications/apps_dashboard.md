@@ -19,7 +19,7 @@ on failed Tasks via Slack integration.
     * Monitored Metric - Series - Metric series (variant) to track
     * Monitored Metric - Trend - Choose whether to track the monitored metric's highest or lowest values
 * **Dashboard Title** - Name of the project dashboard instance, which will appear in the instance list
-* **Failed Task Slack Monitor** (Optional)
+* **Failed Task Slack Monitor** (optional)
     * API Token - Slack workspace access token 
     * Channel Name - Slack channel to which task failure alerts will be posted
     * Fail Iteration Threshold - Minimum number of iterations to trigger Slack alerts about task failure (failed tasks that do not meet the threshold will be ignored)

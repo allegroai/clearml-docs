@@ -27,13 +27,13 @@ queue. The app instance automatically terminates idle machines based on a specif
     * Monitored Queue - Queue associated with application instance. The tasks enqueued to this queue will be executed on 
       machines of this specification
     * Cloud Machine Limit - Maximum number of concurrent machines to launch
-* **Idle Time Limit** (Optional) - Maximum time in minutes that a cloud machine can be idle before it is spun down
-* **Default Docker Image** (Optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
+* **Idle Time Limit** (optional) - Maximum time in minutes that a cloud machine can be idle before it is spun down
+* **Default Docker Image** (optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
   in a Docker artifactory so instances can automatically fetch it
 * **Git Configuration** - Git credentials with which the ClearML Agents running on your cloud instances will access your repositories to retrieve the code for their jobs
     * Git User
     * Git Password / Personal Access Token
-* **Cloud Storage Access** (Optional) - Access credentials to cloud storage service. Provides ClearML Tasks running on cloud 
+* **Cloud Storage Access** (optional) - Access credentials to cloud storage service. Provides ClearML Tasks running on cloud 
   machines access to your storage
 
 ![GPU Compute wizard](../../img/apps_gpu_compute_wizard.png)

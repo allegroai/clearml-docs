@@ -87,7 +87,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
 ### Arguments
 * `return_values` - The artifact names for the step’s corresponding ClearML task to store the step’s returned objects. 
   In the example above, a single object is returned and stored as an artifact named `data_frame`
-* `name` (Optional) - The name for the pipeline step. If not provided, the function name is used 
+* `name` (optional) - The name for the pipeline step. If not provided, the function name is used 
 * `cache` - If `True`, the pipeline controller checks if a step with the same code (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
   section) and input arguments was already executed. If found, the cached step's outputs are used 
   instead of rerunning the step. 
@@ -101,8 +101,8 @@ def step_one(pickle_data_url: str, extra: int = 43):
 * `docker` - Specify the Docker image to be used when executing the pipeline step remotely
 * `docker_args` - Add Docker execution arguments for the remote execution (use single string for all docker arguments).
 * `docker_bash_setup_script` - Add a bash script to be executed inside the docker before setting up the Task's environment
-* `task_type` (Optional) - The [task type](../fundamentals/task.md#task-types) to be created
-* `repo` (Optional) - Specify a repository to attach to the function when remotely executing. Allow users to execute the function inside the specified repository, enabling them to load modules / script from the repository. Notice the execution work directory will be the repository root folder. Supports both git repo url link, and local repository path (automatically converted into the remote git / commit as is currently checkout).
+* `task_type` (optional) - The [task type](../fundamentals/task.md#task-types) to be created
+* `repo` (optional) - Specify a repository to attach to the function when remotely executing. Allow users to execute the function inside the specified repository, enabling them to load modules / script from the repository. Notice the execution work directory will be the repository root folder. Supports both git repo url link, and local repository path (automatically converted into the remote git / commit as is currently checkout).
   * Examples:
     * remote url: `"https://github.com/user/repo.git"`
     * local repo copy: `"./repo"` -> will automatically store the remote repo url and commit ID based on the locally cloned copy
