@@ -29,7 +29,7 @@ Reports are editable Markdown documents, supporting:
 * Code blocks
 * Text and image hyperlinks
 * Embedded images uploaded from your computer
-* Embedded ClearML task content
+* Embedded ClearML task, model, and [app](applications/apps_overview.md) content
 
 ![Report](../img/webapp_report.png)
 
@@ -39,13 +39,14 @@ download a PDF copy, or simply copy the MarkDown content and reuse in your edito
 Access ClearML reports through the [Reports Page](#reports-page).
 
 ## Embedding ClearML Visualizations
-You can embed plots and images from your experiments into your reports: scalar graphs and other plots, and debug samples 
-from an individual experiment or from an experiment comparison page. These visualizations are updated live as the 
-experiment(s) updates.
+You can embed plots and images from your ClearML objects (experiments, models, and apps) into your reports: scalar 
+graphs and other plots, and debug samples 
+from an individual object or from an object comparison page. These visualizations are updated live as the 
+object(s) updates.
 
 To add a graphic resource: 
-1. Go to the resource you want to embed in your report (a plot or debug sample from an individual experiment or 
-experiment comparison) 
+1. Go to the resource you want to embed in your report (a plot or debug sample from an individual object or 
+object comparison) 
 2. Hover over the resource and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Generate embed code" className="icon size-md space-sm" />. 
    
    ![Reports step 2](../img/reports_step_2.png)
@@ -59,6 +60,9 @@ experiment comparison)
 
    ![Reports step 3](../img/reports_step_3.png)
 
+Once embedded in the report, you can return to the resource's original location (e.g. comparison page, experiment/model/app page) 
+by clicking <img src="/docs/latest/icons/ico-resource-return.svg" alt="Return to resource" className="icon size-md" />.
+
 ### Customizing Embed Code
 
 You can customize embed codes to make more elaborate queries for what you want to display in your reports. 
@@ -66,7 +70,7 @@ A standard embed code is formatted like this:
 
 ```
 <iframe
-  src="<web_server>/widgets/?type=sample&tasks=<task_id>&metrics=<metric_name>&variants=Plot%20as%20an%20image&company=<company/workspace_id>"
+  src="<web_server>/widgets/?type=sample&objectType=task&objects=<object_id>&metrics=<metric_name>&variants=Plot%20as%20an%20image&company=<company/workspace_id>"
   width="100%" height="400"
 ></iframe>
 ```
@@ -80,9 +84,14 @@ The query is formatted like a standard query string: `<parameter>=<parameter_val
 delimited with a `&`: `<parameter_1>=<parameter_value_1>&<parameter_2>=<parameter_value_2>`.
 
 The query string usually includes the following parameters:
+* `objectType` - The type of object to fetch. The options are `task` or `model` (`task` also includes ClearML app instances).
+* `objects` - Object IDs (i.e. task or model IDs depending on specified ObjectType). Specify multiple IDs like this: 
+`objects=<id>&objects=<id>&objects=<id>`. Alternatively, you can input a query, and the matching objects' specified 
+resources will be displayed. See [Dynamic Queries](#dynamic-queries) below.
 * `type` - The type of resource to fetch. The options are: 
     * `plot`
     * `scalar`
+    * `single` (single-scalar values table)
     * `sample` (debug sample)
     * `parcoords` (hyperparameter comparison plots) - for this option, you need to also specify the following parameters:
       * `metrics` - Unique metric/variant ID formatted like `metric_id.variant_id` (find with your browser's inspect. See note [below](#event_id)) 
@@ -91,8 +100,7 @@ The query string usually includes the following parameters:
         * `min_value`
         * `max_value`
         * `value` (last value)
-* `tasks` - Task IDs. Specify multiple IDs like this:  `tasks=<id>&tasks=<id>&tasks=<id>`. Alternatively, you can 
-specify a task query which will use its results as the tasks to display. See [Dynamic Task Queries](#dynamic-task-queries) below.
+* `models` - Model IDs. Specify multiple IDs like this: `models=<id>&models=<id>&models<id>`.
 * `metrics` - Metric name 
 * `variants` - Variant’s name
 * `company` - Workspace ID. Applicable to the ClearML hosted service, for embedding content from a different workspace 
@@ -103,9 +111,10 @@ For strings, make sure to use the appropriate URL encoding. For example, if the 
 write `Metric%20Name`
 :::
 
-### Dynamic Task Queries
-You can create more complex queries by specifying task criteria (e.g. tags, statuses, projects, etc.) instead of 
-specific task IDs, with parameters from the [`tasks.get_all`](../references/api/tasks.md#post-tasksget_all) API call. 
+### Dynamic Queries
+You can create more complex queries by specifying object criteria (e.g. tags, statuses, projects, etc.) instead of 
+specific task IDs, with parameters from the [`tasks.get_all`](../references/api/tasks.md#post-tasksget_all) or 
+[`models.get_all`](../references/api/models.md#post-modelsget_all) API calls. 
 
 For these parameters, use the following syntax:
 * `key=value` for non-array fields
@@ -114,10 +123,13 @@ For these parameters, use the following syntax:
 Delimit the fields with `&`s. 
 
 **Examples:**
+The following are examples of dynamic queries. All the examples use `objectType=task`, but `objectType=model` can also be 
+used. 
+
 * Request the scalars plot of a specific metric variant for the latest experiment in a project:
 
   ```
-  src="<web_server>/widgets/?type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
+  src="<web_server>/widgets/?objectType=task&type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
   ```
   Notice that the `project` parameter is specified. In order to get the most recent single experiment, 
   `page_size=1&page=0&order_by[]=-last_update` is added. `page_size` specifies how many results are returned in each 
@@ -127,26 +139,26 @@ Delimit the fields with `&`s.
 * Request the scalars plot of a specific metric variant for the experiments with a specific tag: 
 
   ```
-  src="<web_server>/widgets/?type=scalar&metrics=<metric_name>&variants=<variant>&tags[]=__$or,<tag>
+  src="<web_server>/widgets/?objectType=task&type=scalar&metrics=<metric_name>&variants=<variant>&tags[]=__$or,<tag>
   ```
   A list of tags that the experiment should contain is specified in the `tags` argument. You can also specify tags that 
   exclude experiments. See tag filter syntax examples [here](../clearml_sdk/task_sdk.md#tag-filters).    
 * Request the `training/accuracy` scalar plot of the 5 experiments with the best accuracy scores
 
   ```
-  src="<web_server>?type=scalar&metrics=training&variants=accuracy&project=4043a1657f374e9298649c6ba72ad233&page_size=5&page=0&order_by[]=-last_metrics.<metric_event_id>.<variant_event_id>.value"
+  src="<web_server>?objectType=task&type=scalar&metrics=training&variants=accuracy&project=4043a1657f374e9298649c6ba72ad233&page_size=5&page=0&order_by[]=-last_metrics.<metric_event_id>.<variant_event_id>.value"
   ```
   
 <a id="event_id"></a>
 
 :::tip Event IDs
-The `tasks.get_all` API calls’ parameters sometimes need event IDs, instead of names. To find event IDs: 
-1. Go to the relevant Experiments table > Open the **Developer Tools** window (inspect) > click **Network**. 
+The `tasks.get_all` and `models.get_all` API calls' parameters sometimes need event IDs, instead of names. To find event IDs: 
+1. Go to the relevant Experiments/Model table > Open the **Developer Tools** window (inspect) > click **Network**. 
 1. Execute the action you want the embed code to do (e.g. sort by update time, sort by accuracy). 
-1. Click on the API call `task.get_all_ex` that appears in the **Network** tab. 
+1. Click on the API call `tasks.get_all_ex`/`models.get_all_ex` that appears in the **Network** tab. 
 1. Click on the **Payload** panel. 
 1. Click on the relevant parameter to see the relevant event's ID. For example, if you sorted by experiment accuracy, 
-you will see the metric’s event ID under the `order_by` parameter.  
+you will see the metric's event ID under the `order_by` parameter.  
 :::
 
 
@@ -162,7 +174,7 @@ top-level projects are displayed. Click on a project card to view the project's 
 ![Report page](../img/webapp_report_page.png)
 
 ## Project Cards
-In Project view, project cards display a project’s summarized report information:
+In Project view, project cards display a project's summarized report information:
 
 <div class="max-w-50">
 
@@ -201,7 +213,7 @@ of a report card to open its context menu and access report actions:
 
 </div>
 
-* **Rename** - Change the report’s name
+* **Rename** - Change the report's name
 * **Share** - Copy URL to share report
 * **Add Tag** - Add labels to the report to help easily classify groups of reports.
 * **Move to** - Move the report into another project. If the target project does not exist, it is created on-the-fly.
