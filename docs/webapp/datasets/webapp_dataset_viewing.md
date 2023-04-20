@@ -68,8 +68,7 @@ to view:
 
 </Collapsible>
 
-* **PREVIEW** - A preview of the dataset version's contents 
-  access [plot tools](../webapp_exp_track_visual.md#scalar-plot-tools). Click on a debug sample to expand it. 
+* **PREVIEW** - A preview of the dataset version's contents. 
 
 <Collapsible type="screenshot" title="Version Preview">
 
