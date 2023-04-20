@@ -25,9 +25,15 @@ while ClearML ensures your work is reproducible and scalable.
 <br/>
     
 
-**Friendly tutorials to get you started:**
+<div className="tbl-1">
+
 
 <table>
+<thead>
+    <tr><th colspan="2" font-size="medium;">
+        Friendly tutorials to get you started:</th>
+    </tr>
+</thead>
 <tbody>
   <tr>
     <td><a href="https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_1_Experiment_Management.ipynb"><b>Step 1</b></a> - Experiment Management</td>
@@ -50,11 +56,13 @@ while ClearML ensures your work is reproducible and scalable.
 </tbody>
 </table>
 
+</div>
+
 ![Webapp gif](../img/gif/webapp_screenshots.gif)
 
 ### Read a Little More
 
-<div class="max-w-75">
+<div class="max-w-75 align-center">
 
 ![Architecture diagram](../img/clearml_architecture.png)
 
