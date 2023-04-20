@@ -73,6 +73,11 @@ html[data-theme="dark"] a:hover {
   color: var(--ifm-color-primary-lightest);
 }
 
+.align-center {
+    text-align: center;
+    margin: auto;
+}
+
 .max-w-75 {
   max-width: 75%;
 }
@@ -612,6 +617,15 @@ html[data-theme="dark"] .footer__link-item:hover {
   }
 }
 
+.tbl-1 > table {
+    width: 100%;
+    display: inline-table;
+    margin: 48px 0;
+}
+
+.tbl-1 > thead {
+  font-size: x-large;
+}
 
 html[data-theme="dark"] .markdown thead th {
   color: var(--ifm-color-gray-600);
