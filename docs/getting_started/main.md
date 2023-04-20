@@ -30,10 +30,9 @@ while ClearML ensures your work is reproducible and scalable.
 
 <table>
 <thead>
-    <tr><th colspan="2" font-size="medium;">
+    <tr><th colspan="2">
         Friendly tutorials to get you started:</th>
-    </tr>
-</thead>
+</tr></thead>
 <tbody>
   <tr>
     <td><a href="https://github.com/allegroai/clearml/blob/master/docs/tutorials/Getting_Started_1_Experiment_Management.ipynb"><b>Step 1</b></a> - Experiment Management</td>

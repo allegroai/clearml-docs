@@ -623,6 +623,10 @@ html[data-theme="dark"] .footer__link-item:hover {
     margin: 48px 0;
 }
 
+.tbl-1 > thead {
+  font-size: x-large;
+}
+
 html[data-theme="dark"] .markdown thead th {
   color: var(--ifm-color-gray-600);
 }
