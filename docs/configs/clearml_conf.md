@@ -1293,24 +1293,19 @@ every 5MB
 ### environment section
 
 **`environment`** (*dict*)
-```python
-# Environment section (top-level) is applied to the OS environment as `key=value` for each key/value pair
-# * enable/disable with `agent.apply_environment` OR `sdk.apply_environment`
-# Example:
-#
-#   environment {
-#     key_a: value_a
-#     key_b: value_b
-#   }
 
+Dictionary of environment variables and values which are applied to the OS environment as `key=value` for each key-value
+pairs.
 
-
-#from sdk section
-    # Apply top-level environment section from configuration into os.environ
-    apply_environment: true
-    # Apply top-level files section from configuration into local file system
-    apply_files: true
 ```
+environment {
+   key_a: value_a
+   key_b: value_b
+}
+```
+
+Enable by setting `agent.apply_environment` OR `sdk.apply_environment` to `true`.
+
 ### files section 
 
 ```
@@ -1344,7 +1339,12 @@ every 5MB
 #       target_format: json
 #     }
 #   }
+
+    # Apply top-level files section from configuration into local file system
+    apply_files: true
 ```
+
+
 ## Configuration Vault
 
 :::note Enterprise Feature
