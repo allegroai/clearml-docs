@@ -620,11 +620,15 @@ html[data-theme="dark"] .footer__link-item:hover {
 .tbl-1 > table {
     width: 100%;
     display: inline-table;
-    margin: 48px 0;
+    margin-bottom: 48px;
 }
 
-.tbl-1 > thead {
-  font-size: x-large;
+.tbl-1 > table tbody tr:first-child td:first-child {
+    border-top-left-radius: var(--ifm-card-border-radius);
+}
+
+.tbl-1 > table tbody tr:first-child td:last-child {
+    border-top-right-radius: var(--ifm-card-border-radius);
 }
 
 html[data-theme="dark"] .markdown thead th {
@@ -763,6 +767,15 @@ html[data-theme="dark"] .alert.alert--secondary {
   background-size: 0.9rem;
   margin-right: 0.4rem;
   padding-right: 1rem;
+}
+
+.markdown .no-ext-icon {
+    background: unset !important;
+    padding: unset !important;
+    margin: 0 auto !important;
+    text-underline-offset: unset;
+    line-height: 0;
+    display: block;
 }
 
 .markdown .img-swt {
