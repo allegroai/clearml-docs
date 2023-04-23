@@ -10,6 +10,9 @@ This reference page is organized by configuration file section:
   file will not have an `agent` section.
 * [api](#api-section) - Contains ClearML and ClearML Agent configuration options for ClearML Server.
 * [sdk](#sdk-section) - Contains ClearML and ClearML Agent configuration options for ClearML Python Package and ClearML Server.
+* [environment](#environment-section)
+* [files](#files-section)
+
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
 in the ClearML Agent GitHub repository. 
@@ -1287,6 +1290,61 @@ every 5MB
 * Specify how often in MB the `StorageManager` reports its upload progress to the console. By default, it reports every 
 5MB
 
+### environment section
+
+**`environment`** (*dict*)
+```python
+# Environment section (top-level) is applied to the OS environment as `key=value` for each key/value pair
+# * enable/disable with `agent.apply_environment` OR `sdk.apply_environment`
+# Example:
+#
+#   environment {
+#     key_a: value_a
+#     key_b: value_b
+#   }
+
+
+
+#from sdk section
+    # Apply top-level environment section from configuration into os.environ
+    apply_environment: true
+    # Apply top-level files section from configuration into local file system
+    apply_files: true
+```
+### files section 
+
+```
+# Files section (top-level) allows auto-generating files at designated paths with
+# predefined content and target format.
+# * enable/disable with `agent.apply_files` OR `sdk.apply_files`
+# Files content options include:
+#  contents: the target file's content, typically a string (or any base type int/float/list/dict etc.)
+#  format: a custom format for the contents. Currently supported value is `base64` to automatically decode a
+#          base64-encoded contents string, otherwise ignored
+#  path: the target file's path, may include ~ and inplace env vars
+#  target_format: format used to encode contents before writing into the target file. Supported values are json,
+#                 yaml, yml and bytes (in which case the file will be written in binary mode). Default is text mode.
+#  overwrite: overwrite the target file in case it exists. Default is true.
+#
+# Example:
+#   files {
+#     myfile1 {
+#       contents: "The quick brown fox jumped over the lazy dog"
+#       path: "/tmp/fox.txt"
+#     }
+#     myjsonfile {
+#       contents: {
+#         some {
+#           nested {
+#             value: [1, 2, 3, 4]
+#           }
+#         }
+#       }
+#       path: "/tmp/test.json"
+#       target_format: json
+#     }
+#   }
+```
 ## Configuration Vault
 
 :::note Enterprise Feature
