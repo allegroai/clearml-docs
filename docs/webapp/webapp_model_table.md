@@ -28,6 +28,7 @@ The models table contains the following columns:
 | **TASK** | The experiment (Task) name that created the model. | String |
 | **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Date-time |
 | **DESCRIPTION** | The model description (not shown by default). | String |
+| *Metrics* |Add metrics column (last, minimum, and/or maximum values). Available options depend upon the models in the table. | Varies according to models in table |
 | *Metadata* | User defined metadata key column. Available options depend upon the models in the table. | String |
 
 
@@ -44,11 +45,11 @@ Customize the table using any of the following:
 * Changing table columns
     * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
   **>** mark or clear the checkboxes of columns to show or hide.
-    * Add custom columns - Click **+ ADD CUSTOM METADATA COLUMN** to add metadata columns to the main column list. Added 
-      columns are by default displayed in the table. You can remove the metadata columns from the main column list or the 
-      column addition window. 
-* Filter columns - By ML framework, tags, user
-* Sort columns - By metadata, ML framework, description, and last update elapsed time.
+    * Add custom columns - Click **+ METRICS** or **+ METADATA** to add metric / metadata columns to the 
+      main column list. Added columns are by default displayed in the table. You can remove the custom metadata columns 
+      from the main column list or the column addition window. 
+* Filter columns - By metadata, metric, ML framework, tags, user
+* Sort columns - By metadata, metric, ML framework, description, and last update elapsed time.
 
 :::note
 The following models-table customizations are saved on a **per-project** basis: 
