@@ -156,9 +156,9 @@ This image shows scalars grouped by metric and variant.
 ## Plots
 
 Visualize the comparison of any data that ClearML automatically captures or that is explicitly reported in experiments,
-in the **PLOTS** tab. The compared plots are the last iteration sample of each metric/variant per experiment. Data-series 
-plots (e.g. line or scatter plots) are combined to have multiple lines from different experiments. Other plots which can't 
-be merged are compared side-by-side. 
+in the **PLOTS** tab. The tab displays plots of the last reported iteration sample of each metric/variant combination per 
+compared experiment. Line, scatter, and bar graphs are each merged into single plots presenting all the compared 
+experiments' graphs for each metric/variant. The rest of the plots are displayed separately for each experiment. 
 
 
 **To compare plots:**
