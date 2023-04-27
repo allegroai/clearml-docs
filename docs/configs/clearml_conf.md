@@ -10,8 +10,8 @@ This reference page is organized by configuration file section:
   file will not have an `agent` section.
 * [api](#api-section) - Contains ClearML and ClearML Agent configuration options for ClearML Server.
 * [sdk](#sdk-section) - Contains ClearML and ClearML Agent configuration options for ClearML Python Package and ClearML Server.
-* [environment](#environment-section)
-* [files](#files-section)
+* [environment](#environment-section) - Define environment variables to apply to the OS environment  
+* [files](#files-section) - Define auto-generated files to apply into local file system
 
 
 An example configuration file is located [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf), 
@@ -186,6 +186,14 @@ For example:
         
 ---
 
+**`agent.docker_use_activated_venv`** (*bool*)
+
+* In Docker mode, if the container's entrypoint automatically activates a virtual environment, the activated virtual 
+environment is used and everything is installed in it. Set to `false` to disable, and always create a new venv inheriting 
+from `system_site_packages`
+
+---
+
 **`agent.enable_git_ask_pass`** (*bool*)
 
 :::note
@@ -215,7 +223,14 @@ For example:
 * An optional shell script to run in the Docker, when the Docker starts, before the experiment starts. For example, `["apt-get install -y bindfs", ]`
         
 ---
-        
+
+**`agent.force_git_root_python_path`** (*bool*)
+
+* Force the root folder of the git repository (instead of the working directory) into the `PYHTONPATH` environment variable.
+`false` by default, so only the working directory will be added to `PYHTONPATH`
+
+---
+
 **`agent.force_git_ssh_protocol`** (*bool*)
         
 * Force Git protocol to use SSH regardless of the Git URL. This assumes the Git user/pass are blank.
@@ -470,7 +485,12 @@ ___
 * The `poetry` version to use. For example, `"<2"`, `"==1.1.1"`, `""` (empty string will install the latest version).
 
 ---
-        
+
+**`agent.package_manager.poetry_install_extra_args`** (*list*)
+
+* List extra command-line arguments to pass when using `poetry` 
+---
+
 **`agent.package_manager.post_optional_packages`** (*string*)
         
 * A list of optional packages that will be installed after the required packages. If the installation of an optional post 
@@ -1295,8 +1315,11 @@ every 5MB
 **`environment`** (*dict*)
 
 Dictionary of environment variables and values which are applied to the OS environment as `key=value` for each key-value
-pairs.
+pair.
 
+Enable by setting `agent.apply_environment` OR `sdk.apply_environment` to `true`.
+
+Example:
 ```
 environment {
    key_a: value_a
@@ -1304,46 +1327,51 @@ environment {
 }
 ```
 
-Enable by setting `agent.apply_environment` OR `sdk.apply_environment` to `true`.
-
 ### files section 
 
+**`files`** (*dict*)
+
+The `files` section allows to define files which will be auto-generated at designated paths with predefined content and 
+target format.
+
+Enable by setting `agent.apply_files` OR `sdk.apply_files` to `true`.
+
+Define each file's contents in a dictionary. Files content options include:
+*  `contents` - Target file's content, typically a string (or any base type int/float/list/dict etc.)
+*  `format` - Custom format for the contents. Currently supports `base64` to automatically decode a
+base64-encoded contents string, otherwise ignored
+*  `path` - Target file's path, may include `~` and inplace env vars
+*  `target_format` - Format used to encode contents before writing into the target file. Supported values are `json`, `yaml`, 
+`yml`, and `bytes` (in which case the file will be written in binary mode). Default is text mode.
+* `overwrite` - Overwrite the target file in case it exists. Default is `true`.
+
+Example:
 ```
-# Files section (top-level) allows auto-generating files at designated paths with
-# predefined content and target format.
-# * enable/disable with `agent.apply_files` OR `sdk.apply_files`
-# Files content options include:
-#  contents: the target file's content, typically a string (or any base type int/float/list/dict etc.)
-#  format: a custom format for the contents. Currently supported value is `base64` to automatically decode a
-#          base64-encoded contents string, otherwise ignored
-#  path: the target file's path, may include ~ and inplace env vars
-#  target_format: format used to encode contents before writing into the target file. Supported values are json,
-#                 yaml, yml and bytes (in which case the file will be written in binary mode). Default is text mode.
-#  overwrite: overwrite the target file in case it exists. Default is true.
-#
-# Example:
-#   files {
-#     myfile1 {
-#       contents: "The quick brown fox jumped over the lazy dog"
-#       path: "/tmp/fox.txt"
-#     }
-#     myjsonfile {
-#       contents: {
-#         some {
-#           nested {
-#             value: [1, 2, 3, 4]
-#           }
-#         }
-#       }
-#       path: "/tmp/test.json"
-#       target_format: json
-#     }
-#   }
+files {
+  myfile1 {
+    contents: "The quick brown fox jumped over the lazy dog"
+    path: "/tmp/fox.txt"
+  }
+  myjsonfile {
+    contents: {
+      some {
+        nested {
+           value: [1, 2, 3, 4]
+        }
+      }
+    }
+    path: "/tmp/test.json"
+    target_format: json
+  }
+}
 
     # Apply top-level files section from configuration into local file system
+sdk {
+    
     apply_files: true
+}
 ```
-
+ 
 
 ## Configuration Vault
 
