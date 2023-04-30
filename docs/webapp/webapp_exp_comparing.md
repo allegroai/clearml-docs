@@ -2,7 +2,7 @@
 title: Comparing Experiments
 ---
 It is always useful to investigate what causes an experiment to succeed.
-The **ClearML Web UI** provides a deep experiment comparison, allowing to locate, visualize, and analyze differences including:
+The **ClearML Web UI** provides experiment comparison features, allowing to locate, visualize, and analyze differences including:
 
 * [Details](#details)
     - Artifacts - Input model, output model, and model design.
@@ -156,7 +156,10 @@ This image shows scalars grouped by metric and variant.
 ## Plots
 
 Visualize the comparison of any data that ClearML automatically captures or that is explicitly reported in experiments,
-in the **PLOTS** tab.
+in the **PLOTS** tab. The tab displays plots of the last reported iteration sample of each metric/variant combination per 
+compared experiment. Line, scatter, and bar graphs are each merged into single plots presenting all the compared 
+experiments' graphs for each metric/variant. The rest of the plots are displayed separately for each experiment. 
+
 
 **To compare plots:**
 
