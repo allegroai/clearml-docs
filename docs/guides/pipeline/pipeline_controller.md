@@ -129,10 +129,10 @@ does the following:
         'dataset_url': '',
         'random_state': 42,
         'test_size': 0.2,
-    }
+   }
     
-    # store arguments, later we will be able to change them from outside the code
-    task.connect(args)
+   # store arguments, later we will be able to change them from outside the code
+   task.connect(args)
    ```
 
 1. Download the data created in the previous step (specified through the `dataset_url` parameter) using 
