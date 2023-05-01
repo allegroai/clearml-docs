@@ -52,7 +52,7 @@ The diagram above demonstrates a typical flow where an agent executes a task:
 1. The task's script/code is executed.  
 
 While the agent is running, it continuously reports system metrics to the ClearML Server. You can monitor these metrics
-in the [**Workers and Queues**](../webapp/webapp_workers_queues.md) page.  
+in the [**Orchestration**](../webapp/webapp_workers_queues.md) page.  
 
 ## Resource Management
 Installing an Agent on machines allows it to monitor all the machine's status (GPU / CPU / Memory / Network / Disk IO). 
