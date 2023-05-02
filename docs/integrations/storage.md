@@ -8,11 +8,21 @@ and charts.
 
 Supported storage mediums include:
 
-![image](../../static/icons/ClearML_Supported_Storage--on-light.png)
+![Supported storage](../../static/icons/ClearML_Supported_Storage--on-light.png)
+
+To use cloud storage with ClearML, [install](#installation) the `clearml` package for your cloud storage type, and then 
+[configure](#configuring-storage) your storage credentials.
 
 :::note
 Once uploading an object to a storage medium, each machine that uses the object must have access to it.
 :::
+
+## Installation 
+
+For cloud storage, you must install the ClearML package for your cloud storage type:
+* AWS S3 - `pip install clearml[s3]`
+* Azure - `pip install clearml[azure]`
+* Google Storage - `pip install clearml[gs]`
 
 ## Configuring Storage
 
