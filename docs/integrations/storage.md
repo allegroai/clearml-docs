@@ -19,7 +19,7 @@ Once uploading an object to a storage medium, each machine that uses the object 
 
 ## Installation 
 
-For cloud storage, you must install the ClearML package for your cloud storage type:
+For cloud storage, install the ClearML package for your cloud storage type:
 * AWS S3 - `pip install clearml[s3]`
 * Azure - `pip install clearml[azure]`
 * Google Storage - `pip install clearml[gs]`
