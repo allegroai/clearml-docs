@@ -59,32 +59,19 @@ that version's details.
 ### Version Details Panel
 
 Click on **DETAILS** on the top left of the info panel or hover over a version node and click <img src="/docs/latest/icons/ico-console.svg" alt="details" className="icon size-md space-sm" /> 
-to view:
+to view the version's details panel. The panel includes three tabs:
 * **CONTENT** - Table summarizing version contents, including file names, file sizes, and hashes 
 
-<Collapsible type="screenshot" title="Version Content">
-
-![content](../../img/webapp_dataset_content.png)
-
-</Collapsible>
+  ![content](../../img/webapp_dataset_content.png)
 
 * **PREVIEW** - A preview of the dataset version's contents. 
 
-<Collapsible type="screenshot" title="Version Preview">
-
-![preview](../../img/webapp_dataset_preview.png)
-
-</Collapsible>
+  ![preview](../../img/webapp_dataset_preview.png)
 
 * **CONSOLE** - The dataset version’s console output
 
-<Collapsible type="screenshot" title="Version Console">
+  ![console](../../img/webapp_dataset_console.png)
 
-![console](../../img/webapp_dataset_console.png)
-
-</Collapsible>
-
-<br/>
 
 Click <img src="/docs/latest/icons/ico-max-panel.svg" alt="Expand" className="icon size-md space-sm" /> on the content panel header to view the panel in full screen. 
 
