@@ -131,9 +131,11 @@ in the top right corner of the table.
 The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states)
 that allow each operation.  
 
-Access these actions with the context menu in any of the following ways:
+Access these actions in any of the following ways:
 * In the experiments table, right-click an experiment or hover over an experiment and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+to open the context menu
 * In an experiment info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
+* Through the batch action bar: available at screen bottom when multiple experiments are selected
 
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
@@ -153,13 +155,15 @@ Access these actions with the context menu in any of the following ways:
 | Add Tag | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
 | Move to Project | Move an experiment to another project. | Any state |  None  |
+| Compare | Compare selected experiments (see [Comparing Experiments](webapp_exp_comparing.md)) | Any state |  None  |
 | Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any State | None |
 
 Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
-[Select multiple experiments](#selecting-multiple-experiments), then use either the context menu, or the bar that appears at the bottom of the page, to perform
+[Select multiple experiments](#selecting-multiple-experiments), then use either the context menu, or the batch action bar 
+that appears at the bottom of the page, to perform
 operations on the selected experiments. Actions can be performed only on the experiments that match the action criteria 
 (for example, only *Running* experiments can be aborted). The context menu shows the number 
-of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooltip that
+of experiments that can be affected by each action. The same information can be found in the batch action bar, in a tooltip that
 appears when hovering over an action icon. 
 
 ![Experiment table batch operations](../img/webapp_experiment_table_context_menu.png)

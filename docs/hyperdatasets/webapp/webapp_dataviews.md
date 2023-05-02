@@ -71,14 +71,14 @@ Access these actions with the context menu in any of the following ways:
 | Archive | To more easily work with active Dataviews, move a Dataview to the archive, removing it from the active Dataview table. | 
 | Restore | Action available in the archive. Restore a Dataview to the active Dataviews table. |
 | Clone | Make an exact copy of a Dataview that is editable. |
-| Move to Project | To organize work and improve collaboration, move a Dataview to another project. |
+| Move to Project | Move a Dataview to another project. |
 | Publish |  Publish a Dataview to prevent changes to it. *Published* Dataviews are read-only.|
 | Custom action | When available, provides a mechanism to define your own custom action which will appear in the context menu. See [Custom UI Context Menu Actions](../../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).|
 
 Some of the actions mentioned in the chart above can be performed on multiple Dataviews at once.
-Select multiple Dataviews, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+Select multiple Dataviews, then use either the context menu, or the batch action bar that appears at the bottom of the page, to perform
 operations on the selected Dataviews. The context menu shows the number of Dataviews that can be affected by each action. 
-The same information can be found in the bottom menu, in a tooltip that appears when hovering over an action icon. 
+The same information can be found in the batch action bar, in a tooltip that appears when hovering over an action icon. 
 
 ![Dataviews table batch operations](../../img/hyperdatasets/webapp_dataviews_context_menu.png)
 
