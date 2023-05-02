@@ -28,7 +28,7 @@ The ClearML experiment comparison provides [comparison features](#comparison-fea
 ## Selecting Experiments to Compare
 
 To select experiments to compare:
-1. Go to a experiments table that includes the experiments to be compared.
+1. Go to an experiments table that includes the experiments to be compared.
 1. Select the experiments to compare. Once multiple experiments are selected, the batch action bar appears.
 1. In the batch action bar, click **COMPARE**. 
 
