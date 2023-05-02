@@ -50,19 +50,19 @@ To return to viewing the run’s information, click the pipeline graph, outside 
 Click on **DETAILS** on the top left of the info panel to view the pipeline controller's details panel. To view a step’s 
 details panel, click **DETAILS** and then click on a step node, or hover over a step node and click <img src="/docs/latest/icons/ico-console.svg" alt="details" className="icon size-md space-sm" />.
 
-The details panel includes: 
+The details panel includes three tabs: 
 * **Preview** - View debug samples and plots attached to the pipeline controller or step 
 
-![preview](../../img/webapp_pipeline_step_debug.png)
+  ![preview](../../img/webapp_pipeline_step_debug.png)
 
 * **Console** - The console log for the pipeline controller or steps: contains everything printed to stdout and stderr.  
 
-![console](../../img/webapp_pipeline_step_console.png)
+  ![console](../../img/webapp_pipeline_step_console.png)
 
 * **Code** - For pipeline steps generated from functions using either [`PipelineController.add_function_step`](../../references/sdk/automation_controller_pipelinecontroller.md#add_function_step)
 or [`PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md##pipelinedecoratorcomponent), 
 you can view the selected step’s code. 
 
-![code](../../img/webapp_pipeline_step_code.png)
+  ![code](../../img/webapp_pipeline_step_code.png)
 
 Click <img src="/docs/latest/icons/ico-max-panel.svg" alt="Expand" className="icon size-md space-sm" /> on the details panel header to view the panel in full screen. 
