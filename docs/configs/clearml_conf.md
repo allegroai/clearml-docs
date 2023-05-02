@@ -751,7 +751,7 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
     
 **`sdk.aws.boto3`** (*dict*)
     
-* Dictionary of AWS Storage, Boto2 options.
+* Dictionary of AWS Storage, Boto3 options.
     
 ---
     
