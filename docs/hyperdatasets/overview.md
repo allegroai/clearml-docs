@@ -3,7 +3,7 @@ title: Hyper-Datasets
 ---
 
 :::important ENTERPRISE FEATURE
-Hyper-Datasets is available under the ClearML Enterprise plan
+Hyper-Datasets are available under the ClearML Enterprise plan
 :::
 
 ClearML's Hyper-Datasets are an MLOps-oriented abstraction of your data, which facilitates traceable, reproducible model development
