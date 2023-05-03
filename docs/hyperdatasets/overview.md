@@ -2,12 +2,16 @@
 title: Hyper-Datasets
 ---
 
+:::important ENTERPRISE FEATURE
+Hyper-Datasets is available under the ClearML Enterprise plan
+:::
+
 ClearML's Hyper-Datasets are an MLOps-oriented abstraction of your data, which facilitates traceable, reproducible model development
 through parameterized data access and meta-data version control.
 
 The basic premise is that a user-formed query is a full representation of the dataset used by the ML/DL process. 
 
-ClearML Enterprise's Hyper-Datasets supports rapid prototyping, creating new opportunities such as: 
+ClearML **Enterprise**'s Hyper-Datasets supports rapid prototyping, creating new opportunities such as: 
 * Hyperparameter optimization of the data itself
 * QA/QC pipelining
 * CD/CT (continuous training) during deployment
