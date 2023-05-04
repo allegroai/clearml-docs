@@ -50,7 +50,7 @@ of a project folder to open its context menu and access the following project ac
 * **Rename** - Rename the project.
 * **New Project** - Create a new project (by default a subproject). 
 * **Move to** - Move the project into another project. If the target project does not exist, it is created on-the-fly.
-* **Delete** - Delete the project. To delete a project, all of its experiments must be [archived](webapp_archiving.md) first. 
+* **Delete** - Delete the project. To delete a project, all of its experiments must be archived first. 
 
 ## Create New Projects
 

@@ -75,7 +75,7 @@ Access these actions with the context menu in any of the following ways:
 |---|---|--|
 | Details | View model details, which include general information, the model configuration, and label enumeration. Can also be accessed by double-clicking a model in the models table | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
-| Archive | To more easily work with active models, move a model to the archive. See [Archiving](webapp_archiving.md). | Any state |
+| Archive | To more easily work with active models, move a model to the archive. Archived models do not appear in the active (main) models table. | Any state |
 | Restore | Action available in the archive. Restore a model to the active model table. | Any state |
 | Add Tag | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |

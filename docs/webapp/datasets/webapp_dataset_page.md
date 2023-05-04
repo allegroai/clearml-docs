@@ -77,4 +77,4 @@ of a dataset card to open its context menu and access dataset actions.
 * **Rename** - Change the dataset’s name
 * **Add Tag** - Add label to the dataset to help easily classify groups of dataset.
 * **Delete** - Delete the dataset and all of its versions. To delete a dataset, all its versions must first be 
-  [archived](../webapp_archiving.md). 
+  archived. 
