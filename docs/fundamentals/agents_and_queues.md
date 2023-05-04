@@ -99,7 +99,7 @@ In its default mode, a ClearML Agent executes a single task at a time, since tra
 available to them. Some tasks are mostly idling and require less computation power, such as controller tasks (e.g. 
 a pipeline controller) or service tasks (e.g. cleanup service). 
 
-This is where the `services-modes` comes into play. An agent running in `services-mode` will let multiple tasks execute 
+This is where the `services-mode` comes into play. An agent running in `services-mode` will let multiple tasks execute 
 in parallel (each task will register itself as a sub-agent, visible in the [Workers & Queues](../webapp/webapp_workers_queues.md) tab in the UI).
 
 This mode is intended for running maintenance tasks. Some suitable tasks include:
