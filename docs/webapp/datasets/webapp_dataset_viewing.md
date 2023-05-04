@@ -83,7 +83,7 @@ Access these actions with the context menu by right-clicking a version on the da
 | Action | Description | 
 |-----|----|
 |Add Tag |User-defined labels added to versions for grouping and organization. |
-|Archive| To more easily work with active dataset versions, archive a version. Archived datasets do not appear in the active (main) datasets table.| 
+|Archive| To more easily work with active dataset versions, archive a version. Archived datasets do not appear in the active (main) dataset versions table.| 
 |Restore|Action available in the archive. Restore a version to the active dataset versions table.|
 |Delete| Delete an archived version and its artifacts. This action is available only from the dataset’s archive |
 
