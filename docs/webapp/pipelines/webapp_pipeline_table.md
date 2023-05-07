@@ -14,7 +14,7 @@ Details view can also be accessed by double-clicking a specific pipeline run in 
 
 The table provides two views: the active (main) runs view and the archive. You can archive pipeline runs
 so the active runs view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of a pipeline runs table to open the 
-archive view, where you can view all archived run. From the archive, you can restore archived runs 
+archive view, where you can view all archived runs. From the archive, you can restore archived runs 
 to the main table view.
 
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
