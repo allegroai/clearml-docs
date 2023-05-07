@@ -27,10 +27,9 @@ Each node in the graph represents a dataset version, and shows the following det
   to view the version’s [details panel](#version-details-panel) 
   
 :::tip archiving versions
-The dataset versions list provides two views: the active (main) version view and the archive. You can archive 
-versions so the active versions view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the versions list
-to open the archive view, where you can view all archived versions. From the archive, you can restore archived versions 
-to the active version view.
+You can archive dataset versions so the versions list doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of 
+the list to open the archive and view all archived versions. From the archive, you can restore 
+versions and remove them from the archive.
 :::
 
 ## Version Details

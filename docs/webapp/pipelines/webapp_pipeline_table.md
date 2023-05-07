@@ -12,10 +12,9 @@ using the buttons on the top left of the page. Use the table view for a comparat
 columns of interest. Use the details view to access a selected run’s details, while keeping the pipeline runs list in view. 
 Details view can also be accessed by double-clicking a specific pipeline run in the table view to open its details view. 
 
-The table provides two views: the active (main) runs view and the archive. You can archive pipeline runs
-so the active runs view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of a pipeline runs table to open the 
-archive view, where you can view all archived runs. From the archive, you can restore archived runs 
-to the main table view.
+You can archive pipeline runs so the runs table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
+table to open the archive and view all archived runs. From the archive, you can restore 
+runs and remove them from the archive.
 
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
 

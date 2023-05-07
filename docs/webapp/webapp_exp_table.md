@@ -12,10 +12,9 @@ using the buttons on the top left of the page. Use the table view for a comparat
 to columns of interest. Use the details view to access a selected experiment’s details, while keeping the experiment list 
 in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
 
-The table provides two views: the active (main) experiment view and the archive. You can archive experiments
-so the active experiment view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of an experiment table to open the 
-archive view, where you can view all archived experiments. From the archive, you can restore archived experiments 
-to the main table view.
+You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
+table to open the archive and view all archived experiments. From the archive, you can restore 
+experiments and remove them from the archive.
 
 
 :::info

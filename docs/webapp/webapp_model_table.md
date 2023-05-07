@@ -11,10 +11,9 @@ using the buttons on the top left of the page. Use the table view for a comparat
 columns of interest. Use the details view to access a selected model’s details, while keeping the model list in view. 
 Details view can also be accessed by double-clicking a specific model in the table view to open its details view. 
 
-The table provides two views: the active (main) model view and the archive. You can archive models
-so the active models view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of a models table to open the 
-archive view, where you can view all archived models. From the archive, you can restore archived models 
-to the main table view.
+You can archive models so the models table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
+table to open the archive and view all archived models. From the archive, you can restore 
+models and remove them from the archive.
 
 ![Models table](../img/webapp_models_01.png)
 

@@ -14,10 +14,9 @@ using the buttons on the top left of the page. Use the table view for a comparat
 columns of interest. Use the details view to access a selected Dataview’s details, while keeping the Dataview list in view.
 Details view can also be accessed by double-clicking a specific Dataview in the table view to open its details view. 
 
-The table provides two views: the active (main) view and the archive. You can archive Dataviews
-so the active view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of a Dataviews table to open the 
-archive view, where you can view all archived Dataviews. From the archive, you can restore archived Dataviews
-to the main table view.
+You can archive Dataviews so the Dataviews table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
+table to open the archive and view all archived Dataviews. From the archive, you can restore 
+Dataviews and remove them from the archive.
 
 ![Dataviews table](../../img/hyperdatasets/webapp_dataviews_table.png)
 
