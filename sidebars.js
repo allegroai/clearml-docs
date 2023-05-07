@@ -71,7 +71,6 @@ module.exports = {
                     {
                         'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing']
                     },
-                    'webapp/webapp_archiving'
                 ]
             },
             {

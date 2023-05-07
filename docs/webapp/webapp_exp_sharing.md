@@ -7,7 +7,7 @@ This is a ClearML Hosted Service feature only.
 :::
 
 **ClearML Hosted Service** users can share experiments with users of another workspace. Sharing an experiment shares its 
-models, as well. Shared experiments are read-only, and they can be made private by [archiving](webapp_archiving.md) 
+models, as well. Shared experiments are read-only, and they can be made private by archiving 
 them.
 
 :::note
@@ -40,4 +40,4 @@ Share experiments from the experiments table, the info panel menu, and/or the fu
 
 1. Click **Remove link**.
 
-Another option is to [archive](webapp_archiving.md) the experiment. When archiving the experiment, it automatically becomes private. 
+Another option is to archive the experiment, which makes the experiment private. 
