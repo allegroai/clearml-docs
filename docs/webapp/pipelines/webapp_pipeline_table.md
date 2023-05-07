@@ -12,6 +12,11 @@ using the buttons on the top left of the page. Use the table view for a comparat
 columns of interest. Use the details view to access a selected run’s details, while keeping the pipeline runs list in view. 
 Details view can also be accessed by double-clicking a specific pipeline run in the table view to open its details view. 
 
+The table provides two views: the active (main) runs view and the archive. You can archive pipeline runs
+so the active runs view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of a pipeline runs table to open the 
+archive view, where you can view all archived run. From the archive, you can restore archived runs 
+to the main table view.
+
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
 
 ## Run Table Columns
@@ -105,7 +110,7 @@ Access these actions with the context menu in any of the following ways:
 | Abort | Manually stop / cancel a run. | *Running* / *Pending* | *Aborted* |
 | Continue | Rerun with the same parameters. |  *Aborted* | *Pending* |
 | Add Tag | User-defined labels added to runs for grouping and organization. | Any state |  None  |
-| Archive | To more easily work with active runs, archive a run. Archived pipeline runs do not appear in the active (main) runs table. | Any state |  *Pending* to *Draft*  |
+| Archive | Move pipeline run to the pipeline's archive. | Any state |  *Pending* to *Draft*  |
 | Restore | Action available in the archive. Restore a run to the active pipeline runs table. | Any state | None |
 | Delete | Action available in the archive. Delete a run and its steps, which will also remove all their logs, results, artifacts and debug samples | Any State | N/A |
 

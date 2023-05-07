@@ -26,6 +26,13 @@ Each node in the graph represents a dataset version, and shows the following det
 * Version details button - Hover over the version and click <img src="/docs/latest/icons/ico-console.svg" alt="console" className="icon size-md space-sm" /> 
   to view the version’s [details panel](#version-details-panel) 
   
+:::tip archiving versions
+The dataset versions list provides two views: the active (main) version view and the archive. You can archive 
+versions so the active versions view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the versions list
+to open the archive view, where you can view all archived versions. From the archive, you can restore archived versions 
+to the active version view.
+:::
+
 ## Version Details
 ### Version Info
 
@@ -83,7 +90,7 @@ Access these actions with the context menu by right-clicking a version on the da
 | Action | Description | 
 |-----|----|
 |Add Tag |User-defined labels added to versions for grouping and organization. |
-|Archive| To more easily work with active dataset versions, archive a version. Archived datasets do not appear in the active (main) dataset versions table.| 
+|Archive| Move dataset versions to the dataset's archive. | 
 |Restore|Action available in the archive. Restore a version to the active dataset versions table.|
 |Delete| Delete an archived version and its artifacts. This action is available only from the dataset’s archive |
 

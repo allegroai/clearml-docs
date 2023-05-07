@@ -11,6 +11,11 @@ using the buttons on the top left of the page. Use the table view for a comparat
 columns of interest. Use the details view to access a selected model’s details, while keeping the model list in view. 
 Details view can also be accessed by double-clicking a specific model in the table view to open its details view. 
 
+The table provides two views: the active (main) model view and the archive. You can archive models
+so the active models view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of a models table to open the 
+archive view, where you can view all archived models. From the archive, you can restore archived models 
+to the main table view.
+
 ![Models table](../img/webapp_models_01.png)
 
 ## Models Table Columns
@@ -75,7 +80,7 @@ Access these actions with the context menu in any of the following ways:
 |---|---|--|
 | Details | View model details, which include general information, the model configuration, and label enumeration. Can also be accessed by double-clicking a model in the models table | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
-| Archive | To more easily work with active models, move a model to the archive. Archived models do not appear in the active (main) models table. | Any state |
+| Archive | Move model to the project's archive. | Any state |
 | Restore | Action available in the archive. Restore a model to the active model table. | Any state |
 | Add Tag | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |

@@ -10,7 +10,13 @@ View the experiments table in table view <img src="/docs/latest/icons/ico-table-
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your experiments according 
 to columns of interest. Use the details view to access a selected experiment’s details, while keeping the experiment list 
-in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view. 
+in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
+
+The table provides two views: the active (main) experiment view and the archive. You can archive experiments
+so the active experiment view doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of an experiment table to open the 
+archive view, where you can view all archived experiments. From the archive, you can restore archived experiments 
+to the main table view.
+
 
 :::info
 To assist in focusing on active experimentation, experiments and models can be archived, so they will not appear
@@ -144,7 +150,7 @@ to open the context menu
 | Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
 | View Worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
-| Archive | To more easily work with active experiments, move an experiment to the archive. Archived experiments do not appear in the active (main) experiments table. If it is shared (ClearML Hosted Service only), the experiment becomes private. | Any state |  *Pending* to *Draft*  |
+| Archive | Move experiment to the project's archive. If it is shared (ClearML Hosted Service only), the experiment becomes private. | Any state |  *Pending* to *Draft*  |
 | Restore |Action available in the archive. Restore an experiment to the active experiments table.| Any State | None |
 | Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft* | *Pending* |
 | Dequeue | Remove an experiment from a queue. | *Pending* | *Draft* |
