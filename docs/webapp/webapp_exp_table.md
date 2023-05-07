@@ -14,7 +14,7 @@ in view. Details view can also be accessed by double-clicking a specific experim
 
 You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
 table to open the archive and view all archived experiments. From the archive, you can restore 
-experiments to remove them from the archive, and permanently delete experiments.
+experiments to remove them from the archive. You can also permanently delete experiments.
 
 
 :::info

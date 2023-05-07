@@ -16,7 +16,7 @@ Details view can also be accessed by double-clicking a specific Dataview in the 
 
 You can archive Dataviews so the Dataviews table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
 table to open the archive and view all archived Dataviews. From the archive, you can restore 
-Dataviews to remove them from the archive, and permanently delete Dataviews.
+Dataviews to remove them from the archive. You can also permanently delete Dataviews.
 
 ![Dataviews table](../../img/hyperdatasets/webapp_dataviews_table.png)
 

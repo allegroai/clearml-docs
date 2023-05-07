@@ -14,7 +14,7 @@ Details view can also be accessed by double-clicking a specific pipeline run in 
 
 You can archive pipeline runs so the runs table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
 table to open the archive and view all archived runs. From the archive, you can restore 
-runs to remove them from the archive, and permanently delete runs.
+runs to remove them from the archive. You can also permanently delete runs.
 
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
 
