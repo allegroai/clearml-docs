@@ -13,7 +13,7 @@ Details view can also be accessed by double-clicking a specific model in the tab
 
 You can archive models so the models table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
 table to open the archive and view all archived models. From the archive, you can restore 
-models and remove them from the archive.
+models to remove them from the archive, and permanently delete models.
 
 ![Models table](../img/webapp_models_01.png)
 
@@ -80,7 +80,8 @@ Access these actions with the context menu in any of the following ways:
 | Details | View model details, which include general information, the model configuration, and label enumeration. Can also be accessed by double-clicking a model in the models table | Any state |
 | Publish | Publish a model to prevent changes to it. *Published* models are read-only. If a model is Published, its experiment also becomes Published (read-only). | *Draft* |
 | Archive | Move model to the project's archive. | Any state |
-| Restore | Action available in the archive. Restore a model to the active model table. | Any state |
+| Restore | Action available in the archive. Restore a model to the main model table. | Any state |
+| Delete | Action available in the archive. Permanently delete the model. This will also remove the model weights file. Note that experiments using deleted models will no longer be able to run. | Any state |
 | Add Tag | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
 | Move to Project | To organize work and improve collaboration, move a model to another project. | Any state |

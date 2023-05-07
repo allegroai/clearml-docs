@@ -29,7 +29,7 @@ Each node in the graph represents a dataset version, and shows the following det
 :::tip archiving versions
 You can archive dataset versions so the versions list doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of 
 the list to open the archive and view all archived versions. From the archive, you can restore 
-versions and remove them from the archive.
+versions to remove them from the archive, and permanently delete versions.
 :::
 
 ## Version Details
