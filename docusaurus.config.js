@@ -242,7 +242,7 @@ module.exports = {
 
           // whether to index blog pages
           indexBlog: false,
-          //blogRouteBasePath: '/blog',
+          // blogRouteBasePath: '/blog',
 
           // whether to index static pages
           // /404.html is never indexed
@@ -250,6 +250,8 @@ module.exports = {
 
           // language of your documentation, see next section
           language: "en",
+          // files to ignore in search
+          ignoreFiles: [RegExp(".*ver_.*")],
     }],
     path.resolve(__dirname, 'src/zoom-plugin')
   ],
