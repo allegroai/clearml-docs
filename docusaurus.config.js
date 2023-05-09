@@ -244,14 +244,14 @@ module.exports = {
           indexBlog: false,
           // blogRouteBasePath: '/blog',
 
+          // files to ignore in search
+          ignoreFiles: [/docs\/release_notes\/.*/],
           // whether to index static pages
           // /404.html is never indexed
           indexPages: false,
 
           // language of your documentation, see next section
           language: "en",
-          // files to ignore in search
-          ignoreFiles: [/docs\/release_notes\/.*/],
     }],
     path.resolve(__dirname, 'src/zoom-plugin')
   ],
