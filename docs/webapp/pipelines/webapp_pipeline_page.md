@@ -65,4 +65,4 @@ of a pipeline card to open its context menu and access pipeline actions.
 * **Rename** - Change the pipeline’s name
 * **Add Tag** - Add label to the pipeline to help easily classify groups of pipelines.
 * **Delete** - Delete the pipeline: delete all its runs and any models/artifacts produced (a list of remaining artifacts 
-  is returned). To delete a pipeline, all its runs must first be [archived](../webapp_archiving.md). 
+  is returned). To delete a pipeline, all its runs must first be archived. 
