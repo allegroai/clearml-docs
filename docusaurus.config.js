@@ -251,7 +251,7 @@ module.exports = {
           // language of your documentation, see next section
           language: "en",
           // files to ignore in search
-          ignoreFiles: [RegExp(".*ver_.*")],
+          ignoreFiles: RegExp(".*ver_.*"),
     }],
     path.resolve(__dirname, 'src/zoom-plugin')
   ],
