@@ -17,11 +17,6 @@ table to open the archive and view all archived experiments. From the archive, y
 experiments to remove them from the archive. You can also permanently delete experiments.
 
 
-:::info
-To assist in focusing on active experimentation, experiments and models can be archived, so they will not appear
-in the active experiments and models tables.
-:::
-
 ![Experiment table](../img/webapp_experiment_table.png)
 
 ## Experiments Table Columns
