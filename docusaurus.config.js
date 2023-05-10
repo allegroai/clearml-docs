@@ -219,15 +219,8 @@ module.exports = {
       },
     ],
   ],
-  plugins: [
-    // ... Your other plugins.
-    [
-      require.resolve('docusaurus-gtm-plugin'),
-      {
-        id: 'none', // GTM Container ID
-      }
-    ],
-    [
+  themes: [
+      [
       require.resolve("@easyops-cn/docusaurus-search-local"),
       {
           hashed: true,
@@ -242,15 +235,25 @@ module.exports = {
 
           // whether to index blog pages
           indexBlog: false,
-          //blogRouteBasePath: '/blog',
+          // blogRouteBasePath: '/blog',
 
+          // files to ignore in search
           // whether to index static pages
           // /404.html is never indexed
           indexPages: false,
+          ignoreFiles: [/docs\/release_notes\/.*/],
 
           // language of your documentation, see next section
           language: "en",
-    }],
+    }]],
+  plugins: [
+    // ... Your other plugins.
+    [
+      require.resolve('docusaurus-gtm-plugin'),
+      {
+        id: 'none', // GTM Container ID
+      }
+    ],
     path.resolve(__dirname, 'src/zoom-plugin')
   ],
 };
