@@ -66,11 +66,13 @@ module.exports = {
                     'webapp/webapp_project_overview',
                     {
                         'Experiments': ['webapp/webapp_exp_table', 'webapp/webapp_exp_track_visual', 'webapp/webapp_exp_reproducing', 'webapp/webapp_exp_tuning',
-                            'webapp/webapp_exp_comparing', 'webapp/webapp_exp_sharing']
+                            'webapp/webapp_exp_comparing']
                     },
                     {
                         'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing']
+
                     },
+                    'webapp/webapp_exp_sharing'
                 ]
             },
             {
