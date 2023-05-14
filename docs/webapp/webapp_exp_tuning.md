@@ -119,7 +119,7 @@ Set a logging level for the experiment (see the standard Python [logging levels]
 
 Add, change, or delete hyperparameters, which are organized in the **ClearML Web UI** in the following sections:
 
-* **Args** - Command line arguments and all older experiments parameters, except TensorFlow definitions (logged from code,
+* **Args** - Command line arguments and all other experiment parameters, except TensorFlow definitions (logged from code,
   `argparse` argument automatic logging).
 
 * **TF_DEFINE** - TensorFlow definitions (from code, TF_DEFINEs automatic logging).
