@@ -111,7 +111,7 @@ Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** 
 
 #### Command Line Arguments
 
-The **Args** parameter group shows automatically logged `argparse` arguments, and all other experiment parameters, except 
+The **Args** parameter group shows automatically logged `argparse` arguments, and all older experiments parameters, except 
 TensorFlow Definitions. Hover over a parameter, and the type, description, and default value appear, if they were provided.
 
 ![Command line arguments configuration group](../img/webapp_tracking_22.png)
