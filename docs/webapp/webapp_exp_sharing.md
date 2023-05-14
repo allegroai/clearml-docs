@@ -32,10 +32,10 @@ When a user opens the hyperlink for a shared experiment in their browser, only t
 
 1. Click **Share** in one of these ways:
 
-    * In the [experiment table](webapp_exp_table.md), right-click the experiment **>** **Share**
-    * In the experiment info panel or full screen details view, click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> 
+    * The experiment table - Right-click the experiment **>** **Share**
+    * The experiment info panel or full screen details view **>** <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> 
       (menu) **>** **Share**. 
-   
+
 1. Click **Remove link**.
 
 Another option is to archive the experiment, which makes the experiment private. 
