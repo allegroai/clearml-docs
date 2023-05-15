@@ -69,7 +69,7 @@ module.exports = {
                             'webapp/webapp_exp_comparing', 'webapp/webapp_exp_sharing']
                     },
                     {
-                        'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing']
+                        'Models': ['webapp/webapp_model_table', 'webapp/webapp_model_viewing', 'webapp/webapp_model_comparing']
                     },
                     'webapp/webapp_archiving'
                 ]
