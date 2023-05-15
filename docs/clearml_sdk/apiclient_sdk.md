@@ -17,7 +17,7 @@ Through an `APIClient` instance, you can access ClearML’s REST API services:
 
 `APIClient` makes the ClearML Server’s REST API endpoints available as Python methods. 
 
-To use `APIClient`, create an instance of it then call the method corresponding to the desired REST API endpoints, with 
+To use `APIClient`, create an instance of it then call the method corresponding to the desired REST API endpoint, with 
 its respective parameters as described in the [REST API reference page](../references/api/index.md). 
 
 For example, the [`POST/ projects.get_all`](../references/api/projects.md#post-projectsget_all) call returns all projects 
