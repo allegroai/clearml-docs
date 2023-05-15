@@ -834,7 +834,7 @@ Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you
         
 **I run my script, but my experiment is not in the ClearML Hosted Service Web UI. How do I fix this?** <a id="hosted-service-no-config"></a>
 
-If you joined the ClearML Hosted Service and run a script, but your experiment does not appear in Web UI, you may not have configured ClearML for the hosted service. Run the ClearML setup wizard. It will request your hosted service ClearML credentials and create the ClearML configuration you need.
+If you joined the ClearML Hosted Service and ran a script, but your experiment does not appear in Web UI, you may not have configured ClearML for the hosted service. Run the ClearML setup wizard. It will request your hosted service ClearML credentials and create the ClearML configuration you need.
 
     pip install clearml
     
