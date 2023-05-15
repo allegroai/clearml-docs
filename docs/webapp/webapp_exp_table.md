@@ -10,12 +10,12 @@ View the experiments table in table view <img src="/docs/latest/icons/ico-table-
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your experiments according 
 to columns of interest. Use the details view to access a selected experiment’s details, while keeping the experiment list 
-in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view. 
+in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
 
-:::info
-To assist in focusing on active experimentation, experiments and models can be archived, so they will not appear
-in the active experiments and models tables. See [Archiving](webapp_archiving.md).
-:::
+You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
+table to open the archive and view all archived experiments. From the archive, you can restore 
+experiments to remove them from the archive. You can also permanently delete experiments.
+
 
 ![Experiment table](../img/webapp_experiment_table.png)
 
@@ -131,9 +131,11 @@ in the top right corner of the table.
 The following table describes the actions that can be done from the experiments table, including the [states](../fundamentals/task.md#task-states)
 that allow each operation.  
 
-Access these actions with the context menu in any of the following ways:
+Access these actions in any of the following ways:
 * In the experiments table, right-click an experiment or hover over an experiment and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+to open the context menu
 * In an experiment info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
+* Through the batch action bar: available at screen bottom when multiple experiments are selected
 
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
@@ -142,8 +144,9 @@ Access these actions with the context menu in any of the following ways:
 | Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
 | View Worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
-| Archive | To more easily work with active experiments, move an experiment to the archive. See [Archiving](webapp_archiving.md). | Any state |  None  |
+| Archive | Move experiment to the project's archive. If it is shared (ClearML Hosted Service only), the experiment becomes private. | Any state |  *Pending* to *Draft*  |
 | Restore |Action available in the archive. Restore an experiment to the active experiments table.| Any State | None |
+| Delete |  Action available in the archive. Delete an experiment, which will also remove all their logs, results, artifacts and debug samples. | Any State | N/A |
 | Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft* | *Pending* |
 | Dequeue | Remove an experiment from a queue. | *Pending* | *Draft* |
 | Reset  | Delete the log and output from a previous run of an experiment (for example, before rerunning it). | *Completed*, *Aborted*, or *Failed* | *Draft* |
@@ -153,13 +156,15 @@ Access these actions with the context menu in any of the following ways:
 | Add Tag | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
 | Move to Project | Move an experiment to another project. | Any state |  None  |
+| Compare | Compare selected experiments (see [Comparing Experiments](webapp_exp_comparing.md)) | Any state |  None  |
 | Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any State | None |
 
 Most of the actions mentioned in the chart above can be performed on multiple experiments at once.
-[Select multiple experiments](#selecting-multiple-experiments), then use either the context menu, or the bar that appears at the bottom of the page, to perform
+[Select multiple experiments](#selecting-multiple-experiments), then use either the context menu, or the batch action bar 
+that appears at the bottom of the page, to perform
 operations on the selected experiments. Actions can be performed only on the experiments that match the action criteria 
 (for example, only *Running* experiments can be aborted). The context menu shows the number 
-of experiments that can be affected by each action. The same information can be found in the bottom menu, in a tooltip that
+of experiments that can be affected by each action. The same information can be found in the batch action bar, in a tooltip that
 appears when hovering over an action icon. 
 
 ![Experiment table batch operations](../img/webapp_experiment_table_context_menu.png)

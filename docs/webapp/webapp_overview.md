@@ -24,7 +24,6 @@ The WebApp's sidebar provides access to the following modules:
     * [Tune experiments with no code change](webapp_exp_tuning.md)
     * [Compare experiments](webapp_exp_comparing.md)
     * [Share experiments and their models](webapp_exp_sharing.md) with other ClearML hosted service users 
-    * [Archive experiments and models](webapp_archiving.md)
 * [Datasets](datasets/webapp_dataset_page.md) <img src="/docs/latest/icons/ico-side-bar-datasets.svg" alt="Datasets" className="icon size-md space-sm" /> - View and manage your datasets. 
 * [Pipelines](pipelines/webapp_pipeline_page.md) <img src="/docs/latest/icons/ico-pipelines.svg" alt="Pipelines" className="icon size-md space-sm" /> - View and manage your pipelines.
 * [Reports](webapp_reports.md) <img src="/docs/latest/icons/ico-reports.svg" alt="Reports" className="icon size-md space-sm" /> - View and manage your reports.

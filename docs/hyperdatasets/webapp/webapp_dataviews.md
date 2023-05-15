@@ -14,6 +14,10 @@ using the buttons on the top left of the page. Use the table view for a comparat
 columns of interest. Use the details view to access a selected Dataview’s details, while keeping the Dataview list in view.
 Details view can also be accessed by double-clicking a specific Dataview in the table view to open its details view. 
 
+You can archive Dataviews so the Dataviews table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
+table to open the archive and view all archived Dataviews. From the archive, you can restore 
+Dataviews to remove them from the archive. You can also permanently delete Dataviews.
+
 ![Dataviews table](../../img/hyperdatasets/webapp_dataviews_table.png)
 
 The Dataviews table includes the following columns: 
@@ -68,17 +72,18 @@ Access these actions with the context menu in any of the following ways:
 | ClearML Action | Description |
 |---|---|
 | Details | View Dataview details, including input datasets, label mapping, augmentation operations, and iteration control. Can also be accessed by double-clicking a Dataview in the Dataviews table. |
-| Archive | To more easily work with active Dataviews, move a Dataview to the archive, removing it from the active Dataview table. | 
+| Archive | Move Dataview to the Dataview's archive. | 
 | Restore | Action available in the archive. Restore a Dataview to the active Dataviews table. |
+| Delete | Action available in the archive. Permanently delete a Dataview. |
 | Clone | Make an exact copy of a Dataview that is editable. |
-| Move to Project | To organize work and improve collaboration, move a Dataview to another project. |
+| Move to Project | Move a Dataview to another project. |
 | Publish |  Publish a Dataview to prevent changes to it. *Published* Dataviews are read-only.|
 | Custom action | When available, provides a mechanism to define your own custom action which will appear in the context menu. See [Custom UI Context Menu Actions](../../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).|
 
 Some of the actions mentioned in the chart above can be performed on multiple Dataviews at once.
-Select multiple Dataviews, then use either the context menu, or the bar that appears at the bottom of the page, to perform
+Select multiple Dataviews, then use either the context menu, or the batch action bar that appears at the bottom of the page, to perform
 operations on the selected Dataviews. The context menu shows the number of Dataviews that can be affected by each action. 
-The same information can be found in the bottom menu, in a tooltip that appears when hovering over an action icon. 
+The same information can be found in the batch action bar, in a tooltip that appears when hovering over an action icon. 
 
 ![Dataviews table batch operations](../../img/hyperdatasets/webapp_dataviews_context_menu.png)
 

@@ -2,7 +2,7 @@
 title: Comparing Experiments
 ---
 It is always useful to investigate what causes an experiment to succeed.
-The **ClearML Web UI** provides a deep experiment comparison, allowing to locate, visualize, and analyze differences including:
+The **ClearML Web UI** provides experiment comparison features, allowing to locate, visualize, and analyze differences including:
 
 * [Details](#details)
     - Artifacts - Input model, output model, and model design.
@@ -27,12 +27,13 @@ The ClearML experiment comparison provides [comparison features](#comparison-fea
 
 ## Selecting Experiments to Compare
 
-**To select experiments to compare:**
+To select experiments to compare:
+1. Go to an experiments table that includes the experiments to be compared.
+1. Select the experiments to compare. Once multiple experiments are selected, the batch action bar appears.
+1. In the batch action bar, click **COMPARE**. 
 
-1. Go to an experiments table, which includes the experiments to be compared.
-1. Select the experiments to compare, select the checkboxes individually or select the top checkbox for all experiments. After selecting the second checkbox, a bottom bar appears.
-1. In the bottom bar, click **COMPARE**. The comparison page appears, showing a column for each experiment and differences with a highlighted background color. The experiment on the left is the base experiment. Other experiments compare to the base experiment.
-
+The comparison page opens in the **DETAILS** tab, showing a column for each experiment. The experiment on the left is 
+used as the base experiment, to which the other experiments are compared. 
 
 ## Details
 
@@ -156,7 +157,10 @@ This image shows scalars grouped by metric and variant.
 ## Plots
 
 Visualize the comparison of any data that ClearML automatically captures or that is explicitly reported in experiments,
-in the **PLOTS** tab.
+in the **PLOTS** tab. The tab displays plots of the last reported iteration sample of each metric/variant combination per 
+compared experiment. Line, scatter, and bar graphs are each merged into single plots presenting all the compared 
+experiments' graphs for each metric/variant. The rest of the plots are displayed separately for each experiment. 
+
 
 **To compare plots:**
 

@@ -26,6 +26,12 @@ Each node in the graph represents a dataset version, and shows the following det
 * Version details button - Hover over the version and click <img src="/docs/latest/icons/ico-console.svg" alt="console" className="icon size-md space-sm" /> 
   to view the version’s [details panel](#version-details-panel) 
   
+:::tip archiving versions
+You can archive dataset versions so the versions list doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of 
+the list to open the archive and view all archived versions. From the archive, you can restore 
+versions to remove them from the archive. You can also permanently delete versions.
+:::
+
 ## Version Details
 ### Version Info
 
@@ -60,32 +66,19 @@ that version's details.
 ### Version Details Panel
 
 Click on **DETAILS** on the top left of the info panel or hover over a version node and click <img src="/docs/latest/icons/ico-console.svg" alt="details" className="icon size-md space-sm" /> 
-to view:
+to view the version's details panel. The panel includes three tabs:
 * **CONTENT** - Table summarizing version contents, including file names, file sizes, and hashes 
 
-<Collapsible type="screenshot" title="Version Content">
-
-![content](../../img/webapp_dataset_content.png)
-
-</Collapsible>
+  ![content](../../img/webapp_dataset_content.png)
 
 * **PREVIEW** - A preview of the dataset version's contents. 
 
-<Collapsible type="screenshot" title="Version Preview">
-
-![preview](../../img/webapp_dataset_preview.png)
-
-</Collapsible>
+  ![preview](../../img/webapp_dataset_preview.png)
 
 * **CONSOLE** - The dataset version’s console output
 
-<Collapsible type="screenshot" title="Version Console">
+  ![console](../../img/webapp_dataset_console.png)
 
-![console](../../img/webapp_dataset_console.png)
-
-</Collapsible>
-
-<br/>
 
 Click <img src="/docs/latest/icons/ico-max-panel.svg" alt="Expand" className="icon size-md space-sm" /> on the content panel header to view the panel in full screen. 
 
@@ -97,7 +90,7 @@ Access these actions with the context menu by right-clicking a version on the da
 | Action | Description | 
 |-----|----|
 |Add Tag |User-defined labels added to versions for grouping and organization. |
-|Archive| To more easily work with active dataset versions, archive a version. [See Archiving](../webapp_archiving.md).| 
+|Archive| Move dataset versions to the dataset's archive. | 
 |Restore|Action available in the archive. Restore a version to the active dataset versions table.|
 |Delete| Delete an archived version and its artifacts. This action is available only from the dataset’s archive |
 

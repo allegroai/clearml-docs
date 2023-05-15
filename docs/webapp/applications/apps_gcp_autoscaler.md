@@ -18,6 +18,8 @@ based on a specified maximum idle time, or spins up new VM instances when there 
 in a queue (until reaching the defined maximum number of instances). You can add an init script, which will be executed 
 when each VM instance is spun up. 
 
+For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
+
 ## Autoscaler Instance Configuration
 * **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
   values from the file, which can be modified before launching the app instance

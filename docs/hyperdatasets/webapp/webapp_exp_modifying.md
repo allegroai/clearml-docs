@@ -47,7 +47,7 @@ by the Dataview.
 1. In the **INPUT** area, click **EDIT**.
 1. Do any of the following:
 
-    * Add a Dataset version - Input frames from another a version of another Dataset.
+    * Add a Dataset version - Input frames from another version of another Dataset.
     
         * Click **+** 
     

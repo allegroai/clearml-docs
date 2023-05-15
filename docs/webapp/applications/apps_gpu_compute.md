@@ -13,6 +13,8 @@ a user defined resource budget: define your budget by specifying the GPU type an
 Each application instance monitors a ClearML queue: new cloud machines are spun up if there are pending jobs on the 
 queue. The app instance automatically terminates idle machines based on a specified maximum idle time.
 
+For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
+
 ## GPU Compute Instance Configuration
 * **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
   values from the file, which can be modified before launching the app instance
