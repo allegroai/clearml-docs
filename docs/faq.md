@@ -1113,47 +1113,21 @@ configuration option `agent.package_manager.system_site_packages` to `true`.
 
 **How can I use the ClearML API to fetch data?** <a className="tr_top_negative" id="api"></a>
 
-To fetch data using the ClearML API, create an authenticated session and send requests for data using the ClearML API 
-services and methods. The responses to the requests contain your data.
+You can use the `APIClient` class, which provides a Pythonic interface to access ClearML's backend REST API. Through 
+an `APIClient` instance, you can access ClearML’s REST API services and endpoints. 
 
-For example, to get the metrics for an experiment and to print metrics as a histogram:
+To use `APIClient`, create an instance of it then call the method corresponding to the desired REST API endpoints, with 
+its respective parameters as described in the [REST API reference page](references/api/index.md). 
 
-1. Start an authenticated session.
-1. Send a request for all projects named `examples` using the `projects` service `GetAllRequest` method.
-1. From the response, get the Ids of all those projects named `examples`.
-1. Send a request for all experiments (tasks) with those project IDs using the `tasks` service `GetAllRequest` method.
-1. From the response, get the data for the experiment (task) ID `11` and print the experiment name.
-1. Send a request for a metrics histogram for experiment (task) ID `11` using the `events` service `ScalarMetricsIterHistogramRequest` method and print the histogram.
+For example, the [`POST/ projects.get_all`](references/api/projects.md#post-projectsget_all) call returns all projects 
+in your workspace. The following code uses APIClient to retrieve a list of all projects whose name starts with "example."
 
-    ```python
-    # Import Session from the clearml backend_api
-    from clearml.backend_api import Session
-    # Import the services for tasks, events, and projects
-    from clearml.backend_api.services import tasks, events, projects
-        
-    # Create an authenticated session
-    session = Session()
-        
-    # Get projects matching the project name 'examples'
-    res = session.send(projects.GetAllRequest(name='examples'))
-    # Get all the project Ids matching the project name 'examples"
-    projects_id = [p.id for p in res.response.projects]
-    print('project ids: {}'.format(projects_id))
-        
-    # Get all the experiments/tasks
-    res = session.send(tasks.GetAllRequest(project=projects_id))
-        
-    # Do your work
-    # For example, get the experiment whose ID is '11'
-    task = res.response.tasks[11]
-    print('task name: {}'.format(task.name))
-        
-    # For example, for experiment ID '11', get the experiment metric values
-    res = session.send(events.ScalarMetricsIterHistogramRequest(
-        task=task.id,
-        )
-   )
-    scalars = res.response_data
-    print('scalars {}'.format(scalars))
-    ```
-   
+```python
+from clearml.backend_api.session.client import APIClient
+# Create an instance of APIClient
+client = APIClient()
+project_list = client.projects.get_all(name="example*")
+print(project_list)
+```
+
+For more information, see [`APIClient`](clearml_sdk/apiclient_sdk.md).
