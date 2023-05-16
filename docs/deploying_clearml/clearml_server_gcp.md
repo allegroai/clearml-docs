@@ -8,9 +8,14 @@ provides custom images for each released version of ClearML Server. For a list o
 
 After deploying ClearML Server, configure the **ClearML Python Package** for it, see [Configuring ClearML for ClearML Server](clearml_config_for_clearml_server.md).
 
+:::info
+In order for `clearml` to work with a ClearML Server on the GCP platform, set `CLEARML_API_DEFAULT_REQ_METHOD=PUT` or 
+set `api.http.default_method` to `"PUT"` in the [`clearml.conf`](../configs/clearml_conf.md) file). 
+:::
+
 For information about upgrading ClearML server on GCP, see [here](upgrade_server_gcp.md).
 
-:::important
+:::note Reinstallation
 If ClearML Server is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 
 for Firefox, go to Developer Tools > Storage > Cookies, and for Chrome, go to Developer Tools > Application > Cookies,
 and delete all cookies under the ClearML Server URL.
