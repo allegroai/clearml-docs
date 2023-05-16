@@ -9,7 +9,7 @@ provides custom images for each released version of ClearML Server. For a list o
 After deploying ClearML Server, configure the **ClearML Python Package** for it, see [Configuring ClearML for ClearML Server](clearml_config_for_clearml_server.md).
 
 :::info
-In order for `clearml` to work with a ClearML Server on the GCP platform, set `CLEARML_API_DEFAULT_REQ_METHOD=PUT` or 
+In order for `clearml` to work with a ClearML Server on GCP, set `CLEARML_API_DEFAULT_REQ_METHOD=PUT` or 
 set `api.http.default_method` to `"PUT"` in the [`clearml.conf`](../configs/clearml_conf.md) file. 
 :::
 
