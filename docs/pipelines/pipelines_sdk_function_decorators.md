@@ -13,13 +13,12 @@ for your main pipeline execution logic function.
 
 Using the [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline)
 decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller. Since
-the function is transformed into an independently executed step, it needs to be self-contained. To facilitate this, 
+the function is transformed into an independently executed task, it needs to be self-contained. To facilitate this, 
 all package imports inside the function are automatically logged as required packages for the pipeline controller.
 
 :::tip Multi-file Pipeline Implementation 
-In case you have written the pipeline code over multiple files, make sure to import the step functions (with `component`
-decorators) in the pipeline controller file's first import, not inside the pipeline controller function. This will allow 
-you to rerun the pipeline remotely via the UI.
+In the case your pipeline is implemented across multiple files, make sure the pipeline step implementation (files containing
+functions decorated with `@PipelineDecorator.component`) is imported before `@PipelineDecorator.pipeline`. 
 :::
 
 ```python
