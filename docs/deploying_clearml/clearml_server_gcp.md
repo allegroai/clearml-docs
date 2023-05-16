@@ -10,7 +10,7 @@ After deploying ClearML Server, configure the **ClearML Python Package** for it,
 
 :::info
 In order for `clearml` to work with a ClearML Server on the GCP platform, set `CLEARML_API_DEFAULT_REQ_METHOD=PUT` or 
-set `api.http.default_method` to `"PUT"` in the [`clearml.conf`](../configs/clearml_conf.md) file). 
+set `api.http.default_method` to `"PUT"` in the [`clearml.conf`](../configs/clearml_conf.md) file. 
 :::
 
 For information about upgrading ClearML server on GCP, see [here](upgrade_server_gcp.md).
