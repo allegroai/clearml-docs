@@ -19,7 +19,7 @@ VS Code remote sessions use ports 8878 and 8898 respectively.
 
 <Collapsible title="JupyterLab Window" type="screenshot">
 
-![image](../img/session_jupyter.png)
+![JupyterLab session](../img/session_jupyter.png)
 
 </Collapsible>
 
@@ -27,7 +27,7 @@ VS Code remote sessions use ports 8878 and 8898 respectively.
 
 <Collapsible type="screenshot" title="VS Code Window">
 
-![image](../img/session_vs_code.png)
+![VS Code session](../img/session_vs_code.png)
 
 </Collapsible>
 
@@ -36,55 +36,61 @@ You can also work with PyCharm in a remote session over SSH. Use the [PyCharm Pl
 to automatically sync local configurations with a remote session.
 :::
 
-## How it Works
+## How to Run ClearML Session 
 
-ClearML lets you leverage a resource (e.g. GPU or CPU machine) by utilizing the [ClearML Agent](../clearml_agent.md).
-A ClearML Agent runs on a target machine, and ClearML Session instructs it to execute the Jupyter / VS Code 
-server to develop remotely.
-After entering a `clearml-session` command with all specifications: 
+### Prerequisites
+* `clearml` installed and configured. See [Getting Started](../getting_started/ds/ds_first_steps.md) for details.
+* At least one `clearml-agent` running on a remote host. See [installation](../clearml_agent.md#installation) for details.
+* An SSH client installed on your machine. To verify, open your terminal and execute `ssh`. If you did not receive an 
+error, you are good to go.
 
-   1. `clearml-session` creates a new [Task](../fundamentals/task.md) that is responsible for setting up the SSH and 
-      JupyterLab / VS Code environment according to your specifications on the host machine. 
+### Launching ClearML Session 
+1. Install `clearml-session`: 
+
+   ```commandline
+   pip install clearml-session
+   ```
+
+1. Run `clearml-session`:
+
+   ```commandline
+   clearml-session 
+   ```    
+
+   You can add flags to set a Docker image, the remote SSH port, JupyterLab/VS Code versions, and more. See [CLI options](#command-line-options) 
+   for all configuration options.  
    
-   1. The Task is enqueued, and a ClearML Agent pulls and executes it. The agent downloads the appropriate server and 
-      launches it.  
+   `clearml-session` creates a new [Task](../fundamentals/task.md) that is responsible for setting up the SSH and 
+   JupyterLab/VS Code environment according to your specifications on the host machine. 
+ 
+1. Follow the `clearml-session` setup wizard:
+      
+   1. `Select the queue` - Choose the queue where the ClearML Session task will be enqueued. The agent assigned to this queue
+   will set up and launch the remote server.
+   1. `Launch interactive session?` - Click `y` to launch the interactive session. 
+
+1. The session Task is enqueued in the selected queue, and a ClearML Agent pulls and executes it. The agent downloads the appropriate IDE(s) and 
+   launches it.  
+
+1. Once the agent finishes the initial setup of the interactive Task, the local `cleaml-session` connects to the host 
+   machine via SSH, and tunnels both SSH and IDE over the SSH connection. If a Docker is specified, the 
+   IDE environment runs inside the Docker. 
    
-   1. Once the agent finishes the initial setup of the interactive Task, the local `cleaml-session` connects to the host 
-   machine via SSH, and tunnels both SSH and JupyterLab over the SSH connection. If a Docker is specified, the 
-   JupyterLab environment runs inside the Docker. 
-   
-   1. The CLI outputs access links to the remote JupyterLab and VS Code sessions:  
+1. The CLI outputs access links to the remote JupyterLab and VS Code sessions:  
 
     ```console
     Interactive session is running:
-    SSH: ssh root@localhost -p 8022 [password: c5d19b3c0fa9784ba4f6aeb568c1e036a4fc2a4bc7f9bfc54a2c198d64ceb9c8]
-    Jupyter Lab URL: http://localhost:8878/?token=ff7e5e8b9e5493a01b1a72530d18181320630b95f442b419
+    SSH: ssh root@localhost -p 8022 [password: <password>]
+    Jupyter Lab URL: http://localhost:8878/?token=<token>
     VSCode server available at http://localhost:8898/
     ```
 
-   Notice the links are to 'localhost' since all communication to the remote server itself is done over secure SSH connection.
+   Notice the links are to `localhost` since all communication to the remote server itself is done over a secure SSH connection.
    
-   1. Now start working on the code as if you're running on the target machine itself!
-
-## Features 
-### Running in Docker
-To run a session inside a Docker container, use the `--docker` flag and enter the docker image to use in the interactive 
-session.
-
-### Installing Requirements
-`clearml-session` can install required Python packages when setting up the remote environment. 
-Specify requirements in one of the following ways: 
-* Attach a `requirement.txt` file to the command using `--requirements </file/location.txt>`.
-* Manually specify packages using `--packages "<package_name>"` 
-(for example `--packages "keras" "clearml"`), and they'll be automatically installed.
-
-### Accessing a Git Repository
-To access a git repository remotely, add a `--git-credentials` flag and set it to `true`, so the local `.git-credentials` 
-file is sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless 
-cloning and tracking of git references, including untracked changes. 
+1. Now start working on the code as if you're running on the target machine itself!
 
 ### Re-launching and Shutting Down Sessions 
-If a `clearml-session` was launched locally and is still running on a remote machine, users can easily reconnect to it.
+If a `clearml-session` was launched locally and is still running on a remote machine, you can easily reconnect to it.
 To reconnect to a previous session, execute `clearml-session` with no additional flags, and the option of reconnecting 
 to an existing session will show up: 
 
@@ -102,7 +108,7 @@ Connect to session [0-1] or 'N' to skip
 ```
 
 To shut down a remote session, which frees the `clearml-agent` and closes the CLI, enter "Shutdown". If a session 
-is shutdown, there is no option to reconnect to it. 
+is shut down, there is no option to reconnect to it. 
 
 ### Connecting to an Existing Session
 If a `clearml-session` is running remotely, you can continue working on the session from any machine. 
@@ -110,10 +116,26 @@ When `clearml-session` is launched, it initializes a task with a unique ID in th
 
 To connect to an existing session: 
 1. Go to the web UI, find the interactive session task (by default, it's in project "DevOps").
-1. Click on the ID button to the right of the task name, and copy the unique ID.
+1. Click on the ID button in the task page's header, and copy the unique ID.
 1. Enter the following command: `clearml-session --attach <session_id>`.
 1. Click on the JupyterLab / VS Code link that is outputted, or connect directly to the SSH session
 
+## Features 
+### Running in Docker
+To run a session inside a Docker container, use the `--docker` flag and enter the docker image to use in the interactive 
+session.
+
+### Installing Requirements
+`clearml-session` can install required Python packages when setting up the remote environment. 
+Specify requirements in one of the following ways: 
+* Attach a `requirement.txt` file to the command using `--requirements </file/location.txt>`.
+* Manually specify packages using `--packages "<package_name>"` 
+(for example `--packages "keras" "clearml"`), and they'll be automatically installed.
+
+### Accessing a Git Repository
+To access a git repository remotely, add a `--git-credentials` flag and set it to `true`, so the local `.git-credentials` 
+file is sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless 
+cloning and tracking of git references, including untracked changes. 
 
 ### Starting a Debugging Session 
 You can debug previously executed experiments registered in the ClearML system on a remote interactive session. 
