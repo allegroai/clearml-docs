@@ -63,18 +63,18 @@ error, you are good to go.
    `clearml-session` creates a new [Task](../fundamentals/task.md) that is responsible for setting up the SSH and 
    JupyterLab/VS Code environment according to your specifications on the host machine. 
  
-1. The `clearml-session` command returns a setup wizard:
+1. Follow the `clearml-session` setup wizard:
       
    1. `Select the queue` - Choose the queue where the ClearML Session task will be enqueued. The agent assigned to this queue
    will set up and launch the remote server.
    1. `Launch interactive session?` - Click `y` to launch the interactive session. 
 
-1. The session Task is enqueued in the selected queue, and a ClearML Agent pulls and executes it. The agent downloads the appropriate server and 
+1. The session Task is enqueued in the selected queue, and a ClearML Agent pulls and executes it. The agent downloads the appropriate IDE(s) and 
    launches it.  
 
 1. Once the agent finishes the initial setup of the interactive Task, the local `cleaml-session` connects to the host 
-   machine via SSH, and tunnels both SSH and JupyterLab over the SSH connection. If a Docker is specified, the 
-   JupyterLab environment runs inside the Docker. 
+   machine via SSH, and tunnels both SSH and IDE over the SSH connection. If a Docker is specified, the 
+   IDE environment runs inside the Docker. 
    
 1. The CLI outputs access links to the remote JupyterLab and VS Code sessions:  
 
