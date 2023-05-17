@@ -27,7 +27,7 @@ The WebApp's sidebar provides access to the following modules:
 * [Datasets](datasets/webapp_dataset_page.md) <img src="/docs/latest/icons/ico-side-bar-datasets.svg" alt="Datasets" className="icon size-md space-sm" /> - View and manage your datasets. 
 * [Pipelines](pipelines/webapp_pipeline_page.md) <img src="/docs/latest/icons/ico-pipelines.svg" alt="Pipelines" className="icon size-md space-sm" /> - View and manage your pipelines.
 * [Reports](webapp_reports.md) <img src="/docs/latest/icons/ico-reports.svg" alt="Reports" className="icon size-md space-sm" /> - View and manage your reports.
-* [Orchestration](webapp_workers_queues.md) <img src="/docs/latest/icons/ico-workers.svg" alt="Workers and Queues" className="icon size-md space-sm" /> - Scale, monitor, and manage your resource usage and workers queues.
+* [Orchestration](webapp_workers_queues.md) <img src="/docs/latest/icons/ico-workers.svg" alt="Workers and Queues" className="icon size-md space-sm" /> - Autoscale, monitor, and manage your resource usage and workers queues.
 * [Applications](applications/apps_overview.md) <img src="/docs/latest/icons/ico-applications.svg" alt="ClearML Apps" className="icon size-md space-sm" /> - ClearML's GUI applications for no-code workflow execution.
 
 ## UI Top Bar 
