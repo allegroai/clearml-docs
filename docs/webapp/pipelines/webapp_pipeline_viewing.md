@@ -45,18 +45,24 @@ The panel displays the step’s name, task type, and status, as well as its para
 
 To return to viewing the run’s information, click the pipeline graph, outside any of the steps.  
 
-### Run and Step Log
+### Run and Step Details Panel
 
-Click on **DETAILS** on the top left of the info panel to view a run’s full console log. The log contains everything printed 
-to stdout and stderr.  
+Click on **DETAILS** on the top left of the info panel to view the pipeline controller's details panel. To view a step’s 
+details panel, click **DETAILS** and then click on a step node, or hover over a step node and click <img src="/docs/latest/icons/ico-console.svg" alt="details" className="icon size-md space-sm" />.
 
-To view a step’s console log, click **DETAILS** and then click on a step. 
+The details panel includes three tabs: 
+* **Preview** - View debug samples and plots attached to the pipeline controller or step 
 
-![Step console](../../img/webapp_pipeline_step_console.png)
+  ![preview](../../img/webapp_pipeline_step_debug.png)
 
-For pipelines steps generated from functions using either [`PipelineController.add_function_step`](../../references/sdk/automation_controller_pipelinecontroller.md#add_function_step)
+* **Console** - The console log for the pipeline controller or steps: contains everything printed to stdout and stderr.  
+
+  ![console](../../img/webapp_pipeline_step_console.png)
+
+* **Code** - For pipeline steps generated from functions using either [`PipelineController.add_function_step`](../../references/sdk/automation_controller_pipelinecontroller.md#add_function_step)
 or [`PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent), 
-you can also view the selected step’s code. On the top center 
-of the console panel, click **Code**. 
+you can view the selected step’s code. 
 
-![Step code](../../img/webapp_pipeline_step_code.png)
+  ![code](../../img/webapp_pipeline_step_code.png)
+
+Click <img src="/docs/latest/icons/ico-max-panel.svg" alt="Expand" className="icon size-md space-sm" /> on the details panel header to view the panel in full screen. 

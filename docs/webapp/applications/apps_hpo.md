@@ -87,3 +87,10 @@ The HPO dashboard shows:
 * Summary - Experiment summary table: experiment execution information, objective metric and parameter values.
 * Budget - Available iterations and tasks budget (percentage, out of the values defined in the HPO instance's advanced configuration)
 * Resources - Number of workers servicing the HPO execution queue, and the number of currently running optimization tasks
+
+:::tip EMBEDDING CLEARML VISUALIZATION
+You can embed plots from the app instance dashboard into [ClearML Reports](../webapp_reports.md). These visualizations 
+are updated live as the app instance(s) updates. The Enterprise Plan and Hosted Service support embedding resources in 
+external tools (e.g. Notion). Hover over the plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" /> 
+to copy the embed code, and navigate to a report to paste the embed code.
+:::

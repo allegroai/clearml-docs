@@ -25,7 +25,7 @@ The diagram above demonstrates a typical flow where an agent executes a task:
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
 
-While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Workers and Queues** page).  
+While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Orchestration** page).  
 
 Continue using ClearML Agent once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
