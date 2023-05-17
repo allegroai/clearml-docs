@@ -199,7 +199,7 @@ The default docker-compose installation is preconfigured with Prometheus and Gra
 of both containers is *not* persistent. To add persistence, we recommend adding a volume mount.
 
 You can also add many custom metrics on the input/predictions of your models. Once a model endpoint is registered, 
-adding custom metric can be done using the CLI.
+adding custom metrics can be done using the CLI.
 
 For example, assume the mock scikit-learn model is deployed on endpoint `test_model_sklearn`, you can log the requests 
 inputs and outputs (see examples/sklearn/preprocess.py example):
