@@ -38,7 +38,8 @@ versions to remove them from the archive. You can also permanently delete versio
 On the right side of the dataset version panel, view the **VERSION INFO** which shows: 
 * Version name
 * Dataset ID 
-* Version file size 
+* Parent task name (click to navigate to the parent task's page)
+* Version file size (original and compressed)
 * Number of files
 * Number of links
 * Changes from previous version 

@@ -55,3 +55,9 @@ The Task Scheduler dashboard shows:
 * Scheduler Log - Application console log containing everything printed to stdout and stderr. The log 
   includes when the scheduler syncs, and when it launches tasks for execution.   
  
+:::tip EMBEDDING CLEARML VISUALIZATION
+You can embed plots from the app instance dashboard into [ClearML Reports](../webapp_reports.md). These visualizations 
+are updated live as the app instance(s) updates. The Enterprise Plan and Hosted Service support embedding resources in 
+external tools (e.g. Notion). Hover over the plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" /> 
+to copy the embed code, and navigate to a report to paste the embed code.
+:::

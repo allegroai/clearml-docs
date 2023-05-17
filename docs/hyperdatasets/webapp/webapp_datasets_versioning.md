@@ -198,6 +198,7 @@ If a FrameGroup doesn't have the selected preview source, the preview displays t
 ## Statistics
 
 The **Statistics** tab displays a dataset version's label usage stats. 
+* Dataset total count - number of annotations, annotated frames, and total frames  
 * Each label is listed along with the number of times it was used in the version
 * The pie chart visualizes these stats. Hover over a chart slice and its associated label and usage 
   percentage will appear at the center of the chart. 

@@ -32,6 +32,7 @@ The models table contains the following columns:
 | **TASK** | The experiment (Task) name that created the model. | String |
 | **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Date-time |
 | **DESCRIPTION** | The model description (not shown by default). | String |
+| *Metrics* |Add metrics column (last, minimum, and/or maximum values). Available options depend upon the models in the table. | Varies according to models in table |
 | *Metadata* | User defined metadata key column. Available options depend upon the models in the table. | String |
 
 
@@ -48,11 +49,11 @@ Customize the table using any of the following:
 * Changing table columns
     * Show / hide columns - Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
   **>** mark or clear the checkboxes of columns to show or hide.
-    * Add custom columns - Click **+ ADD CUSTOM METADATA COLUMN** to add metadata columns to the main column list. Added 
-      columns are by default displayed in the table. You can remove the metadata columns from the main column list or the 
-      column addition window. 
-* Filter columns - By ML framework, tags, user
-* Sort columns - By metadata, ML framework, description, and last update elapsed time.
+    * Add custom columns - Click **+ METRICS** or **+ METADATA** to add metric / metadata columns to the 
+      main column list. Added columns are by default displayed in the table. You can remove the custom metadata columns 
+      from the main column list or the column addition window. 
+* Filter columns - By metadata, metric, ML framework, tags, user
+* Sort columns - By metadata, metric, ML framework, description, and last update elapsed time.
 
 :::note
 The following models-table customizations are saved on a **per-project** basis: 
@@ -71,9 +72,11 @@ all the models in the project. The customizations of these two views are saved s
 The following table describes the actions that can be done from the models table, including the states that
 allow each feature. Model states are *Draft* (editable) and *Published* (read-only). 
 
-Access these actions with the context menu in any of the following ways:
-* In the models table, right-click a model, or hover over a model and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+Access these actions in any of the following ways:
+* In the models table, right-click a model, or hover over a model and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> to 
+open the context menu
 * In a model's info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
+* Through the batch action bar, available at screen bottom when multiple models are selected
 
 | ClearML Action | Description | States Valid for the Action |
 |---|---|--|
@@ -84,7 +87,8 @@ Access these actions with the context menu in any of the following ways:
 | Delete | Action available in the archive. Permanently delete the model. This will also remove the model weights file. Note that experiments using deleted models will no longer be able to run. | Any state |
 | Add Tag | Tag models with color-coded labels to assist in organizing work. See [tagging models](#tagging-models). | Any state |
 | Download | Download a model. The file format depends upon the framework. | *Published* |
-| Move to Project | To organize work and improve collaboration, move a model to another project. | Any state |
+| Move to Project | Move a model to another project. | Any state |
+| Compare | Compare selected models (see [Comparing Models](webapp_model_comparing.md)). | Any state |
 | Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any state |
 
 Some actions mentioned in the chart above can be performed on multiple models at once.
