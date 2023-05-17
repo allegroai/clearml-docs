@@ -60,7 +60,7 @@ The details panel includes three tabs:
   ![console](../../img/webapp_pipeline_step_console.png)
 
 * **Code** - For pipeline steps generated from functions using either [`PipelineController.add_function_step`](../../references/sdk/automation_controller_pipelinecontroller.md#add_function_step)
-or [`PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md##pipelinedecoratorcomponent), 
+or [`PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent), 
 you can view the selected step’s code. 
 
   ![code](../../img/webapp_pipeline_step_code.png)

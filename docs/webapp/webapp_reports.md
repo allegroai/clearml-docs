@@ -122,7 +122,8 @@ For these parameters, use the following syntax:
 
 Delimit the fields with `&`s. 
 
-**Examples:**
+#### Examples:
+
 The following are examples of dynamic queries. All the examples use `objectType=task`, but `objectType=model` can also be 
 used. 
 

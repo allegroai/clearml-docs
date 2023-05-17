@@ -141,11 +141,11 @@ in that workspace. You can rejoin the workspace only if you are re-invited.
 This feature is available under the ClearML Enterprise plan
 :::
 
-Use the configuration vault to store global ClearML configuration entries that extend the ClearML [configuration file](../configs/clearml_conf.md) 
+Use the configuration vault to store global ClearML configuration entries that can extend the ClearML [configuration file](../configs/clearml_conf.md) 
 of any ClearML Agents or the ClearML SDK running with your credentials. Productivity tip: Keep the vault disabled while 
 you edit your configuration, and enable it when the configuration is ready.
 
-New entries will extend the configuration in the ClearML [configuration file](../configs/clearml_conf.md), an existing 
+New entries will extend the configuration in the ClearML [configuration file](../configs/clearml_conf.md), and existing 
 file entries will be overridden by the vault values.
 
 Fill in values using any of ClearML supported configuration formats: HOCON / JSON / YAML.
@@ -180,9 +180,9 @@ Existing configuration file entries will be overridden by the vault values.
    1. Vault name - Name that appears in the Administrator Vaults table
    1. User Group - Specify the User Group that the vault affects
    1. Format - Specify the configuration format: HOCON / JSON / YAML.
-1. Fill in the configuration values (click <img src="/docs/latest/icons/ico-list-info.svg" alt="Info" className="icon size-md space-sm" /> 
+1. Fill in the configuration values (click <img src="/docs/latest/icons/ico-info.svg" alt="Info" className="icon size-md space-sm" /> 
 to view configuration file reference). To import and existing configuration file, click <img src="/docs/latest/icons/ico-import.svg" alt="Import" className="icon size-md space-sm" />. 
-1. Click Save 
+1. Click **Save** 
 
 The **Administrator Vaults** table lists all currently defined vaults, and the following details:
 * Active - Toggle to enable / disable the vault
