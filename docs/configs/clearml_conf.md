@@ -688,6 +688,17 @@ Dictionary of configuration options for the ClearML Server API, web, and file se
 :::caution
 You must use a secure protocol with ``api.web_server``, ``api.files_server``, and ``api.api_server``. Use `https`, not `http`. 
 :::
+
+---
+
+**`api.http.default_method`** (*string*)
+
+* Set the request method for all API requests and auth login. This could be useful when `GET` requests with payloads are 
+blocked by a server, and `POST` requests can be used instead. The request options are: "GET", "POST", "PUT".   
+
+:::caution
+This configuration option is experimental, and has not been vigorously tested, so it may have unintended consequences. 
+:::
   
 <br/>
 

@@ -12,7 +12,14 @@ for your main pipeline execution logic function.
 ## @PipelineDecorator.pipeline
 
 Using the [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline)
-decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller
+decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller. Since
+the function is transformed into an independently executed task, it needs to be self-contained. To facilitate this, 
+all package imports inside the function are automatically logged as required packages for the pipeline controller.
+
+:::tip Multi-file Pipeline Implementation 
+In the case your pipeline is implemented across multiple files, make sure the pipeline step implementation (files containing
+functions decorated with `@PipelineDecorator.component`) is imported before `@PipelineDecorator.pipeline`. 
+:::
 
 ```python
 @PipelineDecorator.pipeline(
@@ -26,6 +33,7 @@ def main(pickle_url, mock_parameter='mock'):
     accuracy = 100 * step_four(model, X_data=X_test, Y_data=y_test)
     print(f"Accuracy={accuracy}%")
 ```
+
 
 ### Arguments
 
@@ -84,6 +92,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
     data_frame['target'] = iris['target']
     return data_frame
 ```
+
 ### Arguments
 * `return_values` - The artifact names for the step’s corresponding ClearML task to store the step’s returned objects. 
   In the example above, a single object is returned and stored as an artifact named `data_frame`

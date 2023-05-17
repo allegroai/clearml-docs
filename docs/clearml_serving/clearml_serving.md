@@ -43,8 +43,8 @@ solution.
 
 * **CLI** - Secure configuration interface for on-line model upgrade/deployment on running Serving Services
 
-* **Serving Service Task** - Control plane object storing configuration on all the endpoints. Support multiple separated 
-  instance, deployed on multiple clusters.
+* **Serving Service Task** - Control plane object storing configuration on all the endpoints. Supports multiple separate 
+  instances, deployed on multiple clusters.
 
 * **Inference Services** - Inference containers, performing model serving pre/post-processing. Also supports CPU model 
   inferencing.
