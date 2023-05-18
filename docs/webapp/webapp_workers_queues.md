@@ -41,7 +41,7 @@ dashboard.
 
 For more information about how autoscalers work, see the [Cloud Autoscaling Overview](../cloud_autoscaling/autoscaling_overview.md).
 For more information about a specific autoscaler, see [GPU Compute](applications/apps_gpu_compute.md), [AWS Autoscaler](applications/apps_aws_autoscaler.md), 
-and/or [GCP Autoscaler](applications/apps_gpu_compute.md).
+and/or [GCP Autoscaler](applications/apps_gcp_autoscaler.md).
 
 ![Cloud autoscalers](../img/webapp_orchestration_autoscalers.png)
 

@@ -153,7 +153,7 @@ The Task must be connected to a git repository, since currently single script de
 1. In JupyterLab / VS Code, access the experiment's repository in the `environment/task_repository` folder. 
 
 
-### Command Line Options
+## Command Line Options
 
 <div className="tbl-cmd">
 
