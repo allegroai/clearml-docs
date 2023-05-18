@@ -504,7 +504,8 @@ Yes! You can use ClearML's Offline Mode, in which all the data and logs that a t
 local folder. 
 
 Before initializing a task, use the [`Task.set_offline`](references/sdk/task.md#taskset_offline) 
-class method and set the `offline_mode` argument to `True`. When executed, this returns the Task ID and a path to the 
+class method and set the `offline_mode` argument to `True`. Alternatively, you can set `CLEARML_OFFLINE_MODE=1` before 
+running the task. When executed, this returns the Task ID and a path to the 
 session folder. In order to upload to the ClearML Server the execution data that the Task captured offline, do one of the
 following:
 * Use the `import-offline-session <session_path>` option of the [clearml-task](apps/clearml_task.md) CLI

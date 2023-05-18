@@ -9,7 +9,8 @@ local folder, which can be later uploaded to the [ClearML Server](../deploying_c
 ## Setting Task to Offline Mode
 
 Before initializing a Task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set the 
-`offline_mode` argument to `True`.
+`offline_mode` argument to `True`. Alternatively, you can set `CLEARML_OFFLINE_MODE=1` before 
+running the task.
 
 :::caution 
 Notice that the `Task.set_offline` method only works with tasks created using `Task.init` and not with those created 

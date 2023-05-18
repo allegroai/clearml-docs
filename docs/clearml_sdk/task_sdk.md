@@ -407,7 +407,8 @@ You can work with tasks in Offline Mode, in which all the data and logs that the
 folder, which can later be uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). 
 
 Before initializing a Task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
-the `offline_mode` argument to `True`. The method returns the Task ID and a path to the session folder. 
+the `offline_mode` argument to `True`. Alternatively, you can set `CLEARML_OFFLINE_MODE=1` before 
+running the task. This returns the Task ID and a path to the session folder. 
 
 :::caution 
 Notice that the `Task.set_offline` method only works with tasks created using `Task.init` and not with those created 
