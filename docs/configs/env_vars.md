@@ -48,7 +48,7 @@ Overrides Repository Auto-logging
 |**CLEARML_API_ACCESS_KEY** | Sets the Server's Public Access Key|
 |**CLEARML_API_SECRET_KEY** | Sets the Server's Private Access Key|
 |**CLEARML_API_HOST_VERIFY_CERT** | Enables / Disables server certificate verification (if behind a firewall)|
-|**CLEARML_API_DEFAULT_REQ_METHOD**| *Experimental - this option has not been vigorously tested.*. Set the request method for all API requests and auth login. This could be useful when GET requests with payloads are blocked by a server, so POST/PUT requests can be used instead. |
+|**CLEARML_API_DEFAULT_REQ_METHOD**| *Experimental - this option has not been vigorously tested.* Set the request method for all API requests and auth login. This could be useful when GET requests with payloads are blocked by a server, so POST/PUT requests can be used instead. |
 |**CLEARML_OFFLINE_MODE** | Sets Offline mode|
 |**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server when no HOST server is set|
 
