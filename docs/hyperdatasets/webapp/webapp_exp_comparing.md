@@ -24,12 +24,16 @@ used as the base experiment, to which the other experiments are compared.
 1. Expand any of the following sections:
 
    * **Augmentation** - On-the-fly data augmentation.
-   * **Filtering** 
-     * Frame inclusion and exclusion rules based on ROI labels
+   * **Filtering** - Frame inclusion and exclusion rules based on:
+     * Custom filter - frame and source rules
+     * Dataset version that the filter is applied
+     * ROI rules
+       * Confidence levels
+       * Instances - Number of instances of a rule matching ROIs in each frame 
      * Frame metadata
      * Frame sources 
-     * Number of instances of a rule matching ROIs in each frame
-     * Confidence levels.
+     * 
+     * 
    * **Iteration** - Iteration controls.
    * **Labels Enumeration** - Class label enumeration.
    * **Mapping** - ROI label translation.
