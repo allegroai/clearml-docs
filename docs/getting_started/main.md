@@ -66,14 +66,46 @@ while ClearML ensures your work is reproducible and scalable.
 </div>
 
 Want a more in depth introduction to ClearML? Choose where you want to get started: 
-* **Data Scientists** start [here](ds/ds_first_steps.md) - learn how to use ClearML's
-experiment tracking and management tools, and more!
 
-* **MLOps Engineers** start [here](mlops/mlops_first_steps.md) - learn how to use ClearML's 
-automation, orchestration, and tracking tools
-
-* **DevOps Engineers** start [here](../deploying_clearml/clearml_server.md#deployment) - learn how 
-to deploy and configure a ClearML Server 
+<div class="cml-card">
+    <ol>
+        <li>
+            <i>
+              <img src="/docs/latest/icons/ico-data-scientist.svg" />
+            </i>
+            <h4>Data Scientists</h4>
+            <p>
+                Learn how to use ClearML's experiment tracking and management tools, and
+                more!
+            </p>
+            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/docs/latest/docs/getting_started/ds/ds_first_steps'">
+                START HERE
+            </button>
+        </li>
+        <li>
+            <i>
+              <img src="/docs/latest/icons/ico-mlops-engineer.svg" />
+            </i>
+            <h4>MLOps Engineers</h4>
+            <p>
+                Learn how to use ClearML's automation, orchestration, and tracking tools
+            </p>
+            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/docs/latest/docs/getting_started/mlops/mlops_second_steps'">
+                START HERE
+            </button>
+        </li>
+        <li>
+            <i>
+              <img src="/docs/latest/icons/ico-devops-engineer.svg"/>
+            </i>
+            <h4>DevOps Engineers</h4>
+            <p>Learn learn how to deploy and configure a ClearML Server</p>
+            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/docs/latest/docs/deploying_clearml/clearml_server#deployment'">
+                START HERE
+            </button>
+        </li>
+    </ol>
+</div>
 
 
 ## What Can You Do with ClearML?
