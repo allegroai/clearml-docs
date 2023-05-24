@@ -30,13 +30,14 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
       machines of this specification
     * Cloud Machine Limit - Maximum number of concurrent machines to launch
 * **Idle Time Limit** (optional) - Maximum time in minutes that a cloud machine can be idle before it is spun down
-* **Default Docker Image** (optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
+* **Default Docker Image** - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
   in a Docker artifactory so instances can automatically fetch it
 * **Git Configuration** - Git credentials with which the ClearML Agents running on your cloud instances will access your repositories to retrieve the code for their jobs
     * Git User
     * Git Password / Personal Access Token
 * **Cloud Storage Access** (optional) - Access credentials to cloud storage service. Provides ClearML Tasks running on cloud 
   machines access to your storage
+* Additional ClearML Configuration (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
 
 ![GPU Compute wizard](../../img/apps_gpu_compute_wizard.png)
 
