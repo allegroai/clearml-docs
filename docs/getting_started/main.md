@@ -78,7 +78,7 @@ Want a more in depth introduction to ClearML? Choose where you want to get start
                 Learn how to use ClearML's experiment tracking and management tools, and
                 more!
             </p>
-            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/docs/latest/docs/getting_started/ds/ds_first_steps'">
+            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/ds/ds_first_steps'">
                 START HERE
             </button>
         </li>
@@ -90,7 +90,7 @@ Want a more in depth introduction to ClearML? Choose where you want to get start
             <p>
                 Learn how to use ClearML's automation, orchestration, and tracking tools
             </p>
-            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/docs/latest/docs/getting_started/mlops/mlops_second_steps'">
+            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/mlops/mlops_second_steps'">
                 START HERE
             </button>
         </li>
@@ -100,7 +100,7 @@ Want a more in depth introduction to ClearML? Choose where you want to get start
             </i>
             <h4>DevOps Engineers</h4>
             <p>Learn learn how to deploy and configure a ClearML Server</p>
-            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/docs/latest/docs/deploying_clearml/clearml_server#deployment'">
+            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/deploying_clearml/clearml_server#deployment'">
                 START HERE
             </button>
         </li>
