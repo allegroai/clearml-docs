@@ -992,3 +992,17 @@ html[data-theme=dark] .cml-card i {
     background-color: var(--ifm-background-color);
     border-color: var(--ifm-color-gray-800);
 }
+
+.vid {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    background-color: rgba(0,0,0,0.1);
+    border: 12px solid rgba(0,0,0,0.1);
+    border-radius: calc(var(--ifm-card-border-radius) * 1.5);
+}
+
+html[data-theme=dark] .vid iframe {
+    background-color: rgba(0,0,0,0.3);
+}
