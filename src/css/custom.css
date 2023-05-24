@@ -945,7 +945,6 @@ html[data-theme="dark"] .panel-title:hover {
 .cml-card i {
     width: 64px;
     height: 64px;
-    display: inline-block;
     position: absolute;
     top: -32px;
     left: calc(50% - 32px);
@@ -954,6 +953,7 @@ html[data-theme="dark"] .panel-title:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: white;
 }
 
 .cml-card i img {
