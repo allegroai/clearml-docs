@@ -100,7 +100,10 @@ The autoscaler dashboard shows:
 * Number of current running instances 
 * Console: the application log containing everything printed to stdout and stderr appears in the console log. The log 
   shows polling results of the autoscaler’s associated queues, including the number of tasks enqueued, and updates EC2 
-  instances being spun up/down.  
+  instances being spun up/down.
+* Instance log files - Click to access the app instance's logs. This takes you to the app instance task's ARTIFACTS tab, 
+  which lists the app instance’s logs. In a log’s `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
+  to download the complete log. 
 
 
 :::tip EMBEDDING CLEARML VISUALIZATION
