@@ -918,7 +918,6 @@ html[data-theme="dark"] .panel-title:hover {
   background-position: center;
   background-size: contain;
 }
-
 .cml-card ol {
     list-style-type: none;
     display: flex;
@@ -955,18 +954,41 @@ html[data-theme="dark"] .panel-title:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: white;
 }
 
-.cml-card button {
-    margin: auto 0 0 0 !important;
+.cml-card i img {
+    filter: hue-rotate(25deg) invert(1);
 }
+
+.cml-card .btn-link {
+    margin-top: auto;
+}
+
+.cml-card .btn-link a:link,
+.cml-card .btn-link a:visited {
+    display: inline-block;
+    border-radius: 6px;
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: none !important;
+    padding: calc(var(--ifm-button-padding-vertical)*var(--ifm-button-size-multiplier)) calc(var(--ifm-button-padding-horizontal)*var(--ifm-button-size-multiplier));
+    font-size: calc(.875rem*var(--ifm-button-size-multiplier));
+    line-height: 1.5;
+    color: var(--ifm-button-color);
+    background-color: var(--ifm-color-primary);
+}
+
+.cml-card .btn-link a:hover {
+    background-color: var(--ifm-color-primary-dark)
+}
+
 
 html[data-theme=dark] .cml-card li,
-html[data-theme=dark] .cml-card i  {
+html[data-theme=dark] .cml-card i {
     border-color: var(--ifm-color-gray-800);
 }
-html[data-theme=dark] .cml-card i  {
+
+html[data-theme=dark] .cml-card i {
     background-color: var(--ifm-background-color);
     border-color: var(--ifm-color-gray-800);
 }

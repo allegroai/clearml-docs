@@ -67,42 +67,38 @@ while ClearML ensures your work is reproducible and scalable.
 
 Want a more in depth introduction to ClearML? Choose where you want to get started: 
 
+
 <div class="cml-card">
     <ol>
         <li>
             <i>
-              <img src="/docs/latest/icons/ico-data-scientist.svg" />
+                <img src="/docs/latest/icons/ico-data-scientist.svg" />
             </i>
             <h4>Data Scientists</h4>
-            <p>
-                Learn how to use ClearML's experiment tracking and management tools, and
-                more!
-            </p>
-            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/ds/ds_first_steps'">
-                START HERE
-            </button>
+            <p>Learn how to use ClearML's experiment tracking and management tools, and more!</p>
+            <span class="btn-link">
+                <a href="getting_started/ds/ds_first_steps">START HERE</a>
+            </span>
         </li>
         <li>
             <i>
-              <img src="/docs/latest/icons/ico-mlops-engineer.svg" />
+                <img src="/docs/latest/icons/ico-mlops-engineer.svg" />
             </i>
             <h4>MLOps Engineers</h4>
-            <p>
-                Learn how to use ClearML's automation, orchestration, and tracking tools
-            </p>
-            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/mlops/mlops_second_steps'">
-                START HERE
-            </button>
+            <p>Learn how to use ClearML's automation, orchestration, and tracking tools</p>
+            <span class="btn-link">
+                <a href="getting_started/mlops/mlops_first_steps">START HERE</a>
+            </span>
         </li>
         <li>
             <i>
-              <img src="/docs/latest/icons/ico-devops-engineer.svg"/>
+                <img src="/docs/latest/icons/ico-devops-engineer.svg" />
             </i>
             <h4>DevOps Engineers</h4>
             <p>Learn learn how to deploy and configure a ClearML Server</p>
-            <button type="button" class="clean-btn button button--primary margin-left--md" onclick="window.location.href='/deploying_clearml/clearml_server#deployment'">
-                START HERE
-            </button>
+            <span class="btn-link">
+                <a href="./deploying_clearml/clearml_server#deployment">START HERE</a>
+            </span>
         </li>
     </ol>
 </div>
