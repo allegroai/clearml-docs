@@ -26,6 +26,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **GCP Configuration**
     * GCP Project ID - Project used for spinning up VM instances
     * GCP Zone - The GCP zone where the VM instances will be spun up. See [Regions and zones](https://cloud.google.com/compute/docs/regions-zones)
+    * GCP Subnetwork - The GCP subnetwork where the instances will be spun up. GCP setting will be `projects/{project-id}/regions/{region}/subnetworks/{subnetwork}`
     * GCP Credentials - Credentials with which the autoscaler can access your GCP account for spinning VM instances 
       up/down. See [Generating GCP Credentials](#generating-gcp-credentials).
 * **Git Configuration** - Git credentials with which the ClearML Agents running on your VM instances will access your 
