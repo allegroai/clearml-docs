@@ -136,6 +136,7 @@ The following section contains a list of AMI Image IDs per-region for the latest
 * **us-east-2** : ami-0799c6b09783656cd
 * **us-west-1** : ami-0df5950afdca7aeaf
 * **us-west-2** : ami-041ae28dbf5d461cb
+* **us-east-1** : ami-0b3de34d0b9012e27
 
 ## Next Step
 
