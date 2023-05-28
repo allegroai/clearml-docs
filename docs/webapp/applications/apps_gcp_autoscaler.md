@@ -58,8 +58,8 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 ![GCP autoscaler wizard](../../img/apps_gcp_autoscaler_wizard.png)
 
 :::note Enterprise Feature
-You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to globally add your GCP 
-credentials in the following format: 
+You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to configure GCP 
+credentials for the Autoscaler in the following format: 
 
 ```
 auto_scaler.v1 {

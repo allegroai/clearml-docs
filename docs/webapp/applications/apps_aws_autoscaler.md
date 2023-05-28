@@ -76,8 +76,8 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 ![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
 
 :::note Enterprise Feature
-You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to globally add your AWS 
-credentials in the following format: 
+You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to configure AWS 
+credentials for the Autoscaler in the following format: 
 
 ```
 auto_scaler.v1 {

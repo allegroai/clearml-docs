@@ -364,7 +364,7 @@ Your firewall may be preventing the connection. Try one of the following solutio
 
 **How do I modify experiment names once they have been created?**
 
-An experiment's name is a user-controlled property, which can be accessed via the `Task.name` variable. This lets you use meaningful naming schemes for easily filtering and comparing of experiments.
+An experiment's name is a user-controlled property, which can be accessed via the `Task.name` variable. This lets you use meaningful naming schemes to easily filter and compare experiments.
 
 For example, to distinguish between different experiments, you can append the task ID to the task name:
 ```python
@@ -504,7 +504,7 @@ Yes! You can use ClearML's Offline Mode, in which all the data and logs that a t
 local folder. 
 
 You can enable offline mode in one of the following ways:
-* Before initializing a task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
+* Before initializing a task, use the [`Task.set_offline`](references/sdk/task.md#taskset_offline) class method and set 
 the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
