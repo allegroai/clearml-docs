@@ -44,7 +44,7 @@ To add some files to this newly created dataset version, call the `add_files` me
 
 A really useful thing we can do with the python interface is adding some interesting statistics about the dataset itself, such as a plot for example. Here we simply report a histogram on the amount of files in the train and test folders. You can add anything to a dataset that you can add to a ClearML task, so go nuts!
 
-Finally, upload the dataset and then finalize it, or just set `auto_upload` to `true` to make it a one liner.
+Finally, upload the dataset and then finalize it, or just set `auto_upload` to `true` to make it a one-liner.
 
 In the web UI, we can now see the details of our dataset version by clicking on the Dataset button on the left. When we click on our newly created dataset here, we get an overview of our latest version, of course we have only one for now.
 
