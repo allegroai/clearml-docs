@@ -302,7 +302,7 @@ You can work with datasets in **Offline Mode**, in which all the data and logs a
 which can later be uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). 
 
 You can enable offline mode in one of the following ways:
-* Before creating a dataset, use [`Dataset.set_offline()`](../references/sdk/dataset.md#datasetsetoffline) and set the 
+* Before creating a dataset, use [`Dataset.set_offline()`](../references/sdk/dataset.md#datasetset_offline) and set the 
   `offline_mode` argument to `True`: 
 
   ```python
@@ -331,7 +331,7 @@ ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b78684
 Note that in offline mode, any methods that require communicating with the server have no effect (e.g. `squash()`, 
 `finalize()`, `get_local_copy()`, `get()`, `move_to_project()`, etc.). 
 
-Upload the offline dataset to the ClearML Server using [`Dataset.import_offline_session()`](../references/sdk/dataset.md#datasetimportofflinesession). 
+Upload the offline dataset to the ClearML Server using [`Dataset.import_offline_session()`](../references/sdk/dataset.md#datasetimport_offline_session). 
 
 ```python
 Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True")
