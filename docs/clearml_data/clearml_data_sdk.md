@@ -296,3 +296,47 @@ Dataset.move_to_project(
 )
 ```
 
+## Offline Mode
+
+You can work with datasets in **Offline Mode**, in which all the data and logs are stored in a local session folder, 
+which can later be uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). 
+
+You can enable offline mode in one of the following ways:
+* Before creating a dataset, use [`Dataset.set_offline()`](../references/sdk/dataset.md#datasetsetoffline) and set the 
+  `offline_mode` argument to `True`: 
+
+  ```python
+  from clearml import Dataset
+  # Use the set_offline class method before creating a Dataset
+  Dataset.set_offline(offline_mode=True)
+  # Create a dataset
+  dataset = Dataset.create(dataset_name="Dataset example", dataset_project="Example project")
+  # add files to dataset
+  dataset.add_files(path='my_image.jpg')
+  ```
+  
+* Before creating a dataset, set `CLEARML_OFFLINE_MODE=1`
+
+All the dataset’s information is zipped and is saved locally.
+
+The dataset task's console output displays the task’s ID and a path to the local dataset folder:
+
+```
+ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
+...
+...
+ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
+```
+
+Note that in offline mode, any methods that require communicating with the server have no effect (e.g. `squash()`, 
+`finalize()`, `get_local_copy()`, `get()`, `move_to_project()`, etc.). 
+
+Upload the offline dataset to the ClearML Server using [`Dataset.import_offline_session()`](../references/sdk/dataset.md#datasetimportofflinesession). 
+
+```python
+Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True")
+```
+
+In the `session_folder_zip` argument, insert the path to the zip folder containing the dataset. To [upload](#uploading-files) 
+the dataset's data to network storage, set `upload` to `True`.  To [finalize](#finalizing-a-dataset) the dataset, 
+which will close it and prevent further modifications to the dataset, set `finalize` to `True`. 
