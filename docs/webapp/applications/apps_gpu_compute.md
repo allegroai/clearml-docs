@@ -64,6 +64,17 @@ The GPU Compute dashboard shows:
 * Instance History - Number of running cloud instances over time  
 * Console - The log shows updates of cloud instances being spun up/down. 
 
+:::tip Console Debugging   
+To make the autoscaler console log show additional debug information, change an active app instance’s log level to DEBUG:
+1. Go to the app instance task’s page > **CONFIGURATION** tab > **USER PROPERTIES** section 
+1. Hover over the section > Click `Edit` > Click `+ADD PARAMETER`
+1. Input `log_level` as the key and `DEBUG` as the value of the new parameter.
+
+![Autoscaler debugging](../../img/webapp_autoscaler_debug_log.png)
+
+The console’s log level will update in the autoscaler's next iteration.  
+:::
+
 :::tip EMBEDDING CLEARML VISUALIZATION
 You can embed plots from the app instance dashboard into [ClearML Reports](../webapp_reports.md). These visualizations 
 are updated live as the app instance(s) updates. The Enterprise Plan and Hosted Service support embedding resources in 

@@ -101,6 +101,18 @@ The autoscaler dashboard shows:
 * Console: the application log containing everything printed to stdout and stderr appears in the console log. The log 
   shows polling results of the autoscaler’s associated queues, including the number of tasks enqueued, and updates EC2 
   instances being spun up/down.
+
+:::tip Console Debugging   
+To make the autoscaler console log show additional debug information, change an active app instance’s log level to DEBUG:
+1. Go to the app instance task’s page > **CONFIGURATION** tab > **USER PROPERTIES** section 
+1. Hover over the section > Click `Edit` > Click `+ADD PARAMETER`
+1. Input `log_level` as the key and `DEBUG` as the value of the new parameter.
+
+![Autoscaler debugging](../../img/webapp_autoscaler_debug_log.png)
+
+The console’s log level will update in the autoscaler's next iteration.  
+:::
+
 * Instance log files - Click to access the app instance's logs. This takes you to the app instance task's ARTIFACTS tab, 
   which lists the app instance’s logs. In a log’s `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
   to download the complete log. 
