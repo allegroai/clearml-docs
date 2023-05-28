@@ -1002,7 +1002,7 @@ html[data-theme=dark] .cml-card i {
     border: 12px solid rgba(0,0,0,0.1);
     border-radius: calc(var(--ifm-card-border-radius) * 1.5);
 }
-
-html[data-theme=dark] .vid iframe {
+html[data-theme=dark] .vid {
+    border-color: rgba(0,0,0,0.3);
     background-color: rgba(0,0,0,0.3);
 }
