@@ -13,9 +13,9 @@ The **ClearML Web UI** is the graphical user interface for the ClearML platform,
 
 ## UI Modules 
 The WebApp's sidebar provides access to the following modules:
-* [Dashboard](webapp_home.md) <img src="/docs/latest/icons/ico-homepage.svg" className="icon size-md space-sm" /> - 
+* <img src="/docs/latest/icons/ico-homepage.svg" className="icon size-md space-sm" />[Dashboard](webapp_home.md)  - 
   The dashboard for recent activity and quick access to experiments and projects.
-* [Projects](webapp_projects_page.md) <img src="/docs/latest/icons/ico-projects.svg" className="icon size-md space-sm" /> - 
+* <img src="/docs/latest/icons/ico-projects.svg" className="icon size-md space-sm" />[Projects](webapp_projects_page.md)  - 
   The main experimentation page. Access your experiments and models as they are organized into projects.
   The [experiments](webapp_exp_table.md) and [models](webapp_model_table.md) are displayed in tables
   which let you:
@@ -24,11 +24,11 @@ The WebApp's sidebar provides access to the following modules:
     * [Tune experiments with no code change](webapp_exp_tuning.md)
     * [Compare experiments](webapp_exp_comparing.md)
     * [Share experiments and their models](webapp_exp_sharing.md) with other ClearML hosted service users 
-* [Datasets](datasets/webapp_dataset_page.md) <img src="/docs/latest/icons/ico-side-bar-datasets.svg" alt="Datasets" className="icon size-md space-sm" /> - View and manage your datasets. 
-* [Pipelines](pipelines/webapp_pipeline_page.md) <img src="/docs/latest/icons/ico-pipelines.svg" alt="Pipelines" className="icon size-md space-sm" /> - View and manage your pipelines.
-* [Reports](webapp_reports.md) <img src="/docs/latest/icons/ico-reports.svg" alt="Reports" className="icon size-md space-sm" /> - View and manage your reports.
-* [Orchestration](webapp_workers_queues.md) <img src="/docs/latest/icons/ico-workers.svg" alt="Workers and Queues" className="icon size-md space-sm" /> - Autoscale, monitor, and manage your resource usage and workers queues.
-* [Applications](applications/apps_overview.md) <img src="/docs/latest/icons/ico-applications.svg" alt="ClearML Apps" className="icon size-md space-sm" /> - ClearML's GUI applications for no-code workflow execution.
+* <img src="/docs/latest/icons/ico-side-bar-datasets.svg" alt="Datasets" className="icon size-md space-sm" />[Datasets](datasets/webapp_dataset_page.md) - View and manage your datasets. 
+* <img src="/docs/latest/icons/ico-pipelines.svg" alt="Pipelines" className="icon size-md space-sm" />[Pipelines](pipelines/webapp_pipeline_page.md)  - View and manage your pipelines.
+* <img src="/docs/latest/icons/ico-reports.svg" alt="Reports" className="icon size-md space-sm" />[Reports](webapp_reports.md)  - View and manage your reports.
+* <img src="/docs/latest/icons/ico-workers.svg" alt="Workers and Queues" className="icon size-md space-sm" />[Orchestration](webapp_workers_queues.md)  - Autoscale, monitor, and manage your resource usage and workers queues.
+* <img src="/docs/latest/icons/ico-applications.svg" alt="ClearML Apps" className="icon size-md space-sm" />[Applications](applications/apps_overview.md)  - ClearML's GUI applications for no-code workflow execution.
 
 ## UI Top Bar 
 ### Settings Menu
