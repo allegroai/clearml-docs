@@ -268,10 +268,12 @@ task_filter={
 ```
 
 :::tip Order tasks by metrics
-You can order the returned tasks by performance in a specific metric with `last_metrics.<md5-encoded-metric-title>.<md5-encoded-metric-series>.<value_type>`,
-where:
-* MD5 encoded metric and variant names. In Python, you can encode the strings with `hashlib.md5(str("<metric_name_string>").encode("utf-8")).hexdigest()`
+You can order the returned tasks by performance in a specific metric with `'order_by': [last_metrics.<md5-encoded-metric-title>.<md5-encoded-metric-variant>.<value_type>]`.
+* `<md5-encoded-metric-title>` and `<md5-encoded-metric-variant>` - MD5 encoded metric and variant names. In Python, you 
+can encode the strings with `hashlib.md5(str("<metric_name_string>").encode("utf-8")).hexdigest()`
 * `<value_type>` - Specify which metric values to use. The options are: `value` (last value), `min_value`, or `max_value`
+
+Use the `-` prefix to order the results in descending order.
 
 ```python
 title = hashlib.md5(str("testing").encode("utf-8")).hexdigest()
