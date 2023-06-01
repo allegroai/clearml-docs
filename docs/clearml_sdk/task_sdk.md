@@ -261,9 +261,32 @@ task_filter={
     # only training type tasks
     'type': ['training'],
     # match text in task comment or task name
-    'search_text': 'reg_exp_text'
+    'search_text': 'reg_exp_text',
+    # order return task lists by their update time in ascending order
+    'order_by': ['last_update']
 }
 ```
+
+:::tip Order tasks by metrics
+You can order the returned tasks by performance in a specific metric with `'order_by': [last_metrics.<md5-encoded-metric-title>.<md5-encoded-metric-variant>.<value_type>]`.
+* `<md5-encoded-metric-title>` and `<md5-encoded-metric-variant>` - MD5 encoded metric and variant names. In Python, you 
+can encode the strings with `hashlib.md5(str("<metric_name_string>").encode("utf-8")).hexdigest()`
+* `<value_type>` - Specify which metric values to use. The options are: `value` (last value), `min_value`, or `max_value`
+
+Use the `-` prefix to order the results in descending order.
+
+```python
+title = hashlib.md5(str("testing").encode("utf-8")).hexdigest()
+series = hashlib.md5(str("epoch_accuracy").encode("utf-8")).hexdigest()
+
+tasks = Task.get_tasks(
+  project_name='Example Project', 
+  # order tasks by metric performance in descending order
+  task_filter={'order_by': [f'-last_metrics.{title}.{series}.max_value']}
+)
+```
+:::
+
 
 See [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) for all `task_filter` options.
 

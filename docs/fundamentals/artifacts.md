@@ -61,13 +61,13 @@ In the ClearML's web UI, model information can be located through a project's Mo
 task.
 
 Models associated with a task appear in the task's **ARTIFACTS** tab. To see further model details, including design, 
-label enumeration, and general information, click the model name, which is a hyperlink to the 
+label enumeration, lineage, and general information, click the model name, which is a hyperlink to the 
 [model's detail page](../webapp/webapp_model_viewing.md).
 
 Models can also be accessed through their associated project's [Model Table](../webapp/webapp_model_table.md), where all 
 the models associated with a project are listed.
 
-![WebApp Model](../img/examples_model_update_model.png) 
+![WebApp Model](../img/fundamentals_models.png) 
 
 ## SDK Interface
 

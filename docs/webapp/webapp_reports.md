@@ -2,7 +2,7 @@
 title: Reports
 ---
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/D6fCvpmV8eo" 
         title="YouTube video player" 
@@ -94,7 +94,7 @@ resources will be displayed. See [Dynamic Queries](#dynamic-queries) below.
     * `single` (single-scalar values table)
     * `sample` (debug sample)
     * `parcoords` (hyperparameter comparison plots) - for this option, you need to also specify the following parameters:
-      * `metrics` - Unique metric/variant ID formatted like `metric_id.variant_id` (find with your browser's inspect. See note [below](#event_id)) 
+      * `metrics` - Unique metric/variant ID formatted like `metric_id.variant_id` (see note [below](#event_id)) 
       * `variants` - Parameters to include in the plot (write in following format `<section_name>.<parameter_1>&<section_name>.<parameter_2>`)
       * `value_type` - Specify which metric values to use. The options are:
         * `min_value`
@@ -144,22 +144,18 @@ used.
   ```
   A list of tags that the experiment should contain is specified in the `tags` argument. You can also specify tags that 
   exclude experiments. See tag filter syntax examples [here](../clearml_sdk/task_sdk.md#tag-filters).    
-* Request the `training/accuracy` scalar plot of the 5 experiments with the best accuracy scores
+* Request the `training/accuracy` scalar plot of the 5 experiments with the best accuracy scores (see Metric/Variant IDs note [below](#event_id)):
 
   ```
-  src="<web_server>?objectType=task&type=scalar&metrics=training&variants=accuracy&project=4043a1657f374e9298649c6ba72ad233&page_size=5&page=0&order_by[]=-last_metrics.<metric_event_id>.<variant_event_id>.value"
+  src="<web_server>/widgets/?objectType=task&type=scalar&metrics=training&variants=accuracy&project=4043a1657f374e9298649c6ba72ad233&page_size=5&page=0&order_by[]=-last_metrics.<metric_id>.<variant_id>.value"
   ```
   
 <a id="event_id"></a>
 
-:::tip Event IDs
-The `tasks.get_all` and `models.get_all` API calls' parameters sometimes need event IDs, instead of names. To find event IDs: 
-1. Go to the relevant Experiments/Model table > Open the **Developer Tools** window (inspect) > click **Network**. 
-1. Execute the action you want the embed code to do (e.g. sort by update time, sort by accuracy). 
-1. Click on the API call `tasks.get_all_ex`/`models.get_all_ex` that appears in the **Network** tab. 
-1. Click on the **Payload** panel. 
-1. Click on the relevant parameter to see the relevant event's ID. For example, if you sorted by experiment accuracy, 
-you will see the metric's event ID under the `order_by` parameter.  
+:::tip Metric/Variant IDs
+Metric names need to be MD5 encoded for parallel coordinate plots and for ordering query results by metric
+performance. You can encode the strings in Python with `hashlib.md5(str("<metric_string>").encode("utf-8")).hexdigest()`,
+and use the returned MD5 hash in your query.
 :::
 
 
