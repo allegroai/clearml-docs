@@ -66,5 +66,5 @@ As we saw earlier, if you’re a ClearML pro user, you can even launch your opti
 
 And don’t forget about autoscaling! You can run it for free using code of course, but with ClearML Pro you can set it up in the UI as well. Which means that, starting from scratch, you can have an autoscaling cluster of cloud VMs running hyperparameter optimization on your experiment tasks in just a few minutes. How cool is that? 
 
-In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw), if you need any help.
+In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://joinslack.clear.ml), if you need any help.
 </Collapsible>

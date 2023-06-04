@@ -6,7 +6,7 @@ title: Community Resources
 
 For feature requests or bug reports, see **ClearML** [GitHub Issues](https://github.com/allegroai/clearml/issues).
 
-If you have any questions, post on the **ClearML** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw).
+If you have any questions, post on the **ClearML** [Slack Channel](https://joinslack.clear.ml).
 
 Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with the **clearml** tag.
 
@@ -30,7 +30,7 @@ Contribution comes in many forms:
 
 * Reporting [issues](https://github.com/allegroai/clearml/issues) you've come upon
 * Participating in issue discussions in the [issue tracker](https://github.com/allegroai/clearml/issues) and the
-  [ClearML community slack space](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw)
+  [ClearML community slack space](https://joinslack.clear.ml)
 * Suggesting new features or enhancements
 * Implementing new features or fixing outstanding issues
 
@@ -86,7 +86,7 @@ Enhancement suggestions are tracked as GitHub issues. After you determine which 
 Before you submit a new PR:
 
 * Verify that the work you plan to merge addresses an existing [issue](https://github.com/allegroai/clearml/issues) (If not, open a new one)
-* Check related discussions in the [ClearML slack community](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw) 
+* Check related discussions in the [ClearML slack community](https://joinslack.clear.ml) 
   (Or start your own discussion on the ``#clearml-dev`` channel)
 * Make sure your code conforms to the ClearML coding standards by running:
   
