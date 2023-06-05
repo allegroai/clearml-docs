@@ -7,7 +7,7 @@ keywords: [mlops, components, GitHub Actions, CI/CD]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/k5e-E5oEFUw?rel=0" 
         title="YouTube video player" 
@@ -280,7 +280,7 @@ or out-of-the-box allow you to run on GPU workers.
 
 So it's just one of the very many ways that you can use ClearML to do 
 these kinds of things and I hope you learned something valuable today. All of the code that you saw in this example 
-will be available in the link in the description, and if you need any help, join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw), we're always there, 
+will be available in the link in the description, and if you need any help, join our [Slack Channel](https://joinslack.clear.ml), we're always there, 
 always happy to help and thank you for watching.
 
 </Collapsible>
