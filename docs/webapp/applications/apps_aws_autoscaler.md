@@ -82,9 +82,10 @@ credentials for the Autoscaler in the following format:
 ```
 auto_scaler.v1 {
     aws {
-        cloud_credentials_key: XXX
-        cloud_credentials_secret: XXX
+        cloud_credentials_key: "<aws-key>"
+        cloud_credentials_secret: "<aws-secret>"
     }
+}
 ```
 :::
 
