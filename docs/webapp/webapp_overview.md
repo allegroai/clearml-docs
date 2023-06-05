@@ -54,7 +54,7 @@ in the top right corner of the web UI screen to access the following:
 * **Settings** - Navigate to ClearML's user [Settings](webapp_profile.md) page:
   * Set WebApp preferences
   * Manage workspace API credentials
-  * Configure Cloud Storage Access credentials for the ClearML Web UI
+  * Configure cloud storage access credentials for the ClearML Web UI
   * ClearML Hosted service specific options
     * View usage information
     * Manage users and workspaces
