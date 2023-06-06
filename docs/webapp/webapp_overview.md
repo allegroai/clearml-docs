@@ -13,22 +13,38 @@ The **ClearML Web UI** is the graphical user interface for the ClearML platform,
 
 ## UI Modules 
 The WebApp's sidebar provides access to the following modules:
-* [Dashboard](webapp_home.md) <img src="/docs/latest/icons/ico-homepage.svg" className="icon size-md space-sm" /> - 
-  The dashboard for recent activity and quick access to experiments and projects.
-* [Projects](webapp_projects_page.md) <img src="/docs/latest/icons/ico-projects.svg" className="icon size-md space-sm" /> - 
-  The main experimentation page. Access your experiments and models as they are organized into projects.
-  The [experiments](webapp_exp_table.md) and [models](webapp_model_table.md) are displayed in tables
+<ul>
+  <li>
+    <img src="/docs/latest/icons/ico-homepage.svg" alt="Homepage" className="icon size-md space-sm" /> <a href="webapp_home.md">Dashboard</a> - The dashboard for recent activity and quick access to experiments and projects.
+  </li>
+  <li> 
+    <img src="/docs/latest/icons/ico-projects.svg" alt="Projects" className="icon size-md space-sm" />  <a href="webapp_projects_page.md">Projects</a> - The main experimentation page. Access your experiments and models as they are organized into projects.
+  The <a href="webapp_exp_table.md">experiments</a> and <a href="webapp_model_table.md">models</a> are displayed in tables
   which let you:
-    * [Track ongoing experiments and visualize their results](webapp_exp_track_visual.md)
-    * [Reproduce previously run experiments](webapp_exp_reproducing.md)
-    * [Tune experiments with no code change](webapp_exp_tuning.md)
-    * [Compare experiments](webapp_exp_comparing.md)
-    * [Share experiments and their models](webapp_exp_sharing.md) with other ClearML hosted service users 
-* [Datasets](datasets/webapp_dataset_page.md) <img src="/docs/latest/icons/ico-side-bar-datasets.svg" alt="Datasets" className="icon size-md space-sm" /> - View and manage your datasets. 
-* [Pipelines](pipelines/webapp_pipeline_page.md) <img src="/docs/latest/icons/ico-pipelines.svg" alt="Pipelines" className="icon size-md space-sm" /> - View and manage your pipelines.
-* [Reports](webapp_reports.md) <img src="/docs/latest/icons/ico-reports.svg" alt="Reports" className="icon size-md space-sm" /> - View and manage your reports.
-* [Orchestration](webapp_workers_queues.md) <img src="/docs/latest/icons/ico-workers.svg" alt="Workers and Queues" className="icon size-md space-sm" /> - Autoscale, monitor, and manage your resource usage and workers queues.
-* [Applications](applications/apps_overview.md) <img src="/docs/latest/icons/ico-applications.svg" alt="ClearML Apps" className="icon size-md space-sm" /> - ClearML's GUI applications for no-code workflow execution.
+    <ul>
+      <li><a href="webapp_exp_track_visual.md">Track ongoing experiments and visualize their results</a></li>
+      <li><a href="webapp_exp_reproducing.md">Reproduce previously run experiments</a></li>
+      <li><a href="webapp_exp_tuning.md">Tune experiments with no code change</a></li>
+      <li><a href="webapp_exp_comparing.md">Compare experiments</a></li>
+      <li><a href="webapp_exp_sharing.md">Share experiments and their models</a> with other ClearML hosted service users </li>
+    </ul>
+  </li>
+  <li>
+    <img src="/docs/latest/icons/ico-side-bar-datasets.svg" alt="Datasets" className="icon size-md space-sm" /> <a href="datasets/webapp_dataset_page.md">Datasets</a> - View and manage your datasets. 
+  </li>
+  <li>
+    <img src="/docs/latest/icons/ico-pipelines.svg" alt="Pipelines" className="icon size-md space-sm" /> <a href="pipelines/webapp_pipeline_page.md">Pipelines</a> - View and manage your pipelines.
+  </li>
+  <li>
+    <img src="/docs/latest/icons/ico-reports.svg" alt="Reports" className="icon size-md space-sm" /> <a href="webapp_reports.md">Reports</a> - View and manage your reports.
+  </li>
+  <li>
+    <img src="/docs/latest/icons/ico-workers.svg" alt="Workers and Queues" className="icon size-md space-sm" /> <a href="webapp_workers_queues.md">Orchestration</a> - Autoscale, monitor, and manage your resource usage and workers queues.
+  </li>
+  <li>
+    <img src="/docs/latest/icons/ico-applications.svg" alt="ClearML Apps" className="icon size-md space-sm" /> <a href="applications/apps_overview.md">Applications</a> - ClearML's GUI applications for no-code workflow execution.
+  </li>
+</ul>
 
 ## UI Top Bar 
 ### Settings Menu
@@ -38,7 +54,7 @@ in the top right corner of the web UI screen to access the following:
 * **Settings** - Navigate to ClearML's user [Settings](webapp_profile.md) page:
   * Set WebApp preferences
   * Manage workspace API credentials
-  * Configure Cloud Storage Access credentials for the ClearML Web UI
+  * Configure cloud storage access credentials for the ClearML Web UI
   * ClearML Hosted service specific options
     * View usage information
     * Manage users and workspaces
