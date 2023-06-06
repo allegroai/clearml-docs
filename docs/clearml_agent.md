@@ -325,36 +325,32 @@ clearml-agent daemon --queue default --foreground
 
 ## Execution Environments
 
+ClearML Agent has two primary execution modes: virtual environment and docker modes. 
+
+
 ClearML Agent supports executing tasks in multiple environments.
+### Virtual Environment Mode 
 
-### PIP Mode 
-By default, ClearML Agent works in PIP Mode, in which it uses [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) 
-as the package manager. When ClearML runs, it will create a virtual environment 
-(or reuse an existing one, see [here](clearml_agent.md#virtual-environment-reuse)).
+ClearML Agent supports working with one of the following package managers: [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) (default),
+[`conda`](https://docs.conda.io/en/latest/), and [`poetry`](https://python-poetry.org/). To change the package manager 
+used by the agent, edit the `type` field in the `package_manager`
+section of the `clearml.conf`. If extra channels are needed for `conda`, add the missing channels in the `conda_channels`
+field in the `clearml.conf`
+
+When ClearML runs, it will create a virtual environment (or reuse an existing one, see [here](clearml_agent.md#virtual-environment-reuse)).
 Task dependencies (Python packages) will be installed in the virtual environment.
-
-### Conda Mode 
-This mode is similar to the PIP mode but uses [Conda](https://docs.conda.io/en/latest/) as the package 
-manager. To enable Conda mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: conda` in the “package_manager” section. 
-If extra conda channels are needed, look for “conda_channels” under “package_manager”, and add the missing channel.
-
-### Poetry Mode
-This mode is similar to the PIP mode but uses [Poetry](https://python-poetry.org/) as the package manager.
-To enable Poetry mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: poetry` in the “package_manager” 
-section.
 
 :::note Using Poetry with Pyenv
 Some versions of poetry (using `install-poetry.py`) do not respect `pyenv global`.  
 If you are using pyenv to control the environment where you use ClearML Agent, you can:
   * Use poetry v1.2 and above (which [fixes this issue](https://github.com/python-poetry/poetry/issues/5077))
   * Install poetry with the deprecated `get-poetry.py` installer
-
 :::
 
 ### Docker Mode 
-:::note
-Docker Mode is only supported in linux.<br/>
-Docker Mode requires docker service v19.03 or higher installed.
+:::note notes
+* Docker Mode is only supported in linux.
+* Docker Mode requires docker service v19.03 or higher installed.
 :::
 
 When executing the ClearML Agent in Docker mode, it will: 
@@ -372,7 +368,7 @@ clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional d
 ```
 
 To use the current `clearml-agent` version in the Docker container, instead of the latest `clearml-agent` version that is 
-automatically installed, run:
+automatically installed, pass the `--force-current-version` flag:
 ```bash
 clearml-agent daemon --queue default --docker --force-current-version
 ```
