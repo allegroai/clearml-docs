@@ -53,7 +53,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [ClearML vault](../webapp_profile.md#configuration-vault) when executing the task
 * **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
   instances are running the same task. In most cases, this indicates an issue.
-* **Exclude .bashrc script** - Select in order to skip execution `.bashrc` script 
+* **Exclude .bashrc script** - Select in order to skip `.bashrc` script execution 
 * **Init Script** (optional) - A bash script to execute after launching the VM instance
 * **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
