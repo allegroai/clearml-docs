@@ -233,7 +233,7 @@ clearml-agent daemon --detached --queue default --gpus 1
 ```
 To allocate more than one GPU, provide a list of allocated GPUs
 ```bash
-clearml-agent daemon --gpus 0,1 --queue dual_gpu &
+clearml-agent daemon --gpus 0,1 --queue dual_gpu
 ```
 
 #### Queue Prioritization
