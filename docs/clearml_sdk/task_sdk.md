@@ -835,10 +835,11 @@ task.get_reported_scalars(max_samples=0, x_axis='iter')
 This returns a nested dictionary of the scalar graph values: 
 
 ```console
-{"title": 
-  {"series": {
-    "x": [0, 1 ,2],
-    "y": [10, 11 ,12]
+{
+  "title": {
+    "series": {
+      "x": [0, 1 ,2],
+      "y": [10, 11 ,12]
     }
   }
 }
