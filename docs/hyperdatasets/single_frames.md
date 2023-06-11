@@ -276,7 +276,7 @@ frame = DatasetVersion.get_single_frame(
 To access a SingleFrame, the following must be specified:
 * `frame_id`, which can be found in the WebApp, in the frame's **FRAMEGROUP DETAILS** 
 * The frame's dataset - either with `dataset_name` or `dataset_id`
-* The dataset version - either with `version_id` or  `version_name`
+* The dataset version - either with `version_id` or `version_name`
 
 ### Updating SingleFrames
 
