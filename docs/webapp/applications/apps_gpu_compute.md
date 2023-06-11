@@ -37,7 +37,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Git Password / Personal Access Token
 * **Cloud Storage Access** (optional) - Access credentials to cloud storage service. Provides ClearML Tasks running on cloud 
   machines access to your storage
-* Additional ClearML Configuration (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
+* **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
 
 ![GPU Compute wizard](../../img/apps_gpu_compute_wizard.png)
 
