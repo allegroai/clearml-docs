@@ -72,7 +72,7 @@ Want a more in depth introduction to ClearML? Choose where you want to get start
     <ol>
         <li>
             <i>
-                <img src="/docs/latest/icons/ico-data-scientist.svg" />
+                <img src="/docs/latest/icons/ico-data-scientist.svg" alt="Data scientist logo" />
             </i>
             <h4>Data Scientists</h4>
             <p>Learn how to use ClearML's experiment tracking and management tools, and more!</p>
@@ -82,7 +82,7 @@ Want a more in depth introduction to ClearML? Choose where you want to get start
         </li>
         <li>
             <i>
-                <img src="/docs/latest/icons/ico-mlops-engineer.svg" />
+                <img src="/docs/latest/icons/ico-mlops-engineer.svg" alt="MLOps engineer logo" />
             </i>
             <h4>MLOps Engineers</h4>
             <p>Learn how to use ClearML's automation, orchestration, and tracking tools</p>
@@ -92,7 +92,7 @@ Want a more in depth introduction to ClearML? Choose where you want to get start
         </li>
         <li>
             <i>
-                <img src="/docs/latest/icons/ico-devops-engineer.svg" />
+                <img src="/docs/latest/icons/ico-devops-engineer.svg" alt="DevOps Engineer logo" />
             </i>
             <h4>DevOps Engineers</h4>
             <p>Learn learn how to deploy and configure a ClearML Server</p>

@@ -67,7 +67,7 @@ See the [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optim
 ClearML's `automation` module includes classes that support creating pipelines: 
   * [PipelineController](../pipelines/pipelines_sdk_tasks.md) - A pythonic interface for 
     defining and configuring a pipeline controller and its steps. The controller and steps can be functions in your 
-    python code, or existing ClearML [tasks](../fundamentals/task.md).
+    python code, or ClearML [tasks](../fundamentals/task.md).
   * [PipelineDecorator](../pipelines/pipelines_sdk_function_decorators.md) - A set 
     of Python decorators which transform your functions into the pipeline controller and steps.
     
