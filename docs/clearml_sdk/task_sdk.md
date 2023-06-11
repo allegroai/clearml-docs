@@ -773,5 +773,93 @@ The above example sets the "backbone" property in a task.
 
 ![Task user properties](../img/fundamentals_task_config_properties.png)
 
+## Scalars
+
+After invoking `Task.init` in a script, ClearML automatically captures scalars logged by supported frameworks 
+(see [automatic logging](#automatic-logging)). 
+
+ClearML also supports explicitly logging scalars using the `Logger` class.
+
+```python
+# get logger object for current task
+logger = task.get_logger()
+# report scalar to task
+logger.report_scalar(
+  title='scalar metrics', series='series', value=scalar_value, iteration=iteration
+)
+# report single value metric
+logger.report_single_value(name="scalar_name", value=scalar_value)
+```
+
+See [Manual Reporting](../fundamentals/logger.md#manual-reporting) for more information.
+
+### Retrieving Scalar Values 
+
+#### Scalar Summary 
+Use [`Task.get_last_scalar_metrics()`](../references/sdk/task.md#get_last_scalar_metrics) to get a summary of all 
+scalars logged in the task.
+
+This call returns a nested dictionary of the last, maximum, and minimum values reported for each scalar metric reported 
+to the task, ordered by title and series: 
+
+```console
+{
+ "title": {
+     "series": {
+         "last": 0.5,
+         "min": 0.1,
+         "max": 0.9
+         }
+     }
+ }
+```
+
+#### Get Sample Values
+Use [`get_reported_scalars()`](../references/sdk/task.md#get_reported_scalars) to retrieve a sample of the logged scalars 
+for each metric/series. 
+
+Use the `max_samples` argument to specify the maximum number of samples per series to return (up to a maximum of 
+5000). 
+
+To fetch all scalar values, use [`Task.get_all_reported_scalars()`](../references/sdk/task.md#get_all_reported_scalars).
+
+Set the x-axis units with the `x_axis` argument. The options are: 
+* `iter` - Iteration (default)
+* `timestamp` - Milliseconds since epoch 
+* `iso_time` - Wall time 
+
+```python
+task.get_reported_scalars(max_samples=0, x_axis='iter')
+```
+
+This returns a nested dictionary of the scalar graph values: 
+
+```console
+{
+  "title": {
+    "series": {
+      "x": [0, 1 ,2],
+      "y": [10, 11 ,12]
+    }
+  }
+}
+```
+
+:::info
+This call is not cached. If the Task has many reported scalars, it might take a long time for the call to return.
+:::
+
+#### Get Single Value Scalars
+
+To get the values of a reported single-value scalars, use [`task.get_reported_single_value()`](../references/sdk/task.md#get_reported_single_value) 
+and specify the scalar's `name`.  
+
+To get all reported single scalar values, use [`task.get_reported_single_values()`](../references/sdk/task.md#get_reported_single_values), 
+which returns a dictionary of scalar name and value pairs:
+
+```console
+{'<scalar_name_1>': <value_1>, '<scalar_name_2>': <value_2>}
+```
+
 ## SDK Reference
 For detailed information, see the complete [Task SDK reference page](../references/sdk/task.md). 
