@@ -364,7 +364,7 @@ Your firewall may be preventing the connection. Try one of the following solutio
 
 **How do I modify experiment names once they have been created?**
 
-An experiment's name is a user-controlled property, which can be accessed via the `Task.name` variable. This lets you use meaningful naming schemes for easily filtering and comparing of experiments.
+An experiment's name is a user-controlled property, which can be accessed via the `Task.name` variable. This lets you use meaningful naming schemes to easily filter and compare experiments.
 
 For example, to distinguish between different experiments, you can append the task ID to the task name:
 ```python
@@ -503,9 +503,26 @@ See [`Task.init`](references/sdk/task.md#taskinit).
 Yes! You can use ClearML's Offline Mode, in which all the data and logs that a task captures from the code are stored in a 
 local folder. 
 
-Before initializing a task, use the [`Task.set_offline`](references/sdk/task.md#taskset_offline) 
-class method and set the `offline_mode` argument to `True`. When executed, this returns the Task ID and a path to the 
-session folder. In order to upload to the ClearML Server the execution data that the Task captured offline, do one of the
+You can enable offline mode in one of the following ways:
+* Before initializing a task, use the [`Task.set_offline`](references/sdk/task.md#taskset_offline) class method and set 
+the `offline_mode` argument to `True`
+* Before running a task, set `CLEARML_OFFLINE_MODE=1`
+
+:::caution 
+Offline mode only works with tasks created using `Task.init` and not with those created 
+using the `Task.create` method. 
+:::
+
+The task's console output displays the task ID and a path to the folder with the session's captured information:
+
+```console
+ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
+...
+...
+ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
+```
+
+In order to upload to the ClearML Server the execution data that the Task captured offline, do one of the
 following:
 * Use the `import-offline-session <session_path>` option of the [clearml-task](apps/clearml_task.md) CLI
 * Use the [`Task.import_offline_session`](references/sdk/task.md#taskimport_offline_session) method. 

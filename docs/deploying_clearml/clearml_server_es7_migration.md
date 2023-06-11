@@ -151,7 +151,7 @@ All console output during the execution of the migration script is saved to a lo
 If the migration script does not complete successfully, the migration script prints the error.
 
 :::important  
-For help in resolving migration issues, check the **ClearML** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw), 
+For help in resolving migration issues, check the **ClearML** [Slack Channel](https://joinslack.clear.ml), 
 [GitHub Issues](https://github.com/allegroai/clearml-server/issues), and the **ClearML Server** sections of the [FAQ](../faq.md).     
 :::
     

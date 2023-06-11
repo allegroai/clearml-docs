@@ -7,7 +7,7 @@ keywords: [mlops, components, hyperparameter optimization, hyperparameter]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/dLkP7y4USFg?rel=0" 
         title="YouTube video player" 
@@ -66,5 +66,5 @@ As we saw earlier, if you’re a ClearML pro user, you can even launch your opti
 
 And don’t forget about autoscaling! You can run it for free using code of course, but with ClearML Pro you can set it up in the UI as well. Which means that, starting from scratch, you can have an autoscaling cluster of cloud VMs running hyperparameter optimization on your experiment tasks in just a few minutes. How cool is that? 
 
-In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw), if you need any help.
+In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://joinslack.clear.ml), if you need any help.
 </Collapsible>

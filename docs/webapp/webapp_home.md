@@ -6,7 +6,8 @@ title: Dashboard
 The **Dashboard** provides the following options:
 * Quickly access the summarized monitoring of recently updated projects and their experiments
 * Create new projects 
-* Open the [**Workers & Queues**](webapp_workers_queues.md) tab to monitor resource utilization and to manage queues.
+* Open the [**Orchestration**](webapp_workers_queues.md) tab to autoscale, monitor, and manage your resource usage and 
+  worker queues.
 
 ![Dashboard](../img/webapp_dashboard.png)
 
@@ -25,10 +26,10 @@ The **Dashboard** provides the following options:
     
 **To create a new project:**
 
-1.  Click **+ NEW PROJECT**
+1. Click **+ NEW PROJECT**
 1. Enter the project name, and, optionally, the description and default output destination
 1. Click **CREATE PROJECT**
 
-**To monitor resources utilization, and manage queues and workers:**
+**To autoscale, monitor, and manage your resource usage and workers queues:**
 
-* Click **MANAGE WORKERS AND QUEUES**. The **Workers & Queues** appear.
+* Click **MANAGE WORKERS AND QUEUES** to go to the [**Orchestration**](webapp_workers_queues.md) page.

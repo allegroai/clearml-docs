@@ -261,9 +261,32 @@ task_filter={
     # only training type tasks
     'type': ['training'],
     # match text in task comment or task name
-    'search_text': 'reg_exp_text'
+    'search_text': 'reg_exp_text',
+    # order return task lists by their update time in ascending order
+    'order_by': ['last_update']
 }
 ```
+
+:::tip Order tasks by metrics
+You can order the returned tasks by performance in a specific metric with `'order_by': [last_metrics.<md5-encoded-metric-title>.<md5-encoded-metric-variant>.<value_type>]`.
+* `<md5-encoded-metric-title>` and `<md5-encoded-metric-variant>` - MD5 encoded metric and variant names. In Python, you 
+can encode the strings with `hashlib.md5(str("<metric_name_string>").encode("utf-8")).hexdigest()`
+* `<value_type>` - Specify which metric values to use. The options are: `value` (last value), `min_value`, or `max_value`
+
+Use the `-` prefix to order the results in descending order.
+
+```python
+title = hashlib.md5(str("testing").encode("utf-8")).hexdigest()
+series = hashlib.md5(str("epoch_accuracy").encode("utf-8")).hexdigest()
+
+tasks = Task.get_tasks(
+  project_name='Example Project', 
+  # order tasks by metric performance in descending order
+  task_filter={'order_by': [f'-last_metrics.{title}.{series}.max_value']}
+)
+```
+:::
+
 
 See [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) for all `task_filter` options.
 
@@ -404,34 +427,44 @@ Function tasks must be created from within a regular task, created by calling `T
 ### Offline Mode
 
 You can work with tasks in Offline Mode, in which all the data and logs that the Task captures are stored in a local 
-folder, which can later be uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). 
+session folder, which can later be uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). 
 
-Before initializing a Task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
-the `offline_mode` argument to `True`. The method returns the Task ID and a path to the session folder. 
+You can enable offline mode in one of the following ways:
+* Before initializing a task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
+the `offline_mode` argument to `True`
+  
+  ```python
+  from clearml import Task
+  # Use the set_offline class method before initializing a Task
+  Task.set_offline(offline_mode=True)
+  # Initialize a Task
+  task = Task.init(project_name="examples", task_name="my_task")
+  ```
+
+* Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
 :::caution 
-Notice that the `Task.set_offline` method only works with tasks created using `Task.init` and not with those created 
+Offline mode only works with tasks created using `Task.init` and not with those created 
 using the `Task.create` method. 
 :::
 
-```python
-from clearml import Task
-# Use the set_offline class method before initializing a Task
-Task.set_offline(offline_mode=True)
-# Initialize a Task
-task = Task.init(project_name="examples", task_name="my_task")
- 
-# Rest of code is executed. All data is logged locally and not onto the server
-```
-
 All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. 
+
+The task's console output displays the task ID and a path to the folder with the captured information:
+
+```console
+ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
+...
+...
+ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
+```
 
 Upload the execution data that the Task captured offline to the ClearML Server using one of the following:
 * [`clearml-task`](../apps/clearml_task.md) CLI
   ```bash
   clearml-task --import-offline-session "path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip"
   ```  
-  Pass the path to the zip folder containing the session with the `--import-offline-session` parameter
+  Pass the path to the zip folder containing the captured information with the `--import-offline-session` parameter
 
 * [`Task.import_offline_session`](../references/sdk/task.md#taskimport_offline_session) class method
   ```python

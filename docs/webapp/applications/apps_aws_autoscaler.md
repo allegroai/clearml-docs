@@ -67,6 +67,10 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Arn - Amazon Resource Name specifying the instance profile
     * Name - Name identifying the instance profile
 * **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
+* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [ClearML vault](../webapp_profile.md#configuration-vault) when executing the task
+* **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
+  instances are running the same task. In most cases, this indicates an issue.
+* **Exclude .bashrc script** - Select in order to skip `.bashrc` script execution 
 * **Init script** (optional) - A bash script to execute after launching the EC2 instance 
 * **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when 
   executing your experiments
@@ -76,15 +80,16 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 ![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
 
 :::note Enterprise Feature
-You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to globally add your AWS 
-credentials in the following format: 
+You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to configure AWS 
+credentials for the Autoscaler in the following format: 
 
 ```
 auto_scaler.v1 {
     aws {
-        cloud_credentials_key: XXX
-        cloud_credentials_secret: XXX
+        cloud_credentials_key: "<aws-key>"
+        cloud_credentials_secret: "<aws-secret>"
     }
+}
 ```
 :::
 
@@ -100,7 +105,22 @@ The autoscaler dashboard shows:
 * Number of current running instances 
 * Console: the application log containing everything printed to stdout and stderr appears in the console log. The log 
   shows polling results of the autoscaler’s associated queues, including the number of tasks enqueued, and updates EC2 
-  instances being spun up/down.  
+  instances being spun up/down.
+
+:::tip Console Debugging   
+To make the autoscaler console log show additional debug information, change an active app instance’s log level to DEBUG:
+1. Go to the app instance task’s page > **CONFIGURATION** tab > **USER PROPERTIES** section 
+1. Hover over the section > Click `Edit` > Click `+ADD PARAMETER`
+1. Input `log_level` as the key and `DEBUG` as the value of the new parameter.
+
+![Autoscaler debugging](../../img/webapp_autoscaler_debug_log.png)
+
+The console’s log level will update in the autoscaler's next iteration.  
+:::
+
+* Instance log files - Click to access the app instance's logs. This takes you to the app instance task's ARTIFACTS tab, 
+  which lists the app instance’s logs. In a log’s `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
+  to download the complete log. 
 
 
 :::tip EMBEDDING CLEARML VISUALIZATION

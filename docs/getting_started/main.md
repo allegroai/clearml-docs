@@ -12,7 +12,7 @@ while ClearML ensures your work is reproducible and scalable.
 
 ## Getting Started
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%', marginBottom: '32px' }} >
+<div class="vid">
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/s3k9ntmQmD4" 
         title="YouTube video player" 
@@ -66,14 +66,42 @@ while ClearML ensures your work is reproducible and scalable.
 </div>
 
 Want a more in depth introduction to ClearML? Choose where you want to get started: 
-* **Data Scientists** start [here](ds/ds_first_steps.md) - learn how to use ClearML's
-experiment tracking and management tools, and more!
 
-* **MLOps Engineers** start [here](mlops/mlops_first_steps.md) - learn how to use ClearML's 
-automation, orchestration, and tracking tools
 
-* **DevOps Engineers** start [here](../deploying_clearml/clearml_server.md#deployment) - learn how 
-to deploy and configure a ClearML Server 
+<div class="cml-card">
+    <ol>
+        <li>
+            <i>
+                <img src="/docs/latest/icons/ico-data-scientist.svg" />
+            </i>
+            <h4>Data Scientists</h4>
+            <p>Learn how to use ClearML's experiment tracking and management tools, and more!</p>
+            <span class="btn-link">
+                <a href="getting_started/ds/ds_first_steps">START HERE</a>
+            </span>
+        </li>
+        <li>
+            <i>
+                <img src="/docs/latest/icons/ico-mlops-engineer.svg" />
+            </i>
+            <h4>MLOps Engineers</h4>
+            <p>Learn how to use ClearML's automation, orchestration, and tracking tools</p>
+            <span class="btn-link">
+                <a href="getting_started/mlops/mlops_first_steps">START HERE</a>
+            </span>
+        </li>
+        <li>
+            <i>
+                <img src="/docs/latest/icons/ico-devops-engineer.svg" />
+            </i>
+            <h4>DevOps Engineers</h4>
+            <p>Learn learn how to deploy and configure a ClearML Server</p>
+            <span class="btn-link">
+                <a href="./deploying_clearml/clearml_server#deployment">START HERE</a>
+            </span>
+        </li>
+    </ol>
+</div>
 
 
 ## What Can You Do with ClearML?

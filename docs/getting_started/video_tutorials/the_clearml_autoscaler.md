@@ -7,7 +7,7 @@ keywords: [mlops, components, Autoscaler]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/j4XVMAaUt3E?rel=0" 
         title="YouTube video player" 
@@ -66,5 +66,5 @@ Finally, when everything is done and the remote machines are idle, they will be 
 
 You can see that this functionality is very powerful when combined with for example hyperparameter optimization or pipelines that launch a lot of tasks at once. Obviously, it can be used as the primary way to get access to remote compute, but it can even be used as an extra layer on top of the machines you already have on-premise to spillover in case of large demand spikes for example. You don’t pay when you don’t use it, so there isn’t really a good reason not to have one running at all times.
 
-Get started right now for free at [app.clear.ml](https://app.clear.ml) and start spinning up remote machines with ClearML Pro if you want to save some money and effort by automating the boring stuff. If you run into any issues along the way, join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw), and we’ll help you out.
+Get started right now for free at [app.clear.ml](https://app.clear.ml) and start spinning up remote machines with ClearML Pro if you want to save some money and effort by automating the boring stuff. If you run into any issues along the way, join our [Slack Channel](https://joinslack.clear.ml), and we’ll help you out.
 </Collapsible>
