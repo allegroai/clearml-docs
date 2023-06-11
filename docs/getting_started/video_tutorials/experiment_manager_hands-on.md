@@ -68,5 +68,5 @@ Scalars such as loss or accuracy will be plotted on the same axes which makes co
 
 Finally, plots such as a confusion matrix and debug samples can be compared too. For those times when you just want to confirm that the new model is better with your own eyes.
 
-Now that you’re ready to start tracking and managing your experiments, we’ll cover some more advanced features and concepts of the experiment manager in the next video. But if you want to get started right now, head over to clear.ml and join our community [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1v74jzwkn-~XsuWB0btXOlfFQCh8DJQw) if you need any help.
+Now that you’re ready to start tracking and managing your experiments, we’ll cover some more advanced features and concepts of the experiment manager in the next video. But if you want to get started right now, head over to clear.ml and join our community [Slack Channel](https://joinslack.clear.ml) if you need any help.
 </Collapsible>

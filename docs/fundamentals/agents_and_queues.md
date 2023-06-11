@@ -100,7 +100,7 @@ available to them. Some tasks are mostly idling and require less computation pow
 a pipeline controller) or service tasks (e.g. cleanup service). 
 
 This is where the `services-mode` comes into play. An agent running in `services-mode` will let multiple tasks execute 
-in parallel (each task will register itself as a sub-agent, visible in the [Workers & Queues](../webapp/webapp_workers_queues.md) tab in the UI).
+in parallel (each task will register itself as a sub-agent, visible in the [Orchestration](../webapp/webapp_workers_queues.md) tab in the UI).
 
 This mode is intended for running maintenance tasks. Some suitable tasks include:
 

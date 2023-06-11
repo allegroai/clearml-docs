@@ -4,7 +4,7 @@ title: Working with Frames
 
 View and edit SingleFrames in the Dataset page. After selecting a Hyper-Dataset version, the **Version Browser** shows a sample 
 of frames and enables viewing SingleFrames and FramesGroups, and editing SingleFrames, in the [frame viewer](#frame-viewer). 
-Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
+Before opening the frame viewer, you can filter the frames by applying [simple](webapp_datasets_versioning.md#simple-frame-filtering) or [advanced](webapp_datasets_versioning.md#advanced-frame-filtering) 
 filtering logic. 
 
 ![Dataset page](../../img/hyperdatasets/web-app/dataset_versions.png)
@@ -68,7 +68,7 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 
 **To view / edit a frame in the frame editor**
 
-1. Locate your frame by applying a [simple frame filter](#simple-frame-filtering) or [advanced frame filter](#advanced-frame-filtering), and clicking **LOAD MORE**, if required.
+1. Locate your frame by applying a [simple frame filter](webapp_datasets_versioning.md#simple-frame-filtering) or [advanced frame filter](webapp_datasets_versioning.md#advanced-frame-filtering), and clicking **LOAD MORE**, if required.
 1. Click the frame thumbnail. The frame editor appears.
 1. Do any of the following:
     * View frame details, including:

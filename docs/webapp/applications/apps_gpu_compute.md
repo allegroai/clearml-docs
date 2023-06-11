@@ -30,13 +30,14 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
       machines of this specification
     * Cloud Machine Limit - Maximum number of concurrent machines to launch
 * **Idle Time Limit** (optional) - Maximum time in minutes that a cloud machine can be idle before it is spun down
-* **Default Docker Image** (optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
+* **Default Docker Image** - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
   in a Docker artifactory so instances can automatically fetch it
 * **Git Configuration** - Git credentials with which the ClearML Agents running on your cloud instances will access your repositories to retrieve the code for their jobs
     * Git User
     * Git Password / Personal Access Token
 * **Cloud Storage Access** (optional) - Access credentials to cloud storage service. Provides ClearML Tasks running on cloud 
   machines access to your storage
+* Additional ClearML Configuration (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
 
 ![GPU Compute wizard](../../img/apps_gpu_compute_wizard.png)
 
@@ -62,6 +63,17 @@ The GPU Compute dashboard shows:
 * Number of current running cloud instances 
 * Instance History - Number of running cloud instances over time  
 * Console - The log shows updates of cloud instances being spun up/down. 
+
+:::tip Console Debugging   
+To make the autoscaler console log show additional debug information, change an active app instance’s log level to DEBUG:
+1. Go to the app instance task’s page > **CONFIGURATION** tab > **USER PROPERTIES** section 
+1. Hover over the section > Click `Edit` > Click `+ADD PARAMETER`
+1. Input `log_level` as the key and `DEBUG` as the value of the new parameter.
+
+![Autoscaler debugging](../../img/webapp_autoscaler_debug_log.png)
+
+The console’s log level will update in the autoscaler's next iteration.  
+:::
 
 :::tip EMBEDDING CLEARML VISUALIZATION
 You can embed plots from the app instance dashboard into [ClearML Reports](../webapp_reports.md). These visualizations 
