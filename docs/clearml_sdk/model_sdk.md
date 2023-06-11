@@ -6,7 +6,7 @@ The following page provides an overview of the basic Pythonic interface to Clear
 
 ClearML provides the following classes to work with models:
 * `Model` - Represents a ClearML model, regardless of any task connection. Use this class to programmatically access and manage the ClearML model store.
-* `InputModel` - Represents an existing ClearML model to be used in an experiment. Use this class to load a model from ClearML's model store or to import a pre-trained 
+* `InputModel` - Represents a ClearML model to be used in an experiment. Use this class to load a model from ClearML's model store or to import a pre-trained 
 model from an external resource to use as an experiment's initial starting point.
 * `OutputModel` - Represents an experiment's output model (training results). An OutputModel is always connected to a [task](../fundamentals/task.md),
 so the models are traceable to experiments. 
