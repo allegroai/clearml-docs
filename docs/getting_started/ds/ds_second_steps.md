@@ -23,7 +23,7 @@ Once you have a Task object you can query the state of the Task, get its model, 
 
 ## Log Hyperparameters
 
-For full reproducibility, it's paramount to save Hyperparameters for each experiment. Since Hyperparameters can have substantial impact
+For full reproducibility, it's paramount to save hyperparameters for each experiment. Since hyperparameters can have substantial impact
 on Model performance, saving and comparing these between experiments is sometimes the key to understanding model behavior.
 
 ClearML supports logging `argparse` module arguments out of the box, so once ClearML is integrated into the code, it automatically logs all parameters provided to the argument parser.
@@ -43,7 +43,7 @@ Check [this](../../fundamentals/hyperparameters.md) out for all Hyperparameter l
 ClearML lets you easily store the output products of an experiment - Model snapshot / weights file, a preprocessing of your data, feature representation of data and more!
 
 Essentially, artifacts are files (or python objects) uploaded from a script and are stored alongside the Task.
-These Artifacts can be easily accessed by the web UI or programmatically.
+These artifacts can be easily accessed by the web UI or programmatically.
 
 Artifacts can be stored anywhere, either on the ClearML server, or any object storage solution or shared folder.
 See all [storage capabilities](../../integrations/storage.md).
@@ -73,9 +73,9 @@ Check out all [artifact logging](../../clearml_sdk/task_sdk.md#artifacts) option
 
 ### Using Artifacts
 
-Logged Artifacts can be used by other Tasks, whether it's a pre-trained Model or processed data.
-To use an Artifact, first we have to get an instance of the Task that originally created it,
-then we either download it and get its path, or get the Artifact object directly.
+Logged artifacts can be used by other Tasks, whether it's a pre-trained Model or processed data.
+To use an artifact, first we have to get an instance of the Task that originally created it,
+then we either download it and get its path, or get the artifact object directly.
 
 For example, using a previously generated preprocessed data.
 
@@ -84,7 +84,7 @@ preprocess_task = Task.get_task(task_id='preprocessing_task_id')
 local_csv = preprocess_task.artifacts['data'].get_local_copy()
 ```
 
-The `task.artifacts` is a dictionary where the keys are the Artifact names, and the returned object is the Artifact object.
+The `task.artifacts` is a dictionary where the keys are the artifact names, and the returned object is the artifact object.
 Calling `get_local_copy()` returns a local cached copy of the artifact. Therefore, next time we execute the code, we don't
 need to download the artifact again.
 Calling `get()` gets a deserialized pickled object.
@@ -130,7 +130,7 @@ Like before we have to get the instance of the Task training the original weight
 :::note
 Using TensorFlow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing your requested snapshot.
 :::
-As with Artifacts, all models are cached, meaning the next time we run this code, no model needs to be downloaded.
+As with artifacts, all models are cached, meaning the next time we run this code, no model needs to be downloaded.
 Once one of the frameworks will load the weights file, the running Task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.
 This feature lets you easily get a full genealogy of every trained and used model by your system!
 

@@ -6,7 +6,7 @@ title: Project Dashboard
 The ClearML Project Dashboard App is available under the ClearML Pro plan
 :::
 
-The Project Dashboard Application provides an overview of a  project or workspace’s progress. It presents an aggregated 
+The Project Dashboard Application provides an overview of a project or workspace’s progress. It presents an aggregated 
 view of task status and a chosen metric over time, as well as project GPU and worker usage. It also supports alerts/warnings 
 on completed/failed Tasks via Slack integration.
 
@@ -27,7 +27,7 @@ of the chosen metric over time.
   * Monitored Metric - Title - Metric title to track
   * Monitored Metric - Series - Metric series (variant) to track
   * Monitored Metric - Trend - Choose whether to track the monitored metric's highest or lowest values
-* Slack Notification  (optional) - Set up Slack integration for notifications of task failure. Select the 
+* Slack Notification (optional) - Set up Slack integration for notifications of task failure. Select the 
 `Alert on completed experiments` under `Additional options` to set up alerts for task completions.
   * API Token - Slack workspace access token 
   * Channel Name - Slack channel to which task failure alerts will be posted
