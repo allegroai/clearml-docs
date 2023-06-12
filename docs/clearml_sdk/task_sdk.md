@@ -424,6 +424,82 @@ Like any other arguments, they can be changed from the UI or programmatically.
 Function tasks must be created from within a regular task, created by calling `Task.init`
 :::
 
+### Distributed Execution
+
+ClearML supports distributed remote execution through multiple worker nodes using [`Task.launch_multi_node()`](../references/sdk/task.md#launch_multi_node). 
+This method creates multiple copies of a task and enqueues them for execution. 
+
+Each copy of the task is called a node. The original task that initiates the nodes’ execution is called the master node.
+
+```python
+Task = task.init(task_name ="my_task", project_name="my_project")
+task.execute_remotely(queue="default")
+task.launch_multi_node(total_num_nodes=3, port=29500, queue=None, wait=False, addr=None)
+
+# rest of code
+```
+
+* `total_num_nodes` - The total number of workers (including the master node) to create. 
+* `port` - Network port the master node listens on. This value will be overridden if the `CLEARML_MULTI_NODE_MASTER_DEF_PORT` 
+or `MASTER_PORT` environment variables are set.
+* `addr` - Address of the master node's worker. This value will be overridden if `CLEARML_MULTI_NODE_MASTER_DEF_ADDR` 
+or `MASTER_ADDR` environment variables are set. Left unspecified, the private IP of the machine the master node is 
+running on will be used. 
+* `queue` - The execution queue to use for launching the worker nodes. If `None`, the nodes will be enqueued to the same 
+queue as the master node was enqueued on.
+* `wait` - If `True`, the master node will wait for the other nodes to start
+
+When the method is executed, the following environment variables are set:
+* `MASTER_ADDR` - Address of the machine where the master node is running
+* `MASTER_PORT` - Network port the master node is listening on
+* `WORLD_SIZE` - Total number of nodes, including the master
+* `RANK` - Rank of the current node (master has rank 0)
+
+The `multi_node_instance` task configuration entry of each task holds the multi-node execution information: 
+* `total_num_nodes` - Total number of nodes, including the master node
+* `queue` - Queue where the nodes will be enqueued
+  
+The method returns a dictionary containing relevant information regarding the multi-node run:
+* `master_addr` - Address of the machine where the master node is running
+* `master_port` - Network port the master node is listening on
+* `total_num_nodes` - Total number of nodes, including the master node
+* `queue` - Queue that the nodes are enqueued to, excluding the master node
+* `node_rank` - Rank of the current node
+* `wait` - If `True`, the master node will wait for the other nodes to start
+
+:::important
+`Task.launch_multi_node()` should be called before an underlying distributed computation framework (e.g. `torch.distributed.init_process_group`).
+:::
+
+#### Example: PyTorch Distributed 
+You can use `Task.launch_multi_node()` in conjunction with a distributed model training framework such as PyTorch's 
+[distributed communication package](https://pytorch.org/docs/stable/distributed.html).
+ 
+```python
+from clearml import Task
+import torch
+import torch.distributed as dist
+
+def run(rank, size):
+    print('World size is ', size)
+    tensor = torch.zeros(1)
+    if rank == 0:
+        for i in range(1, size):
+            tensor += 1
+            dist.send(tensor=tensor, dst=i)
+            print('Sending from rank ', rank, ' to rank ', i, ' data: ', tensor[0])
+    else:
+        dist.recv(tensor=tensor, src=0)
+        print('Rank ', rank, ' received data: ', tensor[0])
+            
+if __name__ == '__main__':
+    task = Task.init(project_name='examples', task_name="distributed example")
+    task.execute_remotely(queue_name='queue')
+    config = task.launch_multi_node(4)
+    dist.init_process_group('gloo')
+    run(config.get('node_rank'), config.get('total_num_nodes'))
+```
+
 ### Offline Mode
 
 You can work with tasks in Offline Mode, in which all the data and logs that the Task captures are stored in a local 
