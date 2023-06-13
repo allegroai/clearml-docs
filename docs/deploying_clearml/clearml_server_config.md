@@ -55,7 +55,7 @@ For example, a domain is called `mydomain.com`, and a subdomain named `clearml.m
 * `api.clearml.mydomain.com` (API server)
 * `files.clearml.mydomain.com` (file server)
 
-Accessing the **ClearML Web UI** with `app.clearml.mydomain.com` will automatically send API requests to `api.clearml.mydomain.com`.
+Accessing the [ClearML Web UI](../webapp/webapp_overview.md) with `app.clearml.mydomain.com` will automatically send API requests to `api.clearml.mydomain.com`.
 
 ## ClearML Server Feature Configurations
 
