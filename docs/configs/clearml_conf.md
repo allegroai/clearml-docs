@@ -933,7 +933,7 @@ and limitations on bucket naming.
 **`sdk.development.default_output_uri`** (*string*) <a class="tr_top_negative" id="config_default_output_uri"></a> 
     
 * The default output destination for model checkpoints (snapshots) and artifacts. If the `output_uri` parameter is not provided 
-  when calling the `Task.init` method, then use the destination in `default_output_uri`.
+  when calling [`Task.init()`](../references/sdk/task.md#taskinit), then use the destination in `default_output_uri`.
     
 
 ---
