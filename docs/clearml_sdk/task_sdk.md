@@ -520,8 +520,8 @@ the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
 :::caution 
-Offline mode only works with tasks created using `Task.init` and not with those created 
-using the `Task.create` method. 
+Offline mode only works with tasks created using [`Task.init()`](../references/sdk/task.md#taskinit) and not with those created 
+using [`Task.create()`](../references/sdk/task.md#taskcreate). 
 :::
 
 All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. 

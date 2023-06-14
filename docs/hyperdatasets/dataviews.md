@@ -310,7 +310,7 @@ list_of_frames = myDataView.to_list()
 
 ### Controlling Query Iteration
 
-Use [`DataView.set_iteration_parameters`](../references/hyperdataset/dataview.md#set_iteration_parameters) to manage the 
+Use [`DataView.set_iteration_parameters()`](../references/hyperdataset/dataview.md#set_iteration_parameters) to manage the 
 order, number, timing, and reproducibility of frames for training.
 
 

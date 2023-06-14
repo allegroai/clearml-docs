@@ -51,7 +51,7 @@ The app monitors your workspace for trigger events and will launch copies of the
 
 ## Dashboard 
 
-The Trigger Manager app instance's dashboard displays its console log. The log  shows the instance’s activity: periodic 
+The Trigger Manager app instance's dashboard displays its console log. The log shows the instance’s activity: periodic 
 polling, and events triggered
 
 ![Trigger dashboard](../../img/apps_trigger_manager_dashboard.png)

@@ -509,8 +509,8 @@ the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
 :::caution 
-Offline mode only works with tasks created using `Task.init` and not with those created 
-using the `Task.create` method. 
+Offline mode only works with tasks created using [`Task.init()`](references/sdk/task.md#taskinit) and not with those created 
+using [`Task.create()`](references/sdk/task.md#taskcreate). 
 :::
 
 The task's console output displays the task ID and a path to the folder with the session's captured information:
