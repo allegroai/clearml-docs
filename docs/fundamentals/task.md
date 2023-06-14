@@ -7,7 +7,7 @@ title: Tasks
 A Task is a single code execution session, which can represent an experiment, a step in a workflow, a workflow controller, 
 or any custom implementation you choose.
 
-To transform an existing script into a **ClearML Task**, one must call the [`Task.init()`](../references/sdk/task.md#taskinit) method 
+To transform an existing script into a **ClearML Task**, call the [`Task.init()`](../references/sdk/task.md#taskinit) method 
 and specify a task name and its project. This creates a Task object that automatically captures code execution 
 information as well as execution outputs.
 

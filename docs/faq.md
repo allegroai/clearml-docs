@@ -24,7 +24,7 @@ title: FAQ
 * [I noticed that all of my experiments appear as "Training". Are there other options?](#other-experiment-types)
 * [Sometimes I see experiments as running when in fact they are not. What's going on?](#experiment-running-but-stopped)
 * [My code throws an exception, but my experiment status is not "Failed". What happened?](#exception-not-failed)
-* [CERTIFICATE_VERIFY_FAILED - When I run my experiment, I get an SSL Connection error . Do you have a solution?](#ssl-connection-error)
+* [CERTIFICATE_VERIFY_FAILED - When I run my experiment, I get an SSL Connection error. Do you have a solution?](#ssl-connection-error)
 * [How do I modify experiment names once they have been created?](#modify_exp_names)
 * [Using Conda and the "typing" package, I get the error "AttributeError: type object 'Callable' has no attribute '_abc_registry'". How do I fix this?](#typing)
 * [My ClearML Server disk space usage is too high. What can I do about this?](#delete_exp)
@@ -91,12 +91,12 @@ title: FAQ
 
 **ClearML Server Troubleshooting**
 
-* [I did a reinstall. Why can't I create credentials in the Web-App (UI)?](#clearml-server-reinstall-cookies)
+* [I did a reinstall. Why can't I create credentials in the WebApp (UI)?](#clearml-server-reinstall-cookies)
 * [How do I fix Docker upgrade errors?](#common-docker-upgrade-errors)
 * [Why is web login authentication not working?](#port-conflict)
 * [How do I bypass a proxy configuration to access my local ClearML Server?](#proxy-localhost)
 * [Trains is failing to update ClearML Server. I get an error 500 (or 400). How do I fix this?](#elastic_watermark)
-* [Why is my Trains Web-App (UI) not showing any data?](#web-ui-empty)
+* [Why is my Trains WebApp (UI) not showing any data?](#web-ui-empty)
 * [Why can't I access my ClearML Server when I run my code in a virtual machine?](#vm_server)
 
 **ClearML Agent**
@@ -321,7 +321,7 @@ task = Task.init(project_name, task_name, Task.TaskTypes.testing)
 
 **Sometimes I see experiments as running when in fact they are not. What's going on?** <a id="experiment-running-but-stopped"></a>
 
-ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right-click the experiment in the Web-App and abort it.
+ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right-click the experiment in the WebApp and abort it.
 
 <br/>
 
@@ -919,7 +919,7 @@ on the "Configuring Your Own ClearML Server" page.
 
 **Can I add web login authentication to ClearML Server?** <a id="web-auth"></a>
 
-By default, anyone can log in to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
+By default, anyone can log in to the ClearML Server WebApp. You can configure the ClearML Server to allow only a specific set of users to access the system.
 
 For detailed instructions, see [Web Login Authentication](deploying_clearml/clearml_server_config.md#web-login-authentication) 
 on the "Configuring Your Own ClearML Server" page in the "Deploying ClearML" section.
@@ -940,7 +940,7 @@ For detailed instructions, see [Modifying non-responsive Task watchdog settings]
 
 ## ClearML Server Troubleshooting
 
-**I did a reinstall. Why can't I create credentials in the Web-App (UI)?** <a id="clearml-server-reinstall-cookies"></a>
+**I did a reinstall. Why can't I create credentials in the WebApp (UI)?** <a id="clearml-server-reinstall-cookies"></a>
 
 The issue is likely your browser cookies for ClearML Server. Clearing your browser cookies for ClearML Server is recommended. 
 For example: 
@@ -1089,9 +1089,9 @@ A likely indication of this situation can be determined by searching your clearm
 
 <br/>
 
-**Why is my ClearML Web-App (UI) not showing any data?** <a className="tr_top_negative" id="web-ui-empty"></a>
+**Why is my ClearML WebApp (UI) not showing any data?** <a className="tr_top_negative" id="web-ui-empty"></a>
 
-If your ClearML Web-App (UI) does not show anything, it may be an error authenticating with the server. Try clearing the application cookies for the site in your browser's developer tools. 
+If your ClearML WebApp (UI) does not show anything, it may be an error authenticating with the server. Try clearing the application cookies for the site in your browser's developer tools. 
     
 **Why can't I access my ClearML Server when I run my code in a virtual machine?** <a id="vm_server"></a>
 

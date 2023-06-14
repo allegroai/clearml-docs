@@ -119,7 +119,7 @@ abort task 0. So one way of doing that would be to go to the current experiment,
 ClearML will actually bring me to the original experiment view, the experiment manager, remember everything is 
 integrated here. The experiment manager of that example task. So what I can do here if I look at the console, I have a 
 bunch of output here. I can actually abort it as well. And if I abort it, what will happen is this task will stop 
-executing. Essentially, it will send a `ctrl c`, so a quit command or a terminate command, to the original task on the \
+executing. Essentially, it will send a `ctrl c`, so a quit command or a terminate command, to the original task on the
 remote machine. So the remote machine will say okay, I'm done here. I will just quit it right here. If, for example, 
 your model is not performing very well, or you see like oh, something is definitely wrong here, you can always just 
 abort it. And the cool thing is if we go back to the **Workers and Queues**, we'll see that the `Beast 0` has given up working 
