@@ -1,5 +1,6 @@
 ---
-title: PyTorch with TensorBoard
+title: TensorBoard
+displayed_sidebar: mainSidebar
 ---
 
 The [pytorch_tensorboard.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_tensorboard.py) 

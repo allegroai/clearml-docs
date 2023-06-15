@@ -1,5 +1,6 @@
 ---
 title: CatBoost
+displayed_sidebar: mainSidebar
 ---
 
 The [catboost_example.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/catboost/catboost_example.py) 
