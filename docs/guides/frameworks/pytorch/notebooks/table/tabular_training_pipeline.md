@@ -205,7 +205,7 @@ The logs show the Task ID and accuracy for the best model in **CONSOLE**.
    
 ![image](../../../../../img/tabular_training_pipeline_02.png)
    
-The link to the model details is in **ARTIFACTS** **>** **Output Model** .
+The link to the model details is in **ARTIFACTS** **>** **Output Model**.
         
 ![image](../../../../../img/tabular_training_pipeline_03.png)
    

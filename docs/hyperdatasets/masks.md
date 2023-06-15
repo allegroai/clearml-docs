@@ -27,7 +27,7 @@ In the UI, you can view the mapping in a dataset version's [Metadata](webapp/web
 ![Dataset metadata panel](../img/hyperdatasets/dataset_metadata.png)
 
 When viewing a frame with a mask corresponding with the version’s mask-label mapping, the UI arbitrarily assigns a color 
-to each label . The color assignment can be [customized](webapp/webapp_datasets_frames.md#labels).
+to each label. The color assignment can be [customized](webapp/webapp_datasets_frames.md#labels).
 
 For example:
 * Original frame image:
@@ -44,7 +44,7 @@ The frame's sources array contains a masks list of dictionaries that looks somet
 ```editorconfig
 {
  "id": "<framegroup_id>",
- "timestamp": "<timestamp>" ,
+ "timestamp": "<timestamp>",
  "context_id": "car_1",
  "sources": [
    {

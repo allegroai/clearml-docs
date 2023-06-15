@@ -84,7 +84,7 @@ preprocess_task = Task.get_task(task_id='preprocessing_task_id')
 local_csv = preprocess_task.artifacts['data'].get_local_copy()
 ```
 
-The `task.artifacts` is a dictionary where the keys are the artifact names, and the returned object is the artifact object.
+`task.artifacts` is a dictionary where the keys are the artifact names, and the returned object is the artifact object.
 Calling `get_local_copy()` returns a local cached copy of the artifact. Therefore, next time we execute the code, we don't
 need to download the artifact again.
 Calling `get()` gets a deserialized pickled object.
