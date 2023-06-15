@@ -48,6 +48,7 @@ The app monitors your workspace for trigger events and will launch copies of the
   * Add item - Add another trigger 
 * **Polling frequency** - Time period in minutes at which the workspace is polled for trigger events 
 
+![Trigger manager wizard](../../img/apps_trigger_manager_wizard.png)
 
 ## Dashboard 
 
