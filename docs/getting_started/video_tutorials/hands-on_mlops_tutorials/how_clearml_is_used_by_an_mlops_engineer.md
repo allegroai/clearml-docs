@@ -212,13 +212,13 @@ you would have made yourself, and now you want to get it into the queue. Now one
 you could do a `Task.init` which essentially tracks the run of your code as an experiment in the experiment manager, and 
 then you could go and clone the experiment and then enqueue it. This is something that we saw in the Getting Started videos before. 
 
-Now, another way of doing this is to actually use what you can see here, which is `task.execute_remotely`. What this line 
+Now, another way of doing this is to actually use what you can see here, which is `Task.execute_remotely()`. What this line 
 specifically will do, is when you run the file right here. Let me just do that real quick. So if we do 
 `python setup/example_task_CPU.py` what will happen is ClearML will do the `Task.init` like it would always do, but then 
-it would encounter the `task.execute_remotely` and what that will tell ClearML is say okay, take all of this code, take 
+it would encounter the `Task.execute_remotely()` and what that will tell ClearML is say okay, take all of this code, take 
 all of the packages that are installed, take all of the things that you would normally take as part of the experiment 
 manager, but stop executing right here and then send the rest, send everything through to a ClearML agent or to the queue 
-so that a ClearML agent can start working on it. So one way of doing this is to add a `task.execute_remotely` just all
+so that a ClearML agent can start working on it. So one way of doing this is to add a `Task.execute_remotely()` just all
 the way at the top and then once you run it, you will see here `clearml WARNING - Terminating local execution process`, 
 and so if we're seeing here if we're going to take a look we can see that Model Training currently running, and if we go 
 and take a look, at our queues here, we have `any-remote-machine` running Model Training right here. And if we go and 
@@ -246,7 +246,7 @@ our Model Training GPU. But remember again that we also have the autoscaler. So 
 autoscaler, you'll see here that we indeed have one task in the GPU queue. And we also see that the `GPU_machines` 
 Running Instances is one as well. So we can follow along with the logs here. And it actually detected that there is a 
 task in a GPU queue, and it's now spinning up a new machine, a new GPU machine to be running that specific task, and then 
-it will shut that back down again when it's done. So this is just one example of how you can use `task.execute_remotely` 
+it will shut that back down again when it's done. So this is just one example of how you can use `Task.execute_remotely()` 
 to very efficiently get your tasks into the queue. Actually, it could also be the first time. So if you don't want to 
 use the experiment manager for example, you don't actually have to use a task that is already in the system, you can 
 just say it does not execute remotely, and it will just put it into the system for you and immediately launch it remotely. 

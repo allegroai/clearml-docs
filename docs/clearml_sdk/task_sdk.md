@@ -927,10 +927,10 @@ This call is not cached. If the Task has many reported scalars, it might take a 
 
 #### Get Single Value Scalars
 
-To get the values of a reported single-value scalars, use [`task.get_reported_single_value()`](../references/sdk/task.md#get_reported_single_value) 
+To get the values of a reported single-value scalars, use [`Task.get_reported_single_value()`](../references/sdk/task.md#get_reported_single_value) 
 and specify the scalar's `name`.  
 
-To get all reported single scalar values, use [`task.get_reported_single_values()`](../references/sdk/task.md#get_reported_single_values), 
+To get all reported single scalar values, use [`Task.get_reported_single_values()`](../references/sdk/task.md#get_reported_single_values), 
 which returns a dictionary of scalar name and value pairs:
 
 ```console
