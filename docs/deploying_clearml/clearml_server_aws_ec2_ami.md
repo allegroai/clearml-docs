@@ -45,7 +45,7 @@ Once deployed, ClearML Server exposes the following services:
 1. Go to AWS EC2 Console.
 1. In the **Details** tab, **Public DNS (IPv4)** shows the ClearML Server address.
 
-**To access ClearML Server Web-App (UI):**
+**To access ClearML Server WebApp (UI):**
 
 * Direct browser to its web server URL: `http://<Server Address>:8080`
 

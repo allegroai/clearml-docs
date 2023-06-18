@@ -138,7 +138,7 @@ clearml-agent execute [-h] --id TASK_ID [--log-file LOG_FILE] [--disable-monitor
 |`--log-file`| The log file for Task execution output (stdout / stderr) to a text file.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--log-level`| SDK log level. The values are:<ul><li>`DEBUG`</li><li>`INFO`</li><li>`WARN`</li><li>`WARNING`</li><li>`ERROR`</li><li>`CRITICAL`</li></ul>|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`-O`| Compile optimized pyc code (see python documentation). Repeat for more optimization.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--require-queue`| If the specified task is not queued (in any queue), the execution will fail. (Used for 3rd party scheduler integration, e.g. K8s, SLURM, etc.)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--require-queue`| If the specified task is not queued, the execution will fail. (Used for 3rd party scheduler integration, e.g. K8s, SLURM, etc.)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--standalone-mode`| Do not use any network connects, assume everything is pre-installed|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 ## list

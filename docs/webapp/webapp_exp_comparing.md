@@ -2,7 +2,7 @@
 title: Comparing Experiments
 ---
 It is always useful to investigate what causes an experiment to succeed.
-The **ClearML Web UI** provides experiment comparison features, allowing to locate, visualize, and analyze differences including:
+The ClearML Web UI provides experiment comparison features, allowing to locate, visualize, and analyze differences including:
 
 * [Details](#details)
     - Artifacts - Input model, output model, and model design.
@@ -123,7 +123,7 @@ Visualize the comparison of scalars, which includes metrics and monitored resour
 
 ### Compare Scalar Series
 
-Compare scalar series in plots and analyze differences using **ClearML Web UI** plot tools.
+Compare scalar series in plots and analyze differences using plot tools.
 
 **To compare scalar series:**
 

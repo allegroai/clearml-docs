@@ -61,7 +61,7 @@ help maintainers reproduce the problem:
   a [gist](https://gist.github.com) (and provide a link to that gist).
 * **Describe the behavior you observed after following the steps** and the exact problem with that behavior.
 * **Explain which behavior you expected to see and why.**
-* **For Web-App issues, please include screenshots and animated GIFs** that recreate the described steps and clearly demonstrate 
+* **For WebApp (UI) issues, please include screenshots and animated GIFs** that recreate the described steps and clearly demonstrate 
   the problem. You can use [LICEcap](https://www.cockos.com/licecap) to record GIFs on macOS and Windows, and [silentcast](https://github.com/colinkeenan/silentcast)
   or [byzanz](https://github.com/threedaymonk/byzanz) on Linux.
 
@@ -85,9 +85,9 @@ Enhancement suggestions are tracked as GitHub issues. After you determine which 
 
 Before you submit a new PR:
 
-* Verify that the work you plan to merge addresses an existing [issue](https://github.com/allegroai/clearml/issues) (If not, open a new one)
+* Verify that the work you plan to merge addresses an existing [issue](https://github.com/allegroai/clearml/issues) (if not, open a new one)
 * Check related discussions in the [ClearML slack community](https://joinslack.clear.ml) 
-  (Or start your own discussion on the ``#clearml-dev`` channel)
+  (or start your own discussion on the ``#clearml-dev`` channel)
 * Make sure your code conforms to the ClearML coding standards by running:
   
       flake8 --max-line-length=120 --statistics --show-source --extend-ignore=E501 ./clearml*

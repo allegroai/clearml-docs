@@ -153,7 +153,7 @@ Pass one of the following in the `continue_last_task` parameter:
 * Task ID (string) - The ID of the task to be continued. 
 * Initial iteration offset (integer) - Specify the initial iteration offset. By default, the task will continue one 
   iteration after the last reported one. Pass `0`, to disable the automatic last iteration offset. To also specify a 
-  task ID, use the `reuse_last_task_id` parameter .
+  task ID, use the `reuse_last_task_id` parameter.
 
 You can also continue a task previously executed in offline mode, using the `Task.import_offline_session` method. 
 See [Offline Mode](#offline-mode). 
@@ -417,7 +417,7 @@ a_func_task = task.create_function_task(
 )
 ```
 Arguments passed to the function will be automatically logged in the 
-experiment's **CONFIGURATION** tab under the **HYPERPARAMETER > Function** section . 
+experiment's **CONFIGURATION** tab under the **HYPERPARAMETER > Function** section. 
 Like any other arguments, they can be changed from the UI or programmatically.
 
 :::note Function Task Creation
@@ -914,8 +914,8 @@ This returns a nested dictionary of the scalar graph values:
 {
   "title": {
     "series": {
-      "x": [0, 1 ,2],
-      "y": [10, 11 ,12]
+      "x": [0, 1, 2],
+      "y": [10, 11, 12]
     }
   }
 }
@@ -927,10 +927,10 @@ This call is not cached. If the Task has many reported scalars, it might take a 
 
 #### Get Single Value Scalars
 
-To get the values of a reported single-value scalars, use [`task.get_reported_single_value()`](../references/sdk/task.md#get_reported_single_value) 
+To get the values of a reported single-value scalars, use [`Task.get_reported_single_value()`](../references/sdk/task.md#get_reported_single_value) 
 and specify the scalar's `name`.  
 
-To get all reported single scalar values, use [`task.get_reported_single_values()`](../references/sdk/task.md#get_reported_single_values), 
+To get all reported single scalar values, use [`Task.get_reported_single_values()`](../references/sdk/task.md#get_reported_single_values), 
 which returns a dictionary of scalar name and value pairs:
 
 ```console
