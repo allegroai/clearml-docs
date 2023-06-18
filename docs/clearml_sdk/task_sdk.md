@@ -342,31 +342,44 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
 
 ## Cloning & Executing Tasks
 
-Once a task object is created, it can be copied (cloned). [`Task.clone`](../references/sdk/task.md#taskclone) returns 
+Once a task object is created, it can be copied (cloned). [`Task.clone()`](../references/sdk/task.md#taskclone) returns 
 a copy of the original task (`source_task`). By default, the cloned task is added to the same project as the original, 
 and it's called "Clone Of ORIGINAL_NAME", but the name / project / comment (description) of the cloned task can be directly overridden.
 
 ```python
 task = Task.init(project_name='examples', task_name='original task',)
-cloned = Task.clone(
+cloned_task = Task.clone(
     source_task=task,  # type: Optional[Union[Task, str]]
     # override default name
     name='newly created task',  # type: Optional[str]
     comment=None,  # type: Optional[str]
     # insert cloned task into a different project
-    project=None,  # type: Optional[str]
+    project='<new_project_id>',  # type: Optional[str]
 )
 ```
 
-A newly cloned task has a [draft](../fundamentals/task.md#task-states) status, so it's modifiable.
+A newly cloned task has a [draft](../fundamentals/task.md#task-states) status, 
+so you can modify any configuration. For example, run a different git version of the code, with a new `lr` value, for a 
+different number of epochs and using a new base model:
 
-Once a task is modified, launch it by pushing it into an execution queue with the [`Task.enqueue`](../references/sdk/task.md#taskenqueue)
+```python
+# Set parameters (replaces existing hyperparameters in task)
+cloned_task.set_parameters({'epochs':7, 'lr': 0.5})
+
+# Override git repo information
+cloned_task.set_repo(repo="https://github.com/allegroai/clearml.git", branch="my_branch_name")
+# Remove input model and set a new one
+cloned_task.remove_input_models(models_to_remove=["<model_id>"])
+cloned_task.set_input_model(model_id="<new_intput_model_id>")
+```
+
+Once a task is modified, launch it by pushing it into an execution queue with the [`Task.enqueue()`](../references/sdk/task.md#taskenqueue)
 class method. Then a [ClearML Agent](../clearml_agent.md) assigned to the queue will pull the task from the queue and execute
 it. 
 
 ```python
 Task.enqueue(
-    task=task,  # type: Union[Task, str]
+    task=cloned_task,  # type: Union[Task, str]
     queue_name='default',  # type: Optional[str] 
     queue_id=None  # type: Optional[str]
 )
