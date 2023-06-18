@@ -187,10 +187,14 @@ Task.current_task().set_model_config("a very long text with the configuration fi
 
 **I am training multiple models at the same time, but I only see one of them. What happened?** <a id="only-last-model-appears"></a>
 
-Currently, in the experiment info panel, ClearML shows only the last associated model. In the ClearML Web UI, 
-on the Projects page, the MODELS tab shows all models.
+This issue was resolved in ClearML Server v1.0.0. 
 
-This will be improved in a future version.
+See server upgrade instructions for any of the available formats:
+* [AWS EC2 AMIs](deploying_clearml/upgrade_server_aws_ec2_ami.md)
+* [Google Cloud Platform](deploying_clearml/upgrade_server_gcp.md)
+* [Linux or MacOS](deploying_clearml/upgrade_server_linux_mac.md)
+* [Windows 10](deploying_clearml/upgrade_server_win.md)
+* [Kubernetes](deploying_clearml/upgrade_server_kubernetes_helm.md)
 
 <br/>
 
