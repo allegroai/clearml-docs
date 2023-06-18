@@ -30,7 +30,7 @@ Yeah, yeah we can, it's called hyperparameter optimization. And we can do all of
 
 If you don’t know what Hyperparameter Optimization is yet, you can find a link to our blog post on the topic in the description below. But in its most basic form, hyperparameter optimization tries to optimize a certain output by changing a set of inputs. 
 
-Let’s say we’ve been working on this model here, and we were tracking our experiments with it anyway. We can see we have some hyperparameters to work with in the **Hyperparameters** tab of the web UI. They are logged by using the `task.connect` function in our code. These are our inputs. We also have a scaler called `validation/epoch_accuracy`, that we want to get as high as possible. This is our output. We could also select to minimize the `epoch_loss` for example, that is something you can decide yourself.
+Let’s say we’ve been working on this model here, and we were tracking our experiments with it anyway. We can see we have some hyperparameters to work with in the **Hyperparameters** tab of the web UI. They are logged by using the `Task.connect` function in our code. These are our inputs. We also have a scaler called `validation/epoch_accuracy`, that we want to get as high as possible. This is our output. We could also select to minimize the `epoch_loss` for example, that is something you can decide yourself.
 
 We can see that no code was used to log the scalar. It's done automatically because we are using TensorBoard.
 
