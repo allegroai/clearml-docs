@@ -10,7 +10,7 @@ Hyper-Datasets are supported by the `allegroai` python package.
 
 ### Connecting Dataviews to a Task
 
-Use [`Task.connect`](../references/sdk/task.md#connect) to connect a Dataview object to a Task: 
+Use [`Task.connect()`](../references/sdk/task.md#connect) to connect a Dataview object to a Task: 
 
 ```python
 from allegroai import DataView, Task

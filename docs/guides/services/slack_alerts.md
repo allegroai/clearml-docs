@@ -103,7 +103,7 @@ In `slack_alerts.py`, the class `SlackMonitor` inherits from the `Monitor` class
     * Builds the Slack message which includes the most recent output to the console (retrieved by calling [`Task.get_reported_console_output`](../../references/sdk/task.md#get_reported_console_output)), 
       and the URL of the Task's output log in the ClearML Web UI (retrieved by calling [`Task.get_output_log_web_page`](../../references/sdk/task.md#get_output_log_web_page)).
 
-The example provides the option to run locally or execute remotely by calling the [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely) 
+You can run the example remotely by calling the [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely) 
 method.
 
 To interface to Slack, the example uses `slack_sdk.WebClient` and `slack_sdk.errors.SlackApiError`.
