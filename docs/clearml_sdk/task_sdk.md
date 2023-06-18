@@ -358,9 +358,9 @@ cloned_task = Task.clone(
 )
 ```
 
-A newly cloned task has a [draft](../fundamentals/task.md#task-states) status, A newly cloned task has a draft status, 
+A newly cloned task has a [draft](../fundamentals/task.md#task-states) status, 
 so you can modify any configuration. For example, run a different git version of the code, with a new `lr` value, for a 
-different number of epochs and using a new base model.
+different number of epochs and using a new base model:
 
 ```python
 # Set parameters (replaces existing hyperparameters in task)
