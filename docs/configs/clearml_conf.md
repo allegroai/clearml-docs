@@ -1288,23 +1288,35 @@ will not exceed the value of `matplotlib_untitled_history_size`
         
 * Dictionary of storage cache options. The keys include:
   * `default_base_dir` (*string*) -The default base directory for caching. The default is the system temp folder for caching.
-  * `default_cache_manager_size` - The default limit for the number of files in the cache. If not set, it will be equal to 100 files.
-  * `size.max_used_bytes` - The maximum size of the local cache directory. If you set it to -1, it can use as much 
-  memory as is available on disk. It's a string, so you can set it to 1GB, 2TB, 500MB
-  * `size.min_free_bytes` - The minimum amount of free disk space that should be left. If the `size.max_used_bytes` is 
+  * `default_cache_manager_size` (*int*) - The default limit for the number of files in the cache. If not set, it will be equal to 100 files.
+  * `size.max_used_bytes` (*str*) - The maximum size of the local cache directory. If set to `-1`, the directory  can use 
+  the memory available on the disk. It's a string, so you can set it to 1GB, 2TB, 500MB
+  * `size.min_free_bytes` (*int*) - The minimum amount of free disk space that should be left. If the `size.max_used_bytes` is 
   set to -1, this configuration will limit the cache directory maximum size to X bytes/MB/GB of available disk space - size.min_free_bytes. 
   It's also a string, so you can set it to 1GB, 2TB, 500MB
-  * `zero_file_size_check` - If set to True, each cache hit will also check the cached file size, making sure it is not 
+  * `zero_file_size_check` (*bool*)- If set to True, each cache hit will also check the cached file size, making sure it is not 
   zero. Default (false) file size check is not performed on existing cached entries 
 
-  the possibility to setup a secondary cache - as per the comment in the clearml.conf - “Options for the secondary cache. 
-Acts as a level 2 cache, i.e. files that would be downloaded to the main (which can be also seen as the default/regular/local) 
-cache are first queried from this cache, and if found, pulled from here. In case of a cache miss, the files will first 
-be pulled to the main cache, and then copied to this secondary cache. Note that if the file is already in the main cache, 
-the secondary cache will not be queried. Example usecase: using this cache to store data to an EFS shared by a team, 
+
+* `storage.cache.secondary` - 
+* the possibility to set up a secondary cache - 
+Options for the secondary cache. 
+
+  *** it will look first in primary cache, then it will look in secondary - which could be a shared mounting point. could be 
+  used for downloading stuff 
+  * Acts as a level 2 cache, 
+    * i.e. files that would be downloaded to the main (which can be also seen as the default/regular/local) 
+    cache are first queried from this cache, and if found, pulled from here. 
+  * ** clearml wil check if thing already in cache. if not, it means it's a cache miss. in that case, if secondary cache, it
+    will check secondary cache. if missing from there it will try to download it. it will first put it in primary cache. If there
+    is secondary cache, once cached in main, it will copt to secondary cached 
+    * In case of a cache miss, the files will first be pulled to the main cache, and then copied to this secondary cache. 
+    * Note that if the file is already in the main cache, the secondary cache will not be queried. 
+
+Example usecase: using this cache to store data to an EFS shared by a team, 
 such that files will not be pulled from S3 (or other cloud storage provider) multiple times by multiple team members. 
 Supports exactly the same options as the main cache: default_base_dir (which is mandatory), size.max_used_bytes, size.min_free_bytes etc. If
-an option is missing from here, it will default to the value used by the main cache."
+an option is missing from here, it will default to the value used by the main cache.
 
 
 For more details see this thread: https://clearml.slack.com/archives/CTK20V944/p1686129608668939
