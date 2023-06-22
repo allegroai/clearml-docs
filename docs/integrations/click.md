@@ -5,7 +5,7 @@ title: Click
 [`click`](https://click.palletsprojects.com) is a python package for creating command-line interfaces. ClearML integrates 
 seamlessly with `click` and automatically logs its command-line parameters. 
 
-All you have to do is add two lines of code to your code:
+All you have to do is add two lines of code:
 
 ```python
 from clearml import Task

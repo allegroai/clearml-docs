@@ -7,8 +7,15 @@ title: Hydra
 with Hydra and automatically logs the `OmegaConf` which holds all the configuration files, as well as 
 values overridden during runtime. 
 
-The OmegaConf is logged as a blob and can be viewed in the experiment's 
-**CONFIGURATION > CONFIGURATION OBJECTS > OmegaConf** section. 
+All you have to do is add two lines of code:
+
+```python
+from clearml import Task
+task = Task.init(task_name="<task_name>", project_name="<project_name>")
+```
+
+This creates a [ClearML Task](../fundamentals/task.md). ClearML logs the OmegaConf as a blob and can be viewed in the 
+[WebApp](../webapp/webapp_overview.md), in the experiment's **CONFIGURATION > CONFIGURATION OBJECTS > OmegaConf** section. 
 
 ![Hydra configuration](../img/integrations_hydra_configs.png)
 
