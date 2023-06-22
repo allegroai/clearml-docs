@@ -34,16 +34,10 @@ runner.register_training_hooks(
 )
 ```
 
- The `init_kwargs` dictionary can include any parameter from [`Task.init()`](../references/sdk/task.md#taskinit). 
-The `hooks` dictionary for configuring ClearML can also include the following keys:
-* `interval` - Logging interval in iterations (default 10).
-* `ignore_last` - If set to `True`, ignore the log of last iterations in each epoch if less than `interval` (default `True`).
-* `reset_flag` - If set to `True`,  clear the output buffer after logging (default `False`).
-* `by_epoch` - If set to `True`, [`EpochBasedRunner`](https://mmcv.readthedocs.io/en/v1.3.8/runner.html?highlight=register_training_hooks#epochbasedrunner) 
-is used (default `True`).
-This creates a ClearML task `OpenMMLab cifar10` in the `examples` project.
+The `init_kwargs` dictionary can include any parameter from [`Task.init()`](../references/sdk/task.md#taskinit). 
 
-You can view the metrics in the experiment's **Scalars** tab in the [WebApp](../webapp/webapp_overview.md).
+This creates a [ClearML Task](../fundamentals/task.md) `OpenMMLab cifar10` in the `examples` project.
+You can view the captured metrics in the experiment's **Scalars** tab in the [WebApp](../webapp/webapp_overview.md).
 
 ![OpenMMLab scalars](../img/itegration_openmmlab_scalars.png)
 
