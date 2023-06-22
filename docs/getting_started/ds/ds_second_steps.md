@@ -180,7 +180,7 @@ or check these pages out:
 - Develop on remote machines with [ClearML Session](../../apps/clearml_session.md)
 - Structure your work and put it into [Pipelines](../../pipelines/pipelines.md)
 - Improve your experiments with [Hyperparameter Optimization](../../fundamentals/hpo.md)
-- Check out ClearML's integrations to [external libraries](../../integrations/libraries.md).
+- Check out ClearML's integrations to [external libraries](../../guides/frameworks/autokeras/integration_autokeras.md).
 
 ## YouTube Playlist
 

@@ -2,7 +2,46 @@
 title: Click
 ---
 
-ClearML automatically logs any command line parameters passed when invoking code that uses [click](https://click.palletsprojects.com/). 
+[`click`](https://click.palletsprojects.com) is a python package for creating command-line interfaces, which integrates 
+seamlessly with ClearML. ClearML automatically logs any command-line parameters passed when invoking code that 
+uses `click`. 
 
-The click_single_cmd.py script is a basic example that defines a single command using click, which ClearML automatically 
-logs. The click_multi_cmd.py script defines a more elaborate set of command line parameters with click. 
+All you have to do is add two lines of code to your code:
+
+```python
+from clearml import Task
+task = Task.init(task_name="<task_name>", project_name="<project_name>")
+```
+
+For example: 
+
+```python
+import click
+from clearml import Task
+
+@click.command()
+@click.option('--count', default=1, help='Number of greetings.')
+@click.option('--name', prompt='Your name', help='The person to greet.')
+
+def hello(count, name):
+    task = Task.init(project_name='examples', task_name='Click single command')
+
+    for x in range(count):
+        click.echo("Hello {}!".format(name))
+
+
+if __name__ == '__main__':
+    hello()
+```
+
+When this code is executed, it will create a ClearML Task called `Click single command` in the `examples` project. You 
+can view your `click` parameters in the [WebApp](../webapp/webapp_overview.md), in the experiment's
+**Configuration > Hyperparameters > Args** section. 
+
+![click configuration](../img/integrations_click_configs.png)
+
+In the UI, you can clone the task multiple times and modify the click parameters for re-execution by the [ClearML Agent](../clearml_agent.md).
+When the task is re-executed, the executing agent will override the original values with the new ones.
+
+See [code examples](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click) demonstrating integrating
+ClearML into code that uses click.
