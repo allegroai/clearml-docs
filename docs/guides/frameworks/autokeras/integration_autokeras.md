@@ -1,5 +1,6 @@
 ---
-title: AutoKeras Integration
+title: AutoKeras
+displayed_sidebar: mainSidebar
 ---
 Integrate ClearML into code that uses [autokeras](https://github.com/keras-team/autokeras). Initialize a ClearML 
 Task in a code, and ClearML automatically logs scalars, plots, and images reported to TensorBoard, Matplotlib, Plotly, 

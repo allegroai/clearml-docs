@@ -1,5 +1,6 @@
 ---
-title: Keras Tuner Integration
+title: Keras Tuner
+displayed_sidebar: mainSidebar
 ---
 
 Integrate ClearML into code that uses [Keras Tuner](https://www.tensorflow.org/tutorials/keras/keras_tuner). By 

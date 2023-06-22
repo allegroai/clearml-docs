@@ -1,5 +1,6 @@
 ---
-title: PyTorch MNIST
+title: PyTorch
+displayed_sidebar: mainSidebar
 ---
 
 The [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) example 
