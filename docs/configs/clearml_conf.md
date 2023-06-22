@@ -1295,16 +1295,9 @@ will not exceed the value of `matplotlib_untitled_history_size`
   set to -1, this configuration will limit the cache directory maximum size to X bytes/MB/GB of available disk space - size.min_free_bytes. 
   It's also a string, so you can set it to 1GB, 2TB, 500MB
   * `zero_file_size_check` (*bool*)- If set to True, each cache hit will also check the cached file size, making sure it is not 
-  zero. Default (false) file size check is not performed on existing cached entries 
-
-
-* `storage.cache.secondary` - 
-* the possibility to set up a secondary cache - 
-Options for the secondary cache. 
-
-  *** it will look first in primary cache, then it will look in secondary - which could be a shared mounting point. could be 
-  used for downloading stuff 
-  * Acts as a level 2 cache, 
+    zero. Default (false) file size check is not performed on existing cached entries 
+  * `secondary` (*dict*) - Set up a secondary cache (acts as an L2 cache). When the server is queries, it will first look in primary cache, 
+  then it will look in secondary cache. 
     * i.e. files that would be downloaded to the main (which can be also seen as the default/regular/local) 
     cache are first queried from this cache, and if found, pulled from here. 
   * ** clearml wil check if thing already in cache. if not, it means it's a cache miss. in that case, if secondary cache, it
@@ -1318,7 +1311,8 @@ such that files will not be pulled from S3 (or other cloud storage provider) mul
 Supports exactly the same options as the main cache: default_base_dir (which is mandatory), size.max_used_bytes, size.min_free_bytes etc. If
 an option is missing from here, it will default to the value used by the main cache.
 
-
+cache - which could be a shared mounting point. could be 
+  used for downloading stuff 
 For more details see this thread: https://clearml.slack.com/archives/CTK20V944/p1686129608668939
 
 <br/>
