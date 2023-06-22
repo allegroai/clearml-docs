@@ -209,10 +209,10 @@ To create a [`SingleFrame`](../references/hyperdataset/singleframe.md), instanti
 from allegroai import SingleFrame
 
 frame = SingleFrame(
-    source='/home/user/woof_meow.jpg',
+    source='s3://my/bucket/path_to_file.jpg',
     width=None, 
     height=None, 
-    preview_uri='https://storage.googleapis.com/kaggle-competitions/kaggle/3362/media/woof_meow.jpg',
+    preview_uri='s3://my/bucket/path_to_file.jpg',
     metadata=None, 
     annotations=None,  
     mask_source=None,
@@ -246,10 +246,10 @@ frames = []
 
 # create a frame
 frame = SingleFrame(
-    source='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg',
+    source='s3://my/bucket/path_to_file.jpg',
     width=512, 
     height=512, 
-    preview_uri='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg',
+    preview_uri='s3://my/bucket/path_to_file.jpg',
     metadata={'alive':'yes'}, 
 )
 
