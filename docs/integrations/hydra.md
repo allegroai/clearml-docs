@@ -14,14 +14,14 @@ from clearml import Task
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
-This creates a [ClearML Task](../fundamentals/task.md). ClearML logs the OmegaConf as a blob and can be viewed in the 
+ClearML logs the OmegaConf as a blob and can be viewed in the 
 [WebApp](../webapp/webapp_overview.md), in the experiment's **CONFIGURATION > CONFIGURATION OBJECTS > OmegaConf** section. 
 
 ![Hydra configuration](../img/integrations_hydra_configs.png)
 
 ## Modifying Hydra Values
 
-In the UI, you can clone a task multiple times and modify it for re-execution by the [ClearML Agent](../clearml_agent.md). 
+In the UI, you can clone a task multiple times and modify it for execution by the [ClearML Agent](../clearml_agent.md). 
 The agent executes the code with the modifications you made in the UI, even overriding hardcoded values. 
 
 Clone your experiment, then modify your Hydra parameters via the UI in one of the following ways:

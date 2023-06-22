@@ -33,14 +33,13 @@ if __name__ == '__main__':
     hello()
 ```
 
-When this code is executed, it will create a [ClearML Task](../fundamentals/task.md) called `Click single command` in the `examples` project. You 
-can view your `click` parameters in the [WebApp](../webapp/webapp_overview.md), in the experiment's
-**Configuration > Hyperparameters > Args** section. 
+When this code is executed, ClearML logs your command-line arguments, which you can view in the 
+[WebApp](../webapp/webapp_overview.md), in the experiment's **Configuration > Hyperparameters > Args** section. 
 
 ![click configuration](../img/integrations_click_configs.png)
 
-In the UI, you can clone the task multiple times and modify the click parameters for re-execution by the [ClearML Agent](../clearml_agent.md).
-When the task is re-executed, the executing agent will override the original values with the new ones.
+In the UI, you can clone the task multiple times and set the clones' parameter values for execution by the [ClearML Agent](../clearml_agent.md).
+When the clone is executed, the executing agent will use the new parameter values as if set by the command-line.
 
 See [code examples](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click) demonstrating integrating
-ClearML into code that uses click.
+ClearML with code that uses `click`.
