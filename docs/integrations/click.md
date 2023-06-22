@@ -2,9 +2,8 @@
 title: Click
 ---
 
-[`click`](https://click.palletsprojects.com) is a python package for creating command-line interfaces, which integrates 
-seamlessly with ClearML. ClearML automatically logs any command-line parameters passed when invoking code that 
-uses `click`. 
+[`click`](https://click.palletsprojects.com) is a python package for creating command-line interfaces. ClearML integrates 
+seamlessly with `click` and automatically logs its command-line parameters. 
 
 All you have to do is add two lines of code to your code:
 
@@ -34,7 +33,7 @@ if __name__ == '__main__':
     hello()
 ```
 
-When this code is executed, it will create a ClearML Task called `Click single command` in the `examples` project. You 
+When this code is executed, it will create a [ClearML Task](../fundamentals/task.md) called `Click single command` in the `examples` project. You 
 can view your `click` parameters in the [WebApp](../webapp/webapp_overview.md), in the experiment's
 **Configuration > Hyperparameters > Args** section. 
 

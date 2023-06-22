@@ -3,12 +3,12 @@ title: Hydra
 ---
 
 
-[Hydra](https://github.com/facebookresearch/hydra) is a Python framework for managing experiment parameters, which 
-integrates seamlessly with ClearML. ClearML logs the `OmegaConf` which holds all the configuration files, as well as 
+[Hydra](https://github.com/facebookresearch/hydra) is a Python framework for managing experiment parameters. ClearML integrates seamlessly
+with Hydra and automatically logs the `OmegaConf` which holds all the configuration files, as well as 
 values overridden during runtime. 
 
-ClearML automatically logs Hydra’s OmegaConf file. It is logged as a blob and can be viewed in the experiment's 
-**CONFIGURATION > CONFIGURATION OBJECTS > OmegaConf section**. 
+The OmegaConf is logged as a blob and can be viewed in the experiment's 
+**CONFIGURATION > CONFIGURATION OBJECTS > OmegaConf** section. 
 
 ![Hydra configuration](../img/integrations_hydra_configs.png)
 

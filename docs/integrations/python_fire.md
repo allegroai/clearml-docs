@@ -2,8 +2,8 @@
 title: Python Fire
 ---
 
-Python Fire is a Python package for creating command-line interfaces. ClearML seamlessly integrates into code that uses
-`fire`, and automatically captures command line parameters passed when invoking code that uses the package.
+Python Fire is a Python package for creating command-line interfaces. 
+ClearML integrates seamlessly with `fire` and automatically logs its command-line parameters.
 
 All you have to do is add two lines of code:
 

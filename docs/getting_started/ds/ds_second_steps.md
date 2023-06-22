@@ -180,7 +180,9 @@ or check these pages out:
 - Develop on remote machines with [ClearML Session](../../apps/clearml_session.md)
 - Structure your work and put it into [Pipelines](../../pipelines/pipelines.md)
 - Improve your experiments with [Hyperparameter Optimization](../../fundamentals/hpo.md)
-- Check out ClearML's integrations to [external libraries](../../guides/frameworks/autokeras/integration_autokeras.md).
+- Check out ClearML's integrations to your favorite ML frameworks like [TensorFlow](../../guides/frameworks/tensorflow/tensorflow_mnist.md), 
+  [PyTorch](../../guides/frameworks/pytorch/pytorch_mnist.md), [Keras](../../guides/frameworks/keras/keras_tensorboard.md), 
+  and more
 
 ## YouTube Playlist
 
