@@ -141,7 +141,7 @@ ClearML dataset page: https://app.clear.mli/datasets/simple/<project-id>/experim
 New dataset created id=<dataset-id>
 ```
 
-### Run Training Using A ClearML Dataset
+### Run Training Using a ClearML Dataset
 Now that you have a ClearML dataset, you can very simply use it to train custom YOLOv5  models:
 
 ```commandline
@@ -167,7 +167,7 @@ agents on new remote machines in the cloud of your choice (AWS, GCP, Azure): The
 shuts down instances as needed, according to the budget that you set.
 
 
-### Cloning, Editing, And Enqueuing
+### Cloning, Editing, and Enqueuing
 
 ![Cloning, editing, enqueuing gif](../img/gif/integrations_yolov5.gif)
 
@@ -179,7 +179,7 @@ with the new details on a remote machine:
 
 The ClearML Agent executing the task will use the new values to [override any hard coded values](../clearml_agent.md). 
 
-### Executing A Task Remotely
+### Executing a Task Remotely
 You can set a task to be executed remotely programmatically by adding `Task.execute_remotely()` to your script. This 
 method stops the current local execution of the task, and then enqueues it to a specified queue to re-run it on a remote machine.
 
