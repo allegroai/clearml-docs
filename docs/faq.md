@@ -311,7 +311,7 @@ See more task configuration options [here](fundamentals/hyperparameters.md).
 
 <br/>
 
-**I noticed that all of my experiments appear as "Training" Are there other options?** <a id="other-experiment-types"></a>
+**I noticed that all of my experiments appear as "Training". Are there other options?** <a id="other-experiment-types"></a>
 
 Yes! When creating experiments and calling [`Task.init`](references/sdk/task.md#taskinit), 
 you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
@@ -411,24 +411,26 @@ To resolve the error, uninstall `typing` and rerun your script. If this does not
 
 **My ClearML Server disk space usage is too high. What can I do about this?**
 
-We designed the ClearML open source suite, including ClearML Server, to ensure experiment traceability. For this reason, the ClearML Web UI does not include a feature to delete experiments. The ClearML Web UI does allow you to archive experiments so that they appear only in the Archive area.
- 
-In rare instances, however, such as high disk usage for a privately-hosted ClearML Server because Elasticsearch is indexing unwanted experiments, you may choose to delete an experiment.
+To clear up space, you can delete ClearML objects (e.g. experiments, models, datasets, etc.). 
 
-You can use the `APIClient` provided by ClearML Agent and
-`client.tasks.delete()` to delete an experiment. 
+To delete an object via the UI: 
+1. Go to the relevant object table (e.g. [Experiments Table](webapp/webapp_exp_table.md), [Models Table](webapp/webapp_model_table.md), etc.) 
+1. Archive the object - Right-click the object in the table **>** click **Archive**
+1. Click **Open Archive** on the top of the table
+1. In the archive table, right-click the object **>** click **Delete**. 
+
+To delete an object programmatically, use the relevant method:
+* Tasks - [`Task.delete()`](references/sdk/task.md#delete)
+* Models
+  * [`Model.remove()`](references/sdk/model_model.md#modelremove)
+  * [`InputModel.remove()`](references/sdk/model_inputmodel.md#inputmodelremove)
+* Datasets - [`Dataset.delete()`](references/sdk/dataset.md#datasetdelete)
+
 
 :::caution
-You cannot undo the deletion of an experiment.
+You cannot undo the deletion of a ClearML object.
 :::
 
-For example, the following script deletes an experiment whose Task ID is `123456789`.
-```python
-from clearml_agent import APIClient
-    
-client = APIClient()
-client.tasks.delete(task='123456789')
-```
 
 <a id="random_see"></a>
 
