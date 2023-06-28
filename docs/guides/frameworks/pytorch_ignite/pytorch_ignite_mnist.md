@@ -1,6 +1,5 @@
 ---
 title: PyTorch Ignite ClearMLLogger
-displayed_sidebar: mainSidebar
 ---
 
 The `ignite` repository contains the [mnist_with_clearml_logger.py](https://github.com/pytorch/ignite/blob/master/examples/contrib/mnist/mnist_with_clearml_logger.py)
