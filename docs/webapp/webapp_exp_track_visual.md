@@ -280,13 +280,14 @@ are on the left side of the window. The tools include:
 
     </Collapsible>
 
+* Horizontal axis - Select the x-axis units:
+  * Iterations
+  * Time from start - Time since experiment began
+  * Wall time - Local clock time
+* Curve smoothing - Choose which smoothing algorithm to use from the dropdown menu: Exponential moving average, Gaussian, 
+  or Running Average. Use the slider to configure the smoothing factor or specify a value manually. 
 * Show / hide plots - Click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />
   on those you want to see.
-* **Horizontal axis** modes (scalars, only) - Select one of the following:
-  * **ITERATIONS**
-  * **RELATIVE** - Time since experiment began
-  * **WALL** - Local clock time
-* Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
 To embed scalar plots in your [Reports](webapp_reports.md), hover over a plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 
 which will copy to clipboard the embed code to put in your Reports. In contrast to static screenshots, embedded resources 
