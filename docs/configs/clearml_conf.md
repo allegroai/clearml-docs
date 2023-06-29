@@ -1289,6 +1289,9 @@ will not exceed the value of `matplotlib_untitled_history_size`
 * Dictionary of storage cache options. The keys include:
   * `default_base_dir` (*str*) - The default base directory for caching. The default is the `<system_temp_folder>/clearml_cache`.
   * `default_cache_manager_size` (*int*) - Maximum number of files in the cache (default 100 files).
+  
+:::important Enterprise features 
+The ClearML Enterprise plan also supports the following configuration options under `sdk.storage.cache`:   
   * `size.max_used_bytes` (*str*) - Maximum size of the local cache directory. If set to `-1`, the directory can use 
   the available disk space. Specified in storage units (e.g. `1GB`, `2TB`, `500MB`).
   * `size.min_free_bytes` (*str*) - Minimum amount of free disk space that should be left. If `size.max_used_bytes` is 
@@ -1301,7 +1304,8 @@ will not exceed the value of `matplotlib_untitled_history_size`
   miss, the data will be pulled to the primary cache, and then copied to the secondary cache. The
   `sdk.storage.cache.secondary` dictionary supports the same option as the primary cache: `default_base_dir` (required), `size.max_used_bytes`, 
   `size.min_free_bytes`, etc. If an option is unspecified, it defaults to the primary cache's value.
-  
+:::
+
 <br/>
 
 
