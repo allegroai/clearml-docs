@@ -748,7 +748,7 @@ To fix this, the registered URL of each debug image and/or artifact needs to be 
 Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
 * [Option 1: Install ClearML on your Jupyter Notebook host machine](#opt1)
-* [Option 2: Install ClearML in your Jupyter Notebook and connect using ClearML credentials](opt2)
+* [Option 2: Install ClearML in your Jupyter Notebook and connect using ClearML credentials](#opt2)
 
 **Option 1: Install ClearML on your Jupyter host machine** <a id="opt1"></a>
 
