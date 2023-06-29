@@ -230,7 +230,7 @@ Configure cache location by modifying the [clearml.conf](../configs/clearml_conf
 ```
 storage {
     cache {
-        # Defaults to system temp folder / cache
+        # Defaults to <system_temp_folder>/clearml_cache
         default_base_dir: "~/.clearml/cache"
     }
 
