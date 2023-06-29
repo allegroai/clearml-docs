@@ -1,5 +1,6 @@
 ---
-title: TensorFlow MNIST
+title: TensorFlow
+displayed_sidebar: mainSidebar
 ---
 
 The [tensorflow_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py) 

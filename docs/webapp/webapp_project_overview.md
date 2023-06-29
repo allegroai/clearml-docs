@@ -24,7 +24,7 @@ be sent to the experiment's page.
 
 Every project has a `description` field. The UI provides a Markdown editor to edit this field.
 
-In the Markdown document, you can write and share reports and add links to **ClearML** experiments 
+In the Markdown document, you can write and share reports and add links to ClearML experiments 
 or any network resource such as issue tracker, web repository, etc.
 
 ### Editing the Description

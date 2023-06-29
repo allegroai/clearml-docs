@@ -1,5 +1,6 @@
 ---
-title: Keras with TensorBoard
+title: Keras
+displayed_sidebar: mainSidebar
 ---
 
 The example below demonstrates the integration of ClearML into code which uses Keras and TensorBoard.
@@ -17,7 +18,7 @@ The example script does the following:
 1. Builds a sequential model using a categorical cross entropy loss objective function.
 1. Specifies accuracy as the metric, and uses two callbacks: a TensorBoard callback and a model checkpoint callback.
 1. During script execution, creates an experiment named `Keras with TensorBoard example`, which is associated with the 
-   `examples` project (in script) or the `Colab notebooks` project (in Jupyter Notebook) .
+   `examples` project (in script) or the `Colab notebooks` project (in Jupyter Notebook).
 
 
 ## Scalars

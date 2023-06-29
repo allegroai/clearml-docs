@@ -22,7 +22,7 @@ In the `examples/frameworks/pytorch` directory, run the experiment script:
 
 Clone the experiment to create an editable copy for tuning.
 
-1. In the **ClearML Web-App (UI)**, on the Projects page, click the `examples` project card.
+1. In the ClearML WebApp (UI), on the Projects page, click the `examples` project card.
 
 1. In the experiments table, right-click the experiment `pytorch mnist train`.
 
@@ -82,7 +82,7 @@ Run the worker daemon on the local development machine.
 
 Enqueue the tuned experiment.
 
-1. In the **ClearML Web-App (UI)**, experiments table, right-click the experiment `Clone Of pytorch mnist train`.
+1. In the ClearML WebApp > experiments table, right-click the experiment `Clone Of pytorch mnist train`.
 
 1. In the context menu, click **Enqueue**.
 
@@ -95,7 +95,7 @@ Enqueue the tuned experiment.
 ## Step 6: Compare the Experiments
 
 To compare the original and tuned experiments:
-1. In the **ClearML Web-App (UI)**, on the Projects page, click the `examples` project.
+1. In the ClearML WebApp (UI), on the Projects page, click the `examples` project.
 1. In the experiments table, select the checkboxes for the two experiments: `pytorch mnist train` and `Clone Of pytorch mnist train`.
 1. On the menu bar at the bottom of the experiments table, click **COMPARE**. The experiment comparison window appears. 
    All differences appear with a different background color to highlight them.

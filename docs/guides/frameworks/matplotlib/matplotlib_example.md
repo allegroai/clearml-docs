@@ -1,5 +1,6 @@
 ---
 title: Matplotlib
+displayed_sidebar: mainSidebar
 ---
 
 The example below demonstrates integrating ClearML into code that uses `matplotlib` to plot scatter diagrams, and 

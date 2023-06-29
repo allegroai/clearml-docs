@@ -1,5 +1,6 @@
 ---
-title: TensorBoardX with PyTorch
+title: TensorBoardX
+displayed_sidebar: mainSidebar
 ---
 
 The [pytorch_tensorboardX.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorboardx/pytorch_tensorboardX.py) 

@@ -24,7 +24,7 @@ title: FAQ
 * [I noticed that all of my experiments appear as "Training". Are there other options?](#other-experiment-types)
 * [Sometimes I see experiments as running when in fact they are not. What's going on?](#experiment-running-but-stopped)
 * [My code throws an exception, but my experiment status is not "Failed". What happened?](#exception-not-failed)
-* [CERTIFICATE_VERIFY_FAILED - When I run my experiment, I get an SSL Connection error . Do you have a solution?](#ssl-connection-error)
+* [CERTIFICATE_VERIFY_FAILED - When I run my experiment, I get an SSL Connection error. Do you have a solution?](#ssl-connection-error)
 * [How do I modify experiment names once they have been created?](#modify_exp_names)
 * [Using Conda and the "typing" package, I get the error "AttributeError: type object 'Callable' has no attribute '_abc_registry'". How do I fix this?](#typing)
 * [My ClearML Server disk space usage is too high. What can I do about this?](#delete_exp)
@@ -91,12 +91,12 @@ title: FAQ
 
 **ClearML Server Troubleshooting**
 
-* [I did a reinstall. Why can't I create credentials in the Web-App (UI)?](#clearml-server-reinstall-cookies)
+* [I did a reinstall. Why can't I create credentials in the WebApp (UI)?](#clearml-server-reinstall-cookies)
 * [How do I fix Docker upgrade errors?](#common-docker-upgrade-errors)
 * [Why is web login authentication not working?](#port-conflict)
 * [How do I bypass a proxy configuration to access my local ClearML Server?](#proxy-localhost)
 * [Trains is failing to update ClearML Server. I get an error 500 (or 400). How do I fix this?](#elastic_watermark)
-* [Why is my Trains Web-App (UI) not showing any data?](#web-ui-empty)
+* [Why is my Trains WebApp (UI) not showing any data?](#web-ui-empty)
 * [Why can't I access my ClearML Server when I run my code in a virtual machine?](#vm_server)
 
 **ClearML Agent**
@@ -110,7 +110,7 @@ title: FAQ
 
 ## General Information
 
-**How do I know a new version came out? <a className="tr_top_negative" id="new-version-auto-update"></a>**
+#### How do I know a new version came out? <a className="tr_top_negative" id="new-version-auto-update"></a>  
 
 Starting with ClearML v0.9.3, ClearML issues a new version release notification, which appears in the log and is 
 output to the console, when a Python experiment script is run.
@@ -126,7 +126,7 @@ When a new ClearML Server version is available, the notification is:
 
 <br/>
 
-**How do I find out ClearML version information?** <a id="versions"></a>
+#### How do I find out ClearML version information?   <a id="versions"></a>
 
 ClearML server version information is available in the ClearML webapp Settings page. On the bottom right of the page, 
 it says **Version**, followed by three numbers: the web application version, the API server version, and the API version.
@@ -152,15 +152,19 @@ clearml-session==0.3.2
 
 ## Models
 
-**How can I sort models by a certain metric?** <a id="custom-columns"></a>
+#### How can I sort models by a certain metric?   <a id="custom-columns"></a>
 
-ClearML associates models with the experiments that created them. To sort experiments by a metric, in the ClearML Web UI, 
-add a [custom column](webapp/webapp_exp_table.md#customizing-the-experiments-table) in the experiments table and sort by 
-that metric column. 
+To sort models by a metric, in the ClearML Web UI, 
+add a [custom column](webapp/webapp_model_table.md#customizing-the-models-table) in the models table and sort by 
+that metric column. Available custom column options depend upon the models in the table and the metrics that have been
+attached to them (see [Logging Metrics and Plots](clearml_sdk/model_sdk.md#logging-metrics-and-plots)). 
+
+ClearML associates models with the experiments that created them, so you can also add a [custom column](webapp/webapp_exp_table.md#customizing-the-experiments-table) 
+in an experiments table and sort by that metric column. 
 
 <br/> 
 
-**Can I store more information on the models?** <a id="store-more-model-info"></a>
+#### Can I store more information on the models?   <a id="store-more-model-info"></a>
 
 Yes! For example, you can use the [`Task.set_model_label_enumeration`](references/sdk/task.md#set_model_label_enumeration) 
 method to store label enumeration:
@@ -174,7 +178,7 @@ For more information about `Task` class methods, see the [Task Class](fundamenta
 
 <br/>
 
-**Can I store the model configuration file as well?**  <a id="store-model-configuration"></a>
+#### Can I store the model configuration file as well?    <a id="store-model-configuration"></a>
 
 Yes! Use the [`Task.set_model_config`](references/sdk/task.md#set_model_config) 
 method:
@@ -185,16 +189,20 @@ Task.current_task().set_model_config("a very long text with the configuration fi
  
 <br/>
 
-**I am training multiple models at the same time, but I only see one of them. What happened?** <a id="only-last-model-appears"></a>
+#### I am training multiple models at the same time, but I only see one of them. What happened?   <a id="only-last-model-appears"></a>
 
-Currently, in the experiment info panel, ClearML shows only the last associated model. In the ClearML Web UI, 
-on the Projects page, the MODELS tab shows all models.
+This issue was resolved in ClearML Server v1.0.0. 
 
-This will be improved in a future version.
+See server upgrade instructions for any of the available formats:
+* [AWS EC2 AMIs](deploying_clearml/upgrade_server_aws_ec2_ami.md)
+* [Google Cloud Platform](deploying_clearml/upgrade_server_gcp.md)
+* [Linux or MacOS](deploying_clearml/upgrade_server_linux_mac.md)
+* [Windows 10](deploying_clearml/upgrade_server_win.md)
+* [Kubernetes](deploying_clearml/upgrade_server_kubernetes_helm.md)
 
 <br/>
 
-**Can I log input and output models manually?** <a id="manually-log-models"></a>
+#### Can I log input and output models manually?   <a id="manually-log-models"></a>
 
 Yes! Use the [`InputModel.import_model`](references/sdk/model_inputmodel.md#inputmodelimport_model) 
 and [`Task.connect`](references/sdk/task.md#connect) methods to manually connect an input model. Use the 
@@ -213,7 +221,7 @@ and [OutputModel](references/sdk/model_outputmodel.md) classes.
 
 <br/>
 
-**Models are not accessible from the UI after I migrated ClearML Server to a new address. How do I fix this?** <a id="migrate_server_models"></a>
+#### Models are not accessible from the UI after I migrated ClearML Server to a new address. How do I fix this?   <a id="migrate_server_models"></a>
 
 This can happen if your models were uploaded to the ClearML files server, since the value registered was their full URL 
 at the time of registration (e.g. `https://files.<OLD_ADDRESS>/path/to/model`).
@@ -245,7 +253,7 @@ To replace the URL of each model, execute the following commands:
    ```
 <br/>
 
-**Models are not accessible from the UI after I moved them (different bucket / server). How do I fix this?** <a id="relocate_models"></a>
+#### Models are not accessible from the UI after I moved them (different bucket / server). How do I fix this?   <a id="relocate_models"></a>
 
 This can happen if your models were uploaded to the ClearML files server, since the value registered was their full URL 
 at the time of registration (e.g. `https://files.<OLD_ADDRESS>/path/to/model`).
@@ -275,18 +283,18 @@ To fix this, the registered URL of each model needs to be replaced with its curr
 
 ## Experiments
 
-**I noticed I keep getting the message "warning: uncommitted code". What does it mean?** <a id="uncommitted-code-warning"></a>
+#### I noticed I keep getting the message "warning: uncommitted code". What does it mean?   <a id="uncommitted-code-warning"></a>
 
 This message is only a warning. ClearML not only detects your current repository and git commit, but also warns you 
 if you are using uncommitted code. ClearML does this because uncommitted code means this experiment will be difficult 
 to reproduce. You can see uncommitted changes in the ClearML Web UI, in the EXECUTION tab of the experiment info panel.
 
-**I do not use argparse for hyperparameters. Do you have a solution?** <a id="dont-want-argparser"></a>
+#### I do not use argparse for hyperparameters. Do you have a solution?   <a id="dont-want-argparser"></a>
 
 Yes! ClearML provides multiple ways to configure your task and track your parameters! 
 
-In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](https://click.palletsprojects.com/), 
-[Python Fire](https://github.com/google/python-fire), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
+In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](integrations/click.md), 
+[Python Fire](integrations/python_fire.md), [Hydra](integrations/hydra.md), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
 
 ClearML also supports tracking code-level configuration dictionaries using the [`Task.connect`](references/sdk/task.md#connect) method.
 
@@ -307,7 +315,7 @@ See more task configuration options [here](fundamentals/hyperparameters.md).
 
 <br/>
 
-**I noticed that all of my experiments appear as "Training" Are there other options?** <a id="other-experiment-types"></a>
+#### I noticed that all of my experiments appear as "Training". Are there other options?   <a id="other-experiment-types"></a>
 
 Yes! When creating experiments and calling [`Task.init`](references/sdk/task.md#taskinit), 
 you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
@@ -319,13 +327,13 @@ task = Task.init(project_name, task_name, Task.TaskTypes.testing)
 
 <br/>
 
-**Sometimes I see experiments as running when in fact they are not. What's going on?** <a id="experiment-running-but-stopped"></a>
+#### Sometimes I see experiments as running when in fact they are not. What's going on?   <a id="experiment-running-but-stopped"></a>
 
-ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right-click the experiment in the Web-App and abort it.
+ClearML monitors your Python process. When the process exits properly, ClearML closes the experiment. When the process crashes and terminates abnormally, it sometimes misses the stop signal. In this case, you can safely right-click the experiment in the WebApp and abort it.
 
 <br/>
 
-**My code throws an exception, but my experiment status is not "Failed". What happened?** <a id="exception-not-failed"></a>
+#### My code throws an exception, but my experiment status is not "Failed". What happened?   <a id="exception-not-failed"></a>
 
 This issue was resolved in Trains v0.9.2. Upgrade to ClearML by executing the following command:
 
@@ -335,7 +343,7 @@ This issue was resolved in Trains v0.9.2. Upgrade to ClearML by executing the fo
 
 <br/>
 
-**When I run my experiment, I get an SSL Connection error CERTIFICATE_VERIFY_FAILED. Do you have a solution?**
+#### When I run my experiment, I get an SSL Connection error CERTIFICATE_VERIFY_FAILED. Do you have a solution?  
 
 Your firewall may be preventing the connection. Try one of the following solutions:
 
@@ -362,9 +370,9 @@ Your firewall may be preventing the connection. Try one of the following solutio
 
 <br/>
 
-**How do I modify experiment names once they have been created?**
+#### How do I modify experiment names once they have been created?  
 
-An experiment's name is a user-controlled property, which can be accessed via the `Task.name` variable. This lets you use meaningful naming schemes to easily filter and compare experiments.
+An experiment's name is a user-controlled property, which can be accessed via the `Task.name` property. This lets you use meaningful naming schemes to easily filter and compare experiments.
 
 For example, to distinguish between different experiments, you can append the task ID to the task name:
 ```python
@@ -393,7 +401,7 @@ Use this experiment naming when creating automation pipelines with a naming conv
 
 <br/>
 
-**Using Conda and the "typing" package, I get the error "AttributeError: type object 'Callable' has no attribute '_abc_registry'". How do I fix this?**
+#### Using Conda and the "typing" package, I get the error "AttributeError: type object 'Callable' has no attribute '_abc_registry'". How do I fix this?  
 
 Conda and the [typing](https://pypi.org/project/typing/) package may have some compatibility issues. 
 
@@ -405,32 +413,34 @@ To resolve the error, uninstall `typing` and rerun your script. If this does not
 
 <br/>
 
-**My ClearML Server disk space usage is too high. What can I do about this?**
+#### My ClearML Server disk space usage is too high. What can I do about this?  
 
-We designed the ClearML open source suite, including ClearML Server, to ensure experiment traceability. For this reason, the ClearML Web UI does not include a feature to delete experiments. The ClearML Web UI does allow you to archive experiments so that they appear only in the Archive area.
- 
-In rare instances, however, such as high disk usage for a privately-hosted ClearML Server because Elasticsearch is indexing unwanted experiments, you may choose to delete an experiment.
+To clear up space, you can delete ClearML objects (e.g. experiments, models, datasets, etc.). 
 
-You can use the `APIClient` provided by ClearML Agent and
-`client.tasks.delete()` to delete an experiment. 
+To delete an object via the UI: 
+1. Go to the relevant object table (e.g. [Experiments Table](webapp/webapp_exp_table.md), [Models Table](webapp/webapp_model_table.md), etc.) 
+1. Archive the object - Right-click the object in the table **>** click **Archive**
+1. Click **Open Archive** on the top of the table
+1. In the archive table, right-click the object **>** click **Delete**. 
+
+To delete an object programmatically, use the relevant method:
+* Tasks - [`Task.delete()`](references/sdk/task.md#delete)
+* Models
+  * [`Model.remove()`](references/sdk/model_model.md#modelremove)
+  * [`InputModel.remove()`](references/sdk/model_inputmodel.md#inputmodelremove)
+* Datasets - [`Dataset.delete()`](references/sdk/dataset.md#datasetdelete)
+
 
 :::caution
-You cannot undo the deletion of an experiment.
+You cannot undo the deletion of a ClearML object.
 :::
 
-For example, the following script deletes an experiment whose Task ID is `123456789`.
-```python
-from clearml_agent import APIClient
-    
-client = APIClient()
-client.tasks.delete(task='123456789')
-```
 
 <a id="random_see"></a>
 
 <br/>
 
-**Can I change the random seed my experiment uses?**
+#### Can I change the random seed my experiment uses?  
 
 Yes! By default, ClearML initializes Tasks with an initial seed of `1337` to ensure reproducibility. To set a different 
 value for your task, use the [`Task.set_random_seed`](references/sdk/task.md#taskset_random_seed) class method and 
@@ -442,7 +452,7 @@ You can disable the deterministic behavior entirely by passing `Task.set_random_
 
 <br/>
 
-**In the Web UI, I can't access files that my experiment stored. Why not?**
+#### In the Web UI, I can't access files that my experiment stored. Why not?  
 
 ClearML stores file locations. The machine running your browser must have access to the location where the machine 
 that ran the Task stored the file. This applies to debug samples and artifacts. If, for example, the machine running the browser does not have access, you may see "Unable to load image", instead of the image.
@@ -451,7 +461,7 @@ that ran the Task stored the file. This applies to debug samples and artifacts. 
 
 <br/>
 
-**I get the message "CLEARML Monitor: Could not detect iteration reporting, falling back to iterations as seconds-from-start". What does it mean?**
+#### I get the message "CLEARML Monitor: Could not detect iteration reporting, falling back to iterations as seconds-from-start". What does it mean?  
 
 If metric reporting begins within the first three minutes, ClearML reports resource monitoring by iteration. Otherwise, 
 it reports resource monitoring by seconds from start, and logs a message:
@@ -467,7 +477,7 @@ After thirty minutes, it remains unchanged.
 
 <br/>
 
-**Can I control what ClearML automatically logs?** <a id="controlling_logging"></a>
+#### Can I control what ClearML automatically logs?   <a id="controlling_logging"></a>
 
 Yes! ClearML lets you control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
 by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
@@ -498,7 +508,7 @@ See [`Task.init`](references/sdk/task.md#taskinit).
 <br/>
 
 
-**Can I run ClearML Task while working offline?** <a id="offline_mode"></a>
+#### Can I run ClearML Task while working offline?   <a id="offline_mode"></a>
 
 Yes! You can use ClearML's Offline Mode, in which all the data and logs that a task captures from the code are stored in a 
 local folder. 
@@ -509,8 +519,8 @@ the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
 :::caution 
-Offline mode only works with tasks created using `Task.init` and not with those created 
-using the `Task.create` method. 
+Offline mode only works with tasks created using [`Task.init()`](references/sdk/task.md#taskinit) and not with those created 
+using [`Task.create()`](references/sdk/task.md#taskcreate). 
 :::
 
 The task's console output displays the task ID and a path to the folder with the session's captured information:
@@ -533,7 +543,7 @@ See [Storing Task Data Offline](guides/set_offline.md).
 
 ## Graphs and Logs
 
-**The first log lines are missing from the experiment console tab. Where did they go?** <a id="first-log-lines-missing"></a>
+#### The first log lines are missing from the experiment console tab. Where did they go?   <a id="first-log-lines-missing"></a>
 
 Due to speed/optimization issues, the console displays only the last several hundred log lines.
 
@@ -542,7 +552,7 @@ info panel > CONSOLE tab, use the *Download full log* feature.
 
 <br/>
 
-**How do I create a graph comparing hyperparameters vs. model accuracy?** <a id="compare-graph-parameters"></a>
+#### How do I create a graph comparing hyperparameters vs. model accuracy?   <a id="compare-graph-parameters"></a>
 
 You can use the UI's [experiment comparison features](webapp/webapp_exp_comparing.md) to compare the logged hyperparameter 
 and accuracy values of several experiments. 
@@ -576,7 +586,7 @@ Task.current_task().get_logger().report_scatter2d(
 When these experiments are compared in the UI's experiment comparison, all the reported `performance/accuracy` values 
 are displayed in a single plot.
 
-![image](img/clearml_faq_screenshots/compare_plots.png)
+![Comparison plot](img/clearml_faq_screenshots/compare_plots.png)
 
 Another option is a histogram chart:
 
@@ -593,18 +603,18 @@ Task.current_task().get_logger().report_vector(
 )
 ```
 
-![image](img/clearml_faq_screenshots/compare_plots_hist.png)
+![Comparison plot histogram](img/clearml_faq_screenshots/compare_plots_hist.png)
 
 <br/>
 
-**I want to add more graphs, not just with TensorBoard. Is this supported?** <a id="more-graph-types"></a>
+#### I want to add more graphs, not just with TensorBoard. Is this supported?   <a id="more-graph-types"></a>
 
 Yes! The [Logger](fundamentals/logger.md) module includes methods for explicit reporting. For examples of explicit reporting, see the [Explicit Reporting](guides/reporting/explicit_reporting.md) 
 tutorial, which includes a list of methods for explicit reporting.
 
 <br/>
 
-**How can I report more than one scatter 2D series on the same plot?**  <a id="multiple-scatter2D"></a>
+#### How can I report more than one scatter 2D series on the same plot?    <a id="multiple-scatter2D"></a>
 
 The [`Logger.report_scatter2d`](references/sdk/logger.md#report_scatter2d) 
 method reports all series with the same `title` and `iteration` parameter values on the same plot.
@@ -636,14 +646,14 @@ logger.report_scatter2d(
 
 ## GIT and Storage
 
-**Is there something ClearML can do about uncommitted code running?**  <a id="help-uncommitted-code"></a>
+#### Is there something ClearML can do about uncommitted code running?    <a id="help-uncommitted-code"></a>
 
 Yes! ClearML stores the git diff as part of the experiment's information. You can view the git diff in the ClearML Web UI, 
 experiment info panel > EXECUTION tab.
 
 <br/>
 
-**I read there is a feature for centralized model storage. How do I use it?** <a id="centralized-model-storage"></a>
+#### I read there is a feature for centralized model storage. How do I use it?   <a id="centralized-model-storage"></a>
 
 When calling [`Task.init`](references/sdk/task.md#taskinit), 
 providing the `output_uri` parameter lets you specify the location in which model checkpoints (snapshots) will be stored.
@@ -676,14 +686,14 @@ see [ClearML Configuration Reference](configs/clearml_conf.md).
 
 <br/>
 
-**When using PyCharm to remotely debug a machine, the Git repo is not detected. Do you have a solution?**
+#### When using PyCharm to remotely debug a machine, the Git repo is not detected. Do you have a solution?  
 
 Yes! ClearML provides a PyCharm plugin that allows a remote debugger to grab your local 
 repository / commit ID. For detailed information about using the plugin, see the [ClearML PyCharm Plugin](guides/ide/integration_pycharm.md).
 
 <br/>
 
-**Debug images and/or artifacts are not loading in the UI after I migrated ClearML Server to a new address. How do I fix this?**  <a id="migrate_server_debug"></a>  
+#### Debug images and/or artifacts are not loading in the UI after I migrated ClearML Server to a new address. How do I fix this?    <a id="migrate_server_debug"></a>  
 
 This can happen if your debug images and/or artifacts were uploaded to the ClearML file server, since the value
 registered was their full URL at the time of registration (e.g. `https://files.<OLD_ADDRESS>/path/to/artifact`).
@@ -733,14 +743,14 @@ To fix this, the registered URL of each debug image and/or artifact needs to be 
 
 ## Jupyter
 
-**I am using Jupyter Notebook. Is this supported?** <a id="jupyter-notebook"></a>
+#### I am using Jupyter Notebook. Is this supported?   <a id="jupyter-notebook"></a>
 
 Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
-* Option 1: Install ClearML on your Jupyter Notebook host machine
-* Option 2: Install ClearML in your Jupyter Notebook and connect using ClearML credentials
+* [Option 1: Install ClearML on your Jupyter Notebook host machine](#opt1)
+* [Option 2: Install ClearML in your Jupyter Notebook and connect using ClearML credentials](opt2)
 
-**Option 1: Install ClearML on your Jupyter host machine**
+**Option 1: Install ClearML on your Jupyter host machine** <a id="opt1"></a>
 
 1. Connect to your Jupyter host machine.
 1. Install the ClearML Python Package.
@@ -753,26 +763,18 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
     
 1. In your Jupyter Notebook, you can now use ClearML.
         
-**Option 2: Install ClearML in your Jupyter Notebook**
-
-1. In the ClearML Web UI > **Settings > Workspace** page, create credentials and copy your access key and secret key. These are required for Step 3.
+**Option 2: Install ClearML in your Jupyter Notebook** <a id="opt2"></a>
 
 1. Install the ClearML Python Package.
 
         pip install clearml
 
-1. Use the [`Task.set_credentials`](references/sdk/task.md#taskset_credentials) 
-   method to specify the host, port, access key and secret key (see step 1).
-   ```python
-   # Set your credentials using the clearml apiserver URI and port, access_key, and secret_key.
-   Task.set_credentials(host='http://localhost:8008',key='<access_key>', secret='<secret_key>')
-   ```
+1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the **SETTINGS > WORKSPACE** page, click **Create new credentials**. 
+   The **JUPYTER NOTEBOOK** tab shows the commands required to configure your notebook (a copy to clipboard action is available on hover)
+
+1. Add these commands to your notebook
    
-   :::note 
-   `host` is the API server (default port `8008`), not the web server (default port `8080`).
-   :::
-   
-1. You can now use ClearML.
+1. You can now use ClearML in your notebook!
    ```python
    # create a task and start training
    task = Task.init('jupyter project', 'my notebook')
@@ -785,8 +787,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
 ## Remote Debugging (ClearML PyCharm Plugin)
 
-**I am using your ClearML PyCharm Plugin for remote debugging. I get the message "clearml.Task - INFO - Repository and 
-package analysis timed out (10.0 sec), giving up". What should I do?**<a id="package_thread"></a>
+#### I am using your ClearML PyCharm Plugin for remote debugging. I get the message "clearml.Task - INFO - Repository and package analysis timed out (10.0 sec), giving up". What should I do?  <a id="package_thread"></a>
 
 ClearML uses a background thread to analyze the script. This includes package requirements. At the end of the execution
 of the script, if the background thread is still running, ClearML allows the thread another 10 seconds to complete. 
@@ -798,14 +799,14 @@ To fix this issue, you could import the `time` package and add a `time.sleep(20)
 
 ## scikit-learn
 
-**Can I use ClearML with scikit-learn?** <a id="use-scikit-learn"></a>
+#### Can I use ClearML with scikit-learn?   <a id="use-scikit-learn"></a>
 
 Yes! `scikit-learn` is supported. Everything you do is logged. ClearML automatically logs models which are stored using `joblib`. 
 See the scikit-learn examples with [Matplotlib](guides/frameworks/scikit-learn/sklearn_matplotlib_example.md) and [Joblib](guides/frameworks/scikit-learn/sklearn_joblib_example.md).
 
 ## ClearML Configuration
 
-**How do I explicitly specify the ClearML configuration file to be used?** <a id="change-config-path"></a>
+#### How do I explicitly specify the ClearML configuration file to be used?   <a id="change-config-path"></a>
 
 To override the default configuration file location, set the `CLEARML_CONFIG_FILE` OS environment variable.
 
@@ -815,7 +816,7 @@ For example:
 
 <br/>
 
-**How can I override ClearML credentials from the OS environment?** <a id="credentials-os-env"></a>
+#### How can I override ClearML credentials from the OS environment?   <a id="credentials-os-env"></a>
 
 To override your configuration file / defaults, set the following OS environment variables:
 
@@ -825,7 +826,7 @@ To override your configuration file / defaults, set the following OS environment
 
 <br/>
 
-**How can I track OS environment variables with experiments?**  <a id="track-env-vars"></a>
+#### How can I track OS environment variables with experiments?    <a id="track-env-vars"></a>
 
 Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you need track, either:
 
@@ -849,7 +850,7 @@ Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you
 
 ## ClearML Hosted Service
         
-**I run my script, but my experiment is not in the ClearML Hosted Service Web UI. How do I fix this?** <a id="hosted-service-no-config"></a>
+#### I run my script, but my experiment is not in the ClearML Hosted Service Web UI. How do I fix this?   <a id="hosted-service-no-config"></a>
 
 If you joined the ClearML Hosted Service and ran a script, but your experiment does not appear in Web UI, you may not have configured ClearML for the hosted service. Run the ClearML setup wizard. It will request your hosted service ClearML credentials and create the ClearML configuration you need.
 
@@ -859,35 +860,31 @@ If you joined the ClearML Hosted Service and ran a script, but your experiment d
 
 ## ClearML Server Deployment
 
-**How do I deploy ClearML Server on stand-alone Linux Ubuntu or macOS systems?** <a id="Ubuntu"></a>
+#### How do I deploy ClearML Server on stand-alone Linux Ubuntu or macOS systems?   <a id="Ubuntu"></a>
 
-For detailed instructions, see [Deploying ClearML Server: Linux or macOS](deploying_clearml/clearml_server_linux_mac.md) 
-in the "Deploying ClearML" section.
-
-<br/>
-
-**How do I deploy ClearML Server on Windows 10?** <a id="docker_compose_win10"></a>
-
-For detailed instructions, see [Deploying ClearML Server: Windows 10](deploying_clearml/clearml_server_win.md) in the 
-"Deploying ClearML" section.
+For detailed instructions, see [Deploying ClearML Server: Linux or macOS](deploying_clearml/clearml_server_linux_mac.md).
 
 <br/>
 
-**How do I deploy ClearML Server on AWS EC2 AMIs?** <a id="aws_ec2_amis"></a>
+#### How do I deploy ClearML Server on Windows 10?   <a id="docker_compose_win10"></a>
 
-For detailed instructions, see [Deploying ClearML Server: AWS EC2 AMIs](deploying_clearml/clearml_server_aws_ec2_ami.md) 
-in the "Deploying ClearML" section.
-
-<br/>
-
-**How do I deploy ClearML Server on the Google Cloud Platform?** <a id="google_cloud_platform"></a>
-
-For detailed instructions, see [Deploying ClearML Server: Google Cloud Platform](deploying_clearml/clearml_server_gcp.md) 
-in the "Deploying ClearML" section.
+For detailed instructions, see [Deploying ClearML Server: Windows 10](deploying_clearml/clearml_server_win.md).
 
 <br/>
 
-**How do I restart ClearML Server?** <a id="restart"></a>
+#### How do I deploy ClearML Server on AWS EC2 AMIs?   <a id="aws_ec2_amis"></a>
+
+For detailed instructions, see [Deploying ClearML Server: AWS EC2 AMIs](deploying_clearml/clearml_server_aws_ec2_ami.md).
+
+<br/>
+
+#### How do I deploy ClearML Server on the Google Cloud Platform?   <a id="google_cloud_platform"></a>
+
+For detailed instructions, see [Deploying ClearML Server: Google Cloud Platform](deploying_clearml/clearml_server_gcp.md).
+
+<br/>
+
+#### How do I restart ClearML Server?   <a id="restart"></a>
 
 For detailed instructions, see the "Restarting" section of the documentation page for your deployment format. For example, 
 if you deployed to Linux, see [Restarting](deploying_clearml/clearml_server_linux_mac.md#restarting) on the "Deploying ClearML Server: Linux or macOS" page.
@@ -895,14 +892,14 @@ if you deployed to Linux, see [Restarting](deploying_clearml/clearml_server_linu
 <br/>
 
 
-**Can I create a Helm Chart for ClearML Server Kubernetes deployment?** <a id="helm"></a>
+#### Can I create a Helm Chart for ClearML Server Kubernetes deployment?   <a id="helm"></a>
 
 Yes! You can create a Helm Chart of ClearML Server Kubernetes deployment. For detailed instructions,
-see [Deploying ClearML Server: Kubernetes using Helm](deploying_clearml/clearml_server_kubernetes_helm.md) in the "Deploying ClearML" section.
+see [Deploying ClearML Server: Kubernetes using Helm](deploying_clearml/clearml_server_kubernetes_helm.md).
 
 <br/>
 
-**My Docker cannot load a local host directory on SELinux?** <a id="selinux"></a>
+#### My Docker cannot load a local host directory on SELinux?   <a id="selinux"></a>
 
 If you are using SELinux, run the following command (see this [discussion](https://stackoverflow.com/a/24334000)):
 
@@ -910,23 +907,21 @@ If you are using SELinux, run the following command (see this [discussion](https
 
 ## ClearML Server Configuration
 
-**How do I configure ClearML Server for subdomains and load balancers?** <a id="subdomains"></a>
+#### How do I configure ClearML Server for subdomains and load balancers?   <a id="subdomains"></a>
 
-For detailed instructions, see [Configuring Subdomains and load balancers](deploying_clearml/clearml_server_config.md#subdomains-and-load-balancers) 
-on the "Configuring Your Own ClearML Server" page.
-
-<br/>
-
-**Can I add web login authentication to ClearML Server?** <a id="web-auth"></a>
-
-By default, anyone can log in to the ClearML Server Web-App. You can configure the ClearML Server to allow only a specific set of users to access the system.
-
-For detailed instructions, see [Web Login Authentication](deploying_clearml/clearml_server_config.md#web-login-authentication) 
-on the "Configuring Your Own ClearML Server" page in the "Deploying ClearML" section.
+For detailed instructions, see [Configuring Subdomains and load balancers](deploying_clearml/clearml_server_config.md#subdomains-and-load-balancers).
 
 <br/>
 
-**Can I modify non-responsive task settings?** <a id="watchdog"></a>
+#### Can I add web login authentication to ClearML Server?   <a id="web-auth"></a>
+
+By default, anyone can log in to the ClearML Server WebApp. You can configure the ClearML Server to allow only a specific set of users to access the system.
+
+For detailed instructions, see [Web Login Authentication](deploying_clearml/clearml_server_config.md#web-login-authentication).
+
+<br/>
+
+#### Can I modify non-responsive task settings?   <a id="watchdog"></a>
 
 The non-responsive experiment watchdog monitors experiments that were not updated for a specified time interval, and 
 marks them as `aborted`. The watchdog is always active.
@@ -936,11 +931,11 @@ You can modify the following settings for the watchdog:
 * The time threshold (in seconds) of task inactivity (default value is 7200 seconds which is 2 hours).
 * The time interval (in seconds) between watchdog cycles.
 
-For detailed instructions, see [Modifying non-responsive Task watchdog settings](deploying_clearml/clearml_server_config.md#non-responsive-task-watchdog) on the "Configuring Your Own ClearML Server" page.
+For detailed instructions, see [Modifying non-responsive Task watchdog settings](deploying_clearml/clearml_server_config.md#non-responsive-task-watchdog).
 
 ## ClearML Server Troubleshooting
 
-**I did a reinstall. Why can't I create credentials in the Web-App (UI)?** <a id="clearml-server-reinstall-cookies"></a>
+#### I did a reinstall. Why can't I create credentials in the WebApp (UI)?   <a id="clearml-server-reinstall-cookies"></a>
 
 The issue is likely your browser cookies for ClearML Server. Clearing your browser cookies for ClearML Server is recommended. 
 For example: 
@@ -949,7 +944,7 @@ For example:
 
 <br/>
 
-**How do I fix Docker upgrade errors?** <a id="common-docker-upgrade-errors"></a>
+#### How do I fix Docker upgrade errors?   <a id="common-docker-upgrade-errors"></a>
 
 To resolve the Docker error:
 
@@ -961,7 +956,7 @@ try removing deprecated images:
 
 <br/>
 
-**Why is web login authentication not working?** <a className="tr_top_negative" id="port-conflict"></a>
+#### Why is web login authentication not working?   <a className="tr_top_negative" id="port-conflict"></a>
 
 A port conflict between the ClearML Server MongoDB and/or Elastic instances, and other instances running on your system may prevent web login authentication from working correctly. 
 
@@ -1026,7 +1021,7 @@ To change the MongoDB and/or Elastic ports for your ClearML Server, do the follo
 
 <br/>
 
-**How do I bypass a proxy configuration to access my local ClearML Server?** <a className="tr_top_negative" id="proxy-localhost"></a>
+#### How do I bypass a proxy configuration to access my local ClearML Server?   <a className="tr_top_negative" id="proxy-localhost"></a>
 
 A proxy server may block access to ClearML Server configured for `localhost`.
 
@@ -1070,7 +1065,7 @@ Do the following:
 
 <br/>
 
-**The ClearML Server keeps returning HTTP 500 (or 400) errors. How do I fix this?** <a id="elastic_watermark"></a>
+#### The ClearML Server keeps returning HTTP 500 (or 400) errors. How do I fix this?   <a id="elastic_watermark"></a>
 
 The ClearML Server will return HTTP error responses (5XX, or 4XX) when some of its [backend components](deploying_clearml/clearml_server.md) 
 are failing. 
@@ -1089,11 +1084,11 @@ A likely indication of this situation can be determined by searching your clearm
 
 <br/>
 
-**Why is my ClearML Web-App (UI) not showing any data?** <a className="tr_top_negative" id="web-ui-empty"></a>
+#### Why is my ClearML WebApp (UI) not showing any data?   <a className="tr_top_negative" id="web-ui-empty"></a>
 
-If your ClearML Web-App (UI) does not show anything, it may be an error authenticating with the server. Try clearing the application cookies for the site in your browser's developer tools. 
+If your ClearML WebApp (UI) does not show anything, it may be an error authenticating with the server. Try clearing the application cookies for the site in your browser's developer tools. 
     
-**Why can't I access my ClearML Server when I run my code in a virtual machine?** <a id="vm_server"></a>
+#### Why can't I access my ClearML Server when I run my code in a virtual machine?   <a id="vm_server"></a>
 
 The network definitions inside a virtual machine (or container) are different from those of the host. The virtual machine's 
 and the server machine's IP addresses are different, so you have to make sure that the machine that is executing the 
@@ -1118,7 +1113,7 @@ api {
 
 ## ClearML Agent
 
-**How can I execute ClearML Agent without installing packages each time?** <a className="tr_top_negative" id="system_site_packages"></a>
+#### How can I execute ClearML Agent without installing packages each time?   <a className="tr_top_negative" id="system_site_packages"></a>
 
 Instead of installing the Python packages in the virtual environment created by ClearML Agent, you can optimize execution 
 time by inheriting the packages from your global site-packages directory. In the ClearML configuration file, set the 
@@ -1128,7 +1123,7 @@ configuration option `agent.package_manager.system_site_packages` to `true`.
 
 ## ClearML API
 
-**How can I use the ClearML API to fetch data?** <a className="tr_top_negative" id="api"></a>
+#### How can I use the ClearML API to fetch data?   <a className="tr_top_negative" id="api"></a>
 
 You can use the `APIClient` class, which provides a Pythonic interface to access ClearML's backend REST API. Through 
 an `APIClient` instance, you can access ClearML’s REST API services and endpoints. 

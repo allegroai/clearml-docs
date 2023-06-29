@@ -100,7 +100,6 @@ resources will be displayed. See [Dynamic Queries](#dynamic-queries) below.
         * `min_value`
         * `max_value`
         * `value` (last value)
-* `models` - Model IDs. Specify multiple IDs like this: `models=<id>&models=<id>&models<id>`.
 * `metrics` - Metric name 
 * `variants` - Variant’s name
 * `company` - Workspace ID. Applicable to the ClearML hosted service, for embedding content from a different workspace 

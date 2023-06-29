@@ -209,10 +209,10 @@ To create a [`SingleFrame`](../references/hyperdataset/singleframe.md), instanti
 from allegroai import SingleFrame
 
 frame = SingleFrame(
-    source='/home/user/woof_meow.jpg',
+    source='s3://my/bucket/path_to_file.jpg',
     width=None, 
     height=None, 
-    preview_uri='https://storage.googleapis.com/kaggle-competitions/kaggle/3362/media/woof_meow.jpg',
+    preview_uri='s3://my/bucket/path_to_file.jpg',
     metadata=None, 
     annotations=None,  
     mask_source=None,
@@ -246,10 +246,10 @@ frames = []
 
 # create a frame
 frame = SingleFrame(
-    source='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg',
+    source='s3://my/bucket/path_to_file.jpg',
     width=512, 
     height=512, 
-    preview_uri='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg',
+    preview_uri='s3://my/bucket/path_to_file.jpg',
     metadata={'alive':'yes'}, 
 )
 
@@ -276,7 +276,7 @@ frame = DatasetVersion.get_single_frame(
 To access a SingleFrame, the following must be specified:
 * `frame_id`, which can be found in the WebApp, in the frame's **FRAMEGROUP DETAILS** 
 * The frame's dataset - either with `dataset_name` or `dataset_id`
-* The dataset version - either with `version_id` or  `version_name`
+* The dataset version - either with `version_id` or `version_name`
 
 ### Updating SingleFrames
 

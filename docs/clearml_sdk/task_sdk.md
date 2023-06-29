@@ -153,7 +153,7 @@ Pass one of the following in the `continue_last_task` parameter:
 * Task ID (string) - The ID of the task to be continued. 
 * Initial iteration offset (integer) - Specify the initial iteration offset. By default, the task will continue one 
   iteration after the last reported one. Pass `0`, to disable the automatic last iteration offset. To also specify a 
-  task ID, use the `reuse_last_task_id` parameter .
+  task ID, use the `reuse_last_task_id` parameter.
 
 You can also continue a task previously executed in offline mode, using the `Task.import_offline_session` method. 
 See [Offline Mode](#offline-mode). 
@@ -342,31 +342,44 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
 
 ## Cloning & Executing Tasks
 
-Once a task object is created, it can be copied (cloned). [`Task.clone`](../references/sdk/task.md#taskclone) returns 
+Once a task object is created, it can be copied (cloned). [`Task.clone()`](../references/sdk/task.md#taskclone) returns 
 a copy of the original task (`source_task`). By default, the cloned task is added to the same project as the original, 
 and it's called "Clone Of ORIGINAL_NAME", but the name / project / comment (description) of the cloned task can be directly overridden.
 
 ```python
 task = Task.init(project_name='examples', task_name='original task',)
-cloned = Task.clone(
+cloned_task = Task.clone(
     source_task=task,  # type: Optional[Union[Task, str]]
     # override default name
     name='newly created task',  # type: Optional[str]
     comment=None,  # type: Optional[str]
     # insert cloned task into a different project
-    project=None,  # type: Optional[str]
+    project='<new_project_id>',  # type: Optional[str]
 )
 ```
 
-A newly cloned task has a [draft](../fundamentals/task.md#task-states) status, so it's modifiable.
+A newly cloned task has a [draft](../fundamentals/task.md#task-states) status, 
+so you can modify any configuration. For example, run a different git version of the code, with a new `lr` value, for a 
+different number of epochs and using a new base model:
 
-Once a task is modified, launch it by pushing it into an execution queue with the [`Task.enqueue`](../references/sdk/task.md#taskenqueue)
+```python
+# Set parameters (replaces existing hyperparameters in task)
+cloned_task.set_parameters({'epochs':7, 'lr': 0.5})
+
+# Override git repo information
+cloned_task.set_repo(repo="https://github.com/allegroai/clearml.git", branch="my_branch_name")
+# Remove input model and set a new one
+cloned_task.remove_input_models(models_to_remove=["<model_id>"])
+cloned_task.set_input_model(model_id="<new_intput_model_id>")
+```
+
+Once a task is modified, launch it by pushing it into an execution queue with the [`Task.enqueue()`](../references/sdk/task.md#taskenqueue)
 class method. Then a [ClearML Agent](../clearml_agent.md) assigned to the queue will pull the task from the queue and execute
 it. 
 
 ```python
 Task.enqueue(
-    task=task,  # type: Union[Task, str]
+    task=cloned_task,  # type: Union[Task, str]
     queue_name='default',  # type: Optional[str] 
     queue_id=None  # type: Optional[str]
 )
@@ -417,12 +430,88 @@ a_func_task = task.create_function_task(
 )
 ```
 Arguments passed to the function will be automatically logged in the 
-experiment's **CONFIGURATION** tab under the **HYPERPARAMETER > Function** section . 
+experiment's **CONFIGURATION** tab under the **HYPERPARAMETER > Function** section. 
 Like any other arguments, they can be changed from the UI or programmatically.
 
 :::note Function Task Creation
 Function tasks must be created from within a regular task, created by calling `Task.init`
 :::
+
+### Distributed Execution
+
+ClearML supports distributed remote execution through multiple worker nodes using [`Task.launch_multi_node()`](../references/sdk/task.md#launch_multi_node). 
+This method creates multiple copies of a task and enqueues them for execution. 
+
+Each copy of the task is called a node. The original task that initiates the nodes’ execution is called the master node.
+
+```python
+Task = task.init(task_name ="my_task", project_name="my_project")
+task.execute_remotely(queue="default")
+task.launch_multi_node(total_num_nodes=3, port=29500, queue=None, wait=False, addr=None)
+
+# rest of code
+```
+
+* `total_num_nodes` - The total number of workers (including the master node) to create. 
+* `port` - Network port the master node listens on. This value will be overridden if the `CLEARML_MULTI_NODE_MASTER_DEF_PORT` 
+or `MASTER_PORT` environment variables are set.
+* `addr` - Address of the master node's worker. This value will be overridden if `CLEARML_MULTI_NODE_MASTER_DEF_ADDR` 
+or `MASTER_ADDR` environment variables are set. Left unspecified, the private IP of the machine the master node is 
+running on will be used. 
+* `queue` - The execution queue to use for launching the worker nodes. If `None`, the nodes will be enqueued to the same 
+queue as the master node was enqueued on.
+* `wait` - If `True`, the master node will wait for the other nodes to start
+
+When the method is executed, the following environment variables are set:
+* `MASTER_ADDR` - Address of the machine where the master node is running
+* `MASTER_PORT` - Network port the master node is listening on
+* `WORLD_SIZE` - Total number of nodes, including the master
+* `RANK` - Rank of the current node (master has rank 0)
+
+The `multi_node_instance` task configuration entry of each task holds the multi-node execution information: 
+* `total_num_nodes` - Total number of nodes, including the master node
+* `queue` - Queue where the nodes will be enqueued
+  
+The method returns a dictionary containing relevant information regarding the multi-node run:
+* `master_addr` - Address of the machine where the master node is running
+* `master_port` - Network port the master node is listening on
+* `total_num_nodes` - Total number of nodes, including the master node
+* `queue` - Queue that the nodes are enqueued to, excluding the master node
+* `node_rank` - Rank of the current node
+* `wait` - If `True`, the master node will wait for the other nodes to start
+
+:::important
+`Task.launch_multi_node()` should be called before an underlying distributed computation framework (e.g. `torch.distributed.init_process_group`).
+:::
+
+#### Example: PyTorch Distributed 
+You can use `Task.launch_multi_node()` in conjunction with a distributed model training framework such as PyTorch's 
+[distributed communication package](https://pytorch.org/docs/stable/distributed.html).
+ 
+```python
+from clearml import Task
+import torch
+import torch.distributed as dist
+
+def run(rank, size):
+    print('World size is ', size)
+    tensor = torch.zeros(1)
+    if rank == 0:
+        for i in range(1, size):
+            tensor += 1
+            dist.send(tensor=tensor, dst=i)
+            print('Sending from rank ', rank, ' to rank ', i, ' data: ', tensor[0])
+    else:
+        dist.recv(tensor=tensor, src=0)
+        print('Rank ', rank, ' received data: ', tensor[0])
+            
+if __name__ == '__main__':
+    task = Task.init(project_name='examples', task_name="distributed example")
+    task.execute_remotely(queue_name='queue')
+    config = task.launch_multi_node(4)
+    dist.init_process_group('gloo')
+    run(config.get('node_rank'), config.get('total_num_nodes'))
+```
 
 ### Offline Mode
 
@@ -444,8 +533,8 @@ the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
 :::caution 
-Offline mode only works with tasks created using `Task.init` and not with those created 
-using the `Task.create` method. 
+Offline mode only works with tasks created using [`Task.init()`](../references/sdk/task.md#taskinit) and not with those created 
+using [`Task.create()`](../references/sdk/task.md#taskcreate). 
 :::
 
 All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. 
@@ -627,7 +716,7 @@ Notice that if one of the frameworks loads an existing weights file, the running
 "Input Model", pointing directly to the original training task's model. This makes it easy to get the full lineage of 
 every trained and used model in our system!
 
-Models loaded by the ML framework appear under the "Input Models" section, under the Artifacts tab in the ClearML UI.
+Models loaded by the ML framework appear in an experiment's **Artifacts** tab under the "Input Models" section in the ClearML UI.
 
 ### Setting Upload Destination
 
@@ -772,6 +861,94 @@ task.set_user_properties(
 The above example sets the "backbone" property in a task.
 
 ![Task user properties](../img/fundamentals_task_config_properties.png)
+
+## Scalars
+
+After invoking `Task.init` in a script, ClearML automatically captures scalars logged by supported frameworks 
+(see [automatic logging](#automatic-logging)). 
+
+ClearML also supports explicitly logging scalars using the `Logger` class.
+
+```python
+# get logger object for current task
+logger = task.get_logger()
+# report scalar to task
+logger.report_scalar(
+  title='scalar metrics', series='series', value=scalar_value, iteration=iteration
+)
+# report single value metric
+logger.report_single_value(name="scalar_name", value=scalar_value)
+```
+
+See [Manual Reporting](../fundamentals/logger.md#manual-reporting) for more information.
+
+### Retrieving Scalar Values 
+
+#### Scalar Summary 
+Use [`Task.get_last_scalar_metrics()`](../references/sdk/task.md#get_last_scalar_metrics) to get a summary of all 
+scalars logged in the task.
+
+This call returns a nested dictionary of the last, maximum, and minimum values reported for each scalar metric reported 
+to the task, ordered by title and series: 
+
+```console
+{
+ "title": {
+     "series": {
+         "last": 0.5,
+         "min": 0.1,
+         "max": 0.9
+         }
+     }
+ }
+```
+
+#### Get Sample Values
+Use [`get_reported_scalars()`](../references/sdk/task.md#get_reported_scalars) to retrieve a sample of the logged scalars 
+for each metric/series. 
+
+Use the `max_samples` argument to specify the maximum number of samples per series to return (up to a maximum of 
+5000). 
+
+To fetch all scalar values, use [`Task.get_all_reported_scalars()`](../references/sdk/task.md#get_all_reported_scalars).
+
+Set the x-axis units with the `x_axis` argument. The options are: 
+* `iter` - Iteration (default)
+* `timestamp` - Milliseconds since epoch 
+* `iso_time` - Wall time 
+
+```python
+task.get_reported_scalars(max_samples=0, x_axis='iter')
+```
+
+This returns a nested dictionary of the scalar graph values: 
+
+```console
+{
+  "title": {
+    "series": {
+      "x": [0, 1, 2],
+      "y": [10, 11, 12]
+    }
+  }
+}
+```
+
+:::info
+This call is not cached. If the Task has many reported scalars, it might take a long time for the call to return.
+:::
+
+#### Get Single Value Scalars
+
+To get the values of a reported single-value scalars, use [`Task.get_reported_single_value()`](../references/sdk/task.md#get_reported_single_value) 
+and specify the scalar's `name`.  
+
+To get all reported single scalar values, use [`Task.get_reported_single_values()`](../references/sdk/task.md#get_reported_single_values), 
+which returns a dictionary of scalar name and value pairs:
+
+```console
+{'<scalar_name_1>': <value_1>, '<scalar_name_2>': <value_2>}
+```
 
 ## SDK Reference
 For detailed information, see the complete [Task SDK reference page](../references/sdk/task.md). 

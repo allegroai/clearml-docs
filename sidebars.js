@@ -58,7 +58,20 @@ module.exports = {
         'model_registry',
         {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_setup', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
-        'integrations/libraries',
+        {'Integrations': [
+                'guides/frameworks/autokeras/integration_autokeras',
+                'guides/frameworks/catboost/catboost', 'integrations/click', 'guides/frameworks/fastai/fastai_with_tensorboard',
+                'integrations/hydra',
+                'guides/frameworks/keras/keras_tensorboard', 'guides/frameworks/tensorflow/integration_keras_tuner',
+                'guides/frameworks/lightgbm/lightgbm_example', 'guides/frameworks/matplotlib/matplotlib_example',
+                'guides/frameworks/megengine/megengine_mnist', 'integrations/openmmv', 'integrations/optuna',
+                'integrations/python_fire', 'guides/frameworks/pytorch/pytorch_mnist',
+                {'PyTorch Ignite':['guides/frameworks/pytorch_ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch_ignite/pytorch_ignite_mnist']},
+                'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
+                'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'guides/frameworks/tensorflow/tensorflow_mnist',
+                'integrations/seaborn', 'guides/frameworks/xgboost/xgboost_metrics', 'integrations/yolov5'
+            ]
+        },
         'integrations/storage',
         {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
             {
@@ -95,7 +108,8 @@ module.exports = {
                     'webapp/applications/apps_gcp_autoscaler',
                     'webapp/applications/apps_hpo',
                     'webapp/applications/apps_dashboard',
-                    'webapp/applications/apps_task_scheduler'
+                    'webapp/applications/apps_task_scheduler',
+                    'webapp/applications/apps_trigger_manager'
                 ]
 
             },
