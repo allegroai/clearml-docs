@@ -1287,36 +1287,22 @@ will not exceed the value of `matplotlib_untitled_history_size`
 **`sdk.storage.cache`** (*dict*)
         
 * Dictionary of storage cache options. The keys include:
-  * `default_base_dir` (*string*) -The default base directory for caching. The default is the system temp folder for caching.
-  * `default_cache_manager_size` (*int*) - The default limit for the number of files in the cache. If not set, it will be equal to 100 files.
-  * `size.max_used_bytes` (*str*) - The maximum size of the local cache directory. If set to `-1`, the directory  can use 
-  the memory available on the disk. It's a string, so you can set it to 1GB, 2TB, 500MB
-  * `size.min_free_bytes` (*int*) - The minimum amount of free disk space that should be left. If the `size.max_used_bytes` is 
-  set to -1, this configuration will limit the cache directory maximum size to X bytes/MB/GB of available disk space - size.min_free_bytes. 
-  It's also a string, so you can set it to 1GB, 2TB, 500MB
-  * `zero_file_size_check` (*bool*)- If set to True, each cache hit will also check the cached file size, making sure it is not 
-    zero. Default (false) file size check is not performed on existing cached entries 
-  * `secondary` (*dict*) - Set up a secondary cache (acts as an L2 cache). When the server is queries, it will first look in primary cache, 
-  then it will look in secondary cache. 
-    * i.e. files that would be downloaded to the main (which can be also seen as the default/regular/local) 
-    cache are first queried from this cache, and if found, pulled from here. 
-  * ** clearml wil check if thing already in cache. if not, it means it's a cache miss. in that case, if secondary cache, it
-    will check secondary cache. if missing from there it will try to download it. it will first put it in primary cache. If there
-    is secondary cache, once cached in main, it will copt to secondary cached 
-    * In case of a cache miss, the files will first be pulled to the main cache, and then copied to this secondary cache. 
-    * Note that if the file is already in the main cache, the secondary cache will not be queried. 
-
-Example usecase: using this cache to store data to an EFS shared by a team, 
-such that files will not be pulled from S3 (or other cloud storage provider) multiple times by multiple team members. 
-Supports exactly the same options as the main cache: default_base_dir (which is mandatory), size.max_used_bytes, size.min_free_bytes etc. If
-an option is missing from here, it will default to the value used by the main cache.
-
-cache - which could be a shared mounting point. could be 
-  used for downloading stuff 
-For more details see this thread: https://clearml.slack.com/archives/CTK20V944/p1686129608668939
-
+  * `default_base_dir` (*string*) - The default base directory for caching. The default is the system temp folder (`~/.clearml/cache`).
+  * `default_cache_manager_size` (*int*) - Maximum number of files in the cache (default 100 files).
+  * `size.max_used_bytes` (*str*) - Maximum size of the local cache directory. If set to `-1`, the directory  can use 
+  the memory available on the disk. It's a string, so you can specify the units (e.g. `1GB`, `2TB`, `500MB`).
+  * `size.min_free_bytes` (*str*) - Minimum amount of free disk space that should be left. If `size.max_used_bytes` is 
+  set to `-1`, this configuration will limit the cache directory maximum size to `free disk space - size.min_free_bytes`. 
+  It's a string, so you can specify the units (e.g. `1GB`, `2TB`, `500MB`).
+  * `zero_file_size_check` (*bool*)- If set to `True`, each cache hit will also check the cached file size, making sure 
+  it is not zero (default `False`) 
+  * `secondary` (*dict*) - Set up a secondary cache (acts as an L2 cache). When a request is made, the primary cache is 
+  queried first. If the data is not in the primary cache, the secondary cache is queried. In case of a cache
+  miss, the data will be pulled to the primary cache, and then copied to the secondary cache. The
+  `sdk.storage.cache.secondary` dictionary supports the same option as the primary cache: `default_base_dir` (required), `size.max_used_bytes`, 
+  `size.min_free_bytes`, etc. If an option is unspecified, it defaults to the primary cache's value.
+  
 <br/>
-
 
 
 ##### sdk.storage.direct_access 
