@@ -96,8 +96,6 @@ The Output details include:
 * The output destination used for storing model checkpoints (snapshots) and artifacts (see also, [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
   in the configuration file, and `output_uri` in [`Task.init`](../references/sdk/task.md#taskinit) parameters).
 
-* The logging level for the experiment, which uses the standard Python [logging levels](https://docs.python.org/3/howto/logging.html#logging-levels).
-
 ![Execution details section](../img/webapp_exp_output.png)
 
 ## Configuration
