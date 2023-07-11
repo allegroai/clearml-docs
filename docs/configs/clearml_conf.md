@@ -1286,15 +1286,28 @@ will not exceed the value of `matplotlib_untitled_history_size`
         
 **`sdk.storage.cache`** (*dict*)
         
-* Dictionary of storage cache options.
+* Dictionary of storage cache options. The keys include:
+  * `default_base_dir` (*str*) - The default base directory for caching. The default is the `<system_temp_folder>/clearml_cache`.
+  * `default_cache_manager_size` (*int*) - Maximum number of files in the cache (default 100 files).
+  
+:::important Enterprise features 
+The ClearML Enterprise plan also supports the following configuration options under `sdk.storage.cache`:   
+  * `size.max_used_bytes` (*str*) - Maximum size of the local cache directory. If set to `-1`, the directory can use 
+  the available disk space. Specified in storage units (e.g. `1GB`, `2TB`, `500MB`).
+  * `size.min_free_bytes` (*str*) - Minimum amount of free disk space that should be left. If `size.max_used_bytes` is 
+  set to `-1`, this configuration will limit the cache directory maximum size to `free disk space - size.min_free_bytes`. 
+  Specified in storage units (e.g. `1GB`, `2TB`, `500MB`).
+  * `zero_file_size_check` (*bool*)- If set to `True`, each cache hit will also check the cached file size, making sure 
+  it is not zero (default `False`) 
+  * `secondary` (*dict*) - Set up a secondary cache (acts as an L2 cache). When a request is made, the primary cache is 
+  queried first. If the data is not in the primary cache, the secondary cache is queried. In case of a cache
+  miss, the data will be pulled to the primary cache, and then copied to the secondary cache. The
+  `sdk.storage.cache.secondary` dictionary supports the same option as the primary cache: `default_base_dir` (required), `size.max_used_bytes`, 
+  `size.min_free_bytes`, etc. If an option is unspecified, it defaults to the primary cache's value.
+:::
 
----
-        
-**`sdk.storage.cache.default_base_dir`** (*string*)
-        
-* The default base directory for caching. The default is the system temp folder for caching.
-        
 <br/>
+
 
 ##### sdk.storage.direct_access 
     
