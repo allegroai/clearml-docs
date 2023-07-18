@@ -132,15 +132,13 @@ method before starting the optimizer.
 ::: 
 
 
+## Using ClearML’s Hyperparameter Optimization
+
+ClearML offers the following interfaces for running hyperparameter optimization:
+* `HyperparameterOptimizer` - A python interface for managing the hyperparameter optimization process. For detailed information, see the complete [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optimization_hyperparameteroptimizer.md)
+* `clearml-param-search` - A CLI utility for managing the hyperparameter optimization process. See [ClearML Param Search](../apps/clearml_param_search.md) for a reference of the CLI commands
+* Hyperparameter Optimization App (available under the ClearML Pro plan) - ClearML's GUI application for managing the hyperparameter optimization process. See [Hyperparameter Optimization](../webapp/applications/apps_hpo.md) 
+
 ## Tutorial
 
 Check out the [Hyperparameter Optimization tutorial](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) for a step-by-step guide.
-
-## Hyperparameter Optimization CLI
-
-ClearML also provides `clearml-param-search`, a CLI utility for managing the hyperparameter optimization process. See 
-[ClearML Param Search](../apps/clearml_param_search.md) for more information. 
-
-## SDK Reference
-
-For detailed information, see the complete [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
