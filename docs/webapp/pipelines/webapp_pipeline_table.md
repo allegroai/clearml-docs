@@ -16,6 +16,13 @@ You can archive pipeline runs so the runs table doesn't get too cluttered. Click
 table to open the archive and view all archived runs. From the archive, you can restore 
 runs to remove them from the archive. You can also permanently delete runs.
 
+You can download the pipeline runs table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+and choosing one of these options:
+* **Download onscreen items** - Download the values for pipeline runs currently visible on screen  
+* **Download all items** - Download the values for all runs in this pipeline that match the current active filters  
+
+The downloaded data consists of the currently displayed table columns.
+
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
 
 ## Run Table Columns
