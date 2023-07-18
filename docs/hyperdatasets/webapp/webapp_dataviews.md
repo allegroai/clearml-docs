@@ -18,6 +18,13 @@ You can archive Dataviews so the Dataviews table doesn't get too cluttered. Clic
 table to open the archive and view all archived Dataviews. From the archive, you can restore 
 Dataviews to remove them from the archive. You can also permanently delete Dataviews.
 
+You can download the Dataviews table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+and choosing one of these options:
+* **Download onscreen items** - Download the values for Dataviews currently visible on screen  
+* **Download all items** - Download the values for all Dataviews in this project that match the current active filters  
+
+The downloaded data consists of the currently displayed table columns.
+
 ![Dataviews table](../../img/hyperdatasets/webapp_dataviews_table.png)
 
 The Dataviews table includes the following columns: 
