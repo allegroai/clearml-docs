@@ -136,11 +136,16 @@ method before starting the optimizer.
 
 Check out the [Hyperparameter Optimization tutorial](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) for a step-by-step guide.
 
-## Hyperparameter Optimization CLI
+## SDK Reference
+
+For detailed information, see the complete [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
+
+## CLI
 
 ClearML also provides `clearml-param-search`, a CLI utility for managing the hyperparameter optimization process. See 
 [ClearML Param Search](../apps/clearml_param_search.md) for more information. 
 
-## SDK Reference
+## UI Application
 
-For detailed information, see the complete [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
+ClearML provides the [Hyperparameter Optimization GUI application](../webapp/applications/apps_hpo.md) for launching and 
+managing the hyperparameter optimization process. 
