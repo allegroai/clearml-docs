@@ -54,7 +54,7 @@ manager will capture:
 * And more
 
 All of this is captured into a [ClearML Task](../fundamentals/task.md). By default, a task called `Training` is created 
-in the `YOLOv5` project. To change the task’s name or project , use the `--project` and `--name` arguments when running 
+in the `YOLOv5` project. To change the task’s name or project, use the `--project` and `--name` arguments when running 
 the `train.py` script. 
 
 ```commandline
