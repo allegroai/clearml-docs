@@ -100,7 +100,7 @@ uncommitted changes etc.). The [ClearML Agent](../clearml_agent.md) listens to d
 enqueued, the agent pulls it, recreates its execution environment, and runs it, reporting its scalars, plots, etc. to the 
 experiment manager.
 
-You deploy a ClearML Agent onto any machine (e.g. a cloud VM, a local GPU machine, your own laptop) by simply running 
+Deploy a ClearML Agent onto any machine (e.g. a cloud VM, a local GPU machine, your own laptop) by simply running 
 the following command on it:
 
 ```commandline
