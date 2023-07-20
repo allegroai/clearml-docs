@@ -4,7 +4,7 @@ title: YOLOv5
 
 ClearML helps you get the most out of ultralytics' [YOLOv5](https://github.com/ultralytics/yolov5) through its native 
 built in logger:
-* Track every YOLOv5 training run in the ClearML experiment manager
+* Track every YOLOv5 training run in ClearML
 * Version and easily access your custom training data with [ClearML Data](../clearml_data/clearml_data.md) 
 * Remotely train and monitor your YOLOv5 training runs using [ClearML Agent](../clearml_agent.md)
 * Get the very best mAP using ClearML [Hyperparameter Optimization](../fundamentals/hpo.md)
@@ -62,11 +62,11 @@ python train.py --project my_project --name my_training --img 640 --batch 16 --e
 ```
 
 :::tip project names 
-ClearML uses `/` as a delimiter for subprojects: using `example/sample` as a name will create the task in a `sample` 
+ClearML uses `/` as a delimiter for subprojects: using `example/sample` as a name will create the `sample` 
 task within the `example` project. 
 :::
 
-You can visualize all the captured data in the task’s page in the [WebApp](../webapp/webapp_exp_track_visual.md). 
+You can see all the captured data in the task’s page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md). 
 Additionally, you can view all of your YOLOv5 runs tracked by ClearML in the [Experiments Table](../webapp/webapp_model_table.md). 
 Add custom columns to the table, such as mAP values, so you can easily sort and see what is the best performing model. 
 You can also select multiple experiments and directly [compare](../webapp/webapp_exp_comparing.md) them.   
@@ -152,19 +152,19 @@ python train.py --img 640 --batch 16 --epochs 3 --data clearml://<your_dataset_i
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 
 uncommitted changes etc.). The [ClearML Agent](../clearml_agent.md) listens to designated queues and when a task is 
-enqueued, the agent pulls it, recreates its environment, and runs it, reporting its scalars, plots, etc. to the 
+enqueued, the agent pulls it, recreates its execution environment, and runs it, reporting its scalars, plots, etc. to the 
 experiment manager.
 
-You can turn any machine (e.g. a cloud VM, a local GPU machine, your own laptop) into a ClearML Agent by simply running 
+You deploy a ClearML Agent onto any machine (e.g. a cloud VM, a local GPU machine, your own laptop) by simply running 
 the following command on it:
 
 ```commandline
 clearml-agent daemon --queue <queues_to_listen_to> [--docker]
 ```
 
-Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md), to help you automatically deploy ClearML 
-agents on new remote machines in the cloud of your choice (AWS, GCP, Azure): The autoscaler automatically spins up and 
-shuts down instances as needed, according to the budget that you set.
+Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md), to help you manage cloud workloads in the 
+cloud of your choice (AWS, GCP, Azure) and automatically deploy ClearML agents: The autoscaler automatically spins up 
+and shuts down instances as needed, according to a resource budget that you set.
 
 
 ### Cloning, Editing, and Enqueuing
@@ -172,7 +172,7 @@ shuts down instances as needed, according to the budget that you set.
 ![Cloning, editing, enqueuing gif](../img/gif/integrations_yolov5.gif)
 
 Use ClearML’s web interface to edit task details, like configuration parameters or input models, then execute the task 
-with the new details on a remote machine:
+with the new configuration on a remote machine:
 * Clone the experiment
 * Edit the hyperparameters and/or other details 
 * Enqueue the task
