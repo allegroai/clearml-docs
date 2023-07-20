@@ -155,7 +155,7 @@ uncommitted changes etc.). The [ClearML Agent](../clearml_agent.md) listens to d
 enqueued, the agent pulls it, recreates its execution environment, and runs it, reporting its scalars, plots, etc. to the 
 experiment manager.
 
-You deploy a ClearML Agent onto any machine (e.g. a cloud VM, a local GPU machine, your own laptop) by simply running 
+Deploy a ClearML Agent onto any machine (e.g. a cloud VM, a local GPU machine, your own laptop) by simply running 
 the following command on it:
 
 ```commandline
@@ -163,7 +163,7 @@ clearml-agent daemon --queue <queues_to_listen_to> [--docker]
 ```
 
 Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md), to help you manage cloud workloads in the 
-cloud of your choice (AWS, GCP, Azure) and automatically deploy ClearML agents: The autoscaler automatically spins up 
+cloud of your choice (AWS, GCP, Azure) and automatically deploy ClearML agents: the autoscaler automatically spins up 
 and shuts down instances as needed, according to a resource budget that you set.
 
 
