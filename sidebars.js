@@ -69,7 +69,7 @@ module.exports = {
                 {'PyTorch Ignite':['guides/frameworks/pytorch_ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch_ignite/pytorch_ignite_mnist']},
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
                 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'guides/frameworks/tensorflow/tensorflow_mnist',
-                'integrations/seaborn', 'guides/frameworks/xgboost/xgboost_metrics', 'integrations/yolov5'
+                'integrations/seaborn', 'guides/frameworks/xgboost/xgboost_metrics', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
         'integrations/storage',

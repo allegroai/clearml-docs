@@ -161,6 +161,7 @@ The Task must be connected to a git repository, since currently single script de
 |-----|---|---|
 | `--attach`| Attach to running interactive session | Previous session|
 | `--project`| Set the project name to the interactive session task| `DevOps` |
+| `--shutdowm`, `-S`| Shut down an active session | Previous session|
 | `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
@@ -186,5 +187,6 @@ The Task must be connected to a git repository, since currently single script de
 | `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
 | `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
 | `--version`| Display the clearml-session utility version| N/A|
+| `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|
 
 </div>
