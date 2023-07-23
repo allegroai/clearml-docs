@@ -147,9 +147,9 @@ ClearML also provides `clearml-param-search`, a CLI utility for managing the hyp
 
 ## UI Application
 
-ClearML provides the [Hyperparameter Optimization GUI application](../webapp/applications/apps_hpo.md) for launching and 
-managing the hyperparameter optimization process. 
-
 :::info Pro Plan Offering
 The ClearML HPO App is available under the ClearML Pro plan
 :::
+
+ClearML provides the [Hyperparameter Optimization GUI application](../webapp/applications/apps_hpo.md) for launching and 
+managing the hyperparameter optimization process. 
