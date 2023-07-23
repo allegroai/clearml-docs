@@ -142,7 +142,7 @@ New dataset created id=<dataset-id>
 ```
 
 ### Run Training Using a ClearML Dataset
-Now that you have a ClearML dataset, you can very simply use it to train custom YOLOv5  models:
+Now that you have a ClearML dataset, you can very simply use it to train custom YOLOv5 models:
 
 ```commandline
 python train.py --img 640 --batch 16 --epochs 3 --data clearml://<your_dataset_id> --weights yolov5s.pt --cache
