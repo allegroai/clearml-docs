@@ -165,14 +165,14 @@ The Task must be connected to a git repository, since currently single script de
 | `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
-| `--verbose ` | Increase verbosity of logging | `none` |
 | `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:10.1-runtime-ubuntu18.04` or previously used docker image|
 | `--docker-args ` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--queue`| Select the queue to launch the interactive session on | Previously used queue|
 | `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
 | `--vscode-server` | Install VSCode on interactive session | `true` |
-| `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `3.12.0:2021.10.1365161279`|
+| `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
+| `--vscode-extensions` |Install additional VSCode extensions and VSCode python extensions (example: `ms-python.python,ms-python.black-formatter,ms-python.pylint,ms-python.flake8`)|`None`|
 | `--public-ip` | If `true`, register the public IP of the remote machine (if you are running the session on a public cloud) | `false` - Session runs on the machine whose agent is executing the session|
 | `--remote-ssh-port`| Set the remote SSH server port, running on the agent's machine | 10022|
 | `--init-script` | Specify a BASH init script file to be executed when the interactive session is being set up | `none` or previously entered BASH script |
@@ -186,7 +186,9 @@ The Task must be connected to a git repository, since currently single script de
 | `--skip-docker-network` | Don't pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
 | `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
 | `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
+|  `--force_dropbear`| Force using `dropbear` instead of SSHd |`None`| 
 | `--version`| Display the clearml-session utility version| N/A|
+| `--verbose ` | Increase verbosity of logging | `none` |
 | `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|
 
 </div>
