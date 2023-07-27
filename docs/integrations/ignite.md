@@ -2,13 +2,14 @@
 title: PyTorch Ignite
 ---
 
-ClearML integrates seamlessly into your PyTorch Ignite script through its native built in loggers: TensorboardLogger and ClearMLLogger.
-
+[PyTorch Ignite](https://pytorch.org/ignite/index.html) is a library for training and evaluating neural networks in 
+PyTorch. You can integrate ClearML into your code using Ignite’s built-in loggers: [TensorboardLogger](#tensorboardlogger) 
+and [ClearMLLogger](#clearmllogger). 
 
 ## TensorboardLogger
 
 ClearML integrates seamlessly with TensorboardLogger, and automatically captures all information logged through the 
-handler: metrics, parameters, images, and gradients. 
+handler: metrics, parameters, images, and gradients.
 
 All you have to do is add two lines of code to your script:
 
@@ -18,12 +19,11 @@ task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
 This will create a [ClearML Task](../fundamentals/task.md) that captures your script's information, including Git details, 
-uncommitted code, python environment, all information logged through TensorboardLogger, and more. Visualize all the 
-captured information in the experiment's page in ClearML's [WebApp](#webapp)
+uncommitted code, python environment, all information logged through `TensorboardLogger`, and more. 
 
+Visualize all the captured information in the experiment's page in ClearML's [WebApp](#webapp)
 
 See a code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/ignite/cifar_ignite.py).
-   
 
 ## ClearMLLogger
 PyTorch Ignite supports a ClearML Logger to log metrics, text, model/optimizer parameters, plots, and model checkpoints 
@@ -41,8 +41,7 @@ Integrate ClearML with the following steps:
   This creates a [ClearML Task](../fundamentals/task.md) called `ignite` in the `examples` project, which captures your 
   script's information, including Git details, uncommitted code, python environment. 
   
-  You can also pass the 
-  following parameters to the `ClearMLLogger` object:
+  You can also pass the following parameters to the `ClearMLLogger` object:
   * `task_type` – The type of experiment (see [task types](../fundamentals/task.md#task-types)).
   * `report_freq` – The histogram processing frequency (handles histogram values every X calls to the handler). Affects 
     `GradsHistHandler` and `WeightsHistHandler` (default: 100).
@@ -50,7 +49,7 @@ Integrate ClearML with the following steps:
     reports afterwards) (default: 10).
   * `histogram_granularity` - Histogram sampling granularity (default: 50).
 
-1. Attach the ClearMLLogger to output handlers to log metrics: 
+1. Attach the C`learMLLogger` to output handlers to log metrics: 
 
    ```python 
    # Attach the logger to the trainer to log training loss 
@@ -73,50 +72,52 @@ Integrate ClearML with the following steps:
    ```
 
 1. Attach the ClearMLLogger object to helper handlers to log experiment outputs. Ignite supports the following helper handlers for ClearML:
+
    * **ClearMLSaver** - Saves input snapshots as ClearML artifacts.
    * **GradsHistHandler** and **WeightsHistHandler** - Logs the model's gradients and weights respectively as histograms.
    * **GradsScalarHandler** and **WeightsScalarHandler** - Logs gradients and weights respectively as scalars.
    * **OptimizerParamsHandler** - Logs optimizer parameters
-    
-    ```python
-    # Attach the logger to the trainer to log model's weights norm
-    clearml_logger.attach(
-        trainer, log_handler=WeightsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
-    )
 
-    # Attach the logger to the trainer to log model's weights as a histogram 
-    clearml_logger.attach(trainer, log_handler=WeightsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
+  ```python
+  # Attach the logger to the trainer to log model's weights norm
+  clearml_logger.attach(
+      trainer, log_handler=WeightsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
+  )
 
-    # Attach the logger to the trainer to log model’s gradients as scalars
-    clearml_logger.attach(
-        trainer, log_handler=GradsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
-    )
+  # Attach the logger to the trainer to log model's weights as a histogram 
+  clearml_logger.attach(trainer, log_handler=WeightsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
 
-    #Attach the logger to the trainer to log model's gradients as a histogram    
-    clearml_logger.attach(trainer, log_handler=GradsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
+  # Attach the logger to the trainer to log model’s gradients as scalars
+  clearml_logger.attach(
+      trainer, log_handler=GradsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
+  )
 
-    handler = Checkpoint(
-        {"model": model},
-        ClearMLSaver(),
-        n_saved=1,
-        score_function=lambda e: e.state.metrics["accuracy"],
-        score_name="val_acc",
-        filename_prefix="best",
-        global_step_transform=global_step_from_engine(trainer),
-    )
-    validation_evaluator.add_event_handler(Events.EPOCH_COMPLETED, handler)
+  #Attach the logger to the trainer to log model's gradients as a histogram    
+  clearml_logger.attach(trainer, log_handler=GradsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
+
+  handler = Checkpoint(
+      {"model": model},
+      ClearMLSaver(),
+      n_saved=1,
+      score_function=lambda e: e.state.metrics["accuracy"],
+      score_name="val_acc",
+      filename_prefix="best",
+      global_step_transform=global_step_from_engine(trainer),
+  )
+  validation_evaluator.add_event_handler(Events.EPOCH_COMPLETED, handler)
    
-    # Attach the logger to the trainer to log optimizer's parameters, e.g. learning rate at each iteration
-    clearml_logger.attach(
-       trainer,
-       log_handler=OptimizerParamsHandler(optimizer),
-       event_name=Events.ITERATION_STARTED
-    )
-    ```
+  # Attach the logger to the trainer to log optimizer's parameters, e.g. learning rate at each iteration
+  clearml_logger.attach(
+     trainer,
+     log_handler=OptimizerParamsHandler(optimizer),
+     event_name=Events.ITERATION_STARTED
+  )
+  ```
    
-Visualize all the captured information in the experiment's page in ClearML's [WebApp](#webapp)
+Visualize all the captured information in the experiment's page in ClearML's [WebApp](#webapp).
 
 For more information, see the [ignite documentation](https://pytorch.org/ignite/generated/ignite.contrib.handlers.clearml_logger.html). 
+
 See code example [here](https://github.com/pytorch/ignite/blob/master/examples/contrib/mnist/mnist_with_clearml_logger.py)
 
 ## WebApp
@@ -138,7 +139,7 @@ View the scalars in the experiment's **SCALARS** tab.
 
 ### Debug Samples
 
-ClearML automatically tracks images logged to TensorboardLogger. They appear in the experiment's **DEBUG SAMPLES**.
+ClearML automatically tracks images logged to `TensorboardLogger`. They appear in the experiment's **DEBUG SAMPLES**.
 
 
 ![Debug Samples](../img/examples_integration_pytorch_ignite_debug.png)
