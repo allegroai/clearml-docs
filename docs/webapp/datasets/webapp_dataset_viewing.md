@@ -32,6 +32,15 @@ the list to open the archive and view all archived versions. From the archive, y
 versions to remove them from the archive. You can also permanently delete versions.
 :::
 
+:::tip Download Version List
+You can download the dataset version list as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+and choosing one of these options:
+* **Download onscreen items** - Download the values for versions currently visible on screen  
+* **Download all items** - Download the values for all versions in this dataset that match the current active filters  
+
+The downloaded data consists of the currently displayed table columns.
+:::
+
 ## Version Details
 ### Version Info
 
