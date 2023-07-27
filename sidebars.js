@@ -69,7 +69,7 @@ module.exports = {
                 {'PyTorch Ignite':['guides/frameworks/pytorch_ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch_ignite/pytorch_ignite_mnist']},
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
                 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'integrations/tensorflow',
-                'integrations/seaborn', 'guides/frameworks/xgboost/xgboost_metrics', 'integrations/yolov5'
+                'integrations/seaborn', 'guides/frameworks/xgboost/xgboost_metrics', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
         'integrations/storage',
@@ -192,7 +192,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_11', 'release_notes/ver_1_10', 'release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
+        'Release Notes': ['release_notes/ver_1_12', 'release_notes/ver_1_11', 'release_notes/ver_1_10', 'release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
             'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3',
             'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17',
             'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14', 'release_notes/ver_0_13',

@@ -762,20 +762,13 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
     
 **`sdk.aws.boto3`** (*dict*)
     
-* Dictionary of AWS Storage, Boto3 options.
-    
----
-    
-**`sdk.aws.boto3.pool_connections`** (*integer*)
-    
-* For AWS Boto3, The maximum number of Boto3 pool connections.
-    
----
-    
-**`sdk.aws.boto3.max_multipart_concurrency`** (*integer*)
-    
-* For AWS Boto3, the maximum number of threads making requests for a transfer.
-    
+* Dictionary of AWS Storage, Boto3 options. The keys include: 
+   * `max_multipart_concurrency` (*integer*) - The maximum number of threads making requests for a transfer.
+   * `multipart_threshold` (*integer*) - The transfer size threshold. If size above threshold, Boto3 will automatically use multipart uploads, downloads, and copies (in bytes)
+   * `multipart_chunksize` (*integer*) - The size of each part of a multipart transfer (in bytes).
+   * `pool_connections` (*integer*) - The maximum number of Boto3 pool connections.
+   
+       
 <br/>
 
 ##### sdk.aws.s3

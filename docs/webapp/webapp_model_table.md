@@ -15,6 +15,13 @@ You can archive models so the models table doesn't get too cluttered. Click **OP
 table to open the archive and view all archived models. From the archive, you can restore 
 models to remove them from the archive, and permanently delete models.
 
+You can download the models table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+and choosing one of these options:
+* **Download onscreen items** - Download the values for models currently visible on screen  
+* **Download all items** - Download the values for all models in this project that match the current active filters  
+
+The downloaded data consists of the currently displayed table columns.
+
 ![Models table](../img/webapp_models_01.png)
 
 ## Models Table Columns
