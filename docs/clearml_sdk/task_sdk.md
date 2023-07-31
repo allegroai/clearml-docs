@@ -645,7 +645,7 @@ See more details in the [Artifacts Reporting example](../guides/reporting/artifa
 A task's artifacts are accessed through the task’s *artifact* property which lists the artifacts’ locations.
 
 The artifacts can subsequently be retrieved from their respective locations by using:
-* `get_local_copy()`- Downloads the artifact and caches it for later use, returning the path to the cached copy.
+* `get_local_copy()` - Downloads the artifact and caches it for later use, returning the path to the cached copy.
 * `get()` - Returns a Python object constructed from the downloaded artifact file.
 
 The code below demonstrates how to access a file artifact using the previously generated preprocessed data:
