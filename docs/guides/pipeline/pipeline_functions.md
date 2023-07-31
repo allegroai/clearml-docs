@@ -83,7 +83,7 @@ logged as required packages for the pipeline execution step.
    ```
    
    The third step in the pipeline uses the `step_three` function and uses as its input the second step’s output. This 
-   reference implicitly defines the pipeline structure, making `step_two`the parent step of `step_three`.
+   reference implicitly defines the pipeline structure, making `step_two` the parent step of `step_three`.
    
    Its return object will be stored as an artifact under the name `model`:
    
