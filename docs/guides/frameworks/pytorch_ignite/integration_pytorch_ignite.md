@@ -1,6 +1,5 @@
 ---
 title: PyTorch Ignite TensorboardLogger
-displayed_sidebar: mainSidebar
 ---
 
 The [cifar_ignite.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/ignite/cifar_ignite.py) example 

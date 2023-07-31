@@ -60,16 +60,16 @@ module.exports = {
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
                 'guides/frameworks/autokeras/integration_autokeras',
-                'guides/frameworks/catboost/catboost', 'integrations/click', 'guides/frameworks/fastai/fastai_with_tensorboard',
+                'integrations/catboost', 'integrations/click', 'guides/frameworks/fastai/fastai_with_tensorboard',
                 'integrations/hydra',
                 'guides/frameworks/keras/keras_tensorboard', 'guides/frameworks/tensorflow/integration_keras_tuner',
                 'guides/frameworks/lightgbm/lightgbm_example', 'guides/frameworks/matplotlib/matplotlib_example',
                 'guides/frameworks/megengine/megengine_mnist', 'integrations/openmmv', 'integrations/optuna',
                 'integrations/python_fire', 'guides/frameworks/pytorch/pytorch_mnist',
-                {'PyTorch Ignite':['guides/frameworks/pytorch_ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch_ignite/pytorch_ignite_mnist']},
+                'integrations/ignite',
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
-                'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'integrations/tensorflow',
-                'integrations/seaborn', 'guides/frameworks/xgboost/xgboost_metrics', 'integrations/yolov5', 'integrations/yolov8'
+                'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'integrations/tensorflow',              
+                'integrations/seaborn', 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
         'integrations/storage',

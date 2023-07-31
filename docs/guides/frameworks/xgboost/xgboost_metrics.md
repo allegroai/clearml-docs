@@ -1,6 +1,5 @@
 ---
-title: XGBoost
-displayed_sidebar: mainSidebar
+title: XGBoost Metrics
 ---
 
 The [xgboost_metrics.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/xgboost/xgboost_metrics.py) 
