@@ -67,7 +67,7 @@ module.exports = {
                 'guides/frameworks/megengine/megengine_mnist', 'integrations/openmmv', 'integrations/optuna',
                 'integrations/python_fire', 'guides/frameworks/pytorch/pytorch_mnist',
                 {'PyTorch Ignite':['guides/frameworks/pytorch_ignite/integration_pytorch_ignite', 'guides/frameworks/pytorch_ignite/pytorch_ignite_mnist']},
-                'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
+                'integrations/pytorch_lightning', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
                 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'guides/frameworks/tensorflow/tensorflow_mnist',
                 'integrations/seaborn', 'guides/frameworks/xgboost/xgboost_metrics', 'integrations/yolov5', 'integrations/yolov8'
             ]

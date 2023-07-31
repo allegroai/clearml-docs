@@ -1,6 +1,5 @@
 ---
 title: PyTorch Lightning
-displayed_sidebar: mainSidebar
 ---
 
 The [pytorch-lightning](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch-lightning/pytorch_lightning_example.py) 
