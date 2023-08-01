@@ -8,7 +8,7 @@ instructions.
 :::
 
 [Matplotlib](https://matplotlib.org/) is a Python library for data visualization. ClearML automatically captures plots 
-and images created using `matplotlib`. 
+and images created with `matplotlib`. 
 
 All you have to do is add two lines of code to your script:
 
