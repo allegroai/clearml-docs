@@ -1,6 +1,5 @@
 ---
-title: Keras
-displayed_sidebar: mainSidebar
+title: Keras with TensorBoard
 ---
 
 The example below demonstrates the integration of ClearML into code which uses Keras and TensorBoard.
