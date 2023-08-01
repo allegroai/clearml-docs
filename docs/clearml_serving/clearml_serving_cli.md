@@ -5,7 +5,7 @@ title: CLI
 The `clearml-serving` utility is a CLI tool for model deployment and orchestration. 
 
 The following page provides a reference for `clearml-serving`'s CLI commands:
-* [list](#list) -  List running Serving Services
+* [list](#list) - List running Serving Services
 * [create](#create) - Create a new Serving Service
 * [metrics](#metrics) - Configure inference metrics Service
 * [config](#config) - Configure a new Serving Service

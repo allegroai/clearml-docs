@@ -278,7 +278,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
 * Fix UI custom columns choice does not persist per project - [ClearML GitHub issue 314](https://github.com/allegroai/clearml/issues/314)
 * Fix API plot_str not returned for compressed plots
 * Fix UI plots color picker consistency
-* Fix API ```Tasks.reset``` marking parent id as  'deleted' in its children
+* Fix API ```Tasks.reset``` marking parent id as 'deleted' in its children
 * Fix UI missing queue selection on queue delete
 * Fix UI debug image history slider not shown when there's only a single iteration
 * Fix UI X-axis labels are being cut in plots - [ClearML GitHub issue 264](https://github.com/allegroai/clearml/issues/264)
