@@ -96,7 +96,7 @@ See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
 
 ## Examples 
 
-Take a look at ClearML's XGBoost examples. The examples use XGBOost and ClearML in different configurations with 
+Take a look at ClearML's XGBoost examples. The examples use XGBoost and ClearML in different configurations with 
 additional tools, like Matplotlib and scikit-learn: 
 * [XGBoost Metric](../guides/frameworks/xgboost/xgboost_metrics.md) - Demonstrates ClearML automatic logging of XGBoost models and plots 
 * [XGBoost and scikit-learn](../guides/frameworks/xgboost/xgboost_sample.md) - Demonstrates ClearML automatic logging of XGBoost scalars and models 

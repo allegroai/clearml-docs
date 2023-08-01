@@ -22,7 +22,7 @@ workload grows, not to mention avoiding paying for running machines that aren’
 This is where autoscaling comes into the picture. 
 
 ClearML provides the following options to automate your resource scaling, while optimizing machine usage:
-* [ClearML autoscaler applications](#autoscaler-applications) -  Use the apps to define your compute resource budget, 
+* [ClearML autoscaler applications](#autoscaler-applications) - Use the apps to define your compute resource budget, 
 and have the apps automatically manage your resource consumption as needed–with no code!
 * [Kubernetes integration](#kubernetes) - Deploy agents through Kubernetes, which handles resource management and scaling 
 
