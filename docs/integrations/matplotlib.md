@@ -25,7 +25,7 @@ in the experiment's **Plots** and **Debug Samples** tabs respectively.
 ![image](../img/examples_matplotlib_example_01.png)
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your matplotlib script, it captures all of your matplotlib visualizations. 
+By default, when ClearML is integrated into your script, it captures all of your matplotlib visualizations. 
 But, you may want to have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
