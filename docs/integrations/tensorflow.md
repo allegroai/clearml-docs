@@ -44,7 +44,7 @@ For example:
 
 ```python
 auto_connect_frameworks={
-   'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
+   'tensorflow': False, 'matplotlib': True, 'tensorboard': False, 'pytorch': True,
    'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
    'megengine': True, 'jsonargparse': True, 'catboost': True
