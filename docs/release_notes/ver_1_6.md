@@ -60,7 +60,7 @@ title: Version 1.6
 ### ClearML Server 1.6.0
 **New Features and Improvements**
 * New ClearML Datasets UI pages for tracking dataset versions and exploring version lineage and contents
-* Add history navigation to experiments plots UI page [ClearML GitHub issues #81](https://github.com/allegroai/clearml/issues/81) & [#255](https://github.com/allegroai/clearml/issues/255): 
+* Add history navigation to experiments plots UI page [ClearML GitHub issues #81](https://github.com/allegroai/clearml/issues/81) and [#255](https://github.com/allegroai/clearml/issues/255): 
   * Plots page shows last reported plot for each metric/variation combination
   * Single plot view provides history navigation slider
 * Add single value scalar reporting: Single value scalars are aggregated into a summary table in the experiment’s scalars 

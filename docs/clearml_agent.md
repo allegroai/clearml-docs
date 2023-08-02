@@ -288,7 +288,7 @@ There are two options for deploying the ClearML Agent to a Kubernetes cluster:
 * Spin ClearML Agent as a long-lasting service pod
 * Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
 
-See more details [here](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
+For more details, see [Kubernetes integration](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
 
 ### Explicit Task Execution
 

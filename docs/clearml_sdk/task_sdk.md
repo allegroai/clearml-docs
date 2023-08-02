@@ -11,7 +11,7 @@ populate it with:
 * A link to the running git repository (including commit ID and local uncommitted changes)
 * Python packages used (i.e. directly imported Python packages, and the versions available on the machine)
 * Argparse arguments (default and specific to the current execution)
-* Reports to Tensorboard & Matplotlib and model checkpoints.
+* Reports to Tensorboard and Matplotlib and model checkpoints.
 
 :::tip Ensuring Reproducibility 
 To ensure every run will provide the same results, ClearML controls the deterministic behaviors of the `tensorflow`, 
@@ -340,7 +340,7 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
   )
   ```
 
-## Cloning & Executing Tasks
+## Cloning and Executing Tasks
 
 Once a task object is created, it can be copied (cloned). [`Task.clone()`](../references/sdk/task.md#taskclone) returns 
 a copy of the original task (`source_task`). By default, the cloned task is added to the same project as the original, 
