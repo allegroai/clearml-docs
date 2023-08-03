@@ -12,7 +12,7 @@ to a remote machine.
 
 ![ClearML Agent flow diagram](img/clearml_agent_flow_diagram.png)
 
-The diagram above demonstrates a typical flow where an agent executes a task:  
+The preceding diagram demonstrates a typical flow where an agent executes a task:  
 
 1. Enqueue a task for execution on the queue.
 1. The agent pulls the task from the queue.
