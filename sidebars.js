@@ -66,7 +66,7 @@ module.exports = {
                 'guides/frameworks/lightgbm/lightgbm_example', 'integrations/matplotlib',
                 'guides/frameworks/megengine/megengine_mnist', 'integrations/openmmv', 'integrations/optuna',
                 'integrations/python_fire', 'guides/frameworks/pytorch/pytorch_mnist',
-                'integrations/ignite',
+                'integrations/ignite', 'integrations/monai',
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
                 'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'integrations/tensorflow',              
                 'integrations/seaborn', 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
