@@ -1,6 +1,5 @@
 ---
 title: MegEngine
-displayed_sidebar: mainSidebar
 ---
 
 The [megengine_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/megengine/megengine_mnist.py) 
