@@ -75,7 +75,7 @@ To improve deep dataset DAG storage and speed, dataset squashing was introduced.
 class method generates a new dataset by squashing a set of dataset versions, and merging down all changes introduced in 
 their lineage DAG, creating a new, flat, independent version.
 
-The datasets being squashed into a single dataset can be specified by their IDs or by project & name pairs. 
+The datasets being squashed into a single dataset can be specified by their IDs or by project and name pairs. 
 
 ```python
 # option 1 - list dataset IDs

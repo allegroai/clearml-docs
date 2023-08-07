@@ -4,7 +4,7 @@ title: Next Steps
 
 So, you've already [installed ClearML's python package](ds_first_steps.md) and run your first experiment!
 
-Now, we'll learn how to track Hyperparameters, Artifacts and Metrics!
+Now, you'll learn how to track Hyperparameters, Artifacts and Metrics!
 
 ## Accessing Experiments
 
@@ -13,7 +13,7 @@ A Task has a project and a name, both can be changed after the experiment has be
 A Task is also automatically assigned an auto-generated unique identifier (UUID string) that cannot be changed and always locates the same Task in the system.
 
 It's possible to retrieve a Task object programmatically by querying the system based on either the Task ID,
-or project & name combination. It's also possible to query tasks based on their properties, like Tags.
+or project and name combination. It's also possible to query tasks based on their properties, like Tags.
 
 ```python
 prev_task = Task.get_task(task_id='123456deadbeef')
@@ -62,7 +62,7 @@ task.upload_artifact('/path/to/folder/', name='folder')
 ```
 
 Lastly, you can upload an instance of an object; Numpy/Pandas/PIL Images are supported with npz/csv.gz/jpg formats accordingly.
-If the object type is unknown ClearML pickles it and uploads the pickle file.
+If the object type is unknown, ClearML pickles it and uploads the pickle file.
 
 ```python
 numpy_object = np.eye(100, 100)
@@ -74,8 +74,8 @@ Check out all [artifact logging](../../clearml_sdk/task_sdk.md#artifacts) option
 ### Using Artifacts
 
 Logged artifacts can be used by other Tasks, whether it's a pre-trained Model or processed data.
-To use an artifact, first we have to get an instance of the Task that originally created it,
-then we either download it and get its path, or get the artifact object directly.
+To use an artifact, first you have to get an instance of the Task that originally created it,
+then you either download it and get its path, or get the artifact object directly.
 
 For example, using a previously generated preprocessed data.
 
@@ -85,7 +85,7 @@ local_csv = preprocess_task.artifacts['data'].get_local_copy()
 ```
 
 `task.artifacts` is a dictionary where the keys are the artifact names, and the returned object is the artifact object.
-Calling `get_local_copy()` returns a local cached copy of the artifact. Therefore, next time we execute the code, we don't
+Calling `get_local_copy()` returns a local cached copy of the artifact. Therefore, next time you execute the code, you don't
 need to download the artifact again.
 Calling `get()` gets a deserialized pickled object.
 
@@ -95,8 +95,8 @@ Check out the [artifacts retrieval](https://github.com/allegroai/clearml/blob/ma
 
 Models are a special kind of artifact.
 Models created by popular frameworks (such as PyTorch, TensorFlow, Scikit-learn) are automatically logged by ClearML.
-All snapshots are automatically logged. In order to make sure we also automatically upload the model snapshot (instead of saving its local path),
-we need to pass a storage location for the model files to be uploaded to.
+All snapshots are automatically logged. In order to make sure you also automatically upload the model snapshot (instead of saving its local path),
+pass a storage location for the model files to be uploaded to.
 
 For example, upload all snapshots to an S3 bucket:
 ```python
@@ -126,18 +126,18 @@ last_snapshot = prev_task.models['output'][-1]
 local_weights_path = last_snapshot.get_local_copy()
 ```
 
-Like before we have to get the instance of the Task training the original weights files, then we can query the task for its output models (a list of snapshots), and get the latest snapshot.
+Like before, you have to get the instance of the task training the original weights files, then you can query the task for its output models (a list of snapshots), and get the latest snapshot.
 :::note
 Using TensorFlow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing your requested snapshot.
 :::
-As with artifacts, all models are cached, meaning the next time we run this code, no model needs to be downloaded.
-Once one of the frameworks will load the weights file, the running Task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.
+As with artifacts, all models are cached, meaning the next time you run this code, no model needs to be downloaded.
+Once one of the frameworks will load the weights file, the running task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.
 This feature lets you easily get a full genealogy of every trained and used model by your system!
 
 ## Log Metrics
 
 Full metrics logging is the key to finding the best performing model!
-By default, everything that's reported to Tensorboard & Matplotlib is automatically captured and logged.
+By default, everything that's reported to Tensorboard and Matplotlib is automatically captured and logged.
 
 Since not all metrics are tracked that way, it's also possible to manually report metrics using the `logger` object.
 
@@ -171,7 +171,7 @@ Later you can search based on task name and tag in the search bar, and filter ex
 
 ## What's Next?
 
-This covers the Basics of ClearML! Running through this guide we've learned how to log Parameters, Artifacts and Metrics!
+This covers the Basics of ClearML! Running through this guide you've learned how to log Parameters, Artifacts and Metrics!
 
 If you want to learn more look at how we see the data science process in our [best practices](best_practices.md) page,
 or check these pages out:
@@ -180,7 +180,7 @@ or check these pages out:
 - Develop on remote machines with [ClearML Session](../../apps/clearml_session.md)
 - Structure your work and put it into [Pipelines](../../pipelines/pipelines.md)
 - Improve your experiments with [Hyperparameter Optimization](../../fundamentals/hpo.md)
-- Check out ClearML's integrations with your favorite ML frameworks like [TensorFlow](../../guides/frameworks/tensorflow/tensorflow_mnist.md), 
+- Check out ClearML's integrations with your favorite ML frameworks like [TensorFlow](../../integrations/tensorflow.md), 
   [PyTorch](../../guides/frameworks/pytorch/pytorch_mnist.md), [Keras](../../guides/frameworks/keras/keras_tensorboard.md), 
   and more
 
