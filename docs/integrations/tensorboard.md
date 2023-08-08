@@ -22,7 +22,7 @@ View the TensorBoard outputs in the [WebApp](../webapp/webapp_overview.md), in t
 
 ![TensorBoard WebApp scalars](../img/examples_pytorch_tensorboard_07.png)
 
-![Tensorboard WebApp debug samples](../img/examples_tensorboard_toy_02.png)
+![Tensorboard WebApp debug samples](../img/examples_tensorboard_toy_pytorch_02.png)
 
 ## Automatic Logging Control 
 By default, when ClearML is integrated into your script, it captures all of your TensorBoard plots, images, and metrics. 
@@ -54,6 +54,7 @@ See more information about explicitly logging information to a ClearML Task:
 * [Text/Plots/Debug Samples](../fundamentals/logger.md#manual-reporting)
 
 ### Examples
+Take a look at ClearML’s TensorBoard examples: 
 * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - Demonstrates logging TensorBoard outputs and TensorFlow flags
 * [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - Demonstrates logging TensorBoard histograms, scalars, images, text, and TensorFlow flags
-* [Tensorboard with PyTorch](../guides/frameworks/pytorch/pytorch_tensorboard.md) - Demonstrates logging TensorBoard scalars, debug samples, and text integrated into code that uses PyTorch
+* [Tensorboard with PyTorch](../guides/frameworks/pytorch/pytorch_tensorboard.md) - Demonstrates logging TensorBoard scalars, debug samples, and text integrated in code that uses PyTorch
