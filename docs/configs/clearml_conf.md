@@ -1360,6 +1360,7 @@ base64-encoded contents string, otherwise ignored
 *  `path` - Target file's path, may include `~` and inplace env vars
 *  `target_format` - Format used to encode contents before writing into the target file. Supported values are `json`, `yaml`, 
 `yml`, and `bytes` (in which case the file will be written in binary mode). Default is text mode.
+* `mode` - File-system mode (permissions) to apply to the file after its creation. The mode string will be parsed into an integer (e.g. `"0o777"` for `-rwxrwxrwx`)
 * `overwrite` - Overwrite the target file in case it exists. Default is `true`.
 
 Example:
@@ -1368,6 +1369,7 @@ files {
   myfile1 {
     contents: "The quick brown fox jumped over the lazy dog"
     path: "/tmp/fox.txt"
+    mode: "0o777"
   }
   myjsonfile {
     contents: {
