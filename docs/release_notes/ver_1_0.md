@@ -12,7 +12,7 @@ This release is not backwards compatible
 * `preprocess` and `postprocess` class functions get 3 arguments
 * Add support for per-request state storage, passing information between the pre/post-processing functions
 
-**Features & Bug Fixes**
+**Features and Bug Fixes**
 
 * Optimize serving latency while collecting statistics
 * Fix metric statistics collecting auto-refresh issue

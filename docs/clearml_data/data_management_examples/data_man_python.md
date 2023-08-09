@@ -94,7 +94,7 @@ dataset_path = Dataset.get(
 ).get_local_copy()
 ```
 
-The script above gets the dataset and uses the [`Dataset.get_local_copy`](../../references/sdk/dataset.md#get_local_copy) 
+The preceding script gets the dataset and uses the [`Dataset.get_local_copy`](../../references/sdk/dataset.md#get_local_copy) 
 method to return a path to the cached, read-only local dataset. 
 
 If you need a modifiable copy of the dataset, use the following code: 

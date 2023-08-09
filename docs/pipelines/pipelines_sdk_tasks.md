@@ -165,7 +165,7 @@ pipe.add_function_step(
   outputs are used instead of launching a new task.
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution 
   only after all the parent steps have been executed successfully.
-* `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+* `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
   before and/or after a step’s execution. See [here](#pre_execute_callback--post_execute_callback).
 * `monitor_models`, `monitor_metrics`, `monitor_artifacts` - see [here](#models-artifacts-and-metrics).
 
