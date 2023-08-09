@@ -43,6 +43,8 @@ auto_connect_frameworks={
 }
 ```
 
+Note that the `tensorboard` key enables/disables automatic logging for both `TensorBoard` and `TensorboardX`. 
+
 ## Manual Logging
 To augment its automatic logging, ClearML also provides an explicit logging interface.
 
