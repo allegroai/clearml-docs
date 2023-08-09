@@ -26,7 +26,7 @@ Train a model. Work from your local `clearml-serving` repository's root.
     `python3 examples/sklearn/train_model.py`. 
   
 During execution, ClearML automatically registers the sklearn model and uploads it into the model repository. 
-For Manual model registration see [here](#registering--deploying-new-models-manually) 
+For Manual model registration see [here](#registering-and-deploying-new-models-manually) 
 
 ### Step 2: Register Model
 
@@ -79,7 +79,7 @@ Inference services status, console outputs and machine metrics are available in 
 project (default: "DevOps" project)
 :::
 
-## Registering & Deploying New Models Manually 
+## Registering and Deploying New Models Manually 
 
 Uploading an existing model file into the model repository can be done via the `clearml` RestAPI, the python interface, 
 or with the `clearml-serving` CLI. 
@@ -196,7 +196,7 @@ ClearML serving instances send serving statistics (count/latency) automatically 
 to visualize and create live dashboards. 
 
 The default docker-compose installation is preconfigured with Prometheus and Grafana. Notice that by default data/ate 
-of both containers is *not* persistent. To add persistence, we recommend adding a volume mount.
+of both containers is *not* persistent. To add persistence, adding a volume mount is recommended.
 
 You can also add many custom metrics on the input/predictions of your models. Once a model endpoint is registered, 
 adding custom metrics can be done using the CLI.

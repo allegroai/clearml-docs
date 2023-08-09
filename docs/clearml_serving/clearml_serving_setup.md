@@ -8,7 +8,7 @@ The following page goes over how to set up and upgrade `clearml-serving`.
 
 * ClearML-Server : Model repository, Service Health, Control plane
 * Kubernetes / Single-instance Machine : Deploying containers
-* CLI : Configuration & model deployment interface
+* CLI : Configuration and model deployment interface
 
 ## Initial Setup
 1. Set up your [ClearML Server](../deploying_clearml/clearml_server.md) or use the 

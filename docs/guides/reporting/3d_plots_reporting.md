@@ -33,7 +33,7 @@ Visualize the reported surface plot in **PLOTS**.
 
 ## 3D Scatter Plot
 
-To plot a series as a 3-dimensional scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) 
+To plot a series as a 3D scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) 
 method.
 ```python
 # report 3d scatter plot
