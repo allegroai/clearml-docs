@@ -65,10 +65,10 @@ module.exports = {
                 'guides/frameworks/keras/keras_tensorboard', 'guides/frameworks/tensorflow/integration_keras_tuner',
                 'guides/frameworks/lightgbm/lightgbm_example', 'integrations/matplotlib',
                 'integrations/megengine', 'integrations/openmmv', 'integrations/optuna',
-                'integrations/python_fire', 'guides/frameworks/pytorch/pytorch_mnist',
+                'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
-                'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'integrations/tensorflow',              
+                'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
                 'integrations/seaborn', 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
