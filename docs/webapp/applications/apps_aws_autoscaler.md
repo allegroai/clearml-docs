@@ -42,6 +42,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **Compute Resources**
     * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
     * EC2 Instance Type - See [Instance Types](https://aws.amazon.com/ec2/instance-types) for full list of types
+    * Run in CPU mode - Check box to run with CPU only
     * Use Spot Instance - Check box to use a spot instance. Else, a reserved instance is used
         * Regular Instance Rollback Timeout - Controls when the autoscaler will revert to starting a regular instance after failing to start a spot instance. It will first attempt to start a spot, and then wait and retry again and again. Once the time it waited exceeded the Regular Instance Rollback Timeout, the autoscaler will try to start a regular instance instead. This is for a specific attempt, where starting a spot fails and an alternative instance needs to be started.
         * Spot Instance Blackout Period - Specifies a blackout period after failing to start a spot instance. This is related to future attempts: after failing to start a spot instance, all requests to start additional spot instances will be converted to attempts to start regular instances, as a way of "easing" the spot requests load on the cloud provider and not creating a "DOS" situation in the cloud account which might cause the provider to refuse creating spots for a longer period.
@@ -55,13 +56,14 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
       commas 
     * EBS Device (optional) - Disk mount point
     * EBS Volume Size (optional) - Disk size (GB)
-    * EBS Volume Type (optional) - See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html) 
+    * EBS Volume Type (optional) - See [Amazon EBS volume types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html) 
       for full list of types
     * Instance Key Pair (optional) - AWS key pair that is provided to the spun EC2 instances for connecting to them via 
-      SSH. Provide the Key Pair's name, as was created in AWS. See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) 
+      SSH. Provide the Key Pair's name, as was created in AWS. See [Amazon EC2 key pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) 
       for more details
     * Security Group ID (optional) - Comma separated list of AWS VPC Security Group IDs to attach to the launched 
       instance. Read more [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) 
+    * VPC Subnet ID - The subnet ID For the created instance. If more than one ID is provided, the instance will be started in the first available subnet. For more information, see [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
     * \+ Add Item - Define another resource type
 * **IAM Instance Profile** (optional) - Set an IAM instance profile for all instances spun by the Autoscaler 
     * Arn - Amazon Resource Name specifying the instance profile
