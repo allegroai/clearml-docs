@@ -39,7 +39,7 @@ def main(pickle_url, mock_parameter='mock'):
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline controller task is stored
-* `version` -  Numbered version string (e.g. 1.2.3). If `auto_version_bump` is set to `True`, the version number is 
+* `version` - Numbered version string (e.g. 1.2.3). If `auto_version_bump` is set to `True`, the version number is 
   automatically bumped if the same version already exists and the pipeline code has changed
 * `default_queue` - The default [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) in which to enqueue all pipeline steps (unless otherwise specified in the pipeline step).
 * `args_map` - Map arguments to their [configuration section](../fundamentals/hyperparameters.md#webapp-interface) in 
@@ -138,7 +138,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
   decremented by 1. If the function returns `False`, the node is not retried.
   
 * Callbacks - Control pipeline execution flow with callback functions 
-  * `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+  * `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
     before and/or after a step’s execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback--post_execute_callback).
   * `status_change_callback` - Callback function called when the status of a step changes. Use `node.job` to access the 
   `ClearmlJob` object, or `node.job.task` to directly access the Task object. The signature of the function must look like this:

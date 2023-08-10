@@ -1,6 +1,5 @@
 ---
 title: LightGBM
-displayed_sidebar: mainSidebar
 ---
 
 The [lightgbm_example](https://github.com/allegroai/clearml/blob/master/examples/frameworks/lightgbm/lightgbm_example.py) 

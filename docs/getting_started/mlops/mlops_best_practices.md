@@ -11,7 +11,7 @@ If you are afraid of clutter, use the archive option, and set up your own [clean
 
 - Track the code base. There is no reason not to add metrics to any process in your workflow, even if it is not directly ML. Visibility is key to iterative improvement of your code / workflow.
 - Create per-project [leaderboards](../../guides/ui/building_leader_board.md) based on custom columns 
-  (hyperparameters and performance accuracy), and bookmark them (full URL will always reproduce the same view & table).
+  (hyperparameters and performance accuracy), and bookmark them (full URL will always reproduce the same view and table).
 - Share experiments with your colleagues and team-leaders. 
   Invite more people to see how your project is progressing, and suggest they add metric reporting for their own.
   These metrics can later be part of your own in-house monitoring solution, don't let good data go to waste :)

@@ -15,7 +15,7 @@ pipe = PipelineController(
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline tasks will be created.
-* `version` -  Numbered version string (`e.g. 1.2.3`). When `auto_version_bump` is set to `True`, the version number will 
+* `version` - Numbered version string (`e.g. 1.2.3`). When `auto_version_bump` is set to `True`, the version number will 
   be automatically bumped if the same version already exists and the code has changed
 
 See [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md) for all arguments. 
@@ -159,13 +159,13 @@ pipe.add_function_step(
 * `function_kwargs` (optional) - A dictionary of function arguments and default values which are translated into task 
   hyperparameters. If not provided, all function arguments are translated into hyperparameters.
 * `function_return` - The names for storing the pipeline step’s returned objects as artifacts in its ClearML task.
-* `cache_executed_step` -  If `True`, the controller will check if an identical task with the same code 
+* `cache_executed_step` - If `True`, the controller will check if an identical task with the same code 
   (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
   section) and input arguments was already executed. If found, the cached step's 
   outputs are used instead of launching a new task.
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution 
   only after all the parent steps have been executed successfully.
-* `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+* `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
   before and/or after a step’s execution. See [here](#pre_execute_callback--post_execute_callback).
 * `monitor_models`, `monitor_metrics`, `monitor_artifacts` - see [here](#models-artifacts-and-metrics).
 

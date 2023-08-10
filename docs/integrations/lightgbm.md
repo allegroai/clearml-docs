@@ -1,5 +1,5 @@
 ---
-title: TensorFlow
+title: LightGBM 
 ---
 
 :::tip
@@ -7,10 +7,10 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-ClearML integrates with [TensorFlow](https://www.tensorflow.org/) out-of-the-box, automatically logging its models, 
-definitions, scalars, as well as TensorBoard outputs. 
+ClearML integrates seamlessly with [LightGBM](https://github.com/microsoft/LightGBM), automatically logging its models, 
+metric plots, and parameters. 
 
-All you have to do is simply add two lines of code to your TensorFlow script:
+All you have to do is simply add two lines of code to your LightGBM script:
 
 ```python
 from clearml import Task
@@ -20,21 +20,22 @@ task = Task.init(task_name="<task_name>", project_name="<project_name>")
 And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
-* TensorFlow definitions
-* TensorFlow model files 
-* [TensorBoard](https://www.tensorflow.org/tensorboard) outputs (see example [here](https://clear.ml/docs/latest/docs/guides/frameworks/tensorflow/tensorboard_toy/))
-* Scalars (loss, learning rates)
+* LightGBM model files 
+* Configuration applied to LightGBM (parameters)
+* LightGBM metric plots 
 * Console output
 * General details such as machine details, runtime, creation date etc.
 * And more
 
-You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
+You can view all the task details in the [WebApp](../webapp/webapp_exp_track_visual.md). 
 
-![WebApp Gif](../img/gif/tensorflow.gif)
+See an example of LightGBM and ClearML in action [here](../guides/frameworks/lightgbm/lightgbm_example.md).
+
+![Experiment scalars](../img/examples_lightgbm_scalars.png)
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your TensorFlow script, it captures TensorFlow definitions, models, and 
-scalars. But, you may want to have more control over what your experiment logs.
+By default, when ClearML is integrated into your LightGBM script, it captures models, metric plots, and configuration. 
+But, you may want to have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
@@ -44,21 +45,21 @@ For example:
 
 ```python
 auto_connect_frameworks={
-   'tensorflow': False, 'matplotlib': True, 'tensorboard': False, 'pytorch': True,
-   'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+   'lightgbm': False, 'catboost': False, 'tensorflow': False, 'tensorboard': False, 
+   'xgboost': False, 'scikit': True, 'fastai': True, 'pytorch': True,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'megengine': True, 'jsonargparse': True, 'catboost': True
+   'megengine': True, 'jsonargparse': True
 }
 ```
 
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
 
-For example, in the code below, ClearML will log TensorFlow models only if their paths have the `.pt` extension. The 
+For example, in the code below, ClearML will log LightGBM models only if their paths have the `.pt` extension. The 
 unspecified frameworks' values default to true so all their models are automatically logged.
 
 ```python
-auto_connect_frameworks={'tensorflow' : '*.pt'}
+auto_connect_frameworks={'lightgbm' : '*.pt'}
 ```
 
 ## Manual Logging
@@ -72,20 +73,6 @@ See more information about explicitly logging information to a ClearML Task:
 * [Text/Plots/Debug Samples](../fundamentals/logger.md#manual-reporting)
 
 See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
-
-## Examples
-
-Take a look at ClearML’s TensorFlow examples. The examples use TensorFlow and ClearML in different configurations with 
-additional tools, like Abseil and TensorBoard: 
-
-* [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md) - Demonstrates ClearML's automatic logging of 
-model checkpoints, TensorFlow definitions, and scalars logged using TensorFlow methods
-* [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - Demonstrates ClearML’s automatic 
-logging of TensorBoard output and TensorFlow definitions.
-* [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - Demonstrates ClearML’s automatic logging of 
-TensorBoard scalars, histograms, images, and text, as well as all console output and TensorFlow Definitions.
-* [Absl flags](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/absl_flags.py) - Demonstrates 
-ClearML’s automatic logging of parameters defined using `absl.flags` 
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 

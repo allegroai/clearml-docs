@@ -1,5 +1,5 @@
 ---
-title: TensorFlow
+title: MegEngine
 ---
 
 :::tip
@@ -7,10 +7,9 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-ClearML integrates with [TensorFlow](https://www.tensorflow.org/) out-of-the-box, automatically logging its models, 
-definitions, scalars, as well as TensorBoard outputs. 
+ClearML integrates seamlessly with [MegEngine](https://github.com/MegEngine/MegEngine), automatically logging its models. 
 
-All you have to do is simply add two lines of code to your TensorFlow script:
+All you have to do is simply add two lines of code to your MegEngine script:
 
 ```python
 from clearml import Task
@@ -20,21 +19,20 @@ task = Task.init(task_name="<task_name>", project_name="<project_name>")
 And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
-* TensorFlow definitions
-* TensorFlow model files 
-* [TensorBoard](https://www.tensorflow.org/tensorboard) outputs (see example [here](https://clear.ml/docs/latest/docs/guides/frameworks/tensorflow/tensorboard_toy/))
-* Scalars (loss, learning rates)
+* MegEngine model files
+* Hyperparameters created with standard python packages (e.g. argparse, click, Python Fire, etc.)
+* Scalars logged to popular frameworks like TensorBoard
 * Console output
 * General details such as machine details, runtime, creation date etc.
 * And more
 
 You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
 
-![WebApp Gif](../img/gif/tensorflow.gif)
+See an example of MegEngine and ClearML in action [here](../guides/frameworks/megengine/megengine_mnist.md).
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your TensorFlow script, it captures TensorFlow definitions, models, and 
-scalars. But, you may want to have more control over what your experiment logs.
+By default, when ClearML is integrated into your MegEngine script, it captures all its logged models. But, you may want to 
+have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
@@ -44,21 +42,21 @@ For example:
 
 ```python
 auto_connect_frameworks={
-   'tensorflow': False, 'matplotlib': True, 'tensorboard': False, 'pytorch': True,
-   'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+   'megengine': False, 'catboost': False, 'tensorflow': False, 'tensorboard': False, 
+   'pytorch': True, 'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'megengine': True, 'jsonargparse': True, 'catboost': True
+   'jsonargparse': True
 }
 ```
 
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
 
-For example, in the code below, ClearML will log TensorFlow models only if their paths have the `.pt` extension. The 
+For example, in the code below, ClearML will log MegEngine models only if their paths have the `.pt` extension. The 
 unspecified frameworks' values default to true so all their models are automatically logged.
 
 ```python
-auto_connect_frameworks={'tensorflow' : '*.pt'}
+auto_connect_frameworks={'megengine' : '*.pt'}
 ```
 
 ## Manual Logging
@@ -72,20 +70,6 @@ See more information about explicitly logging information to a ClearML Task:
 * [Text/Plots/Debug Samples](../fundamentals/logger.md#manual-reporting)
 
 See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
-
-## Examples
-
-Take a look at ClearML’s TensorFlow examples. The examples use TensorFlow and ClearML in different configurations with 
-additional tools, like Abseil and TensorBoard: 
-
-* [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md) - Demonstrates ClearML's automatic logging of 
-model checkpoints, TensorFlow definitions, and scalars logged using TensorFlow methods
-* [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - Demonstrates ClearML’s automatic 
-logging of TensorBoard output and TensorFlow definitions.
-* [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - Demonstrates ClearML’s automatic logging of 
-TensorBoard scalars, histograms, images, and text, as well as all console output and TensorFlow Definitions.
-* [Absl flags](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/absl_flags.py) - Demonstrates 
-ClearML’s automatic logging of parameters defined using `absl.flags` 
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 

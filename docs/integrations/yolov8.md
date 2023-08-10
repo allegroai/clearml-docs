@@ -31,7 +31,7 @@ segmentation, and classification. Get the most out of YOLOv8 with ClearML:
 1. To keep track of your experiments and/or data, ClearML needs to communicate to a server. You have 2 server options:
     * Sign up for free to the [ClearML Hosted Service](https://app.clear.ml/) 
     * Set up your own server, see [here](../deploying_clearml/clearml_server.md).  
-1. Connect the ClearML SDK to the server by creating credentials (go to the top right in to UI to **Settings > Workspace > Create new credentials**), 
+1. Connect the ClearML SDK to the server by creating credentials (go to the top right in the UI to **Settings > Workspace > Create new credentials**), 
    then execute the command below and follow the instructions:
 
    ```commandline

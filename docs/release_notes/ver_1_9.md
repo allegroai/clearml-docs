@@ -13,7 +13,7 @@ title: Version 1.9
 **New Features and Improvements**
 * Support parsing queue name when providing execution queue in pipelines code [ClearML GitHub PR #857](https://github.com/allegroai/clearml/pull/857)
 * Ignore `None` values for keys in the `click` argument parser [ClearML GitHub issue #902](https://github.com/allegroai/clearml/issues/902)
-* Improve docstrings for `Task.mark_completed()` and `Task.close()` - ClearML GitHub PRs [#920](https://github.com/allegroai/clearml/pull/920) & [#921](https://github.com/allegroai/clearml/pull/921)
+* Improve docstrings for `Task.mark_completed()` and `Task.close()` - ClearML GitHub PRs [#920](https://github.com/allegroai/clearml/pull/920) and [#921](https://github.com/allegroai/clearml/pull/921)
 * Add pre/post execution callbacks to pipeline steps through `@PipelineDecorator.component`
 * Add status-change callback to pipeline steps through `PipelineController.add_step()`, `PipelineController.add_function_step()`, 
 and `@PipelineDecorator.component`

@@ -55,7 +55,7 @@ and running, users can send Tasks to be executed on Google Colab's HW.
    
    For additional options for running `clearml-agent`, see the [clearml-agent reference](../../clearml_agent/clearml_agent_ref.md).  
    
-   After cell 4 is executed, the worker should now appear in the [**Orchestration**](../../webapp/webapp_workers_queues.md) 
+   After executing cell 4, the worker appears in the [**Orchestration**](../../webapp/webapp_workers_queues.md) 
    page of your server. Clone experiments and enqueue them to your hearts content! The `clearml-agent` will fetch 
    experiments and execute them using the Google Colab hardware.
    

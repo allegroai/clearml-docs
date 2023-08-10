@@ -12,7 +12,7 @@ to a remote machine.
 
 ![ClearML Agent flow diagram](img/clearml_agent_flow_diagram.png)
 
-The diagram above demonstrates a typical flow where an agent executes a task:  
+The preceding diagram demonstrates a typical flow where an agent executes a task:  
 
 1. Enqueue a task for execution on the queue.
 1. The agent pulls the task from the queue.
@@ -288,7 +288,7 @@ There are two options for deploying the ClearML Agent to a Kubernetes cluster:
 * Spin ClearML Agent as a long-lasting service pod
 * Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
 
-See more details [here](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
+For more details, see [Kubernetes integration](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
 
 ### Explicit Task Execution
 

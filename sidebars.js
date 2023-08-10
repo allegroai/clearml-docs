@@ -62,13 +62,13 @@ module.exports = {
                 'guides/frameworks/autokeras/integration_autokeras',
                 'integrations/catboost', 'integrations/click', 'guides/frameworks/fastai/fastai_with_tensorboard',
                 'integrations/hydra',
-                'integration/keras', 'guides/frameworks/tensorflow/integration_keras_tuner',
-                'guides/frameworks/lightgbm/lightgbm_example', 'guides/frameworks/matplotlib/matplotlib_example',
-                'guides/frameworks/megengine/megengine_mnist', 'integrations/openmmv', 'integrations/optuna',
-                'integrations/python_fire', 'guides/frameworks/pytorch/pytorch_mnist',
+                'integrations/keras', 'guides/frameworks/tensorflow/integration_keras_tuner',
+                'integrations/lightgbm', 'integrations/matplotlib',
+                'integrations/megengine', 'integrations/openmmv', 'integrations/optuna',
+                'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
-                'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'integrations/tensorflow',              
+                'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
                 'integrations/seaborn', 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
@@ -172,7 +172,7 @@ module.exports = {
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
                 {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx', "guides/frameworks/tensorboardx/video_tensorboardx"]},
                 {
-                    'Tensorflow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
+                    'TensorFlow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
                         'guides/frameworks/tensorflow/tensorflow_mnist', 'guides/frameworks/tensorflow/integration_keras_tuner']
                 },
                 {'XGBoost': ['guides/frameworks/xgboost/xgboost_sample', 'guides/frameworks/xgboost/xgboost_metrics']}

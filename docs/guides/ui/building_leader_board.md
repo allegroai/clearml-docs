@@ -2,7 +2,7 @@
 title: Tracking Leaderboards
 ---
 
-In this tutorial, we will set up a tracking leaderboard. A tracking leaderboard allows easy monitoring of experiments 
+In this tutorial, you will set up a tracking leaderboard. A tracking leaderboard allows easy monitoring of experiments 
 using a customized [experiments table](../../webapp/webapp_exp_table.md) with auto refresh for continual updates.
 
 The tracking leaderboard can be customized to include columns with information about:

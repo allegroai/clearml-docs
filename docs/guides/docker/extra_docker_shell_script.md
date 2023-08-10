@@ -8,7 +8,7 @@ but sometimes, when using a Docker container, a user may need to use additional,
 
 ## Tutorial
 
-In this tutorial, we will learn how to use `extra_docker_shell_script`, with which we will reconfigure an Agent to execute 
+In this tutorial, you will learn how to use `extra_docker_shell_script` to reconfigure an Agent to execute 
 a shell script when a docker is started, but before an experiment is run. 
 
 ## Prerequisites
@@ -23,8 +23,8 @@ a shell script when a docker is started, but before an experiment is run.
    * Mac - `$HOME/clearml.conf`
    * Windows - `\User\<username>\clearml.conf`
 
-1. In the file, search for and go to, `extra_docker_shell_script:`, which is where we will be putting our extra script. If
-it is commented out, make sure to uncomment the line. We will use the example script that is already there `["apt-get install -y bindfs", ]`.
+1. In the file, go to, `extra_docker_shell_script:`, which is where you will put an extra script. If
+it is commented out, make sure to uncomment the line. Use the example script that is already there `["apt-get install -y bindfs", ]`.
    
 1. Search for and go to `docker_force_pull` in the document, and make sure that it is set to `true`, so that your docker 
    image will be updated. 
@@ -34,7 +34,7 @@ it is commented out, make sure to uncomment the line. We will use the example sc
 
 1. Enqueue any ClearML Task to the `default` queue, which the Agent is now listening to. The Agent pulls the Task, and then reproduces it, 
    and now it will execute the `extra_docker_shell_script` that was put in the configuration file. Then the code will be
-   executed in the updated docker container. If we look at the console output in the web UI, the third entry should start
+   executed in the updated docker container. If you look at the console output in the web UI, the third entry should start
    with `Executing: ['docker', 'run', '-t', '--gpus...'`, and towards the end of the entry, where the downloaded packages are 
-   mentioned, we can see the additional shell-script `apt-get install -y bindfs`. 
+   mentioned, you can see the additional shell-script `apt-get install -y bindfs`. 
    

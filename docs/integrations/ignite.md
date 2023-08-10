@@ -21,7 +21,7 @@ task = Task.init(task_name="<task_name>", project_name="<project_name>")
 This will create a [ClearML Task](../fundamentals/task.md) that captures your script's information, including Git details, 
 uncommitted code, python environment, all information logged through `TensorboardLogger`, and more. 
 
-Visualize all the captured information in the experiment's page in ClearML's [WebApp](#webapp)
+Visualize all the captured information in the experiment's page in ClearML's [WebApp](#webapp).
 
 See a code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/ignite/cifar_ignite.py).
 
