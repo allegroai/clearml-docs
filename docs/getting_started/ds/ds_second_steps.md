@@ -181,7 +181,7 @@ or check these pages out:
 - Structure your work and put it into [Pipelines](../../pipelines/pipelines.md)
 - Improve your experiments with [Hyperparameter Optimization](../../fundamentals/hpo.md)
 - Check out ClearML's integrations with your favorite ML frameworks like [TensorFlow](../../integrations/tensorflow.md), 
-  [PyTorch](../../guides/frameworks/pytorch/pytorch_mnist.md), [Keras](../../guides/frameworks/keras/keras_tensorboard.md), 
+  [PyTorch](../../integrations/pytorch.md), [Keras](../../integrations/keras.md), 
   and more
 
 ## YouTube Playlist
