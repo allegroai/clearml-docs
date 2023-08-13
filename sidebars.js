@@ -60,7 +60,7 @@ module.exports = {
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
                 'integrations/autokeras',
-                'integrations/catboost', 'integrations/click', 'guides/frameworks/fastai/fastai_with_tensorboard',
+                'integrations/catboost', 'integrations/click', 'integrations/fastai',
                 'integrations/hydra',
                 'integrations/keras', 'guides/frameworks/tensorflow/integration_keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
