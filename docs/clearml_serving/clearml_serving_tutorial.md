@@ -26,7 +26,7 @@ Train a model. Work from your local `clearml-serving` repository's root.
     `python3 examples/sklearn/train_model.py`. 
   
 During execution, ClearML automatically registers the sklearn model and uploads it into the model repository. 
-For Manual model registration see [here](#registering-and-deploying-new-models-manually) 
+For information about explicit model registration, see [Registering and Deploying New Models Manually](#registering-and-deploying-new-models-manually). 
 
 ### Step 2: Register Model
 
