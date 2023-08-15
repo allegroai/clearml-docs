@@ -1,5 +1,5 @@
 ---
-title: PyTorch
+title: AutoKeras
 ---
 
 :::tip
@@ -7,9 +7,9 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-ClearML integrates seamlessly with [PyTorch](https://pytorch.org/), automatically logging its models. 
+ClearML integrates seamlessly with [AutoKeras](https://autokeras.com/), automatically logging its models and scalars. 
 
-All you have to do is simply add two lines of code to your PyTorch script:
+All you have to do is simply add two lines of code to your AutoKeras script:
 
 ```python
 from clearml import Task
@@ -19,19 +19,22 @@ task = Task.init(task_name="<task_name>", project_name="<project_name>")
 And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
-* PyTorch models 
-* [TensorBoard](https://www.tensorflow.org/tensorboard) outputs
+* AutoKeras model files 
+* Scalars (loss, learning rates)
 * Console output
 * General details such as machine details, runtime, creation date etc.
+* Hyperparameters created with standard python packages (e.g. argparse, click, Python Fire, etc.)
 * And more
 
-You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
+You can view all the task details in the [WebApp](../webapp/webapp_exp_track_visual.md). 
 
-![Pytorch webapp](../img/examples_pytorch_distributed_example_08.png)
+See an example of AutoKeras and ClearML in action [here](../guides/frameworks/autokeras/autokeras_imdb_example.md).
+
+![Experiment scalars](../img/examples_keras_14.png)
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your PyTorch script, it captures PyTorch models. But, you may want to have 
-more control over what your experiment logs.
+By default, when ClearML is integrated into your AutoKeras script, it captures AutoKeras models and scalars, as well as TensorFlow 
+definitions and TensorBoard outputs. But, you may want to have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
@@ -41,21 +44,23 @@ For example:
 
 ```python
 auto_connect_frameworks={
-   'pytorch': False, 'matplotlib': True, 'tensorboard': False, 'tensorflow': False, 
+   'tensorflow': False, 'tensorboard': False, 'pytorch': True,
    'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'megengine': True, 'jsonargparse': True, 'catboost': True
+   'megengine': True, 'jsonargparse': True, 'catboost': False
 }
 ```
+
+To control AutoKeras logging, use the `tensorflow` and `tensorboard` keys.
 
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
 
-For example, in the code below, ClearML will log PyTorch models only if their paths have the `.pt` extension. The 
+For example, in the code below, ClearML will log TensorFlow models only if their paths have the `.h5` extension. The 
 unspecified frameworks' values default to true so all their models are automatically logged.
 
 ```python
-auto_connect_frameworks={'pytorch' : '*.pt'}
+auto_connect_frameworks={'tensorflow' : '*.h5'}
 ```
 
 ## Manual Logging
@@ -69,30 +74,6 @@ See more information about explicitly logging information to a ClearML Task:
 * [Text/Plots/Debug Samples](../fundamentals/logger.md#manual-reporting)
 
 See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
-
-## Distributed Training
-You can integrate ClearML into your distributed training script. With ClearML, you can easily log information from each 
-subprocess to a centralized location and visualize it.
-
-The [PyTorch Distributed](../guides/frameworks/pytorch/pytorch_distributed_example.md) script demonstrates using ClearML 
-with the [PyTorch Distributed Communications Package (torch.distributed)](https://pytorch.org/tutorials/beginner/dist_overview.html): a 
-ClearML task is initialized before the subprocesses are spawned, and then each subprocess manually reports its artifacts, 
-scalars, and hyperparameters to the task. 
-
-
-## Examples
-
-Take a look at ClearML's PyTorch examples. The examples use PyTorch and ClearML in different configurations with 
-additional tools, like argparse, TensorBoard, and matplotlib:  
-
-* [PyTorch MNIST](../guides/frameworks/pytorch/pytorch_mnist.md) - Demonstrates ClearML automatically logging models created with PyTorch, and `argparse` command line parameters
-* [PyTorch with Matplotlib](../guides/frameworks/pytorch/pytorch_matplotlib.md) - Demonstrates ClearML’s automatic logging PyTorch models and matplotlib images. The images are stored in the resulting ClearML experiment's **Debug Samples**
-* [PyTorch with TensorBoard](../guides/frameworks/pytorch/pytorch_tensorboard.md) - Demonstrates ClearML automatically logging PyTorch models, and scalars, debug samples, and text logged using TensorBoard's `SummaryWriter`
-* [PyTorch TensorBoard Toy](../guides/frameworks/pytorch/tensorboard_toy_pytorch.md) - Demonstrates ClearML automatically logging debug samples logged using TensorBoard's `SummaryWriter`
-* [PyTorch TensorBoardX](../guides/frameworks/pytorch/pytorch_tensorboardx.md) - Demonstrates ClearML automatically logging PyTorch models, and scalars, debug samples, and text logged using TensorBoardX's `SummaryWriter`
-* [PyTorch Abseil](../guides/frameworks/pytorch/pytorch_abseil.md) - Demonstrates ClearML automatically logging PyTorch models and `absl.flags` parameters
-* [PyTorch Model Updating](../guides/frameworks/pytorch/model_updating.md) - Demonstrates training, logging, and updating a PyTorch model using ClearML's [OutputModel](../references/sdk/model_outputmodel.md) class
-* [PyTorch Distributed](../guides/frameworks/pytorch/pytorch_distributed_example.md) - Demonstrates using ClearML with the [PyTorch Distributed Communications Package (torch.distributed)](https://pytorch.org/tutorials/beginner/dist_overview.html)
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 

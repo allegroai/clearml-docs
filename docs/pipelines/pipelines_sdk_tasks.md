@@ -165,8 +165,8 @@ pipe.add_function_step(
   outputs are used instead of launching a new task.
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution 
   only after all the parent steps have been executed successfully.
-* `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
-  before and/or after a step’s execution. See [here](#pre_execute_callback--post_execute_callback).
+* `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+  before and/or after a step’s execution. See [here](#pre_execute_callback-and-post_execute_callback).
 * `monitor_models`, `monitor_metrics`, `monitor_artifacts` - see [here](#models-artifacts-and-metrics).
 
 See [add_function_step](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) for all 
@@ -174,7 +174,7 @@ arguments.
 
 ### Important Arguments
 
-#### pre_execute_callback & post_execute_callback
+#### pre_execute_callback and post_execute_callback
 Callbacks can be utilized to control pipeline execution flow.
 
 A `pre_execute_callback` function is called when the step is created, and before it is sent for execution. This allows a 

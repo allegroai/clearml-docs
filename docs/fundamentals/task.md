@@ -21,7 +21,7 @@ Tasks are grouped into a [project](projects.md) hierarchical structure, similar 
 how to group tasks, though different models or objectives are usually grouped into different projects.
 
 Tasks can be accessed and utilized with code. [Access a task](../clearml_sdk/task_sdk.md#accessing-tasks) by 
-specifying project name & task name combination or by a unique ID. 
+specifying project name and task name combination or by a unique ID. 
 
 It's possible to create copies of a task ([clone](../webapp/webapp_exp_reproducing.md)) then execute them with 
 [ClearML Agent](../clearml_agent.md). When an agent executes a task, it uses the specified configuration to:

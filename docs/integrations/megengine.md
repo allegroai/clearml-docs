@@ -24,7 +24,6 @@ And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which ca
 * Scalars logged to popular frameworks like TensorBoard
 * Console output
 * General details such as machine details, runtime, creation date etc.
-
 * And more
 
 You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 

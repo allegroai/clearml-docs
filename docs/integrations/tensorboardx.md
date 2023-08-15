@@ -23,6 +23,27 @@ View the TensorboardX outputs in the [WebApp](../webapp/webapp_overview.md), in 
 
 ![TensorboardX WebApp scalars](../img/examples_pytorch_tensorboardx_03.png)
 
+## Automatic Logging Control 
+By default, when ClearML is integrated into your script, it captures all of your TensorboardX plots, images, metrics, videos, and text. 
+But, you may want to have more control over what your experiment logs.
+
+To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
+Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
+frameworks, input a dictionary, with framework-boolean pairs.
+
+For example:
+
+```python
+auto_connect_frameworks={
+   'tensorboard': False,'matplotlib': False, 'tensorflow': False,  'pytorch': True,
+   'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+   'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
+   'megengine': True, 'jsonargparse': True, 'catboost': True
+}
+```
+
+Note that the `tensorboard` key enables/disables automatic logging for both `TensorboardX` and `TensorBoard`. 
+
 ## Manual Logging
 To augment its automatic logging, ClearML also provides an explicit logging interface.
 

@@ -67,7 +67,7 @@ logger.report_scatter2d(
 
 ### 3D Plots
 
-To plot a series as a 3-dimensional scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) method.
+To plot a series as a 3D scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) method.
 
 ```python
 # report 3d scatter plot

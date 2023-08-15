@@ -21,7 +21,7 @@ compare results.
 
 ![Hyperparameter optimization diagram](../img/hpo_diagram.png)
 
-The diagram above demonstrates the typical flow of hyperparameter optimization where the parameters of a base task are optimized: 
+The preceding diagram demonstrates the typical flow of hyperparameter optimization where the parameters of a base task are optimized: 
 
 1. Configure an Optimization Task with a base task whose parameters will be optimized, and a set of parameter values to 
    test
