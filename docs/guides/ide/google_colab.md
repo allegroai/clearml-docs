@@ -3,12 +3,12 @@ title: ClearML Agent on Google Colab
 ---
 
 [Google Colab](https://colab.research.google.com) is a common development environment for data scientists. It supports a convenient IDE as well as
-compute provided by google.
+compute provided by Google.
 
 Users can transform a Google Colab instance into an available resource in ClearML using [ClearML Agent](../../clearml_agent.md).
 
 This tutorial goes over how to create a ClearML worker node in a Google Colab notebook. Once the worker is up 
-and running, users can send Tasks to be executed on Google Colab's HW.
+and running, users can send Tasks to be executed on Google Colab's hardware.
 
 ## Prerequisites
 * Be signed up for ClearML (or have a server deployed).
@@ -29,12 +29,10 @@ and running, users can send Tasks to be executed on Google Colab's HW.
    ```
    This environment variable makes Matplotlib work in headless mode, so it won't output graphs to the screen.
    
-1. Create new credentials.   
-   Go to your [**Settings**](https://app.clear.ml/settings/workspace-configuration) page > **WORKSPACE** section. 
+1. Create new credentials. Go to your [**Settings**](https://app.clear.ml/settings/workspace-configuration) page > **WORKSPACE** section. 
    Under **App Credentials**, click **+ Create new credentials**, and copy the information that pops up. 
    
-1. Set the credentials.  
-   In the third cell, enter your own credentials:
+1. Set the credentials. In the third cell, enter your own credentials:
    ```python
    from clearml import Task
    
