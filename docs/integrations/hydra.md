@@ -2,6 +2,11 @@
 title: Hydra
 ---
 
+:::tip
+If you are not already using ClearML, see [Getting Started](../getting_started/ds/ds_first_steps.md) for setup 
+instructions.
+:::
+
 
 [Hydra](https://github.com/facebookresearch/hydra) is a Python framework for managing experiment parameters. ClearML integrates seamlessly
 with Hydra and automatically logs the `OmegaConf` which holds all the configuration files, as well as 
