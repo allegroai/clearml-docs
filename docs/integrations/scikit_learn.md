@@ -7,7 +7,7 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-ClearML integrates seamlessly with [Scikit-Learn](https://scikit-learn.org/stable/), automatically logging models craeted
+ClearML integrates seamlessly with [Scikit-Learn](https://scikit-learn.org/stable/), automatically logging models created
 with `joblib`.
 
 All you have to do is simply add two lines of code to your scikit-learn script:
