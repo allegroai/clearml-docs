@@ -2,6 +2,11 @@
 title: OpenMMLab
 ---
 
+:::tip
+If you are not already using ClearML, see [Getting Started](../getting_started/ds/ds_first_steps.md) for setup 
+instructions.
+:::
+
 [OpenMMLab](https://github.com/open-mmlab) is a computer vision framework. You can integrate ClearML into your 
 code using the `mmcv` package's [`ClearMLLoggerHook`](https://mmcv.readthedocs.io/en/master/_modules/mmcv/runner/hooks/logger/clearml.html)
 class. This class is used to create a ClearML Task and to automatically log metrics. 
