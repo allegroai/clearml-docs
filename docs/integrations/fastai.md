@@ -9,7 +9,7 @@ instructions.
 
 ClearML integrates seamlessly with [fast.ai](https://www.fast.ai/), automatically logging its models and scalars. 
 
-All you have to do is simply add two lines of code to your fast.ai script:
+All you have to do is simply add two lines of code to your `fastai` script:
 
 ```python
 from clearml import Task
