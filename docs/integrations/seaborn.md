@@ -2,6 +2,11 @@
 title: Seaborn
 ---
 
+:::tip
+If you are not already using ClearML, see [Getting Started](../getting_started/ds/ds_first_steps.md) for setup 
+instructions.
+:::
+
 [seaborn](https://seaborn.pydata.org/) is a Python library for data visualization. 
 ClearML automatically captures plots created using `seaborn`. All you have to do is add two
 lines of code to your script:

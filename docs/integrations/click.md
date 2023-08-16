@@ -2,6 +2,11 @@
 title: Click
 ---
 
+:::tip
+If you are not already using ClearML, see [Getting Started](../getting_started/ds/ds_first_steps.md) for setup 
+instructions.
+:::
+
 [`click`](https://click.palletsprojects.com) is a python package for creating command-line interfaces. ClearML integrates 
 seamlessly with `click` and automatically logs its command-line parameters. 
 
