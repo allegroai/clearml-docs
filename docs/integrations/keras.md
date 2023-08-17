@@ -1,5 +1,5 @@
 ---
-title: MegEngine
+title: Keras
 ---
 
 :::tip
@@ -7,9 +7,10 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-ClearML integrates seamlessly with [MegEngine](https://github.com/MegEngine/MegEngine), automatically logging its models. 
+ClearML integrates with [Keras](https://keras.io/) out-of-the-box, automatically logging its models, scalars, 
+TensorFlow definitions, and TensorBoard outputs. 
 
-All you have to do is simply add two lines of code to your MegEngine script:
+All you have to do is simply add two lines of code to your Keras script:
 
 ```python
 from clearml import Task
@@ -19,20 +20,21 @@ task = Task.init(task_name="<task_name>", project_name="<project_name>")
 And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
-* MegEngine model files
-* Hyperparameters created with standard python packages (e.g. argparse, click, Python Fire, etc.)
-* Scalars logged to popular frameworks like TensorBoard
+* Keras models
+* Scalars (e.g. accuracy, loss)
+* TensorFlow definitions
+* [TensorBoard](https://www.tensorflow.org/tensorboard) outputs 
 * Console output
 * General details such as machine details, runtime, creation date etc.
 * And more
 
-You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
+You can view all the task details in the [WebApp](../webapp/webapp_exp_track_visual.md). 
 
-See an example of MegEngine and ClearML in action [here](../guides/frameworks/megengine/megengine_mnist.md).
+![WebApp Gif](../img/gif/tensorflow.gif)
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your MegEngine script, it captures all its logged models. But, you may want to 
-have more control over what your experiment logs.
+By default, when ClearML is integrated into your Keras script, it captures Keras models and scalars, as well as TensorFlow 
+definitions and TensorBoard outputs. But, you may want to have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
@@ -42,21 +44,23 @@ For example:
 
 ```python
 auto_connect_frameworks={
-   'megengine': False, 'catboost': False, 'tensorflow': False, 'tensorboard': False, 
-   'pytorch': True, 'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+   'tensorflow': False, 'tensorboard': False, 'matplotlib': True, 'pytorch': True,
+   'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'jsonargparse': True
+   'megengine': True, 'jsonargparse': True, 'catboost': True
 }
 ```
+
+To control Keras logging, use the `tensorflow` and `tensorboard` keys.
 
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
 
-For example, in the code below, ClearML will log MegEngine models only if their paths have the `.pt` extension. The 
+For example, in the code below, ClearML will log TensorFlow (and/or keras) models only if their paths have the `.keras` extension. The 
 unspecified frameworks' values default to true so all their models are automatically logged.
 
 ```python
-auto_connect_frameworks={'megengine' : '*.pt'}
+auto_connect_frameworks={'tensorflow' : '*.keras'}
 ```
 
 ## Manual Logging
@@ -70,6 +74,16 @@ See more information about explicitly logging information to a ClearML Task:
 * [Text/Plots/Debug Samples](../fundamentals/logger.md#manual-reporting)
 
 See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
+
+## Examples
+
+Take a look at ClearML’s Keras examples. The examples use Keras and ClearML in different configurations with 
+additional tools like TensorBoard and Matplotlib: 
+* [Keras with Tensorboard](../guides/frameworks/keras/keras_tensorboard.md) - Demonstrates ClearML logging a Keras model, 
+and plots and scalars logged to TensorBoard 
+* [Keras with Matplotlib](../guides/frameworks/keras/jupyter.md) - Demonstrates ClearML logging a Keras model, Matplotlib plots, 
+and debug samples, plots, and scalars logged to TensorBoard 
+
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 

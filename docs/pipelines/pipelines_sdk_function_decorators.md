@@ -138,8 +138,8 @@ def step_one(pickle_data_url: str, extra: int = 43):
   decremented by 1. If the function returns `False`, the node is not retried.
   
 * Callbacks - Control pipeline execution flow with callback functions 
-  * `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
-    before and/or after a step’s execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback--post_execute_callback).
+  * `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+    before and/or after a step’s execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback-and-post_execute_callback).
   * `status_change_callback` - Callback function called when the status of a step changes. Use `node.job` to access the 
   `ClearmlJob` object, or `node.job.task` to directly access the Task object. The signature of the function must look like this:
     ```python

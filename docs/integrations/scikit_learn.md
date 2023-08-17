@@ -1,5 +1,5 @@
 ---
-title: MegEngine
+title: Scikit-Learn
 ---
 
 :::tip
@@ -7,9 +7,10 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-ClearML integrates seamlessly with [MegEngine](https://github.com/MegEngine/MegEngine), automatically logging its models. 
+ClearML integrates seamlessly with [Scikit-Learn](https://scikit-learn.org/stable/), automatically logging models created
+with `joblib`.
 
-All you have to do is simply add two lines of code to your MegEngine script:
+All you have to do is simply add two lines of code to your scikit-learn script:
 
 ```python
 from clearml import Task
@@ -19,20 +20,17 @@ task = Task.init(task_name="<task_name>", project_name="<project_name>")
 And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
-* MegEngine model files
-* Hyperparameters created with standard python packages (e.g. argparse, click, Python Fire, etc.)
-* Scalars logged to popular frameworks like TensorBoard
+* Joblib model files 
 * Console output
 * General details such as machine details, runtime, creation date etc.
+* Hyperparameters created with standard python packages (e.g. argparse, click, Python Fire, etc.)
 * And more
 
-You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
-
-See an example of MegEngine and ClearML in action [here](../guides/frameworks/megengine/megengine_mnist.md).
+You can view all the task details in the [WebApp](../webapp/webapp_exp_track_visual.md). 
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your MegEngine script, it captures all its logged models. But, you may want to 
-have more control over what your experiment logs.
+By default, when ClearML is integrated into your scikit-learn script, it captures models, and 
+scalars. But, you may want to have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
@@ -42,21 +40,21 @@ For example:
 
 ```python
 auto_connect_frameworks={
-   'megengine': False, 'catboost': False, 'tensorflow': False, 'tensorboard': False, 
-   'pytorch': True, 'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
-   'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'jsonargparse': True
+   'joblib': False, 'xgboost': True, 'catboost': True, 'tensorflow': True, 'tensorboard': True, 
+   'pytorch': True, 'scikit': True, 'fastai': True, 'lightgbm': False,
+   'hydra': True, 'detect_repository': True, 'tfdefines': True, 
+   'megengine': True, 'jsonargparse': True
 }
 ```
 
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
 
-For example, in the code below, ClearML will log MegEngine models only if their paths have the `.pt` extension. The 
+For example, in the code below, ClearML will log joblib models only if their paths have the `.pkl` extension. The 
 unspecified frameworks' values default to true so all their models are automatically logged.
 
 ```python
-auto_connect_frameworks={'megengine' : '*.pt'}
+auto_connect_frameworks={'joblib' : '*.pkl'}
 ```
 
 ## Manual Logging
@@ -70,6 +68,14 @@ See more information about explicitly logging information to a ClearML Task:
 * [Text/Plots/Debug Samples](../fundamentals/logger.md#manual-reporting)
 
 See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
+
+## Examples 
+
+Take a look at ClearML's scikit-learn examples. The examples use scikit-learn and ClearML in different configurations with 
+additional tools, like Matplotlib: 
+* [Scikit-Learn with Joblib](../guides/frameworks/scikit-learn/sklearn_joblib_example.md) - Demonstrates ClearML automatically logging the models created with joblib and a scatter plot created by Matplotlib.
+* [Scikit-Learn with Matplotlib](../guides/frameworks/scikit-learn/sklearn_matplotlib_example.md) - Demonstrates ClearML automatically logging scatter diagrams created with Matplotlib.
+
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 
@@ -111,8 +117,3 @@ re-run it on a remote machine.
 # If executed locally, process will terminate, and a copy will be executed by an agent instead
 task.execute_remotely(queue_name='default', exit_process=True)
 ```
-
-## Hyperparameter Optimization
-Use ClearML’s [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
-the hyperparameter values that yield the best performing models. See [Hyperparameter Optimization](../fundamentals/hpo.md) 
-for more information.

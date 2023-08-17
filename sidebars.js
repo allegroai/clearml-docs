@@ -59,17 +59,18 @@ module.exports = {
         {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_setup', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
-                'guides/frameworks/autokeras/integration_autokeras',
-                'integrations/catboost', 'integrations/click', 'guides/frameworks/fastai/fastai_with_tensorboard',
+                'integrations/autokeras',
+                'integrations/catboost', 'integrations/click', 'integrations/fastai',
                 'integrations/hydra',
-                'guides/frameworks/keras/keras_tensorboard', 'guides/frameworks/tensorflow/integration_keras_tuner',
-                'guides/frameworks/lightgbm/lightgbm_example', 'integrations/matplotlib',
+                'integrations/keras', 'guides/frameworks/tensorflow/integration_keras_tuner',
+                'integrations/lightgbm', 'integrations/matplotlib',
                 'integrations/megengine', 'integrations/openmmv', 'integrations/optuna',
-                'integrations/python_fire', 'guides/frameworks/pytorch/pytorch_mnist',
+                'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite', 'integrations/monai',
-                'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
-                'guides/frameworks/pytorch/pytorch_tensorboard', 'guides/frameworks/tensorboardx/tensorboardx', 'integrations/tensorflow',              
-                'integrations/seaborn', 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
+                'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
+                'integrations/scikit_learn', 'integrations/seaborn',
+                'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
+                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
         'integrations/storage',
@@ -147,7 +148,7 @@ module.exports = {
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
-                {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
+                'guides/frameworks/autokeras/autokeras_imdb_example',
                 'guides/frameworks/catboost/catboost',
                 'guides/frameworks/fastai/fastai_with_tensorboard',
                 {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},

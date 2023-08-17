@@ -4,7 +4,7 @@ title: Explicit Reporting Tutorial
 
 In this tutorial, learn how to extend ClearML automagical capturing of inputs and outputs with explicit reporting. 
 
-In this example, we will add the following to the [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
+In this example, you will add the following to the [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
 example script from ClearML's GitHub repo:
 
 * Setting an output destination for model checkpoints (snapshots).
@@ -38,7 +38,7 @@ experiment runs. Some possible destinations include:
   * Azure Storage. 
     
 Specify the output location in the `output_uri` parameter of the [`Task.init`](../../references/sdk/task.md#taskinit) method. 
-In this tutorial, we specify a local folder destination.
+In this tutorial, specify a local folder destination.
 
 In `pytorch_mnist_tutorial.py`, change the code from:
 
@@ -135,7 +135,7 @@ def train(args, model, device, train_loader, optimizer, epoch):
 
 ### Plot Other (Not Scalar) Data
 
-The script contains a function named `test`, which determines loss and correct for the trained model. We add a histogram 
+The script contains a function named `test`, which determines loss and correct for the trained model. Add a histogram 
 and confusion matrix to log them.
 
 ```python
@@ -187,7 +187,7 @@ def test(args, model, device, test_loader):
 
 ### Log Text
 
-Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. We use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
+Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. Use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
 method and its argument `level` to report a debugging message.
 
 ```python
@@ -259,7 +259,7 @@ Supported artifacts include:
 * Dictionaries - stored as JSONs
 * Numpy arrays - stored as NPZ files
 
-In the tutorial script, we upload the loss data as an artifact using the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
+In the tutorial script, upload the loss data as an artifact using the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
 method with metadata specified in the `metadata` parameter.
 
 ```python

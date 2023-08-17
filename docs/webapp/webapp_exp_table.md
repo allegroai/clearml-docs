@@ -190,7 +190,7 @@ selecting items beyond the items currently on-screen:
 
 ## Creating an Experiment Leaderboard
 
-Filter & sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
+Filter and sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
 updates in real time with experiment performance and outputs.
 
 Modify the experiments table in the following ways to create a customized leaderboard:
