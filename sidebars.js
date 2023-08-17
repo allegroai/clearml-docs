@@ -60,16 +60,17 @@ module.exports = {
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
                 'integrations/autokeras',
-                'integrations/catboost', 'integrations/click', 'guides/frameworks/fastai/fastai_with_tensorboard',
+                'integrations/catboost', 'integrations/click', 'integrations/fastai',
                 'integrations/hydra',
                 'integrations/keras', 'guides/frameworks/tensorflow/integration_keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
                 'integrations/megengine', 'integrations/openmmv', 'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
-                'guides/frameworks/pytorch_lightning/pytorch_lightning_example', 'guides/frameworks/scikit-learn/sklearn_joblib_example',
+                'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
+                'integrations/scikit_learn', 'integrations/seaborn',
                 'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
-                'integrations/seaborn', 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
+                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
         'integrations/storage',

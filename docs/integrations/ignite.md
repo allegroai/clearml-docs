@@ -2,6 +2,11 @@
 title: PyTorch Ignite
 ---
 
+:::tip
+If you are not already using ClearML, see [Getting Started](../getting_started/ds/ds_first_steps.md) for setup 
+instructions.
+:::
+
 [PyTorch Ignite](https://pytorch.org/ignite/index.html) is a library for training and evaluating neural networks in 
 PyTorch. You can integrate ClearML into your code using Ignite’s built-in loggers: [TensorboardLogger](#tensorboardlogger) 
 and [ClearMLLogger](#clearmllogger). 
