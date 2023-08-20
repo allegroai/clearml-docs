@@ -67,6 +67,7 @@ The Source Code section of an experiment's **EXECUTION** tab includes:
 * Commit ID
 * Script path
 * Working directory
+* Binary (Python executable)
 
 ![Source code section](../img/webapp_exp_source_code.png)
 
