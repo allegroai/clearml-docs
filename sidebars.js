@@ -64,7 +64,7 @@ module.exports = {
                 'integrations/hydra',
                 'integrations/keras', 'guides/frameworks/tensorflow/integration_keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
-                'integrations/megengine', 'integrations/openmmv', 'integrations/optuna',
+                'integrations/megengine', 'integrations/monai', 'integrations/openmmv', 'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
