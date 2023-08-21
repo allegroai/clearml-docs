@@ -250,3 +250,21 @@ Run the pipeline by using one of the following methods:
   respective queues or in the default execution queue.
 * [`PipelineController.start_locally`](../references/sdk/automation_controller_pipelinecontroller.md#start_locally) - launches 
   the pipeline controller locally. To run the pipeline steps locally as well, pass `run_pipeline_steps_locally=True`.
+
+### Remote Execution
+When you run your pipeline, ClearML collects all the information required to reproduce it (DAG, configuration, 
+installed packages, uncommitted changes etc.). By default, when you rerun the pipeline through the ClearML WebApp, the 
+pipeline is constructed from the original codebase. 
+
+To change this behavior, pass `always_create_from_code=False` when instantiating a `PipelineController`. When rerun, 
+the pipeline is generated from the pipeline configuration stored in the pipeline task. This allows you to modify the 
+pipeline configuration via the UI, without changing the original codebase.
+
+To change the pipeline configuration via the UI:
+1. Clone the pipeline controller task
+1. Go to the cloned task’s **Configuration > Configuration Objects > Pipeline** 
+1. Hover over the configuration object > click **Edit**
+
+When the pipeline is rerun, it will use the new configuration values, overriding the original values set in the code.  
+
+![Edit pipeline via UI](../img/pipelines_edit.png)
