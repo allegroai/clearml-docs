@@ -75,7 +75,8 @@ If data is being moved between a **Trains Server** and a **ClearML Server** inst
 for backup and restore (`/opt/trains` and `/opt/clearml` respectively).
 :::
 
-The commands in this section are examples for backing up and restoring data and configuration.
+The commands in this section are examples for backing up and restoring data and configuration. **Note that the 
+server should be stopped before backing up or restoring data and configuration**.
 
 If data and configuration folders are in `/opt/clearml`, then archive all data into `~/clearml_backup_data.tgz`, and 
 configuration into `~/clearml_backup_config.tgz`:
