@@ -2,6 +2,17 @@
 title: ClearML Agent
 ---
 
+
+<div class="vid" >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
+        src="https://www.youtube.com/embed/MX3BrXnaULs" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+        allowfullscreen>
+</iframe>
+</div>
+
 **ClearML Agent** is a virtual environment and execution manager for DL / ML solutions on GPU machines. It integrates with the **ClearML Python Package** and ClearML Server to provide a full AI cluster solution. <br/>
 Its main focus is around:
 - Reproducing experiments, including their complete environments. 
@@ -363,6 +374,11 @@ When executing the ClearML Agent in Docker mode, it will:
 1. Execute the Task in the container, and monitor the process. 
    
 ClearML Agent uses the provided default Docker container, which can be overridden from the UI. 
+
+:::tip Setting Docker Container via UI
+
+:::
+
 
 All ClearML Agent flags (such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
