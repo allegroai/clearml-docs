@@ -88,8 +88,11 @@ The minimum requirements for ClearML Server are:
 
 ## Backing Up and Restoring Data and Configuration
 
-The commands in this section are an example of how to back up and restore data and configuration. **Note that the 
-server should be stopped before backing up or restoring data and configuration**.
+:::caution
+Stop your server before backing up or restoring data and configuration
+:::
+
+The commands in this section are an example of how to back up and restore data and configuration.
 
 If data and configuration folders are in `/opt/clearml`, then archive all data into `~/clearml_backup_data.tgz`, and 
 configuration into `~/clearml_backup_config.tgz`:
