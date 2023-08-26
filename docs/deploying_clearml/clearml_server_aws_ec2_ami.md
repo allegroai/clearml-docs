@@ -65,7 +65,7 @@ The pre-built ClearML Server storage configuration is the following:
 
 * MongoDB: `/opt/clearml/data/mongo_4/`
 * Elasticsearch: `/opt/clearml/data/elastic_7/`
-* File Server: `/mnt/fileserver/`
+* File Server: `/opt/clearml/fileserver/`
 
 
 ## Backing Up and Restoring Data and Configuration
