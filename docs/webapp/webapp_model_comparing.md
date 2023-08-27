@@ -22,6 +22,16 @@ appropriate column header controls. Alternatively, use the search bar to find mo
 1. Select models to include in the comparison (and / or clear the selection of any models you wish to remove).
 1. Click **APPLY**.
 
+## Sharing Comparison Page
+To share a comparison page, copy the full URL from the address bar and send it to a teammate to collaborate. They will 
+get the exact same page (including selected tabs etc.).
+
+## Embedding Comparison Visualization
+To embed plots and debug samples from the comparison pages in your [Reports](webapp_reports.md), hover over the
+resource and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 
+which will copy to clipboard the embed code to put in your Reports. In contrast to static screenshots, embedded resources 
+are retrieved when the report is displayed allowing your reports to show the latest up-to-date data.
+
 ## Comparison Modes
 The comparison tabs provides the following views:
 * Side-by-side textual comparison
