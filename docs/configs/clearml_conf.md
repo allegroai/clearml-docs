@@ -151,7 +151,7 @@ Compatible with Docker versions 0.6.5 and above
 
 **`agent.docker_install_opencv_libs`** (*bool*)
 
-* Install the required packages for opencv libraries (libsm6 libxext6 libxrender-dev libglib2.0-0), for backwards 
+* Install the required packages for opencv libraries (`libsm6 libxext6 libxrender-dev libglib2.0-0`), for backwards 
   compatibility reasons. Change to `false` to skip installation and decrease docker spin-up time.
 
 ---
