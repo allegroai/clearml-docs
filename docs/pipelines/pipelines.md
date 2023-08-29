@@ -41,6 +41,9 @@ ClearML supports multiple modes for pipeline execution:
 * **Debugging Mode** (for PipelineDecorator) - In this mode, the entire pipeline is executed locally, with the pipeline 
   controller and steps called synchronously as regular Python functions providing full ability to debug each function call.
 
+When you run your pipeline, ClearML collects and stores all the information required to reproduce the run. You can rerun
+the pipeline via the ClearML Web UI. See [Pipeline Runs](#pipeline-runs).
+
 ## Pipeline Features  
 ### Artifacts and Metrics
 Each pipeline step can log additional artifacts and metrics on the step task with the usual flows (TB, Matplotlib, or with 
@@ -78,11 +81,28 @@ allowing the pipeline logic to reuse the step outputs.
 Callbacks can be utilized to control pipeline execution flow. A callback can be defined to be called before and/or after 
 the execution of every task in a pipeline. Additionally, you can create customized, step-specific callbacks.
 
-### Pipeline Reusing 
-Like any other task in ClearML, the controller task can be cloned, modified, and relaunched. The main pipeline logic 
-function’s arguments are stored in the controller task’s **Configuration > Args** section. You can clone the pipeline 
-Task using the UI or programmatically, modify the pipeline arguments, and send the pipeline for execution by enqueuing 
-the pipeline on the `services` queue.
+### Pipeline Runs
+When you run your pipeline, ClearML collects and stores all the information required to reproduce the run (DAG, 
+configuration, installed packages, uncommitted changes etc.). 
+
+You can rerun the pipeline via the [ClearML Web UI](../webapp/pipelines/webapp_pipeline_table.md). To launch a new run 
+for a pipeline, click **+ NEW RUN** on the top left of the pipeline runs page. This opens a **NEW RUN** modal, where you 
+can set the run’s parameters and execution queue.  
+
+![Pipeline params UI](../img/pipelines_new_run.png)
+
+The new pipeline run will be executed through the execution queue by a ClearML agent. The agent will rebuild 
+the pipeline according to the configuration and DAG that was captured in the original run, and override the original 
+parameters’ value with those input in the **NEW RUN** modal.
+
+One exception is for pipelines [created from functions](pipelines_sdk_tasks.md#steps-from-functions) (adding steps to a 
+pipeline controller using [`PipelineController.add_function_step()`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step)): 
+When you rerun the pipeline through the ClearML WebApp, the pipeline is constructed again at runtime from the executed 
+code.
+
+To change this behavior, pass `always_create_from_code=False` when instantiating a `PipelineController`. In this case, 
+when rerun, the pipeline DAG will be generated from the pipeline configuration stored in the pipeline task. This allows 
+you to modify the pipeline configuration via the UI, without changing the original codebase.
 
 ### Pipeline Versions
 Each pipeline must be assigned a version number to help track the evolution of your pipeline structure and parameters.
