@@ -219,6 +219,17 @@ frame = SingleFrame(
 )
 ```
 
+:::tip Previewing non-AWS S3-like services
+In order to preview in the UI frames stored in non-AWS S3-like services (e.g. boto3), make sure the `preview_uri` link
+includes:
+* `s3://` prefix 
+* `<host_address>:<port_number>` in the link name
+
+Additionally, make sure to provide cloud storage access in the WebApp [**Settings > Web App Cloud Access**](../webapp/webapp_profile.md#browser-cloud-storage-access). 
+Input `<host_address>:<port_number>` in the `Host` field.
+:::
+
+
 There are also options to populate the instance with:
 * Dimensions - `width` and `height`
 * General information about the frame - `metadata`
