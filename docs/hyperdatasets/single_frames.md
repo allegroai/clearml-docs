@@ -219,7 +219,7 @@ frame = SingleFrame(
 )
 ```
 
-:::tip Previewing non-AWS S3-like services
+:::tip Previewing Frames in non-AWS S3-like services
 In order to preview in the UI frames stored in non-AWS S3-like services (e.g. boto3), make sure the `preview_uri` link
 includes an `s3://` prefix `<host_address>:<port_number>` in the link name (e.g. `s3://my_address.com:80/bucket/my_image.png`).
 
