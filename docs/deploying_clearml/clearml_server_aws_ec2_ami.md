@@ -24,7 +24,7 @@ By default, ClearML Server deploys as an open network. To restrict ClearML Serve
 in the [Security](clearml_server_security.md) page.
 :::
 
-The minimum recommended amount of RAM is 8 GB. For example, a t3.large or t3a.large EC2 instance type would accommodate the recommended RAM size.
+The minimum recommended amount of RAM is 8 GB. For example, a `t3.large` or `t3a.large` EC2 instance type would accommodate the recommended RAM size.
 
 **To launch a ClearML Server AWS community AMI**, use one of the [ClearML Server AWS community AMIs](#clearml-server-aws-community-amis) 
 and see:
@@ -65,7 +65,7 @@ The pre-built ClearML Server storage configuration is the following:
 
 * MongoDB: `/opt/clearml/data/mongo_4/`
 * Elasticsearch: `/opt/clearml/data/elastic_7/`
-* File Server: `/mnt/fileserver/`
+* File Server: `/opt/clearml/data/fileserver/`
 
 
 ## Backing Up and Restoring Data and Configuration
