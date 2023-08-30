@@ -19,7 +19,7 @@ The tree view shows the lineage of the dataset's versions.
 
 ![Versions tree view](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
 
-Use the search bar to find specific versions. You can query by version name or version description. The search returns 
+Use the search bar to find specific versions. You can query by version name, version description, or version ID. The search returns 
 all versions that match the query.
 
 In tree view, parent versions that do not match the query where a child version does appear in a muted color.
