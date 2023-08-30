@@ -36,6 +36,13 @@ Access dataset version actions, by right-clicking a version, or through the menu
 * **Delete** - Delete the version. Only *Draft* versions can be deleted.  
 * **Publish** - Make a *Draft* version read-only to preserve its contents. 
  
+:::tip Publishing versions
+When publishing a version, you can create an additional working copy. The new version is created in a *draft* state, and 
+inherits all the published version's frames. 
+
+![Publish version modal](../../img/hyperdataset_publish_version.png)
+:::
+
 ## Version Data
 A selected dataset version's information and contents are presented on the main section of the page, to the right of 
 the dataset's version list.
