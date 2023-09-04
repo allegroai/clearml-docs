@@ -36,7 +36,8 @@ The preceding diagram demonstrates a typical flow where an agent executes a task
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
 
-While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Orchestration** page).  
+While the agent is running, it continuously reports system metrics to the ClearML Server (these can be monitored in the 
+[**Orchestration**](webapp/webapp_workers_queues.md) page).  
 
 Continue using ClearML Agent once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
@@ -376,9 +377,16 @@ When executing the ClearML Agent in Docker mode, it will:
 ClearML Agent uses the provided default Docker container, which can be overridden from the UI. 
 
 :::tip Setting Docker Container via UI
+You can set the docker container used in a task via the UI: 
+1. Clone the experiment
+2. Set the Docker in the cloned task's **Execution** tab **> Container** section
 
+   ![Container section](../img/webapp_exp_container.png)
+
+3. Enqueue the cloned task
+
+The task will be executed in the container specified in the UI.
 :::
-
 
 All ClearML Agent flags (such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
@@ -405,7 +413,7 @@ CLEARML_AGENT_K8S_HOST_MOUNT=/mnt/host/data:/root/.clearml
 ClearML Agent caches virtual environments so when running experiments multiple times, there's no need to spend time reinstalling 
 pre-installed packages. To make use of the cached virtual environments, enable the virtual environment reuse mechanism. 
 
-#### Virtual Environment Reuse
+### Virtual Environment Reuse
 
 The virtual environment reuse feature may reduce experiment startup time dramatically.
 
