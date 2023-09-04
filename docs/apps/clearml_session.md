@@ -169,6 +169,7 @@ The Task must be connected to a git repository, since currently single script de
 | `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--queue`| Select the queue to launch the interactive session on | Previously used queue|
+| `--interactive`, `-I` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
 | `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
 | `--vscode-server` | Install VSCode on interactive session | `true` |
 | `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
