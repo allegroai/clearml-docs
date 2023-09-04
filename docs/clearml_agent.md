@@ -377,7 +377,7 @@ When executing the ClearML Agent in Docker mode, it will:
 ClearML Agent uses the provided default Docker container, which can be overridden from the UI. 
 
 :::tip Setting Docker Container via UI
-You can set the docker container used in a task via the UI: 
+You can set the docker container via the UI: 
 1. Clone the experiment
 2. Set the Docker in the cloned task's **Execution** tab **> Container** section
 
