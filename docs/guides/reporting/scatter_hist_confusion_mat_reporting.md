@@ -10,7 +10,7 @@ example demonstrates reporting series data in the following 2D formats:
 
 ClearML reports these tables in the **ClearML Web UI**, experiment details **>** **PLOTS** tab. 
 
-When the script runs, it creates an experiment named `2D plots reporting`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `2D plots reporting` in the `examples` project.
 
 ## Histograms
 

@@ -4,7 +4,7 @@ title: Text Classification - Jupyter Notebook
 
 The example [text_classification_AG_NEWS.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/text/text_classification_AG_NEWS.ipynb) 
 demonstrates using Jupyter Notebook for ClearML, and the integration of ClearML into code which trains a network 
-to classify text in the `torchtext` [AG_NEWS](https://pytorch.org/text/stable/datasets.html#ag-news) dataset, and then applies the model to predict the classification of sample text. ClearML automatically logs the scalar and console output by calling TensorBoard methods. In the example, we explicitly log parameters with the Task. When the script runs, it creates an experiment named `text classifier` which is associated with the `Text Example` project.
+to classify text in the `torchtext` [AG_NEWS](https://pytorch.org/text/stable/datasets.html#ag-news) dataset, and then applies the model to predict the classification of sample text. ClearML automatically logs the scalar and console output by calling TensorBoard methods. The example code explicitly logs parameters to the Task. When the script runs, it creates an experiment named `text classifier` in the `Text Example` project.
 
 ## Scalars
 

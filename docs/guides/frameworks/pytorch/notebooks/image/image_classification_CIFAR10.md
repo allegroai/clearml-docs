@@ -6,8 +6,8 @@ The example [image_classification_CIFAR10.ipynb](https://github.com/allegroai/cl
 demonstrates integrating ClearML into a Jupyter Notebook, which uses PyTorch, TensorBoard, and TorchVision to train a 
 neural network on the CIFAR10 dataset for image classification. ClearML automatically logs the example script's 
 calls to TensorBoard methods in training and testing which report scalars and image debug samples, as well as the model 
-and console log. In the example, we also demonstrate connecting parameters to a Task and logging them. When the script runs, 
-it creates an experiment named `image_classification_CIFAR10` which is associated with the `Image Example` project.
+and console log. The example also demonstrates connecting parameters to a Task and logging them. When the script runs, 
+it creates an experiment named `image_classification_CIFAR10` in the `Image Example` project.
 
 Another example optimizes the hyperparameters for this image classification example (see the [Hyperparameter Optimization - Jupyter Notebook](hyperparameter_search.md) documentation page). This image classification example must run before the hyperparameter optimization example.
 

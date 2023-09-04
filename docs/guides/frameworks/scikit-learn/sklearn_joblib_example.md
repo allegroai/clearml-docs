@@ -5,7 +5,7 @@ title: Scikit-Learn with Joblib
 The [sklearn_joblib_example.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/scikit-learn/sklearn_joblib_example.py) 
 demonstrates the integration of ClearML into code that uses `scikit-learn` and `joblib` to store a model and model snapshots, 
 and `matplotlib` to create a scatter diagram. When the script runs, it creates an experiment named 
-`scikit-learn joblib example`, which is associated with the `examples` project.
+`scikit-learn joblib example` in the `examples` project.
 
 ## Plots
 

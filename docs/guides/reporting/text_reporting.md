@@ -8,7 +8,7 @@ method.
 
 ClearML reports these tables in the **ClearML Web UI**, experiment details, **CONSOLE** tab. 
 
-When the script runs, it creates an experiment named `text reporting`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `text reporting` in the `examples` project.
 
     # report text
     Logger.current_logger().report_text("hello, this is plain text")

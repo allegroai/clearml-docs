@@ -22,8 +22,8 @@ script. This experiment must be executed first, so it will be stored in the serv
     1. Setting the newly cloned Task's parameters to the search values in the parameter dictionary (Step 1). See [Task.set_parameters](../../references/sdk/task.md#set_parameters).
     1. Enqueuing the newly cloned Task to execute. See [Task.enqueue](../../references/sdk/task.md#taskenqueue).
 
-When the example script runs, it creates an experiment named `Random Hyper-Parameter Search Example` which is associated 
-with the `examples` project. This starts the parameter search, and creates the experiments:
+When the example script runs, it creates an experiment named `Random Hyper-Parameter Search Example` in
+the `examples` project. This starts the parameter search, and creates the experiments:
 
 * `Keras HP optimization base 0`
 * `Keras HP optimization base 1`

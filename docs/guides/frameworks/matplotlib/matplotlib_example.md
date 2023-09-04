@@ -13,8 +13,8 @@ The example in [Jupyter Notebook](https://github.com/allegroai/clearml/blob/mast
 includes a clickable icon to open the notebook in Google Colab.
 :::
 
-When the example runs, it creates an experiment named `Matplotlib example`, 
-which is associated with the `examples` project (in script) or the `Colab notebooks` project (in Jupyter Notebook).
+When the example runs, it creates an experiment named `Matplotlib example`
+in the `examples` project (in script) or the `Colab notebooks` project (in Jupyter Notebook).
 
 
 
