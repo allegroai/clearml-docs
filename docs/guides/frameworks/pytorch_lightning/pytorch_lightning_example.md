@@ -9,7 +9,7 @@ script demonstrates the integration of ClearML into code that uses [PyTorch Ligh
 The example script does the following:
 * Trains a simple deep neural network on the PyTorch built-in MNIST dataset
 * Defines Argparse command line options, which are automatically captured by ClearML
-* Creates an experiment named `pytorch lightning mnist example`, which is associated with the `examples` project.
+* Creates an experiment named `pytorch lightning mnist example` in the `examples` project.
 
 ## Scalars
 

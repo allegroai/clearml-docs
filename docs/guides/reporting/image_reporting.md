@@ -15,7 +15,7 @@ or ClearML can be configured for image storage, see [Logger.set_default_upload_d
 (storage for [artifacts](../../clearml_sdk/task_sdk.md#setting-upload-destination) is different). Set credentials for 
 storage in the ClearML configuration file.
 
-When the script runs, it creates an experiment named `image reporting`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `image reporting` in the `examples` project.
 
 Report images using several formats by calling the [Logger.report_image](../../references/sdk/logger.md#report_image) 
 method:

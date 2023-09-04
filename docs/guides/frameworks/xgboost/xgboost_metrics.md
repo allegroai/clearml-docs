@@ -6,7 +6,7 @@ The [xgboost_metrics.py](https://github.com/allegroai/clearml/blob/master/exampl
 example demonstrates the integration of ClearML into code that uses XGBoost to train a network on the scikit-learn [iris](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris) 
 classification dataset. ClearML automatically captures models and scalars logged with XGBoost.
 
-When the script runs, it creates a ClearML experiment named `xgboost metric auto reporting`, which is associated with 
+When the script runs, it creates a ClearML experiment named `xgboost metric auto reporting` in 
 the `examples` project.
 
 ## Scalars
