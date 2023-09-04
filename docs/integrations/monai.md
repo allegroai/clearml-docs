@@ -14,7 +14,7 @@ and [`ModelCheckpoint`](#modelcheckpoint).
 ## ClearMLImageHandler and ClearMLStatsHandler
 
 Use the `ClearMLImageHandler` and the `ClearMLStatsHandler` to log images and metrics respectively to ClearML. 
-`ClearMLImageHandler` extends all functionality from [`TensorBoardImageHandler`](https://docs.monai.io/en/latest/handlers.html#monai.handlers.TensorBoardImageHandler, 
+`ClearMLImageHandler` extends all functionality from [`TensorBoardImageHandler`](https://docs.monai.io/en/latest/handlers.html#monai.handlers.TensorBoardImageHandler), 
 used for visualizing images, labels, and outputs. `ClearMLStatsHandler` extends all functionality from [`TensorBoardStatsHandler`](https://docs.monai.io/en/latest/handlers.html#monai.handlers.TensorBoardStatsHandler), 
 which is used to define a set of Ignite Event handlers for TensorBoard logic. ClearML automatically captures all 
 TensorBoard outputs.
