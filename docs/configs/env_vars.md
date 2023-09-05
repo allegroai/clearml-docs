@@ -2,8 +2,7 @@
 title: Environment Variables
 ---
 
-This page lists the available environment variables for configuring ClearML. See [here](../clearml_agent/clearml_agent_env_var.md)
-for environment variables to configure ClearML Agent. 
+This page lists the available environment variables for configuring ClearML. 
 
 :::info
 ClearML's environment variables override the clearml.conf file, SDK, and [configuration vault](../webapp/webapp_profile.md#configuration-vault), 
@@ -52,3 +51,7 @@ Overrides Repository Auto-logging
 |**CLEARML_OFFLINE_MODE** | Sets Offline mode|
 |**CLEARML_NO_DEFAULT_SERVER** | Disables sending information to demo server when no HOST server is set|
 
+## Agent Specific Variables
+
+See [here](../clearml_agent/clearml_agent_env_var.md) for environment variables to configure how the ClearML Agent works
+with the SDK. 
