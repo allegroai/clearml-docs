@@ -11,7 +11,7 @@ classification dataset using XGBoost
 * Scores accuracy using scikit-learn
 * ClearML automatically logs the input model registered by XGBoost, and the output model (and its checkpoints), 
   feature importance plot, and tree plot created with XGBoost. 
-* Creates an experiment named `XGBoost simple example`, which is associated with the `examples` project.
+* Creates an experiment named `XGBoost simple example` in the `examples` project.
 
 ## Plots
 

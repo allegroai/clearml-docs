@@ -28,7 +28,7 @@ moved to be executed by a stronger machine.
 
 During the execution of the example script, the code does the following:
 * Uses ClearML's automatic and explicit logging.
-* Creates an experiment named `Remote_execution PyTorch MNIST train`, which is associated with the `examples` project.
+* Creates an experiment named `Remote_execution PyTorch MNIST train` in the `examples` project.
 
 
 ## Scalars

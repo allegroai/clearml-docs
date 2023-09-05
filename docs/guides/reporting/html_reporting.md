@@ -9,7 +9,7 @@ method.
 ClearML reports these HTML debug samples in the **ClearML Web UI** **>** experiment details **>** 
 **DEBUG SAMPLES** tab. 
 
-When the script runs, it creates an experiment named `html samples reporting`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `html samples reporting` in the `examples` project.
 
 ![image](../../img/examples_reporting_05.png)
 

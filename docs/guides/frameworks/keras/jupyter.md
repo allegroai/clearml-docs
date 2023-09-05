@@ -12,7 +12,7 @@ The example does the following:
    
 1. Specifies accuracy as the metric, and uses two callbacks: a TensorBoard callback and a model checkpoint callback. 
    
-1. During script execution, creates an experiment named `notebook example` which is associated with the `examples` project.
+1. During script execution, creates an experiment named `notebook example` in the `examples` project.
 
 ## Scalars
 

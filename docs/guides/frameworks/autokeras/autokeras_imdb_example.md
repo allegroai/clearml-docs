@@ -9,7 +9,7 @@ The example does the following:
 the autokeras [TextClassifier](https://autokeras.com/text_classifier/) class, and searches for the best model. 
 * Uses two TensorBoard callbacks, one for training and one for testing. 
 * ClearML automatically logs everything the code sends to TensorBoard. 
-* Creates an experiment named `autokeras imdb example with scalars`, which is associated with the `autokeras` project.
+* Creates an experiment named `autokeras imdb example with scalars` in the `autokeras` project.
 
 ## Scalars
 

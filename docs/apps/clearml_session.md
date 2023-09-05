@@ -166,7 +166,7 @@ The Task must be connected to a git repository, since currently single script de
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
 | `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:10.1-runtime-ubuntu18.04` or previously used docker image|
-| `--docker-args ` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
+| `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--queue`| Select the queue to launch the interactive session on | Previously used queue|
 | `--interactive`, `-I` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
@@ -189,7 +189,7 @@ The Task must be connected to a git repository, since currently single script de
 | `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
 |  `--force_dropbear`| Force using `dropbear` instead of SSHd |`None`| 
 | `--version`| Display the clearml-session utility version| N/A|
-| `--verbose ` | Increase verbosity of logging | `none` |
+| `--verbose` | Increase verbosity of logging | `none` |
 | `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|
 
 </div>

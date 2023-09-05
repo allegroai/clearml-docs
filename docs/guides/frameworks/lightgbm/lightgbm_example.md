@@ -9,7 +9,7 @@ The example script does the following:
 * Creates a dataset for LightGBM to train a model
 * Specifies configuration which are automatically captured by ClearML
 * Saves model which ClearML automatically captures
-* Creates an experiment named `LightGBM`, which is associated with the `examples` project.
+* Creates an experiment named `LightGBM` in the `examples` project.
 
 ## Scalars
 

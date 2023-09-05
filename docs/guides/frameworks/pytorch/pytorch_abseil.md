@@ -8,7 +8,7 @@ example demonstrates the integration of ClearML into code that uses PyTorch and 
 The example script does the following:
 * Trains a simple deep neural network on the PyTorch built-in [MNIST](https://pytorch.org/vision/stable/datasets.html#mnist)
   dataset
-* Creates an experiment named `pytorch mnist train with abseil`, which is associated with the `examples` project
+* Creates an experiment named `pytorch mnist train with abseil` in the `examples` project
 * ClearML automatically logs the absl.flags, and the models (and their snapshots) created by PyTorch 
 * Additional metrics are logged by calling the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) 
   method

@@ -11,7 +11,7 @@ Hyperparameters appear in the **web UI** in the experiment's page, under **CONFI
 Each type is in its own subsection. Parameters from older experiments are grouped together with the ``argparse`` command 
 line options (in the **Args** subsection).
 
-When the script runs, it creates an experiment named `hyper-parameters example`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `hyper-parameters example` in the `examples` project.
 
 ## Argparse Command Line Options
 

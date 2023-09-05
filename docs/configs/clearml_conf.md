@@ -214,7 +214,7 @@ from `system_site_packages`
 
 **`agent.extra_docker_arguments`** (*[string]*)
         
-* Optional arguments to pass to the Docker image. These are local for this agent, and will not be updated in the experiment's `docker_cmd` section. For example, ` ["--ipc=host", ]`.
+* Optional arguments to pass to the Docker image. These are local for this agent, and will not be updated in the experiment's `docker_cmd` section. For example, `["--ipc=host", ]`.
         
 ---
         
@@ -707,7 +707,7 @@ This configuration option is experimental, and has not been vigorously tested, s
 **`api.credentials`** (*dict*)
         
 * Dictionary of API credentials.   
-  Alternatively, specify the environment variable ` CLEARML_API_ACCESS_KEY / CLEARML_API_SECRET_KEY` to override these keys.
+  Alternatively, specify the environment variable `CLEARML_API_ACCESS_KEY / CLEARML_API_SECRET_KEY` to override these keys.
 
         
 ---

@@ -6,7 +6,7 @@ The [moveiepy_tensorboardx.py](https://github.com/allegroai/clearml/blob/master/
 example demonstrates the integration of ClearML into code, which creates a TensorBoardX `SummaryWriter` object to log 
 video data. 
 
-When the script runs, it creates an experiment named `pytorch with video tensorboardX`, which is associated with 
+When the script runs, it creates an experiment named `pytorch with video tensorboardX` in 
 the `examples` project. 
 
 ## Debug Samples

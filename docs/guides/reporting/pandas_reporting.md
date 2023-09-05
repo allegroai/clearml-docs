@@ -7,7 +7,7 @@ The [pandas_reporting.py](https://github.com/allegroai/clearml/blob/master/examp
 ClearML reports these tables in the **ClearML Web UI** **>** experiment details **>** **PLOTS** 
 tab. 
 
-When the script runs, it creates an experiment named `table reporting`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `table reporting` in the `examples` project.
 
 ## Reporting Pandas DataFrames as Tables
 
