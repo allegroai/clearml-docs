@@ -13,6 +13,8 @@ title: ClearML Agent
 </iframe>
 </div>
 
+<br/>
+
 **ClearML Agent** is a virtual environment and execution manager for DL / ML solutions on GPU machines. It integrates with the **ClearML Python Package** and ClearML Server to provide a full AI cluster solution. <br/>
 Its main focus is around:
 - Reproducing experiments, including their complete environments. 
@@ -386,7 +388,7 @@ You can set the docker container via the UI:
 1. Clone the experiment
 2. Set the Docker in the cloned task's **Execution** tab **> Container** section
 
-   ![Container section](../img/webapp_exp_container.png)
+   ![Container section](img/webapp_exp_container.png)
 
 3. Enqueue the cloned task
 

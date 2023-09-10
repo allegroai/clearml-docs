@@ -66,7 +66,7 @@ improving your results later on!
 
 ## Visibility Matters
 
-While it's possible to track experiments with one tool, and pipeline them with another, we believe that having 
+While it's possible to track experiments with one tool, and pipeline them with another, having 
 everything under the same roof has its benefits! 
 
 Being able to track experiment progress and compare experiments, and based on that send experiments to execution on remote
