@@ -36,6 +36,11 @@ The preceding diagram demonstrates a typical flow where an agent executes a task
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
 
+:::note Python Version
+ClearML Agent uses the Python version available in the environment or docker in which it executes the code. It does not 
+install Python, so make sure to use a docker or environment with the version you need.
+::: 
+
 While the agent is running, it continuously reports system metrics to the ClearML Server (these can be monitored in the 
 [**Orchestration**](webapp/webapp_workers_queues.md) page).  
 
