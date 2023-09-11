@@ -56,7 +56,7 @@ On the right side of the dataset version panel, view the **VERSION INFO** which 
   * Number of files modified 
   * Number of files removed 
   * Change in size
-* Version description - to modify, hover over description and click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" /> ,
+* Version description - to modify, hover over description and click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" />,
   which opens the edit window
   
 <div class="max-w-50">
@@ -101,7 +101,7 @@ Access these actions with the context menu by right-clicking a version on the da
 |Add Tag |User-defined labels added to versions for grouping and organization. |
 |Archive| Move dataset versions to the dataset's archive. | 
 |Restore|Action available in the archive. Restore a version to the active dataset versions table.|
-|Delete| Delete an archived version and its artifacts. This action is available only from the dataset’s archive |
+|Delete| Delete an archived version and its artifacts. This action is available only from the dataset's archive. |
 
 ![Dataset actions](../../img/webapp_dataset_actions.png)
 
