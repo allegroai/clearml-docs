@@ -186,6 +186,6 @@ or check these pages out:
 
 ## YouTube Playlist
 
-All these tips and tricks are also covered in ClearML's **Getting Started** series on YouTube, go check it out :)
+All these tips and tricks are also covered in ClearML's **Getting Started** series on YouTube. Go check it out :)
 
 [![Watch the video](https://img.youtube.com/vi/kyOfwVg05EM/hqdefault.jpg)](https://www.youtube.com/watch?v=kyOfwVg05EM&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=3)

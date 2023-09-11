@@ -14,6 +14,6 @@ Solutions combined with the clearml-server control plane.
 
 ## YouTube Playlist
 
-The first video in the ClearML YouTube **Getting Started** playlist covers these modules in more detail, feel free to check out the video below.
+The first video in the ClearML YouTube **Getting Started** playlist covers these modules in more detail. Feel free to check out the video below.
 
 [![Watch the video](https://img.youtube.com/vi/s3k9ntmQmD4/hqdefault.jpg)](https://www.youtube.com/watch?v=s3k9ntmQmD4&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=1)

@@ -53,12 +53,11 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Configuration Objects
 
-In the experiment code, a configuration dictionary is connected to the Task by calling the [`Task.connect`](../../../references/sdk/task.md#connect) 
-method. 
+In the experiment code, a configuration dictionary is connected to the Task by calling [`Task.connect()`](../../../references/sdk/task.md#connect). 
 
 ```python
 task.connect_configuration(
-   name="MyConfig" 
+   name="MyConfig", 
    configuration={'test': 1337, 'nested': {'key': 'value', 'number': 1}}
 )
 ```

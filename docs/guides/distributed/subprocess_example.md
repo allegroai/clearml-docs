@@ -5,7 +5,7 @@ title: Subprocess
 The [subprocess_example.py](https://github.com/allegroai/clearml/blob/master/examples/distributed/subprocess_example.py) 
 script demonstrates multiple subprocesses interacting and reporting to a main Task. The following happens in the script: 
 * This script initializes a main Task and spawns subprocesses, each for an instances of that Task.
-* Each Task in a subprocess references the main Task by calling [Task.current_task](../../references/sdk/task.md#taskcurrent_task), 
+* Each Task in a subprocess references the main Task by calling [`Task.current_task()`](../../references/sdk/task.md#taskcurrent_task), 
 which always returns the main Task.
 * The Task in each subprocess reports the following to the main Task:
     * Hyperparameters - Additional, different hyperparameters.
@@ -15,7 +15,7 @@ which always returns the main Task.
 ## Hyperparameters
 
 ClearML automatically logs the command line options defined with `argparse`. A parameter dictionary is logged by 
-connecting it to the Task using a call to the [`Task.connect`](../../references/sdk/task.md#connect) method.
+connecting it to the Task using [`Task.connect()`](../../references/sdk/task.md#connect).
 
 ```python
 additional_parameters = {
