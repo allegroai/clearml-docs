@@ -334,7 +334,7 @@ Note that in offline mode, any methods that require communicating with the serve
 Upload the offline dataset to the ClearML Server using [`Dataset.import_offline_session()`](../references/sdk/dataset.md#datasetimport_offline_session). 
 
 ```python
-Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True")
+Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True)
 ```
 
 In the `session_folder_zip` argument, insert the path to the zip folder containing the dataset. To [upload](#uploading-files) 

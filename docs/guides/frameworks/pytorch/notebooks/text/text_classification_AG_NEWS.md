@@ -15,8 +15,7 @@ Accuracy, learning rate, and training loss appear in **SCALARS**, along with the
 ## Hyperparameters
 
 ClearML automatically logs the command line options, because the example code uses `argparse`. A parameter dictionary 
-is logged by connecting it to the Task using a call to the [Task.connect](../../../../../references/sdk/task.md#connect) 
-method.
+is logged by connecting it to the Task using [`Task.connect()`](../../../../../references/sdk/task.md#connect).
 
 ```python
 configuration_dict = {

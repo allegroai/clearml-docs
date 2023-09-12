@@ -187,7 +187,7 @@ def test(args, model, device, test_loader):
 ### Log Text
 
 Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. Use [`Logger.report_text()`](../../references/sdk/logger.md#report_text) 
-and its argument `level` to report a debugging message.
+and its `level` argument to report a debugging message.
 
 ```python
 logger.report_text(
