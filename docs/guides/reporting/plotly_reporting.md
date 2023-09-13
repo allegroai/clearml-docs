@@ -8,8 +8,7 @@ demonstrates ClearML's Plotly integration and reporting.
 Report Plotly plots in ClearML by calling the [`Logger.report_plotly`](../../references/sdk/logger.md#report_plotly) method, and passing a complex
 Plotly figure, using the `figure` parameter. 
 
-In this example, the Plotly figure is created using `plotly.express.scatter` (see [Scatter Plots in Python](https://plotly.com/python/line-and-scatter/) 
-in the Plotly documentation): 
+In this example, the Plotly figure is created using `plotly.express.scatter` (see the [Plotly documentation](https://plotly.com/python/line-and-scatter/)): 
 
 ```python
 # Iris dataset
@@ -33,7 +32,7 @@ task.get_logger().report_plotly(
 
 When the script runs, it creates an experiment named `plotly reporting` in the examples project.
 
-ClearML reports Plotly plots in the **ClearML Web UI** **>** experiment details **>** **PLOTS** 
+ClearML reports Plotly figures, and displays them in the **ClearML Web UI** **>** experiment details **>** **PLOTS** 
 tab.
 
-![image](../../img/examples_reporting_13.png)
+![Web UI experiment plots](../../img/examples_reporting_13.png)
