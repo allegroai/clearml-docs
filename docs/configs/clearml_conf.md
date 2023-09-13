@@ -115,7 +115,7 @@ in either case).
 * Set to `true` to allow passing host environments into docker container with Task's docker container arguments. For example: `"-e HOST_NAME=$HOST_NAME"`. 
 
 :::caution
-Use with care! This might introduce security risk allowing access to keys/secret on the host machine. 
+Use with care! This might introduce security risks by allowing access to keys/secret on the host machine. 
 :::
 
 ---
@@ -474,7 +474,7 @@ ___
 
 **`agent.package_manager.extra_pip_install_flags`** (*[string]*)
 
-* A list of additional flags to use when calling `pip install`. For example: `["--use-deprecated=legacy-resolver", ]`
+* A list of additional flags to use when the agent install packages. For example: `["--use-deprecated=legacy-resolver", ]`
 
 ---
         
@@ -538,8 +538,10 @@ ___
 
 * Set the PyTorch resolving mode. The options are:
   * `pip` (default) - Sets extra index based on cuda and lets pip resolve
-  * `none` - No resolving
-  * `direct` - Use the previous parsing algorithm that does the matching and downloading
+  * `none` - No resolving. Install PyTorch like any other package
+  * `direct` - Resolve a direct link to the PyTorch wheel by parsing the pytorch.org pip repository and matching the 
+  automatically detected cuda version with the required PyTorch wheel. If the exact cuda version is not found for the 
+  required PyTorch wheel, it will try a lower cuda version until a match is found
 
 ---
 
