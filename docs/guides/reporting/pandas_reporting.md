@@ -4,15 +4,15 @@ title: Tables Reporting (Pandas and CSV Files)
 
 The [pandas_reporting.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/pandas_reporting.py) example demonstrates reporting tabular data from Pandas DataFrames and CSV files as tables. 
 
-ClearML reports these tables in the **ClearML Web UI** **>** experiment details **>** **PLOTS** 
+ClearML reports these tables, and displays them in the **ClearML Web UI** **>** experiment details **>** **PLOTS** 
 tab. 
 
 When the script runs, it creates an experiment named `table reporting` in the `examples` project.
 
 ## Reporting Pandas DataFrames as Tables
 
-Report Pandas DataFrames by calling the [Logger.report_table](../../references/sdk/logger.md#report_table) 
-method, and providing the DataFrame in the `table_plot` parameter.
+Report Pandas DataFrames by calling [`Logger.report_table()`](../../references/sdk/logger.md#report_table), 
+and providing the DataFrame in the `table_plot` parameter.
 
 ```python
 # Report table - DataFrame with index

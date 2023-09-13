@@ -42,7 +42,7 @@ Remember ClearML also stores your code environment, making it reproducible. So w
 
 Back to the overview. One of the output types you can add to your task is what’s called an artifact.
 
-An artifact can be a lot of things, mostly they’re files like model weights or pandas dataframes containing preprocessed features for example. Our documentation lists all supported data types.
+An artifact can be a lot of things, mostly they’re files like model weights or Pandas DataFrames containing preprocessed features for example. Our documentation lists all supported data types.
 
 You can download the artifacts your code produced from the web UI to your local computer if you want to, but artifacts can also be retrieved programmatically.
 
