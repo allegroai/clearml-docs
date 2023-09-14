@@ -1,5 +1,5 @@
 ---
-title: Images Reporting
+title: Image Reporting
 ---
 
 The [image_reporting.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/image_reporting.py) example 

@@ -26,8 +26,10 @@ The script does the following:
 The example uploads a dictionary as an artifact in the main Task by calling [`Task.upload_artifact()`](../../../references/sdk/task.md#upload_artifact)
 on `Task.current_task` (the main Task). The dictionary contains the `dist.rank` of the subprocess, making each unique.
 
-    Task.current_task().upload_artifact(
-        'temp {:02d}'.format(dist.get_rank()), artifact_object={'worker_rank': dist.get_rank()})
+```python
+Task.current_task().upload_artifact(
+    'temp {:02d}'.format(dist.get_rank()), artifact_object={'worker_rank': dist.get_rank()})
+```
 
 All of these artifacts appear in the main Task, **ARTIFACTS** **>** **OTHER**.
 
@@ -39,8 +41,10 @@ Report loss to the main Task by calling [`Logger.report_scalar()`](../../../refe
 on `Task.current_task().get_logger`, which is the logger for the main Task. Since `Logger.report_scalar` is called with the 
 same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are logged together.
 
-    Task.current_task().get_logger().report_scalar(
-        'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i)
+```python
+Task.current_task().get_logger().report_scalar(
+    'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i)
+```
 
 The single scalar plot for loss appears in **SCALARS**.
 
