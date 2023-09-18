@@ -349,7 +349,7 @@ ClearML Agent supports executing tasks in multiple environments.
 ### PIP Mode 
 By default, ClearML Agent works in PIP Mode, in which it uses [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) 
 as the package manager. When ClearML runs, it will create a virtual environment 
-(or reuse an existing one, see [here](clearml_agent.md#virtual-environment-reuse)).
+(or [reuse an existing one](clearml_agent.md#virtual-environment-reuse)).
 Task dependencies (Python packages) will be installed in the virtual environment.
 
 ### Conda Mode 
