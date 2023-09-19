@@ -382,9 +382,11 @@ buttons (or using the left/right arrow keyboard shortcut).
 </iframe>
 </div>
 
+<br/>
+
 Tags are user-defined, color-coded labels that can be added to experiments (and pipelines, datasets, and models), 
 allowing to easily identify and group experiments. Tags can help in organizing, querying, and automating experiments.
-For example, tag experiments by the machine type used to executed them, their label versions, team names, or any other
+For example, tag experiments by the machine type used to execute them, label versions, team names, or any other
 category.
 
 You can use tags to filter your experiments in your experiment table (see [Filtering Columns](webapp_exp_table.md#filtering-columns))
@@ -392,13 +394,14 @@ or when querying experiments in your code (see [Tag Filters](../clearml_sdk/task
 experiment execution according to their tags (see [TriggerScheduler](../references/sdk/trigger.md)) or automatically
 deploy models according to their tags (see [ClearML Serving](../clearml_serving/clearml_serving_tutorial.md#automatic-model-deployment)).
 
-* To add tags:
-    1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (menu)
-    1. Do one of the following:
-        * Add a new tag - Type the new tag name **>** **(Create New)**.
-        * Add an existing tag - Click a tag.
-        * Customize a tag's colors - Click **Tag Colors** **>** Click the tag icon **>** **Background** or **Foreground** **>** Pick a color **>** **OK** **>** **CLOSE**.
-* To remove a tag - Hover over the tag **>** **X**.
+**To add tags:**
+1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (menu)
+1. Do one of the following:
+    * Add a new tag - Type the new tag name **>** **(Create New)**.
+    * Add an existing tag - Click a tag.
+    * Customize a tag's colors - Click **Tag Colors** **>** Click the tag icon **>** **Background** or **Foreground** **>** Pick a color **>** **OK** **>** **CLOSE**.
+
+**To remove a tag** - Hover over the tag and click **X**.
 
 
 
