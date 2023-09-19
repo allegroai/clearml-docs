@@ -110,6 +110,16 @@ in either case).
 
 ---
 
+**`agent.docker_allow_host_environ`** (*bool*)
+
+* Set to `true` to allow passing host environments into docker container with Task's docker container arguments. For example: `"-e HOST_NAME=$HOST_NAME"`. 
+
+:::caution
+Use with care! This might introduce security risks by allowing access to keys/secret on the host machine. 
+:::
+
+---
+
 **`agent.docker_apt_cache`** (*string*)
         
 * The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
@@ -461,6 +471,12 @@ ___
 * A list of URLs for additional artifact repositories when installing Python packages.
 
 ---
+
+**`agent.package_manager.extra_pip_install_flags`** (*[string]*)
+
+* A list of additional flags to use when the agent install packages. For example: `["--use-deprecated=legacy-resolver", ]`
+
+---
         
 **`agent.package_manager.force_upgrade`** (*bool*)
            
@@ -515,6 +531,17 @@ ___
 **`agent.package_manager.priority_packages`** (*[string]*)
 
 * A list of packages with priority to be installed before the rest of the required packages. For example: `["cython", "numpy", "setuptools", ]`
+
+---
+
+**`agent.package_manager.pytorch_resolve`** (*str*)
+
+* Set the PyTorch resolving mode. The options are:
+  * `pip` (default) - Sets extra index based on cuda and lets pip resolve
+  * `none` - No resolving. Install PyTorch like any other package
+  * `direct` - Resolve a direct link to the PyTorch wheel by parsing the pytorch.org pip repository and matching the 
+  automatically detected cuda version with the required PyTorch wheel. If the exact cuda version is not found for the 
+  required PyTorch wheel, it will try a lower cuda version until a match is found
 
 ---
 
@@ -707,7 +734,7 @@ This configuration option is experimental, and has not been vigorously tested, s
 **`api.credentials`** (*dict*)
         
 * Dictionary of API credentials.   
-  Alternatively, specify the environment variable `CLEARML_API_ACCESS_KEY / CLEARML_API_SECRET_KEY` to override these keys.
+  Alternatively, specify the environment variable `CLEARML_API_ACCESS_KEY` / `CLEARML_API_SECRET_KEY` to override these keys.
 
         
 ---

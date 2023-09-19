@@ -14,15 +14,15 @@ dataset), and reports (uploads) the following to the main Task:
 * Scalars - Loss reported as a scalar during training in each Task in a subprocess.
 * Hyperparameters - Hyperparameters created in each Task are added to the hyperparameters in the main Task.
 
-Each Task in a subprocess references the main Task by calling [Task.current_task](../../references/sdk/task.md#taskcurrent_task), which always returns 
+Each Task in a subprocess references the main Task by calling [`Task.current_task()`](../../references/sdk/task.md#taskcurrent_task), which always returns 
 the main Task.
 
 When the script runs, it creates an experiment named `test torch distributed` in the `examples` project.
 
 ## Artifacts
 
-The example uploads a dictionary as an artifact in the main Task by calling the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
-method on [`Task.current_task`](../../references/sdk/task.md#taskcurrent_task) (the main Task). The dictionary contains the [`dist.rank`](https://pytorch.org/docs/stable/distributed.html#torch.distributed.get_rank) 
+The example uploads a dictionary as an artifact in the main Task by calling [`Task.upload_artifact()`](../../references/sdk/task.md#upload_artifact) 
+on [`Task.current_task`](../../references/sdk/task.md#taskcurrent_task) (the main Task). The dictionary contains the [`dist.rank`](https://pytorch.org/docs/stable/distributed.html#torch.distributed.get_rank) 
 of the subprocess, making each unique.
 
 ```python
@@ -38,8 +38,8 @@ All of these artifacts appear in the main Task under **ARTIFACTS** **>** **OTHER
 
 ## Scalars
 
-Loss is reported to the main Task by calling the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
-method on `Task.current_task().get_logger`, which is the logger for the main Task. Since `Logger.report_scalar` is called 
+Loss is reported to the main Task by calling the [`Logger.report_scalar()`](../../references/sdk/logger.md#report_scalar) 
+on `Task.current_task().get_logger()`, which is the logger for the main Task. Since `Logger.report_scalar` is called 
 with the same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are 
 logged together.
 

@@ -14,22 +14,21 @@ The example code preprocesses the downloaded data using Pandas DataFrames, and s
 * `Outcome dictionary` - Label enumeration for training.
 * `Processed data` - A dictionary containing the paths of the training and validation data.
 
-Each artifact is uploaded by calling the [Task.upload_artifact](../../../../../references/sdk/task.md#upload_artifact) 
-method. Artifacts appear in the **ARTIFACTS** tab.
+Each artifact is uploaded by calling [`Task.upload_artifact()`](../../../../../references/sdk/task.md#upload_artifact). 
+Artifacts appear in the **ARTIFACTS** tab.
 
 ![image](../../../../../img/download_and_preprocessing_02.png)
 
 ## Plots (tables)
 
-The example code explicitly reports the data in Pandas DataFrames by calling the [Logger.report_table](../../../../../references/sdk/logger.md#report_table)
-method.
+The example code explicitly reports the data in Pandas DataFrames by calling [`Logger.report_table()`](../../../../../references/sdk/logger.md#report_table).
 
 For example, the raw data is read into a Pandas DataFrame named `train_set`, and the `head` of the DataFrame is reported.
 
 ```python
 train_set = pd.read_csv(Path(path_to_ShelterAnimal) / 'train.csv')
 Logger.current_logger().report_table(
-    title='ClearMLet - raw',series='pandas DataFrame',iteration=0, table_plot=train_set.head()
+    title='ClearMLet - raw', series='pandas DataFrame', iteration=0, table_plot=train_set.head()
 )
 ```
 
@@ -39,8 +38,7 @@ The tables appear in **PLOTS**.
 
 ## Hyperparameters
 
-A parameter dictionary is logged by connecting it to the Task using a call to the [`Task.connect`](../../../../../references/sdk/task.md#connect) 
-method.
+A parameter dictionary is logged by connecting it to the Task using [`Task.connect()`](../../../../../references/sdk/task.md#connect).
 
 ```python
 logger = task.get_logger()

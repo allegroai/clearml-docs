@@ -10,8 +10,7 @@ The example script does the following:
   dataset
 * Creates an experiment named `pytorch mnist train with abseil` in the `examples` project
 * ClearML automatically logs the absl.flags, and the models (and their snapshots) created by PyTorch 
-* Additional metrics are logged by calling the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) 
-  method
+* Additional metrics are logged by calling [`Logger.report_scalar()`](../../../references/sdk/logger.md#report_scalar)
   
 ## Scalars
 

@@ -16,18 +16,20 @@ The script does the following:
     * Hyperparameters - Hyperparameters created in each subprocess Task are added to the main Task's hyperparameters.  
       
     
-  Each Task in a subprocess references the main Task by calling [Task.current_task](../../../references/sdk/task.md#taskcurrent_task), 
+  Each Task in a subprocess references the main Task by calling [`Task.current_task()`](../../../references/sdk/task.md#taskcurrent_task), 
     which always returns the main Task.
 
 1. When the script runs, it creates an experiment named `test torch distributed` in the `examples` project in the **ClearML Web UI**.
 
 ### Artifacts
 
-The example uploads a dictionary as an artifact in the main Task by calling the [Task.upload_artifact](../../../references/sdk/task.md#upload_artifact)
-method on `Task.current_task` (the main Task). The dictionary contains the `dist.rank` of the subprocess, making each unique.
+The example uploads a dictionary as an artifact in the main Task by calling [`Task.upload_artifact()`](../../../references/sdk/task.md#upload_artifact)
+on `Task.current_task` (the main Task). The dictionary contains the `dist.rank` of the subprocess, making each unique.
 
-    Task.current_task().upload_artifact(
-        'temp {:02d}'.format(dist.get_rank()), artifact_object={'worker_rank': dist.get_rank()})
+```python
+Task.current_task().upload_artifact(
+    'temp {:02d}'.format(dist.get_rank()), artifact_object={'worker_rank': dist.get_rank()})
+```
 
 All of these artifacts appear in the main Task, **ARTIFACTS** **>** **OTHER**.
 
@@ -35,12 +37,14 @@ All of these artifacts appear in the main Task, **ARTIFACTS** **>** **OTHER**.
 
 ## Scalars
 
-Report loss to the main Task by calling the [Logger.report_scalar](../../../references/sdk/logger.md#report_scalar) method 
+Report loss to the main Task by calling [`Logger.report_scalar()`](../../../references/sdk/logger.md#report_scalar) 
 on `Task.current_task().get_logger`, which is the logger for the main Task. Since `Logger.report_scalar` is called with the 
 same title (`loss`), but a different series name (containing the subprocess' `rank`), all loss scalar series are logged together.
 
-    Task.current_task().get_logger().report_scalar(
-        'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i)
+```python
+Task.current_task().get_logger().report_scalar(
+    'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i)
+```
 
 The single scalar plot for loss appears in **SCALARS**.
 
@@ -50,8 +54,7 @@ The single scalar plot for loss appears in **SCALARS**.
 
 ClearML automatically logs the command line options defined using `argparse`. 
 
-A parameter dictionary is logged by connecting it to the Task using a call to the [`Task.connect`](../../../references/sdk/task.md#connect) 
-method.
+A parameter dictionary is logged by connecting it to the Task using [`Task.connect()`](../../../references/sdk/task.md#connect).
 
 ```python
 param = {'worker_{}_stuff'.format(dist.get_rank()): 'some stuff ' + str(randint(0, 100))}

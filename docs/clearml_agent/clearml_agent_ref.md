@@ -15,9 +15,9 @@ The following page provides a reference to `clearml-agent`'s CLI commands:
 Use the `build` command to create worker environments without executing tasks. 
 
 You can build Docker containers according to the execution environments of specific tasks, which an agent can later
-use to execute other tasks. See tutorial [here](../guides/clearml_agent/exp_environment_containers.md).
+use to execute other tasks. See [tutorial](../guides/clearml_agent/exp_environment_containers.md).
 
-You can also create a Docker container that executes a specific task when launched. See tutorial [here](../guides/clearml_agent/executable_exp_containers.md). 
+You can also create a Docker container that executes a specific task when launched. See [tutorial](../guides/clearml_agent/executable_exp_containers.md). 
 
 ```bash
 clearml-agent build [-h] --id TASK_ID [--target TARGET]
@@ -46,7 +46,7 @@ clearml-agent build [-h] --id TASK_ID [--target TARGET]
 |`--install-globally`| Install the required Python packages before creating the virtual environment. Use `agent.package_manager.system_site_packages` to control the installation of the system packages. When `--docker` is used, `--install-globally` is always true.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--log-level`| SDK log level. The values are:<ul><li>`DEBUG`</li><li>`INFO`</li><li>`WARN`</li><li>`WARNING`</li><li>`ERROR`</li><li>`CRITICAL`</li></ul>|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--python-version`| Virtual environment Python version to use.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`-O`| Compile optimized pyc code (see python documentation). Repeat for more optimization.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`-O`| Compile optimized pyc code (see [python documentation](https://docs.python.org/3/using/cmdline.html#cmdoption-O)). Repeat for more optimization.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--target`| The target folder for the virtual environment and source code that will be used at launch.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 ## config
@@ -96,7 +96,7 @@ clearml-agent daemon [-h] [--foreground] [--queue QUEUES [QUEUES ...]] [--order-
 |`--gpus`| If running in Docker mode (see the `--docker` option), specify the active GPUs for the Docker containers to use. These are the same GPUs set in the `NVIDIA_VISIBLE_DEVICES` environment variable. For example: <ul><li>`--gpus 0`</li><li>`--gpu 0,1,2`</li><li>`--gpus all`</li></ul>|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`-h`, `--help`| Get help for this command.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--log-level`| SDK log level. The values are:<ul><li>`DEBUG`</li><li>`INFO`</li><li>`WARN`</li><li>`WARNING`</li><li>`ERROR`</li><li>`CRITICAL`</li></ul>|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`-O`| Compile optimized pyc code (see python documentation). Repeat for more optimization.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`-O`| Compile optimized pyc code (see [python documentation](https://docs.python.org/3/using/cmdline.html#cmdoption-O)). Repeat for more optimization.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--order-fairness`| Pull from each queue in a round-robin order, instead of priority order.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--queue`| Specify the queues which the worker is listening to. The values can be any combination of:<ul><li>One or more queue IDs</li><li>One or more queue names</li><li>`default` indicating the default queue</li></ul>|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--services-mode`| Launch multiple long-term docker services. Spin multiple, simultaneous Tasks, each in its own Docker container, on the same machine. Each Task will be registered as a new node in the system, providing tracking and transparency capabilities. Start up and shutdown of each Docker is verified. Use in CPU mode (`--cpu-only`) only. <br/> To limit the number of simultaneous tasks run in services mode, pass the maximum number immediately after the `--services-mode` option (e.g. `--services-mode 5`)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -137,7 +137,7 @@ clearml-agent execute [-h] --id TASK_ID [--log-file LOG_FILE] [--disable-monitor
 |`-h`, `--help`| Get help for this command.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--log-file`| The log file for Task execution output (stdout / stderr) to a text file.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--log-level`| SDK log level. The values are:<ul><li>`DEBUG`</li><li>`INFO`</li><li>`WARN`</li><li>`WARNING`</li><li>`ERROR`</li><li>`CRITICAL`</li></ul>|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`-O`| Compile optimized pyc code (see python documentation). Repeat for more optimization.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`-O`| Compile optimized pyc code (see [python documentation](https://docs.python.org/3/using/cmdline.html#cmdoption-O)). Repeat for more optimization.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--require-queue`| If the specified task is not queued, the execution will fail (used for 3rd party scheduler integration, e.g. K8s, SLURM, etc.)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--standalone-mode`| Do not use any network connects, assume everything is pre-installed|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 

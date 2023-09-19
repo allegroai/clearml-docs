@@ -59,7 +59,7 @@ No upload of the image file is required. Links to image files stored in Google S
 
 1. Click **Create** to import the image. The process can take several minutes depending on the size of the boot disk image.
 
-For more information see [Import the image to your custom images list](https://cloud.google.com/compute/docs/import/import-existing-image#import_image) in the [Compute Engine Documentation](https://cloud.google.com/compute/docs).
+For more information see the [Compute Engine Documentation](https://cloud.google.com/compute/docs/import/import-existing-image#import_image).
 
 ## Launching
 

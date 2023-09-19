@@ -84,7 +84,7 @@ following command on it:
 clearml-agent daemon --queue <queues_to_listen_to> [--docker]
 ```
 
-Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md), to help you manage cloud workloads in the 
+Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md) to help you manage cloud workloads in the 
 cloud of your choice (AWS, GCP, Azure) and automatically deploy ClearML agents: the autoscaler automatically spins up 
 and shuts down instances as needed, according to a resource budget that you set.
 

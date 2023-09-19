@@ -1,5 +1,5 @@
 ---
-title: Images Reporting
+title: Image Reporting
 ---
 
 The [image_reporting.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/image_reporting.py) example 
@@ -11,14 +11,13 @@ demonstrates reporting (uploading) images in several formats, including:
 * Local files. 
 
 ClearML uploads images to the bucket specified in the ClearML [configuration file](../../configs/clearml_conf.md), 
-or ClearML can be configured for image storage, see [Logger.set_default_upload_destination](../../references/sdk/logger.md#set_default_upload_destination) 
+or ClearML can be configured for image storage, see [`Logger.set_default_upload_destination()`](../../references/sdk/logger.md#set_default_upload_destination) 
 (storage for [artifacts](../../clearml_sdk/task_sdk.md#setting-upload-destination) is different). Set credentials for 
 storage in the ClearML configuration file.
 
 When the script runs, it creates an experiment named `image reporting` in the `examples` project.
 
-Report images using several formats by calling the [Logger.report_image](../../references/sdk/logger.md#report_image) 
-method:
+Report images using several formats by calling [`Logger.report_image()`](../../references/sdk/logger.md#report_image):
 
 ```python
 # report image as float image

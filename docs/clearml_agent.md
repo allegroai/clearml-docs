@@ -13,6 +13,8 @@ title: ClearML Agent
 </iframe>
 </div>
 
+<br/>
+
 **ClearML Agent** is a virtual environment and execution manager for DL / ML solutions on GPU machines. It integrates with the **ClearML Python Package** and ClearML Server to provide a full AI cluster solution. <br/>
 Its main focus is around:
 - Reproducing experiments, including their complete environments. 
@@ -35,6 +37,11 @@ The preceding diagram demonstrates a typical flow where an agent executes a task
    1.  Apply any uncommitted changes recorded.
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
+
+:::note Python Version
+ClearML Agent uses the Python version available in the environment or docker in which it executes the code. It does not 
+install Python, so make sure to use a docker or environment with the version you need.
+::: 
 
 While the agent is running, it continuously reports system metrics to the ClearML Server (these can be monitored in the 
 [**Orchestration**](webapp/webapp_workers_queues.md) page).  
@@ -342,7 +349,7 @@ ClearML Agent supports executing tasks in multiple environments.
 ### PIP Mode 
 By default, ClearML Agent works in PIP Mode, in which it uses [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) 
 as the package manager. When ClearML runs, it will create a virtual environment 
-(or reuse an existing one, see [here](clearml_agent.md#virtual-environment-reuse)).
+(or [reuse an existing one](clearml_agent.md#virtual-environment-reuse)).
 Task dependencies (Python packages) will be installed in the virtual environment.
 
 ### Conda Mode 
@@ -380,9 +387,7 @@ ClearML Agent uses the provided default Docker container, which can be overridde
 You can set the docker container via the UI: 
 1. Clone the experiment
 2. Set the Docker in the cloned task's **Execution** tab **> Container** section
-
-   ![Container section](../img/webapp_exp_container.png)
-
+   ![Container section](img/webapp_exp_container.png)
 3. Enqueue the cloned task
 
 The task will be executed in the container specified in the UI.
