@@ -32,8 +32,11 @@ By doubling clicking a thumbnail, you can view a spectrogram plot in the image v
 ClearML automatically logs TensorFlow Definitions. A parameter dictionary is logged by connecting it to the Task using 
 [`Task.connect()`](../../../../../references/sdk/task.md#connect).
 
-    configuration_dict = {'number_of_epochs': 3, 'batch_size': 4, 'dropout': 0.25, 'base_lr': 0.001}
-    configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
+```python
+configuration_dict = {'number_of_epochs': 3, 'batch_size': 4, 'dropout': 0.25, 'base_lr': 0.001}
+# enabling configuration override by clearml
+configuration_dict = task.connect(configuration_dict)
+```
 
 Parameter dictionaries appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **General**.
 

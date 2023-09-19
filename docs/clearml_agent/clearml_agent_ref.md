@@ -15,9 +15,9 @@ The following page provides a reference to `clearml-agent`'s CLI commands:
 Use the `build` command to create worker environments without executing tasks. 
 
 You can build Docker containers according to the execution environments of specific tasks, which an agent can later
-use to execute other tasks. See tutorial [here](../guides/clearml_agent/exp_environment_containers.md).
+use to execute other tasks. See [tutorial](../guides/clearml_agent/exp_environment_containers.md).
 
-You can also create a Docker container that executes a specific task when launched. See tutorial [here](../guides/clearml_agent/executable_exp_containers.md). 
+You can also create a Docker container that executes a specific task when launched. See [tutorial](../guides/clearml_agent/executable_exp_containers.md). 
 
 ```bash
 clearml-agent build [-h] --id TASK_ID [--target TARGET]
