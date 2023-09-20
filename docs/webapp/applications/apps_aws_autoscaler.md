@@ -191,12 +191,12 @@ The template policy below demonstrates how to restrict the autoscaler to launch 
 
 The policy includes the following permissions:
 * Enables performing certain EC2 actions on all resources in specified regions 
+* Enables performing certain EC2 actions on all resources of specified instance types 
 * Enables performing certain EC2 actions on specified resources (in selected subnet and security group, and any network-interface, volume, key-pair, instance) 
 * Enables performing an EC2 action to use on a specified AMI on condition that the `ec2:Owner` is a specified owner
 
 ```json
 {
-
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -220,10 +220,24 @@ The policy includes the following permissions:
             }
         },
         {
+            "Sid": "RunEC2InstanceType",
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": "*",
+            "Condition": {
+                "StringLikeIfExists": {
+                    "ec2:InstanceType": [
+                        "<instance type 1>",
+                        "<instance type 2>",
+                        "<instance type 3>"
+                    ]
+                }
+            }
+        },
+        {
             "Sid": "RunEC2",
             "Effect": "Allow",
             "Action": [
-                "ec2:RunInstances",
                 "ec2:CreateTags",
                 "ec2:DeleteTags",
                 "ec2:StartInstances",
