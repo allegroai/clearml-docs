@@ -720,7 +720,7 @@ You must use a secure protocol with ``api.web_server``, ``api.files_server``, an
 
 **`api.http.default_method`** (*string*)
 
-* Set the request method for all API requests and auth login. This could be useful when `GET` requests with payloads are 
+* Set the request method for all API requests and auth login. This can be useful when `GET` requests with payloads are 
 blocked by a server, and `POST` requests can be used instead. The request options are: "GET", "POST", "PUT".   
 
 :::caution

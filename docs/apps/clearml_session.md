@@ -147,7 +147,7 @@ The Task must be connected to a git repository, since currently single script de
 :::
 
 1. In the **ClearML web UI**, find the experiment (Task) that needs debugging.
-1. Click on the ID button next to the Task name, and copy the unique ID.
+1. Click the `ID` button next to the Task name, and copy the unique ID.
 1. Enter the following command: `clearml-session --debugging-session <experiment_id_here>`
 1. Click on the JupyterLab / VS Code link, or connect directly to the SSH session.
 1. In JupyterLab / VS Code, access the experiment's repository in the `environment/task_repository` folder. 
