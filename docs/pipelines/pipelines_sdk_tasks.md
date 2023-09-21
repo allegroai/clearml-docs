@@ -105,7 +105,7 @@ See [add_step](../references/sdk/automation_controller_pipelinecontroller.md#add
 #### parameter_override
 Use the `parameter_override` argument to modify the step’s parameter values. The `parameter_override` dictionary key is 
 the task parameter’s full path, which includes the parameter section's name and the parameter name separated by a slash 
-(e.g. `'General/dataset_url'`). Passing `"${}"` in the argument value allows you to reference input/output configurations 
+(e.g. `'General/dataset_url'`). Passing `"${}"` in the argument value lets you reference input/output configurations 
 from other pipeline steps. For example: `"${<step_name>.id}"` will be converted to the Task ID of the referenced pipeline 
 step.
 
