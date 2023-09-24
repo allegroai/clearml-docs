@@ -166,7 +166,7 @@ comparison.
 
 Open a debug sample (image, audio, or video) in the viewer or player, by clicking the thumbnail.
 
-![Debug Sample viewer](../img/examples_reporting_07a.png)
+![Debug Sample viewer](../img/webapp_tracking_44.png)
 
 To move to the same sample in another iteration, click <img src="/docs/latest/icons/ico-previous.svg" alt="Left arrow" className="icon size-md space-sm" />
 (previous), <img src="/docs/latest/icons/ico-next.svg" alt="Right arrow" className="icon size-md space-sm" /> (next), or move the slider.
