@@ -29,12 +29,12 @@ ClearML automatically logs command line options defined with argparse and Tensor
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab.
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab.
 
 ![PyTorch Lightning model](../../../img/examples_pytorch_lightning_model.png)
 
-Clicking on a model name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can view 
-the model’s details and access the model.
+Clicking on a model name takes you to the [model's page](../../../webapp/webapp_model_viewing.md), where you can view 
+the model's details and access the model.
 
 ## Console
 

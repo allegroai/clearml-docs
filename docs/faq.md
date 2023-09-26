@@ -1125,7 +1125,7 @@ configuration option `agent.package_manager.system_site_packages` to `true`.
 #### How can I use the ClearML API to fetch data?   <a className="tr_top_negative" id="api"></a>
 
 You can use the `APIClient` class, which provides a Pythonic interface to access ClearML's backend REST API. Through 
-an `APIClient` instance, you can access ClearML’s REST API services and endpoints. 
+an `APIClient` instance, you can access ClearML's REST API services and endpoints. 
 
 To use `APIClient`, create an instance of it, then call the method corresponding to the desired REST API endpoint, with 
 its respective parameters as described in the [REST API reference page](references/api/index.md). 

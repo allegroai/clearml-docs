@@ -24,7 +24,7 @@ Each node in the graph represents a dataset version, and shows the following det
 * Version size 
 * Version update time
 * Version details button - Hover over the version and click <img src="/docs/latest/icons/ico-console.svg" alt="console" className="icon size-md space-sm" /> 
-  to view the version’s [details panel](#version-details-panel) 
+  to view the version's [details panel](#version-details-panel) 
   
 :::tip archiving versions
 You can archive dataset versions so the versions list doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of 
@@ -65,7 +65,7 @@ On the right side of the dataset version panel, view the **VERSION INFO** which 
 
 </div>
 
-To view a version’s detailed information, click **Full details**, which will open the dataset version’s [task page](../webapp_exp_track_visual.md).
+To view a version's detailed information, click **Full details**, which will open the dataset version's [task page](../webapp_exp_track_visual.md).
 
 ![Dataset task info](../../img/webapp_dataset_task_page.png)
 
@@ -84,7 +84,7 @@ to view the version's details panel. The panel includes three tabs:
 
   ![preview](../../img/webapp_dataset_preview.png)
 
-* **CONSOLE** - The dataset version’s console output
+* **CONSOLE** - The dataset version's console output
 
   ![console](../../img/webapp_dataset_console.png)
 

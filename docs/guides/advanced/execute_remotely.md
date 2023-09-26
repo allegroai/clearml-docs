@@ -70,7 +70,7 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks models
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks models
 and any snapshots created using PyTorch. 
 
 ![Experiment artifacts](../../img/examples_remote_execution_artifacts.png)
