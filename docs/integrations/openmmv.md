@@ -44,6 +44,6 @@ The `init_kwargs` dictionary can include any parameter from [`Task.init()`](../r
 This creates a [ClearML Task](../fundamentals/task.md) `OpenMMLab cifar10` in the `examples` project.
 You can view the captured metrics in the experiment's **Scalars** tab in the [WebApp](../webapp/webapp_overview.md).
 
-![OpenMMLab scalars](../img/itegration_openmmlab_scalars.png)
+![OpenMMLab scalars](../img/integration_openmmlab_scalars.png)
 
 See OpenMMLab code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/openmmlab/openmmlab_cifar10.py).
