@@ -106,7 +106,7 @@ logged as required packages for the pipeline execution step.
    The pipeline will be launched remotely, through the `services` queue, unless otherwise specified.  
    
 ## WebApp
-When the experiment is executed, the terminal returns the task ID, and links to the pipeline controller task page and pipeline page. 
+When the experiment is executed, the console output displays the task ID, and links to the pipeline controller task page and pipeline page. 
 
 ```
 ClearML Task: created new task id=bc93610688f242ecbbe70f413ff2cf5f

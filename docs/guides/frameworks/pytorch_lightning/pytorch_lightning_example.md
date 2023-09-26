@@ -17,7 +17,7 @@ The test loss and validation loss plots appear in the experiment's page in the C
 Resource utilization plots, which are titled **:monitor: machine**, also appear in the **SCALARS** tab. All of these 
 plots are automatically captured by ClearML. 
 
-![PyTorch Lightning console](../../../img/examples_pytorch_lightning_scalars.png)
+![PyTorch Lightning scalars](../../../img/examples_pytorch_lightning_scalars.png)
 
 
 ## Hyperparameters
