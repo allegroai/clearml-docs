@@ -75,7 +75,6 @@ The experiment info panel shows model tracking, including the model name and des
 
 ![image](../../../img/examples_keras_jupyter_23.png)
 
-
 The model info panel contains the model details, including the model URL, framework, and snapshot locations.
 
 ![image](../../../img/examples_keras_jupyter_24.png)
