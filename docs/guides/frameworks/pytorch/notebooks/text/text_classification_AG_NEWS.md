@@ -16,7 +16,7 @@ Accuracy, learning rate, and training loss appear in **SCALARS**, along with the
 
 ## Debug Samples
 
-ClearML automatically logs the text samples reported to TensorBoard. They are displayed in the experiment's **Debug Samples**.
+ClearML automatically logs the text samples reported to TensorBoard. They are displayed in the experiment's **DEBUG SAMPLES**.
 
 ![Debug samples](../../../../../img/text_classification_AG_NEWS_04.png)
 
