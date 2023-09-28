@@ -21,8 +21,8 @@ The optimizer Task, `Hyperparameter Optimization`, and the experiments appear in
 
 ### Hyperparameters
 
-The `HyperParameterOptimizer`'s configuration, which is provided when the object instantiated, are stored under the 
-optimizer task's **CONFIGURATION** **>** **HYPERPARAMETERS**.
+The `HyperParameterOptimizer`'s configuration, which is provided when the object instantiated, are displayed in the 
+optimizer task's **CONFIGURATION > HYPERPARAMETERS > General** section.
 
 ```python
 optimizer = HyperParameterOptimizer(
@@ -83,48 +83,11 @@ provides a summary of the optimization results in tabular and parallel coordinat
 
 ![Experiment summary plot](../../../../../img/examples_hyperparameter_search_02b.png)
 
-
-## Experiments Comparison
-
 ## Experiments Comparison
 
 ClearML automatically logs each job, meaning each experiment that executes with a set of hyperparameters, separately. Each appears as an individual experiment in the ClearML Web UI, where the Task name is `image_classification_CIFAR10` and the hyperparameters appended.
 For example: `image_classification_CIFAR10: base_lr=0.0075 batch_size=12 dropout=0.05 number_of_epochs=6`
 
-Use the ClearML Web UI [experiment comparison](../../../../../webapp/webapp_exp_comparing.md) to visualize the following:
+When these experiments are completed, their configuration, results, plots, and debug samples can be compared using the WebApp [comparison features](../../../../../webapp/webapp_exp_comparing.md).
 
-* Side by side hyperparameter value comparison
-* Metric comparison by hyperparameter
-* Scalars by specific values and series
-* Plots
-* Debug images
-
-### Side by Side Hyperparameter Value Comparison
-
-In the experiment comparison window, **HYPERPARAMETERS** tab, select **Values** in the list (the right of **+ Add Experiment**), and hyperparameter differences appear with a different background color.
-
-![Hyperparameter comparison](../../../../../img/examples_hyperparameter_search_06.png)
-
-### Metric Comparison by Hyperparameter
-
-Select **Parallel Coordinates** in the list, click a **Performance Metric**, and then select the checkboxes of the hyperparameters.
-
-![Metric comparison](../../../../../img/examples_hyperparameter_search_07.png)
-
-### Scalar Values Comparison
-
-In the **SCALARS** tab, select **Last Values**, **Min Values**, or **Max Values**. Value differences appear with a different background color.
-
-![Scalar value comparison](../../../../../img/examples_hyperparameter_search_09.png)
-
-### Scalar Series Comparison
-
-Select **Graph** and the scalar series for the jobs appears, where each scalar plot shows the series for all jobs.
-
-![Scalar series comparison](../../../../../img/examples_hyperparameter_search_08.png)
-
-### Debug Samples Comparison
-
-In the **DEBUG SAMPLES** tab, debug images appear.
-
-![Debug sample comparison](../../../../../img/examples_hyperparameter_search_10.png)
+![Comparison scalars](../../../../../img/examples_hyperparameter_search_09.png)
