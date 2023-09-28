@@ -60,58 +60,13 @@ pipe.add_step(
       'General/fill_numerical_NA': 'True'
    }
 )
-
 ```    
-    
 
 The preprocessing data Task fills in values of `NaN` data based on the values of the parameters named `fill_categorical_NA` 
 and `fill_numerical_NA`. It will connect a parameter dictionary to the Task which contains keys with those same names. 
 The pipeline will override the values of those keys when the pipeline executes the cloned Tasks of the base Task. In this way, 
 two sets of data are created in the pipeline.
-
-<Collapsible type="info" title="ClearML tracks and reports the preprocessing step">
-
-In the preprocessing data Task, the parameter values in ``data_task_id``, ``fill_categorical_NA``, and ``fill_numerical_NA`` are overridden.
-```python
-configuration_dict = {
-   'data_task_id': TABULAR_DATASET_ID,
-   'fill_categorical_NA': True, 
-   'fill_numerical_NA': True
-}
-configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
-```
-
-ClearML tracks and reports each instance of the preprocessing Task.
-
-The raw data appears as a table in **PLOTS**.
-
-These images are from one of the two preprocessing Tasks.
-   
-![image](../../../../../img/preprocessing_and_encoding_02.png)
-
-The data after filling NA values is also reported.
-   
-![image](../../../../../img/preprocessing_and_encoding_03.png)
-   
-After an outcome dictionary (label enumeration) is created, it appears in **ARTIFACTS** **>** **OTHER** **>** **Outcome Dictionary**.
-
-![image](../../../../../img/preprocessing_and_encoding_04.png)
-
-The training and validation data is labeled with the encoding and reported as table.
-   
-![image](../../../../../img/preprocessing_and_encoding_05.png)
-
-The column categories are created and uploaded as artifacts, which appear in appears in **ARTIFACTS** **>** **OTHER** **>** **Outcome Dictionary**.
-   
-![image](../../../../../img/preprocessing_and_encoding_06.png)
-
-Finally, the training data and validation data are stored as artifacts.
-   
-![image](../../../../../img/preprocessing_and_encoding_07.png)   
-
-</Collapsible>
-   
-
+ 
 ### Training Step
 
 Each training node depends upon the completion of one preprocessing node. The parameter `parents` is a list of step names indicating all steps that must complete before the new step starts. In this case, `preprocessing_1` must complete before `train_1` begins, and `preprocessing_2` must complete before `train_2` begins.
@@ -139,38 +94,6 @@ pipe.add_step(
 )
 ```
    
-<Collapsible type="info" title="ClearML tracks and reports the training step">
-
-In the training Task, the ``data_task_id`` parameter value is overridden. This allows the pipeline controller to pass a 
-different Task ID to each instance of training, where each Task has an artifact containing different data.
-  
-```python
-configuration_dict = {
-    'data_task_id': TABULAR_DATASET_ID, 
-    'number_of_epochs': 15, 'batch_size': 100, 'dropout': 0.3, 'base_lr': 0.1
-}
-configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
-   ```
-    
-ClearML tracks and reports the training step with each instance of the newly cloned and executed training Task.
-
-ClearML automatically logs training loss and learning. They appear in **SCALARS**.
-
-The following images show one of the two training Tasks.
-
-![image](../../../../../img/train_tabular_predictor_04.png)
-
-Parameter dictionaries appear in the **General** subsection.
-
-![image](../../../../../img/train_tabular_predictor_01.png)
-   
-The TensorFlow Definitions appear in the **TF_DEFINE** subsection.
-
-![image](../../../../../img/train_tabular_predictor_02.png)
-   
-</Collapsible>
-   
-
 ### Best Model Step
 
 The best model step depends upon both training nodes completing and takes the two training node Task IDs to override.
@@ -189,36 +112,28 @@ pipe.add_step(
        
 The IDs of the training Tasks from the steps named `train_1` and `train_2` are passed to the best model Task. They take the form `${<stage-name>.<part-of-Task>}`.           
 
-<Collapsible type="info" title="ClearML tracks and reports the best model step">
-
-In the best model Task, the `train_tasks_ids` parameter is overridden with the Task IDs of the two training tasks.
+### Set Default Execution Queue
+Set the default execution queue for pipeline steps that did not specify an execution queue. The pipeline steps will be 
+enqueued for execution in this queue.
 
 ```python
-configuration_dict = {
-   'train_tasks_ids': 
-      ['c9bff3d15309487a9e5aaa00358ff091', 'c9bff3d15309487a9e5aaa00358ff091']
-}
-configuration_dict = task.connect(configuration_dict)  # enabling configuration override by clearml
+pipe.set_default_execution_queue(default_execution_queue="default")
 ```
 
-The logs show the Task ID and accuracy for the best model in **CONSOLE**.
-   
-![image](../../../../../img/tabular_training_pipeline_02.png)
-   
-The link to the model details is in **ARTIFACTS** **>** **Output Model**.
-        
-![image](../../../../../img/tabular_training_pipeline_03.png)
-   
-The model details appear in the **MODELS** table **>** **>GENERAL**.
-   
-![image](../../../../../img/tabular_training_pipeline_04.png)
-   
-</Collapsible>
-   
+:::note
+Make sure to assign a [ClearML Agent](../../../../../clearml_agent.md) to the queue which the steps are enqueued, so they will be executed
+:::
 
-### Pipeline Start, Wait, and Cleanup
+### Pipeline Execution
 
-Once all steps are added to the pipeline, start it. Wait for it to complete. Finally, cleanup the pipeline processes.
+Start the pipeline! [`PipelineController.start()`](../../../../../references/sdk/automation_controller_pipelinecontroller.md#start) launches 
+the pipeline controller through the services queue, unless otherwise specified. The pipeline steps are enqueued to their 
+respective queues or in the default execution queue.
+
+To launch the pipeline controller locally use [`PipelineController.start_locally()`](../../../../../references/sdk/automation_controller_pipelinecontroller.md#start_locally) 
+instead. To run the pipeline steps locally as well, pass `run_pipeline_steps_locally=True`.
+
+Once the pipeline starts, wait for it to complete. Finally, clean up the pipeline processes.
 
 ```python
 # Starting the pipeline (in the background)
@@ -229,37 +144,37 @@ pipe.wait()
 pipe.stop()
 ```
 
-<Collapsible type="info" title="ClearML tracks and reports the pipeline's execution">
-
-ClearML reports the pipeline with its steps in **PLOTS**.
-   
-![image](../../../../../img/tabular_training_pipeline_01.png)
-   
-By hovering over a step or path between nodes, you can view information about it.
-       
-![image](../../../../../img/tabular_training_pipeline_06.png)
-   
-</Collapsible>
-
-
 ## Running the Pipeline
 
 **To run the pipeline:**
 
 1. Download the data by running the notebook [download_and_split.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/download_and_split.ipynb).
-
 1. Run the script for each of the steps, if the script has not run once before.
-
     * [preprocessing_and_encoding.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/preprocessing_and_encoding.ipynb)
     * [train_tabular_predictor.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/train_tabular_predictor.ipynb)
     * [pick_best_model.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/pick_best_model.ipynb).
-
 1. Run the pipeline controller one of the following two ways:
-
     * Run the notebook [tabular_ml_pipeline.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/table/tabular_ml_pipeline.ipynb).
-    * Remotely execute the Task - If the Task `tabular training pipeline` which is associated with the project `Tabular Example` already exists in ClearML Server, clone it and enqueue it to execute.  
+    * If you have already run the pipeline, you can rerun it via the UI (see [Pipeline Runs](../../../../../pipelines/pipelines.md#pipeline-runs)).   
       
-
 :::note 
-If you enqueue a Task, a worker must be listening to that queue for the Task to execute.
+If you enqueue a Task, a [ClearML Agent](../../../../../clearml_agent.md) must be listening to that queue for the Task to execute.
 :::
+
+## WebApp
+
+View the pipeline’s structure and the execution status of every step, as well as its 
+configuration parameters and output in the [WebApp](../../../../../webapp/pipelines/webapp_pipeline_viewing.md).
+   
+![Pipeline Dag](../../../../../img/tabular_training_pipeline_01.png)
+   
+Click on a step node the execution graph to view its details, including its parameters and metrics.
+       
+![Pipeline step information](../../../../../img/tabular_training_pipeline_06.png)
+   
+To view a step’s details panel, click **DETAILS** and then click on a step node, or hover over a step node and click <img src="/docs/latest/icons/ico-console.svg" alt="details" className="icon size-md space-sm" />.
+The details panel includes the **PREVIEW** tab, where you can view the plots attached to a step. 
+
+![Pipeline plots](../../../../../img/tabular_training_pipeline_07.png)
+
+For more information on the pipeline UI, see [Pipeline Run Details](../../../../../webapp/pipelines/webapp_pipeline_viewing.md).
