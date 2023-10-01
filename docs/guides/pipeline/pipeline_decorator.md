@@ -77,7 +77,7 @@ To run the pipeline, call the pipeline controller function.
 
 ## WebApp
 
-When the experiment is executed, the terminal returns the task ID, and links to the pipeline controller task page and pipeline page. 
+When the experiment is executed, the console output displays the task ID, and links to the pipeline controller task page and pipeline page. 
 
 ```
 ClearML Task: created new task id=bc93610688f242ecbbe70f413ff2cf5f
@@ -85,13 +85,13 @@ ClearML results page: https://app.clear.ml/projects/462f48dba7b441ffb34bddb78371
 ClearML pipeline page: https://app.clear.ml/pipelines/462f48dba7b441ffb34bddb783711da7/experiments/bc93610688f242ecbbe70f413ff2cf5f
 ```
 
-The pipeline run’s page contains the pipeline’s structure, the execution status of every step, as well as the run’s 
+The pipeline run's page contains the pipeline's structure, the execution status of every step, as well as the run's 
 configuration parameters and output.
 
 ![Pipeline DAG](../../img/examples_pipeline_from_decorator_DAG.png)
 
-To view a run’s complete information, click **Full details** on the bottom of the **Run Info** panel, which will open the 
-pipeline’s [controller task page](../../webapp/webapp_exp_track_visual.md).
+To view a run's complete information, click **Full details** on the bottom of the **Run Info** panel, which will open the 
+pipeline's [controller task page](../../webapp/webapp_exp_track_visual.md).
 
 Click a step to see an overview of its details.
 
@@ -99,11 +99,11 @@ Click a step to see an overview of its details.
 
 ## Console and Code
 
-Click **DETAILS** to view a log of the pipeline controller’s console output.   
+Click **DETAILS** to view a log of the pipeline controller's console output.   
 
 ![Pipeline console](../../img/examples_pipeline_from_decorator_console.png)
 
-Click on a step to view its console output. You can also view the selected step’s code by clicking **CODE**
+Click on a step to view its console output. You can also view the selected step's code by clicking **CODE**
 on top of the console log.
 
 ![Pipeline step code](../../img/examples_pipeline_from_decorator_code.png)

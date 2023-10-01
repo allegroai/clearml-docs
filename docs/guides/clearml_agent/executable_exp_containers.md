@@ -2,7 +2,7 @@
 title: Executable Experiment Containers
 ---
 
-This tutorial demonstrates using [`clearml-agent`](../../clearml_agent.md)’s [`build`](../../clearml_agent/clearml_agent_ref.md#build) 
+This tutorial demonstrates using [`clearml-agent`](../../clearml_agent.md)'s [`build`](../../clearml_agent/clearml_agent_ref.md#build) 
 command to package an experiment into an executable container. In this example, you will build a Docker image that, when 
 run, will automatically execute the [keras_tensorboard.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py)
 script.
@@ -13,7 +13,7 @@ script.
 * [clearml](https://github.com/allegroai/clearml) repo cloned (`git clone https://github.com/allegroai/clearml.git`)
 
 ## Creating the ClearML Experiment
-1. Set up the experiment’s execution environment:
+1. Set up the experiment's execution environment:
    
    ```console
    cd clearml/examples/frameworks/keras

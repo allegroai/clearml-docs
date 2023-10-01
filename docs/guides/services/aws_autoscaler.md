@@ -151,9 +151,9 @@ Make sure a `clearml-agent` is assigned to that queue.
 ## WebApp
 ### Configuration 
 
-The values configured through the wizard are stored in the task’s hyperparameters and configuration objects by using the 
+The values configured through the wizard are stored in the task's hyperparameters and configuration objects by using the 
 [`Task.connect`](../../references/sdk/task.md#connect) and [`Task.set_configuration_object`](../../references/sdk/task.md#set_configuration_object) 
-methods respectively. They can be viewed in the WebApp, in the task’s **CONFIGURATION** page under **HYPERPARAMETERS** and **CONFIGURATION OBJECTS > General**. 
+methods respectively. They can be viewed in the WebApp, in the task's **CONFIGURATION** page under **HYPERPARAMETERS** and **CONFIGURATION OBJECTS > General**. 
 
 ClearML automatically logs command line arguments defined with argparse. View them in the experiments **CONFIGURATION** 
 page under **HYPERPARAMETERS > General**.
@@ -161,11 +161,11 @@ page under **HYPERPARAMETERS > General**.
 ![Autoscaler configuration](../../img/examples_aws_autoscaler_config.png)
 
 The task can be reused to launch another autoscaler instance: clone the task, then edit its parameters for the instance 
-types and budget configuration, and enqueue the task for execution (you’ll typically want to use a ClearML Agent running 
+types and budget configuration, and enqueue the task for execution (you'll typically want to use a ClearML Agent running 
 in [services mode](../../clearml_agent.md#services-mode) for such service tasks).
 
 ### Console
 
-All other console output appears in the experiment’s **CONSOLE**.
+All other console output appears in the experiment's **CONSOLE**.
 
 ![Autoscaler console](../../img/examples_aws_autoscaler_console.png)

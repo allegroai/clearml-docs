@@ -40,12 +40,12 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks 
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks 
 models and any snapshots created using PyTorch. 
 
 ![image](../../../img/examples_pytorch_tensorboard_02.png)
 
-Clicking on a model's name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can view 
-the model’s details and access the model.
+Clicking on a model's name takes you to the [model's page](../../../webapp/webapp_model_viewing.md), where you can view 
+the model's details and access the model.
 
 ![image](../../../img/examples_pytorch_tensorboard_03.png)

@@ -79,17 +79,17 @@ The script supports the following additional command line options:
 
 ## Configuration
     
-ClearML automatically logs command line options defined with argparse. They appear in the experiment’s **CONFIGURATION** 
+ClearML automatically logs command line options defined with argparse. They appear in the experiment's **CONFIGURATION** 
 page under **HYPERPARAMETERS > Args**.
 
 ![Monitoring configuration](../../img/examples_slack_config.png)
 
 The task can be reused to launch another monitor instance: clone the task, edit its parameters, and enqueue the task for 
-execution (you’ll typically want to use a ClearML Agent running in [services mode](../../clearml_agent.md#services-mode) 
+execution (you'll typically want to use a ClearML Agent running in [services mode](../../clearml_agent.md#services-mode) 
 for such service tasks).
 
 ## Console
-All console output appears in the experiment’s **CONSOLE** page.
+All console output appears in the experiment's **CONSOLE** page.
 
 ## Additional Information about slack_alerts.py
 
