@@ -5,7 +5,7 @@ title: CLI
 The `clearml-serving` utility is a CLI tool for model deployment and orchestration. 
 
 The following page provides a reference for `clearml-serving`'s CLI commands:
-* [list](#list) -  List running Serving Services
+* [list](#list) - List running Serving Services
 * [create](#create) - Create a new Serving Service
 * [metrics](#metrics) - Configure inference metrics Service
 * [config](#config) - Configure a new Serving Service
@@ -21,7 +21,7 @@ clearml-serving [-h] [--debug] [--yes] [--id ID] {list,create,metrics,config,mod
 
 |Name|Description|Optional|
 |---|---|---|
-|`--id`|Serving Service (Control plane) Task ID to configure (if not provided automatically detect the running control plane Task) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+|`--id`|Serving Service (Control plane) Task ID to configure (if not provided, automatically detect the running control plane Task) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 |`--debug` |  Print debug messages | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--yes` |Always answer YES on interactive inputs| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 
@@ -198,7 +198,7 @@ clearml-serving model upload [-h] --name NAME [--tags TAGS [TAGS ...]] --project
 |`--name`|Specifying the model name to be registered in| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--tags`| Add tags to the newly created model| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--project`| Specify the project for the model to be registered in| <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
-|`--framework`| Specify the model framework. Options are: 'tensorflow', 'tensorflowjs', 'tensorflowlite', 'pytorch', 'torchscript', 'caffe', 'caffe2', 'onnx', 'keras', 'mknet', 'cntk' , 'torch', 'darknet', 'paddlepaddle', 'scikitlearn', 'xgboost', 'lightgbm', 'parquet', 'megengine', 'catboost', 'tensorrt', 'openvino', 'custom' | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--framework`| Specify the model framework. Options are: 'tensorflow', 'tensorflowjs', 'tensorflowlite', 'pytorch', 'torchscript', 'caffe', 'caffe2', 'onnx', 'keras', 'mknet', 'cntk', 'torch', 'darknet', 'paddlepaddle', 'scikitlearn', 'xgboost', 'lightgbm', 'parquet', 'megengine', 'catboost', 'tensorrt', 'openvino', 'custom' | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--publish`| Publish the newly created model (change model state to "published" (i.e. locked and ready to deploy)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--path`|Specify a model file/folder to be uploaded and registered| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--url`| Specify an already uploaded model url (e.g. `s3://bucket/model.bin`, `gs://bucket/model.bin`)|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|

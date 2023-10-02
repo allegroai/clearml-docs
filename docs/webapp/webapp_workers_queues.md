@@ -72,7 +72,7 @@ The worker’s details panel includes the following two tabs:
     * Current Experiment - The experiment currently being executed by the worker
     * Experiment Runtime - How long the currently executing experiment has been running
     * Experiment iteration - The last reported training iteration for the experiment
-* **QUEUES** -  Information about the queues that the worker is assigned to:
+* **QUEUES** - Information about the queues that the worker is assigned to:
     * Queue - The name of the Queue
     * Next experiment - The next experiment available in this queue
     * In Queue - The number of experiments currently enqueued
@@ -117,7 +117,7 @@ Clicking on a queue will open the queue’s details panel and replace the graphs
 The queue’s details panel includes the following two tabs: 
 * **EXPERIMENTS** - A list of experiments in the queue. You can reorder and remove enqueued experiments. See 
   [Controlling Queue Contents](#controlling-queue-contents).
-* **WORKERS**  - Information about the workers assigned to the queue:
+* **WORKERS** - Information about the workers assigned to the queue:
   * Name - Worker name
   * IP - Worker’s IP
   * Currently Executing - The experiment currently being executed by the worker

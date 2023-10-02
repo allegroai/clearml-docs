@@ -13,8 +13,8 @@ The example in [Jupyter Notebook](https://github.com/allegroai/clearml/blob/mast
 includes a clickable icon to open the notebook in Google Colab.
 :::
 
-When the example runs, it creates an experiment named `Matplotlib example`, 
-which is associated with the `examples` project (in script) or the `Colab notebooks` project (in Jupyter Notebook).
+When the example runs, it creates an experiment named `Matplotlib example`
+in the `examples` project (in script) or the `Colab notebooks` project (in Jupyter Notebook).
 
 
 
@@ -22,18 +22,18 @@ which is associated with the `examples` project (in script) or the `Colab notebo
 
 The scatter plots appear in the **ClearML Web UI**, in **PLOTS**.
 
-![image](../../../img/examples_matplotlib_example_01.png)
+![Matplotlib plot 1](../../../img/examples_matplotlib_example_01.png)
 
-![image](../../../img/examples_matplotlib_example_02.png)
+![Matplotlib plot 2](../../../img/examples_matplotlib_example_02.png)
 
-![image](../../../img/examples_matplotlib_example_03.png)
+![Matplotlib plot 3](../../../img/examples_matplotlib_example_03.png)
 
 ## Debug Samples
 
 The images appear in **DEBUG SAMPLES**. Each debug sample image is associated with a metric.
 
-![image](../../../img/examples_matplotlib_example_04.png)
+![Matplotlib image plot](../../../img/examples_matplotlib_example_04.png)
 
 View the debug sample in the image viewer.
 
-![image](../../../img/examples_matplotlib_example_05.png)
+![Image viewer](../../../img/examples_matplotlib_example_05.png)

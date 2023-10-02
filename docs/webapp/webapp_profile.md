@@ -241,7 +241,7 @@ The system includes three pre-configured groups that can't be removed:
 * `Users` - All users. Can't be modified
 * `Admins` - Have RW access to all resources (except queue modification), and can grant users / user groups access 
   permissions to workspace resources
-* `Queue admins` -  Can create / delete / rename queues
+* `Queue admins` - Can create / delete / rename queues
 
 The user group table lists all the active user groups. Each row includes a group's name, description, member list, and ID. 
 

@@ -7,7 +7,7 @@ script integrates ClearML into code that uses [PyTorch Ignite](https://github.co
 
 The example script does the following:
 * Trains a neural network on the CIFAR10 dataset for image classification.
-* Creates a [ClearML Task](../../../fundamentals/task.md) named `image classification CIFAR10`, which is associated with 
+* Creates a [ClearML Task](../../../fundamentals/task.md) named `image classification CIFAR10` in
   the `examples` project.
 * Calls the [`Task.connect`](../../../references/sdk/task.md#connect) method to track experiment configuration.
 * Uses `ignite`'s `TensorboardLogger` and attaches handlers to it. See [`TensorboardLogger`](https://github.com/pytorch/ignite/blob/master/ignite/contrib/handlers/tensorboard_logger.py). 

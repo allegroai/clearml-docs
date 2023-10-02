@@ -7,7 +7,7 @@ title: Tasks
 A Task is a single code execution session, which can represent an experiment, a step in a workflow, a workflow controller, 
 or any custom implementation you choose.
 
-To transform an existing script into a **ClearML Task**, one must call the [`Task.init()`](../references/sdk/task.md#taskinit) method 
+To transform an existing script into a **ClearML Task**, call the [`Task.init()`](../references/sdk/task.md#taskinit) method 
 and specify a task name and its project. This creates a Task object that automatically captures code execution 
 information as well as execution outputs.
 
@@ -21,7 +21,7 @@ Tasks are grouped into a [project](projects.md) hierarchical structure, similar 
 how to group tasks, though different models or objectives are usually grouped into different projects.
 
 Tasks can be accessed and utilized with code. [Access a task](../clearml_sdk/task_sdk.md#accessing-tasks) by 
-specifying project name & task name combination or by a unique ID. 
+specifying project name and task name combination or by a unique ID. 
 
 It's possible to create copies of a task ([clone](../webapp/webapp_exp_reproducing.md)) then execute them with 
 [ClearML Agent](../clearml_agent.md). When an agent executes a task, it uses the specified configuration to:

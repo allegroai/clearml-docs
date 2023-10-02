@@ -70,7 +70,7 @@ A standard embed code is formatted like this:
 
 ```
 <iframe
-  src="<web_server>/widgets/?type=sample&objectType=task&objects=<object_id>&metrics=<metric_name>&variants=Plot%20as%20an%20image&company=<company/workspace_id>"
+  src="<web_server>/widgets/?type=sample&objectType=task&objects=<object_id>&xaxis=iter&metrics=<metric_name>&variants=Plot%20as%20an%20image&company=<company/workspace_id>"
   width="100%" height="400"
 ></iframe>
 ```
@@ -100,7 +100,10 @@ resources will be displayed. See [Dynamic Queries](#dynamic-queries) below.
         * `min_value`
         * `max_value`
         * `value` (last value)
-* `models` - Model IDs. Specify multiple IDs like this: `models=<id>&models=<id>&models<id>`.
+* `xaxis` - Set the x-axis units for plots. The options are:
+  * `iter` - Iteration (default)
+  * `timestamp` - Time from start
+  * `iso_time` - Wall time
 * `metrics` - Metric name 
 * `variants` - Variant’s name
 * `company` - Workspace ID. Applicable to the ClearML hosted service, for embedding content from a different workspace 
@@ -130,7 +133,7 @@ used.
 * Request the scalars plot of a specific metric variant for the latest experiment in a project:
 
   ```
-  src="<web_server>/widgets/?objectType=task&type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
+  src="<web_server>/widgets/?objectType=task&xaxis=iter&type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
   ```
   Notice that the `project` parameter is specified. In order to get the most recent single experiment, 
   `page_size=1&page=0&order_by[]=-last_update` is added. `page_size` specifies how many results are returned in each 
@@ -140,14 +143,14 @@ used.
 * Request the scalars plot of a specific metric variant for the experiments with a specific tag: 
 
   ```
-  src="<web_server>/widgets/?objectType=task&type=scalar&metrics=<metric_name>&variants=<variant>&tags[]=__$or,<tag>
+  src="<web_server>/widgets/?objectType=task&xaxis=iter&type=scalar&metrics=<metric_name>&variants=<variant>&tags[]=__$or,<tag>
   ```
   A list of tags that the experiment should contain is specified in the `tags` argument. You can also specify tags that 
   exclude experiments. See tag filter syntax examples [here](../clearml_sdk/task_sdk.md#tag-filters).    
 * Request the `training/accuracy` scalar plot of the 5 experiments with the best accuracy scores (see Metric/Variant IDs note [below](#event_id)):
 
   ```
-  src="<web_server>/widgets/?objectType=task&type=scalar&metrics=training&variants=accuracy&project=4043a1657f374e9298649c6ba72ad233&page_size=5&page=0&order_by[]=-last_metrics.<metric_id>.<variant_id>.value"
+  src="<web_server>/widgets/?objectType=task&xaxis=iter&type=scalar&metrics=training&variants=accuracy&project=4043a1657f374e9298649c6ba72ad233&page_size=5&page=0&order_by[]=-last_metrics.<metric_id>.<variant_id>.value"
   ```
   
 <a id="event_id"></a>

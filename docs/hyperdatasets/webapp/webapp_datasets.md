@@ -82,7 +82,7 @@ of a dataset card to open its context menu and access dataset actions:
 
 ## Create New Hyper-Datasets
 
-To create a new Hyper-Dataset, click the **+ NEW DATASET** button in the top right of the page, which will open a 
+To create a Hyper-Dataset, click the **+ NEW DATASET** button in the top right of the page, which will open a 
 **New Dataset** modal.
 
 ![Hyper-Dataset creation modal](../../img/webapp_hyperdataset_creation.png)

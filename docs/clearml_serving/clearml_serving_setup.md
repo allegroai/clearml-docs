@@ -8,7 +8,7 @@ The following page goes over how to set up and upgrade `clearml-serving`.
 
 * ClearML-Server : Model repository, Service Health, Control plane
 * Kubernetes / Single-instance Machine : Deploying containers
-* CLI : Configuration & model deployment interface
+* CLI : Configuration and model deployment interface
 
 ## Initial Setup
 1. Set up your [ClearML Server](../deploying_clearml/clearml_server.md) or use the 
@@ -98,7 +98,7 @@ AZURE_STORAGE_KEY
 
 1. Take down the serving containers (`docker-compose` or k8s)
 1. Update the `clearml-serving` CLI `pip3 install -U clearml-serving`
-1. Re-add a single existing endpoint with `clearml-serving model add ... ` (press yes when asked). It will upgrade the 
+1. Re-add a single existing endpoint with `clearml-serving model add ...` (press yes when asked). It will upgrade the 
    `clearml-serving` session definitions
 1. Pull the latest serving containers (`docker-compose pull ...` or k8s)
 1. Re-spin serving containers (`docker-compose` or k8s)

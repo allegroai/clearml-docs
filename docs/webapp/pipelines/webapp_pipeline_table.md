@@ -2,19 +2,26 @@
 title: The Pipeline Runs Table
 ---
 
-The pipeline runs table is a [customizable](#customizing-the-runs-table) list of the pipeline’s runs. Use it to
-view a run’s details, and manage runs (create, continue, or abort). The runs table's auto-refresh allows users 
+The pipeline runs table is a [customizable](#customizing-the-runs-table) list of the pipeline's runs. Use it to
+view a run's details, and manage runs (create, continue, or abort). The runs table's auto-refresh allows users 
 to continually monitor run progress.
 
 View the runs table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, 
 using the buttons on the top left of the page. Use the table view for a comparative view of your runs according to 
-columns of interest. Use the details view to access a selected run’s details, while keeping the pipeline runs list in view. 
+columns of interest. Use the details view to access a selected run's details, while keeping the pipeline runs list in view. 
 Details view can also be accessed by double-clicking a specific pipeline run in the table view to open its details view. 
 
 You can archive pipeline runs so the runs table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
 table to open the archive and view all archived runs. From the archive, you can restore 
 runs to remove them from the archive. You can also permanently delete runs.
+
+You can download the pipeline runs table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+and choosing one of these options:
+* **Download onscreen items** - Download the values for pipeline runs currently visible on screen  
+* **Download all items** - Download the values for all runs in this pipeline that match the current active filters  
+
+The downloaded data consists of the currently displayed table columns.
 
 ![Pipeline runs table](../../img/webapp_pipeline_runs_table.png)
 
@@ -25,7 +32,7 @@ The models table contains the following columns:
 | Column | Description | Type |
 |---|---|---|
 | **RUN** | Pipeline run identifier  |  String |
-| **VERSION** | The pipeline version number. Corresponds to the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md#class-pipelinecontroller) ’s and [PipelineDecorator](../../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator)’s `version` parameter | Version string |
+| **VERSION** | The pipeline version number. Corresponds to the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md#class-pipelinecontroller)'s and [PipelineDecorator](../../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator)’s `version` parameter | Version string |
 | **TAGS** | Descriptive, user-defined, color-coded tags assigned to run. | Tag |
 | **STATUS** | Pipeline run's status. See a list of the [task states and state transitions](../../fundamentals/task.md#task-states). For Running, Failed, and Aborted runs, you will also see a progress indicator next to the status. See [here](../../pipelines/pipelines.md#tracking-pipeline-progress). |  String |
 | **USER** | User who created the run.  |  String |

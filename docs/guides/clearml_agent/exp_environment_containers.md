@@ -2,7 +2,7 @@
 title: Experiment Environment Containers
 ---
 
-This tutorial demonstrates using [`clearml-agent`](../../clearml_agent.md)’s [`build`](../../clearml_agent/clearml_agent_ref.md#build) 
+This tutorial demonstrates using [`clearml-agent`](../../clearml_agent.md)'s [`build`](../../clearml_agent/clearml_agent_ref.md#build) 
 command to build a Docker container replicating the execution environment of an existing task. ClearML Agents can make 
 use of such containers to execute tasks without having to set up their environment every time. 
 
@@ -15,7 +15,7 @@ be used when running optimization tasks.
 * [clearml](https://github.com/allegroai/clearml) repo cloned (`git clone https://github.com/allegroai/clearml.git`)
   
 ## Creating the ClearML Experiment
-1. Set up the experiment’s execution environment:
+1. Set up the experiment's execution environment:
    
    ```console
    cd clearml/examples/frameworks/keras
@@ -47,7 +47,7 @@ clearml-agent build --id <TASK_ID> --docker --target new_docker
 If the container will not make use of a GPU, add the `--cpu-only` flag
 :::
 
-This will create a container with the specified task’s execution environment in the `--target` folder. 
+This will create a container with the specified task's execution environment in the `--target` folder. 
 When the Docker build completes, the console output shows:
 
 ```console
@@ -76,7 +76,7 @@ Make use of the container you've just built by having a ClearML agent make use o
    :::
 
    This agent will pull the enqueued task and run it using the `new_docker` image to create the execution environment. 
-   In the task’s **CONSOLE** tab, one of the first logs should be:
+   In the task's **CONSOLE** tab, one of the first logs should be:
    
    ```console
    Executing: ['docker', 'run', ..., 'CLEARML_DOCKER_IMAGE=new_docker', ...].

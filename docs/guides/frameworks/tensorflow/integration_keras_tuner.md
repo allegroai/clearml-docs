@@ -1,6 +1,12 @@
 ---
-title: Keras Tuner Integration
+title: Keras Tuner
+displayed_sidebar: mainSidebar
 ---
+
+:::tip
+If you are not already using ClearML, see [Getting Started](../getting_started/ds/ds_first_steps.md) for setup 
+instructions.
+:::
 
 Integrate ClearML into code that uses [Keras Tuner](https://www.tensorflow.org/tutorials/keras/keras_tuner). By 
 specifying `ClearMLTunerLogger` (see [kerastuner.py](https://github.com/allegroai/clearml/blob/master/clearml/external/kerastuner.py)) 

@@ -2,6 +2,19 @@
 title: ClearML Agent
 ---
 
+
+<div class="vid" >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
+        src="https://www.youtube.com/embed/MX3BrXnaULs" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+        allowfullscreen>
+</iframe>
+</div>
+
+<br/>
+
 **ClearML Agent** is a virtual environment and execution manager for DL / ML solutions on GPU machines. It integrates with the **ClearML Python Package** and ClearML Server to provide a full AI cluster solution. <br/>
 Its main focus is around:
 - Reproducing experiments, including their complete environments. 
@@ -12,7 +25,7 @@ to a remote machine.
 
 ![ClearML Agent flow diagram](img/clearml_agent_flow_diagram.png)
 
-The diagram above demonstrates a typical flow where an agent executes a task:  
+The preceding diagram demonstrates a typical flow where an agent executes a task:  
 
 1. Enqueue a task for execution on the queue.
 1. The agent pulls the task from the queue.
@@ -25,7 +38,13 @@ The diagram above demonstrates a typical flow where an agent executes a task:
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
 
-While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Orchestration** page).  
+:::note Python Version
+ClearML Agent uses the Python version available in the environment or docker in which it executes the code. It does not 
+install Python, so make sure to use a docker or environment with the version you need.
+::: 
+
+While the agent is running, it continuously reports system metrics to the ClearML Server (these can be monitored in the 
+[**Orchestration**](webapp/webapp_workers_queues.md) page).  
 
 Continue using ClearML Agent once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
@@ -288,7 +307,7 @@ There are two options for deploying the ClearML Agent to a Kubernetes cluster:
 * Spin ClearML Agent as a long-lasting service pod
 * Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
 
-See more details [here](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
+For more details, see [Kubernetes integration](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
 
 ### Explicit Task Execution
 
@@ -360,6 +379,16 @@ When executing the ClearML Agent in Docker mode, it will:
    
 ClearML Agent uses the provided default Docker container, which can be overridden from the UI. 
 
+:::tip Setting Docker Container via UI
+You can set the docker container via the UI: 
+1. Clone the experiment
+2. Set the Docker in the cloned task's **Execution** tab **> Container** section
+   ![Container section](img/webapp_exp_container.png)
+3. Enqueue the cloned task
+
+The task will be executed in the container specified in the UI.
+:::
+
 All ClearML Agent flags (such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
 To execute ClearML Agent in Docker mode, run: 
@@ -385,7 +414,7 @@ CLEARML_AGENT_K8S_HOST_MOUNT=/mnt/host/data:/root/.clearml
 ClearML Agent caches virtual environments so when running experiments multiple times, there's no need to spend time reinstalling 
 pre-installed packages. To make use of the cached virtual environments, enable the virtual environment reuse mechanism. 
 
-#### Virtual Environment Reuse
+### Virtual Environment Reuse
 
 The virtual environment reuse feature may reduce experiment startup time dramatically.
 

@@ -39,7 +39,7 @@ def main(pickle_url, mock_parameter='mock'):
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline controller task is stored
-* `version` -  Numbered version string (e.g. 1.2.3). If `auto_version_bump` is set to `True`, the version number is 
+* `version` - Numbered version string (e.g. 1.2.3). If `auto_version_bump` is set to `True`, the version number is 
   automatically bumped if the same version already exists and the pipeline code has changed
 * `default_queue` - The default [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) in which to enqueue all pipeline steps (unless otherwise specified in the pipeline step).
 * `args_map` - Map arguments to their [configuration section](../fundamentals/hyperparameters.md#webapp-interface) in 
@@ -102,7 +102,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
   instead of rerunning the step. 
 * `packages` - A list of required packages or a local requirements.txt file. Example: `["tqdm>=2.1", "scikit-learn"]` or 
   `"./requirements.txt"`. If not provided, packages are automatically added based on the imports used inside the function.
-* `execution_queue` (Optional) - Queue in which to enqueue the specific step. This overrides the queue set with the 
+* `execution_queue` (optional) - Queue in which to enqueue the specific step. This overrides the queue set with the 
   [`PipelineDecorator.set_default_execution_queue method`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorset_default_execution_queue)
   method.
 * `continue_on_fail` - If `True`, a failed step does not cause the pipeline to stop (or marked as failed). Notice, that 
@@ -115,11 +115,11 @@ def step_one(pickle_data_url: str, extra: int = 43):
   * Examples:
     * remote url: `"https://github.com/user/repo.git"`
     * local repo copy: `"./repo"` -> will automatically store the remote repo url and commit ID based on the locally cloned copy
-* `repo_branch` (Optional) - Specify the remote repository branch (Ignored, if local repo path is used)
-* `repo_commit` (Optional) - Specify the repository commit ID (Ignored, if local repo path is used)
-* `helper_functions` (Optional) - A list of helper functions to make available for the standalone pipeline step. By default, the pipeline step function has no access to any of the other functions, by specifying additional functions here, the remote pipeline step could call the additional functions.
+* `repo_branch` (optional) - Specify the remote repository branch (ignored, if local repo path is used)
+* `repo_commit` (optional) - Specify the repository commit ID (ignored, if local repo path is used)
+* `helper_functions` (optional) - A list of helper functions to make available for the standalone pipeline step. By default, the pipeline step function has no access to any of the other functions, by specifying additional functions here, the remote pipeline step could call the additional functions.
   Example, assuming you have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
-* `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
+* `parents` (optional) - A list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 * `retry_on_failure` - Number of times to retry step in case of failure. You can also input a callable function in the 
    following format:
 
@@ -138,8 +138,8 @@ def step_one(pickle_data_url: str, extra: int = 43):
   decremented by 1. If the function returns `False`, the node is not retried.
   
 * Callbacks - Control pipeline execution flow with callback functions 
-  * `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
-    before and/or after a step’s execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback--post_execute_callback).
+  * `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+    before and/or after a step’s execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback-and-post_execute_callback).
   * `status_change_callback` - Callback function called when the status of a step changes. Use `node.job` to access the 
   `ClearmlJob` object, or `node.job.task` to directly access the Task object. The signature of the function must look like this:
     ```python
@@ -153,12 +153,12 @@ def step_one(pickle_data_url: str, extra: int = 43):
 
 Additionally, you can enable automatic logging of a step’s metrics / artifacts / models to the pipeline task using the 
 following arguments:
-* `monitor_metrics` (Optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
+* `monitor_metrics` (optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
   format is one of the following:
   * List of pairs metric (title, series) to log: [(step_metric_title, step_metric_series), ]. Example: `[('test', 'accuracy'), ]`
   * List of tuple pairs, to specify a different target metric to use on the pipeline Task: [((step_metric_title, step_metric_series), (target_metric_title, target_metric_series)), ].
   Example: `[[('test', 'accuracy'), ('model', 'accuracy')], ]`
-* `monitor_artifacts` (Optional) - Automatically log the step's artifacts on the pipeline Task. 
+* `monitor_artifacts` (optional) - Automatically log the step's artifacts on the pipeline Task. 
   * Provided a list of 
   artifact names created by the step function, these artifacts will be logged automatically also on the Pipeline Task 
   itself. Example: `['processed_data', ]` (target artifact name on the Pipeline Task will have the same name as the original 
@@ -166,7 +166,7 @@ following arguments:
   * Alternatively, provide a list of pairs (source_artifact_name, target_artifact_name), where the first string is the 
     artifact name as it appears on the component Task, and the second is the target artifact name to put on the Pipeline 
     Task. Example: `[('processed_data', 'final_processed_data'), ]`
-* `monitor_models` (Optional) - Automatically log the step's output models on the pipeline Task.
+* `monitor_models` (optional) - Automatically log the step's output models on the pipeline Task.
   * Provided a list of model names created by the step's Task, they will also appear on the Pipeline itself. Example: `['model_weights', ]`
   * To select the latest (lexicographic) model use `model_*`, or the last created model with just `*`. Example: `['model_weights_*', ]`
   * Alternatively, provide a list of pairs (source_model_name, target_model_name), where the first string is the model 

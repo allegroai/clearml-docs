@@ -9,7 +9,7 @@ title: Version 1.3
 * Huggingface Transformer example 
 
 **Bug fixes**
-* Fix NumPy compatibility [ClearML Serving GitHub issue #47](https://github.com/allegroai/clearml-serving/issues/47) & [#46](https://github.com/allegroai/clearml-serving/issues/46)
+* Fix NumPy compatibility [ClearML Serving GitHub issue #47](https://github.com/allegroai/clearml-serving/issues/47) and [#46](https://github.com/allegroai/clearml-serving/issues/46)
 * Fix Triton examples  [ClearML Serving GitHub issue #48](https://github.com/allegroai/clearml-serving/issues/48)
 * Add storage environment variables [ClearML Serving GitHub PR #45](https://github.com/allegroai/clearml-serving/pull/45)
 

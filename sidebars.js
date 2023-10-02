@@ -58,7 +58,21 @@ module.exports = {
         'model_registry',
         {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_setup', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
-        'integrations/libraries',
+        {'Integrations': [
+                'integrations/autokeras',
+                'integrations/catboost', 'integrations/click', 'integrations/fastai',
+                'integrations/hydra',
+                'integrations/keras', 'guides/frameworks/tensorflow/integration_keras_tuner',
+                'integrations/lightgbm', 'integrations/matplotlib',
+                'integrations/megengine', 'integrations/monai', 'integrations/openmmv', 'integrations/optuna',
+                'integrations/python_fire', 'integrations/pytorch',
+                'integrations/ignite',
+                'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
+                'integrations/scikit_learn', 'integrations/seaborn',
+                'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
+                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
+            ]
+        },
         'integrations/storage',
         {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
             {
@@ -95,7 +109,8 @@ module.exports = {
                     'webapp/applications/apps_gcp_autoscaler',
                     'webapp/applications/apps_hpo',
                     'webapp/applications/apps_dashboard',
-                    'webapp/applications/apps_task_scheduler'
+                    'webapp/applications/apps_task_scheduler',
+                    'webapp/applications/apps_trigger_manager'
                 ]
 
             },
@@ -133,7 +148,7 @@ module.exports = {
             {'Distributed': ['guides/distributed/distributed_pytorch_example', 'guides/distributed/subprocess_example']},
             {'Docker': ['guides/docker/extra_docker_shell_script']},
             {'Frameworks': [
-                {'Autokeras': ['guides/frameworks/autokeras/integration_autokeras', 'guides/frameworks/autokeras/autokeras_imdb_example']},
+                'guides/frameworks/autokeras/autokeras_imdb_example',
                 'guides/frameworks/catboost/catboost',
                 'guides/frameworks/fastai/fastai_with_tensorboard',
                 {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},
@@ -158,7 +173,7 @@ module.exports = {
                 {'Scikit-Learn': ['guides/frameworks/scikit-learn/sklearn_joblib_example', 'guides/frameworks/scikit-learn/sklearn_matplotlib_example']},
                 {'TensorBoardX': ['guides/frameworks/tensorboardx/tensorboardx', "guides/frameworks/tensorboardx/video_tensorboardx"]},
                 {
-                    'Tensorflow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
+                    'TensorFlow': ['guides/frameworks/tensorflow/tensorboard_pr_curve', 'guides/frameworks/tensorflow/tensorboard_toy',
                         'guides/frameworks/tensorflow/tensorflow_mnist', 'guides/frameworks/tensorflow/integration_keras_tuner']
                 },
                 {'XGBoost': ['guides/frameworks/xgboost/xgboost_sample', 'guides/frameworks/xgboost/xgboost_metrics']}
@@ -178,7 +193,7 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_11', 'release_notes/ver_1_10', 'release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
+        'Release Notes': ['release_notes/ver_1_13', 'release_notes/ver_1_12', 'release_notes/ver_1_11', 'release_notes/ver_1_10', 'release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
             'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3',
             'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17',
             'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14', 'release_notes/ver_0_13',

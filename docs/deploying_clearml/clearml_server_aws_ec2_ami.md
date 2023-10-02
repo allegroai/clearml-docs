@@ -24,7 +24,7 @@ By default, ClearML Server deploys as an open network. To restrict ClearML Serve
 in the [Security](clearml_server_security.md) page.
 :::
 
-The minimum recommended amount of RAM is 8 GB. For example, a t3.large or t3a.large EC2 instance type would accommodate the recommended RAM size.
+The minimum recommended amount of RAM is 8 GB. For example, a `t3.large` or `t3a.large` EC2 instance type would accommodate the recommended RAM size.
 
 **To launch a ClearML Server AWS community AMI**, use one of the [ClearML Server AWS community AMIs](#clearml-server-aws-community-amis) 
 and see:
@@ -45,7 +45,7 @@ Once deployed, ClearML Server exposes the following services:
 1. Go to AWS EC2 Console.
 1. In the **Details** tab, **Public DNS (IPv4)** shows the ClearML Server address.
 
-**To access ClearML Server Web-App (UI):**
+**To access ClearML Server WebApp (UI):**
 
 * Direct browser to its web server URL: `http://<Server Address>:8080`
 
@@ -65,10 +65,14 @@ The pre-built ClearML Server storage configuration is the following:
 
 * MongoDB: `/opt/clearml/data/mongo_4/`
 * Elasticsearch: `/opt/clearml/data/elastic_7/`
-* File Server: `/mnt/fileserver/`
+* File Server: `/opt/clearml/data/fileserver/`
 
 
 ## Backing Up and Restoring Data and Configuration
+
+:::caution
+Stop your server before backing up or restoring data and configuration
+:::
 
 :::note
 If data is being moved between a **Trains Server** and a **ClearML Server** installation, make sure to use the correct paths 
@@ -108,35 +112,36 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.11.0
+#### v1.12.1
 
-* **af-south-1** : ami-0560629e10e3fa489
-* **ap-east-1** : ami-0fe1e3b906324dd6e
-* **ap-northeast-1** : ami-0c5cd8f7d19142a69
-* **ap-northeast-2** : ami-03ba1dd7378cbe97a
-* **ap-northeast-3** : ami-044733a24789d2eff
-* **ap-south-1** : ami-014cbf31ad63c96ba
-* **ap-south-2** : ami-07cc624ab0cf7b9f5
-* **ap-southeast-1** : ami-08be85937e8fad974
-* **ap-southeast-2** : ami-07c3da5c07a2581a4
-* **ap-southeast-3** : ami-05af6c1b6a98051be
-* **ap-southeast-4** : ami-06d3cebb40053b75e
-* **ca-central-1** : ami-09c79717698c7078f
-* **eu-central-1** : ami-06dced85fe85b8599
-* **eu-central-2** : ami-02a630f52e61e289d
-* **eu-north-1** : ami-0d37ab1952cd633c7
-* **eu-south-1** : ami-0c8bb286c292c2a1e
-* **eu-south-2** : ami-05c1bea482c21e287
-* **eu-west-1** : ami-00f5a4cd6174cb489
-* **eu-west-2** : ami-0d1db7b5b6f153ed4
-* **eu-west-3** : ami-0d4ce6e695a276190
-* **me-central-1** : ami-0009728cabbc12115
-* **me-south-1** : ami-051ae1ac3a908ac15
-* **sa-east-1** : ami-0149c335f4851c3e7
-* **us-east-2** : ami-0799c6b09783656cd
-* **us-west-1** : ami-0df5950afdca7aeaf
-* **us-west-2** : ami-041ae28dbf5d461cb
-* **us-east-1** : ami-0b3de34d0b9012e27
+* **af-south-1** : ami-025319227eb116fa1
+* **ap-east-1** : ami-01c49f2a09d4da396
+* **ap-northeast**-1 : ami-0e28e1ba29e4ff50d
+* **ap-northeast-2** : ami-05def08c702660fa6
+* **ap-northeast-3** : ami-0f67ae8f00e6fddc1
+* **ap-south-1** : ami-03910f982584a5222
+* **ap-south-2** : ami-0a88fb84a276be584
+* **ap-southeast-1** : ami-06b5eca12ad60867f
+* **ap-southeast-2** : ami-078f08906d29cbe7c
+* **ap-southeast-3** : ami-083c5ce6494b32478
+* **ap-southeast-4** : ami-033987e68b979faee
+* **ca-central-1** : ami-02d3df9471104432a
+* **eu-central-1** : ami-0c2b62882814a10c9
+* **eu-central-2** : ami-0542c5ef838f79850
+* **eu-north-1** : ami-067a6dcfa967fc149
+* **eu-south-1** : ami-0d7211ffa84a175b0
+* **eu-south-2** : ami-036e3109d6ff56780
+* **eu-west-1** : ami-06f04346ebfd383d4
+* **eu-west-2** : ami-04957831add42df64
+* **eu-west-3** : ami-0abbef9654d9ccc1a
+* **il-central-1** : ami-0336f760e693387c1
+* **me-central-1** : ami-0a005c34caebef067
+* **me-south-1** : ami-0c05a41f4b0830bb4
+* **sa-east-1** : ami-0972adbadc533980b
+* **us-east-1** : ami-090f314ce0a5e07a3
+* **us-east-2** : ami-0c9e125de514df0b3
+* **us-west-1** : ami-034eb8165ccff9c35
+* **us-west-2** : ami-00eb393a2a8e1bc82
 
 ## Next Step
 

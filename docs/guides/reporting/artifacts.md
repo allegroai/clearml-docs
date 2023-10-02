@@ -22,7 +22,7 @@ is different). Configure ClearML in any of the following ways:
 * In code, when [initializing a Task](../../references/sdk/task.md#taskinit), use the `output_uri` parameter.
 * In the **ClearML Web UI**, when [modifying an experiment](../../webapp/webapp_exp_tuning.md#output-destination).
 
-When the script runs, it creates an experiment named `artifacts example`, which is associated with the `examples` project. 
+When the script runs, it creates an experiment named `artifacts example` in the `examples` project. 
 
 ClearML reports artifacts in the **ClearML Web UI** **>** experiment details **>** **ARTIFACTS** tab.
 

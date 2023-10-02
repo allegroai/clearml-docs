@@ -9,7 +9,7 @@ See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced querya
 
 Datasets can be created, modified, and managed with ClearML Data's python interface. You can upload your dataset to any 
 storage service of your choice (S3 / GS / Azure / Network Storage) by setting the dataset’s upload destination (see 
-[`output_url`](#uploading-files) parameter of `Dataset.upload` method). Once you have uploaded your dataset, you can access 
+[`output_url`](#uploading-files) parameter of `Dataset.upload()`). Once you have uploaded your dataset, you can access 
 it from any machine.  
 
 The following page provides an overview for using the most basic methods of the `Dataset` class. See the [Dataset reference page](../references/sdk/dataset.md) 
@@ -75,7 +75,7 @@ To improve deep dataset DAG storage and speed, dataset squashing was introduced.
 class method generates a new dataset by squashing a set of dataset versions, and merging down all changes introduced in 
 their lineage DAG, creating a new, flat, independent version.
 
-The datasets being squashed into a single dataset can be specified by their IDs or by project & name pairs. 
+The datasets being squashed into a single dataset can be specified by their IDs or by project and name pairs. 
 
 ```python
 # option 1 - list dataset IDs
@@ -156,7 +156,7 @@ dataset = Dataset.create(dataset_name="my dataset", dataset_project="example pro
 dataset.add_files(path="path/to/folder_or_file")
 ```
 
-There is an option to add a set of files based on wildcard matching of a single string or a list of strings, using the 
+You can add a set of files based on wildcard matching of a single string or a list of strings, using the 
 `wildcard` parameter. Specify whether to match the wildcard files recursively using the `recursive` parameter.
 
 For example:
@@ -207,7 +207,7 @@ To remove files from a current dataset, use the [`Dataset.remove_files`](../refe
 Input the path to the folder or file to be removed in the `dataset_path` parameter. The path is relative to the dataset.
 To remove links, specify their URL (e.g. `s3://bucket/file`).
 
-There is also an option to input a wildcard into `dataset_path` in order to remove a set of files matching the wildcard. 
+You can also input a wildcard into `dataset_path` in order to remove a set of files matching the wildcard. 
 Set the `recursive` parameter to `True` in order to match all wildcard files recursively
 
 For example:
@@ -220,7 +220,7 @@ dataset.remove_files(dataset_path="*.csv", recursive=True)
 
 To upload the dataset files to network storage, use the [`Dataset.upload`](../references/sdk/dataset.md#upload) method. 
 
-Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://bucket/data` , `/mnt/share/data`). 
+Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://bucket/data`, `/mnt/share/data`). 
 By default, the dataset uploads to ClearML's file server. This target storage overrides the `output_uri` value of the 
 [`Dataset.create`](#creating-datasets) method.    
 
@@ -334,7 +334,7 @@ Note that in offline mode, any methods that require communicating with the serve
 Upload the offline dataset to the ClearML Server using [`Dataset.import_offline_session()`](../references/sdk/dataset.md#datasetimport_offline_session). 
 
 ```python
-Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True")
+Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True)
 ```
 
 In the `session_folder_zip` argument, insert the path to the zip folder containing the dataset. To [upload](#uploading-files) 

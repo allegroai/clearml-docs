@@ -66,11 +66,11 @@ When you access the Dataset, it automatically merges the files from all parent v
 in a fully automatic and transparent process, as if the files were always part of the requested Dataset.
 
 ### Training
-We can now train our model with the **latest** Dataset we have in the system.
-We will do that by getting the instance of the Dataset based on the `latest` tag 
-(if by any chance we have two Datasets with the same tag we will get the newest).
-Once we have the dataset we can request a local copy of the data. All local copy requests are cached,
-which means that if we are accessing the same dataset multiple times we will not have any unnecessary downloads.
+You can now train your model with the **latest** Dataset you have in the system, by getting the instance of the Dataset 
+based on the `latest` tag 
+(if by any chance you have two Datasets with the same tag you will get the newest).
+Once you have the dataset you can request a local copy of the data. All local copy requests are cached,
+which means that if you access the same dataset multiple times you will not have any unnecessary downloads.
 
 ```python
 # create a task for the model training
@@ -87,7 +87,7 @@ dataset_folder = dataset.get_local_copy()
 
 ## Building the Pipeline
 
-Now that we have the data creation step, and the data training step, let's create a pipeline that when executed,
+Now that you have the data creation step, and the data training step, create a pipeline that when executed,
 will first run the first and then run the second.
 It is important to remember that pipelines are Tasks by themselves and can also be automated by other pipelines (i.e. pipelines of pipelines).
 
@@ -111,6 +111,6 @@ pipe.add_step(
 )
 ```
 
-We could also pass the parameters from one step to the other (for example `Task.id`).
+We can also pass the parameters from one step to the other (for example `Task.id`).
 In addition to pipelines made up of Task steps, ClearML also supports pipelines consisting of function steps. See more in the 
 full pipeline documentation [here](../../pipelines/pipelines.md).

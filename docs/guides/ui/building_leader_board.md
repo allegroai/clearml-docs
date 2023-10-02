@@ -2,7 +2,7 @@
 title: Tracking Leaderboards
 ---
 
-In this tutorial, we will set up a tracking leaderboard. A tracking leaderboard allows easy monitoring of experiments 
+In this tutorial, you will set up a tracking leaderboard. A tracking leaderboard allows easy monitoring of experiments 
 using a customized [experiments table](../../webapp/webapp_exp_table.md) with auto refresh for continual updates.
 
 The tracking leaderboard can be customized to include columns with information about:
@@ -24,7 +24,7 @@ For this tutorial, use one of the following as a project:
 
 The leaderboard will track experiments in one or all projects. 
 
-Begin by opening the **ClearML Web UI** and selecting a project, by doing one of the following:
+Begin by opening the [ClearML Web UI](../../webapp/webapp_overview.md) and selecting a project, by doing one of the following:
 * On the Dashboard, click a project card or **VIEW ALL**.
 * On the Projects page, click a project card or the **All projects** card.
 

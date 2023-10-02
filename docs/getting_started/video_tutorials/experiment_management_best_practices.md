@@ -30,11 +30,11 @@ So let’s start with the inputs: hyperparameters. Hyperparameters are the confi
 
 Let’s take this simple code as an example. First of all, we start the script with the 2 magic lines of code that we covered before. Next to that we have a mix of command line arguments and some additional parameters in a dictionary here. 
 
-The command line arguments will be captured automatically, and for the dict (or really any python object) we can use the `task.connect()` function, to report our dict values as ClearML hyperparameters. 
+The command line arguments will be captured automatically, and for the dict (or really any python object) we can use the `Task.connect()` function, to report our dict values as ClearML hyperparameters. 
 
 As you can see, when we run the script, all hyperparameters are captured and parsed by the server, giving you a clean overview in the UI.
 
-Configuration objects, however, work slightly differently and are mostly used for more complex configurations, like a nested dict or a yaml file for example. They’re logged by using the `task.connect_configuration()` function instead and will save the configuration as a whole, without parsing it.
+Configuration objects, however, work slightly differently and are mostly used for more complex configurations, like a nested dict or a yaml file for example. They’re logged by using the `Task.connect_configuration()` function instead and will save the configuration as a whole, without parsing it.
 
 We have now logged our task with all of its inputs, but if we wanted to, we could rerun our code with different parameters and this is where the magic happens.
 
@@ -42,7 +42,7 @@ Remember ClearML also stores your code environment, making it reproducible. So w
 
 Back to the overview. One of the output types you can add to your task is what’s called an artifact.
 
-An artifact can be a lot of things, mostly they’re files like model weights or pandas dataframes containing preprocessed features for example. Our documentation lists all supported data types.
+An artifact can be a lot of things, mostly they’re files like model weights or Pandas DataFrames containing preprocessed features for example. Our documentation lists all supported data types.
 
 You can download the artifacts your code produced from the web UI to your local computer if you want to, but artifacts can also be retrieved programmatically.
 

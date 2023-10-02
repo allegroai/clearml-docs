@@ -29,12 +29,12 @@ Text printed to the console for training progress, as well as all other console 
 ![Experiment console](../../../img/examples_catboost_console.png)
 
 ## Artifacts
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks 
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks 
 models created using CatBoost.
 
 ![Experiment artifacts](../../../img/examples_catboost_artifacts.png)
 
-Clicking on the model name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can view 
-the model’s details and access the model.
+Clicking on the model name takes you to the [model's page](../../../webapp/webapp_model_viewing.md), where you can view 
+the model's details and access the model.
 
 ![Model page](../../../img/examples_catboost_model.png)

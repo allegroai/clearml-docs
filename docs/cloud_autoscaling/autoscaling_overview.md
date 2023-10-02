@@ -22,7 +22,7 @@ workload grows, not to mention avoiding paying for running machines that aren’
 This is where autoscaling comes into the picture. 
 
 ClearML provides the following options to automate your resource scaling, while optimizing machine usage:
-* [ClearML autoscaler applications](#autoscaler-applications) -  Use the apps to define your compute resource budget, 
+* [ClearML autoscaler applications](#autoscaler-applications) - Use the apps to define your compute resource budget, 
 and have the apps automatically manage your resource consumption as needed–with no code!
 * [Kubernetes integration](#kubernetes) - Deploy agents through Kubernetes, which handles resource management and scaling 
 
@@ -84,7 +84,7 @@ If your code is saved in a private repository, you can add your Git credentials 
 cloud instances will be able to retrieve the code from your repos.
 
 #### Cloud Storage Access
-If your tasks need to access data stored in cloud storage , you can provide your cloud storage credentials, so the 
+If your tasks need to access data stored in cloud storage, you can provide your cloud storage credentials, so the 
 executed tasks will have access to your storage service. 
 
 #### Additional Configuration
@@ -95,7 +95,7 @@ Go to a specific app’s documentation page to view all configuration options
 * [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md) 
 
 ## Kubernetes 
-ClearML offers an option to install `clearml-agent` through a Helm chart. 
+You can install `clearml-agent` through a Helm chart. 
  
 The Clearml Agent deployment is set to service a queue(s). When tasks are added to the queues, the agent pulls the task 
 and creates a pod to execute the task. Kubernetes handles resource management. Your task pod will remain pending until 

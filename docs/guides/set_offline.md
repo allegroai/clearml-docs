@@ -23,8 +23,8 @@ the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
 :::caution 
-Offline mode only works with tasks created using `Task.init` and not with those created 
-using the `Task.create` method. 
+Offline mode only works with tasks created using [`Task.init()`](../references/sdk/task.md#taskinit) and not with those created 
+using [`Task.create()`](../references/sdk/task.md#taskcreate). 
 :::
 
 
@@ -78,7 +78,7 @@ Upload the session's execution data that the Task captured offline to the ClearM
   ```
     
   You can also use the offline task to update the execution of an existing previously executed task by providing the 
-  previously executed task’s ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
+  previously executed task's ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
   `iteration_offset`.   
   
   ```python

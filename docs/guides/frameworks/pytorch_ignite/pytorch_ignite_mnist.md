@@ -10,7 +10,7 @@ checkpoints during training and validation.
 
 The example script does the following:
 * Trains a model to classify images from the MNIST dataset. 
-* Creates a [ClearML Task](../../../fundamentals/task.md) named `ignite`, which is associated with the `examples` 
+* Creates a [ClearML Task](../../../fundamentals/task.md) named `ignite` in the `examples` 
   project. ClearMLLogger connects to ClearML so everything which is logged through it and its handlers 
   is automatically captured by ClearML. 
 * Uses the following ClearMLLogger helper handlers:

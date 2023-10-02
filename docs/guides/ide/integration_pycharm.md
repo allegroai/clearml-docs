@@ -11,7 +11,7 @@ remote machine. The ClearML PyCharm plugin detects the git details on the local
 machine, and passes that information to the remote machine to be registered to a [task](../../fundamentals/task.md).
 
 * Pass user credentials to a remote machine - Multiple users can use the same resource for execution without compromising 
-private credentials (assuming the entire code base, including `.git` already exists on the remote machine)
+private credentials (assuming the entire code base, including `.git` already exists on the remote machine).
 
 * Run the [ClearML Agent](../../clearml_agent.md) on default VMs/Containers.
 

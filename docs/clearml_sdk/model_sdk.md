@@ -6,7 +6,7 @@ The following page provides an overview of the basic Pythonic interface to Clear
 
 ClearML provides the following classes to work with models:
 * `Model` - Represents a ClearML model, regardless of any task connection. Use this class to programmatically access and manage the ClearML model store.
-* `InputModel` - Represents an existing ClearML model to be used in an experiment. Use this class to load a model from ClearML's model store or to import a pre-trained 
+* `InputModel` - Represents a ClearML model to be used in an experiment. Use this class to load a model from ClearML's model store or to import a pre-trained 
 model from an external resource to use as an experiment's initial starting point.
 * `OutputModel` - Represents an experiment's output model (training results). An OutputModel is always connected to a [task](../fundamentals/task.md),
 so the models are traceable to experiments. 
@@ -197,7 +197,7 @@ These methods can be used on `Model`, `InputModel`, and/or `OutputModel` objects
     * Table - [`report_table`](../references/sdk/model_outputmodel.md#report_table)
     * Line plot - [`report_line_plot`](../references/sdk/model_outputmodel.md#report_line_plot)
     * Scatter plot - [`report_scatter2d`](../references/sdk/model_outputmodel.md#report_scatter2d)
-    * Confusion matrix (heat map) - [`report_confusion_matrix`](../references/sdk/model_outputmodel.md#report_confusion_matrix) & [`report_matrix`](../references/sdk/model_outputmodel.md#report_matrix)
+    * Confusion matrix (heat map) - [`report_confusion_matrix`](../references/sdk/model_outputmodel.md#report_confusion_matrix) and [`report_matrix`](../references/sdk/model_outputmodel.md#report_matrix)
   * 3d plots 
     * Scatter plot - [`report_scatter3d`](../references/sdk/model_outputmodel.md#report_scatter3d) 
     * Surface plot - [`report_surface`](../references/sdk/model_outputmodel.md#report_surface)

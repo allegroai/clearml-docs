@@ -16,6 +16,12 @@ You can archive experiments so the experiments table doesn't get too cluttered. 
 table to open the archive and view all archived experiments. From the archive, you can restore 
 experiments to remove them from the archive. You can also permanently delete experiments.
 
+You can download the experiments table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+and choosing one of these options:
+* **Download onscreen items** - Download the values for experiments currently visible on screen  
+* **Download all items** - Download the values for all experiments in this project that match the current active filters  
+
+The downloaded data consists of the currently displayed table columns.
 
 ![Experiment table](../img/webapp_experiment_table.png)
 
@@ -184,7 +190,7 @@ selecting items beyond the items currently on-screen:
 
 ## Creating an Experiment Leaderboard
 
-Filter & sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
+Filter and sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
 updates in real time with experiment performance and outputs.
 
 Modify the experiments table in the following ways to create a customized leaderboard:

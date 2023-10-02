@@ -67,6 +67,7 @@ The Source Code section of an experiment's **EXECUTION** tab includes:
 * Commit ID
 * Script path
 * Working directory
+* Binary (Python executable)
 
 ![Source code section](../img/webapp_exp_source_code.png)
 
@@ -95,8 +96,6 @@ The Container section list the following information:
 The Output details include:
 * The output destination used for storing model checkpoints (snapshots) and artifacts (see also, [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
   in the configuration file, and `output_uri` in [`Task.init`](../references/sdk/task.md#taskinit) parameters).
-
-* The logging level for the experiment, which uses the standard Python [logging levels](https://docs.python.org/3/howto/logging.html#logging-levels).
 
 ![Execution details section](../img/webapp_exp_output.png)
 
@@ -280,13 +279,14 @@ are on the left side of the window. The tools include:
 
     </Collapsible>
 
+* Horizontal axis - Select the x-axis units:
+  * Iterations
+  * Time from start - Time since experiment began
+  * Wall time - Local clock time
+* Curve smoothing - Choose which smoothing algorithm to use from the dropdown menu: Exponential moving average, Gaussian, 
+  or Running Average. Use the slider to configure the smoothing factor or specify a value manually. 
 * Show / hide plots - Click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />
   on those you want to see.
-* **Horizontal axis** modes (scalars, only) - Select one of the following:
-  * **ITERATIONS**
-  * **RELATIVE** - Time since experiment began
-  * **WALL** - Local clock time
-* Curve smoothing (scalars, only) - In **Smoothing** **>** Move the slider or type a smoothing factor between **0** and **0.999**.
 
 To embed scalar plots in your [Reports](webapp_reports.md), hover over a plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 
 which will copy to clipboard the embed code to put in your Reports. In contrast to static screenshots, embedded resources 
@@ -322,7 +322,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-sm space-sm" /> | Pan around plot. Click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-sm space-sm" />, click the plot, and then drag. |
 | <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box icon" className="icon size-sm space-sm" /> | To examine an area, draw a dotted box around it. Click <img src="/docs/latest/icons/ico-dotted-box.svg" alt="Dotted box icon" className="icon size-sm space-sm" /> and then drag. |
 | <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso icon" className="icon size-sm space-sm" /> | To examine an area, draw a dotted lasso around it. Click <img src="/docs/latest/icons/ico-dotted-lasso.svg" alt="Dotted lasso icon" className="icon size-sm space-sm" /> and then drag. |
-| <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale icon" className="icon size-sm space-sm" /> . |
+| <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" /> | Zoom into a section of a plot. Zoom in - Click <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" /> and drag over a section of the plot. Reset to original scale - Click <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale icon" className="icon size-sm space-sm" />. |
 | <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in icon" className="icon size-sm space-sm" /> | Zoom in. |
 | <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out icon" className="icon size-sm space-sm" /> | Zoom out. |
 | <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale icon" className="icon size-sm space-sm" /> | Reset to autoscale after zooming ( <img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" />, <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in icon" className="icon size-sm space-sm" />, or <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out icon" className="icon size-sm space-sm" />). |
@@ -334,7 +334,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
 | <img src="/docs/latest/icons/ico-reset_1.svg" alt="Plot layout setting" className="icon size-sm space-sm" />| Switch between original and auto-fitted plot dimensions. The original layout is the plot's user-defined dimensions. |
 | <img src="/docs/latest/icons/ico-download-json-plot.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | Download plot data as a JSON file. |
-| <img src="/docs/latest/icons/ico-download-csv.svg" alt="Download CSV icon" className="icon size-sm space-sm" /> | Download plot data as a CSV file. |
+| <img src="/docs/latest/icons/ico-download-csv.svg" alt="Download CSV icon" className="icon size-sm space-sm" /> | Download **table** plot data as a CSV file. |
 | <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" /> | Expand plot to entire window. When used with scalar graphs, full screen mode displays plots with all data points, as opposed to an averaged plot |
 | <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-sm space-sm" /> | Refresh scalar graphs in full screen mode to update it.  | 
 | <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-sm space-sm" /> | Copy to clipboard the resource embed code. This opens the following options: <ul><li>**Embed in External tool** (available in the ClearML Enterprise plan and Hosted Service) - Copy code to add to external tools (e.g. Notion). </li><li>**Embed in ClearML report** - Copy code to add to a [report](webapp_reports.md)</li></ul> In contrast to static screenshots, embedded resources are retrieved when the tool/report is displayed allowing your tools/reports to show the latest up-to-date data. |
@@ -354,7 +354,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 Experiment outputs such as images, audio, and videos appear in **DEBUG SAMPLES**. These include data generated by 
 libraries and visualization tools, and explicitly reported using the [ClearML Logger](../fundamentals/logger.md). 
 
-You can view debug samples by metric at any iteration. Filter the samples by metric by selecting a metric from the 
+You can view debug samples by metric in the reported iterations. Filter the samples by metric by selecting a metric from the 
 dropdown menu above the samples. The most recent iteration appears first.
 
 ![Debug Samples tab](../img/webapp_tracking_43.png)
@@ -372,17 +372,36 @@ buttons (or using the left/right arrow keyboard shortcut).
 
 ## Tagging Experiments
 
-Tags are user-defined, color-coded labels that can be added to experiments (and models), allowing to easily identify and
-group experiments. Tags can show any text. For example, add tags for the type of remote machine experiments were executed
-on, label versions of experiments, or apply team names to organize experimentation.
+<div class="vid" >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
+        src="https://www.youtube.com/embed/uqik38jlBsQ?si=joU-KOPpUNLbn6Ws" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+        allowfullscreen>
+</iframe>
+</div>
 
-* To add tags and change tag colors:
-    1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (menu)
-    1. Do one of the following:
-        * Add a new tag - Type the new tag name **>** **(Create New)**.
-        * Add an existing tag - Click a tag.
-        * Change a tag's colors - Click **Tag Colors** **>** Click the tag icon **>** **Background** or **Foreground** **>** Pick a color **>** **OK** **>** **CLOSE**.
-* To remove a tag - Hover over the tag **>** **X**.
+<br/>
+
+Tags are user-defined, color-coded labels that can be added to experiments (and pipelines, datasets, and models), 
+allowing to easily identify and group experiments. Tags can help in organizing, querying, and automating experiments.
+For example, tag experiments by the machine type used to execute them, label versions, team names, or any other
+category.
+
+You can use tags to filter your experiments in your experiment table (see [Filtering Columns](webapp_exp_table.md#filtering-columns))
+or when querying experiments in your code (see [Tag Filters](../clearml_sdk/task_sdk.md#tag-filters)). You can trigger 
+experiment execution according to their tags (see [TriggerScheduler](../references/sdk/trigger.md)) or automatically
+deploy models according to their tags (see [ClearML Serving](../clearml_serving/clearml_serving_tutorial.md#automatic-model-deployment)).
+
+**To add tags:**
+1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (menu)
+1. Do one of the following:
+    * Add a new tag - Type the new tag name **>** **(Create New)**.
+    * Add an existing tag - Click a tag.
+    * Customize a tag's colors - Click **Tag Colors** **>** Click the tag icon **>** **Background** or **Foreground** **>** Pick a color **>** **OK** **>** **CLOSE**.
+
+**To remove a tag** - Hover over the tag and click **X**.
 
 
 

@@ -15,7 +15,7 @@ pipe = PipelineController(
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline tasks will be created.
-* `version` -  Numbered version string (`e.g. 1.2.3`). When `auto_version_bump` is set to `True`, the version number will 
+* `version` - Numbered version string (`e.g. 1.2.3`). When `auto_version_bump` is set to `True`, the version number will 
   be automatically bumped if the same version already exists and the code has changed
 
 See [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md) for all arguments. 
@@ -105,7 +105,7 @@ See [add_step](../references/sdk/automation_controller_pipelinecontroller.md#add
 #### parameter_override
 Use the `parameter_override` argument to modify the step’s parameter values. The `parameter_override` dictionary key is 
 the task parameter’s full path, which includes the parameter section's name and the parameter name separated by a slash 
-(e.g. `'General/dataset_url'`). Passing `"${}"` in the argument value allows you to reference input/output configurations 
+(e.g. `'General/dataset_url'`). Passing `"${}"` in the argument value lets you reference input/output configurations 
 from other pipeline steps. For example: `"${<step_name>.id}"` will be converted to the Task ID of the referenced pipeline 
 step.
 
@@ -159,14 +159,14 @@ pipe.add_function_step(
 * `function_kwargs` (optional) - A dictionary of function arguments and default values which are translated into task 
   hyperparameters. If not provided, all function arguments are translated into hyperparameters.
 * `function_return` - The names for storing the pipeline step’s returned objects as artifacts in its ClearML task.
-* `cache_executed_step` -  If `True`, the controller will check if an identical task with the same code 
+* `cache_executed_step` - If `True`, the controller will check if an identical task with the same code 
   (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
   section) and input arguments was already executed. If found, the cached step's 
   outputs are used instead of launching a new task.
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution 
   only after all the parent steps have been executed successfully.
-* `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
-  before and/or after a step’s execution. See [here](#pre_execute_callback--post_execute_callback).
+* `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+  before and/or after a step’s execution. See [here](#pre_execute_callback-and-post_execute_callback).
 * `monitor_models`, `monitor_metrics`, `monitor_artifacts` - see [here](#models-artifacts-and-metrics).
 
 See [add_function_step](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) for all 
@@ -174,7 +174,7 @@ arguments.
 
 ### Important Arguments
 
-#### pre_execute_callback & post_execute_callback
+#### pre_execute_callback and post_execute_callback
 Callbacks can be utilized to control pipeline execution flow.
 
 A `pre_execute_callback` function is called when the step is created, and before it is sent for execution. This allows a 

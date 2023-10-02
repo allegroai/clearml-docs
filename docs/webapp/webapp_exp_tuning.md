@@ -40,7 +40,6 @@ Web UI**, edit any of the following
 * [Source code](#source-code)
 * [Output destination for artifacts](#output-destination)
 * [Base Docker image](#base-docker-image)
-* [Log level](#log-level)
 * [Hyperparameters](#hyperparameters) - Parameters, TensorFlow Definitions, command line options, environment variables, and user-defined properties
 
 :::note
@@ -102,14 +101,6 @@ method), and in the ClearML configuration file
 for all experiments (see [`default_output_uri`](../configs/clearml_conf.md#config_default_output_uri)
 on the ClearML Configuration Reference page).
 :::
-
-#### Log Level
-
-Set a logging level for the experiment (see the standard Python [logging levels](https://docs.python.org/3/howto/logging.html#logging-levels)).
-
-**To add, change, or delete a log level:**
-
-* In **EXECUTION** **>** **OUTPUT** **>** **LOG LEVEL** **>** hover **>** **EDIT** **>** Enter the log level.
 
 ### Configuration
 

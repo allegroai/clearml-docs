@@ -18,7 +18,7 @@ top-level projects are displayed. Click on a project card to view the project's 
 Click on a dataset card to navigate to its [Version List](webapp_dataset_viewing.md), where you can view the 
 dataset versions' lineage and contents. 
 
-Filter the datasets to find the one you’re looking for more easily. These filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />:
+Filter the datasets to find the one you're looking for more easily. These filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />:
 * My Work - Show only datasets that you created
 * Tags - Choose which tags to filter by from a list of tags used in the datasets.
   * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" 
@@ -29,7 +29,7 @@ Filter the datasets to find the one you’re looking for more easily. These filt
 
 ## Project Cards
 
-In Project view, project cards display a project’s summarized dataset information:
+In Project view, project cards display a project's summarized dataset information:
 
 <div class="max-w-50">
 
@@ -74,7 +74,7 @@ of a dataset card to open its context menu and access dataset actions.
 
 </div>
 
-* **Rename** - Change the dataset’s name
+* **Rename** - Change the dataset's name
 * **Add Tag** - Add label to the dataset to help easily classify groups of dataset.
 * **Delete** - Delete the dataset and all of its versions. To delete a dataset, all its versions must first be 
   archived. 
