@@ -86,8 +86,8 @@ provides a summary of the optimization results in tabular and parallel coordinat
 ## Experiments Comparison
 
 ClearML automatically logs each job, meaning each experiment that executes with a set of hyperparameters, separately. Each appears as an individual experiment in the ClearML Web UI, where the Task name is `image_classification_CIFAR10` and the hyperparameters appended.
-For example: `image_classification_CIFAR10: base_lr=0.0075 batch_size=12 dropout=0.05 number_of_epochs=6`
+For example: `image_classification_CIFAR10: base_lr=0.0075 batch_size=12 dropout=0.05 number_of_epochs=6`.
 
-When these experiments are completed, their configuration, results, plots, and debug samples can be compared using the WebApp [comparison features](../../../../../webapp/webapp_exp_comparing.md).
+Compare the experiments' configuration, results, plots, and debug samples, and more using the WebApp [comparison features](../../../../../webapp/webapp_exp_comparing.md).
 
 ![Comparison scalars](../../../../../img/examples_hyperparameter_search_09.png)
