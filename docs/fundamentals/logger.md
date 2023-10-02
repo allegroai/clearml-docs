@@ -26,7 +26,7 @@ ClearML supports four types of reports:
 ClearML automatically captures metrics reported to leading visualization libraries, such as TensorBoard and Matplotlib, 
 with no additional code necessary.
 
-In addition, ClearML will capture and log everything written to standard output, from debug messages to errors to 
+In addition, ClearML captures and logs everything written to standard output, from debug messages to errors to 
 library warning messages.
 
 GPU, CPU, Memory, and Network information is also automatically captured.
