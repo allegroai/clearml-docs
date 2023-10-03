@@ -340,24 +340,25 @@ Run a `clearml-agent` daemon in foreground mode, sending all output to the conso
 clearml-agent daemon --queue default --foreground
 ```
 
-
-
 ## Execution Environments
 
-ClearML Agent has two primary execution modes: virtual environment and docker modes. 
+ClearML Agent has two primary execution modes: [Virtual Environment](#virtual-environment-mode) and [Docker](#docker-mode) 
+modes. 
 
-
-ClearML Agent supports executing tasks in multiple environments.
 ### Virtual Environment Mode 
 
-ClearML Agent supports working with one of the following package managers: [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) (default),
-[`conda`](https://docs.conda.io/en/latest/), and [`poetry`](https://python-poetry.org/). To change the package manager 
-used by the agent, edit the `type` field in the `package_manager`
-section of the `clearml.conf`. If extra channels are needed for `conda`, add the missing channels in the `conda_channels`
-field in the `clearml.conf`
+In Virtual Environment Mode, the agent creates a virtual environment for the experiment, installs the required Python 
+packages based on the task specification, clones the code repository, applies the uncommitted changes and finally 
+executes the code while monitoring it. This mode uses smart caching so packages and environments can be reused over 
+multiple tasks (see [Virtual Environment Reuse](#virtual-environment-reuse)). 
 
-When ClearML runs, it will create a virtual environment (or reuse an existing one, see [here](clearml_agent.md#virtual-environment-reuse)).
-Task dependencies (Python packages) will be installed in the virtual environment.
+ClearML Agent supports working with one of the following package managers: 
+* [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) (default)
+* [`conda`](https://docs.conda.io/en/latest/)
+* [`poetry`](https://python-poetry.org/)
+
+To change the package manager used by the agent, edit the `package_manager.type` field in the of the `clearml.conf`. If extra channels 
+are needed for `conda`, add the missing channels in the `package_manager.conda_channels` field in the `clearml.conf`. 
 
 :::note Using Poetry with Pyenv
 Some versions of poetry (using `install-poetry.py`) do not respect `pyenv global`.  
