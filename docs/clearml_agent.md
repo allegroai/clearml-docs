@@ -342,8 +342,7 @@ clearml-agent daemon --queue default --foreground
 
 ## Execution Environments
 
-ClearML Agent has two primary execution modes: [Virtual Environment](#virtual-environment-mode) and [Docker](#docker-mode) 
-modes. 
+ClearML Agent has two primary execution modes: [Virtual Environment Mode](#virtual-environment-mode) and [Docker Mode](#docker-mode). 
 
 ### Virtual Environment Mode 
 
