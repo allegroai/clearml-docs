@@ -477,7 +477,7 @@ clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue quad_gpu=4 dual_gpu=2
 ``` 
 
 The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue.
-The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from `dual_gpu`
+The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from the `dual_gpu`
 queue, look for available GPUs again and spin on GPUs 4-5.
 
 Another option for allocating GPUs:

@@ -21,7 +21,7 @@ ClearML provides the following applications:
 * **Nvidia Clara** - Train models using Nvidia's Clara framework
 * [**Project Dashboard**](apps_dashboard.md) - High-level project monitoring with Slack alerts
 * [**Task Scheduler**](apps_task_scheduler.md) - Schedule tasks for one-shot and/or periodic execution at specified times (available under ClearML Enterprise Plan)
-* [**Trigger Manager**](apps_trigger_manager) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
+* [**Trigger Manager**](apps_trigger_manager.md) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
 
 ## App Pages Layout
 Each application's page is split into two sections:
