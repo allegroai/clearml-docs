@@ -95,7 +95,7 @@ Now you can use ClearML in your notebook!
 
 In ClearML, experiments are organized as [Tasks](../../fundamentals/task.md).
 
-ClearML will automatically log your experiment and code, including outputs and parameters from popular ML frameworks,
+ClearML automatically logs your experiment and code, including outputs and parameters from popular ML frameworks,
 once you integrate the ClearML [SDK](../../clearml_sdk/clearml_sdk.md) with your code. To control what ClearML automatically logs, see this [FAQ](../../faq.md#controlling_logging).
 
 At the beginning of your code, import the `clearml` package:
@@ -114,9 +114,9 @@ Then initialize the Task object in your `main()` function, or the beginning of t
 task = Task.init(project_name='great project', task_name='best experiment')
 ```
 
-If the project does not already exist, a new one will be created automatically.
+If the project does not already exist, a new one is created automatically.
 
-The console should return the following output:
+The console should display the following output:
 
 ```
 ClearML Task: created new task id=1ca59ef1f86d44bd81cb517d529d9e5a

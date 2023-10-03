@@ -62,7 +62,7 @@ module.exports = {
                 'integrations/autokeras',
                 'integrations/catboost', 'integrations/click', 'integrations/fastai',
                 'integrations/hydra',
-                'integrations/keras', 'guides/frameworks/tensorflow/integration_keras_tuner',
+                'integrations/keras', 'integrations/keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
                 'integrations/megengine', 'integrations/monai', 'integrations/openmmv', 'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
