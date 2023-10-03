@@ -357,13 +357,14 @@ ClearML Agent supports working with one of the following package managers:
 * [`conda`](https://docs.conda.io/en/latest/)
 * [`poetry`](https://python-poetry.org/)
 
-To change the package manager used by the agent, edit the `package_manager.type` field in the of the `clearml.conf`. If extra channels 
-are needed for `conda`, add the missing channels in the `package_manager.conda_channels` field in the `clearml.conf`. 
+To change the package manager used by the agent, edit the [`package_manager.type`](configs/clearml_conf.md#agentpackagemanager) 
+field in the of the `clearml.conf`. If extra channels are needed for `conda`, add the missing channels in the 
+`package_manager.conda_channels` field in the `clearml.conf`. 
 
 :::note Using Poetry with Pyenv
 Some versions of poetry (using `install-poetry.py`) do not respect `pyenv global`.  
 If you are using pyenv to control the environment where you use ClearML Agent, you can:
-  * Use poetry v1.2 and above (which [fixes this issue](https://github.com/python-poetry/poetry/issues/5077))
+  * Use poetry v1.2 and above (which fixes [this issue](https://github.com/python-poetry/poetry/issues/5077))
   * Install poetry with the deprecated `get-poetry.py` installer
 :::
 
