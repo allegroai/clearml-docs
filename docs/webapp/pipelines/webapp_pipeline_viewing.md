@@ -2,7 +2,7 @@
 title: Pipeline Run Details
 ---
 
-The run details panel shows the pipeline’s structure and the execution status of every step, as well as the run’s 
+The run details panel shows the pipeline's structure and the execution status of every step, as well as the run's 
 configuration parameters and output. 
 
 ![Pipeline structure](../../img/webapp_pipeline_DAG.png)
@@ -15,7 +15,7 @@ Each step shows:
 * Step status
 * Step execution time
 * Step log button - Hover over the step and click <img src="/docs/latest/icons/ico-console.svg" alt="console" className="icon size-md space-sm" /> 
-  to view the step’s [details panel](#run-and-step-details-panel) 
+  to view the step's [details panel](#run-and-step-details-panel) 
 
 While the pipeline is running, the steps’ details and colors are updated.
 

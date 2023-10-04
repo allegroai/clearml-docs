@@ -25,7 +25,7 @@ ClearML automatically logs the configurations applied to LightGBM. They appear i
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks 
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks 
 models and any snapshots created using LightGBM. 
 
 ![LightGBM model](../../../img/examples_lightgbm_model.png)

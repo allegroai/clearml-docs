@@ -454,7 +454,7 @@ You can disable the deterministic behavior entirely by passing `Task.set_random_
 #### In the Web UI, I can't access files that my experiment stored. Why not?  
 
 ClearML stores file locations. The machine running your browser must have access to the location where the machine 
-that ran the Task stored the file. This applies to debug samples and artifacts. If, for example, the machine running the browser does not have access, you may see "Unable to load image", instead of the image.
+that ran the Task stored the file. This applies to debug samples and artifacts. If, for example, the machine running the browser does not have access, you may see `Unable to load image`, instead of the image.
 
 <a id="resource_monitoring"></a>
 
@@ -479,7 +479,7 @@ After thirty minutes, it remains unchanged.
 #### Can I control what ClearML automatically logs?   <a id="controlling_logging"></a>
 
 Yes! ClearML lets you control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
-by calling the [`Task.init`](references/sdk/task.md#taskinit) method. 
+by calling [`Task.init()`](references/sdk/task.md#taskinit). 
 
 To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
 parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
@@ -546,8 +546,10 @@ See [Storing Task Data Offline](guides/set_offline.md).
 
 Due to speed/optimization issues, the console displays only the last several hundred log lines.
 
-You can always download the full log as a file using the ClearML Web UI. In the ClearML Web UI > experiment 
-info panel > CONSOLE tab, use the *Download full log* feature.
+You can always download the full log as a file using the ClearML Web UI. In the **ClearML Web UI >** experiment's **CONSOLE** 
+tab, click `Download full log`.
+
+![Download console log](img/faq_download_console_log.png)
 
 <br/>
 
@@ -562,7 +564,7 @@ in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot.
 The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
 `batch_size`, and `number_of_epochs`) and a performance metric (`accuracy`) of three experiments. 
 
-![Parallel Coordinates](img/clearml_faq_screenshots/compare_parallel_coordinates.png)
+![Parallel Coordinates](img/compare_parallel_coordinates.png)
 
 You can also visualize the differences in a scatter plot. In each experiment whose values will be compared, report a plot 
 with a single point, x-axis for the hyperparameter value, and Y-axis for the accuracy. 
@@ -585,7 +587,7 @@ Task.current_task().get_logger().report_scatter2d(
 When these experiments are compared in the UI's experiment comparison, all the reported `performance/accuracy` values 
 are displayed in a single plot.
 
-![Comparison plot](img/clearml_faq_screenshots/compare_plots.png)
+![Comparison plot](img/compare_plots.png)
 
 Another option is a histogram chart:
 
@@ -602,7 +604,7 @@ Task.current_task().get_logger().report_vector(
 )
 ```
 
-![Comparison plot histogram](img/clearml_faq_screenshots/compare_plots_hist.png)
+![Comparison plot histogram](img/compare_plots_hist.png)
 
 <br/>
 
@@ -647,8 +649,8 @@ logger.report_scatter2d(
 
 #### Is there something ClearML can do about uncommitted code running?    <a id="help-uncommitted-code"></a>
 
-Yes! ClearML stores the git diff as part of the experiment's information. You can view the git diff in the ClearML Web UI, 
-experiment info panel > EXECUTION tab.
+Yes! ClearML stores the git diff as part of the experiment's information. You can view the git diff in the **ClearML Web UI >** 
+experiment' **EXECUTION** tab.
 
 <br/>
 
@@ -1125,7 +1127,7 @@ configuration option `agent.package_manager.system_site_packages` to `true`.
 #### How can I use the ClearML API to fetch data?   <a className="tr_top_negative" id="api"></a>
 
 You can use the `APIClient` class, which provides a Pythonic interface to access ClearML's backend REST API. Through 
-an `APIClient` instance, you can access ClearML’s REST API services and endpoints. 
+an `APIClient` instance, you can access ClearML's REST API services and endpoints. 
 
 To use `APIClient`, create an instance of it, then call the method corresponding to the desired REST API endpoint, with 
 its respective parameters as described in the [REST API reference page](references/api/index.md). 

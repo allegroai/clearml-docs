@@ -8,7 +8,7 @@ For ClearML docker images, including previous versions, see [https://hub.docker.
 However, pulling the ClearML Docker image directly is not required. ClearML provides a docker-compose YAML file that does this. 
 The docker-compose file is included in the instructions on this page.
 
-For information about upgrading ClearML Server in Linux or macOS, see [here](upgrade_server_linux_mac.md)
+For information about upgrading ClearML Server in Linux or macOS, see [here](upgrade_server_linux_mac.md).
 
 :::important
 If ClearML Server is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 

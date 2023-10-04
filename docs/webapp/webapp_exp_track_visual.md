@@ -146,7 +146,7 @@ except experiments whose status is *Published* (read-only).
 ### Configuration Objects
 
 ClearML tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
-These objects include those that are automatically tracked, and those connected to a Task in code (see [Task.connect_configuration](../references/sdk/task.md#connect_configuration)).
+These objects include those that are automatically tracked, and those connected to a Task in code (see [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration)).
 
 ![Configuration objects](../img/webapp_tracking_24.png)
 

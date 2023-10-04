@@ -50,8 +50,8 @@ Logger.current_logger().report_image(
 ClearML reports these images as debug samples in the **ClearML Web UI**, under the experiment's
 **DEBUG SAMPLES** tab. 
 
-![image](../../img/examples_reporting_07.png)
+![Debug samples](../../img/examples_reporting_07.png)
 
-Double-click a thumbnail, and the image viewer opens.
+Click a thumbnail to open the image viewer.
 
-![image](../../img/examples_reporting_07a.png)
+![Image viewer](../../img/examples_reporting_07a.png)

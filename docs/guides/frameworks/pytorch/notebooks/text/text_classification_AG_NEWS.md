@@ -4,18 +4,25 @@ title: Text Classification - Jupyter Notebook
 
 The example [text_classification_AG_NEWS.ipynb](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/notebooks/text/text_classification_AG_NEWS.ipynb) 
 demonstrates using Jupyter Notebook for ClearML, and the integration of ClearML into code which trains a network 
-to classify text in the `torchtext` [AG_NEWS](https://pytorch.org/text/stable/datasets.html#ag-news) dataset, and then applies the model to predict the classification of sample text. ClearML automatically logs the scalar and console output by calling TensorBoard methods. The example code explicitly logs parameters to the Task. When the script runs, it creates an experiment named `text classifier` in the `Text Example` project.
+to classify text in the `torchtext` [AG_NEWS](https://pytorch.org/text/stable/datasets.html#ag-news) dataset, and then applies the model to predict the classification of sample text. 
+
+ClearML automatically logs the scalars and text samples reported with TensorBoard methods. The example code explicitly logs parameters to the Task. When the script runs, it creates an experiment named `text classifier` in the `Text Example` project.
 
 ## Scalars
 
 Accuracy, learning rate, and training loss appear in **SCALARS**, along with the resource utilization plots, which are titled **:monitor: machine**.
 
-![image](../../../../../img/text_classification_AG_NEWS_03.png)
+![Scalars](../../../../../img/text_classification_AG_NEWS_03.png)
+
+## Debug Samples
+
+ClearML automatically logs the text samples reported to TensorBoard. They are displayed in the experiment's **DEBUG SAMPLES**.
+
+![Debug samples](../../../../../img/text_classification_AG_NEWS_04.png)
 
 ## Hyperparameters
 
-ClearML automatically logs the command line options, because the example code uses `argparse`. A parameter dictionary 
-is logged by connecting it to the Task using [`Task.connect()`](../../../../../references/sdk/task.md#connect).
+A parameter dictionary is logged by connecting it to the Task using [`Task.connect()`](../../../../../references/sdk/task.md#connect):
 
 ```python
 configuration_dict = {
@@ -25,17 +32,13 @@ configuration_dict = {
 configuration_dict = task.connect(configuration_dict)  
 ```
     
-Command line options appear in **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **Args**.
+The parameters are displayed in the experiment's **CONFIGURATION** **>** **HYPERPARAMETERS** **>** **General** section.
 
-![image](../../../../../img/text_classification_AG_NEWS_01.png)
-
-Parameter dictionaries appear in the **General** subsection.
-
-![image](../../../../../img/text_classification_AG_NEWS_01a.png)
+![Hyperparameters](../../../../../img/text_classification_AG_NEWS_01.png)
 
 ## Console
 
 Text printed to the console for training progress, as well as all other console output, appear in **CONSOLE**.
 
-![image](../../../../../img/text_classification_AG_NEWS_02.png)
+![Console](../../../../../img/text_classification_AG_NEWS_02.png)
 
