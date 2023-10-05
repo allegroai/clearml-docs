@@ -101,6 +101,7 @@ module.exports = {
             },
             'webapp/webapp_reports',
             'webapp/webapp_workers_queues',
+            'webapp/webapp_orchestration_dash',
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',
