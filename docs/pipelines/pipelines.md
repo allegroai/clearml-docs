@@ -101,8 +101,8 @@ When you rerun the pipeline through the ClearML WebApp, the pipeline is construc
 code.
 
 To change this behavior, pass `always_create_from_code=False` when instantiating a `PipelineController`. In this case, 
-when rerun, the pipeline DAG will be generated from the pipeline configuration stored in the pipeline task. This allows 
-you to modify the pipeline configuration via the UI, without changing the original codebase.
+when rerun, the pipeline DAG will be generated from the pipeline configuration stored in the pipeline task. This 
+lets you modify the pipeline configuration via the UI, without changing the original codebase.
 
 ### Pipeline Versions
 Each pipeline must be assigned a version number to help track the evolution of your pipeline structure and parameters.

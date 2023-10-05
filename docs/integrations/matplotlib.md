@@ -50,7 +50,7 @@ Use [`Logger.report_matplotlib_figure()`](../references/sdk/logger.md#report_mat
 a matplotlib figure, and specify its title and series names, and iteration number:
 
 
-```
+```python
 logger = task.get_logger()
 
 area = (40 * np.random.rand(N))**2

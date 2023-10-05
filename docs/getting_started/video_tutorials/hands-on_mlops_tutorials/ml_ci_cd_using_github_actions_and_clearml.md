@@ -148,7 +148,7 @@ status, it isn't completed this should not happen but. If it is completed, we ar
 functions that I won't go deeper into. Basically, they format the dictionary of the state of the task scalars into
 markdown that we can actually use. Let me just go into this though one quick time. So we can basically do `Task.get_last_scalar_metrics()`, 
 and this function is built into ClearML, which basically gives you a dictionary with all the metrics on your task. 
-We'll just get that formatted into a table, make it into a pandas DataFrame, and then tabulate it with this cool package 
+We'll just get that formatted into a table, make it into a Pandas DataFrame, and then tabulate it with this cool package 
 that turns it into MarkDown. So now that we have marked down in the table, we then want to return results table. You can 
 view the full task. This is basically the comment content we want to be in the comment that will later end up in the PR. 
 If something else went wrong, we want to log it here. It will also end up in a comment, by the way, so then we know that 

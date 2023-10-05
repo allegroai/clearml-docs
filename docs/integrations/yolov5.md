@@ -121,7 +121,7 @@ clearml-data sync --project YOLOv5 --name coco128 --folder .
 
 This command syncs the folder's content with ClearML, packaging all of the folder's contents into a ClearML dataset.
 
-Alternatively, you could run these commands one after the other to create a dataset:
+Alternatively, you can run these commands one after the other to create a dataset:
 
 ```commandline
 # Optionally add --parent <parent_dataset_id> if you want to base
@@ -162,7 +162,7 @@ the following command on it:
 clearml-agent daemon --queue <queues_to_listen_to> [--docker]
 ```
 
-Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md), to help you manage cloud workloads in the 
+Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md) to help you manage cloud workloads in the 
 cloud of your choice (AWS, GCP, Azure) and automatically deploy ClearML agents: the autoscaler automatically spins up 
 and shuts down instances as needed, according to a resource budget that you set.
 

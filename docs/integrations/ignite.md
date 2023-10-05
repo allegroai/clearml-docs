@@ -123,7 +123,7 @@ Visualize all the captured information in the experiment's page in ClearML's [We
 
 For more information, see the [ignite documentation](https://pytorch.org/ignite/generated/ignite.contrib.handlers.clearml_logger.html). 
 
-See code example [here](https://github.com/pytorch/ignite/blob/master/examples/contrib/mnist/mnist_with_clearml_logger.py)
+See code example [here](https://github.com/pytorch/ignite/blob/master/examples/mnist/mnist_with_clearml_logger.py).
 
 ## WebApp
 

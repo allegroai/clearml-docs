@@ -71,7 +71,7 @@ def job_complete_callback(
 Initialize the Task, which will be stored in ClearML Server when the code runs. After the code runs at least once, it 
 can be [reproduced](../../../webapp/webapp_exp_reproducing.md) and [tuned](../../../webapp/webapp_exp_tuning.md).
 
-We set the Task type to optimizer, and create a new experiment (and Task object) each time the optimizer runs (`reuse_last_task_id=False`). 
+Set the Task type to `optimizer`, and create a new experiment (and Task object) each time the optimizer runs (`reuse_last_task_id=False`). 
 
 When the code runs, it creates an experiment named **Automatic Hyper-Parameter Optimization** that is associated with 
 the project **Hyper-Parameter Optimization**, which can be seen in the **ClearML Web UI**. 

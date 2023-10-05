@@ -28,7 +28,7 @@ moved to be executed by a stronger machine.
 
 During the execution of the example script, the code does the following:
 * Uses ClearML's automatic and explicit logging.
-* Creates an experiment named `Remote_execution PyTorch MNIST train`, which is associated with the `examples` project.
+* Creates an experiment named `Remote_execution PyTorch MNIST train` in the `examples` project.
 
 
 ## Scalars
@@ -70,7 +70,7 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks models
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks models
 and any snapshots created using PyTorch. 
 
 ![Experiment artifacts](../../img/examples_remote_execution_artifacts.png)

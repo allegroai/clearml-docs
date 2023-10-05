@@ -37,7 +37,7 @@ experiment runs. Some possible destinations include:
   * Google Cloud Storage
   * Azure Storage. 
     
-Specify the output location in the `output_uri` parameter of the [`Task.init`](../../references/sdk/task.md#taskinit) method. 
+Specify the output location in the `output_uri` parameter of [`Task.init()`](../../references/sdk/task.md#taskinit). 
 In this tutorial, specify a local folder destination.
 
 In `pytorch_mnist_tutorial.py`, change the code from:
@@ -96,8 +96,7 @@ package contains methods for explicit reporting of plots, log text, media, and t
 
 ### Get a Logger
 
-First, create a logger for the Task using the [Task.get_logger](../../references/sdk/task.md#get_logger) 
-method.
+First, create a logger for the Task using [`Task.get_logger()`](../../references/sdk/task.md#get_logger):
 
 ```python
 logger = task.get_logger
@@ -105,8 +104,8 @@ logger = task.get_logger
 
 ### Plot Scalar Metrics
 
-Add scalar metrics using the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
-method to report loss metrics.
+Add scalar metrics using [`Logger.report_scalar()`](../../references/sdk/logger.md#report_scalar) 
+to report loss metrics.
 
 ```python
 def train(args, model, device, train_loader, optimizer, epoch):
@@ -187,8 +186,8 @@ def test(args, model, device, test_loader):
 
 ### Log Text
 
-Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. Use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
-method and its argument `level` to report a debugging message.
+Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. Use [`Logger.report_text()`](../../references/sdk/logger.md#report_text) 
+and its `level` argument to report a debugging message.
 
 ```python
 logger.report_text(
@@ -207,8 +206,8 @@ Currently, ClearML supports Pandas DataFrames as registered artifacts.
 
 ### Register the Artifact
 
-In the tutorial script, `test` function, we can assign the test loss and correct data to a Pandas DataFrame object and register 
-that Pandas DataFrame using the [Task.register_artifact](../../references/sdk/task.md#register_artifact) method.
+In the tutorial script, `test` function, you can assign the test loss and correct data to a Pandas DataFrame object and register 
+that Pandas DataFrame using [`Task.register_artifact()`](../../references/sdk/task.md#register_artifact).
 
 ```python
 # Create the Pandas DataFrame
@@ -234,9 +233,9 @@ task.register_artifact(
 
 Once an artifact is registered, it can be referenced and utilized in the Python experiment script.
 
-In the tutorial script, we add [Task.current_task](../../references/sdk/task.md#taskcurrent_task) and 
-[Task.get_registered_artifacts](../../references/sdk/task.md#get_registered_artifacts) 
-methods to take a sample.
+In the tutorial script, add [`Task.current_task()`](../../references/sdk/task.md#taskcurrent_task) and 
+[`Task.get_registered_artifacts()`](../../references/sdk/task.md#get_registered_artifacts) 
+to take a sample.
 
 ```python
 # Once the artifact is registered, we can get it and work with it. Here, we sample it.
@@ -259,8 +258,8 @@ Supported artifacts include:
 * Dictionaries - stored as JSONs
 * Numpy arrays - stored as NPZ files
 
-In the tutorial script, upload the loss data as an artifact using the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
-method with metadata specified in the `metadata` parameter.
+In the tutorial script, upload the loss data as an artifact using [`Task.upload_artifact()`](../../references/sdk/task.md#upload_artifact) 
+with metadata specified in the `metadata` parameter.
 
 ```python
 # Upload test loss as an artifact. Here, the artifact is numpy array

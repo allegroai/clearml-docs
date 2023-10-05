@@ -25,7 +25,7 @@ compared models at the top.
    ![Adding models](../img/webapp_compare_model_select_2.png)
 1. Find the models to add by sorting and [filtering](webapp_model_table.md#filtering-columns) the models with the 
 appropriate column header controls. Alternatively, use the search bar to find models by name.
-1. Select models to include in the comparison (and / or clear the selection of any models you wish to remove).
+1. Select models to include in the comparison (and/or clear the selection of any models you wish to remove).
 1. Click **APPLY**.
 
 ## Sharing Comparison Page
