@@ -48,7 +48,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * \+ Add Item - Define another resource type
 * **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
 * **Max Idle Time** (optional) - Maximum time in minutes that a VM instance can be idle before the autoscaler spins it down
-* **Workers Prefix** (optional) - A Prefix added to workers’ names, associating them with this autoscaler
+* **Workers Prefix** (optional) - A Prefix added to workers' names, associating them with this autoscaler
 * **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
 * **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [ClearML vault](../webapp_profile.md#configuration-vault) when executing the task
 * **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
@@ -91,22 +91,22 @@ The autoscaler dashboard shows:
 * Queues and the resource type associated with them
 * Number of current running instances
 * Console: the application log containing everything printed to stdout and stderr appears in the console log. The log 
-  shows polling results of the autoscaler’s associated queues, including the number of tasks enqueued, and updates VM 
+  shows polling results of the autoscaler's associated queues, including the number of tasks enqueued, and updates VM 
   instances being spun up/down
 
 :::tip Console Debugging   
-To make the autoscaler console log show additional debug information, change an active app instance’s log level to DEBUG:
-1. Go to the app instance task’s page > **CONFIGURATION** tab > **USER PROPERTIES** section 
+To make the autoscaler console log show additional debug information, change an active app instance's log level to DEBUG:
+1. Go to the app instance task's page > **CONFIGURATION** tab > **USER PROPERTIES** section 
 1. Hover over the section > Click `Edit` > Click `+ADD PARAMETER`
 1. Input `log_level` as the key and `DEBUG` as the value of the new parameter.
 
 ![Autoscaler debugging](../../img/webapp_autoscaler_debug_log.png)
 
-The console’s log level will update in the autoscaler's next iteration.  
+The console's log level will update in the autoscaler's next iteration.  
 :::
 
 * Instance log files - Click to access the app instance's logs. This takes you to the app instance task's ARTIFACTS tab, 
-  which lists the app instance’s logs. In a log’s `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
+  which lists the app instance's logs. In a log's `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
   to download the complete log. 
 
 :::tip EMBEDDING CLEARML VISUALIZATION

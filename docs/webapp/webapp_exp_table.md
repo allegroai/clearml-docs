@@ -9,7 +9,7 @@ to monitor experimentation, and more). The experiments table's auto-refresh allo
 View the experiments table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your experiments according 
-to columns of interest. Use the details view to access a selected experiment’s details, while keeping the experiment list 
+to columns of interest. Use the details view to access a selected experiment's details, while keeping the experiment list 
 in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
 
 You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the

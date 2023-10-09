@@ -123,7 +123,7 @@ pending invitations are displayed.
 
 ### Leaving a Workspace
 
-You can leave any workspace you’ve previously joined (except your personal workspace).
+You can leave any workspace you've previously joined (except your personal workspace).
 
 When leaving a workspace, you lose access to its resources (tasks, models, etc.) and your previously created access 
 credentials to that workspace are revoked. Tasks and associated artifacts that you logged to that workspace will remain 
@@ -223,7 +223,7 @@ To remove a user from a workspace:
 1. Hover over the user's row on the table
 1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
-Removed users lose access to your workspace’s resources (tasks, models, etc.) and their existing access credentials are 
+Removed users lose access to your workspace's resources (tasks, models, etc.) and their existing access credentials are 
 revoked. Tasks and associated artifacts logged to your workspace by a removed user will remain in your workspace. The 
 user can only rejoin your workspace when you re-invite them. 
 
