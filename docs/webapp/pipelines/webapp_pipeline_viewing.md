@@ -43,7 +43,7 @@ The panel displays the step’s name, task type, and status, as well as its para
 
 ![Step info](../../img/webapp_pipeline_step_info.png)
 
-To return to viewing the run’s information, click the pipeline graph, outside any of the steps.  
+To return to viewing the run's information, click the pipeline graph, outside any of the steps.  
 
 ### Run and Step Details Panel
 
