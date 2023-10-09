@@ -21,7 +21,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **Machine Specification** 
     * GPU Type - NVIDIA GPU on the machine
     * Number of GPUs - Number of GPUs in the cloud machine
-    * The rest of the machine’s available resources are dependent on the number and type of GPUs specified above:  
+    * The rest of the machine's available resources are dependent on the number and type of GPUs specified above:  
       * vCPUs - Number of vCPUs in the cloud machine
       * Memory - RAM available to the cloud machine
       * Hourly Price - Machine's hourly rate   
@@ -65,14 +65,14 @@ The GPU Compute dashboard shows:
 * Console - The log shows updates of cloud instances being spun up/down. 
 
 :::tip Console Debugging   
-To make the autoscaler console log show additional debug information, change an active app instance’s log level to DEBUG:
-1. Go to the app instance task’s page > **CONFIGURATION** tab > **USER PROPERTIES** section 
+To make the autoscaler console log show additional debug information, change an active app instance's log level to DEBUG:
+1. Go to the app instance task's page > **CONFIGURATION** tab > **USER PROPERTIES** section 
 1. Hover over the section > Click `Edit` > Click `+ADD PARAMETER`
 1. Input `log_level` as the key and `DEBUG` as the value of the new parameter.
 
 ![Autoscaler debugging](../../img/webapp_autoscaler_debug_log.png)
 
-The console’s log level will update in the autoscaler's next iteration.  
+The console's log level will update in the autoscaler's next iteration.  
 :::
 
 :::tip EMBEDDING CLEARML VISUALIZATION

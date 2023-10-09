@@ -43,7 +43,7 @@ The comparison tabs provides the following views:
 
 In the **Details**, **Network**, and **Scalars** (Values mode) tabs, you can view differences in the models' nominal 
 values. **Details** displays the models' general information, labels, and metadata. **Network** displays the models' 
-configuration. **Scalars** (in Values mode) displays the models’ scalar values (min, max, or last). Each model's 
+configuration. **Scalars** (in Values mode) displays the models' scalar values (min, max, or last). Each model's 
 information is displayed in a column, so each field is lined up side-by-side. 
 
 The model on the left is used as the base model, to which the other models are compared. You can set a new base model 
@@ -67,7 +67,7 @@ models are combined.
 
 ![Merged plots](../img/webapp_compare_models_merge_plots.png)
 
-The rest of the plots which can’t be merged are displayed separately for each model. 
+The rest of the plots which can't be merged are displayed separately for each model. 
 
 ![Side-by-side plots](../img/webapp_compare_models_side_plots.png)
 

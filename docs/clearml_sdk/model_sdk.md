@@ -40,7 +40,7 @@ output_model.update_labels({'background': 0, 'label': 255})
 ```
 
 ### Updating Models
-ClearML doesn’t automatically log the snapshots of manually logged models. To update an experiment’s model use the 
+ClearML doesn't automatically log the snapshots of manually logged models. To update an experiment's model use the 
 [OutputModel.update_weights](../references/sdk/model_outputmodel.md#update_weights) method.
 
 ```python
@@ -106,7 +106,7 @@ task.connect(input_model)
 Retrieve a list of model objects by querying the system by model names, projects, tags, and more, using the 
 [`Model.query_models`](../references/sdk/model_model.md#modelquery_models) and/or 
 the [`InputModel.query_models`](../references/sdk/model_inputmodel.md#inputmodelquery_models) class methods. These 
-methods return a list of model objects that match the queries. The list is ordered according to the models’ last update 
+methods return a list of model objects that match the queries. The list is ordered according to the models' last update 
 time.
 
 ```python
