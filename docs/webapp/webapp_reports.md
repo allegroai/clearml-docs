@@ -14,7 +14,7 @@ title: Reports
 
 <br/>
 
-With ClearML’s Reports you can write up notes, experiment findings, or really anything you want. You can create reports 
+With ClearML's Reports you can write up notes, experiment findings, or really anything you want. You can create reports 
 in any of your ClearML projects.
 
 In addition to its main document, a report also contains a description field, which will appear in the report's card in 
@@ -76,7 +76,7 @@ A standard embed code is formatted like this:
 ```
 
 The `src` parameter is made up of the following components: 
-* Your web server’s URL (e.g. `app.clear.ml`)
+* Your web server's URL (e.g. `app.clear.ml`)
 * `/widget/` - The endpoint that serves the embedded data.
 * The query parameters for your visualization (the path and query are separated by a question mark `?`)
 
@@ -105,7 +105,7 @@ resources will be displayed. See [Dynamic Queries](#dynamic-queries) below.
   * `timestamp` - Time from start
   * `iso_time` - Wall time
 * `metrics` - Metric name 
-* `variants` - Variant’s name
+* `variants` - Variant's name
 * `company` - Workspace ID. Applicable to the ClearML hosted service, for embedding content from a different workspace 
 * `light` - add parameter to switch visualization to light theme
 

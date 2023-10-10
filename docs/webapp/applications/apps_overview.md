@@ -54,7 +54,7 @@ Access app instance actions, by right-clicking an instance, or through the menu 
 ![App context menu](../../img/app_context_menu.png)
 
 * **Rename** - Rename the instance 
-* **Configuration** - View an instance’s configuration 
+* **Configuration** - View an instance's configuration 
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration   
 * **Stop** - Shutdown the instance
