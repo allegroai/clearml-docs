@@ -642,7 +642,6 @@ logger.report_scatter2d(
     xaxis="title x", 
     yaxis="title y"
 )
-
 ```
 
 ## GIT and Storage

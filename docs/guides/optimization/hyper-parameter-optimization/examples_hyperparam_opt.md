@@ -174,7 +174,6 @@ Specify the remaining parameters, including the time limit per Task (minutes), p
     max_iteration_per_job=30,
     
 )  # done creating HyperParameterOptimizer
-
 ```
 
 ## Running as a Service
