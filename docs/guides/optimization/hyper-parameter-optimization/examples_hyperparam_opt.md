@@ -23,7 +23,7 @@ The following search strategies can be used:
   documentation.
      
 * Random uniform sampling of hyperparameter strategy - [automation.RandomSearch](../../../references/sdk/hpo_optimization_randomsearch.md)
-* Full grid sampling strategy of every hyperparameter combination - Grid search [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
+* Full grid sampling strategy of every hyperparameter combination - [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
 * Custom - Use a custom class and inherit from the ClearML automation base strategy class, automation.optimization.SearchStrategy.
 
 The search strategy class that is chosen will be passed to the [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
@@ -73,8 +73,8 @@ can be [reproduced](../../../webapp/webapp_exp_reproducing.md) and [tuned](../..
 
 Set the Task type to `optimizer`, and create a new experiment (and Task object) each time the optimizer runs (`reuse_last_task_id=False`). 
 
-When the code runs, it creates an experiment named **Automatic Hyper-Parameter Optimization** that is associated with 
-the project **Hyper-Parameter Optimization**, which can be seen in the **ClearML Web UI**. 
+When the code runs, it creates an experiment named **Automatic Hyper-Parameter Optimization** in 
+the **Hyper-Parameter Optimization** project, which can be seen in the **ClearML Web UI**. 
  
  ```python
 # Connecting CLEARML
