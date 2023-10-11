@@ -4,7 +4,7 @@ title: The Experiments Table
 
 The experiments table is a [customizable](#customizing-the-experiments-table) list of experiments associated with a project. From the experiments
 table, view experiment details, and work with experiments (reset, clone, enqueue, create [tracking leaderboards](../guides/ui/building_leader_board.md)
-to monitor experimentation, and more). The experiments table's auto-refresh allows users to continually monitor experiment progress.
+to monitor experimentation, and more). The experiments table's auto-refresh lets users continually monitor experiment progress.
 
 View the experiments table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,

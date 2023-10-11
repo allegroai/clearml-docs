@@ -302,7 +302,7 @@ from `system_site_packages`
     * `AWS_SECRET_ACCESS_KEY` 
     * `AZURE_STORAGE_KEY`
   
-  * To mask additional environment variables, add their keys to the `extra_keys` list.  
+  * To mask additional environment variables, add their keys to the `extra_keys` list. 
   For example, to hide the value of a custom environment variable named `MY_SPECIAL_PASSWORD`, set `extra_keys: ["MY_SPECIAL_PASSWORD"]`
 
   * By default, `parse_embedded_urls` is set to `true`, so agent will also hide passwords in URLs and handle environment variables
@@ -733,7 +733,7 @@ This configuration option is experimental, and has not been vigorously tested, s
         
 **`api.credentials`** (*dict*)
         
-* Dictionary of API credentials.   
+* Dictionary of API credentials. 
   Alternatively, specify the environment variable `CLEARML_API_ACCESS_KEY` / `CLEARML_API_SECRET_KEY` to override these keys.
 
         
