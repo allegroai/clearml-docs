@@ -70,25 +70,29 @@ clearml_logger.attach(
 * Log metrics for training:
     
 ```python
-clearml_logger.attach(train_evaluator,
+clearml_logger.attach(
+    train_evaluator,
     log_handler=OutputHandler(
         tag="training",
         metric_names=["nll", "accuracy"],
         global_step_transform=global_step_from_engine(trainer)
     ),
-    event_name=Events.EPOCH_COMPLETED)
+    event_name=Events.EPOCH_COMPLETED
+)
 ```
 
 * Log metrics for validation:
                     
 ```python
-clearml_logger.attach(evaluator,
+clearml_logger.attach(
+    evaluator,
     log_handler=OutputHandler(
         tag="validation",
         metric_names=["nll", "accuracy"],
         global_step_transform=global_step_from_engine(trainer)
     ),
-    event_name=Events.EPOCH_COMPLETED)
+    event_name=Events.EPOCH_COMPLETED
+)
 ```
 
 To log optimizer parameters, use the `attach_opt_params_handler` method:

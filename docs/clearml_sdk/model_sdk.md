@@ -171,7 +171,7 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
   ```
 
 * The following query will return models that have either tag `a` or tag `b` and both tag `c` and tag `d` 
-  (`("a" OR "b") AND "c" AND "d"` ).
+  (`("a" OR "b") AND "c" AND "d"`).
   ```python
   model_list = Model.query_models(
     tags=["__$and", "__$or", "a", "b", "__$and", "c", "d"]
