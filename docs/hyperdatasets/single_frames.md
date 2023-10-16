@@ -319,7 +319,6 @@ frame.meta['road_hazard'] = 'yes'
 # update the SingeFrame
 frames.append(frame)
 myDatasetVersion.update_frames(frames)                
-
 ```
 
 

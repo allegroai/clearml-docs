@@ -18,8 +18,7 @@ ClearML automatically captures scalars logged by CatBoost. These scalars can be 
 ![Experiment scalars](../../../img/examples_catboost_scalars.png)
 
 ## Hyperparameters
-ClearML automatically logs command line options defined with argparse. They appear in **CONFIGURATIONS > HYPER 
-PARAMETERS > Args**.
+ClearML automatically logs command line options defined with argparse. They appear in **CONFIGURATIONS > HYPERPARAMETERS > Args**.
 
 ![Experiment hyperparameters](../../../img/examples_catboost_configurations.png)
 
