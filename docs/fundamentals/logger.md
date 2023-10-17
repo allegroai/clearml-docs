@@ -118,8 +118,7 @@ Credentials for the destination storage are specified in the [ClearML configurat
 The Logger class provides methods for fine-tuning ClearML's automatic logging behavior with Matplotlib and Tensorboard. 
 For example, use the [`Logger.matplotlib_force_report_non_interactive`](../references/sdk/logger.md#loggermatplotlib_force_report_non_interactive) 
 class method to control how matplotlib objects are logged. See the [`Logger.tensorboard_auto_group_scalars`](../references/sdk/logger.md#loggertensorboard_auto_group_scalars) 
-and [`Logger.tensorboard_single_series_per_graph`](../references/sdk/logger.md#loggertensorboard_single_series_per_graph) 
-class methods.  
+class method.  
 
 
 ### Set Default NaN and Inf Values
