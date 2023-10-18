@@ -14,22 +14,21 @@ title: Recreating Experiment Environments
 
 <br/>
 
-When you run your code with ClearML, ClearML logs everything needed to reproduce your experiment and its environment: 
-uncommitted changes, used packages, and more.
+Sometimes, you may need to recreate your experiment environment on a different machine, but you haven't committed your 
+code.
 
-You can also easily reproduce your experiment's execution environment using ClearML.  
-Sometimes, you may need to recreate your experiment environment in your machine, but you haven't committed your code.
-If you have ClearML integrated into your code, and have run your experiment a few times, you can reproduce any of your 
-experiment run's executions environments anywhere.
+ClearML logs everything needed to reproduce your experiment and its environment (uncommitted changes, used packages, and 
+more), making it easy to  reproduce your experiment's execution environment using ClearML.
 
-This is what you have to do:
-1. Go to the [WebApp](../../webapp/webapp_overview.md), to the experiment page of the task you want to reproduce locally 
+You can reproduce the execution environment of any experiment you’ve run with ClearML on any workload:
+
+1. Go to the experiment page of the task you want to reproduce in the [ClearML WebApp](../../webapp/webapp_overview.md), 
    :::tip
    Use the UI's [filtering and sorting](../../webapp/webapp_exp_table.md#filtering-columns) to find the best performing experiments  
    ::: 
 1. Copy the desired experiment's ID
-1. Use the ClearML Agent's [`build`](../../clearml_agent/clearml_agent_ref.md#build) command to rebuild the experiment. 
-   Input the experiment's ID and the target local folder, where the experiment will be stored
+1. Use the ClearML Agent's [`build`](../../clearml_agent/clearml_agent_ref.md#build) command to rebuild the experiment's
+   execution environment. Input the experiment's ID and the target local folder, where the environment will be created
 
    ```commandline
    clearml-agent build --id <task_id> --target <target_folder>
