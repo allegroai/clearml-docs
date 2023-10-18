@@ -17,12 +17,12 @@ clearml-agent daemon --queue default
 The script trains a simple deep neural network on the PyTorch built-in MNIST dataset. The following describes the code's 
 execution flow: 
 1. The training runs for one epoch. 
-1. The code passes the `execute_remotely` method which terminates the local execution of the code and enqueues the task 
+1. The code uses [`Task.execute_remotely()`](../../references/sdk/task.md#execute_remotely), which terminates the local execution of the code and enqueues the task 
    to the `default` queue, as specified in the `queue_name` parameter.
 1. An agent listening to the queue fetches the task and restarts task execution remotely. When the agent executes the task, 
    the `execute_remotely` is considered no-op. 
 
-An execution flow that uses `execute_remotely` method is especially helpful when running code on a development machine for a few iterations
+An execution flow that uses `execute_remotely` is especially helpful when running code on a development machine for a few iterations
 to debug and to make sure the code doesn't crash, or to set up an environment. After that, the training can be 
 moved to be executed by a stronger machine.
 
@@ -41,7 +41,7 @@ Logger.current_logger().report_scalar(
 )
 ```
 
-In the `test` method, the code explicitly reports `loss` and `accuracy` scalars.
+In the script's `test` function, the code explicitly reports `loss` and `accuracy` scalars.
 
 ```python
 Logger.current_logger().report_scalar(
@@ -70,7 +70,7 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks models
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks models
 and any snapshots created using PyTorch. 
 
 ![Experiment artifacts](../../img/examples_remote_execution_artifacts.png)

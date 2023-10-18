@@ -29,6 +29,6 @@ To view the model details, click the model name in the **ARTIFACTS** page, which
 
 ## Console
 
-All console output during the script’s execution appears in the experiment’s **CONSOLE** page.
+All console output during the script's execution appears in the experiment's **CONSOLE** page.
 
 ![Console output](../../../img/examples_xgboost_metric_console.png)

@@ -2,7 +2,7 @@
 title: PyTorch Ignite ClearMLLogger
 ---
 
-The `ignite` repository contains the [mnist_with_clearml_logger.py](https://github.com/pytorch/ignite/blob/master/examples/contrib/mnist/mnist_with_clearml_logger.py)
+The `ignite` repository contains the [mnist_with_clearml_logger.py](https://github.com/pytorch/ignite/blob/master/examples/mnist/mnist_with_clearml_logger.py)
 example script that uses [ignite](https://github.com/pytorch/ignite) and integrates **ClearMLLogger** and its [helper handlers](https://pytorch.org/ignite/generated/ignite.contrib.handlers.clearml_logger.html). 
 
 PyTorch Ignite supports a `ClearMLLogger` handler to log metrics, text, model / optimizer parameters, plots, and model 
@@ -70,25 +70,29 @@ clearml_logger.attach(
 * Log metrics for training:
     
 ```python
-clearml_logger.attach(train_evaluator,
+clearml_logger.attach(
+    train_evaluator,
     log_handler=OutputHandler(
         tag="training",
         metric_names=["nll", "accuracy"],
         global_step_transform=global_step_from_engine(trainer)
     ),
-    event_name=Events.EPOCH_COMPLETED)
+    event_name=Events.EPOCH_COMPLETED
+)
 ```
 
 * Log metrics for validation:
                     
 ```python
-clearml_logger.attach(evaluator,
+clearml_logger.attach(
+    evaluator,
     log_handler=OutputHandler(
         tag="validation",
         metric_names=["nll", "accuracy"],
         global_step_transform=global_step_from_engine(trainer)
     ),
-    event_name=Events.EPOCH_COMPLETED)
+    event_name=Events.EPOCH_COMPLETED
+)
 ```
 
 To log optimizer parameters, use the `attach_opt_params_handler` method:

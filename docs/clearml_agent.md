@@ -340,40 +340,37 @@ Run a `clearml-agent` daemon in foreground mode, sending all output to the conso
 clearml-agent daemon --queue default --foreground
 ```
 
-
-
 ## Execution Environments
 
-ClearML Agent supports executing tasks in multiple environments.
+ClearML Agent has two primary execution modes: [Virtual Environment Mode](#virtual-environment-mode) and [Docker Mode](#docker-mode). 
 
-### PIP Mode 
-By default, ClearML Agent works in PIP Mode, in which it uses [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) 
-as the package manager. When ClearML runs, it will create a virtual environment 
-(or [reuse an existing one](clearml_agent.md#virtual-environment-reuse)).
-Task dependencies (Python packages) will be installed in the virtual environment.
+### Virtual Environment Mode 
 
-### Conda Mode 
-This mode is similar to the PIP mode but uses [Conda](https://docs.conda.io/en/latest/) as the package 
-manager. To enable Conda mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: conda` in the “package_manager” section. 
-If extra conda channels are needed, look for “conda_channels” under “package_manager”, and add the missing channel.
+In Virtual Environment Mode, the agent creates a virtual environment for the experiment, installs the required Python 
+packages based on the task specification, clones the code repository, applies the uncommitted changes and finally 
+executes the code while monitoring it. This mode uses smart caching so packages and environments can be reused over 
+multiple tasks (see [Virtual Environment Reuse](#virtual-environment-reuse)). 
 
-### Poetry Mode
-This mode is similar to the PIP mode but uses [Poetry](https://python-poetry.org/) as the package manager.
-To enable Poetry mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: poetry` in the “package_manager” 
-section.
+ClearML Agent supports working with one of the following package managers: 
+* [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) (default)
+* [`conda`](https://docs.conda.io/en/latest/)
+* [`poetry`](https://python-poetry.org/)
+
+To change the package manager used by the agent, edit the [`package_manager.type`](configs/clearml_conf.md#agentpackage_manager) 
+field in the of the `clearml.conf`. If extra channels are needed for `conda`, add the missing channels in the 
+`package_manager.conda_channels` field in the `clearml.conf`. 
 
 :::note Using Poetry with Pyenv
 Some versions of poetry (using `install-poetry.py`) do not respect `pyenv global`.  
 If you are using pyenv to control the environment where you use ClearML Agent, you can:
-  * Use poetry v1.2 and above (which [fixes this issue](https://github.com/python-poetry/poetry/issues/5077))
+  * Use poetry v1.2 and above (which fixes [this issue](https://github.com/python-poetry/poetry/issues/5077))
   * Install poetry with the deprecated `get-poetry.py` installer
-
 :::
 
 ### Docker Mode 
-:::note
-Docker Mode is only supported in linux.<br/>
-Docker Mode requires docker service v19.03 or higher installed.
+:::note notes
+* Docker Mode is only supported in linux.
+* Docker Mode requires docker service v19.03 or higher installed.
 :::
 
 When executing the ClearML Agent in Docker mode, it will: 
@@ -401,7 +398,7 @@ clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional d
 ```
 
 To use the current `clearml-agent` version in the Docker container, instead of the latest `clearml-agent` version that is 
-automatically installed, run:
+automatically installed, pass the `--force-current-version` flag:
 ```bash
 clearml-agent daemon --queue default --docker --force-current-version
 ```
@@ -477,7 +474,7 @@ clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue quad_gpu=4 dual_gpu=2
 ``` 
 
 The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue.
-The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from `dual_gpu`
+The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from the `dual_gpu`
 queue, look for available GPUs again and spin on GPUs 4-5.
 
 Another option for allocating GPUs:

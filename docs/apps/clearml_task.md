@@ -22,7 +22,7 @@ line arguments, Python module dependencies, and a requirements.txt file!
 1. `clearml-task` does its magic! It creates a new task on the [ClearML Server](../deploying_clearml/clearml_server.md), 
    and, if so directed, enqueues it for execution by a ClearML Agent.
 1. While the Task is running on the remote machine, all its console outputs are logged in real-time, alongside your 
-   TensorBoard and matplotlib. You can track your script’s progress and results in the [ClearML Web UI](../webapp/webapp_overview.md) 
+   TensorBoard and matplotlib. You can track your script's progress and results in the [ClearML Web UI](../webapp/webapp_overview.md) 
    (a link to your task details page in the ClearML Web UI is printed as ClearML Task creates the task).
    
 ## Execution Configuration

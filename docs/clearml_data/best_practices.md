@@ -9,7 +9,7 @@ See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced querya
 
 The following are some recommendations for using ClearML Data. 
 
-![Dataset UI gif](../img/dataset.gif)
+![Dataset UI gif](../img/gif/dataset.gif)
 
 ## Versioning Datasets
 
@@ -34,7 +34,7 @@ most recent dataset in a project. The same is true with tags; if a tag is specif
 
 In cases where you use a dataset in a task (e.g. consuming a dataset), you can easily track which dataset the task is 
 using by using `Dataset.get`'s `alias` parameter. Pass `alias=<dataset_alias_string>`, and the task using the dataset 
-will store the dataset’s ID in the `dataset_alias_string` parameter under the task's **CONFIGURATION > HYPERPARAMETERS >
+will store the dataset's ID in the `dataset_alias_string` parameter under the task's **CONFIGURATION > HYPERPARAMETERS >
 Datasets** section.
 
 

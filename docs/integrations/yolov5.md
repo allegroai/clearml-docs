@@ -121,7 +121,7 @@ clearml-data sync --project YOLOv5 --name coco128 --folder .
 
 This command syncs the folder's content with ClearML, packaging all of the folder's contents into a ClearML dataset.
 
-Alternatively, you could run these commands one after the other to create a dataset:
+Alternatively, you can run these commands one after the other to create a dataset:
 
 ```commandline
 # Optionally add --parent <parent_dataset_id> if you want to base

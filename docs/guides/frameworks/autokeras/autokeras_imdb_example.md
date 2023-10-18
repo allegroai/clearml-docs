@@ -32,11 +32,11 @@ Text printed to the console for training progress, as well as all other console 
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab.
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab.
 
 ![image](../../../img/examples_keras_18.png)
 
-Clicking on the model's name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can view 
-the model’s details and access the model.
+Clicking on the model's name takes you to the [model's page](../../../webapp/webapp_model_viewing.md), where you can view 
+the model's details and access the model.
 
 ![image](../../../img/examples_keras_17.png)

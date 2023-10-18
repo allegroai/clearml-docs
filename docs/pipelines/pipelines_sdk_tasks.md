@@ -15,8 +15,8 @@ pipe = PipelineController(
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline tasks will be created.
-* `version` - Numbered version string (`e.g. 1.2.3`). When `auto_version_bump` is set to `True`, the version number will 
-  be automatically bumped if the same version already exists and the code has changed
+* `version` - Numbered version string (e.g. `1.2.3`). If not set, find the pipeline's latest version and increment 
+  it. If no such version is found, defaults to `1.0.0` 
 
 See [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md) for all arguments. 
 
@@ -33,10 +33,10 @@ pipe.add_parameter(
 ```
 
 * `name` - Parameter name
-* `default` - Parameter’s default value (this value can later be changed in the UI)
+* `default` - Parameter's default value (this value can later be changed in the UI)
 * `description` - String description of the parameter and its usage in the pipeline
 
-These parameters can be programmatically injected into a step’s configuration using the following format:  `"${pipeline.<parameter_name>}"`.
+These parameters can be programmatically injected into a step's configuration using the following format:  `"${pipeline.<parameter_name>}"`.
 
 When launching a new pipeline run from the [UI](../webapp/pipelines/webapp_pipeline_table.md), you can modify their 
 values for the new run.  
@@ -56,7 +56,7 @@ config_file = pipe.connect_configuration(configuration=config_file_path, name="M
 my_params = json.load(open(config_file,'rt'))
 ```
 
-You can view the configuration in the pipeline’s task page's **CONFIGURATION** tab, in the section specified in the 
+You can view the configuration in the pipeline's task page's **CONFIGURATION** tab, in the section specified in the 
 `name` parameter.
 
 
@@ -67,11 +67,10 @@ to the specified structure.
 
 ### Steps from Tasks
 Creating a pipeline step from an existing ClearML task means that when the step is run, the task will be cloned, and a 
-new task will be launched through the configured execution queue (the original task is unmodified). The new task’s 
+new task will be launched through the configured execution queue (the original task is unmodified). The new task's 
 parameters can be [specified](#parameter_override).
 
-Task steps are added using the [`PipelineController.add_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
-method:
+Task steps are added using [`PipelineController.add_step()`](../references/sdk/automation_controller_pipelinecontroller.md#add_step):
 
 ```python
 pipe.add_step(
@@ -103,9 +102,9 @@ pipe.add_step(
 See [add_step](../references/sdk/automation_controller_pipelinecontroller.md#add_step) for all arguments.
 
 #### parameter_override
-Use the `parameter_override` argument to modify the step’s parameter values. The `parameter_override` dictionary key is 
-the task parameter’s full path, which includes the parameter section's name and the parameter name separated by a slash 
-(e.g. `'General/dataset_url'`). Passing `"${}"` in the argument value allows you to reference input/output configurations 
+Use the `parameter_override` argument to modify the step's parameter values. The `parameter_override` dictionary key is 
+the task parameter's full path, which includes the parameter section's name and the parameter name separated by a slash 
+(e.g. `'General/dataset_url'`). Passing `"${}"` in the argument value lets you reference input/output configurations 
 from other pipeline steps. For example: `"${<step_name>.id}"` will be converted to the Task ID of the referenced pipeline 
 step.
 
@@ -116,7 +115,7 @@ Examples:
 * Pipeline parameters (see adding pipeline parameters): `'${pipeline.<pipeline_parameter>}'`
 
 #### configuration_overrides
-You can override a step’s configuration object by passing either a string representation of the content of the configuration 
+You can override a step's configuration object by passing either a string representation of the content of the configuration 
 object, or a configuration dictionary.
 
 Examples:
@@ -132,8 +131,7 @@ As each function is transformed into an independently executed step, it needs to
 all package imports inside the function are automatically logged as required packages for the pipeline step. 
 :::
 
-Function steps are added using the [`PipelineController.add_function_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) 
-method:
+Function steps are added using [`PipelineController.add_function_step()`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step):
 
 ```python
 pipe.add_function_step(
@@ -154,11 +152,11 @@ pipe.add_function_step(
 )
 ```
 
-* `name` - The pipeline step’s name. This name can be referenced in subsequent steps
+* `name` - The pipeline step's name. This name can be referenced in subsequent steps
 * `function` - A global function to be used as a pipeline step, which will be converted into a standalone task
 * `function_kwargs` (optional) - A dictionary of function arguments and default values which are translated into task 
   hyperparameters. If not provided, all function arguments are translated into hyperparameters.
-* `function_return` - The names for storing the pipeline step’s returned objects as artifacts in its ClearML task.
+* `function_return` - The names for storing the pipeline step's returned objects as artifacts in its ClearML task.
 * `cache_executed_step` - If `True`, the controller will check if an identical task with the same code 
   (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
   section) and input arguments was already executed. If found, the cached step's 
@@ -166,7 +164,7 @@ pipe.add_function_step(
 * `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution 
   only after all the parent steps have been executed successfully.
 * `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
-  before and/or after a step’s execution. See [here](#pre_execute_callback-and-post_execute_callback).
+  before and/or after a step's execution. See [here](#pre_execute_callback-and-post_execute_callback).
 * `monitor_models`, `monitor_metrics`, `monitor_artifacts` - see [here](#models-artifacts-and-metrics).
 
 See [add_function_step](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) for all 
@@ -195,7 +193,7 @@ def step_created_callback(
     pass
 ```
 
-A `post_execute_callback` function is called when a step is completed. It lets you modify the step’s status after completion.
+A `post_execute_callback` function is called when a step is completed. It lets you modify the step's status after completion.
 
 ```python
 def step_completed_callback(
@@ -207,7 +205,7 @@ def step_completed_callback(
 
 #### Models, Artifacts, and Metrics 
 
-You can enable automatic logging of a step’s metrics /artifacts / models to the pipeline task using the following arguments:
+You can enable automatic logging of a step's metrics /artifacts / models to the pipeline task using the following arguments:
 
 * `monitor_metrics` (optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
   format is one of the following:

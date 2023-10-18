@@ -3,7 +3,7 @@ title: APIClient
 ---
 
 The `APIClient` class provides a Pythonic interface to access ClearML's backend REST API. It is a convenient low-level access tool. 
-Through an `APIClient` instance, you can access ClearML’s REST API services:
+Through an `APIClient` instance, you can access ClearML's REST API services:
 * [authentication](../references/api/login.md) - Authentication management, authorization and administration for the entire system
 * [debug](../references/api/debug.md) - Debugging utilities
 * [projects](../references/api/projects.md) - Support for defining Projects containing tasks, models, datasets, and/or pipelines 
@@ -15,7 +15,7 @@ Through an `APIClient` instance, you can access ClearML’s REST API services:
 
 ## Using APIClient
 
-`APIClient` makes the ClearML Server’s REST API endpoints available as Python methods. 
+`APIClient` makes the ClearML Server's REST API endpoints available as Python methods. 
 
 To use `APIClient`, create an instance of it then call the method corresponding to the desired REST API endpoint, with 
 its respective parameters as described in the [REST API reference page](../references/api/index.md). 
