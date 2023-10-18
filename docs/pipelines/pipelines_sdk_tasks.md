@@ -15,8 +15,8 @@ pipe = PipelineController(
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline tasks will be created.
-* `version` - Numbered version string (`e.g. 1.2.3`). When `auto_version_bump` is set to `True`, the version number will 
-  be automatically bumped if the same version already exists and the code has changed
+* `version` - Numbered version string (e.g. `1.2.3`). If not set, find the pipeline's latest version and increment 
+  it. If no such version is found, defaults to `1.0.0` 
 
 See [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md) for all arguments. 
 
