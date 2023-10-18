@@ -28,7 +28,7 @@ You can reproduce the execution environment of any experiment you’ve run with 
    ::: 
 1. Copy the desired experiment's ID
 1. Use the ClearML Agent's [`build`](../../clearml_agent/clearml_agent_ref.md#build) command to rebuild the experiment's
-   execution environment. Input the experiment's ID and the target local folder, where the environment will be created
+   execution environment. Input the experiment's ID and the target local folder, where the environment will be created: 
 
    ```commandline
    clearml-agent build --id <task_id> --target <target_folder>
