@@ -39,8 +39,8 @@ def main(pickle_url, mock_parameter='mock'):
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline controller task is stored
-* `version` - Numbered version string (e.g. 1.2.3). If `auto_version_bump` is set to `True`, the version number is 
-  automatically bumped if the same version already exists and the pipeline code has changed
+* `version` - Numbered version string (e.g. `1.2.3`). If not set, find the pipeline's latest version and increment 
+  it. If no such version is found, defaults to `1.0.0` 
 * `default_queue` - The default [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) in which to enqueue all pipeline steps (unless otherwise specified in the pipeline step).
 * `args_map` - Map arguments to their [configuration section](../fundamentals/hyperparameters.md#webapp-interface) in 
   the following format: `{'section_name':['param_name']]}`. For example, the pipeline in the code above will store the 
