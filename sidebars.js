@@ -70,7 +70,7 @@ module.exports = {
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
                 'integrations/scikit_learn', 'integrations/seaborn',
                 'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
-                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
+                'integrations/transformers', 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
         'integrations/storage',
