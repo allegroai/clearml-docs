@@ -60,7 +60,7 @@ module.exports = {
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
                 'integrations/autokeras',
-                'integrations/catboost', 'integrations/click', 'integrations/fastai',
+                'integrations/catboost', 'integrations/click', 'integrations/fastai', 'integrations/transformers',
                 'integrations/hydra',
                 'integrations/keras', 'integrations/keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
@@ -70,7 +70,7 @@ module.exports = {
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
                 'integrations/scikit_learn', 'integrations/seaborn',
                 'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
-                'integrations/transformers', 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
+                'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
         'integrations/storage',
