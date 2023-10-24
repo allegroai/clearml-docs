@@ -180,11 +180,11 @@ For more information about `Task` class methods, see the [Task Class](fundamenta
 
 #### Can I store the model configuration file as well?    <a id="store-model-configuration"></a>
 
-Yes! Use the [`Task.set_model_config`](references/sdk/task.md#set_model_config) 
+Yes! Use [`Task.connect_configuration()`](references/sdk/task.md#connect_configuration) 
 method:
 
 ```python
-Task.current_task().set_model_config("a very long text with the configuration file's content")
+Task.current_task().connect_configuration("a very long text with the configuration file's content")
 ```
  
 <br/>
@@ -594,7 +594,7 @@ Another option is a histogram chart:
 ```python
 number_layers = 10
 accuracy = 0.95
-Task.current_task().get_logger().report_vector(
+Task.current_task().get_logger().report_histogram(
     title="performance", 
     series="accuracy", 
     iteration=0, 
@@ -642,7 +642,6 @@ logger.report_scatter2d(
     xaxis="title x", 
     yaxis="title y"
 )
-
 ```
 
 ## GIT and Storage

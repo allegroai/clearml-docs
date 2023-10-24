@@ -39,8 +39,8 @@ def main(pickle_url, mock_parameter='mock'):
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline controller task is stored
-* `version` - Numbered version string (e.g. 1.2.3). If `auto_version_bump` is set to `True`, the version number is 
-  automatically bumped if the same version already exists and the pipeline code has changed
+* `version` - Numbered version string (e.g. `1.2.3`). If not set, find the pipeline's latest version and increment 
+  it. If no such version is found, defaults to `1.0.0` 
 * `default_queue` - The default [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) in which to enqueue all pipeline steps (unless otherwise specified in the pipeline step).
 * `args_map` - Map arguments to their [configuration section](../fundamentals/hyperparameters.md#webapp-interface) in 
   the following format: `{'section_name':['param_name']]}`. For example, the pipeline in the code above will store the 
@@ -62,7 +62,7 @@ def main(pickle_url, mock_parameter='mock'):
   `services` queue. To run the pipeline logic locally while the components are executed remotely, pass 
   `pipeline_execution_queue=None`
 
-When the function is called, a corresponding ClearML Controller Task is created: its arguments are logged as the task’s 
+When the function is called, a corresponding ClearML Controller Task is created: its arguments are logged as the task's 
 parameters. When launching a new pipeline run from the [UI](../webapp/pipelines/webapp_pipeline_page.md), you can modify their values for the new run.  
 
 ![Pipeline new run](../img/pipelines_new_run.png)
@@ -94,7 +94,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
 ```
 
 ### Arguments
-* `return_values` - The artifact names for the step’s corresponding ClearML task to store the step’s returned objects. 
+* `return_values` - The artifact names for the step's corresponding ClearML task to store the step's returned objects. 
   In the example above, a single object is returned and stored as an artifact named `data_frame`
 * `name` (optional) - The name for the pipeline step. If not provided, the function name is used 
 * `cache` - If `True`, the pipeline controller checks if a step with the same code (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
@@ -139,7 +139,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
   
 * Callbacks - Control pipeline execution flow with callback functions 
   * `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
-    before and/or after a step’s execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback-and-post_execute_callback).
+    before and/or after a step's execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback-and-post_execute_callback).
   * `status_change_callback` - Callback function called when the status of a step changes. Use `node.job` to access the 
   `ClearmlJob` object, or `node.job.task` to directly access the Task object. The signature of the function must look like this:
     ```python
@@ -151,7 +151,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
       pass
     ```
 
-Additionally, you can enable automatic logging of a step’s metrics / artifacts / models to the pipeline task using the 
+Additionally, you can enable automatic logging of a step's metrics / artifacts / models to the pipeline task using the 
 following arguments:
 * `monitor_metrics` (optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
   format is one of the following:

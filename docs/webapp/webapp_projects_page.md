@@ -6,12 +6,12 @@ Use the Projects Page for project navigation and management.
 
 Your projects are displayed like folders: click a folder to access its contents. The Projects Page shows the top-level 
 projects in your workspace. Projects that contain nested subprojects are identified by an extra nested project tab. 
-An exception is the **All Experiments** folder, which shows all projects’ and subprojects’ contents in a single, flat
+An exception is the **All Experiments** folder, which shows all projects' and subprojects' contents in a single, flat
 list.
 
 ![Projects page](../img/webapp_project_page.png)
 
-If a project has any subprojects, clicking its folder will open its own project page. Access the projects’ top-level 
+If a project has any subprojects, clicking its folder will open its own project page. Access the projects' top-level 
 contents (i.e. experiments, models etc.) via the folder with the bracketed (`[ ]`) project name.
 
 If a project does not contain any subprojects, clicking on its folder will open its experiment table (or [Project Overview](webapp_project_overview.md)

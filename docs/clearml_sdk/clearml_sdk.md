@@ -10,7 +10,7 @@ and other workflows.
 For installation instructions, see [Getting Started](../getting_started/ds/ds_first_steps.md#install-clearml). 
 :::
 
-The ClearML Python Package collects the scripts’ entire execution information, including:
+The ClearML Python Package collects the scripts' entire execution information, including:
 * Git repository (branch, commit ID, and uncommitted changes) 
 * Working directory and entry point
 * Hyperparameters 

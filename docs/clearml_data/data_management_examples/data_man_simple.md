@@ -118,7 +118,7 @@ You'll need to input the Dataset ID you received when created the dataset above
    ```bash
    clearml-data add --files new_data.txt
    ```
-   Which should return this output:
+   The console should display this output:
 
    ```console
    clearml-data - Dataset Management & Versioning CLI

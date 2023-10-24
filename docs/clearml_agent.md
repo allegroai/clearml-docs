@@ -356,7 +356,7 @@ ClearML Agent supports working with one of the following package managers:
 * [`conda`](https://docs.conda.io/en/latest/)
 * [`poetry`](https://python-poetry.org/)
 
-To change the package manager used by the agent, edit the [`package_manager.type`](configs/clearml_conf.md#agentpackagemanager) 
+To change the package manager used by the agent, edit the [`package_manager.type`](configs/clearml_conf.md#agentpackage_manager) 
 field in the of the `clearml.conf`. If extra channels are needed for `conda`, add the missing channels in the 
 `package_manager.conda_channels` field in the `clearml.conf`. 
 
