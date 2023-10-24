@@ -29,7 +29,8 @@ tuner = kt.Hyperband(
     logger=ClearMLTunerLogger(),
     objective='val_accuracy',
     max_epochs=10,
-    hyperband_iterations=6)
+    hyperband_iterations=6
+)
 ```
 
 When the script runs, it logs: 

@@ -4,12 +4,12 @@ title: The Experiments Table
 
 The experiments table is a [customizable](#customizing-the-experiments-table) list of experiments associated with a project. From the experiments
 table, view experiment details, and work with experiments (reset, clone, enqueue, create [tracking leaderboards](../guides/ui/building_leader_board.md)
-to monitor experimentation, and more). The experiments table's auto-refresh allows users to continually monitor experiment progress.
+to monitor experimentation, and more). The experiments table's auto-refresh lets users continually monitor experiment progress.
 
 View the experiments table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your experiments according 
-to columns of interest. Use the details view to access a selected experiment’s details, while keeping the experiment list 
+to columns of interest. Use the details view to access a selected experiment's details, while keeping the experiment list 
 in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
 
 You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
@@ -125,7 +125,7 @@ There are a few types of filters:
     options appear on the top of the tag list.
   * Filter by the absence of a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox.
   
-Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
+Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" />).  
 
 To clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" /> 
 in the top right corner of the table.

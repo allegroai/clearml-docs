@@ -106,13 +106,12 @@ logger.report_surface(
 
 ### Confusion Matrices
 
-Report confusion matrices by calling the [Logger.report_matrix](../../references/sdk/logger.md#report_matrix) 
-method.
+Report confusion matrices by calling [`Logger.report_confusion_matrix()`](../../references/sdk/logger.md#report_confusion_matrix).
 
 ```python
 # report confusion matrix
 confusion = np.random.randint(10, size=(10, 10))
-logger.report_matrix(
+logger.report_confusion_matrix(
     "example_confusion",
     "ignored",
     iteration=iteration,
@@ -126,8 +125,8 @@ logger.report_matrix(
 
 ### Histograms
 
-Report histograms by calling the [Logger.report_histogram](../../references/sdk/logger.md#report_histogram) 
-method. To report more than one series on the same plot, use the same `title` argument.
+Report histograms by calling [`Logger.report_histogram()`](../../references/sdk/logger.md#report_histogram). 
+To report more than one series on the same plot, use the same `title` argument.
 
 ```python
 # report a single histogram
@@ -170,11 +169,10 @@ logger.report_histogram(
 
 ## Media
 
-Report audio, HTML, image, and video by calling the [Logger.report_media](../../references/sdk/logger.md#report_media) 
-method using the `local_path` parameter. They appear in **DEBUG SAMPLES**.
+Report audio, HTML, image, and video by calling [`Logger.report_media()`](../../references/sdk/logger.md#report_media) 
+using the `local_path` parameter. They appear in **DEBUG SAMPLES**.
 
-The media for these examples is downloaded using the [StorageManager.get_local_copy](../../references/sdk/storage.md#storagemanagerget_local_copy) 
-method.
+The media for these examples is downloaded using [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy).
 
 For example, to download an image:
 
@@ -224,7 +222,7 @@ logger.report_media('video', 'big bunny', iteration=1, local_path=video_local_co
 
 ## Text
 
-Report text messages by calling the [Logger.report_text](../../references/sdk/logger.md#report_text). 
+Report text messages by calling [`Logger.report_text()`](../../references/sdk/logger.md#report_text). 
 
 ```python
 logger.report_text("hello, this is plain text")

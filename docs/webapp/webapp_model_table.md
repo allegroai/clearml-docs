@@ -8,7 +8,7 @@ view model details, and modify, publish, archive, tag, and move models to other 
 View the models table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your models according to 
-columns of interest. Use the details view to access a selected model’s details, while keeping the model list in view. 
+columns of interest. Use the details view to access a selected model's details, while keeping the model list in view. 
 Details view can also be accessed by double-clicking a specific model in the table view to open its details view. 
 
 You can archive models so the models table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
@@ -134,7 +134,7 @@ There are a couple filter types:
   * Filter by the absence of a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox. 
   
 Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right 
-(<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
+(<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" />).  
 
 To clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" /> 
 in the top right corner of the table.

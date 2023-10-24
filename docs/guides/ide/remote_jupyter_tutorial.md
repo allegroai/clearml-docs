@@ -41,7 +41,7 @@ name is "DevOps"
 After launching the command, the `clearml-agent` listening to the `default` queue spins a remote Jupyter environment with 
 the specifications. It will automatically connect to the docker on the remote machine. 
    
-The terminal should return output with the session's configuration details, which should look something like this:
+The console should display the session's configuration details, which should look something like this:
     
 ```console
 Interactive session config:
