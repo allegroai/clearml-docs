@@ -172,7 +172,17 @@ Administrators can define multiple [configuration vaults](#configuration-vault) 
 where a ClearML task is executed. Configuration vault values will be applied to tasks run by members of the designated user groups. 
 
 To apply its contents, a vault should be enabled. New entries will extend the configuration in the local ClearML [configuration file](../configs/clearml_conf.md). 
-Existing configuration file entries will be overridden by the vault values.
+Most existing configuration file entries will be overridden by the vault values.
+
+:::info 
+The following configuration values are machine-specific, so they can't be set in a configuration vault:
+* `cuda_version`
+* `cudnn_version`
+* `default_python`
+* `worker_id` 
+* `worker_name`
+* `debug`
+:::
 
 **To create a vault:**
 1. Click **+ Add Vault**
