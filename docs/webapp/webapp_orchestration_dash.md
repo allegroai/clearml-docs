@@ -29,14 +29,12 @@ picture of the resources available and in use. The **Total** section displays av
 These counts are also available per worker category. 
 
 The **Totals** section displays:
-* GPUs - The number of currently running GPUs out of those currently available, and the number of idle GPUs. GPUs are considered idle when their average 
+* GPUs - The total number of GPUs in currently running workers out of the total number of GPUs in all provisioned workers, and the number of idle GPUs. GPUs are considered idle when their average 
 utilization falls below 80%.
-* CPUs - The number of currently running CPUs out of those currently available, and the number of idle CPUs. CPUs are considered idle when their average 
+* CPUs - The total number of CPUs in currently running workers out of the total number of CPUs in all provisioned workers, and the number of idle CPUs. CPUs are considered idle when their average 
 utilization falls below 30%.
-* Workers - The number of currently running workers (running or available through an autoscaler) our of those currently available, and number of idle 
+* Workers - The number of currently running workers out of the total number of provisioned workers (through autoscalers or K8S), and the number of idle 
 workers. Workers are considered idle if all of their GPUs and CPUs are idle or if they are not executing any task.
-
-Available resources include those that are currently running and those that can be spun up on demand (i.e. through autoscaling).  
 
 Category sections display the resource count and utilization for:
 * Workers
@@ -100,7 +98,7 @@ history.
 The info panel displays the group's:
 * Total GPU count
 * Total CPU count
-* Total RAM
+* Total Worker RAM
 * Total GPU RAM
 * Aggregate Idle time in last 30 days
 
