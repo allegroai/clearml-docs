@@ -176,12 +176,12 @@ Most existing configuration file entries will be overridden by the vault values.
 
 :::info 
 The following configuration values are machine-specific, so they can't be set in a configuration vault:
-* `cuda_version`
-* `cudnn_version`
-* `default_python`
-* `worker_id` 
-* `worker_name`
-* `debug`
+* `agent.cuda_version`
+* `agent.cudnn_version`
+* `agent.default_python`
+* `agent.worker_id` 
+* `agent.worker_name`
+* `agent.debug`
 :::
 
 **To create a vault:**
