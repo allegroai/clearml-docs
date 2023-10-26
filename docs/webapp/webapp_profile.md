@@ -175,7 +175,7 @@ To apply its contents, a vault should be enabled. New entries will extend the co
 Most existing configuration file entries will be overridden by the vault values.
 
 :::info 
-The following configuration values are machine-specific, so they can't be set in a configuration vault:
+The following configuration values are machine and/or agent specific, so they can't be set in a configuration vault:
 * `agent.cuda_version`
 * `agent.cudnn_version`
 * `agent.default_python`
