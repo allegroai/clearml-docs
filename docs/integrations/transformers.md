@@ -28,7 +28,7 @@ All you have to do is install and set up ClearML:
 That’s it! In every training run from now on, the ClearML experiment 
 manager will capture:
 * Source code and uncommitted changes
-* Hyperparameters - PyTorch trainer [parameters](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer#transformers.TrainingArguments),
+* Hyperparameters - PyTorch trainer [parameters](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer#transformers.TrainingArguments)
 and TensorFlow definitions
 * Installed packages
 * Model files (make sure the `CLEARML_LOG_MODEL` environment variable is set to `True`)
