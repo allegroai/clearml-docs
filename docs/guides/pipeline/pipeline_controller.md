@@ -50,7 +50,7 @@ The sections below describe in more detail what happens in the controller task a
 1. Build the pipeline (see [PipelineController.add_step](../../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
    method for complete reference):
 
-   The pipeline's [first step](#step-1---downloading-the-datae) uses the pre-existing task 
+   The pipeline's [first step](#step-1---downloading-the-data) uses the pre-existing task 
    `pipeline step 1 dataset artifact` in the `examples` project. The step uploads local data and stores it as an artifact.
 
    ```python
