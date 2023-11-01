@@ -232,33 +232,6 @@ module.exports = {
       },
     ],
   ],
-  // themes: [
-  //     [
-  //     require.resolve("@easyops-cn/docusaurus-search-local"),
-  //     {
-  //         hashed: true,
-  //         // whether to index docs pages
-  //         indexDocs: true,
-  //         // must start with "/" and correspond to the routeBasePath configured for the docs plugin
-  //         // use "/" if you use docs-only-mode
-  //         // (see https://v2.docusaurus.io/docs/2.0.0-alpha.70/docs-introduction#docs-only-mode)
-  //         docsRouteBasePath: '/docs',
-  //         searchResultLimits: 8,
-  //         searchResultContextMaxLength: 50,
-  //
-  //         // whether to index blog pages
-  //         indexBlog: false,
-  //         // blogRouteBasePath: '/blog',
-  //
-  //         // files to ignore in search
-  //         // whether to index static pages
-  //         // /404.html is never indexed
-  //         indexPages: false,
-  //         ignoreFiles: [/docs\/release_notes\/.*/],
-  //
-  //         // language of your documentation, see next section
-  //         language: "en",
-  //   }]],
   plugins: [
     // ... Your other plugins.
     [
