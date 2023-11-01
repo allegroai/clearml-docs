@@ -416,7 +416,7 @@ match_rules: [
           image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
           arguments: "-e define=value"
           match: {
-              script {
+              script{
                   # Optional: must match all requirements (not partial)
                   requirements: {
                       # version selection matching PEP-440
