@@ -1,5 +1,5 @@
 ---
-title: OpenMMLab
+title: MMCV
 ---
 
 :::tip
@@ -7,7 +7,7 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-[OpenMMLab](https://github.com/open-mmlab) is a computer vision framework. You can integrate ClearML into your 
+[MMCV](https://github.com/open-mmlab/mmcv) is a computer vision framework developed by OpenMMLab. You can integrate ClearML into your 
 code using the `mmcv` package's [`ClearMLLoggerHook`](https://mmcv.readthedocs.io/en/master/_modules/mmcv/runner/hooks/logger/clearml.html)
 class. This class is used to create a ClearML Task and to automatically log metrics. 
 
@@ -46,4 +46,4 @@ You can view the captured metrics in the experiment's **Scalars** tab in the [We
 
 ![OpenMMLab scalars](../img/integration_openmmlab_scalars.png)
 
-See OpenMMLab code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/openmmlab/openmmlab_cifar10.py).
+See MMCV code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/openmmlab/openmmlab_cifar10.py).

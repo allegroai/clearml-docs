@@ -60,17 +60,17 @@ module.exports = {
         {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
                 'integrations/autokeras',
-                'integrations/catboost', 'integrations/click', 'integrations/fastai',
+                'integrations/catboost', 'integrations/click', 'integrations/fastai', 'integrations/transformers',
                 'integrations/hydra',
                 'integrations/keras', 'integrations/keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
-                'integrations/megengine', 'integrations/monai', 'integrations/openmmv', 'integrations/optuna',
+                'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
                 'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
                 'integrations/scikit_learn', 'integrations/seaborn',
                 'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
-                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
+                'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
         },
         'integrations/storage',
@@ -101,6 +101,7 @@ module.exports = {
             },
             'webapp/webapp_reports',
             'webapp/webapp_workers_queues',
+            'webapp/webapp_orchestration_dash',
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',

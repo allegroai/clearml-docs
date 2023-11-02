@@ -36,6 +36,7 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 |<img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out icon" className="icon size-md space-sm" />|Zoom out| **-** or Ctrl + Mouse wheel |
 |Percentage textbox|Zoom percentage| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
 |<img src="/docs/latest/icons/ico-shared-item.svg" alt="Copy URL" className="icon size-md space-sm" />| Copy frame URL. A direct link to view the current frame|<img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> | 
+|<img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-md space-sm" />|Refresh version preview|<img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
 
 #### Additional Keyboard Shortcuts
 
