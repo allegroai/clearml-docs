@@ -56,7 +56,6 @@ Logger.current_logger().report_media(
     iteration=iteration,
     local_path="bar_pandas_groupby_nested.html",
 )
-
 ```
 
 ### Bokeh Graph HTML

@@ -24,12 +24,12 @@ Once you have a Task object you can query the state of the Task, get its model(s
 ## Log Hyperparameters
 
 For full reproducibility, it's paramount to save hyperparameters for each experiment. Since hyperparameters can have substantial impact
-on Model performance, saving and comparing these between experiments is sometimes the key to understanding model behavior.
+on model performance, saving and comparing these between experiments is sometimes the key to understanding model behavior.
 
 ClearML supports logging `argparse` module arguments out of the box, so once ClearML is integrated into the code, it automatically logs all parameters provided to the argument parser.
 
 It's also possible to log parameter dictionaries (very useful when parsing an external config file and storing as a dict object),
-whole configuration files or even custom objects or [Hydra](https://hydra.cc/docs/intro/) configurations!
+whole configuration files, or even custom objects or [Hydra](https://hydra.cc/docs/intro/) configurations!
 
 ```python
 params_dictionary = {'epochs': 3, 'lr': 0.4}
@@ -51,7 +51,7 @@ See all [storage capabilities](../../integrations/storage.md).
 
 ### Adding Artifacts
 
-Uploading a local file containing the preprocessed results of the data:
+Upload a local file containing the preprocessed results of the data:
 ```python
 task.upload_artifact('/path/to/preprocess_data.csv', name='data')
 ```

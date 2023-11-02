@@ -105,10 +105,9 @@ when rerun, the pipeline DAG will be generated from the pipeline configuration s
 lets you modify the pipeline configuration via the UI, without changing the original codebase.
 
 ### Pipeline Versions
-Each pipeline must be assigned a version number to help track the evolution of your pipeline structure and parameters.
-
-If you pass `auto_version_bump=True` when instantiating a PipelineController, the pipeline's version automatically bumps up
-if there is a change in the pipeline code. If there is no change, the pipeline retains its version number.  
+You can assign each pipeline a version number to help track the evolution of your pipeline structure and parameters. 
+The pipeline's version automatically bumps up if there is a change in the pipeline code. If there is no change, the 
+pipeline retains its version number.  
 
 ### Tracking Pipeline Progress
 ClearML automatically tracks a pipeline's progress percentage: the number of pipeline steps completed out of the total

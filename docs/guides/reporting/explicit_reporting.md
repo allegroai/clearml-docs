@@ -83,7 +83,6 @@ package contains methods for explicit reporting of plots, log text, media, and t
 
 * [Logger.report_histogram](../../references/sdk/logger.md#report_histogram)
 * [Logger.report_confusion_matrix](../../references/sdk/logger.md#report_confusion_matrix)
-* [Logger.report_line_plot](../../references/sdk/logger.md#report_line_plot)
 * [Logger.report_scatter2d](../../references/sdk/logger.md#report_scatter2d)
 * [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d)
 * [Logger.report_surface](../../references/sdk/logger.md#report_surface) 

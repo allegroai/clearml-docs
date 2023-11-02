@@ -74,7 +74,6 @@ parameters['new_param'] = 'this is new'
   
 # changing the value of a parameter (new value will be stored instead of previous one)
 parameters['float'] = '9.9'
-
 ```
 
 Parameters from dictionaries connected to Tasks appear in **HYPERPARAMETERS** **>** **General**.
