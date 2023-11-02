@@ -14,6 +14,7 @@ consumption as needed–-with no code (available under the ClearML Pro plan)
   * Delete empty queues
   * Monitor queue utilization
   * Reorder, move, and remove experiments from queues
+* Monitor all of your available and in-use compute resources (available in the ClearML Enterprise plan. See [Orchestration Dashboard](webapp_orchestration_dash.md))
 
 ## Autoscalers
 
