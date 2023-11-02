@@ -11,55 +11,41 @@ Integrate ClearML when working with TAO Toolkit to get a lot more insight into t
 experiment manager. ClearML tracks metrics, model files, plots, and debug images in real time, so you can always see how 
 your training is progressing. 
 
-
-## Installing the NVIDIA TAO Toolkit
-$$$$$$You can find all the available information on how to use the TAO Toolkit here, but in order to get our feet wet, we’ll be using the QuickStart notebooks in this blogpost.
-
-In the [TAO Toolkit Quick Start page](https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/resources/tao-getting-started), 
-click "Download" on the top right to get the relevant materials.
-
-$$$$$$$$$ Folder structure image
-
-Enabling ClearML
-The now integrated ClearML Experiment Manager is most useful during model training of course.
-
-ClearML Server
 During training, TAO will generate quite a bit of useful output, such as performance metrics, console logs, plots and 
-debug images. Not to mention our valuable trained model!
+debug images. Not to mention our valuable trained model! All of these outputs are sent to a ClearML Server during training. 
 
-All of these outputs are sent to a ClearML Server during training. ClearML is open source, so you can deploy your own 
-server locally if you want to, or you can use the free hosted version at app.clear.ml.
+All you have to do is install and set up ClearML:
 
-* Register HERE for a free hosted server.
+1. Install the `clearml` python package:
 
-Now, TAO needs some credential information to be allowed to connect to the server
+   ```commandline
+   pip install clearml
+   ``` 
+   
+1. To keep track of your experiments and/or data, ClearML needs to communicate to a server. You have 2 server options:
+    * Sign up for free to the [ClearML Hosted Service](https://app.clear.ml/) 
+    * Set up your own server, see [here](../deploying_clearml/clearml_server.md).  
+1. Connect the ClearML SDK to the server by creating credentials (go to the top right in the UI to **Settings > Workspace > Create new credentials**), 
+   then execute the command below and follow the instructions:
 
-Getting and initializing credentials
+   ```commandline
+   clearml-init
+   ```
+   
+   :::tip Jupyter Notebook 
+   If you're using Jupyter Notebook, in the New Credential modal, click "Jupyter Notebook", and copy the credential and paste
+   them in your notebook 
+   :::    
+That’s it! In every training run from now on, the ClearML experiment 
+manager will capture:
 
-1. In the ClearML Web UI, go to SETTINGS > WORKSPACE page, click `Create new credentials`. Then click on the 
-`Jupyter Notebook` tab to get the credentials in the correct format. You can copy everything when hovering over the black section.
-
-Create credentials
-
-Now we go back to the detectnet_v2 notebook and add these credentials to the right cell. Under section 0. you’ll find a subsection called A. Third Party MLOPS integration . Uncomment the ClearML cell and paste your new credentials in the cell. Don’t worry about the formatting, os.environ has the same effect as the copied %env . The cell should look like this:
-
-Add credentials to config
-
-Or this is also fine:
-
-Setting up credentials alternate
-
-With this set up, you should be good to go! Follow the rest of the instructions in the notebook to prepare the data and start training.
-
-Training configuration
-If you now continue with the training flow, you should see the newly created ClearML task pop up both in the console (in between the Tensorflow logs) and in the webUI. There are quite sane defaults setup for everything, but in many cases, you might want to change some settings here and there.
 
 Training configuration in code
 
 Training and configuration changes
 
-Uploading the model
-By default, ClearML only keeps track of the model name, it won’t actually upload the model. When you’re training locally, this is an excellent way to save bandwidth, but there are of course situations where you do want to upload the models.
+By default, ClearML only keeps track of the model name, it won’t actually upload the model. When you’re training locally,
+this is an excellent way to save bandwidth, but there are of course situations where you do want to upload the models.
 
 To do that, go back to the ClearML cell in the notebook and add the following line:
 
