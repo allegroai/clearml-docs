@@ -1,5 +1,5 @@
 ---
-title: Scikit-Learn
+title: scikit-learn
 ---
 
 :::tip
@@ -7,7 +7,7 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-ClearML integrates seamlessly with [Scikit-Learn](https://scikit-learn.org/stable/), automatically logging models created
+ClearML integrates seamlessly with [scikit-learn](https://scikit-learn.org/stable/), automatically logging models created
 with `joblib`.
 
 All you have to do is simply add two lines of code to your scikit-learn script:
@@ -73,8 +73,8 @@ See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
 
 Take a look at ClearML's scikit-learn examples. The examples use scikit-learn and ClearML in different configurations with 
 additional tools, like Matplotlib: 
-* [Scikit-Learn with Joblib](../guides/frameworks/scikit-learn/sklearn_joblib_example.md) - Demonstrates ClearML automatically logging the models created with joblib and a scatter plot created by Matplotlib.
-* [Scikit-Learn with Matplotlib](../guides/frameworks/scikit-learn/sklearn_matplotlib_example.md) - Demonstrates ClearML automatically logging scatter diagrams created with Matplotlib.
+* [scikit-learn with Joblib](../guides/frameworks/scikit-learn/sklearn_joblib_example.md) - Demonstrates ClearML automatically logging the models created with joblib and a scatter plot created by Matplotlib.
+* [scikit-learn with Matplotlib](../guides/frameworks/scikit-learn/sklearn_matplotlib_example.md) - Demonstrates ClearML automatically logging scatter diagrams created with Matplotlib.
 
 
 ## Remote Execution

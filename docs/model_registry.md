@@ -35,7 +35,7 @@ continue to train and test new model versions.
 ClearML supports automatic and manual registration of models to the model catalog. 
 
 ### Automatic Logging
-ClearML automatically logs models created/loaded through popular frameworks like TensorFlow or Scikit-Learn; all you 
+ClearML automatically logs models created/loaded through popular frameworks like TensorFlow or scikit-learn; all you 
 need to do is [instantiate a ClearML Task](clearml_sdk/task_sdk.md#task-creation) in your code. ClearML stores the 
 framework's training results as output models.
 
