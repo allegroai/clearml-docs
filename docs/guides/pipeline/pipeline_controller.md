@@ -41,7 +41,8 @@ The sections below describe in more detail what happens in the controller task a
    )
    ```
 
-1. Set the default execution queue to be used. All the pipeline steps will be enqueued for execution in this queue.
+1. Set the execution queue through which pipeline steps that did not explicitly specify an execution queue will be 
+   executed. These pipeline steps will be enqueued for execution in this queue.
 
    ```python
    pipe.set_default_execution_queue('default')
@@ -65,8 +66,8 @@ The sections below describe in more detail what happens in the controller task a
    the `examples` project. The second step's dependency upon the first step's completion is designated by setting it as 
    its parent. 
 
-   Custom configuration values specific to this step execution are defined through the `parameter_override` parameter, 
-   where the first step's artifact is fed into the second step.
+   The `parameter_override` parameter is used to set specific execution configuration for each step. 
+   In the code below, the first step's artifact is fed into the second step.
 
    Special pre-execution and post-execution logic is added for this step through the use of `pre_execute_callback` 
    and `post_execute_callback` respectively. 

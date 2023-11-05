@@ -34,8 +34,8 @@ logged as required packages for the pipeline execution step.
    )
    ```
     
-1. Set the default execution queue to be used. All the pipeline steps will be enqueued for execution in this queue 
-   (unless overridden by the `execution_queue` parameter of the `add_function_step` method).
+1. Set an execution queue through which pipeline steps that did not explicitly specify an execution queue will be 
+   executed. These pipeline steps will be enqueued for execution in this queue.
     
   ```python
   pipe.set_default_execution_queue('default')
