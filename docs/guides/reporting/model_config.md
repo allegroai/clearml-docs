@@ -25,8 +25,7 @@ output_model = OutputModel(task=task)
 
 ## Label Enumeration
 
-Set the model's label enumeration using the [`OutputModel.update_labels`](../../references/sdk/model_outputmodel.md#update_labels) 
-method.
+Set the model's label enumeration using [`OutputModel.update_labels()`](../../references/sdk/model_outputmodel.md#update_labels).
 
 ```python
 labels = {"background": 0, "cat": 1, "dog": 2}
@@ -34,8 +33,8 @@ output_model.update_labels(labels)
 ```
 
 ## Registering Models
-Register a previously trained model using the [`OutputModel.update_weights`](../../references/sdk/model_outputmodel.md#update_weights) 
-method. The example code uses a model stored in S3.
+Register a previously trained model using [`OutputModel.update_weights()`](../../references/sdk/model_outputmodel.md#update_weights). 
+The example code uses a model stored in S3.
 
 ```python
 # Manually log a model file, which will have the labels connected above

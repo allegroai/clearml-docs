@@ -241,8 +241,8 @@ You can also specify per-endpoint log frequency with the `clearml-serving` CLI. 
 
 See examples of ClearML Serving with other supported frameworks:
 
-* [Scikit-Learn](https://github.com/allegroai/clearml-serving/blob/main/examples/sklearn/readme.md) - random data
-* [Scikit-Learn Model Ensemble](https://github.com/allegroai/clearml-serving/blob/main/examples/ensemble/readme.md) - random data
+* [scikit-learn](https://github.com/allegroai/clearml-serving/blob/main/examples/sklearn/readme.md) - random data
+* [scikit-learn Model Ensemble](https://github.com/allegroai/clearml-serving/blob/main/examples/ensemble/readme.md) - random data
 * [XGBoost](https://github.com/allegroai/clearml-serving/blob/main/examples/xgboost/readme.md) - iris dataset
 * [LightGBM](https://github.com/allegroai/clearml-serving/blob/main/examples/lightgbm/readme.md) - iris dataset
 * [PyTorch](https://github.com/allegroai/clearml-serving/blob/main/examples/pytorch/readme.md) - mnist dataset

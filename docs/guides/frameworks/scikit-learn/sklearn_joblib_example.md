@@ -1,5 +1,5 @@
 ---
-title: Scikit-Learn with Joblib 
+title: scikit-learn with Joblib 
 ---
 
 The [sklearn_joblib_example.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/scikit-learn/sklearn_joblib_example.py) 
