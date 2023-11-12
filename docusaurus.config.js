@@ -31,7 +31,7 @@ module.exports = {
       //algolia apiKey: 'ALGOLIA_API_KEY',  // Public API key
       //algolia indexName: 'ALGOLIA_INDEX_NAME', // index name
 
-      //algolia Optional: see doc section below
+      // Optional: see doc section below
       //algolia contextualSearch: true,},
     zoomSelector: '.markdown :not(em) > img',
     colorMode: {
