@@ -26,14 +26,13 @@ module.exports = {
       theme: require('prism-react-renderer/themes/dracula'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
     },
-    algolia: {
-      appId: 'none', // The application ID provided by Algolia
-      apiKey: 'none',  // Public API key
-      indexName: 'none', // index name
+    //algolia algolia: {
+      //algolia appId: 'ALGOLIA_APP_ID', // The application ID provided by Algolia
+      //algolia apiKey: 'ALGOLIA_APP_KEY',  // Public API key
+      //algolia indexName: 'ALGOLIA_INDEX_NAME', // index name
 
       // Optional: see doc section below
-      contextualSearch: true,
-    },
+      //algolia contextualSearch: true,},
     zoomSelector: '.markdown :not(em) > img',
     colorMode: {
       defaultMode: 'light',
@@ -226,6 +225,35 @@ module.exports = {
         },
       },
     ],
+  ],
+  themes: [
+  // Delete for Algolia start
+      [
+          require.resolve("@easyops-cn/docusaurus-search-local"), {
+          hashed: true,
+          // whether to index docs pages
+          indexDocs: true,
+          // must start with "/" and correspond to the routeBasePath configured for the docs plugin
+          // use "/" if you use docs-only-mode
+          // (see https://v2.docusaurus.io/docs/2.0.0-alpha.70/docs-introduction#docs-only-mode)
+          docsRouteBasePath: '/docs',
+          searchResultLimits: 8,
+          searchResultContextMaxLength: 50,
+
+          // whether to index blog pages
+          indexBlog: false,
+          // blogRouteBasePath: '/blog',
+
+          // files to ignore in search
+          // whether to index static pages
+          // /404.html is never indexed
+          indexPages: false,
+          ignoreFiles: [/docs\/release_notes\/.*/],
+
+          // language of your documentation, see next section
+          language: "en",}
+      ]
+  // Delete for Algolia end
   ],
   plugins: [
     // ... Your other plugins.
