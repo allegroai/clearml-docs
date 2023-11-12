@@ -28,7 +28,7 @@ module.exports = {
     },
     //algolia algolia: {
       //algolia appId: 'ALGOLIA_APP_ID', // The application ID provided by Algolia
-      //algolia apiKey: 'ALGOLIA_API_KEY',  // Public API key
+      //algolia apiKey: 'ALGOLIA_APP_KEY',  // Public API key
       //algolia indexName: 'ALGOLIA_INDEX_NAME', // index name
 
       // Optional: see doc section below
