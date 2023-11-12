@@ -26,13 +26,13 @@ module.exports = {
       theme: require('prism-react-renderer/themes/dracula'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
     },
-    // algolia: {
-      // appId: 'none', // The application ID provided by Algolia
-      // apiKey: 'none',  // Public API key
-      // indexName: 'none', // index name
+    //algolia algolia: {
+      //algolia appId: 'ALGOLIA_APP_ID', // The application ID provided by Algolia
+      //algolia apiKey: 'ALGOLIA_API_KEY',  // Public API key
+      //algolia indexName: 'ALGOLIA_INDEX_NAME', // index name
 
-      // Optional: see doc section below
-      // contextualSearch: true,},
+      //algolia Optional: see doc section below
+      //algolia contextualSearch: true,},
     zoomSelector: '.markdown :not(em) > img',
     colorMode: {
       defaultMode: 'light',
@@ -227,7 +227,9 @@ module.exports = {
     ],
   ],
   themes: [
-      [require.resolve("@easyops-cn/docusaurus-search-local"), {
+  // Delete for Algolia start
+      [
+          require.resolve("@easyops-cn/docusaurus-search-local"), {
           hashed: true,
           // whether to index docs pages
           indexDocs: true,
@@ -249,7 +251,10 @@ module.exports = {
           ignoreFiles: [/docs\/release_notes\/.*/],
 
           // language of your documentation, see next section
-          language: "en",}]],
+          language: "en",}
+      ]
+  // Delete for Algolia end
+  ],
   plugins: [
     // ... Your other plugins.
     [
