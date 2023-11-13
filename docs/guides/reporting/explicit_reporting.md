@@ -53,9 +53,11 @@ model_snapshots_path = '/mnt/clearml'
 if not os.path.exists(model_snapshots_path):
     os.makedirs(model_snapshots_path)
 
-task = Task.init(project_name='examples', 
-    task_name='extending automagical ClearML example', 
-    output_uri=model_snapshots_path)
+task = Task.init(
+  project_name='examples', 
+  task_name='extending automagical ClearML example', 
+  output_uri=model_snapshots_path
+)
 ```
 
 When the script runs, ClearML creates the following directory structure:
