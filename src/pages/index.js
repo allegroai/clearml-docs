@@ -22,7 +22,7 @@ const features = [
     imageUrl: 'img/ico-data-science.svg',
     description: (
       <>
-        <code>ClearML</code> is designed to be as easily integrated as possible. <b>Add 2-lines of code</b> and everything is logged &amp; reported!
+        <code>ClearML</code> is designed to be as easily integrated as possible. <b>Add 2 lines of code</b> and everything is logged &amp; reported!
       </>
     ),
   },
