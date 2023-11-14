@@ -13,7 +13,7 @@ const path = require('path');
 
 module.exports = {
   title: 'ClearML',
-  tagline: 'Auto-Magical Suite of tools to streamline your ML workflow',
+  tagline: 'Auto-Magical Suite of tools to streamline your AI workflow',
   url: 'https://clear.ml',
   baseUrl: '/',
   onBrokenLinks: 'warn',

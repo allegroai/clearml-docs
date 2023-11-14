@@ -11,7 +11,7 @@ module.exports = {
     mainSidebar: [
         {'Getting Started': ['getting_started/main', {
             'Where do I start?': [{'Data Scientists': ['getting_started/ds/ds_first_steps', 'getting_started/ds/ds_second_steps', 'getting_started/ds/best_practices']},
-                {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
+                {'MLOps and LLMOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
         }, 'getting_started/architecture', {'Video Tutorials': 
         [
             'getting_started/video_tutorials/quick_introduction',
