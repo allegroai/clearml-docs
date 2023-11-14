@@ -833,7 +833,7 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
 
 **`sdk.aws.s3.use_credentials_chain`** (*bool*)
 
-* Set to `true` to let Boto3 credential chain look for and pick the right credentials, instead of using the explicitly provided 
+* Set to `true` to let Boto3 look for and pick the right credentials, instead of using the explicitly provided 
   default credentials (`sdk.aws.s3.secret` and `sdk.aws.s3.key`). Boto3 looks for credentials in environment variables,
   a credential file, and metadata service with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
   
