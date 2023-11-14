@@ -69,12 +69,14 @@ Text printed to the console for training appears in **CONSOLE**.
 
 ## Artifacts
 
-Model artifacts associated with the experiment appear in the experiment info panel (in the **EXPERIMENTS** tab), and in the model info panel (in the **MODELS** tab).  
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks models
+created using Keras.
 
 The experiment info panel shows model tracking, including the model name and design in **ARTIFACTS** **>** **Output Model**.
 
 ![image](../../../img/examples_keras_jupyter_23.png)
 
-The model info panel contains the model details, including the model URL, framework, and snapshot locations.
+Clicking on the model name takes you to the [model's page](../../../webapp/webapp_model_viewing.md), where you can view 
+the model's details and access the model.
 
 ![image](../../../img/examples_keras_jupyter_24.png)
