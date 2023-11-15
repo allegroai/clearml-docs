@@ -617,9 +617,8 @@ For example:
   task.upload_artifact(name='folder', artifact_object='/path/to/folder')
   ```
 
-* Add file/folder links. If the provided artifact object is a URL to an 
-  already uploaded artifact (i.e. a URL where the scheme is supported by ClearML such as `http://`, `https://`, 
-  `s3://`, `gs://`, or `azure://`), the artifact will only be added as a URL and will not be uploaded. 
+* Register links to network-stored object (i.e. a URL where the scheme is supported by ClearML such as `http://`, `https://`, 
+  `s3://`, `gs://`, or `azure://`). The artifact will only be added as a URL and will not be uploaded. 
 
   ```python
   task.upload_artifact(name='link', artifact_object='azure://bucket/folder')
