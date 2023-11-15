@@ -6,9 +6,9 @@ title: First Steps
 This tutorial assumes that you've already [signed up](https://app.clear.ml) to ClearML
 :::
 
-ClearML provides tools for **automation**, **orchestration**, and **tracking**, all key in performing effective MLOps. 
+ClearML provides tools for **automation**, **orchestration**, and **tracking**, all key in performing effective MLOps and LLMOps. 
 
-Effective MLOps relies on the ability to scale work beyond one's own computer. Moving from your own machine can be time-consuming. 
+Effective MLOps and LLMOps rely on the ability to scale work beyond one's own computer. Moving from your own machine can be time-consuming. 
 Even assuming that you have all the drivers and applications installed, you still need to manage multiple python environments
 for different packages / package versions, or worse - manage different Dockers for different package versions.
 

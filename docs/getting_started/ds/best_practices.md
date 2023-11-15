@@ -2,7 +2,7 @@
 title: Best Practices
 ---
 
-This section talks about what made us design ClearML the way we did and how it reflects on ML / DL workflows.
+This section talks about what made us design ClearML the way we did and how it reflects on AI workflows.
 While ClearML was designed to fit into any workflow, we do feel that working as we describe below brings a lot of advantages from organizing one's workflow
 and furthermore, preparing it to scale in the long term.
 
