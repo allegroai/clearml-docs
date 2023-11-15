@@ -2,7 +2,7 @@
 title: Workers & Queues
 ---
 
-Two major components of MLOps are experiment reproducibility, and the ability to scale work to multiple machines. ClearML workers, 
+Two major components of MLOps/LLMOps are experiment reproducibility, and the ability to scale work to multiple machines. ClearML workers, 
 coupled with execution queues, address both these needs. 
 
 A ClearML worker is instantiated by launching a ClearML Agent, which is the base for **Automation** in ClearML and can be leveraged to build automated pipelines, launch custom services 
