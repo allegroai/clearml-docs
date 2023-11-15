@@ -100,7 +100,7 @@ package contains methods for explicit reporting of plots, log text, media, and t
 First, create a logger for the Task using [`Task.get_logger()`](../../references/sdk/task.md#get_logger):
 
 ```python
-logger = task.get_logger
+logger = task.get_logger()
 ```
 
 ### Plot Scalar Metrics
