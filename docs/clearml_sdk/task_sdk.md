@@ -603,18 +603,25 @@ Artifacts are the output files created by a task. ClearML uploads and logs these
 accessed, modified, and used.
 
 ### Logging Artifacts
-To log an artifact in a task, use the [`upload_artifact`](../references/sdk/task.md#upload_artifact) method. 
+To log an artifact in a task, use [`upload_artifact()`](../references/sdk/task.md#upload_artifact). 
 
 For example:
 * Upload a local file containing the preprocessing results of the data:
   ```python
   task.upload_artifact(name='data', artifact_object='/path/to/preprocess_data.csv')
   ```
-  
+
 * Upload an entire folder with all its content by passing the folder, which will be zipped and uploaded as a single 
   zip file:
   ```python
   task.upload_artifact(name='folder', artifact_object='/path/to/folder')
+  ```
+
+* Register links to network-stored objects (i.e. a URL where the scheme is supported by ClearML such as `http://`, `https://`, 
+  `s3://`, `gs://`, or `azure://`). The artifact will only be added as a URL and will not be uploaded. 
+
+  ```python
+  task.upload_artifact(name='link', artifact_object='azure://bucket/folder')
   ```
 
 * Serialize and upload a Python object. ClearML automatically chooses the file format based on the object’s type, or you 
