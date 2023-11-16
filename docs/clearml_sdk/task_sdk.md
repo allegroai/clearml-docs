@@ -617,7 +617,7 @@ For example:
   task.upload_artifact(name='folder', artifact_object='/path/to/folder')
   ```
 
-* Register links to network-stored object (i.e. a URL where the scheme is supported by ClearML such as `http://`, `https://`, 
+* Register links to network-stored objects (i.e. a URL where the scheme is supported by ClearML such as `http://`, `https://`, 
   `s3://`, `gs://`, or `azure://`). The artifact will only be added as a URL and will not be uploaded. 
 
   ```python
