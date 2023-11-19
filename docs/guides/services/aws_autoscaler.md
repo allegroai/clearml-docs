@@ -11,13 +11,13 @@ up new instances when there aren't enough to execute pending tasks.
 
 ## Running the ClearML AWS Autoscaler
 
-run the ClearML AWS autoscaler in one of these ways:
+Run the ClearML AWS autoscaler in one of these ways:
 * Run the [aws_autoscaler.py](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) 
   script locally
 * Launch through your [`services` queue](../../clearml_agent.md#services-mode)
 
 :::note Default AMI
-The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI
+The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI.
 :::
 
 ### Running the Script
