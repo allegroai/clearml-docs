@@ -1,6 +1,5 @@
 ---
 title: CatBoost
-displayed_sidebar: mainSidebar
 ---
 
 The [catboost_example.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/catboost/catboost_example.py) 
@@ -19,8 +18,7 @@ ClearML automatically captures scalars logged by CatBoost. These scalars can be 
 ![Experiment scalars](../../../img/examples_catboost_scalars.png)
 
 ## Hyperparameters
-ClearML automatically logs command line options defined with argparse. They appear in **CONFIGURATIONS > HYPER 
-PARAMETERS > Args**.
+ClearML automatically logs command line options defined with argparse. They appear in **CONFIGURATIONS > HYPERPARAMETERS > Args**.
 
 ![Experiment hyperparameters](../../../img/examples_catboost_configurations.png)
 
@@ -30,12 +28,12 @@ Text printed to the console for training progress, as well as all other console 
 ![Experiment console](../../../img/examples_catboost_console.png)
 
 ## Artifacts
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks 
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks 
 models created using CatBoost.
 
 ![Experiment artifacts](../../../img/examples_catboost_artifacts.png)
 
-Clicking on the model name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can view 
-the model’s details and access the model.
+Clicking on the model name takes you to the [model's page](../../../webapp/webapp_model_viewing.md), where you can view 
+the model's details and access the model.
 
 ![Model page](../../../img/examples_catboost_model.png)

@@ -1,7 +1,11 @@
 ---
 title: Keras Tuner
-displayed_sidebar: mainSidebar
 ---
+
+:::tip
+If you are not already using ClearML, see [Getting Started](../../../getting_started/ds/ds_first_steps.md) for setup 
+instructions.
+:::
 
 Integrate ClearML into code that uses [Keras Tuner](https://www.tensorflow.org/tutorials/keras/keras_tuner). By 
 specifying `ClearMLTunerLogger` (see [kerastuner.py](https://github.com/allegroai/clearml/blob/master/clearml/external/kerastuner.py)) 
@@ -25,7 +29,8 @@ tuner = kt.Hyperband(
     logger=ClearMLTunerLogger(),
     objective='val_accuracy',
     max_epochs=10,
-    hyperband_iterations=6)
+    hyperband_iterations=6
+)
 ```
 
 When the script runs, it logs: 
@@ -36,7 +41,7 @@ When the script runs, it logs:
 
 ## Scalars
 
-ClearML logs the scalars from training each network. They appear in the project's page in the **ClearML web UI**, under
+ClearML logs the scalars from training each network. They appear in the experiment's page in the **ClearML web UI**, under
 **SCALARS**.
 
 ![image](../../../img/integration_keras_tuner_06.png)

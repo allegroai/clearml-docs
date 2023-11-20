@@ -17,8 +17,8 @@ In the ``clearml`` GitHub repository, this example includes a clickable icon to 
 
 ## Scalars
 
-To reports scalars, call the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
-method. The scalar plots appear in the **web UI** in **SCALARS**.
+To reports scalars, call [`Logger.report_scalar()`](../../references/sdk/logger.md#report_scalar). 
+The scalar plots appear in the **web UI** in **SCALARS**.
 
 ```python
 # report two scalar series on two different graphs
@@ -44,7 +44,7 @@ Plots appear in **PLOTS**.
 
 ### 2D Plots
 
-Report 2D scatter plots by calling the [Logger.report_scatter2d](../../references/sdk/logger.md#report_scatter2d) method. 
+Report 2D scatter plots by calling [`Logger.report_scatter2d()`](../../references/sdk/logger.md#report_scatter2d). 
 Use the `mode` parameter to plot data points as markers, or both lines and markers.
 
 ```python
@@ -67,7 +67,7 @@ logger.report_scatter2d(
 
 ### 3D Plots
 
-To plot a series as a 3-dimensional scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) method.
+To plot a series as a 3D scatter plot, use [`Logger.report_scatter3d()`](../../references/sdk/logger.md#report_scatter3d).
 
 ```python
 # report 3d scatter plot
@@ -85,8 +85,7 @@ logger.report_scatter3d(
 
 ![3d scatter plot](../../img/colab_explicit_reporting_05.png)
 
-To plot a series as a surface plot, use the [Logger.report_surface](../../references/sdk/logger.md#report_surface) 
-method.
+To plot a series as a surface plot, use [`Logger.report_surface()`](../../references/sdk/logger.md#report_surface).
 
 ```python
 # report 3d surface
@@ -106,13 +105,12 @@ logger.report_surface(
 
 ### Confusion Matrices
 
-Report confusion matrices by calling the [Logger.report_matrix](../../references/sdk/logger.md#report_matrix) 
-method.
+Report confusion matrices by calling [`Logger.report_confusion_matrix()`](../../references/sdk/logger.md#report_confusion_matrix).
 
 ```python
 # report confusion matrix
 confusion = np.random.randint(10, size=(10, 10))
-logger.report_matrix(
+logger.report_confusion_matrix(
     "example_confusion",
     "ignored",
     iteration=iteration,
@@ -126,8 +124,8 @@ logger.report_matrix(
 
 ### Histograms
 
-Report histograms by calling the [Logger.report_histogram](../../references/sdk/logger.md#report_histogram) 
-method. To report more than one series on the same plot, use the same `title` argument.
+Report histograms by calling [`Logger.report_histogram()`](../../references/sdk/logger.md#report_histogram). 
+To report more than one series on the same plot, use the same `title` argument.
 
 ```python
 # report a single histogram
@@ -170,11 +168,10 @@ logger.report_histogram(
 
 ## Media
 
-Report audio, HTML, image, and video by calling the [Logger.report_media](../../references/sdk/logger.md#report_media) 
-method using the `local_path` parameter. They appear in **DEBUG SAMPLES**.
+Report audio, HTML, image, and video by calling [`Logger.report_media()`](../../references/sdk/logger.md#report_media) 
+using the `local_path` parameter. They appear in **DEBUG SAMPLES**.
 
-The media for these examples is downloaded using the [StorageManager.get_local_copy](../../references/sdk/storage.md#storagemanagerget_local_copy) 
-method.
+The media for these examples is downloaded using [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy).
 
 For example, to download an image:
 
@@ -224,7 +221,7 @@ logger.report_media('video', 'big bunny', iteration=1, local_path=video_local_co
 
 ## Text
 
-Report text messages by calling the [Logger.report_text](../../references/sdk/logger.md#report_text). 
+Report text messages by calling [`Logger.report_text()`](../../references/sdk/logger.md#report_text). 
 
 ```python
 logger.report_text("hello, this is plain text")

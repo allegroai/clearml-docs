@@ -1,6 +1,5 @@
 ---
-title: FastAI
-displayed_sidebar: mainSidebar
+title: Fast.ai
 ---
 The [fastai_with_tensorboard_example.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/fastai/legacy/fastai_with_tensorboard_example.py) 
 example demonstrates the integration of ClearML into code that uses FastAI v1 and TensorBoard. 
@@ -13,7 +12,7 @@ The ClearML repository also includes [examples using FastAI v2](https://github.c
 The example code does the following:
 1. Trains a simple deep neural network on the fastai built-in MNIST dataset (see the [fast.ai](https://fastai1.fast.ai) documentation).
 1. Uses the fastai `LearnerTensorboardWriter` callback, and ClearML automatically logs TensorBoard through the callback. 
-1. During script execution, creates an experiment named `fastai with tensorboard callback`, which is associated with the `examples` project.
+1. During script execution, creates an experiment named `fastai with tensorboard callback` in the `examples` project.
 
 ## Scalars
 

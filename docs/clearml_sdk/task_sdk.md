@@ -11,7 +11,7 @@ populate it with:
 * A link to the running git repository (including commit ID and local uncommitted changes)
 * Python packages used (i.e. directly imported Python packages, and the versions available on the machine)
 * Argparse arguments (default and specific to the current execution)
-* Reports to Tensorboard & Matplotlib and model checkpoints.
+* Reports to Tensorboard and Matplotlib and model checkpoints.
 
 :::tip Ensuring Reproducibility 
 To ensure every run will provide the same results, ClearML controls the deterministic behaviors of the `tensorflow`, 
@@ -333,14 +333,14 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
   ```
 
 * The following query will return tasks that have either tag `a` or tag `b` and both tag `c` and tag `d` 
-  (`("a" OR "b") AND "c" AND "d"` ).
+  (`("a" OR "b") AND "c" AND "d"`).
   ```python
   task_list = Task.get_tasks(
     tags=["__$and", "__$or", "a", "b", "__$and", "c", "d"]
   )
   ```
 
-## Cloning & Executing Tasks
+## Cloning and Executing Tasks
 
 Once a task object is created, it can be copied (cloned). [`Task.clone()`](../references/sdk/task.md#taskclone) returns 
 a copy of the original task (`source_task`). By default, the cloned task is added to the same project as the original, 
@@ -603,18 +603,25 @@ Artifacts are the output files created by a task. ClearML uploads and logs these
 accessed, modified, and used.
 
 ### Logging Artifacts
-To log an artifact in a task, use the [`upload_artifact`](../references/sdk/task.md#upload_artifact) method. 
+To log an artifact in a task, use [`upload_artifact()`](../references/sdk/task.md#upload_artifact). 
 
 For example:
 * Upload a local file containing the preprocessing results of the data:
   ```python
   task.upload_artifact(name='data', artifact_object='/path/to/preprocess_data.csv')
   ```
-  
+
 * Upload an entire folder with all its content by passing the folder, which will be zipped and uploaded as a single 
   zip file:
   ```python
   task.upload_artifact(name='folder', artifact_object='/path/to/folder')
+  ```
+
+* Register links to network-stored objects (i.e. a URL where the scheme is supported by ClearML such as `http://`, `https://`, 
+  `s3://`, `gs://`, or `azure://`). The artifact will only be added as a URL and will not be uploaded. 
+
+  ```python
+  task.upload_artifact(name='link', artifact_object='azure://bucket/folder')
   ```
 
 * Serialize and upload a Python object. ClearML automatically chooses the file format based on the object’s type, or you 
@@ -645,7 +652,7 @@ See more details in the [Artifacts Reporting example](../guides/reporting/artifa
 A task's artifacts are accessed through the task’s *artifact* property which lists the artifacts’ locations.
 
 The artifacts can subsequently be retrieved from their respective locations by using:
-* `get_local_copy()`- Downloads the artifact and caches it for later use, returning the path to the cached copy.
+* `get_local_copy()` - Downloads the artifact and caches it for later use, returning the path to the cached copy.
 * `get()` - Returns a Python object constructed from the downloaded artifact file.
 
 The code below demonstrates how to access a file artifact using the previously generated preprocessed data:
@@ -714,7 +721,7 @@ local_weights_path = last_snapshot.get_local_copy()
 
 Notice that if one of the frameworks loads an existing weights file, the running task will automatically update its 
 "Input Model", pointing directly to the original training task's model. This makes it easy to get the full lineage of 
-every trained and used model in our system!
+every trained and used model in your system!
 
 Models loaded by the ML framework appear in an experiment's **Artifacts** tab under the "Input Models" section in the ClearML UI.
 

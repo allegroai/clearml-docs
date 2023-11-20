@@ -2,7 +2,7 @@
 title: Workers & Queues
 ---
 
-Two major components of MLOps are experiment reproducibility, and the ability to scale work to multiple machines. ClearML workers, 
+Two major components of MLOps/LLMOps are experiment reproducibility, and the ability to scale work to multiple machines. ClearML workers, 
 coupled with execution queues, address both these needs. 
 
 A ClearML worker is instantiated by launching a ClearML Agent, which is the base for **Automation** in ClearML and can be leveraged to build automated pipelines, launch custom services 
@@ -77,21 +77,23 @@ reuse machines without the need for any dedicated containers or images.
 Agents can be deployed bare-metal, with multiple instances allocating 
 specific GPUs to the agents. They can also be deployed as dockers in a Kubernetes cluster.
 
-The Agent has three running modes:
-- Docker Mode: The agent spins a docker image based on the Task’s definition then inside the docker the agent will clone 
-  the specified repository/code, apply the original execution’s uncommitted changes, install the required python packages 
-  and start executing the code while monitoring it.
-- Virtual Environment Mode: The agent creates a new virtual environment for the experiment, installs the required python 
-  packages based on the Task specification, clones the code repository, applies the uncommitted changes and finally 
-  executes the code while monitoring it.
-- Conda Environment Mode: Similar to the Virtual Environment mode, only instead of using pip, it uses conda install and 
-  pip combination. Notice this mode is quite brittle due to the Conda package version support table.
+The Agent supports the following running modes:
+* **Virtual Environment Mode** - The agent creates a new virtual environment for the experiment, installs the required 
+  python packages based on the Task specification, clones the code repository, applies the uncommitted changes and 
+  finally executes the code while monitoring it. This mode uses smart caching so packages and environments can be reused
+  over multiple tasks (see [Virtual Environment Reuse](../clearml_agent.md#virtual-environment-reuse)). 
 
-:::tip Agents and virtual environments 
-An agent that runs in Virtual Environment Mode or Conda Environment Mode needs to create virtual environments, and
-it can't do that when running from a virtual environment. You can run agents in these modes with 
-system Python.
-:::
+  ClearML Agent supports using the following package managers: `pip` (default), `conda`, `poetry`. 
+
+  :::tip Agents and virtual environments 
+  An agent that runs in Virtual Environment Mode needs to create virtual environments, and
+  it can't do that when running from a virtual environment. You can run agents in these modes with 
+  system Python.
+  :::
+
+* **Docker Mode** - The agent spins a Docker image based on the Task's definitions. Inside the Docker the agent clones 
+  the specified repository/code, applies the original execution's uncommitted changes, sets up the Python environment and 
+  required packages, and starts executing the code while monitoring it.  
 
 ## Services Mode
 

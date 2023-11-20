@@ -139,7 +139,7 @@ The relevant label is applied to all masks in the version according to the versi
 Frames can contain multiple masks. To add multiple masks, use the SingleFrame’s `masks_source` property. Input one of 
 the following:
 * A dictionary with mask string ID keys and mask URI values
-* A list of mask URIs. Number IDs are automatically assigned to the masks ( "00", "01", etc.)   
+* A list of mask URIs. Number IDs are automatically assigned to the masks ("00", "01", etc.)   
 
 ```python
 frame = SingleFrame(source='https://s3.amazonaws.com/allegro-datasets/cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/frankfurt/frankfurt_000000_000294_leftImg8bit.png',)

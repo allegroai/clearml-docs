@@ -11,7 +11,7 @@ This release is not backwards compatible - see notes below on upgrading
 **Breaking Changes**
 * Triton engine size supports variable request size (-1)
 
-**Features & Bug Fixes**
+**Features and Bug Fixes**
 
 * Add version number of serving session task
 * Triton engine support for variable request (matrix) sizes

@@ -2,7 +2,7 @@
 title: Tracking Leaderboards
 ---
 
-In this tutorial, we will set up a tracking leaderboard. A tracking leaderboard allows easy monitoring of experiments 
+In this tutorial, you will set up a tracking leaderboard. A tracking leaderboard allows easy monitoring of experiments 
 using a customized [experiments table](../../webapp/webapp_exp_table.md) with auto refresh for continual updates.
 
 The tracking leaderboard can be customized to include columns with information about:
@@ -51,7 +51,7 @@ The experiments table allows filtering experiments by experiment name, type, and
     * **Aborted** - The experiment ran and was manually or programmatically terminated.
     * **Published** - The experiment is not running, it is preserved as read-only.
 
-## Step 3: Hide the Defaults Column
+## Step 3: Hide the Default Columns
 
 Customize the columns on the tracking leaderboard by hiding any of the default columns shown below.
 

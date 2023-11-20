@@ -25,8 +25,8 @@ limits.
   sample a different set of hyperparameters values
 * **Optimization Configuration**
     * Optimization Method - The optimization strategy to employ (e.g. random, grid, hyperband)
-    * Optimization Objective Metric’s Title - Title of metric to optimize
-    * Optimization Objective Metric’s Series - Metric series (variant) to optimize
+    * Optimization Objective Metric's Title - Title of metric to optimize
+    * Optimization Objective Metric's Series - Metric series (variant) to optimize
     * Optimization Objective Trend - Choose the optimization target, whether to maximize or minimize the value of the 
       metric specified above
 * **Execution Queue** - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which 
@@ -39,7 +39,7 @@ limits.
             * Step Size - Step size between samples
         * Discrete Parameters - A set of values to sample
             * Values - Comma separated list of values to sample
-    * Name - The original task’s configuration parameter name (including section name e.g. `Args/lr`)  <br/>
+    * Name - The original task's configuration parameter name (including section name e.g. `Args/lr`)  <br/>
     :::tip Hydra Parameters
     For experiments using Hydra, input parameters from the OmegaConf in the following format:
     `Hydra/<param>`. Specify `<param>` using dot notation. For example, if your OmegaConf looks like this: 

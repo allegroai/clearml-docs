@@ -28,7 +28,7 @@ title: Version 1.7
 ### ClearML Server 1.7.0
 **New Features and Improvements**
 * Add “Sync comparison” to UI experiment debug samples comparison: Control metric/iteration for all compared experiments [ClearML GitHub issue #691](https://github.com/allegroai/clearml/issues/691)
-* Support serving UI from a non-root path of the ClearML Server [ClearML Helm Charts issue #101](https://github.com/allegroai/clearml-helm-charts/issues/101) & [ClearML Server issue #135](https://github.com/allegroai/clearml-server/issues/135).
+* Support serving UI from a non-root path of the ClearML Server [ClearML Helm Charts issue #101](https://github.com/allegroai/clearml-helm-charts/issues/101) and [ClearML Server issue #135](https://github.com/allegroai/clearml-server/issues/135).
 * Add UI option for hiding “secret” experiment container arguments [ClearML Server GitHub issue #146](https://github.com/allegroai/clearml-server/issues/146)
 * Add UI tables switch to detail mode through double-click [ClearML Server GitHub issue #134](https://github.com/allegroai/clearml-server/issues/134)
 * Add customizable user activity timeout for UI logout

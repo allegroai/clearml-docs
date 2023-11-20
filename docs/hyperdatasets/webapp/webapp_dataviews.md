@@ -51,7 +51,7 @@ Customize the table using any of the following:
 * Dynamic column order - Drag a column title to a different position.
 * Resize columns - Drag the column separator to change the width of that column. Double-click the column separator for automatic fit.
 * Filter by user and/or status - When a filter is applied to a column, its filter icon will appear with a highlighted 
-  dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ). To 
+  dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" />). To 
   clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" />
   in the top right corner of the table.
 * Sort columns - By experiment name and/or elapsed time since creation.

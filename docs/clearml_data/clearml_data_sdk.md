@@ -8,7 +8,7 @@ See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced querya
 :::
 
 Datasets can be created, modified, and managed with ClearML Data's python interface. You can upload your dataset to any 
-storage service of your choice (S3 / GS / Azure / Network Storage) by setting the dataset’s upload destination (see 
+storage service of your choice (S3 / GS / Azure / Network Storage) by setting the dataset's upload destination (see 
 [`output_url`](#uploading-files) parameter of `Dataset.upload()`). Once you have uploaded your dataset, you can access 
 it from any machine.  
 
@@ -28,8 +28,8 @@ ClearML Data supports multiple ways to create datasets programmatically, which p
   will inherit its data
 * [`Dataset.squash()`](#datasetsquash) - Generate a new dataset from by squashing together a set of related datasets
 
-You can add metadata to your datasets using the `Dataset.set_metadata` method, and access the metadata using the
-`Dataset.get_metadata` method. See [`set_metadata`](../references/sdk/dataset.md#set_metadata) and [`get_metadata`](../references/sdk/dataset.md#get_metadata).
+You can add metadata to your datasets using [`Dataset.set_metadata()`](../references/sdk/dataset.md#set_metadata), 
+and access the metadata using [`Dataset.get_metadata()`](../references/sdk/dataset.md#get_metadata).
 
 ### Dataset.create()
 
@@ -75,7 +75,7 @@ To improve deep dataset DAG storage and speed, dataset squashing was introduced.
 class method generates a new dataset by squashing a set of dataset versions, and merging down all changes introduced in 
 their lineage DAG, creating a new, flat, independent version.
 
-The datasets being squashed into a single dataset can be specified by their IDs or by project & name pairs. 
+The datasets being squashed into a single dataset can be specified by their IDs or by project and name pairs. 
 
 ```python
 # option 1 - list dataset IDs
@@ -334,7 +334,7 @@ Note that in offline mode, any methods that require communicating with the serve
 Upload the offline dataset to the ClearML Server using [`Dataset.import_offline_session()`](../references/sdk/dataset.md#datasetimport_offline_session). 
 
 ```python
-Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True")
+Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True)
 ```
 
 In the `session_folder_zip` argument, insert the path to the zip folder containing the dataset. To [upload](#uploading-files) 

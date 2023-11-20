@@ -2,7 +2,7 @@
 title: Best Practices
 ---
 
-This section talks about what made us design ClearML the way we did and how it reflects on ML / DL workflows.
+This section talks about what made us design ClearML the way we did and how it reflects on AI workflows.
 While ClearML was designed to fit into any workflow, we do feel that working as we describe below brings a lot of advantages from organizing one's workflow
 and furthermore, preparing it to scale in the long term.
 
@@ -24,7 +24,7 @@ During early stages of model development, while code is still being modified hea
 The abovementioned setups might be folded into each other and that's great! If you have a GPU machine for each researcher, that's awesome! 
 The goal of this phase is to get a code, dataset, and environment setup, so you can start digging to find the best model!
 
--  [ClearML SDK](../../clearml_sdk/clearml_sdk.md) should be integrated into your code (check out our [getting started](ds_first_steps.md)). 
+- [ClearML SDK](../../clearml_sdk/clearml_sdk.md) should be integrated into your code (check out [Getting Started](ds_first_steps.md)). 
   This helps visualizing the results and tracking progress.
 - [ClearML Agent](../../clearml_agent.md) helps moving your work to other machines without the hassle of rebuilding the environment every time, 
   while also creating an easy queue interface that easily lets you just drop your experiments to be executed one by one
@@ -41,8 +41,8 @@ yields the best performing model for your task!
   - You should continue coding while experiments are being executed without interrupting them.
   - Stop optimizing your code because your machine struggles, and run it on a beefier machine (cloud / on-prem).
 
-Visualization and comparisons dashboards keep your sanity at bay! In this stage we usually have a docker container with all the binaries 
-that we need. 
+Visualization and comparison dashboards keep your sanity at bay! At this stage you usually have a docker container with all the binaries 
+that you need. 
 - [ClearML SDK](../../clearml_sdk/clearml_sdk.md) ensures that all the metrics, parameters and Models are automatically logged and can later be 
   accessed, [compared](../../webapp/webapp_exp_comparing.md) and [tracked](../../webapp/webapp_exp_track_visual.md).
 - [ClearML Agent](../../clearml_agent.md) does the heavy lifting. It reproduces the execution environment, clones your code, 
@@ -66,7 +66,7 @@ improving your results later on!
 
 ## Visibility Matters
 
-While it's possible to track experiments with one tool, and pipeline them with another, we believe that having 
+While it's possible to track experiments with one tool, and pipeline them with another, having 
 everything under the same roof has its benefits! 
 
 Being able to track experiment progress and compare experiments, and based on that send experiments to execution on remote

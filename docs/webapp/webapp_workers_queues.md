@@ -14,6 +14,7 @@ consumption as needed–-with no code (available under the ClearML Pro plan)
   * Delete empty queues
   * Monitor queue utilization
   * Reorder, move, and remove experiments from queues
+* Monitor all of your available and in-use compute resources (available in the ClearML Enterprise plan. See [Orchestration Dashboard](webapp_orchestration_dash.md))
 
 ## Autoscalers
 
@@ -58,21 +59,21 @@ The worker table shows the currently available workers and their current executi
 * Training iteration.
 
 
-Clicking on a worker will open the worker’s details panel and replace the graph with that worker’s resource utilization 
-information. The resource metric being monitored can be selected through the menu at the graph’s top left corner:
+Clicking on a worker will open the worker's details panel and replace the graph with that worker's resource utilization 
+information. The resource metric being monitored can be selected through the menu at the graph's top left corner:
 * CPU and GPU Usage
 * Memory Usage
 * Video Memory Usage
 * Network Usage.
 
-The worker’s details panel includes the following two tabs:
+The worker's details panel includes the following two tabs:
 * **INFO** - worker information:
     * Worker Name
     * Update time - The last time the worker reported data
     * Current Experiment - The experiment currently being executed by the worker
     * Experiment Runtime - How long the currently executing experiment has been running
     * Experiment iteration - The last reported training iteration for the experiment
-* **QUEUES** -  Information about the queues that the worker is assigned to:
+* **QUEUES** - Information about the queues that the worker is assigned to:
     * Queue - The name of the Queue
     * Next experiment - The next experiment available in this queue
     * In Queue - The number of experiments currently enqueued
@@ -97,7 +98,7 @@ The queue table shows the following queue information:
 To create a new queue - Click **+ NEW QUEUE** (top left).
 
 Hover over a queue and click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-md space-sm" /> 
-to copy the queue’s ID. 
+to copy the queue's ID. 
 
 ![image](../img/4100.png)
 
@@ -107,24 +108,24 @@ to access queue actions:
 ![Queue context menu](../img/webapp_workers_queues_context.png)
    
 * Delete - Delete the queue. Any pending tasks will be dequeued.
-* Rename - Change the queue’s name
+* Rename - Change the queue's name
 * Clear - Remove all pending tasks from the queue
 * Custom action - The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
   appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions)
   
-Clicking on a queue will open the queue’s details panel and replace the graphs with that queue’s statistics.
+Clicking on a queue will open the queue's details panel and replace the graphs with that queue's statistics.
 
-The queue’s details panel includes the following two tabs: 
+The queue's details panel includes the following two tabs: 
 * **EXPERIMENTS** - A list of experiments in the queue. You can reorder and remove enqueued experiments. See 
   [Controlling Queue Contents](#controlling-queue-contents).
-* **WORKERS**  - Information about the workers assigned to the queue:
+* **WORKERS** - Information about the workers assigned to the queue:
   * Name - Worker name
-  * IP - Worker’s IP
+  * IP - Worker's IP
   * Currently Executing - The experiment currently being executed by the worker
 
 ### Controlling Queue Contents
 
-Click on an experiment’s menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> 
+Click on an experiment's menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> 
 in the **EXPERIMENTS** tab to reorganize your queue:
 
 ![Queue experiment's menu](../img/workers_queues_experiment_actions.png)  

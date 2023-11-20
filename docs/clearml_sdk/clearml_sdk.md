@@ -10,7 +10,7 @@ and other workflows.
 For installation instructions, see [Getting Started](../getting_started/ds/ds_first_steps.md#install-clearml). 
 :::
 
-The ClearML Python Package collects the scripts’ entire execution information, including:
+The ClearML Python Package collects the scripts' entire execution information, including:
 * Git repository (branch, commit ID, and uncommitted changes) 
 * Working directory and entry point
 * Hyperparameters 
@@ -93,7 +93,7 @@ See an [overview](apiclient_sdk.md) for APIClient usage.
 Use the ClearmlJob to create and manage jobs based on existing tasks. The class supports changing a job's parameters, 
 configurations, and other execution details. 
 
-See reference page [here](../references/sdk/automation_job_clearmljob.md).
+See [reference page](../references/sdk/automation_job_clearmljob.md).
 
 ### AutoScaler
 The `AutoScaler` class facilitates implementing resource budgeting. See class methods [here](https://github.com/allegroai/clearml/blob/master/clearml/automation/auto_scaler.py).

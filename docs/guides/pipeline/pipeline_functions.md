@@ -34,8 +34,8 @@ logged as required packages for the pipeline execution step.
    )
    ```
     
-1. Set the default execution queue to be used. All the pipeline steps will be enqueued for execution in this queue 
-   (unless overridden by the `execution_queue` parameter of the `add_function_step` method).
+1. Set an execution queue through which pipeline steps that did not explicitly specify an execution queue will be 
+   executed. These pipeline steps will be enqueued for execution in this queue.
     
   ```python
   pipe.set_default_execution_queue('default')
@@ -66,7 +66,7 @@ logged as required packages for the pipeline execution step.
    ) 
    ```
    
-   The second step in the pipeline uses the `step_two` function and uses as its input the first step’s output.This reference 
+   The second step in the pipeline uses the `step_two` function and uses as its input the first step's output.This reference 
    implicitly defines the pipeline structure, making `step_one` the parent step of `step_two`. 
    
    Its return object will be stored as an artifact under the name `processed_data`.
@@ -82,8 +82,8 @@ logged as required packages for the pipeline execution step.
    )
    ```
    
-   The third step in the pipeline uses the `step_three` function and uses as its input the second step’s output. This 
-   reference implicitly defines the pipeline structure, making `step_two`the parent step of `step_three`.
+   The third step in the pipeline uses the `step_three` function and uses as its input the second step's output. This 
+   reference implicitly defines the pipeline structure, making `step_two` the parent step of `step_three`.
    
    Its return object will be stored as an artifact under the name `model`:
    
@@ -106,7 +106,7 @@ logged as required packages for the pipeline execution step.
    The pipeline will be launched remotely, through the `services` queue, unless otherwise specified.  
    
 ## WebApp
-When the experiment is executed, the terminal returns the task ID, and links to the pipeline controller task page and pipeline page. 
+When the experiment is executed, the console output displays the task ID, and links to the pipeline controller task page and pipeline page. 
 
 ```
 ClearML Task: created new task id=bc93610688f242ecbbe70f413ff2cf5f
@@ -114,13 +114,13 @@ ClearML results page: https://app.clear.ml/projects/462f48dba7b441ffb34bddb78371
 ClearML pipeline page: https://app.clear.ml/pipelines/462f48dba7b441ffb34bddb783711da7/experiments/bc93610688f242ecbbe70f413ff2cf5f
 ```
 
-The pipeline run’s page contains the pipeline’s structure, the execution status of every step, as well as the run’s 
+The pipeline run's page contains the pipeline's structure, the execution status of every step, as well as the run's 
 configuration parameters and output.
 
 ![Pipeline DAG](../../img/pipeline_from_functions_DAG.png)
 
-To view a run’s complete information, click **Full details** on the bottom of the **Run Info** panel, which will open the 
-pipeline’s [controller task page](../../webapp/webapp_exp_track_visual.md).
+To view a run's complete information, click **Full details** on the bottom of the **Run Info** panel, which will open the 
+pipeline's [controller task page](../../webapp/webapp_exp_track_visual.md).
 
 Click a step to see an overview of its details.
 
@@ -128,11 +128,11 @@ Click a step to see an overview of its details.
 
 ## Console and Code
 
-Click **DETAILS** to view a log of the pipeline controller’s console output.   
+Click **DETAILS** to view a log of the pipeline controller's console output.   
 
 ![Pipeline console](../../img/pipeline_from_functions_console.png)
 
-Click on a step to view its console output. You can also view the selected step’s code by clicking **CODE**
+Click on a step to view its console output. You can also view the selected step's code by clicking **CODE**
 on top of the console log.
 
 ![Pipeline step code](../../img/pipeline_from_functions_code.png)

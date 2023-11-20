@@ -2,6 +2,11 @@
 title: Hydra
 ---
 
+:::tip
+If you are not already using ClearML, see [Getting Started](../getting_started/ds/ds_first_steps.md) for setup 
+instructions.
+:::
+
 
 [Hydra](https://github.com/facebookresearch/hydra) is a Python framework for managing experiment parameters. ClearML integrates seamlessly
 with Hydra and automatically logs the `OmegaConf` which holds all the configuration files, as well as 
@@ -20,6 +25,16 @@ ClearML logs the OmegaConf as a blob and can be viewed in the
 ![Hydra configuration](../img/integrations_hydra_configs.png)
 
 ## Modifying Hydra Values
+
+### Via Command Line
+You can use Hydra's command line syntax to modify your OmegaConf: override, append, or remove config values:
+* Override config value: `foo.bar=value`
+* Append config value: `+foo.bar=value`
+* Remove config value: `~foo.bar` or `~foo.bar=value`
+
+See the [Hydra documentation](https://hydra.cc/docs/advanced/override_grammar/basic/#basic-override-syntax) for more information.
+
+### Via UI
 
 In the UI, you can clone a task multiple times and modify it for execution by the [ClearML Agent](../clearml_agent.md). 
 The agent executes the code with the modifications you made in the UI, even overriding hardcoded values. 
@@ -49,4 +64,6 @@ Enqueue the customized experiment for execution. The task will use the new value
 second option mentioned above, notice that the OmegaConf in **CONFIGURATION > CONFIGURATION OBJECTS > OmegaConf** changes 
 according to your added parameters. 
 
-See code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/hydra/hydra_example.py).
+## Code Example
+
+See example which demonstrates integrating ClearML into script that uses Hydra [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/hydra/hydra_example.py).

@@ -5,7 +5,7 @@ title: 3D Plots Reporting
 The [3d_plots_reporting.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/3d_plots_reporting.py) 
 example demonstrates reporting a series as a surface plot and as a 3D scatter plot. 
 
-When the script runs, it creates an experiment named `3D plot reporting`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `3D plot reporting` in the `examples` project.
 
 ClearML reports these plots in the experiment's **PLOTS** tab. 
 
@@ -27,13 +27,13 @@ Logger.current_logger().report_surface(
     zaxis="title Z",
 )
 ```
-Visualize the reported surface plot in **PLOTS**.
+View the reported surface plot in **PLOTS**.
 
 ![Surface plot](../../img/examples_reporting_02.png)
 
 ## 3D Scatter Plot
 
-To plot a series as a 3-dimensional scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) 
+To plot a series as a 3D scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) 
 method.
 ```python
 # report 3d scatter plot
@@ -49,5 +49,5 @@ Logger.current_logger().report_scatter3d(
 )
 ```
 
-Visualize the reported 3D scatter plot in **PLOTS**.
+View the reported 3D scatter plot in **PLOTS**.
 ![3d scatter plot](../../img/examples_reporting_01.png)

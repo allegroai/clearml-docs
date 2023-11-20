@@ -110,6 +110,16 @@ in either case).
 
 ---
 
+**`agent.docker_allow_host_environ`** (*bool*)
+
+* Set to `true` to allow passing host environments into docker container with Task's docker container arguments. For example: `"-e HOST_NAME=$HOST_NAME"`. 
+
+:::caution
+Use with care! This might introduce security risks by allowing access to keys/secret on the host machine. 
+:::
+
+---
+
 **`agent.docker_apt_cache`** (*string*)
         
 * The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
@@ -151,7 +161,7 @@ Compatible with Docker versions 0.6.5 and above
 
 **`agent.docker_install_opencv_libs`** (*bool*)
 
-* Install the required packages for opencv libraries (libsm6 libxext6 libxrender-dev libglib2.0-0), for backwards 
+* Install the required packages for opencv libraries (`libsm6 libxext6 libxrender-dev libglib2.0-0`), for backwards 
   compatibility reasons. Change to `false` to skip installation and decrease docker spin-up time.
 
 ---
@@ -214,7 +224,7 @@ from `system_site_packages`
 
 **`agent.extra_docker_arguments`** (*[string]*)
         
-* Optional arguments to pass to the Docker image. These are local for this agent, and will not be updated in the experiment's `docker_cmd` section. For example, ` ["--ipc=host", ]`.
+* Optional arguments to pass to the Docker image. These are local for this agent, and will not be updated in the experiment's `docker_cmd` section. For example, `["--ipc=host", ]`.
         
 ---
         
@@ -292,7 +302,7 @@ from `system_site_packages`
     * `AWS_SECRET_ACCESS_KEY` 
     * `AZURE_STORAGE_KEY`
   
-  * To mask additional environment variables, add their keys to the `extra_keys` list.  
+  * To mask additional environment variables, add their keys to the `extra_keys` list. 
   For example, to hide the value of a custom environment variable named `MY_SPECIAL_PASSWORD`, set `extra_keys: ["MY_SPECIAL_PASSWORD"]`
 
   * By default, `parse_embedded_urls` is set to `true`, so agent will also hide passwords in URLs and handle environment variables
@@ -406,7 +416,7 @@ match_rules: [
           image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
           arguments: "-e define=value"
           match: {
-              script{
+              script {
                   # Optional: must match all requirements (not partial)
                   requirements: {
                       # version selection matching PEP-440
@@ -459,6 +469,12 @@ ___
 **`agent.package_manager.extra_index_url`** (*[string]*)
         
 * A list of URLs for additional artifact repositories when installing Python packages.
+
+---
+
+**`agent.package_manager.extra_pip_install_flags`** (*[string]*)
+
+* A list of additional flags to use when the agent install packages. For example: `["--use-deprecated=legacy-resolver", ]`
 
 ---
         
@@ -515,6 +531,17 @@ ___
 **`agent.package_manager.priority_packages`** (*[string]*)
 
 * A list of packages with priority to be installed before the rest of the required packages. For example: `["cython", "numpy", "setuptools", ]`
+
+---
+
+**`agent.package_manager.pytorch_resolve`** (*str*)
+
+* Set the PyTorch resolving mode. The options are:
+  * `pip` (default) - Sets extra index based on cuda and lets pip resolve
+  * `none` - No resolving. Install PyTorch like any other package
+  * `direct` - Resolve a direct link to the PyTorch wheel by parsing the pytorch.org pip repository and matching the 
+  automatically detected cuda version with the required PyTorch wheel. If the exact cuda version is not found for the 
+  required PyTorch wheel, it will try a lower cuda version until a match is found
 
 ---
 
@@ -693,7 +720,7 @@ You must use a secure protocol with ``api.web_server``, ``api.files_server``, an
 
 **`api.http.default_method`** (*string*)
 
-* Set the request method for all API requests and auth login. This could be useful when `GET` requests with payloads are 
+* Set the request method for all API requests and auth login. This can be useful when `GET` requests with payloads are 
 blocked by a server, and `POST` requests can be used instead. The request options are: "GET", "POST", "PUT".   
 
 :::caution
@@ -706,8 +733,8 @@ This configuration option is experimental, and has not been vigorously tested, s
         
 **`api.credentials`** (*dict*)
         
-* Dictionary of API credentials.   
-  Alternatively, specify the environment variable ` CLEARML_API_ACCESS_KEY / CLEARML_API_SECRET_KEY` to override these keys.
+* Dictionary of API credentials. 
+  Alternatively, specify the environment variable `CLEARML_API_ACCESS_KEY` / `CLEARML_API_SECRET_KEY` to override these keys.
 
         
 ---
@@ -806,9 +833,9 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
 
 **`sdk.aws.s3.use_credentials_chain`** (*bool*)
 
-* Instead of using default credentials for an unspecified bucket, enable credentials chain to let Boto3 pick the right 
-  credentials. This includes picking credentials from environment variables,
-  a credential file, and metadata service with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials)
+* Set to `true` to let Boto3 look for and pick the right credentials, instead of using the explicitly provided 
+  default credentials (`sdk.aws.s3.secret` and `sdk.aws.s3.key`). Boto3 looks for credentials in environment variables,
+  a credential file, and metadata service with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
   
 
 <br/>
@@ -1360,6 +1387,7 @@ base64-encoded contents string, otherwise ignored
 *  `path` - Target file's path, may include `~` and inplace env vars
 *  `target_format` - Format used to encode contents before writing into the target file. Supported values are `json`, `yaml`, 
 `yml`, and `bytes` (in which case the file will be written in binary mode). Default is text mode.
+* `mode` - File-system mode (permissions) to apply to the file after its creation. The mode string will be parsed into an integer (e.g. `"0o777"` for `-rwxrwxrwx`)
 * `overwrite` - Overwrite the target file in case it exists. Default is `true`.
 
 Example:
@@ -1368,6 +1396,7 @@ files {
   myfile1 {
     contents: "The quick brown fox jumped over the lazy dog"
     path: "/tmp/fox.txt"
+    mode: "0o777"
   }
   myjsonfile {
     contents: {

@@ -1,6 +1,5 @@
 ---
-title: TensorFlow
-displayed_sidebar: mainSidebar
+title: TensorFlow MNIST
 ---
 
 The [tensorflow_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py) 
@@ -31,13 +30,13 @@ All console output appears in **CONSOLE**.
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks 
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks 
 models and any snapshots created using TensorFlow. 
 
 ![image](../../../img/examples_tensorflow_mnist_03.png)
 
-Clicking on a model’s name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can 
-view the model’s details and access the model.
+Clicking on a model's name takes you to the [model's page](../../../webapp/webapp_model_viewing.md), where you can 
+view the model's details and access the model.
 
 
 ![image](../../../img/examples_tensorflow_mnist_10.png)

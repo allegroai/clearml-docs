@@ -16,7 +16,7 @@ ClearML uploads media to the bucket specified in the ClearML configuration file 
 ClearML reports media in the **ClearML Web UI** **>** experiment details **>** **DEBUG SAMPLES** 
 tab. 
 
-When the script runs, it creates an experiment named `audio and video reporting`, which is associated with the `examples` 
+When the script runs, it creates an experiment named `audio and video reporting` in the `examples` 
 project.
 
 ## Reporting (Uploading) Media from a Source by URL
@@ -38,9 +38,9 @@ Logger.current_logger().report_media(
 )
 ```
 
-The reported audio can be viewed in the **DEBUG SAMPLES** tab. Double-click a thumbnail, and the audio player opens.
+The reported audio can be viewed in the **DEBUG SAMPLES** tab. Click a thumbnail to open the audio player.
 
-![image](../../img/examples_reporting_08.png)
+![Audio debug samples](../../img/examples_reporting_08.png)
 
 
 ## Reporting (Uploading) Media from a Local File
@@ -55,6 +55,6 @@ Logger.current_logger().report_media(
 )
 ```
     
-The reported video can be viewed in the **DEBUG SAMPLES** tab. Double-click a thumbnail, and the video player opens.
+The reported video can be viewed in the **DEBUG SAMPLES** tab. Click a thumbnail to open the video player.
 
-![image](../../img/examples_reporting_09.png)
+![Video debug samples](../../img/examples_reporting_09.png)

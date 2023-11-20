@@ -14,8 +14,8 @@ can be executed locally, or on any machine using the [clearml-agent](../clearml_
 
 ![Pipeline UI](../img/pipelines_DAG.png)
 
-The [Pipeline Run](../webapp/pipelines/webapp_pipeline_viewing.md) page in the web UI displays the pipeline’s structure 
-in terms of executed steps and their status, as well as the run’s configuration parameters and output. See [pipeline UI](../webapp/pipelines/webapp_pipeline_page.md) 
+The [Pipeline Run](../webapp/pipelines/webapp_pipeline_viewing.md) page in the web UI displays the pipeline's structure 
+in terms of executed steps and their status, as well as the run's configuration parameters and output. See [pipeline UI](../webapp/pipelines/webapp_pipeline_page.md) 
 for more details.
 
 ClearML pipelines are created from code using one of the following:
@@ -35,16 +35,19 @@ example of a pipeline with concurrent steps.
 ClearML supports multiple modes for pipeline execution:
 * **Remote Mode** (default) - In this mode, the pipeline controller logic is executed through a designated queue, and all 
   the pipeline steps are launched remotely through their respective queues. Since each task is executed independently, 
-  it can have control over its git repository (if needed), required python packages and specific container to be used.
+  it can have control over its git repository (if needed), required python packages, and the specific container to use.
 * **Local Mode** - In this mode, the pipeline is executed locally, and the steps are executed as sub-processes. Each 
   subprocess uses the exact same Python environment as the main pipeline logic.
 * **Debugging Mode** (for PipelineDecorator) - In this mode, the entire pipeline is executed locally, with the pipeline 
   controller and steps called synchronously as regular Python functions providing full ability to debug each function call.
 
+When you run your pipeline, ClearML collects and stores all the information required to reproduce the run. You can rerun
+the pipeline via the ClearML Web UI. See [Pipeline Runs](#pipeline-runs).
+
 ## Pipeline Features  
 ### Artifacts and Metrics
 Each pipeline step can log additional artifacts and metrics on the step task with the usual flows (TB, Matplotlib, or with 
-[ClearML Logger](../fundamentals/logger.md)). To get the instance of the step’s Task during runtime, use the class method 
+[ClearML Logger](../fundamentals/logger.md)). To get the instance of the step's Task during runtime, use the class method 
 [Task.current_task](../references/sdk/task.md#taskcurrent_task).
 
 Additionally, pipeline steps can directly report metrics or upload artifacts / models to the pipeline using these 
@@ -67,7 +70,7 @@ section)
 
 By default, pipeline steps are not cached. Enable caching when creating a pipeline step (for example, see [@PipelineDecorator.component](pipelines_sdk_function_decorators.md#pipelinedecoratorcomponent)).
 
-When a step is cached, the step code is hashed, alongside the step’s parameters (as passed in runtime), into a single 
+When a step is cached, the step code is hashed, alongside the step's parameters (as passed in runtime), into a single 
 representing hash string. The pipeline first checks if a cached step exists in the system (archived Tasks will not be used 
 as a cached instance). If the pipeline finds an existing fully executed instance of the step, it will plug its output directly, 
 allowing the pipeline logic to reuse the step outputs.
@@ -78,23 +81,39 @@ allowing the pipeline logic to reuse the step outputs.
 Callbacks can be utilized to control pipeline execution flow. A callback can be defined to be called before and/or after 
 the execution of every task in a pipeline. Additionally, you can create customized, step-specific callbacks.
 
-### Pipeline Reusing 
-Like any other task in ClearML, the controller task can be cloned, modified, and relaunched. The main pipeline logic 
-function’s arguments are stored in the controller task’s **Configuration > Args** section. You can clone the pipeline 
-Task using the UI or programmatically, modify the pipeline arguments, and send the pipeline for execution by enqueuing 
-the pipeline on the `services` queue.
+### Pipeline Runs
+When you run your pipeline, ClearML collects and stores all the information required to reproduce the run (DAG, 
+configuration, installed packages, uncommitted changes etc.). 
+
+You can rerun the pipeline via the [ClearML Web UI](../webapp/pipelines/webapp_pipeline_table.md). To launch a new run 
+for a pipeline, click **+ NEW RUN** on the top left of the pipeline runs page. This opens a **NEW RUN** modal, where you 
+can set the run's parameters and execution queue.  
+
+![Pipeline params UI](../img/pipelines_new_run.png)
+
+The new pipeline run will be executed through the execution queue by a ClearML agent. The agent will rebuild 
+the pipeline according to the configuration and DAG that was captured in the original run, and override the original 
+parameters' value with those input in the **NEW RUN** modal.
+
+One exception is for pipelines [created from functions](pipelines_sdk_tasks.md#steps-from-functions) (adding steps to a 
+pipeline controller using [`PipelineController.add_function_step()`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step)): 
+When you rerun the pipeline through the ClearML WebApp, the pipeline is constructed again at runtime from the executed 
+code.
+
+To change this behavior, pass `always_create_from_code=False` when instantiating a `PipelineController`. In this case, 
+when rerun, the pipeline DAG will be generated from the pipeline configuration stored in the pipeline task. This 
+lets you modify the pipeline configuration via the UI, without changing the original codebase.
 
 ### Pipeline Versions
-Each pipeline must be assigned a version number to help track the evolution of your pipeline structure and parameters.
-
-If you pass `auto_version_bump=True` when instantiating a PipelineController, the pipeline’s version automatically bumps up
-if there is a change in the pipeline code. If there is no change, the pipeline retains its version number.  
+You can assign each pipeline a version number to help track the evolution of your pipeline structure and parameters. 
+The pipeline's version automatically bumps up if there is a change in the pipeline code. If there is no change, the 
+pipeline retains its version number.  
 
 ### Tracking Pipeline Progress
-ClearML automatically tracks a pipeline’s progress percentage: the number of pipeline steps completed out of the total
+ClearML automatically tracks a pipeline's progress percentage: the number of pipeline steps completed out of the total
 number of steps. For example, if a pipeline consists of 4 steps, after the first step completes, ClearML automatically 
 sets its progress value to 25. Once a pipeline has started to run but is yet to successfully finish, the WebApp will 
-show the pipeline’s progress indication in the pipeline runs table, next to the run’s status.
+show the pipeline's progress indication in the pipeline runs table, next to the run's status.
 
 ## Examples
 

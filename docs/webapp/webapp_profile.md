@@ -123,7 +123,7 @@ pending invitations are displayed.
 
 ### Leaving a Workspace
 
-You can leave any workspace you’ve previously joined (except your personal workspace).
+You can leave any workspace you've previously joined (except your personal workspace).
 
 When leaving a workspace, you lose access to its resources (tasks, models, etc.) and your previously created access 
 credentials to that workspace are revoked. Tasks and associated artifacts that you logged to that workspace will remain 
@@ -172,7 +172,17 @@ Administrators can define multiple [configuration vaults](#configuration-vault) 
 where a ClearML task is executed. Configuration vault values will be applied to tasks run by members of the designated user groups. 
 
 To apply its contents, a vault should be enabled. New entries will extend the configuration in the local ClearML [configuration file](../configs/clearml_conf.md). 
-Existing configuration file entries will be overridden by the vault values.
+Most existing configuration file entries will be overridden by the vault values.
+
+:::info 
+The following configuration values are machine and/or agent specific, so they can't be set in a configuration vault:
+* `agent.cuda_version`
+* `agent.cudnn_version`
+* `agent.default_python`
+* `agent.worker_id` 
+* `agent.worker_name`
+* `agent.debug`
+:::
 
 **To create a vault:**
 1. Click **+ Add Vault**
@@ -223,7 +233,7 @@ To remove a user from a workspace:
 1. Hover over the user's row on the table
 1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
-Removed users lose access to your workspace’s resources (tasks, models, etc.) and their existing access credentials are 
+Removed users lose access to your workspace's resources (tasks, models, etc.) and their existing access credentials are 
 revoked. Tasks and associated artifacts logged to your workspace by a removed user will remain in your workspace. The 
 user can only rejoin your workspace when you re-invite them. 
 
@@ -241,7 +251,7 @@ The system includes three pre-configured groups that can't be removed:
 * `Users` - All users. Can't be modified
 * `Admins` - Have RW access to all resources (except queue modification), and can grant users / user groups access 
   permissions to workspace resources
-* `Queue admins` -  Can create / delete / rename queues
+* `Queue admins` - Can create / delete / rename queues
 
 The user group table lists all the active user groups. Each row includes a group's name, description, member list, and ID. 
 

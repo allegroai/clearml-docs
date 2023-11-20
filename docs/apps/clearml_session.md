@@ -147,7 +147,7 @@ The Task must be connected to a git repository, since currently single script de
 :::
 
 1. In the **ClearML web UI**, find the experiment (Task) that needs debugging.
-1. Click on the ID button next to the Task name, and copy the unique ID.
+1. Click the `ID` button next to the Task name, and copy the unique ID.
 1. Enter the following command: `clearml-session --debugging-session <experiment_id_here>`
 1. Click on the JupyterLab / VS Code link, or connect directly to the SSH session.
 1. In JupyterLab / VS Code, access the experiment's repository in the `environment/task_repository` folder. 
@@ -166,9 +166,10 @@ The Task must be connected to a git repository, since currently single script de
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
 | `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:10.1-runtime-ubuntu18.04` or previously used docker image|
-| `--docker-args ` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
+| `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--queue`| Select the queue to launch the interactive session on | Previously used queue|
+| `--interactive`, `-I` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
 | `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
 | `--vscode-server` | Install VSCode on interactive session | `true` |
 | `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
@@ -188,7 +189,7 @@ The Task must be connected to a git repository, since currently single script de
 | `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
 |  `--force_dropbear`| Force using `dropbear` instead of SSHd |`None`| 
 | `--version`| Display the clearml-session utility version| N/A|
-| `--verbose ` | Increase verbosity of logging | `none` |
+| `--verbose` | Increase verbosity of logging | `none` |
 | `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|
 
 </div>

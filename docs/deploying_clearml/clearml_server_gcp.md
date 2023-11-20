@@ -59,7 +59,7 @@ No upload of the image file is required. Links to image files stored in Google S
 
 1. Click **Create** to import the image. The process can take several minutes depending on the size of the boot disk image.
 
-For more information see [Import the image to your custom images list](https://cloud.google.com/compute/docs/import/import-existing-image#import_image) in the [Compute Engine Documentation](https://cloud.google.com/compute/docs).
+For more information see the [Compute Engine Documentation](https://cloud.google.com/compute/docs/import/import-existing-image#import_image).
 
 ## Launching
 
@@ -88,7 +88,11 @@ The minimum requirements for ClearML Server are:
 
 ## Backing Up and Restoring Data and Configuration
 
-The commands in this section are an example of how to back up and restore data and configuration. 
+:::caution
+Stop your server before backing up or restoring data and configuration
+:::
+
+The commands in this section are an example of how to back up and restore data and configuration.
 
 If data and configuration folders are in `/opt/clearml`, then archive all data into `~/clearml_backup_data.tgz`, and 
 configuration into `~/clearml_backup_config.tgz`:
@@ -113,12 +117,15 @@ If the data and the configuration need to be restored:
 
 The following section contains a list of Custom Image URLs (exported in different formats) for each released ClearML Server version.
 
-### Latest Version - v1.11.0
+### Latest Version - v1.13.0
 
 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server.tar.gz)
 
 ### All Release Versions
 
+- v1.13.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-13-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-13-0.tar.gz)
+- v1.12.1 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-12-1.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-12-1.tar.gz)
+- v1.12.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-12-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-12-0.tar.gz)
 - v1.11.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-11-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-11-0.tar.gz)
 - v1.9.2 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-9-1.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-9-2.tar.gz)
 - v1.9.1 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-9-1.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-9-1.tar.gz)

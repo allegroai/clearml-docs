@@ -1,6 +1,5 @@
 ---
 title: MegEngine
-displayed_sidebar: mainSidebar
 ---
 
 The [megengine_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/megengine/megengine_mnist.py) 
@@ -11,7 +10,7 @@ The example script does the following:
 * Trains a simple deep neural network on MegEngine's built-in [MNIST](https://megengine.org.cn/doc/stable/en/reference/api/megengine.data.dataset.MNIST.html)
   dataset.
 * Creates a TensorBoardX `SummaryWriter` object to log scalars during training.  
-* Creates a ClearML experiment named `megengine mnist train`, which is associated with the `examples` project.
+* Creates a ClearML experiment named `megengine mnist train` in the `examples` project.
 
 ## Hyperparameters
 
@@ -50,6 +49,6 @@ The model info panel contains the model details, including:
 
 ## Console
 
-All console output during the script’s execution appears in the experiment’s **CONSOLE** page.
+All console output during the script's execution appears in the experiment's **CONSOLE** page.
 ![Console tab](../../../img/examples_megengine_console.png)
 

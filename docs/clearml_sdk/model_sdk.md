@@ -40,7 +40,7 @@ output_model.update_labels({'background': 0, 'label': 255})
 ```
 
 ### Updating Models
-ClearML doesn’t automatically log the snapshots of manually logged models. To update an experiment’s model use the 
+ClearML doesn't automatically log the snapshots of manually logged models. To update an experiment's model use the 
 [OutputModel.update_weights](../references/sdk/model_outputmodel.md#update_weights) method.
 
 ```python
@@ -106,7 +106,7 @@ task.connect(input_model)
 Retrieve a list of model objects by querying the system by model names, projects, tags, and more, using the 
 [`Model.query_models`](../references/sdk/model_model.md#modelquery_models) and/or 
 the [`InputModel.query_models`](../references/sdk/model_inputmodel.md#inputmodelquery_models) class methods. These 
-methods return a list of model objects that match the queries. The list is ordered according to the models’ last update 
+methods return a list of model objects that match the queries. The list is ordered according to the models' last update 
 time.
 
 ```python
@@ -171,7 +171,7 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
   ```
 
 * The following query will return models that have either tag `a` or tag `b` and both tag `c` and tag `d` 
-  (`("a" OR "b") AND "c" AND "d"` ).
+  (`("a" OR "b") AND "c" AND "d"`).
   ```python
   model_list = Model.query_models(
     tags=["__$and", "__$or", "a", "b", "__$and", "c", "d"]
@@ -197,7 +197,7 @@ These methods can be used on `Model`, `InputModel`, and/or `OutputModel` objects
     * Table - [`report_table`](../references/sdk/model_outputmodel.md#report_table)
     * Line plot - [`report_line_plot`](../references/sdk/model_outputmodel.md#report_line_plot)
     * Scatter plot - [`report_scatter2d`](../references/sdk/model_outputmodel.md#report_scatter2d)
-    * Confusion matrix (heat map) - [`report_confusion_matrix`](../references/sdk/model_outputmodel.md#report_confusion_matrix) & [`report_matrix`](../references/sdk/model_outputmodel.md#report_matrix)
+    * Confusion matrix (heat map) - [`report_confusion_matrix`](../references/sdk/model_outputmodel.md#report_confusion_matrix)
   * 3d plots 
     * Scatter plot - [`report_scatter3d`](../references/sdk/model_outputmodel.md#report_scatter3d) 
     * Surface plot - [`report_surface`](../references/sdk/model_outputmodel.md#report_surface)

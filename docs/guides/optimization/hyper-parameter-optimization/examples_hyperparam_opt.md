@@ -23,15 +23,15 @@ The following search strategies can be used:
   documentation.
      
 * Random uniform sampling of hyperparameter strategy - [automation.RandomSearch](../../../references/sdk/hpo_optimization_randomsearch.md)
-* Full grid sampling strategy of every hyperparameter combination - Grid search [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
-* Custom - Use a custom class and inherit from the ClearML automation base strategy class, automation.optimization.SearchStrategy.
+* Full grid sampling strategy of every hyperparameter combination - [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
+* Custom - Use a custom class and inherit from the ClearML automation base strategy class, [SearchStrategy](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L310)
 
 The search strategy class that is chosen will be passed to the [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object later.
 
 The example code attempts to import `OptimizerOptuna` for the search strategy. If `clearml.automation.optuna` is not 
 installed, it attempts to import `OptimizerBOHB`. If `clearml.automation.hpbandster` is not installed, it uses 
-the `RandomSearch` for the search strategy. 
+`RandomSearch` as the search strategy. 
 
 ```python
 try:
@@ -71,10 +71,10 @@ def job_complete_callback(
 Initialize the Task, which will be stored in ClearML Server when the code runs. After the code runs at least once, it 
 can be [reproduced](../../../webapp/webapp_exp_reproducing.md) and [tuned](../../../webapp/webapp_exp_tuning.md).
 
-We set the Task type to optimizer, and create a new experiment (and Task object) each time the optimizer runs (`reuse_last_task_id=False`). 
+Set the Task type to `optimizer`, and create a new experiment (and Task object) each time the optimizer runs (`reuse_last_task_id=False`). 
 
-When the code runs, it creates an experiment named **Automatic Hyper-Parameter Optimization** that is associated with 
-the project **Hyper-Parameter Optimization**, which can be seen in the **ClearML Web UI**. 
+When the code runs, it creates an experiment named **Automatic Hyper-Parameter Optimization** in 
+the **Hyper-Parameter Optimization** project, which can be seen in the **ClearML Web UI**. 
  
  ```python
 # Connecting CLEARML
@@ -174,7 +174,6 @@ Specify the remaining parameters, including the time limit per Task (minutes), p
     max_iteration_per_job=30,
     
 )  # done creating HyperParameterOptimizer
-
 ```
 
 ## Running as a Service

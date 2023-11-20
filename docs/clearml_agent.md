@@ -2,6 +2,19 @@
 title: ClearML Agent
 ---
 
+
+<div class="vid" >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
+        src="https://www.youtube.com/embed/MX3BrXnaULs" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+        allowfullscreen>
+</iframe>
+</div>
+
+<br/>
+
 **ClearML Agent** is a virtual environment and execution manager for DL / ML solutions on GPU machines. It integrates with the **ClearML Python Package** and ClearML Server to provide a full AI cluster solution. <br/>
 Its main focus is around:
 - Reproducing experiments, including their complete environments. 
@@ -12,7 +25,7 @@ to a remote machine.
 
 ![ClearML Agent flow diagram](img/clearml_agent_flow_diagram.png)
 
-The diagram above demonstrates a typical flow where an agent executes a task:  
+The preceding diagram demonstrates a typical flow where an agent executes a task:  
 
 1. Enqueue a task for execution on the queue.
 1. The agent pulls the task from the queue.
@@ -25,7 +38,13 @@ The diagram above demonstrates a typical flow where an agent executes a task:
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
 
-While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Orchestration** page).  
+:::note Python Version
+ClearML Agent uses the Python version available in the environment or docker in which it executes the code. It does not 
+install Python, so make sure to use a docker or environment with the version you need.
+::: 
+
+While the agent is running, it continuously reports system metrics to the ClearML Server (these can be monitored in the 
+[**Orchestration**](webapp/webapp_workers_queues.md) page).  
 
 Continue using ClearML Agent once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
@@ -288,7 +307,7 @@ There are two options for deploying the ClearML Agent to a Kubernetes cluster:
 * Spin ClearML Agent as a long-lasting service pod
 * Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
 
-See more details [here](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
+For more details, see [Kubernetes integration](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
 
 ### Explicit Task Execution
 
@@ -321,40 +340,37 @@ Run a `clearml-agent` daemon in foreground mode, sending all output to the conso
 clearml-agent daemon --queue default --foreground
 ```
 
-
-
 ## Execution Environments
 
-ClearML Agent supports executing tasks in multiple environments.
+ClearML Agent has two primary execution modes: [Virtual Environment Mode](#virtual-environment-mode) and [Docker Mode](#docker-mode). 
 
-### PIP Mode 
-By default, ClearML Agent works in PIP Mode, in which it uses [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) 
-as the package manager. When ClearML runs, it will create a virtual environment 
-(or reuse an existing one, see [here](clearml_agent.md#virtual-environment-reuse)).
-Task dependencies (Python packages) will be installed in the virtual environment.
+### Virtual Environment Mode 
 
-### Conda Mode 
-This mode is similar to the PIP mode but uses [Conda](https://docs.conda.io/en/latest/) as the package 
-manager. To enable Conda mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: conda` in the “package_manager” section. 
-If extra conda channels are needed, look for “conda_channels” under “package_manager”, and add the missing channel.
+In Virtual Environment Mode, the agent creates a virtual environment for the experiment, installs the required Python 
+packages based on the task specification, clones the code repository, applies the uncommitted changes and finally 
+executes the code while monitoring it. This mode uses smart caching so packages and environments can be reused over 
+multiple tasks (see [Virtual Environment Reuse](#virtual-environment-reuse)). 
 
-### Poetry Mode
-This mode is similar to the PIP mode but uses [Poetry](https://python-poetry.org/) as the package manager.
-To enable Poetry mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: poetry` in the “package_manager” 
-section.
+ClearML Agent supports working with one of the following package managers: 
+* [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) (default)
+* [`conda`](https://docs.conda.io/en/latest/)
+* [`poetry`](https://python-poetry.org/)
+
+To change the package manager used by the agent, edit the [`package_manager.type`](configs/clearml_conf.md#agentpackage_manager) 
+field in the of the `clearml.conf`. If extra channels are needed for `conda`, add the missing channels in the 
+`package_manager.conda_channels` field in the `clearml.conf`. 
 
 :::note Using Poetry with Pyenv
 Some versions of poetry (using `install-poetry.py`) do not respect `pyenv global`.  
 If you are using pyenv to control the environment where you use ClearML Agent, you can:
-  * Use poetry v1.2 and above (which [fixes this issue](https://github.com/python-poetry/poetry/issues/5077))
+  * Use poetry v1.2 and above (which fixes [this issue](https://github.com/python-poetry/poetry/issues/5077))
   * Install poetry with the deprecated `get-poetry.py` installer
-
 :::
 
 ### Docker Mode 
-:::note
-Docker Mode is only supported in linux.<br/>
-Docker Mode requires docker service v19.03 or higher installed.
+:::note notes
+* Docker Mode is only supported in linux.
+* Docker Mode requires docker service v19.03 or higher installed.
 :::
 
 When executing the ClearML Agent in Docker mode, it will: 
@@ -364,6 +380,16 @@ When executing the ClearML Agent in Docker mode, it will:
    
 ClearML Agent uses the provided default Docker container, which can be overridden from the UI. 
 
+:::tip Setting Docker Container via UI
+You can set the docker container via the UI: 
+1. Clone the experiment
+2. Set the Docker in the cloned task's **Execution** tab **> Container** section
+   ![Container section](img/webapp_exp_container.png)
+3. Enqueue the cloned task
+
+The task will be executed in the container specified in the UI.
+:::
+
 All ClearML Agent flags (such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
 To execute ClearML Agent in Docker mode, run: 
@@ -372,7 +398,7 @@ clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional d
 ```
 
 To use the current `clearml-agent` version in the Docker container, instead of the latest `clearml-agent` version that is 
-automatically installed, run:
+automatically installed, pass the `--force-current-version` flag:
 ```bash
 clearml-agent daemon --queue default --docker --force-current-version
 ```
@@ -389,7 +415,7 @@ CLEARML_AGENT_K8S_HOST_MOUNT=/mnt/host/data:/root/.clearml
 ClearML Agent caches virtual environments so when running experiments multiple times, there's no need to spend time reinstalling 
 pre-installed packages. To make use of the cached virtual environments, enable the virtual environment reuse mechanism. 
 
-#### Virtual Environment Reuse
+### Virtual Environment Reuse
 
 The virtual environment reuse feature may reduce experiment startup time dramatically.
 
@@ -448,7 +474,7 @@ clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue quad_gpu=4 dual_gpu=2
 ``` 
 
 The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue.
-The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from `dual_gpu`
+The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from the `dual_gpu`
 queue, look for available GPUs again and spin on GPUs 4-5.
 
 Another option for allocating GPUs:

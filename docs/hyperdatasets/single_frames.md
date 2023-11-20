@@ -35,7 +35,7 @@ For more information, see [Annotations](annotations.md).
 
 
 ### Masks
-A `SingleFrame` can include a URI link to masks file if applicable. Masks correspond to raw data where the objects to be 
+A `SingleFrame` can include a URI link to a mask file if applicable. Masks correspond to raw data where the objects to be 
 detected are marked with colors or different opacity levels in the masks.
 
 For more information, see [Masks](masks.md).
@@ -219,6 +219,15 @@ frame = SingleFrame(
 )
 ```
 
+:::tip Previewing Frames in non-AWS S3-like services
+For the ClearML UI to be able to show frames stored in non-AWS S3-like services (e.g. MinIO), make sure the `preview_uri` link
+uses the `s3://` prefix and explicitly specifies the port number in the URL (e.g. `s3://my_address.com:80/bucket/my_image.png`).
+
+Additionally, make sure to provide cloud storage access in the WebApp [**Settings > Web App Cloud Access**](../webapp/webapp_profile.md#browser-cloud-storage-access). 
+Input `<host_address>:<port_number>` in the **Host** field.
+:::
+
+
 There are also options to populate the instance with:
 * Dimensions - `width` and `height`
 * General information about the frame - `metadata`
@@ -229,7 +238,7 @@ For more information, see the [`SingleFrame`](../references/hyperdataset/singlef
 
 ### Adding SingleFrames to a Dataset Version
 
-Use the [`DatasetVersion.add_frames`](../references/hyperdataset/hyperdatasetversion.md#add_frames) method to add 
+Use [`DatasetVersion.add_frames()`](../references/hyperdataset/hyperdatasetversion.md#add_frames) to add 
 SingleFrames to a [Dataset version](dataset.md#dataset-versioning) (see [Creating snapshots](dataset.md#creating-snapshots) 
 or [Creating child versions](dataset.md#creating-child-versions)). Frames that are already a part of the dataset version 
 will only be updated. 
@@ -261,8 +270,7 @@ myDatasetversion.add_frames(frames)
 
 
 ### Accessing SingleFrames
-To access a SingleFrame, use the [`DatasetVersion.get_single_frame`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame) 
-method. 
+To access a SingleFrame, use [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame). 
 
 ```python
 from allegroai import DatasetVersion
@@ -281,8 +289,7 @@ To access a SingleFrame, the following must be specified:
 ### Updating SingleFrames
 
 To update a SingleFrame: 
-* Access the SingleFrame by calling the [`DatasetVersion.get_single_frame`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame) 
-  method 
+* Access the SingleFrame by calling [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame)
 * Make changes to the frame
 * Update the frame in a DatasetVersion using the [`DatasetVersion.update_frames`](../references/hyperdataset/hyperdatasetversion.md#update_frames) 
   method.
@@ -312,14 +319,12 @@ frame.meta['road_hazard'] = 'yes'
 # update the SingeFrame
 frames.append(frame)
 myDatasetVersion.update_frames(frames)                
-
 ```
 
 
 ### Deleting Frames
 
-To delete a SingleFrame, use the [`DatasetVersion.delete_frames`](../references/hyperdataset/hyperdatasetversion.md#delete_frames) 
-method.
+To delete a SingleFrame, use [`DatasetVersion.delete_frames()`](../references/hyperdataset/hyperdatasetversion.md#delete_frames).
 
 ```python
 frames = []                

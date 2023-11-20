@@ -20,7 +20,7 @@ built in logger:
 1. To keep track of your experiments and/or data, ClearML needs to communicate to a server. You have 2 server options:
     * Sign up for free to the [ClearML Hosted Service](https://app.clear.ml/) 
     * Set up your own server, see [here](../deploying_clearml/clearml_server.md).  
-1. Connect the ClearML SDK to the server by creating credentials (go to the top right in to UI to **Settings > Workspace > Create new credentials**), 
+1. Connect the ClearML SDK to the server by creating credentials (go to the top right in the UI to **Settings > Workspace > Create new credentials**), 
    then execute the command below and follow the instructions:
 
    ```commandline
@@ -121,7 +121,7 @@ clearml-data sync --project YOLOv5 --name coco128 --folder .
 
 This command syncs the folder's content with ClearML, packaging all of the folder's contents into a ClearML dataset.
 
-Alternatively, you could run these commands one after the other to create a dataset:
+Alternatively, you can run these commands one after the other to create a dataset:
 
 ```commandline
 # Optionally add --parent <parent_dataset_id> if you want to base
@@ -162,7 +162,7 @@ the following command on it:
 clearml-agent daemon --queue <queues_to_listen_to> [--docker]
 ```
 
-Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md), to help you manage cloud workloads in the 
+Use the ClearML [Autoscalers](../cloud_autoscaling/autoscaling_overview.md) to help you manage cloud workloads in the 
 cloud of your choice (AWS, GCP, Azure) and automatically deploy ClearML agents: the autoscaler automatically spins up 
 and shuts down instances as needed, according to a resource budget that you set.
 
