@@ -7,8 +7,7 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-When integrated in code, ClearML automatically captures models created with PyTorch Lightning and parameters created
-using LightningCLI.
+When integrated in code, ClearML automatically captures PyTorch Lightning's models and parameters.
 
 All you have to do is simply add two lines of code to your PyTorch Lightning script:
 
@@ -29,7 +28,7 @@ And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which ca
 You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your TensorFlow script, it captures TensorFlow definitions, models, and 
+By default, when ClearML is integrated into your PyTorch Lightning script, it captures models, and 
 scalars. But, you may want to have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
