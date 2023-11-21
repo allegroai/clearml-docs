@@ -7,7 +7,7 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-When integrated in code, ClearML automatically captures PyTorch Lightning's models and parameters.
+ClearML integrates seamlessly with [PyTorch Lightning](https://lightning.ai/), automatically logging its models and scalars. 
 
 All you have to do is simply add two lines of code to your PyTorch Lightning script:
 
@@ -19,16 +19,18 @@ task = Task.init(task_name="<task_name>", project_name="<project_name>")
 And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
-* Lightning Models
-* LightningCLI parameters
+* PyTorch Models
+* Scalars
 * Console output
 * General details such as machine details, runtime, creation date etc.
 * And more
 
 You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
 
+See an example of PyTorch Lightning and ClearML in action [here](../guides/frameworks/pytorch_lightning/pytorch_lightning_example.md). 
+
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your PyTorch Lightning script, it captures models, and 
+By default, when ClearML is integrated into your PyTorch Lightning script, it captures models and 
 scalars. But, you may want to have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
@@ -51,11 +53,11 @@ Note that the `pytorch` key enables/disables automatic logging for PyTorch Light
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
 
-For example, in the code below, ClearML will log TensorFlow models only if their paths have the `.pt` extension. The 
+For example, in the code below, ClearML will log PyTorch models only if their paths have the `.pt` extension. The 
 unspecified frameworks' values default to true so all their models are automatically logged.
 
 ```python
-auto_connect_frameworks={'tensorflow' : '*.pt'}
+auto_connect_frameworks={'pytorch' : '*.pt'}
 ```
 
 ## Manual Logging
@@ -69,20 +71,6 @@ See more information about explicitly logging information to a ClearML Task:
 * [Text/Plots/Debug Samples](../fundamentals/logger.md#manual-reporting)
 
 See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
-
-## Examples
-
-Take a look at ClearML’s TensorFlow examples. The examples use TensorFlow and ClearML in different configurations with 
-additional tools, like Abseil and TensorBoard: 
-
-* [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md) - Demonstrates ClearML's automatic logging of 
-model checkpoints, TensorFlow definitions, and scalars logged using TensorFlow methods
-* [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - Demonstrates ClearML’s automatic 
-logging of TensorBoard output and TensorFlow definitions.
-* [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - Demonstrates ClearML’s automatic logging of 
-TensorBoard scalars, histograms, images, and text, as well as all console output and TensorFlow Definitions.
-* [Absl flags](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/absl_flags.py) - Demonstrates 
-ClearML’s automatic logging of parameters defined using `absl.flags` 
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 
@@ -125,7 +113,4 @@ re-run it on a remote machine.
 task.execute_remotely(queue_name='default', exit_process=True)
 ```
 
-## Hyperparameter Optimization
-Use ClearML’s [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
-the hyperparameter values that yield the best performing models. See [Hyperparameter Optimization](../fundamentals/hpo.md) 
-for more information.
+
