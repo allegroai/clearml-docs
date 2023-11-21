@@ -7,7 +7,7 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-[PyTorch Lightning](https://lightning.ai/) is a high-level framework built on top of frameworks. ClearML seamlessly 
+[PyTorch Lightning](https://github.com/Lightning-AI/lightning) is a framework that simplifies the process of training and deploying PyTorch models. ClearML seamlessly 
 integrates with PyTorch Lightning, automatically logging PyTorch models and more. 
 
 All you have to do is simply add two lines of code to your PyTorch Lightning script:
