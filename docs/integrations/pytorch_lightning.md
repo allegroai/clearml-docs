@@ -49,7 +49,7 @@ auto_connect_frameworks={
 }
 ```
 
-The preceding code will log PyTorch models, but will not log scalars reported to TensorBoard.  
+The preceding code will log PyTorch models, but will not log any information reported to TensorBoard.  
 
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
