@@ -7,7 +7,8 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-ClearML integrates seamlessly with [PyTorch Lightning](https://lightning.ai/), automatically logging its models and scalars. 
+[PyTorch Lightning](https://lightning.ai/) is a high-level framework built on top of frameworks. ClearML seamlessly 
+integrates with PyTorch Lightning, automatically logging PyTorch models and more. 
 
 All you have to do is simply add two lines of code to your PyTorch Lightning script:
 
@@ -20,7 +21,7 @@ And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which ca
 * Source code and uncommitted changes
 * Installed packages
 * PyTorch Models
-* Scalars
+* [TensorBoard](https://www.tensorflow.org/tensorboard) outputs
 * Console output
 * General details such as machine details, runtime, creation date etc.
 * And more
@@ -30,8 +31,8 @@ You can view all the task details in the [WebApp](../webapp/webapp_overview.md).
 See an example of PyTorch Lightning and ClearML in action [here](../guides/frameworks/pytorch_lightning/pytorch_lightning_example.md). 
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your PyTorch Lightning script, it captures models and 
-scalars. But, you may want to have more control over what your experiment logs.
+By default, when ClearML is integrated into your script, it automatically captures information from supported frameworks. 
+But, you may want to have more control over what your experiment logs.
 
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
@@ -41,14 +42,14 @@ For example:
 
 ```python
 auto_connect_frameworks={
-   'pytorch': True, 'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 
-   'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
+   'pytorch': True, 'tensorboard': False, 'matplotlib': True, 'tensorflow': True,  
+   'xgboost': True, 'scikit': True, 'fastai': True, 'lightgbm': True,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
    'megengine': True, 'jsonargparse': True, 'catboost': True
 }
 ```
 
-Note that the `pytorch` key enables/disables automatic logging for PyTorch Lightning
+The preceding code will log PyTorch models, but will not log scalars reported to TensorBoard.  
 
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
