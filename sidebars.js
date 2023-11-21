@@ -67,7 +67,7 @@ module.exports = {
                 'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
-                'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
+                'integrations/pytorch_lightning',
                 'integrations/scikit_learn', 'integrations/seaborn',
                 'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
