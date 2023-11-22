@@ -52,7 +52,10 @@ For files, call `connect_configuration()` before reading the configuration file.
 path.
 
 ```python
-config_file = pipe.connect_configuration(configuration=config_file_path, name="My Configuration", description="configuration for pipeline")
+config_file = pipe.connect_configuration(
+    configuration=config_file_path, 
+    name="My Configuration", description="configuration for pipeline"
+)
 my_params = json.load(open(config_file,'rt'))
 ```
 

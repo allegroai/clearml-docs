@@ -1,29 +1,23 @@
 ---
 title: Comparing Experiments
 ---
-It is always useful to investigate what causes an experiment to succeed.
-The ClearML Web UI provides experiment comparison features, allowing to locate, visualize, and analyze differences including:
 
-* [Details](#details)
-    - Artifacts - Input model, output model, and model design.
-    - Execution - Installed packages and source code.
-    - Configuration - Configuration objects used by the experiment.
-    - Info - General experiment details.
-* [Hyperparameters](#hyperparameters)
-    - [Values (table) view](#values-mode) - Key/value of all the arguments used by the experiments.
-    - [Parallel coordinates view](#parallel-coordinates-mode) - Impact of each argument on a selected metric
-      the experiments reported (see [task.connect_configuration](../references/sdk/task.md#connect_configuration)).
-* [Scalars](#scalars)
-    - Specific values and plots of scalar series (see [reporting scalars](../guides/reporting/scalar_reporting.md) / [automatic reporting](../fundamentals/logger.md#automatic-reporting))
-* [Plots](#plots)
-    - Plots are combined to have multiple lines from different experiments (for example multiple RoC curves laid on top
-      of each other).
-* [Debug samples](#debug-samples)
-    - Debug samples by each iteration
-    - Examine samples with a viewer (for images and video), and a player (for audio) (see [reporting media](../guides/reporting/media_reporting.md)).
+The ClearML Web UI provides features for comparing experiments, allowing to locate, visualize, and analyze the 
+differences in experiments’ results and their causes. You can view the differences in: 
+* [Details](#side-by-side-textual-comparison) - Compare experiment source code, package versions, models, configuration 
+objects, and other details.
+* Hyperparameters
+  * [Values](#side-by-side-textual-comparison) - Compare parameters and their values
+  * [Parallel coordinates](#parallel-coordinates-mode) - View the impact of hyperparameters on a selected metric
+* Scalars - Compare experiment metrics:
+  * [Values](#tabular-scalar-comparison) - Compare minimal, maximal or last reported values in a concise comparison 
+  table
+  * [Graphs](#plot-comparison) - Overlay compared experiments in a single graph per metric
+* [Plots](#plot-comparison) - Compare experiment plots
+* [Debug samples](#side-by-side-debug-sample-comparison) - Compare debug samples by iteration
 
-
-The ClearML experiment comparison provides [comparison features](#comparison-features) making it easy to compare experiments.
+With these comparisons, you can investigate the impact of different setups on your experiment results, and gain insight 
+for crafting future experiments.
 
 ## Selecting Experiments to Compare
 
@@ -32,248 +26,147 @@ To select experiments to compare:
 1. Select the experiments to compare. Once multiple experiments are selected, the batch action bar appears.
 1. In the batch action bar, click **COMPARE**. 
 
-The comparison page opens in the **DETAILS** tab, showing a column for each experiment. The experiment on the left is 
-used as the base experiment, to which the other experiments are compared. 
+The comparison page opens in the **DETAILS** tab with the experiments [compared side by side](#side-by-side-textual-comparison).
 
-## Details
+### Modifying Experiment Selection
 
-The **DETAILS** tab includes deep comparisons of the following:
-* Artifacts - Input/output models and their configuration, and other artifacts, if any.
-* Execution Details - Source code, uncommitted changes, and installed python packages. See details [here](webapp_exp_track_visual.md#execution). 
-* Configuration - Configuration objects used by the experiment, sorted by sections. See details [here](webapp_exp_track_visual.md#configuration).
-* Info - General experiment details. This includes information describing the stored experiment. See details [here](webapp_exp_track_visual.md#general-information). 
+Click the `EXPERIMENTS` button to view your currently compared experiments. Click `X` on a listed experiment to remove
+it from the comparison.
 
-**To Locate the Source Differences:**
+![Experiments list](../img/webapp_compare_exp_select_2.png)
 
-Click the **DETAILS** tab **>** Expand highlighted sections, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
-(previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (next diff).
-
-For example, in the image below, expanding **ARTIFACTS** **>** **Output Model** **>** **Model** shows that the model names 
-are different.
-
-![image](../img/webapp_compare_05.png)
-
-
-
-## Hyperparameters
-
-Compare hyperparameters as values, or compare by metric (hyperparameter parallel coordinate comparison).
-
-### Values Mode
-
-The Values mode is a side-by-side comparison that shows hyperparameter value differences highlighted line-by-line.
-
-**To view a side by side values comparison:**
-
-1. Click the **HYPERPARAMETERS** tab.
-1. In the dropdown menu (on the upper left, next to **+ Add Experiments**), choose **Values**.
-1. To show only differences, move the **Hide Identical Fields** slider to on.
-1. Locate differences by either:
-    * Clicking <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md space-sm" /> (previous diff) or
-      <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (next diff).
-    * Scrolling to see highlighted hyperparameters.
-
-For example, expanding **General** shows that the `batch_size` and `epochs` differ between the experiments.
-
-![image](../img/webapp_compare_10.png)
-
-### Parallel Coordinates Mode
-
-In the Parallel Coordinates mode, compare a metric to any combination of hyperparameters using a parallel coordinates plot.
-
-**To compare by metric:**
-
-1. Click the **HYPERPARAMETERS** tab.
-1. In the dropdown menu (on the upper left, next to **+ Add Experiments**), choose **Parallel Coordinates**.
-1. In **Performance Metric**, expand a metric or monitored resource, and then click a variant.
-1. Select the metric values to use. Choose one of the following:
-    * **LAST** - The final value, or the most recent value, for in-progress experiments.
-    * **MIN** - Minimal value.
-    * **MAX** - Maximal value.
-1. In **Parameters**, select the hyperparameter checkboxes to compare.
-1. To view one experiment on the plot, hover over the experiment name in the legend.
-
-For example, plot the metric/variant `epoch_accuracy`/`validation: epoch_accuracy` against the hyperparameters
-`batch_size` and `epochs`.
-
-![image](../img/webapp_compare_11.png)
-
-Hover over one of the experiment names in the legend, and the plot shows only that data.
-
-![image](../img/webapp_compare_12.png)
-
-
-
-## Scalars
-
-Visualize the comparison of scalars, which includes metrics and monitored resources in the **SCALARS** tab.
-
-### Compare Specific Values
-
-**To compare specific values:**
-
-1. Click the **SCALARS** tab.
-1. In the dropdown menu (upper right of the left sidebar), choose either:
-    * **Last Values** (the final or most recent value)
-    * **Min Values** (the minimal values)
-    * **Max Values** (the maximal values)
-1. Sort by variant.
-
-![image](../img/webapp_exp_comparing_scalars.png)
-
-### Compare Scalar Series
-
-Compare scalar series in plots and analyze differences using plot tools.
-
-**To compare scalar series:**
-
-1. Click the **SCALARS** tab.
-1. In the dropdown menu (upper right of the left sidebar), choose **Graph**.
-
-**To improve scalar series analysis:**
-
-* In **Group by**, select one of these option:
-  * **Metric** - all variants for a metric on the same plot.
-  * **Metric+Variant** - every variant appears on its own plot.
-* Horizontal axis options:
-  * Iterations,
-  * Relative time since the experiment began,
-  * Wall (clock time).
-* Smooth a curve - move the **Smoothing** slider or type in a smoothing number from **0** to **0.999**.
-* Use plot controls, which appear when you hover over the top of a plot.
-* Hide / show scalar plots - Click **Hide all** and <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />.
-* Filter scalars by full or partial scalar name.
-
-This image shows scalars grouped by metric.
-
-![image](../img/webapp_compare_08.png)
-
-This image shows scalars grouped by metric and variant.
-
-![image](../img/webapp_compare_09.png)
-
-
-
-## Plots
-
-Visualize the comparison of any data that ClearML automatically captures or that is explicitly reported in experiments,
-in the **PLOTS** tab. The tab displays plots of the last reported iteration sample of each metric/variant combination per 
-compared experiment. Line, scatter, and bar graphs are each merged into single plots presenting all the compared 
-experiments' graphs for each metric/variant. The rest of the plots are displayed separately for each experiment. 
-
-
-**To compare plots:**
-
-1. Click the **PLOTS** tab.
-1. To improve your comparison, use either of the following:
-
-    * To locate scalars, click **HIDE ALL**, and then <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />
-      (show) to choose which scalars to see. Scalars can also be filtered by full or partial scalar name, using the search bar.
-    * Use any of the plot controls that appear when hovering over the top of a plot, including:
-      * Downloading the image
-      * Downloading the data as JSON
-      * Zooming
-      * Panning
-      * Switching between logarithmic / linear scale.
-
-
-
-## Debug Samples
-
-Compare debug samples at any iteration to verify that an experiment is running as expected. The most recent iteration appears
-first. Use the viewer / player to inspect images, audio, video samples and do any of the following:
-* Move to the same sample in a different iteration (move the iteration slider).
-* Show the next or previous iteration's sample.
-* Download the file <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
-* Zoom.
-* View the sample's iteration number, width, height, and coordinates.
-
-**To compare debug samples:**
-
-1. Click the **DEBUG SAMPLES** tab. The most recent iteration appears at the top.
-1. Locate debug samples by doing the following:
-
-    * Filter by metric. In the **Metric** list, choose a metric.
-    * Show other iterations. Click <img src="/docs/latest/icons/ico-circle-older.svg" alt="Left arrow" className="icon size-md space-sm" /> (older images),
-      <img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (new images), or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="right arrow, newest image" className="icon size-md space-sm" /> (newest images).
-    * Click <img src="/docs/latest/icons/ico-disconnect.svg" alt="Sync selection" className="icon size-md space-sm" /> in 
-      order to synchronize iteration and metric selection across experiments. For example, if you select a metric for 
-      one experiment's debug samples, the same metric will be automatically selected for the rest of the experiments in the comparison.   
-
-    ![image](../img/webapp_compare_30.png)
-
-1. To open a debug sample (image, audio, or video) in the viewer or player, click the thumbnail.
-
-    ![image](../img/webapp_compare_31.png)
-
-1. To move to the same sample in another iteration, click <img src="/docs/latest/icons/ico-previous.svg" alt="Left arrow" className="icon size-md space-sm" />
-   (previous), <img src="/docs/latest/icons/ico-next.svg" alt="Right arrow" className="icon size-md space-sm" /> (next), or move the slider.
-
-**To view a debug sample in the viewer / player:**
-
-1. Click the debug sample thumbnail.
-
-1. Do any of the following:
-
-    * Move to the same sample in another iteration - Move the slider, or click **<** (previous) or **>** (next).
-    * Download the file - Click  <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
-    * Zoom
-    * For images, locate a position on the sample - Hover over the sample and the X, Y coordinates appear in the legend below the sample.
-
-## Comparison Features
-
-To assist in experiment analysis, the comparison page supports:
-
-* [Changing compared experiments selection](#changing-compared-experiments-selection) 
-* [Finding the next or previous difference](#finding-the-next-or-previous-difference).
-* [Hiding identical fields](#hiding-identical-fields)
-* [Choosing a different base experiment](#choosing-a-different-base-experiment)
-* [Dynamic ordering](#dynamic-ordering-of-the-compared-experiments) of the compared experiments
-* [Sharing experiments](#sharing-experiments)
-* Auto refresh
-
-
-
-### Changing Compared Experiments Selection
-
-1. Click **+ Add Experiment** in the top left corner of any of the comparison pages. This will open up a window with an
-   experiment table with the currently compared experiments at the top. 
-1. Find the experiments to add by sorting and [filtering](webapp_exp_table.md#filtering-columns) the experiments with 
-   the appropriate column header controls. Alternatively, use the search bar to find experiments by name.
-1. Select experiments to include in the comparison (and/or clear the selection of any experiment you wish to remove).
+You can add/remove experiments to your comparison:
+1. Click the `+` button in any of the comparison tabs. This opens up a window with an experiment table with the currently 
+compared experiments at the top.
+   ![Adding experiments](../img/webapp_compare_exp_select_1.png)
+1. Find the experiments to add by sorting and [filtering](webapp_exp_table.md#filtering-columns) the experiments with the 
+appropriate column header controls. Alternatively, use the search bar to find experiments by name.
+1. Select experiments to include in the comparison (and/or clear the selection of any experiments you wish to remove).
 1. Click **APPLY**.
 
-![image](../img/webapp_compare_add.png)
+## Sharing Comparison Page
+To share a comparison page, copy the full URL from the address bar and send it to a teammate to collaborate. They will 
+get the exact same page (including selected tabs etc.).
 
+## Embedding Comparison Visualization
+To embed plots and debug samples from the comparison pages in your [Reports](webapp_reports.md), hover over the
+resource and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 
+which will copy to clipboard the embed code to put in your Reports. These visualizations are updated live as the 
+experiments update. The Enterprise Plan and Hosted Service support embedding resources in external tools (e.g. Notion).
 
+## Comparison Modes 
+The comparison pages provide the following views:
+* [Side-by-side textual comparison](#side-by-side-textual-comparison)
+* [Tabular scalar comparison](#tabular-scalar-comparison)
+* [Parallel coordinates](#parallel-coordinates-mode) for parameter impact on metric
+* [Overlaid plot comparison](#plot-comparison)
+* Side-by-side [debug sample](#side-by-side-debug-sample-comparison) and [plot](#plot-comparison) comparison
 
-### Finding the Next or Previous Difference
+### Side-by-side Textual Comparison 
 
-* Find the previous difference <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md space-sm" />, or
-  the next difference <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" />.
+In the **Details** and **Hyperparameters** (Values view) tabs, you can view differences in the experiments' parameters' nominal 
+values. The **Details** tab displays the experiments' execution details (source code, uncommitted changes, python packages), 
+models, artifacts, configuration objects, and additional general information. **Hyperparameters** (Values view) displays the 
+experiments' hyperparameter and their values. 
 
-
-
-### Hiding Identical Fields
-
-Move the **Hide Identical Fields** slider to "on" mode to see only fields that are different.
-
-### Choosing a Different Base Experiment
-
-Show differences in other experiments in reference to a new base experiment. To set a new base experiment, do one of the following:
+The experiments are laid out in vertical cards, so each field is lined up side-by-side. The experiment on the 
+left is used as the base experiment, to which the other experiments are compared. You can set a new base experiment in 
+one of the following ways:
 * Click on <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> on the top right of the experiment that will be the new base.
 * Click on <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> the new base experiment and drag it all the way to the left
 
-### Dynamic Ordering of the Compared Experiments
+The differences between the experiments are highlighted. Easily locate 
+value differences by clicking click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
+(previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Down arrow" className="icon size-md space-sm" /> (next diff) 
+in the tab header. Obscure identical fields by switching on the **Hide Identical Fields** toggle. 
 
-To reorder the experiments being compared, press <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> on the top right of the experiment that
-needs to be moved, and drag the experiment to its new position.
+Use the search bar to find any field names or values. Lines that match the search query are highlighted, and you can
+navigate between search results. 
 
-### Removing an Experiment from the Comparison
-Remove an experiment from the comparison, by pressing <img src="/docs/latest/icons/ico-remove-compare.svg" alt="Minus" className="icon size-md space-sm" />
-on the top right of the experiment that needs to be removed.
+![Side-by-side textual comparison](../img/webapp_compare_05.png)
 
-### Sharing Experiments
 
-To share a comparison table, copy the full URL from the address bar and send it to a teammate to collaborate. They will
-get the exact same page (including selected tabs etc.).
+### Tabular Scalar Comparison 
+The **Scalars** tab **Values** view lays out the experiments’ metric values in a table: a row per metric/variant and a 
+column for each experiment. Select from the dropdown menu which metric values to display:
+* Last Values: The last reported values for each experiment
+* Min Values: The minimal value reported throughout the experiment execution
+* Max Values: The maximal value reported throughout the experiment execution
+
+You can download the scalar comparison table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />. 
+
+Switch on the **Show row extremes** toggle to highlight each variant's maximum and minimum values.  
+
+![side-by-side scalar comparison](../img/webapp_compare_exp_scalar_vals.png)
+
+### Parallel Coordinates Mode
+
+The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments’ hyperparameter impact on a specific metric.
+
+**To compare by metric:**
+1. Under **Performance Metric**, select a metric to compare for
+1. Select the metric values to use in the plot:
+    * LAST - The final value, or the most recent value, for currently running experiments 
+    * MIN - Minimal value 
+    * MAX - Maximal value
+1. In **Parameters**, select the hyperparameters to compare.
+
+
+For example, plot the metric/variant `accuracy`/`total` against the hyperparameters
+`base_lr`, `dropout`, and `number_of_epochs`.
+
+![Parallel coordinates](../img/webapp_compare_11.png)
+
+To focus on a specific experiment, hover over its name in the graph legend.
+
+To hide an experiment, click its name in the graph legend (click again to bring back).
+
+### Plot Comparison
+The **Scalars** (Graph view) and **Plots** tabs compare experiments’ plots.
+
+The **Scalars** tab displays scalar values as time series line charts. The **Plots** tab compares the last reported 
+iteration sample of each metric/variant combination per compared experiment.
+
+Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a single
+comparative plot. 
+
+Use **Group by** to select how to group plots:
+* **Metric** - All variants for a metric appear on the same plot.
+* **Metric+Variant** (default) - Every variant appears on its own plot.
+
+
+![Scalar comparison](../img/webapp_compare_08.png)
+
+Other plot types are displayed separately for each experiment.
+
+![non-merged comparison](../img/webapp_compare_exp_plots.png)
+
+All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
+represents a reported metric, and each bar in the cluster represents an experiment.
+
+![Single scalar comparison](../img/webapp_compare_exp_single_scalars.png)
+
+Hover over plots to access plot controls (see [Scalar Plot Tools](webapp_exp_track_visual.md#scalar-plot-tools)).
+
+### Side-by-side Debug Sample Comparison
+Compare debug samples at different iterations to examine how your experiments perform throughout their execution.
+
+You can view debug samples by metric in the reported iterations. Filter the samples by metric 
+by selecting a metric from the dropdown menu above the samples. The most recent iteration appears first. To navigate 
+between iterations, click <img src="/docs/latest/icons/ico-circle-older.svg" alt="Left arrow" className="icon size-md space-sm" /> (older images),
+<img src="/docs/latest/icons/ico-circle-newer.svg" alt="Right arrow" className="icon size-md space-sm" /> (newer images), 
+or <img src="/docs/latest/icons/ico-circle-newest.svg" alt="right arrow, newest image" className="icon size-md space-sm" /> (newest images).
+
+Click <img src="/docs/latest/icons/ico-disconnect.svg" alt="Sync selection" className="icon size-md space-sm" /> in order 
+to synchronize iteration and metric selection across experiments. For example, if you select a metric for one 
+experiment's debug samples, the same metric will be automatically selected for the rest of the experiments in the 
+comparison.
+
+![Debug sample comparison](../img/webapp_compare_30.png)
+
+Open a debug sample (image, audio, or video) in the viewer or player, by clicking the thumbnail.
+
+![Debug Sample viewer](../img/webapp_tracking_44.png)
+
+To move to the same sample in another iteration, click <img src="/docs/latest/icons/ico-previous.svg" alt="Left arrow" className="icon size-md space-sm" />
+(previous), <img src="/docs/latest/icons/ico-next.svg" alt="Right arrow" className="icon size-md space-sm" /> (next), or move the slider.

@@ -11,7 +11,7 @@ module.exports = {
     mainSidebar: [
         {'Getting Started': ['getting_started/main', {
             'Where do I start?': [{'Data Scientists': ['getting_started/ds/ds_first_steps', 'getting_started/ds/ds_second_steps', 'getting_started/ds/best_practices']},
-                {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
+                {'MLOps and LLMOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
         }, 'getting_started/architecture', {'Video Tutorials': 
         [
             'getting_started/video_tutorials/quick_introduction',
@@ -67,7 +67,7 @@ module.exports = {
                 'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
-                'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
+                'integrations/pytorch_lightning',
                 'integrations/scikit_learn', 'integrations/seaborn',
                 'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
@@ -101,6 +101,7 @@ module.exports = {
             },
             'webapp/webapp_reports',
             'webapp/webapp_workers_queues',
+            'webapp/webapp_orchestration_dash',
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',

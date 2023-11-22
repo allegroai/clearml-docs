@@ -17,8 +17,8 @@ In the ``clearml`` GitHub repository, this example includes a clickable icon to 
 
 ## Scalars
 
-To reports scalars, call the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
-method. The scalar plots appear in the **web UI** in **SCALARS**.
+To reports scalars, call [`Logger.report_scalar()`](../../references/sdk/logger.md#report_scalar). 
+The scalar plots appear in the **web UI** in **SCALARS**.
 
 ```python
 # report two scalar series on two different graphs
@@ -44,7 +44,7 @@ Plots appear in **PLOTS**.
 
 ### 2D Plots
 
-Report 2D scatter plots by calling the [Logger.report_scatter2d](../../references/sdk/logger.md#report_scatter2d) method. 
+Report 2D scatter plots by calling [`Logger.report_scatter2d()`](../../references/sdk/logger.md#report_scatter2d). 
 Use the `mode` parameter to plot data points as markers, or both lines and markers.
 
 ```python
@@ -67,7 +67,7 @@ logger.report_scatter2d(
 
 ### 3D Plots
 
-To plot a series as a 3D scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) method.
+To plot a series as a 3D scatter plot, use [`Logger.report_scatter3d()`](../../references/sdk/logger.md#report_scatter3d).
 
 ```python
 # report 3d scatter plot
@@ -85,8 +85,7 @@ logger.report_scatter3d(
 
 ![3d scatter plot](../../img/colab_explicit_reporting_05.png)
 
-To plot a series as a surface plot, use the [Logger.report_surface](../../references/sdk/logger.md#report_surface) 
-method.
+To plot a series as a surface plot, use [`Logger.report_surface()`](../../references/sdk/logger.md#report_surface).
 
 ```python
 # report 3d surface
