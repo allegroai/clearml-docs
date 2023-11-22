@@ -206,6 +206,24 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 
 1. Save the configuration.
 
+### Dynamic Environment Variables
+Dynamic ClearML Agent environment variables can be used to override any configuration setting that appears in the [`agent`](configs/clearml_conf.md#agent-section) 
+section of the `clearml.conf`.
+
+The environment variable's name should be `CLEARML_AGENT__AGENT__<configuration-path>`, where `<configuration-path>` 
+represents the full path to the configuration field being set. Elements of the configuration path should be separated by 
+`__` (double underscore). For example, set the `CLEARML_AGENT__AGENT__DEFAULT_DOCKER__IMAGE` environment variable to 
+deploy an agent with a different value to what is specified for `agent.default_docker.image` in the clearml.conf.
+
+:::note NOTES
+* Since configuration fields may contain JSON-parsable values, make sure to always quote strings (otherwise the agent 
+might fail to parse them)
+* In order to comply with environment variables standards, it is recommended to use only upper-case characters in 
+environment variable keys. For this reason, ClearML Agent will always convert the configuration path specified in the 
+dynamic environment variable's key to lower-case before overriding configuration values with the environment variable 
+value.
+:::
+
 ## Deployment
 
 ### Spinning Up an Agent
