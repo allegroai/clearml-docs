@@ -17,7 +17,7 @@ Run the ClearML AWS autoscaler in one of these ways:
 * Launch through your [`services` queue](../../clearml_agent.md#services-mode)
 
 :::note Default AMI
-The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI.
+The autoscaler service uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI.
 :::
 
 ### Running the Script
