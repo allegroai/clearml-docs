@@ -31,7 +31,7 @@ Once you have a Task in ClearML, you can clone and edit its definitions in the U
 ## Manage Your Data
 Use [ClearML Data](../../clearml_data/clearml_data.md) to version your data, then link it to running experiments for easy reproduction.
 Make datasets machine agnostic (i.e. store original dataset in a shared storage location, e.g. shared-folder / S3 / Gs / Azure).
-ClearML Data supports efficient Dataset storage and caching, differentiable & compressed.
+ClearML Data supports efficient Dataset storage and caching, differentiable and compressed.
 
 ## Scale Your Work
 Use [ClearML Agent](../../clearml_agent.md) to scale work. Install the agent machines (remote or local) and manage
