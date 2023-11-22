@@ -17,7 +17,7 @@ Run the ClearML AWS autoscaler in one of these ways:
 * Launch through your [`services` queue](../../clearml_agent.md#services-mode)
 
 :::note Default AMI
-The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI.
+The autoscaler service uses by default the `ami-04c0416d6bd8e4b1f` AMI.
 :::
 
 ### Running the Script
@@ -78,9 +78,9 @@ When the script runs, a configuration wizard prompts for instance details and bu
    Use spot instances? [y/N]: y
    Select availability zone ['us-east-1b']:
    Select the Amazon Machine Image id ['ami-07c95cafbb788face']:
-   Enter the Amazon EBS device ['/dev/xvda']:
+   Enter the Amazon EBS device ['/dev/sda1']:
    Enter the Amazon EBS volume size (in GiB) [100]:
-   Enter the Amazon EBS volume type ['gp2']:
+   Enter the Amazon EBS volume type ['gp3']:
    ```
    
    Name the instance type that was configured. Later in the configuration, use this name to create the budget.

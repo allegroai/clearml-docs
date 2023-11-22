@@ -48,7 +48,7 @@ The sections below describe in more detail what happens in the controller task a
    pipe.set_default_execution_queue('default')
    ```
    
-1. Build the pipeline (see [PipelineController.add_step](../../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
+1. Build the pipeline (see [`PipelineController.add_step`](../../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
    method for complete reference):
 
    The pipeline's [first step](#step-1---downloading-the-data) uses the pre-existing task 
