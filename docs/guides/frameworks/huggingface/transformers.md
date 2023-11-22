@@ -4,14 +4,11 @@ title: Transformers
 
 The [HuggingFace Transformers example](https://github.com/allegroai/clearml/blob/master/examples/frameworks/huggingface/transformers.ipynb)
 demonstrates how to integrate ClearML into your Transformer's PyTorch [Trainer](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer) 
-code. When ClearML is installed, the Trainer by default uses the built-in [`ClearMLCallback`](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/callback#transformers.integrations.ClearMLCallback),
+code. When ClearML is installed in an environment, the Trainer by default uses the built-in [`ClearMLCallback`](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/callback#transformers.integrations.ClearMLCallback),
 so ClearML automatically logs Transformers models, parameters, scalars, and more. 
 
-In the example, ClearML is installed and set up in the training environment. This way ClearML can log models, 
-parameters, scalars, and more.
-
-When the example runs, it creates a ClearML task called "Trainer" in the "HuggingFace Transformers" projects. To change the task’s name 
-or project, use the `CLEARML_PROJECT` and `CLEARML_TASK` environment variables.
+When the example runs, it creates a ClearML task called `Trainer` in the `HuggingFace Transformers` projects. To change 
+the task’s name or project, use the `CLEARML_PROJECT` and `CLEARML_TASK` environment variables respectively.
 
 For more information about integrating ClearML into your Transformers code, see [HuggingFace Transformers](../../../integrations/transformers.md).
 
@@ -54,5 +51,3 @@ experiment's **ARTIFACTS** tab.
 ClearML automatically captures the Trainer's scalars, which can be viewed in the experiment's **Scalars** tab.
 
 ![Transformers scalars](../../../img/integrations_transformers_scalars.png)
-
-
