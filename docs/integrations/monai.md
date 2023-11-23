@@ -1,5 +1,5 @@
 ---
-title: Monai
+title: MONAI
 ---
 
 :::tip
@@ -7,8 +7,8 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-[Monai](https://github.com/Project-MONAI/MONAI) is a PyTorch-based, open-source framework for deep learning in healthcare 
-imaging. You can integrate ClearML into your code using Monai's built-in handlers: [`ClearMLImageHandler`, `ClearMLStatsHandler`](#clearmlimagehandler-and-clearmlstatshandler), 
+[MONAI](https://github.com/Project-MONAI/MONAI) is a PyTorch-based, open-source framework for deep learning in healthcare 
+imaging. You can integrate ClearML into your code using MONAI's built-in handlers: [`ClearMLImageHandler`, `ClearMLStatsHandler`](#clearmlimagehandler-and-clearmlstatshandler), 
 and [`ModelCheckpoint`](#modelcheckpoint). 
 
 ## ClearMLImageHandler and ClearMLStatsHandler
