@@ -18,7 +18,7 @@ Use the orchestration dashboard to monitor all of your available and in-use comp
 The orchestration dashboard shows your workers by groups and categories, specified by the following naming 
 policy: `<category>:<group>:<name>`.  
 
-When no category is specified,  workers are assigned the `DEFAULT` category.
+When no category is specified, workers are assigned the `DEFAULT` category.
 
 When no group is specified, workers are assigned the  `Default Group` group.
 

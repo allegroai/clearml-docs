@@ -13,11 +13,11 @@
 The [ClearML documentation website](https://clear.ml/docs/latest/docs) is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
 
-## Contributing (yes please!)
+## Contributing (yes, please!)
 
 **PRs are always welcomed** :heart:
 
-Good PR examples
+Good PR examples:
 * If you see something that is inaccurate or missing
 * A topic that interests you is not addressed
 * You feel that a guide would have made your life easier
