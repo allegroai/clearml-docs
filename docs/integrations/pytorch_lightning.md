@@ -67,7 +67,7 @@ auto_connect_frameworks={'pytorch' : '*.pt'}
 ```
 
 ### Argument Parsers
-To control a task's logging of parameters from argparsers, use the `auto_connect_arg_parser` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
+To control a task's logging of parameters from argument parsers, use the `auto_connect_arg_parser` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
 Completely disable all automatic logging by setting the parameter to `False` (this includes disabling logging of `LightningCLI` parameters). 
 
 ```python
@@ -77,19 +77,18 @@ auto_connect_arg_parser=False
 For finer grained control of logged parameters, input a dictionary with parameter-boolean pairs. The `False` value 
 excludes the specified parameter. Unspecified parameters default to `True`.
 
+For example, the following code will not log the `Example_1` parameter, but will log all other arguments.
+
 ```python
 auto_connect_arg_parser={"Example_1": False}
 ```
 
-The preceding code will not log the `Example_1` parameter, but will log the remaining argparse parameters.
-
-To exclude all unspecified parameters, set the `*` key to `False`:  
+To exclude all unspecified parameters, set the `*` key to `False`. For example, the following code will log **only** the 
+`Example_2` parameter.
 
 ```python
 auto_connect_arg_parser={"Example_2": True, "*": False}
 ```
-
-The preceding code will log **only** the `Example_2` parameter.
 
 ## Manual Logging
 To augment its automatic logging, ClearML also provides an explicit logging interface.
