@@ -68,13 +68,11 @@ auto_connect_frameworks={'pytorch' : '*.pt'}
 
 ### Argument Parsers
 To control a task's logging of parameters from argparsers, use the `auto_connect_arg_parser` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
-Completely disable all automatic logging by setting the parameter to `False`. 
+Completely disable all automatic logging by setting the parameter to `False` (this includes disabling logging of `LightningCLI` parameters). 
 
 ```python
 auto_connect_arg_parser=False
 ```
-
-The preceding code will **not** log any arguments from supported argparsers (including `LightningCLI`).
 
 For finer grained control of logged parameters, input a dictionary with parameter-boolean pairs. The `False` value 
 excludes the specified parameter. Unspecified parameters default to `True`.
