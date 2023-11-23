@@ -39,7 +39,7 @@ auto_connect_frameworks={
    'matplotlib': False, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
    'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'megengine': True, 'jsonargparse': True, 'catboost': True
+   'megengine': True, 'catboost': True
 }
 ```
 
