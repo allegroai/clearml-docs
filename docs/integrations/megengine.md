@@ -44,8 +44,7 @@ For example:
 auto_connect_frameworks={
    'megengine': False, 'catboost': False, 'tensorflow': False, 'tensorboard': False, 
    'pytorch': True, 'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
-   'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'jsonargparse': True
+   'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True
 }
 ```
 

@@ -68,7 +68,7 @@ auto_connect_frameworks={
    'xgboost': False, 'catboost': False, 'tensorflow': False, 'tensorboard': False, 
     'pytorch': True, 'scikit': True, 'fastai': True, 'lightgbm': False,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'megengine': True, 'jsonargparse': True
+   'megengine': True
 }
 ```
 

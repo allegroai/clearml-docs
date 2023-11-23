@@ -176,7 +176,7 @@ following arguments:
 You can also control a pipeline component's automatic logging using the following parameters: 
 * `auto_connect_frameworks` - Control a component's framework logging. You can completely disable framework logging, or
 specify which frameworks to log. See `Task.init`'s [`auto_connect_framework` parameter](../references/sdk/task.md#taskinit)
-* `auto_connect_arg_parser` - control automatic logging of argparse objects. See `Task.init`'s [`auto_connect_arg_parser` parameter](../references/sdk/task.md#taskinit) 
+* `auto_connect_arg_parser` - Control automatic logging of argparse objects. See `Task.init`'s [`auto_connect_arg_parser` parameter](../references/sdk/task.md#taskinit) 
 
 You can also directly upload a model or an artifact from the step to the pipeline controller, using the 
 [`PipelineDecorator.upload_model`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorupload_model) 
