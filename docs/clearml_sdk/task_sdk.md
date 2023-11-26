@@ -62,7 +62,7 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
 * **Hyperparameters** - ClearML logs the following types of hyperparameters:
     * Command Line Parsing - ClearML captures any command line parameters passed when invoking code that uses standard python packages, including:
         * [click](https://click.palletsprojects.com) (see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py)).
-        * argparse (see argparse logging example [here](../guides/reporting/hyper_parameters.md).)
+        * [argparse](https://docs.python.org/3/library/argparse.html#module-argparse) (see argparse logging example [here](../guides/reporting/hyper_parameters.md).)
         * [Python Fire](https://github.com/google/python-fire) (see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)).
         * [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli) (see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py)).
     * TensorFlow Definitions (`absl-py`)
