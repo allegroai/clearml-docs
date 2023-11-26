@@ -61,27 +61,27 @@ Nesting projects works on multiple levels. For example: `project_name=main_proje
 After invoking `Task.init` in a script, ClearML starts its automagical logging, which includes the following elements:
 * **Hyperparameters** - ClearML logs the following types of hyperparameters:
     * Command Line Parsing - ClearML captures any command line parameters passed when invoking code that uses standard python packages, including:
-        * [click](https://click.palletsprojects.com) (see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py)).
-        * [argparse](https://docs.python.org/3/library/argparse.html#module-argparse) (see argparse logging example [here](../guides/reporting/hyper_parameters.md).)
-        * [Python Fire](https://github.com/google/python-fire) (see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)).
-        * [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli) (see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py)).
+        * [click](../integrations/click.md)
+        * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options)
+        * [Python Fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
+        * [LightningCLI](../integrations/pytorch_lightning.md)
     * TensorFlow Definitions (`absl-py`)
-    * [Hydra](https://github.com/facebookresearch/hydra) - the OmegaConf which holds all the configuration files, as well as overridden values. 
+    * [Hydra](../integrations/hydra.md) - the OmegaConf which holds all the configuration files, as well as overridden values. 
 * **Models** - ClearML automatically logs and updates the models and all snapshot paths saved with the following frameworks:
-    * TensorFlow (see [code example](../guides/frameworks/tensorflow/tensorflow_mnist.md))
-    * Keras (see [code example](../guides/frameworks/keras/keras_tensorboard.md))
-    * PyTorch (see [code example](../guides/frameworks/pytorch/pytorch_mnist.md))
-    * scikit-learn (only using joblib) (see [code example](../guides/frameworks/scikit-learn/sklearn_joblib_example.md))
-    * XGBoost (only using joblib) (see [code example](../guides/frameworks/xgboost/xgboost_sample.md))
-    * FastAI (see [code example](../guides/frameworks/fastai/fastai_with_tensorboard.md))
-    * MegEngine (see [code example](../guides/frameworks/megengine/megengine_mnist.md))
-    * CatBoost (see [code example](../guides/frameworks/catboost/catboost.md))
-    * MONAI (see [MONAI integration](../integrations/monai.md))
+    * [TensorFlow](../integrations/tensorflow.md)
+    * [Keras](../integrations/keras.md)
+    * [PyTorch](../integrations/pytorch.md)
+    * [scikit-learn](../integrations/scikit_learn.md) 
+    * [XGBoost](../integrations/xgboost.md) 
+    * [FastAI](../integrations/fastai.md) 
+    * [MegEngine](../integrations/megengine.md)
+    * [CatBoost](../integrations/catboost.md) 
+    * [MONAI](../integrations/monai.md)
     
 * **Metrics, scalars, plots, debug images** reported through supported frameworks, including:
-    * Matplotlib (see [code example](../guides/frameworks/matplotlib/matplotlib_example.md))
-    * Tensorboard (see [code example](../guides/frameworks/pytorch/pytorch_tensorboardx.md))
-    * TensorboardX (see [code example](../guides/frameworks/tensorboardx/tensorboardx.md))
+    * [Matplotlib](../integrations/matplotlib.md)
+    * [Tensorboard](../integrations/tensorboard.md)
+    * [TensorboardX](../integrations/tensorboardx.md)
   
 * **Execution details** including:
     * Git information 
