@@ -76,7 +76,7 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * FastAI (see [code example](../guides/frameworks/fastai/fastai_with_tensorboard.md))
     * MegEngine (see [code example](../guides/frameworks/megengine/megengine_mnist.md))
     * CatBoost (see [code example](../guides/frameworks/catboost/catboost.md))
-    * MONAI (see [code MONAI integration](../integrations/monai.md))
+    * MONAI (see [MONAI integration](../integrations/monai.md))
     
 * **Metrics, scalars, plots, debug images** reported through supported frameworks, including:
     * Matplotlib (see [code example](../guides/frameworks/matplotlib/matplotlib_example.md))
