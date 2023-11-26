@@ -21,7 +21,7 @@ ClearML Agent was designed to deal with such issues and more! It is a tool respo
 machine of choice through the ClearML WebApp with no need for additional code.
 
 The agent will set up the environment for a specific Task’s execution (inside a Docker, or bare-metal), install the 
-required python packages, and execute & monitor the process.
+required python packages, and execute and monitor the process.
 
 
 ## Set up an Agent

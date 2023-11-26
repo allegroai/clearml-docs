@@ -490,7 +490,7 @@ auto_connect_frameworks={
     'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
     'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
     'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-    'megengine': True, 'jsonargparse': True, 'catboost': True
+    'megengine': True, 'catboost': True
 }
 ```
 
@@ -570,7 +570,7 @@ You can also visualize the differences in a scatter plot. In each experiment who
 with a single point, x-axis for the hyperparameter value, and Y-axis for the accuracy. 
 
 In the code below, the task reports a single-point scatter plot with `number_layers` as the x-axis and
-`accuracy` as the Y-axis :
+`accuracy` as the Y-axis:
 
 ```python
 number_layers = 10

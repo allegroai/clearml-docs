@@ -8,7 +8,8 @@ instructions.
 :::
 
 [PyTorch Lightning](https://github.com/Lightning-AI/lightning) is a framework that simplifies the process of training and deploying PyTorch models. ClearML seamlessly 
-integrates with PyTorch Lightning, automatically logging PyTorch models and more. 
+integrates with PyTorch Lightning, automatically logging PyTorch models, parameters supplied by [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html), 
+and more. 
 
 All you have to do is simply add two lines of code to your PyTorch Lightning script:
 
@@ -21,6 +22,7 @@ And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which ca
 * Source code and uncommitted changes
 * Installed packages
 * PyTorch Models
+* Parameters supplied by [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html) (when class is instantiated in script)
 * [TensorBoard](https://www.tensorflow.org/tensorboard) outputs
 * Console output
 * General details such as machine details, runtime, creation date etc.
@@ -28,12 +30,15 @@ And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which ca
 
 You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
 
+![LightningCLI params](../img/integrations_lightningcli_params.png)
+
 See an example of PyTorch Lightning and ClearML in action [here](../guides/frameworks/pytorch_lightning/pytorch_lightning_example.md). 
 
 ## Automatic Logging Control 
-By default, when ClearML is integrated into your script, it automatically captures information from supported frameworks. 
-But, you may want to have more control over what your experiment logs.
+By default, when ClearML is integrated into your script, it automatically captures information from supported frameworks, 
+and parameters from supported argument parsers. But, you may want to have more control over what your experiment logs.
 
+### Frameworks
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
 frameworks, input a dictionary, with framework-boolean pairs.
@@ -45,7 +50,7 @@ auto_connect_frameworks={
    'pytorch': True, 'tensorboard': False, 'matplotlib': True, 'tensorflow': True,  
    'xgboost': True, 'scikit': True, 'fastai': True, 'lightgbm': True,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'megengine': True, 'jsonargparse': True, 'catboost': True
+   'megengine': True, 'catboost': True
 }
 ```
 
@@ -59,6 +64,30 @@ unspecified frameworks' values default to true so all their models are automatic
 
 ```python
 auto_connect_frameworks={'pytorch' : '*.pt'}
+```
+
+### Argument Parsers
+To control a task's logging of parameters from argument parsers, use the `auto_connect_arg_parser` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
+Completely disable all automatic logging by setting the parameter to `False` (this includes disabling logging of `LightningCLI` parameters). 
+
+```python
+auto_connect_arg_parser=False
+```
+
+For finer grained control of logged parameters, input a dictionary with parameter-boolean pairs. The `False` value 
+excludes the specified parameter. Unspecified parameters default to `True`.
+
+For example, the following code will not log the `Example_1` parameter, but will log all other arguments.
+
+```python
+auto_connect_arg_parser={"Example_1": False}
+```
+
+To exclude all unspecified parameters, set the `*` key to `False`. For example, the following code will log **only** the 
+`Example_2` parameter.
+
+```python
+auto_connect_arg_parser={"Example_2": True, "*": False}
 ```
 
 ## Manual Logging
@@ -114,4 +143,8 @@ re-run it on a remote machine.
 task.execute_remotely(queue_name='default', exit_process=True)
 ```
 
+## Hyperparameter Optimization
+Use ClearML’s [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
+the hyperparameter values that yield the best performing models. See [Hyperparameter Optimization](../fundamentals/hpo.md) 
+for more information.
 
