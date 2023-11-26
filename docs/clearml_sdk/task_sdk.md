@@ -61,26 +61,27 @@ Nesting projects works on multiple levels. For example: `project_name=main_proje
 After invoking `Task.init` in a script, ClearML starts its automagical logging, which includes the following elements:
 * **Hyperparameters** - ClearML logs the following types of hyperparameters:
     * Command Line Parsing - ClearML captures any command line parameters passed when invoking code that uses standard python packages, including:
-        * [click](https://click.palletsprojects.com) (see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py)).
-        * argparse (see argparse logging example [here](../guides/reporting/hyper_parameters.md).)
-        * [Python Fire](https://github.com/google/python-fire) - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
-        * [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
+        * [click](../integrations/click.md)
+        * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options)
+        * [Python Fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
+        * [LightningCLI](../integrations/pytorch_lightning.md)
     * TensorFlow Definitions (`absl-py`)
-    * [Hydra](https://github.com/facebookresearch/hydra) - the OmegaConf which holds all the configuration files, as well as overridden values. 
+    * [Hydra](../integrations/hydra.md) - the OmegaConf which holds all the configuration files, as well as overridden values. 
 * **Models** - ClearML automatically logs and updates the models and all snapshot paths saved with the following frameworks:
-    * TensorFlow (see [code example](../guides/frameworks/tensorflow/tensorflow_mnist.md))
-    * Keras (see [code example](../guides/frameworks/keras/keras_tensorboard.md))
-    * PyTorch (see [code example](../guides/frameworks/pytorch/pytorch_mnist.md))
-    * scikit-learn (only using joblib) (see [code example](../guides/frameworks/scikit-learn/sklearn_joblib_example.md))
-    * XGBoost (only using joblib) (see [code example](../guides/frameworks/xgboost/xgboost_sample.md))
-    * FastAI (see [code example](../guides/frameworks/fastai/fastai_with_tensorboard.md))
-    * MegEngine (see [code example](../guides/frameworks/megengine/megengine_mnist.md))
-    * CatBoost (see [code example](../guides/frameworks/catboost/catboost.md))
+    * [TensorFlow](../integrations/tensorflow.md)
+    * [Keras](../integrations/keras.md)
+    * [PyTorch](../integrations/pytorch.md)
+    * [scikit-learn](../integrations/scikit_learn.md) 
+    * [XGBoost](../integrations/xgboost.md) 
+    * [FastAI](../integrations/fastai.md) 
+    * [MegEngine](../integrations/megengine.md)
+    * [CatBoost](../integrations/catboost.md) 
+    * [MONAI](../integrations/monai.md)
     
 * **Metrics, scalars, plots, debug images** reported through supported frameworks, including:
-    * Matplotlib (see [code example](../guides/frameworks/matplotlib/matplotlib_example.md))
-    * Tensorboard (see [code example](../guides/frameworks/pytorch/pytorch_tensorboardx.md))
-    * TensorboardX (see [code example](../guides/frameworks/tensorboardx/tensorboardx.md))
+    * [Matplotlib](../integrations/matplotlib.md)
+    * [Tensorboard](../integrations/tensorboard.md)
+    * [TensorboardX](../integrations/tensorboardx.md)
   
 * **Execution details** including:
     * Git information 
@@ -89,7 +90,12 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
       of the executed script
     * Python environment
     * Execution [configuration](../webapp/webapp_exp_track_visual.md#configuration) 
-  
+
+### Control Automatic Logging 
+By default, when ClearML is integrated into your script, it automatically captures information from supported frameworks, 
+and parameters from supported argument parsers. But, you may want to have more control over what your experiment logs.
+
+#### Frameworks  
 To control a task's framework logging, use the `auto_connect_frameworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
 method. Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
 input a dictionary, with framework-boolean pairs. 
@@ -122,6 +128,37 @@ parameters, but you can disable the logging with the following code:
 auto_connect_frameworks={'tensorboard': {'report_hparams': False}} 
 ```
  
+#### Argument Parsers
+To control a task's logging of parameters from supported argument parsers, use the `auto_connect_arg_parser` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
+Completely disable all automatic logging by setting the parameter to `False`. 
+
+```python
+auto_connect_arg_parser=False
+```
+
+For finer grained control of logged parameters, input a dictionary with parameter-boolean pairs. The `False` value 
+excludes the specified parameter. Unspecified parameters default to `True`.
+
+For example, the following code will not log the `Example_1` parameter, but will log all other arguments.
+
+```python
+auto_connect_arg_parser={"Example_1": False}
+```
+
+To exclude all unspecified parameters, set the `*` key to `False`. 
+
+For example, the following code will log **only** the `Example_2` parameter.
+
+```python
+auto_connect_arg_parser={"Example_2": True, "*": False}
+```
+
+An empty dictionary completely disables all automatic logging of parameters from argument parsers: 
+
+```python
+auto_connect_arg_parser={}
+```
+
 ### Task Reuse
 Every `Task.init` call will create a new task for the current execution.
 In order to mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
