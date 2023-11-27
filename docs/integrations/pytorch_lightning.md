@@ -43,7 +43,8 @@ To control a task's framework logging, use the `auto_connect_frameworks` paramet
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
 frameworks, input a dictionary, with framework-boolean pairs.
 
-For example:
+For example, the following code will log PyTorch models, but will not log any information reported to TensorBoard.  
+:
 
 ```python
 auto_connect_frameworks={
@@ -53,8 +54,6 @@ auto_connect_frameworks={
    'megengine': True, 'catboost': True
 }
 ```
-
-The preceding code will log PyTorch models, but will not log any information reported to TensorBoard.  
 
 You can also input wildcards as dictionary values, so ClearML will log a model created by a framework only if its local 
 path matches at least one wildcard. 
