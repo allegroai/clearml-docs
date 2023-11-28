@@ -8,9 +8,9 @@ Pipelines provide users with a greater level of abstraction and automation, with
 Tasks can interface with other Tasks in the pipeline and leverage other Tasks' work products.
 
 The sections below describe the following scenarios: 
-* Dataset creation
-* Data processing and consumption  
-* Pipeline building
+* [Dataset creation](#dataset-creation)
+* Data [processing](#preprocessing-data) and [consumption](#training)  
+* [Pipeline building](#building-the-pipeline)
 
 
 ## Building Tasks
@@ -46,7 +46,8 @@ dataset_folder = dataset.get_mutable_local_copy(
 
 # create a new version of the dataset with the pickle file
 new_dataset = Dataset.create(
-    dataset_project='data', dataset_name='dataset_v2', 
+    dataset_project='data', 
+    dataset_name='dataset_v2', 
     parent_datasets=[dataset], 
     use_current_task=True,  
     # this will make sure we have the creation code and the actual dataset artifacts on the same Task

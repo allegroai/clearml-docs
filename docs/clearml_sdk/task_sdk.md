@@ -450,8 +450,7 @@ queue. From there, an agent can pull and launch it.
 See the [Remote Execution](../guides/advanced/execute_remotely.md) example. 
 
 #### Remote Function Execution
-A specific function can also be launched on a remote machine with the [`Task.create_function_task`](../references/sdk/task.md#create_function_task)
-method.
+A specific function can also be launched on a remote machine with [`Task.create_function_task()`](../references/sdk/task.md#create_function_task).
 
 For example:
 ```python
@@ -467,7 +466,7 @@ a_func_task = task.create_function_task(
 )
 ```
 Arguments passed to the function will be automatically logged in the 
-experiment's **CONFIGURATION** tab under the **HYPERPARAMETER > Function** section. 
+experiment's **CONFIGURATION** tab under the **HYPERPARAMETERS > Function** section. 
 Like any other arguments, they can be changed from the UI or programmatically.
 
 :::note Function Task Creation
