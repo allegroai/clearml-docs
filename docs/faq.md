@@ -649,7 +649,7 @@ logger.report_scatter2d(
 #### Is there something ClearML can do about uncommitted code running?    <a id="help-uncommitted-code"></a>
 
 Yes! ClearML stores the git diff as part of the experiment's information. You can view the git diff in the **ClearML Web UI >** 
-experiment' **EXECUTION** tab.
+experiment's **EXECUTION** tab.
 
 <br/>
 

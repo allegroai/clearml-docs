@@ -700,6 +700,8 @@ html[data-theme="dark"] h3 {
 /* <h4> */
 .markdown h4 {
   font-size: 1.3rem;
+  margin-bottom: 8px;
+  margin-top: 42px;
 }
 html[data-theme="light"] h4 {
   color: #62b00d;

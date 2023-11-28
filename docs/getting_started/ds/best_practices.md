@@ -69,7 +69,7 @@ improving your results later on!
 While it's possible to track experiments with one tool, and pipeline them with another, having 
 everything under the same roof has its benefits! 
 
-Being able to track experiment progress and compare experiments, and based on that send experiments to execution on remote
+Being able to track experiment progress and compare experiments, and, based on that, send experiments to execution on remote
 machines (that also build the environment themselves) has tremendous benefits in terms of visibility and ease of integration.
 
 Being able to have visibility in your pipeline, while using experiments already defined in the platform, 
