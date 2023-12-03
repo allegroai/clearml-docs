@@ -84,7 +84,7 @@ Now that a new dataset is registered, you can consume it!
 The [data_ingestion.py](https://github.com/allegroai/clearml/blob/master/examples/datasets/data_ingestion.py) script 
 demonstrates data ingestion using the dataset created in the first script.
 
-The following script gets the dataset and uses [`Dataset.get_local_copy`](../../references/sdk/dataset.md#get_local_copy) 
+The following script gets the dataset and uses [`Dataset.get_local_copy()`](../../references/sdk/dataset.md#get_local_copy) 
 to return a path to the cached, read-only local dataset. 
 
 ```python

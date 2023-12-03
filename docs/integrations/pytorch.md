@@ -16,7 +16,7 @@ from clearml import Task
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
-And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
+And that's it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
 * PyTorch models 
@@ -86,7 +86,7 @@ Take a look at ClearML's PyTorch examples. The examples use PyTorch and ClearML 
 additional tools, like argparse, TensorBoard, and matplotlib:  
 
 * [PyTorch MNIST](../guides/frameworks/pytorch/pytorch_mnist.md) - Demonstrates ClearML automatically logging models created with PyTorch, and `argparse` command line parameters
-* [PyTorch with Matplotlib](../guides/frameworks/pytorch/pytorch_matplotlib.md) - Demonstrates ClearML’s automatic logging PyTorch models and matplotlib images. The images are stored in the resulting ClearML experiment's **Debug Samples**
+* [PyTorch with Matplotlib](../guides/frameworks/pytorch/pytorch_matplotlib.md) - Demonstrates ClearML's automatic logging PyTorch models and matplotlib images. The images are stored in the resulting ClearML experiment's **Debug Samples**
 * [PyTorch with TensorBoard](../guides/frameworks/pytorch/pytorch_tensorboard.md) - Demonstrates ClearML automatically logging PyTorch models, and scalars, debug samples, and text logged using TensorBoard's `SummaryWriter`
 * [PyTorch TensorBoard Toy](../guides/frameworks/pytorch/tensorboard_toy_pytorch.md) - Demonstrates ClearML automatically logging debug samples logged using TensorBoard's `SummaryWriter`
 * [PyTorch TensorBoardX](../guides/frameworks/pytorch/pytorch_tensorboardx.md) - Demonstrates ClearML automatically logging PyTorch models, and scalars, debug samples, and text logged using TensorBoardX's `SummaryWriter`

@@ -16,7 +16,7 @@ The comparison page opens in the **DETAILS** tab, showing a column for each expe
 
 ## Dataviews
 
-In the **Details** tab, you can view differences in the experiments’ nominal values. Each experiment’s information is 
+In the **Details** tab, you can view differences in the experiments' nominal values. Each experiment's information is 
 displayed in a column, so each field is lined up side-by-side. Expand the **DATAVIEWS** 
 section to view all the Dataview fields side-by-side (filters, iterations, label enumeration, etc.). The differences between the 
 experiments are highlighted. Obscure identical fields by switching on the `Hide Identical Fields` toggle. 

@@ -8,7 +8,7 @@ code. When ClearML is installed in an environment, the Trainer by default uses t
 so ClearML automatically logs Transformers models, parameters, scalars, and more. 
 
 When the example runs, it creates a ClearML task called `Trainer` in the `HuggingFace Transformers` projects. To change 
-the task’s name or project, use the `CLEARML_PROJECT` and `CLEARML_TASK` environment variables respectively.
+the task's name or project, use the `CLEARML_PROJECT` and `CLEARML_TASK` environment variables respectively.
 
 For more information about integrating ClearML into your Transformers code, see [HuggingFace Transformers](../../../integrations/transformers.md).
 

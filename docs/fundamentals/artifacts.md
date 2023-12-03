@@ -30,7 +30,7 @@ pointing directly to the original training task's model.
 ### Output Models
 
 ClearML stores training results as output models. The `OutputModel` object is instantiated with a task object as an 
-argument (see [`task`](../references/sdk/model_outputmodel.md) parameter), so it's automatically registered as the Task’s 
+argument (see [`task`](../references/sdk/model_outputmodel.md) parameter), so it's automatically registered as the Task's 
 output model. Since OutputModel objects are connected to tasks, the models are traceable in experiments.
 
 Output models are read-write so weights can be updated throughout training. Additionally, users can specify a model's 
