@@ -9,7 +9,7 @@ ClearML supports tracking and managing hyperparameters in each experiment and pr
 optimization module](hpo.md). With ClearML's logging and tracking capabilities, experiments can be reproduced, and their 
 hyperparameters and results can be saved and compared, which is key to understanding model behavior.
 
-ClearML lets you easily try out different hyperparameter values without changing your original code. ClearML’s [execution
+ClearML lets you easily try out different hyperparameter values without changing your original code. ClearML's [execution
 agent](../clearml_agent.md) will override the original values with any new ones you specify through the web UI (see 
 [Configuration](../webapp/webapp_exp_tuning.md#configuration) in the Tuning Experiments page). It's also possible to 
 programmatically set experiment parameters.
@@ -93,7 +93,7 @@ making it easier to search / filter experiments. Add user properties to an exper
 
 ### Accessing Parameters
 
-ClearML provides methods to directly access a task’s logged parameters.
+ClearML provides methods to directly access a task's logged parameters.
 
 To get all of a task's parameters and properties (hyperparameters, configuration objects, and user properties), use the 
 [`Task.get_parameters`](../references/sdk/task.md#get_parameters) method, which will return a dictionary with the parameters, 

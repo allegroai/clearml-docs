@@ -11,7 +11,7 @@ to the specific task's **DATAVIEWS** tab (see [Experiment Dataviews](webapp_exp_
 View the Dataviews table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your Dataviews according to 
-columns of interest. Use the details view to access a selected Dataview’s details, while keeping the Dataview list in view.
+columns of interest. Use the details view to access a selected Dataview's details, while keeping the Dataview list in view.
 Details view can also be accessed by double-clicking a specific Dataview in the table view to open its details view. 
 
 You can archive Dataviews so the Dataviews table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 

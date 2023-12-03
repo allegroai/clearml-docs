@@ -9,7 +9,7 @@ See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced querya
 
 `clearml-data` is a data management CLI tool that comes as part of the `clearml` python package. Use `clearml-data` to 
 create, modify, and manage your datasets. You can upload your dataset to any storage service of your choice (S3 / GS / 
-Azure / Network Storage) by setting the dataset’s upload destination (see [`--storage`](#upload)). Once you have uploaded 
+Azure / Network Storage) by setting the dataset's upload destination (see [`--storage`](#upload)). Once you have uploaded 
 your dataset, you can access it from any machine. 
 
 The following page provides a reference to `clearml-data`'s CLI commands. 
@@ -41,7 +41,7 @@ clearml-data create [-h] [--parents [PARENTS [PARENTS ...]]] [--project PROJECT]
 
 
 :::tip Dataset ID
-* For datasets created with `clearml` v1.6 or newer on ClearML Server v1.6 or newer, find the ID in the dataset version’s info panel in the [Dataset UI](../webapp/datasets/webapp_dataset_viewing.md).  
+* For datasets created with `clearml` v1.6 or newer on ClearML Server v1.6 or newer, find the ID in the dataset version's info panel in the [Dataset UI](../webapp/datasets/webapp_dataset_viewing.md).  
   For datasets created with earlier versions of `clearml`, or if using an earlier version of ClearML Server, find the ID in the task header of the [dataset task's info panel](../webapp/webapp_exp_track_visual.md).  
 * clearml-data works in a stateful mode so once a new dataset is created, the following commands
 do not require the `--id` flag.
@@ -66,7 +66,7 @@ clearml-data add [-h] [--id ID] [--dataset-folder DATASET_FOLDER]
 |Name|Description|Optional|
 |---|---|---|
 |`--id` | Dataset's ID. Default: previously created / accessed dataset| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
-|`--files`| Files / folders to add. Items will be uploaded to the dataset’s designated storage.  | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+|`--files`| Files / folders to add. Items will be uploaded to the dataset's designated storage.  | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--wildcard`|  Add specific set of files, denoted by these wildcards. For example: `~/data/*.jpg ~/data/json`. Multiple wildcards can be passed. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--links`| Files / folders link to add. Supports S3, GS, Azure links. Example: `s3://bucket/data` `azure://bucket/folder`. Items remain in their original location. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--dataset-folder` | Dataset base folder to add the files to in the dataset. Default: dataset root| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
@@ -183,7 +183,7 @@ clearml-data sync [-h] [--id ID] [--dataset-folder DATASET_FOLDER] --folder FOLD
 |`--parents`|IDs of the dataset's parents (i.e. merge all parents). All modifications made to the folder since the parents were synced will be reflected in the dataset|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--project`|If creating a new dataset, specify the dataset's project name|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--name`|If creating a new dataset, specify the dataset's name|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--version`|Specify the dataset’s version using the [semantic versioning](https://semver.org) scheme. Default: `1.0.0`|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--version`|Specify the dataset's version using the [semantic versioning](https://semver.org) scheme. Default: `1.0.0`|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--tags`|Dataset user tags|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--skip-close`|Do not auto close dataset after syncing folders|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--chunk-size`| Set dataset artifact upload chunk size in MB. Default 512, (pass -1 for a single chunk). Example: 512, dataset will be split and uploaded in 512 MB chunks. |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -233,7 +233,7 @@ clearml-data set-description [-h] [--id ID] [--description DESCRIPTION]
 
 |Name|Description|Optional|
 |---|---|---|
-|`--id`|Dataset’s ID|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--id`|Dataset's ID|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--description`|Description to be set|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 
 

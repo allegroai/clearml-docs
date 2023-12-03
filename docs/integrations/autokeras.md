@@ -16,7 +16,7 @@ from clearml import Task
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
-And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
+And that's it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
 * AutoKeras model files 

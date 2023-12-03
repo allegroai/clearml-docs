@@ -40,14 +40,15 @@ need to do is [instantiate a ClearML Task](clearml_sdk/task_sdk.md#task-creation
 framework's training results as output models.
 
 Automatic logging is supported for the following frameworks:
-* TensorFlow (see [code example](guides/frameworks/tensorflow/tensorflow_mnist.md))
-* Keras (see [code example](guides/frameworks/keras/keras_tensorboard.md))
-* PyTorch (see [code example](guides/frameworks/pytorch/pytorch_mnist.md))
-* scikit-learn (only using joblib) (see [code example](guides/frameworks/scikit-learn/sklearn_joblib_example.md))
-* XGBoost (only using joblib) (see [code example](guides/frameworks/xgboost/xgboost_sample.md))
-* FastAI (see [code example](guides/frameworks/fastai/fastai_with_tensorboard.md))
-* MegEngine (see [code example](guides/frameworks/megengine/megengine_mnist.md))
-* CatBoost (see [code example](guides/frameworks/catboost/catboost.md))
+* [TensorFlow](integrations/tensorflow.md)
+* [Keras](integrations/keras.md)
+* [PyTorch](integrations/pytorch.md)
+* [scikit-learn](integrations/scikit_learn.md) (only using joblib)
+* [XGBoost](integrations/xgboost.md) (only using joblib)
+* [Fast.ai](integrations/fastai.md)
+* [MegEngine](integrations/megengine.md)
+* [CatBoost](integrations/catboost.md)
+* [MONAI](integrations/monai.md)
 
 You may want more control over which models are logged. Use the `auto_connect_framework` parameter of [`Task.init()`](references/sdk/task.md#taskinit) 
 to control automatic logging of frameworks. 

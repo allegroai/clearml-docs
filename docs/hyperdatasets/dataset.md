@@ -123,7 +123,7 @@ Dataset.delete(
 ```
 
 This supports deleting sources located in AWS S3, GCP, and Azure Storage (not local storage). The `delete_sources` 
-parameter is ignored if `delete_all_versions` is `False`. You can view the deletion process’ progress by passing 
+parameter is ignored if `delete_all_versions` is `False`. You can view the deletion process' progress by passing 
 `show_progress=True` (`tqdm` required).  
 
 ### Tagging Datasets
