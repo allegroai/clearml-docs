@@ -24,9 +24,9 @@ Follow **ClearML** on [LinkedIn](https://www.linkedin.com/company/clearml).
 
 ## Guidelines for Contributing
 
-Firstly, we thank you for taking the time to contribute!
+Firstly, thank you for taking the time to contribute!
 
-Contribution comes in many forms:
+Contributions come in many forms:
 
 * Reporting [issues](https://github.com/allegroai/clearml/issues) you've come upon
 * Participating in issue discussions in the [issue tracker](https://github.com/allegroai/clearml/issues) and the

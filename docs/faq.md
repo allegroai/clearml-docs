@@ -286,7 +286,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
 
 This message is only a warning. ClearML not only detects your current repository and git commit, but also warns you 
 if you are using uncommitted code. ClearML does this because uncommitted code means this experiment will be difficult 
-to reproduce. You can see uncommitted changes in the ClearML Web UI, in the EXECUTION tab of the experiment info panel.
+to reproduce. You can see uncommitted changes in the ClearML Web UI, in the **EXECUTION** tab of the experiment info panel.
 
 #### I do not use argparse for hyperparameters. Do you have a solution?   <a id="dont-want-argparser"></a>
 

@@ -103,7 +103,7 @@ The panel below describes the details contained within a `frame`:
     
       :::info
       The `mask` dictionary is deprecated. Mask labels and their associated pixel values are now stored in the dataset 
-      version’s metadata. See [Masks](masks.md).
+      version's metadata. See [Masks](masks.md).
       :::
   
     * `poly` (*[int]*) - Bounding area vertices.

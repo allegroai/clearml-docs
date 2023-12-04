@@ -3,7 +3,7 @@ title: Comparing Experiments
 ---
 
 The ClearML Web UI provides features for comparing experiments, allowing to locate, visualize, and analyze the 
-differences in experiments’ results and their causes. You can view the differences in: 
+differences in experiments' results and their causes. You can view the differences in: 
 * [Details](#side-by-side-textual-comparison) - Compare experiment source code, package versions, models, configuration 
 objects, and other details.
 * Hyperparameters
@@ -87,7 +87,7 @@ navigate between search results.
 
 
 ### Tabular Scalar Comparison 
-The **Scalars** tab **Values** view lays out the experiments’ metric values in a table: a row per metric/variant and a 
+The **Scalars** tab **Values** view lays out the experiments' metric values in a table: a row per metric/variant and a 
 column for each experiment. Select from the dropdown menu which metric values to display:
 * Last Values: The last reported values for each experiment
 * Min Values: The minimal value reported throughout the experiment execution
@@ -101,7 +101,7 @@ Switch on the **Show row extremes** toggle to highlight each variant's maximum a
 
 ### Parallel Coordinates Mode
 
-The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments’ hyperparameter impact on a specific metric.
+The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments' hyperparameter impact on a specific metric.
 
 **To compare by metric:**
 1. Under **Performance Metric**, select a metric to compare for
@@ -122,7 +122,7 @@ To focus on a specific experiment, hover over its name in the graph legend.
 To hide an experiment, click its name in the graph legend (click again to bring back).
 
 ### Plot Comparison
-The **Scalars** (Graph view) and **Plots** tabs compare experiments’ plots.
+The **Scalars** (Graph view) and **Plots** tabs compare experiments' plots.
 
 The **Scalars** tab displays scalar values as time series line charts. The **Plots** tab compares the last reported 
 iteration sample of each metric/variant combination per compared experiment.

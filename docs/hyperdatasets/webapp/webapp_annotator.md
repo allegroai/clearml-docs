@@ -9,7 +9,7 @@ Use annotation tasks to efficiently organize the annotation of frames in Dataset
 
 ![Annotations page](../../img/annotation_page.png) 
 
-Click on an annotation task card to open the frame viewer, where you can view the task’s frames and annotate them.
+Click on an annotation task card to open the frame viewer, where you can view the task's frames and annotate them.
 
 ## Annotation Task Actions
 Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> on the top right 
@@ -18,7 +18,7 @@ of an annotation task card to open its context menu and access annotation task a
 ![Annotation task card](../../img/annotation_task_card.png)
 
 * **Annotate** - Go to annotation task frame viewer
-* **Info** - View annotation task’s definitions: dataset versions, filters, and frame iteration specification
+* **Info** - View annotation task's definitions: dataset versions, filters, and frame iteration specification
 * **Complete** - Mark annotation task as Completed
 * **Delete** - Delete annotation task
 
@@ -112,11 +112,11 @@ or the arrow keys on the keyboard). Closing the frame editor will prompt you to 
 | Icon (when applicable) | Action | Description |
 |---|---|---|
 || Move annotation | Click on a bounded area and drag it. |
-|| Resize annotation| Select an annotation, then click on a bounded area’s vertex and drag it. |	
+|| Resize annotation| Select an annotation, then click on a bounded area's vertex and drag it. |	
 |<img src="/docs/latest/icons/ico-metadata.svg" alt="edit metadata" className="icon size-md space-sm" />|Edit metadata|Hover over an annotation in the list and click the icon to open the edit window. Input the metadata dictionary in JSON format. This metadata is specific to the selected annotation, not the entire frame.|
 |<img src="/docs/latest/icons/ico-lock-open.svg" alt="Lock annotation" className="icon size-md space-sm" />|Lock / Unlock annotation |Click the button on a specific annotation to make it uneditable. You can also click the button on top of the annotations list to lock all annotations in the frame.|
 |<img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" />|Delete annotation|Click the annotation or bounded area in the frame and then click the button to delete the annotation.|
-|<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />|Show/hide all annotations |Click the button to view the frame without annotations. When annotations are hidden, they can’t be modified. |
+|<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />|Show/hide all annotations |Click the button to view the frame without annotations. When annotations are hidden, they can't be modified. |
 ||Delete label |In the relevant annotation, click **x** on the label you want to remove.| 
 
 ### Frame Labels
