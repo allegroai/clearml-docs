@@ -13,14 +13,15 @@ interface.
 
 Once integrated into code, ClearML automatically logs and tracks models and any snapshots created by the following 
 frameworks:
-- TensorFlow (see [code example](../guides/frameworks/tensorflow/tensorflow_mnist.md))
-- Keras (see [code example](../guides/frameworks/keras/keras_tensorboard.md))
-- PyTorch (see [code example](../guides/frameworks/pytorch/pytorch_mnist.md))
-- scikit-learn (only using joblib) (see [code example](../guides/frameworks/scikit-learn/sklearn_joblib_example.md))
-- XGBoost (only using joblib) (see [code example](../guides/frameworks/xgboost/xgboost_sample.md))
-- FastAI (see [code example](../guides/frameworks/fastai/fastai_with_tensorboard.md))
-- MegEngine (see [code example](../guides/frameworks/megengine/megengine_mnist.md))
-- CatBoost (see [code example](../guides/frameworks/catboost/catboost.md))
+* [TensorFlow](../integrations/tensorflow.md)
+* [Keras](../integrations/keras.md)
+* [PyTorch](../integrations/pytorch.md)
+* [scikit-learn](../integrations/scikit_learn.md) (only using joblib)
+* [XGBoost](../integrations/xgboost.md) (only using joblib)
+* [Fast.ai](../integrations/fastai.md)
+* [MegEngine](../integrations/megengine.md)
+* [CatBoost](../integrations/catboost.md)
+* [MONAI](../integrations/monai.md))
 
 When a supported framework loads a weights file, the running task will be automatically updated, with its input model 
 pointing directly to the original training task's model.
