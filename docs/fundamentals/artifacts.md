@@ -21,7 +21,7 @@ frameworks:
 * [Fast.ai](../integrations/fastai.md)
 * [MegEngine](../integrations/megengine.md)
 * [CatBoost](../integrations/catboost.md)
-* [MONAI](../integrations/monai.md))
+* [MONAI](../integrations/monai.md)
 
 When a supported framework loads a weights file, the running task will be automatically updated, with its input model 
 pointing directly to the original training task's model.
