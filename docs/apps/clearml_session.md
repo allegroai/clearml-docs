@@ -164,12 +164,13 @@ The Task must be connected to a git repository, since currently single script de
 | `--shutdowm`, `-S`| Shut down an active session | Previous session|
 | `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
+| `--upload-files`|  Specify local files/folders to upload to the remote session|`None`|
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
 | `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:10.1-runtime-ubuntu18.04` or previously used docker image|
 | `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--queue`| Select the queue to launch the interactive session on | Previously used queue|
-| `--interactive`, `-I` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
+| `--shell` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
 | `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
 | `--vscode-server` | Install VSCode on interactive session | `true` |
 | `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
