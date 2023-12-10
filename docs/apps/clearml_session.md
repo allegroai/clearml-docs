@@ -164,7 +164,7 @@ The Task must be connected to a git repository, since currently single script de
 | `--shutdowm`, `-S`| Shut down an active session | Previous session|
 | `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
-| `--upload-files`|  Upload local files/folders to the remote session|`None`|
+| `--upload-files`|  Specify local files/folders to upload to the remote session|`None`|
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
 | `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:10.1-runtime-ubuntu18.04` or previously used docker image|
 | `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
