@@ -56,6 +56,7 @@ Additionally, you can view all of your Transformers runs tracked by ClearML in t
 Add custom columns to the table, such as mAP values, so you can easily sort and see what is the best performing model. 
 You can also select multiple experiments and directly [compare](../webapp/webapp_exp_comparing.md) them.   
 
+See an example of Transformers and ClearML in action [here](../guides/frameworks/huggingface/transformers.md). 
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 

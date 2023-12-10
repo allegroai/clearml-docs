@@ -48,7 +48,7 @@ While the agent is running, it continuously reports system metrics to the ClearM
 
 Continue using ClearML Agent once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
-* Programmatically (using [`Task.enqueue`](references/sdk/task.md#taskenqueue) or [`Task.execute_remotely`](references/sdk/task.md#execute_remotely))
+* Programmatically (using [`Task.enqueue()`](references/sdk/task.md#taskenqueue) or [`Task.execute_remotely()`](references/sdk/task.md#execute_remotely))
 * Through the ClearML Web UI (without working directly with code), by cloning experiments and enqueuing them to the 
   queue that a ClearML Agent is servicing.
 
@@ -57,7 +57,7 @@ code modification. Modifying a task clone’s configuration will have the ClearM
 original values:
 * Modified package requirements will have the experiment script run with updated packages
 * Modified recorded command line arguments will have the ClearML agent inject the new values in their stead
-* Code-level configuration instrumented with [`Task.connect`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
+* Code-level configuration instrumented with [`Task.connect()`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
 
 For more information, see [ClearML Agent Reference](clearml_agent/clearml_agent_ref.md), 
 and [configuration options](configs/clearml_conf.md#agent-section).
@@ -109,7 +109,7 @@ it can't do that when running from a virtual environment.
    Detected credentials key="********************" secret="*******"
    ```
         
-1. **Enter** to accept default server URL, which is detected from the credentials or enter a ClearML web server URL.
+1. **Enter** to accept the default server URL, which is detected from the credentials or enter a ClearML web server URL.
 
    A secure protocol, https, must be used. **Do not use http.**
     
