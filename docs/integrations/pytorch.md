@@ -92,7 +92,7 @@ additional tools, like argparse, TensorBoard, and matplotlib:
 * [PyTorch TensorBoardX](../guides/frameworks/pytorch/pytorch_tensorboardx.md) - Demonstrates ClearML automatically logging PyTorch models, and scalars, debug samples, and text logged using TensorBoardX's `SummaryWriter`
 * [PyTorch Abseil](../guides/frameworks/pytorch/pytorch_abseil.md) - Demonstrates ClearML automatically logging PyTorch models and `absl.flags` parameters
 * [PyTorch Model Updating](../guides/frameworks/pytorch/model_updating.md) - Demonstrates training, logging, and updating a PyTorch model using ClearML's [OutputModel](../references/sdk/model_outputmodel.md) class
-* [PyTorch Distributed](../guides/frameworks/pytorch/pytorch_distributed_example.md) - Demonstrates using ClearML with the [PyTorch Distributed Communications Package (torch.distributed)](https://pytorch.org/tutorials/beginner/dist_overview.html)
+* [PyTorch Distributed](../guides/frameworks/pytorch/pytorch_distributed_example.md) - Demonstrates using ClearML with the [PyTorch Distributed Communications Package (`torch.distributed`)](https://pytorch.org/tutorials/beginner/dist_overview.html)
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 
