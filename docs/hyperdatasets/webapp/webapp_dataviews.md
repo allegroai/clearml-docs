@@ -34,7 +34,7 @@ The Dataviews table includes the following columns:
 |**DATAVIEW** | Dataview name | String|
 |**USER** | User who created the Dataview | String|
 |**STATUS** | The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only)| String| 
-|**PROJECT** | The project name with which the dataview is associated| String|
+|**PROJECT** | Name of the Dataview's project| String|
 |**CREATED** | Elapsed time since the Dataview was created| Date-time|
 |**DESCRIPTION** | A description of the Dataview | String| 
 
