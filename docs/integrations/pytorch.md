@@ -75,7 +75,7 @@ You can integrate ClearML into your distributed training script. With ClearML, y
 subprocess to a centralized location and visualize it.
 
 The [PyTorch Distributed](../guides/frameworks/pytorch/pytorch_distributed_example.md) script demonstrates using ClearML 
-with the [PyTorch Distributed Communications Package (torch.distributed)](https://pytorch.org/tutorials/beginner/dist_overview.html): a 
+with the [PyTorch Distributed Communications Package (`torch.distributed`)](https://pytorch.org/tutorials/beginner/dist_overview.html): a 
 ClearML task is initialized before the subprocesses are spawned, and then each subprocess manually reports its artifacts, 
 scalars, and hyperparameters to the task. 
 

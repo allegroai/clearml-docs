@@ -19,10 +19,10 @@ Once you have launched an app instance, you can view the following information i
     * <img src="/docs/latest/icons/ico-vscode-loading.svg" alt="VS Code loading" className="icon size-md" /> - Remote IDE is setting up 
     * <img src="/docs/latest/icons/ico-vscode-active.svg" alt="VS Code active" className="icon size-md" /> - Remote IDE is active
     * <img src="/docs/latest/icons/ico-vscode-idle.svg" alt="VS Code idle" className="icon size-md" /> - Remote IDE is idle  
-    * <img src="/docs/latest/icons/ico-vscode-stopped.svg" alt="VS Code stopped" className="icon size-md" /> Remote IDE is stopped
+    * <img src="/docs/latest/icons/ico-vscode-stopped.svg" alt="VS Code stopped" className="icon size-md" /> - Remote IDE is stopped
 * Open IDE - link to the IDE session
 * Idle time
-* Server’s resources monitoring (CPU / GPU / vMem utilization)
+* Server's resources monitoring (CPU / GPU / vMem utilization)
 * Console - The console log shows the instance's activity, including server setup progress, server status changes
 
 ![VS Code Dashboard](../../img/apps_vs_code.png)
