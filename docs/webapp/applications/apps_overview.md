@@ -23,6 +23,7 @@ ClearML provides the following applications:
 * [**Task Scheduler**](apps_task_scheduler.md) - Schedule tasks for one-shot and/or periodic execution at specified times (available under ClearML Enterprise Plan)
 * [**Trigger Manager**](apps_trigger_manager.md) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
 * [**VS Code**](apps_vscode.md) - Launch a remote VS Code session on a machine that better meets resource needs (available under ClearML Enterprise Plan)
+* [**Jupyter Lab**](apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine
 
 ## App Pages Layout
 Each application's page is split into two sections:

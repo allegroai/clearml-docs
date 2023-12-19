@@ -16,16 +16,16 @@ setup is complete, the dashboard displays a link to access the Jupyter Lab sessi
 
 Once you have launched an app instance, you can view the following information in its dashboard: 
 * App status indicator
-    * <img src="/docs/latest/icons/ico-vscode-loading.svg" alt="Jupyter loading" className="icon size-md" /> - Remote IDE is setting up 
-    * <img src="/docs/latest/icons/ico-vscode-active.svg" alt="Jupyter active" className="icon size-md" /> - Remote IDE is active
-    * <img src="/docs/latest/icons/ico-vscode-idle.svg" alt="Jupyter idle" className="icon size-md" /> - Remote IDE is idle  
-    * <img src="/docs/latest/icons/ico-vscode-stopped.svg" alt="Jupyter stopped" className="icon size-md" /> Remote IDE is stopped
+    * <img src="/docs/latest/icons/ico-jupyter-lab-loading.svg" alt="Jupyter loading" className="icon size-md" /> - Remote IDE is setting up 
+    * <img src="/docs/latest/icons/ico-jupyter-lab-active.svg" alt="Jupyter active" className="icon size-md" /> - Remote IDE is active
+    * <img src="/docs/latest/icons/ico-jupyter-lab-idle.svg" alt="Jupyter idle" className="icon size-md" /> - Remote IDE is idle  
+    * <img src="/docs/latest/icons/ico-jupyter-lab-stopped.svg" alt="Jupyter stopped" className="icon size-md" /> Remote IDE is stopped
 * Open IDE - link to the IDE session
 * Idle time
 * Server's resources monitoring (CPU / GPU / vMem utilization)
 * Console - The console log shows the instance's activity, including server setup progress, server status changes
 
-![Jupyter Lab Dashboard](../../img/apps_vs_code.png)
+![Jupyter Lab Dashboard](../../img/apps_jupyter_lab.png)
 
 ## Extra Python packages to be installedApp Instance Configuration
 
