@@ -22,6 +22,7 @@ ClearML provides the following applications:
 * [**Project Dashboard**](apps_dashboard.md) - High-level project monitoring with Slack alerts
 * [**Task Scheduler**](apps_task_scheduler.md) - Schedule tasks for one-shot and/or periodic execution at specified times (available under ClearML Enterprise Plan)
 * [**Trigger Manager**](apps_trigger_manager.md) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
+* [**VS Code**](apps_vscode.md) - Launch a VS Code session on a remote machine (available under ClearML Enterprise Plan)
 
 ## App Pages Layout
 Each application's page is split into two sections:

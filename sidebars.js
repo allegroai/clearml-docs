@@ -111,7 +111,8 @@ module.exports = {
                     'webapp/applications/apps_hpo',
                     'webapp/applications/apps_dashboard',
                     'webapp/applications/apps_task_scheduler',
-                    'webapp/applications/apps_trigger_manager'
+                    'webapp/applications/apps_trigger_manager',
+                    'webapp/applications/apps_vscode'
                 ]
 
             },
