@@ -19,7 +19,7 @@ Once you have launched an app instance, you can view the following information i
     * <img src="/docs/latest/icons/ico-jupyter-lab-loading.svg" alt="Jupyter loading" className="icon size-md" /> - Remote IDE is setting up 
     * <img src="/docs/latest/icons/ico-jupyter-lab-active.svg" alt="Jupyter active" className="icon size-md" /> - Remote IDE is active
     * <img src="/docs/latest/icons/ico-jupyter-lab-idle.svg" alt="Jupyter idle" className="icon size-md" /> - Remote IDE is idle  
-    * <img src="/docs/latest/icons/ico-jupyter-lab-stopped.svg" alt="Jupyter stopped" className="icon size-md" /> Remote IDE is stopped
+    * <img src="/docs/latest/icons/ico-jupyter-lab-stopped.svg" alt="Jupyter stopped" className="icon size-md" /> - Remote IDE is stopped
 * Open IDE - link to the IDE session
 * Idle time
 * Server's resources monitoring (CPU / GPU / vMem utilization)
