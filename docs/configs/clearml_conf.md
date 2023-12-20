@@ -1209,17 +1209,6 @@ will not exceed the value of `matplotlib_untitled_history_size`
         
 * The maximum number of digits after the decimal point in plot reporting. This can reduce the report size.
         
----
-        
-**`sdk.metrics.tensorboard_single_series_per_graph`** (*bool*)
-        
-* Indicates whether plots appear using TensorBoard behavior where each series is plotted in its own graph (plot-per-graph).
- 
-    The values are:
-    
-    * `true` - Support TensorBoard behavior
-    * `false` - Do not
-        
 <br/>
 
 ##### sdk.metrics.images
