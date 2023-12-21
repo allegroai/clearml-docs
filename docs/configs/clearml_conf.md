@@ -1212,7 +1212,11 @@ will not exceed the value of `matplotlib_untitled_history_size`
 ---
         
 **`sdk.metrics.tensorboard_single_series_per_graph`** (*bool*)
-        
+    
+:::note
+This configuration is deprecated. This plot behavior is now controlled via the UI
+:::
+
 * Indicates whether plots appear using TensorBoard behavior where each series is plotted in its own graph (plot-per-graph).
  
     The values are:
