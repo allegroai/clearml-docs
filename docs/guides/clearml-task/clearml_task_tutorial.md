@@ -7,9 +7,8 @@ on a remote or local machine, from a remote repository and your local machine.
 
 ### Prerequisites
 
-- `clearml` Python package installed 
-
-- `clearml-agent` running on at least one machine (to execute the experiment), configured to listen to default queue 
+- [`clearml`](../../getting_started/ds/ds_first_steps.md) Python package installed and configured
+- [`clearml-agent`](../../clearml_agent.md#installation) running on at least one machine (to execute the experiment), configured to listen to `default` queue 
 
 ### Executing Code from a Remote Repository 
 
@@ -34,9 +33,9 @@ or add the `--packages "<package_name>"` option to the command (for example: `--
 ::: 
 
 Now `clearml-task` does all the heavy-lifting!
-1. It creates a new Task on the [ClearML Server](../../deploying_clearml/clearml_server.md).
+1. It creates a new [ClearML Task](../../fundamentals/task.md) 
 1. `clearml-task` enqueues the task in the selected execution queue, where a [ClearML Agent](../../clearml_agent.md) 
-   assigned to that queue executes the task.  
+   assigned to that queue executes the task  
      
 Your output should look something like this:
 

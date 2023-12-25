@@ -18,20 +18,23 @@ demonstrates how to do the following:
 
 ### Downloading the Data
 
-You first need to obtain a local copy of the CIFAR dataset.
+You first need to obtain a local copy of the CIFAR dataset. 
+The code below downloads the data and `dataset_path` contains the path to the downloaded data: 
 
- ```python
- from clearml import StorageManager
+```python
+from clearml import StorageManager
 
- manager = StorageManager()
- dataset_path = manager.get_local_copy(
-     remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
- )
+manager = StorageManager()
+dataset_path = manager.get_local_copy(
+    remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
+)
 ```
 
-This script downloads the data and `dataset_path` contains the path to the downloaded data. 
 
 ### Creating the Dataset
+
+The following code creates a data processing task called `cifar_dataset` in the `dataset examples` project, which
+can be viewed in the [WebApp](../../webapp/datasets/webapp_dataset_viewing.md).
 
 ```python
 from clearml import Dataset
@@ -42,23 +45,24 @@ dataset = Dataset.create(
 )
  ```
 
-This creates a data processing task called `cifar_dataset` in the `dataset examples` project, which
-can be viewed in the WebApp.
 
 ### Adding Files
+
+Add the downloaded files to the current dataset:
 
 ```python
 dataset.add_files(path=dataset_path)
 ```
 
-This adds the downloaded files to the current dataset.  
-
 ### Uploading the Files
+
+Upload the dataset: 
 
 ```python
 dataset.upload()
 ```
-This uploads the dataset to the ClearML Server by default. The dataset's destination can be changed by specifying the 
+
+By default, the dataset is uploaded to the ClearML Server. The dataset's destination can be changed by specifying the 
 target storage with the `output_url` parameter of the [`upload`](../../references/sdk/dataset.md#upload) method. 
 
 ### Finalizing the Dataset
