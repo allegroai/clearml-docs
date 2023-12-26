@@ -62,7 +62,7 @@ Upload the dataset:
 dataset.upload()
 ```
 
-By default, the dataset is uploaded to the ClearML Server. The dataset's destination can be changed by specifying the 
+By default, the dataset is uploaded to the ClearML File Server. The dataset's destination can be changed by specifying the 
 target storage with the `output_url` parameter of the [`upload`](../../references/sdk/dataset.md#upload) method. 
 
 ### Finalizing the Dataset
