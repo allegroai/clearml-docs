@@ -216,9 +216,9 @@ For example:
 dataset.remove_files(dataset_path="*.csv", recursive=True)
 ```
 
-## Attach Information
+## Attaching Information
 
-Attach informative metrics or debug samples to the Dataset itself. Use [`Dataset.get_logger()`](../references/sdk/dataset.md#get_logger)
+Attach informative metrics or debug samples to the Dataset. Use [`Dataset.get_logger()`](../references/sdk/dataset.md#get_logger)
 to access the dataset's logger object, then add any additional information to the dataset, using the methods
 available with a [logger](../references/sdk/logger.md) object. 
 
