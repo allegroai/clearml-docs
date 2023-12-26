@@ -3,7 +3,6 @@ title: Version 1.7
 ---
 
 ### ClearML Agent 1.7.0
-
 **New Features**
 * Add `agent.docker_args_extra_precedes_task` and `agent.protected_docker_extra_args` configuration settings to prevent 
 the same switch to be used by both `agent.extra_docker_args` and a Task's docker args
