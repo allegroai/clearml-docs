@@ -19,7 +19,7 @@ line arguments, Python module dependencies, and a requirements.txt file!
 
 1. Execute `clearml-task`, specifying the ClearML target project and task name, along with your script (and repository / commit / branch). 
    Optionally, specify an execution queue and Docker image to use.
-1. `clearml-task` does its magic! It creates a new task on the [ClearML Server](../deploying_clearml/clearml_server.md), 
+1. `clearml-task` does its magic! It creates a new [ClearML Task](../fundamentals/task.md), 
    and, if so directed, enqueues it for execution by a ClearML Agent.
 1. While the Task is running on the remote machine, all its console outputs are logged in real-time, alongside your 
    TensorBoard and matplotlib. You can track your script's progress and results in the [ClearML Web UI](../webapp/webapp_overview.md) 
