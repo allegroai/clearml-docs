@@ -218,7 +218,7 @@ dataset.remove_files(dataset_path="*.csv", recursive=True)
 
 ## Dataset Preview
 
-AAdd informative metrics, plots, or media to the Dataset. Use [`Dataset.get_logger()`](../references/sdk/dataset.md#get_logger)
+Add informative metrics, plots, or media to the Dataset. Use [`Dataset.get_logger()`](../references/sdk/dataset.md#get_logger)
 to access the dataset's logger object, then add any additional information to the dataset, using the methods
 available with a [logger](../references/sdk/logger.md) object. 
 
