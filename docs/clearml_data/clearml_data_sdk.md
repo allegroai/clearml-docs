@@ -240,7 +240,7 @@ dataset.get_logger().report_histogram(
     values=histogram_data,
     iteration=0,
     xlabels=histogram_data.index.tolist(),
-    yaxis="Amount of samples",
+    yaxis="Number of samples",
 )
 ```
 
