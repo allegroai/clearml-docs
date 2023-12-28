@@ -126,6 +126,12 @@ Use with care! This might introduce security risks by allowing access to keys/se
         
 ---
 
+**`docker_args_extra_precedes_task`** (*bool*)
+
+*  Allow the arguments specified in `agent.extra_docker_arguments` to override task level docker arguments, in the case that
+the same argument is passed in both. If set to `False`, a task's docker arguments will override the `extra_docker_arguments`.
+
+---
 **`agent.docker_container_name_format`** (*string*)
 
 :::note Compatibility Required
@@ -329,7 +335,13 @@ from `system_site_packages`
       use the requested python version (default)
 
 ___
-        
+
+**`agent.protected_docker_extra_args`** (*[string]*)   
+
+* Prevent listed task docker arguments from being used if they are already specified in `agent.extra_docker_arguments`. 
+
+---
+
 **`agent.python_binary`** (*string*)
         
 * Set the Python version to use when creating the virtual environment, and when launching the experiment. For example, `/usr/bin/python3` or `/usr/local/bin/python3.6`.
@@ -1212,7 +1224,11 @@ will not exceed the value of `matplotlib_untitled_history_size`
 ---
         
 **`sdk.metrics.tensorboard_single_series_per_graph`** (*bool*)
-        
+    
+:::note
+This configuration is deprecated. This plot behavior is now controlled via the UI
+:::
+
 * Indicates whether plots appear using TensorBoard behavior where each series is plotted in its own graph (plot-per-graph).
  
     The values are:
