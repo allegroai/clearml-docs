@@ -260,7 +260,7 @@ Dataset files must be uploaded before a dataset is [finalized](#finalizing-a-dat
 
 ## Finalizing a Dataset
 
-Use the [`Dataset.finalize`](../references/sdk/dataset.md#finalize) method to close the current dataset. This marks the 
+Use [`Dataset.finalize()`](../references/sdk/dataset.md#finalize) to close the current dataset. This marks the 
 dataset task as *Completed*, at which point, the dataset can no longer be modified. 
 
 Before closing a dataset, its files must first be [uploaded](#uploading-files).
@@ -268,7 +268,7 @@ Before closing a dataset, its files must first be [uploaded](#uploading-files).
 
 ## Syncing Local Storage
 
-Use the [`Dataset.sync_folder`](../references/sdk/dataset.md#sync_folder) method in order to update a dataset according
+Use [`Dataset.sync_folder()`](../references/sdk/dataset.md#sync_folder) in order to update a dataset according
 to a specific folder's content changes. Specify the folder to sync with the `local_path` parameter (the method assumes all files within the folder and recursive). 
 
 This method is useful in the case where there's a single point of truth, either a local or network folder, that gets updated periodically. 
@@ -276,7 +276,7 @@ The folder changes will be reflected in a new dataset version. This method saves
 update (add / remove) files in a dataset.
 
 ## Deleting Datasets
-Delete a dataset using the [`Dataset.delete`](../references/sdk/dataset.md#datasetdelete) class method. Input any of the 
+Delete a dataset using [`Dataset.delete()`](../references/sdk/dataset.md#datasetdelete) method. Input any of the 
 attributes of the dataset(s) you want to delete, including ID, project name, version, and/or dataset name. Multiple 
 datasets matching the query will raise an exception, unless you pass `entire_dataset=True` and `force=True`. In this 
 case, all matching datasets will be deleted. 
@@ -360,11 +360,11 @@ Note that in offline mode, any methods that require communicating with the serve
 `finalize()`, `get_local_copy()`, `get()`, `move_to_project()`, etc.). 
 
 Upload the offline dataset to the ClearML Server using [`Dataset.import_offline_session()`](../references/sdk/dataset.md#datasetimport_offline_session). 
+In the `session_folder_zip` argument, insert the path to the zip folder containing the dataset. To [upload](#uploading-files) 
+the dataset's data to network storage, set `upload` to `True`.  To [finalize](#finalizing-a-dataset) the dataset, 
+which will close it and prevent further modifications to the dataset, set `finalize` to `True`. 
 
 ```python
 Dataset.import_offline_session(session_folder_zip="<path_to_offline_dataset>", upload=True, finalize=True)
 ```
 
-In the `session_folder_zip` argument, insert the path to the zip folder containing the dataset. To [upload](#uploading-files) 
-the dataset's data to network storage, set `upload` to `True`.  To [finalize](#finalizing-a-dataset) the dataset, 
-which will close it and prevent further modifications to the dataset, set `finalize` to `True`. 
