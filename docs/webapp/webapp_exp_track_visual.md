@@ -331,7 +331,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> and then hover over a series on the plot. |
 | <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> and then hover over the plot. |
 | <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view icon" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
-| <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
+| <img src="/docs/latest/icons/ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
 | <img src="/docs/latest/icons/ico-reset_1.svg" alt="Plot layout setting" className="icon size-sm space-sm" />| Switch between original and auto-fitted plot dimensions. The original layout is the plot's user-defined dimensions. |
 | <img src="/docs/latest/icons/ico-download-json-plot.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | Download plot data as a JSON file. |
 | <img src="/docs/latest/icons/ico-download-csv.svg" alt="Download CSV icon" className="icon size-sm space-sm" /> | Download **table** plot data as a CSV file. |
