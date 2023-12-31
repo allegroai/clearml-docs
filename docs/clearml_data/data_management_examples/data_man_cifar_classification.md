@@ -43,7 +43,7 @@ New dataset created id=ee1c35f60f384e65bc800f42f0aca5ec
 Where `ee1c35f60f384e65bc800f42f0aca5ec` is the dataset ID.
 
 ## Adding Files
-Add the files that were just downloaded to the dataset: 
+Add the [downloaded files](#downloading-the-data) to the dataset: 
 
 ```
 clearml-data add --files <dataset_path>
