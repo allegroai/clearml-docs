@@ -80,6 +80,12 @@ The Installed Packages section lists the experiment's installed Python packages 
 
 ![Installed packages section](../img/webapp_exp_installed_packages.png)
 
+When a ClearML agent executing an experiment ends up using a different set of python packages than was originally 
+specified, both the original specification (`original pip` or `original conda`), and the packages the agent ended up 
+using to set up an environment (`pip` or `conda`) are available. Select which requirements to view in the dropdown menu.  
+
+![Packages used by agent](../img/webapp_exp_installed_packages_2.png.png)
+
 ### Container
 The Container section list the following information:
 * Image - a pre-configured Docker that ClearML Agent will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container))
