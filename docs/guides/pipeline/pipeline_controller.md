@@ -137,7 +137,7 @@ does the following:
    ```
 
 1. Download the data created in the previous step (specified through the `dataset_url` parameter) using 
-   [`StorageManager.get_local_copy`()](../../references/sdk/storage.md#storagemanagerget_local_copy) 
+   [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
    
    ```python
    iris_pickle = StorageManager.get_local_copy(remote_url=args['dataset_url'])
