@@ -2,7 +2,7 @@
 title: Reproducing Experiments
 ---
 
-Reproduce experiments on local or remote machines, in one of the following ways:
+Reproduce experiments on local or remote machines in one of the following ways:
 * Cloning any experiment - Make an exact copy, while maintaining the original experiment
 * Resetting an experiment whose status is not Published - Delete the previous run's logs and output
 
@@ -13,7 +13,7 @@ Experiments can also be modified and then executed remotely, see [Tuning Experim
 ## Cloning
 To clone an experiment:
 1. In the experiments table, right-click the experiment to reproduce and click **Clone**.
-1. In the `Clone Experiment modal`, set the following:
+1. In the `Clone Experiment` modal, set the following:
    * Project - The project where the experiment will be saved
    * Description (optional)
    * Set `<cloned_experiment>` as parent - Select to set this experiment as the new experiments' parent task
