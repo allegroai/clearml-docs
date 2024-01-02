@@ -19,8 +19,7 @@ The Settings page consists of the following sections:
   vaults to apply ClearML client settings to all members of the user groups
 * [Users & Groups](#users--groups) - Manage the users that have access to a workspace
 * [Access Rules](#access-rules) (ClearML Enterprise Server) - Manage per-resource access privileges 
-* [Identity Providers](#identity-providers) (ClearML Enterprise Server) - Configure, manage, and apply server identity 
-providers
+* [Identity Providers](#identity-providers) (ClearML Enterprise Server) - Manage server identity providers
 * [Usage & Billing](#usage--billing) (ClearML Hosted Service) - View current usage information and billing details 
 
 ## Profile 
