@@ -23,7 +23,7 @@ logged as required packages for the pipeline execution step.
 
 ## Pipeline Controller
 
-1. Create the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md) object.
+1. Create the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md) object:
 
    ```python
    pipe = PipelineController(
@@ -98,7 +98,7 @@ logged as required packages for the pipeline execution step.
     )
    ```
  
-1. Run the pipeline. 
+1. Run the pipeline: 
    ```python
    pipe.start()
    ```

@@ -30,7 +30,7 @@ The sections below describe in more detail what happens in the controller task a
 
 ## The Pipeline Controller
 
-1. Create the [pipeline controller](../../references/sdk/automation_controller_pipelinecontroller.md) object.
+1. Create the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md) object:
 
    ```python
    pipe = PipelineController(
@@ -90,7 +90,7 @@ The sections below describe in more detail what happens in the controller task a
    The [third step](#step-3---training-the-network) uses the pre-existing task `pipeline step 3 train model` in the 
    `examples` projects. The step uses Step 2's artifacts.
    
-1. Run the pipeline.
+1. Run the pipeline:
    
    ```python
    pipe.start()
@@ -103,7 +103,7 @@ The sections below describe in more detail what happens in the controller task a
 The pipeline's first step ([step1_dataset_artifact.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/step1_dataset_artifact.py))
 does the following: 
 
-1. Download data using [`StorageManager.get_local_copy`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
+1. Download data using [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy): 
   
    ```python
    # simulate local dataset, download one, so we have something local
@@ -111,7 +111,7 @@ does the following:
        remote_url='https://github.com/allegroai/events/raw/master/odsc20-east/generic/iris_dataset.pkl'
    )
    ```    
-1. Store the data as an artifact named `dataset` using [`Task.upload_artifact`](../../references/sdk/task.md#upload_artifact)
+1. Store the data as an artifact named `dataset` using [`Task.upload_artifact()`](../../references/sdk/task.md#upload_artifact):
    ```python
    # add and upload local file containing our toy dataset
    task.upload_artifact('dataset', artifact_object=local_iris_pkl)
@@ -137,7 +137,7 @@ does the following:
    ```
 
 1. Download the data created in the previous step (specified through the `dataset_url` parameter) using 
-   [`StorageManager.get_local_copy`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
+   [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
    
    ```python
    iris_pickle = StorageManager.get_local_copy(remote_url=args['dataset_url'])
@@ -167,13 +167,13 @@ does the following:
    task.connect(args)
    ```
    
-1. Clone the base task and enqueue it using [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely).
+1. Clone the base task and enqueue it using [`Task.execute_remotely()`](../../references/sdk/task.md#execute_remotely):
    
    ```python
    task.execute_remotely() 
    ```
    
-1. Access the data created in the previous task.
+1. Access the data created in the previous task:
    
    ```python
    dataset_task = Task.get_task(task_id=args['dataset_task_id'])
@@ -189,14 +189,14 @@ does the following:
 
 **To run the pipeline:**
 
-1. If the pipeline steps tasks do not yet exist, run their code to create the ClearML tasks.
+1. If the pipeline steps tasks do not yet exist, run their code to create the ClearML tasks:
    ```bash
    python step1_dataset_artifact.py
    python step2_data_processing.py
    python step3_train_model.py
    ``` 
    
-1. Run the pipeline controller.
+1. Run the pipeline controller:
    
    ```bash
    python pipeline_from_tasks.py

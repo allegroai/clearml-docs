@@ -75,7 +75,7 @@ You can integrate ClearML into your distributed training script. With ClearML, y
 subprocess to a centralized location and visualize it.
 
 The [PyTorch Distributed](../guides/frameworks/pytorch/pytorch_distributed_example.md) script demonstrates using ClearML 
-with the [PyTorch Distributed Communications Package (torch.distributed)](https://pytorch.org/tutorials/beginner/dist_overview.html): a 
+with the [PyTorch Distributed Communications Package (`torch.distributed`)](https://pytorch.org/tutorials/beginner/dist_overview.html): a 
 ClearML task is initialized before the subprocesses are spawned, and then each subprocess manually reports its artifacts, 
 scalars, and hyperparameters to the task. 
 
@@ -86,7 +86,7 @@ Take a look at ClearML's PyTorch examples. The examples use PyTorch and ClearML 
 additional tools, like argparse, TensorBoard, and matplotlib:  
 
 * [PyTorch MNIST](../guides/frameworks/pytorch/pytorch_mnist.md) - Demonstrates ClearML automatically logging models created with PyTorch, and `argparse` command line parameters
-* [PyTorch with Matplotlib](../guides/frameworks/pytorch/pytorch_matplotlib.md) - Demonstrates ClearML's automatic logging PyTorch models and matplotlib images. The images are stored in the resulting ClearML experiment's **Debug Samples**
+* [PyTorch with Matplotlib](../guides/frameworks/pytorch/pytorch_matplotlib.md) - Demonstrates ClearML's automatic logging PyTorch models and matplotlib images. The images are presented in the resulting ClearML experiment's **Debug Samples**
 * [PyTorch with TensorBoard](../guides/frameworks/pytorch/pytorch_tensorboard.md) - Demonstrates ClearML automatically logging PyTorch models, and scalars, debug samples, and text logged using TensorBoard's `SummaryWriter`
 * [PyTorch TensorBoard Toy](../guides/frameworks/pytorch/tensorboard_toy_pytorch.md) - Demonstrates ClearML automatically logging debug samples logged using TensorBoard's `SummaryWriter`
 * [PyTorch TensorBoardX](../guides/frameworks/pytorch/pytorch_tensorboardx.md) - Demonstrates ClearML automatically logging PyTorch models, and scalars, debug samples, and text logged using TensorBoardX's `SummaryWriter`

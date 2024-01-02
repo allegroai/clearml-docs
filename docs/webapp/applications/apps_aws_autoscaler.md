@@ -81,19 +81,60 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 
 ![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
 
-:::note Enterprise Feature
-You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to configure AWS 
-credentials for the Autoscaler in the following format: 
+### Configuration Vault 
+
+:::important Enterprise Feature
+The Configuration Vault is available under the ClearML Enterprise plan.
+:::
+
+You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to set the following: 
+* `aws_region`
+* `aws_credentials_key_id` and `aws_secret_access_key` - AWS credentials for the Autoscaler
+* `extra_vm_bash_script` - A bash script to execute after launching the EC2 instance. This script will be appended to
+the one set in the `Init script` field of the autoscaler wizard
+* `extra_clearml_conf` - ClearML configuration to use by the ClearML Agent when executing your experiments. This 
+configuration will be appended to that set in the `Additional ClearML Configuration` field of the autoscaler wizard
+
+For example, the following configuration would be applied to all autoscaler instances:
 
 ```
-auto_scaler.v1 {
-    aws {
-        cloud_credentials_key: "<aws-key>"
-        cloud_credentials_secret: "<aws-secret>"
+auto_scaler.v1.aws {
+   aws_region: "us-east-1"
+   aws_access_key_id: "<key>"
+   aws_secret_access_key: "<secret>"
+   extra_vm_bash_script: """
+     echo "Hello world!"
+   """
+   extra_clearml_conf: """
+     agent.docker_force_pull: true
+   """
+}
+```
+
+To configure a specific instance(s), add a regular expression to match the autoscaler's `Workers Prefix` under 
+`auto_scaler.v1.aws.match`. Within this section, input the specific configuration which will be merged to any 
+matched autoscaler's configuration.
+
+For example:
+
+```
+auto_scaler.v1.aws {
+    # this will be applied to all AWS autoscalers
+    aws_region: "us-east-2"
+
+    match {
+        "^aws_test$": {
+            # this will be applied only to AWS autoscalers who's workers prefix exactly matches aws_test
+            extra_vm_bash_script: """ echo "Hello world!" """
+        }
+        "^aws_.*$": {
+            # this will be applied to all AWS autoscalers who's workers prefix starts with aws_
+            extra_vm_bash_script: """ echo "Goodbye!" """
+        }
     }
 }
 ```
-:::
+
 
 ## Dashboard
 Once an autoscaler is launched, the autoscaler's dashboard provides information about available EC2 instances and their 

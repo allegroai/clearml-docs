@@ -11,14 +11,14 @@ artifact and utilizes it.
 
 ## Task 1: Uploading an Artifact 
 
-The first task uploads a data file as an artifact using the [`Task.upload_artifact`](../../references/sdk/task.md#upload_artifact) 
-method, inputting the artifact's name and the location of the file.
+The first task uploads a data file as an artifact using [`Task.upload_artifact()`](../../references/sdk/task.md#upload_artifact), 
+and inputting the artifact's name and the location of the file.
 
 ```python
 task1.upload_artifact(name='data file', artifact_object='data_samples/sample.json')
 ```
 
-The task is then closed, using the [`Task.close`](../../references/sdk/task.md#close) method, so another task can be 
+The task is then closed, using [`Task.close()`](../../references/sdk/task.md#close), so another task can be 
 initialized in the same script. 
 
 Artifact details (location and size) can be viewed in ClearML's **web UI > experiment details > ARTIFACTS tab > OTHER section**. 
