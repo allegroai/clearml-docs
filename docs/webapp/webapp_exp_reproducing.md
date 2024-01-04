@@ -4,7 +4,7 @@ title: Reproducing Experiments
 
 Reproduce experiments on local or remote machines in one of the following ways:
 * Cloning any experiment - Make an exact copy, while maintaining the original experiment
-* Resetting an experiment whose status is not Published - Delete the previous run's logs and output
+* Resetting an experiment whose status is not *Published* - Delete the previous run's logs and output
 
 After cloning or resetting, enqueue the reset or newly cloned experiment for execution by a worker.
 

@@ -5,7 +5,7 @@ title: Transformers
 The [HuggingFace Transformers example](https://github.com/allegroai/clearml/blob/master/examples/frameworks/huggingface/transformers.ipynb)
 demonstrates how to integrate ClearML into your Transformer's [Trainer](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer) 
 code. The HuggingFace Trainer automatically uses the built-in [`ClearMLCallback`](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/callback#transformers.integrations.ClearMLCallback)
-if the `clearl` package is already installed, to log Transformers models, parameters, scalars, and more. 
+if the `clearml` package is already installed, to log Transformers models, parameters, scalars, and more. 
 
 In the example, ClearML is installed and set up in the training environment. This way ClearML can log models, parameters, 
 scalars, and more.
