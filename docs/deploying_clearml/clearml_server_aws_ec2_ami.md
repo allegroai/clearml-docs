@@ -126,6 +126,7 @@ The following section contains a list of AMI Image IDs per-region for the latest
 * **ap-southeast-3** : ami-0dcce74d0ef388d21
 * **ap-southeast-4** : ami-0e6a5dedd284d147f
 * **ca-central-1** : ami-0da8b81a0ac520ce6
+* **ca-west-1** : ami-0b257406c6be268c2
 * **eu-central-1** : ami-038c4c2b29337b8b0
 * **eu-central-2** : ami-047b3de405e0da6a0
 * **eu-north-1** : ami-0225c5a0fc71a5920
