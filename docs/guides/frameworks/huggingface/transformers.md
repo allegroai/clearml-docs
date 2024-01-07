@@ -3,11 +3,14 @@ title: Transformers
 ---
 
 The [HuggingFace Transformers example](https://github.com/allegroai/clearml/blob/master/examples/frameworks/huggingface/transformers.ipynb)
-demonstrates how to integrate ClearML into your Transformer's PyTorch [Trainer](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer) 
-code. When ClearML is installed in an environment, the Trainer by default uses the built-in [`ClearMLCallback`](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/callback#transformers.integrations.ClearMLCallback),
-so ClearML automatically logs Transformers models, parameters, scalars, and more. 
+demonstrates how to integrate ClearML into your Transformer's [Trainer](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer) 
+code. The HuggingFace Trainer automatically uses the built-in [`ClearMLCallback`](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/callback#transformers.integrations.ClearMLCallback)
+if the `clearml` package is already installed, to log Transformers models, parameters, scalars, and more. 
 
-When the example runs, it creates a ClearML task called `Trainer` in the `HuggingFace Transformers` projects. To change 
+In the example, ClearML is installed and set up in the training environment. This way ClearML can log models, parameters, 
+scalars, and more.
+
+When the example runs, it creates a ClearML task called `Trainer` in the `HuggingFace Transformers` project. To change 
 the task's name or project, use the `CLEARML_PROJECT` and `CLEARML_TASK` environment variables respectively.
 
 For more information about integrating ClearML into your Transformers code, see [HuggingFace Transformers](../../../integrations/transformers.md).
@@ -16,7 +19,7 @@ For more information about integrating ClearML into your Transformers code, see 
 
 ### Hyperparameters
 
-ClearML automatically captures all the PyTorch trainer [parameters](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer#transformers.TrainingArguments). 
+ClearML automatically captures all the Trainer [parameters](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer#transformers.TrainingArguments). 
 Notice in the code example that only a few of the `TrainingArguments` are explicitly set:
 
 ```python
@@ -29,17 +32,17 @@ training_args = TrainingArguments(
 )
 ```
 
-ClearML captures the arguments specified in the preceding code, as well the rest of the `TrainingArguments` and their default
-values. 
+ClearML captures all of the `TrainingArguments` passed to the Trainer. 
 
-View the parameters in the experiment's **CONFIGURATION** tab **> Hyperparameters** section.
+View these parameters in the experiment's **CONFIGURATION** tab **> Hyperparameters** section.
 
 ![Transformers params](../../../img/examples_transformers_params.png)
 
 
 ### Models 
 
-In order for ClearML to log the models created during training, the `CLEARML_LOG_MODEL` environment variable is set to `True`. 
+In order for ClearML to log the models created during training in this example, the `CLEARML_LOG_MODEL` environment 
+variable is set to `True`. 
 
 ClearML automatically captures the model snapshots created by the Trainer, and saves them as artifacts. View the snapshots in the 
 experiment's **ARTIFACTS** tab.
