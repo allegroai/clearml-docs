@@ -109,12 +109,14 @@ All parameters and configuration objects appear in the **CONFIGURATION** tab.
 
 ### Hyperparameters
 
-Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPERPARAMETERS**.
+Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPERPARAMETERS**. Once an experiment 
+is run and stored in ClearML Server, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
 #### Command Line Arguments
 
-The **Args** parameter group shows automatically logged `argparse` arguments, and all older experiments parameters, except 
-TensorFlow Definitions. Hover over a parameter, and the type, description, and default value appear, if they were provided.
+The **Args** group shows automatically logged argument parser parameters (e.g. `argparse`, `click`, `hydra`). Hover over 
+<img src="/docs/latest/icons/ico-description" alt="Description" className="icon size-md" /> (menu) on a 
+parameter's line, and the type, description, and default value appear, if they were provided.
 
 ![Command line arguments configuration group](../img/webapp_tracking_22.png)
 
@@ -126,8 +128,9 @@ If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group wil
 
 #### Custom Parameter Groups
 
-Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using the `Task.connect` method,
-with a `name` argument provided.
+Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using the 
+[`Task.connect()`](../references/sdk/task.md#connect) with a `name` argument provided. `General` is the default section
+if a name is not provided.
 
 ![Custom parameters group](../img/webapp_tracking_25.png)
 
@@ -136,8 +139,6 @@ with a `name` argument provided.
 The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
 ![TF_DEFINE parameter group](../img/webapp_tracking_26.png)
-
-Once an experiment is run and stored in ClearML Server, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
 ### User Properties
 
