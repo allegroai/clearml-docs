@@ -110,17 +110,15 @@ on the ClearML Configuration Reference page).
 
 Add, change, or delete hyperparameters, which are organized in the **ClearML Web UI** in the following sections:
 
-* **Args** - Command line arguments and all older experiments parameters, except TensorFlow definitions (logged from code,
-  `argparse` argument automatic logging).
+* **Args** - Automatically logged argument parser parameters (e.g. `argparse`, `click`, `hydra`).
 
 * **TF_DEFINE** - TensorFlow definitions (from code, TF_DEFINEs automatic logging).
 
-* **General** - Parameter dictionaries (from code, connected to the Task by calling the [Task.connect](../references/sdk/task.md#connect)
-  method).
+* **General** - Parameter dictionaries (from code, connected to the Task by calling [`Task.connect()`](../references/sdk/task.md#connect)).
 
 * Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq.md#track-env-vars)).
 
-* Custom named parameter groups (see the `name` parameter in [Task.connect](../references/sdk/task.md#connect)).
+* Custom named parameter groups (see the `name` parameter in [`Task.connect`](../references/sdk/task.md#connect)).
 
 **To add, change, or delete hyperparameters:**
 
