@@ -58,7 +58,7 @@ User parameters are editable in any experiment, except experiments whose status 
 
 Select source code by changing any of the following:
 
-* Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, and /or working directory.
+* Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, and/or working directory.
 * Installed Python packages and/or versions - Edit or clear (remove) them all.
 * Uncommitted changes - Edit or clear (remove) them all.
 
@@ -122,8 +122,8 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 
 **To add, change, or delete hyperparameters:**
 
-* In the **CONFIGURATION** tab **>** **HYPERPARAMETERS** > **General** **>** hover **>** **EDIT** **>** add, change,
-  or delete keys and /or values **>** **SAVE**.
+* In the **CONFIGURATION** tab **>** **HYPERPARAMETERS** **>** parameter group **>** hover **>** click **EDIT** **>** add, change,
+  or delete keys and/or values **>** click **SAVE**.
 
 
 
@@ -134,8 +134,8 @@ except experiments whose status is *Published* (read-only).
 
 **To add, change, or delete user properties:**
 
-* In **CONFIGURATION** **>** **USER PROPERTIES** > **Properties** **>** hover **>** **EDIT** **>** add, change, or delete
-  keys and /or values **>** **SAVE**.
+* In **CONFIGURATION** **>** **USER PROPERTIES** **>** **Properties** **>** hover **>** click **EDIT** **>** add, change, or delete
+  keys and/or values **>** click **SAVE**.
 
 
 
@@ -143,7 +143,7 @@ except experiments whose status is *Published* (read-only).
 
 **To add, change, or delete the Task model configurations:**
 
-* In **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** **GENERAL** **>** hover **>** **EDIT** or **CLEAR** (if the
+* In **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** object name **>** hover **>** **EDIT** or **CLEAR** (if the
   configuration is not empty).
 
 ### Artifacts
