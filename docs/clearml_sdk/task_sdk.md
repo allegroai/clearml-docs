@@ -871,7 +871,7 @@ task.connect(params_dictionary)
 ### Configuration Objects
 
 To log configuration more elaborate than a key-value dictionary (such as nested dictionaries or configuration files), 
-use the [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration) method. 
+use [`Task.connect_configuration()`](../references/sdk/task.md#connect_configuration). 
 This method saves configuration objects as blobs (i.e. ClearML is not aware of their internal structure).
 
 ```python
@@ -895,13 +895,13 @@ config_file_yaml = task.connect_configuration(
 A task's user properties do not impact task execution, so you can add / modify the properties at any stage. Add user 
 properties to a task with the [`Task.set_user_properties`](../references/sdk/task.md#set_user_properties) method.
 
+For example, the code below sets the "backbone" property in a task:
+
 ```python
 task.set_user_properties(
   {"name": "backbone", "description": "network type", "value": "great"}
 )
 ```
-
-The above example sets the "backbone" property in a task.
 
 ![Task user properties](../img/fundamentals_task_config_properties.png)
 
