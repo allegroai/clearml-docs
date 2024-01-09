@@ -199,7 +199,7 @@ full_scalars = executed_task.get_reported_scalars()
 
 #### Query Experiments
 You can also search and query Tasks in the system. Use the [`Task.get_tasks`](../../references/sdk/task.md#taskget_tasks) 
-method to retrieve Task objects and filter based on the specific values of the Task - status, parameters, metrics and more!
+class method to retrieve Task objects and filter based on the specific values of the Task - status, parameters, metrics and more!
 
 ```python
 from clearml import Task
