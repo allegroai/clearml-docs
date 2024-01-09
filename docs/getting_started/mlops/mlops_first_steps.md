@@ -97,6 +97,7 @@ All Tasks in the system can be accessed through their unique Task ID, or based o
 method. For example:
 ```python
 from clearml import Task
+
 executed_task = Task.get_task(task_id='aabbcc')
 ```
 
@@ -130,6 +131,7 @@ Users can programmatically change cloned experiments' parameters.
 For example:
 ```python
 from clearml import Task
+
 cloned_task = Task.clone(task_id='aabbcc')
 cloned_task.set_parameter(name='internal/magic', value=42)
 ```
@@ -141,6 +143,7 @@ objects and files to a task anywhere from code.
 ```python
 import numpy as np
 from clearml import Task
+
 Task.current_task().upload_artifact(name='a_file', artifact_object='local_file.bin')
 Task.current_task().upload_artifact(name='numpy', artifact_object=np.ones(4,4))
 ```
@@ -150,6 +153,7 @@ by accessing the Task that created them. These artifacts can be modified and upl
 
 ```python
 from clearml import Task
+
 executed_task = Task.get_task(task_id='aabbcc')
 # artifact as a file
 local_file = executed_task.artifacts['file'].get_local_copy()
@@ -173,6 +177,7 @@ improves the visibility of your processes’ progress.
 
 ```python
 from clearml import Logger
+
 Logger.current_logger().report_scalar(
    graph='metric',
    series='variant',
@@ -184,6 +189,7 @@ Logger.current_logger().report_scalar(
 You can also retrieve reported scalars for programmatic analysis:
 ```python
 from clearml import Task
+
 executed_task = Task.get_task(task_id='aabbcc')
 # get a summary of the min/max/last value of all reported scalars
 min_max_values = executed_task.get_last_scalar_metrics()
@@ -197,6 +203,7 @@ method to retrieve Task objects and filter based on the specific values of the T
 
 ```python
 from clearml import Task
+
 tasks = Task.get_tasks(
    project_name='examples',
    task_name='partial_name_match',

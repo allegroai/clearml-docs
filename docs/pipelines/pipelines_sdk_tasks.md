@@ -8,6 +8,7 @@ Create the [PipelineController](../references/sdk/automation_controller_pipeline
 the pipeline's execution logic:
 ```python
 from clearml import PipelineController
+
 pipe = PipelineController(
   name="Pipeline Controller", project="Pipeline example", version="1.0.0"
 )
