@@ -799,9 +799,11 @@ APIClient. The body of the call must contain the ``queue-id`` and the tags to ad
 
 For example, force workers on for a queue using the APIClient:
 
-    from clearml.backend_api.session.client import APIClient
-    client = APIClient()
-    client.queues.update(queue="<queue_id>", tags=["force_workers:on"]
+```python
+from clearml.backend_api.session.client import APIClient
+client = APIClient()
+client.queues.update(queue="<queue_id>", tags=["force_workers:on"])
+```
 
 Or, force workers on for a queue using the REST API:
 

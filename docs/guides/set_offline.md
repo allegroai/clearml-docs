@@ -14,6 +14,7 @@ the `offline_mode` argument to `True`
 
   ```python
   from clearml import Task
+  
   # Use the set_offline class method before initializing a Task
   Task.set_offline(offline_mode=True)
   # Initialize a Task 

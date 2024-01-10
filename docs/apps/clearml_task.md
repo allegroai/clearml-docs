@@ -80,7 +80,7 @@ errors in identifying the correct default branch.
 </div>
 
 ## Usage
-These commands demonstrate a few useful use cases for `clearml-task`
+These commands demonstrate a few useful use cases for `clearml-task`.
 
 ### Executing Code from a Remote Repository 
 
