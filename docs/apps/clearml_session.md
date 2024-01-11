@@ -14,7 +14,7 @@ in the UI and send it for long-term training on a remote machine.
 ClearML provides tools that allow you to launch remote sessions and to execute code on a remote machine that better 
 meets resource needs:
 * [GUI Applications](#gui-applications) (available under ClearML Enterprise Plan)
-  * [Jupyter Lab](../webapp/applications/apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine 
+  * [JupyterLab](../webapp/applications/apps_jupyter_lab.md) - Launch a JupyterLab session on a remote machine 
   * [VS Code](../webapp/applications/apps_vscode.md) - Launch a VS Code session on a remote machine 
 * [Remote PyCharm](#remote-pycharm) - Work with PyCharm in a remote session over SSH
 * [Clearml Session CLI](#clearml-session-cli) - Launch a JupyterLab and VS Code session on a remote machine
@@ -30,7 +30,7 @@ The ClearML Enterprise Server provides GUI applications for setting up remote se
 apps provide local links to access the JupyterLab or VS Code on a remote machine over a secure and encrypted SSH connection,
 letting you use the IDE as if you're running on the target machine itself
 
-For more information, see [Jupyter Lab](../webapp/applications/apps_jupyter_lab.md) and/or [VS Code](../webapp/applications/apps_vscode.md).
+For more information, see [JupyterLab](../webapp/applications/apps_jupyter_lab.md) and/or [VS Code](../webapp/applications/apps_vscode.md).
 
 ## Remote PyCharm
 
