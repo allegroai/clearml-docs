@@ -801,6 +801,7 @@ For example, force workers on for a queue using the APIClient:
 
 ```python
 from clearml.backend_api.session.client import APIClient
+
 client = APIClient()
 client.queues.update(queue="<queue_id>", tags=["force_workers:on"])
 ```

@@ -148,7 +148,7 @@ except experiments whose status is *Published* (read-only).
 
 ### Artifacts
 
-### Initial Weights Input Model
+#### Initial Weights Input Model
 
 Edit model configuration and label enumeration, choose a different initial input weight model for the same project or any
 other project, or remove the model.
