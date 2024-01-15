@@ -2,7 +2,7 @@
 title: Remote Session
 ---
 
-Machine Learning and deep Learning development is sometimes more challenging than traditional software development. If 
+Machine Learning and Deep Learning development is sometimes more challenging than traditional software development. If 
 you are working on an average laptop or computer, and you have a sizeable dataset that requires significant computation, 
 your local machine may not be able to provide you with the resources for an effective workflow.
 
@@ -13,29 +13,15 @@ in the UI and send it for long-term training on a remote machine.
 
 ClearML provides tools that allow you to launch remote sessions and to execute code on a remote machine that better 
 meets resource needs:
+* [Clearml Session CLI](#clearml-session-cli) - Launch a JupyterLab and VS Code session on a remote machine
 * [GUI Applications](#gui-applications) (available under ClearML Enterprise Plan)
   * [JupyterLab](../webapp/applications/apps_jupyter_lab.md) - Launch a JupyterLab session on a remote machine 
   * [VS Code](../webapp/applications/apps_vscode.md) - Launch a VS Code session on a remote machine 
-* [Remote PyCharm](#remote-pycharm) - Work with PyCharm in a remote session over SSH
-* [Clearml Session CLI](#clearml-session-cli) - Launch a JupyterLab and VS Code session on a remote machine
 
-
-## GUI Applications
-
-:::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+:::info Remote PyCharm
+You can also work with PyCharm in a remote session over SSH. Use the [PyCharm Plugin](../guides/ide/integration_pycharm.md) 
+to automatically sync local configurations with a remote session.
 :::
-
-The ClearML Enterprise Server provides GUI applications for setting up remote sessions in VS Code and JupyterLab. These
-apps provide local links to access the JupyterLab or VS Code on a remote machine over a secure and encrypted SSH connection,
-letting you use the IDE as if you're running on the target machine itself
-
-For more information, see [JupyterLab](../webapp/applications/apps_jupyter_lab.md) and/or [VS Code](../webapp/applications/apps_vscode.md).
-
-## Remote PyCharm
-
-You can work with PyCharm in a remote session over SSH. Use the PyCharm Plugin 
-to automatically sync local configurations with a remote session. For more information, see [Integration for PyCharm](../guides/ide/integration_pycharm.md).
 
 ## ClearML Session CLI 
 `clearml-session` is a feature that allows to launch a session of JupyterLab and VS Code, and to execute code on a remote 
@@ -214,3 +200,15 @@ The Task must be connected to a git repository, since currently single script de
 | `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|
 
 </div>
+
+## GUI Applications
+
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan
+:::
+
+The ClearML Enterprise Server provides GUI applications for setting up remote sessions in VS Code and JupyterLab. These
+apps provide local links to access JupyterLab or VS Code on a remote machine over a secure and encrypted SSH connection,
+letting you use the IDE as if you're running on the target machine itself
+
+For more information, see [JupyterLab](../webapp/applications/apps_jupyter_lab.md) and/or [VS Code](../webapp/applications/apps_vscode.md).
