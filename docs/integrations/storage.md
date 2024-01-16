@@ -42,37 +42,46 @@ pick the right credentials. This includes picking credentials from environment v
 with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
 
 You can specify additional [ExtraArgs](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#the-extraargs-parameter) 
-to pass to boto3 when uploading files. You can set this on a per-bucket basis. 
+to pass to boto3 when uploading files. 
+
+For example, the following configuration would be applied to all relevant buckets:
 
 ```
 aws {
     s3 {
         # S3 credentials, used for read/write access by various SDK elements
 
-        # default, used for any bucket not specified below
+        # default, used for any bucket not specified in "credentials"
         key: ""
         secret: ""
         region: ""
         use_credentials_chain: false
         extra_args: {}
-        
-        credentials: [
-            # specifies key/secret credentials to use when handling s3 urls (read or write)
-            {
-                bucket: "my-bucket-name"
-                key: ""
-                secret: ""
-                verify: "/path/to/ca/bundle.crt" OR false to not verify
-                use_credentials_chain: false
-            },
-                
-        ]
     }
     boto3 {
         pool_connections: 512
         max_multipart_concurrency: 16
     }
 }
+```
+
+To configure a specific bucket, add its name and credentials under `aws.s3.credentials`.
+
+$$$List of dictionaries, for AWS S3, each dictionary can contain the credentials for individual S3 buckets or hosts for individual buckets.
+
+For example:
+
+```        
+        credentials: [
+            # specifies key/secret credentials to use when handling s3 urls (read or write)
+            {
+                bucket: "my-bucket-name"
+                key: ""
+                secret: ""
+                verify: "/path/to/ca/bundle.crt" # OR false to not verify
+                use_credentials_chain: false
+            },
+        ]
 ```
 
 AWS's S3 access parameters can be specified by referencing the standard environment variables if already defined.
