@@ -46,6 +46,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Machine Image (optional) - The GCP machine image to launch 
     * Disc Size (in GB) (optional) 
     * \+ Add Item - Define another resource type
+* **Global Metadata** (optional) - GCP Metadata to be applied on all instances. Input comma separated key=value pairs (e.g. `"Owner=Admin,Foo=Bar"`).
 * **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
 * **Max Idle Time** (optional) - Maximum time in minutes that a VM instance can be idle before the autoscaler spins it down
 * **Workers Prefix** (optional) - A Prefix added to workers' names, associating them with this autoscaler
