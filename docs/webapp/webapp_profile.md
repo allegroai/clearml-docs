@@ -347,7 +347,7 @@ on the respective column and select the users / groups to view from the list tha
 This feature is available under the ClearML Enterprise plan
 :::
 
-Administrators can connect identity service providers to the server. Configure an identity connection, which allows
+Administrators can connect identity service providers to the server: configure an identity connection, which allows
 ClearML to communicate with your identity provider, retrieve user information, authenticate users, and more. Once an identity 
 provider connection is configured and enabled, the option appears in your server login page.
 
