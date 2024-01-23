@@ -375,7 +375,7 @@ provider connection is configured and enabled, the option appears in your server
    `Client Secret`, and the `Authorization Endpoint`, must be obtained from your identity provider's ClearML App settings
    and copied to the relevant field.
    
-    <Collapsible title="OIDC Providers" type="configuration">
+   <Collapsible title="OIDC Providers" type="configuration">
 
       * ClearML WebApp URL - The external URL for the ClearML WebApp. Used to construct the Callback URL used by the 
       identity provider
@@ -422,9 +422,9 @@ provider connection is configured and enabled, the option appears in your server
        to the matched ClearML group. The server will also make sure the ClearML user is removed from the group if 
        a previous membership has been revoked.
 
-    </Collapsible> 
+   </Collapsible> 
 
-    <Collapsible title="SAML Providers" type="configuration">
+   <Collapsible title="SAML Providers" type="configuration">
 
       * ClearML Webapp URL - The external URL for the ClearML WebApp. This is used to construct the Callback URL used by 
        the identity provider
@@ -467,12 +467,13 @@ provider connection is configured and enabled, the option appears in your server
       to the matched ClearML group. The server will also make sure the ClearML user is removed from the group if 
       a previous membership has been revoked.
 
-    </Collapsible> 
+   </Collapsible> 
 
 1. Click **Test Provider** to make sure that the connection is working. This calls the identity provider, and displays 
   the returned information, so you can verify that the information was mapped correctly. An error will be displayed, if the provider fails to connect.
 
   ![Test provider window](../img/settings_sso_provider_test.png)
+
 2. Click **Save**
 
 The **Provider Connections** table lists all currently defined connections, and the following details:
