@@ -41,7 +41,7 @@ with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.c
 You can specify additional [ExtraArgs](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#the-extraargs-parameter) 
 to pass to boto3 when uploading files. 
 
-For example, the following is the default configuration provided in the `aws.s3` section is applied to any bucket without 
+The default configuration is set under the `aws.s3` section. For example, the following configuration is applied to any bucket without 
 a bucket-specific configuration:
 
 ```
@@ -63,7 +63,7 @@ aws {
 }
 ```
 
-It's possible to also give access to specific S3 buckets in the `aws.s3.credentials` section. Each dictionary in the 
+Give access to specific S3 buckets in the `aws.s3.credentials` section. Each dictionary in the 
 list can contain the credentials for individual S3 buckets or hosts for individual buckets (see [`aws.s3.credentials`](../configs/clearml_conf.md#sdkawss3credentials)).
 
 For example:
