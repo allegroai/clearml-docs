@@ -34,9 +34,6 @@ The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/
 
 Modify these parts of the clearml.conf file and add the key, secret, and region of the S3 bucket.
 
-It's possible to also give access to specific S3 buckets in the `aws.s3.credentials` section. The default configuration 
-provided in the `aws.s3` section is applied to any bucket without a bucket-specific configuration. 
-
 You can also enable using a credentials chain to let Boto3 
 pick the right credentials. This includes picking credentials from environment variables, a credential file, and metadata service 
 with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
@@ -44,7 +41,8 @@ with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.c
 You can specify additional [ExtraArgs](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#the-extraargs-parameter) 
 to pass to boto3 when uploading files. 
 
-For example, the following configuration would be applied to all relevant buckets:
+For example, the following is the default configuration provided in the `aws.s3` section is applied to any bucket without 
+a bucket-specific configuration:
 
 ```
 aws {
@@ -65,9 +63,8 @@ aws {
 }
 ```
 
-To configure a specific bucket, add its name and credentials under `aws.s3.credentials`.
-
-$$$List of dictionaries, for AWS S3, each dictionary can contain the credentials for individual S3 buckets or hosts for individual buckets.
+It's possible to also give access to specific S3 buckets in the `aws.s3.credentials` section. Each dictionary in the 
+list can contain the credentials for individual S3 buckets or hosts for individual buckets (see [`aws.s3.credentials`](../configs/clearml_conf.md#sdkawss3credentials)).
 
 For example:
 
@@ -75,7 +72,7 @@ For example:
         credentials: [
             # specifies key/secret credentials to use when handling s3 urls (read or write)
             {
-                bucket: "my-bucket-name"
+                bucket: "my-bucket"
                 key: ""
                 secret: ""
                 verify: "/path/to/ca/bundle.crt" # OR false to not verify
