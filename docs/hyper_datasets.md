@@ -18,9 +18,16 @@ Hyper-Datasets are available under the ClearML Enterprise plan
 
 <br/>
 
-ClearML's Hyper-Datasets are an MLOps-oriented abstraction of your data, which facilitates traceable, reproducible model development
-through parameterized data access and metadata version control. It is is a data management system specifically 
-tailored for handling unstructured data, like text, audio, or visual data.  
+ClearML's **Hyper-Datasets** are an MLOps-oriented abstraction of your data, which facilitates traceable, reproducible model development
+through parameterized data access and metadata version control. 
+
+Hyper-Datasets is a data management system specifically tailored for handling unstructured data, like text, audio, or 
+visual data. You can create, manage, and version your datasets. Datasets can be set up to inherit from other datasets, so
+data lineages can be created, and users can track when and how their data changes. In the ClearML Enterprise's WebApp, 
+you can view a dataset's version history, as well as its contents, including annotations, metadata, masks, and other 
+information.
+
+![Frame viewer](img/hyperdatasets/web-app/dataset_example_frame_editor.png)
 
 The basic premise of Hyper-Datasets is that a user-formed query is a full representation of the dataset used by the ML/DL 
 process. Hyper-Datasets decouple metadata from raw data files, allowing you to manipulate metadata through sophisticated
