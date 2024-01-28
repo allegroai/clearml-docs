@@ -131,9 +131,11 @@ Examples:
 Creating a pipeline step from a function means that when the function is called, it will be transformed into a ClearML task, 
 translating its arguments into parameters, and returning values into artifacts.  
 
-:::info Function to ClearML Task conversion
-As each function is transformed into an independently executed step, it needs to be self-contained. To facilitate this, 
-all package imports inside the function are automatically logged as required packages for the pipeline step. 
+:::info Package Imports
+In the case that the `skip_global_imports` parameter of [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md) 
+is set to `False`, all global imports will be automatically imported at the beginning of each step's execution. 
+Otherwise, if set to `True`, make sure that each function which makes up a pipeline step contains package imports, which 
+are automatically logged as required packages for the pipeline execution step.
 :::
 
 Function steps are added using [`PipelineController.add_function_step()`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step):

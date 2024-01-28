@@ -12,9 +12,8 @@ for your main pipeline execution logic function.
 ## @PipelineDecorator.pipeline
 
 Using the [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline)
-decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller. Since
-the function is transformed into an independently executed task, it needs to be self-contained. To facilitate this, 
-all package imports inside the function are automatically logged as required packages for the pipeline controller.
+decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller, 
+an independently executed task.
 
 :::tip Multi-file Pipeline Implementation 
 In the case your pipeline is implemented across multiple files, make sure the pipeline step implementation (files containing
@@ -61,6 +60,9 @@ def main(pickle_url, mock_parameter='mock'):
 * `pipeline_execution_queue` - The queue in which to enqueue the pipeline controller task. The default value is the 
   `services` queue. To run the pipeline logic locally while the components are executed remotely, pass 
   `pipeline_execution_queue=None`
+* `skip_global_imports` – If `True`, global imports will not be included in the steps’ execution. If `False` (default), 
+  all global imports will be automatically imported at the beginning of each step’s execution.
+
 
 When the function is called, a corresponding ClearML Controller Task is created: its arguments are logged as the task's 
 parameters. When launching a new pipeline run from the [UI](../webapp/pipelines/webapp_pipeline_page.md), you can modify their values for the new run.  
@@ -71,9 +73,14 @@ parameters. When launching a new pipeline run from the [UI](../webapp/pipelines/
 Using the [`@PipelineDecorator.component`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent) 
 decorator transforms a function into a ClearML pipeline step when called from a pipeline controller.
 
-When the pipeline controller calls a pipeline step, a corresponding ClearML task is created. For this reason, each 
-function which makes up a pipeline step needs to be self-contained. All package imports inside the function are automatically 
-logged as required packages for the pipeline execution step. 
+When the pipeline controller calls a pipeline step, a corresponding ClearML task is created. 
+
+:::tip Package Imports
+In the case that the `skip_global_imports` parameter of [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline) 
+is set to `False`, all global imports will be automatically imported at the beginning of each step's execution. 
+Otherwise, if set to `True`, make sure that each function which makes up a pipeline step contains package imports, which 
+are automatically logged as required packages for the pipeline execution step.
+:::
 
 ```python
 from clearml.automation.controller import PipelineDecorator

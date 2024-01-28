@@ -15,9 +15,8 @@ The fourth task is the pipeline task, which is created when the pipeline is laun
 
 The step functions will be registered as pipeline steps when they are added to the pipeline controller.
 
-When the pipeline steps are executed, corresponding ClearML Tasks are created. For this reason, each function which makes 
-up a pipeline step needs to be self-contained. Notice that all package imports inside the function will be automatically 
-logged as required packages for the pipeline execution step.
+When the pipeline steps are executed, corresponding ClearML Tasks are created. Notice that all package imports inside 
+the function will be automatically logged as required packages for the pipeline execution step.
 
 
 
