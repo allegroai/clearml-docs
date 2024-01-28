@@ -560,6 +560,7 @@ the `offline_mode` argument to `True`
   
   ```python
   from clearml import Task
+  
   # Use the set_offline class method before initializing a Task
   Task.set_offline(offline_mode=True)
   # Initialize a Task
@@ -594,6 +595,7 @@ Upload the execution data that the Task captured offline to the ClearML Server u
 * [`Task.import_offline_session`](../references/sdk/task.md#taskimport_offline_session) class method
   ```python
   from clearml import Task
+  
   Task.import_offline_session(session_folder_zip="path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip")
   ```
 

@@ -347,8 +347,9 @@ on the respective column and select the users / groups to view from the list tha
 This feature is available under the ClearML Enterprise plan
 :::
 
-Administrators can connect identity service providers to the server. Once an identity provider connection is configured and enabled, 
-the option appears in your server login page.
+Administrators can connect identity service providers to the server: configure an identity connection, which allows
+ClearML to communicate with your identity provider, retrieve user information, authenticate users, and more. Once an identity 
+provider connection is configured and enabled, the option appears in your server login page.
 
 **To create a new connection**:
 1. Click **+ New Connection**
@@ -370,9 +371,11 @@ the option appears in your server login page.
      * Microsoft AD
      * Custom
 3. Click **Next**
-4. Provide the **Provider Connection Configuration**: 
+4. Provide the **Provider Connection Configuration**. Note that some of the information, such as the `Client ID`,
+   `Client Secret`, and the `Authorization Endpoint`, must be obtained from your identity provider's ClearML App settings
+   and copied to the relevant field.
    
-    <Collapsible title="OIDC Providers" type="configuration">
+   <Collapsible title="OIDC Providers" type="configuration">
 
       * ClearML WebApp URL - The external URL for the ClearML WebApp. Used to construct the Callback URL used by the 
       identity provider
@@ -419,9 +422,9 @@ the option appears in your server login page.
        to the matched ClearML group. The server will also make sure the ClearML user is removed from the group if 
        a previous membership has been revoked.
 
-    </Collapsible> 
+   </Collapsible> 
 
-    <Collapsible title="SAML Providers" type="configuration">
+   <Collapsible title="SAML Providers" type="configuration">
 
       * ClearML Webapp URL - The external URL for the ClearML WebApp. This is used to construct the Callback URL used by 
        the identity provider
@@ -464,12 +467,13 @@ the option appears in your server login page.
       to the matched ClearML group. The server will also make sure the ClearML user is removed from the group if 
       a previous membership has been revoked.
 
-    </Collapsible> 
+   </Collapsible> 
 
 1. Click **Test Provider** to make sure that the connection is working. This calls the identity provider, and displays 
   the returned information, so you can verify that the information was mapped correctly. An error will be displayed, if the provider fails to connect.
 
   ![Test provider window](../img/settings_sso_provider_test.png)
+
 2. Click **Save**
 
 The **Provider Connections** table lists all currently defined connections, and the following details:
@@ -482,6 +486,8 @@ The **Provider Connections** table lists all currently defined connections, and 
 
 Hover over a connection in the table to **Edit** or **Delete** it.  
  
+![Identity provider chart](../img/settings_identity_chart.png)
+
 ## Usage & Billing
 
 The **USAGE & BILLING** section displays your ClearML workspace usage information including: 

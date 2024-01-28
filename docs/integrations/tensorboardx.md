@@ -13,6 +13,7 @@ to do is add two lines of code to your script:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 

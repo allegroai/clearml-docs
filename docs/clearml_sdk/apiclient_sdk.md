@@ -25,6 +25,7 @@ in your workspace. The following code uses APIClient to retrieve a list of all p
 
 ```python
 from clearml.backend_api.session.client import APIClient
+
 # Create an instance of APIClient
 client = APIClient()
 project_list = client.projects.get_all(name="example*")

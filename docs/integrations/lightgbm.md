@@ -14,6 +14,7 @@ All you have to do is simply add two lines of code to your LightGBM script:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 

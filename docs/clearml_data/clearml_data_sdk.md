@@ -335,6 +335,7 @@ You can enable offline mode in one of the following ways:
 
   ```python
   from clearml import Dataset
+  
   # Use the set_offline class method before creating a Dataset
   Dataset.set_offline(offline_mode=True)
   # Create a dataset

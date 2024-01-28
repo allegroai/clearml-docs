@@ -35,7 +35,7 @@ script.
    This ID will be used in the following section.
 
 ## Building and Launching a Containerized Task
-1. Execute the following command to build the container. Input the ID of the task created above.  
+1. Execute the following command to build the container. Input the ID of the task created above:  
    ```console
    clearml-agent build --id <TASK_ID> --docker --target new-docker --entry-point clone_task
    ```

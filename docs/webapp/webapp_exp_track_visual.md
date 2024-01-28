@@ -114,8 +114,8 @@ is run and stored in ClearML Server, any of these hyperparameters can be [modifi
 
 #### Command Line Arguments
 
-The **Args** group shows automatically logged argument parser parameters (e.g. `argparse`, `click`, `hydra`). Hover over 
-<img src="/docs/latest/icons/ico-description" alt="Description" className="icon size-md" /> (menu) on a 
+The **Args** group shows automatically logged argument parser parameters (e.g. `argparse`, `click`, `hydra`). 
+Hover over <img src="/docs/latest/icons/ico-description.svg" alt="Description" className="icon size-md space-sm" /> (menu) on a 
 parameter's line, and the type, description, and default value appear, if they were provided.
 
 ![Command line arguments configuration group](../img/webapp_tracking_22.png)
@@ -128,7 +128,7 @@ If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group wil
 
 #### Custom Parameter Groups
 
-Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using the 
+Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using 
 [`Task.connect()`](../references/sdk/task.md#connect) with a `name` argument provided. `General` is the default section
 if a name is not provided.
 
