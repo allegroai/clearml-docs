@@ -4,7 +4,7 @@ title: PipelineDecorator
 
 ## Creating Pipelines Using Function Decorators
 
-Use the [PipelineDecorator](../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator) 
+Use the [`PipelineDecorator`](../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator) 
 class to create pipelines from your existing functions. Use [`@PipelineDecorator.component`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent) 
 to denote functions that comprise the steps of your pipeline, and [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline) 
 for your main pipeline execution logic function.
