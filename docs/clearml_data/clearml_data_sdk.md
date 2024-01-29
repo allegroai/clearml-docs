@@ -62,7 +62,7 @@ and auto-increments the version number.
 :::
 
 Use the `output_uri` parameter to specify a network storage target to upload the dataset files, and associated information 
-(such as previews) to (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://bucket/data`, `file:///mnt/share/data`). 
+(such as previews) to (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://<account name>.blob.core.windows.net/path/to/file`, `file:///mnt/share/data`). 
 By default, the dataset uploads to ClearML's file server. The `output_uri` parameter of the [`Dataset.upload`](#uploading-files)
 method overrides this parameter's value.
 
@@ -248,7 +248,7 @@ dataset.get_logger().report_histogram(
 
 To upload the dataset files to network storage, use the [`Dataset.upload`](../references/sdk/dataset.md#upload) method. 
 
-Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://bucket/data`, `/mnt/share/data`). 
+Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://<account name>.blob.core.windows.net/path/to/file`, `/mnt/share/data`). 
 By default, the dataset uploads to ClearML's file server. This target storage overrides the `output_uri` value of the 
 [`Dataset.create`](#creating-datasets) method.    
 
