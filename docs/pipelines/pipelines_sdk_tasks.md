@@ -4,7 +4,7 @@ title: PipelineController
 
 ## The PipelineController Class
 
-Create the [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md), where you will define
+Create the [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md), where you will define
 the pipeline's execution logic:
 ```python
 from clearml import PipelineController
@@ -45,9 +45,9 @@ values for the new run.
 ![Pipeline new run](../img/pipelines_new_run.png)
 
 ### Additional Configuration 
-You can connect configuration dictionaries or files to a pipeline controller using the 
-[PipelineController.connect_configuration](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
-method by providing the configuration object, or file path. 
+You can connect configuration dictionaries or files to a pipeline controller using 
+[`PipelineController.connect_configuration()`](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
+by providing the configuration object, or file path. 
 
 For files, call `connect_configuration()` before reading the configuration file. If it's a local file, input a relative 
 path.
@@ -55,7 +55,8 @@ path.
 ```python
 config_file = pipe.connect_configuration(
     configuration=config_file_path, 
-    name="My Configuration", description="configuration for pipeline"
+    name="My Configuration", 
+    description="configuration for pipeline"
 )
 my_params = json.load(open(config_file,'rt'))
 ```

@@ -30,7 +30,7 @@ The sections below describe in more detail what happens in the controller task a
 
 ## The Pipeline Controller
 
-1. Create the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md) object:
+1. Create the [`PipelineController`](../../references/sdk/automation_controller_pipelinecontroller.md) object:
 
    ```python
    pipe = PipelineController(

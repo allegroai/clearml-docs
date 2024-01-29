@@ -659,7 +659,7 @@ For example:
   `s3://`, `gs://`, or `azure://`). The artifact will only be added as a URL and will not be uploaded. 
 
   ```python
-  task.upload_artifact(name='link', artifact_object='azure://bucket/folder')
+  task.upload_artifact(name='link', artifact_object='azure://<account name>.blob.core.windows.net/path/to/file')
   ```
 
 * Serialize and upload a Python object. ClearML automatically chooses the file format based on the object's type, or you 
