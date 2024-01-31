@@ -140,14 +140,14 @@ and ClearML Server needs to be installed.
 
 Upon successful completion, the migration script renames the original **Trains Server** directory, which contains the now 
 migrated data, and prints a completion message:
-
-    Renaming the source directory /opt/trains/data/elastic to /opt/trains/data/elastic_migrated_<date_time>.
-    Upgrade completed.
-
+```
+Renaming the source directory /opt/trains/data/elastic to /opt/trains/data/elastic_migrated_<date_time>.
+Upgrade completed.
+```
 All console output during the execution of the migration script is saved to a log file in the directory where the migration script executes:
- 
-    <path_to_script>/upgrade_to_7_<date_time>.log
-    
+``` 
+<path_to_script>/upgrade_to_7_<date_time>.log
+```    
 If the migration script does not complete successfully, the migration script prints the error.
 
 :::important  

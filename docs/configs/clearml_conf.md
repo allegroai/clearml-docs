@@ -1286,7 +1286,7 @@ This configuration is deprecated. This plot behavior is now controlled via the U
 **`sdk.network.iteration.retry_backoff_factor_sec`** (*integer*)
         
 * For retries when getting frames from the server, this is backoff factor for consecutive retry attempts. This is used to 
-  determine the number of seconds between retries. The retry backoff factor is calculated as {backoff factor} * (2 ^ ({number of total retries} - 1)).
+  determine the number of seconds between retries. The retry backoff factor is calculated as `{backoff factor} * (2 ^ ({number of total retries} - 1))`.
         
 <br/>
 

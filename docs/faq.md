@@ -353,13 +353,14 @@ Your firewall may be preventing the connection. Try one of the following solutio
   For security reasons, it is not recommended to disable certificate verification
   :::
     1. Upgrade ClearML to the current version:
-        
-            pip install -U clearml
-        
+       ``` 
+       pip install -U clearml
+       ``` 
     1. Create a new `clearml.conf` configuration file (see a [sample configuration file](https://github.com/allegroai/clearml/blob/master/docs/clearml.conf)), containing:
-        
-            api { verify_certificate = False }
-        
+       
+       ``` 
+       api { verify_certificate = False }
+       ```
     1. Copy the new `clearml.conf` file to:
          * Linux - `~/clearml.conf`
          * Mac - `$HOME/clearml.conf`
@@ -1053,13 +1054,14 @@ Do the following:
         ```
    
 1. Run the ClearML wizard `clearml-init` to configure ClearML for ClearML Server, which will prompt you to open the ClearML Web UI at, [http://127.0.0.1:8080/](http://127.0.0.1:8080/), and create new ClearML credentials.
-
+    ```
     The wizard completes with:
 
-        Verifying credentials ...
-        Credentials verified!
-        New configuration stored in /home/<username>/clearml.conf
-        ClearML setup completed successfully.
+    Verifying credentials ...
+    Credentials verified!
+    New configuration stored in /home/<username>/clearml.conf
+    ClearML setup completed successfully.
+    ```
 
 <a className="tr_top_negative" id="elastic_watermark"></a>
 

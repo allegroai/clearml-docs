@@ -260,7 +260,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
   * Add filters time columns
   * Add filters for custom columns (metrics and hyperparameters)
   * Add secondary nested sorting
-* Add worker<->queue clickable reference in workers and queues tables
+* Add `worker<->queue` clickable reference in workers and queues tables
 * Add presenting all metric debug samples concurrently
 * Add Full project name display in project cards - [ClearML GitHub issue 81](https://github.com/allegroai/clearml/issues/81#issuecomment-823303842)
 * Add option for continuing aborted tasks

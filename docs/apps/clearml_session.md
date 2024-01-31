@@ -179,7 +179,7 @@ The Task must be connected to a git repository, since currently single script de
 | `--shell` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
 | `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
 | `--vscode-server` | Install VSCode on interactive session | `true` |
-| `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
+| `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version `<vscode:python-ext>` (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
 | `--vscode-extensions` |Install additional VSCode extensions and VSCode python extensions (example: `ms-python.python,ms-python.black-formatter,ms-python.pylint,ms-python.flake8`)|`None`|
 | `--public-ip` | If `true`, register the public IP of the remote machine (if you are running the session on a public cloud) | `false` - Session runs on the machine whose agent is executing the session|
 | `--remote-ssh-port`| Set the remote SSH server port, running on the agent's machine | 10022|

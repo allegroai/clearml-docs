@@ -166,15 +166,17 @@ The following example, which is based on AWS load balancing, demonstrates the co
 
 1. In the ClearML Server `/opt/clearml/config/apiserver.conf` file, add the following `auth.cookies` section:
 
-        auth {
-          cookies {
-            httponly: true
-            secure: true
-            domain: ".clearml.mydomain.com"
-            max_age: 99999999999
-          }
-        }
-
+   ```        
+   auth {
+       cookies {
+       httponly: true
+       secure: true
+       domain: ".clearml.mydomain.com"
+       max_age: 99999999999
+     }
+   }
+   ```
+   
    :::tip
    If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or
    an alternate folder you configured), and input the modified configuration
@@ -261,27 +263,29 @@ Without web login authentication, ClearML Server does not restrict access (by de
 
     For example:
 
-        auth {
-            # Fixed users login credentials
-            # No other user will be able to login
-            fixed_users {
-                enabled: true
-                pass_hashed: false
-                users: [
-                    {
-                        username: "jane"
-                        password: "12345678"
-                        name: "Jane Doe"
-                    },
-                    {
-                        username: "john"
-                        password: "12345678"
-                        name: "John Doe"
-                    },
-                ]
-            }
+    ```
+    auth {
+        # Fixed users login credentials
+        # No other user will be able to login
+        fixed_users {
+            enabled: true
+            pass_hashed: false
+            users: [
+                {
+                    username: "jane"
+                    password: "12345678"
+                    name: "Jane Doe"
+                },
+                {
+                    username: "john"
+                    password: "12345678"
+                    name: "John Doe"
+                },
+            ]
         }
-
+    }
+    ```
+   
    :::tip
    If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or 
    an alternate folder you configured), and input the modified configuration
@@ -338,18 +342,19 @@ Modify the following settings for the watchdog:
    section and specify the watchdog settings.
 
     For example:
+    ```
+    tasks {
+        non_responsive_tasks_watchdog {
+            enabled: true
 
-        tasks {
-            non_responsive_tasks_watchdog {
-                enabled: true
-
-                # In-progress tasks that haven't been updated for at least 'value' seconds will be stopped by the watchdog
-                threshold_sec: 7200
+            # In-progress tasks that haven't been updated for at least 'value' seconds will be stopped by the watchdog
+            threshold_sec: 7200
         
-                # Watchdog will sleep for this number of seconds after each cycle
-                watch_interval_sec: 900
-            }
+            # Watchdog will sleep for this number of seconds after each cycle
+            watch_interval_sec: 900
         }
+    }
+   ```
    
    :::tip
    If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or 

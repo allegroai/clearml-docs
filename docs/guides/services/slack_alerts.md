@@ -59,7 +59,7 @@ python slack_alerts.py --channel <Slack-channel-name> --slack-api <Slack-API-tok
 The script supports the following additional command line options:
 * `service_queue` - The queue to use when running remotely as a service. The default value is `services` (make sure 
   your workspace has such a queue and to assign a ClearML Agent to this queue).
-* `message_prefix` - A message prefix for Slack alerts. For example, to alert all channel members use: "Hey <!here>". 
+* `message_prefix` - A message prefix for Slack alerts. For example, to alert all channel members use: `"Hey <!here>"`. 
 * `min_num_iterations` - Minimal iteration threshold below which experiments are ignored. Use this option to eliminate 
   debug sessions that fail quickly. The default value is 0.
 * `project` - The name of the project to monitor. By default, all projects are monitored.  

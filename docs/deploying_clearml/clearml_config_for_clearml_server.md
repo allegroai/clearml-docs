@@ -60,30 +60,30 @@ by setting [configuration options](../configs/clearml_conf.md).
 
    1. Enter the ClearML Server web server URL, or press **Enter** to accept the default which is detected from the 
       credentials.
-    
-            WEB Host configured to: [https://app.<your-domain>] 
-    
+      ```
+      WEB Host configured to: [https://app.<your-domain>] 
+      ```
    1. Enter the ClearML Server API server URL, or press **Enter** to accept the default value which is based on the previous response:
-    
-            API Host configured to: [https://api.<your-domain>] 
-    
+      ```
+      API Host configured to: [https://api.<your-domain>] 
+      ```
    1. Enter the ClearML Server file server URL, or press **Enter** to accept the default value which is based on the previous response:
-    
-            File Store Host configured to: [files.<your-domain>] 
-    
-       The wizard responds with a configuration and directs to the ClearML Server.
-    
-            CLEARML Hosts configuration:
-            Web App: https://app.<your-domain>
-            API: https://api.<your-domain>
-            File Store: https://files.<your-domain>
+      ```
+      File Store Host configured to: [files.<your-domain>] 
+      ```
+      The wizard responds with a configuration and directs to the ClearML Server.
+      ```
+      CLEARML Hosts configuration:
+      Web App: https://app.<your-domain>
+      API: https://api.<your-domain>
+      File Store: https://files.<your-domain>
             
-            Verifying credentials ...
-            Credentials verified!
+      Verifying credentials ...
+      Credentials verified!
     
-            New configuration stored in /home/<username>/clearml.conf
-            CLEARML setup completed successfully.
-    
+      New configuration stored in /home/<username>/clearml.conf
+      CLEARML setup completed successfully.
+      ```
 <br/>
 The configuration file's location depends upon the operating system:
 
