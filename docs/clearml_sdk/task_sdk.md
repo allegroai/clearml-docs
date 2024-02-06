@@ -172,8 +172,8 @@ It's possible to always create a new task by passing `reuse_last_task_id=False`.
 See full `Task.init` reference [here](../references/sdk/task.md#taskinit).
 
 ### Continuing Task Execution
-You can continue the execution of a previously run task using the `continue_last_task` parameter of the `Task.init` 
-method. This will retain all of its previous artifacts / models / logs.  
+You can continue the execution of a previously run task using the `continue_last_task` parameter of `Task.init()`. 
+This will retain all of its previous artifacts / models / logs.  
 
 The task will continue reporting its outputs based on the iteration in which it had left off. For example: a task's last 
 train/loss scalar reported was for iteration 100, when continued, the next report will be as iteration 101.  
@@ -432,7 +432,7 @@ A compelling workflow is:
 1. Run code on a development machine for a few iterations, or just set up the environment.
 1. Move the execution to a beefier remote machine for the actual training.
 
-Use the [`Task.execute_remotely`](../references/sdk/task.md#execute_remotely) method to implement this workflow. This method 
+Use [`Task.execute_remotely()`](../references/sdk/task.md#execute_remotely) to implement this workflow. This method 
 stops the current manual execution, and then re-runs it on a remote machine.
 
 For example:
