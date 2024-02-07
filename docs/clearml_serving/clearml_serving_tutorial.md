@@ -104,7 +104,7 @@ or with the `clearml-serving` CLI.
 
 :::info Model Storage
 You can also provide a different storage destination for the model, such as S3/GS/Azure, by passing
-`--destination="s3://bucket/folder"`, `gs://bucket/folder`, `azure://bucket/folder`. There is no need to provide a unique 
+`--destination="s3://bucket/folder"`, `gs://bucket/folder`, `azure://<account name>.blob.core.windows.net/path/to/file`. There is no need to provide a unique 
 path to the destination argument, the location of the model will be a unique path based on the serving service ID and the 
 model name
 :::

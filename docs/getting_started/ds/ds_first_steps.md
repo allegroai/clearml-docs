@@ -133,6 +133,6 @@ Sit back, relax, and watch your models converge :) or continue to see what else 
 
 ## YouTube Playlist
 
-Or watch the Getting Started Playlist on ClearML's YouTube Channel!
+Or watch the **Getting Started** playlist on ClearML's YouTube Channel!
 
 [![Watch the video](https://img.youtube.com/vi/bjWwZAzDxTY/hqdefault.jpg)](https://www.youtube.com/watch?v=bjWwZAzDxTY&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=2)

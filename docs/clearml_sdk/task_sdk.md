@@ -71,12 +71,16 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * [TensorFlow](../integrations/tensorflow.md)
     * [Keras](../integrations/keras.md)
     * [PyTorch](../integrations/pytorch.md)
-    * [scikit-learn](../integrations/scikit_learn.md) 
-    * [XGBoost](../integrations/xgboost.md) 
-    * [FastAI](../integrations/fastai.md) 
+    * [AutoKeras](../integrations/autokeras.md)
+    * [CatBoost](../integrations/catboost.md)
+    * [Fast.ai](../integrations/fastai.md)
+    * [LightGBM](../integrations/lightgbm.md)
     * [MegEngine](../integrations/megengine.md)
-    * [CatBoost](../integrations/catboost.md) 
     * [MONAI](../integrations/monai.md)
+    * [scikit-learn](../integrations/scikit_learn.md) (only using joblib)
+    * [XGBoost](../integrations/xgboost.md) (only using joblib)
+    * [YOLOv8](../integrations/yolov8.md)
+    * [YOLOv5](../integrations/yolov5.md)
     
 * **Metrics, scalars, plots, debug images** reported through supported frameworks, including:
     * [Matplotlib](../integrations/matplotlib.md)
@@ -172,8 +176,8 @@ It's possible to always create a new task by passing `reuse_last_task_id=False`.
 See full `Task.init` reference [here](../references/sdk/task.md#taskinit).
 
 ### Continuing Task Execution
-You can continue the execution of a previously run task using the `continue_last_task` parameter of the `Task.init` 
-method. This will retain all of its previous artifacts / models / logs.  
+You can continue the execution of a previously run task using the `continue_last_task` parameter of `Task.init()`. 
+This will retain all of its previous artifacts / models / logs.  
 
 The task will continue reporting its outputs based on the iteration in which it had left off. For example: a task's last 
 train/loss scalar reported was for iteration 100, when continued, the next report will be as iteration 101.  
@@ -432,7 +436,7 @@ A compelling workflow is:
 1. Run code on a development machine for a few iterations, or just set up the environment.
 1. Move the execution to a beefier remote machine for the actual training.
 
-Use the [`Task.execute_remotely`](../references/sdk/task.md#execute_remotely) method to implement this workflow. This method 
+Use [`Task.execute_remotely()`](../references/sdk/task.md#execute_remotely) to implement this workflow. This method 
 stops the current manual execution, and then re-runs it on a remote machine.
 
 For example:
@@ -659,7 +663,7 @@ For example:
   `s3://`, `gs://`, or `azure://`). The artifact will only be added as a URL and will not be uploaded. 
 
   ```python
-  task.upload_artifact(name='link', artifact_object='azure://bucket/folder')
+  task.upload_artifact(name='link', artifact_object='azure://<account name>.blob.core.windows.net/path/to/file')
   ```
 
 * Serialize and upload a Python object. ClearML automatically chooses the file format based on the object's type, or you 
