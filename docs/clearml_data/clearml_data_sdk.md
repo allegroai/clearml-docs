@@ -190,7 +190,7 @@ dataset.add_external_files(
 )
 ```
 
-There is an option to add a set of files based on wildcard matching of a single string or a list of wildcards, using the 
+You can add a set of files based on wildcard matching of a single string or a list of wildcards using the 
 `wildcard` parameter. Specify whether to match the wildcard files recursively using the `recursive` parameter.
 
 ```python
