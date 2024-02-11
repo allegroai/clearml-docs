@@ -139,7 +139,7 @@ This feature lets you easily get a full genealogy of every trained and used mode
 Full metrics logging is the key to finding the best performing model!
 By default, everything that's reported to TensorBoard and Matplotlib is automatically captured and logged.
 
-Since not all metrics are tracked that way, it's also possible to manually report metrics using the [`logger`](../../fundamentals/logger.md) object.
+Since not all metrics are tracked that way, it's also possible to manually report metrics using a [`Logger`](../../fundamentals/logger.md) object.
 
 It's possible to log everything, from time series data to confusion matrices to HTML, Audio and Video, to custom plotly graphs! Everything goes!
 
