@@ -86,6 +86,6 @@ If we now click on details again to look at the content, we can see that our cho
 
 In this video, we’ve covered the most important uses of ClearML Data, so hopefully you have a good intuition into what’s possible now and how valuable it can be. Building and updating your dataset versions from code is the best way to keep everything updated and make sure no data is ever lost. You’re highly encouraged to explore ways to automate as much of this process as possible, take a look at our documentation to find the full range of possibilities.
 
-So what are you waiting for? Start tracking your datasets with `clearml-data` and don’t forget to join our [Slack Channel](https://joinslack.clear.ml) if you need any help.
+So what are you waiting for? Start tracking your datasets with `clearml-data` and don’t forget to join our [Slack channel](https://joinslack.clear.ml) if you need any help.
 
 </Collapsible>

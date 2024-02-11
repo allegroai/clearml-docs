@@ -7,7 +7,7 @@ The **ClearML Web UI** is the graphical user interface for the ClearML platform,
 * Browsing
 * Resource utilization monitoring
 * Profile management
-* Direct access to the ClearML community (Slack Channel, YouTube, and GitHub).
+* Direct access to the ClearML community (Slack channel, YouTube, and GitHub).
 
 ![WebApp screenshots gif](../img/gif/webapp_screenshots.gif)
 
