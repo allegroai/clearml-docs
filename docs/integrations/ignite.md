@@ -8,7 +8,7 @@ instructions.
 :::
 
 [PyTorch Ignite](https://pytorch.org/ignite/index.html) is a library for training and evaluating neural networks in 
-PyTorch. You can integrate ClearML into your code using Ignite’s built-in loggers: [TensorboardLogger](#tensorboardlogger) 
+PyTorch. You can integrate ClearML into your code using Ignite's built-in loggers: [TensorboardLogger](#tensorboardlogger) 
 and [ClearMLLogger](#clearmllogger). 
 
 ## TensorboardLogger
@@ -20,6 +20,7 @@ All you have to do is add two lines of code to your script:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
@@ -92,7 +93,7 @@ Integrate ClearML with the following steps:
   # Attach the logger to the trainer to log model's weights as a histogram 
   clearml_logger.attach(trainer, log_handler=WeightsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
 
-  # Attach the logger to the trainer to log model’s gradients as scalars
+  # Attach the logger to the trainer to log model's gradients as scalars
   clearml_logger.attach(
       trainer, log_handler=GradsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
   )

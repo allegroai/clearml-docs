@@ -115,7 +115,7 @@ under the "Input Models" section.
 Check out model snapshots examples for [TensorFlow](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/tensorflow_mnist.py),
 [PyTorch](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py),
 [Keras](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py),
-[Scikit-Learn](https://github.com/allegroai/clearml/blob/master/examples/frameworks/scikit-learn/sklearn_joblib_example.py).
+[scikit-learn](https://github.com/allegroai/clearml/blob/master/examples/frameworks/scikit-learn/sklearn_joblib_example.py).
 
 #### Loading Models
 Loading a previously trained model is quite similar to loading artifacts.
@@ -139,7 +139,7 @@ This feature lets you easily get a full genealogy of every trained and used mode
 Full metrics logging is the key to finding the best performing model!
 By default, everything that's reported to TensorBoard and Matplotlib is automatically captured and logged.
 
-Since not all metrics are tracked that way, it's also possible to manually report metrics using the [`logger`](../../fundamentals/logger.md) object.
+Since not all metrics are tracked that way, it's also possible to manually report metrics using a [`Logger`](../../fundamentals/logger.md) object.
 
 It's possible to log everything, from time series data to confusion matrices to HTML, Audio and Video, to custom plotly graphs! Everything goes!
 

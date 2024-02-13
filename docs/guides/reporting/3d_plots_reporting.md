@@ -27,7 +27,7 @@ Logger.current_logger().report_surface(
     zaxis="title Z",
 )
 ```
-Visualize the reported surface plot in **PLOTS**.
+View the reported surface plot in **PLOTS**.
 
 ![Surface plot](../../img/examples_reporting_02.png)
 
@@ -49,5 +49,5 @@ Logger.current_logger().report_scatter3d(
 )
 ```
 
-Visualize the reported 3D scatter plot in **PLOTS**.
+View the reported 3D scatter plot in **PLOTS**.
 ![3d scatter plot](../../img/examples_reporting_01.png)

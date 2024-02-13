@@ -34,7 +34,7 @@ The models table contains the following columns:
 | **NAME** | Model name. | String |
 | **TAGS** | User-defined labels added to models for grouping and organization. | Tag |
 | **STATUS** | The status of the model, which can be *Draft* (editable) or *Published* (read-only). | String |
-| **PROJECT** | The project with which the model is associated.| String |
+| **PROJECT** | Name of the model's project | String |
 | **USER** | The user who ran the experiment that created the model, or the user who imported the model.| String |
 | **TASK** | The experiment (Task) name that created the model. | String |
 | **UPDATED** | Elapsed time since the model was updated. Hover over the elapsed time to view the date and time.| Date-time |

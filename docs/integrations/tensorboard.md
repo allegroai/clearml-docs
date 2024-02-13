@@ -12,6 +12,7 @@ lines of code to your script:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
@@ -39,7 +40,7 @@ auto_connect_frameworks={
    'tensorboard': False,'matplotlib': False, 'tensorflow': False,  'pytorch': True,
    'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'megengine': True, 'jsonargparse': True, 'catboost': True
+   'megengine': True, 'catboost': True
 }
 ```
 
@@ -56,7 +57,7 @@ See more information about explicitly logging information to a ClearML Task:
 * [Text/Plots/Debug Samples](../fundamentals/logger.md#manual-reporting)
 
 ### Examples
-Take a look at ClearML’s TensorBoard examples: 
+Take a look at ClearML's TensorBoard examples: 
 * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - Demonstrates logging TensorBoard outputs and TensorFlow flags
 * [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - Demonstrates logging TensorBoard histograms, scalars, images, text, and TensorFlow flags
 * [Tensorboard with PyTorch](../guides/frameworks/pytorch/pytorch_tensorboard.md) - Demonstrates logging TensorBoard scalars, debug samples, and text integrated in code that uses PyTorch

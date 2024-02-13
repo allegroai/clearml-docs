@@ -25,10 +25,10 @@ All you have to do is install and set up ClearML:
    clearml-init
    ```
     
-That’s it! In every training run from now on, the ClearML experiment 
+That's it! In every training run from now on, the ClearML experiment 
 manager will capture:
 * Source code and uncommitted changes
-* Hyperparameters - PyTorch trainer [parameters](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer#transformers.TrainingArguments),
+* Hyperparameters - PyTorch trainer [parameters](https://huggingface.co/docs/transformers/v4.34.1/en/main_classes/trainer#transformers.TrainingArguments)
 and TensorFlow definitions
 * Installed packages
 * Model files (make sure the `CLEARML_LOG_MODEL` environment variable is set to `True`)
@@ -38,7 +38,7 @@ and TensorFlow definitions
 * And more
 
 All of this is captured into a [ClearML Task](../fundamentals/task.md). By default, a task called `Trainer` is created 
-in the `HuggingFace Transformers` project. To change the task’s name or project, use the `CLEARML_PROJECT` and `CLEARML_TASK`
+in the `HuggingFace Transformers` project. To change the task's name or project, use the `CLEARML_PROJECT` and `CLEARML_TASK`
 environment variables
 
 :::tip project names 
@@ -48,7 +48,7 @@ task within the `example` project.
 
 In order to log the models created during training, set the `CLEARML_LOG_MODEL` environment variable to `True`. 
 
-You can see all the captured data in the task’s page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md). 
+You can see all the captured data in the task's page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md). 
 
 ![transformers scalars](../img/integrations_transformers_scalars.png)
 
@@ -56,6 +56,7 @@ Additionally, you can view all of your Transformers runs tracked by ClearML in t
 Add custom columns to the table, such as mAP values, so you can easily sort and see what is the best performing model. 
 You can also select multiple experiments and directly [compare](../webapp/webapp_exp_comparing.md) them.   
 
+See an example of Transformers and ClearML in action [here](../guides/frameworks/huggingface/transformers.md). 
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 
@@ -79,7 +80,7 @@ and shuts down instances as needed, according to a resource budget that you set.
 
 ![Cloning, editing, enqueuing gif](../img/gif/integrations_yolov5.gif)
 
-Use ClearML’s web interface to edit task details, like configuration parameters or input models, then execute the task 
+Use ClearML's web interface to edit task details, like configuration parameters or input models, then execute the task 
 with the new configuration on a remote machine:
 * Clone the experiment
 * Edit the hyperparameters and/or other details 
@@ -88,6 +89,6 @@ with the new configuration on a remote machine:
 The ClearML Agent executing the task will use the new values to [override any hard coded values](../clearml_agent.md). 
 
 ## Hyperparameter Optimization
-Use ClearML’s [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
+Use ClearML's [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
 the hyperparameter values that yield the best performing models. See [Hyperparameter Optimization](../fundamentals/hpo.md) 
 for more information.

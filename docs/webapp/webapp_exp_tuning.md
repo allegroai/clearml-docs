@@ -58,7 +58,7 @@ User parameters are editable in any experiment, except experiments whose status 
 
 Select source code by changing any of the following:
 
-* Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, and /or working directory.
+* Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, and/or working directory.
 * Installed Python packages and/or versions - Edit or clear (remove) them all.
 * Uncommitted changes - Edit or clear (remove) them all.
 
@@ -87,7 +87,7 @@ and formats for specifying locations include:
 * A shared folder: `/mnt/share/folder`
 * S3: `s3://bucket/folder`
 * Google Cloud Storage: `gs://bucket-name/folder`
-* Azure Storage: `azure://company.blob.core.windows.net/folder/`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
 **To add, change, or delete an artifact output destination:**
 
@@ -110,22 +110,20 @@ on the ClearML Configuration Reference page).
 
 Add, change, or delete hyperparameters, which are organized in the **ClearML Web UI** in the following sections:
 
-* **Args** - Command line arguments and all older experiments parameters, except TensorFlow definitions (logged from code,
-  `argparse` argument automatic logging).
+* **Args** - Automatically logged argument parser parameters (e.g. `argparse`, `click`, `hydra`).
 
 * **TF_DEFINE** - TensorFlow definitions (from code, TF_DEFINEs automatic logging).
 
-* **General** - Parameter dictionaries (from code, connected to the Task by calling the [Task.connect](../references/sdk/task.md#connect)
-  method).
+* **General** - Parameter dictionaries (from code, connected to the Task by calling [`Task.connect()`](../references/sdk/task.md#connect)).
 
 * Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq.md#track-env-vars)).
 
-* Custom named parameter groups (see the `name` parameter in [Task.connect](../references/sdk/task.md#connect)).
+* Custom named parameter groups (see the `name` parameter in [`Task.connect`](../references/sdk/task.md#connect)).
 
 **To add, change, or delete hyperparameters:**
 
-* In the **CONFIGURATION** tab **>** **HYPERPARAMETERS** > **General** **>** hover **>** **EDIT** **>** add, change,
-  or delete keys and /or values **>** **SAVE**.
+* In the **CONFIGURATION** tab **>** **HYPERPARAMETERS** **>** parameter group **>** hover **>** click **EDIT** **>** add, change,
+  or delete keys and/or values **>** click **SAVE**.
 
 
 
@@ -136,8 +134,8 @@ except experiments whose status is *Published* (read-only).
 
 **To add, change, or delete user properties:**
 
-* In **CONFIGURATION** **>** **USER PROPERTIES** > **Properties** **>** hover **>** **EDIT** **>** add, change, or delete
-  keys and /or values **>** **SAVE**.
+* In **CONFIGURATION** **>** **USER PROPERTIES** **>** **Properties** **>** hover **>** click **EDIT** **>** add, change, or delete
+  keys and/or values **>** click **SAVE**.
 
 
 
@@ -145,12 +143,12 @@ except experiments whose status is *Published* (read-only).
 
 **To add, change, or delete the Task model configurations:**
 
-* In **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** **GENERAL** **>** hover **>** **EDIT** or **CLEAR** (if the
+* In **CONFIGURATION** **>** **CONFIGURATION OBJECTS** **>** object name **>** hover **>** **EDIT** or **CLEAR** (if the
   configuration is not empty).
 
 ### Artifacts
 
-### Initial Weights Input Model
+#### Initial Weights Input Model
 
 Edit model configuration and label enumeration, choose a different initial input weight model for the same project or any
 other project, or remove the model.

@@ -11,12 +11,18 @@ To select models to compare:
 1. Select the models to compare. Once multiple models are selected, the batch action bar appears.
 1. In the batch action bar, click **COMPARE**. 
 
-The comparison page opens in the DETAILS tab, showing a column for each model.
+The comparison page opens in the **DETAILS** tab, with the models compared [side by side](#side-by-side-textual-comparison).
 
-## Modifying Model Selection
-You can modify the model selection while comparing. 
-1. Click **+ Add Model** in the top left corner of any of the comparison pages. This will open up a window with a model 
-table with the currently compared models at the top.
+### Modifying Model Selection
+Click the `MODELS` button to view your currently compared models. Click `X` on a listed model to remove
+it from the comparison.
+
+![Models list](../img/webapp_compare_model_select_1.png)
+
+You can add/remove models to your comparison:
+1. Click the `+` button in any of the comparison tabs. This opens up a window with a model table with the currently 
+compared models at the top.
+   ![Adding models](../img/webapp_compare_model_select_2.png)
 1. Find the models to add by sorting and [filtering](webapp_model_table.md#filtering-columns) the models with the 
 appropriate column header controls. Alternatively, use the search bar to find models by name.
 1. Select models to include in the comparison (and/or clear the selection of any models you wish to remove).
@@ -29,21 +35,22 @@ get the exact same page (including selected tabs etc.).
 ## Embedding Comparison Visualization
 To embed plots and debug samples from the comparison pages in your [Reports](webapp_reports.md), hover over the
 resource and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 
-which will copy to clipboard the embed code to put in your Reports. In contrast to static screenshots, embedded resources 
-are retrieved when the report is displayed allowing your reports to show the latest up-to-date data.
+which will copy to clipboard the embed code to put in your Reports. These visualizations are updated live as the 
+models update. The Enterprise Plan and Hosted Service support embedding resources in external tools (e.g. Notion).
 
 ## Comparison Modes
 The comparison tabs provides the following views:
-* Side-by-side textual comparison
-* Merged plot comparison 
-* Side-by-side graphic comparison 
+* [Side-by-side textual comparison](#side-by-side-textual-comparison)
+* [Tabular scalar comparison](#tabular-scalar-comparison)
+* [Merged plot comparison](#graphic-comparison) 
+* [Side-by-side graphic comparison](#graphic-comparison) 
 
 
 ### Side-by-side Textual Comparison
 
-In the **Details**, **Network**, and **Scalars** (Values mode) tabs, you can view differences in the models' nominal 
+In the **Details** and **Network** tabs, you can view differences in the models' nominal 
 values. **Details** displays the models' general information, labels, and metadata. **Network** displays the models' 
-configuration. **Scalars** (in Values mode) displays the models' scalar values (min, max, or last). Each model's 
+configuration. Each model's 
 information is displayed in a column, so each field is lined up side-by-side. 
 
 The model on the left is used as the base model, to which the other models are compared. You can set a new base model 
@@ -57,8 +64,22 @@ The differences between the models are highlighted. You can obscure identical fi
 
 ![Text comparison](../img/webapp_compare_models_text.png)
 
+### Tabular Scalar Comparison 
+The **Scalars** tab (**Values** view) lays out the models' reported metric values in a table: a row per metric/variant and a 
+column for each model. Select from the dropdown menu which metric values to display:
+* Last Values: The last reported values for each model
+* Min Values: The minimal value reported 
+* Max Values: The maximal value reported 
+
+You can download the scalar comparison table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />. 
+
+Switch on the **Show row extremes** toggle to highlight each variant's maximum and minimum values.  
+
+![side-by-side scalar comparison](../img/webapp_compare_models_scalar_table.png)
+
+
 ### Graphic Comparison
-The **Scalars** (Graph mode) and **Plots** tabs display plots attached to the models. The **Scalars** tab compares 
+The **Scalars** (Graph view) and **Plots** tabs display plots attached to the models. The **Scalars** tab compares 
 scalar values as time series line charts. The **Plots** tab compares the last reported iteration sample of each 
 metric/variant combination per compared model. 
 
@@ -67,8 +88,13 @@ models are combined.
 
 ![Merged plots](../img/webapp_compare_models_merge_plots.png)
 
-The rest of the plots which can't be merged are displayed separately for each model. 
+Other plot types are displayed separately for each model.
 
 ![Side-by-side plots](../img/webapp_compare_models_side_plots.png)
+
+All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
+represents a reported metric, and each bar in the cluster represents a model.
+
+![Single scalar comparison](../img/webapp_compare_model_single_scalars.png)
 
 For better plot analysis, see [Plot Controls](webapp_exp_track_visual.md#plot-controls).

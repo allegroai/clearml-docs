@@ -11,7 +11,7 @@ module.exports = {
     mainSidebar: [
         {'Getting Started': ['getting_started/main', {
             'Where do I start?': [{'Data Scientists': ['getting_started/ds/ds_first_steps', 'getting_started/ds/ds_second_steps', 'getting_started/ds/best_practices']},
-                {'MLOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
+                {'MLOps and LLMOps': ['getting_started/mlops/mlops_first_steps','getting_started/mlops/mlops_second_steps','getting_started/mlops/mlops_best_practices']}]
         }, 'getting_started/architecture', {'Video Tutorials': 
         [
             'getting_started/video_tutorials/quick_introduction',
@@ -54,20 +54,31 @@ module.exports = {
                 ]
         },
         {'ClearML Data': ['clearml_data/clearml_data', 'clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
-                {'Workflows': ['clearml_data/data_management_examples/workflows', 'clearml_data/data_management_examples/data_man_simple', 'clearml_data/data_management_examples/data_man_folder_sync', 'clearml_data/data_management_examples/data_man_cifar_classification', 'clearml_data/data_management_examples/data_man_python']},]},
+                {'Workflows': [
+                    'clearml_data/data_management_examples/workflows',
+                    'clearml_data/data_management_examples/data_man_simple',
+                    'clearml_data/data_management_examples/data_man_folder_sync',
+                    'clearml_data/data_management_examples/data_man_cifar_classification',
+                    'clearml_data/data_management_examples/data_man_python'
+                    ]
+                },
+            ]
+        },
+        'hyper_datasets',
         'model_registry',
+        'apps/clearml_session',
         {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_setup', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
-        {'CLI Tools': ['apps/clearml_session', 'apps/clearml_task', 'apps/clearml_param_search']},
+        {'CLI Tools': ['apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
                 'integrations/autokeras',
                 'integrations/catboost', 'integrations/click', 'integrations/fastai', 'integrations/transformers',
-                'integrations/hydra',
+                'integrations/hydra', 'integrations/jsonargparse',
                 'integrations/keras', 'integrations/keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
                 'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
-                'guides/frameworks/pytorch_lightning/pytorch_lightning_example',
+                'integrations/pytorch_lightning',
                 'integrations/scikit_learn', 'integrations/seaborn',
                 'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
@@ -101,6 +112,7 @@ module.exports = {
             },
             'webapp/webapp_reports',
             'webapp/webapp_workers_queues',
+            'webapp/webapp_orchestration_dash',
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',
@@ -110,7 +122,9 @@ module.exports = {
                     'webapp/applications/apps_hpo',
                     'webapp/applications/apps_dashboard',
                     'webapp/applications/apps_task_scheduler',
-                    'webapp/applications/apps_trigger_manager'
+                    'webapp/applications/apps_trigger_manager',
+                    'webapp/applications/apps_jupyter_lab',
+                    'webapp/applications/apps_vscode'
                 ]
 
             },
@@ -151,7 +165,8 @@ module.exports = {
                 'guides/frameworks/autokeras/autokeras_imdb_example',
                 'guides/frameworks/catboost/catboost',
                 'guides/frameworks/fastai/fastai_with_tensorboard',
-                {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},
+                 {'HuggingFace': ['guides/frameworks/huggingface/transformers']},
+                 {'Keras': ['guides/frameworks/keras/jupyter', 'guides/frameworks/keras/keras_tensorboard']},
                 'guides/frameworks/lightgbm/lightgbm_example',
                 'guides/frameworks/matplotlib/matplotlib_example',
                 'guides/frameworks/megengine/megengine_mnist',
@@ -193,7 +208,8 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_13', 'release_notes/ver_1_12', 'release_notes/ver_1_11', 'release_notes/ver_1_10', 'release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
+        'Release Notes': ['release_notes/ver_1_14', 'release_notes/ver_1_13', 'release_notes/ver_1_12', 'release_notes/ver_1_11',
+            'release_notes/ver_1_10', 'release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
             'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3',
             'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17',
             'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14', 'release_notes/ver_0_13',

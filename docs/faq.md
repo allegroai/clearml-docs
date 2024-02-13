@@ -128,7 +128,7 @@ When a new ClearML Server version is available, the notification is:
 
 #### How do I find out ClearML version information?   <a id="versions"></a>
 
-ClearML server version information is available in the ClearML webapp Settings page. On the bottom right of the page, 
+ClearML server version information is available in the ClearML WebApp **Settings** page. On the bottom right of the page, 
 it says **Version**, followed by three numbers: the web application version, the API server version, and the API version.
 
 ![Server version information](img/faq_server_versions.png)
@@ -286,7 +286,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
 
 This message is only a warning. ClearML not only detects your current repository and git commit, but also warns you 
 if you are using uncommitted code. ClearML does this because uncommitted code means this experiment will be difficult 
-to reproduce. You can see uncommitted changes in the ClearML Web UI, in the EXECUTION tab of the experiment info panel.
+to reproduce. You can see uncommitted changes in the ClearML Web UI, in the **EXECUTION** tab of the experiment info panel.
 
 #### I do not use argparse for hyperparameters. Do you have a solution?   <a id="dont-want-argparser"></a>
 
@@ -490,7 +490,7 @@ auto_connect_frameworks={
     'matplotlib': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
     'xgboost': False, 'scikit': True, 'fastai': True, 'lightgbm': False,
     'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-    'megengine': True, 'jsonargparse': True, 'catboost': True
+    'megengine': True, 'catboost': True
 }
 ```
 
@@ -570,7 +570,7 @@ You can also visualize the differences in a scatter plot. In each experiment who
 with a single point, x-axis for the hyperparameter value, and Y-axis for the accuracy. 
 
 In the code below, the task reports a single-point scatter plot with `number_layers` as the x-axis and
-`accuracy` as the Y-axis :
+`accuracy` as the Y-axis:
 
 ```python
 number_layers = 10
@@ -649,7 +649,7 @@ logger.report_scatter2d(
 #### Is there something ClearML can do about uncommitted code running?    <a id="help-uncommitted-code"></a>
 
 Yes! ClearML stores the git diff as part of the experiment's information. You can view the git diff in the **ClearML Web UI >** 
-experiment' **EXECUTION** tab.
+experiment's **EXECUTION** tab.
 
 <br/>
 
@@ -1136,6 +1136,7 @@ in your workspace. The following code uses APIClient to retrieve a list of all p
 
 ```python
 from clearml.backend_api.session.client import APIClient
+
 # Create an instance of APIClient
 client = APIClient()
 project_list = client.projects.get_all(name="example*")

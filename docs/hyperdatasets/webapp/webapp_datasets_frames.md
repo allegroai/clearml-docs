@@ -36,6 +36,7 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 |<img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out icon" className="icon size-md space-sm" />|Zoom out| **-** or Ctrl + Mouse wheel |
 |Percentage textbox|Zoom percentage| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
 |<img src="/docs/latest/icons/ico-shared-item.svg" alt="Copy URL" className="icon size-md space-sm" />| Copy frame URL. A direct link to view the current frame|<img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> | 
+|<img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-md space-sm" />|Refresh version preview|<img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
 
 #### Additional Keyboard Shortcuts
 
@@ -176,11 +177,11 @@ or the arrow keys on the keyboard). Closing the frame editor will prompt you to 
 | Icon (when applicable) | Action | Description |
 |---|---|---|
 || Move annotation | Click on a bounded area and drag it. |
-|| Resize annotation| Select an annotation, then click on a bounded area’s vertex and drag it. |	
+|| Resize annotation| Select an annotation, then click on a bounded area's vertex and drag it. |	
 |<img src="/docs/latest/icons/ico-metadata.svg" alt="edit metadata" className="icon size-md space-sm" />|Edit metadata|Hover over an annotation in the list and click the icon to open the edit window. Input the metadata dictionary in JSON format. This metadata is specific to the selected annotation, not the entire frame.|
 |<img src="/docs/latest/icons/ico-lock-open.svg" alt="Lock annotation" className="icon size-md space-sm" />|Lock / Unlock annotation |Click the button on a specific annotation to make it uneditable. You can also click the button on top of the annotations list to lock all annotations in the frame.|
-|<img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" />|Delete annotation|Click the annotation or bounded area in the frame and then click the button to delete the annotation.|
-|<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />|Show/hide all annotations |Click the button to view the frame without annotations. When annotations are hidden, they can’t be modified. |
+|<img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-md space-sm" />|Delete annotation|Click the annotation or bounded area in the frame and then click the button to delete the annotation.|
+|<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />|Show/hide all annotations |Click the button to view the frame without annotations. When annotations are hidden, they can't be modified. |
 ||Delete label |In the relevant annotation, click **x** on the label you want to remove.| 
 
 ### Frame Labels

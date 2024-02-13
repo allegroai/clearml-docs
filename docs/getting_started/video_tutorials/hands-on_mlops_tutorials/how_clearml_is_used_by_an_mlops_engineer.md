@@ -453,5 +453,5 @@ machine, on a remote machine, and it will give you a remote interactive Jupyter 
 instance so that you can always code already on the remote machine. So that's also really, really cool. It's something 
 we're going to cover soon, but I think the video is already long enough. So thank you very, very much for watching. 
 Thank you very, very much for your attention. Let me know in the comments: if you want to see videos of these 
-hyperparameters, and pipelines, and sessions, and don't forget to join our [Slack Channel](https://joinslack.clear.ml) if you need any help.
+hyperparameters, and pipelines, and sessions, and don't forget to join our [Slack channel](https://joinslack.clear.ml) if you need any help.
 </Collapsible>

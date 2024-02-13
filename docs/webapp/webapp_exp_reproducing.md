@@ -2,38 +2,53 @@
 title: Reproducing Experiments
 ---
 
-Reproduce experiments on local or remote machines, in one of the following ways: 
-* **Cloning** any experiment - make an exact copy keeping the original
-* **Resetting** an experiment whose status is not *Published* - this deletes the previous run's 
-logs and output. 
-  
-After cloning or resetting, enqueue the reset or newly cloned experiment for execution by a worker. 
+Reproduce experiments on local or remote machines in one of the following ways:
+* Cloning any experiment - Make an exact copy, while maintaining the original experiment
+* Resetting an experiment whose status is not *Published* - Delete the previous run's logs and output
 
-Experiments can also be modified and then executed remotely, see [Tuning Experiments](webapp_exp_tuning.md). 
+After cloning or resetting, enqueue the reset or newly cloned experiment for execution by a worker.
 
-**To reproduce an experiment:**
+Experiments can also be modified and then executed remotely, see [Tuning Experiments](webapp_exp_tuning.md).
 
-1. Locate the experiment. Open the Project page for the experiment from the Dashboard or the main Projects page.
+## Cloning
+To clone an experiment:
+1. In the experiments table, right-click the experiment to reproduce and click **Clone**.
+1. In the `Clone Experiment` modal, set the following:
+   * Project - The project where the experiment will be saved
+   * Description (optional)
+   * Set `<cloned_experiment>` as parent - Select to set this experiment as the new experiments' parent task
+1. Click **Clone**
 
-    * On the Dashboard, click a recent experiment, project card, or **VIEW ALL** and then click a project card.
-    * On the Projects page, click project card, or the **All projects** card.
+:::note
+By default, the new experiment’s parent task is set to the original task’s parent, unless the original task does not 
+have a parent, in which case the original task is set as the parent. Select `Set <cloned_experiment> as parent` to force 
+the original experiment to become the clone’s parent. 
+:::
 
-1. Reproduce the experiment. In the experiments table, right-click and then either:
+![Clone modal](../img/webapp_clone.png)
 
-    * Clone (make an exact copy) 
-    
-        1. Click **Clone**, and a **Clone experiment** box will pop up.
-        1. In the **Project** textbox, select or create a project:
-           * To search for another project, start typing the project name.
-           * To create a new project, type new experiment name and click **Create New**.
-        1. Enter an optional description.
-        1. Click **CLONE**.
-         
-    * Reset (delete logs and output from the previous run) - Click **Reset**.
 
-    The experiment's status becomes *Draft*.
+## Resetting
 
-1. Enqueue the experiment for execution. Right-click the experiment **>** **Enqueue** **>** Select a queue **>** **ENQUEUE**. 
+To reset an experiment:
+1. In the experiments table, right-click the relevant experiment and click **Reset**. 
+1. In the `Reset Experiment` modal, if you want the experiment's artifacts and debug samples to be deleted from the 
+   ClearML file server, click the checkbox
+1. Click **Reset**
 
-    The experiment's status becomes *Pending*. When a worker fetches the Task (experiment), the status becomes *Running*. 
-   The experiment can now be tracked and its results visualized.
+![Reset modal](../img/webapp_reset.png)
+
+## Final Steps 
+
+At the end of the process you are left with an experiment with draft status, meaning that it is editable.
+
+Re-execute the new experiment:
+1. If desired, modify the experiment’s configuration (see [Tuning Experiments](webapp_exp_tuning.md)).
+1. Enqueue the experiment for execution. Right-click the experiment > Enqueue > Select a queue > **ENQUEUE**.
+	
+   :::note
+   Make sure that a [ClearML Agent](../clearml_agent.md) has been assigned to the selected queue 
+   :::
+
+A ClearML Agent will fetch the experiment from the queue and execute it. The experiment can now be tracked and its 
+results visualized.

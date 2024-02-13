@@ -116,7 +116,7 @@ clicking the checkbox in the top left corner of the list.
 Click the checkbox in the top left corner of the list to select all items currently visible.
 
 An extended bulk selection tool is available through the down arrow next to the checkbox in the top left corner, enabling selecting items beyond the items currently on-screen:
-* All - Select all versions in the dataset
-* None - Clear selection
-* Filtered - Select all versions in the dataset that match the current active filters
+* **All** - Select all versions in the dataset
+* **None** - Clear selection
+* **Filtered** - Select all versions in the dataset that match the current active filters
 

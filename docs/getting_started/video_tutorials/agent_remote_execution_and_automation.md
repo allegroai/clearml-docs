@@ -1,7 +1,7 @@
 ---
 title: Agent Remote Execution and Automation
 description: Learn about the ClearML agent.
-keywords: [mlops, components, ClearML agent]
+keywords: [llmops, mlops, components, ClearML agent]
 ---
 
 
@@ -44,7 +44,7 @@ You can also run the agent in conda mode or poetry mode, which essentially do th
 
 However, there’s also docker mode. In this case the agent will run every incoming task in its own docker container instead of just a virtual environment. This makes things much easier if your tasks have system package dependencies for example, or when not every task uses the same python version. For our example, we’ll be using docker mode.
 
-Now that our configuration is ready, we can start our agent in docker mode by running the command `clearml-agent daemon –docker` 
+Now that our configuration is ready, we can start our agent in docker mode by running the command `clearml-agent daemon –docker`. 
 
 
 After running the command, we can see it pop up in our workers table. Now the agent will start listening for tasks in the `default` queue, and it’s ready to go!
@@ -63,6 +63,6 @@ Talking of which, let’s say your wait times are very long because all data sci
 
 In the following video we’ll go a little deeper yet into this newly discovered automation thing we just saw and introduce things like automatic hyperparameter optimization and pipelines.
 
-But for now, feel free to start spinning up some agents on your own machines completely for free at [app.clear.ml](https://app.clear.ml) or by using our self-hosted server on GitHub, and don’t forget to join our [Slack Channel](https://joinslack.clear.ml) if you need any help.
+But for now, feel free to start spinning up some agents on your own machines completely for free at [app.clear.ml](https://app.clear.ml) or by using our self-hosted server on GitHub, and don’t forget to join our [Slack channel](https://joinslack.clear.ml) if you need any help.
 
 </Collapsible>

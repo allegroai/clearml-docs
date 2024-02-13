@@ -13,10 +13,11 @@ All you have to do is simply add two lines of code to your `fastai` script:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
-And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
+And that's it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
 * `fastai` model files 
@@ -47,7 +48,7 @@ auto_connect_frameworks={
    'fastai': False, 'catboost': True, 'tensorflow': False, 'tensorboard': False, 'pytorch': True,
    'xgboost': False, 'scikit': True,  'lightgbm': False,
    'hydra': True, 'detect_repository': True, 'tfdefines': True, 'joblib': True,
-   'megengine': True, 'jsonargparse': True
+   'megengine': True
 }
 ```
 

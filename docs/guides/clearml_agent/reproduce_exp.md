@@ -18,13 +18,13 @@ Sometimes, you may need to recreate your experiment environment on a different m
 code.
 
 ClearML logs everything needed to reproduce your experiment and its environment (uncommitted changes, used packages, and 
-more), making it easy to  reproduce your experiment's execution environment using ClearML.
+more), making it easy to reproduce your experiment's execution environment using ClearML.
 
-You can reproduce the execution environment of any experiment you’ve run with ClearML on any workload:
+You can reproduce the execution environment of any experiment you've run with ClearML on any workload:
 
 1. Go to the experiment page of the task you want to reproduce in the [ClearML WebApp](../../webapp/webapp_overview.md), 
    :::tip
-   Use the UI's [filtering and sorting](../../webapp/webapp_exp_table.md#filtering-columns) to find the best performing experiments  
+   Use the UI's [filtering and sorting](../../webapp/webapp_exp_table.md#filtering-columns) to find the best performing experiments.  
    ::: 
 1. Copy the desired experiment's ID
 1. Use the ClearML Agent's [`build`](../../clearml_agent/clearml_agent_ref.md#build) command to rebuild the experiment's

@@ -6,11 +6,15 @@ The experiments table is a [customizable](#customizing-the-experiments-table) li
 table, view experiment details, and work with experiments (reset, clone, enqueue, create [tracking leaderboards](../guides/ui/building_leader_board.md)
 to monitor experimentation, and more). The experiments table's auto-refresh lets users continually monitor experiment progress.
 
-View the experiments table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
-or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
+View the experiments in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" />, 
+details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, or
+comparison view <img src="/docs/latest/icons/ico-charts-view.svg" alt="Comparison view" className="icon size-md space-sm" />
 using the buttons on the top left of the page. Use the table view for a comparative view of your experiments according 
 to columns of interest. Use the details view to access a selected experiment's details, while keeping the experiment list 
 in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
+Use the [comparison view](#comparing-experiments) to compare your experiments' scalar and plot results (for a more in 
+depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). When selected, this view presents a comparison 
+of all selected experiments. If no experiments are selected, all currently visible experiments in the table are compared.
 
 You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
 table to open the archive and view all archived experiments. From the archive, you can restore 
@@ -187,6 +191,37 @@ selecting items beyond the items currently on-screen:
 * **All** - Select all experiments in the project
 * **None** - Clear selection
 * **Filtered** - Select **all experiments in the project** that match the current active filters in the project
+
+## Comparing Experiments 
+
+The comparison view compares experiment scalar and plot results (for a more in depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). 
+When selected, the view presents a comparison of all [selected experiments](#selecting-multiple-experiments). If no 
+experiments are selected, all currently visible experiments in the table are displayed in the comparison. 
+
+In the dropdown menu, select to view **Scalars** or **Plots**. **Scalars** shows experiments' scalar results as time 
+series line graphs. **Plots** shows the last reported iteration sample of each metric/variant combination per compared 
+experiment. 
+
+Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
+single comparative plot. 
+
+![Merged comparison plots](../img/webapp_compare_view_1.png)
+
+Other plot types are displayed separately for each experiment.
+
+![Separate comparison plots](../img/webapp_compare_view_2.png)
+
+All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
+represents a reported metric, and each bar in the cluster represents an experiment.
+
+![Single scalar comparison](../img/webapp_compare_view_3.png)
+
+Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> to customize which 
+metrics to view.
+
+In the **Scalars** view, click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size-md" /> to access 
+scalar plot tools (see [here](webapp_exp_track_visual.md#scalar-plot-tools)).
+
 
 ## Creating an Experiment Leaderboard
 

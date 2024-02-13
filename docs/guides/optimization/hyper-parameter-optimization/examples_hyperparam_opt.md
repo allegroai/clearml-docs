@@ -24,14 +24,14 @@ The following search strategies can be used:
      
 * Random uniform sampling of hyperparameter strategy - [automation.RandomSearch](../../../references/sdk/hpo_optimization_randomsearch.md)
 * Full grid sampling strategy of every hyperparameter combination - [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
-* Custom - Use a custom class and inherit from the ClearML automation base strategy class, automation.optimization.SearchStrategy.
+* Custom - Use a custom class and inherit from the ClearML automation base strategy class, [SearchStrategy](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L310)
 
 The search strategy class that is chosen will be passed to the [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object later.
 
 The example code attempts to import `OptimizerOptuna` for the search strategy. If `clearml.automation.optuna` is not 
 installed, it attempts to import `OptimizerBOHB`. If `clearml.automation.hpbandster` is not installed, it uses 
-the `RandomSearch` for the search strategy. 
+`RandomSearch` as the search strategy. 
 
 ```python
 try:

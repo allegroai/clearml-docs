@@ -4,9 +4,9 @@ title: Community Resources
 
 ## Join the ClearML Conversation
 
-For feature requests or bug reports, see **ClearML** [GitHub Issues](https://github.com/allegroai/clearml/issues).
+For feature requests or bug reports, see **ClearML** [GitHub issues](https://github.com/allegroai/clearml/issues).
 
-If you have any questions, post on the **ClearML** [Slack Channel](https://joinslack.clear.ml).
+If you have any questions, post on the **ClearML** [Slack channel](https://joinslack.clear.ml).
 
 Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with the **clearml** tag.
 
@@ -24,9 +24,9 @@ Follow **ClearML** on [LinkedIn](https://www.linkedin.com/company/clearml).
 
 ## Guidelines for Contributing
 
-Firstly, we thank you for taking the time to contribute!
+Firstly, thank you for taking the time to contribute!
 
-Contribution comes in many forms:
+Contributions come in many forms:
 
 * Reporting [issues](https://github.com/allegroai/clearml/issues) you've come upon
 * Participating in issue discussions in the [issue tracker](https://github.com/allegroai/clearml/issues) and the

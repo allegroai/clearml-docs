@@ -27,7 +27,7 @@ built in logger:
    clearml-init
    ```
     
-That’s it! Now, whenever you train a model using YOLOv5, the run will be captured and tracked by ClearML – no additional 
+That's it! Now, whenever you train a model using YOLOv5, the run will be captured and tracked by ClearML – no additional 
 code necessary. 
  
 ## Training YOLOv5 with ClearML 
@@ -54,7 +54,7 @@ manager will capture:
 * And more
 
 All of this is captured into a [ClearML Task](../fundamentals/task.md). By default, a task called `Training` is created 
-in the `YOLOv5` project. To change the task’s name or project, use the `--project` and `--name` arguments when running 
+in the `YOLOv5` project. To change the task's name or project, use the `--project` and `--name` arguments when running 
 the `train.py` script. 
 
 ```commandline
@@ -66,7 +66,7 @@ ClearML uses `/` as a delimiter for subprojects: using `example/sample` as a nam
 task within the `example` project. 
 :::
 
-You can see all the captured data in the task’s page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md). 
+You can see all the captured data in the task's page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md). 
 Additionally, you can view all of your YOLOv5 runs tracked by ClearML in the [Experiments Table](../webapp/webapp_model_table.md). 
 Add custom columns to the table, such as mAP values, so you can easily sort and see what is the best performing model. 
 You can also select multiple experiments and directly [compare](../webapp/webapp_exp_comparing.md) them.   
@@ -94,7 +94,7 @@ dataset using the link in the yaml file or the scripts provided by YOLOv5, you g
 ```
 
 You can use any dataset, as long as you maintain this folder structure.
-Copy the dataset’s corresponding yaml file to the root of the dataset folder. 
+Copy the dataset's corresponding yaml file to the root of the dataset folder. 
 
 ```
 ..
@@ -171,7 +171,7 @@ and shuts down instances as needed, according to a resource budget that you set.
 
 ![Cloning, editing, enqueuing gif](../img/gif/integrations_yolov5.gif)
 
-Use ClearML’s web interface to edit task details, like configuration parameters or input models, then execute the task 
+Use ClearML's web interface to edit task details, like configuration parameters or input models, then execute the task 
 with the new configuration on a remote machine:
 * Clone the experiment
 * Edit the hyperparameters and/or other details 
@@ -200,7 +200,7 @@ if RANK in {-1, 0}:
 ```
 
 ## Hyperparameter Optimization
-Use ClearML’s [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
+Use ClearML's [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
 the hyperparameter values that yield the best performing models. 
 
 To run hyperparameter optimization locally, you can use the [template script](https://github.com/ultralytics/yolov5/blob/master/utils/loggers/clearml/hpo.py) 

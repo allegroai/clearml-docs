@@ -1,5 +1,5 @@
 ---
-title: Monai
+title: MONAI
 ---
 
 :::tip
@@ -7,8 +7,8 @@ If you are not already using ClearML, see [Getting Started](../getting_started/d
 instructions.
 :::
 
-[Monai](https://github.com/Project-MONAI/MONAI) is a PyTorch-based, open-source framework for deep learning in healthcare 
-imaging. You can integrate ClearML into your code using Monai's built-in handlers: [`ClearMLImageHandler`, `ClearMLStatsHandler`](#clearmlimagehandler-and-clearmlstatshandler), 
+[MONAI](https://github.com/Project-MONAI/MONAI) is a PyTorch-based, open-source framework for deep learning in healthcare 
+imaging. You can integrate ClearML into your code using MONAI's built-in handlers: [`ClearMLImageHandler`, `ClearMLStatsHandler`](#clearmlimagehandler-and-clearmlstatshandler), 
 and [`ModelCheckpoint`](#modelcheckpoint). 
 
 ## ClearMLImageHandler and ClearMLStatsHandler
@@ -66,7 +66,7 @@ change the task's name or project, use the `task_name` and `project_name` parame
 The task captures the images logged by the image handler, metrics logged with the stats handler, as well as source code, 
 uncommitted changes, installed packages, console output, and more. 
  
-You can see all the captured data in the task’s page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md).
+You can see all the captured data in the task's page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md).
 
 View the logged images in the WebApp, in the experiment's **Debug Samples** tab.
 
@@ -80,7 +80,7 @@ View the logged metrics in the WebApp, in the experiment's **Scalars** tab.
 
 ClearML automatically logs models saved using the `ModelCheckpoint` handler. Make sure a ClearML Task is instantiated in
 your script. If you're already using either `ClearMLStatsHandler` or `ClearMLImageHandler`, you don't have to add any code. 
-Otherwise, all you have to is add two lines of code to create a task:
+Otherwise, all you have to do is add two lines of code to create a task:
 
 ```python
 from clearml import Task

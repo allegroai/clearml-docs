@@ -4,10 +4,11 @@ title: PipelineController
 
 ## The PipelineController Class
 
-Create the [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md), where you will define
+Create the [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md), where you will define
 the pipeline's execution logic:
 ```python
 from clearml import PipelineController
+
 pipe = PipelineController(
   name="Pipeline Controller", project="Pipeline example", version="1.0.0"
 )
@@ -44,15 +45,19 @@ values for the new run.
 ![Pipeline new run](../img/pipelines_new_run.png)
 
 ### Additional Configuration 
-You can connect configuration dictionaries or files to a pipeline controller using the 
-[PipelineController.connect_configuration](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
-method by providing the configuration object, or file path. 
+You can connect configuration dictionaries or files to a pipeline controller using 
+[`PipelineController.connect_configuration()`](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
+by providing the configuration object, or file path. 
 
 For files, call `connect_configuration()` before reading the configuration file. If it's a local file, input a relative 
 path.
 
 ```python
-config_file = pipe.connect_configuration(configuration=config_file_path, name="My Configuration", description="configuration for pipeline")
+config_file = pipe.connect_configuration(
+    configuration=config_file_path, 
+    name="My Configuration", 
+    description="configuration for pipeline"
+)
 my_params = json.load(open(config_file,'rt'))
 ```
 
@@ -93,13 +98,13 @@ pipe.add_step(
 * `cache_executed_step` – If `True`, the controller will check if an identical task with the same code (including setup, 
   e.g. required packages, docker image, etc.) and input arguments was already executed. If found, the cached step's 
   outputs are used instead of launching a new task.
-* `execution_queue` (optional) - the queue to use for executing this specific step. If not provided, the task will be sent to the default execution queue, as defined on the class
-* `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
+* `execution_queue` (optional) - The queue to use for executing this specific step. If not provided, the task will be sent to the default execution queue, as defined on the class.
+* `parents` (optional) - List of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 * `parameter_override` - Dictionary of parameters and values to override in the current step. See [parameter_override](#parameter_override).
-* `configuration_overrides` - Dictionary of configuration objects and values to override in the current step. See [configuration_overrides](#configuration_overrides)
+* `configuration_overrides` - Dictionary of configuration objects and values to override in the current step. See [configuration_overrides](#configuration_overrides).
 * `monitor_models`, `monitor_metrics`, `monitor_artifacts` - see [here](#models-artifacts-and-metrics).
 
-See [add_step](../references/sdk/automation_controller_pipelinecontroller.md#add_step) for all arguments.
+See [`PipelineController.add_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_step) for all arguments.
 
 #### parameter_override
 Use the `parameter_override` argument to modify the step's parameter values. The `parameter_override` dictionary key is 
@@ -126,9 +131,11 @@ Examples:
 Creating a pipeline step from a function means that when the function is called, it will be transformed into a ClearML task, 
 translating its arguments into parameters, and returning values into artifacts.  
 
-:::info Function to ClearML Task conversion
-As each function is transformed into an independently executed step, it needs to be self-contained. To facilitate this, 
-all package imports inside the function are automatically logged as required packages for the pipeline step. 
+:::info Package Imports
+In the case that the `skip_global_imports` parameter of [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md) 
+is set to `False`, all global imports will be automatically imported at the beginning of each step's execution. 
+Otherwise, if set to `True`, make sure that each function which makes up a pipeline step contains package imports, which 
+are automatically logged as required packages for the pipeline execution step.
 :::
 
 Function steps are added using [`PipelineController.add_function_step()`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step):
@@ -161,13 +168,13 @@ pipe.add_function_step(
   (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
   section) and input arguments was already executed. If found, the cached step's 
   outputs are used instead of launching a new task.
-* `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution 
+* `parents` (optional) - List of parent steps in the pipeline. The current step in the pipeline will be sent for execution 
   only after all the parent steps have been executed successfully.
 * `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
   before and/or after a step's execution. See [here](#pre_execute_callback-and-post_execute_callback).
 * `monitor_models`, `monitor_metrics`, `monitor_artifacts` - see [here](#models-artifacts-and-metrics).
 
-See [add_function_step](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) for all 
+See [`PipelineController.add_function_step`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step) for all 
 arguments.
 
 ### Important Arguments

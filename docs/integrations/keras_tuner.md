@@ -36,7 +36,7 @@ Integrate ClearML into your Keras Tuner optimization script by doing the followi
  )
  ```
 
-And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
+And that's it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Output Keras model
 * Optimization trial scalars - scalar plot showing metrics for all runs
 * Hyperparameter optimization summary plot - Tabular summary of hyperparameters tested and their metrics by trial ID

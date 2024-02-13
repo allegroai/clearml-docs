@@ -6,14 +6,14 @@ title: Optuna
 which makes use of different samplers such as grid search, random, bayesian, and evolutionary algorithms. You can integrate
 Optuna into ClearML's automated hyperparameter optimization. 
 
-The [HyperParameterOptimizer](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class contains ClearML’s 
+The [HyperParameterOptimizer](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class contains ClearML's 
 hyperparameter optimization modules. Its modular design enables using different optimizers, including existing software 
 frameworks, like Optuna, enabling simple,
-accurate, and fast hyperparameter optimization. The Optuna ([`automation.optuna.OptimizerOptuna`](../references/sdk/hpo_optuna_optuna_optimizeroptuna.md)),
+accurate, and fast hyperparameter optimization. The Optuna ([`automation.optuna.OptimizerOptuna`](../references/sdk/hpo_optuna_optuna_optimizeroptuna.md))
 optimizer lets you simultaneously optimize many hyperparameters efficiently by relying on early stopping (pruning)
 and smart resource allocation.
 
-To use optuna in ClearML's hyperparameter optimization, you must first install it. When you instantiate `HyperParameterOptimizer`,
+To use Optuna in ClearML's hyperparameter optimization, you must first install it. When you instantiate `HyperParameterOptimizer`,
 pass `OptimizerOptuna` as the `optimizer_class` argument:
 
 ```python

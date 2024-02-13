@@ -22,7 +22,7 @@ const features = [
     imageUrl: 'img/ico-data-science.svg',
     description: (
       <>
-        <code>ClearML</code> is designed to be as easily integrated as possible. <b>Add 2-lines of code</b> and everything is logged &amp; reported!
+        <code>ClearML</code> is designed to be as easily integrated as possible. <b>Add 2 lines of code</b> and everything is logged &amp; reported!
       </>
     ),
   },
@@ -97,7 +97,7 @@ function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Turn your code into MLOps with only 2 lines of code with ClearML! Easily develop, orchestrate, and automate ML workflows at scale"
+      description="Turn your code into MLOps with only 2 lines of code with ClearML! Easily develop, orchestrate, and automate AI workflows at scale"
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">

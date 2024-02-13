@@ -1,5 +1,5 @@
 ---
-title: ClearML Session
+title: Remote Session
 ---
 
 Machine Learning and Deep Learning development is sometimes more challenging than traditional software development. If 
@@ -11,7 +11,19 @@ in the UI and send it for long-term training on a remote machine.
 
 **If you are not that lucky**, this section is for you :)
 
-## What Does ClearML Session Do?
+ClearML provides tools that allow you to launch remote sessions and to execute code on a remote machine that better 
+meets resource needs:
+* [Clearml Session CLI](#clearml-session-cli) - Launch a JupyterLab and VS Code session on a remote machine
+* [GUI Applications](#gui-applications) (available under ClearML Enterprise Plan)
+  * [JupyterLab](../webapp/applications/apps_jupyter_lab.md) - Launch a JupyterLab session on a remote machine 
+  * [VS Code](../webapp/applications/apps_vscode.md) - Launch a VS Code session on a remote machine 
+
+:::info Remote PyCharm
+You can also work with PyCharm in a remote session over SSH. Use the [PyCharm Plugin](../guides/ide/integration_pycharm.md) 
+to automatically sync local configurations with a remote session.
+:::
+
+## ClearML Session CLI 
 `clearml-session` is a feature that allows to launch a session of JupyterLab and VS Code, and to execute code on a remote 
 machine that better meets resource needs. This feature provides local links to access JupyterLab and VS Code on a 
 remote machine over a secure and encrypted SSH connection. By default, the JupyterLab and 
@@ -31,12 +43,6 @@ VS Code remote sessions use ports 8878 and 8898 respectively.
 
 </Collapsible>
 
-:::info Remote PyCharm
-You can also work with PyCharm in a remote session over SSH. Use the [PyCharm Plugin](../guides/ide/integration_pycharm.md) 
-to automatically sync local configurations with a remote session.
-:::
-
-## How to Run ClearML Session 
 
 ### Prerequisites
 * `clearml` installed and configured. See [Getting Started](../getting_started/ds/ds_first_steps.md) for details.
@@ -120,24 +126,24 @@ To connect to an existing session:
 1. Enter the following command: `clearml-session --attach <session_id>`.
 1. Click on the JupyterLab / VS Code link that is outputted, or connect directly to the SSH session
 
-## Features 
-### Running in Docker
+### Features 
+#### Running in Docker
 To run a session inside a Docker container, use the `--docker` flag and enter the docker image to use in the interactive 
 session.
 
-### Installing Requirements
+#### Installing Requirements
 `clearml-session` can install required Python packages when setting up the remote environment. 
 Specify requirements in one of the following ways: 
 * Attach a `requirement.txt` file to the command using `--requirements </file/location.txt>`.
 * Manually specify packages using `--packages "<package_name>"` 
 (for example `--packages "keras" "clearml"`), and they'll be automatically installed.
 
-### Accessing a Git Repository
+#### Accessing a Git Repository
 To access a git repository remotely, add a `--git-credentials` flag and set it to `true`, so the local `.git-credentials` 
 file is sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless 
 cloning and tracking of git references, including untracked changes. 
 
-### Starting a Debugging Session 
+#### Starting a Debugging Session 
 You can debug previously executed experiments registered in the ClearML system on a remote interactive session. 
 Input into `clearml-session` the ID of a Task to debug, then `clearml-session` clones the experiment's git repository and 
 replicates the environment on a remote machine. Then the code can be interactively executed and debugged on JupyterLab / VS Code. 
@@ -153,7 +159,7 @@ The Task must be connected to a git repository, since currently single script de
 1. In JupyterLab / VS Code, access the experiment's repository in the `environment/task_repository` folder. 
 
 
-## Command Line Options
+### Command Line Options
 
 <div className="tbl-cmd">
 
@@ -164,12 +170,13 @@ The Task must be connected to a git repository, since currently single script de
 | `--shutdowm`, `-S`| Shut down an active session | Previous session|
 | `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
+| `--upload-files`|  Specify local files/folders to upload to the remote session|`None`|
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
 | `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:10.1-runtime-ubuntu18.04` or previously used docker image|
 | `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--queue`| Select the queue to launch the interactive session on | Previously used queue|
-| `--interactive`, `-I` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
+| `--shell` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
 | `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
 | `--vscode-server` | Install VSCode on interactive session | `true` |
 | `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
@@ -193,3 +200,15 @@ The Task must be connected to a git repository, since currently single script de
 | `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|
 
 </div>
+
+## GUI Applications
+
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan
+:::
+
+The ClearML Enterprise Server provides GUI applications for setting up remote sessions in VS Code and JupyterLab. These
+apps provide local links to access JupyterLab or VS Code on a remote machine over a secure and encrypted SSH connection,
+letting you use the IDE as if you're running on the target machine itself
+
+For more information, see [JupyterLab](../webapp/applications/apps_jupyter_lab.md) and/or [VS Code](../webapp/applications/apps_vscode.md).

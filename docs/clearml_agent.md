@@ -48,7 +48,7 @@ While the agent is running, it continuously reports system metrics to the ClearM
 
 Continue using ClearML Agent once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
-* Programmatically (using [`Task.enqueue`](references/sdk/task.md#taskenqueue) or [`Task.execute_remotely`](references/sdk/task.md#execute_remotely))
+* Programmatically (using [`Task.enqueue()`](references/sdk/task.md#taskenqueue) or [`Task.execute_remotely()`](references/sdk/task.md#execute_remotely))
 * Through the ClearML Web UI (without working directly with code), by cloning experiments and enqueuing them to the 
   queue that a ClearML Agent is servicing.
 
@@ -57,7 +57,7 @@ code modification. Modifying a task clone’s configuration will have the ClearM
 original values:
 * Modified package requirements will have the experiment script run with updated packages
 * Modified recorded command line arguments will have the ClearML agent inject the new values in their stead
-* Code-level configuration instrumented with [`Task.connect`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
+* Code-level configuration instrumented with [`Task.connect()`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
 
 For more information, see [ClearML Agent Reference](clearml_agent/clearml_agent_ref.md), 
 and [configuration options](configs/clearml_conf.md#agent-section).
@@ -109,7 +109,7 @@ it can't do that when running from a virtual environment.
    Detected credentials key="********************" secret="*******"
    ```
         
-1. **Enter** to accept default server URL, which is detected from the credentials or enter a ClearML web server URL.
+1. **Enter** to accept the default server URL, which is detected from the credentials or enter a ClearML web server URL.
 
    A secure protocol, https, must be used. **Do not use http.**
     
@@ -206,6 +206,24 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 
 1. Save the configuration.
 
+### Dynamic Environment Variables
+Dynamic ClearML Agent environment variables can be used to override any configuration setting that appears in the [`agent`](configs/clearml_conf.md#agent-section) 
+section of the `clearml.conf`.
+
+The environment variable's name should be `CLEARML_AGENT__AGENT__<configuration-path>`, where `<configuration-path>` 
+represents the full path to the configuration field being set. Elements of the configuration path should be separated by 
+`__` (double underscore). For example, set the `CLEARML_AGENT__AGENT__DEFAULT_DOCKER__IMAGE` environment variable to 
+deploy an agent with a different value to what is specified for `agent.default_docker.image` in the clearml.conf.
+
+:::note NOTES
+* Since configuration fields may contain JSON-parsable values, make sure to always quote strings (otherwise the agent 
+might fail to parse them)
+* In order to comply with environment variables standards, it is recommended to use only upper-case characters in 
+environment variable keys. For this reason, ClearML Agent will always convert the configuration path specified in the 
+dynamic environment variable's key to lower-case before overriding configuration values with the environment variable 
+value.
+:::
+
 ## Deployment
 
 ### Spinning Up an Agent
@@ -300,14 +318,199 @@ SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <y
 
 ### Kubernetes 
 Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML Agent adds the missing scheduling 
-capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent’s 
-features (scheduling, job prioritization, and more).
+capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent's 
+features.
 
-There are two options for deploying the ClearML Agent to a Kubernetes cluster:
-* Spin ClearML Agent as a long-lasting service pod
-* Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
+ClearML Agent is deployed onto a Kubernetes cluster through its Kubernetes-Glue  which maps ClearML jobs directly to K8s 
+jobs:
+* Use the [ClearML Agent Helm Chart](https://github.com/allegroai/clearml-helm-charts/tree/main/charts/clearml-agent) to
+spin an agent pod acting as a controller. Alternatively (less recommended) run a [k8s glue script](https://github.com/allegroai/clearml-agent/blob/master/examples/k8s_glue_example.py) 
+on a K8S cpu node
+* The ClearML K8S glue pulls jobs from the ClearML job execution queue and prepares a K8s job (based on provided yaml 
+template)
+* Inside each job pod the `clearml-agent` will install the ClearML task's environment and run and monitor the experiment's 
+process
 
-For more details, see [Kubernetes integration](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
+#### Fractional GPUs
+Some jobs that you send for execution need a minimal amount of compute and memory, but you end up allocating entire GPUs 
+to them. In order to optimize your compute resource usage, you can partition GPUs into slices. 
+
+Set up MIG support for Kubernetes through your NVIDIA device plugin, and define the GPU fractions to be made available 
+to the cluster. 
+
+The ClearML Agent Helm chart lets you specify a pod template for each queue which describes the resources that the pod
+will use. The template should specify the requested GPU slices under `Containers.resources.limits` to have the queue use 
+the defined resources. For example, the following configures a K8s pod to run a 3g.20gb MIG device:
+
+```
+# tf-benchmarks-mixed.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tf-benchmarks-mixed
+spec:
+  restartPolicy: Never
+  Containers:
+     - name: tf-benchmarks-mixed
+     image: ""
+      command: []
+      args: []
+      resources:
+        limits:
+          nvidia.com/mig-3g.20gb: 1
+  nodeSelector:  #optional
+    nvidia.com/gpu.product: A100-SXM4-40GB
+```
+
+When tasks are added to the relevant queue, the agent pulls the task and creates a pod to execute it, using the specified 
+GPU slice. 
+
+For example, the following configures what resources should be used to execute tasks from the `default` queue: 
+
+```
+agentk8sglue:
+  queue: default 
+  # … 
+  basePodTemplate:
+    # …
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+  nodeSelector:
+    nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
+```
+
+:::important Enterprise Feature
+The ClearML Enterprise plan supports K8S servicing multiple ClearML queues, as well as providing a pod template for each 
+queue for describing the resources for each pod to use.
+
+For example, the following configures which resources to use for `example_queue_1` and `example_queue_2`:
+
+```yaml
+agentk8sglue:
+  queues:
+    example_queue_1:
+      templateOverrides:
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      nodeSelector:
+        nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
+    example_queue_2:
+      templateOverrides:
+        resources:
+          limits:
+            nvidia.com/gpu: 2
+      nodeSelector:
+        nvidia.com/gpu.product: A100-SXM4-40GB
+```
+:::
+
+### Slurm
+
+:::important Enterprise Feature
+Slurm Glue is available under the ClearML Enterprise plan
+:::
+
+Agents can be deployed bare-metal or inside [`Singularity`](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) 
+containers in linux clusters managed with Slurm. 
+
+ClearML Agent Slurm Glue maps jobs to Slurm batch scripts: associate a ClearML queue to a batch script template, then 
+when a Task is pushed into the queue, it will be converted and executed as an `sbatch` job according to the sbatch 
+template specification attached to the queue. 
+
+1. Install the Slurm Glue on a machine where you can run `sbatch` / `squeue` etc. 
+   
+   ```
+   pip3 install -U --extra-index-url https://*****@*****.allegro.ai/repository/clearml_agent_slurm/simple clearml-agent-slurm
+   ```
+
+1. Create a new batch template. Make sure to set the `SBATCH` variables to the resources you want to attach to the queue. 
+   The script below sets up an agent to run bare-metal, creating a virtual environment per job. For example:
+
+   ```
+   #!/bin/bash
+   # available template variables (default value separator ":")
+   # ${CLEARML_QUEUE_NAME}
+   # ${CLEARML_QUEUE_ID}
+   # ${CLEARML_WORKER_ID}.
+   # complex template variables  (default value separator ":")
+   # ${CLEARML_TASK.id}
+   # ${CLEARML_TASK.name}
+   # ${CLEARML_TASK.project.id}
+   # ${CLEARML_TASK.hyperparams.properties.user_key.value}
+   
+   
+   # example
+   #SBATCH --job-name=clearml_task_${CLEARML_TASK.id}       # Job name DO NOT CHANGE
+   #SBATCH --ntasks=1                    # Run on a single CPU
+   # #SBATCH --mem=1mb                   # Job memory request
+   # #SBATCH --time=00:05:00             # Time limit hrs:min:sec
+   #SBATCH --output=task-${CLEARML_TASK.id}-%j.log
+   #SBATCH --partition debug
+   #SBATCH --cpus-per-task=1
+   #SBATCH --priority=5
+   #SBATCH --nodes=${CLEARML_TASK.hyperparams.properties.num_nodes.value:1}
+   
+   
+   ${CLEARML_PRE_SETUP}
+   
+   echo whoami $(whoami)
+   
+   ${CLEARML_AGENT_EXECUTE}
+   
+   ${CLEARML_POST_SETUP}
+   ```
+
+   Notice: If you are using Slurm with Singularity container support replace `${CLEARML_AGENT_EXECUTE}` in the batch 
+   template with `singularity exec ${CLEARML_AGENT_EXECUTE}`. For additional required settings, see [Slurm with Singularity](#slurm-with-singularity).
+
+   :::tip 
+   You can override the default values of a Slurm job template via the ClearML Web UI. The following command in the 
+   template sets the `nodes` value to be the ClearML Task’s `num_nodes` user property:  
+   ```
+   #SBATCH --nodes=${CLEARML_TASK.hyperparams.properties.num_nodes.value:1}
+   ```
+   This user property can be modified in the UI, in the task's **CONFIGURATION > User Properties** section, and when the 
+   task is executed the new modified value will be used. 
+   ::: 
+
+3. Launch the ClearML Agent Slurm Glue and assign the Slurm configuration to a ClearML queue. For example, the following 
+   associates the `default` queue to the `slurm.example.template` script, so any jobs pushed to this queue will use the 
+   resources set by that script.  
+   ```
+   clearml-agent-slurm --template-files slurm.example.template --queue default
+   ```
+   
+   You can also pass multiple templates and queues. For example:
+   ```
+   clearml-agent-slurm --template-files slurm.template1 slurm.template2 --queue queue1 queue2
+   ```
+
+#### Slurm with Singularity
+If you are running Slurm with Singularity containers support, set the following:
+
+1. Make sure your `sbatch` template contains:
+   ```
+   singularity exec ${CLEARML_AGENT_EXECUTE}
+   ```
+   Additional singularity arguments can be added, for example: 
+   ```
+   singularity exec --uts ${CLEARML_AGENT_EXECUTE}`
+   ``` 
+1. Set the default Singularity container to use in your [clearml.conf](configs/clearml_conf.md) file:
+   ```
+   agent.default_docker.image="shub://repo/hello-world"
+   ```
+   Or
+   ```
+   agent.default_docker.image="docker://ubuntu"
+   ```
+
+1. Add `--singularity-mode` to the command line, for example:
+   ```
+   clearml-agent-slurm --container-mode --template-files slurm.example_singularity.template --queue default
+   ```
 
 ### Explicit Task Execution
 
@@ -675,9 +878,12 @@ APIClient. The body of the call must contain the ``queue-id`` and the tags to ad
 
 For example, force workers on for a queue using the APIClient:
 
-    from clearml.backend_api.session.client import APIClient
-    client = APIClient()
-    client.queues.update(queue="<queue_id>", tags=["force_workers:on"]
+```python
+from clearml.backend_api.session.client import APIClient
+
+client = APIClient()
+client.queues.update(queue="<queue_id>", tags=["force_workers:on"])
+```
 
 Or, force workers on for a queue using the REST API:
 
