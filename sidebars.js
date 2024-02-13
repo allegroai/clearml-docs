@@ -130,7 +130,7 @@ module.exports = {
             },
             'webapp/webapp_profile']
         },
-        {'Configurations': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
+        {'Configuring ClearML': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
         //'References': ['references/clearml_ref','references/clearml_agent_ref'],
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
