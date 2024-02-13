@@ -217,12 +217,12 @@ task = Task.create(
 )
 ```
 
-See full `Task.create` reference [here](../references/sdk/task.md#taskcreate).
+For more information, see [`Task.create()`](../references/sdk/task.md#taskcreate).
 
 ## Tracking Task Progress
-Track a task's progress by setting the task progress property using the [`Task.set_progress`](../references/sdk/task.md#set_progress) method. 
-Set a task's progress to a numeric value between 0 - 100. Access the task's current progress, using the 
-[`Task.get_progress`](../references/sdk/task.md#get_progress) method. 
+Track a task's progress by setting the task progress property using [`Task.set_progress()`](../references/sdk/task.md#set_progress). 
+Set a task's progress to a numeric value between 0 - 100. Access the task's current progress, using
+[`Task.get_progress()`](../references/sdk/task.md#get_progress). 
 
 ```python
 task = Task.init(project_name="examples", task_name="Track experiment progress")
@@ -273,7 +273,7 @@ The task's outputs, such as artifacts and models, can also be retrieved.
 ## Querying / Searching Tasks
 
 Search and filter tasks programmatically. Input search parameters into the [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) 
-method, which returns a list of task objects that match the search. Pass `allow_archived=False` to filter out archived 
+class method, which returns a list of task objects that match the search. Pass `allow_archived=False` to filter out archived 
 tasks.
 
 
@@ -290,7 +290,7 @@ task_list = Task.get_tasks(
 )
 ```
 
-It's possible to also filter tasks by passing filtering rules to `task_filter`. 
+You can also filter tasks by passing filtering rules to `task_filter`. 
 
 For example:
 ```python
@@ -560,7 +560,7 @@ session folder, which can later be uploaded to the [ClearML Server](../deploying
 
 You can enable offline mode in one of the following ways:
 * Before initializing a task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
-the `offline_mode` argument to `True`
+the `offline_mode` argument to `True`:
   
   ```python
   from clearml import Task
@@ -744,7 +744,7 @@ It's possible to modify the following parameters:
 * Iteration number
 * Model tags
 
-Models can also be manually updated independently, without any task. See [OutputModel.update_weights](../references/sdk/model_outputmodel.md#update_weights). 
+Models can also be manually updated independently, without any task. See [`OutputModel.update_weights`](../references/sdk/model_outputmodel.md#update_weights). 
 
 ### Using Models
 
@@ -793,13 +793,13 @@ using [clearml-agent](../clearml_agent.md) to execute code.
 
 #### Setting Parameters
 
-To define parameters manually use the [`Task.set_parameters`](../references/sdk/task.md#set_parameters) method to specify 
+To define parameters manually use [`Task.set_parameters()`](../references/sdk/task.md#set_parameters) to specify 
 name-value pairs in a parameter dictionary.
 
 Parameters can be designated into sections: specify a parameter's section by prefixing its name, delimited with a slash 
 (i.e. `section_name/parameter_name:value`). `General` is the default section.
 
-Call the [`set_parameter`](../references/sdk/task.md#set_parameter) method to set a single parameter. 
+Call [`Task.set_parameter()`](../references/sdk/task.md#set_parameter) to set a single parameter. 
 
 ```python
 task = Task.init(project_name='examples', task_name='parameters')
@@ -812,12 +812,12 @@ task.set_parameter(name='decay',value=0.001)
 ```
 
 :::caution Overwriting Parameters
-The `set_parameters` method replaces any existing hyperparameters in the task.
+`Task.set_parameters()` replaces any existing hyperparameters in the task.
 :::
 
 #### Adding Parameters
-To update the parameters in a task, use the [`Task.set_parameters_as_dict`](../references/sdk/task.md#set_parameters_as_dict) 
-method. Arguments and values are input as a dictionary. Like in `set_parameters` above, the parameter's section can 
+To update the parameters in a task, use [`Task.set_parameters_as_dict()`](../references/sdk/task.md#set_parameters_as_dict).
+Arguments and values are input as a dictionary. Like in `set_parameters` above, the parameter's section can 
 be specified.
 
 ```python
@@ -829,7 +829,7 @@ task.set_parameters_as_dict({'my_args/lr':0.3, 'epochs':10})
 
 ### Accessing Parameters 
 
-To access all task parameters, use the [`Task.get_parameters`](../references/sdk/task.md#get_parameters) method. This 
+To access all task parameters, use [`Task.get_parameters()`](../references/sdk/task.md#get_parameters). This 
 method returns a flattened dictionary of the `'section/parameter': 'value'` pairs.
 
 ```python
@@ -853,7 +853,7 @@ The parameters and their section names are case-sensitive
 ### Tracking Python Objects
 
 ClearML can track Python objects (such as dictionaries and custom classes) as they evolve in your code, and log them to 
-your task's configuration using the [`Task.connect`](../references/sdk/task.md#connect) method. Once objects are connected 
+your task's configuration using [`Task.connect()`](../references/sdk/task.md#connect). Once objects are connected 
 to a task, ClearML automatically logs all object elements (e.g. class members, dictionary key-values pairs).
 
 ```python

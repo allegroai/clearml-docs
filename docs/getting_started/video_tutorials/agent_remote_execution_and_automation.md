@@ -44,7 +44,7 @@ You can also run the agent in conda mode or poetry mode, which essentially do th
 
 However, there’s also docker mode. In this case the agent will run every incoming task in its own docker container instead of just a virtual environment. This makes things much easier if your tasks have system package dependencies for example, or when not every task uses the same python version. For our example, we’ll be using docker mode.
 
-Now that our configuration is ready, we can start our agent in docker mode by running the command `clearml-agent daemon –docker` 
+Now that our configuration is ready, we can start our agent in docker mode by running the command `clearml-agent daemon –docker`. 
 
 
 After running the command, we can see it pop up in our workers table. Now the agent will start listening for tasks in the `default` queue, and it’s ready to go!

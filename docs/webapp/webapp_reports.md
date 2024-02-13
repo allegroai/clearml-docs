@@ -238,7 +238,7 @@ headings. The number of `#` signs correspond to the heading level (i.e. `#` for 
 
 | MarkDown | Rendered Output |
 |---|---|
-| <code># H1<br/>## H2<br/>### H3<br/>#### H4<br/>##### H5<br/>###### H6</code>|![Report headings](../img/reports_headings.png)|
+| <code># H1</code><br/><code>## H2</code><br/><code>### H3</code><br/><code>#### H4</code><br/><code>##### H5</code><br/><code>###### H6</code>|![Report headings](../img/reports_headings.png)|
 
 ### Text Emphasis
 
@@ -416,7 +416,7 @@ link:
 ```
 The rendered output should look like this:
 
-![Logo with title](https://raw.githubusercontent.com/allegroai/clearml/master/docs/clearml-logo.svg "ClearML logo")
+<img src="https://raw.githubusercontent.com/allegroai/clearml/master/docs/clearml-logo.svg" alt="Logo with Title" title="ClearML logo"/>
 
 Hover over the image to see its title. 
 
