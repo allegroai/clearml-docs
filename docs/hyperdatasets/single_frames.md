@@ -57,8 +57,8 @@ For more information, see [Custom Metadata](custom_metadata.md).
 Frames' `context_id` property facilitates grouping SingleFrames and FrameGroups. When a `context_id` is not explicitly 
 defined, the frame's source URI is used instead.
 
-When you query the server for frames (e.g. with the [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator) 
-method), the returned frames are grouped together according to their `context_id`, and within their context group are 
+When you query the server for frames (e.g. with [`DataView.get_iterator()`](../references/hyperdataset/dataview.md#get_iterator)), 
+the returned frames are grouped together according to their `context_id`, and within their context group are 
 ordered according to their `timestamp`. 
 
 Use the WebApp's dataset version frame browser "Group by URL" option to display a single preview for all frames with the 
@@ -291,8 +291,7 @@ To access a SingleFrame, the following must be specified:
 To update a SingleFrame: 
 * Access the SingleFrame by calling [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame)
 * Make changes to the frame
-* Update the frame in a DatasetVersion using the [`DatasetVersion.update_frames`](../references/hyperdataset/hyperdatasetversion.md#update_frames) 
-  method.
+* Update the frame in a DatasetVersion using [`DatasetVersion.update_frames()`](../references/hyperdataset/hyperdatasetversion.md#update_frames)
 
 ```python
 frames = []                

@@ -13,7 +13,7 @@ To select models to compare:
 
 The comparison page opens in the **DETAILS** tab, with the models compared [side by side](#side-by-side-textual-comparison).
 
-## Modifying Model Selection
+### Modifying Model Selection
 Click the `MODELS` button to view your currently compared models. Click `X` on a listed model to remove
 it from the comparison.
 
