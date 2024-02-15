@@ -9,6 +9,7 @@ objects, and other details.
 * Hyperparameters
   * [Values](#side-by-side-textual-comparison) - Compare parameters and their values
   * [Parallel coordinates](#parallel-coordinates-mode) - View the impact of hyperparameters on a selected metric
+  * [Scatter plot](#scatter-plot) - View the correlation between a selected hyperparameter and metric
 * Scalars - Compare experiment metrics:
   * [Values](#tabular-scalar-comparison) - Compare minimal, maximal or last reported values in a concise comparison 
   table
@@ -59,6 +60,7 @@ The comparison pages provide the following views:
 * [Side-by-side textual comparison](#side-by-side-textual-comparison)
 * [Tabular scalar comparison](#tabular-scalar-comparison)
 * [Parallel coordinates](#parallel-coordinates-mode) for parameter impact on metric
+* [Scatter plot](#scatter-plot)
 * [Overlaid plot comparison](#plot-comparison)
 * Side-by-side [debug sample](#side-by-side-debug-sample-comparison) and [plot](#plot-comparison) comparison
 
@@ -120,6 +122,23 @@ For example, plot the metric/variant `accuracy`/`total` against the hyperparamet
 To focus on a specific experiment, hover over its name in the graph legend.
 
 To hide an experiment, click its name in the graph legend (click again to bring back).
+
+### Scatter Plot 
+The **Hyperparameters** tab's **Scatter Plot** comparison shows experiments' correlation between a selected 
+hyperparameter and metric.
+
+To show the value distribution:
+* Select the **Plot Axes**:
+   1. Under Y-axis select the metric and the metric values to use in the plot:
+      * **LAST** - The final value, or the most recent value, for currently running experiments
+      * **MIN** - Minimal value
+      * **MAX** - Maximal value
+   1. Under X-axis select the hyperparameter.
+
+Hovering each datapoint in the resulting plot will show the experiment name and the metric and parameter value for that 
+point. You can add additional metrics and hyperparameters values to the datapoint tooltip through **ADDITIONAL DATA POINT INFORMATION**.
+
+![Comparison scatter plot](../img/webapp_compare_scatter.png)
 
 ### Plot Comparison
 The **Scalars** (Graph view) and **Plots** tabs compare experiments' plots.
