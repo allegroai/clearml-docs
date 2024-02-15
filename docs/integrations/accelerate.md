@@ -117,7 +117,6 @@ See more information about explicitly logging information to a ClearML Task:
 
 See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
 
-
 ## Close Task 
 
 Once you've finished training, make sure to run `Accelerator.end_training()` so that ClearML can mark the task as 
@@ -126,5 +125,3 @@ completed.
 ```python
 accelerator.end_training()
 ```
-
-
