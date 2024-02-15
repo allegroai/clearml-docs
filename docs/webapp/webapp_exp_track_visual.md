@@ -32,22 +32,19 @@ table / full screen**.
 The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table.md#experiment-actions)
 can be performed from the table (as well as the menu in the info panel).
 
-<Collapsible type="screenshot" title="View a screenshot">
-
 ![Info panel](../img/webapp_tracking_40.png)
 
-</Collapsible>
+Click <img src="/docs/latest/icons/ico-compact-view.svg" alt="Compressed view" className="icon size-md space-sm" /> to 
+hide details in the experiment table, so only the experiment names and statuses are displayed
+
+![Compressed info panel](../img/webapp_tracking_41.png)
 
 ### Full Screen Details View
 
 The full screen details view allows for easier viewing and working with experiment tracking and results. The experiments
 table is not visible when the full screen details view is open. Perform experiment actions from the menu.
 
-<Collapsible type="screenshot" title="View a screenshot">
-
 ![Full screen view](../img/webapp_tracking_33.png)
-
-</Collapsible>
 
 
 ## Execution 
@@ -83,6 +80,12 @@ The Installed Packages section lists the experiment's installed Python packages 
 
 ![Installed packages section](../img/webapp_exp_installed_packages.png)
 
+When a ClearML agent executing an experiment ends up using a different set of python packages than was originally 
+specified, both the original specification (`original pip` or `original conda`), and the packages the agent ended up 
+using to set up an environment (`pip` or `conda`) are available. Select which requirements to view in the dropdown menu.  
+
+![Packages used by agent](../img/webapp_exp_installed_packages_2.png.png)
+
 ### Container
 The Container section list the following information:
 * Image - a pre-configured Docker that ClearML Agent will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container))
@@ -106,12 +109,14 @@ All parameters and configuration objects appear in the **CONFIGURATION** tab.
 
 ### Hyperparameters
 
-Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPERPARAMETERS**.
+Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPERPARAMETERS**. Once an experiment 
+is run and stored in ClearML Server, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
 #### Command Line Arguments
 
-The **Args** parameter group shows automatically logged `argparse` arguments, and all older experiments parameters, except 
-TensorFlow Definitions. Hover over a parameter, and the type, description, and default value appear, if they were provided.
+The **Args** group shows automatically logged argument parser parameters (e.g. `argparse`, `click`, `hydra`). 
+Hover over <img src="/docs/latest/icons/ico-description.svg" alt="Description" className="icon size-md space-sm" /> (menu) on a 
+parameter's line, and the type, description, and default value appear, if they were provided.
 
 ![Command line arguments configuration group](../img/webapp_tracking_22.png)
 
@@ -123,8 +128,9 @@ If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group wil
 
 #### Custom Parameter Groups
 
-Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using the `Task.connect` method,
-with a `name` argument provided.
+Custom parameter groups show parameter dictionaries if the parameters were connected to the Task, using 
+[`Task.connect()`](../references/sdk/task.md#connect) with a `name` argument provided. `General` is the default section
+if a name is not provided.
 
 ![Custom parameters group](../img/webapp_tracking_25.png)
 
@@ -133,8 +139,6 @@ with a `name` argument provided.
 The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
 ![TF_DEFINE parameter group](../img/webapp_tracking_26.png)
-
-Once an experiment is run and stored in ClearML Server, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
 ### User Properties
 
@@ -328,10 +332,9 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 | <img src="/docs/latest/icons/ico-reset-autoscale.svg" alt="Reset autoscale icon" className="icon size-sm space-sm" /> | Reset to autoscale after zooming (<img src="/docs/latest/icons/ico-zoom.svg" alt="Zoom icon" className="icon size-sm space-sm" />, <img src="/docs/latest/icons/ico-zoom-in-square.svg" alt="Zoom-in icon" className="icon size-sm space-sm" />, or <img src="/docs/latest/icons/ico-zoom-out-square.svg" alt="Zoom-out icon" className="icon size-sm space-sm" />). |
 | <img src="/docs/latest/icons/ico-reset-axes.svg" alt="Reset axes icon" className="icon size-sm space-sm" /> | Reset axes after a zoom. |
 | <img src="/docs/latest/icons/ico-spike-lines.svg" alt="Spike lines icon" className="icon size-sm space-sm" /> | Show / hide spike lines. |
-| <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> | Show the closest data point on hover, including horizontal and vertical axes values. Click <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> and then hover over a series on the plot. |
-| <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> | Compare data on hover. Click <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> and then hover over the plot. |
+| <img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> <br/> <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> <br/> <img src="/docs/latest/icons/ico-x-unified.svg" alt="X-united mode" className="icon size-sm space-sm" />| Set data hover mode:<ul><li><img src="/docs/latest/icons/ico-show-closest.svg" alt="Show closest icon" className="icon size-sm space-sm" /> Closest - Show the (X, Y) data point closest to the cursor, including horizontal and vertical axes values</li><li> <img src="/docs/latest/icons/ico-compare-data.svg" alt="Compare data icon" className="icon size-sm space-sm" /> X - Show labels for points with the same x value as the cursor  </li><li> <img src="/docs/latest/icons/ico-x-unified.svg" alt="X-united mode" className="icon size-sm space-sm"/> X unified - Show a single label for the points with the same x value as the cursor</li></ul> |
 | <img src="/docs/latest/icons/ico-logarithmic-view.svg" alt="Logarithmic view icon" className="icon size-sm space-sm" /> | Switch to logarithmic view. |
-| <img src="/docs/latest/icons/ico-ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
+| <img src="/docs/latest/icons/ico-graph-legend.svg" alt="Graph legend icon" className="icon size-sm space-sm" /> | Hide / show the legend. |
 | <img src="/docs/latest/icons/ico-reset_1.svg" alt="Plot layout setting" className="icon size-sm space-sm" />| Switch between original and auto-fitted plot dimensions. The original layout is the plot's user-defined dimensions. |
 | <img src="/docs/latest/icons/ico-download-json-plot.svg" alt="Download JSON icon" className="icon size-sm space-sm" /> | Download plot data as a JSON file. |
 | <img src="/docs/latest/icons/ico-download-csv.svg" alt="Download CSV icon" className="icon size-sm space-sm" /> | Download **table** plot data as a CSV file. |

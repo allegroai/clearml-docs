@@ -3,7 +3,7 @@ title: Data Management with Python
 ---
 
 The [dataset_creation.py](https://github.com/allegroai/clearml/blob/master/examples/datasets/dataset_creation.py) and 
-[data_ingestion.py](https://github.com/allegroai/clearml/blob/master/examples/datasets/data_ingestion.py) 
+[data_ingestion.py](https://github.com/allegroai/clearml/blob/master/examples/datasets/data_ingestion.py) scripts
 together demonstrate how to use ClearML's [`Dataset`](../../references/sdk/dataset.md) class to create a dataset and 
 subsequently ingest the data. 
 
@@ -18,20 +18,23 @@ demonstrates how to do the following:
 
 ### Downloading the Data
 
-You first need to obtain a local copy of the CIFAR dataset.
+You first need to obtain a local copy of the CIFAR dataset. 
+The code below downloads the data and `dataset_path` contains the path to the downloaded data: 
 
- ```python
- from clearml import StorageManager
+```python
+from clearml import StorageManager
 
- manager = StorageManager()
- dataset_path = manager.get_local_copy(
-     remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
- )
+manager = StorageManager()
+dataset_path = manager.get_local_copy(
+    remote_url="https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz"
+)
 ```
 
-This script downloads the data and `dataset_path` contains the path to the downloaded data. 
 
 ### Creating the Dataset
+
+The following code creates a data processing task called `cifar_dataset` in the `dataset examples` project, which
+can be viewed in the [WebApp](../../webapp/datasets/webapp_dataset_viewing.md).
 
 ```python
 from clearml import Dataset
@@ -42,23 +45,24 @@ dataset = Dataset.create(
 )
  ```
 
-This creates a data processing task called `cifar_dataset` in the `dataset examples` project, which
-can be viewed in the WebApp.
 
 ### Adding Files
+
+Add the downloaded files to the current dataset:
 
 ```python
 dataset.add_files(path=dataset_path)
 ```
 
-This adds the downloaded files to the current dataset.  
-
 ### Uploading the Files
+
+Upload the dataset: 
 
 ```python
 dataset.upload()
 ```
-This uploads the dataset to the ClearML Server by default. The dataset's destination can be changed by specifying the 
+
+By default, the dataset is uploaded to the ClearML File Server. The dataset's destination can be changed by specifying the 
 target storage with the `output_url` parameter of the [`upload`](../../references/sdk/dataset.md#upload) method. 
 
 ### Finalizing the Dataset
@@ -84,7 +88,7 @@ Now that a new dataset is registered, you can consume it!
 The [data_ingestion.py](https://github.com/allegroai/clearml/blob/master/examples/datasets/data_ingestion.py) script 
 demonstrates data ingestion using the dataset created in the first script.
 
-The following script gets the dataset and uses [`Dataset.get_local_copy`](../../references/sdk/dataset.md#get_local_copy) 
+The following script gets the dataset and uses [`Dataset.get_local_copy()`](../../references/sdk/dataset.md#get_local_copy) 
 to return a path to the cached, read-only local dataset. 
 
 ```python

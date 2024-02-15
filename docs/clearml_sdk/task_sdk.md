@@ -71,12 +71,16 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * [TensorFlow](../integrations/tensorflow.md)
     * [Keras](../integrations/keras.md)
     * [PyTorch](../integrations/pytorch.md)
-    * [scikit-learn](../integrations/scikit_learn.md) 
-    * [XGBoost](../integrations/xgboost.md) 
-    * [FastAI](../integrations/fastai.md) 
+    * [AutoKeras](../integrations/autokeras.md)
+    * [CatBoost](../integrations/catboost.md)
+    * [Fast.ai](../integrations/fastai.md)
+    * [LightGBM](../integrations/lightgbm.md)
     * [MegEngine](../integrations/megengine.md)
-    * [CatBoost](../integrations/catboost.md) 
     * [MONAI](../integrations/monai.md)
+    * [scikit-learn](../integrations/scikit_learn.md) (only using joblib)
+    * [XGBoost](../integrations/xgboost.md) (only using joblib)
+    * [YOLOv8](../integrations/yolov8.md)
+    * [YOLOv5](../integrations/yolov5.md)
     
 * **Metrics, scalars, plots, debug images** reported through supported frameworks, including:
     * [Matplotlib](../integrations/matplotlib.md)
@@ -172,10 +176,10 @@ It's possible to always create a new task by passing `reuse_last_task_id=False`.
 See full `Task.init` reference [here](../references/sdk/task.md#taskinit).
 
 ### Continuing Task Execution
-You can continue the execution of a previously run task using the `continue_last_task` parameter of the `Task.init` 
-method. This will retain all of its previous artifacts / models / logs.  
+You can continue the execution of a previously run task using the `continue_last_task` parameter of `Task.init()`. 
+This will retain all of its previous artifacts / models / logs.  
 
-The task will continue reporting its outputs based on the iteration in which it had left off. For example: a task’s last 
+The task will continue reporting its outputs based on the iteration in which it had left off. For example: a task's last 
 train/loss scalar reported was for iteration 100, when continued, the next report will be as iteration 101.  
 
 :::note Reproducibility
@@ -213,12 +217,12 @@ task = Task.create(
 )
 ```
 
-See full `Task.create` reference [here](../references/sdk/task.md#taskcreate).
+For more information, see [`Task.create()`](../references/sdk/task.md#taskcreate).
 
 ## Tracking Task Progress
-Track a task’s progress by setting the task progress property using the [`Task.set_progress`](../references/sdk/task.md#set_progress) method. 
-Set a task’s progress to a numeric value between 0 - 100. Access the task’s current progress, using the 
-[`Task.get_progress`](../references/sdk/task.md#get_progress) method. 
+Track a task's progress by setting the task progress property using [`Task.set_progress()`](../references/sdk/task.md#set_progress). 
+Set a task's progress to a numeric value between 0 - 100. Access the task's current progress, using
+[`Task.get_progress()`](../references/sdk/task.md#get_progress). 
 
 ```python
 task = Task.init(project_name="examples", task_name="Track experiment progress")
@@ -230,8 +234,8 @@ print(task.get_progress())
 task.set_progress(100)
 ```
 
-While the task is running, the WebApp will show the task’s progress indication in the experiment table, next to the 
-task’s status. If a task failed or was aborted, you can view how much progress it had made. 
+While the task is running, the WebApp will show the task's progress indication in the experiment table, next to the 
+task's status. If a task failed or was aborted, you can view how much progress it had made. 
 
 <div class="max-w-50">
 
@@ -239,7 +243,7 @@ task’s status. If a task failed or was aborted, you can view how much progress
 
 </div>
 
-Additionally, you can view a task’s progress in its [INFO](../webapp/webapp_exp_track_visual.md#general-information) tab 
+Additionally, you can view a task's progress in its [INFO](../webapp/webapp_exp_track_visual.md#general-information) tab 
 in the WebApp. 
 
 
@@ -269,7 +273,7 @@ The task's outputs, such as artifacts and models, can also be retrieved.
 ## Querying / Searching Tasks
 
 Search and filter tasks programmatically. Input search parameters into the [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) 
-method, which returns a list of task objects that match the search. Pass `allow_archived=False` to filter out archived 
+class method, which returns a list of task objects that match the search. Pass `allow_archived=False` to filter out archived 
 tasks.
 
 
@@ -286,7 +290,7 @@ task_list = Task.get_tasks(
 )
 ```
 
-It's possible to also filter tasks by passing filtering rules to `task_filter`. 
+You can also filter tasks by passing filtering rules to `task_filter`. 
 
 For example:
 ```python
@@ -432,7 +436,7 @@ A compelling workflow is:
 1. Run code on a development machine for a few iterations, or just set up the environment.
 1. Move the execution to a beefier remote machine for the actual training.
 
-Use the [`Task.execute_remotely`](../references/sdk/task.md#execute_remotely) method to implement this workflow. This method 
+Use [`Task.execute_remotely()`](../references/sdk/task.md#execute_remotely) to implement this workflow. This method 
 stops the current manual execution, and then re-runs it on a remote machine.
 
 For example:
@@ -478,7 +482,7 @@ Function tasks must be created from within a regular task, created by calling `T
 ClearML supports distributed remote execution through multiple worker nodes using [`Task.launch_multi_node()`](../references/sdk/task.md#launch_multi_node). 
 This method creates multiple copies of a task and enqueues them for execution. 
 
-Each copy of the task is called a node. The original task that initiates the nodes’ execution is called the master node.
+Each copy of the task is called a node. The original task that initiates the nodes' execution is called the master node.
 
 ```python
 Task = task.init(task_name ="my_task", project_name="my_project")
@@ -556,10 +560,11 @@ session folder, which can later be uploaded to the [ClearML Server](../deploying
 
 You can enable offline mode in one of the following ways:
 * Before initializing a task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
-the `offline_mode` argument to `True`
+the `offline_mode` argument to `True`:
   
   ```python
   from clearml import Task
+  
   # Use the set_offline class method before initializing a Task
   Task.set_offline(offline_mode=True)
   # Initialize a Task
@@ -594,6 +599,7 @@ Upload the execution data that the Task captured offline to the ClearML Server u
 * [`Task.import_offline_session`](../references/sdk/task.md#taskimport_offline_session) class method
   ```python
   from clearml import Task
+  
   Task.import_offline_session(session_folder_zip="path/to/session/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip")
   ```
 
@@ -611,7 +617,7 @@ Upload the execution data that the Task captured offline to the ClearML Server u
   ```
 
   You can also use the offline task to update the execution of an existing previously executed task by providing the 
-  previously executed task’s ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
+  previously executed task's ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
   `iteration_offset`.   
   
   ```python
@@ -657,10 +663,10 @@ For example:
   `s3://`, `gs://`, or `azure://`). The artifact will only be added as a URL and will not be uploaded. 
 
   ```python
-  task.upload_artifact(name='link', artifact_object='azure://bucket/folder')
+  task.upload_artifact(name='link', artifact_object='azure://<account name>.blob.core.windows.net/path/to/file')
   ```
 
-* Serialize and upload a Python object. ClearML automatically chooses the file format based on the object’s type, or you 
+* Serialize and upload a Python object. ClearML automatically chooses the file format based on the object's type, or you 
   can explicitly specify the format as follows:
     * dict - `.json` (default), `.yaml` 
     * pandas.DataFrame - `.csv.gz` (default), `.parquet`, `.feather`, `.pickle` 
@@ -685,7 +691,7 @@ For example:
 See more details in the [Artifacts Reporting example](../guides/reporting/artifacts.md) and in the [SDK reference](../references/sdk/task.md#upload_artifact).
 
 ### Using Artifacts
-A task's artifacts are accessed through the task’s *artifact* property which lists the artifacts’ locations.
+A task's artifacts are accessed through the task's *artifact* property which lists the artifacts' locations.
 
 The artifacts can subsequently be retrieved from their respective locations by using:
 * `get_local_copy()` - Downloads the artifact and caches it for later use, returning the path to the cached copy.
@@ -738,12 +744,12 @@ It's possible to modify the following parameters:
 * Iteration number
 * Model tags
 
-Models can also be manually updated independently, without any task. See [OutputModel.update_weights](../references/sdk/model_outputmodel.md#update_weights). 
+Models can also be manually updated independently, without any task. See [`OutputModel.update_weights`](../references/sdk/model_outputmodel.md#update_weights). 
 
 ### Using Models
 
-Accessing a task’s previously trained model is quite similar to accessing task artifacts. A task's models are accessed 
-through the task’s models property which lists the input models and output model snapshots’ locations.
+Accessing a task's previously trained model is quite similar to accessing task artifacts. A task's models are accessed 
+through the task's models property which lists the input models and output model snapshots' locations.
 
 The models can subsequently be retrieved from their respective locations by using `get_local_copy()` which downloads the 
 model and caches it for later use, returning the path to the cached copy (if using TensorFlow, the snapshots are stored 
@@ -787,13 +793,13 @@ using [clearml-agent](../clearml_agent.md) to execute code.
 
 #### Setting Parameters
 
-To define parameters manually use the [`Task.set_parameters`](../references/sdk/task.md#set_parameters) method to specify 
+To define parameters manually use [`Task.set_parameters()`](../references/sdk/task.md#set_parameters) to specify 
 name-value pairs in a parameter dictionary.
 
-Parameters can be designated into sections: specify a parameter’s section by prefixing its name, delimited with a slash 
+Parameters can be designated into sections: specify a parameter's section by prefixing its name, delimited with a slash 
 (i.e. `section_name/parameter_name:value`). `General` is the default section.
 
-Call the [`set_parameter`](../references/sdk/task.md#set_parameter) method to set a single parameter. 
+Call [`Task.set_parameter()`](../references/sdk/task.md#set_parameter) to set a single parameter. 
 
 ```python
 task = Task.init(project_name='examples', task_name='parameters')
@@ -806,12 +812,12 @@ task.set_parameter(name='decay',value=0.001)
 ```
 
 :::caution Overwriting Parameters
-The `set_parameters` method replaces any existing hyperparameters in the task.
+`Task.set_parameters()` replaces any existing hyperparameters in the task.
 :::
 
 #### Adding Parameters
-To update the parameters in a task, use the [`Task.set_parameters_as_dict`](../references/sdk/task.md#set_parameters_as_dict) 
-method. Arguments and values are input as a dictionary. Like in `set_parameters` above, the parameter's section can 
+To update the parameters in a task, use [`Task.set_parameters_as_dict()`](../references/sdk/task.md#set_parameters_as_dict).
+Arguments and values are input as a dictionary. Like in `set_parameters` above, the parameter's section can 
 be specified.
 
 ```python
@@ -823,7 +829,7 @@ task.set_parameters_as_dict({'my_args/lr':0.3, 'epochs':10})
 
 ### Accessing Parameters 
 
-To access all task parameters, use the [`Task.get_parameters`](../references/sdk/task.md#get_parameters) method. This 
+To access all task parameters, use [`Task.get_parameters()`](../references/sdk/task.md#get_parameters). This 
 method returns a flattened dictionary of the `'section/parameter': 'value'` pairs.
 
 ```python
@@ -847,7 +853,7 @@ The parameters and their section names are case-sensitive
 ### Tracking Python Objects
 
 ClearML can track Python objects (such as dictionaries and custom classes) as they evolve in your code, and log them to 
-your task’s configuration using the [`Task.connect`](../references/sdk/task.md#connect) method. Once objects are connected 
+your task's configuration using [`Task.connect()`](../references/sdk/task.md#connect). Once objects are connected 
 to a task, ClearML automatically logs all object elements (e.g. class members, dictionary key-values pairs).
 
 ```python
@@ -871,7 +877,7 @@ task.connect(params_dictionary)
 ### Configuration Objects
 
 To log configuration more elaborate than a key-value dictionary (such as nested dictionaries or configuration files), 
-use the [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration) method. 
+use [`Task.connect_configuration()`](../references/sdk/task.md#connect_configuration). 
 This method saves configuration objects as blobs (i.e. ClearML is not aware of their internal structure).
 
 ```python
@@ -892,16 +898,16 @@ config_file_yaml = task.connect_configuration(
 ![Task configuration objects](../img/fundamentals_task_config_object.png)
 
 ### User Properties
-A task’s user properties do not impact task execution, so you can add / modify the properties at any stage. Add user 
+A task's user properties do not impact task execution, so you can add / modify the properties at any stage. Add user 
 properties to a task with the [`Task.set_user_properties`](../references/sdk/task.md#set_user_properties) method.
+
+For example, the code below sets the "backbone" property in a task:
 
 ```python
 task.set_user_properties(
   {"name": "backbone", "description": "network type", "value": "great"}
 )
 ```
-
-The above example sets the "backbone" property in a task.
 
 ![Task user properties](../img/fundamentals_task_config_properties.png)
 

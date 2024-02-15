@@ -14,10 +14,11 @@ All you have to do is simply add two lines of code to your scikit-learn script:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
-And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
+And that's it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
 * Joblib model files 

@@ -15,10 +15,11 @@ All you have to do is simply add two lines of code to your PyTorch Lightning scr
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
-And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
+And that's it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
 * PyTorch Models
@@ -43,8 +44,7 @@ To control a task's framework logging, use the `auto_connect_frameworks` paramet
 Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
 frameworks, input a dictionary, with framework-boolean pairs.
 
-For example, the following code will log PyTorch models, but will not log any information reported to TensorBoard.  
-:
+For example, the following code will log PyTorch models, but will not log any information reported to TensorBoard:
 
 ```python
 auto_connect_frameworks={
@@ -143,7 +143,7 @@ task.execute_remotely(queue_name='default', exit_process=True)
 ```
 
 ## Hyperparameter Optimization
-Use ClearML’s [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
+Use ClearML's [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
 the hyperparameter values that yield the best performing models. See [Hyperparameter Optimization](../fundamentals/hpo.md) 
 for more information.
 

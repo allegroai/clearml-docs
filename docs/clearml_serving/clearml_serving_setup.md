@@ -66,7 +66,7 @@ The following page goes over how to set up and upgrade `clearml-serving`.
    cd docker && docker-compose --env-file example.env -f docker-compose-triton.yml up 
    ```
    
-   If running on a GPU instance w/ Triton support (keras/pytorch/onnx etc.), use the triton gpu docker-compose file:
+   If running on a GPU instance with Triton support (keras/pytorch/onnx etc.), use the triton gpu docker-compose file:
    ```bash
    cd docker && docker-compose --env-file example.env -f docker-compose-triton-gpu.yml up
    ```

@@ -62,11 +62,8 @@ ClearML also supports manually reporting multiple types of metrics and plots, su
 charts.
 
 
-The object used for reporting metrics is called **logger** and is obtained by calling
+The object used for reporting metrics is called **logger** and is obtained by calling [`Task.get_logger()`](../references/sdk/task.md#get_logger).
 
-```python
-logger = task.get_logger()
-```
 
 ### Media Reporting
 

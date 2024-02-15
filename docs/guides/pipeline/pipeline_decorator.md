@@ -47,9 +47,8 @@ method before calling the pipeline function. See pipeline execution options [her
 Using the `@PipelineDecorator.component` decorator will make the function a pipeline component that can be called from the 
 pipeline controller, which implements the pipeline's execution logic. For detailed information, see [`@PipelineDecorator.component`](../../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent). 
 
-When the pipeline controller calls a pipeline step, a corresponding ClearML task will be created. For this reason, each 
-function which makes up a pipeline step needs to be self-contained. Notice that all package imports inside the function 
-will be automatically logged as required packages for the pipeline execution step.
+When the pipeline controller calls a pipeline step, a corresponding ClearML task will be created. Notice that all package 
+imports inside the function will be automatically logged as required packages for the pipeline execution step.
 
 ## Pipeline Execution
 

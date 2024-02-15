@@ -28,7 +28,7 @@ solution.
     * Support for CPU and GPU nodes
     * Auto-batching for DL models
 * [Automatic deployment](clearml_serving_tutorial.md#automatic-model-deployment)
-    * Automatic model upgrades w/ canary support
+    * Automatic model upgrades with canary support
     * Programmable API for model deployment
 * [Canary A/B deployment](clearml_serving_tutorial.md#canary-endpoint-setup) - online Canary updates
 * [Model Monitoring](clearml_serving_tutorial.md#model-monitoring-and-performance-metrics)

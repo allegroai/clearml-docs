@@ -14,10 +14,11 @@ All you have to do is simply add two lines of code to your TensorFlow script:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
-And that’s it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
+And that's it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Source code and uncommitted changes
 * Installed packages
 * TensorFlow definitions
@@ -75,17 +76,17 @@ See [Explicit Reporting Tutorial](../guides/reporting/explicit_reporting.md).
 
 ## Examples
 
-Take a look at ClearML’s TensorFlow examples. The examples use TensorFlow and ClearML in different configurations with 
+Take a look at ClearML's TensorFlow examples. The examples use TensorFlow and ClearML in different configurations with 
 additional tools, like Abseil and TensorBoard: 
 
 * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md) - Demonstrates ClearML's automatic logging of 
 model checkpoints, TensorFlow definitions, and scalars logged using TensorFlow methods
-* [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - Demonstrates ClearML’s automatic 
+* [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md) - Demonstrates ClearML's automatic 
 logging of TensorBoard output and TensorFlow definitions.
-* [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - Demonstrates ClearML’s automatic logging of 
+* [TensorBoard Toy](../guides/frameworks/tensorflow/tensorboard_toy.md) - Demonstrates ClearML's automatic logging of 
 TensorBoard scalars, histograms, images, and text, as well as all console output and TensorFlow Definitions.
 * [Absl flags](https://github.com/allegroai/clearml/blob/master/examples/frameworks/tensorflow/absl_flags.py) - Demonstrates 
-ClearML’s automatic logging of parameters defined using `absl.flags` 
+ClearML's automatic logging of parameters defined using `absl.flags` 
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 
@@ -129,6 +130,6 @@ task.execute_remotely(queue_name='default', exit_process=True)
 ```
 
 ## Hyperparameter Optimization
-Use ClearML’s [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
+Use ClearML's [`HyperParameterOptimizer`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) class to find 
 the hyperparameter values that yield the best performing models. See [Hyperparameter Optimization](../fundamentals/hpo.md) 
 for more information.

@@ -38,7 +38,7 @@ segmentation, and classification. Get the most out of YOLOv8 with ClearML:
    clearml-init
    ```
     
-That’s it! Now, whenever you train a model using YOLOv8, the run will be captured and tracked by ClearML – no additional 
+That's it! Now, whenever you train a model using YOLOv8, the run will be captured and tracked by ClearML – no additional 
 code necessary. 
  
 ## Training YOLOv8 with ClearML 
@@ -64,7 +64,7 @@ manager will capture:
 * And more
 
 All of this is captured into a [ClearML Task](../fundamentals/task.md): a task with your training script's name 
-created in a `YOLOv8` ClearML project. To change the task’s name or project, pass the `name` and `project` arguments in one of 
+created in a `YOLOv8` ClearML project. To change the task's name or project, pass the `name` and `project` arguments in one of 
 the following ways:
 * Via the SDK: 
    
@@ -89,7 +89,7 @@ ClearML uses `/` as a delimiter for subprojects: using `example/sample` as a nam
 task within the `example` project. 
 :::
 
-You can see all the captured data in the task’s page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md). 
+You can see all the captured data in the task's page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md). 
 Additionally, you can view all of your YOLOv8 runs tracked by ClearML in the [Experiments Table](../webapp/webapp_model_table.md). 
 Add custom columns to the table, such as mAP values, so you can easily sort and see what is the best performing model. 
 You can also select multiple experiments and directly [compare](../webapp/webapp_exp_comparing.md) them.   
@@ -115,7 +115,7 @@ shuts down instances as needed, according to a resource budget that you set.
 ### Cloning, Editing, and Enqueuing
 
 ClearML logs all the information required to reproduce an experiment, but you may also want to change a few parameters 
-and task details when you re-run an experiment, which you can do through ClearML’s UI.
+and task details when you re-run an experiment, which you can do through ClearML's UI.
 
 In order to be able to override parameters via the UI, 
 you have to run your code to [create a ClearML Task](../clearml_sdk/task_sdk.md#task-creation), which will log all the 

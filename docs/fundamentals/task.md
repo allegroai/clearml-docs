@@ -63,7 +63,7 @@ The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-
 To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
 
 ### Execution Configuration
-ClearML logs a task’s hyperparameters specified as command line arguments, environment or code level variables. This 
+ClearML logs a task's hyperparameters specified as command line arguments, environment or code level variables. This 
 allows experiments to be reproduced, and their hyperparameters and results can be saved and compared, which is key to 
 understanding model behavior.
 
@@ -82,7 +82,7 @@ See [Hyperparameters](hyperparameters.md) for more information.
 ClearML allows easy storage of experiments' output products as artifacts that can later be accessed easily and used, 
 through the [web UI](../webapp/webapp_overview.md) or programmatically.
 
-ClearML provides methods to easily track files generated throughout your experiments’ execution such as:
+ClearML provides methods to easily track files generated throughout your experiments' execution such as:
 
 - Numpy objects 
 - Pandas DataFrames
@@ -91,7 +91,7 @@ ClearML provides methods to easily track files generated throughout your experim
 - Python objects
 - and more!
 
-Most importantly, ClearML also logs experiments’ input and output models as well as interim model snapshots (see 
+Most importantly, ClearML also logs experiments' input and output models as well as interim model snapshots (see 
 [Models](artifacts.md)).
 
 #### Logging Artifacts 
@@ -121,7 +121,7 @@ Available task types are:
 * *training* (default) - Training a model 
 * *testing* - Testing a component, for example model performance
 * *inference* - Model inference job (e.g. offline / batch model execution)
-* *controller* - A task that lays out the logic for other tasks’ interactions, manual or automatic (e.g. a pipeline 
+* *controller* - A task that lays out the logic for other tasks' interactions, manual or automatic (e.g. a pipeline 
   controller) 
 * *optimizer* - A specific type of controller for optimization tasks (e.g. [hyperparameter optimization](hpo.md))
 * *service* - Long lasting or recurring service (e.g. server cleanup, auto ingress, sync services etc.)

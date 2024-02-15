@@ -43,7 +43,7 @@ The preceding diagram demonstrates the typical flow of hyperparameter optimizati
 
 ### Supported Optimizers
 
-The `HyperParameterOptimizer` class contains ClearML’s hyperparameter optimization modules. Its modular design enables 
+The `HyperParameterOptimizer` class contains ClearML's hyperparameter optimization modules. Its modular design enables 
 using different optimizers, including existing software frameworks, enabling simple, accurate, and fast hyperparameter 
 optimization.
 

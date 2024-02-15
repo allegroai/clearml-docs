@@ -11,7 +11,7 @@ to the specific task's **DATAVIEWS** tab (see [Experiment Dataviews](webapp_exp_
 View the Dataviews table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your Dataviews according to 
-columns of interest. Use the details view to access a selected Dataview’s details, while keeping the Dataview list in view.
+columns of interest. Use the details view to access a selected Dataview's details, while keeping the Dataview list in view.
 Details view can also be accessed by double-clicking a specific Dataview in the table view to open its details view. 
 
 You can archive Dataviews so the Dataviews table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
@@ -34,7 +34,7 @@ The Dataviews table includes the following columns:
 |**DATAVIEW** | Dataview name | String|
 |**USER** | User who created the Dataview | String|
 |**STATUS** | The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only)| String| 
-|**PROJECT** | The project name with which the dataview is associated| String|
+|**PROJECT** | Name of the Dataview's project| String|
 |**CREATED** | Elapsed time since the Dataview was created| Date-time|
 |**DESCRIPTION** | A description of the Dataview | String| 
 

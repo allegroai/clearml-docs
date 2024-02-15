@@ -16,6 +16,7 @@ All you have to do is add two lines of code:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
@@ -41,10 +42,10 @@ The agent executes the code with the modifications you made in the UI, even over
 
 Clone your experiment, then modify your Hydra parameters via the UI in one of the following ways:
 * Modify the OmegaConf directly:
-  1. In the experiment’s **CONFIGURATION > HYPERPARAMETERS > HYDRA** section, set `_allow_omegaconf_edit_` to `True` 
-  1. In the experiment’s **CONFIGURATION > CONFIGURATION OBJECTS > OmegaConf** section, modify the OmegaConf values
+  1. In the experiment's **CONFIGURATION > HYPERPARAMETERS > HYDRA** section, set `_allow_omegaconf_edit_` to `True` 
+  1. In the experiment's **CONFIGURATION > CONFIGURATION OBJECTS > OmegaConf** section, modify the OmegaConf values
 * Add an experiment hyperparameter:
-  1. In the experiment’s **CONFIGURATION > HYPERPARAMETERS > HYDRA** section, make sure `_allow_omegaconf_edit_` is set 
+  1. In the experiment's **CONFIGURATION > HYPERPARAMETERS > HYDRA** section, make sure `_allow_omegaconf_edit_` is set 
   to `False` 
   1. In the same section, click `Edit`, which gives you the option to add parameters. Input parameters from the OmegaConf 
   that you want to modify using dot notation. For example, if your OmegaConf looks like this: 

@@ -66,7 +66,7 @@ change the task's name or project, use the `task_name` and `project_name` parame
 The task captures the images logged by the image handler, metrics logged with the stats handler, as well as source code, 
 uncommitted changes, installed packages, console output, and more. 
  
-You can see all the captured data in the task’s page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md).
+You can see all the captured data in the task's page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md).
 
 View the logged images in the WebApp, in the experiment's **Debug Samples** tab.
 

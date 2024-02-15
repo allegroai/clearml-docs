@@ -4,10 +4,11 @@ title: PipelineController
 
 ## The PipelineController Class
 
-Create the [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md), where you will define
+Create the [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md), where you will define
 the pipeline's execution logic:
 ```python
 from clearml import PipelineController
+
 pipe = PipelineController(
   name="Pipeline Controller", project="Pipeline example", version="1.0.0"
 )
@@ -44,9 +45,9 @@ values for the new run.
 ![Pipeline new run](../img/pipelines_new_run.png)
 
 ### Additional Configuration 
-You can connect configuration dictionaries or files to a pipeline controller using the 
-[PipelineController.connect_configuration](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
-method by providing the configuration object, or file path. 
+You can connect configuration dictionaries or files to a pipeline controller using 
+[`PipelineController.connect_configuration()`](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
+by providing the configuration object, or file path. 
 
 For files, call `connect_configuration()` before reading the configuration file. If it's a local file, input a relative 
 path.
@@ -54,7 +55,8 @@ path.
 ```python
 config_file = pipe.connect_configuration(
     configuration=config_file_path, 
-    name="My Configuration", description="configuration for pipeline"
+    name="My Configuration", 
+    description="configuration for pipeline"
 )
 my_params = json.load(open(config_file,'rt'))
 ```
@@ -129,9 +131,11 @@ Examples:
 Creating a pipeline step from a function means that when the function is called, it will be transformed into a ClearML task, 
 translating its arguments into parameters, and returning values into artifacts.  
 
-:::info Function to ClearML Task conversion
-As each function is transformed into an independently executed step, it needs to be self-contained. To facilitate this, 
-all package imports inside the function are automatically logged as required packages for the pipeline step. 
+:::info Package Imports
+In the case that the `skip_global_imports` parameter of [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md) 
+is set to `False`, all global imports will be automatically imported at the beginning of each step's execution. 
+Otherwise, if set to `True`, make sure that each function which makes up a pipeline step contains package imports, which 
+are automatically logged as required packages for the pipeline execution step.
 :::
 
 Function steps are added using [`PipelineController.add_function_step()`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step):

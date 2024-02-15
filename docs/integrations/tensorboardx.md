@@ -13,6 +13,7 @@ to do is add two lines of code to your script:
 
 ```python
 from clearml import Task
+
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
@@ -56,7 +57,7 @@ See more information about explicitly logging information to a ClearML Task:
 
 ### Examples
 
-Take a look at ClearML’s TensorboardX examples: 
+Take a look at ClearML's TensorboardX examples: 
 
 * [TensorboardX with PyTorch](../guides/frameworks/tensorboardx/tensorboardx.md) - Demonstrates ClearML logging TensorboardX scalars, debug 
   samples, and text in code using PyTorch
