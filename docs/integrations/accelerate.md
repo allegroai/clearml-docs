@@ -34,7 +34,7 @@ accelerator.init_trackers(project_name="my_project", config=hps)
 :::tip
 You can also pass parameters to [`Task.init()`](../references/sdk/task.md#taskinit) by adding a nested dictionary
 to the `init_kwargs` argument of `Accelerator.init_trackers()`: use `"clearml"` as the key, and a dictionary of 
-kwarg-name/kwarg-value pairs as the value. For example, the following code adds tags to your task:
+parameter-name/parameter-value pairs as the value. For example, the following code adds tags to your task:
 
 ```python
 accelerator.init_trackers(
