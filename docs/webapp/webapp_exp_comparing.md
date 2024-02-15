@@ -8,7 +8,7 @@ differences in experiments' results and their causes. You can view the differenc
 objects, and other details.
 * Hyperparameters
   * [Values](#side-by-side-textual-comparison) - Compare parameters and their values
-  * [Parallel coordinates](#parallel-coordinates-mode) - View the impact of hyperparameters on a selected metric
+  * [Parallel coordinates](#parallel-coordinates-mode) - View the impact of hyperparameters on a selected metrics
   * [Scatter plot](#scatter-plot) - View the correlation between a selected hyperparameter and metric
 * Scalars - Compare experiment metrics:
   * [Values](#tabular-scalar-comparison) - Compare minimal, maximal or last reported values in a concise comparison 
@@ -103,11 +103,10 @@ Switch on the **Show row extremes** toggle to highlight each variant's maximum a
 
 ### Parallel Coordinates Mode
 
-The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments' hyperparameter impact on a specific metric.
-
-**To compare by metric:**
-1. Under **Performance Metric**, select a metric to compare for
-1. Select the metric values to use in the plot:
+The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments' hyperparameter impact on a specified 
+metrics:
+1. Under **Performance Metrics**, select a metrics to compare for
+1. Select the values to use for each metric in the plot (can select multiple):
     * LAST - The final value, or the most recent value, for currently running experiments 
     * MIN - Minimal value 
     * MAX - Maximal value
