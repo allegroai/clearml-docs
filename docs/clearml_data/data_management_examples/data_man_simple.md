@@ -29,7 +29,7 @@ the needed files.
     New dataset created id=24d05040f3e14fbfbed8edb1bf08a88c
     ```
 
-1. Now let's add a folder. File addition is recursive, so it's enough to point at the folder 
+1. Add a folder. File addition is recursive, so it's enough to point at the folder 
 to captures all files and sub-folders:
    
    ```bash

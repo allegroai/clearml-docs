@@ -12,8 +12,8 @@ Every previously executed experiment is stored as a Task.
 A Task's project and name can be changed after the experiment has been executed.
 A Task is also automatically assigned an auto-generated unique identifier (UUID string) that cannot be changed and always locates the same Task in the system.
 
-It's possible to retrieve a Task object programmatically by querying the system based on either the Task ID,
-or project and name combination. It's also possible to query tasks based on their properties, like tags (see [Querying Tasks](../../clearml_sdk/task_sdk.md#querying--searching-tasks)).
+Retrieve a Task object programmatically by querying the system based on either the Task ID,
+or project and name combination. You can also query tasks based on their properties, like tags (see [Querying Tasks](../../clearml_sdk/task_sdk.md#querying--searching-tasks)).
 
 ```python
 prev_task = Task.get_task(task_id='123456deadbeef')
@@ -28,7 +28,7 @@ on model performance, saving and comparing these between experiments is sometime
 
 ClearML supports logging `argparse` module arguments out of the box, so once ClearML is integrated into the code, it automatically logs all parameters provided to the argument parser.
 
-It's also possible to log parameter dictionaries (very useful when parsing an external config file and storing as a dict object),
+You can also log parameter dictionaries (very useful when parsing an external config file and storing as a dict object),
 whole configuration files, or even custom objects or [Hydra](https://hydra.cc/docs/intro/) configurations!
 
 ```python
@@ -139,9 +139,9 @@ This feature lets you easily get a full genealogy of every trained and used mode
 Full metrics logging is the key to finding the best performing model!
 By default, everything that's reported to TensorBoard and Matplotlib is automatically captured and logged.
 
-Since not all metrics are tracked that way, it's also possible to manually report metrics using a [`Logger`](../../fundamentals/logger.md) object.
+Since not all metrics are tracked that way, you can also manually report metrics using a [`Logger`](../../fundamentals/logger.md) object.
 
-It's possible to log everything, from time series data to confusion matrices to HTML, Audio and Video, to custom plotly graphs! Everything goes!
+You can log everything, from time series data to confusion matrices to HTML, Audio and Video, to custom plotly graphs! Everything goes!
 
 ![image](../../img/report_plotly.png)
 
@@ -157,7 +157,7 @@ The experiment table is a powerful tool for creating dashboards and views of you
 
 ### Creating Leaderboards
 Customize the [experiments table](../../webapp/webapp_exp_table.md) to fit your own needs, adding desired views of parameters, metrics and tags.
-It's possible to filter and sort based on parameters and metrics, so creating custom views is simple and flexible.
+You can filter and sort based on parameters and metrics, so creating custom views is simple and flexible.
 
 Create a dashboard for a project, presenting the latest Models and their accuracy scores, for immediate insights.
 
@@ -166,7 +166,7 @@ This is helpful to monitor your projects' progress, and to share it across the o
 
 Any page is sharable by copying the URL from the address bar, allowing you to bookmark leaderboards or to send an exact view of a specific experiment or a comparison page.
 
-It's also possible to tag Tasks for visibility and filtering allowing you to add more information on the execution of the experiment.
+You can also tag Tasks for visibility and filtering allowing you to add more information on the execution of the experiment.
 Later you can search based on task name in the search bar, and filter experiments based on their tags, parameters, status, and more.
 
 ## What's Next?
