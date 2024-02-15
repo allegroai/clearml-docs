@@ -204,10 +204,10 @@ See server upgrade instructions for any of the available formats:
 
 #### Can I log input and output models manually?   <a id="manually-log-models"></a>
 
-Yes! Use the [`InputModel.import_model`](references/sdk/model_inputmodel.md#inputmodelimport_model) 
-and [`Task.connect`](references/sdk/task.md#connect) methods to manually connect an input model. Use the 
-[`OutputModel.update_weights`](references/sdk/model_outputmodel.md#update_weights) 
-method to manually connect a model weights file.
+Yes! Use [`InputModel.import_model()`](references/sdk/model_inputmodel.md#inputmodelimport_model) 
+and [`Task.connect()`](references/sdk/task.md#connect) to connect an input model. Use
+[`OutputModel.update_weights()`](references/sdk/model_outputmodel.md#update_weights) 
+to connect a model weights file.
 
 ```python
 input_model = InputModel.import_model(link_to_initial_model_file)
@@ -801,8 +801,8 @@ To fix this issue, you could import the `time` package and add a `time.sleep(20)
 
 #### Can I use ClearML with scikit-learn?   <a id="use-scikit-learn"></a>
 
-Yes! `scikit-learn` is supported. Everything you do is logged. ClearML automatically logs models which are stored using `joblib`. 
-See the scikit-learn examples with [Matplotlib](guides/frameworks/scikit-learn/sklearn_matplotlib_example.md) and [Joblib](guides/frameworks/scikit-learn/sklearn_joblib_example.md).
+Yes! `scikit-learn` is supported. ClearML automatically logs models which are stored using `joblib`.
+For more information, see [scikit-learn](integrations/scikit_learn.md).
 
 ## ClearML Configuration
 
