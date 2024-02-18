@@ -246,30 +246,30 @@ user can only rejoin your workspace when you re-invite them.
 This feature is available under the ClearML Enterprise plan.
 :::
 
-Service accounts are entities with credentials that enable them to access the ClearML API, but not the UI.
-Administrators can assign credentials to user accounts to use them for different ClearML Agents, automations, and more,
-without giving up a seat in the workspace. 
+Service accounts are ClearML users that provide  services or applications  with access to the ClearML API, but not the 
+UI. Administrators can create access credentials for service accounts to use them for different ClearML Agents, 
+automations, and more. 
 
 The **SERVICE ACCOUNTS** table lists workspace service accounts. 
 Each row of the table includes: 
-* **Name** - Account name 
-* [**User groups**](#user-groups)
-* **User ID**
-* **Credentials** - Number of credentials granted to account
-* **Last active time**
+* Name - Service account name 
+* [User groups](#user-groups)
+* User ID
+* Credentials - Number of credentials currently available to the account
+* Last active time
 
 Hover over a service account in the table to **Edit** or **Delete** it.
 
-#### Creating Service Account
+#### Creating a Service Account
 
 To create a service account:
 1. Click **+ ADD SERVICE ACCOUNT**
-2. In **ADD SERVICE ACCOUNT** modal input a name for the new account, and select `Set as admin` to grant the account administrator 
-   permissions (RW access to all resources) 
+2. In the **ADD SERVICE ACCOUNT** modal input a name for the new account. Select `Set as admin` to grant the account 
+   administrator privileges (see [User Groups](#user-groups))
 4. Click **Save**
 
-When a service account is created, its first set of credentials is automatically generated. 
-The dialog displays new credentials, formatted as a ready-to-copy configuration file section.
+When a service account is created, an initial set of credentials is automatically generated. The dialog displays new 
+credentials, formatted as a ready-to-copy configuration file section.
 
 #### Service Account Credentials 
 
