@@ -27,9 +27,9 @@ The goal of this phase is to get a code, dataset, and environment set up, so you
 - [ClearML SDK](../../clearml_sdk/clearml_sdk.md) should be integrated into your code (check out [Getting Started](ds_first_steps.md)). 
   This helps visualizing the results and tracking progress.
 - [ClearML Agent](../../clearml_agent.md) helps moving your work to other machines without the hassle of rebuilding the environment every time, 
-  while also creating an easy queue interface that easily lets you just drop your experiments to be executed one by one
+  while also creating an easy queue interface that easily lets you drop your experiments to be executed one by one
   (great for ensuring that the GPUs are churning during the weekend).
-- [ClearML Session](../../apps/clearml_session.md) helps with developing on remote machines, just like you'd develop on your local laptop!
+- [ClearML Session](../../apps/clearml_session.md) helps with developing on remote machines, in the same way that you'd develop on your local laptop!
 
 ## Train Remotely
 
@@ -66,7 +66,7 @@ improving your results later on!
 
 ## Visibility Matters
 
-While it's possible to track experiments with one tool, and pipeline them with another, having 
+While you can track experiments with one tool, and pipeline them with another, having 
 everything under the same roof has its benefits! 
 
 Being able to track experiment progress and compare experiments, and, based on that, send experiments to execution on remote

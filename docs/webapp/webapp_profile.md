@@ -553,7 +553,7 @@ The **USAGE & BILLING** section displays your ClearML workspace usage informatio
 ![Billing and Usage free](../img/settings_billing_usage_free.png)
 
 To add users to your workspace, click **INVITE USERS** in the **USERS** section. This will redirect you to the 
-**USER MANAGEMENT** page, where you can invite users (see details [here](#inviting-new-teammates))
+**USER MANAGEMENT** page, where you can invite users (see details [here](#inviting-new-teammates)).
 
 ### ClearML Pro 
 

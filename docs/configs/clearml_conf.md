@@ -413,7 +413,7 @@ ___
 
 **`agent.match_rules`** (*[dict]*)
 
-:::note Enterprise Feature
+:::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
 :::
 
@@ -1437,7 +1437,7 @@ sdk {
 
 ## Configuration Vault
 
-:::note Enterprise Feature
+:::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
 :::
 

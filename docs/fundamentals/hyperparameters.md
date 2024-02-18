@@ -11,7 +11,7 @@ hyperparameters and results can be saved and compared, which is key to understan
 
 ClearML lets you easily try out different hyperparameter values without changing your original code. ClearML's [execution
 agent](../clearml_agent.md) will override the original values with any new ones you specify through the web UI (see 
-[Configuration](../webapp/webapp_exp_tuning.md#configuration) in the Tuning Experiments page). It's also possible to 
+[Configuration](../webapp/webapp_exp_tuning.md#configuration) in the Tuning Experiments page). You can also
 programmatically set experiment parameters.
 
 ## Tracking Hyperparameters 
@@ -50,7 +50,7 @@ parameter specifying parameters to log.
 log_os_environments: ["AWS_*", "CUDA_VERSION"]
 ```
 
-It's also possible to specify environment variables using the `CLEARML_LOG_ENVIRONMENT` variable.
+You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` variable.
 
 :::note Overriding clearml.conf
 The `CLEARML_LOG_ENVIRONMENT` always overrides the `clearml.conf` file. 
