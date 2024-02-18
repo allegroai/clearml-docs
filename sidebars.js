@@ -71,7 +71,10 @@ module.exports = {
         {'CLI Tools': ['apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
                 'integrations/autokeras',
-                'integrations/catboost', 'integrations/click', 'integrations/fastai', 'integrations/transformers',
+                'integrations/catboost',
+                'integrations/click',
+                'integrations/fastai',
+                {"HuggingFace": ['integrations/transformers', 'integrations/accelerate']},
                 'integrations/hydra', 'integrations/jsonargparse',
                 'integrations/keras', 'integrations/keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
