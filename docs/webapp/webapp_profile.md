@@ -8,19 +8,21 @@ To navigate to the Settings page, click the <img src="/docs/latest/icons/ico-me.
 button in the top right corner of the web UI screen, then click **Settings**. 
 
 The Settings page consists of the following sections:
-* [Profile](#profile) - You basic user information
-* [Configuration](#configuration) - Control general system behavior settings and input storage access credentials
-* [Workspace](#workspace)  
-    * [ClearML credentials](#clearml-credentials) - Create client credentials for ClearML and ClearML Agent to use 
-    * [Configuration vault](#configuration-vault) (ClearML Enterprise Server) - Define global ClearML client settings
-      that are applied to all ClearML and ClearML Agent instances (which use the workspace's access 
-      credentials)
-* [Administrator Vaults](#administrator-vaults) (ClearML Enterprise Server) - Manage user-group level configuration 
-  vaults to apply ClearML client settings to all members of the user groups
-* [Users & Groups](#users--groups) - Manage the users that have access to a workspace
-* [Access Rules](#access-rules) (ClearML Enterprise Server) - Manage per-resource access privileges 
-* [Identity Providers](#identity-providers) (ClearML Enterprise Server) - Manage server identity providers
-* [Usage & Billing](#usage--billing) (ClearML Hosted Service) - View current usage information and billing details 
+* User Settings:
+  * [Profile](#profile) - You basic user information
+  * [Configuration](#configuration) - Control general system behavior settings and input storage access credentials
+  * [Workspace](#workspace)  
+      * [ClearML credentials](#clearml-credentials) - Create client credentials for ClearML and ClearML Agent to use 
+      * [Configuration vault](#configuration-vault) (ClearML Enterprise Server) - Define global ClearML client settings
+        that are applied to all ClearML and ClearML Agent instances (which use the workspace's access 
+        credentials)
+* Administrator Settings:
+  * [Administrator Vaults](#administrator-vaults) (ClearML Enterprise Server) - Manage user-group level configuration 
+    vaults to apply ClearML client settings to all members of the user groups
+  * [Users & Groups](#users--groups) - Manage the users that have access to a workspace
+  * [Access Rules](#access-rules) (ClearML Enterprise Server) - Manage per-resource access privileges 
+  * [Identity Providers](#identity-providers) (ClearML Enterprise Server) - Manage server identity providers
+  * [Usage & Billing](#usage--billing) (ClearML Hosted Service) - View current usage information and billing details 
 
 ## Profile 
 The profile tab presents user information.
@@ -237,6 +239,59 @@ To remove a user from a workspace:
 Removed users lose access to your workspace's resources (tasks, models, etc.) and their existing access credentials are 
 revoked. Tasks and associated artifacts logged to your workspace by a removed user will remain in your workspace. The 
 user can only rejoin your workspace when you re-invite them. 
+
+### Service Accounts
+
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan.
+:::
+
+Service accounts are ClearML users that provide  services or applications  with access to the ClearML API, but not the 
+UI. Administrators can create access credentials for service accounts to use them for different ClearML Agents, 
+automations, and more. 
+
+The **SERVICE ACCOUNTS** table lists workspace service accounts. 
+Each row of the table includes: 
+* Name - Service account name 
+* [User groups](#user-groups)
+* User ID
+* Credentials - Number of credentials currently available to the account
+* Last active time
+
+Hover over a service account in the table to **Edit** or **Delete** it.
+
+#### Creating a Service Account
+
+To create a service account:
+1. Click **+ ADD SERVICE ACCOUNT**
+2. In the **ADD SERVICE ACCOUNT** modal input a name for the new account. Select `Set as admin` to grant the account 
+   administrator privileges (see [User Groups](#user-groups))
+4. Click **Save**
+
+When a service account is created, an initial set of credentials is automatically generated. The dialog displays new 
+credentials, formatted as a ready-to-copy configuration file section.
+
+#### Service Account Credentials 
+
+To generate new credentials for a service account:
+1. Hover over the account's row on the table
+2. Click the <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> button, which
+   opens the editing panel
+3. Click **Create new credentials**
+
+The dialog displays new credentials, formatted as a ready-to-copy configuration file section.
+
+To revoke a set of credentials:
+1. In the editing panel, hover of the relevant credential's row
+2. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
+
+#### Deleting Service Account
+Deleting a service account will revoke its credentials, causing agents using the account's credentials to fail. 
+Tasks and associated artifacts logged to your workspace by a service account will remain in your workspace.
+
+To delete a service account:
+1. Hover over the account's row on the table
+1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
 ### User Groups
 
