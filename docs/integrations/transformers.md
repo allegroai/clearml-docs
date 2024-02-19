@@ -1,5 +1,5 @@
 ---
-title: HuggingFace Transformers
+title: Transformers
 ---
 
 HuggingFace's [Transformers](https://huggingface.co/docs/transformers/index) is a popular deep learning framework. You can 

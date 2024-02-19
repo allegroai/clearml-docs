@@ -171,7 +171,7 @@ In order to mitigate the clutter that a multitude of debugging tasks might creat
   the ClearML configuration reference)
 * The previous task execution did not have any artifacts / models
 
-It's possible to always create a new task by passing `reuse_last_task_id=False`.
+You can always create a new task by passing `reuse_last_task_id=False`.
 
 See full `Task.init` reference [here](../references/sdk/task.md#taskinit).
 
@@ -267,7 +267,7 @@ For example:
     a_task = Task.get_task(project_name='examples', task_name='artifacts')
     ```
 
-Once a task object is obtained, it's possible to query the state of the task, reported scalars, etc.
+Once a task object is obtained, you can query the state of the task, reported scalars, etc.
 The task's outputs, such as artifacts and models, can also be retrieved. 
 
 ## Querying / Searching Tasks
@@ -708,7 +708,7 @@ local_csv = preprocess_task.artifacts['data'].get_local_copy()
 See more details in the [Using Artifacts example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
 
 ## Models 
-The following is an overview of working with models through a `Task` object. It is also possible to work directly with model
+The following is an overview of working with models through a `Task` object. You can also work directly with model
 objects (see [Models (SDK)](model_sdk.md)).
 
 ### Logging Models Manually
@@ -737,7 +737,7 @@ The snapshots of manually uploaded models aren't automatically captured. To upda
 task.update_output_model(model_path='path/to/model')
 ```
 
-It's possible to modify the following parameters:
+You can modify the following parameters:
 * Model location
 * Model name
 * Model description

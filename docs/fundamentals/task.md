@@ -23,7 +23,7 @@ how to group tasks, though different models or objectives are usually grouped in
 Tasks can be accessed and utilized with code. [Access a task](../clearml_sdk/task_sdk.md#accessing-tasks) by 
 specifying project name and task name combination or by a unique ID. 
 
-It's possible to create copies of a task ([clone](../webapp/webapp_exp_reproducing.md)) then execute them with 
+You can create copies of a task ([clone](../webapp/webapp_exp_reproducing.md)) then execute them with 
 [ClearML Agent](../clearml_agent.md). When an agent executes a task, it uses the specified configuration to:
 
 * Install required Python packages
@@ -60,7 +60,7 @@ The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-
 * [Debug samples](../webapp/webapp_exp_track_visual.md#debug-samples)
 * [Models](artifacts.md) 
 
-To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
+For a more in-depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
 
 ### Execution Configuration
 ClearML logs a task's hyperparameters specified as command line arguments, environment or code level variables. This 
@@ -115,7 +115,7 @@ they are attached to, and then retrieving the artifact with one of its following
 See more details in the [Using Artifacts example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
 
 ## Task Types
-Tasks have a *type* attribute, which denotes their purpose (e.g. training / testing / data processing). This helps to further 
+Tasks have a *type* attribute, which denotes their purpose. This helps to further 
 organize projects and ensure tasks are easy to [search and find](../clearml_sdk/task_sdk.md#querying--searching-tasks). 
 Available task types are: 
 * *training* (default) - Training a model 
