@@ -378,13 +378,20 @@ link to see the link's title.
 
 The MarkDown code for a collapsible panel looks like this:
 
-| MarkDown | Rendered Output |
-|---|---|
-| <code><details\><br/>&nbsp<summary\>Section title</summary\><br/>&nbsp;&nbsp;Collapsible Section Contents<br/></details\></code>|<details><summary>Section title</summary>Collapsible Section Contents</details>|
+```
+<details><summary>Section title</summary>Collapsible Section Contents</details>
+```
 
 The collapsible panel is surrounded by `<details>` tags. Within the `<details>` tag, add the section's title between
 the `<summary>` tags. This title can be seen when the panel is collapsed. After the `</summary>` tag, add the panel
 contents. 
+
+It is rendered like this:
+
+<details><summary>Section title</summary>Collapsible Section Contents</details>
+
+
+
 
 ### Horizontal Rules
 

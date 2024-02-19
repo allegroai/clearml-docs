@@ -7,6 +7,7 @@
  * @format
  */
 
+import {themes as prismThemes} from 'prism-react-renderer';
 
 const path = require('path');
 
@@ -23,8 +24,8 @@ module.exports = {
   projectName: 'ClearML', // Usually your repo name.
   themeConfig: {
     prism: {
-      theme: require('prism-react-renderer/themes/dracula'),
-      darkTheme: require('prism-react-renderer/themes/dracula'),
+      theme: prismThemes.dracula,
+      darkTheme: prismThemes.dracula,
     },
     //algolia algolia: {
       //algolia appId: 'ALGOLIA_APP_ID', // The application ID provided by Algolia
