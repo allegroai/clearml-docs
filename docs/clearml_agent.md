@@ -656,10 +656,11 @@ Agents can spin multiple Tasks from different queues based on the number of GPUs
 needs.
 
 `dynamic-gpus` enables dynamic allocation of GPUs based on queue properties.
-To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
+To configure the number of GPUs for a queue, use the `--gpus` flag to specify the active GPUs, and use the `--queue` 
+flag to specify the queue name and number of GPUs:
 
 ```console
-clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
+clearml-agent daemon --dynamic-gpus --gpus 0-2 --queue dual_gpus=2 single_gpu=1
 ```
 
 ### Example
