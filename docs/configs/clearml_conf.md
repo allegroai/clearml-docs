@@ -114,7 +114,7 @@ in either case).
 
 * Set to `true` to allow passing host environments into docker container with Task's docker container arguments. For example: `"-e HOST_NAME=$HOST_NAME"`. 
 
-:::caution
+:::warning
 Use with care! This might introduce security risks by allowing access to keys/secret on the host machine. 
 :::
 
@@ -724,7 +724,7 @@ Dictionary of configuration options for the ClearML Server API, web, and file se
         
 * The URL of your ClearML file server. For example, `https://files.MyDomain.com`.
         
-:::caution
+:::warning
 You must use a secure protocol with ``api.web_server``, ``api.files_server``, and ``api.api_server``. Use `https`, not `http`. 
 :::
 
@@ -735,7 +735,7 @@ You must use a secure protocol with ``api.web_server``, ``api.files_server``, an
 * Set the request method for all API requests and auth login. This can be useful when `GET` requests with payloads are 
 blocked by a server, and `POST` requests can be used instead. The request options are: "GET", "POST", "PUT".   
 
-:::caution
+:::warning
 This configuration option is experimental, and has not been vigorously tested, so it may have unintended consequences. 
 :::
   
@@ -772,7 +772,7 @@ This configuration option is experimental, and has not been vigorously tested, s
     * `true` - Verify   
     * `false` - Do not verify. 
 
-:::caution
+:::warning
 Set to False only if required.
 :::
 

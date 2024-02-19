@@ -349,7 +349,7 @@ Your firewall may be preventing the connection. Try one of the following solutio
 * Direct python "requests" to use the enterprise certificate file by setting the OS environment variables CURL_CA_BUNDLE or REQUESTS_CA_BUNDLE. For a detailed discussion of this topic, see [https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module](https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module).
 * Disable certificate verification   
   
-  :::caution
+  :::warning
   For security reasons, it is not recommended to disable certificate verification
   :::
     1. Upgrade ClearML to the current version:
@@ -431,7 +431,7 @@ To delete an object programmatically, use the relevant method:
 * Datasets - [`Dataset.delete()`](references/sdk/dataset.md#datasetdelete)
 
 
-:::caution
+:::warning
 You cannot undo the deletion of a ClearML object.
 :::
 
@@ -518,7 +518,7 @@ You can enable offline mode in one of the following ways:
 the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
-:::caution 
+:::warning 
 Offline mode only works with tasks created using [`Task.init()`](references/sdk/task.md#taskinit) and not with those created 
 using [`Task.create()`](references/sdk/task.md#taskcreate). 
 :::

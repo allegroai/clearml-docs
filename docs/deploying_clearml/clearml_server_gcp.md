@@ -64,7 +64,7 @@ For more information see the [Compute Engine Documentation](https://cloud.google
 ## Launching
 
 
-:::caution
+:::warning
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
 instructions in the [Security](clearml_server_security.md) page.
 :::
@@ -88,7 +88,7 @@ The minimum requirements for ClearML Server are:
 
 ## Backing Up and Restoring Data and Configuration
 
-:::caution
+:::warning
 Stop your server before backing up or restoring data and configuration
 :::
 
