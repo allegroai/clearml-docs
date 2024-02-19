@@ -295,7 +295,7 @@ Yes! ClearML provides multiple ways to configure your task and track your parame
 In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](integrations/click.md), 
 [Python Fire](integrations/python_fire.md), [Hydra](integrations/hydra.md), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
 
-ClearML also supports tracking code-level configuration dictionaries using the [`Task.connect`](references/sdk/task.md#connect) method.
+ClearML also supports tracking code-level configuration dictionaries using [`Task.connect()`](references/sdk/task.md#connect).
 
 For example, the code below connects hyperparameters (`learning_rate`, `batch_size`, `display_step`,
 `model_path`, `n_hidden_1`, and `n_hidden_2`) to a task:
@@ -309,7 +309,7 @@ parameters_dict = { 'learning_rate': 0.001, 'batch_size': 100, 'display_step': 1
 parameters_dict = Task.current_task().connect(parameters_dict)
 ```
 
-See more task configuration options [here](fundamentals/hyperparameters.md). 
+For more task configuration options, see [Hyperparameters](fundamentals/hyperparameters.md). 
     
 
 <br/>

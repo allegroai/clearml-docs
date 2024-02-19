@@ -173,7 +173,7 @@ In order to mitigate the clutter that a multitude of debugging tasks might creat
 
 You can always create a new task by passing `reuse_last_task_id=False`.
 
-See full `Task.init` reference [here](../references/sdk/task.md#taskinit).
+For more information, see [`Task.init()`](../references/sdk/task.md#taskinit).
 
 ### Continuing Task Execution
 You can continue the execution of a previously run task using the `continue_last_task` parameter of `Task.init()`. 

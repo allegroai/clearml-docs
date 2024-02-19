@@ -220,9 +220,9 @@ of a report card to open its context menu and access report actions:
 * **Archive** - Move report from active reports page to archive
 * **Delete** - Delete the report. To delete a report, it must first be archived. 
 
-### Create New Reports
+### Create Reports
 
-To create a new project, click the **+ NEW REPORT** button in the top right of the page, 
+To create a report, click the **+ NEW REPORT** button in the top right of the page, 
 which will open a **New Report** modal.
 
 ![New project modal](../img/webapp_report_new_report.png)
