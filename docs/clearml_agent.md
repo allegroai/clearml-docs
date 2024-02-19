@@ -659,7 +659,7 @@ needs.
 To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
 
 ```console
-clearml-agent daemon --dynamic-gpus --gpus all --queue dual_gpus=2 single_gpu=1
+clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
 ```
 
 ### Example
