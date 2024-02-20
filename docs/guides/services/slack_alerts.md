@@ -10,7 +10,7 @@ failure of tasks, and posts alert messages on a Slack channel.
 
 ## Creating a Slack Bot
 
-Before configuring and running the Slack alert service, create a new Slack Bot (**ClearML Bot**). 
+Before configuring and running the Slack alert service, create a Slack Bot (**ClearML Bot**). 
 
 :::important
 The Slack API token and channel you create are required to configure the Slack alert service.
