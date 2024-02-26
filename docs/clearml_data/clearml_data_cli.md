@@ -103,7 +103,7 @@ clearml-data remove [-h] [--id ID] [--files [FILES [FILES ...]]]
 
 ## upload
 
-Upload the local dataset changes to the server. By default, it's uploaded to the ClearML File Server. You can specify a different storage
+Upload the local dataset changes to the server. By default, it's uploaded to the ClearML file server. You can specify a different storage
 medium by entering an upload destination, such as `s3://bucket`, `gs://`, `azure://`, `/mnt/shared/`.
 
 ```bash
