@@ -679,7 +679,7 @@ task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
 task = Task.init(project_name, task_name, output_uri="gs://bucket-name/folder")
 ```
 
-To use Cloud storage with ClearML, configure the storage credentials in your `~/clearml.conf`. For detailed information, 
+To use cloud storage with ClearML, configure the storage credentials in your `~/clearml.conf`. For detailed information, 
 see [ClearML Configuration Reference](configs/clearml_conf.md).
 
 <a id="pycharm-remote-debug-detect-git"></a>
