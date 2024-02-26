@@ -782,6 +782,15 @@ task = Task.init(
 )
 ```
 
+:::tip Output URI Formats
+Specify the model storage URI location using the relevant format: 
+* A shared folder: `/mnt/share/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+:::
+
 To automatically store all models created by any experiment at a specific location, edit the `clearml.conf` (see
  [ClearML Configuration Reference](../configs/clearml_conf.md#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` 
 to the desired storage (see [Storage](../integrations/storage.md)). This is especially helpful when

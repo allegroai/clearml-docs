@@ -62,7 +62,13 @@ and auto-increments the version number.
 :::
 
 Use the `output_uri` parameter to specify a network storage target to upload the dataset files, and associated information 
-(such as previews) to (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://<account name>.blob.core.windows.net/path/to/file`, `file:///mnt/share/data`). 
+(such as previews) to. For example:
+* A shared folder: `/mnt/share/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+
 By default, the dataset uploads to ClearML's file server. The `output_uri` parameter of the [`Dataset.upload`](#uploading-files)
 method overrides this parameter's value.
 
@@ -248,7 +254,13 @@ dataset.get_logger().report_histogram(
 
 To upload the dataset files to network storage, use the [`Dataset.upload`](../references/sdk/dataset.md#upload) method. 
 
-Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://<account name>.blob.core.windows.net/path/to/file`, `/mnt/share/data`). 
+Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure. For example:
+* A shared folder: `/mnt/share/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+
 By default, the dataset uploads to ClearML's file server. This target storage overrides the `output_uri` value of the 
 [`Dataset.create`](#creating-datasets) method.    
 
