@@ -670,7 +670,13 @@ the experiment's ID. If the experiment's ID is `6ea4f0b56d994320a713aeaf13a86d9d
 /mnt/shared/folder/task.6ea4f0b56d994320a713aeaf13a86d9d/models/
 ```
 
-ClearML supports other storage types for `output_uri`, including:
+ClearML supports other storage types for `output_uri`:
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+
+For example:
 ```python
 # AWS S3 bucket
 task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
@@ -679,7 +685,7 @@ task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
 task = Task.init(project_name, task_name, output_uri="gs://bucket-name/folder")
 ```
 
-To use Cloud storage with ClearML, configure the storage credentials in your `~/clearml.conf`. For detailed information, 
+To use cloud storage with ClearML, configure the storage credentials in your `~/clearml.conf`. For detailed information, 
 see [ClearML Configuration Reference](configs/clearml_conf.md).
 
 <a id="pycharm-remote-debug-detect-git"></a>
