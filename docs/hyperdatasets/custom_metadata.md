@@ -10,8 +10,8 @@ Metadata can be customized as needed using: **meta** dictionaries:
 
 ### Adding Frame Metadata
 
-When instantiating a Frame, metadata that applies for the entire frame can be
-added as an argument.
+When instantiating a `SingleFrame`, metadata that applies to the entire frame can be
+added as an argument:
 
 ```python
 from allegroai import SingleFrame
@@ -30,11 +30,13 @@ frame.metadata['dangerous'] = 'no'
 
 ### Adding ROI Metadata
 
-Metadata can be added to individual ROIs when adding an annotation to a `frame`, using the [`SingleFrame.add_annotation`](../references/hyperdataset/singleframe.md#add_annotation)
-method. 
+Metadata can be added to individual ROIs when adding an annotation to a `frame`, using [`SingleFrame.add_annotation()`](../references/hyperdataset/singleframe.md#add_annotation): 
 
 ```python
-frame.add_annotation(box2d_xywh=(10, 10, 30, 20), labels=['tiger'],
-                     # insert metadata dictionary
-                     metadata={'dangerous':'yes'})
+frame.add_annotation(
+    box2d_xywh=(10, 10, 30, 20), 
+    labels=['tiger'],
+    # insert metadata dictionary
+    metadata={'dangerous':'yes'}
+)
 ```
