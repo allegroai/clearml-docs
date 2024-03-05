@@ -103,8 +103,13 @@ clearml-data remove [-h] [--id ID] [--files [FILES [FILES ...]]]
 
 ## upload
 
-Upload the local dataset changes to the server. By default, it's uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). You can specify a different storage
-medium by entering an upload destination, such as `s3://bucket`, `gs://`, `azure://`, `/mnt/shared/`.
+Upload the local dataset changes to the server. By default, it's uploaded to the ClearML file server. You can specify a different storage
+medium by entering an upload destination. For example: 
+* A shared folder: `/mnt/shared/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
 ```bash
 clearml-data upload [-h] [--id ID] [--storage STORAGE] [--chunk-size CHUNK_SIZE] 

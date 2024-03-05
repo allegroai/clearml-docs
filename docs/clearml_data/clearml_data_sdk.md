@@ -62,9 +62,15 @@ and auto-increments the version number.
 :::
 
 Use the `output_uri` parameter to specify a network storage target to upload the dataset files, and associated information 
-(such as previews) to (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://<account name>.blob.core.windows.net/path/to/file`, `file:///mnt/share/data`). 
-By default, the dataset uploads to ClearML's file server. The `output_uri` parameter of the [`Dataset.upload`](#uploading-files)
-method overrides this parameter's value.
+(such as previews) to. For example:
+* A shared folder: `/mnt/share/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+
+By default, the dataset uploads to ClearML's file server. The `output_uri` parameter of [`Dataset.upload()`](#uploading-files)
+overrides this parameter's value.
 
 The created dataset inherits the content of the `parent_datasets`. When multiple dataset parents are listed, 
 they are merged in order of specification. Each parent overrides any overlapping files from a previous parent dataset.
@@ -92,8 +98,8 @@ squashed_dataset_2 = Dataset.squash(
 )
 ```
 
-In addition, the target storage location for the squashed dataset can be specified using the `output_uri` parameter of the 
-[`Dataset.squash`](../references/sdk/dataset.md#datasetsquash) method.
+In addition, the target storage location for the squashed dataset can be specified using the `output_uri` parameter of
+[`Dataset.squash()`](../references/sdk/dataset.md#datasetsquash).
 
 ## Accessing Datasets
 Once a dataset has been created and uploaded to a server, the dataset can be accessed programmatically from anywhere. 
@@ -248,7 +254,13 @@ dataset.get_logger().report_histogram(
 
 To upload the dataset files to network storage, use the [`Dataset.upload`](../references/sdk/dataset.md#upload) method. 
 
-Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure (e.g. `s3://bucket/data`, `gs://bucket/data`, `azure://<account name>.blob.core.windows.net/path/to/file`, `/mnt/share/data`). 
+Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure. For example:
+* A shared folder: `/mnt/share/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+
 By default, the dataset uploads to ClearML's file server. This target storage overrides the `output_uri` value of the 
 [`Dataset.create`](#creating-datasets) method.    
 

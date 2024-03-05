@@ -63,10 +63,10 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * Command Line Parsing - ClearML captures any command line parameters passed when invoking code that uses standard python packages, including:
         * [click](../integrations/click.md)
         * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options)
-        * [Python Fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
+        * [Python Fire](../integrations/python_fire.md)
         * [LightningCLI](../integrations/pytorch_lightning.md)
     * TensorFlow Definitions (`absl-py`)
-    * [Hydra](../integrations/hydra.md) - the OmegaConf which holds all the configuration files, as well as overridden values. 
+    * [Hydra](../integrations/hydra.md) - ClearML logs the OmegaConf which holds all the configuration files, as well as values overridden during runtime. 
 * **Models** - ClearML automatically logs and updates the models and all snapshot paths saved with the following frameworks:
     * [TensorFlow](../integrations/tensorflow.md)
     * [Keras](../integrations/keras.md)
@@ -781,6 +781,15 @@ task = Task.init(
   output_uri='s3://my_models/'
 )
 ```
+
+:::tip Output URI Formats
+Specify the model storage URI location using the relevant format: 
+* A shared folder: `/mnt/share/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+:::
 
 To automatically store all models created by any experiment at a specific location, edit the `clearml.conf` (see
  [ClearML Configuration Reference](../configs/clearml_conf.md#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` 
