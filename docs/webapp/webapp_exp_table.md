@@ -220,7 +220,7 @@ Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" classNam
 metrics to view.
 
 In the **Scalars** view, click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size-md" /> to access 
-scalar plot tools (see [here](webapp_exp_track_visual.md#scalar-plot-tools)).
+[scalar plot tools](webapp_exp_track_visual.md#scalar-plot-tools).
 
 
 ## Creating an Experiment Leaderboard
