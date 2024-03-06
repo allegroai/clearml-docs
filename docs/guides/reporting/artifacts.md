@@ -30,8 +30,8 @@ ClearML reports artifacts in the **ClearML Web UI** **>** experiment details **>
 
 ## Dynamically Tracked Artifacts
 
-Currently, ClearML supports uploading and dynamically tracking Pandas DataFrames. Use the [Task.register_artifact](../../references/sdk/task.md#register_artifact)
-method. If the Pandas DataFrame changes, ClearML uploads the changes. The updated artifact is associated with the experiment.
+ClearML supports uploading and dynamically tracking Pandas DataFrames. Use [`Task.register_artifact()`](../../references/sdk/task.md#register_artifact)
+to add a DataFrame to a task. If the DataFrame is modified, ClearML will automatically update the changes. 
 
 For example:
 
@@ -47,11 +47,15 @@ df = pd.DataFrame(
 
 # Register Pandas object as artifact to watch
 # (it will be monitored in the background and automatically synced and uploaded)
-task.register_artifact('train', df, metadata={'counting': 'legs', 'max legs': 69}))
+task.register_artifact(
+    name='train', 
+    artifact=df, 
+    metadata={'counting': 'legs', 'max legs': 68}
+)
 ```
 
-By changing the artifact, and calling the [Task.get_registered_artifacts](../../references/sdk/task.md#get_registered_artifacts) 
-method to retrieve it, you can see that ClearML tracked the change.
+By modifying the artifact, and calling [`Task.get_registered_artifacts()`](../../references/sdk/task.md#get_registered_artifacts) 
+to retrieve it, you can see ClearML tracking the changes:
 
 ```python
 # change the artifact object

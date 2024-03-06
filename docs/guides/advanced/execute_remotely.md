@@ -37,7 +37,7 @@ In the example script's `train` function, the following code explicitly reports 
 
 ```python
 Logger.current_logger().report_scalar(
-    "train", "loss", iteration=(epoch * len(train_loader) + batch_idx), value=loss.item()
+    title="train", series="loss", iteration=(epoch * len(train_loader) + batch_idx), value=loss.item()
 )
 ```
 
@@ -45,10 +45,10 @@ In the script's `test` function, the code explicitly reports `loss` and `accurac
 
 ```python
 Logger.current_logger().report_scalar(
-    "test", "loss", iteration=epoch, value=test_loss
+    title="test", series="loss", iteration=epoch, value=test_loss
 )
 Logger.current_logger().report_scalar(
-    "test", "accuracy", iteration=epoch, value=(correct / len(test_loader.dataset))
+    title="test", series="accuracy", iteration=epoch, value=(correct / len(test_loader.dataset))
 )
 ```    
 

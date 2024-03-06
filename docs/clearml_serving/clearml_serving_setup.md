@@ -78,8 +78,8 @@ and the model inference itself will be executed on the Triton Engine container.
 
 ## Advanced Setup - S3/GS/Azure Access (Optional)
 To add access credentials and allow the inference containers to download models from your S3/GS/Azure object-storage, 
-add the respective environment variables to your env files (example.env). See further details on configuring the storage 
-access [here](../integrations/storage.md#configuring-storage).
+add the respective environment variables to your env files (example.env). For further details, see 
+[Configuring Storage](../integrations/storage.md#configuring-storage).
 
 ```
 AWS_ACCESS_KEY_ID
