@@ -783,7 +783,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 1. You can now use ClearML in your notebook!
    ```python
    # create a task and start training
-   task = Task.init('jupyter project', 'my notebook')
+   task = Task.init(project_name='jupyter project', task_name='my notebook')
    ```
         
 

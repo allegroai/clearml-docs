@@ -185,7 +185,7 @@ image_local_copy = StorageManager.get_local_copy(
 ### Audio
 
 ```python
-logger.report_media('audio', 'pink panther', iteration=1, local_path=audio_local_copy)
+logger.report_media(title='audio', series='pink panther', iteration=1, local_path=audio_local_copy)
 ``` 
 
 ![Audio sample](../../img/colab_explicit_reporting_08.png)
@@ -194,8 +194,8 @@ logger.report_media('audio', 'pink panther', iteration=1, local_path=audio_local
 
 ```python
 logger.report_media(
-    "html", 
-    "url_html", 
+    title="html", 
+    series="url_html", 
     iteration=1, 
     url="https://clear.ml/docs/latest/docs/index.html"
 )
@@ -206,7 +206,12 @@ logger.report_media(
 ### Images
 
 ```python
-logger.report_image("image", "image from url", iteration=100, local_path=image_local_copy)
+logger.report_image(
+    title="image", 
+    series="image from url", 
+    iteration=100, 
+    local_path=image_local_copy
+)
 ```
 
 ![Image sample](../../img/colab_explicit_reporting_10.png)
@@ -214,7 +219,12 @@ logger.report_image("image", "image from url", iteration=100, local_path=image_l
 ### Video
 
 ```python
-logger.report_media('video', 'big bunny', iteration=1, local_path=video_local_copy)
+logger.report_media(
+    title='video', 
+    series='big bunny', 
+    iteration=1, 
+    local_path=video_local_copy
+)
 ```
 
 ![Video sample](../../img/colab_explicit_reporting_11.png)

@@ -875,7 +875,7 @@ me = Person('Erik', 5)
 
 params_dictionary = {'epochs': 3, 'lr': 0.4}
 
-task = Task.init(project_name='examples',task_name='argparser')
+task = Task.init(project_name='examples',task_name='python objects')
 
 task.connect(me)
 task.connect(params_dictionary)
