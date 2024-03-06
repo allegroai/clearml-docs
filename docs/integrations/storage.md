@@ -187,6 +187,11 @@ google.storage {
 }
 ```
 
+:::tip Direct Decoding
+From v1.13.2, `clearml` supports directly decoding JSON from the `credentials_json` argument. If ClearML
+fails to load the credentials as a file, it will attempt to decode the JSON directly. 
+:::
+
 ## Storage Manager
 
 ClearML provides the [StorageManager](../references/sdk/storage.md) class to manage downloading, uploading, and caching of 
