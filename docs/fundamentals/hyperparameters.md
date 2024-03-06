@@ -74,14 +74,14 @@ When connecting objects to ClearML, users can directly access and modify an obje
 pair in a parameter dictionary).
 
 #### Connecting Configuration Objects
-Configuration objects are dictionaries or configuration files connected to the task using the 
-[`Task.connect_configuration`](../references/sdk/task.md#connect_configuration) method. With this method, configuration 
+Configuration objects are dictionaries or configuration files connected to the task using 
+[`Task.connect_configuration()`](../references/sdk/task.md#connect_configuration). With this method, configuration 
 objects are saved as blobs i.e. ClearML is not aware of their internal structure.
 
 #### Setting and Updating Parameters
-ClearML provides methods to set and update task parameters manually. Use the [`Task.set_parameters`](../references/sdk/task.md#set_parameters) 
-method to define parameters manually. To update the parameters in an experiment, use the [`Task.set_parameters_as_dict`](../references/sdk/task.md#set_parameters_as_dict) 
-method. The `set_parameters_as_dict` method updates parameters while the `set_parameters` method overrides the parameters.
+ClearML provides methods to set and update task parameters manually. Use [`Task.set_parameters()`](../references/sdk/task.md#set_parameters) 
+to define parameters manually. To update the parameters in an experiment, use [`Task.set_parameters_as_dict()`](../references/sdk/task.md#set_parameters_as_dict). 
+The `set_parameters_as_dict` method updates parameters while the `set_parameters` method overrides the parameters.
 
 ClearML does not automatically track changes to explicitly set parameters.
 

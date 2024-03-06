@@ -65,7 +65,7 @@ the function will be automatically logged as required packages for the pipeline 
    ) 
    ```
    
-   The second step in the pipeline uses the `step_two` function and uses as its input the first step's output.This reference 
+   The second step in the pipeline uses the `step_two` function and uses as its input the first step's output. This reference 
    implicitly defines the pipeline structure, making `step_one` the parent step of `step_two`. 
    
    Its return object will be stored as an artifact under the name `processed_data`.
