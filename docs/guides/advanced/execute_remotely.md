@@ -37,7 +37,10 @@ In the example script's `train` function, the following code explicitly reports 
 
 ```python
 Logger.current_logger().report_scalar(
-    title="train", series="loss", iteration=(epoch * len(train_loader) + batch_idx), value=loss.item()
+    title="train", 
+    series="loss", 
+    iteration=(epoch * len(train_loader) + batch_idx), 
+    value=loss.item()
 )
 ```
 
