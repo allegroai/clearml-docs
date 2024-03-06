@@ -18,7 +18,7 @@ Configure ClearML for uploading artifacts to any of the supported types of stora
 S3 buckets, Google Cloud Storage, and Azure Storage ([debug sample storage](../../references/sdk/logger.md#set_default_upload_destination) 
 is different). Configure ClearML in any of the following ways:
 
-* In the configuration file, set [default_output_uri](../../configs/clearml_conf.md#config_default_output_uri).
+* In the configuration file, set [`default_output_uri`](../../configs/clearml_conf.md#config_default_output_uri).
 * In code, when [initializing a Task](../../references/sdk/task.md#taskinit), use the `output_uri` parameter.
 * In the **ClearML Web UI**, when [modifying an experiment](../../webapp/webapp_exp_tuning.md#output-destination).
 
@@ -26,7 +26,7 @@ When the script runs, it creates an experiment named `artifacts example` in the 
 
 ClearML reports artifacts in the **ClearML Web UI** **>** experiment details **>** **ARTIFACTS** tab.
 
-![image](../../img/examples_reporting_03.png)
+![Experiment artifacts](../../img/examples_reporting_03.png)
 
 ## Dynamically Tracked Artifacts
 
@@ -82,7 +82,7 @@ Artifacts without tracking include:
 ### Pandas DataFrames
 ```python
 # add and upload pandas.DataFrame (onetime snapshot of the object)
-task.upload_artifact('Pandas', artifact_object=df)
+task.upload_artifact(name='Pandas', artifact_object=df)
 ```
 
 ### Local Files
@@ -90,7 +90,7 @@ task.upload_artifact('Pandas', artifact_object=df)
 ```python
 # add and upload local file artifact
 task.upload_artifact(
-    'local file', 
+    name='local file', 
     artifact_object=os.path.join(
         'data_samples',
         'dancing.jpg'
@@ -101,31 +101,31 @@ task.upload_artifact(
 ### Dictionaries
 ```python
 # add and upload dictionary stored as JSON
-task.upload_artifact('dictionary', df.to_dict())
+task.upload_artifact(name='dictionary', artifact_object=df.to_dict())
 ```
     
 ### Numpy Objects
 ```python
 # add and upload Numpy Object (stored as .npz file)
-task.upload_artifact('Numpy Eye', np.eye(100, 100))
+task.upload_artifact(name='Numpy Eye', artifact_object=np.eye(100, 100))
 ```
     
 ### Image Files
 ```python
 # add and upload Image (stored as .png file)
 im = Image.open(os.path.join('data_samples', 'dancing.jpg'))
-task.upload_artifact('pillow_image', im)
+task.upload_artifact(name='pillow_image', artifact_object=im)
 ```
     
 ### Folders
 ```python
 # add and upload a folder, artifact_object should be the folder path
-task.upload_artifact('local folder', artifact_object=os.path.join('data_samples'))
+task.upload_artifact(name='local folder', artifact_object=os.path.join('data_samples'))
 ```
 
 ### Wildcards
 ```python
 # add and upload a wildcard
-task.upload_artifact('wildcard jpegs', artifact_object=os.path.join('data_samples', '*.jpg'))
+task.upload_artifact(name='wildcard jpegs', artifact_object=os.path.join('data_samples', '*.jpg'))
 ```
     
