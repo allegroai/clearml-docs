@@ -166,42 +166,37 @@ The Task must be connected to a git repository, since currently single script de
 | Command line options | Description | Default value |
 |-----|---|---|
 | `--attach`| Attach to running interactive session | Previous session|
-| `--base-task-id` | Pass the ID of a task that will become the base task, so the session will use its configurations | `none` or the previously entered base task |
-| `--config-file` | Specify a path to another configuration file for `clearml-session` to store its previous state | `.clearml_session.json` or previously entered configuration file |  
-| `--continue-session` | Pass the session of a previous session to continue, restoring your workspace (see `--store-workspace`) | `none` |
-| `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
-| `--disable-session-cleanup` | If `True`, previous interactive sessions are not deleted | `false`|
-| `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:11.6.2-runtime-ubuntu20.04` or previously used docker image|
-| `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
-| `--force_dropbear`| Force using `dropbear` instead of SSHd |`None`| 
-| `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
-| `--init-script` | Specify a BASH init script file to be executed when the interactive session is being set up | `none` or previously entered BASH script |
-| `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
-| `--keepalive` | If set, enables transparent proxy that keep sockets alive to maintain the connection to the remote resource | `false` - do not use transparent socket for mitigating connection drops | 
-| `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
-| `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
 | `--project`| Set the project name to the interactive session task| `DevOps` |
-| `--public-ip` | If `true`, register the public IP of the remote machine (if you are running the session on a public cloud) | `false` - Session runs on the machine whose agent is executing the session|
-| `--queue`| Select the queue to launch the interactive session on | Previously used queue|
-| `--queue-excluded-tag` | The queue option list will exclude queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
-| `--queue-include-tag` | The queue option list will include only queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
-| `--remote-gateway` | Specify a gateway IP to pass to the interactive session, if an external address needs to be accessed | `none`|
-| `--remote-ssh-port`| Set the remote SSH server port, running on the agent's machine | 10022|
-| `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
-| `--session-name` | Set the name of the interactive session Task| `none` |
-| `--session-tags` | Add tags to the interactive session for increased visibility | `none` |
-| `--shell` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
 | `--shutdowm`, `-S`| Shut down an active session | Previous session|
-| `--skip-docker-network` | Don't pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
-| `--store-workspace` |  Upload/Restore remote workspace folder and extract it into next the session. Use with `--continue-session` to continue your previous work from your exact container state | `none` |
+| `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
+| `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
 | `--upload-files`|  Specify local files/folders to upload to the remote session|`None`|
-| `--user-folder` | Specify the path for the session's remote base folder for the session | Home folder(`~/`) or previously entered user folder path |
-| `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
-| `--verbose` | Increase verbosity of logging | `none` |
-| `--version`| Display the clearml-session utility version| N/A|
+| `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
+| `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:10.1-runtime-ubuntu18.04` or previously used docker image|
+| `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
+| `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
+| `--queue`| Select the queue to launch the interactive session on | Previously used queue|
+| `--shell` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
+| `--jupyter-lab` | Install a JupyterLab on interactive session | `true` |
 | `--vscode-server` | Install VSCode on interactive session | `true` |
 | `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
 | `--vscode-extensions` |Install additional VSCode extensions and VSCode python extensions (example: `ms-python.python,ms-python.black-formatter,ms-python.pylint,ms-python.flake8`)|`None`|
+| `--public-ip` | If `true`, register the public IP of the remote machine (if you are running the session on a public cloud) | `false` - Session runs on the machine whose agent is executing the session|
+| `--remote-ssh-port`| Set the remote SSH server port, running on the agent's machine | 10022|
+| `--init-script` | Specify a BASH init script file to be executed when the interactive session is being set up | `none` or previously entered BASH script |
+| `--user-folder` | Specify the path for the session's remote base folder for the session | Home folder(`~/`) or previously entered user folder path |
+| `--config-file` | Specify a path to another configuration file for `clearml-session` to store its previous state | `.clearml_session.json` or previously entered configuration file |  
+| `--remote-gateway` | Specify a gateway IP to pass to the interactive session, if an external address needs to be accessed | `none`|
+| `--base-task-id` | Pass the ID of a task that will become the base task, so the session will use its configurations | `none` or the previously entered base task |
+| `--keepalive` | If set, enables transparent proxy that keep sockets alive to maintain the connection to the remote resource | `false` - do not use transparent socket for mitigating connection drops | 
+| `--queue-excluded-tag` | The queue option list will exclude queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
+| `--queue-include-tag` | The queue option list will include only queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
+| `--skip-docker-network` | Don't pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
+| `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
+| `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
+|  `--force_dropbear`| Force using `dropbear` instead of SSHd |`None`| 
+| `--version`| Display the clearml-session utility version| N/A|
+| `--verbose` | Increase verbosity of logging | `none` |
 | `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|
 
 </div>
