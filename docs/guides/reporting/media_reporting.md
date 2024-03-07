@@ -50,7 +50,9 @@ Use the `local_path` parameter.
 ```python
 #  report audio, report local media audio file
 Logger.current_logger().report_media(
-    'audio', 'tada', iteration=1,
+    title='audio', 
+    series='tada', 
+    iteration=1,
     local_path=os.path.join('data_samples', 'sample.mp3')
 )
 ```

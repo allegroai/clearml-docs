@@ -375,7 +375,7 @@ An experiment's name is a user-controlled property, which can be accessed via th
 
 For example, to distinguish between different experiments, you can append the task ID to the task name:
 ```python
-task = Task.init('examples', 'train')
+task = Task.init(project_name='examples', task_name='train')
 task.name += ' {}'.format(task.id)
 ```
 
@@ -625,8 +625,8 @@ For example, the following two scatter2D series are reported on the same plot, b
 ```python
 scatter2d_1 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
 logger.report_scatter2d(
-    "example_scatter",
-    "series_1", 
+    title="example_scatter",
+    series="series_1", 
     iteration=1, 
     scatter=scatter2d_1,
     xaxis="title x", 
@@ -635,8 +635,8 @@ logger.report_scatter2d(
     
 scatter2d_2 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
 logger.report_scatter2d(
-    "example_scatter", 
-    "series_2", 
+    title="example_scatter", 
+    series="series_2", 
     iteration=1, 
     scatter=scatter2d_2,
     xaxis="title x", 
@@ -783,7 +783,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 1. You can now use ClearML in your notebook!
    ```python
    # create a task and start training
-   task = Task.init('jupyter project', 'my notebook')
+   task = Task.init(project_name='jupyter project', task_name='my notebook')
    ```
         
 

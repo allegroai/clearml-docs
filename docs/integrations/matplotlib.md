@@ -18,11 +18,17 @@ from clearml import Task
 task = Task.init(task_name="<task_name>", project_name="<project_name>")
 ```
 
-This will create a ClearML Task that captures your script's information, including Git details, uncommitted code, python 
-environment, your matplotlib visualizations, and more. View these matplotlib plots and images in the [WebApp](../webapp/webapp_exp_track_visual.md), 
+This will create a ClearML Task that captures:
+* Git details
+* Source code and uncommitted changes 
+* Installed packages
+* Matplotlib visualizations
+* And more
+
+View captured Matplotlib plots and images in the [WebApp](../webapp/webapp_exp_track_visual.md), 
 in the experiment's **Plots** and **Debug Samples** tabs respectively.
 
-![image](../img/examples_matplotlib_example_01.png)
+![Experiment plots](../img/examples_matplotlib_example_01.png)
 
 ## Automatic Logging Control 
 By default, when ClearML is integrated into your script, it captures all of your matplotlib visualizations. 
