@@ -168,7 +168,7 @@ The Task must be connected to a git repository, since currently single script de
 | `--attach`| Attach to running interactive session | Previous session|
 | `--project`| Set the project name to the interactive session task| `DevOps` |
 | `--shutdowm`, `-S`| Shut down an active session | Previous session|
-| `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
+| `--requirements`| Specify `requirements.txt` file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
 | `--upload-files`|  Specify local files/folders to upload to the remote session|`None`|
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
