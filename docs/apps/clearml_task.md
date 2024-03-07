@@ -31,7 +31,7 @@ Specify a Docker container to run the code in with the `--docker <docker_image>`
 The ClearML Agent pulls it from Docker Hub or a Docker artifactory automatically.
 
 ### Package Dependencies
-`clearml-task` automatically finds the requirements.txt file in remote repositories. 
+`clearml-task` automatically finds the `requirements.txt` file in remote repositories. 
 
 If a local script requires certain packages, or the remote repository doesn't have a `requirements.txt` file,
 manually specify the required Python packages using `--packages "<package_name>"`, for example `--packages "keras" "tensorflow>2.2"`.

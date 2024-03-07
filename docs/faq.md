@@ -166,8 +166,8 @@ in an experiments table and sort by that metric column.
 
 #### Can I store more information on the models?   <a id="store-more-model-info"></a>
 
-Yes! For example, you can use the [`Task.set_model_label_enumeration`](references/sdk/task.md#set_model_label_enumeration) 
-method to store label enumeration:
+Yes! For example, you can use [`Task.set_model_label_enumeration()`](references/sdk/task.md#set_model_label_enumeration) 
+to store label enumeration:
 
 ```python
 Task.current_task().set_model_label_enumeration( {"label": int(0), } )
