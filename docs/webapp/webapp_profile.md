@@ -253,8 +253,8 @@ automations, and more.
 A service account has all the privileges of a normal user in ClearML, with the following limitations:
 * Service accounts cannot be used to access the UI
 * Service accounts can be used to facilitate running tasks under the identity of each task's owner ("Impersonation"). 
-  This has the added benefit of allowing you to specify Vaults that apply to this service account, thus managing 
-  custom settings.
+  This has the added benefit of allowing you to specify [Vaults](#configuration-vault) that apply to this service 
+  account, thus managing custom settings.
   * Used to run an agent using the command-line, this will allow you to specify the `--use-owner-token` option.
   * Used to run the ClearML Agent Helm Chart, this will allow you to specify `values.agentk8s.useOwnerToken: true` option.
   * Used to run an Autoscaler application, this will allow you to make use of the `Apply Task Owner Vault Configuration`

@@ -8,7 +8,7 @@ differences in experiments' results and their causes. You can view the differenc
 objects, and other details.
 * Hyperparameters
   * [Values](#side-by-side-textual-comparison) - Compare parameters and their values
-  * [Parallel coordinates](#parallel-coordinates-mode) - View the impact of hyperparameters on a selected metrics
+  * [Parallel coordinates](#parallel-coordinates-mode) - View the impact of hyperparameters on selected metrics
   * [Scatter plot](#scatter-plot) - View the correlation between a selected hyperparameter and metric
 * Scalars - Compare experiment metrics:
   * [Values](#tabular-scalar-comparison) - Compare minimal, maximal or last reported values in a concise comparison 
