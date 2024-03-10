@@ -556,20 +556,21 @@ tab, click `Download full log`.
 #### How do I create a graph comparing hyperparameters vs. model accuracy?   <a id="compare-graph-parameters"></a>
 
 You can use the UI's [experiment comparison features](webapp/webapp_exp_comparing.md) to compare the logged hyperparameter 
-and accuracy values of several experiments. In an experiment comparison page, under the **HYPERPARAMETERS** tab
-you can visualize experiments' hyperparameter values in relation to a specific metric in a scatter plot or parallel
+and accuracy values of several experiments. In the experiment comparison page, under the **HYPERPARAMETERS** tab
+you can visualize experiments' hyperparameter values in relation to performance metrics in a scatter plot or parallel
 coordinates plot:
-* Scatter plot: View the correlation between a selected hyperparameter and metric. For example, the image below shows 
-  a scatter plot that displays the values of a performance metric (`epoch_accuracy`) and of a hyperparameter (`epochs`)
+* [Scatter plot](webapp/webapp_exp_comparing.md#scatter-plot): View the correlation between a selected hyperparameter and 
+  metric. For example, the image below shows a scatter plot that displays the values of a performance metric (`epoch_accuracy`) 
+  and a hyperparameter (`epochs`) of a few experiments:
+  
   ![Scatter plot comparison](img/faq_compare_scatter.png)
 
-(e.g. accuracy) in a parallel coordinates plot. 
+* [Parallel coordinates plot](webapp/webapp_exp_comparing.md#parallel-coordinates-mode): View the impact of hyperparameters 
+  on selected metric(s). For example, the image below shows 
+  a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, `batch_size`, and 
+  `number_of_epochs`) and a performance metric (`accuracy`) of three experiments: 
 
-The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
-`batch_size`, and `number_of_epochs`) and a performance metric (`accuracy`) of three experiments. 
-
-![Parallel Coordinates](img/compare_parallel_coordinates.png)
-
+  ![Parallel Coordinates](img/compare_parallel_coordinates.png)
 
 <br/>
 
