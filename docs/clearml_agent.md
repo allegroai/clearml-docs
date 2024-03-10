@@ -321,7 +321,7 @@ Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML
 capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent's 
 features.
 
-ClearML Agent is deployed onto a Kubernetes cluster through its Kubernetes-Glue  which maps ClearML jobs directly to K8s 
+ClearML Agent is deployed onto a Kubernetes cluster through its Kubernetes-Glue which maps ClearML jobs directly to K8s 
 jobs:
 * Use the [ClearML Agent Helm Chart](https://github.com/allegroai/clearml-helm-charts/tree/main/charts/clearml-agent) to
 spin an agent pod acting as a controller. Alternatively (less recommended) run a [k8s glue script](https://github.com/allegroai/clearml-agent/blob/master/examples/k8s_glue_example.py) 
