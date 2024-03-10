@@ -214,6 +214,6 @@ This feature is available under the ClearML Enterprise plan
 
 The ClearML Enterprise Server provides GUI applications for setting up remote sessions in VS Code and JupyterLab. These
 apps provide local links to access JupyterLab or VS Code on a remote machine over a secure and encrypted SSH connection,
-letting you use the IDE as if you're running on the target machine itself
+letting you use the IDE as if you're running on the target machine itself.
 
 For more information, see [JupyterLab](../webapp/applications/apps_jupyter_lab.md) and/or [VS Code](../webapp/applications/apps_vscode.md).
