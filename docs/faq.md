@@ -556,55 +556,20 @@ tab, click `Download full log`.
 #### How do I create a graph comparing hyperparameters vs. model accuracy?   <a id="compare-graph-parameters"></a>
 
 You can use the UI's [experiment comparison features](webapp/webapp_exp_comparing.md) to compare the logged hyperparameter 
-and accuracy values of several experiments. 
+and accuracy values of several experiments. In an experiment comparison page, under the **HYPERPARAMETERS** tab
+you can visualize experiments' hyperparameter values in relation to a specific metric in a scatter plot or parallel
+coordinates plot:
+* Scatter plot: View the correlation between a selected hyperparameter and metric. For example, the image below shows 
+  a scatter plot that displays the values of a performance metric (`epoch_accuracy`) and of a hyperparameter (`epochs`)
+  ![Scatter plot comparison](img/faq_compare_scatter.png)
 
-In an experiment comparison page, under the **HYPERPARAMETERS** tab, you can view the experiments' hyperparameter values 
-in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
+(e.g. accuracy) in a parallel coordinates plot. 
 
 The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
 `batch_size`, and `number_of_epochs`) and a performance metric (`accuracy`) of three experiments. 
 
 ![Parallel Coordinates](img/compare_parallel_coordinates.png)
 
-You can also visualize the differences in a scatter plot. In each experiment whose values will be compared, report a plot 
-with a single point, x-axis for the hyperparameter value, and Y-axis for the accuracy. 
-
-In the code below, the task reports a single-point scatter plot with `number_layers` as the x-axis and
-`accuracy` as the Y-axis:
-
-```python
-number_layers = 10
-accuracy = 0.95
-Task.current_task().get_logger().report_scatter2d(
-    title="performance", 
-    series="accuracy", 
-    iteration=0, 
-    mode='markers', 
-    scatter=[(number_layers, accuracy)]
-)
-```
-
-When these experiments are compared in the UI's experiment comparison, all the reported `performance/accuracy` values 
-are displayed in a single plot.
-
-![Comparison plot](img/compare_plots.png)
-
-Another option is a histogram chart:
-
-```python
-number_layers = 10
-accuracy = 0.95
-Task.current_task().get_logger().report_histogram(
-    title="performance", 
-    series="accuracy", 
-    iteration=0, 
-    labels=['accuracy'],
-    values=[accuracy], 
-    xlabels=['number_layers %d' % number_layers]
-)
-```
-
-![Comparison plot histogram](img/compare_plots_hist.png)
 
 <br/>
 
