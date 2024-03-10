@@ -246,9 +246,25 @@ user can only rejoin your workspace when you re-invite them.
 This feature is available under the ClearML Enterprise plan.
 :::
 
-Service accounts are ClearML users that provide  services or applications  with access to the ClearML API, but not the 
+Service accounts are ClearML users that provide services with access to the ClearML API, but not the 
 UI. Administrators can create access credentials for service accounts to use them for different ClearML Agents, 
 automations, and more. 
+
+A service account has all the privileges of a normal user in ClearML, with the following limitations:
+* Service accounts cannot be used to access the UI
+* Service accounts can be used to facilitate running tasks under the identity of each task's owner ("Impersonation"). 
+  This has the added benefit of allowing you to specify Vaults that apply to this service account, thus managing 
+  custom settings.
+  * Used to run an agent using the command-line, this will allow you to specify the `--use-owner-token` option.
+  * Used to run the ClearML Agent Helm Chart, this will allow you to specify `values.agentk8s.useOwnerToken: true` option.
+  * Used to run an Autoscaler application, this will allow you to make use of the `Apply Task Owner Vault Configuration`
+  option.
+
+::: info Access Rules 
+When [access controls](#access-rules) are provisioned, they apply to service accounts the same as for ClearML users.
+Therefore, in order to use a service account to run an agent in daemon mode, the service account must have access to the 
+queue the agent will service.
+:::
 
 The **SERVICE ACCOUNTS** table lists workspace service accounts. 
 Each row of the table includes: 
@@ -264,9 +280,22 @@ Hover over a service account in the table to **Edit** or **Delete** it.
 
 To create a service account:
 1. Click **+ ADD SERVICE ACCOUNT**
-2. In the **ADD SERVICE ACCOUNT** modal input a name for the new account. Select `Set as admin` to grant the account 
-   administrator privileges (see [User Groups](#user-groups))
+2. In the **ADD SERVICE ACCOUNT** modal input a name for the new account. Select `Allow impersonation` to allow the 
+   service account to assume the identity of a task owner 
 4. Click **Save**
+
+:::info Impersonation 
+Service accounts are members of the `Users` group, meaning they can access the resources available to all users. When 
+impersonation is enabled, a task run by the service account (i.e. by an agent or autoscaler using the service accounts' 
+credentials) is executed as if by the owner of the task, meaning it will have access to the task owner's configuration 
+vaults and to the resources that the task owner has access to. Impersonating an admin user does not mean the task's code 
+will have admin privileges.
+
+In case impersonation is not enabled: 
+* If you run an agent with `--use_owner_token` then the agent will fail. 
+* If you run an agent without `--use_owner_token`, the task will run with the service account's access rules, so make 
+* sure the account uses resources it has access to
+:::
 
 When a service account is created, an initial set of credentials is automatically generated. The dialog displays new 
 credentials, formatted as a ready-to-copy configuration file section.
@@ -304,7 +333,7 @@ Administrators can define user groups, which can be used for access privilege ma
 multiple user groups.
 
 The system includes three pre-configured groups that can't be removed: 
-* `Users` - All users. Can't be modified
+* `Users` - All users (including [service accounts](#service-accounts)). Can't be modified
 * `Admins` - Have RW access to all resources (except queue modification), and can grant users / user groups access 
   permissions to workspace resources
 * `Queue admins` - Can create / delete / rename queues
@@ -343,8 +372,8 @@ otherwise provided individually or to another group they are members of).
 This feature is available under the ClearML Enterprise plan
 :::
 
-Workspace administrators can use the **Access Rules** page to manage workspace permissions, by specifying which users 
-and/or user groups have access permissions to the following workspace resources:
+Workspace administrators can use the **Access Rules** page to manage workspace permissions, by specifying which users,
+service accounts, and/or user groups have access permissions to the following workspace resources:
  
 * [Projects](../fundamentals/projects.md)
 * [Tasks](../fundamentals/task.md) 
@@ -363,9 +392,10 @@ Access privileges can be viewed, defined, and edited in the **Access Rules** tab
    specific project or task), click the input box, and select the object from the list that appears. Filter the 
    list by typing part of the desired object name
 1. Select the permission type - **Read Only** or **Read & Modify**
-1. Assign users and/or [user groups](#user-groups) to be given access. Click the desired input box, and select the 
-   users / groups from the list that appears. Filter the list by typing part of the desired object name. To revoke 
-   access, hover over a user's or group's row and click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> 
+1. Assign users, [service accounts](#service-accounts), and/or [user groups](#user-groups) to be given access. Click the 
+   desired input box, and select the users / service accounts / groups from the list that appears. Filter the list by 
+   typing part of the desired object name. To revoke 
+   access, hover over a user's, service account's, or group's row and click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> 
    button
 1. Click **SAVE**
 
@@ -379,22 +409,22 @@ not have access to another task in the project, unless explicitly granted.
 1. Hover over the access rule's row on the table
 1. Click the <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> button
 1. Change the resource, resource object, and permission type as desired
-1. Edit access rule users / groups (see details [here](#creating-access-rules))
+1. Edit access rule users / service accounts / groups (see details [here](#creating-access-rules))
 1. Click **SAVE**
 
 ### Deleting Access Rules
 1. Hover over the access rule's row on the **Access Rules** table
 1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
-All users and access groups who had been assigned to the deleted access rule, will lose the access privileges granted by
-that rule (unless otherwise provided by a different rule)
+All users, service accounts, and user groups who had been assigned to the deleted access rule, will lose the access privileges granted by
+that rule (unless otherwise provided by a different rule).
 
 ### Filtering Access Rules Table
 
 The access rules table can be filtered by resource type and by target resource and users / groups. 
 * **To filter by resource**, click the **View** dropdown menu and select the desired resource
-* **To filter by target resource or users / groups**, click <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />
-on the respective column and select the users / groups to view from the list that appears. 
+* **To filter by target resource or users / groups / service accounts**, click <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />
+on the respective column and select the users / groups / service accounts to view from the list that appears. 
 
 ## Identity Providers
 
