@@ -28,7 +28,7 @@ on model performance, saving and comparing these between experiments is sometime
 
 ClearML supports logging `argparse` module arguments out of the box, so once ClearML is integrated into the code, it automatically logs all parameters provided to the argument parser.
 
-You can also log parameter dictionaries (very useful when parsing an external config file and storing as a dict object),
+You can also log parameter dictionaries (very useful when parsing an external configuration file and storing as a dict object),
 whole configuration files, or even custom objects or [Hydra](https://hydra.cc/docs/intro/) configurations!
 
 ```python

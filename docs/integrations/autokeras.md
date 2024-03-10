@@ -24,7 +24,7 @@ And that's it! This creates a [ClearML Task](../fundamentals/task.md) which capt
 * Scalars (loss, learning rates)
 * Console output
 * General details such as machine details, runtime, creation date etc.
-* Hyperparameters created with standard python packages (e.g. argparse, click, Python Fire, etc.)
+* Hyperparameters created with standard python packages (such as argparse, click, Python Fire, etc.)
 * And more
 
 You can view all the task details in the [WebApp](../webapp/webapp_exp_track_visual.md). 

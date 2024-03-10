@@ -218,7 +218,7 @@ deploy an agent with a different value to what is specified for `agent.default_d
 :::note NOTES
 * Since configuration fields may contain JSON-parsable values, make sure to always quote strings (otherwise the agent 
 might fail to parse them)
-* In order to comply with environment variables standards, it is recommended to use only upper-case characters in 
+* To comply with environment variables standards, it is recommended to use only upper-case characters in 
 environment variable keys. For this reason, ClearML Agent will always convert the configuration path specified in the 
 dynamic environment variable's key to lower-case before overriding configuration values with the environment variable 
 value.
@@ -670,7 +670,7 @@ Let's say a server has three queues:
 * `quad_gpu`
 * `opportunistic`
 
-An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple
+An agent can be spun on multiple GPUs (for example: 8 GPUs, `--gpus 0-7`), and then attached to multiple
 queues that are configured to run with a certain amount of resources:
 
 ```console
@@ -702,7 +702,7 @@ clearml-agent daemon --services-mode --queue services --create-queue --docker <d
 ```
 
 To limit the number of simultaneous tasks run in services mode, pass the maximum number immediately after the 
-`--services-mode` option (e.g. `--services-mode 5`)
+`--services-mode` option (for example: `--services-mode 5`).
 
 :::note Notes
 * `services-mode` currently only supports Docker mode. Each service spins on its own Docker image.

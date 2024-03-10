@@ -46,7 +46,7 @@ ClearML uses `/` as a delimiter for subprojects: using `example/sample` as a nam
 task within the `example` project. 
 :::
 
-In order to log the models created during training, set the `CLEARML_LOG_MODEL` environment variable to `True`. 
+To log the models created during training, set the `CLEARML_LOG_MODEL` environment variable to `True`. 
 
 You can see all the captured data in the task's page of the ClearML [WebApp](../webapp/webapp_exp_track_visual.md). 
 

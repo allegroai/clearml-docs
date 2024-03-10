@@ -122,7 +122,7 @@ When `clearml-session` is launched, it initializes a task with a unique ID in th
 
 To connect to an existing session: 
 1. Go to the web UI, find the interactive session task (by default, it's in project "DevOps").
-1. Click on the ID button in the task page's header, and copy the unique ID.
+1. Click the `ID` button in the task page's header to copy the unique ID.
 1. Run the following command: `clearml-session --attach <session_id>`.
 1. Click on the JupyterLab / VS Code link that is outputted, or connect directly to the SSH session
 
