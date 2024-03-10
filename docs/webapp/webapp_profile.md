@@ -260,7 +260,7 @@ A service account has all the privileges of a normal user in ClearML, with the f
   * Used to run an Autoscaler application, this will allow you to make use of the `Apply Task Owner Vault Configuration`
   option.
 
-::: info Access Rules 
+:::info Access Rules 
 When [access controls](#access-rules) are provisioned, they apply to service accounts the same as for ClearML users.
 Therefore, in order to use a service account to run an agent in daemon mode, the service account must have access to the 
 queue the agent will service.
@@ -275,6 +275,8 @@ Each row of the table includes:
 * Last active time
 
 Hover over a service account in the table to **Edit** or **Delete** it.
+
+![Service accounts](../img/settings_service_accounts.png)
 
 #### Creating a Service Account
 
@@ -294,7 +296,7 @@ will have admin privileges.
 In case impersonation is not enabled: 
 * If you run an agent with `--use_owner_token` then the agent will fail. 
 * If you run an agent without `--use_owner_token`, the task will run with the service account's access rules, so make 
-* sure the account uses resources it has access to
+  sure the account uses resources it has access to
 :::
 
 When a service account is created, an initial set of credentials is automatically generated. The dialog displays new 

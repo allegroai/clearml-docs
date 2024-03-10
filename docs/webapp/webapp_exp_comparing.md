@@ -103,7 +103,7 @@ Switch on the **Show row extremes** toggle to highlight each variant's maximum a
 
 ### Parallel Coordinates Mode
 
-The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments' hyperparameter impact on a specified 
+The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments' hyperparameter impact on specified 
 metrics:
 1. Under **Performance Metrics**, select a metrics to compare for
 1. Select the values to use for each metric in the plot (can select multiple):
@@ -134,7 +134,7 @@ To show the value distribution:
       * **MAX** - Maximal value
    1. Under X-axis select the hyperparameter.
 
-Hovering each datapoint in the resulting plot will show the experiment name and the metric and parameter value for that 
+Hovering over each datapoint in the resulting plot will show the experiment name and the metric and parameter value for that 
 point. You can add additional metrics and hyperparameters values to the datapoint tooltip through **ADDITIONAL DATA POINT INFORMATION**.
 
 ![Comparison scatter plot](../img/webapp_compare_scatter.png)
