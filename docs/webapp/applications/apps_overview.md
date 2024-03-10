@@ -21,6 +21,11 @@ ClearML provides the following applications:
 * [**Jupyter Lab**](apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine (available under ClearML Enterprise Plan)
 * [**VS Code**](apps_vscode.md) - Launch a VS Code session on a remote machine (available under ClearML Enterprise Plan)
 
+:::info Autoscaler Apps
+The Autoscaler applications ([GPU Compute](apps_gpu_compute.md), [AWS Autoscaler](apps_aws_autoscaler.md), and [GCP Autoscaler](apps_gcp_autoscaler.md))
+have been moved to the [Orchestration page](../webapp_workers_queues.md) in the WebApp. 
+:::
+
 ## App Pages Layout
 Each application's page is split into two sections:
 * App Instance List - Launch new app instances and view previously launched instances. Click on an instance to view its 
