@@ -11,9 +11,9 @@ A search strategy is required for the optimization, as well as a search strategy
 
 The following search strategies can be used:
 
-* Optuna hyperparameter optimization - [automation.optuna.OptimizerOptuna](../../../references/sdk/hpo_optuna_optuna_optimizeroptuna.md). 
+* Optuna hyperparameter optimization - [`automation.optuna.OptimizerOptuna`](../../../references/sdk/hpo_optuna_optuna_optimizeroptuna.md). 
   For more information about Optuna, see the [Optuna](https://optuna.org/) documentation.
-* BOHB - [automation.hpbandster.OptimizerBOHB](../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md).
+* BOHB - [`automation.hpbandster.OptimizerBOHB`](../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md).
   
   BOHB performs robust and efficient hyperparameter optimization at scale by combining the speed of Hyperband searches 
   with the guidance and guarantees of convergence of Bayesian Optimization.
@@ -22,11 +22,11 @@ The following search strategies can be used:
   For more information about HpBandSter BOHB, see the [HpBandSter](https://automl.github.io/HpBandSter/build/html/index.html) 
   documentation.
      
-* Random uniform sampling of hyperparameter strategy - [automation.RandomSearch](../../../references/sdk/hpo_optimization_randomsearch.md)
-* Full grid sampling strategy of every hyperparameter combination - [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
-* Custom - Use a custom class and inherit from the ClearML automation base strategy class, [SearchStrategy](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L310)
+* Random uniform sampling of hyperparameter strategy - [`automation.RandomSearch`](../../../references/sdk/hpo_optimization_randomsearch.md)
+* Full grid sampling strategy of every hyperparameter combination - [`automation.GridSearch`](../../../references/sdk/hpo_optimization_gridsearch.md).
+* Custom - Use a custom class and inherit from the ClearML automation base strategy class, [`SearchStrategy`](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L310)
 
-The search strategy class that is chosen will be passed to the [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
+The search strategy class that is chosen will be passed to the [`automation.HyperParameterOptimizer`](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object later.
 
 The example code attempts to import `OptimizerOptuna` for the search strategy. If `clearml.automation.optuna` is not 
@@ -113,7 +113,7 @@ if not args['template_task_id']:
 
 ## Creating the Optimizer Object
 
-Initialize an [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
+Initialize an [`automation.HyperParameterOptimizer`](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object, setting the optimization parameters, beginning with the ID of the experiment to optimize.
 
 ```python
@@ -122,8 +122,8 @@ an_optimizer = HyperParameterOptimizer(
     base_task_id=args['template_task_id'],
 ```
 
-Set the hyperparameter ranges to sample, instantiating them as ClearML automation objects using [automation.UniformIntegerParameterRange](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
-and [automation.DiscreteParameterRange](../../../references/sdk/hpo_parameters_discreteparameterrange.md).
+Set the hyperparameter ranges to sample, instantiating them as ClearML automation objects using [`automation.UniformIntegerParameterRange`](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
+and [`automation.DiscreteParameterRange`](../../../references/sdk/hpo_parameters_discreteparameterrange.md).
 
 ```python
     hyper_parameters=[
