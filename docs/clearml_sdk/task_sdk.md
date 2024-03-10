@@ -100,8 +100,8 @@ By default, when ClearML is integrated into your script, it automatically captur
 and parameters from supported argument parsers. But, you may want to have more control over what your experiment logs.
 
 #### Frameworks  
-To control a task's framework logging, use the `auto_connect_frameworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
-method. Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
+To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
+Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
 input a dictionary, with framework-boolean pairs. 
 
 For example: 

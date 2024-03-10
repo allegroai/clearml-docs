@@ -33,7 +33,7 @@ the following types of parameters:
   as well as values overridden during runtime.
 
 :::tip Disabling Automatic Logging
-Automatic logging can be disabled. See this [FAQ](../faq.md#controlling_logging).
+Automatic logging can be disabled. See [Control Automatic Logging](../clearml_sdk/task_sdk.md#control-automatic-logging).
 :::
 
 ### Environment Variables
