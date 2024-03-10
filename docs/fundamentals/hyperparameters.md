@@ -22,16 +22,16 @@ and tracks hyperparameters of various types, supporting automatic logging and ex
 Once a ClearML Task has been [initialized](../references/sdk/task.md#taskinit) in a script, ClearML automatically captures and tracks 
 the following types of parameters:
 * Command line parsing - command line parameters passed when invoking code that uses standard python packages, including:
-  * [click](https://click.palletsprojects.com) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/click/click_multi_cmd.py).
-  * [argparse](https://docs.python.org/3/library/argparse.html) - see code example [here](../guides/frameworks/pytorch/pytorch_tensorboardx.md).
-  * [Python Fire](https://github.com/google/python-fire) - see code examples [here](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire).
-  * [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli) - see code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/jsonargparse/pytorch_lightning_cli.py).
+  * [click](../integrations/click.md).
+  * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options).
+  * [Python Fire](../integrations/python_fire.md).
+  * [LightningCLI](../integrations/pytorch_lightning.md).
 * TensorFlow Definitions (`absl-py`). See examples of ClearML's automatic logging of TF Defines:
     * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
     * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
-* [Hydra](https://github.com/facebookresearch/hydra) - ClearML logs the `OmegaConf` which holds all the configuration files, 
-  as well as values overridden during runtime. See code example [here](https://github.com/allegroai/clearml/blob/master/examples/frameworks/hydra/hydra_example.py).
-    
+* [Hydra](../integrations/hydra.md) - ClearML logs the `OmegaConf` which holds all the configuration files, 
+  as well as values overridden during runtime.
+
 :::tip Disabling Automatic Logging
 Automatic logging can be disabled. See this [FAQ](../faq.md#controlling_logging).
 :::
@@ -74,14 +74,14 @@ When connecting objects to ClearML, users can directly access and modify an obje
 pair in a parameter dictionary).
 
 #### Connecting Configuration Objects
-Configuration objects are dictionaries or configuration files connected to the task using the 
-[`Task.connect_configuration`](../references/sdk/task.md#connect_configuration) method. With this method, configuration 
+Configuration objects are dictionaries or configuration files connected to the task using 
+[`Task.connect_configuration()`](../references/sdk/task.md#connect_configuration). With this method, configuration 
 objects are saved as blobs i.e. ClearML is not aware of their internal structure.
 
 #### Setting and Updating Parameters
-ClearML provides methods to set and update task parameters manually. Use the [`Task.set_parameters`](../references/sdk/task.md#set_parameters) 
-method to define parameters manually. To update the parameters in an experiment, use the [`Task.set_parameters_as_dict`](../references/sdk/task.md#set_parameters_as_dict) 
-method. The `set_parameters_as_dict` method updates parameters while the `set_parameters` method overrides the parameters.
+ClearML provides methods to set and update task parameters manually. Use [`Task.set_parameters()`](../references/sdk/task.md#set_parameters) 
+to define parameters manually. To update the parameters in an experiment, use [`Task.set_parameters_as_dict()`](../references/sdk/task.md#set_parameters_as_dict). 
+The `set_parameters_as_dict` method updates parameters while the `set_parameters` method overrides the parameters.
 
 ClearML does not automatically track changes to explicitly set parameters.
 

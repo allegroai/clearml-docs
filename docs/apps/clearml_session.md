@@ -123,7 +123,7 @@ When `clearml-session` is launched, it initializes a task with a unique ID in th
 To connect to an existing session: 
 1. Go to the web UI, find the interactive session task (by default, it's in project "DevOps").
 1. Click on the ID button in the task page's header, and copy the unique ID.
-1. Enter the following command: `clearml-session --attach <session_id>`.
+1. Run the following command: `clearml-session --attach <session_id>`.
 1. Click on the JupyterLab / VS Code link that is outputted, or connect directly to the SSH session
 
 ### Features 
@@ -168,11 +168,12 @@ The Task must be connected to a git repository, since currently single script de
 | `--attach`| Attach to running interactive session | Previous session|
 | `--project`| Set the project name to the interactive session task| `DevOps` |
 | `--shutdowm`, `-S`| Shut down an active session | Previous session|
-| `--requirements`| Specify requirements.txt file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
+| `--disable-session-cleanup` | If `True`, previous interactive sessions are not deleted | `false`|
+| `--requirements`| Specify `requirements.txt` file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
 | `--packages`| Additional packages to add. Supports version numbers. Example: `--packages torch==1.7 tqdm` | Previously added packages.| 
 | `--upload-files`|  Specify local files/folders to upload to the remote session|`None`|
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
-| `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:10.1-runtime-ubuntu18.04` or previously used docker image|
+| `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:11.6.2-runtime-ubuntu20.04` or previously used docker image|
 | `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--queue`| Select the queue to launch the interactive session on | Previously used queue|
@@ -194,7 +195,11 @@ The Task must be connected to a git repository, since currently single script de
 | `--skip-docker-network` | Don't pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
 | `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
 | `--password`| Set your own SSH password for the interactive session | A randomly generated password or a previously used one |
-|  `--force_dropbear`| Force using `dropbear` instead of SSHd |`None`| 
+| `--force_dropbear`| Force using `dropbear` instead of SSHd |`None`| 
+| `--store-workspace` |  Upload/Restore remote workspace folder and extract it into next the session. Use with `--continue-session` to continue your previous work from your exact container state | `none` |
+| `--continue-session` | Pass the session of a previous session to continue, restoring your workspace (see `--store-workspace`) | `none` |
+| `--session-name` | Set the name of the interactive session Task| `none` |
+| `--session-tags` | Add tags to the interactive session for increased visibility | `none` |
 | `--version`| Display the clearml-session utility version| N/A|
 | `--verbose` | Increase verbosity of logging | `none` |
 | `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|

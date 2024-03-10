@@ -41,10 +41,10 @@ task = Task.init(
 )
 ```
 
-Once a task is created, the task object can be accessed from anywhere in the code by calling [`Task.current_task`](../references/sdk/task.md#taskcurrent_task).
+Once a task is created, the task object can be accessed from anywhere in the code by calling [`Task.current_task()`](../references/sdk/task.md#taskcurrent_task).
 
 If multiple tasks need to be created in the same process (for example, for logging multiple manual runs), 
-make sure to close a task, before initializing a new one. To close a task simply call [`Task.close`](../references/sdk/task.md#close) 
+make sure to close a task, before initializing a new one. To close a task simply call [`Task.close()`](../references/sdk/task.md#close) 
 (see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a task, its project needs to be specified. If the project entered does not exist, it will be created on-the-fly. 
@@ -63,10 +63,10 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * Command Line Parsing - ClearML captures any command line parameters passed when invoking code that uses standard python packages, including:
         * [click](../integrations/click.md)
         * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options)
-        * [Python Fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
+        * [Python Fire](../integrations/python_fire.md)
         * [LightningCLI](../integrations/pytorch_lightning.md)
     * TensorFlow Definitions (`absl-py`)
-    * [Hydra](../integrations/hydra.md) - the OmegaConf which holds all the configuration files, as well as overridden values. 
+    * [Hydra](../integrations/hydra.md) - ClearML logs the OmegaConf which holds all the configuration files, as well as values overridden during runtime. 
 * **Models** - ClearML automatically logs and updates the models and all snapshot paths saved with the following frameworks:
     * [TensorFlow](../integrations/tensorflow.md)
     * [Keras](../integrations/keras.md)
@@ -173,7 +173,7 @@ In order to mitigate the clutter that a multitude of debugging tasks might creat
 
 You can always create a new task by passing `reuse_last_task_id=False`.
 
-See full `Task.init` reference [here](../references/sdk/task.md#taskinit).
+For more information, see [`Task.init()`](../references/sdk/task.md#taskinit).
 
 ### Continuing Task Execution
 You can continue the execution of a previously run task using the `continue_last_task` parameter of `Task.init()`. 
@@ -782,6 +782,15 @@ task = Task.init(
 )
 ```
 
+:::tip Output URI Formats
+Specify the model storage URI location using the relevant format: 
+* A shared folder: `/mnt/share/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+:::
+
 To automatically store all models created by any experiment at a specific location, edit the `clearml.conf` (see
  [ClearML Configuration Reference](../configs/clearml_conf.md#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` 
 to the desired storage (see [Storage](../integrations/storage.md)). This is especially helpful when
@@ -866,7 +875,7 @@ me = Person('Erik', 5)
 
 params_dictionary = {'epochs': 3, 'lr': 0.4}
 
-task = Task.init(project_name='examples',task_name='argparser')
+task = Task.init(project_name='examples',task_name='python objects')
 
 task.connect(me)
 task.connect(params_dictionary)

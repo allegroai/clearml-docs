@@ -12,7 +12,7 @@ and specify a task name and its project. This creates a Task object that automat
 information as well as execution outputs.
 
 All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md),
-and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
+and it can be visualized in the [ClearML WebApp (UI)](../webapp/webapp_overview.md). ClearML can also be configured to upload 
 model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). Additionally, 
 you can work with tasks in Offline Mode, in which all information is saved in a local folder (see 
 [Storing Task Data Offline](../guides/set_offline.md)).
@@ -96,7 +96,7 @@ Most importantly, ClearML also logs experiments' input and output models as well
 
 #### Logging Artifacts 
 ClearML provides an explicit logging interface that supports manually reporting a variety of artifacts. Any type of 
-artifact can be logged to a task using the [`Task.upload_artifact`](../references/sdk/task.md#upload_artifact) method. 
+artifact can be logged to a task using [`Task.upload_artifact()`](../references/sdk/task.md#upload_artifact). 
 See more details in the [Artifacts Reporting example](../guides/reporting/artifacts.md).
 
 ClearML can be configured to upload artifacts to any of the supported types of storage, which include local and shared 

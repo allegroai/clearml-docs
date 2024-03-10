@@ -11,15 +11,14 @@ ClearML reports these plots in the experiment's **PLOTS** tab.
 
 ## Surface Plot
 
-To plot a series as a surface plot, use the [Logger.report_surface](../../references/sdk/logger.md#report_surface) 
-method.
+To plot a series as a surface plot, use [`Logger.report_surface()`](../../references/sdk/logger.md#report_surface):
 
 ```python
 # report 3d surface
 surface = np.random.randint(10, size=(10, 10))
 Logger.current_logger().report_surface(
-    "example_surface",
-    "series1",
+    title="example_surface",
+    series="series1",
     iteration=iteration,
     matrix=surface,
     xaxis="title X",
@@ -33,14 +32,14 @@ View the reported surface plot in **PLOTS**.
 
 ## 3D Scatter Plot
 
-To plot a series as a 3D scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) 
-method.
+To plot a series as a 3D scatter plot, use [`Logger.report_scatter3d()`](../../references/sdk/logger.md#report_scatter3d):
+
 ```python
 # report 3d scatter plot
 scatter3d = np.random.randint(10, size=(10, 3))
 Logger.current_logger().report_scatter3d(
-    "example_scatter_3d",
-    "series_xyz",
+    title="example_scatter_3d",
+    series="series_xyz",
     iteration=iteration,
     scatter=scatter3d,
     xaxis="title x",

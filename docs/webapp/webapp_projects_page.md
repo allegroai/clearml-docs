@@ -53,9 +53,9 @@ of a project folder to open its context menu and access the following project ac
 * **Delete** - Delete the project. To delete a project, all of its contents (i.e. any pipelines/reports/datasets) must
 first be archived or removed. 
 
-## Create New Projects
+## Create Projects
 
-To create a new project, click the **+ NEW PROJECT** button in the top right of the page or in a project's context menu, 
+To create a project, click the **+ NEW PROJECT** button in the top right of the page or in a project's context menu, 
 which will open a **New Project** modal. 
 
 ![New project modal](../img/webapp_projects_new_project.png)

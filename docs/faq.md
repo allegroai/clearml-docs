@@ -166,8 +166,8 @@ in an experiments table and sort by that metric column.
 
 #### Can I store more information on the models?   <a id="store-more-model-info"></a>
 
-Yes! For example, you can use the [`Task.set_model_label_enumeration`](references/sdk/task.md#set_model_label_enumeration) 
-method to store label enumeration:
+Yes! For example, you can use [`Task.set_model_label_enumeration()`](references/sdk/task.md#set_model_label_enumeration) 
+to store label enumeration:
 
 ```python
 Task.current_task().set_model_label_enumeration( {"label": int(0), } )
@@ -295,7 +295,7 @@ Yes! ClearML provides multiple ways to configure your task and track your parame
 In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](integrations/click.md), 
 [Python Fire](integrations/python_fire.md), [Hydra](integrations/hydra.md), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
 
-ClearML also supports tracking code-level configuration dictionaries using the [`Task.connect`](references/sdk/task.md#connect) method.
+ClearML also supports tracking code-level configuration dictionaries using [`Task.connect()`](references/sdk/task.md#connect).
 
 For example, the code below connects hyperparameters (`learning_rate`, `batch_size`, `display_step`,
 `model_path`, `n_hidden_1`, and `n_hidden_2`) to a task:
@@ -309,7 +309,7 @@ parameters_dict = { 'learning_rate': 0.001, 'batch_size': 100, 'display_step': 1
 parameters_dict = Task.current_task().connect(parameters_dict)
 ```
 
-See more task configuration options [here](fundamentals/hyperparameters.md). 
+For more task configuration options, see [Hyperparameters](fundamentals/hyperparameters.md). 
     
 
 <br/>
@@ -375,7 +375,7 @@ An experiment's name is a user-controlled property, which can be accessed via th
 
 For example, to distinguish between different experiments, you can append the task ID to the task name:
 ```python
-task = Task.init('examples', 'train')
+task = Task.init(project_name='examples', task_name='train')
 task.name += ' {}'.format(task.id)
 ```
 
@@ -625,8 +625,8 @@ For example, the following two scatter2D series are reported on the same plot, b
 ```python
 scatter2d_1 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
 logger.report_scatter2d(
-    "example_scatter",
-    "series_1", 
+    title="example_scatter",
+    series="series_1", 
     iteration=1, 
     scatter=scatter2d_1,
     xaxis="title x", 
@@ -635,8 +635,8 @@ logger.report_scatter2d(
     
 scatter2d_2 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
 logger.report_scatter2d(
-    "example_scatter", 
-    "series_2", 
+    title="example_scatter", 
+    series="series_2", 
     iteration=1, 
     scatter=scatter2d_2,
     xaxis="title x", 
@@ -670,7 +670,13 @@ the experiment's ID. If the experiment's ID is `6ea4f0b56d994320a713aeaf13a86d9d
 /mnt/shared/folder/task.6ea4f0b56d994320a713aeaf13a86d9d/models/
 ```
 
-ClearML supports other storage types for `output_uri`, including:
+ClearML supports other storage types for `output_uri`:
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+
+For example:
 ```python
 # AWS S3 bucket
 task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
@@ -679,7 +685,7 @@ task = Task.init(project_name, task_name, output_uri="s3://bucket-name/folder")
 task = Task.init(project_name, task_name, output_uri="gs://bucket-name/folder")
 ```
 
-To use Cloud storage with ClearML, configure the storage credentials in your `~/clearml.conf`. For detailed information, 
+To use cloud storage with ClearML, configure the storage credentials in your `~/clearml.conf`. For detailed information, 
 see [ClearML Configuration Reference](configs/clearml_conf.md).
 
 <a id="pycharm-remote-debug-detect-git"></a>
@@ -777,7 +783,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 1. You can now use ClearML in your notebook!
    ```python
    # create a task and start training
-   task = Task.init('jupyter project', 'my notebook')
+   task = Task.init(project_name='jupyter project', task_name='my notebook')
    ```
         
 

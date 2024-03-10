@@ -53,7 +53,7 @@ See the [Logger SDK reference page](../references/sdk/logger.md).
 ### Hyperparameter Optimization 
 
 ClearML's `optimization` module includes classes that support hyperparameter optimization (HPO):
-* [HyperParameterOptimizer](../references/sdk/automation_controller_pipelinecontroller.md) - Hyperparameter search 
+* [HyperParameterOptimizer](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) - Hyperparameter search 
   controller class 
 * Optimization search strategy classes including [Optuna](../references/sdk/hpo_optuna_optuna_optimizeroptuna.md), [HpBandSter](../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md),
   [GridSearch](../references/sdk/hpo_optimization_gridsearch.md), [RandomSearch](../references/sdk/hpo_optimization_randomsearch.md), 
@@ -115,4 +115,4 @@ The `clearml` GitHub repository includes an [examples folder](https://github.com
 with example scripts demonstrating how to use the various functionalities of the ClearML SDK. 
 
 These examples are preloaded in the [ClearML Hosted Service](https://app.clear.ml), and can be viewed, cloned, 
-and edited in the ClearML Web UI's `ClearML Examples` project. The examples are each explained in the [examples section](../guides/main.md). 
+and edited in the ClearML Web UI's `ClearML Examples` project. Each example is explained in the [examples section](../guides/main.md). 
