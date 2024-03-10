@@ -610,8 +610,8 @@ Task.current_task().get_logger().report_histogram(
 
 #### I want to add more graphs, not just with TensorBoard. Is this supported?   <a id="more-graph-types"></a>
 
-Yes! The [Logger](fundamentals/logger.md) module includes methods for explicit reporting. For examples of explicit reporting, see the [Explicit Reporting](guides/reporting/explicit_reporting.md) 
-tutorial, which includes a list of methods for explicit reporting.
+Yes! The [`Logger`](fundamentals/logger.md) module includes methods for explicit reporting. For examples of explicit reporting, see the [Explicit Reporting](guides/reporting/explicit_reporting.md) 
+tutorial.
 
 <br/>
 
