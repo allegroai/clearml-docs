@@ -143,6 +143,18 @@ To access a git repository remotely, add a `--git-credentials` flag and set it t
 file is sent to the interactive session. This is helpful if working on private git repositories, and it allows for seamless 
 cloning and tracking of git references, including untracked changes. 
 
+#### Uploading Local Files to Remote Session
+You can upload local files and directories from your local machine into the remote session by specifying their path with 
+`--upload-files <file_path>`. The entire content of the directory or file will be copied into your remote 
+`clearml-session` container under the `~/session-files/` directory.
+
+```commandline
+clearml-session --upload-files /mnt/data/stuff
+```
+
+You can upload your files in conjunction with the `--store-workspace` option to easily move workloads between local 
+development machine and remote machines with persistent workspace synchronization. See [Storing and Synchronizing Workspace](#storing-and-synchronizing-workspace).
+
 #### Starting a Debugging Session 
 You can debug previously executed experiments registered in the ClearML system on a remote interactive session. 
 Input into `clearml-session` the ID of a Task to debug, then `clearml-session` clones the experiment's git repository and 
@@ -158,6 +170,31 @@ The Task must be connected to a git repository, since currently single script de
 1. Click on the JupyterLab / VS Code link, or connect directly to the SSH session.
 1. In JupyterLab / VS Code, access the experiment's repository in the `environment/task_repository` folder. 
 
+#### Storing and Synchronizing Workspace
+You can automatically store and sync your interactive session workspace with the `--store-workspace` option. `clearml-session`
+will automatically create a snapshot of your entire workspace when shutting it down, and later restore in a 
+new session on any remote machine. 
+
+Specify the remote workspace root-folder by adding `--store-workspace <workspace_root_folder>` to the command line. In 
+the remote session container, put all your code and data under the `<workspace_root_folder>` directory. When your 
+session is shut down, the workspace folder will be automatically packaged and stored on the ClearML file server. 
+
+```commandline
+clearml-session --store-workspace ~/workspace --docker python:3.10-bullseye
+```
+
+In your next `clearml-session` execution, specify `--store-workspace <workspace_root_folder>` again and `clearml-session` 
+will grab the previous workspace snapshot and restore it into the new remote container in `<workspace_root_folder>`.
+
+```commandline
+clearml-session --store-workspace ~/workspace --docker python:3.10-bullseye
+```
+
+To continue a specific session and restore its workspace, specify the session ID with `--continue-session <session_id>`:
+
+```commandline
+clearml-session --continue-session <session_id> --store-workspace ~/workspace --docker python:3.10-bullseye
+```
 
 ### Command Line Options
 
