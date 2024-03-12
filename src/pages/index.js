@@ -43,7 +43,7 @@ const features = [
     imageUrl: 'img/ico-data-management.svg',
     description: (
       <>
-          <code>ClearML-Data</code> lets you to <b>abstract the Data from your Code</b>.
+          <code>ClearML-Data</code> lets you <b>abstract the Data from your Code</b>.
           CLI / programmatic interface easily create datasets from anywhere.
           ClearML-Data is a fully differentiable solution on top of object-storage / http / NAS layer.
           <b> We solve your data localization problem, so you can process it anywhere.</b>
