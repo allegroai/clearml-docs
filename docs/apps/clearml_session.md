@@ -180,20 +180,20 @@ the remote session container, put all your code and data under the `<workspace_r
 session is shut down, the workspace folder will be automatically packaged and stored on the ClearML file server. 
 
 ```commandline
-clearml-session --store-workspace ~/workspace --docker python:3.10-bullseye
+clearml-session --store-workspace ~/workspace
 ```
 
 In your next `clearml-session` execution, specify `--store-workspace <workspace_root_folder>` again and `clearml-session` 
 will grab the previous workspace snapshot and restore it into the new remote container in `<workspace_root_folder>`.
 
 ```commandline
-clearml-session --store-workspace ~/workspace --docker python:3.10-bullseye
+clearml-session --store-workspace ~/workspace
 ```
 
 To continue a specific session and restore its workspace, specify the session ID with `--continue-session <session_id>`:
 
 ```commandline
-clearml-session --continue-session <session_id> --store-workspace ~/workspace --docker python:3.10-bullseye
+clearml-session --continue-session <session_id> --store-workspace ~/workspace 
 ```
 
 ### Command Line Options
@@ -208,7 +208,7 @@ clearml-session --continue-session <session_id> --store-workspace ~/workspace --
 | `--continue-session` | Pass the session of a previous session to continue, restoring your workspace (see `--store-workspace`) | `none` |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--disable-session-cleanup` | If `True`, previous interactive sessions are not deleted | `false`|
-| `--docker`| Select the docker image to use in the interactive session on |`nvidia/cuda:11.6.2-runtime-ubuntu20.04` or previously used docker image|
+| `--docker`| Select the docker image to use in the interactive session |`nvidia/cuda:11.6.2-runtime-ubuntu20.04` or previously used docker image|
 | `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--force_dropbear`| Force using `dropbear` instead of SSHd |`None`| 
 | `--git-credentials` | If `True`, local `.git-credentials` file is sent to the interactive session.| `false`|
@@ -227,10 +227,10 @@ clearml-session --continue-session <session_id> --store-workspace ~/workspace --
 | `--requirements`| Specify `requirements.txt` file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
 | `--session-name` | Set the name of the interactive session Task| `none` |
 | `--session-tags` | Add tags to the interactive session for increased visibility | `none` |
-| `--shell` | Open the SSH session directly. Notice, quiting the SSH session will not shut down the remote session|`None`|
-| `--shutdowm`, `-S`| Shut down an active session | Previous session|
+| `--shell` | Open the SSH session directly. Notice, quitting the SSH session will not shut down the remote session|`None`|
+| `--shutdown`, `-S`| Shut down an active session | Previous session|
 | `--skip-docker-network` | Don't pass the `--network host` flag to the Docker that is launching the remote session. See [Networking using the host network](https://docs.docker.com/network/network-tutorial-host/) | `false`|
-| `--store-workspace` |  Upload/Restore remote workspace folder and extract it into next the session. Use with `--continue-session` to continue your previous work from your exact container state | `none` |
+| `--store-workspace` |  Upload/Restore remote workspace folder and extract it into the next session. Use with `--continue-session` to continue your previous work from your exact container state | `none` |
 | `--upload-files`|  Specify local files/folders to upload to the remote session|`None`|
 | `--user-folder` | Specify the path for the session's remote base folder for the session | Home folder(`~/`) or previously entered user folder path |
 | `--username`| Set your own SSH username for the interactive session | `root` or a previously used username | 
