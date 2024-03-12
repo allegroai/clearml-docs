@@ -126,7 +126,7 @@ You'll need to input the Dataset ID you received when created the dataset above
    1 file added
    ```
    
-1. Remove a file. We'll need to specify the file's full path (within the dataset, not locally) to remove it.
+1. Remove a file. You need to specify the file's full path (within the dataset, not locally) to remove it.
 
    ```bash
    clearml-data remove --files data_samples/dancing.jpg
