@@ -49,7 +49,7 @@ The comparison tabs provides the following views:
 ### Side-by-side Textual Comparison
 
 In the **Details** and **Network** tabs, you can view differences in the models' nominal 
-values. **Details** displays the models' general information, labels, and metadata. **Network** displays the models' 
+values. **Details** displays the models' general information, labels, metadata, and lineage. **Network** displays the models' 
 configuration. Each model's 
 information is displayed in a column, so each field is lined up side-by-side. 
 
