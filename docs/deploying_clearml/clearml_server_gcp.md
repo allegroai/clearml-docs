@@ -69,7 +69,7 @@ By default, ClearML Server launches with unrestricted access. To restrict ClearM
 instructions in the [Security](clearml_server_security.md) page.
 :::
 
-To launch ClearML Server using a GCP Custom Image, see the [Manually importing virtual disks](https://cloud.google.com/compute/docs/import/import-existing-image#overview) in the "Google Cloud Storage" documentation, [Compute Engine documentation](https://cloud.google.com/compute/docs). For more information on Custom Images, see [Custom Images](https://cloud.google.com/compute/docs/images#custom_images) in the "Compute Engine documentation".
+To launch ClearML Server using a GCP Custom Image, see the [Manually importing virtual disks](https://cloud.google.com/compute/docs/import/import-existing-image#overview) in the "Google Cloud Storage" documentation, [Compute Engine documentation](https://cloud.google.com/compute/docs). For more information about Custom Images, see [Custom Images](https://cloud.google.com/compute/docs/images#custom_images) in the "Compute Engine documentation".
 
 The minimum requirements for ClearML Server are:
 

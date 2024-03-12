@@ -122,7 +122,7 @@ When `clearml-session` is launched, it initializes a task with a unique ID in th
 
 To connect to an existing session: 
 1. Go to the web UI, find the interactive session task (by default, it's in project "DevOps").
-1. Click on the ID button in the task page's header, and copy the unique ID.
+1. Click the `ID` button in the task page's header to copy the unique ID.
 1. Run the following command: `clearml-session --attach <session_id>`.
 1. Click on the JupyterLab / VS Code link that is outputted, or connect directly to the SSH session
 
@@ -251,6 +251,6 @@ This feature is available under the ClearML Enterprise plan
 
 The ClearML Enterprise Server provides GUI applications for setting up remote sessions in VS Code and JupyterLab. These
 apps provide local links to access JupyterLab or VS Code on a remote machine over a secure and encrypted SSH connection,
-letting you use the IDE as if you're running on the target machine itself
+letting you use the IDE as if you're running on the target machine itself.
 
 For more information, see [JupyterLab](../webapp/applications/apps_jupyter_lab.md) and/or [VS Code](../webapp/applications/apps_vscode.md).

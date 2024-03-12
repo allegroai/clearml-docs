@@ -129,7 +129,10 @@ When a new ClearML Server version is available, the notification is:
 #### How do I find out ClearML version information?   <a id="versions"></a>
 
 ClearML server version information is available in the ClearML WebApp **Settings** page. On the bottom right of the page, 
-it says **Version**, followed by three numbers: the web application version, the API server version, and the API version.
+the following numbers are displayed: 
+* Web application version
+* API server version
+* API version
 
 ![Server version information](img/faq_server_versions.png)
 
@@ -576,8 +579,8 @@ coordinates plot:
 
 #### I want to add more graphs, not just with TensorBoard. Is this supported?   <a id="more-graph-types"></a>
 
-Yes! The [Logger](fundamentals/logger.md) module includes methods for explicit reporting. For examples of explicit reporting, see the [Explicit Reporting](guides/reporting/explicit_reporting.md) 
-tutorial, which includes a list of methods for explicit reporting.
+Yes! The [`Logger`](fundamentals/logger.md) module includes methods for explicit reporting. For examples of explicit reporting, see the [Explicit Reporting](guides/reporting/explicit_reporting.md) 
+tutorial.
 
 <br/>
 
@@ -638,7 +641,7 @@ the experiment's ID. If the experiment's ID is `6ea4f0b56d994320a713aeaf13a86d9d
 
 ClearML supports other storage types for `output_uri`:
 * S3: `s3://bucket/folder`
-* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
 * Google Cloud Storage: `gs://bucket-name/folder`
 * Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
@@ -767,7 +770,7 @@ If the thread does not complete, it times out.
 
 This can occur for scripts that do not import any packages, for example short test scripts.
 
-To fix this issue, you could import the `time` package and add a `time.sleep(20)` statement to the end of your script.
+To fix this issue, you can import the `time` package and add a `time.sleep(20)` statement to the end of your script.
 
 ## scikit-learn
 

@@ -12,7 +12,7 @@ and running, users can send Tasks to be executed on Google Colab's hardware.
 
 ## Prerequisites
 * Be signed up for ClearML (or have a server deployed).
-* Have a Google account to access Google Colab
+* Have a Google account to access Google Colab.
 
 
 ## Steps 
