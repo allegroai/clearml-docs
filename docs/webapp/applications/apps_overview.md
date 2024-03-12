@@ -13,10 +13,6 @@ Use ClearML's GUI Applications to manage ML workloads and automatically run your
 Configure and launch app instances, then track their execution from the app dashboard.
 
 ClearML provides the following applications:
-* [**GPU Compute**](apps_gpu_compute.md) - Launch cloud machines on demand and optimize their usage according to a 
-  defined budget--no previous setup necessary
-* [**AWS Autoscaler**](apps_aws_autoscaler.md) - Optimize AWS EC2 instance usage according to a defined instance budget
-* [**GCP Autoscaler**](apps_gcp_autoscaler.md) - Optimize GCP instance usage according to a defined instance budget
 * [**Hyperparameter Optimization**](apps_hpo.md) - Find the parameter values that yield the best performing models
 * **Nvidia Clara** - Train models using Nvidia's Clara framework
 * [**Project Dashboard**](apps_dashboard.md) - High-level project monitoring with Slack alerts
@@ -24,6 +20,12 @@ ClearML provides the following applications:
 * [**Trigger Manager**](apps_trigger_manager.md) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
 * [**Jupyter Lab**](apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine (available under ClearML Enterprise Plan)
 * [**VS Code**](apps_vscode.md) - Launch a VS Code session on a remote machine (available under ClearML Enterprise Plan)
+
+:::info Autoscalers
+Autoscaling ([GPU Compute](apps_gpu_compute.md), [AWS Autoscaler](apps_aws_autoscaler.md), and [GCP Autoscaler](apps_gcp_autoscaler.md))
+was previously available through the Applications page. The autoscaler functionality has been moved to the [Orchestration page](https://app.clear.ml/workers-and-queues/autoscalers) 
+in the WebApp. 
+:::
 
 ## App Pages Layout
 Each application's page is split into two sections:
