@@ -45,7 +45,7 @@ of the optimization results in table and graph forms.
 |`--args`| List of `<argument>=<value>` strings to pass to the remote execution. Currently only argparse/click/hydra/fire arguments are supported. Example: `--args lr=0.003 batch_size=64`|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--local`| If set, run the experiments locally. Notice that no new python environment will be created. The `--script` parameter must point to a local file entry point and all arguments must be passed with `--args`| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--save-top-k-tasks-only`| Keep only the top \<k\> performing tasks, and archive the rest of the experiments. Input `-1` to keep all tasks. Default: `10`.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--time-limit-per-job`|Maximum execution time per single job in minutes. When time limit is exceeded, the job is aborted. Default: no time limit.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--time-limit-per-job`|Maximum execution time per single job in minutes. When the time limit is exceeded, the job is aborted. Default: no time limit.|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
 </div>
 
