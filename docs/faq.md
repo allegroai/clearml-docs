@@ -481,8 +481,10 @@ After thirty minutes, it remains unchanged.
 
 #### Can I control what ClearML automatically logs?   <a id="controlling_logging"></a>
 
-Yes! ClearML lets you control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
-by calling [`Task.init()`](references/sdk/task.md#taskinit). 
+Yes! ClearML lets you control automatic logging for frameworks, argument parsers, `stdout`, and `stderr`  when 
+initializing a Task by calling [`Task.init()`](references/sdk/task.md#taskinit). 
+
+##### Frameworks
 
 To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
 parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
@@ -496,6 +498,35 @@ auto_connect_frameworks={
     'megengine': True, 'catboost': True
 }
 ```
+
+##### Argument Parsers
+
+To control a task's logging of parameters from supported argument parsers, use the `auto_connect_arg_parser` parameter. 
+Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
+parameters, input a dictionary with parameter-boolean pairs. The `False` value excludes the specified parameter. 
+Unspecified parameters default to `True`.
+
+For example, the following code will not log the `Example_1` parameter, but will log all other arguments.
+
+```python
+auto_connect_arg_parser={"Example_1": False}
+```
+
+To exclude all unspecified parameters, set the `*` key to `False`. 
+
+For example, the following code will log **only** the `Example_2` parameter.
+
+```python
+auto_connect_arg_parser={"Example_2": True, "*": False}
+```
+
+An empty dictionary completely disables all automatic logging of parameters from argument parsers: 
+
+```python
+auto_connect_arg_parser={}
+```
+
+##### stdout and stderr 
 
 To control the `stdout`, `stderr`, and standard logging, use the `auto_connect_streams` parameter. 
 To disable logging all three, set the parameter to `False`. For finer grained control, input a dictionary, where the keys are `stout`, `stderr`, 
