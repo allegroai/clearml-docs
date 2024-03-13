@@ -129,7 +129,10 @@ When a new ClearML Server version is available, the notification is:
 #### How do I find out ClearML version information?   <a id="versions"></a>
 
 ClearML server version information is available in the ClearML WebApp **Settings** page. On the bottom right of the page, 
-it says **Version**, followed by three numbers: the web application version, the API server version, and the API version.
+the following numbers are displayed: 
+* Web application version
+* API server version
+* API version
 
 ![Server version information](img/faq_server_versions.png)
 
@@ -166,8 +169,8 @@ in an experiments table and sort by that metric column.
 
 #### Can I store more information on the models?   <a id="store-more-model-info"></a>
 
-Yes! For example, you can use the [`Task.set_model_label_enumeration`](references/sdk/task.md#set_model_label_enumeration) 
-method to store label enumeration:
+Yes! For example, you can use [`Task.set_model_label_enumeration()`](references/sdk/task.md#set_model_label_enumeration) 
+to store label enumeration:
 
 ```python
 Task.current_task().set_model_label_enumeration( {"label": int(0), } )
@@ -292,8 +295,11 @@ to reproduce. You can see uncommitted changes in the ClearML Web UI, in the **EX
 
 Yes! ClearML provides multiple ways to configure your task and track your parameters! 
 
-In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](integrations/click.md), 
-[Python Fire](integrations/python_fire.md), [Hydra](integrations/hydra.md), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
+In addition to argparse, ClearML also automatically captures and tracks command line parameters created using:
+* [click](integrations/click.md) 
+* [Python Fire](integrations/python_fire.md) 
+* [Hydra](integrations/hydra.md)
+* [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli)
 
 ClearML also supports tracking code-level configuration dictionaries using [`Task.connect()`](references/sdk/task.md#connect).
 
@@ -316,7 +322,7 @@ For more task configuration options, see [Hyperparameters](fundamentals/hyperpar
 
 #### I noticed that all of my experiments appear as "Training". Are there other options?   <a id="other-experiment-types"></a>
 
-Yes! When creating experiments and calling [`Task.init`](references/sdk/task.md#taskinit), 
+Yes! When creating experiments and calling [`Task.init()`](references/sdk/task.md#taskinit), 
 you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
 
 ```python
@@ -375,7 +381,7 @@ An experiment's name is a user-controlled property, which can be accessed via th
 
 For example, to distinguish between different experiments, you can append the task ID to the task name:
 ```python
-task = Task.init('examples', 'train')
+task = Task.init(project_name='examples', task_name='train')
 task.name += ' {}'.format(task.id)
 ```
 
@@ -478,8 +484,10 @@ After thirty minutes, it remains unchanged.
 
 #### Can I control what ClearML automatically logs?   <a id="controlling_logging"></a>
 
-Yes! ClearML lets you control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
-by calling [`Task.init()`](references/sdk/task.md#taskinit). 
+Yes! ClearML lets you control automatic logging for frameworks, argument parsers, `stdout`, and `stderr`  when 
+initializing a Task by calling [`Task.init()`](references/sdk/task.md#taskinit). 
+
+##### Frameworks
 
 To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
 parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
@@ -493,6 +501,35 @@ auto_connect_frameworks={
     'megengine': True, 'catboost': True
 }
 ```
+
+##### Argument Parsers
+
+To control a task's logging of parameters from supported argument parsers, use the `auto_connect_arg_parser` parameter. 
+Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
+parameters, input a dictionary with parameter-boolean pairs. The `False` value excludes the specified parameter. 
+Unspecified parameters default to `True`.
+
+For example, the following code will not log the `Example_1` parameter, but will log all other arguments.
+
+```python
+auto_connect_arg_parser={"Example_1": False}
+```
+
+To exclude all unspecified parameters, set the `*` key to `False`. 
+
+For example, the following code will log **only** the `Example_2` parameter.
+
+```python
+auto_connect_arg_parser={"Example_2": True, "*": False}
+```
+
+An empty dictionary completely disables all automatic logging of parameters from argument parsers: 
+
+```python
+auto_connect_arg_parser={}
+```
+
+##### stdout and stderr 
 
 To control the `stdout`, `stderr`, and standard logging, use the `auto_connect_streams` parameter. 
 To disable logging all three, set the parameter to `False`. For finer grained control, input a dictionary, where the keys are `stout`, `stderr`, 
@@ -556,62 +593,28 @@ tab, click `Download full log`.
 #### How do I create a graph comparing hyperparameters vs. model accuracy?   <a id="compare-graph-parameters"></a>
 
 You can use the UI's [experiment comparison features](webapp/webapp_exp_comparing.md) to compare the logged hyperparameter 
-and accuracy values of several experiments. 
+and accuracy values of several experiments. In the experiment comparison page, under the **HYPERPARAMETERS** tab
+you can visualize experiments' hyperparameter values in relation to performance metrics in a scatter plot or parallel
+coordinates plot:
+* [Scatter plot](webapp/webapp_exp_comparing.md#scatter-plot): View the correlation between a selected hyperparameter and 
+  metric. For example, the image below shows a scatter plot that displays the values of a performance metric (`epoch_accuracy`) 
+  and a hyperparameter (`epochs`) of a few experiments:
+  
+  ![Scatter plot comparison](img/faq_compare_scatter.png)
 
-In an experiment comparison page, under the **HYPERPARAMETERS** tab, you can view the experiments' hyperparameter values 
-in relation to a specific metric (e.g. accuracy) in a parallel coordinates plot. 
+* [Parallel coordinates plot](webapp/webapp_exp_comparing.md#parallel-coordinates-mode): View the impact of hyperparameters 
+  on selected metric(s). For example, the image below shows 
+  a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, `batch_size`, and 
+  `number_of_epochs`) and a performance metric (`accuracy`) of three experiments: 
 
-The image below shows a parallel coordinates plot which displays the values of selected hyperparameters (`base_lr`, 
-`batch_size`, and `number_of_epochs`) and a performance metric (`accuracy`) of three experiments. 
-
-![Parallel Coordinates](img/compare_parallel_coordinates.png)
-
-You can also visualize the differences in a scatter plot. In each experiment whose values will be compared, report a plot 
-with a single point, x-axis for the hyperparameter value, and Y-axis for the accuracy. 
-
-In the code below, the task reports a single-point scatter plot with `number_layers` as the x-axis and
-`accuracy` as the Y-axis:
-
-```python
-number_layers = 10
-accuracy = 0.95
-Task.current_task().get_logger().report_scatter2d(
-    title="performance", 
-    series="accuracy", 
-    iteration=0, 
-    mode='markers', 
-    scatter=[(number_layers, accuracy)]
-)
-```
-
-When these experiments are compared in the UI's experiment comparison, all the reported `performance/accuracy` values 
-are displayed in a single plot.
-
-![Comparison plot](img/compare_plots.png)
-
-Another option is a histogram chart:
-
-```python
-number_layers = 10
-accuracy = 0.95
-Task.current_task().get_logger().report_histogram(
-    title="performance", 
-    series="accuracy", 
-    iteration=0, 
-    labels=['accuracy'],
-    values=[accuracy], 
-    xlabels=['number_layers %d' % number_layers]
-)
-```
-
-![Comparison plot histogram](img/compare_plots_hist.png)
+  ![Parallel Coordinates](img/compare_parallel_coordinates.png)
 
 <br/>
 
 #### I want to add more graphs, not just with TensorBoard. Is this supported?   <a id="more-graph-types"></a>
 
-Yes! The [Logger](fundamentals/logger.md) module includes methods for explicit reporting. For examples of explicit reporting, see the [Explicit Reporting](guides/reporting/explicit_reporting.md) 
-tutorial, which includes a list of methods for explicit reporting.
+Yes! The [`Logger`](fundamentals/logger.md) module includes methods for explicit reporting. For examples of explicit reporting, see the [Explicit Reporting](guides/reporting/explicit_reporting.md) 
+tutorial.
 
 <br/>
 
@@ -625,8 +628,8 @@ For example, the following two scatter2D series are reported on the same plot, b
 ```python
 scatter2d_1 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
 logger.report_scatter2d(
-    "example_scatter",
-    "series_1", 
+    title="example_scatter",
+    series="series_1", 
     iteration=1, 
     scatter=scatter2d_1,
     xaxis="title x", 
@@ -635,8 +638,8 @@ logger.report_scatter2d(
     
 scatter2d_2 = np.hstack((np.atleast_2d(np.arange(0, 10)).T, np.random.randint(10, size=(10, 1))))
 logger.report_scatter2d(
-    "example_scatter", 
-    "series_2", 
+    title="example_scatter", 
+    series="series_2", 
     iteration=1, 
     scatter=scatter2d_2,
     xaxis="title x", 
@@ -672,7 +675,7 @@ the experiment's ID. If the experiment's ID is `6ea4f0b56d994320a713aeaf13a86d9d
 
 ClearML supports other storage types for `output_uri`:
 * S3: `s3://bucket/folder`
-* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
 * Google Cloud Storage: `gs://bucket-name/folder`
 * Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
@@ -763,7 +766,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
         pip install clearml
 
-1. Run the ClearML initialize wizard.
+1. Run the ClearML setup wizard.
 
         clearml-init
     
@@ -783,7 +786,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 1. You can now use ClearML in your notebook!
    ```python
    # create a task and start training
-   task = Task.init('jupyter project', 'my notebook')
+   task = Task.init(project_name='jupyter project', task_name='my notebook')
    ```
         
 
@@ -801,7 +804,7 @@ If the thread does not complete, it times out.
 
 This can occur for scripts that do not import any packages, for example short test scripts.
 
-To fix this issue, you could import the `time` package and add a `time.sleep(20)` statement to the end of your script.
+To fix this issue, you can import the `time` package and add a `time.sleep(20)` statement to the end of your script.
 
 ## scikit-learn
 

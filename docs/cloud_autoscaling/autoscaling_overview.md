@@ -63,7 +63,7 @@ different queue. When a queue detects a task, the autoscaler spins up the approp
 ![Autoscaler diagram](../img/autoscaler_diagram.png)
 
 The diagram above demonstrates an example where an autoscaler app instance is attached to two queues. Each queue is 
-associated with a different resource, CPU and GPU, and each queue has two enqueued tasks. In order to execute the tasks, 
+associated with a different resource, CPU and GPU, and each queue has two enqueued tasks. To execute the tasks, 
 the autoscaler spins up four machines, two CPU machines to execute the tasks in the CPU queue and two GPU machines to 
 execute the tasks in the GPU queue.
 
