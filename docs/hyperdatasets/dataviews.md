@@ -144,7 +144,7 @@ iteration settings and additional iteration parameters that control query iterat
 ```python
 from allegroai import DataView, IterationOrder
 # Create a DataView object that iterates randomly until terminated by the user
-myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
+myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=False)
 ```
 
 ### Adding Queries
@@ -332,7 +332,7 @@ This example demonstrates creating a DataView and setting its parameters to iter
 
 ```python
 # Create a Dataview object for an iterator for frames
-myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
+myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=False)
 
 # Set Iteration Parameters (overrides parameters in constructing the DataView object
 myDataView.set_iteration_parameters(
@@ -499,7 +499,7 @@ Dataview objects can be retrieved by the Dataview ID or name using the [`DataVie
 class method.
 
 ```python
-my_dataview = DataView.get(dataview_id='12344kg2p3hf8')
+my_dataview = DataView.get(dataview_id='<dataview_id>')
 ```
 
 Access the Dataview's frames as a python list, dictionary, or through a pythonic iterator.
