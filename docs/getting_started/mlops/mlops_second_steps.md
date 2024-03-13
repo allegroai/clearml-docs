@@ -31,6 +31,8 @@ The second step is to preprocess the data. First access the data, then modify it
 and lastly create a new version of the data.
 
 ```python
+from clearml import Task, Dataset
+
 # create a task for the data processing part
 task = Task.init(project_name='data', task_name='create', task_type='data_processing')
 
@@ -93,6 +95,8 @@ will first run the first and then run the second.
 It is important to remember that pipelines are Tasks by themselves and can also be automated by other pipelines (i.e. pipelines of pipelines).
 
 ```python
+from clearml import PipelineController
+
 pipe = PipelineController(
     project='data', 
     name='pipeline demo',
@@ -112,6 +116,6 @@ pipe.add_step(
 )
 ```
 
-We can also pass the parameters from one step to the other (for example `Task.id`).
-In addition to pipelines made up of Task steps, ClearML also supports pipelines consisting of function steps. See more in the 
-full pipeline documentation [here](../../pipelines/pipelines.md).
+You can also pass the parameters from one step to the other (for example `Task.id`).
+In addition to pipelines made up of Task steps, ClearML also supports pipelines consisting of function steps. For more 
+information, see the [full pipeline documentation](../../pipelines/pipelines.md).

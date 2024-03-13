@@ -181,7 +181,7 @@ The default operator for a query is `or`, unless `and` is placed at the beginnin
 ### Retrieving Models 
 Retrieve a local copy of a ClearML model through a `Model`/`InputModel` object's [`get_local_copy()`](../references/sdk/model_model.md#get_local_copy). 
 The method returns a path to a cached local copy of the model. In the case that the model is already cached, you can set 
-`force_download` to `True` in order to download a fresh version.
+`force_download` to `True` to download a fresh version.
 
 ## Logging Metrics and Plots
 

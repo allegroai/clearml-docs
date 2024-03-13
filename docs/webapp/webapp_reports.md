@@ -135,7 +135,7 @@ used.
   ```
   src="<web_server>/widgets/?objectType=task&xaxis=iter&type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
   ```
-  Notice that the `project` parameter is specified. In order to get the most recent single experiment, 
+  Notice that the `project` parameter is specified. To get the most recent single experiment, 
   `page_size=1&page=0&order_by[]=-last_update` is added. `page_size` specifies how many results are returned in each 
   page, and `page` specifies which page to return (in this case the first page)--this way you can specify how many 
   experiments you want in your graph. `order_by[]=-last_update` orders the results by update time in descending order 

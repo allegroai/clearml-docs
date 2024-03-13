@@ -106,7 +106,7 @@ and [example](https://github.com/allegroai/clearml/blob/master/examples/schedule
 
 ### TriggerScheduler
 The `TriggerScheduler` class facilitates triggering task execution in the case that specific events occur in the system 
-(e.g. model publication, dataset creation, task failure). See [code](https://github.com/allegroai/clearml/blob/master/clearml/automation/trigger.py#L148)
+(such as model publication, dataset creation, task failure). See [code](https://github.com/allegroai/clearml/blob/master/clearml/automation/trigger.py#L148)
 and [usage example](https://github.com/allegroai/clearml/blob/master/examples/scheduler/trigger_example.py).
 
 ## Examples 

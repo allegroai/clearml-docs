@@ -19,7 +19,7 @@ To ensure every run will provide the same results, ClearML controls the determin
 :::
 
 :::note
-ClearML object (e.g. task, project) names are required to be at least 3 characters long
+ClearML object (such as task, project) names are required to be at least 3 characters long
 :::
 
 ```python
@@ -100,8 +100,8 @@ By default, when ClearML is integrated into your script, it automatically captur
 and parameters from supported argument parsers. But, you may want to have more control over what your experiment logs.
 
 #### Frameworks  
-To control a task's framework logging, use the `auto_connect_frameworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
-method. Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
+To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
+Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
 input a dictionary, with framework-boolean pairs. 
 
 For example: 
@@ -165,7 +165,7 @@ auto_connect_arg_parser={}
 
 ### Task Reuse
 Every `Task.init` call will create a new task for the current execution.
-In order to mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
+To mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
 * The last time it was executed (on this machine) was under 24 hours ago (configurable, see 
   [`sdk.development.task_reuse_time_window_in_hours`](../configs/clearml_conf.md#task_reuse) in 
   the ClearML configuration reference)
@@ -183,7 +183,7 @@ The task will continue reporting its outputs based on the iteration in which it 
 train/loss scalar reported was for iteration 100, when continued, the next report will be as iteration 101.  
 
 :::note Reproducibility
-Continued tasks may not be reproducible. In order to guarantee task reproducibility, you must ensure that all steps are 
+Continued tasks may not be reproducible. To guarantee task reproducibility, you must ensure that all steps are 
 done in the same order (e.g. maintaining learning rate profile, ensuring data is fed in the same order).
 :::
 
@@ -786,7 +786,7 @@ task = Task.init(
 Specify the model storage URI location using the relevant format: 
 * A shared folder: `/mnt/share/folder`
 * S3: `s3://bucket/folder`
-* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
 * Google Cloud Storage: `gs://bucket-name/folder`
 * Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 :::

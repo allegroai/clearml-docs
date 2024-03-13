@@ -105,7 +105,7 @@ Switch on the **Show row extremes** toggle to highlight each variant's maximum a
 
 The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments' hyperparameter impact on specified 
 metrics:
-1. Under **Performance Metrics**, select a metrics to compare for
+1. Under **Performance Metrics**, select metrics to compare for
 1. Select the values to use for each metric in the plot (can select multiple):
     * LAST - The final value, or the most recent value, for currently running experiments 
     * MIN - Minimal value 

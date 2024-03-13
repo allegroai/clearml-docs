@@ -56,7 +56,7 @@ For datasets created with earlier versions of `clearml`, or if using an earlier 
 :::
 
 :::info Dataset Version
-Input the dataset's version using the [semantic versioning](https://semver.org) scheme (e.g. `1.0.1`, `2.0`). If a version 
+Input the dataset's version using the [semantic versioning](https://semver.org) scheme (for example: `1.0.1`, `2.0`). If a version 
 is not input, the method tries finding the latest dataset version with the specified `dataset_name` and `dataset_project` 
 and auto-increments the version number. 
 :::
@@ -65,7 +65,7 @@ Use the `output_uri` parameter to specify a network storage target to upload the
 (such as previews) to. For example:
 * A shared folder: `/mnt/share/folder`
 * S3: `s3://bucket/folder`
-* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
 * Google Cloud Storage: `gs://bucket-name/folder`
 * Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
@@ -209,12 +209,12 @@ dataset.add_external_files(
 ```
 
 ### remove_files()
-To remove files from a current dataset, use the [`Dataset.remove_files`](../references/sdk/dataset.md#remove_files) method.
+To remove files from a current dataset, use [`Dataset.remove_files()`](../references/sdk/dataset.md#remove_files).
 Input the path to the folder or file to be removed in the `dataset_path` parameter. The path is relative to the dataset.
-To remove links, specify their URL (e.g. `s3://bucket/file`).
+To remove links, specify their URL (for example, `s3://bucket/file`).
 
-You can also input a wildcard into `dataset_path` in order to remove a set of files matching the wildcard. 
-Set the `recursive` parameter to `True` in order to match all wildcard files recursively
+You can also input a wildcard into `dataset_path` to remove a set of files matching the wildcard. 
+Set the `recursive` parameter to `True` to match all wildcard files recursively
 
 For example:
 
@@ -257,7 +257,7 @@ To upload the dataset files to network storage, use the [`Dataset.upload`](../re
 Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure. For example:
 * A shared folder: `/mnt/share/folder`
 * S3: `s3://bucket/folder`
-* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
 * Google Cloud Storage: `gs://bucket-name/folder`
 * Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
@@ -369,7 +369,7 @@ ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
 ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
 ```
 
-Note that in offline mode, any methods that require communicating with the server have no effect (e.g. `squash()`, 
+Note that in offline mode, any methods that require communicating with the server have no effect (such as `squash()`, 
 `finalize()`, `get_local_copy()`, `get()`, `move_to_project()`, etc.). 
 
 Upload the offline dataset to the ClearML Server using [`Dataset.import_offline_session()`](../references/sdk/dataset.md#datasetimport_offline_session). 
