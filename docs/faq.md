@@ -295,8 +295,11 @@ to reproduce. You can see uncommitted changes in the ClearML Web UI, in the **EX
 
 Yes! ClearML provides multiple ways to configure your task and track your parameters! 
 
-In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](integrations/click.md), 
-[Python Fire](integrations/python_fire.md), [Hydra](integrations/hydra.md), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
+In addition to argparse, ClearML also automatically captures and tracks command line parameters created using:
+* [click](integrations/click.md) 
+* [Python Fire](integrations/python_fire.md) 
+* [Hydra](integrations/hydra.md)
+* [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli)
 
 ClearML also supports tracking code-level configuration dictionaries using [`Task.connect()`](references/sdk/task.md#connect).
 
@@ -319,7 +322,7 @@ For more task configuration options, see [Hyperparameters](fundamentals/hyperpar
 
 #### I noticed that all of my experiments appear as "Training". Are there other options?   <a id="other-experiment-types"></a>
 
-Yes! When creating experiments and calling [`Task.init`](references/sdk/task.md#taskinit), 
+Yes! When creating experiments and calling [`Task.init()`](references/sdk/task.md#taskinit), 
 you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
 
 ```python
@@ -763,7 +766,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
         pip install clearml
 
-1. Run the ClearML initialize wizard.
+1. Run the ClearML setup wizard.
 
         clearml-init
     
