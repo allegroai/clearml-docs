@@ -295,8 +295,11 @@ to reproduce. You can see uncommitted changes in the ClearML Web UI, in the **EX
 
 Yes! ClearML provides multiple ways to configure your task and track your parameters! 
 
-In addition to argparse, ClearML also automatically captures and tracks command line parameters created using [click](integrations/click.md), 
-[Python Fire](integrations/python_fire.md), [Hydra](integrations/hydra.md), and/or [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli).
+In addition to argparse, ClearML also automatically captures and tracks command line parameters created using:
+* [click](integrations/click.md) 
+* [Python Fire](integrations/python_fire.md) 
+* [Hydra](integrations/hydra.md)
+* [LightningCLI](https://lightning.ai/docs/pytorch/stable/cli/lightning_cli.html#lightning-cli)
 
 ClearML also supports tracking code-level configuration dictionaries using [`Task.connect()`](references/sdk/task.md#connect).
 
@@ -319,7 +322,7 @@ For more task configuration options, see [Hyperparameters](fundamentals/hyperpar
 
 #### I noticed that all of my experiments appear as "Training". Are there other options?   <a id="other-experiment-types"></a>
 
-Yes! When creating experiments and calling [`Task.init`](references/sdk/task.md#taskinit), 
+Yes! When creating experiments and calling [`Task.init()`](references/sdk/task.md#taskinit), 
 you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
 
 ```python
@@ -481,8 +484,10 @@ After thirty minutes, it remains unchanged.
 
 #### Can I control what ClearML automatically logs?   <a id="controlling_logging"></a>
 
-Yes! ClearML lets you control automatic logging for `stdout`, `stderr`, and frameworks when initializing a Task
-by calling [`Task.init()`](references/sdk/task.md#taskinit). 
+Yes! ClearML lets you control automatic logging for frameworks, argument parsers, `stdout`, and `stderr`  when 
+initializing a Task by calling [`Task.init()`](references/sdk/task.md#taskinit). 
+
+##### Frameworks
 
 To control a Task's framework logging, use the `auto_connect_frameworks` parameter. Turn off all automatic logging by setting the 
 parameter to `False`. For finer grained control of logged frameworks, input a dictionary, with framework-boolean pairs. 
@@ -496,6 +501,35 @@ auto_connect_frameworks={
     'megengine': True, 'catboost': True
 }
 ```
+
+##### Argument Parsers
+
+To control a task's logging of parameters from supported argument parsers, use the `auto_connect_arg_parser` parameter. 
+Completely disable all automatic logging by setting the parameter to `False`. For finer grained control of logged 
+parameters, input a dictionary with parameter-boolean pairs. The `False` value excludes the specified parameter. 
+Unspecified parameters default to `True`.
+
+For example, the following code will not log the `Example_1` parameter, but will log all other arguments.
+
+```python
+auto_connect_arg_parser={"Example_1": False}
+```
+
+To exclude all unspecified parameters, set the `*` key to `False`. 
+
+For example, the following code will log **only** the `Example_2` parameter.
+
+```python
+auto_connect_arg_parser={"Example_2": True, "*": False}
+```
+
+An empty dictionary completely disables all automatic logging of parameters from argument parsers: 
+
+```python
+auto_connect_arg_parser={}
+```
+
+##### stdout and stderr 
 
 To control the `stdout`, `stderr`, and standard logging, use the `auto_connect_streams` parameter. 
 To disable logging all three, set the parameter to `False`. For finer grained control, input a dictionary, where the keys are `stout`, `stderr`, 
@@ -732,7 +766,7 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 
         pip install clearml
 
-1. Run the ClearML initialize wizard.
+1. Run the ClearML setup wizard.
 
         clearml-init
     
