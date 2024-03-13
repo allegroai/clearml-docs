@@ -149,7 +149,7 @@ myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=
 
 ### Adding Queries
 
-To add a query to a DataView, use the [`DataView.add_query`](../references/hyperdataset/dataview.md#add_query) method 
+To add a query to a DataView, use [`DataView.add_query()`](../references/hyperdataset/dataview.md#add_query) 
 and specify Dataset versions, ROI and/or frame queries, and other criteria. 
 
 The `dataset_name` and `version_name` arguments specify the Dataset Version. The `roi_query` and `frame_query` arguments 
@@ -160,8 +160,8 @@ specify the queries.
 Multiple queries can be added to the same or different Dataset versions, each query with the same or different ROI 
 and/or frame queries.
 
-You can retrieve the Dataview frames using [`DataView.to_list`](../references/hyperdataset/dataview.md#to_list), 
-[`DataView.to_dict`](../references/hyperdataset/dataview.md#to_dict), or [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator)
+You can retrieve the Dataview frames using [`DataView.to_list()`](../references/hyperdataset/dataview.md#to_list), 
+[`DataView.to_dict()`](../references/hyperdataset/dataview.md#to_dict), or [`DataView.get_iterator()`](../references/hyperdataset/dataview.md#get_iterator)
 (see [Accessing Frames](#accessing-frames)).
 
 #### ROI Queries: 
@@ -172,7 +172,7 @@ This example is an ROI query filtering for frames containing at least one ROI wi
 
 ```python
 # Create a Dataview object for an iterator that randomly returns frames according to queries
-myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
+myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=False)
 
 # Add a query for a Dataset version 
 myDataView.add_query(
