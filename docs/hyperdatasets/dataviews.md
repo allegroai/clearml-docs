@@ -144,7 +144,7 @@ iteration settings and additional iteration parameters that control query iterat
 ```python
 from allegroai import DataView, IterationOrder
 # Create a DataView object that iterates randomly until terminated by the user
-myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=False)
+myDataView = DataView(iteration_order=IterationOrder.random, iteration_infinite=True)
 ```
 
 ### Adding Queries
