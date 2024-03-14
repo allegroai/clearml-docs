@@ -66,7 +66,13 @@ module.exports = {
         },
         'hyper_datasets',
         'model_registry',
-        'apps/clearml_session',
+        {'Remote Session': [
+            'remote_session',
+            'apps/clearml_session',
+            {type: 'ref', id: 'webapp/applications/apps_jupyter_lab'},
+            {type: 'ref', id: 'webapp/applications/apps_vscode'}
+            ]
+        },
         {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_setup', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
         {'CLI Tools': ['apps/clearml_task', 'apps/clearml_param_search']},
         {'Integrations': [
