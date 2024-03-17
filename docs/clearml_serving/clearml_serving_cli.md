@@ -1,5 +1,5 @@
 ---
-title: CLI 
+title: ClearML Serving CLI 
 --- 
 
 The `clearml-serving` utility is a CLI tool for model deployment and orchestration. 
