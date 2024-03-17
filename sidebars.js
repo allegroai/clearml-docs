@@ -74,7 +74,15 @@ module.exports = {
             ]
         },
         {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_setup', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
-        {'CLI Tools': ['apps/clearml_task', 'apps/clearml_param_search']},
+        {'CLI Tools': [
+            'apps/clearml_task',
+            {type: 'ref', id: 'clearml_agent/clearml_agent_ref'},
+            {type: 'ref', id: 'clearml_data/clearml_data_cli'},
+            'apps/clearml_param_search',
+            {type: 'ref', id: 'apps/clearml_session'},
+            {type: 'ref', id: 'clearml_serving/clearml_serving_cli'},
+            ]
+        },
         {'Integrations': [
                 'integrations/autokeras',
                 'integrations/catboost',
