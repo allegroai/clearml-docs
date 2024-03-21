@@ -1,5 +1,5 @@
 ---
-title: CLI 
+title: ClearML Data CLI 
 --- 
 
 :::important

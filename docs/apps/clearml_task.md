@@ -1,5 +1,5 @@
 ---
-title: ClearML Task
+title: ClearML Task CLI
 ---
 
 Using only the command line and **zero** additional lines of code, easily track your work and integrate ClearML with your 
