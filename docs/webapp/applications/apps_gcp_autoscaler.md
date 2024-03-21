@@ -44,6 +44,9 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Max Number of Instances - Maximum number of concurrent running VM instances of this type allowed
     * Monitored Queue - Queue associated with this VM instance type. The tasks enqueued to this queue will be executed on VM instances of this type
     * Machine Image (optional) - The GCP machine image to launch 
+    :::note
+    The machine image used for the autoscaler must include docker runtime and virtualenv 
+    :::
     * Disc Size (in GB) (optional) 
     * \+ Add Item - Define another resource type
 * **Global Metadata** (optional) - GCP Metadata to be applied on all instances. Input comma separated key=value pairs (e.g. `"Owner=Admin,Foo=Bar"`).
