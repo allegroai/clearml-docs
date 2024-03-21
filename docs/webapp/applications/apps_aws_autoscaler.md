@@ -49,7 +49,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Availability Zone - The [EC2 availability zone](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones) 
       to launch this resource in
     * AMI ID - The AWS AMI to launch
-    :::note AMIs
+    :::note AMI prerequisites
     The AMI used for the autoscaler must include docker runtime and virtualenv 
     :::
     * Max Number of Instances - Maximum number of concurrent running instances of this type allowed
