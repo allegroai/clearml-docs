@@ -112,7 +112,7 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.14.0
+#### v1.15.0
 
 * **af-south-1** : ami-00588db413be68efe
 * **ap-east-1** : ami-0799044c29fded34e
