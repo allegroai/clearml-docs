@@ -34,7 +34,7 @@ The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/
 
 Modify these parts of the clearml.conf file and add the key, secret, and region of the S3 bucket.
 
-It's possible to also give access to specific S3 buckets in the `aws.s3.credentials` section. The default configuration 
+You can also give access to specific S3 buckets in the `aws.s3.credentials` section. The default configuration 
 provided in the `aws.s3` section is applied to any bucket without a bucket-specific configuration. 
 
 You can also enable using a credentials chain to let Boto3 
@@ -186,6 +186,11 @@ google.storage {
      ]
 }
 ```
+
+:::tip Direct Decoding
+From v1.13.2, `clearml` supports directly decoding JSON from the `credentials_json` argument. If ClearML
+fails to load the credentials as a file, it will attempt to decode the JSON directly. 
+:::
 
 ## Storage Manager
 

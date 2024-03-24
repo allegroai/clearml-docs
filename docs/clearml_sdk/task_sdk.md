@@ -19,7 +19,7 @@ To ensure every run will provide the same results, ClearML controls the determin
 :::
 
 :::note
-ClearML object (e.g. task, project) names are required to be at least 3 characters long
+ClearML object (such as task, project) names are required to be at least 3 characters long
 :::
 
 ```python
@@ -41,10 +41,10 @@ task = Task.init(
 )
 ```
 
-Once a task is created, the task object can be accessed from anywhere in the code by calling [`Task.current_task`](../references/sdk/task.md#taskcurrent_task).
+Once a task is created, the task object can be accessed from anywhere in the code by calling [`Task.current_task()`](../references/sdk/task.md#taskcurrent_task).
 
 If multiple tasks need to be created in the same process (for example, for logging multiple manual runs), 
-make sure to close a task, before initializing a new one. To close a task simply call [`Task.close`](../references/sdk/task.md#close) 
+make sure to close a task, before initializing a new one. To close a task simply call [`Task.close()`](../references/sdk/task.md#close) 
 (see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a task, its project needs to be specified. If the project entered does not exist, it will be created on-the-fly. 
@@ -63,10 +63,10 @@ After invoking `Task.init` in a script, ClearML starts its automagical logging, 
     * Command Line Parsing - ClearML captures any command line parameters passed when invoking code that uses standard python packages, including:
         * [click](../integrations/click.md)
         * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options)
-        * [Python Fire](https://github.com/allegroai/clearml/tree/master/examples/frameworks/fire)
+        * [Python Fire](../integrations/python_fire.md)
         * [LightningCLI](../integrations/pytorch_lightning.md)
     * TensorFlow Definitions (`absl-py`)
-    * [Hydra](../integrations/hydra.md) - the OmegaConf which holds all the configuration files, as well as overridden values. 
+    * [Hydra](../integrations/hydra.md) - ClearML logs the OmegaConf which holds all the configuration files, as well as values overridden during runtime. 
 * **Models** - ClearML automatically logs and updates the models and all snapshot paths saved with the following frameworks:
     * [TensorFlow](../integrations/tensorflow.md)
     * [Keras](../integrations/keras.md)
@@ -100,8 +100,8 @@ By default, when ClearML is integrated into your script, it automatically captur
 and parameters from supported argument parsers. But, you may want to have more control over what your experiment logs.
 
 #### Frameworks  
-To control a task's framework logging, use the `auto_connect_frameworks` parameter of the [`Task.init`](../references/sdk/task.md#taskinit) 
-method. Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
+To control a task's framework logging, use the `auto_connect_frameworks` parameter of [`Task.init()`](../references/sdk/task.md#taskinit). 
+Turn off all automatic logging by setting the parameter to `False`. For finer grained control of logged frameworks, 
 input a dictionary, with framework-boolean pairs. 
 
 For example: 
@@ -165,15 +165,15 @@ auto_connect_arg_parser={}
 
 ### Task Reuse
 Every `Task.init` call will create a new task for the current execution.
-In order to mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
+To mitigate the clutter that a multitude of debugging tasks might create, a task will be reused if:
 * The last time it was executed (on this machine) was under 24 hours ago (configurable, see 
   [`sdk.development.task_reuse_time_window_in_hours`](../configs/clearml_conf.md#task_reuse) in 
   the ClearML configuration reference)
 * The previous task execution did not have any artifacts / models
 
-It's possible to always create a new task by passing `reuse_last_task_id=False`.
+You can always create a new task by passing `reuse_last_task_id=False`.
 
-See full `Task.init` reference [here](../references/sdk/task.md#taskinit).
+For more information, see [`Task.init()`](../references/sdk/task.md#taskinit).
 
 ### Continuing Task Execution
 You can continue the execution of a previously run task using the `continue_last_task` parameter of `Task.init()`. 
@@ -183,7 +183,7 @@ The task will continue reporting its outputs based on the iteration in which it 
 train/loss scalar reported was for iteration 100, when continued, the next report will be as iteration 101.  
 
 :::note Reproducibility
-Continued tasks may not be reproducible. In order to guarantee task reproducibility, you must ensure that all steps are 
+Continued tasks may not be reproducible. To guarantee task reproducibility, you must ensure that all steps are 
 done in the same order (e.g. maintaining learning rate profile, ensuring data is fed in the same order).
 :::
 
@@ -267,7 +267,7 @@ For example:
     a_task = Task.get_task(project_name='examples', task_name='artifacts')
     ```
 
-Once a task object is obtained, it's possible to query the state of the task, reported scalars, etc.
+Once a task object is obtained, you can query the state of the task, reported scalars, etc.
 The task's outputs, such as artifacts and models, can also be retrieved. 
 
 ## Querying / Searching Tasks
@@ -708,7 +708,7 @@ local_csv = preprocess_task.artifacts['data'].get_local_copy()
 See more details in the [Using Artifacts example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
 
 ## Models 
-The following is an overview of working with models through a `Task` object. It is also possible to work directly with model
+The following is an overview of working with models through a `Task` object. You can also work directly with model
 objects (see [Models (SDK)](model_sdk.md)).
 
 ### Logging Models Manually
@@ -737,7 +737,7 @@ The snapshots of manually uploaded models aren't automatically captured. To upda
 task.update_output_model(model_path='path/to/model')
 ```
 
-It's possible to modify the following parameters:
+You can modify the following parameters:
 * Model location
 * Model name
 * Model description
@@ -781,6 +781,15 @@ task = Task.init(
   output_uri='s3://my_models/'
 )
 ```
+
+:::tip Output URI Formats
+Specify the model storage URI location using the relevant format: 
+* A shared folder: `/mnt/share/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
+:::
 
 To automatically store all models created by any experiment at a specific location, edit the `clearml.conf` (see
  [ClearML Configuration Reference](../configs/clearml_conf.md#sdkdevelopment)) and set `sdk.developmenmt.default_output_uri` 
@@ -866,7 +875,7 @@ me = Person('Erik', 5)
 
 params_dictionary = {'epochs': 3, 'lr': 0.4}
 
-task = Task.init(project_name='examples',task_name='argparser')
+task = Task.init(project_name='examples',task_name='python objects')
 
 task.connect(me)
 task.connect(params_dictionary)

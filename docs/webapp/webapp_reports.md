@@ -135,7 +135,7 @@ used.
   ```
   src="<web_server>/widgets/?objectType=task&xaxis=iter&type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
   ```
-  Notice that the `project` parameter is specified. In order to get the most recent single experiment, 
+  Notice that the `project` parameter is specified. To get the most recent single experiment, 
   `page_size=1&page=0&order_by[]=-last_update` is added. `page_size` specifies how many results are returned in each 
   page, and `page` specifies which page to return (in this case the first page)--this way you can specify how many 
   experiments you want in your graph. `order_by[]=-last_update` orders the results by update time in descending order 
@@ -220,9 +220,9 @@ of a report card to open its context menu and access report actions:
 * **Archive** - Move report from active reports page to archive
 * **Delete** - Delete the report. To delete a report, it must first be archived. 
 
-### Create New Reports
+### Create Reports
 
-To create a new project, click the **+ NEW REPORT** button in the top right of the page, 
+To create a report, click the **+ NEW REPORT** button in the top right of the page, 
 which will open a **New Report** modal.
 
 ![New project modal](../img/webapp_report_new_report.png)

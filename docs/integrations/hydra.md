@@ -28,7 +28,7 @@ ClearML logs the OmegaConf as a blob and can be viewed in the
 ## Modifying Hydra Values
 
 ### Via Command Line
-You can use Hydra's command line syntax to modify your OmegaConf: override, append, or remove config values:
+You can use Hydra's command line syntax to modify your OmegaConf: override, append, or remove configuration values:
 * Override config value: `foo.bar=value`
 * Append config value: `+foo.bar=value`
 * Remove config value: `~foo.bar` or `~foo.bar=value`

@@ -112,37 +112,37 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.14.0
+#### v1.15.0
 
-* **af-south-1** : ami-0e69792cb3be26d55
-* **ap-east-1** : ami-07524dbb2b03ff201
-* **ap-northeast-1** : ami-007249581a013504d
-* **ap-northeast-2** : ami-0caf85dd3d4f219d6
-* **ap-northeast-3** : ami-0e10ca701a6bb7469
-* **ap-south-1** : ami-054c70485ca886616
-* **ap-south-2** : ami-0ee463ae4ece7007d
-* **ap-southeast-1** : ami-0a6af47f6aa3ca8a3
-* **ap-southeast-2** : ami-01844c10140f557d6
-* **ap-southeast-3** : ami-0dcce74d0ef388d21
-* **ap-southeast-4** : ami-0e6a5dedd284d147f
-* **ca-central-1** : ami-0da8b81a0ac520ce6
-* **ca-west-1** : ami-0b257406c6be268c2
-* **eu-central-1** : ami-038c4c2b29337b8b0
-* **eu-central-2** : ami-047b3de405e0da6a0
-* **eu-north-1** : ami-0225c5a0fc71a5920
-* **eu-south-1** : ami-0b487e868d6f558ec
-* **eu-south-2** : ami-0343e0d81203a5a70
-* **eu-west-1** : ami-0f4c6ea53f0ce7e6c
-* **eu-west-2** : ami-08be0e71fde585b89
-* **eu-west-3** : ami-02089b6890f55ce22
-* **il-central-1** : ami-098b5ed3c758c5c8f
-* **me-central-1** : ami-0ba83e2a2bcf35a57
-* **me-south-1** : ami-0fbddf979e090c105
-* **sa-east-1** : ami-0bb2661ad1d39b122
-* **us-east-1** : ami-0e608019816bb5f01
-* **us-east-2** : ami-01e69562133afabfc
-* **us-west-1** : ami-00f975c6de93f13ac
-* **us-west-2** : ami-0b75375a006916e53
+* **af-south-1** : ami-00588db413be68efe
+* **ap-east-1** : ami-0799044c29fded34e
+* **ap-northeast-1** : ami-02d65fcc0f55994a0
+* **ap-northeast-2** : ami-080dfab2b5bb0d8b9
+* **ap-northeast-3** : ami-057dffc8f2f2735dd
+* **ap-south-1** : ami-0012e733c8554ab05
+* **ap-south-2** : ami-02c8bf629d03f98ac
+* **ap-southeast-1** : ami-0ab7f1a25112a1780
+* **ap-southeast-2** : ami-0788dd3fb6731f7bc
+* **ap-southeast-3** : ami-0b8e4e04ac9126d6f
+* **ap-southeast-4** : ami-058bd99267f35cfbb
+* **ca-central-1** : ami-08ea8ff364f8ec570
+* **ca-west-1** : ami-0bccef2cd4f66e37b
+* **eu-central-1** : ami-0deab56eb3e29826c
+* **eu-central-2** : ami-008c21960dc713d91
+* **eu-north-1** : ami-054542654592e7ca0
+* **eu-south-1** : ami-0a322333fe24d90f6
+* **eu-south-2** : ami-0983b0c11666333cf
+* **eu-west-1** : ami-05c86376e6913f6c2
+* **eu-west-2** : ami-0bd8a72170a908c9d
+* **eu-west-3** : ami-099c539ede777e53c
+* **il-central-1** : ami-0f9389e102a4947f1
+* **me-central-1** : ami-0e0c482f6befaed52
+* **me-south-1** : ami-075a22f8360c056df
+* **sa-east-1** : ami-065b4d41a975945ea
+* **us-east-1** : ami-04f41d5829c505e9d
+* **us-east-2** : ami-07b81aabb1f4eeca4
+* **us-west-1** : ami-094720a8f0c14570c
+* **us-west-2** : ami-044daba414cfcd7f6
 
 ## Next Step
 

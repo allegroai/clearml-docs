@@ -76,7 +76,7 @@ Make use of the container you've just built by having a ClearML agent make use o
    :::
 
    This agent will pull the enqueued task and run it using the `new_docker` image to create the execution environment. 
-   In the task's **CONSOLE** tab, one of the first logs should be:
+   In the task's **CONSOLE** tab, one of the first logs displays the following:
    
    ```console
    Executing: ['docker', 'run', ..., 'CLEARML_DOCKER_IMAGE=new_docker', ...].

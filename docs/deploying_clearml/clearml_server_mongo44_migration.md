@@ -16,7 +16,7 @@ mongodb version 4.4. If your ClearML server had been deployed with this chart (w
 You can stop reading here, as no migration is required.
 :::
 
-The migration process is comprised of the following:
+The migration process includes the following:
 * Backing up your data
 * Creating a copy of the data which will be migrated for use with the new version
 * Sequentially running data migration for MongoDB: 3.6->4.0, 4.0->4.2, 4.0->4.4

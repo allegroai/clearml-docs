@@ -218,7 +218,7 @@ deploy an agent with a different value to what is specified for `agent.default_d
 :::note NOTES
 * Since configuration fields may contain JSON-parsable values, make sure to always quote strings (otherwise the agent 
 might fail to parse them)
-* In order to comply with environment variables standards, it is recommended to use only upper-case characters in 
+* To comply with environment variables standards, it is recommended to use only upper-case characters in 
 environment variable keys. For this reason, ClearML Agent will always convert the configuration path specified in the 
 dynamic environment variable's key to lower-case before overriding configuration values with the environment variable 
 value.
@@ -321,7 +321,7 @@ Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML
 capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent's 
 features.
 
-ClearML Agent is deployed onto a Kubernetes cluster through its Kubernetes-Glue  which maps ClearML jobs directly to K8s 
+ClearML Agent is deployed onto a Kubernetes cluster through its Kubernetes-Glue which maps ClearML jobs directly to K8s 
 jobs:
 * Use the [ClearML Agent Helm Chart](https://github.com/allegroai/clearml-helm-charts/tree/main/charts/clearml-agent) to
 spin an agent pod acting as a controller. Alternatively (less recommended) run a [k8s glue script](https://github.com/allegroai/clearml-agent/blob/master/examples/k8s_glue_example.py) 
@@ -425,7 +425,7 @@ template specification attached to the queue.
    pip3 install -U --extra-index-url https://*****@*****.allegro.ai/repository/clearml_agent_slurm/simple clearml-agent-slurm
    ```
 
-1. Create a new batch template. Make sure to set the `SBATCH` variables to the resources you want to attach to the queue. 
+1. Create a batch template. Make sure to set the `SBATCH` variables to the resources you want to attach to the queue. 
    The script below sets up an agent to run bare-metal, creating a virtual environment per job. For example:
 
    ```
@@ -656,10 +656,11 @@ Agents can spin multiple Tasks from different queues based on the number of GPUs
 needs.
 
 `dynamic-gpus` enables dynamic allocation of GPUs based on queue properties.
-To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
+To configure the number of GPUs for a queue, use the `--gpus` flag to specify the active GPUs, and use the `--queue` 
+flag to specify the queue name and number of GPUs:
 
 ```console
-clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
+clearml-agent daemon --dynamic-gpus --gpus 0-2 --queue dual_gpus=2 single_gpu=1
 ```
 
 ### Example
@@ -669,7 +670,7 @@ Let's say a server has three queues:
 * `quad_gpu`
 * `opportunistic`
 
-An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple
+An agent can be spun on multiple GPUs (for example: 8 GPUs, `--gpus 0-7`), and then attached to multiple
 queues that are configured to run with a certain amount of resources:
 
 ```console
@@ -701,7 +702,7 @@ clearml-agent daemon --services-mode --queue services --create-queue --docker <d
 ```
 
 To limit the number of simultaneous tasks run in services mode, pass the maximum number immediately after the 
-`--services-mode` option (e.g. `--services-mode 5`)
+`--services-mode` option (for example: `--services-mode 5`).
 
 :::note Notes
 * `services-mode` currently only supports Docker mode. Each service spins on its own Docker image.
@@ -757,11 +758,11 @@ Build a Docker container according to the execution environment of a specific ta
 clearml-agent build --id <task-id> --docker --target <new-docker-name>
 ```
 
-It's possible to add the Docker container as the base Docker image to a task (experiment), using one of the following methods:
+You can add the Docker container as the base Docker image to a task (experiment), using one of the following methods:
 
 - Using the **ClearML Web UI** - See [Base Docker image](webapp/webapp_exp_tuning.md#base-docker-image) on the "Tuning
   Experiments" page.
-- In the ClearML configuration file - Use the ClearML configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
+- In the ClearML configuration file - Use the ClearML configuration file [`agent.default_docker`](configs/clearml_conf.md#agentdefault_docker)
   options.
 
 Check out [this tutorial](guides/clearml_agent/exp_environment_containers.md) for building a Docker container 

@@ -47,8 +47,8 @@ the pipeline via the ClearML Web UI. See [Pipeline Runs](#pipeline-runs).
 ## Pipeline Features  
 ### Artifacts and Metrics
 Each pipeline step can log additional artifacts and metrics on the step task with the usual flows (TB, Matplotlib, or with 
-[ClearML Logger](../fundamentals/logger.md)). To get the instance of the step's Task during runtime, use the class method 
-[Task.current_task](../references/sdk/task.md#taskcurrent_task).
+[ClearML Logger](../fundamentals/logger.md)). To get the instance of the step's Task during runtime, use the
+[`Task.current_task()`](../references/sdk/task.md#taskcurrent_task) class method.
 
 Additionally, pipeline steps can directly report metrics or upload artifacts / models to the pipeline using these 
 PipelineController and PipelineDecorator class methods: `get_logger`, `upload_model`, `upload_artifact`.
