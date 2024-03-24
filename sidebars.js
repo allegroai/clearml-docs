@@ -287,7 +287,8 @@ module.exports = {
                 },
                 'hyperdatasets/webapp/webapp_annotator'
             ]
-        }
+        },
+        'hyperdatasets/code_examples'
     ],
     sdkHyperDataset: [
         {'Hyper-Dataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
