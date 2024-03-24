@@ -92,7 +92,8 @@ module.exports = {
                 'integrations/hydra', 'integrations/jsonargparse',
                 'integrations/keras', 'integrations/keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
-                'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/optuna',
+                'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/tao',
+                'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
                 'integrations/pytorch_lightning',
@@ -145,7 +146,13 @@ module.exports = {
             'webapp/webapp_profile']
         },
         {'Configuring ClearML': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
-        //'References': ['references/clearml_ref','references/clearml_agent_ref'],
+        {'User Management': [
+            'user_management/user_groups',
+            'user_management/access_rules',
+            'user_management/admin_vaults',
+            'user_management/identity_providers'
+            ]
+        },
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
                 'Deploying ClearML Server': ['deploying_clearml/clearml_server_aws_ec2_ami', 'deploying_clearml/clearml_server_gcp',
@@ -287,7 +294,8 @@ module.exports = {
                 },
                 'hyperdatasets/webapp/webapp_annotator'
             ]
-        }
+        },
+        'hyperdatasets/code_examples'
     ],
     sdkHyperDataset: [
         {'Hyper-Dataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
