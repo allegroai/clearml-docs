@@ -74,7 +74,7 @@ See [Automatic Logging](clearml_sdk/task_sdk.md#automatic-logging) for more info
 
 ### Manual Logging
 
-You can explicitly specify an experiment’s models using ClearML InputModel and OutputModel classes. 
+You can explicitly specify an experiment’s models using ClearML `InputModel` and `OutputModel` classes. 
 
 #### InputModel
 

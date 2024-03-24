@@ -53,8 +53,8 @@ scatter2d = np.hstack(
 )
 # report 2d scatter plot with markers
 logger.report_scatter2d(
-    "example_scatter",
-    "series_lines+markers",
+    title="example_scatter",
+    series="series_lines+markers",
     iteration=iteration,
     scatter=scatter2d,
     xaxis="title x",
@@ -73,8 +73,8 @@ To plot a series as a 3D scatter plot, use [`Logger.report_scatter3d()`](../../r
 # report 3d scatter plot
 scatter3d = np.random.randint(10, size=(10, 3))
 logger.report_scatter3d(
-    "example_scatter_3d",
-    "series_xyz",
+    title="example_scatter_3d",
+    series="series_xyz",
     iteration=iteration,
     scatter=scatter3d,
     xaxis="title x",
@@ -91,8 +91,8 @@ To plot a series as a surface plot, use [`Logger.report_surface()`](../../refere
 # report 3d surface
 surface = np.random.randint(10, size=(10, 10))
 logger.report_surface(
-    "example_surface",
-    "series1",
+    title="example_surface",
+    series="series1",
     iteration=iteration,
     matrix=surface,
     xaxis="title X",
@@ -111,8 +111,8 @@ Report confusion matrices by calling [`Logger.report_confusion_matrix()`](../../
 # report confusion matrix
 confusion = np.random.randint(10, size=(10, 10))
 logger.report_confusion_matrix(
-    "example_confusion",
-    "ignored",
+    title="example_confusion",
+    series="ignored",
     iteration=iteration,
     matrix=confusion,
     xaxis="title X",
@@ -131,8 +131,8 @@ To report more than one series on the same plot, use the same `title` argument.
 # report a single histogram
 histogram = np.random.randint(10, size=10)
 logger.report_histogram(
-    "single_histogram",
-    "random histogram",
+    title="single_histogram",
+    series="random histogram",
     iteration=iteration,
     values=histogram,
     xaxis="title x",
@@ -147,16 +147,16 @@ logger.report_histogram(
 histogram1 = np.random.randint(13, size=10)
 histogram2 = histogram * 0.75
 logger.report_histogram(
-    "two_histogram",
-    "series 1",
+    title="two_histogram",
+    series="series 1",
     iteration=iteration,
     values=histogram1,
     xaxis="title x",
     yaxis="title y",
 )
 logger.report_histogram(
-    "two_histogram",
-    "series 2",
+    title="two_histogram",
+    series="series 2",
     iteration=iteration,
     values=histogram2,
     xaxis="title x",
@@ -185,7 +185,7 @@ image_local_copy = StorageManager.get_local_copy(
 ### Audio
 
 ```python
-logger.report_media('audio', 'pink panther', iteration=1, local_path=audio_local_copy)
+logger.report_media(title='audio', series='pink panther', iteration=1, local_path=audio_local_copy)
 ``` 
 
 ![Audio sample](../../img/colab_explicit_reporting_08.png)
@@ -194,8 +194,8 @@ logger.report_media('audio', 'pink panther', iteration=1, local_path=audio_local
 
 ```python
 logger.report_media(
-    "html", 
-    "url_html", 
+    title="html", 
+    series="url_html", 
     iteration=1, 
     url="https://clear.ml/docs/latest/docs/index.html"
 )
@@ -206,7 +206,12 @@ logger.report_media(
 ### Images
 
 ```python
-logger.report_image("image", "image from url", iteration=100, local_path=image_local_copy)
+logger.report_image(
+    title="image", 
+    series="image from url", 
+    iteration=100, 
+    local_path=image_local_copy
+)
 ```
 
 ![Image sample](../../img/colab_explicit_reporting_10.png)
@@ -214,7 +219,12 @@ logger.report_image("image", "image from url", iteration=100, local_path=image_l
 ### Video
 
 ```python
-logger.report_media('video', 'big bunny', iteration=1, local_path=video_local_copy)
+logger.report_media(
+    title='video', 
+    series='big bunny', 
+    iteration=1, 
+    local_path=video_local_copy
+)
 ```
 
 ![Video sample](../../img/colab_explicit_reporting_11.png)

@@ -1,5 +1,5 @@
 ---
-title: CLI 
+title: ClearML Data CLI 
 --- 
 
 :::important
@@ -93,7 +93,7 @@ clearml-data remove [-h] [--id ID] [--files [FILES [FILES ...]]]
 |Name|Description|Optional|
 |---|---|---|
 |`--id` | Dataset's ID. Default: previously created / accessed dataset| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
-|`--files` |  Files / folders to remove (wildcard selection is supported, for example: `~/data/*.jpg ~/data/json`). Notice: file path is the path within the dataset, not the local path. For links, you can specify their URL (e.g. `s3://bucket/data`) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+|`--files` |  Files / folders to remove (wildcard selection is supported, for example: `~/data/*.jpg ~/data/json`). Notice: file path is the path within the dataset, not the local path. For links, you can specify their URL (for example, `s3://bucket/data`) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 |`--non-recursive` | Disable recursive scan of files | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--verbose` | Verbose reporting | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
@@ -103,8 +103,13 @@ clearml-data remove [-h] [--id ID] [--files [FILES [FILES ...]]]
 
 ## upload
 
-Upload the local dataset changes to the server. By default, it's uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). It's possible to specify a different storage
-medium by entering an upload destination, such as `s3://bucket`, `gs://`, `azure://`, `/mnt/shared/`.
+Upload the local dataset changes to the server. By default, it's uploaded to the ClearML file server. You can specify a different storage
+medium by entering an upload destination. For example: 
+* A shared folder: `/mnt/shared/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
 ```bash
 clearml-data upload [-h] [--id ID] [--storage STORAGE] [--chunk-size CHUNK_SIZE] 
@@ -248,7 +253,7 @@ Deletes dataset(s). Pass any of the attributes of the dataset(s) you want to del
 request will raise an exception, unless you pass `--entire-dataset` and `--force`. In this case, all matching datasets 
 will be deleted. 
 
-If a dataset is a parent to a dataset(s), you must pass `--force` in order to delete it. 
+If a dataset is a parent to a dataset(s), you must pass `--force` to delete it. 
 
 :::caution
 Deleting a parent dataset may cause child datasets to lose data!

@@ -38,7 +38,7 @@ def main(pickle_url, mock_parameter='mock'):
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline controller task is stored
-* `version` - Numbered version string (e.g. `1.2.3`). If not set, find the pipeline's latest version and increment 
+* `version` - Numbered version string (for example, `1.2.3`). If not set, find the pipeline's latest version and increment 
   it. If no such version is found, defaults to `1.0.0` 
 * `default_queue` - The default [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) in which to enqueue all pipeline steps (unless otherwise specified in the pipeline step).
 * `args_map` - Map arguments to their [configuration section](../fundamentals/hyperparameters.md#webapp-interface) in 
@@ -214,7 +214,7 @@ if __name__ == '__main__':
 ```
 
 :::tip RUN PIPELINE CONTROLLER LOCALLY
-It is possible to run the pipeline logic itself locally, while keeping the pipeline components execution remote
+You can run the pipeline logic locally, while keeping the pipeline components execution remote
 (enqueued and executed by the clearml-agent). Pass `pipeline_execution_queue=None` to the `@PipelineDecorator.pipeline` decorator.
 ```python
 @PipelineDecorator.pipeline(

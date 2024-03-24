@@ -100,7 +100,7 @@ module.exports = {
 
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_14',
+              to: '/docs/release_notes/ver_1_15',
             },
             {
               label: 'Community Resources',

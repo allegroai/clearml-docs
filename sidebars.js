@@ -40,9 +40,9 @@ module.exports = {
         {'Cloud Autoscaling': [
             'cloud_autoscaling/autoscaling_overview',
              {'Autoscaler Apps': [
-                    {type: 'ref', id: 'webapp/applications/apps_gpu_compute'},
-                    {type: 'ref', id: 'webapp/applications/apps_aws_autoscaler'},
-                    {type: 'ref', id: 'webapp/applications/apps_gcp_autoscaler'},
+                    'webapp/applications/apps_gpu_compute',
+                    'webapp/applications/apps_aws_autoscaler',
+                    'webapp/applications/apps_gcp_autoscaler',
                  ]
              }
              ]
@@ -66,12 +66,29 @@ module.exports = {
         },
         'hyper_datasets',
         'model_registry',
-        'apps/clearml_session',
+        {'Remote Session': [
+            'remote_session',
+            'apps/clearml_session',
+            {type: 'ref', id: 'webapp/applications/apps_jupyter_lab'},
+            {type: 'ref', id: 'webapp/applications/apps_vscode'}
+            ]
+        },
         {'ClearML Serving':['clearml_serving/clearml_serving', 'clearml_serving/clearml_serving_setup', 'clearml_serving/clearml_serving_cli', 'clearml_serving/clearml_serving_tutorial']},
-        {'CLI Tools': ['apps/clearml_task', 'apps/clearml_param_search']},
+        {'CLI Tools': [
+            'apps/clearml_task',
+            {type: 'ref', id: 'clearml_agent/clearml_agent_ref'},
+            {type: 'ref', id: 'clearml_data/clearml_data_cli'},
+            'apps/clearml_param_search',
+            {type: 'ref', id: 'apps/clearml_session'},
+            {type: 'ref', id: 'clearml_serving/clearml_serving_cli'},
+            ]
+        },
         {'Integrations': [
                 'integrations/autokeras',
-                'integrations/catboost', 'integrations/click', 'integrations/fastai', 'integrations/transformers',
+                'integrations/catboost',
+                'integrations/click',
+                'integrations/fastai',
+                {"HuggingFace": ['integrations/transformers', 'integrations/accelerate']},
                 'integrations/hydra', 'integrations/jsonargparse',
                 'integrations/keras', 'integrations/keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
@@ -116,9 +133,6 @@ module.exports = {
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',
-                    'webapp/applications/apps_gpu_compute',
-                    'webapp/applications/apps_aws_autoscaler',
-                    'webapp/applications/apps_gcp_autoscaler',
                     'webapp/applications/apps_hpo',
                     'webapp/applications/apps_dashboard',
                     'webapp/applications/apps_task_scheduler',
@@ -130,7 +144,7 @@ module.exports = {
             },
             'webapp/webapp_profile']
         },
-        {'Configurations': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
+        {'Configuring ClearML': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
         //'References': ['references/clearml_ref','references/clearml_agent_ref'],
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
@@ -208,7 +222,9 @@ module.exports = {
 
     ],
     rnSidebar: {
-        'Release Notes': ['release_notes/ver_1_14', 'release_notes/ver_1_13', 'release_notes/ver_1_12', 'release_notes/ver_1_11',
+        'Release Notes': [
+            'release_notes/ver_1_15',
+            'release_notes/ver_1_14', 'release_notes/ver_1_13', 'release_notes/ver_1_12', 'release_notes/ver_1_11',
             'release_notes/ver_1_10', 'release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
             'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3',
             'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17',

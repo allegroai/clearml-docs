@@ -12,7 +12,7 @@ and specify a task name and its project. This creates a Task object that automat
 information as well as execution outputs.
 
 All the information captured by a task is by default uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md),
-and it can be visualized in the [ClearML WebApp](../webapp/webapp_overview.md) (UI). ClearML can also be configured to upload 
+and it can be visualized in the [ClearML WebApp (UI)](../webapp/webapp_overview.md). ClearML can also be configured to upload 
 model checkpoints, artifacts, and charts to cloud storage (see [Storage](../integrations/storage.md)). Additionally, 
 you can work with tasks in Offline Mode, in which all information is saved in a local folder (see 
 [Storing Task Data Offline](../guides/set_offline.md)).
@@ -23,7 +23,7 @@ how to group tasks, though different models or objectives are usually grouped in
 Tasks can be accessed and utilized with code. [Access a task](../clearml_sdk/task_sdk.md#accessing-tasks) by 
 specifying project name and task name combination or by a unique ID. 
 
-It's possible to create copies of a task ([clone](../webapp/webapp_exp_reproducing.md)) then execute them with 
+You can create copies of a task ([clone](../webapp/webapp_exp_reproducing.md)) then execute them with 
 [ClearML Agent](../clearml_agent.md). When an agent executes a task, it uses the specified configuration to:
 
 * Install required Python packages
@@ -60,7 +60,7 @@ The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-
 * [Debug samples](../webapp/webapp_exp_track_visual.md#debug-samples)
 * [Models](artifacts.md) 
 
-To view a more in depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
+For a more in-depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
 
 ### Execution Configuration
 ClearML logs a task's hyperparameters specified as command line arguments, environment or code level variables. This 
@@ -96,7 +96,7 @@ Most importantly, ClearML also logs experiments' input and output models as well
 
 #### Logging Artifacts 
 ClearML provides an explicit logging interface that supports manually reporting a variety of artifacts. Any type of 
-artifact can be logged to a task using the [`Task.upload_artifact`](../references/sdk/task.md#upload_artifact) method. 
+artifact can be logged to a task using [`Task.upload_artifact()`](../references/sdk/task.md#upload_artifact). 
 See more details in the [Artifacts Reporting example](../guides/reporting/artifacts.md).
 
 ClearML can be configured to upload artifacts to any of the supported types of storage, which include local and shared 
@@ -115,7 +115,7 @@ they are attached to, and then retrieving the artifact with one of its following
 See more details in the [Using Artifacts example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
 
 ## Task Types
-Tasks have a *type* attribute, which denotes their purpose (e.g. training / testing / data processing). This helps to further 
+Tasks have a *type* attribute, which denotes their purpose. This helps to further 
 organize projects and ensure tasks are easy to [search and find](../clearml_sdk/task_sdk.md#querying--searching-tasks). 
 Available task types are: 
 * *training* (default) - Training a model 

@@ -87,7 +87,7 @@ Auto refresh allows monitoring the progress of experiments in real time. It is e
 
 **To enable / disable auto refresh:**
 
-* Hover over refresh and then check / uncheck the **Auto Refresh** checkbox.
+* Hover over refresh and then check / clear the **Auto Refresh** checkbox.
 
 ## Step 6: Save the Tracking Leaderboard
 

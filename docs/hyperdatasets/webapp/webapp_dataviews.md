@@ -96,7 +96,7 @@ The same information can be found in the batch action bar, in a tooltip that app
 
 ## Creating a Dataview 
 
-Create a new Dataview by clicking the **+ NEW DATAVIEW** button at the top right of the table, which opens a 
+Create a Dataview by clicking the **+ NEW DATAVIEW** button at the top right of the table, which opens a 
 **NEW DATAVIEW** window. 
 
 ![New Dataview window](../../img/webapp_dataview_new.png)
