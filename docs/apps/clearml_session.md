@@ -109,6 +109,41 @@ To connect to an existing session:
 To run a session inside a Docker container, use the `--docker` flag and enter the docker image to use in the interactive 
 session.
 
+### Kubernetes Support 
+With ClearML k8s-glue you can enable launching ClearML sessions directly within Kubernetes pods. Set up the network and 
+ingress settings for `clearml-session` in the `sessions` section of the [`values.yaml`](https://github.com/allegroai/clearml-helm-charts/blob/main/charts/clearml-agent/values.yaml)
+file. 
+
+Make sure to set the following values:
+* Set `portModeEnabled: true` to allow sessions to run directly from a pod  
+* `svcType` - Set the service type to either `NodePort` or `LoadBalancer`. Note that if set to `NodePort`, the 
+`externalIP` must be set to the IP of one of the workers. If set to `LoadBalancer`, you need to have a LoadBalancer and 
+external IP address set up in advance, before applying the chart
+* `externalIP` - Define an external IP address that the client will connect to. Note that this external IP needs to be 
+set up in advance.
+* `maxServices` - The maximum number of sessions the agent will spawn
+
+For example: 
+```
+# -- Sessions internal service configuration
+sessions:
+  # -- Enable/Disable sessions portmode WARNING: only one Agent deployment can have this set to true
+  portModeEnabled: true
+  # -- specific annotations for session services
+  svcAnnotations: {}
+  # -- service type ("NodePort" or "ClusterIP" or "LoadBalancer")
+  svcType: "NodePort"
+  # -- External IP sessions clients can connect to
+  externalIP: 0.0.0.0
+  # -- starting range of exposed NodePorts
+  startingPort: 30000
+  # -- maximum number of NodePorts exposed
+  maxServices: 20
+```
+
+For more information, see [Kubernetes](../clearml_agent.md#kubernetes).
+
+
 ### Installing Requirements
 `clearml-session` can install required Python packages when setting up the remote environment. 
 Specify requirements in one of the following ways: 

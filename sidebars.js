@@ -92,7 +92,8 @@ module.exports = {
                 'integrations/hydra', 'integrations/jsonargparse',
                 'integrations/keras', 'integrations/keras_tuner',
                 'integrations/lightgbm', 'integrations/matplotlib',
-                'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/optuna',
+                'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/tao',
+                'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',
                 'integrations/pytorch_lightning',
@@ -287,7 +288,8 @@ module.exports = {
                 },
                 'hyperdatasets/webapp/webapp_annotator'
             ]
-        }
+        },
+        'hyperdatasets/code_examples'
     ],
     sdkHyperDataset: [
         {'Hyper-Dataset': ['references/hyperdataset/hyperdataset', 'references/hyperdataset/hyperdatasetversion']},
