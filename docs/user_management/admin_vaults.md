@@ -6,8 +6,9 @@ title: Administrator Vaults
 Administrator Vaults are available under the ClearML Enterprise plan
 :::
 
-Administrators can centrally set configuration for users, service accounts and [user groups](../webapp/webapp_profile.md#user-groups) 
-within a ClearML workspace by using central configuration stores--or Administrator Vaults.
+Administrators can set configuration for users, [service accounts](../webapp/webapp_profile.md#service-accounts), 
+and [user groups](../webapp/webapp_profile.md#user-groups) within a ClearML workspace by using central configuration 
+stores--or Administrator Vaults.
 
 Administrators can define multiple [configuration vaults](../webapp/webapp_profile.md#configuration-vault) which will 
 each be applied to their designated [user groups](../webapp/webapp_profile.md#user-groups), allowing for custom settings. 
