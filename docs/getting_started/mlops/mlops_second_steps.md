@@ -51,8 +51,8 @@ new_dataset = Dataset.create(
     dataset_project='data', 
     dataset_name='dataset_v2', 
     parent_datasets=[dataset], 
-    use_current_task=True,  
-    # this will make sure we have the creation code and the actual dataset artifacts on the same Task
+    # this will make sure we have the creation code and the actual dataset artifacts on the same Task 
+    use_current_task=True,
 )
 new_dataset.sync_folder(local_path=dataset_folder)
 new_dataset.upload()

@@ -43,11 +43,13 @@ which supports environment variable reference.
 
 For example: 
 ```editorconfig
- google.storage {
-        # # Default project and credentials file
-        # # Will be used when no bucket configuration is found
-        project: "clearml"
-        credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
+sdk {
+   google.storage {
+          # # Default project and credentials file
+          # # Will be used when no bucket configuration is found
+          project: "clearml"
+          credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
+  }
 }
 ```
 
