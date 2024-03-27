@@ -45,32 +45,34 @@ You can specify additional [ExtraArgs](https://boto3.amazonaws.com/v1/documentat
 to pass to boto3 when uploading files. You can set this on a per-bucket basis. 
 
 ```
-aws {
-    s3 {
-        # S3 credentials, used for read/write access by various SDK elements
-
-        # default, used for any bucket not specified below
-        key: ""
-        secret: ""
-        region: ""
-        use_credentials_chain: false
-        extra_args: {}
-        
-        credentials: [
-            # specifies key/secret credentials to use when handling s3 urls (read or write)
-            {
-                bucket: "my-bucket-name"
-                key: ""
-                secret: ""
-                verify: "/path/to/ca/bundle.crt" OR false to not verify
-                use_credentials_chain: false
-            },
-                
-        ]
-    }
-    boto3 {
-        pool_connections: 512
-        max_multipart_concurrency: 16
+sdk {
+    aws {
+        s3 {
+            # S3 credentials, used for read/write access by various SDK elements
+    
+            # default, used for any bucket not specified below
+            key: ""
+            secret: ""
+            region: ""
+            use_credentials_chain: false
+            extra_args: {}
+            
+            credentials: [
+                # specifies key/secret credentials to use when handling s3 urls (read or write)
+                {
+                    bucket: "my-bucket-name"
+                    key: ""
+                    secret: ""
+                    verify: "/path/to/ca/bundle.crt" OR false to not verify
+                    use_credentials_chain: false
+                },
+                    
+            ]
+        }
+        boto3 {
+            pool_connections: 512
+            max_multipart_concurrency: 16
+        }
     }
 }
 ```
@@ -79,36 +81,40 @@ AWS's S3 access parameters can be specified by referencing the standard environm
 
 For example: 
 ```
-aws {
-        s3 {
-            # default, used for any bucket not specified below
-            key: ${AWS_ACCESS_KEY_ID}
-            secret: ${AWS_SECRET_ACCESS_KEY}
-            region: ${AWS_DEFAULT_REGION}
-        }
+sdk {
+    aws {
+            s3 {
+                # default, used for any bucket not specified below
+                key: ${AWS_ACCESS_KEY_ID}
+                secret: ${AWS_SECRET_ACCESS_KEY}
+                region: ${AWS_DEFAULT_REGION}
+            }
+    }
 }
 ``` 
 
 ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
 ```
-aws {
-        s3 {
-            # default, used for any bucket not specified below
-            key: ""
-            secret: ""
-            region: ""
-
-            credentials: [
-                {
-                    # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
-                    host: "my-minio-host:9000"
-                    key: ""
-                    secret: ""
-                    multipart: false
-                    secure: false
-                }
-            ]
-        } 
+sdk {
+    aws {
+            s3 {
+                # default, used for any bucket not specified below
+                key: ""
+                secret: ""
+                region: ""
+    
+                credentials: [
+                    {
+                        # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
+                        host: "my-minio-host:9000"
+                        key: ""
+                        secret: ""
+                        multipart: false
+                        secure: false
+                    }
+                ]
+            } 
+    }
 }
 ```
 
@@ -121,14 +127,16 @@ To enable TLS, pass `secure: true`.
 To configure Azure blob storage specify the account name and key.
 
 ```
-azure.storage {
-    containers: [
-        {
-            account_name: ""
-            account_key: ""
-            # container_name:
-        }
-    ]
+sdk {
+    azure.storage {
+        containers: [
+            {
+                account_name: ""
+                account_key: ""
+                # container_name:
+            }
+        ]
+    }
 }
 ```
 
@@ -136,14 +144,16 @@ Azure's storage access parameters can be specified by referencing the standard e
 
 For example:
 ```
-azure.storage {
-    containers: [
-        {
-            account_name: ${AZURE_STORAGE_ACCOUNT}
-            account_key: ${AZURE_STORAGE_KEY}
-            # container_name:
-        }
-    ]
+sdk {
+    azure.storage {
+        containers: [
+            {
+                account_name: ${AZURE_STORAGE_ACCOUNT}
+                account_key: ${AZURE_STORAGE_KEY}
+                # container_name:
+            }
+        ]
+    }
 }
 ```
 
@@ -154,36 +164,40 @@ It's also possible to specify credentials for a specific bucket in the `google.s
 configuration provided in the `google.storage` section is applied to any bucket without a bucket-specific configuration.
 
 ```
-google.storage {
-    # Default project and credentials file
-    # Will be used when no bucket configuration is found
-    project: "clearml"
-    credentials_json: "/path/to/credentials.json"
-
-    # Specific credentials per bucket and sub directory
-    credentials = [
-         {
-             bucket: ""
-             subdir: "path/in/bucket" # Not required
-             project: ""
-             credentials_json: "/path/to/credentials.json"
-         },
-     ]
+sdk {
+    google.storage {
+        # Default project and credentials file
+        # Will be used when no bucket configuration is found
+        project: "clearml"
+        credentials_json: "/path/to/credentials.json"
+    
+        # Specific credentials per bucket and sub directory
+        credentials = [
+             {
+                 bucket: ""
+                 subdir: "path/in/bucket" # Not required
+                 project: ""
+                 credentials_json: "/path/to/credentials.json"
+             },
+         ]
+    }
 }
 ```
 
 GCP's storage access parameters can be specified by referencing the standard environment variables if already defined.
 
 ```
-google.storage {
-    credentials = [
-         {
-             bucket: ""
-             subdir: "path/in/bucket" # Not required
-             project: ""
-             credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
-         },
-     ]
+sdk {
+    google.storage {
+        credentials = [
+             {
+                 bucket: ""
+                 subdir: "path/in/bucket" # Not required
+                 project: ""
+                 credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
+             },
+         ]
+    }
 }
 ```
 
@@ -208,8 +222,8 @@ substitution allows for registering the data into `clearml-data` once, and then 
 To enable path substitution, modify the clearml.conf file and configure:
 
 ```bash
-sdk{
-    storage{
+sdk {
+    storage {
         path_substitution = [
             # Replace registered links with local prefixes,
             # Solve mapping issues, and allow for external resource caching.
@@ -233,18 +247,20 @@ piece twice!
 Configure cache location by modifying the [clearml.conf](../configs/clearml_conf.md) file:
 
 ```
-storage {
-    cache {
-        # Defaults to <system_temp_folder>/clearml_cache
-        default_base_dir: "~/.clearml/cache"
+sdk {
+    storage {
+        cache {
+            # Defaults to <system_temp_folder>/clearml_cache
+            default_base_dir: "~/.clearml/cache"
+        }
+    
+        direct_access: [
+            # Objects matching are considered to be available for direct access, i.e. they will not be downloaded
+            # or cached, and any download request will return a direct reference.
+            # Objects are specified in glob format, available for url and content_type.
+            { url: "file://*" }  # file-urls are always directly referenced
+        ]
     }
-
-    direct_access: [
-        # Objects matching are considered to be available for direct access, i.e. they will not be downloaded
-        # or cached, and any download request will return a direct reference.
-        # Objects are specified in glob format, available for url and content_type.
-        { url: "file://*" }  # file-urls are always directly referenced
-    ]
 }
 ```
 
