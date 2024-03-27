@@ -97,7 +97,7 @@ ClearML provides methods to directly access a task's logged parameters.
 
 To get all of a task's parameters and properties (hyperparameters, configuration objects, and user properties), use the 
 [`Task.get_parameters`](../references/sdk/task.md#get_parameters) method, which will return a dictionary with the parameters, 
-including their sub-sections (see [WebApp sections](#webapp-interface) below). 
+including their subsections (see [WebApp sections](#webapp-interface) below). 
 
 ## WebApp Interface
 
@@ -108,7 +108,7 @@ The configuration panel is split into three sections according to type:
 - **Hyperparameters** - Individual parameters for configuration
 - **Configuration Objects** - Usually configuration files (JSON / YAML) or Python objects. 
   
-These sections are further broken down into sub-sections based on how the parameters were logged (General / Args / TF_Define / Environment).
+These sections are further broken down into subsections based on how the parameters were logged (General / Args / TF_Define / Environment).
 
 ![Task hyperparameters sections](../img/hyperparameters_sections.png)
 
