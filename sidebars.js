@@ -91,6 +91,7 @@ module.exports = {
                 {"HuggingFace": ['integrations/transformers', 'integrations/accelerate']},
                 'integrations/hydra', 'integrations/jsonargparse',
                 'integrations/keras', 'integrations/keras_tuner',
+                'integrations/langchain',
                 'integrations/lightgbm', 'integrations/matplotlib',
                 'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/tao',
                 'integrations/optuna',
