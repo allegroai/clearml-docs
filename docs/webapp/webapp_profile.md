@@ -230,6 +230,7 @@ Each row of the table includes:
 #### Inviting New Teammates
 
 To invite a user to your workspace, press the **+ INVITE USER** button, and input the email in the dialog that pops up.
+Once added, the new users can immediately access your workspace. 
 
 #### Removing Teammates
 To remove a user from a workspace:
