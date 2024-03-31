@@ -146,7 +146,13 @@ module.exports = {
             'webapp/webapp_profile']
         },
         {'Configuring ClearML': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
-        //'References': ['references/clearml_ref','references/clearml_agent_ref'],
+        {'User Management': [
+            'user_management/user_groups',
+            'user_management/access_rules',
+            'user_management/admin_vaults',
+            'user_management/identity_providers'
+            ]
+        },
         {'ClearML Server': ['deploying_clearml/clearml_server',
             {
                 'Deploying ClearML Server': ['deploying_clearml/clearml_server_aws_ec2_ami', 'deploying_clearml/clearml_server_gcp',
