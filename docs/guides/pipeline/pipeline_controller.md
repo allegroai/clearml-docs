@@ -30,7 +30,7 @@ The sections below describe in more detail what happens in the controller task a
 
 ## The Pipeline Controller
 
-1. Create the [PipelineController](../../references/sdk/automation_controller_pipelinecontroller.md) object:
+1. Create the [`PipelineController`](../../references/sdk/automation_controller_pipelinecontroller.md) object:
 
    ```python
    pipe = PipelineController(
@@ -114,7 +114,7 @@ does the following:
 1. Store the data as an artifact named `dataset` using [`Task.upload_artifact()`](../../references/sdk/task.md#upload_artifact):
    ```python
    # add and upload local file containing our toy dataset
-   task.upload_artifact('dataset', artifact_object=local_iris_pkl)
+   task.upload_artifact(name='dataset', artifact_object=local_iris_pkl)
    ```
    
 ## Step 2 - Processing the Data
@@ -146,10 +146,10 @@ does the following:
 1. Generate testing and training sets from the data and store them as artifacts.
    
    ```python
-   task.upload_artifact('X_train', X_train)
-   task.upload_artifact('X_test', X_test)
-   task.upload_artifact('y_train', y_train)
-   task.upload_artifact('y_test', y_test)
+   task.upload_artifact(name='X_train', artifact_object=X_train)
+   task.upload_artifact(name='X_test', artifact_object=X_test)
+   task.upload_artifact(name='y_train', artifact_object=y_train)
+   task.upload_artifact(name='y_test', artifact_object=y_test)
    ```
    
 ## Step 3 - Training the Network

@@ -43,11 +43,13 @@ which supports environment variable reference.
 
 For example: 
 ```editorconfig
- google.storage {
-        # # Default project and credentials file
-        # # Will be used when no bucket configuration is found
-        project: "clearml"
-        credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
+sdk {
+   google.storage {
+          # # Default project and credentials file
+          # # Will be used when no bucket configuration is found
+          project: "clearml"
+          credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
+  }
 }
 ```
 
@@ -413,7 +415,7 @@ ___
 
 **`agent.match_rules`** (*[dict]*)
 
-:::note Enterprise Feature
+:::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
 :::
 
@@ -1248,7 +1250,7 @@ This configuration is deprecated. This plot behavior is now controlled via the U
         
 **`sdk.metrics.images.format`** (*string*)
         
-* The image file format for generated debug images (e.g., JPEG).
+* The image file format for generated debug images (such as "JPEG").
         
 ---
         
@@ -1329,10 +1331,10 @@ This configuration is deprecated. This plot behavior is now controlled via the U
 :::important Enterprise features 
 The ClearML Enterprise plan also supports the following configuration options under `sdk.storage.cache`:   
   * `size.max_used_bytes` (*str*) - Maximum size of the local cache directory. If set to `-1`, the directory can use 
-  the available disk space. Specified in storage units (e.g. `1GB`, `2TB`, `500MB`).
+  the available disk space. Specified in storage units (for example: `1GB`, `2TB`, `500MB`).
   * `size.min_free_bytes` (*str*) - Minimum amount of free disk space that should be left. If `size.max_used_bytes` is 
   set to `-1`, this configuration will limit the cache directory maximum size to `free disk space - size.min_free_bytes`. 
-  Specified in storage units (e.g. `1GB`, `2TB`, `500MB`).
+  Specified in storage units (for example: `1GB`, `2TB`, `500MB`).
   * `zero_file_size_check` (*bool*)- If set to `True`, each cache hit will also check the cached file size, making sure 
   it is not zero (default `False`) 
   * `secondary` (*dict*) - Set up a secondary cache (acts as an L2 cache). When a request is made, the primary cache is 
@@ -1403,7 +1405,7 @@ base64-encoded contents string, otherwise ignored
 *  `path` - Target file's path, may include `~` and inplace env vars
 *  `target_format` - Format used to encode contents before writing into the target file. Supported values are `json`, `yaml`, 
 `yml`, and `bytes` (in which case the file will be written in binary mode). Default is text mode.
-* `mode` - File-system mode (permissions) to apply to the file after its creation. The mode string will be parsed into an integer (e.g. `"0o777"` for `-rwxrwxrwx`)
+* `mode` - File-system mode (permissions) to apply to the file after its creation. The mode string will be parsed into an integer (for example: `"0o777"` for `-rwxrwxrwx`)
 * `overwrite` - Overwrite the target file in case it exists. Default is `true`.
 
 Example:
@@ -1437,7 +1439,7 @@ sdk {
 
 ## Configuration Vault
 
-:::note Enterprise Feature
+:::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
 :::
 

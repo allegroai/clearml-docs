@@ -4,7 +4,7 @@ title: PipelineController
 
 ## The PipelineController Class
 
-Create the [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md), where you will define
+Create the [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md), where you will define
 the pipeline's execution logic:
 ```python
 from clearml import PipelineController
@@ -16,7 +16,7 @@ pipe = PipelineController(
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline tasks will be created.
-* `version` - Numbered version string (e.g. `1.2.3`). If not set, find the pipeline's latest version and increment 
+* `version` - Numbered version string (for example, `1.2.3`). If not set, find the pipeline's latest version and increment 
   it. If no such version is found, defaults to `1.0.0` 
 
 See [PipelineController](../references/sdk/automation_controller_pipelinecontroller.md) for all arguments. 
@@ -45,9 +45,9 @@ values for the new run.
 ![Pipeline new run](../img/pipelines_new_run.png)
 
 ### Additional Configuration 
-You can connect configuration dictionaries or files to a pipeline controller using the 
-[PipelineController.connect_configuration](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
-method by providing the configuration object, or file path. 
+You can connect configuration dictionaries or files to a pipeline controller using 
+[`PipelineController.connect_configuration()`](../references/sdk/automation_controller_pipelinecontroller.md#connect_configuration) 
+by providing the configuration object, or file path. 
 
 For files, call `connect_configuration()` before reading the configuration file. If it's a local file, input a relative 
 path.
@@ -55,7 +55,8 @@ path.
 ```python
 config_file = pipe.connect_configuration(
     configuration=config_file_path, 
-    name="My Configuration", description="configuration for pipeline"
+    name="My Configuration", 
+    description="configuration for pipeline"
 )
 my_params = json.load(open(config_file,'rt'))
 ```
@@ -108,7 +109,7 @@ See [`PipelineController.add_step`](../references/sdk/automation_controller_pipe
 #### parameter_override
 Use the `parameter_override` argument to modify the step's parameter values. The `parameter_override` dictionary key is 
 the task parameter's full path, which includes the parameter section's name and the parameter name separated by a slash 
-(e.g. `'General/dataset_url'`). Passing `"${}"` in the argument value lets you reference input/output configurations 
+(for example, `'General/dataset_url'`). Passing `"${}"` in the argument value lets you reference input/output configurations 
 from other pipeline steps. For example: `"${<step_name>.id}"` will be converted to the Task ID of the referenced pipeline 
 step.
 
@@ -130,9 +131,11 @@ Examples:
 Creating a pipeline step from a function means that when the function is called, it will be transformed into a ClearML task, 
 translating its arguments into parameters, and returning values into artifacts.  
 
-:::info Function to ClearML Task conversion
-As each function is transformed into an independently executed step, it needs to be self-contained. To facilitate this, 
-all package imports inside the function are automatically logged as required packages for the pipeline step. 
+:::info Package Imports
+In the case that the `skip_global_imports` parameter of [`PipelineController`](../references/sdk/automation_controller_pipelinecontroller.md) 
+is set to `False`, all global imports will be automatically imported at the beginning of each step's execution. 
+Otherwise, if set to `True`, make sure that each function which makes up a pipeline step contains package imports, which 
+are automatically logged as required packages for the pipeline execution step.
 :::
 
 Function steps are added using [`PipelineController.add_function_step()`](../references/sdk/automation_controller_pipelinecontroller.md#add_function_step):
@@ -186,7 +189,7 @@ ClearmlJob.
 
 If the callback returned value is False, the step is skipped and so is any step in the pipeline that relies on this step.
 
-Notice the parameters are already parsed (e.g. `${step1.parameters.Args/param}` is replaced with relevant value).
+Notice the parameters are already parsed (for example, `${step1.parameters.Args/param}` is replaced with relevant value).
 
 ```python
 def step_created_callback(

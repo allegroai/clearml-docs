@@ -63,7 +63,7 @@ different queue. When a queue detects a task, the autoscaler spins up the approp
 ![Autoscaler diagram](../img/autoscaler_diagram.png)
 
 The diagram above demonstrates an example where an autoscaler app instance is attached to two queues. Each queue is 
-associated with a different resource, CPU and GPU, and each queue has two enqueued tasks. In order to execute the tasks, 
+associated with a different resource, CPU and GPU, and each queue has two enqueued tasks. To execute the tasks, 
 the autoscaler spins up four machines, two CPU machines to execute the tasks in the CPU queue and two GPU machines to 
 execute the tasks in the GPU queue.
 
@@ -105,7 +105,7 @@ You can set up Kubernetes' cluster autoscaler to work with your cloud providers,
 your Kubernetes cluster as needed; increasing the amount of nodes when there aren't enough to execute pods and removing 
 underutilized nodes. See [charts](https://github.com/kubernetes/autoscaler/tree/master/charts) for specific cloud providers.
 
-:::note Enterprise features
+:::important Enterprise features
 The ClearML Enterprise plan supports K8S servicing multiple ClearML queues, as well as providing a pod template for each 
 queue for describing the resources for each pod to use. See [ClearML Helm Charts](https://github.com/allegroai/clearml-helm-charts/tree/main).  
 :::

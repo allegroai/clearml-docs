@@ -62,5 +62,5 @@ If we select a step from our pipeline, we can see much of the same details, but 
 
 But now comes the most powerful feature of all. Again, a pipeline controller is a task like any other, so… we can clone it like any other. Pressing the **+ New Run** button will allow us to do that from the UI! We can even change our global pipeline parameters here and, just like normal tasks, these will be injected into the original task and overwrite the original parameters. In this way, you can very quickly run many pipelines each with different parameters.
 
-In the next video of this Getting Started series, we’ll get a long-overdue look at ClearML Data, our data versioning tool. In the meantime, slap some pipeline decorators on your own functions for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://joinslack.clear.ml), if you need any help.
+In the next video of this Getting Started series, we’ll get a long-overdue look at ClearML Data, our data versioning tool. In the meantime, slap some pipeline decorators on your own functions for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack channel](https://joinslack.clear.ml), if you need any help.
 </Collapsible>

@@ -43,12 +43,16 @@ Automatic logging is supported for the following frameworks:
 * [TensorFlow](integrations/tensorflow.md)
 * [Keras](integrations/keras.md)
 * [PyTorch](integrations/pytorch.md)
+* [AutoKeras](integrations/autokeras.md)
+* [CatBoost](integrations/catboost.md)
+* [Fast.ai](integrations/fastai.md)
+* [LightGBM](integrations/lightgbm.md)
+* [MegEngine](integrations/megengine.md)
+* [MONAI](integrations/monai.md)
 * [scikit-learn](integrations/scikit_learn.md) (only using joblib)
 * [XGBoost](integrations/xgboost.md) (only using joblib)
-* [Fast.ai](integrations/fastai.md)
-* [MegEngine](integrations/megengine.md)
-* [CatBoost](integrations/catboost.md)
-* [MONAI](integrations/monai.md)
+* [YOLOv8](integrations/yolov8.md)
+* [YOLOv5](integrations/yolov5.md)
 
 You may want more control over which models are logged. Use the `auto_connect_framework` parameter of [`Task.init()`](references/sdk/task.md#taskinit) 
 to control automatic logging of frameworks. 
@@ -70,7 +74,7 @@ See [Automatic Logging](clearml_sdk/task_sdk.md#automatic-logging) for more info
 
 ### Manual Logging
 
-You can explicitly specify an experiment’s models using ClearML InputModel and OutputModel classes. 
+You can explicitly specify an experiment’s models using ClearML `InputModel` and `OutputModel` classes. 
 
 #### InputModel
 

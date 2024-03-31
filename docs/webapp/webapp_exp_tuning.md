@@ -86,8 +86,9 @@ and formats for specifying locations include:
 
 * A shared folder: `/mnt/share/folder`
 * S3: `s3://bucket/folder`
+* Non-AWS S3-like services (e.g. MinIO): `s3://host_addr:port/bucket` 
 * Google Cloud Storage: `gs://bucket-name/folder`
-* Azure Storage: `azure://company.blob.core.windows.net/folder/`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
 **To add, change, or delete an artifact output destination:**
 

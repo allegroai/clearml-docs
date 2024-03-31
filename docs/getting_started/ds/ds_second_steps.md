@@ -12,8 +12,8 @@ Every previously executed experiment is stored as a Task.
 A Task's project and name can be changed after the experiment has been executed.
 A Task is also automatically assigned an auto-generated unique identifier (UUID string) that cannot be changed and always locates the same Task in the system.
 
-It's possible to retrieve a Task object programmatically by querying the system based on either the Task ID,
-or project and name combination. It's also possible to query tasks based on their properties, like tags (see [Querying Tasks](../../clearml_sdk/task_sdk.md#querying--searching-tasks)).
+Retrieve a Task object programmatically by querying the system based on either the Task ID,
+or project and name combination. You can also query tasks based on their properties, like tags (see [Querying Tasks](../../clearml_sdk/task_sdk.md#querying--searching-tasks)).
 
 ```python
 prev_task = Task.get_task(task_id='123456deadbeef')
@@ -28,7 +28,7 @@ on model performance, saving and comparing these between experiments is sometime
 
 ClearML supports logging `argparse` module arguments out of the box, so once ClearML is integrated into the code, it automatically logs all parameters provided to the argument parser.
 
-It's also possible to log parameter dictionaries (very useful when parsing an external config file and storing as a dict object),
+You can also log parameter dictionaries (very useful when parsing an external configuration file and storing as a dict object),
 whole configuration files, or even custom objects or [Hydra](https://hydra.cc/docs/intro/) configurations!
 
 ```python
@@ -53,15 +53,15 @@ See all [storage capabilities](../../integrations/storage.md).
 
 Upload a local file containing the preprocessed results of the data:
 ```python
-task.upload_artifact('/path/to/preprocess_data.csv', name='data')
+task.upload_artifact(name='data', artifact_object='/path/to/preprocess_data.csv')
 ```
 
 You can also upload an entire folder with all its content by passing the folder (the folder will be zipped and uploaded as a single zip file).
 ```python
-task.upload_artifact('/path/to/folder/', name='folder')
+task.upload_artifact(name='folder', artifact_object='/path/to/folder/')
 ```
 
-Lastly, you can upload an instance of an object; Numpy/Pandas/PIL Images are supported with npz/csv.gz/jpg formats accordingly.
+Lastly, you can upload an instance of an object; Numpy/Pandas/PIL Images are supported with `npz`/`csv.gz`/`jpg` formats accordingly.
 If the object type is unknown, ClearML pickles it and uploads the pickle file.
 
 ```python
@@ -69,7 +69,7 @@ numpy_object = np.eye(100, 100)
 task.upload_artifact(name='features', artifact_object=numpy_object)
 ```
 
-Check out all [artifact logging](../../clearml_sdk/task_sdk.md#artifacts) options.
+For more artifact logging options, see [Artifacts](../../clearml_sdk/task_sdk.md#artifacts).
 
 ### Using Artifacts
 
@@ -137,27 +137,27 @@ This feature lets you easily get a full genealogy of every trained and used mode
 ## Log Metrics
 
 Full metrics logging is the key to finding the best performing model!
-By default, everything that's reported to TensorBoard and Matplotlib is automatically captured and logged.
+By default, ClearML automatically captures and logs everything reported to TensorBoard and Matplotlib.
 
-Since not all metrics are tracked that way, it's also possible to manually report metrics using the [`logger`](../../fundamentals/logger.md) object.
+Since not all metrics are tracked that way, you can also manually report metrics using a [`Logger`](../../fundamentals/logger.md) object.
 
-It's possible to log everything, from time series data to confusion matrices to HTML, Audio and Video, to custom plotly graphs! Everything goes!
+You can log everything, from time series data and confusion matrices to HTML, Audio, and Video, to custom plotly graphs! Everything goes!
 
-![image](../../img/report_plotly.png)
+![Experiment plots](../../img/report_plotly.png)
 
-Once everything is neatly logged and displayed, using the [comparison tool](../../webapp/webapp_exp_comparing.md) makes it easy to find the best configuration!
+Once everything is neatly logged and displayed, use the [comparison tool](../../webapp/webapp_exp_comparing.md) to find the best configuration!
 
 
 ## Track Experiments
 
-The experiment table is a powerful tool for creating dashboards and views of your own projects, your team's projects, or the entire development.
+The experiments table is a powerful tool for creating dashboards and views of your own projects, your team's projects, or the entire development.
 
-![image](../../img/webapp_experiment_table.png)
+![Experiments table](../../img/webapp_experiment_table.png)
 
 
 ### Creating Leaderboards
-Customize the [experiments table](../../webapp/webapp_exp_table.md) to fit your own needs, adding desired views of parameters, metrics and tags.
-It's possible to filter and sort based on parameters and metrics, so creating custom views is simple and flexible.
+Customize the [experiments table](../../webapp/webapp_exp_table.md) to fit your own needs, adding desired views of parameters, metrics, and tags.
+You can filter and sort based on parameters and metrics, so creating custom views is simple and flexible.
 
 Create a dashboard for a project, presenting the latest Models and their accuracy scores, for immediate insights.
 
@@ -166,7 +166,7 @@ This is helpful to monitor your projects' progress, and to share it across the o
 
 Any page is sharable by copying the URL from the address bar, allowing you to bookmark leaderboards or to send an exact view of a specific experiment or a comparison page.
 
-It's also possible to tag Tasks for visibility and filtering allowing you to add more information on the execution of the experiment.
+You can also tag Tasks for visibility and filtering allowing you to add more information on the execution of the experiment.
 Later you can search based on task name in the search bar, and filter experiments based on their tags, parameters, status, and more.
 
 ## What's Next?

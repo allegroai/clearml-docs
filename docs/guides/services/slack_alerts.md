@@ -10,7 +10,7 @@ failure of tasks, and posts alert messages on a Slack channel.
 
 ## Creating a Slack Bot
 
-Before configuring and running the Slack alert service, create a new Slack Bot (**ClearML Bot**). 
+Before configuring and running the Slack alert service, create a Slack Bot (**ClearML Bot**). 
 
 :::important
 The Slack API token and channel you create are required to configure the Slack alert service.
@@ -100,10 +100,9 @@ In `slack_alerts.py`, the class `SlackMonitor` inherits from the `Monitor` class
 * `process_task` - Get the information for a Task, post a Slack message, and output to console.
     * Allows skipping failed Tasks, if a Task ran for few iterations. Calls [`Task.get_last_iteration`](../../references/sdk/task.md#get_last_iteration) 
       to get the number of iterations.
-    * Builds the Slack message which includes the most recent output to the console (retrieved by calling [`Task.get_reported_console_output`](../../references/sdk/task.md#get_reported_console_output)), 
-      and the URL of the Task's output log in the ClearML Web UI (retrieved by calling [`Task.get_output_log_web_page`](../../references/sdk/task.md#get_output_log_web_page)).
+    * Builds the Slack message which includes the most recent output to the console (retrieved by calling [`Task.get_reported_console_output()`](../../references/sdk/task.md#get_reported_console_output)), 
+      and the URL of the Task's output log in the ClearML Web UI (retrieved by calling [`Task.get_output_log_web_page()`](../../references/sdk/task.md#get_output_log_web_page)).
 
-You can run the example remotely by calling the [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely) 
-method.
+You can run the example remotely by calling [`Task.execute_remotely()`](../../references/sdk/task.md#execute_remotely).
 
 To interface to Slack, the example uses `slack_sdk.WebClient` and `slack_sdk.errors.SlackApiError`.

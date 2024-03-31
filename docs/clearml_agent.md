@@ -218,7 +218,7 @@ deploy an agent with a different value to what is specified for `agent.default_d
 :::note NOTES
 * Since configuration fields may contain JSON-parsable values, make sure to always quote strings (otherwise the agent 
 might fail to parse them)
-* In order to comply with environment variables standards, it is recommended to use only upper-case characters in 
+* To comply with environment variables standards, it is recommended to use only upper-case characters in 
 environment variable keys. For this reason, ClearML Agent will always convert the configuration path specified in the 
 dynamic environment variable's key to lower-case before overriding configuration values with the environment variable 
 value.
@@ -318,14 +318,93 @@ SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <y
 
 ### Kubernetes 
 Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML Agent adds the missing scheduling 
-capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent’s 
-features (scheduling, job prioritization, and more).
+capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent's 
+features.
 
-There are two options for deploying the ClearML Agent to a Kubernetes cluster:
-* Spin ClearML Agent as a long-lasting service pod
-* Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
+ClearML Agent is deployed onto a Kubernetes cluster through its Kubernetes-Glue which maps ClearML jobs directly to K8s 
+jobs:
+* Use the [ClearML Agent Helm Chart](https://github.com/allegroai/clearml-helm-charts/tree/main/charts/clearml-agent) to
+spin an agent pod acting as a controller. Alternatively (less recommended) run a [k8s glue script](https://github.com/allegroai/clearml-agent/blob/master/examples/k8s_glue_example.py) 
+on a K8S cpu node
+* The ClearML K8S glue pulls jobs from the ClearML job execution queue and prepares a K8s job (based on provided yaml 
+template)
+* Inside each job pod the `clearml-agent` will install the ClearML task's environment and run and monitor the experiment's 
+process
 
-For more details, see [Kubernetes integration](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
+#### Fractional GPUs
+Some jobs that you send for execution need a minimal amount of compute and memory, but you end up allocating entire GPUs 
+to them. In order to optimize your compute resource usage, you can partition GPUs into slices. 
+
+Set up MIG support for Kubernetes through your NVIDIA device plugin, and define the GPU fractions to be made available 
+to the cluster. 
+
+The ClearML Agent Helm chart lets you specify a pod template for each queue which describes the resources that the pod
+will use. The template should specify the requested GPU slices under `Containers.resources.limits` to have the queue use 
+the defined resources. For example, the following configures a K8s pod to run a 3g.20gb MIG device:
+
+```
+# tf-benchmarks-mixed.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tf-benchmarks-mixed
+spec:
+  restartPolicy: Never
+  Containers:
+     - name: tf-benchmarks-mixed
+     image: ""
+      command: []
+      args: []
+      resources:
+        limits:
+          nvidia.com/mig-3g.20gb: 1
+  nodeSelector:  #optional
+    nvidia.com/gpu.product: A100-SXM4-40GB
+```
+
+When tasks are added to the relevant queue, the agent pulls the task and creates a pod to execute it, using the specified 
+GPU slice. 
+
+For example, the following configures what resources should be used to execute tasks from the `default` queue: 
+
+```
+agentk8sglue:
+  queue: default 
+  # … 
+  basePodTemplate:
+    # …
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+  nodeSelector:
+    nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
+```
+
+:::important Enterprise Feature
+The ClearML Enterprise plan supports K8S servicing multiple ClearML queues, as well as providing a pod template for each 
+queue for describing the resources for each pod to use.
+
+For example, the following configures which resources to use for `example_queue_1` and `example_queue_2`:
+
+```yaml
+agentk8sglue:
+  queues:
+    example_queue_1:
+      templateOverrides:
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      nodeSelector:
+        nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
+    example_queue_2:
+      templateOverrides:
+        resources:
+          limits:
+            nvidia.com/gpu: 2
+      nodeSelector:
+        nvidia.com/gpu.product: A100-SXM4-40GB
+```
+:::
 
 ### Slurm
 
@@ -346,7 +425,7 @@ template specification attached to the queue.
    pip3 install -U --extra-index-url https://*****@*****.allegro.ai/repository/clearml_agent_slurm/simple clearml-agent-slurm
    ```
 
-1. Create a new batch template. Make sure to set the `SBATCH` variables to the resources you want to attach to the queue. 
+1. Create a batch template. Make sure to set the `SBATCH` variables to the resources you want to attach to the queue. 
    The script below sets up an agent to run bare-metal, creating a virtual environment per job. For example:
 
    ```
@@ -577,10 +656,11 @@ Agents can spin multiple Tasks from different queues based on the number of GPUs
 needs.
 
 `dynamic-gpus` enables dynamic allocation of GPUs based on queue properties.
-To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
+To configure the number of GPUs for a queue, use the `--gpus` flag to specify the active GPUs, and use the `--queue` 
+flag to specify the queue name and number of GPUs:
 
 ```console
-clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
+clearml-agent daemon --dynamic-gpus --gpus 0-2 --queue dual_gpus=2 single_gpu=1
 ```
 
 ### Example
@@ -590,7 +670,7 @@ Let's say a server has three queues:
 * `quad_gpu`
 * `opportunistic`
 
-An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple
+An agent can be spun on multiple GPUs (for example: 8 GPUs, `--gpus 0-7`), and then attached to multiple
 queues that are configured to run with a certain amount of resources:
 
 ```console
@@ -622,7 +702,7 @@ clearml-agent daemon --services-mode --queue services --create-queue --docker <d
 ```
 
 To limit the number of simultaneous tasks run in services mode, pass the maximum number immediately after the 
-`--services-mode` option (e.g. `--services-mode 5`)
+`--services-mode` option (for example: `--services-mode 5`).
 
 :::note Notes
 * `services-mode` currently only supports Docker mode. Each service spins on its own Docker image.
@@ -678,11 +758,11 @@ Build a Docker container according to the execution environment of a specific ta
 clearml-agent build --id <task-id> --docker --target <new-docker-name>
 ```
 
-It's possible to add the Docker container as the base Docker image to a task (experiment), using one of the following methods:
+You can add the Docker container as the base Docker image to a task (experiment), using one of the following methods:
 
 - Using the **ClearML Web UI** - See [Base Docker image](webapp/webapp_exp_tuning.md#base-docker-image) on the "Tuning
   Experiments" page.
-- In the ClearML configuration file - Use the ClearML configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
+- In the ClearML configuration file - Use the ClearML configuration file [`agent.default_docker`](configs/clearml_conf.md#agentdefault_docker)
   options.
 
 Check out [this tutorial](guides/clearml_agent/exp_environment_containers.md) for building a Docker container 

@@ -4,7 +4,7 @@ title: PipelineDecorator
 
 ## Creating Pipelines Using Function Decorators
 
-Use the [PipelineDecorator](../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator) 
+Use the [`PipelineDecorator`](../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator) 
 class to create pipelines from your existing functions. Use [`@PipelineDecorator.component`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent) 
 to denote functions that comprise the steps of your pipeline, and [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline) 
 for your main pipeline execution logic function.
@@ -12,9 +12,8 @@ for your main pipeline execution logic function.
 ## @PipelineDecorator.pipeline
 
 Using the [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline)
-decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller. Since
-the function is transformed into an independently executed task, it needs to be self-contained. To facilitate this, 
-all package imports inside the function are automatically logged as required packages for the pipeline controller.
+decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller, 
+an independently executed task.
 
 :::tip Multi-file Pipeline Implementation 
 In the case your pipeline is implemented across multiple files, make sure the pipeline step implementation (files containing
@@ -39,7 +38,7 @@ def main(pickle_url, mock_parameter='mock'):
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline controller task is stored
-* `version` - Numbered version string (e.g. `1.2.3`). If not set, find the pipeline's latest version and increment 
+* `version` - Numbered version string (for example, `1.2.3`). If not set, find the pipeline's latest version and increment 
   it. If no such version is found, defaults to `1.0.0` 
 * `default_queue` - The default [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) in which to enqueue all pipeline steps (unless otherwise specified in the pipeline step).
 * `args_map` - Map arguments to their [configuration section](../fundamentals/hyperparameters.md#webapp-interface) in 
@@ -61,6 +60,9 @@ def main(pickle_url, mock_parameter='mock'):
 * `pipeline_execution_queue` - The queue in which to enqueue the pipeline controller task. The default value is the 
   `services` queue. To run the pipeline logic locally while the components are executed remotely, pass 
   `pipeline_execution_queue=None`
+* `skip_global_imports` – If `True`, global imports will not be included in the steps’ execution. If `False` (default), 
+  all global imports will be automatically imported at the beginning of each step’s execution.
+
 
 When the function is called, a corresponding ClearML Controller Task is created: its arguments are logged as the task's 
 parameters. When launching a new pipeline run from the [UI](../webapp/pipelines/webapp_pipeline_page.md), you can modify their values for the new run.  
@@ -71,9 +73,14 @@ parameters. When launching a new pipeline run from the [UI](../webapp/pipelines/
 Using the [`@PipelineDecorator.component`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent) 
 decorator transforms a function into a ClearML pipeline step when called from a pipeline controller.
 
-When the pipeline controller calls a pipeline step, a corresponding ClearML task is created. For this reason, each 
-function which makes up a pipeline step needs to be self-contained. All package imports inside the function are automatically 
-logged as required packages for the pipeline execution step. 
+When the pipeline controller calls a pipeline step, a corresponding ClearML task is created. 
+
+:::tip Package Imports
+In the case that the `skip_global_imports` parameter of [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline) 
+is set to `False`, all global imports will be automatically imported at the beginning of each step's execution. 
+Otherwise, if set to `True`, make sure that each function which makes up a pipeline step contains package imports, which 
+are automatically logged as required packages for the pipeline execution step.
+:::
 
 ```python
 from clearml.automation.controller import PipelineDecorator
@@ -207,7 +214,7 @@ if __name__ == '__main__':
 ```
 
 :::tip RUN PIPELINE CONTROLLER LOCALLY
-It is possible to run the pipeline logic itself locally, while keeping the pipeline components execution remote
+You can run the pipeline logic locally, while keeping the pipeline components execution remote
 (enqueued and executed by the clearml-agent). Pass `pipeline_execution_queue=None` to the `@PipelineDecorator.pipeline` decorator.
 ```python
 @PipelineDecorator.pipeline(
