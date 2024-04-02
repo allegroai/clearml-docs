@@ -20,6 +20,8 @@ ClearML provides the following applications:
 * [**Trigger Manager**](apps_trigger_manager.md) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
 * [**Jupyter Lab**](apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine (available under ClearML Enterprise Plan)
 * [**VS Code**](apps_vscode.md) - Launch a VS Code session on a remote machine (available under ClearML Enterprise Plan)
+* [**Gradio Launcher**](apps_gradio.md) - Create visual web interfaces for your models with Gradio (available under ClearML Enterprise Plan)
+* [**Streamlit Launcher**](apps_streamlit.md) - Create visual web interfaces for your models with Streamlit (available under ClearML Enterprise Plan)
 
 :::info Autoscalers
 Autoscaling ([GPU Compute](apps_gpu_compute.md), [AWS Autoscaler](apps_aws_autoscaler.md), and [GCP Autoscaler](apps_gcp_autoscaler.md))
