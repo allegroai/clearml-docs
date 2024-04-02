@@ -1,0 +1,53 @@
+---
+title: Gradio Launcher
+---
+
+:::info Enterprise Feature
+The Gradio Launcher App is available under the ClearML Enterprise plan.
+:::
+
+[Gradio](https://gradio.app/) is a framework for creating visual web interfaces for your models. The ClearML Gradio 
+launcher application spins up a Gradio execution environment and serves your Gradio app on a machine of your choice. 
+Once you start a Gradio launcher instance, you will be provided with an [externally accessible link](#traffic_router) to 
+your Gradio app, where you can make use of your models.
+
+The Gradio launcher monitors the Gradio app activity and shuts down if it is inactive for a specified maximum idle time.
+
+<a id="traffic_router"/>
+
+:::important Task Traffic Router
+The Gradio Launcher relies on the ClearML Traffic Router which facilitates user authentication, and redirects requests 
+to the IP/port served by the Gradio app. 
+:::
+
+Once you start a Gradio launcher instance, you can view the following information in its dashboard:
+
+* Gradio App status indicator
+  * <img src="/docs/latest/icons/ico-gradio-active.svg" alt="Active server" className="icon size-md space-sm" /> - App is running and is actively in use
+  * <img src="/docs/latest/icons/ico-gradio-loading.svg" alt="Loading server" className="icon size-md space-sm" /> - App is setting up 
+  * <img src="/docs/latest/icons/ico-gradio-idle.svg" alt="Idle server" className="icon size-md space-sm" /> - App is idle
+  * <img src="/docs/latest/icons/ico-gradio-stopped.svg" alt="Stopped server" className="icon size-md space-sm" /> - App is stopped 
+* Idle time 
+* Gradio App - Externally accessible link to your Gradio app. You can send this link to your colleagues, so they can 
+  access the app. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-sm space-sm" />
+  to copy link
+* Gradio Git repo - Repository that holds the Gradio app script
+* Live preview of the Gradio app
+* Console Log  The console log shows the launcher instance's activity, including server setup progress, server status 
+  changes
+ 
+
+## Gradio Launcher Instance Configuration
+
+* **Gradio Instance Name** - Name for the Gradio launcher instance. This will appear in the instance list
+* **Project name** - Project where your Gradio launcher app instance task will be stored
+* **Task name** - Name of task for your Gradio launcher app instance
+* **Git Repository** - Git repository containing the Gradio script 
+* **Git Branch** - Git branch containing the Gradio script
+* **Gradio Script Name** - Name of Gradio script to be executed
+* **Queue** - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which the Gradio launcher 
+  app instance task will be enqueued (make sure an agent is assigned to that queue)
+* **Docker Image** - Docker image the ClearML Agent will use for running the Gradio app
+* **Arguments** - Arguments to be passed to the script
+* **Idle Time Limit** (Hours) - Maximum idle time (Period in which no requests are received by the Gradio app) after 
+  which the Gradio app and the launcher instance will shut down.
