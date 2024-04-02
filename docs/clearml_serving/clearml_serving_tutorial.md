@@ -26,7 +26,7 @@ Train a model. Work from your local `clearml-serving` repository's root.
     `python3 examples/sklearn/train_model.py`. 
   
 During execution, ClearML automatically registers the sklearn model and uploads it into the model repository. 
-For Manual model registration see [here](#registering--deploying-new-models-manually) 
+For information about explicit model registration, see [Registering and Deploying New Models Manually](#registering-and-deploying-new-models-manually). 
 
 ### Step 2: Register Model
 
@@ -79,7 +79,7 @@ Inference services status, console outputs and machine metrics are available in 
 project (default: "DevOps" project)
 :::
 
-## Registering & Deploying New Models Manually 
+## Registering and Deploying New Models Manually 
 
 Uploading an existing model file into the model repository can be done via the `clearml` RestAPI, the python interface, 
 or with the `clearml-serving` CLI. 
@@ -104,7 +104,7 @@ or with the `clearml-serving` CLI.
 
 :::info Model Storage
 You can also provide a different storage destination for the model, such as S3/GS/Azure, by passing
-`--destination="s3://bucket/folder"`, `gs://bucket/folder`, `azure://bucket/folder`. There is no need to provide a unique 
+`--destination="s3://bucket/folder"`, `s3://host_addr:port/bucket` (for non-AWS S3-like services like MinIO), `gs://bucket/folder`, `azure://<account name>.blob.core.windows.net/path/to/file`. There is no need to provide a unique 
 path to the destination argument, the location of the model will be a unique path based on the serving service ID and the 
 model name
 :::
@@ -196,10 +196,10 @@ ClearML serving instances send serving statistics (count/latency) automatically 
 to visualize and create live dashboards. 
 
 The default docker-compose installation is preconfigured with Prometheus and Grafana. Notice that by default data/ate 
-of both containers is *not* persistent. To add persistence, we recommend adding a volume mount.
+of both containers is *not* persistent. To add persistence, adding a volume mount is recommended.
 
 You can also add many custom metrics on the input/predictions of your models. Once a model endpoint is registered, 
-adding custom metric can be done using the CLI.
+adding custom metrics can be done using the CLI.
 
 For example, assume the mock scikit-learn model is deployed on endpoint `test_model_sklearn`, you can log the requests 
 inputs and outputs (see examples/sklearn/preprocess.py example):
@@ -241,8 +241,8 @@ You can also specify per-endpoint log frequency with the `clearml-serving` CLI. 
 
 See examples of ClearML Serving with other supported frameworks:
 
-* [Scikit-Learn](https://github.com/allegroai/clearml-serving/blob/main/examples/sklearn/readme.md) - random data
-* [Scikit-Learn Model Ensemble](https://github.com/allegroai/clearml-serving/blob/main/examples/ensemble/readme.md) - random data
+* [scikit-learn](https://github.com/allegroai/clearml-serving/blob/main/examples/sklearn/readme.md) - random data
+* [scikit-learn Model Ensemble](https://github.com/allegroai/clearml-serving/blob/main/examples/ensemble/readme.md) - random data
 * [XGBoost](https://github.com/allegroai/clearml-serving/blob/main/examples/xgboost/readme.md) - iris dataset
 * [LightGBM](https://github.com/allegroai/clearml-serving/blob/main/examples/lightgbm/readme.md) - iris dataset
 * [PyTorch](https://github.com/allegroai/clearml-serving/blob/main/examples/pytorch/readme.md) - mnist dataset

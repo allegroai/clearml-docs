@@ -1,5 +1,5 @@
 ---
-title: CLI 
+title: ClearML Data CLI 
 --- 
 
 :::important
@@ -9,7 +9,7 @@ See [Hyper-Datasets](../hyperdatasets/overview.md) for ClearML's advanced querya
 
 `clearml-data` is a data management CLI tool that comes as part of the `clearml` python package. Use `clearml-data` to 
 create, modify, and manage your datasets. You can upload your dataset to any storage service of your choice (S3 / GS / 
-Azure / Network Storage) by setting the dataset’s upload destination (see [`--storage`](#upload)). Once you have uploaded 
+Azure / Network Storage) by setting the dataset's upload destination (see [`--storage`](#upload)). Once you have uploaded 
 your dataset, you can access it from any machine. 
 
 The following page provides a reference to `clearml-data`'s CLI commands. 
@@ -41,7 +41,7 @@ clearml-data create [-h] [--parents [PARENTS [PARENTS ...]]] [--project PROJECT]
 
 
 :::tip Dataset ID
-* For datasets created with `clearml` v1.6 or newer on ClearML Server v1.6 or newer, find the ID in the dataset version’s info panel in the [Dataset UI](../webapp/datasets/webapp_dataset_viewing.md).  
+* For datasets created with `clearml` v1.6 or newer on ClearML Server v1.6 or newer, find the ID in the dataset version's info panel in the [Dataset UI](../webapp/datasets/webapp_dataset_viewing.md).  
   For datasets created with earlier versions of `clearml`, or if using an earlier version of ClearML Server, find the ID in the task header of the [dataset task's info panel](../webapp/webapp_exp_track_visual.md).  
 * clearml-data works in a stateful mode so once a new dataset is created, the following commands
 do not require the `--id` flag.
@@ -66,9 +66,9 @@ clearml-data add [-h] [--id ID] [--dataset-folder DATASET_FOLDER]
 |Name|Description|Optional|
 |---|---|---|
 |`--id` | Dataset's ID. Default: previously created / accessed dataset| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
-|`--files`| Files / folders to add. Items will be uploaded to the dataset’s designated storage.  | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+|`--files`| Files / folders to add. Items will be uploaded to the dataset's designated storage.  | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--wildcard`|  Add specific set of files, denoted by these wildcards. For example: `~/data/*.jpg ~/data/json`. Multiple wildcards can be passed. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
-|`--links`| Files / folders link to add. Supports S3, GS, Azure links. Example: `s3://bucket/data` `azure://bucket/folder`. Items remain in their original location. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+|`--links`| Files / folders link to add. Supports S3, GS, Azure links. Example: `s3://bucket/data` `azure://<account name>.blob.core.windows.net/path/to/file`. Items remain in their original location. | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--dataset-folder` | Dataset base folder to add the files to in the dataset. Default: dataset root| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--non-recursive` | Disable recursive scan of files | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--verbose` | Verbose reporting | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -93,7 +93,7 @@ clearml-data remove [-h] [--id ID] [--files [FILES [FILES ...]]]
 |Name|Description|Optional|
 |---|---|---|
 |`--id` | Dataset's ID. Default: previously created / accessed dataset| <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
-|`--files` |  Files / folders to remove (wildcard selection is supported, for example: `~/data/*.jpg ~/data/json`). Notice: file path is the path within the dataset, not the local path. For links, you can specify their URL (e.g. `s3://bucket/data`) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
+|`--files` |  Files / folders to remove (wildcard selection is supported, for example: `~/data/*.jpg ~/data/json`). Notice: file path is the path within the dataset, not the local path. For links, you can specify their URL (for example, `s3://bucket/data`) | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 |`--non-recursive` | Disable recursive scan of files | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 |`--verbose` | Verbose reporting | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 
@@ -103,8 +103,13 @@ clearml-data remove [-h] [--id ID] [--files [FILES [FILES ...]]]
 
 ## upload
 
-Upload the local dataset changes to the server. By default, it's uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). It's possible to specify a different storage
-medium by entering an upload destination, such as `s3://bucket`, `gs://`, `azure://`, `/mnt/shared/`.
+Upload the local dataset changes to the server. By default, it's uploaded to the ClearML file server. You can specify a different storage
+medium by entering an upload destination. For example: 
+* A shared folder: `/mnt/shared/folder`
+* S3: `s3://bucket/folder`
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
+* Google Cloud Storage: `gs://bucket-name/folder`
+* Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 
 ```bash
 clearml-data upload [-h] [--id ID] [--storage STORAGE] [--chunk-size CHUNK_SIZE] 
@@ -183,7 +188,7 @@ clearml-data sync [-h] [--id ID] [--dataset-folder DATASET_FOLDER] --folder FOLD
 |`--parents`|IDs of the dataset's parents (i.e. merge all parents). All modifications made to the folder since the parents were synced will be reflected in the dataset|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--project`|If creating a new dataset, specify the dataset's project name|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--name`|If creating a new dataset, specify the dataset's name|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
-|`--version`|Specify the dataset’s version using the [semantic versioning](https://semver.org) scheme. Default: `1.0.0`|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
+|`--version`|Specify the dataset's version using the [semantic versioning](https://semver.org) scheme. Default: `1.0.0`|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--tags`|Dataset user tags|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--skip-close`|Do not auto close dataset after syncing folders|<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
 |`--chunk-size`| Set dataset artifact upload chunk size in MB. Default 512, (pass -1 for a single chunk). Example: 512, dataset will be split and uploaded in 512 MB chunks. |<img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" />|
@@ -233,7 +238,7 @@ clearml-data set-description [-h] [--id ID] [--description DESCRIPTION]
 
 |Name|Description|Optional|
 |---|---|---|
-|`--id`|Dataset’s ID|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
+|`--id`|Dataset's ID|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 |`--description`|Description to be set|<img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" />|
 
 
@@ -248,7 +253,7 @@ Deletes dataset(s). Pass any of the attributes of the dataset(s) you want to del
 request will raise an exception, unless you pass `--entire-dataset` and `--force`. In this case, all matching datasets 
 will be deleted. 
 
-If a dataset is a parent to a dataset(s), you must pass `--force` in order to delete it. 
+If a dataset is a parent to a dataset(s), you must pass `--force` to delete it. 
 
 :::caution
 Deleting a parent dataset may cause child datasets to lose data!

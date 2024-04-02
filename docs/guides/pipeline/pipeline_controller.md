@@ -30,7 +30,7 @@ The sections below describe in more detail what happens in the controller task a
 
 ## The Pipeline Controller
 
-1. Create the [pipeline controller](../../references/sdk/automation_controller_pipelinecontroller.md) object.
+1. Create the [`PipelineController`](../../references/sdk/automation_controller_pipelinecontroller.md) object:
 
    ```python
    pipe = PipelineController(
@@ -41,16 +41,17 @@ The sections below describe in more detail what happens in the controller task a
    )
    ```
 
-1. Set the default execution queue to be used. All the pipeline steps will be enqueued for execution in this queue.
+1. Set the execution queue through which pipeline steps that did not explicitly specify an execution queue will be 
+   executed. These pipeline steps will be enqueued for execution in this queue.
 
    ```python
    pipe.set_default_execution_queue('default')
    ```
    
-1. Build the pipeline (see [PipelineController.add_step](../../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
+1. Build the pipeline (see [`PipelineController.add_step`](../../references/sdk/automation_controller_pipelinecontroller.md#add_step) 
    method for complete reference):
 
-   The pipeline’s [first step](#step-1---downloading-the-datae) uses the pre-existing task 
+   The pipeline's [first step](#step-1---downloading-the-data) uses the pre-existing task 
    `pipeline step 1 dataset artifact` in the `examples` project. The step uploads local data and stores it as an artifact.
 
    ```python
@@ -62,11 +63,11 @@ The sections below describe in more detail what happens in the controller task a
    ```
    
    The [second step](#step-2---processing-the-data) uses the pre-existing task `pipeline step 2 process dataset` in 
-   the `examples` project. The second step’s dependency upon the first step’s completion is designated by setting it as 
+   the `examples` project. The second step's dependency upon the first step's completion is designated by setting it as 
    its parent. 
 
-   Custom configuration values specific to this step execution are defined through the `parameter_override` parameter, 
-   where the first step’s artifact is fed into the second step.
+   The `parameter_override` parameter is used to set specific execution configuration for each step. 
+   In the code below, the first step's artifact is fed into the second step.
 
    Special pre-execution and post-execution logic is added for this step through the use of `pre_execute_callback` 
    and `post_execute_callback` respectively. 
@@ -87,9 +88,9 @@ The sections below describe in more detail what happens in the controller task a
    ```
 
    The [third step](#step-3---training-the-network) uses the pre-existing task `pipeline step 3 train model` in the 
-   `examples` projects. The step uses Step 2’s artifacts.
+   `examples` projects. The step uses Step 2's artifacts.
    
-1. Run the pipeline.
+1. Run the pipeline:
    
    ```python
    pipe.start()
@@ -99,10 +100,10 @@ The sections below describe in more detail what happens in the controller task a
    
 ## Step 1 - Downloading the Data
 
-The pipeline’s first step ([step1_dataset_artifact.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/step1_dataset_artifact.py))
+The pipeline's first step ([step1_dataset_artifact.py](https://github.com/allegroai/clearml/blob/master/examples/pipeline/step1_dataset_artifact.py))
 does the following: 
 
-1. Download data using [`StorageManager.get_local_copy`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
+1. Download data using [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy): 
   
    ```python
    # simulate local dataset, download one, so we have something local
@@ -110,10 +111,10 @@ does the following:
        remote_url='https://github.com/allegroai/events/raw/master/odsc20-east/generic/iris_dataset.pkl'
    )
    ```    
-1. Store the data as an artifact named `dataset` using [`Task.upload_artifact`](../../references/sdk/task.md#upload_artifact)
+1. Store the data as an artifact named `dataset` using [`Task.upload_artifact()`](../../references/sdk/task.md#upload_artifact):
    ```python
    # add and upload local file containing our toy dataset
-   task.upload_artifact('dataset', artifact_object=local_iris_pkl)
+   task.upload_artifact(name='dataset', artifact_object=local_iris_pkl)
    ```
    
 ## Step 2 - Processing the Data
@@ -136,7 +137,7 @@ does the following:
    ```
 
 1. Download the data created in the previous step (specified through the `dataset_url` parameter) using 
-   [`StorageManager.get_local_copy`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
+   [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
    
    ```python
    iris_pickle = StorageManager.get_local_copy(remote_url=args['dataset_url'])
@@ -145,10 +146,10 @@ does the following:
 1. Generate testing and training sets from the data and store them as artifacts.
    
    ```python
-   task.upload_artifact('X_train', X_train)
-   task.upload_artifact('X_test', X_test)
-   task.upload_artifact('y_train', y_train)
-   task.upload_artifact('y_test', y_test)
+   task.upload_artifact(name='X_train', artifact_object=X_train)
+   task.upload_artifact(name='X_test', artifact_object=X_test)
+   task.upload_artifact(name='y_train', artifact_object=y_train)
+   task.upload_artifact(name='y_test', artifact_object=y_test)
    ```
    
 ## Step 3 - Training the Network
@@ -166,13 +167,13 @@ does the following:
    task.connect(args)
    ```
    
-1. Clone the base task and enqueue it using [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely).
+1. Clone the base task and enqueue it using [`Task.execute_remotely()`](../../references/sdk/task.md#execute_remotely):
    
    ```python
    task.execute_remotely() 
    ```
    
-1. Access the data created in the previous task.
+1. Access the data created in the previous task:
    
    ```python
    dataset_task = Task.get_task(task_id=args['dataset_task_id'])
@@ -188,14 +189,14 @@ does the following:
 
 **To run the pipeline:**
 
-1. If the pipeline steps tasks do not yet exist, run their code to create the ClearML tasks.
+1. If the pipeline steps tasks do not yet exist, run their code to create the ClearML tasks:
    ```bash
    python step1_dataset_artifact.py
    python step2_data_processing.py
    python step3_train_model.py
    ``` 
    
-1. Run the pipeline controller.
+1. Run the pipeline controller:
    
    ```bash
    python pipeline_from_tasks.py
@@ -209,7 +210,7 @@ does the following:
     
 ## WebApp
 
-When the experiment is executed, the terminal returns the task ID, and links to the pipeline controller task page and 
+When the experiment is executed, the console output displays the task ID, and links to the pipeline controller task page and 
 pipeline page. 
 
 ```
@@ -218,13 +219,13 @@ ClearML results page: https://app.clear.ml/projects/462f48dba7b441ffb34bddb78371
 ClearML pipeline page: https://app.clear.ml/pipelines/462f48dba7b441ffb34bddb783711da7/experiments/bc93610688f242ecbbe70f413ff2cf5f
 ```
 
-The pipeline run’s page contains the pipeline’s structure, the execution status of every step, as well as the run’s 
+The pipeline run's page contains the pipeline's structure, the execution status of every step, as well as the run's 
 configuration parameters and output.
 
 ![Pipeline DAG](../../img/examples_pipeline_from_tasks_DAG.png)
 
-To view a run’s complete information, click **Full details** on the bottom of the **Run Info** panel, which will open 
-the pipeline’s [controller task page](../../webapp/webapp_exp_track_visual.md).
+To view a run's complete information, click **Full details** on the bottom of the **Run Info** panel, which will open 
+the pipeline's [controller task page](../../webapp/webapp_exp_track_visual.md).
 
 Click a step to see its summary information.
 
@@ -232,7 +233,7 @@ Click a step to see its summary information.
 
 ### Console
 
-Click **DETAILS** to view a log of the pipeline controller’s console output.
+Click **DETAILS** to view a log of the pipeline controller's console output.
 
 ![Pipeline console](../../img/examples_pipeline_from_tasks_console.png)
 

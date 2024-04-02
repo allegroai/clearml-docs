@@ -7,7 +7,7 @@ keywords: [mlops, components, Experiment Manager]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/bjWwZAzDxTY?rel=0" 
         title="YouTube video player" 
@@ -26,7 +26,7 @@ This is the experiment manager's UI, and every row you can see here, is a single
 
 We’re currently in our project folder. As you can see, we have our very basic toy example here that we want to keep track of by using ClearML’s experiment manager.
 
-The first thing to do is to install the `clearml` python package in our virtual environment. Installing the package itself, will add 3 commands for you. We’ll cover the `clearml-data` and `clearml-task` commands later. For now the one we need is `clearml-init`
+The first thing to do is to install the `clearml` python package in our virtual environment. Installing the package itself, will add 3 commands for you. We’ll cover the `clearml-data` and `clearml-task` commands later. For now the one we need is `clearml-init`.
 
 If you paid attention in the first video of this series, you’d remember that we need to connect to a ClearML Server to save all our tracked data. The server is where we saw the list of experiments earlier. This connection is what `clearml-init` will set up for us. When running the command it’ll ask for your server API credentials.
 
@@ -68,5 +68,5 @@ Scalars such as loss or accuracy will be plotted on the same axes which makes co
 
 Finally, plots such as a confusion matrix and debug samples can be compared too. For those times when you just want to confirm that the new model is better with your own eyes.
 
-Now that you’re ready to start tracking and managing your experiments, we’ll cover some more advanced features and concepts of the experiment manager in the next video. But if you want to get started right now, head over to clear.ml and join our community [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A) if you need any help.
+Now that you’re ready to start tracking and managing your experiments, we’ll cover some more advanced features and concepts of the experiment manager in the next video. But if you want to get started right now, head over to clear.ml and join our community [Slack channel](https://joinslack.clear.ml) if you need any help.
 </Collapsible>

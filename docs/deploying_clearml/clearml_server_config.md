@@ -55,7 +55,11 @@ For example, a domain is called `mydomain.com`, and a subdomain named `clearml.m
 * `api.clearml.mydomain.com` (API server)
 * `files.clearml.mydomain.com` (file server)
 
-Accessing the **ClearML Web UI** with `app.clearml.mydomain.com` will automatically send API requests to `api.clearml.mydomain.com`.
+Accessing the [ClearML Web UI](../webapp/webapp_overview.md) with `app.clearml.mydomain.com` will automatically send API requests to `api.clearml.mydomain.com`.
+
+:::note
+If using Cloudflare Tunnels as a reverse proxy, create three tunnels, one for each respective service. Importantly, the SSL certs (in the free tier) will only be valid for one level of subdomain, so instead use `app.mydomain.com`, `api.mydomain.com`, and `files.mydomain.com` in order to avoid [version-cipher-mismatch errors](https://developers.cloudflare.com/ssl/troubleshooting/version-cipher-mismatch/#multi-level-subdomains).
+:::
 
 ## ClearML Server Feature Configurations
 
@@ -378,7 +382,7 @@ options.
 
 ### Custom UI Context Menu Actions
 
-:::note Enterprise Feature
+:::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
 :::
 

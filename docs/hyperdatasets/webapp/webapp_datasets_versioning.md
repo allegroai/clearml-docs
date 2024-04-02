@@ -19,7 +19,7 @@ The tree view shows the lineage of the dataset's versions.
 
 ![Versions tree view](../../img/hyperdatasets/web-app/dataset_simple_adv_02.png)
 
-Use the search bar to find specific versions. You can query by version name or version description. The search returns 
+Use the search bar to find specific versions. You can query by version name, version description, or version ID. The search returns 
 all versions that match the query.
 
 In tree view, parent versions that do not match the query where a child version does appear in a muted color.
@@ -30,12 +30,19 @@ In tree view, parent versions that do not match the query where a child version 
 
 Access dataset version actions, by right-clicking a version, or through the menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> (available on hover).
 
-* **Rename** - Change the version’s name
+* **Rename** - Change the version's name
 * **Create New Version** - Creates a child version of a *Published* dataset version. The new version is created in a *draft*
   state, and inherits all the parent version's frames
 * **Delete** - Delete the version. Only *Draft* versions can be deleted.  
 * **Publish** - Make a *Draft* version read-only to preserve its contents. 
  
+:::tip Publishing versions
+When publishing a version, you can create an additional working copy. The new version is created in a *draft* state, and 
+inherits all the published version's frames. 
+
+![Publish version modal](../../img/hyperdataset_publish_version.png)
+:::
+
 ## Version Data
 A selected dataset version's information and contents are presented on the main section of the page, to the right of 
 the dataset's version list.
@@ -51,7 +58,7 @@ The **Frames** tab displays the contents of the selected dataset version.
 
 View the version's frames as thumbnail previews or in a table. Use the view toggle to switch between thumbnail 
 view <img src="/docs/latest/icons/ico-grid-view.svg" alt="thumbnail view" className="icon size-md space-sm" /> and 
-table view <img src="/docs/latest/icons/ico-table-view.svg" alt="table view" className="icon size-md space-sm" /> . 
+table view <img src="/docs/latest/icons/ico-table-view.svg" alt="table view" className="icon size-md space-sm" />. 
 
 Use the thumbnail view for a visual preview of the version's frames. You can increase <img src="/docs/latest/icons/ico-zoom-in.svg" alt="Zoom in" className="icon size-md space-sm" /> 
 and decrease <img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out" className="icon size-md space-sm" /> the size of 
@@ -59,7 +66,7 @@ the previews.
 
 ![Frame browser thumbnails](../../img/hyperdatasets/frame_browser_thumbnails.png)
 
-Use the table view to list the version’s frames in a customizable table. Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
+Use the table view to list the version's frames in a customizable table. Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" />
 for column customization options.
 
 ![Frame browser list](../../img/hyperdatasets/frame_browser_list.png)
@@ -115,7 +122,7 @@ Multiple frame filters are applied with a logical OR operator.
 
 For example, the dataset version in the image below has two frame filters. "Frame Filter 1" has the same two rules 
 described in the example above. "Frame Filter 2" specifies an ROI rule for the frame to contain an ROI with the label 
-`dog`. So the frames returned are those that match ALL of Frame Filter 1’s rules OR ALL of Frame Filter 2’s rules.  
+`dog`. So the frames returned are those that match ALL of Frame Filter 1's rules OR ALL of Frame Filter 2's rules.  
 
 ![Multiple filters](../../img/hyperdatasets/multiple_filters.png)
 
@@ -186,7 +193,7 @@ Use the **Grouping** menu to select one of the following options:
 * Group by URL - Show a single preview for all FrameGroups with the same context   
 
 #### Preview Source
-When using multi-source FrameGroups, users can choose which of the FrameGroups’ sources will be displayed as the preview. 
+When using multi-source FrameGroups, users can choose which of the FrameGroups' sources will be displayed as the preview. 
 
 Select a source from the **PREVIEW SOURCE** menu.
 Choose the `Default preview source` option to present the first available source.
@@ -198,6 +205,7 @@ If a FrameGroup doesn't have the selected preview source, the preview displays t
 ## Statistics
 
 The **Statistics** tab displays a dataset version's label usage stats. 
+* Dataset total count - number of annotations, annotated frames, and total frames  
 * Each label is listed along with the number of times it was used in the version
 * The pie chart visualizes these stats. Hover over a chart slice and its associated label and usage 
   percentage will appear at the center of the chart. 

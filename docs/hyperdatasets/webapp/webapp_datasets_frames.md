@@ -3,17 +3,16 @@ title: Working with Frames
 ---
 
 View and edit SingleFrames in the Dataset page. After selecting a Hyper-Dataset version, the **Version Browser** shows a sample 
-of frames and enables viewing SingleFrames and FramesGroups, and edit SingleFrames, in the [frame viewer](#frame-viewer). 
-Before opening the frame viewer, you can filter the frames by applying [simple](#simple-frame-filtering) or [advanced](#advanced-frame-filtering) 
+of frames and enables viewing SingleFrames and FramesGroups, and editing SingleFrames, in the [frame viewer](#frame-viewer). 
+Before opening the frame viewer, you can filter the frames by applying [simple](webapp_datasets_versioning.md#simple-frame-filtering) or [advanced](webapp_datasets_versioning.md#advanced-frame-filtering) 
 filtering logic. 
 
 ![Dataset page](../../img/hyperdatasets/web-app/dataset_versions.png)
 
 ## Frame Viewer
 
-Frame viewer lets you view and edit annotations which can be FrameGroup objects (Regions of Interest) and FrameGroup 
-labels applied to the entire frame not a region of the frame, the frame details (see [frames](../frames.md)), 
-frame metadata, the raw data source URI, as well as providing navigation and viewing tools. 
+Use the frame viewer to view and edit annotations (ROIs and frame labels), frame details (see [frames](../frames.md)), 
+and frame metadata, as well as view frame masks of your dataset version frames.
 
 ![Frame viewer](../../img/hyperdatasets/web-app/dataset_example_frame_editor.png)
 
@@ -36,7 +35,8 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 |<img src="/docs/latest/icons/ico-zoom-in.svg" alt="Zoom in icon" className="icon size-md space-sm" />|Zoom in| **+** or Ctrl + Mouse wheel| 
 |<img src="/docs/latest/icons/ico-zoom-out.svg" alt="Zoom out icon" className="icon size-md space-sm" />|Zoom out| **-** or Ctrl + Mouse wheel |
 |Percentage textbox|Zoom percentage| <img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
-
+|<img src="/docs/latest/icons/ico-shared-item.svg" alt="Copy URL" className="icon size-md space-sm" />| Copy frame URL. A direct link to view the current frame|<img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> | 
+|<img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-md space-sm" />|Refresh version preview|<img src="/docs/latest/icons/ico-optional-no.svg" alt="Not applicable" className="icon size-md center-md" /> |
 
 #### Additional Keyboard Shortcuts
 
@@ -68,7 +68,7 @@ Use frame viewer controls to navigate between frames in a Hyper-Dataset Version,
 
 **To view / edit a frame in the frame editor**
 
-1. Locate your frame by applying a [simple frame filter](#simple-frame-filtering) or [advanced frame filter](#advanced-frame-filtering), and clicking **LOAD MORE**, if required.
+1. Locate your frame by applying a [simple frame filter](webapp_datasets_versioning.md#simple-frame-filtering) or [advanced frame filter](webapp_datasets_versioning.md#advanced-frame-filtering), and clicking **LOAD MORE**, if required.
 1. Click the frame thumbnail. The frame editor appears.
 1. Do any of the following:
     * View frame details, including:
@@ -177,11 +177,11 @@ or the arrow keys on the keyboard). Closing the frame editor will prompt you to 
 | Icon (when applicable) | Action | Description |
 |---|---|---|
 || Move annotation | Click on a bounded area and drag it. |
-|| Resize annotation| Select an annotation, then click on a bounded area’s vertex and drag it. |	
+|| Resize annotation| Select an annotation, then click on a bounded area's vertex and drag it. |	
 |<img src="/docs/latest/icons/ico-metadata.svg" alt="edit metadata" className="icon size-md space-sm" />|Edit metadata|Hover over an annotation in the list and click the icon to open the edit window. Input the metadata dictionary in JSON format. This metadata is specific to the selected annotation, not the entire frame.|
 |<img src="/docs/latest/icons/ico-lock-open.svg" alt="Lock annotation" className="icon size-md space-sm" />|Lock / Unlock annotation |Click the button on a specific annotation to make it uneditable. You can also click the button on top of the annotations list to lock all annotations in the frame.|
-|<img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" />|Delete annotation|Click the annotation or bounded area in the frame and then click the button to delete the annotation.|
-|<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />|Show/hide all annotations |Click the button to view the frame without annotations. When annotations are hidden, they can’t be modified. |
+|<img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-md space-sm" />|Delete annotation|Click the annotation or bounded area in the frame and then click the button to delete the annotation.|
+|<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />|Show/hide all annotations |Click the button to view the frame without annotations. When annotations are hidden, they can't be modified. |
 ||Delete label |In the relevant annotation, click **x** on the label you want to remove.| 
 
 ### Frame Labels

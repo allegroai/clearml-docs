@@ -7,7 +7,7 @@ keywords: [mlops, components, automation, orchestration, pipeline]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/prZ_eiv_y3c?rel=0" 
         title="YouTube video player" 
@@ -60,5 +60,5 @@ When we select a specific step, we can see its inputs and outputs as well as its
 
 Finally, we can also clone the whole pipeline and change its parameters by clicking on the **+ New Run** button. This is the most powerful feature of all, as it allows us to really quickly rerun the whole pipeline with different parameters from the UI. The agents will take care of the rest!
 
-In the next video of this Getting Started series, we’ll take a look at ClearML Data, for real this time. In the meantime, spin up some pipeline controllers yourself for free at [app.clear.ml](https://app.clear.ml) and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A), if you need any help.
+In the next video of this Getting Started series, we’ll take a look at ClearML Data, for real this time. In the meantime, spin up some pipeline controllers yourself for free at [app.clear.ml](https://app.clear.ml) and don’t forget to join our [Slack channel](https://joinslack.clear.ml), if you need any help.
 </Collapsible>

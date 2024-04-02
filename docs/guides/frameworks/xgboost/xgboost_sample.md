@@ -11,11 +11,11 @@ classification dataset using XGBoost
 * Scores accuracy using scikit-learn
 * ClearML automatically logs the input model registered by XGBoost, and the output model (and its checkpoints), 
   feature importance plot, and tree plot created with XGBoost. 
-* Creates an experiment named `XGBoost simple example`, which is associated with the `examples` project.
+* Creates an experiment named `XGBoost simple example` in the `examples` project.
 
 ## Plots
 
-The feature importance plot and tree plot appear in the project's page in the **ClearML web UI**, under 
+The feature importance plot and tree plot appear in the experiment's page in the **ClearML web UI**, under 
 **PLOTS**.
 
 ![Feature importance plot](../../../img/examples_xgboost_sample_06.png)
@@ -31,12 +31,12 @@ All other console output appear in **CONSOLE**.
 
 ## Artifacts
 
-Models created by the experiment appear in the experiment’s **ARTIFACTS** tab. ClearML automatically logs and tracks 
+Models created by the experiment appear in the experiment's **ARTIFACTS** tab. ClearML automatically logs and tracks 
 models and any snapshots created using XGBoost. 
 
 ![image](../../../img/examples_xgboost_sample_10.png)
 
-Clicking on the model's name takes you to the [model’s page](../../../webapp/webapp_model_viewing.md), where you can 
-view the model’s details and access the model.
+Clicking on the model's name takes you to the [model's page](../../../webapp/webapp_model_viewing.md), where you can 
+view the model's details and access the model.
 
 ![image](../../../img/examples_xgboost_sample_03.png)

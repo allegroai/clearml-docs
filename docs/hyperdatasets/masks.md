@@ -26,15 +26,15 @@ In the UI, you can view the mapping in a dataset version's [Metadata](webapp/web
 
 ![Dataset metadata panel](../img/hyperdatasets/dataset_metadata.png)
 
-When viewing a frame with a mask corresponding with the version’s mask-label mapping, the UI arbitrarily assigns a color 
-to each label . The color assignment can be [customized](webapp/webapp_datasets_frames.md#labels).
+When viewing a frame with a mask corresponding with the version's mask-label mapping, the UI arbitrarily assigns a color 
+to each label. The color assignment can be [customized](webapp/webapp_datasets_frames.md#labels).
 
 For example:
 * Original frame image:
 
   ![Frame without mask](../img/hyperdatasets/dataset_pixel_masks_1.png)
 
-* Frame image with the semantic segmentation mask enabled. Labels are applied according to the dataset version’s 
+* Frame image with the semantic segmentation mask enabled. Labels are applied according to the dataset version's 
   mask-label mapping:
 
   ![Frame with semantic seg mask](../img/hyperdatasets/dataset_pixel_masks_2.png)
@@ -44,7 +44,7 @@ The frame's sources array contains a masks list of dictionaries that looks somet
 ```editorconfig
 {
  "id": "<framegroup_id>",
- "timestamp": "<timestamp>" ,
+ "timestamp": "<timestamp>",
  "context_id": "car_1",
  "sources": [
    {
@@ -66,7 +66,7 @@ The frame's sources array contains a masks list of dictionaries that looks somet
 }
 ```
 
-The masks dictionary includes the frame's masks’ URIs and IDs.
+The masks dictionary includes the frame's masks' URIs and IDs.
 
 ## Alpha Channel Masks
 For alpha channel, mask RGB pixel values are interpreted as opacity values so that when the mask is applied, only the 
@@ -133,13 +133,13 @@ version.set_masks_labels(
 )
 ```
 
-The relevant label is applied to all masks in the version according to the version’s mask-label mapping dictionary.
+The relevant label is applied to all masks in the version according to the version's mask-label mapping dictionary.
 
 ### Registering Frames with Multiple Masks
-Frames can contain multiple masks. To add multiple masks, use the SingleFrame’s `masks_source` property. Input one of 
+Frames can contain multiple masks. To add multiple masks, use the SingleFrame's `masks_source` property. Input one of 
 the following:
 * A dictionary with mask string ID keys and mask URI values
-* A list of mask URIs. Number IDs are automatically assigned to the masks ( "00", "01", etc.)   
+* A list of mask URIs. Number IDs are automatically assigned to the masks ("00", "01", etc.)   
 
 ```python
 frame = SingleFrame(source='https://s3.amazonaws.com/allegro-datasets/cityscapes/leftImg8bit_trainvaltest/leftImg8bit/val/frankfurt/frankfurt_000000_000294_leftImg8bit.png',)

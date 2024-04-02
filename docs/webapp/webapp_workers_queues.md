@@ -1,14 +1,50 @@
 ---
-title: Workers and Queues
+title: Orchestration
 ---
 
-With the **Workers and Queues** page, users can:
+With the **Orchestration** page, you can:
 
+* Use Cloud autoscaling apps to define your compute resource budget, and have the apps automatically manage your resource 
+consumption as needed–-with no code (available under the ClearML Pro plan)
 * Monitor resources (CPU and GPU, memory, video memory, and network usage) used by the experiments / Tasks that workers
   execute
 * View workers and the queues they listen to
-* Create and rename queues; delete empty queues; monitor queue utilization
-* Reorder, move, and remove experiments from queues
+* Manage worker queues
+  * Create and rename queues
+  * Delete empty queues
+  * Monitor queue utilization
+  * Reorder, move, and remove experiments from queues
+* Monitor all of your available and in-use compute resources (available in the ClearML Enterprise plan. See [Orchestration Dashboard](webapp_orchestration_dash.md))
+
+## Autoscalers
+
+:::info Pro Plan Offering
+The ClearML Autoscaler apps are available under the ClearML Pro plan
+:::
+
+Use the **AUTOSCALERS** tab to access ClearML's cloud autoscaling applications:
+
+* GPU Compute (powered by Genesis Cloud)
+* AWS Autoscaler
+* GCP Autoscaler
+
+The autoscalers automatically spin up or down cloud instances as needed and according to a budget that you set, so you 
+pay only for the time that you actually use the machines.
+
+The **AWS** and **GCP** autoscaler applications will manage instances on your behalf in your cloud account. When 
+launching an app instance, you will provide your cloud service credentials so the autoscaler can access your account.
+
+The **GPU Compute** application provides on-demand GPU instances powered by Genesis. All you need to do is define your 
+compute resource budget, and you're good to go.
+
+Once you launch an autoscaler app instance, you can monitor the autoscaler's activity and your cloud usage in the instance's
+dashboard.
+
+For more information about how autoscalers work, see the [Cloud Autoscaling Overview](../cloud_autoscaling/autoscaling_overview.md).
+For more information about a specific autoscaler, see [GPU Compute](applications/apps_gpu_compute.md), [AWS Autoscaler](applications/apps_aws_autoscaler.md), 
+and/or [GCP Autoscaler](applications/apps_gcp_autoscaler.md).
+
+![Cloud autoscalers](../img/webapp_orchestration_autoscalers.png)
 
 ## Workers
 
@@ -23,21 +59,21 @@ The worker table shows the currently available workers and their current executi
 * Training iteration.
 
 
-Clicking on a worker will open the worker’s details panel and replace the graph with that worker’s resource utilization 
-information. The resource metric being monitored can be selected through the menu at the graph’s top left corner:
+Clicking on a worker will open the worker's details panel and replace the graph with that worker's resource utilization 
+information. The resource metric being monitored can be selected through the menu at the graph's top left corner:
 * CPU and GPU Usage
 * Memory Usage
 * Video Memory Usage
 * Network Usage.
 
-The worker’s details panel includes the following two tabs:
+The worker's details panel includes the following two tabs:
 * **INFO** - worker information:
     * Worker Name
     * Update time - The last time the worker reported data
     * Current Experiment - The experiment currently being executed by the worker
     * Experiment Runtime - How long the currently executing experiment has been running
     * Experiment iteration - The last reported training iteration for the experiment
-* **QUEUES** -  Information about the queues that the worker is assigned to:
+* **QUEUES** - Information about the queues that the worker is assigned to:
     * Queue - The name of the Queue
     * Next experiment - The next experiment available in this queue
     * In Queue - The number of experiments currently enqueued
@@ -62,7 +98,7 @@ The queue table shows the following queue information:
 To create a new queue - Click **+ NEW QUEUE** (top left).
 
 Hover over a queue and click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-md space-sm" /> 
-to copy the queue’s ID. 
+to copy the queue's ID. 
 
 ![image](../img/4100.png)
 
@@ -72,24 +108,24 @@ to access queue actions:
 ![Queue context menu](../img/webapp_workers_queues_context.png)
    
 * Delete - Delete the queue. Any pending tasks will be dequeued.
-* Rename - Change the queue’s name
+* Rename - Change the queue's name
 * Clear - Remove all pending tasks from the queue
 * Custom action - The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
   appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions)
   
-Clicking on a queue will open the queue’s details panel and replace the graphs with that queue’s statistics.
+Clicking on a queue will open the queue's details panel and replace the graphs with that queue's statistics.
 
-The queue’s details panel includes the following two tabs: 
+The queue's details panel includes the following two tabs: 
 * **EXPERIMENTS** - A list of experiments in the queue. You can reorder and remove enqueued experiments. See 
   [Controlling Queue Contents](#controlling-queue-contents).
-* **WORKERS**  - Information about the workers assigned to the queue:
+* **WORKERS** - Information about the workers assigned to the queue:
   * Name - Worker name
-  * IP - Worker’s IP
+  * IP - Worker's IP
   * Currently Executing - The experiment currently being executed by the worker
 
 ### Controlling Queue Contents
 
-Click on an experiment’s menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> 
+Click on an experiment's menu button <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" /> 
 in the **EXPERIMENTS** tab to reorganize your queue:
 
 ![Queue experiment's menu](../img/workers_queues_experiment_actions.png)  

@@ -8,7 +8,7 @@ The following page goes over how to set up and upgrade `clearml-serving`.
 
 * ClearML-Server : Model repository, Service Health, Control plane
 * Kubernetes / Single-instance Machine : Deploying containers
-* CLI : Configuration & model deployment interface
+* CLI : Configuration and model deployment interface
 
 ## Initial Setup
 1. Set up your [ClearML Server](../deploying_clearml/clearml_server.md) or use the 
@@ -66,7 +66,7 @@ The following page goes over how to set up and upgrade `clearml-serving`.
    cd docker && docker-compose --env-file example.env -f docker-compose-triton.yml up 
    ```
    
-   If running on a GPU instance w/ Triton support (keras/pytorch/onnx etc.), use the triton gpu docker-compose file:
+   If running on a GPU instance with Triton support (keras/pytorch/onnx etc.), use the triton gpu docker-compose file:
    ```bash
    cd docker && docker-compose --env-file example.env -f docker-compose-triton-gpu.yml up
    ```
@@ -78,8 +78,8 @@ and the model inference itself will be executed on the Triton Engine container.
 
 ## Advanced Setup - S3/GS/Azure Access (Optional)
 To add access credentials and allow the inference containers to download models from your S3/GS/Azure object-storage, 
-add the respective environment variables to your env files (example.env). See further details on configuring the storage 
-access [here](../integrations/storage.md#configuring-storage).
+add the respective environment variables to your env files (example.env). For further details, see 
+[Configuring Storage](../integrations/storage.md#configuring-storage).
 
 ```
 AWS_ACCESS_KEY_ID
@@ -98,7 +98,7 @@ AZURE_STORAGE_KEY
 
 1. Take down the serving containers (`docker-compose` or k8s)
 1. Update the `clearml-serving` CLI `pip3 install -U clearml-serving`
-1. Re-add a single existing endpoint with `clearml-serving model add ... ` (press yes when asked). It will upgrade the 
+1. Re-add a single existing endpoint with `clearml-serving model add ...` (press yes when asked). It will upgrade the 
    `clearml-serving` session definitions
 1. Pull the latest serving containers (`docker-compose pull ...` or k8s)
 1. Re-spin serving containers (`docker-compose` or k8s)

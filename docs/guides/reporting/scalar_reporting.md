@@ -6,10 +6,10 @@ The [scalar_reporting.py](https://github.com/allegroai/clearml/blob/master/examp
 demonstrates explicit scalar reporting. ClearML reports scalars in the **ClearML Web UI** **>** experiment details 
 **>** **SCALARS** tab. 
 
-When the script runs, it creates an experiment named `scalar reporting`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `scalar reporting` in the `examples` project.
 
-To reports scalars, call the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
-method. To report more than one series on the same plot, use the same `title` argument. For different plots, use different 
+To reports scalars, call [`Logger.report_scalar()`](../../references/sdk/logger.md#report_scalar). 
+To report more than one series on the same plot, use the same `title` argument. For different plots, use different 
 `title` arguments. 
 
 ```python

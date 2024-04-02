@@ -3,35 +3,30 @@ title: Comparing Dataviews
 ---
 
 In addition to [ClearML's comparison features](../../webapp/webapp_exp_comparing.md), the ClearML Enterprise WebApp 
-provides a deep comparison of input data selection criteria of experiment Dataviews, enabling to easily locate, visualize, and analyze differences.
+supports comparing input data selection criteria of experiment [Dataviews](../dataviews.md), enabling to easily locate, visualize, and analyze differences.
 
 ## Selecting Experiments 
 
-**To select experiments to compare:**
+To select experiments to compare:
+1. Go to an experiments table that includes the experiments to be compared.
+1. Select the experiments to compare. Once multiple experiments are selected, the batch action bar appears.
+1. In the batch action bar, click **COMPARE**. 
 
-1. In the experiment's table, select the checkbox of each experiment to compare, or select the top checkbox for all experiments. 
-   After selecting the second checkbox, the bottom bar appears.
-1. In the bottom bar, click **COMPARE**. The comparison page appears, showing a column for each experiment and differences with 
-   a highlighted background color. The experiment on the left is the base experiment. Other experiments compare to the base experiment.
+The comparison page opens in the **DETAILS** tab, showing a column for each experiment. 
 
-## Dataviews (Input Data)
+## Dataviews
 
-**To locate the input data differences:**
+In the **Details** tab, you can view differences in the experiments' nominal values. Each experiment's information is 
+displayed in a column, so each field is lined up side-by-side. Expand the **DATAVIEWS** 
+section to view all the Dataview fields side-by-side (filters, iterations, label enumeration, etc.). The differences between the 
+experiments are highlighted. Obscure identical fields by switching on the `Hide Identical Fields` toggle. 
 
-1. Click the **DETAILS** tab **>** Expand the **DATAVIEWS** section, or, in the header, click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Previous diff" className="icon size-md" /> 
-   (Previous diff) or <img src="/docs/latest/icons/ico-next-diff.svg" alt="Next diff" className="icon size-md space-sm" /> (Next diff).
-1. Expand any of the following sections:
+The experiment on the left is used as the base experiment, to which the other experiments are compared. You can set a 
+new base experiment 
+in one of the following ways:
+* Click <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> 
+on the top right of the experiment that will be the new base.
+* Click on the new base experiment and drag it all the way to the left
 
-* **Augmentation** - On-the-fly data augmentation.
-* **Filtering** 
-  * Frame inclusion and exclusion rules based on ROI labels
-  * Frame metadata
-  * Frame sources 
-  * Number of instances of a rule matching ROIs in each frame
-  * Confidence levels.
-* **Iteration** - Iteration controls.
-* **Labels Enumeration** - Class label enumeration.
-* **Mapping** - ROI label translation.
-* **View**
 
-![image](../../img/hyperdatasets/web-app/compare_dataviews.png)
+![Dataview comparison](../../img/hyperdatasets/web-app/compare_dataviews.png)

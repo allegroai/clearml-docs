@@ -1,5 +1,5 @@
 ---
-title: ClearML Task
+title: ClearML Task CLI
 ---
 
 Using only the command line and **zero** additional lines of code, easily track your work and integrate ClearML with your 
@@ -19,10 +19,10 @@ line arguments, Python module dependencies, and a requirements.txt file!
 
 1. Execute `clearml-task`, specifying the ClearML target project and task name, along with your script (and repository / commit / branch). 
    Optionally, specify an execution queue and Docker image to use.
-1. `clearml-task` does its magic! It creates a new task on the [ClearML Server](../deploying_clearml/clearml_server.md), 
+1. `clearml-task` does its magic! It creates a new [ClearML Task](../fundamentals/task.md), 
    and, if so directed, enqueues it for execution by a ClearML Agent.
 1. While the Task is running on the remote machine, all its console outputs are logged in real-time, alongside your 
-   TensorBoard and matplotlib. You can track your script’s progress and results in the [ClearML Web UI](../webapp/webapp_overview.md) 
+   TensorBoard and matplotlib. You can track your script's progress and results in the [ClearML Web UI](../webapp/webapp_overview.md) 
    (a link to your task details page in the ClearML Web UI is printed as ClearML Task creates the task).
    
 ## Execution Configuration
@@ -31,7 +31,7 @@ Specify a Docker container to run the code in with the `--docker <docker_image>`
 The ClearML Agent pulls it from Docker Hub or a Docker artifactory automatically.
 
 ### Package Dependencies
-`clearml-task` automatically finds the requirements.txt file in remote repositories. 
+`clearml-task` automatically finds the `requirements.txt` file in remote repositories. 
 
 If a local script requires certain packages, or the remote repository doesn't have a `requirements.txt` file,
 manually specify the required Python packages using `--packages "<package_name>"`, for example `--packages "keras" "tensorflow>2.2"`.
@@ -80,7 +80,7 @@ errors in identifying the correct default branch.
 </div>
 
 ## Usage
-These commands demonstrate a few useful use cases for `clearml-task`
+These commands demonstrate a few useful use cases for `clearml-task`.
 
 ### Executing Code from a Remote Repository 
 

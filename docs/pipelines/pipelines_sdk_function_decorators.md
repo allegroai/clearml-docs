@@ -4,7 +4,7 @@ title: PipelineDecorator
 
 ## Creating Pipelines Using Function Decorators
 
-Use the [PipelineDecorator](../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator) 
+Use the [`PipelineDecorator`](../references/sdk/automation_controller_pipelinecontroller.md#class-automationcontrollerpipelinedecorator) 
 class to create pipelines from your existing functions. Use [`@PipelineDecorator.component`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent) 
 to denote functions that comprise the steps of your pipeline, and [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline) 
 for your main pipeline execution logic function.
@@ -12,7 +12,13 @@ for your main pipeline execution logic function.
 ## @PipelineDecorator.pipeline
 
 Using the [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline)
-decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller
+decorator transforms the function which implements your pipeline's execution logic to a ClearML pipeline controller, 
+an independently executed task.
+
+:::tip Multi-file Pipeline Implementation 
+In the case your pipeline is implemented across multiple files, make sure the pipeline step implementation (files containing
+functions decorated with `@PipelineDecorator.component`) is imported before `@PipelineDecorator.pipeline`. 
+:::
 
 ```python
 @PipelineDecorator.pipeline(
@@ -27,12 +33,13 @@ def main(pickle_url, mock_parameter='mock'):
     print(f"Accuracy={accuracy}%")
 ```
 
+
 ### Arguments
 
 * `name` - The name for the pipeline controller task
 * `project` - The ClearML project where the pipeline controller task is stored
-* `version` -  Numbered version string (e.g. 1.2.3). If `auto_version_bump` is set to `True`, the version number is 
-  automatically bumped if the same version already exists and the pipeline code has changed
+* `version` - Numbered version string (for example, `1.2.3`). If not set, find the pipeline's latest version and increment 
+  it. If no such version is found, defaults to `1.0.0` 
 * `default_queue` - The default [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) in which to enqueue all pipeline steps (unless otherwise specified in the pipeline step).
 * `args_map` - Map arguments to their [configuration section](../fundamentals/hyperparameters.md#webapp-interface) in 
   the following format: `{'section_name':['param_name']]}`. For example, the pipeline in the code above will store the 
@@ -53,8 +60,11 @@ def main(pickle_url, mock_parameter='mock'):
 * `pipeline_execution_queue` - The queue in which to enqueue the pipeline controller task. The default value is the 
   `services` queue. To run the pipeline logic locally while the components are executed remotely, pass 
   `pipeline_execution_queue=None`
+* `skip_global_imports` – If `True`, global imports will not be included in the steps’ execution. If `False` (default), 
+  all global imports will be automatically imported at the beginning of each step’s execution.
 
-When the function is called, a corresponding ClearML Controller Task is created: its arguments are logged as the task’s 
+
+When the function is called, a corresponding ClearML Controller Task is created: its arguments are logged as the task's 
 parameters. When launching a new pipeline run from the [UI](../webapp/pipelines/webapp_pipeline_page.md), you can modify their values for the new run.  
 
 ![Pipeline new run](../img/pipelines_new_run.png)
@@ -63,9 +73,14 @@ parameters. When launching a new pipeline run from the [UI](../webapp/pipelines/
 Using the [`@PipelineDecorator.component`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorcomponent) 
 decorator transforms a function into a ClearML pipeline step when called from a pipeline controller.
 
-When the pipeline controller calls a pipeline step, a corresponding ClearML task is created. For this reason, each 
-function which makes up a pipeline step needs to be self-contained. All package imports inside the function are automatically 
-logged as required packages for the pipeline execution step. 
+When the pipeline controller calls a pipeline step, a corresponding ClearML task is created. 
+
+:::tip Package Imports
+In the case that the `skip_global_imports` parameter of [`@PipelineDecorator.pipeline`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorpipeline) 
+is set to `False`, all global imports will be automatically imported at the beginning of each step's execution. 
+Otherwise, if set to `True`, make sure that each function which makes up a pipeline step contains package imports, which 
+are automatically logged as required packages for the pipeline execution step.
+:::
 
 ```python
 from clearml.automation.controller import PipelineDecorator
@@ -84,8 +99,9 @@ def step_one(pickle_data_url: str, extra: int = 43):
     data_frame['target'] = iris['target']
     return data_frame
 ```
+
 ### Arguments
-* `return_values` - The artifact names for the step’s corresponding ClearML task to store the step’s returned objects. 
+* `return_values` - The artifact names for the step's corresponding ClearML task to store the step's returned objects. 
   In the example above, a single object is returned and stored as an artifact named `data_frame`
 * `name` (optional) - The name for the pipeline step. If not provided, the function name is used 
 * `cache` - If `True`, the pipeline controller checks if a step with the same code (including setup, see task [Execution](../webapp/webapp_exp_track_visual.md#execution) 
@@ -93,7 +109,7 @@ def step_one(pickle_data_url: str, extra: int = 43):
   instead of rerunning the step. 
 * `packages` - A list of required packages or a local requirements.txt file. Example: `["tqdm>=2.1", "scikit-learn"]` or 
   `"./requirements.txt"`. If not provided, packages are automatically added based on the imports used inside the function.
-* `execution_queue` (Optional) - Queue in which to enqueue the specific step. This overrides the queue set with the 
+* `execution_queue` (optional) - Queue in which to enqueue the specific step. This overrides the queue set with the 
   [`PipelineDecorator.set_default_execution_queue method`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorset_default_execution_queue)
   method.
 * `continue_on_fail` - If `True`, a failed step does not cause the pipeline to stop (or marked as failed). Notice, that 
@@ -106,11 +122,11 @@ def step_one(pickle_data_url: str, extra: int = 43):
   * Examples:
     * remote url: `"https://github.com/user/repo.git"`
     * local repo copy: `"./repo"` -> will automatically store the remote repo url and commit ID based on the locally cloned copy
-* `repo_branch` (Optional) - Specify the remote repository branch (Ignored, if local repo path is used)
-* `repo_commit` (Optional) - Specify the repository commit ID (Ignored, if local repo path is used)
-* `helper_functions` (Optional) - A list of helper functions to make available for the standalone pipeline step. By default, the pipeline step function has no access to any of the other functions, by specifying additional functions here, the remote pipeline step could call the additional functions.
+* `repo_branch` (optional) - Specify the remote repository branch (ignored, if local repo path is used)
+* `repo_commit` (optional) - Specify the repository commit ID (ignored, if local repo path is used)
+* `helper_functions` (optional) - A list of helper functions to make available for the standalone pipeline step. By default, the pipeline step function has no access to any of the other functions, by specifying additional functions here, the remote pipeline step could call the additional functions.
   Example, assuming you have two functions, `parse_data()` and `load_data()`: `[parse_data, load_data]`
-* `parents` – Optional list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
+* `parents` (optional) - A list of parent steps in the pipeline. The current step in the pipeline will be sent for execution only after all the parent steps have been executed successfully.
 * `retry_on_failure` - Number of times to retry step in case of failure. You can also input a callable function in the 
    following format:
 
@@ -129,8 +145,8 @@ def step_one(pickle_data_url: str, extra: int = 43):
   decremented by 1. If the function returns `False`, the node is not retried.
   
 * Callbacks - Control pipeline execution flow with callback functions 
-  * `pre_execute_callback` & `post_execute_callback` - Control pipeline flow with callback functions that can be called 
-    before and/or after a step’s execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback--post_execute_callback).
+  * `pre_execute_callback` and `post_execute_callback` - Control pipeline flow with callback functions that can be called 
+    before and/or after a step's execution. See [here](pipelines_sdk_tasks.md#pre_execute_callback-and-post_execute_callback).
   * `status_change_callback` - Callback function called when the status of a step changes. Use `node.job` to access the 
   `ClearmlJob` object, or `node.job.task` to directly access the Task object. The signature of the function must look like this:
     ```python
@@ -142,14 +158,14 @@ def step_one(pickle_data_url: str, extra: int = 43):
       pass
     ```
 
-Additionally, you can enable automatic logging of a step’s metrics / artifacts / models to the pipeline task using the 
+Additionally, you can enable automatic logging of a step's metrics / artifacts / models to the pipeline task using the 
 following arguments:
-* `monitor_metrics` (Optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
+* `monitor_metrics` (optional) - Automatically log the step's reported metrics also on the pipeline Task. The expected 
   format is one of the following:
   * List of pairs metric (title, series) to log: [(step_metric_title, step_metric_series), ]. Example: `[('test', 'accuracy'), ]`
   * List of tuple pairs, to specify a different target metric to use on the pipeline Task: [((step_metric_title, step_metric_series), (target_metric_title, target_metric_series)), ].
   Example: `[[('test', 'accuracy'), ('model', 'accuracy')], ]`
-* `monitor_artifacts` (Optional) - Automatically log the step's artifacts on the pipeline Task. 
+* `monitor_artifacts` (optional) - Automatically log the step's artifacts on the pipeline Task. 
   * Provided a list of 
   artifact names created by the step function, these artifacts will be logged automatically also on the Pipeline Task 
   itself. Example: `['processed_data', ]` (target artifact name on the Pipeline Task will have the same name as the original 
@@ -157,7 +173,7 @@ following arguments:
   * Alternatively, provide a list of pairs (source_artifact_name, target_artifact_name), where the first string is the 
     artifact name as it appears on the component Task, and the second is the target artifact name to put on the Pipeline 
     Task. Example: `[('processed_data', 'final_processed_data'), ]`
-* `monitor_models` (Optional) - Automatically log the step's output models on the pipeline Task.
+* `monitor_models` (optional) - Automatically log the step's output models on the pipeline Task.
   * Provided a list of model names created by the step's Task, they will also appear on the Pipeline itself. Example: `['model_weights', ]`
   * To select the latest (lexicographic) model use `model_*`, or the last created model with just `*`. Example: `['model_weights_*', ]`
   * Alternatively, provide a list of pairs (source_model_name, target_model_name), where the first string is the model 
@@ -167,7 +183,7 @@ following arguments:
 You can also control a pipeline component's automatic logging using the following parameters: 
 * `auto_connect_frameworks` - Control a component's framework logging. You can completely disable framework logging, or
 specify which frameworks to log. See `Task.init`'s [`auto_connect_framework` parameter](../references/sdk/task.md#taskinit)
-* `auto_connect_arg_parser` - control automatic logging of argparse objects. See `Task.init`'s [`auto_connect_arg_parser` parameter](../references/sdk/task.md#taskinit) 
+* `auto_connect_arg_parser` - Control automatic logging of argparse objects. See `Task.init`'s [`auto_connect_arg_parser` parameter](../references/sdk/task.md#taskinit) 
 
 You can also directly upload a model or an artifact from the step to the pipeline controller, using the 
 [`PipelineDecorator.upload_model`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinedecoratorupload_model) 
@@ -198,7 +214,7 @@ if __name__ == '__main__':
 ```
 
 :::tip RUN PIPELINE CONTROLLER LOCALLY
-It is possible to run the pipeline logic itself locally, while keeping the pipeline components execution remote
+You can run the pipeline logic locally, while keeping the pipeline components execution remote
 (enqueued and executed by the clearml-agent). Pass `pipeline_execution_queue=None` to the `@PipelineDecorator.pipeline` decorator.
 ```python
 @PipelineDecorator.pipeline(

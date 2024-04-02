@@ -11,7 +11,7 @@ Hyperparameters appear in the **web UI** in the experiment's page, under **CONFI
 Each type is in its own subsection. Parameters from older experiments are grouped together with the ``argparse`` command 
 line options (in the **Args** subsection).
 
-When the script runs, it creates an experiment named `hyper-parameters example`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `hyper-parameters example` in the `examples` project.
 
 ## Argparse Command Line Options
 
@@ -74,7 +74,6 @@ parameters['new_param'] = 'this is new'
   
 # changing the value of a parameter (new value will be stored instead of previous one)
 parameters['float'] = '9.9'
-
 ```
 
 Parameters from dictionaries connected to Tasks appear in **HYPERPARAMETERS** **>** **General**.

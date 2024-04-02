@@ -35,7 +35,7 @@ For more information, see [Annotations](annotations.md).
 
 
 ### Masks
-A `SingleFrame` can include a URI link to masks file if applicable. Masks correspond to raw data where the objects to be 
+A `SingleFrame` can include a URI link to a mask file if applicable. Masks correspond to raw data where the objects to be 
 detected are marked with colors or different opacity levels in the masks.
 
 For more information, see [Masks](masks.md).
@@ -57,8 +57,8 @@ For more information, see [Custom Metadata](custom_metadata.md).
 Frames' `context_id` property facilitates grouping SingleFrames and FrameGroups. When a `context_id` is not explicitly 
 defined, the frame's source URI is used instead.
 
-When you query the server for frames (e.g. with the [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator) 
-method), the returned frames are grouped together according to their `context_id`, and within their context group are 
+When you query the server for frames (e.g. with [`DataView.get_iterator()`](../references/hyperdataset/dataview.md#get_iterator)), 
+the returned frames are grouped together according to their `context_id`, and within their context group are 
 ordered according to their `timestamp`. 
 
 Use the WebApp's dataset version frame browser "Group by URL" option to display a single preview for all frames with the 
@@ -103,7 +103,7 @@ The panel below describes the details contained within a `frame`:
     
       :::info
       The `mask` dictionary is deprecated. Mask labels and their associated pixel values are now stored in the dataset 
-      version’s metadata. See [Masks](masks.md).
+      version's metadata. See [Masks](masks.md).
       :::
   
     * `poly` (*[int]*) - Bounding area vertices.
@@ -209,15 +209,24 @@ To create a [`SingleFrame`](../references/hyperdataset/singleframe.md), instanti
 from allegroai import SingleFrame
 
 frame = SingleFrame(
-    source='/home/user/woof_meow.jpg',
+    source='s3://my/bucket/path_to_file.jpg',
     width=None, 
     height=None, 
-    preview_uri='https://storage.googleapis.com/kaggle-competitions/kaggle/3362/media/woof_meow.jpg',
+    preview_uri='s3://my/bucket/path_to_file.jpg',
     metadata=None, 
     annotations=None,  
     mask_source=None,
 )
 ```
+
+:::tip Previewing Frames in non-AWS S3-like services
+For the ClearML UI to be able to show frames stored in non-AWS S3-like services (e.g. MinIO), make sure the `preview_uri` link
+uses the `s3://` prefix and explicitly specifies the port number in the URL (e.g. `s3://my_address.com:80/bucket/my_image.png`).
+
+Additionally, make sure to provide cloud storage access in the WebApp [**Settings > Configuration > Web App Cloud Access**](../webapp/webapp_profile.md#browser-cloud-storage-access). 
+Input `<host_address>:<port_number>` in the **Host** field.
+:::
+
 
 There are also options to populate the instance with:
 * Dimensions - `width` and `height`
@@ -229,7 +238,7 @@ For more information, see the [`SingleFrame`](../references/hyperdataset/singlef
 
 ### Adding SingleFrames to a Dataset Version
 
-Use the [`DatasetVersion.add_frames`](../references/hyperdataset/hyperdatasetversion.md#add_frames) method to add 
+Use [`DatasetVersion.add_frames()`](../references/hyperdataset/hyperdatasetversion.md#add_frames) to add 
 SingleFrames to a [Dataset version](dataset.md#dataset-versioning) (see [Creating snapshots](dataset.md#creating-snapshots) 
 or [Creating child versions](dataset.md#creating-child-versions)). Frames that are already a part of the dataset version 
 will only be updated. 
@@ -246,10 +255,10 @@ frames = []
 
 # create a frame
 frame = SingleFrame(
-    source='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg',
+    source='s3://my/bucket/path_to_file.jpg',
     width=512, 
     height=512, 
-    preview_uri='https://allegro-datasets.s3.amazonaws.com/tutorials/000012.jpg',
+    preview_uri='s3://my/bucket/path_to_file.jpg',
     metadata={'alive':'yes'}, 
 )
 
@@ -261,8 +270,7 @@ myDatasetversion.add_frames(frames)
 
 
 ### Accessing SingleFrames
-To access a SingleFrame, use the [`DatasetVersion.get_single_frame`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame) 
-method. 
+To access a SingleFrame, use [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame). 
 
 ```python
 from allegroai import DatasetVersion
@@ -276,16 +284,14 @@ frame = DatasetVersion.get_single_frame(
 To access a SingleFrame, the following must be specified:
 * `frame_id`, which can be found in the WebApp, in the frame's **FRAMEGROUP DETAILS** 
 * The frame's dataset - either with `dataset_name` or `dataset_id`
-* The dataset version - either with `version_id` or  `version_name`
+* The dataset version - either with `version_id` or `version_name`
 
 ### Updating SingleFrames
 
 To update a SingleFrame: 
-* Access the SingleFrame by calling the [`DatasetVersion.get_single_frame`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame) 
-  method 
+* Access the SingleFrame by calling [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame)
 * Make changes to the frame
-* Update the frame in a DatasetVersion using the [`DatasetVersion.update_frames`](../references/hyperdataset/hyperdatasetversion.md#update_frames) 
-  method.
+* Update the frame in a DatasetVersion using [`DatasetVersion.update_frames()`](../references/hyperdataset/hyperdatasetversion.md#update_frames)
 
 ```python
 frames = []                
@@ -312,14 +318,12 @@ frame.meta['road_hazard'] = 'yes'
 # update the SingeFrame
 frames.append(frame)
 myDatasetVersion.update_frames(frames)                
-
 ```
 
 
 ### Deleting Frames
 
-To delete a SingleFrame, use the [`DatasetVersion.delete_frames`](../references/hyperdataset/hyperdatasetversion.md#delete_frames) 
-method.
+To delete a SingleFrame, use [`DatasetVersion.delete_frames()`](../references/hyperdataset/hyperdatasetversion.md#delete_frames).
 
 ```python
 frames = []                

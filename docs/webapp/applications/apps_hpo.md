@@ -9,7 +9,7 @@ The ClearML HPO App is available under the ClearML Pro plan
 The Hyperparameter Optimization Application finds the set of parameter values that optimize a specific metric for your 
 model.
 
-It takes in an existing ClearML experiment and its parameters to optimize. The parameter search space can be specified
+It takes in a ClearML experiment and its parameters to optimize. The parameter search space can be specified
 by specific (discrete) values and/or value ranges (uniform parameters). 
 
 The optimization app launches multiple copies of the original experiment, each time sampling different parameter sets, 
@@ -21,12 +21,12 @@ limits.
 ## HPO Instance Configuration
 * **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
   values from the file, which can be modified before launching the app instance
-* **Initial Task to Optimize** - ID of an existing ClearML task to optimize. This task will be cloned, and each clone will 
+* **Initial Task to Optimize** - ID of a ClearML task to optimize. This task will be cloned, and each clone will 
   sample a different set of hyperparameters values
 * **Optimization Configuration**
     * Optimization Method - The optimization strategy to employ (e.g. random, grid, hyperband)
-    * Optimization Objective Metric’s Title - Title of metric to optimize
-    * Optimization Objective Metric’s Series - Metric series (variant) to optimize
+    * Optimization Objective Metric's Title - Title of metric to optimize
+    * Optimization Objective Metric's Series - Metric series (variant) to optimize
     * Optimization Objective Trend - Choose the optimization target, whether to maximize or minimize the value of the 
       metric specified above
 * **Execution Queue** - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which 
@@ -39,7 +39,7 @@ limits.
             * Step Size - Step size between samples
         * Discrete Parameters - A set of values to sample
             * Values - Comma separated list of values to sample
-    * Name - The original task’s configuration parameter name (including section name e.g. `Args/lr`)  <br/>
+    * Name - The original task's configuration parameter name (including section name e.g. `Args/lr`)  <br/>
     :::tip Hydra Parameters
     For experiments using Hydra, input parameters from the OmegaConf in the following format:
     `Hydra/<param>`. Specify `<param>` using dot notation. For example, if your OmegaConf looks like this: 
@@ -87,3 +87,10 @@ The HPO dashboard shows:
 * Summary - Experiment summary table: experiment execution information, objective metric and parameter values.
 * Budget - Available iterations and tasks budget (percentage, out of the values defined in the HPO instance's advanced configuration)
 * Resources - Number of workers servicing the HPO execution queue, and the number of currently running optimization tasks
+
+:::tip EMBEDDING CLEARML VISUALIZATION
+You can embed plots from the app instance dashboard into [ClearML Reports](../webapp_reports.md). These visualizations 
+are updated live as the app instance(s) updates. The Enterprise Plan and Hosted Service support embedding resources in 
+external tools (e.g. Notion). Hover over the plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" /> 
+to copy the embed code, and navigate to a report to paste the embed code.
+:::

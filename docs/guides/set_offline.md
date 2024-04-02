@@ -4,30 +4,35 @@ title: Storing Task Data Offline
 
 If your computer is offline, or you do not want a Task's data and logs stored in the ClearML Server, use
 the **Offline Mode** option. In this mode, all the data and logs that the Task captures from the code are stored in a 
-local folder, which can be later uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md).
+local session folder, which can be later uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md).
 
 ## Setting Task to Offline Mode
 
-Before initializing a Task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set the 
-`offline_mode` argument to `True`.
+You can enable offline mode in one of the following ways:
+* Before initializing a task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
+the `offline_mode` argument to `True`
+
+  ```python
+  from clearml import Task
+  
+  # Use the set_offline class method before initializing a Task
+  Task.set_offline(offline_mode=True)
+  # Initialize a Task 
+  task = Task.init(project_name="examples", task_name="my_task")
+  ```
+
+* Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
 :::caution 
-Notice that the `Task.set_offline` method only works with tasks created using `Task.init` and not with those created 
-using the `Task.create` method. 
+Offline mode only works with tasks created using [`Task.init()`](../references/sdk/task.md#taskinit) and not with those created 
+using [`Task.create()`](../references/sdk/task.md#taskcreate). 
 :::
 
 
-```python
-from clearml import Task
-# Use the set_offline class method before initializing a Task
-Task.set_offline(offline_mode=True)
-# Initialize a Task 
-task = Task.init(project_name="examples", task_name="my_task")
+All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. The 
+session's zip folder's location is `~/.clearml/cache/offline/<task_id>.zip`.
 
-# Rest of code is executed. All data is logged locally and not onto the server
-```
-
-The method returns the Task ID and a path to the session folder:
+The task's console output displays the task ID and a path to the folder with the session's captured information:
 
 ```console
 ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
@@ -36,8 +41,6 @@ ClearML Task: created new task id=offline-372657bb04444c25a31bc6af86552cc9
 ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b786845decb14eecadf2be24affc7418.zip
 ```
 
-All the information captured by the Task is saved locally. Once the task script finishes execution, it's zipped. The 
-session's zip folder's location is `~/.clearml/cache/offline/<task_id>.zip`.
 
 ## Uploading Session Data
 
@@ -76,7 +79,7 @@ Upload the session's execution data that the Task captured offline to the ClearM
   ```
     
   You can also use the offline task to update the execution of an existing previously executed task by providing the 
-  previously executed task’s ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
+  previously executed task's ID. To avoid overwriting metrics, you can specify the initial iteration offset with 
   `iteration_offset`.   
   
   ```python

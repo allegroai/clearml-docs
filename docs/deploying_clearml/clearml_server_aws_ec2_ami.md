@@ -24,7 +24,7 @@ By default, ClearML Server deploys as an open network. To restrict ClearML Serve
 in the [Security](clearml_server_security.md) page.
 :::
 
-The minimum recommended amount of RAM is 8 GB. For example, a t3.large or t3a.large EC2 instance type would accommodate the recommended RAM size.
+The minimum recommended amount of RAM is 8 GB. For example, a `t3.large` or `t3a.large` EC2 instance type would accommodate the recommended RAM size.
 
 **To launch a ClearML Server AWS community AMI**, use one of the [ClearML Server AWS community AMIs](#clearml-server-aws-community-amis) 
 and see:
@@ -45,7 +45,7 @@ Once deployed, ClearML Server exposes the following services:
 1. Go to AWS EC2 Console.
 1. In the **Details** tab, **Public DNS (IPv4)** shows the ClearML Server address.
 
-**To access ClearML Server Web-App (UI):**
+**To access ClearML Server WebApp (UI):**
 
 * Direct browser to its web server URL: `http://<Server Address>:8080`
 
@@ -65,10 +65,14 @@ The pre-built ClearML Server storage configuration is the following:
 
 * MongoDB: `/opt/clearml/data/mongo_4/`
 * Elasticsearch: `/opt/clearml/data/elastic_7/`
-* File Server: `/mnt/fileserver/`
+* File Server: `/opt/clearml/data/fileserver/`
 
 
 ## Backing Up and Restoring Data and Configuration
+
+:::caution
+Stop your server before backing up or restoring data and configuration
+:::
 
 :::note
 If data is being moved between a **Trains Server** and a **ClearML Server** installation, make sure to use the correct paths 
@@ -108,35 +112,37 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.10.1
+#### v1.15.0
 
-* **af-south-1** : ami-0e3e4797d4ccc0e0c 
-* **ap-east-1** : ami-02a12e5311d72998f 
-* **ap-northeast-1** : ami-0e865b4342968a5eb 
-* **ap-northeast-2** : ami-0c7776ecfe9bf1284 
-* **ap-northeast-3** : ami-0810f5629b3d0aa94 
-* **ap-south-1** : ami-030668030e4924765 
-* **ap-south-2** : ami-014673456c25f30e6 
-* **ap-southeast-1** : ami-0186a8688052a3678 
-* **ap-southeast-2** : ami-0e436536f5d592089 
-* **ap-southeast-3** : ami-0baea2d6c25b26722 
-* **ap-southeast-4** : ami-0de0e585a274c04f2 
-* **ca-central-1** : ami-0ed3b795112a0929f 
-* **eu-central-1** : ami-050930b9bb9adb3d1 
-* **eu-central-2** : ami-09e8faf49058d2ecf 
-* **eu-north-1** : ami-09842284b34278a57 
-* **eu-south-1** : ami-0b36f18eb63585b84 
-* **eu-south-2** : ami-075f9c45c16782fe7 
-* **eu-west-1** : ami-0e4da440bbc49854f 
-* **eu-west-2** : ami-0f2a05843c12fb956 
-* **eu-west-3** : ami-0904fef8e624ea843 
-* **me-central-1** : ami-0e63e8943731c276b 
-* **me-south-1** : ami-02dd1559745b77ada 
-* **sa-east-1** : ami-0152238a946006fd0 
-* **us-east-2** : ami-0cac56ead347a486c 
-* **us-west-1** : ami-045b41391be6c1407 
-* **us-west-2** : ami-0c5b193f3ad64fbbb 
-* **us-east-1** : ami-02a070391945d4843 
+* **af-south-1** : ami-00588db413be68efe
+* **ap-east-1** : ami-0799044c29fded34e
+* **ap-northeast-1** : ami-02d65fcc0f55994a0
+* **ap-northeast-2** : ami-080dfab2b5bb0d8b9
+* **ap-northeast-3** : ami-057dffc8f2f2735dd
+* **ap-south-1** : ami-0012e733c8554ab05
+* **ap-south-2** : ami-02c8bf629d03f98ac
+* **ap-southeast-1** : ami-0ab7f1a25112a1780
+* **ap-southeast-2** : ami-0788dd3fb6731f7bc
+* **ap-southeast-3** : ami-0b8e4e04ac9126d6f
+* **ap-southeast-4** : ami-058bd99267f35cfbb
+* **ca-central-1** : ami-08ea8ff364f8ec570
+* **ca-west-1** : ami-0bccef2cd4f66e37b
+* **eu-central-1** : ami-0deab56eb3e29826c
+* **eu-central-2** : ami-008c21960dc713d91
+* **eu-north-1** : ami-054542654592e7ca0
+* **eu-south-1** : ami-0a322333fe24d90f6
+* **eu-south-2** : ami-0983b0c11666333cf
+* **eu-west-1** : ami-05c86376e6913f6c2
+* **eu-west-2** : ami-0bd8a72170a908c9d
+* **eu-west-3** : ami-099c539ede777e53c
+* **il-central-1** : ami-0f9389e102a4947f1
+* **me-central-1** : ami-0e0c482f6befaed52
+* **me-south-1** : ami-075a22f8360c056df
+* **sa-east-1** : ami-065b4d41a975945ea
+* **us-east-1** : ami-04f41d5829c505e9d
+* **us-east-2** : ami-07b81aabb1f4eeca4
+* **us-west-1** : ami-094720a8f0c14570c
+* **us-west-2** : ami-044daba414cfcd7f6
 
 ## Next Step
 

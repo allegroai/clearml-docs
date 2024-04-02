@@ -4,9 +4,9 @@ title: Community Resources
 
 ## Join the ClearML Conversation
 
-For feature requests or bug reports, see **ClearML** [GitHub Issues](https://github.com/allegroai/clearml/issues).
+For feature requests or bug reports, see **ClearML** [GitHub issues](https://github.com/allegroai/clearml/issues).
 
-If you have any questions, post on the **ClearML** [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A).
+If you have any questions, post on the **ClearML** [Slack channel](https://joinslack.clear.ml).
 
 Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with the **clearml** tag.
 
@@ -24,13 +24,13 @@ Follow **ClearML** on [LinkedIn](https://www.linkedin.com/company/clearml).
 
 ## Guidelines for Contributing
 
-Firstly, we thank you for taking the time to contribute!
+Firstly, thank you for taking the time to contribute!
 
-Contribution comes in many forms:
+Contributions come in many forms:
 
 * Reporting [issues](https://github.com/allegroai/clearml/issues) you've come upon
 * Participating in issue discussions in the [issue tracker](https://github.com/allegroai/clearml/issues) and the
-  [ClearML community slack space](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A)
+  [ClearML community slack space](https://joinslack.clear.ml)
 * Suggesting new features or enhancements
 * Implementing new features or fixing outstanding issues
 
@@ -57,11 +57,11 @@ help maintainers reproduce the problem:
 * **Provide specific examples to demonstrate the steps.** Include links to files or GitHub projects, or copy / paste snippets which you use in those examples.
 * **If you are reporting any ClearML crash,** include a crash report with a stack trace from the operating system. Make 
   sure to add the crash report in the issue and place it in a [code block](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks), 
-  a [file attachment](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests), or just put it in 
+  a [file attachment](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests), or put it in 
   a [gist](https://gist.github.com) (and provide a link to that gist).
 * **Describe the behavior you observed after following the steps** and the exact problem with that behavior.
 * **Explain which behavior you expected to see and why.**
-* **For Web-App issues, please include screenshots and animated GIFs** that recreate the described steps and clearly demonstrate 
+* **For WebApp (UI) issues, please include screenshots and animated GIFs** that recreate the described steps and clearly demonstrate 
   the problem. You can use [LICEcap](https://www.cockos.com/licecap) to record GIFs on macOS and Windows, and [silentcast](https://github.com/colinkeenan/silentcast)
   or [byzanz](https://github.com/threedaymonk/byzanz) on Linux.
 
@@ -85,9 +85,9 @@ Enhancement suggestions are tracked as GitHub issues. After you determine which 
 
 Before you submit a new PR:
 
-* Verify that the work you plan to merge addresses an existing [issue](https://github.com/allegroai/clearml/issues) (If not, open a new one)
-* Check related discussions in the [ClearML slack community](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A) 
-  (Or start your own discussion on the ``#clearml-dev`` channel)
+* Verify that the work you plan to merge addresses an existing [issue](https://github.com/allegroai/clearml/issues) (if not, open a new one)
+* Check related discussions in the [ClearML slack community](https://joinslack.clear.ml) 
+  (or start your own discussion on the ``#clearml-dev`` channel)
 * Make sure your code conforms to the ClearML coding standards by running:
   
       flake8 --max-line-length=120 --statistics --show-source --extend-ignore=E501 ./clearml*

@@ -6,9 +6,9 @@ title: First Steps
 This tutorial assumes that you've already [signed up](https://app.clear.ml) to ClearML
 :::
 
-ClearML provides tools for **automation**, **orchestration**, and **tracking**, all key in performing effective MLOps. 
+ClearML provides tools for **automation**, **orchestration**, and **tracking**, all key in performing effective MLOps and LLMOps. 
 
-Effective MLOps relies on the ability to scale work beyond one's own computer. Moving from your own machine can be time-consuming. 
+Effective MLOps and LLMOps rely on the ability to scale work beyond one's own computer. Moving from your own machine can be time-consuming. 
 Even assuming that you have all the drivers and applications installed, you still need to manage multiple python environments
 for different packages / package versions, or worse - manage different Dockers for different package versions.
 
@@ -21,12 +21,12 @@ ClearML Agent was designed to deal with such issues and more! It is a tool respo
 machine of choice through the ClearML WebApp with no need for additional code.
 
 The agent will set up the environment for a specific Task’s execution (inside a Docker, or bare-metal), install the 
-required python packages, and execute & monitor the process.
+required python packages, and execute and monitor the process.
 
 
 ## Set up an Agent
 
-1. Let's install the agent!
+1. Install the agent:
 
     ```bash
     pip install clearml-agent
@@ -42,7 +42,7 @@ required python packages, and execute & monitor the process.
     If you've already created credentials, you can copy-paste the default agent section from [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf#L15) (this is optional. If the section is not provided the default values will be used)
     :::
 
-1. Start the agent's daemon and assign it to a [queue](../../fundamentals/agents_and_queues.md#what-is-a-queue). 
+1. Start the agent's daemon and assign it to a [queue](../../fundamentals/agents_and_queues.md#what-is-a-queue):
 
     ```bash
     clearml-agent daemon --queue default
@@ -55,7 +55,7 @@ required python packages, and execute & monitor the process.
 :::tip Agent Deployment Modes
 ClearML Agents can be deployed in Virtual Environment Mode or Docker Mode. In [virtual environment mode](../../clearml_agent.md#execution-environments), 
 the agent creates a new venv to execute an experiment. In [Docker mode](../../clearml_agent.md#docker-mode), 
-the agent executes an experiment inside a Docker container. See all running mode options [here](../../fundamentals/agents_and_queues.md#additional-features).  
+the agent executes an experiment inside a Docker container. For more information, see [Running Modes](../../fundamentals/agents_and_queues.md#running-modes).  
 :::
 
 ## Clone an Experiment
@@ -97,6 +97,7 @@ All Tasks in the system can be accessed through their unique Task ID, or based o
 method. For example:
 ```python
 from clearml import Task
+
 executed_task = Task.get_task(task_id='aabbcc')
 ```
 
@@ -130,6 +131,7 @@ Users can programmatically change cloned experiments' parameters.
 For example:
 ```python
 from clearml import Task
+
 cloned_task = Task.clone(task_id='aabbcc')
 cloned_task.set_parameter(name='internal/magic', value=42)
 ```
@@ -141,6 +143,7 @@ objects and files to a task anywhere from code.
 ```python
 import numpy as np
 from clearml import Task
+
 Task.current_task().upload_artifact(name='a_file', artifact_object='local_file.bin')
 Task.current_task().upload_artifact(name='numpy', artifact_object=np.ones(4,4))
 ```
@@ -150,6 +153,7 @@ by accessing the Task that created them. These artifacts can be modified and upl
 
 ```python
 from clearml import Task
+
 executed_task = Task.get_task(task_id='aabbcc')
 # artifact as a file
 local_file = executed_task.artifacts['file'].get_local_copy()
@@ -173,6 +177,7 @@ improves the visibility of your processes’ progress.
 
 ```python
 from clearml import Logger
+
 Logger.current_logger().report_scalar(
    graph='metric',
    series='variant',
@@ -184,6 +189,7 @@ Logger.current_logger().report_scalar(
 You can also retrieve reported scalars for programmatic analysis:
 ```python
 from clearml import Task
+
 executed_task = Task.get_task(task_id='aabbcc')
 # get a summary of the min/max/last value of all reported scalars
 min_max_values = executed_task.get_last_scalar_metrics()
@@ -193,10 +199,11 @@ full_scalars = executed_task.get_reported_scalars()
 
 #### Query Experiments
 You can also search and query Tasks in the system. Use the [`Task.get_tasks`](../../references/sdk/task.md#taskget_tasks) 
-method to retrieve Task objects and filter based on the specific values of the Task - status, parameters, metrics and more!
+class method to retrieve Task objects and filter based on the specific values of the Task - status, parameters, metrics and more!
 
 ```python
 from clearml import Task
+
 tasks = Task.get_tasks(
    project_name='examples',
    task_name='partial_name_match',

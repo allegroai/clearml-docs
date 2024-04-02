@@ -10,7 +10,7 @@ and other workflows.
 For installation instructions, see [Getting Started](../getting_started/ds/ds_first_steps.md#install-clearml). 
 :::
 
-The ClearML Python Package collects the scripts’ entire execution information, including:
+The ClearML Python Package collects the scripts' entire execution information, including:
 * Git repository (branch, commit ID, and uncommitted changes) 
 * Working directory and entry point
 * Hyperparameters 
@@ -53,7 +53,7 @@ See the [Logger SDK reference page](../references/sdk/logger.md).
 ### Hyperparameter Optimization 
 
 ClearML's `optimization` module includes classes that support hyperparameter optimization (HPO):
-* [HyperParameterOptimizer](../references/sdk/automation_controller_pipelinecontroller.md) - Hyperparameter search 
+* [HyperParameterOptimizer](../references/sdk/hpo_optimization_hyperparameteroptimizer.md) - Hyperparameter search 
   controller class 
 * Optimization search strategy classes including [Optuna](../references/sdk/hpo_optuna_optuna_optimizeroptuna.md), [HpBandSter](../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md),
   [GridSearch](../references/sdk/hpo_optimization_gridsearch.md), [RandomSearch](../references/sdk/hpo_optimization_randomsearch.md), 
@@ -67,7 +67,7 @@ See the [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optim
 ClearML's `automation` module includes classes that support creating pipelines: 
   * [PipelineController](../pipelines/pipelines_sdk_tasks.md) - A pythonic interface for 
     defining and configuring a pipeline controller and its steps. The controller and steps can be functions in your 
-    python code, or existing ClearML [tasks](../fundamentals/task.md).
+    python code, or ClearML [tasks](../fundamentals/task.md).
   * [PipelineDecorator](../pipelines/pipelines_sdk_function_decorators.md) - A set 
     of Python decorators which transform your functions into the pipeline controller and steps.
     
@@ -93,7 +93,7 @@ See an [overview](apiclient_sdk.md) for APIClient usage.
 Use the ClearmlJob to create and manage jobs based on existing tasks. The class supports changing a job's parameters, 
 configurations, and other execution details. 
 
-See reference page [here](../references/sdk/automation_job_clearmljob.md).
+See [reference page](../references/sdk/automation_job_clearmljob.md).
 
 ### AutoScaler
 The `AutoScaler` class facilitates implementing resource budgeting. See class methods [here](https://github.com/allegroai/clearml/blob/master/clearml/automation/auto_scaler.py).
@@ -106,7 +106,7 @@ and [example](https://github.com/allegroai/clearml/blob/master/examples/schedule
 
 ### TriggerScheduler
 The `TriggerScheduler` class facilitates triggering task execution in the case that specific events occur in the system 
-(e.g. model publication, dataset creation, task failure). See [code](https://github.com/allegroai/clearml/blob/master/clearml/automation/trigger.py#L148)
+(such as model publication, dataset creation, task failure). See [code](https://github.com/allegroai/clearml/blob/master/clearml/automation/trigger.py#L148)
 and [usage example](https://github.com/allegroai/clearml/blob/master/examples/scheduler/trigger_example.py).
 
 ## Examples 
@@ -115,4 +115,4 @@ The `clearml` GitHub repository includes an [examples folder](https://github.com
 with example scripts demonstrating how to use the various functionalities of the ClearML SDK. 
 
 These examples are preloaded in the [ClearML Hosted Service](https://app.clear.ml), and can be viewed, cloned, 
-and edited in the ClearML Web UI's `ClearML Examples` project. The examples are each explained in the [examples section](../guides/main.md). 
+and edited in the ClearML Web UI's `ClearML Examples` project. Each example is explained in the [examples section](../guides/main.md). 

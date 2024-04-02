@@ -17,8 +17,8 @@ In the ``clearml`` GitHub repository, this example includes a clickable icon to 
 
 ## Scalars
 
-To reports scalars, call the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
-method. The scalar plots appear in the **web UI** in **SCALARS**.
+To reports scalars, call [`Logger.report_scalar()`](../../references/sdk/logger.md#report_scalar). 
+The scalar plots appear in the **web UI** in **SCALARS**.
 
 ```python
 # report two scalar series on two different graphs
@@ -44,7 +44,7 @@ Plots appear in **PLOTS**.
 
 ### 2D Plots
 
-Report 2D scatter plots by calling the [Logger.report_scatter2d](../../references/sdk/logger.md#report_scatter2d) method. 
+Report 2D scatter plots by calling [`Logger.report_scatter2d()`](../../references/sdk/logger.md#report_scatter2d). 
 Use the `mode` parameter to plot data points as markers, or both lines and markers.
 
 ```python
@@ -53,8 +53,8 @@ scatter2d = np.hstack(
 )
 # report 2d scatter plot with markers
 logger.report_scatter2d(
-    "example_scatter",
-    "series_lines+markers",
+    title="example_scatter",
+    series="series_lines+markers",
     iteration=iteration,
     scatter=scatter2d,
     xaxis="title x",
@@ -67,14 +67,14 @@ logger.report_scatter2d(
 
 ### 3D Plots
 
-To plot a series as a 3-dimensional scatter plot, use the [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d) method.
+To plot a series as a 3D scatter plot, use [`Logger.report_scatter3d()`](../../references/sdk/logger.md#report_scatter3d).
 
 ```python
 # report 3d scatter plot
 scatter3d = np.random.randint(10, size=(10, 3))
 logger.report_scatter3d(
-    "example_scatter_3d",
-    "series_xyz",
+    title="example_scatter_3d",
+    series="series_xyz",
     iteration=iteration,
     scatter=scatter3d,
     xaxis="title x",
@@ -85,15 +85,14 @@ logger.report_scatter3d(
 
 ![3d scatter plot](../../img/colab_explicit_reporting_05.png)
 
-To plot a series as a surface plot, use the [Logger.report_surface](../../references/sdk/logger.md#report_surface) 
-method.
+To plot a series as a surface plot, use [`Logger.report_surface()`](../../references/sdk/logger.md#report_surface).
 
 ```python
 # report 3d surface
 surface = np.random.randint(10, size=(10, 10))
 logger.report_surface(
-    "example_surface",
-    "series1",
+    title="example_surface",
+    series="series1",
     iteration=iteration,
     matrix=surface,
     xaxis="title X",
@@ -106,15 +105,14 @@ logger.report_surface(
 
 ### Confusion Matrices
 
-Report confusion matrices by calling the [Logger.report_matrix](../../references/sdk/logger.md#report_matrix) 
-method.
+Report confusion matrices by calling [`Logger.report_confusion_matrix()`](../../references/sdk/logger.md#report_confusion_matrix).
 
 ```python
 # report confusion matrix
 confusion = np.random.randint(10, size=(10, 10))
-logger.report_matrix(
-    "example_confusion",
-    "ignored",
+logger.report_confusion_matrix(
+    title="example_confusion",
+    series="ignored",
     iteration=iteration,
     matrix=confusion,
     xaxis="title X",
@@ -126,15 +124,15 @@ logger.report_matrix(
 
 ### Histograms
 
-Report histograms by calling the [Logger.report_histogram](../../references/sdk/logger.md#report_histogram) 
-method. To report more than one series on the same plot, use the same `title` argument.
+Report histograms by calling [`Logger.report_histogram()`](../../references/sdk/logger.md#report_histogram). 
+To report more than one series on the same plot, use the same `title` argument.
 
 ```python
 # report a single histogram
 histogram = np.random.randint(10, size=10)
 logger.report_histogram(
-    "single_histogram",
-    "random histogram",
+    title="single_histogram",
+    series="random histogram",
     iteration=iteration,
     values=histogram,
     xaxis="title x",
@@ -149,16 +147,16 @@ logger.report_histogram(
 histogram1 = np.random.randint(13, size=10)
 histogram2 = histogram * 0.75
 logger.report_histogram(
-    "two_histogram",
-    "series 1",
+    title="two_histogram",
+    series="series 1",
     iteration=iteration,
     values=histogram1,
     xaxis="title x",
     yaxis="title y",
 )
 logger.report_histogram(
-    "two_histogram",
-    "series 2",
+    title="two_histogram",
+    series="series 2",
     iteration=iteration,
     values=histogram2,
     xaxis="title x",
@@ -170,11 +168,10 @@ logger.report_histogram(
 
 ## Media
 
-Report audio, HTML, image, and video by calling the [Logger.report_media](../../references/sdk/logger.md#report_media) 
-method using the `local_path` parameter. They appear in **DEBUG SAMPLES**.
+Report audio, HTML, image, and video by calling [`Logger.report_media()`](../../references/sdk/logger.md#report_media) 
+using the `local_path` parameter. They appear in **DEBUG SAMPLES**.
 
-The media for these examples is downloaded using the [StorageManager.get_local_copy](../../references/sdk/storage.md#storagemanagerget_local_copy) 
-method.
+The media for these examples is downloaded using [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy).
 
 For example, to download an image:
 
@@ -188,7 +185,7 @@ image_local_copy = StorageManager.get_local_copy(
 ### Audio
 
 ```python
-logger.report_media('audio', 'pink panther', iteration=1, local_path=audio_local_copy)
+logger.report_media(title='audio', series='pink panther', iteration=1, local_path=audio_local_copy)
 ``` 
 
 ![Audio sample](../../img/colab_explicit_reporting_08.png)
@@ -197,8 +194,8 @@ logger.report_media('audio', 'pink panther', iteration=1, local_path=audio_local
 
 ```python
 logger.report_media(
-    "html", 
-    "url_html", 
+    title="html", 
+    series="url_html", 
     iteration=1, 
     url="https://clear.ml/docs/latest/docs/index.html"
 )
@@ -209,7 +206,12 @@ logger.report_media(
 ### Images
 
 ```python
-logger.report_image("image", "image from url", iteration=100, local_path=image_local_copy)
+logger.report_image(
+    title="image", 
+    series="image from url", 
+    iteration=100, 
+    local_path=image_local_copy
+)
 ```
 
 ![Image sample](../../img/colab_explicit_reporting_10.png)
@@ -217,14 +219,19 @@ logger.report_image("image", "image from url", iteration=100, local_path=image_l
 ### Video
 
 ```python
-logger.report_media('video', 'big bunny', iteration=1, local_path=video_local_copy)
+logger.report_media(
+    title='video', 
+    series='big bunny', 
+    iteration=1, 
+    local_path=video_local_copy
+)
 ```
 
 ![Video sample](../../img/colab_explicit_reporting_11.png)
 
 ## Text
 
-Report text messages by calling the [Logger.report_text](../../references/sdk/logger.md#report_text). 
+Report text messages by calling [`Logger.report_text()`](../../references/sdk/logger.md#report_text). 
 
 ```python
 logger.report_text("hello, this is plain text")

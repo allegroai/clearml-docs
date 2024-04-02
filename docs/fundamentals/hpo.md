@@ -21,7 +21,7 @@ compare results.
 
 ![Hyperparameter optimization diagram](../img/hpo_diagram.png)
 
-The diagram above demonstrates the typical flow of hyperparameter optimization where the parameters of a base task are optimized: 
+The preceding diagram demonstrates the typical flow of hyperparameter optimization where the parameters of a base task are optimized: 
 
 1. Configure an Optimization Task with a base task whose parameters will be optimized, and a set of parameter values to 
    test
@@ -43,7 +43,7 @@ The diagram above demonstrates the typical flow of hyperparameter optimization w
 
 ### Supported Optimizers
 
-The `HyperParameterOptimizer` class contains ClearML’s hyperparameter optimization modules. Its modular design enables 
+The `HyperParameterOptimizer` class contains ClearML's hyperparameter optimization modules. Its modular design enables 
 using different optimizers, including existing software frameworks, enabling simple, accurate, and fast hyperparameter 
 optimization.
 
@@ -121,14 +121,14 @@ optimization.
 
 ## Optimizer Execution Options
 The `HyperParameterOptimizer` provides options to launch the optimization tasks locally or through a ClearML [queue](agents_and_queues.md#what-is-a-queue).
-Start a `HyperParameterOptimizer` instance using either [`HyperParameterOptimizer.start`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md#start) 
-or [`HyperParameterOptimizer.start_locally`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md#start_locally). 
-Both methods run the optimizer controller locally. The `start` method launches the base task clones through a queue 
-specified when instantiating the controller, while `start_locally` runs the tasks locally.
+Start a `HyperParameterOptimizer` instance using either [`HyperParameterOptimizer.start()`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md#start) 
+or [`HyperParameterOptimizer.start_locally()`](../references/sdk/hpo_optimization_hyperparameteroptimizer.md#start_locally). 
+Both methods run the optimizer controller locally. `start()` launches the base task clones through a queue 
+specified when instantiating the controller, while `start_locally()` runs the tasks locally.
 
 :::tip Remote Execution
-You can also launch the optimizer controller through a queue by using the [`Task.execute_remotely`](../references/sdk/task.md#execute_remotely) 
-method before starting the optimizer.  
+You can also launch the optimizer controller through a queue by using [`Task.execute_remotely()`](../references/sdk/task.md#execute_remotely) 
+before starting the optimizer.  
 ::: 
 
 
@@ -136,11 +136,20 @@ method before starting the optimizer.
 
 Check out the [Hyperparameter Optimization tutorial](../guides/optimization/hyper-parameter-optimization/examples_hyperparam_opt.md) for a step-by-step guide.
 
-## Hyperparameter Optimization CLI
+## SDK Reference
+
+For detailed information, see the complete [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
+
+## CLI
 
 ClearML also provides `clearml-param-search`, a CLI utility for managing the hyperparameter optimization process. See 
 [ClearML Param Search](../apps/clearml_param_search.md) for more information. 
 
-## SDK Reference
+## UI Application
 
-For detailed information, see the complete [HyperParameterOptimizer SDK reference page](../references/sdk/hpo_optimization_hyperparameteroptimizer.md).
+:::info Pro Plan Offering
+The ClearML HPO App is available under the ClearML Pro plan
+:::
+
+ClearML provides the [Hyperparameter Optimization GUI application](../webapp/applications/apps_hpo.md) for launching and 
+managing the hyperparameter optimization process. 

@@ -43,11 +43,13 @@ which supports environment variable reference.
 
 For example: 
 ```editorconfig
- google.storage {
-        # # Default project and credentials file
-        # # Will be used when no bucket configuration is found
-        project: "clearml"
-        credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
+sdk {
+   google.storage {
+          # # Default project and credentials file
+          # # Will be used when no bucket configuration is found
+          project: "clearml"
+          credentials_json: ${GOOGLE_APPLICATION_CREDENTIALS}
+  }
 }
 ```
 
@@ -110,12 +112,28 @@ in either case).
 
 ---
 
+**`agent.docker_allow_host_environ`** (*bool*)
+
+* Set to `true` to allow passing host environments into docker container with Task's docker container arguments. For example: `"-e HOST_NAME=$HOST_NAME"`. 
+
+:::caution
+Use with care! This might introduce security risks by allowing access to keys/secret on the host machine. 
+:::
+
+---
+
 **`agent.docker_apt_cache`** (*string*)
         
 * The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
         
 ---
 
+**`docker_args_extra_precedes_task`** (*bool*)
+
+*  Allow the arguments specified in `agent.extra_docker_arguments` to override task level docker arguments, in the case that
+the same argument is passed in both. If set to `False`, a task's docker arguments will override the `extra_docker_arguments`.
+
+---
 **`agent.docker_container_name_format`** (*string*)
 
 :::note Compatibility Required
@@ -151,7 +169,7 @@ Compatible with Docker versions 0.6.5 and above
 
 **`agent.docker_install_opencv_libs`** (*bool*)
 
-* Install the required packages for opencv libraries (libsm6 libxext6 libxrender-dev libglib2.0-0), for backwards 
+* Install the required packages for opencv libraries (`libsm6 libxext6 libxrender-dev libglib2.0-0`), for backwards 
   compatibility reasons. Change to `false` to skip installation and decrease docker spin-up time.
 
 ---
@@ -214,7 +232,7 @@ from `system_site_packages`
 
 **`agent.extra_docker_arguments`** (*[string]*)
         
-* Optional arguments to pass to the Docker image. These are local for this agent, and will not be updated in the experiment's `docker_cmd` section. For example, ` ["--ipc=host", ]`.
+* Optional arguments to pass to the Docker image. These are local for this agent, and will not be updated in the experiment's `docker_cmd` section. For example, `["--ipc=host", ]`.
         
 ---
         
@@ -292,7 +310,7 @@ from `system_site_packages`
     * `AWS_SECRET_ACCESS_KEY` 
     * `AZURE_STORAGE_KEY`
   
-  * To mask additional environment variables, add their keys to the `extra_keys` list.  
+  * To mask additional environment variables, add their keys to the `extra_keys` list. 
   For example, to hide the value of a custom environment variable named `MY_SPECIAL_PASSWORD`, set `extra_keys: ["MY_SPECIAL_PASSWORD"]`
 
   * By default, `parse_embedded_urls` is set to `true`, so agent will also hide passwords in URLs and handle environment variables
@@ -319,7 +337,13 @@ from `system_site_packages`
       use the requested python version (default)
 
 ___
-        
+
+**`agent.protected_docker_extra_args`** (*[string]*)   
+
+* Prevent listed task docker arguments from being used if they are already specified in `agent.extra_docker_arguments`. 
+
+---
+
 **`agent.python_binary`** (*string*)
         
 * Set the Python version to use when creating the virtual environment, and when launching the experiment. For example, `/usr/bin/python3` or `/usr/local/bin/python3.6`.
@@ -391,7 +415,7 @@ ___
 
 **`agent.match_rules`** (*[dict]*)
 
-:::note Enterprise Feature
+:::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
 :::
 
@@ -406,7 +430,7 @@ match_rules: [
           image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
           arguments: "-e define=value"
           match: {
-              script{
+              script {
                   # Optional: must match all requirements (not partial)
                   requirements: {
                       # version selection matching PEP-440
@@ -459,6 +483,12 @@ ___
 **`agent.package_manager.extra_index_url`** (*[string]*)
         
 * A list of URLs for additional artifact repositories when installing Python packages.
+
+---
+
+**`agent.package_manager.extra_pip_install_flags`** (*[string]*)
+
+* A list of additional flags to use when the agent install packages. For example: `["--use-deprecated=legacy-resolver", ]`
 
 ---
         
@@ -515,6 +545,17 @@ ___
 **`agent.package_manager.priority_packages`** (*[string]*)
 
 * A list of packages with priority to be installed before the rest of the required packages. For example: `["cython", "numpy", "setuptools", ]`
+
+---
+
+**`agent.package_manager.pytorch_resolve`** (*str*)
+
+* Set the PyTorch resolving mode. The options are:
+  * `pip` (default) - Sets extra index based on cuda and lets pip resolve
+  * `none` - No resolving. Install PyTorch like any other package
+  * `direct` - Resolve a direct link to the PyTorch wheel by parsing the pytorch.org pip repository and matching the 
+  automatically detected cuda version with the required PyTorch wheel. If the exact cuda version is not found for the 
+  required PyTorch wheel, it will try a lower cuda version until a match is found
 
 ---
 
@@ -688,6 +729,17 @@ Dictionary of configuration options for the ClearML Server API, web, and file se
 :::caution
 You must use a secure protocol with ``api.web_server``, ``api.files_server``, and ``api.api_server``. Use `https`, not `http`. 
 :::
+
+---
+
+**`api.http.default_method`** (*string*)
+
+* Set the request method for all API requests and auth login. This can be useful when `GET` requests with payloads are 
+blocked by a server, and `POST` requests can be used instead. The request options are: "GET", "POST", "PUT".   
+
+:::caution
+This configuration option is experimental, and has not been vigorously tested, so it may have unintended consequences. 
+:::
   
 <br/>
 
@@ -695,8 +747,8 @@ You must use a secure protocol with ``api.web_server``, ``api.files_server``, an
         
 **`api.credentials`** (*dict*)
         
-* Dictionary of API credentials.   
-  Alternatively, specify the environment variable ` CLEARML_API_ACCESS_KEY / CLEARML_API_SECRET_KEY` to override these keys.
+* Dictionary of API credentials. 
+  Alternatively, specify the environment variable `CLEARML_API_ACCESS_KEY` / `CLEARML_API_SECRET_KEY` to override these keys.
 
         
 ---
@@ -751,20 +803,13 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
     
 **`sdk.aws.boto3`** (*dict*)
     
-* Dictionary of AWS Storage, Boto3 options.
-    
----
-    
-**`sdk.aws.boto3.pool_connections`** (*integer*)
-    
-* For AWS Boto3, The maximum number of Boto3 pool connections.
-    
----
-    
-**`sdk.aws.boto3.max_multipart_concurrency`** (*integer*)
-    
-* For AWS Boto3, the maximum number of threads making requests for a transfer.
-    
+* Dictionary of AWS Storage, Boto3 options. The keys include: 
+   * `max_multipart_concurrency` (*integer*) - The maximum number of threads making requests for a transfer.
+   * `multipart_threshold` (*integer*) - The transfer size threshold. If size above threshold, Boto3 will automatically use multipart uploads, downloads, and copies (in bytes)
+   * `multipart_chunksize` (*integer*) - The size of each part of a multipart transfer (in bytes).
+   * `pool_connections` (*integer*) - The maximum number of Boto3 pool connections.
+   
+       
 <br/>
 
 ##### sdk.aws.s3
@@ -802,9 +847,9 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
 
 **`sdk.aws.s3.use_credentials_chain`** (*bool*)
 
-* Instead of using default credentials for an unspecified bucket, enable credentials chain to let Boto3 pick the right 
-  credentials. This includes picking credentials from environment variables,
-  a credential file, and metadata service with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials)
+* Set to `true` to let Boto3 look for and pick the right credentials, instead of using the explicitly provided 
+  default credentials (`sdk.aws.s3.secret` and `sdk.aws.s3.key`). Boto3 looks for credentials in environment variables,
+  a credential file, and metadata service with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
   
 
 <br/>
@@ -922,7 +967,7 @@ and limitations on bucket naming.
 **`sdk.development.default_output_uri`** (*string*) <a class="tr_top_negative" id="config_default_output_uri"></a> 
     
 * The default output destination for model checkpoints (snapshots) and artifacts. If the `output_uri` parameter is not provided 
-  when calling the `Task.init` method, then use the destination in `default_output_uri`.
+  when calling [`Task.init()`](../references/sdk/task.md#taskinit), then use the destination in `default_output_uri`.
     
 
 ---
@@ -1181,7 +1226,11 @@ will not exceed the value of `matplotlib_untitled_history_size`
 ---
         
 **`sdk.metrics.tensorboard_single_series_per_graph`** (*bool*)
-        
+    
+:::note
+This configuration is deprecated. This plot behavior is now controlled via the UI
+:::
+
 * Indicates whether plots appear using TensorBoard behavior where each series is plotted in its own graph (plot-per-graph).
  
     The values are:
@@ -1201,7 +1250,7 @@ will not exceed the value of `matplotlib_untitled_history_size`
         
 **`sdk.metrics.images.format`** (*string*)
         
-* The image file format for generated debug images (e.g., JPEG).
+* The image file format for generated debug images (such as "JPEG").
         
 ---
         
@@ -1275,15 +1324,28 @@ will not exceed the value of `matplotlib_untitled_history_size`
         
 **`sdk.storage.cache`** (*dict*)
         
-* Dictionary of storage cache options.
+* Dictionary of storage cache options. The keys include:
+  * `default_base_dir` (*str*) - The default base directory for caching. The default is the `<system_temp_folder>/clearml_cache`.
+  * `default_cache_manager_size` (*int*) - Maximum number of files in the cache (default 100 files).
+  
+:::important Enterprise features 
+The ClearML Enterprise plan also supports the following configuration options under `sdk.storage.cache`:   
+  * `size.max_used_bytes` (*str*) - Maximum size of the local cache directory. If set to `-1`, the directory can use 
+  the available disk space. Specified in storage units (for example: `1GB`, `2TB`, `500MB`).
+  * `size.min_free_bytes` (*str*) - Minimum amount of free disk space that should be left. If `size.max_used_bytes` is 
+  set to `-1`, this configuration will limit the cache directory maximum size to `free disk space - size.min_free_bytes`. 
+  Specified in storage units (for example: `1GB`, `2TB`, `500MB`).
+  * `zero_file_size_check` (*bool*)- If set to `True`, each cache hit will also check the cached file size, making sure 
+  it is not zero (default `False`) 
+  * `secondary` (*dict*) - Set up a secondary cache (acts as an L2 cache). When a request is made, the primary cache is 
+  queried first. If the data is not in the primary cache, the secondary cache is queried. In case of a cache
+  miss, the data will be pulled to the primary cache, and then copied to the secondary cache. The
+  `sdk.storage.cache.secondary` dictionary supports the same option as the primary cache: `default_base_dir` (required), `size.max_used_bytes`, 
+  `size.min_free_bytes`, etc. If an option is unspecified, it defaults to the primary cache's value.
+:::
 
----
-        
-**`sdk.storage.cache.default_base_dir`** (*string*)
-        
-* The default base directory for caching. The default is the system temp folder for caching.
-        
 <br/>
+
 
 ##### sdk.storage.direct_access 
     
@@ -1343,6 +1405,7 @@ base64-encoded contents string, otherwise ignored
 *  `path` - Target file's path, may include `~` and inplace env vars
 *  `target_format` - Format used to encode contents before writing into the target file. Supported values are `json`, `yaml`, 
 `yml`, and `bytes` (in which case the file will be written in binary mode). Default is text mode.
+* `mode` - File-system mode (permissions) to apply to the file after its creation. The mode string will be parsed into an integer (for example: `"0o777"` for `-rwxrwxrwx`)
 * `overwrite` - Overwrite the target file in case it exists. Default is `true`.
 
 Example:
@@ -1351,6 +1414,7 @@ files {
   myfile1 {
     contents: "The quick brown fox jumped over the lazy dog"
     path: "/tmp/fox.txt"
+    mode: "0o777"
   }
   myjsonfile {
     contents: {
@@ -1375,7 +1439,7 @@ sdk {
 
 ## Configuration Vault
 
-:::note Enterprise Feature
+:::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
 :::
 

@@ -10,13 +10,13 @@ example demonstrates reporting series data in the following 2D formats:
 
 ClearML reports these tables in the **ClearML Web UI**, experiment details **>** **PLOTS** tab. 
 
-When the script runs, it creates an experiment named `2D plots reporting`, which is associated with the `examples` project.
+When the script runs, it creates an experiment named `2D plots reporting` in the `examples` project.
 
 ## Histograms
 
-Report histograms by calling the [Logger.report_histogram](../../references/sdk/logger.md#report_histogram) 
-method. To report more than one series on the same plot, use same the `title` argument. For different plots, use different 
-`title` arguments. Specify the type of histogram with the `mode` parameter. The `mode` values are `group` (the default), 
+Report histograms by calling [`Logger.report_histogram()`](../../references/sdk/logger.md#report_histogram). 
+To report more than one series on the same plot, use same the `title` argument. For different plots, use different 
+`title` arguments. Specify the type of histogram with the `mode` parameter. The `mode` values are `group` (default), 
 `stack`, and `relative`.
 
 ```python
@@ -59,13 +59,12 @@ Logger.current_logger().report_histogram(
 
 ## Confusion Matrices
 
-Report confusion matrices by calling the [Logger.report_matrix](../../references/sdk/logger.md#report_matrix) 
-method.
+Report confusion matrices by calling [`Logger.report_confusion_matrix()`](../../references/sdk/logger.md#report_confusion_matrix).
 
 ```python
 # report confusion matrix
 confusion = np.random.randint(10, size=(10, 10))
-Logger.current_logger().report_matrix(
+Logger.current_logger().report_confusion_matrix(
     "example_confusion",
     "ignored",
     iteration=iteration,
@@ -79,7 +78,7 @@ Logger.current_logger().report_matrix(
 
 ```python
 # report confusion matrix with 0,0 is at the top left
-Logger.current_logger().report_matrix(
+Logger.current_logger().report_confusion_matrix(
     "example_confusion_0_0_at_top",
     "ignored",
     iteration=iteration,
@@ -92,8 +91,8 @@ Logger.current_logger().report_matrix(
 
 ## 2D Scatter Plots
 
-Report 2D scatter plots by calling the [Logger.report_scatter2d](../../references/sdk/logger.md#report_scatter2d) 
-method. Use the `mode` parameter to plot data points with lines (by default), markers, or both lines and markers.
+Report 2D scatter plots by calling [`Logger.report_scatter2d()`](../../references/sdk/logger.md#report_scatter2d). 
+Use the `mode` parameter to plot data points with lines (by default), markers, or both lines and markers.
 
 ```python
 scatter2d = np.hstack(

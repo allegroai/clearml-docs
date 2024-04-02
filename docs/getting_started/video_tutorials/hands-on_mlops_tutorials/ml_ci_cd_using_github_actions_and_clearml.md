@@ -7,7 +7,7 @@ keywords: [mlops, components, GitHub Actions, CI/CD]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/k5e-E5oEFUw?rel=0" 
         title="YouTube video player" 
@@ -146,9 +146,9 @@ there and open it up, we first get the status of the task, just to be sure. Reme
 something else might have happened in the meantime. If the status is not `completed`, we want to say this is the 
 status, it isn't completed this should not happen but. If it is completed, we are going to create a table with these
 functions that I won't go deeper into. Basically, they format the dictionary of the state of the task scalars into
-markdown that we can actually use. Let me just go into this though one quick time. So we can basically do `task.get_last_scalar_metrics`, 
+markdown that we can actually use. Let me just go into this though one quick time. So we can basically do `Task.get_last_scalar_metrics()`, 
 and this function is built into ClearML, which basically gives you a dictionary with all the metrics on your task. 
-We'll just get that formatted into a table, make it into a pandas DataFrame, and then tabulate it with this cool package 
+We'll just get that formatted into a table, make it into a Pandas DataFrame, and then tabulate it with this cool package 
 that turns it into MarkDown. So now that we have marked down in the table, we then want to return results table. You can 
 view the full task. This is basically the comment content we want to be in the comment that will later end up in the PR. 
 If something else went wrong, we want to log it here. It will also end up in a comment, by the way, so then we know that 
@@ -280,7 +280,7 @@ or out-of-the-box allow you to run on GPU workers.
 
 So it's just one of the very many ways that you can use ClearML to do 
 these kinds of things and I hope you learned something valuable today. All of the code that you saw in this example 
-will be available in the link in the description, and if you need any help, join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A), we're always there, 
+will be available in the link in the description, and if you need any help, join our [Slack channel](https://joinslack.clear.ml), we're always there, 
 always happy to help and thank you for watching.
 
 </Collapsible>

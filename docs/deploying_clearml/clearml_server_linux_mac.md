@@ -8,7 +8,7 @@ For ClearML docker images, including previous versions, see [https://hub.docker.
 However, pulling the ClearML Docker image directly is not required. ClearML provides a docker-compose YAML file that does this. 
 The docker-compose file is included in the instructions on this page.
 
-For information about upgrading ClearML Server in Linux or macOS, see [here](upgrade_server_linux_mac.md)
+For information about upgrading ClearML Server in Linux or macOS, see [here](upgrade_server_linux_mac.md).
 
 :::important
 If ClearML Server is being reinstalled, clearing browser cookies for ClearML Server is recommended. For example, 
@@ -22,7 +22,7 @@ and delete all cookies under the ClearML Server URL.
 
 For Linux users only:
 
-* Linux distribution must support Docker. For more information, see this [explanation](https://docs.docker.com/engine/install/) in the Docker documentation. 
+* Linux distribution must support Docker. For more information, see the [Docker documentation](https://docs.docker.com/engine/install/). 
 * Be logged in as a user with `sudo` privileges.
 * Use `bash` for all command-line instructions in this installation.
 * The ports `8080`, `8081`, and `8008` must be available for the ClearML Server services.
@@ -157,7 +157,11 @@ After deploying ClearML Server, the services expose the following ports:
 
 ## Backing Up and Restoring Data and Configuration
 
-The commands in this section are an example of how to back up and to restore data and configuration    . 
+:::caution
+Stop your server before backing up or restoring data and configuration
+:::
+
+The commands in this section are an example of how to back up and to restore data and configuration.
 
 If the data and configuration folders are in `/opt/clearml`, then archive all data into `~/clearml_backup_data.tgz`, and
 configuration into `~/clearml_backup_config.tgz`:

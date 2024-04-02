@@ -11,13 +11,13 @@ up new instances when there aren't enough to execute pending tasks.
 
 ## Running the ClearML AWS Autoscaler
 
-run the ClearML AWS autoscaler in one of these ways:
+Run the ClearML AWS autoscaler in one of these ways:
 * Run the [aws_autoscaler.py](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) 
   script locally
 * Launch through your [`services` queue](../../clearml_agent.md#services-mode)
 
 :::note Default AMI
-The autoscaler services uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI
+The autoscaler service uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI.
 :::
 
 ### Running the Script
@@ -78,9 +78,9 @@ When the script runs, a configuration wizard prompts for instance details and bu
    Use spot instances? [y/N]: y
    Select availability zone ['us-east-1b']:
    Select the Amazon Machine Image id ['ami-07c95cafbb788face']:
-   Enter the Amazon EBS device ['/dev/xvda']:
+   Enter the Amazon EBS device ['/dev/sda1']:
    Enter the Amazon EBS volume size (in GiB) [100]:
-   Enter the Amazon EBS volume type ['gp2']:
+   Enter the Amazon EBS volume type ['gp3']:
    ```
    
    Name the instance type that was configured. Later in the configuration, use this name to create the budget.
@@ -151,9 +151,9 @@ Make sure a `clearml-agent` is assigned to that queue.
 ## WebApp
 ### Configuration 
 
-The values configured through the wizard are stored in the task’s hyperparameters and configuration objects by using the 
+The values configured through the wizard are stored in the task's hyperparameters and configuration objects by using the 
 [`Task.connect`](../../references/sdk/task.md#connect) and [`Task.set_configuration_object`](../../references/sdk/task.md#set_configuration_object) 
-methods respectively. They can be viewed in the WebApp, in the task’s **CONFIGURATION** page under **HYPERPARAMETERS** and **CONFIGURATION OBJECTS > General**. 
+methods respectively. They can be viewed in the WebApp, in the task's **CONFIGURATION** page under **HYPERPARAMETERS** and **CONFIGURATION OBJECTS > General**. 
 
 ClearML automatically logs command line arguments defined with argparse. View them in the experiments **CONFIGURATION** 
 page under **HYPERPARAMETERS > General**.
@@ -161,11 +161,11 @@ page under **HYPERPARAMETERS > General**.
 ![Autoscaler configuration](../../img/examples_aws_autoscaler_config.png)
 
 The task can be reused to launch another autoscaler instance: clone the task, then edit its parameters for the instance 
-types and budget configuration, and enqueue the task for execution (you’ll typically want to use a ClearML Agent running 
+types and budget configuration, and enqueue the task for execution (you'll typically want to use a ClearML Agent running 
 in [services mode](../../clearml_agent.md#services-mode) for such service tasks).
 
 ### Console
 
-All other console output appears in the experiment’s **CONSOLE**.
+All other console output appears in the experiment's **CONSOLE**.
 
 ![Autoscaler console](../../img/examples_aws_autoscaler_console.png)

@@ -11,9 +11,9 @@ view, all pipelines are shown side-by-side. In Project view, pipelines are organ
 top-level projects are displayed. Click on a project card to view the project's pipelines.
 
 Click on a pipeline card to navigate to its [Pipeline Runs Table](webapp_pipeline_table.md), where you can view the 
-pipeline structure, configuration, and outputs of all the pipeline’s runs, as well as create new runs.
+pipeline structure, configuration, and outputs of all the pipeline's runs, as well as create new runs.
 
-Filter the pipelines to find the one you’re looking for more easily. These filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />:
+Filter the pipelines to find the one you're looking for more easily. These filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />:
 * My Work - Show only pipelines that you created
 * Tags - Choose which tags to filter by from a list of tags used in the pipelines.
   * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" 
@@ -46,7 +46,7 @@ In List view, the pipeline cards display summarized pipeline information:
 </div>
 
 * Pipeline name
-* Time since the pipeline’s most recent run
+* Time since the pipeline's most recent run
 * Run summary - Number of *Running*/*Pending*/*Completed*/*Failed* runs
 * Tags 
 
@@ -62,7 +62,7 @@ of a pipeline card to open its context menu and access pipeline actions.
 
 </div>
 
-* **Rename** - Change the pipeline’s name
+* **Rename** - Change the pipeline's name
 * **Add Tag** - Add label to the pipeline to help easily classify groups of pipelines.
 * **Delete** - Delete the pipeline: delete all its runs and any models/artifacts produced (a list of remaining artifacts 
-  is returned). To delete a pipeline, all its runs must first be [archived](../webapp_archiving.md). 
+  is returned). To delete a pipeline, all its runs must first be archived. 

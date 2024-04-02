@@ -48,13 +48,13 @@ As can be seen, the `clearml-data sync` command creates the dataset, then upload
 
 ## Modifying Synced Folder
 
-Now we'll modify the folder:
+Modify the data folder:
 1. Add another line to one of the files in the `data_samples` folder.
 1. Add a file to the sample_data folder.<br/> 
-   Run`echo "data data data" > data_samples/new_data.txt` (this will create the file `new_data.txt` and put it in the `data_samples` folder)
+   Run `echo "data data data" > data_samples/new_data.txt` (this will create the file `new_data.txt` and put it in the `data_samples` folder)
 
 
-We'll repeat the process of creating a new dataset with the previous one as its parent, and syncing the folder.
+Repeat the process of creating a new dataset with the previous one as its parent, and syncing the folder.
 
 ```bash
 clearml-data sync --project datasets --name second_ds --parents a1ddc8b0711b4178828f6c6e6e994b7c --folder data_samples

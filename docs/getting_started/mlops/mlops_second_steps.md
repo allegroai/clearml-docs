@@ -8,9 +8,9 @@ Pipelines provide users with a greater level of abstraction and automation, with
 Tasks can interface with other Tasks in the pipeline and leverage other Tasks' work products.
 
 The sections below describe the following scenarios: 
-* Dataset creation
-* Data processing and consumption  
-* Pipeline building
+* [Dataset creation](#dataset-creation)
+* Data [processing](#preprocessing-data) and [consumption](#training)  
+* [Pipeline building](#building-the-pipeline)
 
 
 ## Building Tasks
@@ -31,6 +31,8 @@ The second step is to preprocess the data. First access the data, then modify it
 and lastly create a new version of the data.
 
 ```python
+from clearml import Task, Dataset
+
 # create a task for the data processing part
 task = Task.init(project_name='data', task_name='create', task_type='data_processing')
 
@@ -46,10 +48,11 @@ dataset_folder = dataset.get_mutable_local_copy(
 
 # create a new version of the dataset with the pickle file
 new_dataset = Dataset.create(
-    dataset_project='data', dataset_name='dataset_v2', 
+    dataset_project='data', 
+    dataset_name='dataset_v2', 
     parent_datasets=[dataset], 
-    use_current_task=True,  
-    # this will make sure we have the creation code and the actual dataset artifacts on the same Task
+    # this will make sure we have the creation code and the actual dataset artifacts on the same Task 
+    use_current_task=True,
 )
 new_dataset.sync_folder(local_path=dataset_folder)
 new_dataset.upload()
@@ -66,11 +69,11 @@ When you access the Dataset, it automatically merges the files from all parent v
 in a fully automatic and transparent process, as if the files were always part of the requested Dataset.
 
 ### Training
-We can now train our model with the **latest** Dataset we have in the system.
-We will do that by getting the instance of the Dataset based on the `latest` tag 
-(if by any chance we have two Datasets with the same tag we will get the newest).
-Once we have the dataset we can request a local copy of the data. All local copy requests are cached,
-which means that if we are accessing the same dataset multiple times we will not have any unnecessary downloads.
+You can now train your model with the **latest** Dataset you have in the system, by getting the instance of the Dataset 
+based on the `latest` tag 
+(if by any chance you have two Datasets with the same tag you will get the newest).
+Once you have the dataset you can request a local copy of the data. All local copy requests are cached,
+which means that if you access the same dataset multiple times you will not have any unnecessary downloads.
 
 ```python
 # create a task for the model training
@@ -87,11 +90,13 @@ dataset_folder = dataset.get_local_copy()
 
 ## Building the Pipeline
 
-Now that we have the data creation step, and the data training step, let's create a pipeline that when executed,
+Now that you have the data creation step, and the data training step, create a pipeline that when executed,
 will first run the first and then run the second.
 It is important to remember that pipelines are Tasks by themselves and can also be automated by other pipelines (i.e. pipelines of pipelines).
 
 ```python
+from clearml import PipelineController
+
 pipe = PipelineController(
     project='data', 
     name='pipeline demo',
@@ -111,6 +116,6 @@ pipe.add_step(
 )
 ```
 
-We could also pass the parameters from one step to the other (for example `Task.id`).
-In addition to pipelines made up of Task steps, ClearML also supports pipelines consisting of function steps. See more in the 
-full pipeline documentation [here](../../pipelines/pipelines.md).
+You can also pass the parameters from one step to the other (for example `Task.id`).
+In addition to pipelines made up of Task steps, ClearML also supports pipelines consisting of function steps. For more 
+information, see the [full pipeline documentation](../../pipelines/pipelines.md).

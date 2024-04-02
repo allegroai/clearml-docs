@@ -7,7 +7,7 @@ keywords: [mlops, components, machine learning, data scientist]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/quSGXvuK1IM?rel=0" 
         title="YouTube video player" 
@@ -188,7 +188,7 @@ your machine usage and your GPU usage and stuff like that, and then the learning
 give you a really, really quick overview of the most important metrics that you're trying to solve. And keep in mind 
 this F1 score because this is the thing that we're trying to optimize here. 
 
-Then plots. I can, for example, plot a confusion matrix every X iterations. So in this case ,for example, after a few 
+Then plots. I can, for example, plot a confusion matrix every X iterations. So in this case, for example, after a few 
 iterations, I plot the confusion matrix again just so I can see over time how well the model starts performing. So as 
 you can see here, a perfect confusion matrix will be a diagonal line because every true label will be combined with the 
 exact same predicted label. And in this case, it's horribly wrong. But then over time it starts getting closer and 

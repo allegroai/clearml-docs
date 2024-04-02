@@ -2,6 +2,19 @@
 title: ClearML Agent
 ---
 
+
+<div class="vid" >
+<iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
+        src="https://www.youtube.com/embed/MX3BrXnaULs" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+        allowfullscreen>
+</iframe>
+</div>
+
+<br/>
+
 **ClearML Agent** is a virtual environment and execution manager for DL / ML solutions on GPU machines. It integrates with the **ClearML Python Package** and ClearML Server to provide a full AI cluster solution. <br/>
 Its main focus is around:
 - Reproducing experiments, including their complete environments. 
@@ -12,7 +25,7 @@ to a remote machine.
 
 ![ClearML Agent flow diagram](img/clearml_agent_flow_diagram.png)
 
-The diagram above demonstrates a typical flow where an agent executes a task:  
+The preceding diagram demonstrates a typical flow where an agent executes a task:  
 
 1. Enqueue a task for execution on the queue.
 1. The agent pulls the task from the queue.
@@ -25,11 +38,17 @@ The diagram above demonstrates a typical flow where an agent executes a task:
    1.  Set up the python environment and required packages.
 1. The task's script/code is executed.  
 
-While the agent is running, it continuously reports system metrics to the ClearML Server (These can be monitored in the **Workers and Queues** page).  
+:::note Python Version
+ClearML Agent uses the Python version available in the environment or docker in which it executes the code. It does not 
+install Python, so make sure to use a docker or environment with the version you need.
+::: 
+
+While the agent is running, it continuously reports system metrics to the ClearML Server (these can be monitored in the 
+[**Orchestration**](webapp/webapp_workers_queues.md) page).  
 
 Continue using ClearML Agent once it is running on a target machine. Reproduce experiments and execute 
 automated workflows in one (or both) of the following ways: 
-* Programmatically (using [`Task.enqueue`](references/sdk/task.md#taskenqueue) or [`Task.execute_remotely`](references/sdk/task.md#execute_remotely))
+* Programmatically (using [`Task.enqueue()`](references/sdk/task.md#taskenqueue) or [`Task.execute_remotely()`](references/sdk/task.md#execute_remotely))
 * Through the ClearML Web UI (without working directly with code), by cloning experiments and enqueuing them to the 
   queue that a ClearML Agent is servicing.
 
@@ -38,7 +57,7 @@ code modification. Modifying a task clone’s configuration will have the ClearM
 original values:
 * Modified package requirements will have the experiment script run with updated packages
 * Modified recorded command line arguments will have the ClearML agent inject the new values in their stead
-* Code-level configuration instrumented with [`Task.connect`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
+* Code-level configuration instrumented with [`Task.connect()`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
 
 For more information, see [ClearML Agent Reference](clearml_agent/clearml_agent_ref.md), 
 and [configuration options](configs/clearml_conf.md#agent-section).
@@ -90,7 +109,7 @@ it can't do that when running from a virtual environment.
    Detected credentials key="********************" secret="*******"
    ```
         
-1. **Enter** to accept default server URL, which is detected from the credentials or enter a ClearML web server URL.
+1. **Enter** to accept the default server URL, which is detected from the credentials or enter a ClearML web server URL.
 
    A secure protocol, https, must be used. **Do not use http.**
     
@@ -187,6 +206,24 @@ In case a `clearml.conf` file already exists, add a few ClearML Agent specific c
 
 1. Save the configuration.
 
+### Dynamic Environment Variables
+Dynamic ClearML Agent environment variables can be used to override any configuration setting that appears in the [`agent`](configs/clearml_conf.md#agent-section) 
+section of the `clearml.conf`.
+
+The environment variable's name should be `CLEARML_AGENT__AGENT__<configuration-path>`, where `<configuration-path>` 
+represents the full path to the configuration field being set. Elements of the configuration path should be separated by 
+`__` (double underscore). For example, set the `CLEARML_AGENT__AGENT__DEFAULT_DOCKER__IMAGE` environment variable to 
+deploy an agent with a different value to what is specified for `agent.default_docker.image` in the clearml.conf.
+
+:::note NOTES
+* Since configuration fields may contain JSON-parsable values, make sure to always quote strings (otherwise the agent 
+might fail to parse them)
+* To comply with environment variables standards, it is recommended to use only upper-case characters in 
+environment variable keys. For this reason, ClearML Agent will always convert the configuration path specified in the 
+dynamic environment variable's key to lower-case before overriding configuration values with the environment variable 
+value.
+:::
+
 ## Deployment
 
 ### Spinning Up an Agent
@@ -233,7 +270,7 @@ clearml-agent daemon --detached --queue default --gpus 1
 ```
 To allocate more than one GPU, provide a list of allocated GPUs
 ```bash
-clearml-agent daemon --gpus 0,1 --queue dual_gpu &
+clearml-agent daemon --gpus 0,1 --queue dual_gpu
 ```
 
 #### Queue Prioritization
@@ -281,14 +318,199 @@ SSH_AUTH_SOCK=<file_socket> clearml-agent daemon --gpus <your config> --queue <y
 
 ### Kubernetes 
 Agents can be deployed bare-metal or as dockers in a Kubernetes cluster. ClearML Agent adds the missing scheduling 
-capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent’s 
-features (scheduling, job prioritization, and more).
+capabilities to Kubernetes, allows for more flexible automation from code, and gives access to all of ClearML Agent's 
+features.
 
-There are two options for deploying the ClearML Agent to a Kubernetes cluster:
-* Spin ClearML Agent as a long-lasting service pod
-* Map ClearML jobs directly to K8s jobs with Kubernetes Glue (available in the ClearML Enterprise plan)
+ClearML Agent is deployed onto a Kubernetes cluster through its Kubernetes-Glue which maps ClearML jobs directly to K8s 
+jobs:
+* Use the [ClearML Agent Helm Chart](https://github.com/allegroai/clearml-helm-charts/tree/main/charts/clearml-agent) to
+spin an agent pod acting as a controller. Alternatively (less recommended) run a [k8s glue script](https://github.com/allegroai/clearml-agent/blob/master/examples/k8s_glue_example.py) 
+on a K8S cpu node
+* The ClearML K8S glue pulls jobs from the ClearML job execution queue and prepares a K8s job (based on provided yaml 
+template)
+* Inside each job pod the `clearml-agent` will install the ClearML task's environment and run and monitor the experiment's 
+process
 
-See more details [here](https://github.com/allegroai/clearml-agent#kubernetes-integration-optional).
+#### Fractional GPUs
+Some jobs that you send for execution need a minimal amount of compute and memory, but you end up allocating entire GPUs 
+to them. In order to optimize your compute resource usage, you can partition GPUs into slices. 
+
+Set up MIG support for Kubernetes through your NVIDIA device plugin, and define the GPU fractions to be made available 
+to the cluster. 
+
+The ClearML Agent Helm chart lets you specify a pod template for each queue which describes the resources that the pod
+will use. The template should specify the requested GPU slices under `Containers.resources.limits` to have the queue use 
+the defined resources. For example, the following configures a K8s pod to run a 3g.20gb MIG device:
+
+```
+# tf-benchmarks-mixed.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tf-benchmarks-mixed
+spec:
+  restartPolicy: Never
+  Containers:
+     - name: tf-benchmarks-mixed
+     image: ""
+      command: []
+      args: []
+      resources:
+        limits:
+          nvidia.com/mig-3g.20gb: 1
+  nodeSelector:  #optional
+    nvidia.com/gpu.product: A100-SXM4-40GB
+```
+
+When tasks are added to the relevant queue, the agent pulls the task and creates a pod to execute it, using the specified 
+GPU slice. 
+
+For example, the following configures what resources should be used to execute tasks from the `default` queue: 
+
+```
+agentk8sglue:
+  queue: default 
+  # … 
+  basePodTemplate:
+    # …
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+  nodeSelector:
+    nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
+```
+
+:::important Enterprise Feature
+The ClearML Enterprise plan supports K8S servicing multiple ClearML queues, as well as providing a pod template for each 
+queue for describing the resources for each pod to use.
+
+For example, the following configures which resources to use for `example_queue_1` and `example_queue_2`:
+
+```yaml
+agentk8sglue:
+  queues:
+    example_queue_1:
+      templateOverrides:
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      nodeSelector:
+        nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
+    example_queue_2:
+      templateOverrides:
+        resources:
+          limits:
+            nvidia.com/gpu: 2
+      nodeSelector:
+        nvidia.com/gpu.product: A100-SXM4-40GB
+```
+:::
+
+### Slurm
+
+:::important Enterprise Feature
+Slurm Glue is available under the ClearML Enterprise plan
+:::
+
+Agents can be deployed bare-metal or inside [`Singularity`](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) 
+containers in linux clusters managed with Slurm. 
+
+ClearML Agent Slurm Glue maps jobs to Slurm batch scripts: associate a ClearML queue to a batch script template, then 
+when a Task is pushed into the queue, it will be converted and executed as an `sbatch` job according to the sbatch 
+template specification attached to the queue. 
+
+1. Install the Slurm Glue on a machine where you can run `sbatch` / `squeue` etc. 
+   
+   ```
+   pip3 install -U --extra-index-url https://*****@*****.allegro.ai/repository/clearml_agent_slurm/simple clearml-agent-slurm
+   ```
+
+1. Create a batch template. Make sure to set the `SBATCH` variables to the resources you want to attach to the queue. 
+   The script below sets up an agent to run bare-metal, creating a virtual environment per job. For example:
+
+   ```
+   #!/bin/bash
+   # available template variables (default value separator ":")
+   # ${CLEARML_QUEUE_NAME}
+   # ${CLEARML_QUEUE_ID}
+   # ${CLEARML_WORKER_ID}.
+   # complex template variables  (default value separator ":")
+   # ${CLEARML_TASK.id}
+   # ${CLEARML_TASK.name}
+   # ${CLEARML_TASK.project.id}
+   # ${CLEARML_TASK.hyperparams.properties.user_key.value}
+   
+   
+   # example
+   #SBATCH --job-name=clearml_task_${CLEARML_TASK.id}       # Job name DO NOT CHANGE
+   #SBATCH --ntasks=1                    # Run on a single CPU
+   # #SBATCH --mem=1mb                   # Job memory request
+   # #SBATCH --time=00:05:00             # Time limit hrs:min:sec
+   #SBATCH --output=task-${CLEARML_TASK.id}-%j.log
+   #SBATCH --partition debug
+   #SBATCH --cpus-per-task=1
+   #SBATCH --priority=5
+   #SBATCH --nodes=${CLEARML_TASK.hyperparams.properties.num_nodes.value:1}
+   
+   
+   ${CLEARML_PRE_SETUP}
+   
+   echo whoami $(whoami)
+   
+   ${CLEARML_AGENT_EXECUTE}
+   
+   ${CLEARML_POST_SETUP}
+   ```
+
+   Notice: If you are using Slurm with Singularity container support replace `${CLEARML_AGENT_EXECUTE}` in the batch 
+   template with `singularity exec ${CLEARML_AGENT_EXECUTE}`. For additional required settings, see [Slurm with Singularity](#slurm-with-singularity).
+
+   :::tip 
+   You can override the default values of a Slurm job template via the ClearML Web UI. The following command in the 
+   template sets the `nodes` value to be the ClearML Task’s `num_nodes` user property:  
+   ```
+   #SBATCH --nodes=${CLEARML_TASK.hyperparams.properties.num_nodes.value:1}
+   ```
+   This user property can be modified in the UI, in the task's **CONFIGURATION > User Properties** section, and when the 
+   task is executed the new modified value will be used. 
+   ::: 
+
+3. Launch the ClearML Agent Slurm Glue and assign the Slurm configuration to a ClearML queue. For example, the following 
+   associates the `default` queue to the `slurm.example.template` script, so any jobs pushed to this queue will use the 
+   resources set by that script.  
+   ```
+   clearml-agent-slurm --template-files slurm.example.template --queue default
+   ```
+   
+   You can also pass multiple templates and queues. For example:
+   ```
+   clearml-agent-slurm --template-files slurm.template1 slurm.template2 --queue queue1 queue2
+   ```
+
+#### Slurm with Singularity
+If you are running Slurm with Singularity containers support, set the following:
+
+1. Make sure your `sbatch` template contains:
+   ```
+   singularity exec ${CLEARML_AGENT_EXECUTE}
+   ```
+   Additional singularity arguments can be added, for example: 
+   ```
+   singularity exec --uts ${CLEARML_AGENT_EXECUTE}`
+   ``` 
+1. Set the default Singularity container to use in your [clearml.conf](configs/clearml_conf.md) file:
+   ```
+   agent.default_docker.image="shub://repo/hello-world"
+   ```
+   Or
+   ```
+   agent.default_docker.image="docker://ubuntu"
+   ```
+
+1. Add `--singularity-mode` to the command line, for example:
+   ```
+   clearml-agent-slurm --container-mode --template-files slurm.example_singularity.template --queue default
+   ```
 
 ### Explicit Task Execution
 
@@ -321,40 +543,37 @@ Run a `clearml-agent` daemon in foreground mode, sending all output to the conso
 clearml-agent daemon --queue default --foreground
 ```
 
-
-
 ## Execution Environments
 
-ClearML Agent supports executing tasks in multiple environments.
+ClearML Agent has two primary execution modes: [Virtual Environment Mode](#virtual-environment-mode) and [Docker Mode](#docker-mode). 
 
-### PIP Mode 
-By default, ClearML Agent works in PIP Mode, in which it uses [pip](https://en.wikipedia.org/wiki/Pip_(package_manager)) 
-as the package manager. When ClearML runs, it will create a virtual environment 
-(or reuse an existing one, see [here](clearml_agent.md#virtual-environment-reuse)).
-Task dependencies (Python packages) will be installed in the virtual environment.
+### Virtual Environment Mode 
 
-### Conda Mode 
-This mode is similar to the PIP mode but uses [Conda](https://docs.conda.io/en/latest/) as the package 
-manager. To enable Conda mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: conda` in the “package_manager” section. 
-If extra conda channels are needed, look for “conda_channels” under “package_manager”, and add the missing channel.
+In Virtual Environment Mode, the agent creates a virtual environment for the experiment, installs the required Python 
+packages based on the task specification, clones the code repository, applies the uncommitted changes and finally 
+executes the code while monitoring it. This mode uses smart caching so packages and environments can be reused over 
+multiple tasks (see [Virtual Environment Reuse](#virtual-environment-reuse)). 
 
-### Poetry Mode
-This mode is similar to the PIP mode but uses [Poetry](https://python-poetry.org/) as the package manager.
-To enable Poetry mode, edit the `clearml.conf` file, and modify the `type: pip` to `type: poetry` in the “package_manager” 
-section.
+ClearML Agent supports working with one of the following package managers: 
+* [`pip`](https://en.wikipedia.org/wiki/Pip_(package_manager)) (default)
+* [`conda`](https://docs.conda.io/en/latest/)
+* [`poetry`](https://python-poetry.org/)
+
+To change the package manager used by the agent, edit the [`package_manager.type`](configs/clearml_conf.md#agentpackage_manager) 
+field in the of the `clearml.conf`. If extra channels are needed for `conda`, add the missing channels in the 
+`package_manager.conda_channels` field in the `clearml.conf`. 
 
 :::note Using Poetry with Pyenv
 Some versions of poetry (using `install-poetry.py`) do not respect `pyenv global`.  
 If you are using pyenv to control the environment where you use ClearML Agent, you can:
-  * Use poetry v1.2 and above (which [fixes this issue](https://github.com/python-poetry/poetry/issues/5077))
+  * Use poetry v1.2 and above (which fixes [this issue](https://github.com/python-poetry/poetry/issues/5077))
   * Install poetry with the deprecated `get-poetry.py` installer
-
 :::
 
 ### Docker Mode 
-:::note
-Docker Mode is only supported in linux.<br/>
-Docker Mode requires docker service v19.03 or higher installed.
+:::note notes
+* Docker Mode is only supported in linux.
+* Docker Mode requires docker service v19.03 or higher installed.
 :::
 
 When executing the ClearML Agent in Docker mode, it will: 
@@ -364,6 +583,16 @@ When executing the ClearML Agent in Docker mode, it will:
    
 ClearML Agent uses the provided default Docker container, which can be overridden from the UI. 
 
+:::tip Setting Docker Container via UI
+You can set the docker container via the UI: 
+1. Clone the experiment
+2. Set the Docker in the cloned task's **Execution** tab **> Container** section
+   ![Container section](img/webapp_exp_container.png)
+3. Enqueue the cloned task
+
+The task will be executed in the container specified in the UI.
+:::
+
 All ClearML Agent flags (such as `--gpus` and `--foreground`) are applicable to Docker mode as well. 
 
 To execute ClearML Agent in Docker mode, run: 
@@ -372,7 +601,7 @@ clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional d
 ```
 
 To use the current `clearml-agent` version in the Docker container, instead of the latest `clearml-agent` version that is 
-automatically installed, run:
+automatically installed, pass the `--force-current-version` flag:
 ```bash
 clearml-agent daemon --queue default --docker --force-current-version
 ```
@@ -389,7 +618,7 @@ CLEARML_AGENT_K8S_HOST_MOUNT=/mnt/host/data:/root/.clearml
 ClearML Agent caches virtual environments so when running experiments multiple times, there's no need to spend time reinstalling 
 pre-installed packages. To make use of the cached virtual environments, enable the virtual environment reuse mechanism. 
 
-#### Virtual Environment Reuse
+### Virtual Environment Reuse
 
 The virtual environment reuse feature may reduce experiment startup time dramatically.
 
@@ -427,10 +656,11 @@ Agents can spin multiple Tasks from different queues based on the number of GPUs
 needs.
 
 `dynamic-gpus` enables dynamic allocation of GPUs based on queue properties.
-To configure the number of GPUs for a queue, use the `--queue` flag and specify the queue name and number of GPUs:
+To configure the number of GPUs for a queue, use the `--gpus` flag to specify the active GPUs, and use the `--queue` 
+flag to specify the queue name and number of GPUs:
 
 ```console
-clearml-agent daemon --dynamic-gpus --queue dual_gpus=2 single_gpu=1
+clearml-agent daemon --dynamic-gpus --gpus 0-2 --queue dual_gpus=2 single_gpu=1
 ```
 
 ### Example
@@ -440,7 +670,7 @@ Let's say a server has three queues:
 * `quad_gpu`
 * `opportunistic`
 
-An agent can be spun on multiple GPUs (e.g. 8 GPUs, `--gpus 0-7`), and then attached to multiple
+An agent can be spun on multiple GPUs (for example: 8 GPUs, `--gpus 0-7`), and then attached to multiple
 queues that are configured to run with a certain amount of resources:
 
 ```console
@@ -448,7 +678,7 @@ clearml-agent daemon --dynamic-gpus --gpus 0-7 --queue quad_gpu=4 dual_gpu=2
 ``` 
 
 The agent can now spin multiple Tasks from the different queues based on the number of GPUs configured to the queue.
-The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from `dual_gpu`
+The agent will pick a Task from the `quad_gpu` queue, use GPUs 0-3 and spin it. Then it will pick a Task from the `dual_gpu`
 queue, look for available GPUs again and spin on GPUs 4-5.
 
 Another option for allocating GPUs:
@@ -472,7 +702,7 @@ clearml-agent daemon --services-mode --queue services --create-queue --docker <d
 ```
 
 To limit the number of simultaneous tasks run in services mode, pass the maximum number immediately after the 
-`--services-mode` option (e.g. `--services-mode 5`)
+`--services-mode` option (for example: `--services-mode 5`).
 
 :::note Notes
 * `services-mode` currently only supports Docker mode. Each service spins on its own Docker image.
@@ -528,11 +758,11 @@ Build a Docker container according to the execution environment of a specific ta
 clearml-agent build --id <task-id> --docker --target <new-docker-name>
 ```
 
-It's possible to add the Docker container as the base Docker image to a task (experiment), using one of the following methods:
+You can add the Docker container as the base Docker image to a task (experiment), using one of the following methods:
 
 - Using the **ClearML Web UI** - See [Base Docker image](webapp/webapp_exp_tuning.md#base-docker-image) on the "Tuning
   Experiments" page.
-- In the ClearML configuration file - Use the ClearML configuration file [agent.default_docker](configs/clearml_conf.md#agentdefault_docker)
+- In the ClearML configuration file - Use the ClearML configuration file [`agent.default_docker`](configs/clearml_conf.md#agentdefault_docker)
   options.
 
 Check out [this tutorial](guides/clearml_agent/exp_environment_containers.md) for building a Docker container 
@@ -649,9 +879,12 @@ APIClient. The body of the call must contain the ``queue-id`` and the tags to ad
 
 For example, force workers on for a queue using the APIClient:
 
-    from clearml.backend_api.session.client import APIClient
-    client = APIClient()
-    client.queues.update(queue="<queue_id>", tags=["force_workers:on"]
+```python
+from clearml.backend_api.session.client import APIClient
+
+client = APIClient()
+client.queues.update(queue="<queue_id>", tags=["force_workers:on"])
+```
 
 Or, force workers on for a queue using the REST API:
 

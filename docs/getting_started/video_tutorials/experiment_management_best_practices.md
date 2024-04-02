@@ -7,7 +7,7 @@ keywords: [mlops, components, Experiment Manager]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/kyOfwVg05EM?rel=0" 
         title="YouTube video player" 
@@ -21,7 +21,7 @@ keywords: [mlops, components, Experiment Manager]
 
 <Collapsible type="info" title="Video Transcript">
 Welcome to ClearML. In this video, we’ll go deeper into some of the best practices and advanced tricks you can use while working with ClearML experiment management.
-
+<br/>
 The first thing to know is that the Task object is the central pillar of both the experiment manager and the orchestration and automation components. This means that if you manage the task well in the experiment phase, it will be much easier to scale to production later down the line. 
 
 So let’s take a look at the task object in more detail. We have inputs called hyperparameters and configuration objects for external config files. Outputs can be anything like we saw in the last video. Things like debug images, plots and console output kind of speak for themselves, so the ones we’ll focus on here are scalars and artifacts.
@@ -30,11 +30,11 @@ So let’s start with the inputs: hyperparameters. Hyperparameters are the confi
 
 Let’s take this simple code as an example. First of all, we start the script with the 2 magic lines of code that we covered before. Next to that we have a mix of command line arguments and some additional parameters in a dictionary here. 
 
-The command line arguments will be captured automatically, and for the dict (or really any python object) we can use the `task.connect()` function, to report our dict values as ClearML hyperparameters. 
+The command line arguments will be captured automatically, and for the dict (or really any python object) we can use the `Task.connect()` function, to report our dict values as ClearML hyperparameters. 
 
 As you can see, when we run the script, all hyperparameters are captured and parsed by the server, giving you a clean overview in the UI.
 
-Configuration objects, however, work slightly differently and are mostly used for more complex configurations, like a nested dict or a yaml file for example. They’re logged by using the `task.connect_configuration()` function instead and will save the configuration as a whole, without parsing it.
+Configuration objects, however, work slightly differently and are mostly used for more complex configurations, like a nested dict or a yaml file for example. They’re logged by using the `Task.connect_configuration()` function instead and will save the configuration as a whole, without parsing it.
 
 We have now logged our task with all of its inputs, but if we wanted to, we could rerun our code with different parameters and this is where the magic happens.
 
@@ -42,7 +42,7 @@ Remember ClearML also stores your code environment, making it reproducible. So w
 
 Back to the overview. One of the output types you can add to your task is what’s called an artifact.
 
-An artifact can be a lot of things, mostly they’re files like model weights or pandas dataframes containing preprocessed features for example. Our documentation lists all supported data types.
+An artifact can be a lot of things, mostly they’re files like model weights or Pandas DataFrames containing preprocessed features for example. Our documentation lists all supported data types.
 
 You can download the artifacts your code produced from the web UI to your local computer if you want to, but artifacts can also be retrieved programmatically.
 
@@ -66,6 +66,6 @@ And then we’re not even talking about all the ways to automate tasks using the
 
 For the next videos we’ll finally cover automation and orchestration as well as ClearML Data, our data versioning tool.
 
-Feel free to check out and test all of these features at [app.clear.ml](https://app.clear.ml), or using our self-hosted server on GitHub and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A) if you need any help.
+Feel free to check out and test all of these features at [app.clear.ml](https://app.clear.ml), or using our self-hosted server on GitHub and don’t forget to join our [Slack channel](https://joinslack.clear.ml) if you need any help.
 
 </Collapsible>

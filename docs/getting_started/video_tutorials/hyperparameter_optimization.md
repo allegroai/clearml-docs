@@ -7,7 +7,7 @@ keywords: [mlops, components, hyperparameter optimization, hyperparameter]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/dLkP7y4USFg?rel=0" 
         title="YouTube video player" 
@@ -30,7 +30,7 @@ Yeah, yeah we can, it's called hyperparameter optimization. And we can do all of
 
 If you don’t know what Hyperparameter Optimization is yet, you can find a link to our blog post on the topic in the description below. But in its most basic form, hyperparameter optimization tries to optimize a certain output by changing a set of inputs. 
 
-Let’s say we’ve been working on this model here, and we were tracking our experiments with it anyway. We can see we have some hyperparameters to work with in the **Hyperparameters** tab of the web UI. They are logged by using the `task.connect` function in our code. These are our inputs. We also have a scaler called `validation/epoch_accuracy`, that we want to get as high as possible. This is our output. We could also select to minimize the `epoch_loss` for example, that is something you can decide yourself.
+Let’s say we’ve been working on this model here, and we were tracking our experiments with it anyway. We can see we have some hyperparameters to work with in the **Hyperparameters** tab of the web UI. They are logged by using the `Task.connect` function in our code. These are our inputs. We also have a scaler called `validation/epoch_accuracy`, that we want to get as high as possible. This is our output. We could also select to minimize the `epoch_loss` for example, that is something you can decide yourself.
 
 We can see that no code was used to log the scalar. It's done automatically because we are using TensorBoard.
 
@@ -66,5 +66,5 @@ As we saw earlier, if you’re a ClearML pro user, you can even launch your opti
 
 And don’t forget about autoscaling! You can run it for free using code of course, but with ClearML Pro you can set it up in the UI as well. Which means that, starting from scratch, you can have an autoscaling cluster of cloud VMs running hyperparameter optimization on your experiment tasks in just a few minutes. How cool is that? 
 
-In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A), if you need any help.
+In the next video, we’ll take a look at another example of automation goodness: pipelines. In the meantime, why not try and optimize one of your existing models for free at [app.clear.ml](https://app.clear.ml), and don’t forget to join our [Slack channel](https://joinslack.clear.ml), if you need any help.
 </Collapsible>

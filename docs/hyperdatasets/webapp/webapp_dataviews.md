@@ -11,8 +11,19 @@ to the specific task's **DATAVIEWS** tab (see [Experiment Dataviews](webapp_exp_
 View the Dataviews table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
 using the buttons on the top left of the page. Use the table view for a comparative view of your Dataviews according to 
-columns of interest. Use the details view to access a selected Dataview’s details, while keeping the Dataview list in view.
+columns of interest. Use the details view to access a selected Dataview's details, while keeping the Dataview list in view.
 Details view can also be accessed by double-clicking a specific Dataview in the table view to open its details view. 
+
+You can archive Dataviews so the Dataviews table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
+table to open the archive and view all archived Dataviews. From the archive, you can restore 
+Dataviews to remove them from the archive. You can also permanently delete Dataviews.
+
+You can download the Dataviews table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+and choosing one of these options:
+* **Download onscreen items** - Download the values for Dataviews currently visible on screen  
+* **Download all items** - Download the values for all Dataviews in this project that match the current active filters  
+
+The downloaded data consists of the currently displayed table columns.
 
 ![Dataviews table](../../img/hyperdatasets/webapp_dataviews_table.png)
 
@@ -23,7 +34,7 @@ The Dataviews table includes the following columns:
 |**DATAVIEW** | Dataview name | String|
 |**USER** | User who created the Dataview | String|
 |**STATUS** | The status of the Dataview, which can be *Draft* (editable) or *Published* (read-only)| String| 
-|**PROJECT** | The project name with which the dataview is associated| String|
+|**PROJECT** | Name of the Dataview's project| String|
 |**CREATED** | Elapsed time since the Dataview was created| Date-time|
 |**DESCRIPTION** | A description of the Dataview | String| 
 
@@ -40,7 +51,7 @@ Customize the table using any of the following:
 * Dynamic column order - Drag a column title to a different position.
 * Resize columns - Drag the column separator to change the width of that column. Double-click the column separator for automatic fit.
 * Filter by user and/or status - When a filter is applied to a column, its filter icon will appear with a highlighted 
-  dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ). To 
+  dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" />). To 
   clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" />
   in the top right corner of the table.
 * Sort columns - By experiment name and/or elapsed time since creation.
@@ -68,8 +79,9 @@ Access these actions with the context menu in any of the following ways:
 | ClearML Action | Description |
 |---|---|
 | Details | View Dataview details, including input datasets, label mapping, augmentation operations, and iteration control. Can also be accessed by double-clicking a Dataview in the Dataviews table. |
-| Archive | To more easily work with active Dataviews, move a Dataview to the archive, removing it from the active Dataview table. | 
+| Archive | Move Dataview to the Dataview's archive. | 
 | Restore | Action available in the archive. Restore a Dataview to the active Dataviews table. |
+| Delete | Action available in the archive. Permanently delete a Dataview. |
 | Clone | Make an exact copy of a Dataview that is editable. |
 | Move to Project | Move a Dataview to another project. |
 | Publish |  Publish a Dataview to prevent changes to it. *Published* Dataviews are read-only.|
@@ -84,7 +96,7 @@ The same information can be found in the batch action bar, in a tooltip that app
 
 ## Creating a Dataview 
 
-Create a new Dataview by clicking the **+ NEW DATAVIEW** button at the top right of the table, which opens a 
+Create a Dataview by clicking the **+ NEW DATAVIEW** button at the top right of the table, which opens a 
 **NEW DATAVIEW** window. 
 
 ![New Dataview window](../../img/webapp_dataview_new.png)

@@ -10,15 +10,15 @@ ClearML's Task Scheduler Application lets you schedule tasks for one-shot and/or
 The Scheduler is useful for scheduling routine operations, such as backups, generating reports, as well 
 as periodically running pipelines for updating data and models. 
 
-Each scheduling job is configured with existing ClearML tasks and a scheduling specification for each task: the time 
+Each scheduling job is configured with ClearML tasks and a scheduling specification for each task: the time 
 for execution and recurrence type. The Scheduler app will then launch copies of the specified tasks at their specified 
 times. 
 
 ## Scheduler Instance Configuration
 
 * **Scheduled Tasks** 
-  * **Base Task ID** - ID of an existing ClearML task to schedule. This task will be cloned and enqueued for execution at the specified time. 
-  * **Destination Project** - The project where scheduled tasks will be saved.
+  * **Base Task ID** - ID of a ClearML task to clone and enqueue for execution at the specified time. 
+  * **Destination Project** - The project where the task will be cloned to.
   * **Queue** - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which scheduled tasks are enqueued (make sure an agent is assigned to that queue)
   * **Recurrence** - Recurrence type, select one of the following options:
     * **None** - The task will run once at the specified time.
@@ -55,3 +55,9 @@ The Task Scheduler dashboard shows:
 * Scheduler Log - Application console log containing everything printed to stdout and stderr. The log 
   includes when the scheduler syncs, and when it launches tasks for execution.   
  
+:::tip EMBEDDING CLEARML VISUALIZATION
+You can embed plots from the app instance dashboard into [ClearML Reports](../webapp_reports.md). These visualizations 
+are updated live as the app instance(s) updates. The Enterprise Plan and Hosted Service support embedding resources in 
+external tools (e.g. Notion). Hover over the plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" /> 
+to copy the embed code, and navigate to a report to paste the embed code.
+:::

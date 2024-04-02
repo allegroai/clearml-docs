@@ -17,6 +17,8 @@ based on a specified maximum idle time, or spins up new instances when there are
 queue (until reaching the defined maximum number of instances). You can add an init script, which will be executed when 
 each instance is spun up. 
 
+For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
+
 ## Autoscaler Instance Configuration
 * **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
   values from the file, which can be modified before launching the app instance
@@ -33,19 +35,23 @@ each instance is spun up.
     * Git Password / Personal Access Token
 * **Max Idle Time** (optional) - Maximum time in minutes that an EC2 instance can be idle before the autoscaler spins it 
   down 
-* **Workers Prefix** (optional) - A Prefix added to workers’ names, associating them with this autoscaler
+* **Workers Prefix** (optional) - A Prefix added to workers' names, associating them with this autoscaler
 * **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
 * **Base Docker Image** (optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
   in a Docker artifactory so instances can automatically fetch it
 * **Compute Resources**
     * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
     * EC2 Instance Type - See [Instance Types](https://aws.amazon.com/ec2/instance-types) for full list of types
+    * Run in CPU mode - Check box to run with CPU only
     * Use Spot Instance - Check box to use a spot instance. Else, a reserved instance is used
         * Regular Instance Rollback Timeout - Controls when the autoscaler will revert to starting a regular instance after failing to start a spot instance. It will first attempt to start a spot, and then wait and retry again and again. Once the time it waited exceeded the Regular Instance Rollback Timeout, the autoscaler will try to start a regular instance instead. This is for a specific attempt, where starting a spot fails and an alternative instance needs to be started.
         * Spot Instance Blackout Period - Specifies a blackout period after failing to start a spot instance. This is related to future attempts: after failing to start a spot instance, all requests to start additional spot instances will be converted to attempts to start regular instances, as a way of "easing" the spot requests load on the cloud provider and not creating a "DOS" situation in the cloud account which might cause the provider to refuse creating spots for a longer period.
     * Availability Zone - The [EC2 availability zone](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones) 
       to launch this resource in
     * AMI ID - The AWS AMI to launch
+    :::note AMI prerequisites
+    The AMI used for the autoscaler must include docker runtime and virtualenv 
+    :::
     * Max Number of Instances - Maximum number of concurrent running instances of this type allowed
     * Monitored Queue - Queue associated with this instance type. The tasks enqueued to this queue will be executed on 
       instances of this type
@@ -53,18 +59,23 @@ each instance is spun up.
       commas 
     * EBS Device (optional) - Disk mount point
     * EBS Volume Size (optional) - Disk size (GB)
-    * EBS Volume Type (optional) - See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html) 
+    * EBS Volume Type (optional) - See [Amazon EBS volume types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volume-types.html) 
       for full list of types
     * Instance Key Pair (optional) - AWS key pair that is provided to the spun EC2 instances for connecting to them via 
-      SSH. Provide the Key Pair's name, as was created in AWS. See [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) 
+      SSH. Provide the Key Pair's name, as was created in AWS. See [Amazon EC2 key pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) 
       for more details
     * Security Group ID (optional) - Comma separated list of AWS VPC Security Group IDs to attach to the launched 
       instance. Read more [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) 
+    * VPC Subnet ID - The subnet ID For the created instance. If more than one ID is provided, the instance will be started in the first available subnet. For more information, see [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
     * \+ Add Item - Define another resource type
 * **IAM Instance Profile** (optional) - Set an IAM instance profile for all instances spun by the Autoscaler 
     * Arn - Amazon Resource Name specifying the instance profile
     * Name - Name identifying the instance profile
 * **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
+* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [ClearML vault](../webapp_profile.md#configuration-vault) when executing the task
+* **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
+  instances are running the same task. In most cases, this indicates an issue.
+* **Exclude .bashrc script** - Select in order to skip `.bashrc` script execution 
 * **Init script** (optional) - A bash script to execute after launching the EC2 instance 
 * **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when 
   executing your experiments
@@ -73,18 +84,60 @@ each instance is spun up.
 
 ![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
 
-:::note Enterprise Feature
-You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to globally add your AWS 
-credentials in the following format: 
+### Configuration Vault 
+
+:::important Enterprise Feature
+The Configuration Vault is available under the ClearML Enterprise plan.
+:::
+
+You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to set the following: 
+* `aws_region`
+* `aws_credentials_key_id` and `aws_secret_access_key` - AWS credentials for the Autoscaler
+* `extra_vm_bash_script` - A bash script to execute after launching the EC2 instance. This script will be appended to
+the one set in the `Init script` field of the autoscaler wizard
+* `extra_clearml_conf` - ClearML configuration to use by the ClearML Agent when executing your experiments. This 
+configuration will be appended to that set in the `Additional ClearML Configuration` field of the autoscaler wizard
+
+For example, the following configuration would be applied to all autoscaler instances:
 
 ```
-auto_scaler.v1 {
-    aws {
-        cloud_credentials_key: XXX
-        cloud_credentials_secret: XXX
-    }
+auto_scaler.v1.aws {
+   aws_region: "us-east-1"
+   aws_access_key_id: "<key>"
+   aws_secret_access_key: "<secret>"
+   extra_vm_bash_script: """
+     echo "Hello world!"
+   """
+   extra_clearml_conf: """
+     agent.docker_force_pull: true
+   """
+}
 ```
-:::
+
+To configure a specific instance(s), add a regular expression to match the autoscaler's `Workers Prefix` under 
+`auto_scaler.v1.aws.match`. Within this section, input the specific configuration which will be merged to any 
+matched autoscaler's configuration.
+
+For example:
+
+```
+auto_scaler.v1.aws {
+    # this will be applied to all AWS autoscalers
+    aws_region: "us-east-2"
+
+    match {
+        "^aws_test$": {
+            # this will be applied only to AWS autoscalers who's workers prefix exactly matches aws_test
+            extra_vm_bash_script: """ echo "Hello world!" """
+        }
+        "^aws_.*$": {
+            # this will be applied to all AWS autoscalers who's workers prefix starts with aws_
+            extra_vm_bash_script: """ echo "Goodbye!" """
+        }
+    }
+}
+```
+
 
 ## Dashboard
 Once an autoscaler is launched, the autoscaler's dashboard provides information about available EC2 instances and their 
@@ -97,8 +150,31 @@ The autoscaler dashboard shows:
 * Queues and the resource type associated with them
 * Number of current running instances 
 * Console: the application log containing everything printed to stdout and stderr appears in the console log. The log 
-  shows polling results of the autoscaler’s associated queues, including the number of tasks enqueued, and updates EC2 
-  instances being spun up/down.  
+  shows polling results of the autoscaler's associated queues, including the number of tasks enqueued, and updates EC2 
+  instances being spun up/down.
+
+:::tip Console Debugging   
+To make the autoscaler console log show additional debug information, change an active app instance's log level to DEBUG:
+1. Go to the app instance task's page > **CONFIGURATION** tab > **USER PROPERTIES** section 
+1. Hover over the section > Click `Edit` > Click `+ADD PARAMETER`
+1. Input `log_level` as the key and `DEBUG` as the value of the new parameter.
+
+![Autoscaler debugging](../../img/webapp_autoscaler_debug_log.png)
+
+The console's log level will update in the autoscaler's next iteration.  
+:::
+
+* Instance log files - Click to access the app instance's logs. This takes you to the app instance task's ARTIFACTS tab, 
+  which lists the app instance's logs. In a log's `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
+  to download the complete log. 
+
+
+:::tip EMBEDDING CLEARML VISUALIZATION
+You can embed plots from the app instance dashboard into [ClearML Reports](../webapp_reports.md). These visualizations 
+are updated live as the app instance(s) updates. The Enterprise Plan and Hosted Service support embedding resources in 
+external tools (e.g. Notion). Hover over the plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" /> 
+to copy the embed code, and navigate to a report to paste the embed code.
+:::
 
 ## Generating AWS IAM Credentials
 
@@ -159,12 +235,12 @@ The template policy below demonstrates how to restrict the autoscaler to launch 
 
 The policy includes the following permissions:
 * Enables performing certain EC2 actions on all resources in specified regions 
+* Enables performing certain EC2 actions on all resources of specified instance types 
 * Enables performing certain EC2 actions on specified resources (in selected subnet and security group, and any network-interface, volume, key-pair, instance) 
 * Enables performing an EC2 action to use on a specified AMI on condition that the `ec2:Owner` is a specified owner
 
 ```json
 {
-
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -188,10 +264,24 @@ The policy includes the following permissions:
             }
         },
         {
+            "Sid": "RunEC2InstanceType",
+            "Effect": "Allow",
+            "Action": "ec2:RunInstances",
+            "Resource": "*",
+            "Condition": {
+                "StringLikeIfExists": {
+                    "ec2:InstanceType": [
+                        "<instance type 1>",
+                        "<instance type 2>",
+                        "<instance type 3>"
+                    ]
+                }
+            }
+        },
+        {
             "Sid": "RunEC2",
             "Effect": "Allow",
             "Action": [
-                "ec2:RunInstances",
                 "ec2:CreateTags",
                 "ec2:DeleteTags",
                 "ec2:StartInstances",

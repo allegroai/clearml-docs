@@ -2,7 +2,7 @@
 title: Tracking Leaderboards
 ---
 
-In this tutorial, we will set up a tracking leaderboard. A tracking leaderboard allows easy monitoring of experiments 
+In this tutorial, you will set up a tracking leaderboard. A tracking leaderboard allows easy monitoring of experiments 
 using a customized [experiments table](../../webapp/webapp_exp_table.md) with auto refresh for continual updates.
 
 The tracking leaderboard can be customized to include columns with information about:
@@ -24,7 +24,7 @@ For this tutorial, use one of the following as a project:
 
 The leaderboard will track experiments in one or all projects. 
 
-Begin by opening the **ClearML Web UI** and selecting a project, by doing one of the following:
+Begin by opening the [ClearML Web UI](../../webapp/webapp_overview.md) and selecting a project, by doing one of the following:
 * On the Dashboard, click a project card or **VIEW ALL**.
 * On the Projects page, click a project card or the **All projects** card.
 
@@ -51,7 +51,7 @@ The experiments table allows filtering experiments by experiment name, type, and
     * **Aborted** - The experiment ran and was manually or programmatically terminated.
     * **Published** - The experiment is not running, it is preserved as read-only.
 
-## Step 3: Hide the Defaults Column
+## Step 3: Hide the Default Columns
 
 Customize the columns on the tracking leaderboard by hiding any of the default columns shown below.
 
@@ -87,7 +87,7 @@ Auto refresh allows monitoring the progress of experiments in real time. It is e
 
 **To enable / disable auto refresh:**
 
-* Hover over refresh and then check / uncheck the **Auto Refresh** checkbox.
+* Hover over refresh and then check / clear the **Auto Refresh** checkbox.
 
 ## Step 6: Save the Tracking Leaderboard
 

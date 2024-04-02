@@ -7,7 +7,7 @@ keywords: [mlops, components, ClearML data]
 
 ## Video Tutorial
 
-<div style={{position: 'relative', overflow: 'hidden', width: '100%', paddingTop: '56.25%' }} >
+<div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
         src="https://www.youtube.com/embed/S2pz9jn26uI?rel=0" 
         title="YouTube video player" 
@@ -44,7 +44,7 @@ To add some files to this newly created dataset version, call the `add_files` me
 
 A really useful thing we can do with the python interface is adding some interesting statistics about the dataset itself, such as a plot for example. Here we simply report a histogram on the amount of files in the train and test folders. You can add anything to a dataset that you can add to a ClearML task, so go nuts!
 
-Finally, upload the dataset and then finalize it, or just set `auto_upload` to `true` to make it a one liner.
+Finally, upload the dataset and then finalize it, or just set `auto_upload` to `true` to make it a one-liner.
 
 In the web UI, we can now see the details of our dataset version by clicking on the Dataset button on the left. When we click on our newly created dataset here, we get an overview of our latest version, of course we have only one for now.
 
@@ -86,6 +86,6 @@ If we now click on details again to look at the content, we can see that our cho
 
 In this video, we’ve covered the most important uses of ClearML Data, so hopefully you have a good intuition into what’s possible now and how valuable it can be. Building and updating your dataset versions from code is the best way to keep everything updated and make sure no data is ever lost. You’re highly encouraged to explore ways to automate as much of this process as possible, take a look at our documentation to find the full range of possibilities.
 
-So what are you waiting for? Start tracking your datasets with `clearml-data` and don’t forget to join our [Slack Channel](https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A) if you need any help.
+So what are you waiting for? Start tracking your datasets with `clearml-data` and don’t forget to join our [Slack channel](https://joinslack.clear.ml) if you need any help.
 
 </Collapsible>

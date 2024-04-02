@@ -4,7 +4,7 @@ title: Explicit Reporting Tutorial
 
 In this tutorial, learn how to extend ClearML automagical capturing of inputs and outputs with explicit reporting. 
 
-In this example, we will add the following to the [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
+In this example, you will add the following to the [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
 example script from ClearML's GitHub repo:
 
 * Setting an output destination for model checkpoints (snapshots).
@@ -20,7 +20,7 @@ example script from ClearML's GitHub repo:
 ## Before Starting
 
 Make a copy of [pytorch_mnist.py](https://github.com/allegroai/clearml/blob/master/examples/frameworks/pytorch/pytorch_mnist.py) 
-in order to add explicit reporting to it.
+to add explicit reporting to it.
 
 ```bash
 cp pytorch_mnist.py pytorch_mnist_tutorial.py
@@ -37,8 +37,8 @@ experiment runs. Some possible destinations include:
   * Google Cloud Storage
   * Azure Storage. 
     
-Specify the output location in the `output_uri` parameter of the [`Task.init`](../../references/sdk/task.md#taskinit) method. 
-In this tutorial, we specify a local folder destination.
+Specify the output location in the `output_uri` parameter of [`Task.init()`](../../references/sdk/task.md#taskinit). 
+In this tutorial, specify a local folder destination.
 
 In `pytorch_mnist_tutorial.py`, change the code from:
 
@@ -53,9 +53,11 @@ model_snapshots_path = '/mnt/clearml'
 if not os.path.exists(model_snapshots_path):
     os.makedirs(model_snapshots_path)
 
-task = Task.init(project_name='examples', 
-    task_name='extending automagical ClearML example', 
-    output_uri=model_snapshots_path)
+task = Task.init(
+  project_name='examples', 
+  task_name='extending automagical ClearML example', 
+  output_uri=model_snapshots_path
+)
 ```
 
 When the script runs, ClearML creates the following directory structure:
@@ -83,7 +85,6 @@ package contains methods for explicit reporting of plots, log text, media, and t
 
 * [Logger.report_histogram](../../references/sdk/logger.md#report_histogram)
 * [Logger.report_confusion_matrix](../../references/sdk/logger.md#report_confusion_matrix)
-* [Logger.report_line_plot](../../references/sdk/logger.md#report_line_plot)
 * [Logger.report_scatter2d](../../references/sdk/logger.md#report_scatter2d)
 * [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d)
 * [Logger.report_surface](../../references/sdk/logger.md#report_surface) 
@@ -96,17 +97,16 @@ package contains methods for explicit reporting of plots, log text, media, and t
 
 ### Get a Logger
 
-First, create a logger for the Task using the [Task.get_logger](../../references/sdk/task.md#get_logger) 
-method.
+First, create a logger for the Task using [`Task.get_logger()`](../../references/sdk/task.md#get_logger):
 
 ```python
-logger = task.get_logger
+logger = task.get_logger()
 ```
 
 ### Plot Scalar Metrics
 
-Add scalar metrics using the [Logger.report_scalar](../../references/sdk/logger.md#report_scalar) 
-method to report loss metrics.
+Add scalar metrics using [`Logger.report_scalar()`](../../references/sdk/logger.md#report_scalar) 
+to report loss metrics.
 
 ```python
 def train(args, model, device, train_loader, optimizer, epoch):
@@ -135,7 +135,7 @@ def train(args, model, device, train_loader, optimizer, epoch):
 
 ### Plot Other (Not Scalar) Data
 
-The script contains a function named `test`, which determines loss and correct for the trained model. We add a histogram 
+The script contains a function named `test`, which determines loss and correct for the trained model. Add a histogram 
 and confusion matrix to log them.
 
 ```python
@@ -187,8 +187,8 @@ def test(args, model, device, test_loader):
 
 ### Log Text
 
-Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. We use the [Logger.report_text](../../references/sdk/logger.md#report_text) 
-method and its argument `level` to report a debugging message.
+Extend ClearML by explicitly logging text, including errors, warnings, and debugging statements. Use [`Logger.report_text()`](../../references/sdk/logger.md#report_text) 
+and its `level` argument to report a debugging message.
 
 ```python
 logger.report_text(
@@ -207,8 +207,8 @@ Currently, ClearML supports Pandas DataFrames as registered artifacts.
 
 ### Register the Artifact
 
-In the tutorial script, `test` function, we can assign the test loss and correct data to a Pandas DataFrame object and register 
-that Pandas DataFrame using the [Task.register_artifact](../../references/sdk/task.md#register_artifact) method.
+In the tutorial script, `test` function, you can assign the test loss and correct data to a Pandas DataFrame object and register 
+that Pandas DataFrame using [`Task.register_artifact()`](../../references/sdk/task.md#register_artifact).
 
 ```python
 # Create the Pandas DataFrame
@@ -234,9 +234,9 @@ task.register_artifact(
 
 Once an artifact is registered, it can be referenced and utilized in the Python experiment script.
 
-In the tutorial script, we add [Task.current_task](../../references/sdk/task.md#taskcurrent_task) and 
-[Task.get_registered_artifacts](../../references/sdk/task.md#get_registered_artifacts) 
-methods to take a sample.
+In the tutorial script, add [`Task.current_task()`](../../references/sdk/task.md#taskcurrent_task) and 
+[`Task.get_registered_artifacts()`](../../references/sdk/task.md#get_registered_artifacts) 
+to take a sample.
 
 ```python
 # Once the artifact is registered, we can get it and work with it. Here, we sample it.
@@ -259,8 +259,8 @@ Supported artifacts include:
 * Dictionaries - stored as JSONs
 * Numpy arrays - stored as NPZ files
 
-In the tutorial script, we upload the loss data as an artifact using the [Task.upload_artifact](../../references/sdk/task.md#upload_artifact) 
-method with metadata specified in the `metadata` parameter.
+In the tutorial script, upload the loss data as an artifact using [`Task.upload_artifact()`](../../references/sdk/task.md#upload_artifact) 
+with metadata specified in the `metadata` parameter.
 
 ```python
 # Upload test loss as an artifact. Here, the artifact is numpy array

@@ -13,7 +13,7 @@ const path = require('path');
 
 module.exports = {
   title: 'ClearML',
-  tagline: 'Auto-Magical Suite of tools to streamline your ML workflow',
+  tagline: 'Auto-Magical Suite of tools to streamline your AI workflow',
   url: 'https://clear.ml',
   baseUrl: '/',
   onBrokenLinks: 'warn',
@@ -26,6 +26,13 @@ module.exports = {
       theme: require('prism-react-renderer/themes/dracula'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
     },
+    //algolia algolia: {
+      //algolia appId: 'ALGOLIA_APP_ID', // The application ID provided by Algolia
+      //algolia apiKey: 'ALGOLIA_APP_KEY',  // Public API key
+      //algolia indexName: 'ALGOLIA_INDEX_NAME', // index name
+
+      // Optional: see doc section below
+      //algolia contextualSearch: true,},
     zoomSelector: '.markdown :not(em) > img',
     colorMode: {
       defaultMode: 'light',
@@ -93,7 +100,7 @@ module.exports = {
 
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_10',
+              to: '/docs/release_notes/ver_1_15',
             },
             {
               label: 'Community Resources',
@@ -107,7 +114,7 @@ module.exports = {
           to: '/docs/faq'
         },
         {
-          href: 'https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A',
+          href: 'https://joinslack.clear.ml',
           position: 'right',
           className: 'header-ico header-ico--slack',
           'aria-label': 'Slack Channel',
@@ -140,7 +147,7 @@ module.exports = {
           items: [
             {
               label: 'Slack',
-              href: 'https://join.slack.com/t/clearml/shared_invite/zt-1rp61f0cg-Bu_7UlETQrvHHjw~hEBh5A',
+              href: 'https://joinslack.clear.ml',
             },
             {
               label: 'YouTube',
@@ -219,17 +226,10 @@ module.exports = {
       },
     ],
   ],
-  plugins: [
-    // ... Your other plugins.
-    [
-      require.resolve('docusaurus-gtm-plugin'),
-      {
-        id: 'none', // GTM Container ID
-      }
-    ],
-    [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
-      {
+  themes: [
+  // Delete for Algolia start
+      [
+          require.resolve("@easyops-cn/docusaurus-search-local"), {
           hashed: true,
           // whether to index docs pages
           indexDocs: true,
@@ -242,15 +242,27 @@ module.exports = {
 
           // whether to index blog pages
           indexBlog: false,
-          //blogRouteBasePath: '/blog',
+          // blogRouteBasePath: '/blog',
 
+          // files to ignore in search
           // whether to index static pages
           // /404.html is never indexed
           indexPages: false,
+          ignoreFiles: [/docs\/release_notes\/.*/],
 
           // language of your documentation, see next section
-          language: "en",
-    }],
+          language: "en",}
+      ]
+  // Delete for Algolia end
+  ],
+  plugins: [
+    // ... Your other plugins.
+    [
+      require.resolve('docusaurus-gtm-plugin'),
+      {
+        id: 'none', // GTM Container ID
+      }
+    ],
     path.resolve(__dirname, 'src/zoom-plugin')
   ],
 };

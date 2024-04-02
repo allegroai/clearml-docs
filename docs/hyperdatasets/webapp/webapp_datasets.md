@@ -9,10 +9,10 @@ or in List view <img src="/docs/latest/icons/ico-flat-view.svg" alt="List view" 
 view, all hyper-datasets are shown side-by-side. In Project view, hyper-datasets are organized according to their projects, and 
 top-level projects are displayed. Click on a project card to view the project's hyper-datasets.
 
-Click on a Hyper-Dataset card to open the dataset’s [version list](webapp_datasets_versioning.md), where you can view 
+Click on a Hyper-Dataset card to open the dataset's [version list](webapp_datasets_versioning.md), where you can view 
 and manage the dataset versions' lineage and contents. 
 
-Filter the hyper-datasets to find the one you’re looking for more easily. These filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />:
+Filter the hyper-datasets to find the one you're looking for more easily. These filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />:
 * My Work - Show only hyper-datasets that you created
 * Tags - Choose which tags to filter by from a list of tags used in the hyper-datasets.
   * Filter by multiple tag values using the **ANY** or **ALL** options, which correspond to the logical "AND" and "OR" 
@@ -24,7 +24,7 @@ Filter the hyper-datasets to find the one you’re looking for more easily. Thes
 
 ## Project Cards
 
-In Project view, project cards display a project’s summarized hyper-dataset information:
+In Project view, project cards display a project's summarized hyper-dataset information:
 
 <div class="max-w-50">
 
@@ -76,13 +76,13 @@ of a dataset card to open its context menu and access dataset actions:
 
 </div>
 
-* **Rename** - Change the dataset’s name
+* **Rename** - Change the dataset's name
 * **Add Tag** - Add label to the dataset to help easily classify groups of datasets.
 * **Edit Metadata** - Modify dataset-level metadata. This will open the metadata edit window, where you can edit the section
 
 ## Create New Hyper-Datasets
 
-To create a new Hyper-Dataset, click the **+ NEW DATASET** button in the top right of the page, which will open a 
+To create a Hyper-Dataset, click the **+ NEW DATASET** button in the top right of the page, which will open a 
 **New Dataset** modal.
 
 ![Hyper-Dataset creation modal](../../img/webapp_hyperdataset_creation.png)

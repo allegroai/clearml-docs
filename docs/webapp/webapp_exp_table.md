@@ -4,18 +4,28 @@ title: The Experiments Table
 
 The experiments table is a [customizable](#customizing-the-experiments-table) list of experiments associated with a project. From the experiments
 table, view experiment details, and work with experiments (reset, clone, enqueue, create [tracking leaderboards](../guides/ui/building_leader_board.md)
-to monitor experimentation, and more). The experiments table's auto-refresh allows users to continually monitor experiment progress.
+to monitor experimentation, and more). The experiments table's auto-refresh lets users continually monitor experiment progress.
 
-View the experiments table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
-or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />,
+View the experiments in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" />, 
+details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, or
+comparison view <img src="/docs/latest/icons/ico-charts-view.svg" alt="Comparison view" className="icon size-md space-sm" />
 using the buttons on the top left of the page. Use the table view for a comparative view of your experiments according 
-to columns of interest. Use the details view to access a selected experiment’s details, while keeping the experiment list 
-in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view. 
+to columns of interest. Use the details view to access a selected experiment's details, while keeping the experiment list 
+in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
+Use the [comparison view](#comparing-experiments) to compare your experiments' scalar and plot results (for a more in 
+depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). When selected, this view presents a comparison 
+of all selected experiments. If no experiments are selected, all currently visible experiments in the table are compared.
 
-:::info
-To assist in focusing on active experimentation, experiments and models can be archived, so they will not appear
-in the active experiments and models tables. See [Archiving](webapp_archiving.md).
-:::
+You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
+table to open the archive and view all archived experiments. From the archive, you can restore 
+experiments to remove them from the archive. You can also permanently delete experiments.
+
+You can download the experiments table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+and choosing one of these options:
+* **Download onscreen items** - Download the values for experiments currently visible on screen  
+* **Download all items** - Download the values for all experiments in this project that match the current active filters  
+
+The downloaded data consists of the currently displayed table columns.
 
 ![Experiment table](../img/webapp_experiment_table.png)
 
@@ -119,7 +129,7 @@ There are a few types of filters:
     options appear on the top of the tag list.
   * Filter by the absence of a tag (logical "NOT") by clicking its checkbox twice. An `X` will appear in the tag's checkbox.
   
-Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" /> ).  
+Once a filter is applied to a column, its filter icon will appear with a highlighted dot on its top right (<img src="/docs/latest/icons/ico-filter-on.svg" alt="Filter on" className="icon size-md" />).  
 
 To clear all active filters, click <img src="/docs/latest/icons/ico-filter-reset.svg" alt="Clear filters" className="icon size-md" /> 
 in the top right corner of the table.
@@ -144,8 +154,9 @@ to open the context menu
 | Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
 | View Worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
-| Archive | To more easily work with active experiments, move an experiment to the archive. See [Archiving](webapp_archiving.md). | Any state |  None  |
+| Archive | Move experiment to the project's archive. If it is shared (ClearML Hosted Service only), the experiment becomes private. | Any state |  *Pending* to *Draft*  |
 | Restore |Action available in the archive. Restore an experiment to the active experiments table.| Any State | None |
+| Delete |  Action available in the archive. Delete an experiment, which will also remove all their logs, results, artifacts and debug samples. | Any State | N/A |
 | Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft* | *Pending* |
 | Dequeue | Remove an experiment from a queue. | *Pending* | *Draft* |
 | Reset  | Delete the log and output from a previous run of an experiment (for example, before rerunning it). | *Completed*, *Aborted*, or *Failed* | *Draft* |
@@ -181,9 +192,40 @@ selecting items beyond the items currently on-screen:
 * **None** - Clear selection
 * **Filtered** - Select **all experiments in the project** that match the current active filters in the project
 
+## Comparing Experiments 
+
+The comparison view compares experiment scalar and plot results (for a more in depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). 
+When selected, the view presents a comparison of all [selected experiments](#selecting-multiple-experiments). If no 
+experiments are selected, all currently visible experiments in the table are displayed in the comparison. 
+
+In the dropdown menu, select to view **Scalars** or **Plots**. **Scalars** shows experiments' scalar results as time 
+series line graphs. **Plots** shows the last reported iteration sample of each metric/variant combination per compared 
+experiment. 
+
+Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
+single comparative plot. 
+
+![Merged comparison plots](../img/webapp_compare_view_1.png)
+
+Other plot types are displayed separately for each experiment.
+
+![Separate comparison plots](../img/webapp_compare_view_2.png)
+
+All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
+represents a reported metric, and each bar in the cluster represents an experiment.
+
+![Single scalar comparison](../img/webapp_compare_view_3.png)
+
+Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> to customize which 
+metrics to view.
+
+In the **Scalars** view, click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size-md" /> to access 
+[scalar plot tools](webapp_exp_track_visual.md#scalar-plot-tools).
+
+
 ## Creating an Experiment Leaderboard
 
-Filter & sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
+Filter and sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
 updates in real time with experiment performance and outputs.
 
 Modify the experiments table in the following ways to create a customized leaderboard:

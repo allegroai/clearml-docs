@@ -2,8 +2,8 @@
 title: Remote Jupyter Tutorial
 ---
 
-In this tutorial we will learn how to launch a remote interactive session on Jupyter Notebook using `clearml-session`.
-We will be using two machines. A local one, where we will be using an interactive session of Jupyter, and a remote machine, 
+In this tutorial you will learn how to launch a remote interactive session on Jupyter Notebook using `clearml-session`.
+You will be using two machines. A local one, where you will be using an interactive session of Jupyter, and a remote machine, 
 where a `clearml-agent` will run and spin an instance of the remote session. 
 
 ## Prerequisites
@@ -41,7 +41,7 @@ name is "DevOps"
 After launching the command, the `clearml-agent` listening to the `default` queue spins a remote Jupyter environment with 
 the specifications. It will automatically connect to the docker on the remote machine. 
    
-The terminal should return output with the session's configuration details, which should look something like this:
+The console should display the session's configuration details:
     
 ```console
 Interactive session config:
@@ -93,17 +93,17 @@ Now, let's execute some code in the remote session!
 
 1. Open up a new Notebook.
 
-1. In the first cell of the notebook, clone the [ClearML Repo](https://github.com/allegroai/clearml). 
+1. In the first cell of the notebook, clone the [ClearML repository](https://github.com/allegroai/clearml): 
 
         !git clone https://github.com/allegroai/clearml.git
 
-1. In the second cell of the notebook, we are going to run this [script](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py) 
-   from the repository that we cloned.
+1. In the second cell of the notebook, run this [script](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py) 
+   from the cloned repository:
    
         %run clearml/examples/frameworks/keras/keras_tensorboard.py
 
-   Look in the script, and notice that it makes use of ClearML, Keras, and TensorFlow, but we don't need to install these 
-   packages in Jupyter, because we specified them in the `--packages` flag of `clearml-session`. 
+   Look in the script, and notice that it makes use of ClearML, Keras, and TensorFlow, but you don't need to install these 
+   packages in Jupyter, because you specified them in the `--packages` flag of `clearml-session`. 
    
 ### Step 5: Shut Down Remote Session
 

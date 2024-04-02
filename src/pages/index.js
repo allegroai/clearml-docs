@@ -22,7 +22,7 @@ const features = [
     imageUrl: 'img/ico-data-science.svg',
     description: (
       <>
-        <code>ClearML</code> is designed to be as easily integrated as possible. <b>Add 2-lines of code</b> and everything is logged &amp; reported!
+        <code>ClearML</code> is designed to be as easily integrated as possible. <b>Add 2 lines of code</b> and everything is logged &amp; reported!
       </>
     ),
   },
@@ -43,7 +43,7 @@ const features = [
     imageUrl: 'img/ico-data-management.svg',
     description: (
       <>
-          <code>ClearML-Data</code> enables you to <b>abstract the Data from your Code</b>.
+          <code>ClearML-Data</code> lets you <b>abstract the Data from your Code</b>.
           CLI / programmatic interface easily create datasets from anywhere.
           ClearML-Data is a fully differentiable solution on top of object-storage / http / NAS layer.
           <b> We solve your data localization problem, so you can process it anywhere.</b>
@@ -97,7 +97,7 @@ function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Turn your code into MLOps with only 2 lines of code with ClearML! Easily develop, orchestrate, and automate ML workflows at scale"
+      description="Turn your code into MLOps with only 2 lines of code with ClearML! Easily develop, orchestrate, and automate AI workflows at scale"
     >
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">

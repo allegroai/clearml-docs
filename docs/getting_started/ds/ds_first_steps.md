@@ -95,7 +95,7 @@ Now you can use ClearML in your notebook!
 
 In ClearML, experiments are organized as [Tasks](../../fundamentals/task.md).
 
-ClearML will automatically log your experiment and code, including outputs and parameters from popular ML frameworks,
+ClearML automatically logs your experiment and code, including outputs and parameters from popular ML frameworks,
 once you integrate the ClearML [SDK](../../clearml_sdk/clearml_sdk.md) with your code. To control what ClearML automatically logs, see this [FAQ](../../faq.md#controlling_logging).
 
 At the beginning of your code, import the `clearml` package:
@@ -104,7 +104,7 @@ At the beginning of your code, import the `clearml` package:
 from clearml import Task
 ```
 
-:::note Full Automatic Logging
+:::tip Full Automatic Logging
 To ensure full automatic logging, it is recommended to import the `clearml` package at the top of your entry script.
 :::
 
@@ -114,9 +114,9 @@ Then initialize the Task object in your `main()` function, or the beginning of t
 task = Task.init(project_name='great project', task_name='best experiment')
 ```
 
-If the project does not already exist, a new one will be created automatically.
+If the project does not already exist, a new one is created automatically.
 
-The console should return the following output:
+The console should display the following output:
 
 ```
 ClearML Task: created new task id=1ca59ef1f86d44bd81cb517d529d9e5a
@@ -128,12 +128,11 @@ ClearML results page: https://app.clear.ml/projects/4043a1657f374e9298649c6ba72a
 **That’s it!** You are done integrating ClearML with your code :)
 
 Now, [command-line arguments](../../fundamentals/hyperparameters.md#tracking-hyperparameters), [console output](../../fundamentals/logger.md#types-of-logged-results) as well as Tensorboard and Matplotlib will automatically be logged in the UI under the created Task.
-<br/>
 
 Sit back, relax, and watch your models converge :) or continue to see what else can be done with ClearML [here](ds_second_steps.md).
 
 ## YouTube Playlist
 
-Or watch the YouTube Getting Started Playlist on our YouTube Channel!
+Or watch the **Getting Started** playlist on ClearML's YouTube Channel!
 
 [![Watch the video](https://img.youtube.com/vi/bjWwZAzDxTY/hqdefault.jpg)](https://www.youtube.com/watch?v=bjWwZAzDxTY&list=PLMdIlCuMqSTnoC45ME5_JnsJX0zWqDdlO&index=2)
