@@ -48,5 +48,6 @@ Once you start a Streamlit launcher instance, you can view the following informa
 * **Queue** - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which the Streamlit launcher 
   app instance task will be enqueued (make sure an agent is assigned to that queue)
 * **Docker Image** - Docker image the ClearML Agent will use for running the Streamlit app
+* **Arguments** - Arguments to be passed to the script
 * **Idle Time Limit** (Hours) - Maximum idle time (Period in which no requests are received by the Streamlit app) after 
   which the Streamlit app and the launcher instance will shut down.
