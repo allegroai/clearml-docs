@@ -28,7 +28,8 @@ on `Task.current_task` (the main Task). The dictionary contains the `dist.rank` 
 
 ```python
 Task.current_task().upload_artifact(
-    'temp {:02d}'.format(dist.get_rank()), artifact_object={'worker_rank': dist.get_rank()}
+    name='temp {:02d}'.format(dist.get_rank()), 
+    artifact_object={'worker_rank': dist.get_rank()}
 )
 ```
 
@@ -44,7 +45,10 @@ same title (`loss`), but a different series name (containing the subprocess' `ra
 
 ```python
 Task.current_task().get_logger().report_scalar(
-    'loss', 'worker {:02d}'.format(dist.get_rank()), value=loss.item(), iteration=i
+    title='loss', 
+    series='worker {:02d}'.format(dist.get_rank()), 
+    value=loss.item(), 
+    iteration=i
 )
 ```
 
