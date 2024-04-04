@@ -95,8 +95,8 @@ making it easier to search / filter experiments. Add user properties to an exper
 
 ClearML provides methods to directly access a task's logged parameters.
 
-To get all of a task's parameters and properties (hyperparameters, configuration objects, and user properties), use the 
-[`Task.get_parameters`](../references/sdk/task.md#get_parameters) method, which will return a dictionary with the parameters, 
+To get all of a task's parameters and properties (hyperparameters, configuration objects, and user properties), use 
+[`Task.get_parameters()`](../references/sdk/task.md#get_parameters), which will return a dictionary with the parameters, 
 including their subsections (see [WebApp sections](#webapp-interface) below). 
 
 ## WebApp Interface
