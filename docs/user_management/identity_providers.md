@@ -6,7 +6,7 @@ title: Identity Providers
 This feature is available under the ClearML Enterprise plan
 :::
 
-Administrators can seamlessly connect ClearML with their identity service providers to easily implement Single Sign On 
+Administrators can seamlessly connect ClearML with their identity service providers to easily implement single sign-on 
 (SSO). On top of authenticating users, this also allows ClearML to retrieve user information and more. Once an identity 
 provider connection is configured and enabled, the option appears in your server login page.
 
