@@ -77,17 +77,17 @@ logging metrics, model files, plots, debug samples, and more, so you can gain mo
    ```
    clearml_config{
        project: "TAO Toolkit ClearML Demo"
-	   task: "detectnet_v2_resnet18_clearml"
-	   tags: "detectnet_v2"
-	   tags: "training"
-	   tags: "resnet18"
-	   tags: "unpruned"
+       task: "detectnet_v2_resnet18_clearml"
+       tags: "detectnet_v2"
+       tags: "training"
+       tags: "resnet18"
+       tags: "unpruned"
    }
    ```
    This configuration may vary depending on the schema the network follows. For more information, see the [NVIDIA documentation](https://docs.nvidia.com/tao/tao-toolkit/text/mlops/clearml.html#configuring-the-clearml-element-in-the-training-spec). 
 
 
-And that's it! Whenever you train a model using TAO toolkit, a [ClearML Task](../fundamentals/task.md) will be created, 
+And that's it! Whenever you train a model using TAO Toolkit, a [ClearML Task](../fundamentals/task.md) will be created, 
 which will capture your model files, training configuration, scalars, debug samples, plots, console output, and more. 
 You can view all of this captured information in the [ClearML Web UI](../webapp/webapp_exp_track_visual.md). 
 

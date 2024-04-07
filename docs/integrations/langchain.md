@@ -15,7 +15,6 @@ Integrate ClearML with the following steps:
 1. Set up the `ClearMLCallbackHandler`. The following code creates a [ClearML Task](../fundamentals/task.md) called 
    `llm` in the `langchain_callback_demo` project, which captures your script's information, including Git details, 
    uncommitted code, and python environment: 
-
    ```python
    from langchain.callbacks import ClearMLCallbackHandler
    from langchain_openai import OpenAI
@@ -34,14 +33,13 @@ Integrate ClearML with the following steps:
 
    llm = OpenAI(temperature=0, callbacks=[clearml_callback])
    ```
-  
-  You can also pass the following parameters to the `ClearMLCallbackHandler` object:
-  * `task_type` – The type of ClearML task to create (see [task types](../fundamentals/task.md#task-types))
-  * `tags` – A list of tags to add to the task
-  * `visualize` - Set to `True` for ClearML to capture the run's Dependencies and Entities plots to the ClearML task
-  * `complexity_metrics` - Set to `True` to log complexity metrics
-  * `stream_logs` - Set to `True` to stream callback actions to ClearML Parameters.
-1. Use `ClearMLCallbackHandler.flush_tracker()` after each model request to make sure all outputs, including metrics and  
+   You can also pass the following parameters to the `ClearMLCallbackHandler` object:
+   * `task_type` – The type of ClearML task to create (see [task types](../fundamentals/task.md#task-types))
+   * `tags` – A list of tags to add to the task
+   * `visualize` - Set to `True` for ClearML to capture the run's Dependencies and Entities plots to the ClearML task
+   * `complexity_metrics` - Set to `True` to log complexity metrics
+   * `stream_logs` - Set to `True` to stream callback actions to ClearML Parameters.
+1. Use `ClearMLCallbackHandler.flush_tracker()` after each model request to make sure all outputs, including metrics and
    prompts, are logged to ClearML:
 
    ```python

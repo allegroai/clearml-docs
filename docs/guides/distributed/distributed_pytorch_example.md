@@ -45,8 +45,8 @@ logged together.
 
 ```python
 Task.current_task().get_logger().report_scalar(
-    'loss', 
-    'worker {:02d}'.format(dist.get_rank()), 
+    title='loss', 
+    series='worker {:02d}'.format(dist.get_rank()), 
     value=loss.item(), 
     iteration=i
 )
