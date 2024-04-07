@@ -78,8 +78,8 @@ myVersion.add_frames(frames)
 
 ### Accessing a FrameGroup
 
-To access a FrameGroup, use the `DatasetVersion.get_single_frame` method, just like when 
-[accessing a SingleFrame](single_frames.md#accessing-singleframes).
+To access a FrameGroup, use [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame), 
+just like when [accessing a SingleFrame](single_frames.md#accessing-singleframes):
 
 ```python
 # Get the FrameGroup
