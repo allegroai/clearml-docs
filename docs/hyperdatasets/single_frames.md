@@ -270,7 +270,7 @@ myDatasetversion.add_frames(frames)
 
 
 ### Accessing SingleFrames
-To access a SingleFrame, use [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame). 
+To access a SingleFrame, use [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame):
 
 ```python
 from allegroai import DatasetVersion

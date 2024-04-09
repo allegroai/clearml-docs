@@ -93,7 +93,7 @@ module.exports = {
                 'integrations/keras', 'integrations/keras_tuner',
                 'integrations/langchain',
                 'integrations/lightgbm', 'integrations/matplotlib',
-                'integrations/megengine', 'integrations/monai', 'integrations/mmcv', 'integrations/tao',
+                'integrations/megengine', 'integrations/mmcv', 'integrations/monai', 'integrations/tao',
                 'integrations/optuna',
                 'integrations/python_fire', 'integrations/pytorch',
                 'integrations/ignite',

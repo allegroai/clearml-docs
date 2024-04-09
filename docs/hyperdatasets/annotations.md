@@ -6,7 +6,7 @@ With ClearML Enterprise, annotations can be applied to video and image frames. [
 two types of annotations: **Frame objects** and **Frame labels**.
 
 Annotation Tasks can be used to efficiently organize the annotation of frames in Hyper-Dataset versions (see 
-[Annotations Task Page](webapp/webapp_annotator.md)).  
+[Annotation Tasks](webapp/webapp_annotator.md)).  
 
 For information about how to view, create, and manage annotations using the WebApp, see [Annotating Images and Videos](webapp/webapp_annotator.md#annotating-images-and-video).
 
@@ -27,8 +27,7 @@ Frame labels are applied to an entire frame, not a region in a frame.
 
 ### Adding a Frame Object
 
-To add a frame object annotation to a SingleFrame, use the [`SingleFrame.add_annotation`](../references/hyperdataset/singleframe.md#add_annotation) 
-method.  
+To add a frame object annotation to a SingleFrame, use [`SingleFrame.add_annotation()`](../references/hyperdataset/singleframe.md#add_annotation): 
 
 ```python
 # a bounding box labeled "test" at x=10,y=10 with width of 30px and height of 20px
@@ -49,7 +48,8 @@ Enter the annotation's boundaries in one of the following ways:
 Adding a frame label is similar to creating a frame object, except that coordinates don't need to be specified, since 
 the whole frame is being referenced. 
 
-Use the `SingleFrame.add_annotation` method, but use only the `labels` parameter. 
+Use [`SingleFrame.add_annotation()`](../references/hyperdataset/singleframe.md#add_annotation), but specify only the 
+`labels` parameter:
 
 ```python
 # labels for the whole frame        
