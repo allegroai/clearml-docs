@@ -24,7 +24,7 @@ ClearML provides the following applications:
 * [**Streamlit Launcher**](apps_streamlit.md) - Create visual web interfaces for your models with Streamlit (available under ClearML Enterprise Plan)
 
 :::info Autoscalers
-Autoscaling ([GPU Compute](apps_gpu_compute.md), [AWS Autoscaler](apps_aws_autoscaler.md), and [GCP Autoscaler](apps_gcp_autoscaler.md))
+Autoscaling ([AWS Autoscaler](apps_aws_autoscaler.md) and [GCP Autoscaler](apps_gcp_autoscaler.md))
 was previously available through the Applications page. The autoscaler functionality has been moved to the [Orchestration page](https://app.clear.ml/workers-and-queues/autoscalers) 
 in the WebApp. 
 :::

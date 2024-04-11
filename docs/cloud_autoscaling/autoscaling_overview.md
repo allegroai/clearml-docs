@@ -28,7 +28,6 @@ and have the apps automatically manage your resource consumption as needed–wit
 
 ## Autoscaler Applications
 ClearML provides the following GUI autoscaler applications:
-* [GPU Compute](../webapp/applications/apps_gpu_compute.md) (powered by Genesis Cloud)
 * [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md)
 * [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md)
 
@@ -37,8 +36,6 @@ pay only for the time that you actually use the machines.
 
 The **AWS** and **GCP** autoscaler applications will manage instances on your behalf in your cloud account. When 
 launching an app instance, you will provide your cloud service credentials so the autoscaler can access your account.  
-
-The **GPU Compute** application provides on-demand GPU instances powered by Genesis. All you need to do is define your compute resource budget, and you’re good to go. 
 
 ## How ClearML Autoscaler Apps Work 
 
@@ -67,10 +64,7 @@ associated with a different resource, CPU and GPU, and each queue has two enqueu
 the autoscaler spins up four machines, two CPU machines to execute the tasks in the CPU queue and two GPU machines to 
 execute the tasks in the GPU queue.
 
-:::note
-The GPU Compute app spins up a single compute resource, so you can launch multiple app instances in order to work with 
-multiple resources.
-:::
+
 
 ### Task Execution Configuration
 
@@ -90,7 +84,6 @@ executed tasks will have access to your storage service.
 #### Additional Configuration
 
 Go to a specific app’s documentation page to view all configuration options
-* [GPU Compute](../webapp/applications/apps_gpu_compute.md)
 * [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md)
 * [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md) 
 
