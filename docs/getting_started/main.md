@@ -112,8 +112,8 @@ Want a more in depth introduction to ClearML? Choose where you want to get start
 alert you whenever your model improves in accuracy)
 - Manage your [data](../clearml_data/clearml_data.md) - store, track, and version control 
 - Remotely execute experiments on any compute resource you have available with [ClearML Agent](../clearml_agent.md)  
-- Automatically scale cloud instances according to your resource needs with ClearML's [GPU Compute](../webapp/applications/apps_gpu_compute.md), 
-[AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md), and [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md)
+- Automatically scale cloud instances according to your resource needs with ClearML's 
+[AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md) and [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md)
 GUI applications
 - Run [hyperparameter optimization](../fundamentals/hpo.md) 
 - Build [pipelines](../pipelines/pipelines.md) from code 

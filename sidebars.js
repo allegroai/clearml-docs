@@ -40,7 +40,6 @@ module.exports = {
         {'Cloud Autoscaling': [
             'cloud_autoscaling/autoscaling_overview',
              {'Autoscaler Apps': [
-                    'webapp/applications/apps_gpu_compute',
                     'webapp/applications/apps_aws_autoscaler',
                     'webapp/applications/apps_gcp_autoscaler',
                  ]
