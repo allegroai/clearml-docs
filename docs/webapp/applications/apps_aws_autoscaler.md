@@ -72,13 +72,16 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Arn - Amazon Resource Name specifying the instance profile
     * Name - Name identifying the instance profile
 * **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
-* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [ClearML vault](../webapp_profile.md#configuration-vault) when executing the task
+* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [ClearML vault](../webapp_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
 * **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
   instances are running the same task. In most cases, this indicates an issue.
 * **Exclude .bashrc script** - Select in order to skip `.bashrc` script execution 
 * **Init script** (optional) - A bash script to execute after launching the EC2 instance 
 * **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when 
   executing your experiments
+* **Custom Launch Spec** - Custom AWS EC2 launch specification in JSON format. This will be used as the basis for 
+creating the instances launch spec. See [boto3 EC2.client.run_instances Request Syntax](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/run_instances.html) 
+and [AWS API Reference: RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html) (available under ClearML Enterprise Plan)
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration 
 
