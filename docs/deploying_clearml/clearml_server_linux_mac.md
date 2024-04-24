@@ -83,7 +83,7 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
 
     * macOS:
     
-          screen ~/Library/Containers/com.docker.docker/Data/vms/0/tty
+          docker run --net=host --ipc=host --uts=host --pid=host --privileged --security-opt=seccomp=unconfined -it --rm -v /:/host alpine chroot /host
           sysctl -w vm.max_map_count=262144
 
 1. Remove any previous installation of ClearML Server.
