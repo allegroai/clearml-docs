@@ -413,7 +413,7 @@ ___
         
 ---
 
-**`agent.match_rules`** (*[dict]*)
+**`agent.default_docker.match_rules`** (*[dict]*)
 
 :::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
@@ -477,6 +477,12 @@ match_rules: [
 **`agent.package_manager.conda_env_as_base_docker`** (*bool*)
 
 * Uses conda environment for execution (like a docker)
+
+---
+
+**`agent.package_manager.use_conda_base_env`** (*bool*)
+
+* When set to `True`, installation should be performed into the base Conda environment. Should be used in Docker mode. 
 
 ___
 
@@ -684,6 +690,10 @@ Torch Nightly builds are ephemeral and are deleted from time to time.
 <br/>
 
 #### agent.venv_update
+
+:::note
+This configuration is deprecated. Use `venvs_cache` and set `venvs_cache.path` instead. 
+:::
 
 **`agent.venv_update`** (*dict*)
         
@@ -954,6 +964,21 @@ and limitations on bucket naming.
 * For Azure Storage, this is the container name.
 
 <br/>
+
+#### sdk.dataset
+
+**`sdk.dataset.preview`** (*[dict]*)
+
+* Set limits for the objects that are logged as dataset previews:
+  * **`sdk.dataset.preview.media.max_file_size`** (*int*) - Maximum file size in bytes that a preview object (e.g. image, video, html, etc.) can have. 
+  Files exceeding this size will not be reported as previews. 
+  * **`sdk.dataset.preview.media.image_count`** (*int*) - The maximum number of image files reported as previews
+  * **`sdk.dataset.preview.media.video_count`** (*int*) - The maximum number of video files reported as previews
+  * **`sdk.dataset.preview.media.audio_count`** (*int*) - The maximum number of image files reported as previews
+  * **`sdk.dataset.preview.media.html_count`** (*int*) - The maximum number of html files reported as previews
+  * **`sdk.dataset.preview.media.json_count`** (*int*) - The maximum number of json files reported as previews
+  * **`sdk.dataset.preview.tabular.row_count`** (*int*) - The number of rows for each tabular file reported. By default, it will report only the first 10 rows from that file
+  * **`sdk.dataset.preview.tabular.table_count`** (*int*) - The maximum number of tables reported as preview
 
 
 #### sdk.development
@@ -1371,6 +1396,24 @@ every 5MB
 **`sdk.storage.log.report_upload_chunk_size_mb`** (*int*)
 * Specify how often in MB the `StorageManager` reports its upload progress to the console. By default, it reports every 
 5MB
+
+##### sdk.storage.path_substitution
+
+**`sdk.storage.path_substitution`** (*[dict]*)
+
+* path_substitution = [
+            # Replace registered links with local prefixes,
+            # Solve mapping issues, and allow for external resource caching.
+
+            # {
+            #     registered_prefix = "s3://bucket/research"
+            #     local_prefix = "file:///mnt/shared/bucket/research"
+            # },
+            # {
+            #     registered_prefix = "file:///mnt/shared/folder/"
+            #     local_prefix = "file:///home/user/shared/folder"
+            # }
+        ]
 
 ### environment section
 
