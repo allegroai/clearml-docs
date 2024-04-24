@@ -83,7 +83,7 @@ executed tasks will have access to your storage service.
 
 #### Additional Configuration
 
-Go to a specific app’s documentation page to view all configuration options
+Go to a specific app’s documentation page to view all configuration options:
 * [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md)
 * [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md) 
 

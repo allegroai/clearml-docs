@@ -48,7 +48,7 @@ make sure to close a task, before initializing a new one. To close a task simply
 (see example [here](../guides/advanced/multiple_tasks_single_process.md)).
 
 When initializing a task, its project needs to be specified. If the project entered does not exist, it will be created on-the-fly. 
-Projects can be divided into subprojects, just like folders are broken into sub-folders.
+Projects can be divided into subprojects, just like folders are broken into subfolders.
 
 For example:
 ```python

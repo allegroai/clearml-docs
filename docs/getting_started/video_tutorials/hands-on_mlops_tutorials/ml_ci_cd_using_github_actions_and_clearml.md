@@ -69,7 +69,7 @@ keep track of installed packages and stuff like that. In this case, of course, w
 it's only the `Task.init` and then just reporting some scalars. 
 
 What we do have is some scalars, so this is what it would look like, and we'll be using this one later down the line. 
-Right, so if I go back here to my code you can also see we have a GitHub folder with the workflow sub-folder in there. 
+Right, so if I go back here to my code you can also see we have a GitHub folder with the workflow subfolder in there. 
 This basically tells GitHub that whatever you do--a push or commit or whatever--it will check this `yaml` file to see 
 if it has to do any kind of checks. In this case, we'll call it ClearML checks, and we'll set it on to pull requests. 
 Now, most of the time that you're using ClearML, it's going to be interesting to do checks on a pull request because it 

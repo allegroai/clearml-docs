@@ -28,7 +28,7 @@ models, and dataviews, can be viewed in the project's [experiments table](../web
 ### Creating Subprojects
 
 When [initializing a task](../clearml_sdk/task_sdk.md#task-creation), its project needs to be specified. If the project entered does not exist, it will be created. 
-Projects can contain subprojects, just like folders can contain sub-folders. Input into the `project_name` 
+Projects can contain subprojects, just like folders can contain subfolders. Input into the `project_name` 
 parameter a target project path. The project path should follow the project tree hierarchy, in which the project and 
 subprojects are slash (`/`) delimited.
 
