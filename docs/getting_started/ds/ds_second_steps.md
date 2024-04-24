@@ -131,7 +131,7 @@ Like before, you have to get the instance of the task training the original weig
 Using TensorFlow, the snapshots are stored in a folder, meaning the `local_weights_path` will point to a folder containing your requested snapshot.
 :::
 As with artifacts, all models are cached, meaning the next time you run this code, no model needs to be downloaded.
-Once one of the frameworks will load the weights file, the running task will be automatically updated with “Input Model” pointing directly to the original training Task’s Model.
+Once one of the frameworks will load the weights file, the running task will be automatically updated with "Input Model" pointing directly to the original training Task's Model.
 This feature lets you easily get a full genealogy of every trained and used model by your system!
 
 ## Log Metrics

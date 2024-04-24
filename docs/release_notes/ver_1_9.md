@@ -120,5 +120,5 @@ size for upload and download
 * Fix UI model link doesn't preserve double spaces, breaking the URI
 * Fix tasks/models/datasets can't be moved to UI root project
 * Fix UI tag color list doesn't display tags 
-* Fix UI dashboard search returns results from team’s work when "My Work" filter is enabled
+* Fix UI dashboard search returns results from team's work when "My Work" filter is enabled
 * Fix UI experiment console does not display complete text when large text is reported

@@ -20,9 +20,9 @@ To clone an experiment:
 1. Click **Clone**
 
 :::note
-By default, the new experiment’s parent task is set to the original task’s parent, unless the original task does not 
+By default, the new experiment's parent task is set to the original task's parent, unless the original task does not 
 have a parent, in which case the original task is set as the parent. Select `Set <cloned_experiment> as parent` to force 
-the original experiment to become the clone’s parent. 
+the original experiment to become the clone's parent. 
 :::
 
 ![Clone modal](../img/webapp_clone.png)
@@ -43,7 +43,7 @@ To reset an experiment:
 At the end of the process you are left with an experiment with draft status, meaning that it is editable.
 
 Re-execute the new experiment:
-1. If desired, modify the experiment’s configuration (see [Tuning Experiments](webapp_exp_tuning.md)).
+1. If desired, modify the experiment's configuration (see [Tuning Experiments](webapp_exp_tuning.md)).
 1. Enqueue the experiment for execution. Right-click the experiment > Enqueue > Select a queue > **ENQUEUE**.
 	
    :::note

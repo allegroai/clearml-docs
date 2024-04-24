@@ -100,7 +100,7 @@ configuration option, allowing users to use `$ENV` in the task docker arguments 
 * Add history navigation to experiments plots UI page [ClearML GitHub issues #81](https://github.com/allegroai/clearml/issues/81) and [#255](https://github.com/allegroai/clearml/issues/255): 
   * Plots page shows last reported plot for each metric/variation combination
   * Single plot view provides history navigation slider
-* Add single value scalar reporting: Single value scalars are aggregated into a summary table in the experiment’s scalars 
+* Add single value scalar reporting: Single value scalars are aggregated into a summary table in the experiment's scalars 
   UI page [ClearML GitHub issue #400](https://github.com/allegroai/clearml/issues/400)
 * Add "show hidden projects" control [ClearML GitHub issue #694](https://github.com/allegroai/clearml/issues/694)
 * Improve UI projects page setting persistence - User's last chosen settings for recent/name sorting and team/personal 
