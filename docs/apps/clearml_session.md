@@ -221,6 +221,7 @@ clearml-session --continue-session <session_id> --store-workspace ~/workspace
 | `--continue-session` | Pass the session of a previous session to continue, restoring your workspace (see `--store-workspace`) | `none` |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--disable-session-cleanup` | If `True`, previous interactive sessions are not deleted | `false`|
+| `--disable-store-defaults` | If set, do not store current setup as new default configuration| `none`|
 | `--docker`| Select the docker image to use in the interactive session |`nvidia/cuda:11.6.2-runtime-ubuntu20.04` or previously used docker image|
 | `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--force_dropbear`| Force using `dropbear` instead of SSHd |`none`| 
