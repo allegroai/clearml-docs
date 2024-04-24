@@ -125,7 +125,7 @@ ClearML results page: https://app.clear.ml/projects/4043a1657f374e9298649c6ba72a
 2021-07-25 13:59:16
 ```
 
-**That’s it!** You are done integrating ClearML with your code :)
+**That's it!** You are done integrating ClearML with your code :)
 
 Now, [command-line arguments](../../fundamentals/hyperparameters.md#tracking-hyperparameters), [console output](../../fundamentals/logger.md#types-of-logged-results) as well as Tensorboard and Matplotlib will automatically be logged in the UI under the created Task.
 

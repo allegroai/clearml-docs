@@ -198,7 +198,7 @@ The comparison view compares experiment scalar and plot results (for a more in d
 When selected, the view presents a comparison of all [selected experiments](#selecting-multiple-experiments). If no 
 experiments are selected, all currently visible experiments in the table are displayed in the comparison. 
 
-In the dropdown menu, select to view **Scalars** or **Plots**. **Scalars** shows experiments' scalar results as time 
+In the dropdown menu, select to view **Scalars** or **Plots**. **Scalars** shows experiment scalar results as time 
 series line graphs. **Plots** shows the last reported iteration sample of each metric/variant combination per compared 
 experiment. 
 
