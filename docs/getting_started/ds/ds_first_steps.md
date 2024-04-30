@@ -21,9 +21,28 @@ pip install clearml
    ```bash
    clearml-init
    ```
+   
+   <Collapsible type="info" title="Learn about creating multiple ClearML configuration files">
 
+   Additional ClearML configuration files can be created, for example, to use inside Docker containers when executing 
+   a Task.
+   
+   Use the `--file` option for `clearml-init`.
+
+       clearml-init --file MyOtherClearML.conf
+
+   and then specify it using the ``CLEARML_CONFIG_FILE`` environment variable inside the container:
+        
+        CLEARML_CONFIG_FILE = MyOtherClearML.conf
+
+   For more information about running experiments inside Docker containers, see [ClearML Agent Deployment](../../clearml_agent.md#deployment)
+   and [ClearML Agent Reference](../../clearml_agent/clearml_agent_ref.md).
+    
+   </Collapsible>
+   
    If the setup wizard's response indicates that a configuration file already exists, follow the instructions in 
-   [here](../../deploying_clearml/clearml_config_for_clearml_server.md#add-clearml-to-a-configuration-file). The wizard 
+   [here](#add-clearml-to-a-configuration-file). The wizard does not edit or overwrite existing configuration files.
+   If the setup wizard's response indicates that a configuration file already exists. The wizard 
    does not edit or overwrite existing configuration files.
 
 1. The setup wizard prompts for ClearML credentials.
