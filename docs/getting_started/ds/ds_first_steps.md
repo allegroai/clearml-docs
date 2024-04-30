@@ -22,6 +22,11 @@ pip install clearml
    clearml-init
    ```
    
+   :::note 
+   The wizard does not edit or overwrite existing configuration files, so the above command will not work if a `clearml.conf`
+   file already exists.
+   :::
+
    <Collapsible type="info" title="Learn about creating multiple ClearML configuration files">
 
    Additional ClearML configuration files can be created, for example, to use inside Docker containers when executing 
@@ -40,11 +45,6 @@ pip install clearml
     
    </Collapsible>
    
-   If the setup wizard's response indicates that a configuration file already exists, follow the instructions in 
-   [here](#add-clearml-to-a-configuration-file). The wizard does not edit or overwrite existing configuration files.
-   If the setup wizard's response indicates that a configuration file already exists. The wizard 
-   does not edit or overwrite existing configuration files.
-
 1. The setup wizard prompts for ClearML credentials.
 
    ```console
