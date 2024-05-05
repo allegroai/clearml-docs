@@ -72,7 +72,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Arn - Amazon Resource Name specifying the instance profile
     * Name - Name identifying the instance profile
 * **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
-* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [ClearML vault](../webapp_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
+* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [configuration vault](../webapp_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
 * **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
   instances are running the same task. In most cases, this indicates an issue.
 * **Exclude .bashrc script** - Select in order to skip `.bashrc` script execution 
