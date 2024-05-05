@@ -46,7 +46,7 @@ by setting [configuration options](../configs/clearml_conf.md).
            Please create new clearml credentials through the settings page in your `clearml-server` web app, 
            or create a free account at https://app.clear.ml/settings/webapp-configuration
             
-           In the settings > workspace  page, press "Create new credentials", then press "Copy to clipboard".
+           In the settings > workspace page, press "Create new credentials", then press "Copy to clipboard".
            Paste copied configuration here: 
 
    1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the **SETTINGS > WORKSPACE** page, click 
