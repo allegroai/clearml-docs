@@ -20,8 +20,7 @@ each instance is spun up.
 For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
 
 ## Autoscaler Instance Configuration
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
-  values from the file, which can be modified before launching the app instance
+
 * **AWS Credentials** - Credentials with which the autoscaler can access your AWS account. See [Generating AWS IAM Credentials](#generating-aws-iam-credentials)
     * Use IAM role - Select if you are running your autoscalers on your own EC2 instances which are attached to an [IAM 
       role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html). In such a case, no AWS IAM credentials are required
@@ -37,15 +36,19 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
   down 
 * **Workers Prefix** (optional) - A Prefix added to workers' names, associating them with this autoscaler
 * **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
-* **Base Docker Image** (optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
+* **Use docker mode** - If selected, tasks enqueued to the autoscaler will be executed by ClearML Agents running in 
+[Docker mode](../../clearml_agent.md#docker-mode) 
+* **Base Docker Image** (optional) - Option is displayed when `Use docker mode` is selected. Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
   in a Docker artifactory so instances can automatically fetch it
 * **Compute Resources**
     * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
     * EC2 Instance Type - See [Instance Types](https://aws.amazon.com/ec2/instance-types) for full list of types
     * Run in CPU mode - Check box to run with CPU only
-    * Use Spot Instance - Check box to use a spot instance. Else, a reserved instance is used
-        * Regular Instance Rollback Timeout - Controls when the autoscaler will revert to starting a regular instance after failing to start a spot instance. It will first attempt to start a spot, and then wait and retry again and again. Once the time it waited exceeded the Regular Instance Rollback Timeout, the autoscaler will try to start a regular instance instead. This is for a specific attempt, where starting a spot fails and an alternative instance needs to be started.
+    * Use Spot Instance - Select to use a spot instance. Else, a reserved instance is used
+        * Regular Instance Rollback - When selected, if a spot instance is unavailable for the time specified in the `Regular Instance Rollback Timeout`, a regular instance will be spun up instead
+        * Regular Instance Rollback Timeout - Controls when the autoscaler will revert to starting a regular instance after failing to start a spot instance. It will first attempt to start a spot, and then wait and retry again and again. Once the specified time is exceeded, the autoscaler will try to start a regular instance instead. This is for a specific attempt, where starting a spot fails and an alternative instance needs to be started.
         * Spot Instance Blackout Period - Specifies a blackout period after failing to start a spot instance. This is related to future attempts: after failing to start a spot instance, all requests to start additional spot instances will be converted to attempts to start regular instances, as a way of "easing" the spot requests load on the cloud provider and not creating a "DOS" situation in the cloud account which might cause the provider to refuse creating spots for a longer period.
+    * Place tags on resources - In addition to placing tags on the instance, choose which resources tags will be applied to
     * Availability Zone - The [EC2 availability zone](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones) 
       to launch this resource in
     * AMI ID - The AWS AMI to launch
@@ -86,8 +89,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 creating the instances launch spec. See [boto3 EC2.client.run_instances Request Syntax](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/run_instances.html) 
 and [AWS API Reference: RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html) (available under ClearML Enterprise Plan)
 * **Run with Service Account** -  Select to allow running the application under a [Service Account](../webapp_profile.md#service-accounts) identity instead of under your own identity (available under ClearML Enterprise Plan)
-* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
-  a new instance with the same configuration 
+
 
 ![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
 
