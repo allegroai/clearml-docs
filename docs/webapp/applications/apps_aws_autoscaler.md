@@ -104,6 +104,10 @@ You can utilize the [configuration vault](../../webapp/webapp_profile.md#configu
 the one set in the `Init script` field of the autoscaler wizard
 * `extra_clearml_conf` - ClearML configuration to use by the ClearML Agent when executing your experiments. This 
 configuration will be appended to that set in the `Additional ClearML Configuration` field of the autoscaler wizard
+* `files` - Define files which will be auto-generated at designated paths with predefined content and 
+target format. For more information, see [Files Section](../../configs/clearml_conf.md#files-section)
+* `environment` - Dictionary of environment variables and values which are applied to the OS environment as `key=value` 
+for each key-value pair. For more information, see [Environment Section](../../configs/clearml_conf.md#environment-section)
 
 For example, the following configuration would be applied to all autoscaler instances:
 
@@ -118,6 +122,13 @@ auto_scaler.v1.aws {
    extra_clearml_conf: """
      agent.docker_force_pull: true
    """
+   files {
+     myfile1 {
+        contents: "The quick brown fox jumped over the lazy dog"
+        path: "/tmp/fox.txt"
+        mode: "0o777"
+     }
+   }
 }
 ```
 
