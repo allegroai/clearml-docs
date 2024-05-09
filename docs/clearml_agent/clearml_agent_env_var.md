@@ -34,7 +34,7 @@ but can be overridden by command-line arguments.
 |**CLEARML_EXTRA_PIP_INSTALL_FLAGS**| List of additional flags to use when the agent installs packages. For example: `["--use-deprecated=legacy-resolver", ]`|
 |**CLEARML_AGENT_EXTRA_PYTHON_PATH** | Sets extra python path                                                                                                                                                                                                                          |
 |**CLEARML_AGENT_INITIAL_CONNECT_RETRY_OVERRIDE** | Overrides initial server connection behavior (true by default), allows explicit number to specify number of connect retries)                                                                                                                    | 
-|**CLEARML_AGENT_NO_UPDATE** | Boolean. set to `1` to skip agent update in the k8s pod container before the agent executes the task |
+|**CLEARML_AGENT_NO_UPDATE** | Boolean. Set to `1` to skip agent update in the k8s pod container before the agent executes the task |
 |**CLEARML_AGENT_K8S_HOST_MOUNT / CLEARML_AGENT_DOCKER_HOST_MOUNT** | Specifies Agent's mount point for Docker / K8s                                                                                                                                                                                                  |
 |**CLEARML_AGENT_TEMP_STDOUT_FILE_DIR**|Allows overriding the default `/tmp` location for agent temporary files|
 |**CLEARML_K8S_GLUE_START_AGENT_SCRIPT_PATH** | Provide an alternate path to place the agent startup script generated inside a k8s task pod (instead of the default `~/~/__start_agent__.sh`)                                                                                                   |
