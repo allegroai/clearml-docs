@@ -11,4 +11,4 @@ configuration and access control administration by allowing administrators to as
 rules at the group level rather than for each user and/or [service account](../webapp/webapp_profile.md#service-accounts) 
 individually. Administrators have the flexibility to create user groups, and add or remove members as needed.
 
-For more information see [User Groups](../webapp/webapp_profile.md#user-groups)
+For more information see [User Groups](../webapp/webapp_profile.md#user-groups).

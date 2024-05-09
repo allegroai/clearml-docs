@@ -34,7 +34,7 @@ Once you start a Streamlit launcher instance, you can view the following informa
   to copy link
 * Streamlit Git repo - Repository that holds the Streamlit app script
 * Live preview of the Streamlit app
-* Console Log  The console log shows the launcher instance's activity, including server setup progress, server status 
+* Console Log - The console log shows the launcher instance's activity, including server setup progress, server status 
   changes
 
 ## Streamlit Launcher Instance Configuration

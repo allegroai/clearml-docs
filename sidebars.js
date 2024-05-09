@@ -167,7 +167,7 @@ module.exports = {
                     'deploying_clearml/upgrade_server_kubernetes_helm',
                     'deploying_clearml/clearml_server_es7_migration', 'deploying_clearml/clearml_server_mongo44_migration']
             },
-            'deploying_clearml/clearml_server_config', 'deploying_clearml/clearml_config_for_clearml_server', 'deploying_clearml/clearml_server_security'
+            'deploying_clearml/clearml_server_config', 'deploying_clearml/clearml_server_security'
         ]},
 
         //'Comments': ['Notes'],
