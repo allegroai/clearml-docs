@@ -482,7 +482,7 @@ match_rules: [
 
 **`agent.package_manager.use_conda_base_env`** (*bool*)
 
-* When set to `True`, installation should be performed into the base Conda environment. Should be used in Docker mode. 
+* When set to `True`, installation will be performed into the base Conda environment. Use in [Docker mode](../clearml_agent.md#docker-mode). 
 
 ___
 
@@ -842,7 +842,13 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
 * For AWS S3, the default access key for any bucket that is not specified in the `sdk.aws.s3.credentials` section.
     
 ---
+
+**`sdk.aws.s3.profile`** (*string*)
     
+* For AWS S3, the default profile name for any bucket that is not specified in the `sdk.aws.s3.credentials` section.
+    
+---
+
 **`sdk.aws.s3.region`** (*string*)
     
 * For AWS S3, the default region name for any bucket that is not specified in the `sdk.aws.s3.credentials` section.
@@ -969,16 +975,18 @@ and limitations on bucket naming.
 
 **`sdk.dataset.preview`** (*[dict]*)
 
-* Set limits for the objects that are logged as dataset previews:
-  * **`sdk.dataset.preview.media.max_file_size`** (*int*) - Maximum file size in bytes that a preview object (e.g. image, video, html, etc.) can have. 
-  Files exceeding this size will not be reported as previews. 
-  * **`sdk.dataset.preview.media.image_count`** (*int*) - The maximum number of image files reported as previews
-  * **`sdk.dataset.preview.media.video_count`** (*int*) - The maximum number of video files reported as previews
-  * **`sdk.dataset.preview.media.audio_count`** (*int*) - The maximum number of image files reported as previews
-  * **`sdk.dataset.preview.media.html_count`** (*int*) - The maximum number of html files reported as previews
-  * **`sdk.dataset.preview.media.json_count`** (*int*) - The maximum number of json files reported as previews
-  * **`sdk.dataset.preview.tabular.row_count`** (*int*) - The number of rows for each tabular file reported. By default, it will report only the first 10 rows from that file
-  * **`sdk.dataset.preview.tabular.table_count`** (*int*) - The maximum number of tables reported as preview
+* Set limits for the objects that are logged as dataset previews
+  * `**sdk.dataset.preview.media`** (*dict*) - Set limits for media files that are logged as dataset previews
+    * **`sdk.dataset.preview.media.max_file_size`** (*int*) - Maximum file size in bytes of a preview object (e.g. image, 
+    video, html, etc.). Files exceeding this size will not be reported as previews. 
+    * **`sdk.dataset.preview.media.image_count`** (*int*) - The maximum number of image files reported as previews
+    * **`sdk.dataset.preview.media.video_count`** (*int*) - The maximum number of video files reported as previews
+    * **`sdk.dataset.preview.media.audio_count`** (*int*) - The maximum number of image files reported as previews
+    * **`sdk.dataset.preview.media.html_count`** (*int*) - The maximum number of html files reported as previews
+    * **`sdk.dataset.preview.media.json_count`** (*int*) - The maximum number of json files reported as previews
+  * `**sdk.dataset.preview.tabular`** (*dict*) - Set limits for tabular files that are logged as dataset previews
+    * **`sdk.dataset.preview.tabular.row_count`** (*int*) - The maximum number of rows for each tabular file reported as a preview. By default, it will report only the first 10 rows from a file
+    * **`sdk.dataset.preview.tabular.table_count`** (*int*) - The maximum number of tables reported as preview in a dataset
 
 
 #### sdk.development
@@ -1038,7 +1046,7 @@ and limitations on bucket naming.
 
 ---
     
-**`sdk.development.store_uncommitted_code_diff_on_train`** (*bool*)
+**`sdk.development.store_uncommitted_code_diff`** (*bool*)
     
 * For development mode, indicates whether to store the uncommitted `git diff` or `hg diff` in the experiment manifest. 
 
@@ -1105,6 +1113,14 @@ and limitations on bucket naming.
     * `false` - Do not log all
 
 ---
+
+**`sdk.development.worker. max_wait_for_first_iteration_to_start_sec`** (*integer*)
+        
+* Maximum time (in seconds) for allowing the resource monitoring to switch back to reporting iterations as the x-axis 
+after initially starting to report "seconds from start." If the specified time limit is exceeded, the resource monitoring
+will continue reporting using "seconds from start" as the x-axis.
+
+---
  
 **`sdk.development.worker.ping_period_sec`** (*integer*)
         
@@ -1132,6 +1148,19 @@ and limitations on bucket naming.
         
 * For development mode workers, the interval in seconds for a development mode ClearML worker to report.
         
+---
+
+**`sdk.development.worker.report_start_sec`** (*integer*)
+        
+* The number of seconds after which the development mode worker starts resource reporting.    
+
+---
+
+**`sdk.development.worker.wait_for_first_iteration_to_start_sec`** (*integer*)
+        
+* Controls how long (in seconds) to wait for iteration reporting to be used as x-axis for resource monitoring. If iteration
+reporting is unavailable once time is exceeded, "seconds from start" will be used for the x-axis. 
+
 <br/>
 
 #### sdk.google.storage
@@ -1401,19 +1430,25 @@ every 5MB
 
 **`sdk.storage.path_substitution`** (*[dict]*)
 
-* path_substitution = [
-            # Replace registered links with local prefixes,
-            # Solve mapping issues, and allow for external resource caching.
+* List of dictionaries, where each dictionary contains a registered links and a local prefix which will replace it. 
+  For example: 
 
-            # {
-            #     registered_prefix = "s3://bucket/research"
-            #     local_prefix = "file:///mnt/shared/bucket/research"
-            # },
-            # {
-            #     registered_prefix = "file:///mnt/shared/folder/"
-            #     local_prefix = "file:///home/user/shared/folder"
-            # }
+  ```
+  sdk{ 
+     storage {
+        path_substitution = [
+          {
+             registered_prefix = "s3://bucket/research"
+             local_prefix = "file:///mnt/shared/bucket/research"
+          },
+          {
+             registered_prefix = "file:///mnt/shared/folder/"
+             local_prefix = "file:///home/user/shared/folder"
+          }
         ]
+     }
+  }
+  ```
 
 ### environment section
 
