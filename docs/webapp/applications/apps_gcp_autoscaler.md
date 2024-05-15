@@ -54,10 +54,13 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **Max Idle Time** (optional) - Maximum time in minutes that a VM instance can be idle before the autoscaler spins it down
 * **Workers Prefix** (optional) - A Prefix added to workers' names, associating them with this autoscaler
 * **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
-* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [ClearML vault](../webapp_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
+* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [configuration vault](../webapp_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
 * **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
   instances are running the same task. In most cases, this indicates an issue.
 * **Exclude .bashrc script** - Select in order to skip `.bashrc` script execution 
+* **Ignore vault parsing errors** - If not selected, the autoscaler will abort if encountering errors when loading vaults 
+  on startup. This only applies to vaults loaded by the autoscaler itself, not to vaults loaded on cloud instances or by 
+  tasks run by the autoscaler. For more information, see [Configuration Vault note](#configuration_vault) (available under ClearML Enterprise Plan).
 * **Init Script** (optional) - A bash script to execute after launching the VM instance
 * **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
 * **Run with Service Account** -  Select to allow running the application under a [Service Account](../webapp_profile.md#service-accounts) identity instead of under your own identity (available under ClearML Enterprise Plan)
@@ -65,6 +68,8 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
   a new instance with the same configuration. 
   
 ![GCP autoscaler wizard](../../img/apps_gcp_autoscaler_wizard.png)
+
+<a id="configuration_vault"/>
 
 :::important Enterprise Feature
 You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to configure GCP 

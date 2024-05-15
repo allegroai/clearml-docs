@@ -33,7 +33,7 @@ Once you start a Gradio launcher instance, you can view the following informatio
   to copy link
 * Gradio Git repo - Repository that holds the Gradio app script
 * Live preview of the Gradio app
-* Console Log  The console log shows the launcher instance's activity, including server setup progress, server status 
+* Console Log - The console log shows the launcher instance's activity, including server setup progress, server status 
   changes
  
 
