@@ -65,7 +65,7 @@ module.exports = {
         },
         'hyper_datasets',
         'model_registry',
-        {'Remote Session': [
+        {'Remote IDE': [
             'remote_session',
             'apps/clearml_session',
             {type: 'ref', id: 'webapp/applications/apps_jupyter_lab'},

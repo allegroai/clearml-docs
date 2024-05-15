@@ -2,7 +2,7 @@
 title: ClearML Session CLI
 ---
 
-`clearml-session` is a feature that allows to launch a session of JupyterLab and VS Code, and to execute code on a remote 
+`clearml-session` is a feature that allows to launch a session of JupyterLab, VS Code, and SSH, and to execute code on a remote 
 machine that better meets resource needs. This feature provides local links to access JupyterLab and VS Code on a 
 remote machine over a secure and encrypted SSH connection. By default, the JupyterLab and 
 VS Code remote sessions use ports 8878 and 8898 respectively. 
@@ -70,7 +70,8 @@ error, you are good to go.
     ```
 
    Notice the links are to `localhost` since all communication to the remote server itself is done over a secure SSH connection.
-   
+   Click on the Jupyter Lab or VScode links, or drop into SSH shell by typing `shell`.
+
 1. Now start working on the code as if you're running on the target machine itself!
 
 ## Re-launching and Shutting Down Sessions 
