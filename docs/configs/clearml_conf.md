@@ -692,7 +692,7 @@ Torch Nightly builds are ephemeral and are deleted from time to time.
 #### agent.venv_update
 
 :::note
-This configuration is deprecated. Use `venvs_cache` and set `venvs_cache.path` instead. 
+This option is deprecated. Use `venvs_cache` and set `venvs_cache.path` instead. 
 :::
 
 **`agent.venv_update`** (*dict*)
@@ -976,7 +976,8 @@ and limitations on bucket naming.
 **`sdk.dataset.preview`** (*[dict]*)
 
 * Set limits for the objects that are logged as dataset previews
-  * `**sdk.dataset.preview.media`** (*dict*) - Set limits for media files that are logged as dataset previews
+  * `**sdk.dataset.preview.media`** (*dict*) - Set limits for media files that are logged as dataset previews. Available 
+  options:
     * **`sdk.dataset.preview.media.max_file_size`** (*int*) - Maximum file size in bytes of a preview object (e.g. image, 
     video, html, etc.). Files exceeding this size will not be reported as previews. 
     * **`sdk.dataset.preview.media.image_count`** (*int*) - The maximum number of image files reported as previews
@@ -984,7 +985,7 @@ and limitations on bucket naming.
     * **`sdk.dataset.preview.media.audio_count`** (*int*) - The maximum number of image files reported as previews
     * **`sdk.dataset.preview.media.html_count`** (*int*) - The maximum number of html files reported as previews
     * **`sdk.dataset.preview.media.json_count`** (*int*) - The maximum number of json files reported as previews
-  * `**sdk.dataset.preview.tabular`** (*dict*) - Set limits for tabular files that are logged as dataset previews
+  * `**sdk.dataset.preview.tabular`** (*dict*) - Set limits for tabular files that are logged as dataset previews:
     * **`sdk.dataset.preview.tabular.row_count`** (*int*) - The maximum number of rows for each tabular file reported as a preview. By default, it will report only the first 10 rows from a file
     * **`sdk.dataset.preview.tabular.table_count`** (*int*) - The maximum number of tables reported as preview in a dataset
 
@@ -1282,7 +1283,7 @@ will not exceed the value of `matplotlib_untitled_history_size`
 **`sdk.metrics.tensorboard_single_series_per_graph`** (*bool*)
     
 :::note
-This configuration is deprecated. This plot behavior is now controlled via the UI
+This option is deprecated. This plot behavior is now controlled via the UI
 :::
 
 * Indicates whether plots appear using TensorBoard behavior where each series is plotted in its own graph (plot-per-graph).
@@ -1387,7 +1388,7 @@ The ClearML Enterprise plan also supports the following configuration options un
   * `size.max_used_bytes` (*str*) - Maximum size of the local cache directory. If set to `-1`, the directory can use 
   the available disk space. Specified in storage units (for example: `1GB`, `2TB`, `500MB`).
   * `size.min_free_bytes` (*str*) - Minimum amount of free disk space that should be left. If `size.max_used_bytes` is 
-  set to `-1`, this configuration will limit the cache directory maximum size to `free disk space - size.min_free_bytes`. 
+  set to `-1`, this configuration option will limit the cache directory maximum size to `free disk space - size.min_free_bytes`. 
   Specified in storage units (for example: `1GB`, `2TB`, `500MB`).
   * `zero_file_size_check` (*bool*)- If set to `True`, each cache hit will also check the cached file size, making sure 
   it is not zero (default `False`) 
@@ -1430,21 +1431,27 @@ every 5MB
 
 **`sdk.storage.path_substitution`** (*[dict]*)
 
-* List of dictionaries, where each dictionary contains a registered links and a local prefix which will replace it. 
+* List of dictionaries, where each dictionary contains a registered link and a link to replace it. This is useful in
+  cases where data was registered under a path that was later renamed, or when data was pushed to a bucket but later
+  mounted to a local drive. 
+* Each dictionary contains a `registered_prefix` and a `local_prefix`. The `registered_prefix` is the prefix to find and 
+  replace. The `local_prefix` is the prefix where 
+  the data is actually saved under, which will replace the `registered_prefix`.
+
   For example: 
 
   ```
-  sdk{ 
+  sdk { 
      storage {
         path_substitution = [
-          {
-             registered_prefix = "s3://bucket/research"
-             local_prefix = "file:///mnt/shared/bucket/research"
-          },
-          {
-             registered_prefix = "file:///mnt/shared/folder/"
-             local_prefix = "file:///home/user/shared/folder"
-          }
+           {
+              registered_prefix = "s3://bucket/research"
+              local_prefix = "file:///mnt/shared/bucket/research"
+           },
+           {
+              registered_prefix = "file:///mnt/shared/folder/"
+              local_prefix = "file:///home/user/shared/folder"
+           }
         ]
      }
   }
