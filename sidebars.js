@@ -65,7 +65,7 @@ module.exports = {
         },
         'hyper_datasets',
         'model_registry',
-        {'Remote Session': [
+        {'Remote IDE': [
             'remote_session',
             'apps/clearml_session',
             {type: 'ref', id: 'webapp/applications/apps_jupyter_lab'},
@@ -167,7 +167,7 @@ module.exports = {
                     'deploying_clearml/upgrade_server_kubernetes_helm',
                     'deploying_clearml/clearml_server_es7_migration', 'deploying_clearml/clearml_server_mongo44_migration']
             },
-            'deploying_clearml/clearml_server_config', 'deploying_clearml/clearml_config_for_clearml_server', 'deploying_clearml/clearml_server_security'
+            'deploying_clearml/clearml_server_config', 'deploying_clearml/clearml_server_security'
         ]},
 
         //'Comments': ['Notes'],
