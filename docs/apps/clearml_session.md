@@ -2,7 +2,7 @@
 title: ClearML Session CLI
 ---
 
-`clearml-session` is a feature that allows to launch a session of JupyterLab and VS Code, and to execute code on a remote 
+`clearml-session` is a feature that allows to launch a session of JupyterLab, VS Code, and SSH, and to execute code on a remote 
 machine that better meets resource needs. This feature provides local links to access JupyterLab and VS Code on a 
 remote machine over a secure and encrypted SSH connection. By default, the JupyterLab and 
 VS Code remote sessions use ports 8878 and 8898 respectively. 
@@ -70,7 +70,8 @@ error, you are good to go.
     ```
 
    Notice the links are to `localhost` since all communication to the remote server itself is done over a secure SSH connection.
-   
+   Click on the Jupyter Lab or VScode links, or drop into SSH shell by typing `shell`.
+
 1. Now start working on the code as if you're running on the target machine itself!
 
 ## Re-launching and Shutting Down Sessions 
@@ -221,6 +222,7 @@ clearml-session --continue-session <session_id> --store-workspace ~/workspace
 | `--continue-session` | Pass the session of a previous session to continue, restoring your workspace (see `--store-workspace`) | `none` |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
 | `--disable-session-cleanup` | If `True`, previous interactive sessions are not deleted | `false`|
+| `--disable-store-defaults` | If set, do not store current setup as new default configuration| `none`|
 | `--docker`| Select the docker image to use in the interactive session |`nvidia/cuda:11.6.2-runtime-ubuntu20.04` or previously used docker image|
 | `--docker-args` | Add additional arguments for the docker image to use in the interactive session | `none` or the previously used docker-args |
 | `--force_dropbear`| Force using `dropbear` instead of SSHd |`none`| 

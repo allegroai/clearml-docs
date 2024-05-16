@@ -65,16 +65,16 @@ an empty string
 * Add UI tables switch to detail mode through double-click [ClearML Server GitHub issue #134](https://github.com/allegroai/clearml-server/issues/134)
 * Add customizable user activity timeout for UI logout
 * Add UI navigation from experiment comparison back to originating experiment table
-* Improve UI scalar comparison graph configuration - Persist user’s choice for viewing graph data.
+* Improve UI scalar comparison graph configuration - Persist user's choice for viewing graph data.
 * Add model IDs display in UI experiment artifact tab
 * Add dataset description to UI dataset information display
 
 **Bug Fixes**
-* Fix UI experiment Hyperparameter tab’s inefficient use of screen real estate [ClearML GitHub issue #705](https://github.com/allegroai/clearml/issues/705)
+* Fix UI experiment Hyperparameter tab's inefficient use of screen real estate [ClearML GitHub issue #705](https://github.com/allegroai/clearml/issues/705)
 * Fix navigating to an archived experiment's configuration causes UI to return to non-archived view [ClearML Server GitHub issue #148](https://github.com/allegroai/clearml-server/issues/148)
 * Fix metric storage failure when large amount of metrics logged
 * Fix UI plots downloaded as PNGs don't contain legends
-* Fix UI plot colors can’t be changed when colors are specified in code
+* Fix UI plot colors can't be changed when colors are specified in code
 * Fix experiment table hyperparameter column sorting fails when hyperparameter includes "."
 * Fix artifacts aren't deleted when experiment is reset
 * Fix UI project cards displaying incorrect task counts when "Show Hidden Projects" is enabled

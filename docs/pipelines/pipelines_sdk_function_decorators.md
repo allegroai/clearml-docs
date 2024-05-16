@@ -50,7 +50,7 @@ def main(pickle_url, mock_parameter='mock'):
   (this is useful to create better visibility in projects with multiple pipelines, and for easy selection) (default: 
   `False`).
 * `target_project` - If provided, all pipeline steps are cloned into the target project. If not provided, pipeline steps 
-  are stored on the same project as the pipeline itself. Target sub-folder allows for easier organization of pipeline 
+  are stored on the same project as the pipeline itself. Target subfolder allows for easier organization of pipeline 
   execution logic (Pipeline Task) and step execution Tasks. Example: "pipeline/component_execution".
 * `abort_on_failure` - If `False` (default), failed pipeline steps will not cause the pipeline to stop immediately. 
   Instead, any step that is not connected (or indirectly connected) to the failed step, will still be executed. 
@@ -60,8 +60,8 @@ def main(pickle_url, mock_parameter='mock'):
 * `pipeline_execution_queue` - The queue in which to enqueue the pipeline controller task. The default value is the 
   `services` queue. To run the pipeline logic locally while the components are executed remotely, pass 
   `pipeline_execution_queue=None`
-* `skip_global_imports` – If `True`, global imports will not be included in the steps’ execution. If `False` (default), 
-  all global imports will be automatically imported at the beginning of each step’s execution.
+* `skip_global_imports` – If `True`, global imports will not be included in the steps' execution. If `False` (default), 
+  all global imports will be automatically imported at the beginning of each step's execution.
 
 
 When the function is called, a corresponding ClearML Controller Task is created: its arguments are logged as the task's 
