@@ -94,7 +94,7 @@ it can't do that when running from a virtual environment.
     Please create new clearml credentials through the settings page in your `clearml-server` web app, 
     or create a free account at https://app.clear.ml/settings/webapp-configuration
     
-    In the settings > workspace  page, press "Create new credentials", then press "Copy to clipboard".
+    In the settings > workspace page, press "Create new credentials", then press "Copy to clipboard".
 
     Paste copied configuration here:    
     ```

@@ -189,4 +189,5 @@ If needed, restore data and configuration by doing the following:
           sudo chown -R $(whoami):staff /opt/clearml
 ## Next Step
 
-* [Configuring ClearML for ClearML Server](clearml_config_for_clearml_server.md).
+To keep track of your experiments and/or data, the `clearml` package needs to communicate with your server. 
+For instruction to connect the ClearML SDK to the server, see [Getting Started: First Steps](../getting_started/ds/ds_first_steps.md).
