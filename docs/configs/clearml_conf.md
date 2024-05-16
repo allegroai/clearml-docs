@@ -1116,7 +1116,7 @@ and limitations on bucket naming.
 
 ---
 
-**`sdk.development.worker. max_wait_for_first_iteration_to_start_sec`** (*integer*)
+**`sdk.development.worker.max_wait_for_first_iteration_to_start_sec`** (*integer*)
         
 * Maximum time (in seconds) for allowing the resource monitoring to switch back to reporting iterations as the x-axis 
 after initially starting to report "seconds from start." If the specified time limit is exceeded, the resource monitoring
@@ -1432,12 +1432,9 @@ every 5MB
 
 **`sdk.storage.path_substitution`** (*[dict]*)
 
-* List of dictionaries, where each dictionary contains a registered link and a link to replace it. This is useful in
-  cases where data was registered under a path that was later renamed, or when data was pushed to a bucket but later
-  mounted to a local drive. 
-* Each dictionary contains a `registered_prefix` and a `local_prefix`. The `registered_prefix` is the prefix to find and 
-  replace. The `local_prefix` is the prefix where 
-  the data is actually saved under, which will replace the `registered_prefix`.
+* List of dictionaries, where each dictionary contains path substitution mapping. This is useful in
+  cases where data was originally logged in one location and later moved, or when different workloads access the data through different mounts. 
+* Each dictionary contains a `registered_prefix` and a `local_prefix`. `registered_prefix` is the URL prefix logged in ClearML. `local_prefix` is the URL prefix to be used at runtime instead of the `registered_prefix` to access the data.
 
   For example: 
 
