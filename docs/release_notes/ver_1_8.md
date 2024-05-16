@@ -2,6 +2,18 @@
 title: Version 1.8
 ---
 
+### ClearML Agent 1.8.1
+
+**New Features**
+* Add option to set daemon polling interval [ClearML Agent GitHub PR #197](https://github.com/allegroai/clearml-agent/pull/197)
+* Add Python 3.12 support
+
+**Bug Fixes**
+* Fix git pulling on cached invalid git entry. On error, re-clone the entire repository again (enable using `agent.vcs_cache.clone_on_pull_fail: true`)
+* Fix conda env should not be cached if installing into base conda or conda existing env
+* Fix cached repositories not passing user/token when pulling
+* Fix when disabling vcs cache do not add vcs mount point to container
+
 ### ClearML Agent 1.8.0
 
 **New Features**
