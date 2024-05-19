@@ -413,7 +413,7 @@ ___
         
 ---
 
-**`agent.match_rules`** (*[dict]*)
+**`agent.default_docker.match_rules`** (*[dict]*)
 
 :::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan
@@ -477,6 +477,12 @@ match_rules: [
 **`agent.package_manager.conda_env_as_base_docker`** (*bool*)
 
 * Uses conda environment for execution (like a docker)
+
+---
+
+**`agent.package_manager.use_conda_base_env`** (*bool*)
+
+* When set to `True`, installation will be performed into the base Conda environment. Use in [Docker mode](../clearml_agent.md#docker-mode). 
 
 ___
 
@@ -685,6 +691,10 @@ Torch Nightly builds are ephemeral and are deleted from time to time.
 
 #### agent.venv_update
 
+:::note
+This option is deprecated. Use `venvs_cache` and set `venvs_cache.path` instead. 
+:::
+
 **`agent.venv_update`** (*dict*)
         
 * Dictionary containing virtual environment update options.
@@ -832,7 +842,13 @@ metrics, network, AWS S3 buckets and credentials, Google Cloud Storage, Azure St
 * For AWS S3, the default access key for any bucket that is not specified in the `sdk.aws.s3.credentials` section.
     
 ---
+
+**`sdk.aws.s3.profile`** (*string*)
     
+* For AWS S3, the default profile name for any bucket that is not specified in the `sdk.aws.s3.credentials` section.
+    
+---
+
 **`sdk.aws.s3.region`** (*string*)
     
 * For AWS S3, the default region name for any bucket that is not specified in the `sdk.aws.s3.credentials` section.
@@ -955,6 +971,25 @@ and limitations on bucket naming.
 
 <br/>
 
+#### sdk.dataset
+
+**`sdk.dataset.preview`** (*[dict]*)
+
+* Set limits for the objects that are logged as dataset previews:
+  * `**sdk.dataset.preview.media`** (*dict*) - Set limits for media files that are logged as dataset previews. Available 
+  options:
+    * **`sdk.dataset.preview.media.max_file_size`** (*int*) - Maximum file size in bytes of a preview object (e.g. image, 
+    video, html, etc.). Files exceeding this size will not be reported as previews. 
+    * **`sdk.dataset.preview.media.image_count`** (*int*) - The maximum number of image files reported as previews
+    * **`sdk.dataset.preview.media.video_count`** (*int*) - The maximum number of video files reported as previews
+    * **`sdk.dataset.preview.media.audio_count`** (*int*) - The maximum number of image files reported as previews
+    * **`sdk.dataset.preview.media.html_count`** (*int*) - The maximum number of html files reported as previews
+    * **`sdk.dataset.preview.media.json_count`** (*int*) - The maximum number of json files reported as previews
+  * `**sdk.dataset.preview.tabular`** (*dict*) - Set limits for tabular files that are logged as dataset previews. Available 
+  options:
+    * **`sdk.dataset.preview.tabular.row_count`** (*int*) - The maximum number of rows for each tabular file reported as a preview. By default, it will report only the first 10 rows from a file
+    * **`sdk.dataset.preview.tabular.table_count`** (*int*) - The maximum number of tables reported as preview in a dataset
+
 
 #### sdk.development
     
@@ -1013,7 +1048,7 @@ and limitations on bucket naming.
 
 ---
     
-**`sdk.development.store_uncommitted_code_diff_on_train`** (*bool*)
+**`sdk.development.store_uncommitted_code_diff`** (*bool*)
     
 * For development mode, indicates whether to store the uncommitted `git diff` or `hg diff` in the experiment manifest. 
 
@@ -1080,6 +1115,14 @@ and limitations on bucket naming.
     * `false` - Do not log all
 
 ---
+
+**`sdk.development.worker.max_wait_for_first_iteration_to_start_sec`** (*integer*)
+        
+* Maximum time (in seconds) for allowing the resource monitoring to switch back to reporting iterations as the x-axis 
+after initially starting to report "seconds from start." If the specified time limit is exceeded, the resource monitoring
+will continue reporting using "seconds from start" as the x-axis.
+
+---
  
 **`sdk.development.worker.ping_period_sec`** (*integer*)
         
@@ -1107,6 +1150,19 @@ and limitations on bucket naming.
         
 * For development mode workers, the interval in seconds for a development mode ClearML worker to report.
         
+---
+
+**`sdk.development.worker.report_start_sec`** (*integer*)
+        
+* The number of seconds after which the development mode worker starts resource reporting.    
+
+---
+
+**`sdk.development.worker.wait_for_first_iteration_to_start_sec`** (*integer*)
+        
+* Controls how long (in seconds) to wait for iteration reporting to be used as x-axis for resource monitoring. If iteration
+reporting is unavailable once time is exceeded, "seconds from start" will be used for the x-axis. 
+
 <br/>
 
 #### sdk.google.storage
@@ -1228,7 +1284,7 @@ will not exceed the value of `matplotlib_untitled_history_size`
 **`sdk.metrics.tensorboard_single_series_per_graph`** (*bool*)
     
 :::note
-This configuration is deprecated. This plot behavior is now controlled via the UI
+This option is deprecated. This plot behavior is now controlled via the UI
 :::
 
 * Indicates whether plots appear using TensorBoard behavior where each series is plotted in its own graph (plot-per-graph).
@@ -1333,7 +1389,7 @@ The ClearML Enterprise plan also supports the following configuration options un
   * `size.max_used_bytes` (*str*) - Maximum size of the local cache directory. If set to `-1`, the directory can use 
   the available disk space. Specified in storage units (for example: `1GB`, `2TB`, `500MB`).
   * `size.min_free_bytes` (*str*) - Minimum amount of free disk space that should be left. If `size.max_used_bytes` is 
-  set to `-1`, this configuration will limit the cache directory maximum size to `free disk space - size.min_free_bytes`. 
+  set to `-1`, this configuration option will limit the cache directory maximum size to `free disk space - size.min_free_bytes`. 
   Specified in storage units (for example: `1GB`, `2TB`, `500MB`).
   * `zero_file_size_check` (*bool*)- If set to `True`, each cache hit will also check the cached file size, making sure 
   it is not zero (default `False`) 
@@ -1371,6 +1427,33 @@ every 5MB
 **`sdk.storage.log.report_upload_chunk_size_mb`** (*int*)
 * Specify how often in MB the `StorageManager` reports its upload progress to the console. By default, it reports every 
 5MB
+
+##### sdk.storage.path_substitution
+
+**`sdk.storage.path_substitution`** (*[dict]*)
+
+* List of dictionaries, where each dictionary contains path substitution mapping. This is useful in
+  cases where data was originally logged in one location and later moved, or when different workloads access the data through different mounts. 
+* Each dictionary contains a `registered_prefix` and a `local_prefix`. `registered_prefix` is the URL prefix logged in ClearML. `local_prefix` is the URL prefix to be used at runtime instead of the `registered_prefix` to access the data.
+
+  For example: 
+
+  ```
+  sdk { 
+     storage {
+        path_substitution = [
+           {
+              registered_prefix = "s3://bucket/research"
+              local_prefix = "file:///mnt/shared/bucket/research"
+           },
+           {
+              registered_prefix = "file:///mnt/shared/folder/"
+              local_prefix = "file:///home/user/shared/folder"
+           }
+        ]
+     }
+  }
+  ```
 
 ### environment section
 
