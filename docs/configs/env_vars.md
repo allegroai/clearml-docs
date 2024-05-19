@@ -4,7 +4,7 @@ title: Environment Variables
 
 This page lists the available environment variables for configuring ClearML. 
 
-In addition to the environment variables listed below, ClearML also supports dynamic environment variables to override 
+In addition to the environment variables listed below, ClearML also supports **dynamic environment variables** to override 
 any configuration option that appears in the configuration files. For more information, see [Dynamic Environment Variables](../deploying_clearml/clearml_server_config.md#dynamic-environment-variables).
 
 :::info
