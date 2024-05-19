@@ -5,14 +5,14 @@ title: Version 1.5
 ### ClearML Agent 1.5.2
 
 **New Features and Improvements**
-* Switch services agent entrypoint shell from sh to bash [ClearML Agent GitHub issue #140](https://github.com/allegroai/clearml-agent/issues/140)
+* Switch services agent entrypoint shell from sh to bash ([ClearML Agent GitHub issue #140](https://github.com/allegroai/clearml-agent/issues/140))
 * Improve poetry support
-* Add poetry cwd support [ClearML Agent GitHub issue #138](https://github.com/allegroai/clearml-agent/issues/138)
+* Add poetry cwd support ([ClearML Agent GitHub issue #138](https://github.com/allegroai/clearml-agent/issues/138))
 * Add `agent.package_manager.poetry_install_extra_args` configuration option
 * Do not allow request exceptions (keep retrying, throw error only on the initial login call)
 
 **Bug Fixes**
-* Fix agent update version [ClearML Agent GitHub PR #132](https://github.com/allegroai/clearml-agent/pull/132)
+* Fix agent update version ([ClearML Agent GitHub PR #132](https://github.com/allegroai/clearml-agent/pull/132))
 * Fix login uses `GET` with payload, which breaks when trying to connect a server running in GCP
 * Fix `clearml-agent build --docker` stuck on certain containers
 * Fix build fails when target is relative path
@@ -25,7 +25,7 @@ title: Version 1.5
 ### ClearML Agent 1.5.1
 
 **New Features and Improvements**
-* Upgrade requirements for `attrs`, `jsonschema`, `pyparsing`, `six`, and `pyjwt` [ClearML Agent GitHub issue #129](https://github.com/allegroai/clearml-agent/issues/129)
+* Upgrade requirements for `attrs`, `jsonschema`, `pyparsing`, `six`, and `pyjwt` ([ClearML Agent GitHub issue #129](https://github.com/allegroai/clearml-agent/issues/129))
 * Add default output URI selection to `clearml-agent init`
 * Add `agent.disable_task_docker_override` configuration option to disable docker override specified in executing tasks
 * Add `CLEARML_AGENT_FORCE_SYSTEM_SITE_PACKAGES` env var (default `true`) to allow overriding default `system_site_packages: true` 
@@ -39,7 +39,7 @@ since 4.0.0)
 ### ClearML Agent 1.5.0
 
 **New Features and Improvements**
-* Add option to crash agent on exception using `agent.crash_on_exception` configuration setting [ClearML Agent GitHub issue #122](https://github.com/allegroai/clearml-agent/issues/122)
+* Add option to crash agent on exception using `agent.crash_on_exception` configuration setting ([ClearML Agent GitHub issue #122](https://github.com/allegroai/clearml-agent/issues/122))
 * Improve venv cache disabled message
 * Upgrade packages for better Python 3.10 support
 * Remove future package dependency (Python 2 is not supported for `clearml-agent`)
@@ -68,19 +68,19 @@ for user/password when cloning/fetching repositories)
 ### ClearML SDK 1.5.0
 
 **New Features and Improvements**
-* Add support for single value metric reporting ClearML GitHub issue [ClearML GitHub issue #400](https://github.com/allegroai/clearml/issues/400)
-* Add support for specifying parameter sections in `PipelineDecorator` [ClearML GitHub issue #629](https://github.com/allegroai/clearml/issues/629)
+* Add support for single value metric reporting ClearML GitHub issue ([ClearML GitHub issue #400](https://github.com/allegroai/clearml/issues/400))
+* Add support for specifying parameter sections in `PipelineDecorator` ([ClearML GitHub issue #629](https://github.com/allegroai/clearml/issues/629))
 * Add support for parallel uploads and downloads (upload / download and zip / unzip of artifacts)
 * Add support for specifying execution details (repository, branch, commit, packages, image) in `PipelineDecorator`
 * Bump PyJWT version due to "*Key confusion through non-blocklisted public key formats*" vulnerability
 * Add support for AWS Session Token (using boto3's `aws_session_token` argument)
 
 **Bug Fixes**
-* Fix `Task.get_projects()` retrieves only the first 500 results [ClearML GitHub issue #612](https://github.com/allegroai/clearml/issues/612)
-* Fix failure to delete artifacts stored in Azure [ClearML GitHub issue #660](https://github.com/allegroai/clearml/issues/660)
-* Fix Process Pool hangs at exit [ClearML GitHub issue #674](https://github.com/allegroai/clearml/issues/674)
-* Fix number of unpacked values when syncing a dataset [ClearML GitHub issue #682](https://github.com/allegroai/clearml/issues/682)
-* Fix FastAI DeprecationWarning [ClearML GitHub PR #683](https://github.com/allegroai/clearml/issues/683)
+* Fix `Task.get_projects()` retrieves only the first 500 results ([ClearML GitHub issue #612](https://github.com/allegroai/clearml/issues/612))
+* Fix failure to delete artifacts stored in Azure ([ClearML GitHub issue #660](https://github.com/allegroai/clearml/issues/660))
+* Fix Process Pool hangs at exit ([ClearML GitHub issue #674](https://github.com/allegroai/clearml/issues/674))
+* Fix number of unpacked values when syncing a dataset ([ClearML GitHub issue #682](https://github.com/allegroai/clearml/issues/682))
+* Fix FastAI DeprecationWarning ([ClearML GitHub PR #683](https://github.com/allegroai/clearml/issues/683))
 * Fix `StorageManager.download_folder()` crash
 * Fix pipelines can't handle `None` return value
 * Fix pre-existing pipeline raises an exception
@@ -100,8 +100,8 @@ for user/password when cloning/fetching repositories)
     * Redesign experiment status banner
     * Display all experiment tabs in single line
     * Move experiment action buttons to the top right
-* Add UI adherence to user specified plot dimensions [ClearML GitHub issue #587](https://github.com/allegroai/clearml/issues/587)
-* Add row highlight to experiment textual comparison UI [ClearML GitHub issue #581](https://github.com/allegroai/clearml/issues/581)
+* Add UI adherence to user specified plot dimensions ([ClearML GitHub issue #587](https://github.com/allegroai/clearml/issues/587))
+* Add row highlight to experiment textual comparison UI ([ClearML GitHub issue #581](https://github.com/allegroai/clearml/issues/581))
 * Add UI "Delete" action for Pipelines
 * Add UI indicator for task and pipeline progress
 * Add UI API credentials label "Edit" action
@@ -110,8 +110,8 @@ for user/password when cloning/fetching repositories)
 * Add pipeline results to UI dashboard search
 
 **Bug Fixes**
-* Fix UI experiment debug samples disappearing after refresh [ClearML Server GitHub issue #136](https://github.com/allegroai/clearml-server/issues/136)
-* Fix deleting tasks sometimes raises errors [ClearML GitHub issue #632](https://github.com/allegroai/clearml/issues/632)
+* Fix UI experiment debug samples disappearing after refresh ([ClearML Server GitHub issue #136](https://github.com/allegroai/clearml-server/issues/136))
+* Fix deleting tasks sometimes raises errors ([ClearML GitHub issue #632](https://github.com/allegroai/clearml/issues/632))
 * Fix only partial task log shown when running on ES with multiple shards
 * Fix move task to trash is not thread-safe
 * Fix UI Project overview metric snapshot not showing

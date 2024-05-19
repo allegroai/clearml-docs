@@ -5,7 +5,7 @@ title: Version 1.8
 ### ClearML Agent 1.8.1
 
 **New Features**
-* Add option to set daemon polling interval [ClearML Agent GitHub PR #197](https://github.com/allegroai/clearml-agent/pull/197)
+* Add option to set daemon polling interval ([ClearML Agent GitHub PR #197](https://github.com/allegroai/clearml-agent/pull/197))
 * Add Python 3.12 support
 
 **Bug Fixes**
@@ -31,9 +31,9 @@ specified and the code is running a preinstalled docker
 * Improve GPU monitoring for MIGs
 
 **Bug Fixes**
-* Use correct Python version in Poetry init [ClearML Agent GitHub PR #179](https://github.com/allegroai/clearml-agent/pull/179)
-* Fix queue handling in `K8sIntegration` and `k8s_glue_example.py` [ClearML Agent GitHub PR #183](https://github.com/allegroai/clearml-agent/pull/183)
-* Fix `FileNotFoundException` crash in `find_python_executable_for_version` [ClearML Agent GitHub issue #164](https://github.com/allegroai/clearml-agent/issues/164)
+* Use correct Python version in Poetry init ([ClearML Agent GitHub PR #179](https://github.com/allegroai/clearml-agent/pull/179))
+* Fix queue handling in `K8sIntegration` and `k8s_glue_example.py` ([ClearML Agent GitHub PR #183](https://github.com/allegroai/clearml-agent/pull/183))
+* Fix `FileNotFoundException` crash in `find_python_executable_for_version` ([ClearML Agent GitHub issue #164](https://github.com/allegroai/clearml-agent/issues/164))
 * Fix delete temp console pipe log files after Task execution is completed (important for long-lasting services agents to avoid collecting temp files on host machine)
 * Fix `agent.enable_git_ask_pass` does not show in configuration dump
 * Fix `pip` is returned as a pip version if no value exists in `agent.package_manager.pip_version`
@@ -46,7 +46,7 @@ specified and the code is running a preinstalled docker
 ### ClearML SDK 1.8.3
 
 **Bug Fixes**
-* Set GCS credentials to `None` if invalid service account credentials are provided [ClearML GitHub issue #840](https://github.com/allegroai/clearml/issues/840)
+* Set GCS credentials to `None` if invalid service account credentials are provided ([ClearML GitHub issue #840](https://github.com/allegroai/clearml/issues/840))
 * Fix a sync issue when loading deferred configuration
 
 ### ClearML SDK 1.8.2
@@ -61,18 +61,18 @@ specified and the code is running a preinstalled docker
 ### ClearML Server 1.8.0
 
 **New Features and Improvements**
-* Support `/` delimited project names for on-the-fly nested project creation in UI operations [ClearML Server GitHub issue #151](https://github.com/allegroai/clearml-server/issues/151) 
+* Support `/` delimited project names for on-the-fly nested project creation in UI operations ([ClearML Server GitHub issue #151](https://github.com/allegroai/clearml-server/issues/151))
 * Add keyboard shortcut iteration navigation in full screen view of debug samples and plots
-* Add "Don't show again" option for UI notification when archiving tasks [ClearML Server GitHub issue #149](https://github.com/allegroai/clearml-server/issues/149)
+* Add "Don't show again" option for UI notification when archiving tasks ([ClearML Server GitHub issue #149](https://github.com/allegroai/clearml-server/issues/149))
 * Add task reset/delete modal automatically closes when no additional information is provided
 * Add parent project name in UI dataset and pipeline cards
 * Move UI plot legends to bottom of plot
 
 **Bug Fixes**
-* Fix task artifacts not deleted from file server when task deleted via UI [ClearML GitHub issue #801](https://github.com/allegroai/clearml/issues/801)
-* Fix deleting pipeline projects via UI fails [ClearML GitHub issue #798](https://github.com/allegroai/clearml/issues/798)
-* Fix multiple selection with `Shift` key in UI experiment table not working [ClearML Server GitHub issue #139](https://github.com/allegroai/clearml-server/issues/139)
-* Fix disappearing user filter in UI "All Experiments" table [ClearML Web GitHub issue #33](https://github.com/allegroai/clearml-web/issues/33)
+* Fix task artifacts not deleted from file server when task deleted via UI ([ClearML GitHub issue #801](https://github.com/allegroai/clearml/issues/801))
+* Fix deleting pipeline projects via UI fails ([ClearML GitHub issue #798](https://github.com/allegroai/clearml/issues/798))
+* Fix multiple selection with `Shift` key in UI experiment table not working ([ClearML Server GitHub issue #139](https://github.com/allegroai/clearml-server/issues/139))
+* Fix disappearing user filter in UI "All Experiments" table ([ClearML Web GitHub issue #33](https://github.com/allegroai/clearml-web/issues/33))
 * Fix UI Dashboard missing My Work / Team Work filter
 * Fix navigating to Scalars and Plots tabs in UI experiment comparison freezes browser
 * Fix project stats do not exclude dataset and annotation tasks
@@ -86,8 +86,8 @@ specified and the code is running a preinstalled docker
 ### ClearML SDK 1.8.1
 
 **New Features and Improvements**
-* Raise error on failed uploads [ClearML GitHub issue #810](https://github.com/allegroai/clearml/issues/819)
-* Add hyperdataset examples [ClearML GitHub PR #823](https://github.com/allegroai/clearml/commit/f6b9efe54e1246adba4036c56bc6e8a0bdb99948)
+* Raise error on failed uploads ([ClearML GitHub issue #810](https://github.com/allegroai/clearml/issues/819))
+* Add hyperdataset examples ([ClearML GitHub PR #823](https://github.com/allegroai/clearml/commit/f6b9efe54e1246adba4036c56bc6e8a0bdb99948))
 * Change `report_event_flush_threshold` default to 100
 * Add `ModelInfo.weights_object()` to store callback access to the actual model object being stored (valid for both 
 pre/post save calls, otherwise `None`)
@@ -95,8 +95,8 @@ pre/post save calls, otherwise `None`)
 * Support max connections setting for Azure storage using the `sdk.azure.storage.max_connection` configuration option
 
 **Bug Fixes**
-* Fix clearml logger default level cannot be changed [ClearML GitHub issue #741](https://github.com/allegroai/clearml/issues/741)
-* Fix Hydra doesn't get overridden information from ClearML [ClearML GitHub issue #751](https://github.com/allegroai/clearml/issues/751)
+* Fix clearml logger default level cannot be changed ([ClearML GitHub issue #741](https://github.com/allegroai/clearml/issues/741))
+* Fix Hydra doesn't get overridden information from ClearML ([ClearML GitHub issue #751](https://github.com/allegroai/clearml/issues/751))
 * Fix `StorageManager.list(“s3://..”, with_metadata=True)` doesn't work
 * Fix `ModelsList.keys()` is missing
 * Fix `CLEARML_DEFERRED_TASK_INIT=1` doesn't work
@@ -105,10 +105,10 @@ pre/post save calls, otherwise `None`)
 ### ClearML SDK 1.8.0
 
 **New Features and Improvements**
-* Add tarfile member sanitization to `extractall()`[ClearML GitHub PR #803](https://github.com/allegroai/clearml/pull/803)
-* Add `Task.delete_artifacts()` with `raise_on_errors` argument [ClearML GitHub issue #805](https://github.com/allegroai/clearml/issues/805)
-* Add CI/CD example [ClearML GitHub PR #815](https://github.com/allegroai/clearml/pull/815)
-* Limit number of `_serialize` requests when adding list of links with `add_external_files()` [ClearML GitHub issue #813](https://github.com/allegroai/clearml/issues/813)
+* Add tarfile member sanitization to `extractall()`([ClearML GitHub PR #803](https://github.com/allegroai/clearml/pull/803))
+* Add `Task.delete_artifacts()` with `raise_on_errors` argument ([ClearML GitHub issue #805](https://github.com/allegroai/clearml/issues/805))
+* Add CI/CD example ([ClearML GitHub PR #815](https://github.com/allegroai/clearml/pull/815))
+* Limit number of `_serialize` requests when adding list of links with `add_external_files()` ([ClearML GitHub issue #813](https://github.com/allegroai/clearml/issues/813))
 * Add support for connecting Enum values as parameters
 * Improve Colab integration (store entire colab, not history)
 * Add `clearml.browser_login` to authenticate browser online sessions such as Colab, Jupyter Notebooks etc.
@@ -120,7 +120,7 @@ pre/post save calls, otherwise `None`)
 
 **Bug Fixes**
 * Fix passing `compression=ZIP_STORED` (or 0) to `Dataset.upload()` uses `ZIP_DEFLATED` and overrides the user-supplied 
-argument [ClearML GitHub PR #812](https://github.com/allegroai/clearml/pull/812)
+argument ([ClearML GitHub PR #812](https://github.com/allegroai/clearml/pull/812))
 * Fix `unique_selector` is not applied properly on batches after the first batch. Remove default selector value since 
 it does not work for all event types (and we always specify it anyway)
 * Fix `clearml-init` colab detection

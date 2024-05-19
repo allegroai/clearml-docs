@@ -10,10 +10,10 @@ title: Version 1.6
 ### ClearML Agent 1.6.0
 
 **New Features and Improvements**
-* Upgrade `requests` library [ClearML Agent GitHub issue #161](https://github.com/allegroai/clearml-agent/issues/161)
+* Upgrade `requests` library ([ClearML Agent GitHub issue #161](https://github.com/allegroai/clearml-agent/issues/161))
 * Add support for controlling PyTorch resolving mode using the `CLEARML_AGENT_PACKAGE_PYTORCH_RESOLVE` environment 
 variable and `agent.package_manager.pytorch_resolve configuration` setting with `none` (no resolving), `pip` (sets extra 
-index based on cuda and lets pip resolve) or `direct` (the previous parsing algorithm that does the matching and downloading). Default is `pip` [ClearML Agent GitHub issue #152](https://github.com/allegroai/clearml-agent/issues/152)
+index based on cuda and lets pip resolve) or `direct` (the previous parsing algorithm that does the matching and downloading). Default is `pip` ([ClearML Agent GitHub issue #152](https://github.com/allegroai/clearml-agent/issues/152))
 * Add backwards compatibility in standalone mode using the `CLEARML_AGENT_STANDALONE_CONFIG_BC` environment variable
 * Add `CLEARML_AGENT_DOCKER_AGENT_REPO` alias for the `FORCE_CLEARML_AGENT_REPO` environment variable
 * Show a better message for `agent init` when an existing `clearml.conf` is found
@@ -47,7 +47,7 @@ configuration option, allowing users to use `$ENV` in the task docker arguments 
 ### ClearML SDK 1.6.3
 
 **New Features and Improvements**
-* Add option to specify an endpoint URL when creating S3 resource service [ClearML GitHub issue #673](https://github.com/allegroai/clearml/issues/673)
+* Add option to specify an endpoint URL when creating S3 resource service ([ClearML GitHub issue #673](https://github.com/allegroai/clearml/issues/673))
 * Add support for providing `ExtraArgs` to boto3 when uploading files using the `sdk.aws.s3.extra_args` configuration option
 * Add support for Server API 2.20
 * Add `Task.get_num_enqueued_tasks()` to get the number of tasks enqueued in a specific queue
@@ -62,12 +62,12 @@ configuration option, allowing users to use `$ENV` in the task docker arguments 
   * Add wild-card support in `clearml-data`
 
 **Bug Fixes**
-* Fix dataset download [ClearML GitHub issue #713](https://github.com/allegroai/clearml/issues/713)
-* Fix lock is not released after dataset cache is downloaded [ClearML GitHub issue #671](https://github.com/allegroai/clearml/issues/671)
-* Fix deadlock might occur when using process pool large number processes [ClearML GitHub issue #674](https://github.com/allegroai/clearml/issues/674)
-* Fix 'series' not appearing on UI when using `logger.report_table()` [ClearML GitHub issue #684](https://github.com/allegroai/clearml/issues/684)
-* Fix `Task.init()` docstring to include behavior when executing remotely [ClearML GitHub PR #737](https://github.com/allegroai/clearml/pull/737)
-* Fix `KeyError` when running remotely and no params were passed to click [ClearML Agent GitHub issue #111](https://github.com/allegroai/clearml-agent/issues/111)
+* Fix dataset download ([ClearML GitHub issue #713](https://github.com/allegroai/clearml/issues/713))
+* Fix lock is not released after dataset cache is downloaded ([ClearML GitHub issue #671](https://github.com/allegroai/clearml/issues/671))
+* Fix deadlock might occur when using process pool large number processes ([ClearML GitHub issue #674](https://github.com/allegroai/clearml/issues/674))
+* Fix 'series' not appearing on UI when using `logger.report_table()` ([ClearML GitHub issue #684](https://github.com/allegroai/clearml/issues/684))
+* Fix `Task.init()` docstring to include behavior when executing remotely ([ClearML GitHub PR #737](https://github.com/allegroai/clearml/pull/737))
+* Fix `KeyError` when running remotely and no params were passed to click ([ClearML Agent GitHub issue #111](https://github.com/allegroai/clearml-agent/issues/111))
 * Fix full path is stored when uploading a single artifact file
 * Fix passing non-alphanumeric filename in `sdk.development.detect_with_pip_freeze`
 * Fix Python 3.6 and 3.10 support
@@ -97,14 +97,14 @@ configuration option, allowing users to use `$ENV` in the task docker arguments 
 ### ClearML Server 1.6.0
 **New Features and Improvements**
 * New ClearML Datasets UI pages for tracking dataset versions and exploring version lineage and contents
-* Add history navigation to experiments plots UI page [ClearML GitHub issues #81](https://github.com/allegroai/clearml/issues/81) and [#255](https://github.com/allegroai/clearml/issues/255): 
+* Add history navigation to experiments plots UI page ([ClearML GitHub issues #81](https://github.com/allegroai/clearml/issues/81) and [#255](https://github.com/allegroai/clearml/issues/255)): 
   * Plots page shows last reported plot for each metric/variation combination
   * Single plot view provides history navigation slider
 * Add single value scalar reporting: Single value scalars are aggregated into a summary table in the experiment's scalars 
-  UI page [ClearML GitHub issue #400](https://github.com/allegroai/clearml/issues/400)
-* Add "show hidden projects" control [ClearML GitHub issue #694](https://github.com/allegroai/clearml/issues/694)
+  UI page ([ClearML GitHub issue #400](https://github.com/allegroai/clearml/issues/400))
+* Add "show hidden projects" control ([ClearML GitHub issue #694](https://github.com/allegroai/clearml/issues/694))
 * Improve UI projects page setting persistence - User's last chosen settings for recent/name sorting and team/personal 
-  filter is saved [ClearML GitHub issue #353](https://github.com/allegroai/clearml/issues/353)
+  filter is saved ([ClearML GitHub issue #353](https://github.com/allegroai/clearml/issues/353))
 * Improve UI presentation for object IDs:
   * Display shortened ID next to task name 
   * Display full ID in tooltip  
@@ -118,9 +118,9 @@ configuration option, allowing users to use `$ENV` in the task docker arguments 
 * Maintain UI viewing mode when restoring archived items
 
 **Bug Fixes**
-* Fix experiment selection with 'Shift' key in UI experiment table not working [ClearML Server GitHub issue #139](https://github.com/allegroai/clearml-server/issues/139)
-* Fix UI search error message interferes with inputting search query [ClearML Server GitHub issue #138](https://github.com/allegroai/clearml-server/issues/138)
-* Fix refresh breaks UI breadcrumbs ClearML Server [ClearML Server GitHub issue #142](https://github.com/allegroai/clearml-server/issues/142)
+* Fix experiment selection with 'Shift' key in UI experiment table not working ([ClearML Server GitHub issue #139](https://github.com/allegroai/clearml-server/issues/139))
+* Fix UI search error message interferes with inputting search query ([ClearML Server GitHub issue #138](https://github.com/allegroai/clearml-server/issues/138))
+* Fix refresh breaks UI breadcrumbs ClearML Server ([ClearML Server GitHub issue #142](https://github.com/allegroai/clearml-server/issues/142))
 * Fix UI Workers and Queues page displays incorrect queue metrics
 * Fix failure to publish models whose generating task was reset
 * Fix listed models in UI pipeline run info panel doesn't link to model 
@@ -161,7 +161,7 @@ configuration option, allowing users to use `$ENV` in the task docker arguments 
 
 **Bug Fix**
 
-* Fix format string construction sometimes causing delayed evaluation errors [ClearML GitHub issue #706](https://github.com/allegroai/clearml/issues/706)
+* Fix format string construction sometimes causing delayed evaluation errors ([ClearML GitHub issue #706](https://github.com/allegroai/clearml/issues/706))
 
 ### ClearML SDK 1.6.1
 
@@ -183,7 +183,7 @@ configuration option, allowing users to use `$ENV` in the task docker arguments 
 
 **Bug Fixes**
 * Fix axis range settings when logging plots
-* Fix `Task.get_project()` to return more than 500 entries [ClearML GitHub issue #612](https://github.com/allegroai/clearml/issues/612)
+* Fix `Task.get_project()` to return more than 500 entries ([ClearML GitHub issue #612](https://github.com/allegroai/clearml/issues/612))
 * Fix pipeline progress calculation
 * Fix `StorageManager.upload_folder()` returns `None` for both successful and unsuccessful uploads
 * Fix script path capturing stores a relative path and not an absolute path
