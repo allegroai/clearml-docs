@@ -28,6 +28,9 @@ or the experiment that created the model.
 The ClearML web UI visualizes the model catalog for complete observability and lineage of the model lifecycle, providing 
 governance at scale.
 
+The [Gradio](webapp/applications/apps_gradio.md) and [Streamlit](webapp/applications/apps_streamlit.md) launcher apps
+let you interactively demo your models
+
 [ClearML Serving](clearml_serving/clearml_serving.md) lets you deploy your models, and continue updating them as you 
 continue to train and test new model versions.
 
