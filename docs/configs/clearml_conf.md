@@ -976,7 +976,7 @@ and limitations on bucket naming.
 **`sdk.dataset.preview`** (*[dict]*)
 
 * Set limits for the objects that are logged as dataset previews:
-  * `**sdk.dataset.preview.media`** (*dict*) - Set limits for media files that are logged as dataset previews. Available 
+  * **`sdk.dataset.preview.media`** (*dict*) - Set limits for media files that are logged as dataset previews. Available 
   options:
     * **`sdk.dataset.preview.media.max_file_size`** (*int*) - Maximum file size in bytes of a preview object (e.g. image, 
     video, html, etc.). Files exceeding this size will not be reported as previews. 
@@ -985,7 +985,7 @@ and limitations on bucket naming.
     * **`sdk.dataset.preview.media.audio_count`** (*int*) - The maximum number of image files reported as previews
     * **`sdk.dataset.preview.media.html_count`** (*int*) - The maximum number of html files reported as previews
     * **`sdk.dataset.preview.media.json_count`** (*int*) - The maximum number of json files reported as previews
-  * `**sdk.dataset.preview.tabular`** (*dict*) - Set limits for tabular files that are logged as dataset previews. Available 
+  * **`sdk.dataset.preview.tabular`** (*dict*) - Set limits for tabular files that are logged as dataset previews. Available 
   options:
     * **`sdk.dataset.preview.tabular.row_count`** (*int*) - The maximum number of rows for each tabular file reported as a preview. By default, it will report only the first 10 rows from a file
     * **`sdk.dataset.preview.tabular.table_count`** (*int*) - The maximum number of tables reported as preview in a dataset
