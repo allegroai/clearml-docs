@@ -39,13 +39,16 @@ The profile tab presents user information.
 Under **USER PREFERENCES**, users can set a few web UI options:
 * **Show Hidden Projects** - Show ClearML infrastructure projects alongside your own projects. Disabled by default. When 
 enabled, these projects are labeled with <img src="/docs/latest/icons/ico-ghost.svg" alt="Hidden project" className="icon size-md space-sm" />.
-* **Don't show ClearML Examples** - Hide the preloaded ClearML example content (project, pipeline, dataset, etc.) 
-* **HiDPI browser scale override** - Adjust scaling on High-DPI monitors to improve the web UI experience. 
-  Enabled by default.
+* **Don't show ClearML examples** - Hide the preloaded ClearML example content (project, pipeline, dataset, etc.). 
+* **Disable HiDPI browser scale override** - ClearML dynamically sets the browser scaling factor for an optimal page layout. 
+Disable for default desktop scale. 
 * **Don't show pro tips periodically** - Stop showing ClearML usage tips on login. Disabled by default.
+* **Block running user's scripts in the browser** - Block any user and 3rd party scripts from running anywhere in the 
+WebApp. Note that if enabled, the WebApp will not display debug samples, [Hyper-Dataset frame previews](../hyperdatasets/previews.md), 
+and embedded resources in [reports](webapp_reports.md).
 * **Hide specific container arguments** - Specify which Docker environment variable values should be hidden in logs. 
 When printed, the variable values are replaced with `********`. By default, `CLEARML_API_SECRET_KEY`, `CLEARML_AGENT_GIT_PASS`,
-`AWS_SECRET_ACCESS_KEY`, and `AZURE_STORAGE_KEY` values are redacted.  
+`AWS_SECRET_ACCESS_KEY`, and `AZURE_STORAGE_KEY` values are redacted. To modify the hidden container argument list, click **Edit**.
 
 :::info Self-hosted ClearML Server 
 The self-hosted ClearML Server has an additional option to enable sharing anonymous telemetry data with the ClearML 
