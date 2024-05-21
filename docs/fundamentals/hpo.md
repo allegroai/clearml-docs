@@ -23,7 +23,7 @@ compare results.
 
 The preceding diagram demonstrates the typical flow of hyperparameter optimization where the parameters of a base task are optimized: 
 
-1. Configure an Optimization Task with a base task whose parameters will be optimized, and a set of parameter values to 
+1. Configure an Optimization Task with a base task whose parameters will be optimized, optimization targets, and a set of parameter values to 
    test
 1. Clone the base task. Each clone's parameter is overridden with a value from the optimization task  
 1. Enqueue each clone for execution by a ClearML Agent
@@ -116,6 +116,19 @@ optimization.
   :::tip Locating Task ID
   To locate the base task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). The ID appears 
   in the task header.
+  :::
+
+  :::tip Multi-objective Optimization
+  If you are using the Optuna framework (see [Supported Optimizers](#supported-optimizers)), you can list multiple optimization objectives. 
+  When doing so, make sure the `objective_metric_title`, `objective_metric_series`, and `objective_metric_sign` lists 
+  are the same length. Each title will be matched to its respective series and sign. 
+
+  For example, the code below sets two objectives: to minimize the `validation/loss` metric and to maximize the `validation/accuracy` metric. 
+  ```
+  objective_metric_title=[“validation”, “validation”]
+  objective_metric_series=[“loss”, “accuracy”]
+  objective_metric_sign=[“min”, “max]
+  ```
   :::
 
 
