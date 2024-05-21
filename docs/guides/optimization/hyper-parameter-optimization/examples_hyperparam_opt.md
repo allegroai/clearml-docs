@@ -152,10 +152,10 @@ object, setting the following optimization parameters:
   
   For example, the code below sets two objectives: to minimize the `validation/loss` metric and to maximize the 
   `validation/accuracy` metric: 
-  ```
-  objective_metric_title=[“validation”, “validation”]
-  objective_metric_series=[“loss”, “accuracy”]
-  objective_metric_sign=[“min”, “max]
+  ```python
+  objective_metric_title=["validation", "validation"]
+  objective_metric_series=["loss", "accuracy"]
+  objective_metric_sign=["min", "max"]
   ```
   :::
   
