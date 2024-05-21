@@ -208,6 +208,7 @@ to an IAM user, and create credentials keys for that user to configure in the au
    {
        "Version": "2012-10-17",
        "Statement": [
+           {
                "Sid": "CreateTags",
                "Effect": "Allow",
                "Action": "ec2:CreateTags",
