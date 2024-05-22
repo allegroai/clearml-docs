@@ -204,11 +204,34 @@ If a FrameGroup doesn't have the selected preview source, the preview displays t
 
 ## Statistics
 
-The **Statistics** tab displays a dataset version's label usage stats. 
-* Dataset total count - number of annotations, annotated frames, and total frames  
-* Each label is listed along with the number of times it was used in the version
-* The pie chart visualizes these stats. Hover over a chart slice and its associated label and usage 
-  percentage will appear at the center of the chart. 
+The **Statistics** tab allows exploring frame and ROI property distribution across a Hyper-Dataset version:
+1. Query the frames to include in the statistics calculations under **Filter by label**. Use [simple](#simple-frame-filtering) 
+or [advanced](#advanced-frame-filtering) frame filters. If no filter is applied, all frames in the dataset version will 
+be included in the calculation. 
+1. Select the property whose distribution should be calculated 
+   * Select the property **Type**:
+      * **ROI** - Frame ROI properties (e.g. ROI label, ID, confidence, etc.). This will calculate the distribution of 
+     the specified property across all ROIs in the version's frames.
+      * **Frame** - Frames properties (e.g. update time, metadata keys, timestamp, etc.)
+   * Input the **Property** key (e.g. `meta.location`) 
+   * If **ROI** property was selected, you can also limit the scope of ROIs included in the calculation with the
+   **Count ROIs matching** filter: Input a Lucene query to specify which ROIs to count
+1. Click **Apply** to calculate the statistics 
+
+For example, calculating the distribution for the `label` ROI property, specifying `rois.confidence: 1` for ROI matching 
+will show the label distribution across only ROIs with a confidence level of 1.
+
+![Distribution by ROI property](../../img/hyperdatasets/dataset_version_statistics_roi.png)
+
+By default, the ROI label distribution across the entire Hyper-Dataset version is shown.
+The tab displays the following information
+* Object counts:
+    * Number of annotations matching specification
+    * Number of annotated frames in the current frame filter selection
+    * Total number of frames in the current frame filter selection
+* Each property is listed along with its number of occurrences in the current frame filter selection
+* The pie chart visualizes this distribution. Hover over a chart segment and its associated property and count will 
+appear in a tooltip and its usage percentage will appear at the center of the chart.
   
 ![Version label statistics](../../img/hyperdatasets/dataset_version_statistics.png)
 
