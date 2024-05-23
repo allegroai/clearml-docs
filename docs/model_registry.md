@@ -203,8 +203,12 @@ and [InputModel](references/sdk/model_inputmodel.md) reference pages.
 
 ## Creating Visual Web Interface
 
+:::important Enterprise Feature
+The Streamlit and Gradio launcher apps are available under the ClearML Enterprise plan.
+:::
+
 Create a visual web interface and interactively demo your models using the [Gradio](webapp/applications/apps_gradio.md) 
-and [Streamlit](webapp/applications/apps_streamlit.md) launcher apps (available under the ClearML Enterprise plan).
+and [Streamlit](webapp/applications/apps_streamlit.md) launcher apps.
 
 The launcher applications spin up a Gradio or Streamlit execution environment and serve your respective app on a machine 
 of your choice. Once you start a launcher instance, you will be provided with an [externally accessible link](#traffic_router) to 
