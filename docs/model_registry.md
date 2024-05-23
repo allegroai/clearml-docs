@@ -211,7 +211,7 @@ Create a visual web interface and interactively demo your models using the [Grad
 and [Streamlit](webapp/applications/apps_streamlit.md) launcher apps.
 
 The launcher applications spin up a Gradio or Streamlit execution environment and serve your respective app on a machine 
-of your choice. Once you start a launcher instance, you will be provided with an [externally accessible link](#traffic_router) to 
+of your choice. Once you start a launcher instance, you will be provided with an externally accessible link to 
 your Gradio or Streamlit app, where you can make use of your models.
 
 ## Serving Models 
