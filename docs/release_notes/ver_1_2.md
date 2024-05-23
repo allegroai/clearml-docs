@@ -8,7 +8,7 @@ title: Version 1.2
 * Improve GPU Performance, 50%-300% improvement over vanilla Triton
 * Improve performance on CPU, optimize uvloop + multi-processing
 * Add Huggingface Transformer example
-* Add binary input support [ClearML Serving PR #37](https://github.com/allegroai/clearml-serving/pull/37) 
+* Add binary input support ([ClearML Serving PR #37](https://github.com/allegroai/clearml-serving/pull/37) )
 
 **Bug Fix**
 * stdout/stderr in inference service not logging to dedicated Task
@@ -34,9 +34,9 @@ title: Version 1.2
 
 **New Features and Improvements**
 
-- Update S3 bucket verify option for minio [ClearML Agent GitHub PR #83](https://github.com/allegroai/clearml-agent/pull/83) 
-- Add environment variable for request method [ClearML Agent GitHub PR #91](https://github.com/allegroai/clearml-agent/pull/91)
-- Add additional k8s-glue dockerfiles [ClearML Agent GitHub PR #94](https://github.com/allegroai/clearml-agent/pull/94) 
+- Update S3 bucket verify option for minio ([ClearML Agent GitHub PR #83](https://github.com/allegroai/clearml-agent/pull/83))
+- Add environment variable for request method ([ClearML Agent GitHub PR #91](https://github.com/allegroai/clearml-agent/pull/91))
+- Add additional k8s-glue dockerfiles ([ClearML Agent GitHub PR #94](https://github.com/allegroai/clearml-agent/pull/94) )
 - Update default docker image to `nvidia/cuda:10.2-cudnn7-runtime-ubuntu18.04`
 - Add support for custom docker image resolving using the `agent.default_docker.match_rules` configuration setting (see [here](https://github.com/allegroai/clearml-agent/blob/8712c5e636d9a02e939a9759348d29521a3939a9/docs/clearml.conf#L169))
 - Add `agent.force_git_root_python_path` configuration setting to force adding the git repository root folder to the `PYTHONPATH` (if set working directory is not added to the `PYHTONPATH`)
@@ -50,10 +50,10 @@ title: Version 1.2
 
 **Bug Fixes**
 
-- Fix virtualenv python interpreter used [ClearML Agent GitHub PR #98](https://github.com/allegroai/clearml-agent/pull/98)
-- Fix typing package incorrectly required for Python>3.5 [ClearML Agent GitHub PR #103](https://github.com/allegroai/clearml-agent/pull/103)
-- Fix symbolic links not copied from cached VCS into working copy (windows platform will result with default copy content instead of original symbolic link) [ClearML Agent GitHub PR #89](https://github.com/allegroai/clearml-agent/pull/89)
-- Fix agent fails to check out code from main branch when branch/commit is not explicitly specified [ClearML GitHub issue #551](https://github.com/allegroai/clearml/issues/551)
+- Fix virtualenv python interpreter used ([ClearML Agent GitHub PR #98](https://github.com/allegroai/clearml-agent/pull/98))
+- Fix typing package incorrectly required for Python>3.5 ([ClearML Agent GitHub PR #103](https://github.com/allegroai/clearml-agent/pull/103))
+- Fix symbolic links not copied from cached VCS into working copy (windows platform will result with default copy content instead of original symbolic link) ([ClearML Agent GitHub PR #89](https://github.com/allegroai/clearml-agent/pull/89))
+- Fix agent fails to check out code from main branch when branch/commit is not explicitly specified ([ClearML GitHub issue #551](https://github.com/allegroai/clearml/issues/551))
 - Fix `git+git://` requirements
 - Fix `default_python` calculation (and verbosity)
 - Fix using deprecated `abc` support (Python 3.10 compatibility)
@@ -73,18 +73,18 @@ title: Version 1.2
 
 **Bug Fixes**
 
-- Fix HTTP download fails constructing URL [ClearML GitHub issue #593](https://github.com/allegroai/clearml/issues/593)
+- Fix HTTP download fails constructing URL ([ClearML GitHub issue #593](https://github.com/allegroai/clearml/issues/593))
 
 ### ClearML SDK 1.2.0
 
 **Features**
 
-- Add fastai v2 support [ClearML GitHub PR #571](https://github.com/allegroai/clearml/pull/571)
-- Add catboost support  [ClearML GitHub PR #542](https://github.com/allegroai/clearml/pull/542)
-- Add Python Fire support [ClearML GitHub PR #550](https://github.com/allegroai/clearml/pull/550)
-- Add new Azure Storage driver support [ClearML GitHub PR #548](https://github.com/allegroai/clearml/pull/548)
-- Add requirements file support in Task.add_requirements [ClearML GitHub PR #575](https://github.com/allegroai/clearml/pull/575)
-- Allow overriding `auto_delete_file` in `Task.update_output_model()` [ClearML GitHub issue #554](https://github.com/allegroai/clearml/issues/554)
+- Add fastai v2 support ([ClearML GitHub PR #571](https://github.com/allegroai/clearml/pull/571))
+- Add catboost support ([ClearML GitHub PR #542](https://github.com/allegroai/clearml/pull/542))
+- Add Python Fire support ([ClearML GitHub PR #550](https://github.com/allegroai/clearml/pull/550))
+- Add new Azure Storage driver support ([ClearML GitHub PR #548](https://github.com/allegroai/clearml/pull/548))
+- Add requirements file support in `Task.add_requirements `([ClearML GitHub PR #575](https://github.com/allegroai/clearml/pull/575))
+- Allow overriding `auto_delete_file` in `Task.update_output_model()` ([ClearML GitHub issue #554](https://github.com/allegroai/clearml/issues/554))
 - Support `artifact_object` empty string
 - Add `skip_zero_size_check` to `StorageManager.download_folder()`
 - Add support for extra HTTP retry codes (see [here](https://github.com/allegroai/clearml/blob/2c916181b90c784fe0bd267cd67ea915e53e36e4/clearml/backend_api/config/default/api.conf#L29) or use `CLEARML_API_EXTRA_RETRY_CODES`)
@@ -93,18 +93,18 @@ title: Version 1.2
 - Add autoscaler CPU-only support
 - Add AWS autoscaler IAM instance profile support
 - Update examples
-  - Edit HTML reporting examples [ClearML GitHub PR #546](https://github.com/allegroai/clearml/pull/546)
-  - Add model reporting examples [ClearML GitHub PR #553](https://github.com/allegroai/clearml/pull/553)
+  - Edit HTML reporting examples ([ClearML GitHub PR #546](https://github.com/allegroai/clearml/pull/546))
+  - Add model reporting examples ([ClearML GitHub PR #553](https://github.com/allegroai/clearml/pull/553))
 
 **Bug Fixes**
 
-- Fix `nargs="?"` without type does not properly cast the default value [ClearML GitHub issue #531](https://github.com/allegroai/clearml/issues/531)
-- Fix using invalid configurations [ClearML GitHub issue #544](https://github.com/allegroai/clearml/issues/544)
-- Fix extra_layout not passed to report_matrix [ClearML GitHub issue #559](https://github.com/allegroai/clearml/issues/559)
-- Fix group arguments in click [ClearML GitHub PR #561](https://github.com/allegroai/clearml/pull/561)
-- Fix no warning when failing to patch argparse [ClearML GitHub PR #576](https://github.com/allegroai/clearml/pull/576)
-- Fix crash in `Dataset.upload()` when there is nothing to upload [ClearML GitHub PR #579](https://github.com/allegroai/clearml/pull/579)
-- Fix requirements, refactor and reformat examples [ClearML GitHub PR #567](https://github.com/allegroai/clearml/pull/567), [#573](https://github.com/allegroai/clearml/pull/573), [#582](https://github.com/allegroai/clearml/pull/582)
+- Fix `nargs="?"` without type does not properly cast the default value ([ClearML GitHub issue #531](https://github.com/allegroai/clearml/issues/531))
+- Fix using invalid configurations ([ClearML GitHub issue #544](https://github.com/allegroai/clearml/issues/544))
+- Fix extra_layout not passed to report_matrix ([ClearML GitHub issue #559](https://github.com/allegroai/clearml/issues/559))
+- Fix group arguments in click ([ClearML GitHub PR #561](https://github.com/allegroai/clearml/pull/561))
+- Fix no warning when failing to patch argparse ([ClearML GitHub PR #576](https://github.com/allegroai/clearml/pull/576))
+- Fix crash in `Dataset.upload()` when there is nothing to upload ([ClearML GitHub PR #579](https://github.com/allegroai/clearml/pull/579))
+- Fix requirements, refactor and reformat examples ([ClearML GitHub PRs #567](https://github.com/allegroai/clearml/pull/567), [#573](https://github.com/allegroai/clearml/pull/573), [#582](https://github.com/allegroai/clearml/pull/582))
 - Auto-scaler
   - Change confusing log message
   - Fix AWS tags support
@@ -119,14 +119,14 @@ title: Version 1.2
 - Fix `clearml-init` changing web host after pasting full credentials
 - Fix fileserver upload does not support path in URL
 - Fix crash on semaphore acquire error
-- Fix docs and docstrings [ClearML GitHub PR #558](https://github.com/allegroai/clearml/pull/558), [#560](https://github.com/allegroai/clearml/pull/560)
+- Fix docs and docstrings ([ClearML GitHub PRs #558](https://github.com/allegroai/clearml/pull/558), [#560](https://github.com/allegroai/clearml/pull/560))
 
 
 ### ClearML Server 1.2.0
 
 **New Features and Improvements**
 * Add functionality to "Abort all children" UI action for controller and optimizer tasks
-* Add parameter search to task configuration UI section [ClearML GitHub issue #467](https://github.com/allegroai/clearml/issues/467)
+* Add parameter search to task configuration UI section ([ClearML GitHub issue #467](https://github.com/allegroai/clearml/issues/467))
 * Add tag exclusion filters in UI experiment and model tables
 * Add "Clear Filters" functionality button to UI table filters
 * Improve full screen scalar graph to display all data points
@@ -149,12 +149,12 @@ title: Version 1.2
 
 **Bug Fixes**
 
-* Fix UI debug sample viewer ignoring metric filter on auto-refresh [ClearML GitHub issue #512](https://github.com/allegroai/clearml/issues/512)
-* Fix "Wall time" x-axis option in UI plots slowing down web app [ClearML GitHub issue #441](https://github.com/allegroai/clearml/issues/441)
-* Fix UI table plot titles don't display their iteration number [ClearML GitHub issue #474](https://github.com/allegroai/clearml/issues/474)
-* Fix auto-refresh resets vertical scroll in UI debug samples [ClearML GitHub issue #474](https://github.com/allegroai/clearml/issues/474)
-* Fix manually run experiments cannot be edited in UI after being reset  [ClearML GitHub issue #449](https://github.com/allegroai/clearml/issues/449) 
-* Fix UI Workers & Queues and Experiment Table pages display mismatching experiment runtime values [ClearML Server GitHub issue #100](https://github.com/allegroai/clearml-server/issues/100)
+* Fix UI debug sample viewer ignoring metric filter on auto-refresh ([ClearML GitHub issue #512](https://github.com/allegroai/clearml/issues/512))
+* Fix "Wall time" x-axis option in UI plots slowing down web app ([ClearML GitHub issue #441](https://github.com/allegroai/clearml/issues/441))
+* Fix UI table plot titles don't display their iteration number ([ClearML GitHub issue #474](https://github.com/allegroai/clearml/issues/474))
+* Fix auto-refresh resets vertical scroll in UI debug samples ([ClearML GitHub issue #474](https://github.com/allegroai/clearml/issues/474))
+* Fix manually run experiments cannot be edited in UI after being reset ([ClearML GitHub issue #449](https://github.com/allegroai/clearml/issues/449)) 
+* Fix UI Workers & Queues and Experiment Table pages display mismatching experiment runtime values ([ClearML Server GitHub issue #100](https://github.com/allegroai/clearml-server/issues/100))
 * Fix UI plots sometimes disappear after task execution completion
 * Fix UI experiment plots don't display some plots on a http server
 * Fix failure to add Azure credentials through UI Settings page by new users 
