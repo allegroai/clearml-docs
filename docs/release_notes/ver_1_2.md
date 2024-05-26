@@ -83,7 +83,7 @@ title: Version 1.2
 - Add catboost support ([ClearML GitHub PR #542](https://github.com/allegroai/clearml/pull/542))
 - Add Python Fire support ([ClearML GitHub PR #550](https://github.com/allegroai/clearml/pull/550))
 - Add new Azure Storage driver support ([ClearML GitHub PR #548](https://github.com/allegroai/clearml/pull/548))
-- Add requirements file support in `Task.add_requirements `([ClearML GitHub PR #575](https://github.com/allegroai/clearml/pull/575))
+- Add requirements file support in `Task.add_requirements` ([ClearML GitHub PR #575](https://github.com/allegroai/clearml/pull/575))
 - Allow overriding `auto_delete_file` in `Task.update_output_model()` ([ClearML GitHub issue #554](https://github.com/allegroai/clearml/issues/554))
 - Support `artifact_object` empty string
 - Add `skip_zero_size_check` to `StorageManager.download_folder()`

@@ -60,7 +60,7 @@ This release is not backwards compatible
 
 **Features**
 
-- Add Google Colab notebook tutorial ([ClearML GitHub PR 368](https://github.com/allegroai/clearml/issues/368) [ClearML GitHub PR 374](https://github.com/allegroai/clearml/issues/374))
+- Add Google Colab notebook tutorial ([ClearML GitHub PR 368](https://github.com/allegroai/clearml/issues/368) and [ClearML GitHub PR 374](https://github.com/allegroai/clearml/issues/374))
 - Add support for GIF images in Tensorboard ([ClearML GitHub issue 372](https://github.com/allegroai/clearml/issues/372))
 - Add a tensorboardX example for `add_video` (creates GIFs in tensorboard) ([ClearML GitHub PR 372](https://github.com/allegroai/clearml/issues/372)) 
 - Add auto scaler customizable boot bash script
@@ -252,7 +252,7 @@ Arguments order changed in `Logger.report_line_plot()`, `Logger.report_plotly()`
 * Add support for extended container (docker) configuration and init script
 * Add special character support ("." (dot) and "$") in Hyperparameters
 * Add new context menu icons
-* Add deleting experiments and models through UI (ClearML GitHub issues [53](https://github.com/allegroai/clearml-server/issues/53), [61](https://github.com/allegroai/clearml-server/issues/61) and [81](https://github.com/allegroai/clearml/issues/81#issuecomment-706907718))
+* Add deleting experiments and models through UI (ClearML GitHub issues [53](https://github.com/allegroai/clearml-server/issues/53), [61](https://github.com/allegroai/clearml-server/issues/61), and [81](https://github.com/allegroai/clearml/issues/81#issuecomment-706907718))
 * Improve Project deletion: deletes project's experiments and models.
 * Add experiment description access from info title
 * Improve experiment table columns 
