@@ -159,19 +159,19 @@ object, setting the following optimization parameters:
   ```
   :::
   
-  * Number of concurrent Tasks:
+* Number of concurrent Tasks:
   ```python
       max_number_of_concurrent_tasks=2,
   ```
-  * Optimization strategy (see [Set the search strategy for optimization](#set-the-search-strategy-for-optimization)):
+* Optimization strategy (see [Set the search strategy for optimization](#set-the-search-strategy-for-optimization)):
   ```python
       optimizer_class=aSearchStrategy,
   ```
-  * Queue to use for remote execution. This is overridden if the optimizer runs as a service.
+* Queue to use for remote execution. This is overridden if the optimizer runs as a service.
   ```python
       execution_queue='1xGPU',
   ```
-  * Remaining parameters, including the time limit per Task (minutes), period for checking the optimization (minutes), 
+* Remaining parameters, including the time limit per Task (minutes), period for checking the optimization (minutes), 
   maximum number of jobs to launch, minimum and maximum number of iterations for each Task:
   ```python
       # Optional: Limit the execution time of a single experiment, in minutes.
