@@ -137,11 +137,18 @@ Once a specific dataset object has been obtained, get a local copy of the datase
 * [`Dataset.get_local_copy()`](../references/sdk/dataset.md#get_local_copy) - get a read-only local copy of an entire dataset. 
   This method returns a path to the dataset in local cache (downloading the dataset if it is not already in cache).
 * [`Dataset.get_mutable_local_copy()`](../references/sdk/dataset.md#get_mutable_local_copy) - get a writable local copy 
-of an entire dataset. This method downloads the dataset to a specific folder (non-cached), specified with the `target_folder` parameter. If 
-the specified folder already has contents, specify whether to overwrite its contents with the dataset contents, using the `overwrite` parameter.
+  of an entire dataset. This method downloads the dataset to a specific folder (non-cached), specified with the `target_folder` parameter. If 
+  the specified folder already has contents, specify whether to overwrite its contents with the dataset contents, using the `overwrite` parameter.
+
+  :::note
+  `Dataset.get_mutable_local_copy()` initially downloads the local copy into a cache directory before moving it to the
+  location specified in `target_folder`. If the default cache directory does not have sufficient disk space, you can 
+  change the directory by setting the `CLEARML_CACHE_DIR` environment variable.
+  :::
+
 
 ClearML supports parallel downloading of datasets. Use the `max_workers` parameter of the `Dataset.get_local_copy` or 
-`Dataset.get_mutable_copy` methods to specify the number of threads to use when downloading the dataset. By default, it's 
+`Dataset.get_mutable_local_copy` methods to specify the number of threads to use when downloading the dataset. By default, it's 
 the number of your machine's logical cores.
 
 ## Modifying Datasets
