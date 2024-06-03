@@ -35,7 +35,7 @@ Integrate ClearML with the following steps:
 
 2. Log experiment parameters using `ClearMLVisBackend.add_config()`. Under the `config` parameter, input a dictionary of parameter key-value pairs.  
 
-    ```
+    ```python
     cfg = Config(dict(a=1, b=dict(b1=[0, 1])))
     vis_backend.add_config(config=cfg)
     ```
@@ -45,7 +45,7 @@ Integrate ClearML with the following steps:
 3. Log your experiment’s scalars using either `ClearMLVisBackend.add_scalar()` for single values or `ClearMLVisBackend.add_scalars()` 
    for multiple values: 
    
-   ```    
+   ```python
    vis_backend.add_scalar(name='mAP', value=0.6, step=1)
    vis_backend.add_scalars(scalar_dict={'loss': 0.1,'acc':0.8}, step=1)
    ```
@@ -55,7 +55,7 @@ Integrate ClearML with the following steps:
 5. Report images to your experiment using `ClearMLVisBackend.add_image()`. Under the `image` parameter, input the image 
    to be reported as an `np.ndarray` in RGB format:
 
-   ```
+   ```python
    img = np.random.randint(0, 256, size=(10, 10, 3))
    vis_backend.add_image(name='img.png', image=img, step=1)
    ```
@@ -65,6 +65,6 @@ Integrate ClearML with the following steps:
    completed. This will also scan the directory for relevant artifacts with the suffixes input when instantiating 
    `ClearMLVisBackend` and log the artifacts to your experiment. 
 
-    ```
+    ```python
     vis_backend.close()
     ```
