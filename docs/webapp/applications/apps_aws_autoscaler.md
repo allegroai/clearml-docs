@@ -215,128 +215,57 @@ to an IAM user, and create credentials keys for that user to configure in the au
 
    ![AWS create policy JSON](../../img/apps_aws_permissions_3.png)
 
-1. Insert the following policy into the text box: 
+1. Insert the following policy into the text box (make sure to replace `<AWS_ACCOUNT_ID>` with your account ID): 
 
    ```json
-   {                  
+   {
        "Version": "2012-10-17",
        "Statement": [
            {
-               "Sid": "VisualEditor0",
+               "Sid": "CreateTags",
+               "Effect": "Allow",
+               "Action": "ec2:CreateTags",
+               "Resource": [
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:instance/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:dedicated-host/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:elastic-ip/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:reserved-instances/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>>:capacity-reservation-fleet/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>>:volume/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:capacity-reservation/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:fleet/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:spot-instances-request/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:host-reservation/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:launch-template/*",
+                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:network-interface/*"
+               ]
+           },
+           {
+               "Sid": "EC2Actions",
                "Effect": "Allow",
                "Action": [
                    "ec2:DescribeInstances",
-                   "ec2:TerminateInstances",
                    "ec2:RequestSpotInstances",
-                   "ec2:DeleteTags",
-                   "ec2:CreateTags",
+                   "ec2:CancelSpotFleetRequests",
+                   "ec2:DescribeInstanceAttribute",
+                   "ec2:SendSpotInstanceInterruptions",
                    "ec2:RunInstances",
+                   "ec2:RequestSpotFleet",
                    "ec2:DescribeSpotInstanceRequests",
-                   "ec2:GetConsoleOutput"
+                   "ec2:DescribeInstanceEventNotificationAttributes",
+                   "ec2:GetConsoleOutput",
+                   "ec2:CancelSpotInstanceRequests",
+                   "ec2:DescribeInstanceTypes",
+                   "ec2:DescribeInstanceStatus",
+                   "ec2:TerminateInstances"
                ],
                "Resource": "*"
            }
        ]
    }
    ```
-   
-   This is a basic policy which gives the autoscaler access to your account. See example policy with finer security 
-configuration [here](#aws-iam-restricted-access-policy). 
 
 1. Complete creating the policy
 1. Attach the created policy to an IAM user/group whose credentials will be used in the autoscaler app (you can create a 
    new IAM user/group for this purpose)
 1. Obtain a set of AWS IAM credentials for the user/group to which you have attached the created policy in the previous step  
-
-
-### AWS IAM Restricted Access Policy
-
-The template policy below demonstrates how to restrict the autoscaler to launch EC2.
-
-The policy includes the following permissions:
-* Enables performing certain EC2 actions on all resources in specified regions 
-* Enables performing certain EC2 actions on all resources of specified instance types 
-* Enables performing certain EC2 actions on specified resources (in selected subnet and security group, and any network-interface, volume, key-pair, instance) 
-* Enables performing an EC2 action to use on a specified AMI on condition that the `ec2:Owner` is a specified owner
-
-```json
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "GeneralEC2",
-            "Effect": "Allow",
-            "Action": [
-                "ec2:AttachClassicLinkVpc",
-                "ec2:CancelSpotInstanceRequests",
-                "ec2:CreateFleet",
-                "ec2:Describe*",
-                "ec2:GetConsoleOutput",
-                "ec2:DetachClassicLinkVpc",
-                "ec2:ModifyInstanceAttribute",
-                "ec2:RequestSpotInstances"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "StringEquals": {
-                    "aws:RequestedRegion": "<region>"
-                }
-            }
-        },
-        {
-            "Sid": "RunEC2InstanceType",
-            "Effect": "Allow",
-            "Action": "ec2:RunInstances",
-            "Resource": "*",
-            "Condition": {
-                "StringLikeIfExists": {
-                    "ec2:InstanceType": [
-                        "<instance type 1>",
-                        "<instance type 2>",
-                        "<instance type 3>"
-                    ]
-                }
-            }
-        },
-        {
-            "Sid": "RunEC2",
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateTags",
-                "ec2:DeleteTags",
-                "ec2:StartInstances",
-                "ec2:StopInstances",
-                "ec2:TerminateInstances",
-                "ec2:DescribeVolumes",
-                "ec2:DescribeAvailabilityZones",
-                "ec2:CreateVolume",
-                "ec2:AttachVolume",
-                "ec2:DetachVolume"
-            ],
-            "Resource": [
-                "arn:aws:ec2:<region>:<account id>:subnet/<subnet id>",
-                "arn:aws:ec2:<region>:<account id>:network-interface/*",
-                "arn:aws:ec2:<region>:<account id>:volume/*",
-                "arn:aws:ec2:<region>:<account id>:key-pair/*",
-                "arn:aws:ec2:<region>:<account id>:security-group/<security group id>",
-                "arn:aws:ec2:<region>:<account id>:instance/*"
-            ]
-        },
-        {
-            "Sid": "RunEC2AMI",
-            "Effect": "Allow",
-            "Action": [
-                "ec2:RunInstances"
-            ],
-            "Resource": [
-                "arn:aws:ec2:<region>::image/<ami id>"
-            ],
-            "Condition": {
-                "StringEquals": {
-                    "ec2:Owner": "<owner>"
-                }
-            }
-        }
-    ]
-}
-```
