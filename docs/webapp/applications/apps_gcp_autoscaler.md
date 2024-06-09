@@ -26,7 +26,11 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * GCP Project ID - Project used for spinning up VM instances
     * GCP Zone - The GCP zone where the VM instances will be spun up. See [Regions and zones](https://cloud.google.com/compute/docs/regions-zones)
     * Use full subnet path - Select to specify a full subnet path (i.e. referencing a subnet from a different project)
-    * GCP Subnet Name - The GCP subnetwork where the instances will be spun up. GCP setting will be `projects/{project-id}/regions/{region}/subnetworks/{subnetwork}`
+      * GCP Subnet Full Path - Available if `Use full subnet path` was selected. The GCP subnetwork where the instances 
+      will be spun up. This allows setting a custom subnet resource path, and allows setting subnets shared from other 
+      projects as well. See [GCP Documentation](https://cloud.google.com/dataflow/docs/guides/specifying-networks).
+    * GCP Subnet Name - Available  if `Use full subnet path` was not selected. The GCP subnetwork where the instances 
+    will be spun up. GCP setting will be `projects/{project-id}/regions/{region}/subnetworks/{subnetwork}`
     * GCP Credentials - Credentials with which the autoscaler can access your GCP account for spinning VM instances 
       up/down. See [Generating GCP Credentials](#generating-gcp-credentials).
 * **Git Configuration** - Git credentials with which the ClearML Agents running on your VM instances will access your 
@@ -35,7 +39,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Git Password / Personal Access Token
 * **Use docker mode** - If selected, tasks enqueued to the autoscaler will be executed by ClearML Agents running in 
 [Docker mode](../../clearml_agent.md#docker-mode) 
-* **Base Docker Image** (optional) - Option is displayed when `Use docker mode` is selected. Default Docker image in which the ClearML Agent will run. Provide a Docker stored in a 
+* **Base Docker Image** (optional) - Available when `Use docker mode` is selected. Default Docker image in which the ClearML Agent will run. Provide an image stored in a 
   Docker artifactory so VM instances can automatically fetch it
 * **Compute Resources**
     * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
@@ -58,7 +62,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Disc Size (in GB) (optional) 
     * Use the default GCP Service Account - If selected, the default service account will be used. To use a 
     different service account, clear this option and fill in the `Service Account Email` field
-    * Service Account Scopes - Comma-separated scope aliases. For more information, see [`--scopes`](https://cloud.google.com/sdk/gcloud/reference/compute/instances/create#--scopes). 
+    * Service Account Scopes - Comma-separated scope aliases. For more information, see [GCP documentation](https://cloud.google.com/sdk/gcloud/reference/compute/instances/create#--scopes). 
     Fully-qualified scope URIs are supported. If left empty, the autoscaler will use the default scopes.
     * Metadata - GCP Metadata to be applied on this resource's instances. Input comma separated key=value pairs (e.g. `"Owner=Admin,Foo=Bar"`).
     * \+ Add Item - Define another resource type
