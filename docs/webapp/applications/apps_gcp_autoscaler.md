@@ -21,7 +21,8 @@ when each VM instance is spun up.
 For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
 
 ## Autoscaler Instance Configuration
-
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **GCP Configuration**
     * GCP Project ID - Project used for spinning up VM instances
     * GCP Zone - The GCP zone where the VM instances will be spun up. See [Regions and zones](https://cloud.google.com/compute/docs/regions-zones)
@@ -81,6 +82,8 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **Init Script** (optional) - A bash script to execute after launching the VM instance
 * **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
 * **Run with Service Account** -  Select to allow running the application under a [Service Account](../webapp_profile.md#service-accounts) identity instead of under your own identity (available under ClearML Enterprise Plan)
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration 
 
 ![GCP autoscaler wizard](../../img/apps_gcp_autoscaler_wizard.png)
 
