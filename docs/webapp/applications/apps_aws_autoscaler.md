@@ -20,7 +20,8 @@ each instance is spun up.
 For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
 
 ## Autoscaler Instance Configuration
-
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **AWS Credentials** - Credentials with which the autoscaler can access your AWS account. See [Generating AWS IAM Credentials](#generating-aws-iam-credentials)
     * Use IAM role - Select if you are running your autoscalers on your own EC2 instances which are attached to an [IAM 
       role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html). In such a case, no AWS IAM credentials are required
@@ -89,7 +90,8 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 creating the instances launch spec. See [boto3 EC2.client.run_instances Request Syntax](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/run_instances.html) 
 and [AWS API Reference: RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html) (available under ClearML Enterprise Plan)
 * **Run with Service Account** -  Select to allow running the application under a [Service Account](../webapp_profile.md#service-accounts) identity instead of under your own identity (available under ClearML Enterprise Plan)
-
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration 
 
 ![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
 
