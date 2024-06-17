@@ -71,7 +71,7 @@ for column customization options.
 
 ![Frame browser list](../../img/hyperdatasets/frame_browser_list.png)
 
-The dataset version's frames can be filtered by multiple criteria. The resulting frames can be exported as a JSON file. 
+The dataset version's frames can be filtered by multiple criteria. The resulting frames can be [exported as a JSON file](#exporting-frames). 
 
 To view the details of a specific frame, click on its preview, which will open the [Frame Viewer](webapp_datasets_frames.md#frame-viewer).
 
@@ -174,6 +174,20 @@ Lucene queries can also be used in ROI label filters and frame rules.
 
 </Collapsible>      
 
+### Sorting Frames 
+
+Sort the dataset version’s frames by any of the following attributes:
+* ID 
+* Last update time
+* Dimensions (height)
+* Timestamp
+* Context ID
+* Metadata key - Click `+ Metadata Key` and select the desired key for sorting
+
+Click <img src="/docs/latest/icons/ico-sort.svg" alt="Sort order" className="icon size-md space-sm" /> to toggle between ascending and descending sort orders.
+
+![Dataset frame sorting](../../img/hyperdatasets/dataset_frame_sorting.png)
+
 ### Exporting Frames
 
 To export (download) the filtered frames as a JSON file, click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> > **EXPORT FRAMES**. 
@@ -185,12 +199,48 @@ frame browser configuration settings.
 ![Frame browser config menu](../../img/hyperdatasets/frame_browser_menu.png)
 
 #### Grouping Previews
-FrameGroups or SingleFrames can share the same `context_id` (URL). For example, users can set the same `context_id` 
-to multiple FrameGroups that represent frames in a single video. 
 
-Use the **Grouping** menu to select one of the following options:
-* Split Preview - Show separate previews for each individual FrameGroup, regardless of shared context.
-* Group by URL - Show a single preview for all FrameGroups with the same context   
+Use the **Grouping** menu to set how to display frames that share a common property:
+* **Split Preview** - Show a separate preview for each individual FrameGroup
+* **Group by URL** - Show a single preview for all FrameGroups with the same context ID. For example, users can set the 
+same `context_id` to multiple FrameGroups that represent frames in a single video.
+* **Sample by Property** - Specify a frame or ROI property whose value to group frames by and set the number of frames 
+to preview for each group. For example, in the image below, frames are grouped by ROI labels. Each group displays six 
+samples of frames that contain an ROI with the same label.
+
+![Sample by property](../../img/hyperdatasets/dataset_sample_by_roi_property.png)
+
+**To sample by property:**
+1. In the **Grouping** menu, click **Sample by Property**
+1. In the **Sample by Property** modal, input the following:
+      * Select the Property type:
+         * ROI - Properties associated with the frame ROIs (e.g. ROI label names, IDs, confidence, etc.) 
+         * Frame -  Properties associated with the frames (e.g. update time, metadata, timestamp, etc.)
+      * Property name - Property whose value to group the frames by 
+      * Sample size - Number of frames to preview for each group
+      * ROI match query (*For grouping by ROI property only*) - A Lucene query to filter which of a frame's ROIs
+      to use in grouping by their properties. For example, in a Hyper-Dataset where ROIs have object labels and type labels, 
+      view a sample of frames with different types of the same object by grouping frames according to `label.keyword`
+      with a match query for the object of interest.
+      ![Sample by Property modal](../../img/hyperdatasets/sample_by_property_modal.png)
+      The image below shows a sample of 3 frames which have ROIs of each type (`pedestrian`, `rider`, `sitting`) of `person`.
+      ![ROI Match Query](../../img/hyperdatasets/roi_match_query.png)
+      :::note Property N/A group
+      If there are frames which have no value for the grouped by property, a sample of them will be provided as a final
+      group. If you sample according to an ROI property, this group will NOT include frames that have no ROIS at all.
+      :::
+1. Click **Save**
+
+Once saved, whenever you select the **Sample by Property** option in the **Grouping** menu, the frame will be grouped 
+according to the previously configured setting. 
+
+**To modify the grouping property:**
+1. Hover over **Sample by Property** 
+1. Click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" />
+1. Modify the **Sample by Property** configuration
+1. Click **Save**
+
+
 
 #### Preview Source
 When using multi-source FrameGroups, users can choose which of the FrameGroups' sources will be displayed as the preview. 
