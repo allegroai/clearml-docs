@@ -37,15 +37,19 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
   down 
 * **Workers Prefix** (optional) - A Prefix added to workers' names, associating them with this autoscaler
 * **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
-* **Base Docker Image** (optional) - Default Docker image in which the ClearML Agent will run. Provide a Docker stored 
-  in a Docker artifactory so instances can automatically fetch it
+* **Use docker mode** - If selected, tasks enqueued to the autoscaler will be executed by ClearML Agents running in 
+[Docker mode](../../clearml_agent.md#docker-mode) 
+  * **Base Docker Image** (optional) - Available when `Use docker mode` is selected: Default Docker image in which the 
+  ClearML Agent will run. Provide an image stored in a Docker artifactory so instances can automatically fetch it
 * **Compute Resources**
     * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
     * EC2 Instance Type - See [Instance Types](https://aws.amazon.com/ec2/instance-types) for full list of types
     * Run in CPU mode - Check box to run with CPU only
-    * Use Spot Instance - Check box to use a spot instance. Else, a reserved instance is used
-        * Regular Instance Rollback Timeout - Controls when the autoscaler will revert to starting a regular instance after failing to start a spot instance. It will first attempt to start a spot, and then wait and retry again and again. Once the time it waited exceeded the Regular Instance Rollback Timeout, the autoscaler will try to start a regular instance instead. This is for a specific attempt, where starting a spot fails and an alternative instance needs to be started.
+    * Use Spot Instance - Select to use a spot instance. Otherwise, a reserved instance is used.
+        * Regular Instance Rollback - When selected, if a spot instance is unavailable for the time specified in the `Regular Instance Rollback Timeout`, a reserved instance will be spun up instead        
+        * Regular Instance Rollback Timeout - Controls how long the autoscaler will wait for a spot instance to become available. It will first attempt to start a spot instance, then periodically retry. Once the specified time is exceeded, the autoscaler will try to start a reserved instance instead. The timeout applies for a specific attempt, where starting a spot fails and an alternative instance needs to be started. 
         * Spot Instance Blackout Period - Specifies a blackout period after failing to start a spot instance. This is related to future attempts: after failing to start a spot instance, all requests to start additional spot instances will be converted to attempts to start regular instances, as a way of "easing" the spot requests load on the cloud provider and not creating a "DOS" situation in the cloud account which might cause the provider to refuse creating spots for a longer period.
+    * Place tags on resources - In addition to placing tags on the instance, choose which cloud resources tags will be placed on
     * Availability Zone - The [EC2 availability zone](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones) 
       to launch this resource in
     * AMI ID - The AWS AMI to launch
@@ -104,6 +108,10 @@ You can utilize the [configuration vault](../../webapp/webapp_profile.md#configu
 the one set in the `Init script` field of the autoscaler wizard
 * `extra_clearml_conf` - ClearML configuration to use by the ClearML Agent when executing your experiments. This 
 configuration will be appended to that set in the `Additional ClearML Configuration` field of the autoscaler wizard
+* `files` - Files to create at designated paths with predefined content on the launched cloud instances. 
+For more information, see [Files Section](../../configs/clearml_conf.md#files-section)
+* `environment` - Dictionary of environment variables and values to set in the OS environment of the launched cloud 
+instances. For more information, see [Environment Section](../../configs/clearml_conf.md#environment-section)
 
 For example, the following configuration would be applied to all autoscaler instances:
 
@@ -118,6 +126,24 @@ auto_scaler.v1.aws {
    extra_clearml_conf: """
      agent.docker_force_pull: true
    """
+   files {
+     boto3_file {
+       contents: |
+          boto3 {
+            pool_connections: 512
+            max_multipart_concurrency: 16
+          }      	
+       path: "/boto3_config.yaml"
+       target_format: yaml
+       mode: "0o644"
+       }
+     }
+   }
+   environment {
+      DB_PASSWORD: "secretpassword"
+      LOG_LEVEL: "info"
+   }
+
 }
 ```
 
