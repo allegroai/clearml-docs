@@ -4,9 +4,9 @@ title: Community Resources
 
 ## Join the ClearML Conversation
 
-For feature requests or bug reports, see **ClearML** [GitHub Issues](https://github.com/allegroai/clearml/issues).
+For feature requests or bug reports, see **ClearML** [GitHub issues](https://github.com/allegroai/clearml/issues).
 
-If you have any questions, post on the **ClearML** [Slack Channel](https://joinslack.clear.ml).
+If you have any questions, post on the **ClearML** [Slack channel](https://joinslack.clear.ml).
 
 Or, tag your questions on [stackoverflow](https://stackoverflow.com/questions/tagged/clearml) with the **clearml** tag.
 
@@ -57,7 +57,7 @@ help maintainers reproduce the problem:
 * **Provide specific examples to demonstrate the steps.** Include links to files or GitHub projects, or copy / paste snippets which you use in those examples.
 * **If you are reporting any ClearML crash,** include a crash report with a stack trace from the operating system. Make 
   sure to add the crash report in the issue and place it in a [code block](https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks), 
-  a [file attachment](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests), or just put it in 
+  a [file attachment](https://help.github.com/articles/file-attachments-on-issues-and-pull-requests), or put it in 
   a [gist](https://gist.github.com) (and provide a link to that gist).
 * **Describe the behavior you observed after following the steps** and the exact problem with that behavior.
 * **Explain which behavior you expected to see and why.**

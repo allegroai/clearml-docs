@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+      @keyframes anim {
+        from {
+            r: 2px;
+        }
+        to {
+          r: 6px;
+        }
+        to {
+            r: 8px;
+        }
+    }
+    .circle {
+        animation-name: anim;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+    }
+  </style>
+
+  <g>
+    <path d="m30.67,6.82l21.91,12.02v7l-21.91-12.02v-7Z" fill="rgba(255, 124, 0, .75)"/>
+    <path d="m52.58,18.84l-22,12.06v7.05l22-12.06v-7.05Z" fill="#ff7c00"/>
+    <path d="m8.58,18.84l22,12.06v7.05l-22-12.06v-7.05Z" fill="rgba(255, 124, 0, .75)"/>
+    <path d="m30.67,6.78l-22.08,12.06v7.05l22.08-12.06v-7.05Z" fill="#ff7c00"/>
+    <path d="m52.58,37.54v-6.55l-21.91-12.02v7l20.46,11.22c.5.09.99.2,1.46.35Z" fill="rgba(255, 124, 0, .75)"/>
+    <path d="m49,37c1.25,0,2.45.19,3.58.54v-6.55l-22,12.06v7.05l6.7-3.68c1.18-5.39,5.97-9.43,11.72-9.43Z" fill="#ff7c00"/>
+    <polygon points="8.58 38.04 30.58 50.11 30.58 43.06 8.58 31 8.58 38.04" fill="rgba(255, 124, 0, .75)"/>
+    <path d="m30.67,18.93l-22.08,12.06v7.05l22.08-12.06v-7.05Z" fill="#ff7c00"/>
+  </g>
+  <circle class="circle" cx="16" cy="16" r="8" fill="#D3FF00" style="transform: translate(33px, 33px)" />
+</svg>

@@ -20,13 +20,13 @@ This can create overhead that derails you from your core work!
 ClearML Agent was designed to deal with such issues and more! It is a tool responsible for executing experiments on remote machines: on-premises or in the cloud! ClearML Agent provides the means to reproduce and track experiments in your 
 machine of choice through the ClearML WebApp with no need for additional code.
 
-The agent will set up the environment for a specific Task’s execution (inside a Docker, or bare-metal), install the 
+The agent will set up the environment for a specific Task's execution (inside a Docker, or bare-metal), install the 
 required python packages, and execute and monitor the process.
 
 
 ## Set up an Agent
 
-1. Let's install the agent!
+1. Install the agent:
 
     ```bash
     pip install clearml-agent
@@ -42,7 +42,7 @@ required python packages, and execute and monitor the process.
     If you've already created credentials, you can copy-paste the default agent section from [here](https://github.com/allegroai/clearml-agent/blob/master/docs/clearml.conf#L15) (this is optional. If the section is not provided the default values will be used)
     :::
 
-1. Start the agent's daemon and assign it to a [queue](../../fundamentals/agents_and_queues.md#what-is-a-queue). 
+1. Start the agent's daemon and assign it to a [queue](../../fundamentals/agents_and_queues.md#what-is-a-queue):
 
     ```bash
     clearml-agent daemon --queue default
@@ -60,7 +60,7 @@ the agent executes an experiment inside a Docker container. For more information
 
 ## Clone an Experiment
 Experiments already in the system can be reproduced for validation, or used as a baseline for further experimentation. 
-Cloning a task duplicates the task’s configuration, but not its outputs.
+Cloning a task duplicates the task's configuration, but not its outputs.
 
 **To clone an experiment in the ClearML WebApp:** 
 1. Click on any project card to open its [experiments table](../../webapp/webapp_exp_table.md)
@@ -77,13 +77,13 @@ Once you have set up an experiment, it is now time to execute it.
 
 **To execute an experiment through the ClearML WebApp:**
 1. Right-click your draft experiment (the context menu is also available through the <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> 
-   button on the top right of the experiment’s info panel)
+   button on the top right of the experiment's info panel)
 1. Click **ENQUEUE,** which will open the **ENQUEUE EXPERIMENT** window
 1. In the window, select `default` in the queue menu
 1. Click **ENQUEUE** 
 
 This action pushes the experiment into the `default` queue. The experiment's status becomes *Pending* until an agent 
-assigned to the queue fetches it, at which time the experiment’s status becomes *Running*. The agent executes the 
+assigned to the queue fetches it, at which time the experiment's status becomes *Running*. The agent executes the 
 experiment, and the experiment can be [tracked and its results visualized](../../webapp/webapp_exp_track_visual.md).
 
 
@@ -106,7 +106,7 @@ Once a specific Task object has been obtained, it can be cloned, modified, and m
 #### Clone an Experiment
 
 To duplicate an experiment, use the [`Task.clone`](../../references/sdk/task.md#taskclone) method, and input either a 
-Task object or the Task’s ID as the `source_task` argument.   
+Task object or the Task's ID as the `source_task` argument.   
 ```python
 cloned_task = Task.clone(source_task=executed_task)
 ```
@@ -173,7 +173,7 @@ ClearML also supports methods to explicitly log models. Models can be automatica
 
 #### Log Metrics
 Log as many metrics as you want from your processes using the [Logger](../../fundamentals/logger.md) module. This 
-improves the visibility of your processes’ progress.
+improves the visibility of your processes' progress.
 
 ```python
 from clearml import Logger
@@ -212,7 +212,7 @@ tasks = Task.get_tasks(
 ```
 
 #### Manage Your Data
-Data is probably one of the biggest factors that determines the success of a project. Associating a model’s data with 
+Data is probably one of the biggest factors that determines the success of a project. Associating a model's data with 
 the model's configuration, code, and results (such as accuracy) is key to deducing meaningful insights into model behavior.
 
 [ClearML Data](../../clearml_data/clearml_data.md) lets you version your data, so it's never lost, fetch it from every 

@@ -135,7 +135,7 @@ used.
   ```
   src="<web_server>/widgets/?objectType=task&xaxis=iter&type=scalar&metrics=<metric_name>&variants=<variant>&project=<project_id>&page_size=1&page=0&order_by[]=-last_update
   ```
-  Notice that the `project` parameter is specified. In order to get the most recent single experiment, 
+  Notice that the `project` parameter is specified. To get the most recent single experiment, 
   `page_size=1&page=0&order_by[]=-last_update` is added. `page_size` specifies how many results are returned in each 
   page, and `page` specifies which page to return (in this case the first page)--this way you can specify how many 
   experiments you want in your graph. `order_by[]=-last_update` orders the results by update time in descending order 
@@ -220,9 +220,9 @@ of a report card to open its context menu and access report actions:
 * **Archive** - Move report from active reports page to archive
 * **Delete** - Delete the report. To delete a report, it must first be archived. 
 
-### Create New Reports
+### Create Reports
 
-To create a new project, click the **+ NEW REPORT** button in the top right of the page, 
+To create a report, click the **+ NEW REPORT** button in the top right of the page, 
 which will open a **New Report** modal.
 
 ![New project modal](../img/webapp_report_new_report.png)
@@ -238,7 +238,7 @@ headings. The number of `#` signs correspond to the heading level (i.e. `#` for 
 
 | MarkDown | Rendered Output |
 |---|---|
-| <code># H1<br/>## H2<br/>### H3<br/>#### H4<br/>##### H5<br/>###### H6</code>|![Report headings](../img/reports_headings.png)|
+| <code># H1</code><br/><code>## H2</code><br/><code>### H3</code><br/><code>#### H4</code><br/><code>##### H5</code><br/><code>###### H6</code>|![Report headings](../img/reports_headings.png)|
 
 ### Text Emphasis
 
@@ -423,7 +423,7 @@ link:
 ```
 The rendered output should look like this:
 
-![Logo with title](https://raw.githubusercontent.com/allegroai/clearml/master/docs/clearml-logo.svg "ClearML logo")
+<img src="https://raw.githubusercontent.com/allegroai/clearml/master/docs/clearml-logo.svg" alt="Logo with Title" title="ClearML logo"/>
 
 Hover over the image to see its title. 
 

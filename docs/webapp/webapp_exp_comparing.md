@@ -8,7 +8,8 @@ differences in experiments' results and their causes. You can view the differenc
 objects, and other details.
 * Hyperparameters
   * [Values](#side-by-side-textual-comparison) - Compare parameters and their values
-  * [Parallel coordinates](#parallel-coordinates-mode) - View the impact of hyperparameters on a selected metric
+  * [Parallel coordinates](#parallel-coordinates-mode) - View the impact of hyperparameters on selected metrics
+  * [Scatter plot](#scatter-plot) - View the correlation between a selected hyperparameter and metric
 * Scalars - Compare experiment metrics:
   * [Values](#tabular-scalar-comparison) - Compare minimal, maximal or last reported values in a concise comparison 
   table
@@ -59,6 +60,7 @@ The comparison pages provide the following views:
 * [Side-by-side textual comparison](#side-by-side-textual-comparison)
 * [Tabular scalar comparison](#tabular-scalar-comparison)
 * [Parallel coordinates](#parallel-coordinates-mode) for parameter impact on metric
+* [Scatter plot](#scatter-plot)
 * [Overlaid plot comparison](#plot-comparison)
 * Side-by-side [debug sample](#side-by-side-debug-sample-comparison) and [plot](#plot-comparison) comparison
 
@@ -101,11 +103,10 @@ Switch on the **Show row extremes** toggle to highlight each variant's maximum a
 
 ### Parallel Coordinates Mode
 
-The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments' hyperparameter impact on a specific metric.
-
-**To compare by metric:**
-1. Under **Performance Metric**, select a metric to compare for
-1. Select the metric values to use in the plot:
+The **Hyperparameters** tab's **Parallel Coordinates** comparison shows experiments' hyperparameter impact on specified 
+metrics:
+1. Under **Performance Metrics**, select metrics to compare for
+1. Select the values to use for each metric in the plot (can select multiple):
     * LAST - The final value, or the most recent value, for currently running experiments 
     * MIN - Minimal value 
     * MAX - Maximal value
@@ -120,6 +121,23 @@ For example, plot the metric/variant `accuracy`/`total` against the hyperparamet
 To focus on a specific experiment, hover over its name in the graph legend.
 
 To hide an experiment, click its name in the graph legend (click again to bring back).
+
+### Scatter Plot 
+The **Hyperparameters** tab's **Scatter Plot** comparison shows experiments' correlation between a selected 
+hyperparameter and metric.
+
+To show the value distribution:
+* Select the **Plot Axes**:
+   1. Under Y-axis select the metric and the metric values to use in the plot:
+      * **LAST** - The final value, or the most recent value, for currently running experiments
+      * **MIN** - Minimal value
+      * **MAX** - Maximal value
+   1. Under X-axis select the hyperparameter.
+
+Hovering over each datapoint in the resulting plot will show the experiment name and the metric and parameter value for that 
+point. You can add additional metrics and hyperparameters values to the datapoint tooltip through **ADDITIONAL DATA POINT INFORMATION**.
+
+![Comparison scatter plot](../img/webapp_compare_scatter.png)
 
 ### Plot Comparison
 The **Scalars** (Graph view) and **Plots** tabs compare experiments' plots.

@@ -30,7 +30,7 @@ And that's it! This creates a [ClearML Task](../fundamentals/task.md) which capt
 
 You can view all the task details in the [WebApp](../webapp/webapp_exp_track_visual.md). 
 
-See an example of LightGBM and ClearML in action [here](../guides/frameworks/lightgbm/lightgbm_example.md).
+See LightGBM and ClearML in action in a [code example](../guides/frameworks/lightgbm/lightgbm_example.md).
 
 ![Experiment scalars](../img/examples_lightgbm_scalars.png)
 

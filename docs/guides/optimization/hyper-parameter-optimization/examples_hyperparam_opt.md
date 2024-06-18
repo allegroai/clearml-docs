@@ -11,9 +11,9 @@ A search strategy is required for the optimization, as well as a search strategy
 
 The following search strategies can be used:
 
-* Optuna hyperparameter optimization - [automation.optuna.OptimizerOptuna](../../../references/sdk/hpo_optuna_optuna_optimizeroptuna.md). 
+* Optuna hyperparameter optimization - [`automation.optuna.OptimizerOptuna`](../../../references/sdk/hpo_optuna_optuna_optimizeroptuna.md). 
   For more information about Optuna, see the [Optuna](https://optuna.org/) documentation.
-* BOHB - [automation.hpbandster.OptimizerBOHB](../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md).
+* BOHB - [`automation.hpbandster.OptimizerBOHB`](../../../references/sdk/hpo_hpbandster_bandster_optimizerbohb.md).
   
   BOHB performs robust and efficient hyperparameter optimization at scale by combining the speed of Hyperband searches 
   with the guidance and guarantees of convergence of Bayesian Optimization.
@@ -22,11 +22,11 @@ The following search strategies can be used:
   For more information about HpBandSter BOHB, see the [HpBandSter](https://automl.github.io/HpBandSter/build/html/index.html) 
   documentation.
      
-* Random uniform sampling of hyperparameter strategy - [automation.RandomSearch](../../../references/sdk/hpo_optimization_randomsearch.md)
-* Full grid sampling strategy of every hyperparameter combination - [automation.GridSearch](../../../references/sdk/hpo_optimization_gridsearch.md).
-* Custom - Use a custom class and inherit from the ClearML automation base strategy class, [SearchStrategy](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L310)
+* Random uniform sampling of hyperparameter strategy - [`automation.RandomSearch`](../../../references/sdk/hpo_optimization_randomsearch.md)
+* Full grid sampling strategy of every hyperparameter combination - [`automation.GridSearch`](../../../references/sdk/hpo_optimization_gridsearch.md).
+* Custom - Use a custom class and inherit from the ClearML automation base strategy class, [`SearchStrategy`](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L310)
 
-The search strategy class that is chosen will be passed to the [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
+The search strategy class that is chosen will be passed to the [`automation.HyperParameterOptimizer`](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
 object later.
 
 The example code attempts to import `OptimizerOptuna` for the search strategy. If `clearml.automation.optuna` is not 
@@ -113,68 +113,86 @@ if not args['template_task_id']:
 
 ## Creating the Optimizer Object
 
-Initialize an [automation.HyperParameterOptimizer](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
-object, setting the optimization parameters, beginning with the ID of the experiment to optimize.
+Initialize an [`automation.HyperParameterOptimizer`](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md) 
+object, setting the following optimization parameters: 
 
-```python
-an_optimizer = HyperParameterOptimizer(
-    # This is the experiment we want to optimize
-    base_task_id=args['template_task_id'],
-```
+* ID of a ClearML task to optimize. This task will be cloned, and each clone will sample a different set of hyperparameters values:
 
-Set the hyperparameter ranges to sample, instantiating them as ClearML automation objects using [automation.UniformIntegerParameterRange](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
-and [automation.DiscreteParameterRange](../../../references/sdk/hpo_parameters_discreteparameterrange.md).
-
-```python
-    hyper_parameters=[
-        UniformIntegerParameterRange('layer_1', min_value=128, max_value=512, step_size=128),
-        UniformIntegerParameterRange('layer_2', min_value=128, max_value=512, step_size=128),
-        DiscreteParameterRange('batch_size', values=[96, 128, 160]),
-        DiscreteParameterRange('epochs', values=[30]),
-        ],
-```
+  ```python
+  an_optimizer = HyperParameterOptimizer(
+      # This is the experiment we want to optimize
+      base_task_id=args['template_task_id'],
+  ```
+  
+* Hyperparameter ranges to sample, instantiating them as ClearML automation objects using [`automation.UniformIntegerParameterRange`](../../../references/sdk/hpo_parameters_uniformintegerparameterrange.md) 
+  and [`automation.DiscreteParameterRange`](../../../references/sdk/hpo_parameters_discreteparameterrange.md):
+  
+  ```python
+      hyper_parameters=[
+          UniformIntegerParameterRange('layer_1', min_value=128, max_value=512, step_size=128),
+          UniformIntegerParameterRange('layer_2', min_value=128, max_value=512, step_size=128),
+          DiscreteParameterRange('batch_size', values=[96, 128, 160]),
+          DiscreteParameterRange('epochs', values=[30]),
+          ],
+  ```
+        
+* Metric to optimize and the optimization objective:
+  
+  ```python
+      objective_metric_title='val_acc',
+      objective_metric_series='val_acc',
+      objective_metric_sign='max',
+  ```
+  
+  :::tip Multi-objective Optimization
+  If you are using the Optuna framework (see [Set the Search Strategy for Optimization](#set-the-search-strategy-for-optimization)), 
+  you can list multiple optimization objectives. When doing so, make sure the `objective_metric_title`, 
+  `objective_metric_series`, and `objective_metric_sign` lists are 
+  the same length. Each title will be matched to its respective series and sign. 
+  
+  For example, the code below sets two objectives: to minimize the `validation/loss` metric and to maximize the 
+  `validation/accuracy` metric: 
+  ```python
+  objective_metric_title=["validation", "validation"]
+  objective_metric_series=["loss", "accuracy"]
+  objective_metric_sign=["min", "max"]
+  ```
+  :::
+  
+* Number of concurrent Tasks:
+  ```python
+      max_number_of_concurrent_tasks=2,
+  ```
+* Optimization strategy (see [Set the search strategy for optimization](#set-the-search-strategy-for-optimization)):
+  ```python
+      optimizer_class=aSearchStrategy,
+  ```
+* Queue to use for remote execution. This is overridden if the optimizer runs as a service.
+  ```python
+      execution_queue='1xGPU',
+  ```
+* Remaining parameters, including the time limit per Task (minutes), period for checking the optimization (minutes), 
+  maximum number of jobs to launch, minimum and maximum number of iterations for each Task:
+  ```python
+      # Optional: Limit the execution time of a single experiment, in minutes.
+      # (this is optional, and if using OptimizerBOHB, it is ignored)
+      time_limit_per_job=10.,
+      # Check the experiments every 6 seconds is way too often, we should probably set it to 5 min,
+      # assuming a single experiment is usually hours...
+      pool_period_min=0.1,
+      # set the maximum number of jobs to launch for the optimization, default (None) unlimited
+      # If OptimizerBOHB is used, it defined the maximum budget in terms of full jobs
+      # basically the cumulative number of iterations will not exceed total_max_jobs * max_iteration_per_job
+      total_max_jobs=10,
+      # This is only applicable for OptimizerBOHB and ignore by the rest
+      # set the minimum number of iterations for an experiment, before early stopping
+      min_iteration_per_job=10,
+      # Set the maximum number of iterations for an experiment to execute
+      # (This is optional, unless using OptimizerBOHB where this is a must)
+      max_iteration_per_job=30,
       
-Set the metric to optimize and the optimization objective.
-
-```python
-    objective_metric_title='val_acc',
-    objective_metric_series='val_acc',
-    objective_metric_sign='max',
-```
-
-Set the number of concurrent Tasks.
-```python
-    max_number_of_concurrent_tasks=2,
-```
-Set the optimization strategy, see [Set the search strategy for optimization](#set-the-search-strategy-for-optimization).
-```python
-    optimizer_class=aSearchStrategy,
-```
-Specify the queue to use for remote execution. This is overridden if the optimizer runs as a service.
-```python
-    execution_queue='1xGPU',
-```
-Specify the remaining parameters, including the time limit per Task (minutes), period for checking the optimization (minutes), maximum number of jobs to launch, minimum and maximum number of iterations for each Task.
-```python
-    # Optional: Limit the execution time of a single experiment, in minutes.
-    # (this is optional, and if using OptimizerBOHB, it is ignored)
-    time_limit_per_job=10.,
-    # Check the experiments every 6 seconds is way too often, we should probably set it to 5 min,
-    # assuming a single experiment is usually hours...
-    pool_period_min=0.1,
-    # set the maximum number of jobs to launch for the optimization, default (None) unlimited
-    # If OptimizerBOHB is used, it defined the maximum budget in terms of full jobs
-    # basically the cumulative number of iterations will not exceed total_max_jobs * max_iteration_per_job
-    total_max_jobs=10,
-    # This is only applicable for OptimizerBOHB and ignore by the rest
-    # set the minimum number of iterations for an experiment, before early stopping
-    min_iteration_per_job=10,
-    # Set the maximum number of iterations for an experiment to execute
-    # (This is optional, unless using OptimizerBOHB where this is a must)
-    max_iteration_per_job=30,
-    
-)  # done creating HyperParameterOptimizer
-```
+  )  # done creating HyperParameterOptimizer
+  ```
 
 ## Running as a Service
 

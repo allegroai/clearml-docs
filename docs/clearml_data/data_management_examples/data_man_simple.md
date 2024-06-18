@@ -29,8 +29,8 @@ the needed files.
     New dataset created id=24d05040f3e14fbfbed8edb1bf08a88c
     ```
 
-1. Now let's add a folder. File addition is recursive, so it's enough to point at the folder 
-to captures all files and sub-folders:
+1. Add a folder. File addition is recursive, so it's enough to point at the folder 
+to captures all files and subfolders:
    
    ```bash
    clearml-data add --files data_samples
@@ -126,7 +126,7 @@ You'll need to input the Dataset ID you received when created the dataset above
    1 file added
    ```
    
-1. Remove a file. We'll need to specify the file's full path (within the dataset, not locally) to remove it.
+1. Remove a file. You need to specify the file's full path (within the dataset, not locally) to remove it.
 
    ```bash
    clearml-data remove --files data_samples/dancing.jpg

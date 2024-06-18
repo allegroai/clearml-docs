@@ -44,11 +44,11 @@ Hover over the model configuration area to access the following actions:
 
 ## Label Enumeration
 
-The **Label Enumeration** tab displays for each class label (“Label”) its name and enumerated value (“ID”).
+The **LABELS** tab displays for each class label (`Label`) its name and enumerated value (`ID`).
 
 ![Model label enumeration](../img/webapp_model_labels.png)
 
-To modify / add / delete class labels (for Draft models), hover over the label table, then click EDIT. This opens the 
+To modify / add / delete class labels (for *Draft* models), hover over the label table and click **EDIT**. This opens the 
 label editing window. 
 
 ![Model label editing](../img/webapp_model_labels_edit.png)
@@ -60,7 +60,7 @@ The **METADATA** tab lists the model's metadata entries, which consist of a key,
 
 ![Model metadata](../img/webapp_model_metadata.png)
 
-To modify / add / delete model metadata items, hover over Metadata, then click EDIT. This opens the Metadata editing 
+To modify / add / delete model metadata items, hover over the metadata table and click **EDIT**. This opens the metadata editing 
 window.
 
 ![Model metadata editing](../img/webapp_model_metadata_edit.png)

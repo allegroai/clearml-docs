@@ -8,19 +8,21 @@ To navigate to the Settings page, click the <img src="/docs/latest/icons/ico-me.
 button in the top right corner of the web UI screen, then click **Settings**. 
 
 The Settings page consists of the following sections:
-* [Profile](#profile) - You basic user information
-* [Configuration](#configuration) - Control general system behavior settings and input storage access credentials
-* [Workspace](#workspace)  
-    * [ClearML credentials](#clearml-credentials) - Create client credentials for ClearML and ClearML Agent to use 
-    * [Configuration vault](#configuration-vault) (ClearML Enterprise Server) - Define global ClearML client settings
-      that are applied to all ClearML and ClearML Agent instances (which use the workspace's access 
-      credentials)
-* [Administrator Vaults](#administrator-vaults) (ClearML Enterprise Server) - Manage user-group level configuration 
-  vaults to apply ClearML client settings to all members of the user groups
-* [Users & Groups](#users--groups) - Manage the users that have access to a workspace
-* [Access Rules](#access-rules) (ClearML Enterprise Server) - Manage per-resource access privileges 
-* [Identity Providers](#identity-providers) (ClearML Enterprise Server) - Manage server identity providers
-* [Usage & Billing](#usage--billing) (ClearML Hosted Service) - View current usage information and billing details 
+* User Settings:
+  * [Profile](#profile) - You basic user information
+  * [Configuration](#configuration) - Control general system behavior settings and input storage access credentials
+  * [Workspace](#workspace)  
+      * [ClearML credentials](#clearml-credentials) - Create client credentials for ClearML and ClearML Agent to use 
+      * [Configuration vault](#configuration-vault) (ClearML Enterprise Server) - Define global ClearML client settings
+        that are applied to all ClearML and ClearML Agent instances (which use the workspace's access 
+        credentials)
+* Administrator Settings:
+  * [Administrator Vaults](#administrator-vaults) (ClearML Enterprise Server) - Manage user-group level configuration 
+    vaults to apply ClearML client settings to all members of the user groups
+  * [Users & Groups](#users--groups) - Manage the users that have access to a workspace
+  * [Access Rules](#access-rules) (ClearML Enterprise Server) - Manage per-resource access privileges 
+  * [Identity Providers](#identity-providers) (ClearML Enterprise Server) - Manage server identity providers
+  * [Usage & Billing](#usage--billing) (ClearML Hosted Service) - View current usage information and billing details 
 
 ## Profile 
 The profile tab presents user information.
@@ -228,6 +230,7 @@ Each row of the table includes:
 #### Inviting New Teammates
 
 To invite a user to your workspace, press the **+ INVITE USER** button, and input the email in the dialog that pops up.
+Once invited, the added users can immediately access your workspace. 
 
 #### Removing Teammates
 To remove a user from a workspace:
@@ -237,6 +240,88 @@ To remove a user from a workspace:
 Removed users lose access to your workspace's resources (tasks, models, etc.) and their existing access credentials are 
 revoked. Tasks and associated artifacts logged to your workspace by a removed user will remain in your workspace. The 
 user can only rejoin your workspace when you re-invite them. 
+
+### Service Accounts
+
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan.
+:::
+
+Service accounts are ClearML users that provide services with access to the ClearML API, but not the 
+UI. Administrators can create access credentials for service accounts to use them for different ClearML Agents, 
+automations, and more. 
+
+A service account has all the privileges of a normal user in ClearML, with the following limitations:
+* Service accounts cannot be used to access the UI
+* Service accounts can be used to facilitate running tasks under the identity of each task's owner ("Impersonation"). 
+  * Used to run an agent using the command-line, this will allow you to specify the `--use-owner-token` option.
+  * Used to run the ClearML Agent Helm Chart, this will allow you to specify `values.agentk8s.useOwnerToken: true` option.
+  * Used to run an Autoscaler application, this will allow you to make use of the `Apply Task Owner Vault Configuration`
+  option.
+
+:::info Access Rules 
+When [access controls](#access-rules) are provisioned, they apply to service accounts the same as for ClearML users.
+Therefore, in order to use a service account to run an agent in daemon mode, the service account must have access to the 
+queue the agent will service.
+:::
+
+The **SERVICE ACCOUNTS** table lists workspace service accounts. 
+Each row of the table includes: 
+* Name - Service account name 
+* [User groups](#user-groups)
+* User ID
+* Credentials - Number of credentials currently available to the account
+* Last active time
+
+Hover over a service account in the table to **Edit** or **Delete** it.
+
+![Service accounts](../img/settings_service_accounts.png)
+
+#### Creating a Service Account
+
+To create a service account:
+1. Click **+ ADD SERVICE ACCOUNT**
+2. In the **ADD SERVICE ACCOUNT** modal input a name for the new account. Select `Allow impersonation` to allow the 
+   service account to assume the identity of a task owner 
+4. Click **Save**
+
+:::info Impersonation 
+Service accounts are members of the `Users` group, meaning they can access the resources available to all users. When 
+impersonation is enabled, a task run by the service account (i.e. by an agent or autoscaler using the service accounts' 
+credentials) is executed as if by the owner of the task, meaning it will have access to the task owner's configuration 
+vaults and to the resources that the task owner has access to. Impersonating an admin user does not mean the task's code 
+will have admin privileges.
+
+In case impersonation is not enabled: 
+* If you run an agent with `--use_owner_token` then the agent will fail. 
+* If you run an agent without `--use_owner_token`, the task will run with the service account's access rules, so make 
+  sure the account uses resources it has access to
+:::
+
+When a service account is created, an initial set of credentials is automatically generated. The dialog displays new 
+credentials, formatted as a ready-to-copy configuration file section.
+
+#### Service Account Credentials 
+
+To generate new credentials for a service account:
+1. Hover over the account's row on the table
+2. Click the <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> button, which
+   opens the editing panel
+3. Click **Create new credentials**
+
+The dialog displays new credentials, formatted as a ready-to-copy configuration file section.
+
+To revoke a set of credentials:
+1. In the editing panel, hover of the relevant credential's row
+2. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
+
+#### Deleting Service Account
+Deleting a service account will revoke its credentials, causing agents using the account's credentials to fail. 
+Tasks and associated artifacts logged to your workspace by a service account will remain in your workspace.
+
+To delete a service account:
+1. Hover over the account's row on the table
+1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
 ### User Groups
 
@@ -249,7 +334,7 @@ Administrators can define user groups, which can be used for access privilege ma
 multiple user groups.
 
 The system includes three pre-configured groups that can't be removed: 
-* `Users` - All users. Can't be modified
+* `Users` - All users (including [service accounts](#service-accounts)). Can't be modified
 * `Admins` - Have RW access to all resources (except queue modification), and can grant users / user groups access 
   permissions to workspace resources
 * `Queue admins` - Can create / delete / rename queues
@@ -288,8 +373,8 @@ otherwise provided individually or to another group they are members of).
 This feature is available under the ClearML Enterprise plan
 :::
 
-Workspace administrators can use the **Access Rules** page to manage workspace permissions, by specifying which users 
-and/or user groups have access permissions to the following workspace resources:
+Workspace administrators can use the **Access Rules** page to manage workspace permissions, by specifying which users,
+service accounts, and/or user groups have access permissions to the following workspace resources:
  
 * [Projects](../fundamentals/projects.md)
 * [Tasks](../fundamentals/task.md) 
@@ -308,9 +393,10 @@ Access privileges can be viewed, defined, and edited in the **Access Rules** tab
    specific project or task), click the input box, and select the object from the list that appears. Filter the 
    list by typing part of the desired object name
 1. Select the permission type - **Read Only** or **Read & Modify**
-1. Assign users and/or [user groups](#user-groups) to be given access. Click the desired input box, and select the 
-   users / groups from the list that appears. Filter the list by typing part of the desired object name. To revoke 
-   access, hover over a user's or group's row and click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> 
+1. Assign users, [service accounts](#service-accounts), and/or [user groups](#user-groups) to be given access. Click the 
+   desired input box, and select the users / service accounts / groups from the list that appears. Filter the list by 
+   typing part of the desired object name. To revoke 
+   access, hover over a user's, service account's, or group's row and click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> 
    button
 1. Click **SAVE**
 
@@ -324,22 +410,22 @@ not have access to another task in the project, unless explicitly granted.
 1. Hover over the access rule's row on the table
 1. Click the <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> button
 1. Change the resource, resource object, and permission type as desired
-1. Edit access rule users / groups (see details [here](#creating-access-rules))
+1. Edit access rule users / service accounts / groups (see details [here](#creating-access-rules))
 1. Click **SAVE**
 
 ### Deleting Access Rules
 1. Hover over the access rule's row on the **Access Rules** table
 1. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
-All users and access groups who had been assigned to the deleted access rule, will lose the access privileges granted by
-that rule (unless otherwise provided by a different rule)
+All users, service accounts, and user groups who had been assigned to the deleted access rule, will lose the access privileges granted by
+that rule (unless otherwise provided by a different rule).
 
 ### Filtering Access Rules Table
 
 The access rules table can be filtered by resource type and by target resource and users / groups. 
 * **To filter by resource**, click the **View** dropdown menu and select the desired resource
-* **To filter by target resource or users / groups**, click <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />
-on the respective column and select the users / groups to view from the list that appears. 
+* **To filter by target resource or users / groups / service accounts**, click <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />
+on the respective column and select the users / groups / service accounts to view from the list that appears. 
 
 ## Identity Providers
 
@@ -498,7 +584,7 @@ The **USAGE & BILLING** section displays your ClearML workspace usage informatio
 ![Billing and Usage free](../img/settings_billing_usage_free.png)
 
 To add users to your workspace, click **INVITE USERS** in the **USERS** section. This will redirect you to the 
-**USER MANAGEMENT** page, where you can invite users (see details [here](#inviting-new-teammates))
+**USER MANAGEMENT** page, where you can invite users (see details [here](#inviting-new-teammates)).
 
 ### ClearML Pro 
 

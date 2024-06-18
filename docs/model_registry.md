@@ -28,6 +28,9 @@ or the experiment that created the model.
 The ClearML web UI visualizes the model catalog for complete observability and lineage of the model lifecycle, providing 
 governance at scale.
 
+Create a visual web interface and interactively demo your models using the [Gradio](webapp/applications/apps_gradio.md) 
+and [Streamlit](webapp/applications/apps_streamlit.md) launcher apps (available under the ClearML Enterprise plan).
+
 [ClearML Serving](clearml_serving/clearml_serving.md) lets you deploy your models, and continue updating them as you 
 continue to train and test new model versions.
 
@@ -43,12 +46,16 @@ Automatic logging is supported for the following frameworks:
 * [TensorFlow](integrations/tensorflow.md)
 * [Keras](integrations/keras.md)
 * [PyTorch](integrations/pytorch.md)
+* [AutoKeras](integrations/autokeras.md)
+* [CatBoost](integrations/catboost.md)
+* [Fast.ai](integrations/fastai.md)
+* [LightGBM](integrations/lightgbm.md)
+* [MegEngine](integrations/megengine.md)
+* [MONAI](integrations/monai.md)
 * [scikit-learn](integrations/scikit_learn.md) (only using joblib)
 * [XGBoost](integrations/xgboost.md) (only using joblib)
-* [Fast.ai](integrations/fastai.md)
-* [MegEngine](integrations/megengine.md)
-* [CatBoost](integrations/catboost.md)
-* [MONAI](integrations/monai.md)
+* [YOLOv8](integrations/yolov8.md)
+* [YOLOv5](integrations/yolov5.md)
 
 You may want more control over which models are logged. Use the `auto_connect_framework` parameter of [`Task.init()`](references/sdk/task.md#taskinit) 
 to control automatic logging of frameworks. 
@@ -70,7 +77,7 @@ See [Automatic Logging](clearml_sdk/task_sdk.md#automatic-logging) for more info
 
 ### Manual Logging
 
-You can explicitly specify an experiment’s models using ClearML InputModel and OutputModel classes. 
+You can explicitly specify an experiment’s models using ClearML `InputModel` and `OutputModel` classes. 
 
 #### InputModel
 
@@ -193,6 +200,19 @@ Once you have retrieved a model object, you can work with it programmatically.
 See the [Model SDK interface](clearml_sdk/model_sdk.md) for an overview of model classes' Pythonic methods. See a 
 detailed list of all available methods in the [Model](references/sdk/model_model.md), [OutputModel](references/sdk/model_outputmodel.md), 
 and [InputModel](references/sdk/model_inputmodel.md) reference pages.
+
+## Creating Visual Web Interface
+
+:::important Enterprise Feature
+The Streamlit and Gradio launcher apps are available under the ClearML Enterprise plan.
+:::
+
+Create a visual web interface and interactively demo your models using the [Gradio](webapp/applications/apps_gradio.md) 
+and [Streamlit](webapp/applications/apps_streamlit.md) launcher apps.
+
+The launcher applications spin up a Gradio or Streamlit execution environment and serve your respective app on a machine 
+of your choice. Once you start a launcher instance, you will be provided with an externally accessible link to 
+your Gradio or Streamlit app, where you can make use of your models.
 
 ## Serving Models 
 [ClearML Serving](clearml_serving/clearml_serving.md) provides a command line utility for model deployment and 

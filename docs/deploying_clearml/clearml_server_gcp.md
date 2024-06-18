@@ -6,7 +6,8 @@ Deploy ClearML Server on the Google Cloud Platform (GCP) using one of the pre-bu
 provides custom images for each released version of ClearML Server. For a list of the pre-built custom images, see 
 [ClearML Server GCP Custom Image](#clearml-server-gcp-custom-image). 
 
-After deploying ClearML Server, configure the **ClearML Python Package** for it, see [Configuring ClearML for ClearML Server](clearml_config_for_clearml_server.md).
+To keep track of your experiments and/or data, the `clearml` package needs to communicate with the server you have deployed. 
+For instruction to connect the ClearML SDK to the server, see [Getting Started: First Steps](../getting_started/ds/ds_first_steps.md).
 
 :::info
 In order for `clearml` to work with a ClearML Server on GCP, set `CLEARML_API_DEFAULT_REQ_METHOD=PUT` or 
@@ -69,7 +70,7 @@ By default, ClearML Server launches with unrestricted access. To restrict ClearM
 instructions in the [Security](clearml_server_security.md) page.
 :::
 
-To launch ClearML Server using a GCP Custom Image, see the [Manually importing virtual disks](https://cloud.google.com/compute/docs/import/import-existing-image#overview) in the "Google Cloud Storage" documentation, [Compute Engine documentation](https://cloud.google.com/compute/docs). For more information on Custom Images, see [Custom Images](https://cloud.google.com/compute/docs/images#custom_images) in the "Compute Engine documentation".
+To launch ClearML Server using a GCP Custom Image, see the [Manually importing virtual disks](https://cloud.google.com/compute/docs/import/import-existing-image#overview) in the "Google Cloud Storage" documentation, [Compute Engine documentation](https://cloud.google.com/compute/docs). For more information about Custom Images, see [Custom Images](https://cloud.google.com/compute/docs/images#custom_images) in the "Compute Engine documentation".
 
 The minimum requirements for ClearML Server are:
 
@@ -143,6 +144,8 @@ The following section contains a list of Custom Image URLs (exported in differen
 - v1.0.1 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-1.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-1.tar.gz)
 - v1.0.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-1-0-0.tar.gz)
 - v0.17.0 - [https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-0-17-0.tar.gz](https://storage.googleapis.com/allegro-files/clearml-server/clearml-server-0-17-0.tar.gz)
+
 ## Next Step
 
-* [Configuring ClearML for ClearML Server](clearml_config_for_clearml_server.md).
+To keep track of your experiments and/or data, the `clearml` package needs to communicate with your server. 
+For instruction to connect the ClearML SDK to the server, see [Getting Started: First Steps](../getting_started/ds/ds_first_steps.md).

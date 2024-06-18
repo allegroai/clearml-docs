@@ -29,7 +29,7 @@ And that's it! This creates a [ClearML Task](../fundamentals/task.md) which capt
 
 You can view all the task details in the [WebApp](../webapp/webapp_overview.md). 
 
-See an example of MegEngine and ClearML in action [here](../guides/frameworks/megengine/megengine_mnist.md).
+See MegEngine and ClearML in action in a [code example](../guides/frameworks/megengine/megengine_mnist.md).
 
 ## Automatic Logging Control 
 By default, when ClearML is integrated into your MegEngine script, it captures all its logged models. But, you may want to 

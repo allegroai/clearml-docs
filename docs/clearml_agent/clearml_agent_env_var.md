@@ -4,6 +4,10 @@ title: ClearML Agent Environment Variables
 
 This page lists the available environment variables for configuring ClearML Agent. 
 
+In addition to the environment variables listed below, ClearML also supports **dynamic environment variables** to override 
+any configuration option that appears in the [`agent`](../configs/clearml_conf.md#agent-section) section of the `clearml.conf`. 
+For more information, see [Dynamic Environment Variables](../clearml_agent.md#dynamic-environment-variables).
+
 :::info
 ClearML's environment variables override the [clearml.conf file](../configs/clearml_conf.md), SDK, and 
 [configuration vault](../webapp/webapp_profile.md#configuration-vault), 
@@ -23,8 +27,8 @@ but can be overridden by command-line arguments.
 |**CLEARML_AGENT_DISABLE_SSH_MOUNT** | Disables the auto `.ssh` mount into the docker                                                                                                                                                                                                  |
 |**CLEARML_AGENT_FORCE_CODE_DIR**| Allows overriding the remote execution code directory to bypass repository cloning and use a repo already available where the remote agent is running. |
 |**CLEARML_AGENT_FORCE_EXEC_SCRIPT**| Allows overriding the remote execution script to bypass repository cloning and execute code already available where the remote agent is running. Use `module:file.py` format to specify a module and a script to execute (e.g. `.:main.py` to run `main.py` from the working dir)|
-|**CLEARML_AGENT_FORCE_SYSTEM_SITE_PACKAGES** | If set to `true`, overrides default [`agent.package_manager.system_site_packages: true`](../configs/clearml_conf.md#system_site_packages) behavior when running tasks in containers (docker mode and k8s-glue)|
-|**CLEARML_AGENT_GIT_CLONE_VERBOSE**| If set to `true`, `git clone` calls will report progress verbosely  |
+|**CLEARML_AGENT_FORCE_SYSTEM_SITE_PACKAGES** | If set to `1`, overrides default [`agent.package_manager.system_site_packages: true`](../configs/clearml_conf.md#system_site_packages) behavior when running tasks in containers (docker mode and k8s-glue)|
+|**CLEARML_AGENT_GIT_CLONE_VERBOSE**| If set to `1`, `git clone` calls will report progress verbosely  |
 |**CLEARML_AGENT_GIT_USER** | Sets the Git user for ClearML Agent                                                                                                                                                                                                             |
 |**CLEARML_AGENT_GIT_PASS** | Sets the Git password for ClearML Agent                                                                                                                                                                                                         |
 |**CLEARML_AGENT_GIT_HOST** | Sets Git host (only sending login to this host)                                                                                                                                                                                                 |
@@ -34,7 +38,7 @@ but can be overridden by command-line arguments.
 |**CLEARML_EXTRA_PIP_INSTALL_FLAGS**| List of additional flags to use when the agent installs packages. For example: `["--use-deprecated=legacy-resolver", ]`|
 |**CLEARML_AGENT_EXTRA_PYTHON_PATH** | Sets extra python path                                                                                                                                                                                                                          |
 |**CLEARML_AGENT_INITIAL_CONNECT_RETRY_OVERRIDE** | Overrides initial server connection behavior (true by default), allows explicit number to specify number of connect retries)                                                                                                                    | 
-|**CLEARML_AGENT_NO_UPDATE** | Boolean. Set to `true` to skip agent update in the k8s pod container before the agent executes the task |
+|**CLEARML_AGENT_NO_UPDATE** | Boolean. Set to `1` to skip agent update in the k8s pod container before the agent executes the task |
 |**CLEARML_AGENT_K8S_HOST_MOUNT / CLEARML_AGENT_DOCKER_HOST_MOUNT** | Specifies Agent's mount point for Docker / K8s                                                                                                                                                                                                  |
 |**CLEARML_AGENT_TEMP_STDOUT_FILE_DIR**|Allows overriding the default `/tmp` location for agent temporary files|
 |**CLEARML_K8S_GLUE_START_AGENT_SCRIPT_PATH** | Provide an alternate path to place the agent startup script generated inside a k8s task pod (instead of the default `~/~/__start_agent__.sh`)                                                                                                   |

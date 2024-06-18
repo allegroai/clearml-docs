@@ -112,38 +112,39 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.14.0
+#### v1.15.1
 
-* **af-south-1** : ami-0e69792cb3be26d55
-* **ap-east-1** : ami-07524dbb2b03ff201
-* **ap-northeast-1** : ami-007249581a013504d
-* **ap-northeast-2** : ami-0caf85dd3d4f219d6
-* **ap-northeast-3** : ami-0e10ca701a6bb7469
-* **ap-south-1** : ami-054c70485ca886616
-* **ap-south-2** : ami-0ee463ae4ece7007d
-* **ap-southeast-1** : ami-0a6af47f6aa3ca8a3
-* **ap-southeast-2** : ami-01844c10140f557d6
-* **ap-southeast-3** : ami-0dcce74d0ef388d21
-* **ap-southeast-4** : ami-0e6a5dedd284d147f
-* **ca-central-1** : ami-0da8b81a0ac520ce6
-* **ca-west-1** : ami-0b257406c6be268c2
-* **eu-central-1** : ami-038c4c2b29337b8b0
-* **eu-central-2** : ami-047b3de405e0da6a0
-* **eu-north-1** : ami-0225c5a0fc71a5920
-* **eu-south-1** : ami-0b487e868d6f558ec
-* **eu-south-2** : ami-0343e0d81203a5a70
-* **eu-west-1** : ami-0f4c6ea53f0ce7e6c
-* **eu-west-2** : ami-08be0e71fde585b89
-* **eu-west-3** : ami-02089b6890f55ce22
-* **il-central-1** : ami-098b5ed3c758c5c8f
-* **me-central-1** : ami-0ba83e2a2bcf35a57
-* **me-south-1** : ami-0fbddf979e090c105
-* **sa-east-1** : ami-0bb2661ad1d39b122
-* **us-east-1** : ami-0e608019816bb5f01
-* **us-east-2** : ami-01e69562133afabfc
-* **us-west-1** : ami-00f975c6de93f13ac
-* **us-west-2** : ami-0b75375a006916e53
+* **af-south-1** : ami-04efa6d3850413f44
+* **ap-east-1** : ami-0c9e7c16d8d4cab69
+* **ap-northeast-1** : ami-00dd0cb01c3b25ed3
+* **ap-northeast-2** : ami-0c058a67bf00f75e5
+* **ap-northeast-3** : ami-015408b1e7e04ecaa
+* **ap-south-1** : ami-05d51f70dce24d51c
+* **ap-south-2** : ami-085f86c261d84c768
+* **ap-southeast-1** : ami-0e24c25769ea43b24
+* **ap-southeast-2** : ami-0ca52ca06ef568c16
+* **ap-southeast-3** : ami-0bb76a9ba8c23639d
+* **ap-southeast-4** : ami-05c54a10f3c932683
+* **ca-central-1** : ami-018b94fe16dbba1e4
+* **ca-west-1** : ami-02a6c0c23823e5d49
+* **eu-central-1** : ami-02fb9796acd913d73
+* **eu-central-2** : ami-0a262efc258244efb
+* **eu-north-1** : ami-0fac51ab15b088a6e
+* **eu-south-1** : ami-0f660d03e983d5304
+* **eu-south-2** : ami-0917518c71cce4966
+* **eu-west-1** : ami-00f05408da2674aa0
+* **eu-west-2** : ami-027f63a70e70a92b8
+* **eu-west-3** : ami-008eb25d0a127d2b9
+* **il-central-1** : ami-026173238b4e5e517
+* **me-central-1** : ami-0004dc2210c9300cb
+* **me-south-1** : ami-01e51a07db860b8c3
+* **sa-east-1** : ami-04cdda5744fb22bad
+* **us-east-1** : ami-0b7bb8741dac34752
+* **us-east-2** : ami-04fc2f5cf9bdc72b6
+* **us-west-1** : ami-0b4fef3673433d075
+* **us-west-2** : ami-0327adc54a82c8d1d
 
 ## Next Step
 
-* [Configuring ClearML for ClearML Server](clearml_config_for_clearml_server.md).
+To keep track of your experiments and/or data, the `clearml` package needs to communicate with your server. 
+For instruction to connect the ClearML SDK to the server, see [Getting Started: First Steps](../getting_started/ds/ds_first_steps.md).

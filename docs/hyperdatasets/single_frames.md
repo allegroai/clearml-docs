@@ -57,8 +57,8 @@ For more information, see [Custom Metadata](custom_metadata.md).
 Frames' `context_id` property facilitates grouping SingleFrames and FrameGroups. When a `context_id` is not explicitly 
 defined, the frame's source URI is used instead.
 
-When you query the server for frames (e.g. with the [`DataView.get_iterator`](../references/hyperdataset/dataview.md#get_iterator) 
-method), the returned frames are grouped together according to their `context_id`, and within their context group are 
+When you query the server for frames (e.g. with [`DataView.get_iterator()`](../references/hyperdataset/dataview.md#get_iterator)), 
+the returned frames are grouped together according to their `context_id`, and within their context group are 
 ordered according to their `timestamp`. 
 
 Use the WebApp's dataset version frame browser "Group by URL" option to display a single preview for all frames with the 
@@ -224,7 +224,7 @@ frame = SingleFrame(
 For the ClearML UI to be able to show frames stored in non-AWS S3-like services (e.g. MinIO), make sure the `preview_uri` link
 uses the `s3://` prefix and explicitly specifies the port number in the URL (e.g. `s3://my_address.com:80/bucket/my_image.png`).
 
-Additionally, make sure to provide cloud storage access in the WebApp [**Settings > Web App Cloud Access**](../webapp/webapp_profile.md#browser-cloud-storage-access). 
+Additionally, make sure to provide cloud storage access in the WebApp [**Settings > Configuration > Web App Cloud Access**](../webapp/webapp_profile.md#browser-cloud-storage-access). 
 Input `<host_address>:<port_number>` in the **Host** field.
 :::
 
@@ -271,7 +271,7 @@ myDatasetversion.add_frames(frames)
 
 
 ### Accessing SingleFrames
-To access a SingleFrame, use [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame). 
+To access a SingleFrame, use [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame):
 
 ```python
 from allegroai import DatasetVersion
@@ -292,8 +292,7 @@ To access a SingleFrame, the following must be specified:
 To update a SingleFrame: 
 * Access the SingleFrame by calling [`DatasetVersion.get_single_frame()`](../references/hyperdataset/hyperdatasetversion.md#datasetversionget_single_frame)
 * Make changes to the frame
-* Update the frame in a DatasetVersion using the [`DatasetVersion.update_frames`](../references/hyperdataset/hyperdatasetversion.md#update_frames) 
-  method.
+* Update the frame in a DatasetVersion using [`DatasetVersion.update_frames()`](../references/hyperdataset/hyperdatasetversion.md#update_frames)
 
 ```python
 frames = []                

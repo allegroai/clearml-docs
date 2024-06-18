@@ -27,7 +27,7 @@ of the subprocess, making each unique.
 
 ```python
 Task.current_task().upload_artifact(
-    'temp {:02d}'.format(dist.get_rank()), 
+    name='temp {:02d}'.format(dist.get_rank()), 
     artifact_object={'worker_rank': dist.get_rank()}
 )
 ```
@@ -45,8 +45,8 @@ logged together.
 
 ```python
 Task.current_task().get_logger().report_scalar(
-    'loss', 
-    'worker {:02d}'.format(dist.get_rank()), 
+    title='loss', 
+    series='worker {:02d}'.format(dist.get_rank()), 
     value=loss.item(), 
     iteration=i
 )

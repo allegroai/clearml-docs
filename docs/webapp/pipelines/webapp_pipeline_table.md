@@ -112,7 +112,7 @@ Access these actions with the context menu in any of the following ways:
 | Action | Description | States Valid for the Action | State Transition |
 |---|---|---|---|
 | Details | View pipeline details. Can also be accessed by double-clicking a run in the pipeline runs table. | Any state |  None  |
-| Run | Create a new pipeline run. Configure and enqueue it for execution. See [Create Run](#create-run).  | Any State | *Pending* |
+| Run | Create a pipeline run. Configure and enqueue it for execution. See [Create Run](#create-run).  | Any State | *Pending* |
 | Abort | Manually stop / cancel a run. | *Running* / *Pending* | *Aborted* |
 | Continue | Rerun with the same parameters. |  *Aborted* | *Pending* |
 | Add Tag | User-defined labels added to runs for grouping and organization. | Any state |  None  |

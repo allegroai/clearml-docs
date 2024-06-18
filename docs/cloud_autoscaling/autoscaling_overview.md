@@ -28,7 +28,6 @@ and have the apps automatically manage your resource consumption as needed–wit
 
 ## Autoscaler Applications
 ClearML provides the following GUI autoscaler applications:
-* [GPU Compute](../webapp/applications/apps_gpu_compute.md) (powered by Genesis Cloud)
 * [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md)
 * [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md)
 
@@ -37,8 +36,6 @@ pay only for the time that you actually use the machines.
 
 The **AWS** and **GCP** autoscaler applications will manage instances on your behalf in your cloud account. When 
 launching an app instance, you will provide your cloud service credentials so the autoscaler can access your account.  
-
-The **GPU Compute** application provides on-demand GPU instances powered by Genesis. All you need to do is define your compute resource budget, and you’re good to go. 
 
 ## How ClearML Autoscaler Apps Work 
 
@@ -63,14 +60,11 @@ different queue. When a queue detects a task, the autoscaler spins up the approp
 ![Autoscaler diagram](../img/autoscaler_diagram.png)
 
 The diagram above demonstrates an example where an autoscaler app instance is attached to two queues. Each queue is 
-associated with a different resource, CPU and GPU, and each queue has two enqueued tasks. In order to execute the tasks, 
+associated with a different resource, CPU and GPU, and each queue has two enqueued tasks. To execute the tasks, 
 the autoscaler spins up four machines, two CPU machines to execute the tasks in the CPU queue and two GPU machines to 
 execute the tasks in the GPU queue.
 
-:::note
-The GPU Compute app spins up a single compute resource, so you can launch multiple app instances in order to work with 
-multiple resources.
-:::
+
 
 ### Task Execution Configuration
 
@@ -89,8 +83,7 @@ executed tasks will have access to your storage service.
 
 #### Additional Configuration
 
-Go to a specific app’s documentation page to view all configuration options
-* [GPU Compute](../webapp/applications/apps_gpu_compute.md)
+Go to a specific app’s documentation page to view all configuration options:
 * [AWS Autoscaler](../webapp/applications/apps_aws_autoscaler.md)
 * [GCP Autoscaler](../webapp/applications/apps_gcp_autoscaler.md) 
 
@@ -105,7 +98,7 @@ You can set up Kubernetes' cluster autoscaler to work with your cloud providers,
 your Kubernetes cluster as needed; increasing the amount of nodes when there aren't enough to execute pods and removing 
 underutilized nodes. See [charts](https://github.com/kubernetes/autoscaler/tree/master/charts) for specific cloud providers.
 
-:::note Enterprise features
+:::important Enterprise features
 The ClearML Enterprise plan supports K8S servicing multiple ClearML queues, as well as providing a pod template for each 
 queue for describing the resources for each pod to use. See [ClearML Helm Charts](https://github.com/allegroai/clearml-helm-charts/tree/main).  
 :::
