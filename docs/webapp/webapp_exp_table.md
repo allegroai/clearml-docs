@@ -29,6 +29,60 @@ The downloaded data consists of the currently displayed table columns.
 
 ![Experiment table](../img/webapp_experiment_table.png)
 
+## Creating Experiments
+
+You can create experiments by:
+* Running code instrumented with ClearML (see [Task Creation](../clearml_sdk/task_sdk.md#task-creation))
+* [Cloning an existing experiment](webapp_exp_reproducing.md)
+* Through the UI interface: Input the experiment's details, including its source code and python requirements, and then 
+run it through a [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) or save it as a *draft*.
+
+To create an experiment through the UI interface:
+1. Click `+ New Experiment` 
+1. In the `Create Experiment` modal, input the following information:
+   * **Code**
+     * Experiment name
+     * Git
+       * Repository URL
+       * Version specification - one of the following:
+         * Tag 
+         * Branch 
+         * Commit ID
+       * Execution Entry Point
+         * Working Directory
+         * One of the following
+           * Script name
+           * Module (see [python module specification](https://docs.python.org/3/using/cmdline.html#cmdoption-m)) 
+       * Add `Task.init` call - If selected, [`Task.init()`](../references/sdk/task.md#taskinit) call is added to the 
+       entry point. Select if it is not already called within your code
+   * **Arguments** (*optional*) - Add [hyperparameter](../fundamentals/hyperparameters.md) values.
+   * **Environment** (*optional*) - Set up the experiment’s python execution environment using either of the following 
+   options:
+     * Use Poetry specification - Requires specifying a docker image for the experiment to be executed in.
+     * Manually specify the python environment configuration:
+       * Python binary - The python executable to use
+       * Preinstalled venv - A specific existing virtual environment to use. Requires specifying a docker image for the 
+       experiment to be executed in.
+       * Python package specification:
+         * Skip - Assume system packages are available. Requires specifying a docker image for the experiment to be 
+         executed in.
+         * Use an existing `requirements.txt` file
+         * Explicitly specify the required packages
+   * **Docker** (*optional*) - Specify Docker container configuration for executing the experiment
+     * Image - Docker image to use for running the experiment
+     * Arguments - Add Docker arguments as a single string
+     * Startup Script - Add a bash script to be executed inside the Docker before setting up the experiment's environment 
+   * **Run**
+     * Queue - [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) where the experiment should be 
+     enqueued for execution
+     * Output Destination - A URI where experiment outputs should be stored (ClearML file server by default). 
+1. Once you have input all the information, click one of the following options
+   * Save as Draft - Save the experiment as a new draft task. 
+   * Run - Enqueue the experiment for execution in the queue specified in the **Run** tab
+
+Once you have completed the experiment creation wizard, the experiment will be saved in your current project (where 
+you clicked `+ New Experiment`). See what you can do with your experiment in [Experiment Actions](#experiment-actions).
+
 ## Experiments Table Columns
 
 The experiments table default and customizable columns are described in the following table.

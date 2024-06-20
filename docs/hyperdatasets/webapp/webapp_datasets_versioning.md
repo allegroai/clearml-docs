@@ -71,7 +71,7 @@ for column customization options.
 
 ![Frame browser list](../../img/hyperdatasets/frame_browser_list.png)
 
-The dataset version's frames can be filtered by multiple criteria. The resulting frames can be exported as a JSON file. 
+The dataset version's frames can be filtered by multiple criteria. The resulting frames can be [exported as a JSON file](#exporting-frames). 
 
 To view the details of a specific frame, click on its preview, which will open the [Frame Viewer](webapp_datasets_frames.md#frame-viewer).
 
@@ -174,6 +174,20 @@ Lucene queries can also be used in ROI label filters and frame rules.
 
 </Collapsible>      
 
+### Sorting Frames 
+
+Sort the dataset version’s frames by any of the following attributes:
+* ID 
+* Last update time
+* Dimensions (height)
+* Timestamp
+* Context ID
+* Metadata key - Click `+ Metadata Key` and select the desired key for sorting
+
+Click <img src="/docs/latest/icons/ico-sort.svg" alt="Sort order" className="icon size-md space-sm" /> to toggle between ascending and descending sort orders.
+
+![Dataset frame sorting](../../img/hyperdatasets/dataset_frame_sorting.png)
+
 ### Exporting Frames
 
 To export (download) the filtered frames as a JSON file, click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> > **EXPORT FRAMES**. 
@@ -185,12 +199,51 @@ frame browser configuration settings.
 ![Frame browser config menu](../../img/hyperdatasets/frame_browser_menu.png)
 
 #### Grouping Previews
-FrameGroups or SingleFrames can share the same `context_id` (URL). For example, users can set the same `context_id` 
-to multiple FrameGroups that represent frames in a single video. 
 
-Use the **Grouping** menu to select one of the following options:
-* Split Preview - Show separate previews for each individual FrameGroup, regardless of shared context.
-* Group by URL - Show a single preview for all FrameGroups with the same context   
+Use the **Grouping** menu to set how to display frames that share a common property:
+* **Split Preview** - Show a separate preview for each individual FrameGroup
+* **Group by URL** - Show a single preview for all FrameGroups with the same context ID. For example, users can set the 
+same `context_id` to multiple FrameGroups that represent frames in a single video.
+* **Sample by Property** - Specify a frame or ROI property whose value to group frames by and set the number of frames 
+to preview for each group. For example, in the image below, frames are grouped by ROI labels. Each group displays six 
+samples of frames that contain an ROI with the same label.
+
+![Sample by property](../../img/hyperdatasets/dataset_sample_by_roi_property.png)
+
+**To sample by property:**
+1. In the **Grouping** menu, click **Sample by Property**
+1. In the **Sample by Property** modal, input the following:
+      * Select the Property type:
+         * ROI - Properties associated with the frame ROIs (e.g. ROI label names, IDs, confidence, etc.) 
+         * Frame -  Properties associated with the frames (e.g. update time, metadata, timestamp, etc.)
+      * Property name - Property whose value to group the frames by 
+      * Sample size - Number of frames to preview for each group
+      * ROI match query (*For grouping by ROI property only*) - A Lucene query to filter which of a frame's ROIs
+      to use in grouping by their properties. For example, in a Hyper-Dataset where ROIs have object labels and type labels, 
+      view a sample of frames with different types of the same object by grouping frames according to `label.keyword`
+      with a match query for the object of interest.
+   
+      ![Sample by Property modal](../../img/hyperdatasets/sample_by_property_modal.png)
+
+      The image below shows a sample of 3 frames which have ROIs of each type (`pedestrian`, `rider`, `sitting`) of `person`.
+
+      ![ROI Match Query](../../img/hyperdatasets/roi_match_query.png)
+      :::note Property N/A group
+      If there are frames which have no value for the grouped by property, a sample of them will be provided as a final
+      group. If you sample according to an ROI property, this group will NOT include frames that have no ROIS at all.
+      :::
+1. Click **Save**
+
+Once saved, whenever you select the **Sample by Property** option in the **Grouping** menu, the frame will be grouped 
+according to the previously configured setting. 
+
+**To modify the grouping property:**
+1. Hover over **Sample by Property** 
+1. Click <img src="/docs/latest/icons/ico-edit.svg" alt="Edit pencil" className="icon size-md space-sm" />
+1. Modify the **Sample by Property** configuration
+1. Click **Save**
+
+
 
 #### Preview Source
 When using multi-source FrameGroups, users can choose which of the FrameGroups' sources will be displayed as the preview. 
@@ -204,11 +257,34 @@ If a FrameGroup doesn't have the selected preview source, the preview displays t
 
 ## Statistics
 
-The **Statistics** tab displays a dataset version's label usage stats. 
-* Dataset total count - number of annotations, annotated frames, and total frames  
-* Each label is listed along with the number of times it was used in the version
-* The pie chart visualizes these stats. Hover over a chart slice and its associated label and usage 
-  percentage will appear at the center of the chart. 
+The **Statistics** tab allows exploring frame and ROI property distribution across a Hyper-Dataset version:
+1. Query the frames to include in the statistics calculations under **Filter by label**. Use [simple](#simple-frame-filtering) 
+or [advanced](#advanced-frame-filtering) frame filters. If no filter is applied, all frames in the dataset version will 
+be included in the calculation. 
+1. Select the property whose distribution should be calculated 
+   * Select the property **Type**:
+      * **ROI** - Frame ROI properties (e.g. ROI label, ID, confidence, etc.). This will calculate the distribution of 
+     the specified property across all ROIs in the version's frames.
+      * **Frame** - Frames properties (e.g. update time, metadata keys, timestamp, etc.)
+   * Input the **Property** key (e.g. `meta.location`) 
+   * If **ROI** property was selected, you can also limit the scope of ROIs included in the calculation with the
+   **Count ROIs matching** filter: Input a Lucene query to specify which ROIs to count
+1. Click **Apply** to calculate the statistics 
+
+For example, calculating the distribution for the `label` ROI property, specifying `rois.confidence: 1` for ROI matching 
+will show the label distribution across only ROIs with a confidence level of 1.
+
+![Distribution by ROI property](../../img/hyperdatasets/dataset_version_statistics_roi.png)
+
+By default, the ROI label distribution across the entire Hyper-Dataset version is shown.
+The tab displays the following information
+* Object counts:
+    * Number of annotations matching specification
+    * Number of annotated frames in the current frame filter selection
+    * Total number of frames in the current frame filter selection
+* Each property is listed along with its number of occurrences in the current frame filter selection
+* The pie chart visualizes this distribution. Hover over a chart segment and its associated property and count will 
+appear in a tooltip and its usage percentage will appear at the center of the chart.
   
 ![Version label statistics](../../img/hyperdatasets/dataset_version_statistics.png)
 
