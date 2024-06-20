@@ -627,11 +627,11 @@ the following information:
 ![Resource profile card](../img/resource_configuration_profile_card.png)
 
 * Profile name
-* <img src="/docs/latest/icons/ico-resource-number" alt="Number of resources" className="icon size-md space-sm" /> - Number
+* <img src="/docs/latest/icons/ico-resource-number.svg" alt="Number of resources" className="icon size-md space-sm" /> - Number
 of resources allocated to jobs in this profile
 * List of [pool links](#connecting-profiles-to-pools)
 * <img src="/docs/latest/icons/ico-queued-jobs.svg" alt="Queued jobs" className="icon size-md space-sm" /> - Number of currently pending jobs
-* <img src="/docs/latest/icons/ico-running-jobs" alt="Running jobs" className="icon size-md space-sm" /> - Number of currently running jobs
+* <img src="/docs/latest/icons/ico-running-jobs.svg" alt="Running jobs" className="icon size-md space-sm" /> - Number of currently running jobs
 * Number of resource policies. Click to open resource policy list and to order queuing priority.  
 
 ### Example  Workflow
