@@ -11,7 +11,7 @@ Resource policies let administrators define user group resource quotas and reser
 across available resources. 
 
 Administrators make the allocated resources available to users through designated execution queues, each matching a 
-specific resource consumption profile (i.e. the amount of resources allocated to jobs run through a queue).
+specific resource consumption profile (i.e. the amount of resources allocated to jobs run through the queue).
 
 Workspace administrators can use the resource policy manager to create, modify or delete resource policies:
 Set resource reservation and limits for user groups
@@ -32,9 +32,9 @@ Set resource reservation and limits for user groups
 1. Click **Add**
 
 Once the policy is defined, you can connect profiles to it (Resource profiles are defined in the [Resource Configuration](webapp_profile.md#resource-configuration) 
-page, available to administrators). Resource profiles serve as an interface for resource policies to provide users with 
-access to the available resource pools based on their job resource requirements (i.e. a job running through a profile is 
-allocated the profile’s defined amount of resources). 
+settings page, available to administrators). Resource profiles serve as an interface for resource policies to provide 
+users with access to the available resource pools based on their job resource requirements (i.e. a job running through a 
+profile is allocated the profile’s defined amount of resources). 
 
 **To connect a resource profile to a policy:**
 1. In the policy’s details panel, click **Edit**
@@ -47,7 +47,7 @@ allocated the profile’s defined amount of resources).
 
 :::note Available Profiles
 Only profiles that are part of the currently provisioned [resource configuration](webapp_profile.md#resource-configuration) 
-are available for selection (i.e. Profiles that are part of a configuration that has been saved but not yet provisioned 
+are available for selection (Profiles that are part of a configuration that has been saved but not yet provisioned 
 will not appear in the list).
 
 Profiles whose resource requirement exceeds the policy's resource limit will appear in the list but are not available 
@@ -59,7 +59,7 @@ The policy details panel displays:
 * Policy quota and reservation
 * Resource profiles associated with the policy
 * Queues the policy makes available
-* Number of jobs currently assigned through each profile (enqueued or running) 
+* Number of current jobs in each profile (pending or running) 
 
 The top card displays the policy information:
 * Policy name
@@ -73,9 +73,9 @@ The top card displays the policy information:
 The cards below the policy card display the profiles that are connected to the policy:
 * Resource profile name 
 * <img src="/docs/latest/icons/ico-resource-number" alt="Number of resources" className="icon size-md space-sm" /> - Number
-of resources consumed by each job enqueued through this profile 
-* <img src="/docs/latest/icons/ico-queued-jobs.svg" alt="Queued jobs" className="icon size-md space-sm" /> - Queued jobs
-* <img src="/docs/latest/icons/ico-running-jobs" alt="Running jobs" className="icon size-md space-sm" /> - Running jobs 
+of resources consumed by each job enqueued through this profile's queue 
+* <img src="/docs/latest/icons/ico-queued-jobs.svg" alt="Queued jobs" className="icon size-md space-sm" /> - Currently queued jobs
+* <img src="/docs/latest/icons/ico-running-jobs" alt="Running jobs" className="icon size-md space-sm" /> - Currently running jobs 
 
 ![Resource profile card non-admin view](../img/resource_policies_profile_card_non_admin.png)
 

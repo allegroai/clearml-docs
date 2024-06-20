@@ -22,6 +22,8 @@ The Settings page consists of the following sections:
   * [Users & Groups](#users--groups) - Manage the users that have access to a workspace
   * [Access Rules](#access-rules) (ClearML Enterprise Server) - Manage per-resource access privileges 
   * [Identity Providers](#identity-providers) (ClearML Enterprise Server) - Manage server identity providers
+  * [Resource Configuration](#resource-configuration) (ClearML Enterprise Server) - Define the available resources and the way in which they 
+  will be allocated to different workloads 
   * [Usage & Billing](#usage--billing) (ClearML Hosted Service) - View current usage information and billing details 
 
 ## Profile 
@@ -587,8 +589,8 @@ will be allocated to different workloads.
 
 ![Resource configuration page](../img/resource_configuration.png)
 
-The Resource Configuration settings page shows the [currently provisioned] configuration: the defined resource pools, 
-resource profiles, and the resource allocation architecture. 
+The Resource Configuration settings page shows the [currently provisioned](#applying-resource-configuration) configuration: 
+the defined resource pools, resource profiles, and the resource allocation architecture. 
 
 ### Resource Pools
 A resource pool is an aggregation of resources available for use, such as a Kubernetes cluster or a GPU superpod. 
@@ -602,7 +604,7 @@ versa).
 The resource pool cards are displayed on the top of the Resource Configuration settings page. Each card displays the 
 following information: 
 
-![Resouce pool card](../img/resource_configuration_pool_card.png)
+![Resource pool card](../img/resource_configuration_pool_card.png)
 
 * Pool name
 * Number of resources currently in use out of the total available resources
@@ -617,7 +619,7 @@ Administrators can control the resource pool allocation precedence within a prof
 `pool A` cannot currently satisfy the profile's resource requirements).
 
 Administrators can control the queuing priority within a profile across resource policies making use of it (e.g. if the 
-R&D team and DevOps teams both have pending jobs - run the R&D team's jobs first or vice versa).
+R&D team and DevOps team both have pending jobs - run the R&D team's jobs first or vice versa).
 
 The resource profile cards are displayed on the bottom of the Resource Configuration settings page. Each card displays 
 the following information: 
@@ -630,12 +632,13 @@ of resources allocated to jobs in this profile
 * List of [pool links](#connecting-profiles-to-pools)
 * <img src="/docs/latest/icons/ico-queued-jobs.svg" alt="Queued jobs" className="icon size-md space-sm" /> - Number of currently pending jobs
 * <img src="/docs/latest/icons/ico-running-jobs" alt="Running jobs" className="icon size-md space-sm" /> - Number of currently running jobs
-* Number of resource policies. Click to open resource policy list and order of queuing priority.  
+* Number of resource policies. Click to open resource policy list and to order queuing priority.  
 
 ### Example  Workflow
 
-Assume 16 GPUs are available, spread across a local H100 and additional bare metal servers, as well as on AWS (managed 
-by an autoscaler): 8 resources are available in the H100 resource pool and in the Bare Metal pool:
+You have GPUs spread across a local H100 and additional bare metal servers, as well as on AWS (managed 
+by an autoscaler). Assume that currently most of your resources are already assigned to jobs, and only 16 resources are available: 8 in the 
+H100 resource pool and 8 in the Bare Metal pool:
 
 ![Example resource pools](../img/resource_example_pools.png)
 
@@ -674,10 +677,14 @@ Resources are assigned from the `Bare Metal` pool first (precedence set on the r
 ![Example resource pool precedence](../img/resource_example_pool_priority.png)
 
 If the first pool cannot currently satisfy the profile’s resource requirements, resources are assigned from the next 
-listed pool. Let’s look at the first pool in the image below. Notice that the pool has 8 available resources, therefore 
+listed pool. Let's look at the first pool in the image below. Notice that the pool has 8 available resources, therefore 
 it can run two 4-resource jobs.
 
-![Example resource pool card](../img/resource_example_pool.png)
+<div class="max-w-50">
+
+![Example resource pool card](../img/resource_example_pool_card.png)
+
+</div>
 
 Since the Bare Metal pool does not have any more available resources, additional jobs will be assigned resources from 
 the next pool that the Resource Profile is connected to. The H100 pool has 8 available resources. There are still 2 jobs 
@@ -704,8 +711,8 @@ To make any change (create, delete, or modify a component) to the resource confi
     * **Provision** - Apply the resource policy’s saved changes 
     * **Reset Configuration** - Set the editor to the currently provisioned values. This will delete any unprovisioned 
     changes (both saved and unsaved)
-1. Click Exit to leave Editor mode. The page will show the provisioned configuration. Unprovisioned saved changes will 
-be shown in Editor mode. 
+1. Click **Exit** to leave Editor mode. The page will show the provisioned configuration. Unprovisioned saved changes will 
+still be available in Editor mode. 
 
 #### Resource Pool 
 
@@ -745,7 +752,8 @@ To control which pool's resources will be assigned first, click and drag the poo
 to change its position in order of priority.
 
 You can also change the Execution Priority of the resource policies making use of this profile. Open the policy list, 
-then click the policy anchor <ICON>$$$$ and drag the policy to change its position in order of priority.  
+then click the policy anchor <img src="/docs/latest/icons/ico-drag-vertical.svg" alt="policy anchor" className="icon size-md space-sm" />
+and drag the policy to change its position in order of priority.  
 
 **To delete a resource profile:**
 1. Click <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Menu" className="icon size-md space-sm" /> on the relevant resource pool card 
