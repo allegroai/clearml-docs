@@ -71,10 +71,13 @@ The top card displays the policy information:
 ![Resource policy card](../img/resource_policies_policy_card.png)
 
 The cards below the policy card display the profiles that are connected to the policy:
-* Resource profile name 
+* Resource profile name
+
 * <img src="/docs/latest/icons/ico-resource-number" alt="Number of resources" className="icon size-md space-sm" /> - Number
-of resources consumed by each job enqueued through this profile's queue 
+of resources consumed by each job enqueued through this profile's queue
+
 * <img src="/docs/latest/icons/ico-queued-jobs.svg" alt="Queued jobs" className="icon size-md space-sm" /> - Currently queued jobs
+  
 * <img src="/docs/latest/icons/ico-running-jobs" alt="Running jobs" className="icon size-md space-sm" /> - Currently running jobs 
 
 ![Resource profile card non-admin view](../img/resource_policies_profile_card_non_admin.png)

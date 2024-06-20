@@ -222,8 +222,11 @@ samples of frames that contain an ROI with the same label.
       to use in grouping by their properties. For example, in a Hyper-Dataset where ROIs have object labels and type labels, 
       view a sample of frames with different types of the same object by grouping frames according to `label.keyword`
       with a match query for the object of interest.
+   
       ![Sample by Property modal](../../img/hyperdatasets/sample_by_property_modal.png)
+
       The image below shows a sample of 3 frames which have ROIs of each type (`pedestrian`, `rider`, `sitting`) of `person`.
+
       ![ROI Match Query](../../img/hyperdatasets/roi_match_query.png)
       :::note Property N/A group
       If there are frames which have no value for the grouped by property, a sample of them will be provided as a final
