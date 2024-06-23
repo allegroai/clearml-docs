@@ -23,7 +23,7 @@ the `offline_mode` argument to `True`
 
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
-:::caution 
+:::warning 
 Offline mode only works with tasks created using [`Task.init()`](../references/sdk/task.md#taskinit) and not with those created 
 using [`Task.create()`](../references/sdk/task.md#taskcreate). 
 :::

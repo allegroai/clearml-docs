@@ -30,7 +30,7 @@ For Linux users only:
 ## Deploying
 
 
-:::caution
+:::warning
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
 instructions in the [Security](clearml_server_security.md) page.
 :::
@@ -157,7 +157,7 @@ After deploying ClearML Server, the services expose the following ports:
 
 ## Backing Up and Restoring Data and Configuration
 
-:::caution
+:::warning
 Stop your server before backing up or restoring data and configuration
 :::
 

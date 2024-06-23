@@ -255,7 +255,7 @@ will be deleted.
 
 If a dataset is a parent to a dataset(s), you must pass `--force` to delete it. 
 
-:::caution
+:::warning
 Deleting a parent dataset may cause child datasets to lose data!
 :::
 

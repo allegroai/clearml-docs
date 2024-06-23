@@ -355,17 +355,18 @@ Your firewall may be preventing the connection. Try one of the following solutio
 * Direct python "requests" to use the enterprise certificate file by setting the OS environment variables CURL_CA_BUNDLE or REQUESTS_CA_BUNDLE. For a detailed discussion of this topic, see [https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module](https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module).
 * Disable certificate verification   
   
-  :::caution
+  :::warning
   For security reasons, it is not recommended to disable certificate verification
   :::
     1. Upgrade ClearML to the current version:
-        
-            pip install -U clearml
-        
+       ``` 
+       pip install -U clearml
+       ``` 
     1. Create a new `clearml.conf` configuration file (see a [sample configuration file](https://github.com/allegroai/clearml/blob/master/docs/clearml.conf)), containing:
-        
-            api { verify_certificate = False }
-        
+       
+       ``` 
+       api { verify_certificate = False }
+       ```
     1. Copy the new `clearml.conf` file to:
          * Linux - `~/clearml.conf`
          * Mac - `$HOME/clearml.conf`
@@ -436,7 +437,7 @@ To delete an object programmatically, use the relevant method:
 * Datasets - [`Dataset.delete()`](references/sdk/dataset.md#datasetdelete)
 
 
-:::caution
+:::warning
 You cannot undo the deletion of a ClearML object.
 :::
 
@@ -554,7 +555,7 @@ You can enable offline mode in one of the following ways:
 the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
-:::caution 
+:::warning 
 Offline mode only works with tasks created using [`Task.init()`](references/sdk/task.md#taskinit) and not with those created 
 using [`Task.create()`](references/sdk/task.md#taskcreate). 
 :::
@@ -1062,13 +1063,14 @@ Do the following:
         ```
    
 1. Run the ClearML wizard `clearml-init` to configure ClearML for ClearML Server, which will prompt you to open the ClearML Web UI at, [http://127.0.0.1:8080/](http://127.0.0.1:8080/), and create new ClearML credentials.
-
-    The wizard completes with:
-
-        Verifying credentials ...
-        Credentials verified!
-        New configuration stored in /home/<username>/clearml.conf
-        ClearML setup completed successfully.
+   
+   The wizard completes with:
+   ```
+   Verifying credentials ...
+   Credentials verified!
+   New configuration stored in /home/<username>/clearml.conf
+   ClearML setup completed successfully.
+   ```
 
 <a className="tr_top_negative" id="elastic_watermark"></a>
 
