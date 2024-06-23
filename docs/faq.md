@@ -1063,14 +1063,14 @@ Do the following:
         ```
    
 1. Run the ClearML wizard `clearml-init` to configure ClearML for ClearML Server, which will prompt you to open the ClearML Web UI at, [http://127.0.0.1:8080/](http://127.0.0.1:8080/), and create new ClearML credentials.
-    ```
-    The wizard completes with:
-
-    Verifying credentials ...
-    Credentials verified!
-    New configuration stored in /home/<username>/clearml.conf
-    ClearML setup completed successfully.
-    ```
+   
+   The wizard completes with:
+   ```
+   Verifying credentials ...
+   Credentials verified!
+   New configuration stored in /home/<username>/clearml.conf
+   ClearML setup completed successfully.
+   ```
 
 <a className="tr_top_negative" id="elastic_watermark"></a>
 

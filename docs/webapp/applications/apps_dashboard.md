@@ -19,7 +19,7 @@ on completed/failed Tasks via Slack integration.
     * Entire workspace - Monitor all projects in your workspace
             
   :::warning
-  If your workspace or specified project contains a large number of experiments, the dashboard could take a while to update
+  If your workspace or specified project contains a large number of experiments, the dashboard can take a while to update.
   :::
 
 * **Monitored Metric** - Specify a metric for the app instance to monitor. The dashboard will present an aggregated view 
