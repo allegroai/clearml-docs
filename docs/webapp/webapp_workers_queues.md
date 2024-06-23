@@ -15,6 +15,8 @@ consumption as needed–-with no code (available under the ClearML Pro plan)
   * Monitor queue utilization
   * Reorder, move, and remove experiments from queues
 * Monitor all of your available and in-use compute resources (available in the ClearML Enterprise plan. See [Orchestration Dashboard](webapp_orchestration_dash.md))
+* Set user group resource quotas and reservations to enable workload prioritization across available resources (available 
+in the ClearML Enterprise plan. See [Resource Policies](resource_policies.md))
 
 ## Autoscalers
 
