@@ -634,7 +634,7 @@ of resources allocated to jobs in this profile
 * <img src="/docs/latest/icons/ico-running-jobs.svg" alt="Running jobs" className="icon size-md space-sm" /> - Number of currently running jobs
 * Number of resource policies. Click to open resource policy list and to order queuing priority.  
 
-### Example  Workflow
+### Example Workflow
 
 You have GPUs spread across a local H100 and additional bare metal servers, as well as on AWS (managed 
 by an autoscaler). Assume that currently most of your resources are already assigned to jobs, and only 16 resources are available: 8 in the 
@@ -648,7 +648,7 @@ Teams' jobs have varying resource requirements of 0.5, 2, 4, and 8 GPUs. Resourc
 
 The different jobs will be routed to different resource pools by connecting the profiles to the resource pools. Jobs 
 enqueued through the profiles will be run in the pools where there are available resources in order of their priority. 
-For example, the H100 pool will run jobs with the following precedence: 2 GPU jobs first, then 4GPU ones, then 8 GPU, 
+For example, the H100 pool will run jobs with the following precedence: 2 GPU jobs first, then 4 GPU ones, then 8 GPU, 
 and lastly 0.5 GPU. 
 
 ![Example profile priority](../img/resource_example_profile_priority.png)
