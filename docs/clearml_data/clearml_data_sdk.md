@@ -302,7 +302,7 @@ case, all matching datasets will be deleted.
 
 If a dataset is a parent to a dataset(s), you must pass `force=True` in order to delete it. 
 
-:::caution
+:::warning
 Deleting a parent dataset may cause child datasets to lose data!
 :::
 
