@@ -140,14 +140,16 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
       ```
 1. For Linux only, configure the **ClearML Agent Services**. If `CLEARML_HOST_IP` is not provided, then ClearML Agent Services uses the external public address of the ClearML Server. If `CLEARML_AGENT_GIT_USER` / `CLEARML_AGENT_GIT_PASS` are not provided, then ClearML Agent Services can't access any private repositories for running service tasks.
 
-        export CLEARML_HOST_IP=server_host_ip_here
-        export CLEARML_AGENT_GIT_USER=git_username_here
-        export CLEARML_AGENT_GIT_PASS=git_password_here
+     ```   
+     export CLEARML_HOST_IP=server_host_ip_here
+     export CLEARML_AGENT_GIT_USER=git_username_here
+     export CLEARML_AGENT_GIT_PASS=git_password_here
+     ```
 
 1. Run `docker-compose` with the downloaded configuration file.
-
-        docker-compose -f /opt/clearml/docker-compose.yml up -d
-   
+      ```
+      docker-compose -f /opt/clearml/docker-compose.yml up -d
+      ```
 The server is now running on [http://localhost:8080](http://localhost:8080).
  
 ## Port Mapping
@@ -164,9 +166,10 @@ After deploying ClearML Server, the services expose the following ports:
 
 * Stop and then restart the Docker containers by executing the following commands:
 
-      docker-compose -f /opt/clearml/docker-compose.yml down
-      docker-compose -f /opt/clearml/docker-compose.yml up -d
-
+   ```
+   docker-compose -f /opt/clearml/docker-compose.yml down
+   docker-compose -f /opt/clearml/docker-compose.yml up -d
+   ```
 
 
 ## Backing Up and Restoring Data and Configuration
@@ -180,27 +183,36 @@ The commands in this section are an example of how to back up and to restore dat
 If the data and configuration folders are in `/opt/clearml`, then archive all data into `~/clearml_backup_data.tgz`, and
 configuration into `~/clearml_backup_config.tgz`:
 
-    sudo tar czvf ~/clearml_backup_data.tgz -C /opt/clearml/data .
-    sudo tar czvf ~/clearml_backup_config.tgz -C /opt/clearml/config .
+```
+sudo tar czvf ~/clearml_backup_data.tgz -C /opt/clearml/data .
+sudo tar czvf ~/clearml_backup_config.tgz -C /opt/clearml/config .
+```
 
 If needed, restore data and configuration by doing the following:
 
 1. Verify the existence of backup files.
 1. Replace any existing data with the backup data:
 
-        sudo rm -fR /opt/clearml/data/* /opt/clearml/config/*
-        sudo tar -xzf ~/clearml_backup_data.tgz -C /opt/clearml/data
-        sudo tar -xzf ~/clearml_backup_config.tgz -C /opt/clearml/config 
-
+   ```
+   sudo rm -fR /opt/clearml/data/* /opt/clearml/config/*
+   sudo tar -xzf ~/clearml_backup_data.tgz -C /opt/clearml/data
+   sudo tar -xzf ~/clearml_backup_config.tgz -C /opt/clearml/config 
+   ```
+   
 1. Grant access to the data, depending upon the operating system:
 
     * Linux:
 
-          sudo chown -R 1000:1000 /opt/clearml
-
+       ```
+       sudo chown -R 1000:1000 /opt/clearml
+       ```
+      
     * macOS:
 
-          sudo chown -R $(whoami):staff /opt/clearml
+       ```
+       sudo chown -R $(whoami):staff /opt/clearml
+       ```
+      
 ## Next Step
 
 To keep track of your experiments and/or data, the `clearml` package needs to communicate with your server. 
