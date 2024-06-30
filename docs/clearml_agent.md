@@ -734,15 +734,20 @@ CLEARML_API_SECRET_KEY
 
 Build a Docker container that when launched executes a specific experiment, or a clone (copy) of that experiment.
 
-- Build a Docker container that at launch will execute a specific Task.
+- Build a Docker container that at launch will execute a specific Task:
+
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point reuse_task
   ```
-- Build a Docker container that at launch will clone a Task specified by Task ID, and will execute the newly cloned Task.
+
+- Build a Docker container that at launch will clone a Task specified by Task ID, and will execute the newly cloned Task:
+
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point clone_task
   ```
+
 - Run built Docker by executing:
+
   ```bash
   docker run <new-docker-name>
   ```

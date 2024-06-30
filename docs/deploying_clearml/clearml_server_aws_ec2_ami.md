@@ -93,12 +93,14 @@ sudo tar czvf ~/clearml_backup_config.tgz -C /opt/clearml/config .
 
 1. Verify you have the backup files.
 1. Replace any existing data with the backup data:
+
    ```bash
    sudo rm -fR /opt/clearml/data/* /opt/clearml/config/*
    sudo tar -xzf ~/clearml_backup_data.tgz -C /opt/clearml/data
    sudo tar -xzf ~/clearml_backup_config.tgz -C /opt/clearml/config
    ```
 1. Grant access to the data:
+
    ```bash
    sudo chown -R 1000:1000 /opt/clearml
    ```
