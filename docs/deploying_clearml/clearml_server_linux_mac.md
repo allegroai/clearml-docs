@@ -154,7 +154,7 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
      export CLEARML_AGENT_GIT_USER=git_username_here
      export CLEARML_AGENT_GIT_PASS=git_password_here
      ```
-  
+
 1. Run `docker-compose` with the downloaded configuration file.
       ```
       docker-compose -f /opt/clearml/docker-compose.yml up -d
