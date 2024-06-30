@@ -140,7 +140,7 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
       ```
 1. For Linux only, configure the **ClearML Agent Services**:
 
-    * Set `CLEARML_AGENT_ACCESS_KEY` and `CLEARML_AGENT_SECRET_KEY` so the services agent can communicate to the API 
+    * Set `CLEARML_AGENT_ACCESS_KEY` and `CLEARML_AGENT_SECRET_KEY` so the services agent can communicate with the API 
     server. Prepare randomly-generated strings for these fields  
     * If `CLEARML_HOST_IP` is not provided, then ClearML Agent Services uses the external public address of the ClearML 
     Server 
