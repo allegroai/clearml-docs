@@ -573,7 +573,7 @@ the `offline_mode` argument to `True`:
 
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
-:::caution 
+:::warning 
 Offline mode only works with tasks created using [`Task.init()`](../references/sdk/task.md#taskinit) and not with those created 
 using [`Task.create()`](../references/sdk/task.md#taskcreate). 
 :::
@@ -820,7 +820,7 @@ task.set_parameters({'Args/epochs':7, 'lr': 0.5})
 task.set_parameter(name='decay',value=0.001)
 ```
 
-:::caution Overwriting Parameters
+:::warning Overwriting Parameters
 `Task.set_parameters()` replaces any existing hyperparameters in the task.
 :::
 

@@ -18,7 +18,7 @@ on completed/failed Tasks via Slack integration.
     * Project - Monitor a specific project. You can select an option to also monitor the specified project's subprojects
     * Entire workspace - Monitor all projects in your workspace
             
-  :::caution
+  :::warning
   If your workspace or specified project contains a large number of experiments, the dashboard can take a while to update.
   :::
 

@@ -19,7 +19,7 @@ and delete all cookies under the ClearML Server URL.
 
 ## Launching
 
-:::caution
+:::warning
 By default, ClearML Server deploys as an open network. To restrict ClearML Server access, follow the instructions 
 in the [Security](clearml_server_security.md) page.
 :::
@@ -70,7 +70,7 @@ The pre-built ClearML Server storage configuration is the following:
 
 ## Backing Up and Restoring Data and Configuration
 
-:::caution
+:::warning
 Stop your server before backing up or restoring data and configuration
 :::
 
@@ -112,37 +112,37 @@ The following section contains a list of AMI Image IDs per-region for the latest
 
 ### Latest Version
 
-#### v1.15.1
+#### v1.16.0
 
-* **af-south-1** : ami-04efa6d3850413f44
-* **ap-east-1** : ami-0c9e7c16d8d4cab69
-* **ap-northeast-1** : ami-00dd0cb01c3b25ed3
-* **ap-northeast-2** : ami-0c058a67bf00f75e5
-* **ap-northeast-3** : ami-015408b1e7e04ecaa
-* **ap-south-1** : ami-05d51f70dce24d51c
-* **ap-south-2** : ami-085f86c261d84c768
-* **ap-southeast-1** : ami-0e24c25769ea43b24
-* **ap-southeast-2** : ami-0ca52ca06ef568c16
-* **ap-southeast-3** : ami-0bb76a9ba8c23639d
-* **ap-southeast-4** : ami-05c54a10f3c932683
-* **ca-central-1** : ami-018b94fe16dbba1e4
-* **ca-west-1** : ami-02a6c0c23823e5d49
-* **eu-central-1** : ami-02fb9796acd913d73
-* **eu-central-2** : ami-0a262efc258244efb
-* **eu-north-1** : ami-0fac51ab15b088a6e
-* **eu-south-1** : ami-0f660d03e983d5304
-* **eu-south-2** : ami-0917518c71cce4966
-* **eu-west-1** : ami-00f05408da2674aa0
-* **eu-west-2** : ami-027f63a70e70a92b8
-* **eu-west-3** : ami-008eb25d0a127d2b9
-* **il-central-1** : ami-026173238b4e5e517
-* **me-central-1** : ami-0004dc2210c9300cb
-* **me-south-1** : ami-01e51a07db860b8c3
-* **sa-east-1** : ami-04cdda5744fb22bad
-* **us-east-1** : ami-0b7bb8741dac34752
-* **us-east-2** : ami-04fc2f5cf9bdc72b6
-* **us-west-1** : ami-0b4fef3673433d075
-* **us-west-2** : ami-0327adc54a82c8d1d
+* **af-south-1** : ami-082c41392599317e5
+* **ap-east-1** : ami-0dd992397a979922c
+* **ap-northeast-1** : ami-04d0e43e2c165b7e3
+* **ap-northeast-2** : ami-0160bf5649141984d
+* **ap-northeast-3** : ami-0e1c923da2bd51167
+* **ap-south-1** : ami-0cdf7c211475f3a04
+* **ap-south-2** : ami-094b28d8dc0bc8a9b
+* **ap-southeast-1** : ami-0f8b23d1b361fc160
+* **ap-southeast-2** : ami-015d54d17cb26ff61
+* **ap-southeast-3** : ami-08b3c73a939afc887
+* **ap-southeast-4** : ami-0d46f3ef19e1c5b78
+* **ca-central-1** : ami-0aefb0810bf8060d2
+* **ca-west-1** : ami-04ae0035a7bd7a136
+* **eu-central-1** : ami-0b125f7136e505a05
+* **eu-central-2** : ami-0ddcc4635e97d7d16
+* **eu-north-1** : ami-00adacc6aff8470a3
+* **eu-south-1** : ami-0322e9be2b4ac1bf1
+* **eu-south-2** : ami-0cc6ad52cd6327ed8
+* **eu-west-1** : ami-04899c6eb75c421e8
+* **eu-west-2** : ami-086a230f11bb3d3c3
+* **eu-west-3** : ami-0842181eaf6839288
+* **il-central-1** : ami-060bd6d9f7d78a222
+* **me-central-1** : ami-0d5f6f979d83b5a72
+* **me-south-1** : ami-05c73ebd173c00cb9
+* **sa-east-1** : ami-0b87492a81682614a
+* **us-east-1** : ami-06b430aec5a4951d2
+* **us-east-2** : ami-0b150fff20cc2d641
+* **us-west-1** : ami-003f294c14a15b608
+* **us-west-2** : ami-0039ade7076eb680e
 
 ## Next Step
 

@@ -111,7 +111,7 @@ This mode is intended for running maintenance tasks. Some suitable tasks include
 - [Control Service](../guides/services/aws_autoscaler.md) - AWS Autoscaler for example
 - [External services](../guides/services/slack_alerts.md) - Such as Slack integration alert service
 
-:::caution
+:::warning
 Do not enqueue training or inference tasks into the services queue. They will put an unnecessary load on the server.
 :::
 
