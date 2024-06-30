@@ -224,30 +224,39 @@ To open external access to the Elasticsearch, MongoDB, and Redis ports:
     
 1. Shutdown ClearML Server. Execute the following command (which assumes the configuration file is in the environment path). 
 
-        docker-compose down
+   ```
+   docker-compose down
+   ```
 
 1. Edit the `docker-compose.yml` file as follows:
 
     * In the `elasticsearch` section, add the two lines:
 
-            ports:
-            - "9200:9200"
-
+       ```
+       ports:
+       - "9200:9200"
+       ```
+      
     * In the `mongo` section, add the two lines:
     
-            ports:
-            - "27017:27017"
+       ```
+       ports:
+       - "27017:27017"
+       ```            
 
     * In the `redis` section, add the two lines:
     
-            ports:
-            - "6379:6379"
-
+       ```
+       ports:
+       - "6379:6379"
+       ```
+      
 1. Startup ClearML Server.
 
-        docker-compose -f docker-compose.yml pull
-        docker-compose -f docker-compose.yml up -d
-
+    ```
+    docker-compose -f docker-compose.yml pull
+    docker-compose -f docker-compose.yml up -d
+    ```
 
 
 ### Web Login Authentication

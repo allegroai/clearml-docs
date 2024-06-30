@@ -34,12 +34,16 @@ pip install clearml
    
    Use the `--file` option for `clearml-init`.
 
-       clearml-init --file MyOtherClearML.conf
-
+   ```
+   clearml-init --file MyOtherClearML.conf
+   ```
+   
    and then specify it using the ``CLEARML_CONFIG_FILE`` environment variable inside the container:
         
-        CLEARML_CONFIG_FILE = MyOtherClearML.conf
-
+   ```
+   CLEARML_CONFIG_FILE = MyOtherClearML.conf
+   ```
+   
    For more information about running experiments inside Docker containers, see [ClearML Agent Deployment](../../clearml_agent.md#deployment)
    and [ClearML Agent Reference](../../clearml_agent/clearml_agent_ref.md).
     
