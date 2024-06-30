@@ -45,6 +45,8 @@ Specifically, the relevant settings are:
 * `secure.auth.token_secret`
 * `secure.credentials.apiserver.user_key`
 * `secure.credentials.apiserver.user_secret`
+* `secure.credentials.fileserver.user_key`
+* `secure.credentials.fileserver.user_secret`
 * `secure.credentials.webserver.user_key` (automatically revoked by the server if using [Web Login Authentication](clearml_server_config.md#web-login-authentication))
 * `secure.credentials.webserver.user_secret` (automatically revoked by the server if using [Web Login Authentication](./clearml_server_config.md#web-login-authentication))
 * `secure.credentials.tests.user_key`
@@ -66,6 +68,8 @@ To set new values for these settings, use the following environment variables:
 * `CLEARML__SECURE__AUTH__TOKEN_SECRET="new-secret-string"`
 * `CLEARML__SECURE__CREDENTIALS__APISERVER__USER_KEY="new-key-string"`
 * `CLEARML__SECURE__CREDENTIALS__APISERVER__USER_SECRET="new-secret-string"`
+* `CLEARML__SECURE__CREDENTIALS__FILESERVER__USER_KEY="new-key-string"`
+* `CLEARML__SECURE__CREDENTIALS__FILESERVER__USER_SECRET="new-secret-string"`
 * `CLEARML__SECURE__CREDENTIALS__WEBSERVER__USER_KEY="new-key-string"`
 * `CLEARML__SECURE__CREDENTIALS__WEBSERVER__USER_SECRET="new-secret-string"`
 * `CLEARML__SECURE__CREDENTIALS__TESTS__USER_KEY="new-key-string"`
