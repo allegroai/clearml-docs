@@ -138,14 +138,23 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
       ```
       sudo curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
       ```
-1. For Linux only, configure the **ClearML Agent Services**. If `CLEARML_HOST_IP` is not provided, then ClearML Agent Services uses the external public address of the ClearML Server. If `CLEARML_AGENT_GIT_USER` / `CLEARML_AGENT_GIT_PASS` are not provided, then ClearML Agent Services can't access any private repositories for running service tasks.
+1. For Linux only, configure the **ClearML Agent Services**:
+
+    * Set `CLEARML_AGENT_ACCESS_KEY` and `CLEARML_AGENT_SECRET_KEY` so the services agent can communicate to the API 
+    server. Prepare randomly-generated strings for these fields  
+    * If `CLEARML_HOST_IP` is not provided, then ClearML Agent Services uses the external public address of the ClearML 
+    Server 
+    * Set `CLEARML_AGENT_GIT_USER` / `CLEARML_AGENT_GIT_PASS` so ClearML Agent Services can access 
+    private repositories for running service tasks
 
      ```   
+     export CLEARML_AGENT_ACCESS_KEY=generate_access_key_here
+     export CLEARML_AGENT_SECRET_KEY=generate_secret_key_here
      export CLEARML_HOST_IP=server_host_ip_here
      export CLEARML_AGENT_GIT_USER=git_username_here
      export CLEARML_AGENT_GIT_PASS=git_password_here
      ```
-
+  
 1. Run `docker-compose` with the downloaded configuration file.
       ```
       docker-compose -f /opt/clearml/docker-compose.yml up -d
