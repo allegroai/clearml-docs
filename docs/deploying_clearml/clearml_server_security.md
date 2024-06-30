@@ -25,8 +25,9 @@ Configure ClearML Server to use Web Login authentication, which requires a usern
 
 ## File Server Security
 
-By default, the File Server is not secured even if [Web Login Authentication](clearml_server_config.md#web-login-authentication)
+Prior to ClearML version 1.16.0, the File Server was not secured even if [Web Login Authentication](clearml_server_config.md#web-login-authentication)
 has been configured. Using an [object storage solution](../integrations/storage.md) that has built-in security is recommended.
+Version 1.16.0 added token authentication to the File Server by default.
 
 ## Server Credentials and Secrets
 

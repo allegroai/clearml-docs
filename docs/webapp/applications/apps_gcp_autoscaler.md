@@ -30,7 +30,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
       * GCP Subnet Full Path - Available if `Use full subnet path` was selected. The GCP subnetwork where the instances 
       will be spun up. This allows setting a custom subnet resource path, and allows setting subnets shared from other 
       projects as well. See [GCP Documentation](https://cloud.google.com/dataflow/docs/guides/specifying-networks).
-    * GCP Subnet Name - Available  if `Use full subnet path` was not selected. The GCP subnetwork where the instances 
+    * GCP Subnet Name - Available if `Use full subnet path` was not selected. The GCP subnetwork where the instances 
     will be spun up. GCP setting will be `projects/{project-id}/regions/{region}/subnetworks/{subnetwork}`
     * GCP Credentials - Credentials with which the autoscaler can access your GCP account for spinning VM instances 
       up/down. See [Generating GCP Credentials](#generating-gcp-credentials).
