@@ -98,7 +98,7 @@ an empty string
 * Fix `Dataset.get_local_copy()` is allowed for a non-finalized dataset
 * Fix `Task.upload_artifact()` does not upload empty lists/tuples
 * Fix pipeline retry mechanism interface
-* Fix Python <3.5 compatibility
+* Fix `Python <3.5` compatibility
 * Fix local cache warning (should be a debug message)
 
 ### ClearML SDK 1.7.0

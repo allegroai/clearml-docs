@@ -319,13 +319,17 @@ To create block code, use one of the following options:
     ```
 
 * Surround code with "fences"--three backticks (<code>```</code>):
+   
 
-      ```
-      from clearml import Task
+   ~~~
+   ```  
+   from clearml import Task
 
-      t = Task.init(project_name='My project', task_name='Base')
-      ```
+   t = Task.init(project_name='My project', task_name='Base')  
+   ```
+   ~~~
 
+  
 Both of these options will be rendered as:
 
 ```
@@ -338,11 +342,13 @@ t = Task.init(project_name='My project', task_name='Base')
 
 To display syntax highlighting, specify the coding language after the first fence (e.g. <code>\```python</code>, <code>\```json</code>, <code>\```js</code>, etc.):
 
-    ```python
-    from clearml import Task
+~~~
+```python
+from clearml import Task
 
-    t = Task.init(project_name='My project', task_name='Base')
-    ```
+t = Task.init(project_name='My project', task_name='Base')
+```
+~~~
 
 The rendered output should look like this:
 
@@ -378,13 +384,20 @@ link to see the link's title.
 
 The MarkDown code for a collapsible panel looks like this:
 
-| MarkDown | Rendered Output |
-|---|---|
-| <code><details\><br/>&nbsp<summary\>Section title</summary\><br/>&nbsp;&nbsp;Collapsible Section Contents<br/></details\></code>|<details><summary>Section title</summary>Collapsible Section Contents</details>|
+```
+<details><summary>Section title</summary>Collapsible Section Contents</details>
+```
 
 The collapsible panel is surrounded by `<details>` tags. Within the `<details>` tag, add the section's title between
 the `<summary>` tags. This title can be seen when the panel is collapsed. After the `</summary>` tag, add the panel
 contents. 
+
+It is rendered like this:
+
+<details><summary>Section title</summary>Collapsible Section Contents</details>
+
+
+
 
 ### Horizontal Rules
 

@@ -62,21 +62,23 @@ task = Task.init(
 
 When the script runs, ClearML creates the following directory structure:
 
-    + - <output destination name>
-    |   +-- <project name>
-    |       +-- <task name>.<Task Id>
-    |           +-- models
-    |           +-- artifacts
-
+```
++ - <output destination name>
+|   +-- <project name>
+|       +-- <task name>.<Task Id>
+|           +-- models
+|           +-- artifacts
+```
 and puts the model checkpoints (snapshots) and artifacts in that folder.
 
 For example, if the Task ID is `9ed78536b91a44fbb3cc7a006128c1b0`, then the directory structure will be:
-
-    + - model_snapshots
-    |   +-- examples
-    |       +-- extending automagical ClearML example.9ed78536b91a44fbb3cc7a006128c1b0
-    |           +-- models
-    |           +-- artifacts
+```
++ - model_snapshots
+|   +-- examples
+|       +-- extending automagical ClearML example.9ed78536b91a44fbb3cc7a006128c1b0
+|           +-- models
+|           +-- artifacts
+```
 
 ## Step 2: Logger Class Reporting Methods
 

@@ -130,8 +130,13 @@ module.exports = {
                 ]
             },
             'webapp/webapp_reports',
-            'webapp/webapp_workers_queues',
-            'webapp/webapp_orchestration_dash',
+            {
+                'Orchestration': [
+                    'webapp/webapp_workers_queues',
+                    'webapp/webapp_orchestration_dash',
+                    'webapp/resource_policies'
+                ]
+            },
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',

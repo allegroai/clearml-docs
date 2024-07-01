@@ -166,15 +166,17 @@ The following example, which is based on AWS load balancing, demonstrates the co
 
 1. In the ClearML Server `/opt/clearml/config/apiserver.conf` file, add the following `auth.cookies` section:
 
-        auth {
-          cookies {
-            httponly: true
-            secure: true
-            domain: ".clearml.mydomain.com"
-            max_age: 99999999999
-          }
-        }
-
+   ```        
+   auth {
+       cookies {
+       httponly: true
+       secure: true
+       domain: ".clearml.mydomain.com"
+       max_age: 99999999999
+     }
+   }
+   ```
+   
    :::tip
    If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or
    an alternate folder you configured), and input the modified configuration
@@ -212,7 +214,7 @@ For improved security, the ports for ClearML Server Elasticsearch, MongoDB, and 
 they are only open internally in the docker network. If external access is needed, open these ports (but make sure to 
 understand the security risks involved with doing so).
 
-:::caution 
+:::warning 
 Opening the ports for Elasticsearch, MongoDB, and Redis for external access may pose a security concern and is not recommended 
 unless you know what you're doing. Network security measures, such as firewall configuration, should be considered when 
 opening ports for external access.
@@ -222,30 +224,39 @@ To open external access to the Elasticsearch, MongoDB, and Redis ports:
     
 1. Shutdown ClearML Server. Execute the following command (which assumes the configuration file is in the environment path). 
 
-        docker-compose down
+   ```
+   docker-compose down
+   ```
 
 1. Edit the `docker-compose.yml` file as follows:
 
     * In the `elasticsearch` section, add the two lines:
 
-            ports:
-            - "9200:9200"
-
+       ```
+       ports:
+       - "9200:9200"
+       ```
+      
     * In the `mongo` section, add the two lines:
     
-            ports:
-            - "27017:27017"
+       ```
+       ports:
+       - "27017:27017"
+       ```            
 
     * In the `redis` section, add the two lines:
     
-            ports:
-            - "6379:6379"
-
+       ```
+       ports:
+       - "6379:6379"
+       ```
+      
 1. Startup ClearML Server.
 
-        docker-compose -f docker-compose.yml pull
-        docker-compose -f docker-compose.yml up -d
-
+    ```
+    docker-compose -f docker-compose.yml pull
+    docker-compose -f docker-compose.yml up -d
+    ```
 
 
 ### Web Login Authentication
@@ -261,27 +272,29 @@ Without web login authentication, ClearML Server does not restrict access (by de
 
     For example:
 
-        auth {
-            # Fixed users login credentials
-            # No other user will be able to login
-            fixed_users {
-                enabled: true
-                pass_hashed: false
-                users: [
-                    {
-                        username: "jane"
-                        password: "12345678"
-                        name: "Jane Doe"
-                    },
-                    {
-                        username: "john"
-                        password: "12345678"
-                        name: "John Doe"
-                    },
-                ]
-            }
+    ```
+    auth {
+        # Fixed users login credentials
+        # No other user will be able to login
+        fixed_users {
+            enabled: true
+            pass_hashed: false
+            users: [
+                {
+                    username: "jane"
+                    password: "12345678"
+                    name: "Jane Doe"
+                },
+                {
+                    username: "john"
+                    password: "12345678"
+                    name: "John Doe"
+                },
+            ]
         }
-
+    }
+    ```
+   
    :::tip
    If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or 
    an alternate folder you configured), and input the modified configuration
@@ -338,18 +351,19 @@ Modify the following settings for the watchdog:
    section and specify the watchdog settings.
 
     For example:
+    ```
+    tasks {
+        non_responsive_tasks_watchdog {
+            enabled: true
 
-        tasks {
-            non_responsive_tasks_watchdog {
-                enabled: true
-
-                # In-progress tasks that haven't been updated for at least 'value' seconds will be stopped by the watchdog
-                threshold_sec: 7200
+            # In-progress tasks that haven't been updated for at least 'value' seconds will be stopped by the watchdog
+            threshold_sec: 7200
         
-                # Watchdog will sleep for this number of seconds after each cycle
-                watch_interval_sec: 900
-            }
+            # Watchdog will sleep for this number of seconds after each cycle
+            watch_interval_sec: 900
         }
+    }
+   ```
    
    :::tip
    If the `apiserver.conf` file does not exist, create your own in ClearML Server's `/opt/clearml/config` directory (or 

@@ -51,33 +51,34 @@ For more information about workers, worker daemons, and queues, see [Agents and 
 Run the worker daemon on the local development machine.
 1. Open a terminal session.
 1. Run the following `clearml-agent` command which runs a worker daemon listening to the `default` queue:
-
-        clearml-agent daemon --queue default
-    
+    ```
+    clearml-agent daemon --queue default
+    ```
     The response to this command is information about the configuration, the worker, and the queue. For example:
-
-        Current configuration (clearml_agent v0.16.0, location: /home/<username>/clearml.conf):
-        ----------------------
-        agent.worker_id =
-        agent.worker_name = LAPTOP-PPTKKPGK
-        agent.python_binary =
-        agent.package_manager.type = pip
-        .
-        .
-        .
-        sdk.development.worker.report_period_sec = 2
-        sdk.development.worker.ping_period_sec = 30
-        sdk.development.worker.log_stdout = true
+    ```
+    Current configuration (clearml_agent v0.16.0, location: /home/<username>/clearml.conf):
+    ----------------------
+    agent.worker_id =
+    agent.worker_name = LAPTOP-PPTKKPGK
+    agent.python_binary =
+    agent.package_manager.type = pip
+    .
+    .
+    .
+    sdk.development.worker.report_period_sec = 2
+    sdk.development.worker.ping_period_sec = 30
+    sdk.development.worker.log_stdout = true
         
-        Worker "LAPTOP-PPTKKPGK:0" - Listening to queues:
-        + ---------------------------------+---------+-------+
-        | id                               | name    | tags  |
-        + ---------------------------------+---------+-------+
-        | 2a03daf5ff9a4255b9915fbd5306f924 | default |       |
-        + ---------------------------------+---------+-------+
+    Worker "LAPTOP-PPTKKPGK:0" - Listening to queues:
+    + ---------------------------------+---------+-------+
+    | id                               | name    | tags  |
+    + ---------------------------------+---------+-------+
+    | 2a03daf5ff9a4255b9915fbd5306f924 | default |       |
+    + ---------------------------------+---------+-------+
         
-        Running CLEARML-AGENT daemon in background mode, writing stdout/stderr to /home/<username>/.clearml_agent_daemon_outym6lqxrz.txt
-
+    Running CLEARML-AGENT daemon in background mode, writing stdout/stderr to /home/<username>/.clearml_agent_daemon_outym6lqxrz.txt
+    ```
+   
 ## Step 5: Enqueue the Tuned Experiment
 
 Enqueue the tuned experiment.

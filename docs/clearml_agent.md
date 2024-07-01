@@ -509,7 +509,7 @@ If you are running Slurm with Singularity containers support, set the following:
 
 1. Add `--singularity-mode` to the command line, for example:
    ```
-   clearml-agent-slurm --container-mode --template-files slurm.example_singularity.template --queue default
+   clearml-agent-slurm --singularity-mode --template-files slurm.example_singularity.template --queue default
    ```
 
 ### Explicit Task Execution
@@ -712,7 +712,7 @@ To limit the number of simultaneous tasks run in services mode, pass the maximum
 
 Launch a service task like any other task, by enqueuing it to the appropriate queue.
 
-:::caution
+:::warning
 Do not enqueue training or inference tasks into the services queue. They will put an unnecessary load on the server.
 :::
 
@@ -734,15 +734,20 @@ CLEARML_API_SECRET_KEY
 
 Build a Docker container that when launched executes a specific experiment, or a clone (copy) of that experiment.
 
-- Build a Docker container that at launch will execute a specific Task.
+- Build a Docker container that at launch will execute a specific Task:
+
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point reuse_task
   ```
-- Build a Docker container that at launch will clone a Task specified by Task ID, and will execute the newly cloned Task.
+
+- Build a Docker container that at launch will clone a Task specified by Task ID, and will execute the newly cloned Task:
+
   ```bash
   clearml-agent build --id <task-id> --docker --target <new-docker-name> --entry-point clone_task
   ```
+
 - Run built Docker by executing:
+
   ```bash
   docker run <new-docker-name>
   ```
@@ -799,7 +804,7 @@ Override worker schedules by:
 
 Set a schedule for a worker from the command line when running `clearml-agent`. Two properties enable setting working hours:
 
-:::caution
+:::warning
 Use only one of these properties
 :::
 
@@ -828,7 +833,7 @@ For example:
 
 Set a schedule for a worker using configuration file options. The options are:
 
-:::caution
+:::warning
 Use only one of these properties
 :::
 
@@ -845,7 +850,7 @@ For example, set a worker's schedule from 5 PM to 8 PM on Sunday through Tuesday
 
 Runtime properties override the command line uptime / downtime properties. The runtime properties are:
 
-:::caution
+:::warning
 Use only one of these properties
 :::
 
@@ -861,13 +866,15 @@ endpoint, as follows:
 
 For example, to force a worker on for 24 hours:
 
-    curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"worker":"<worker_id>","runtime_properties":[{"key": "force", "value": "on", "expiry": 86400}]}' http://<api-server-hostname-or-ip>:8008/workers.set_runtime_properties
+```
+curl --user <key>:<secret> --header "Content-Type: application/json" --data '{"worker":"<worker_id>","runtime_properties":[{"key": "force", "value": "on", "expiry": 86400}]}' http://<api-server-hostname-or-ip>:8008/workers.set_runtime_properties
+```
 
 ### Overriding Worker Schedules Using Queue Tags
 
 Queue tags override command line and runtime properties. The queue tags are the following:
 
-:::caution
+:::warning
 Use only one of these properties
 :::
 

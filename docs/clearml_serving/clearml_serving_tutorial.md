@@ -52,11 +52,14 @@ and downloaded in realtime when updated
 
 Spin the Inference Container
   - Customize container [Dockerfile](https://github.com/allegroai/clearml-serving/blob/main/clearml_serving/serving/Dockerfile) if needed
-  - Build container `
+  - Build container:
+
     ```bash
     docker build --tag clearml-serving-inference:latest -f clearml_serving/serving/Dockerfile .
     ```
+
   - Spin the inference container: 
+
     ```bash
     docker run -v ~/clearml.conf:/root/clearml.conf -p 8080:8080 -e CLEARML_SERVING_TASK_ID=<service_id> -e CLEARML_SERVING_POLL_FREQ=5 clearml-serving-inference:latest
     ``` 
@@ -91,13 +94,14 @@ or with the `clearml-serving` CLI.
    clearml-serving --id <service_id> model upload --name "manual sklearn model" --project "serving examples" --framework "scikitlearn" --path ./sklearn-model.pkl
    ```
     
-  You now have a new Model named `manual sklearn model` in the `serving examples` project. The CLI output prints 
-  the UID of the new model, which you will use to register a new endpoint. 
+   You now have a new Model named `manual sklearn model` in the `serving examples` project. The CLI output prints 
+   the UID of the new model, which you will use to register a new endpoint. 
 
-  In the [ClearML web UI](../webapp/webapp_overview.md), the new model is listed under the **Models** tab of its project. 
-  You can also download the model file itself directly from the web UI. 
+   In the [ClearML web UI](../webapp/webapp_overview.md), the new model is listed under the **Models** tab of its project. 
+   You can also download the model file itself directly from the web UI. 
 
-1. Register a new endpoint with the new model
+1. Register a new endpoint with the new model:
+
    ```bash
    clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --model-id <newly_created_model_id_here>
    ```
@@ -131,11 +135,13 @@ deployment process, as a single API automatically deploys (or removes) a model f
     - Use the RestAPI (see [details](https://clear.ml/docs/latest/docs/references/api/models#post-modelspublish_many))
     - Use Python interface:
    
-    ```python
-    from clearml import Model
-    Model(model_id="unique_model_id_here").publish()
-    ```
+       ```python
+       from clearml import Model
+       Model(model_id="unique_model_id_here").publish()
+       ```
+    
 1. The new model is available on a new endpoint version (1), test with: 
+  
    ```bash
    curl -X POST "http://127.0.0.1:8080/serve/test_model_sklearn_auto/1" -H "accept: application/json" -H "Content-Type: application/json" -d '{"x0": 1, "x1": 2}'
    ```
@@ -171,22 +177,26 @@ endpoint `/test_model_sklearn/3/`.
 
 Example:
 1. Add two endpoints:
-  ```bash
-  clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --name "train sklearn model" --version 1 --project "serving examples"
-  ```
-  ```bash
-  clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --name "train sklearn model" --version 2 --project "serving examples"
-  ```  
+    
+   ```bash
+   clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --name "train sklearn model" --version 1 --project "serving examples"
+   ```
+   
+   ```bash
+   clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_model_sklearn" --preprocess "examples/sklearn/preprocess.py" --name "train sklearn model" --version 2 --project "serving examples"
+   ```
 
-1. Add Canary endpoint:
-  ```bash
-  clearml-serving --id <service_id> model canary --endpoint "test_model_sklearn_canary" --weights 0.1 0.9 --input-endpoints test_model_sklearn/2 test_model_sklearn/1
-  ```  
+1. Add Canary endpoint: 
+  
+   ```bash
+   clearml-serving --id <service_id> model canary --endpoint "test_model_sklearn_canary" --weights 0.1 0.9 --input-endpoints test_model_sklearn/2 test_model_sklearn/1
+   ```  
 
 1. Test Canary endpoint:
-  ```bash
-  curl -X POST "http://127.0.0.1:8080/serve/test_model" -H "accept: application/json" -H "Content-Type: application/json" -d '{"x0": 1, "x1": 2}'` 
-  ```
+  
+   ```bash
+   curl -X POST "http://127.0.0.1:8080/serve/test_model" -H "accept: application/json" -H "Content-Type: application/json" -d '{"x0": 1, "x1": 2}'` 
+   ```
 
 ### Model Monitoring and Performance Metrics
 

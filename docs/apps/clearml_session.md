@@ -253,7 +253,7 @@ clearml-session --continue-session <session_id> --store-workspace ~/workspace
 | `--version`| Display the clearml-session utility version| N/A|
 | `--vscode-extensions` |Install additional VSCode extensions and VSCode python extensions (example: `ms-python.python,ms-python.black-formatter,ms-python.pylint,ms-python.flake8`)|`none`|
 | `--vscode-server` | Install VSCode on interactive session | `true` |
-| `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version <vscode:python-ext> (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
+| `--vscode-version` | Set VSCode server (code-server) version, as well as VSCode python extension version `<vscode:python-ext>` (example: "3.7.4:2020.10.332292344")| `4.14.1:2023.12.0`|
 | `--yes`, `-y`| Automatic yes to prompts; assume "yes" as answer to all prompts and run non-interactively |N/A|
 
 </div>

@@ -15,7 +15,7 @@ and delete all cookies under the ClearML Server URL.
 
 ## Deploying
 
-:::caution
+:::warning
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the instructions in the [Security](clearml_server_security.md) page.
 :::
 
@@ -42,23 +42,30 @@ Deploying the server requires a minimum of 4 GB of memory, 8 GB is recommended.
 
     **This clears all existing ClearML SDK databases.**
 
-        rmdir c:\opt\clearml /s
-
+    ``` 
+    rmdir c:\opt\clearml /s
+    ```
+   
 1. Create local directories for data and logs. Open PowerShell and execute the following commands:
 
-        cd c:
-        mkdir c:\opt\clearml\data
-        mkdir c:\opt\clearml\logs
+   ```
+   cd c:
+   mkdir c:\opt\clearml\data
+   mkdir c:\opt\clearml\logs
+   ```
 
 1. Save the ClearML Server docker-compose YAML file.
  
-        curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose-win10.yml -o c:\opt\clearml\docker-compose-win10.yml
- 
+   ```   
+   curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose-win10.yml -o c:\opt\clearml\docker-compose-win10.yml
+   ```
+   
 1. Run `docker-compose`. In PowerShell, execute the following commands:
 
-        docker-compose -f c:\opt\clearml\docker-compose-win10.yml up
-   
-    The server is now running on [http://localhost:8080](http://localhost:8080).
+   ```
+   docker-compose -f c:\opt\clearml\docker-compose-win10.yml up
+   ```
+   The server is now running on [http://localhost:8080](http://localhost:8080).
  
 ## Port Mapping
 
@@ -74,9 +81,10 @@ After deploying ClearML Server, the services expose the following node ports:
 
 * Stop and then restart the Docker containers by executing the following commands:
 
-      docker-compose -f c:\opt\clearml\docker-compose-win10.yml down
-      docker-compose -f c:\opt\clearml\docker-compose-win10.yml up -d
-
+   ```
+   docker-compose -f c:\opt\clearml\docker-compose-win10.yml down
+   docker-compose -f c:\opt\clearml\docker-compose-win10.yml up -d
+   ```
 
 ## Next Step
 

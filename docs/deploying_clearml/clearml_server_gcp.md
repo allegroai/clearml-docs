@@ -65,12 +65,12 @@ For more information see the [Compute Engine Documentation](https://cloud.google
 ## Launching
 
 
-:::caution
+:::warning
 By default, ClearML Server launches with unrestricted access. To restrict ClearML Server access, follow the 
 instructions in the [Security](clearml_server_security.md) page.
 :::
 
-To launch ClearML Server using a GCP Custom Image, see the [Manually importing virtual disks](https://cloud.google.com/compute/docs/import/import-existing-image#overview) in the "Google Cloud Storage" documentation, [Compute Engine documentation](https://cloud.google.com/compute/docs). For more information about Custom Images, see [Custom Images](https://cloud.google.com/compute/docs/images#custom_images) in the "Compute Engine documentation".
+To launch ClearML Server using a GCP Custom Image, see the [Google Cloud Storage documentation](https://cloud.google.com/compute/docs/import/import-existing-image#overview). For more information about Custom Images, see [Custom Images](https://cloud.google.com/compute/docs/images#custom_images) in the Compute Engine documentation.
 
 The minimum requirements for ClearML Server are:
 
@@ -83,13 +83,14 @@ The minimum requirements for ClearML Server are:
 
 * Stop and then restart the Docker containers by executing the following commands:
 
-      docker-compose -f /opt/clearml/docker-compose.yml down
-      docker-compose -f /opt/clearml/docker-compose.yml up -d
-
+   ```
+   docker-compose -f /opt/clearml/docker-compose.yml down
+   docker-compose -f /opt/clearml/docker-compose.yml up -d
+   ```
 
 ## Backing Up and Restoring Data and Configuration
 
-:::caution
+:::warning
 Stop your server before backing up or restoring data and configuration
 :::
 
@@ -98,22 +99,28 @@ The commands in this section are an example of how to back up and restore data a
 If data and configuration folders are in `/opt/clearml`, then archive all data into `~/clearml_backup_data.tgz`, and 
 configuration into `~/clearml_backup_config.tgz`:
 
-    sudo tar czvf ~/clearml_backup_data.tgz -C /opt/clearml/data .
-    sudo tar czvf ~/clearml_backup_config.tgz -C /opt/clearml/config .
+```
+sudo tar czvf ~/clearml_backup_data.tgz -C /opt/clearml/data .
+sudo tar czvf ~/clearml_backup_config.tgz -C /opt/clearml/config .
+```
 
 If the data and the configuration need to be restored:
 
 1. Verify you have the backup files.
 1. Replace any existing data with the backup data:
 
-        sudo rm -fR /opt/clearml/data/* /opt/clearml/config/*
-        sudo tar -xzf ~/clearml_backup_data.tgz -C /opt/clearml/data
-        sudo tar -xzf ~/clearml_backup_config.tgz -C /opt/clearml/config 
-   
+   ```
+   sudo rm -fR /opt/clearml/data/* /opt/clearml/config/*
+   sudo tar -xzf ~/clearml_backup_data.tgz -C /opt/clearml/data
+   sudo tar -xzf ~/clearml_backup_config.tgz -C /opt/clearml/config 
+   ```
+ 
 1. Grant access to the data:
 
-        sudo chown -R 1000:1000 /opt/clearml
-
+   ```
+   sudo chown -R 1000:1000 /opt/clearml
+   ```
+   
 ## ClearML Server GCP Custom Image
 
 The following section contains a list of Custom Image URLs (exported in different formats) for each released ClearML Server version.

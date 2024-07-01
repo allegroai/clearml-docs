@@ -6,7 +6,7 @@ title: Hyperparameter Optimization
 The ClearML HPO App is available under the ClearML Pro plan
 :::
 
-The Hyperparameter Optimization Application finds the set of parameter values that optimize a specific metric for your 
+The Hyperparameter Optimization Application finds the set of parameter values that optimize a specific metric(s) for your 
 model.
 
 It takes in a ClearML experiment and its parameters to optimize. The parameter search space can be specified
@@ -23,12 +23,13 @@ limits.
   values from the file, which can be modified before launching the app instance
 * **Initial Task to Optimize** - ID of a ClearML task to optimize. This task will be cloned, and each clone will 
   sample a different set of hyperparameters values
-* **Optimization Configuration**
-    * Optimization Method - The optimization strategy to employ (e.g. random, grid, hyperband)
+* **Optimization Method** - The optimization strategy to employ (e.g. random, grid, hyperband)
+* **Objectives** - Set the optimization targets of minimizing or maximizing the values of a specified metric(s)
     * Optimization Objective Metric's Title - Title of metric to optimize
     * Optimization Objective Metric's Series - Metric series (variant) to optimize
     * Optimization Objective Trend - Choose the optimization target, whether to maximize or minimize the value of the 
       metric specified above
+    * \+ Add item - Add an objective
 * **Execution Queue** - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which 
   optimization tasks will be enqueued (make sure an agent is assigned to that queue)
 * **Parameters to Optimize** - Parameters comprising the optimization space
@@ -71,7 +72,7 @@ limits.
       then iterations=epochs)
     * Limit Total Optimization Instance Time (Minutes) - Time limit for the whole optimization process (in minutes)
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
-  a new instance with the same configuration. 
+  a new instance with the same configuration 
   
 ![HPO app wizard](../../img/apps_hpo_wizard.png)
  
