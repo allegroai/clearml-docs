@@ -46,4 +46,4 @@ title: Windows
    docker-compose -f c:\opt\clearml\docker-compose-win10.yml up -d
    ```
    
-If issues arise during your upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq.md#common-docker-upgrade-errors). 
+If issues arise during your upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq.md#common-docker-upgrade-errors)

@@ -319,13 +319,17 @@ To create block code, use one of the following options:
     ```
 
 * Surround code with "fences"--three backticks (<code>```</code>):
+   
 
-      ```
-      from clearml import Task
+   ~~~
+   ```  
+   from clearml import Task
 
-      t = Task.init(project_name='My project', task_name='Base')
-      ```
+   t = Task.init(project_name='My project', task_name='Base')  
+   ```
+   ~~~
 
+  
 Both of these options will be rendered as:
 
 ```
@@ -338,11 +342,13 @@ t = Task.init(project_name='My project', task_name='Base')
 
 To display syntax highlighting, specify the coding language after the first fence (e.g. <code>\```python</code>, <code>\```json</code>, <code>\```js</code>, etc.):
 
-    ```python
-    from clearml import Task
+~~~
+```python
+from clearml import Task
 
-    t = Task.init(project_name='My project', task_name='Base')
-    ```
+t = Task.init(project_name='My project', task_name='Base')
+```
+~~~
 
 The rendered output should look like this:
 

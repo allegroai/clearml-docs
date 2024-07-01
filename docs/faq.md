@@ -117,12 +117,15 @@ output to the console, when a Python experiment script is run.
 
 For example, when a new ClearML Python Package version is available, the notification is:
 
-    CLEARML new package available: UPGRADE to vX.Y.Z is recommended!
+```
+CLEARML new package available: UPGRADE to vX.Y.Z is recommended!
+```
 
 When a new ClearML Server version is available, the notification is:
 
-    CLEARML-SERVER new version available: upgrade to vX.Y is recommended!
-
+```
+CLEARML-SERVER new version available: upgrade to vX.Y is recommended!
+```
 
 <br/>
 
@@ -183,8 +186,7 @@ For more information about `Task` class methods, see the [Task Class](fundamenta
 
 #### Can I store the model configuration file as well?    <a id="store-model-configuration"></a>
 
-Yes! Use [`Task.connect_configuration()`](references/sdk/task.md#connect_configuration) 
-method:
+Yes! Use [`Task.connect_configuration()`](references/sdk/task.md#connect_configuration):
 
 ```python
 Task.current_task().connect_configuration("a very long text with the configuration file's content")
@@ -240,6 +242,7 @@ To replace the URL of each model, execute the following commands:
     ```
 
 1. Create the following script inside the Docker shell (as well as the URL protocol if you aren't using `s3`):   
+
     ```bash
     cat <<EOT >> script.js
     db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
@@ -248,11 +251,13 @@ To replace the URL of each model, execute the following commands:
     EOT 
     ```
     Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`.
+
 1. Run the script against the backend DB:
 
    ```bash
    mongo backend script.js
    ```
+   
 <br/>
 
 #### Models are not accessible from the UI after I moved them (different bucket / server). How do I fix this?   <a id="relocate_models"></a>
@@ -342,7 +347,9 @@ ClearML monitors your Python process. When the process exits properly, ClearML c
 
 This issue was resolved in Trains v0.9.2. Upgrade to ClearML by executing the following command:
 
-    pip install -U clearml
+```    
+pip install -U clearml
+```
 
 <a id="ssl-connection-error"></a>
 
@@ -352,7 +359,7 @@ This issue was resolved in Trains v0.9.2. Upgrade to ClearML by executing the fo
 
 Your firewall may be preventing the connection. Try one of the following solutions:
 
-* Direct python "requests" to use the enterprise certificate file by setting the OS environment variables CURL_CA_BUNDLE or REQUESTS_CA_BUNDLE. For a detailed discussion of this topic, see [https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module](https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module).
+* Direct python "requests" to use the enterprise certificate file by setting the OS environment variables `CURL_CA_BUNDLE` or `REQUESTS_CA_BUNDLE`. For a detailed discussion of this topic, see [https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module](https://stackoverflow.com/questions/48391750/disable-python-requests-ssl-validation-for-an-imported-module).
 * Disable certificate verification   
   
   :::warning
@@ -725,30 +732,30 @@ To fix this, the registered URL of each debug image and/or artifact needs to be 
     }' \
     ```
 
-* For **artifacts**, you can do the following: 
+* For **artifacts**, you can do the following:
 
     1. Open bash in the mongo DB docker container:
 
-    ```bash 
-    sudo docker exec -it clearml-mongo /bin/bash
-    ```
+       ```bash 
+       sudo docker exec -it clearml-mongo /bin/bash
+       ```
 
     1. Inside the docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, 
    as well as the URL protocol prefixes if you aren't using `s3`. 
    
-    ```bash
-    cat <<EOT >> script.js
-    db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
-    e.uri = e.uri.replace("s3://<old-bucket-name>/","s3://<new-bucket-name>/");
-    db.model.save(e);});
-    EOT 
-    ```
+       ```bash
+       cat <<EOT >> script.js
+       db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
+       e.uri = e.uri.replace("s3://<old-bucket-name>/","s3://<new-bucket-name>/");
+       db.model.save(e);});
+       EOT 
+       ```
 
-    1. Run the script against the backend DB:
+   1. Run the script against the backend DB:
 
-    ```bash
-    mongo backend script.js
-    ```
+      ```bash
+      mongo backend script.js
+      ```
    
 
 ## Jupyter
@@ -763,22 +770,28 @@ Yes! You can run ClearML in Jupyter Notebooks using either of the following:
 **Option 1: Install ClearML on your Jupyter host machine** <a id="opt1"></a>
 
 1. Connect to your Jupyter host machine.
-1. Install the ClearML Python Package.
+1. Install the ClearML Python Package:
 
-        pip install clearml
+   ```
+   pip install clearml
+   ```
+   
+1. Run the ClearML setup wizard:
 
-1. Run the ClearML setup wizard.
-
-        clearml-init
+   ```
+   clearml-init
+   ```
     
 1. In your Jupyter Notebook, you can now use ClearML.
         
 **Option 2: Install ClearML in your Jupyter Notebook** <a id="opt2"></a>
 
-1. Install the ClearML Python Package.
-
-        pip install clearml
-
+1. Install the ClearML Python Package:
+   
+   ```
+   pip install clearml
+   ```
+   
 1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the **SETTINGS > WORKSPACE** page, click **Create new credentials**. 
    The **JUPYTER NOTEBOOK** tab shows the commands required to configure your notebook (a copy to clipboard action is available on hover)
 
@@ -822,7 +835,9 @@ To override the default configuration file location, set the `CLEARML_CONFIG_FIL
 
 For example:
 
-    export CLEARML_CONFIG_FILE="/home/user/myclearml.conf"
+```    
+export CLEARML_CONFIG_FILE="/home/user/myclearml.conf"
+```
 
 <br/>
 
@@ -830,9 +845,11 @@ For example:
 
 To override your configuration file / defaults, set the following OS environment variables:
 
-    export CLEARML_API_ACCESS_KEY="key_here"
-    export CLEARML_API_SECRET_KEY="secret_here"
-    export CLEARML_API_HOST="http://localhost:8008"
+```
+export CLEARML_API_ACCESS_KEY="key_here"
+export CLEARML_API_SECRET_KEY="secret_here"
+export CLEARML_API_HOST="http://localhost:8008"
+```
 
 <br/>
 
@@ -864,9 +881,11 @@ Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you
 
 If you joined the ClearML Hosted Service and ran a script, but your experiment does not appear in Web UI, you may not have configured ClearML for the hosted service. Run the ClearML setup wizard. It will request your hosted service ClearML credentials and create the ClearML configuration you need.
 
-    pip install clearml
+```
+pip install clearml
     
-    clearml-init
+clearml-init
+```
 
 ## ClearML Server Deployment
 
@@ -913,7 +932,9 @@ see [Deploying ClearML Server: Kubernetes using Helm](deploying_clearml/clearml_
 
 If you are using SELinux, run the following command (see this [discussion](https://stackoverflow.com/a/24334000)):
 
-    chcon -Rt svirt_sandbox_file_t /opt/clearml
+```
+chcon -Rt svirt_sandbox_file_t /opt/clearml
+```
 
 ## ClearML Server Configuration
 
@@ -958,11 +979,15 @@ For example:
 
 To resolve the Docker error:
 
-`... The container name "/trains-???" is already in use by ...`
+```
+... The container name "/trains-???" is already in use by ...
+```
 
 try removing deprecated images:
 
-    $ docker rm -f $(docker ps -a -q)
+```
+$ docker rm -f $(docker ps -a -q)
+```
 
 <br/>
 
@@ -1042,8 +1067,10 @@ Do the following:
 1. Allow bypassing of your proxy server to `localhost`
     using a system environment variable, for example:
     
-        NO_PROXY = localhost
-
+   ```
+   NO_PROXY = localhost
+   ```
+   
 1. If a ClearML configuration file (`clearml.conf`) exists, delete it.
 1. Open a terminal session.
 1. Set the system environment variable to `127.0.0.1` in the terminal session. For example:

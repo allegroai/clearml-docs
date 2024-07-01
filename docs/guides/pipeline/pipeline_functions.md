@@ -36,9 +36,9 @@ the function will be automatically logged as required packages for the pipeline 
 1. Set an execution queue through which pipeline steps that did not explicitly specify an execution queue will be 
    executed. These pipeline steps will be enqueued for execution in this queue.
     
-  ```python
-  pipe.set_default_execution_queue('default')
-  ```
+   ```python
+   pipe.set_default_execution_queue('default')
+   ```
    
 1. Add a pipeline level parameter that can be referenced from any step in the pipeline (see `step_one` below).
    ```python

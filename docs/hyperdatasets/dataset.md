@@ -56,22 +56,22 @@ myDataset_2 = DatasetVersion.create_new_dataset(
 
 To raise a `ValueError` exception if the Dataset exists, specify the `raise_if_exists` parameters as `True`.
 
-* With `Dataset.create`
-```python
-try:
-    myDataset = Dataset.create(dataset_name='myDataset One', raise_if_exists=True)
-except ValueError:
-    print('Dataset exists.')
-```
+* With `Dataset.create`:
+  ```python
+  try:
+      myDataset = Dataset.create(dataset_name='myDataset One', raise_if_exists=True)
+  except ValueError:
+      print('Dataset exists.')
+  ```
 
-* Or with `DatasetVersion.create_new_dataset`
+* Or with `DatasetVersion.create_new_dataset`:
 
-```python
-try:
-    myDataset = DatasetVersion.create_new_dataset(dataset_name='myDataset Two', raise_if_exists=True)
-except ValueError:
-    print('Dataset exists.')
-```
+  ```python
+  try:
+      myDataset = DatasetVersion.create_new_dataset(dataset_name='myDataset Two', raise_if_exists=True)
+  except ValueError:
+      print('Dataset exists.')
+  ```
 
 Additionally, create a Dataset with tags and a description.
 

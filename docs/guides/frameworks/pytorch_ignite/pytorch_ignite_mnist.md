@@ -25,23 +25,23 @@ Integrate ClearML with the following steps:
 1. Create a `ClearMLLogger` object. When the code runs, it connects to the ClearML backend, and creates a task in ClearML
    (see ClearMLLogger's parameters [below](#parameters)).
 
-  ```python
-  from ignite.contrib.handlers.clearml_logger import ClearMLLogger
+   ```python
+   from ignite.contrib.handlers.clearml_logger import ClearMLLogger
 
-  clearml_logger = ClearMLLogger(project_name="examples", task_name="ignite")
-  ```
+   clearml_logger = ClearMLLogger(project_name="examples", task_name="ignite")
+   ```
 
 1. Attach helper handlers to the `ClearMLLogger` object.
    
-  For example, attach the `OutputHandler` to log training loss at each iteration:
-  ```python
-  clearml_logger.attach(
-    trainer,
-    log_handler=OutputHandler(tag="training",
-    output_transform=lambda loss: {"loss": loss}),
-    event_name=Events.ITERATION_COMPLETED
-  )
-  ```
+   For example, attach the `OutputHandler` to log training loss at each iteration:
+   ```python
+   clearml_logger.attach(
+     trainer,
+     log_handler=OutputHandler(tag="training",
+     output_transform=lambda loss: {"loss": loss}),
+     event_name=Events.ITERATION_COMPLETED
+   )
+   ```
 
 ### Parameters
 The following are the `ClearMLLogger` parameters:

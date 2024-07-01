@@ -63,7 +63,9 @@ Use the following JSON format for each parameter:
 }
 ```
 The following are the parameter type options and their corresponding fields:
+
 - `LogUniformParameterRange` 
+
     - `"min_value": float` - The minimum exponent sample to use for logarithmic uniform random sampling
     - `"max_value": float` - The maximum exponent sample to use for logarithmic uniform random sampling
     - `"base": Optional[float]` - The base used to raise the sampled exponent. Default: `10`
