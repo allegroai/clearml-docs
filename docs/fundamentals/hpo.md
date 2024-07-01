@@ -64,72 +64,72 @@ optimization.
 
 1. Import ClearML's automation modules: 
 
-  ```python 
-  from clearml.automation import UniformParameterRange, UniformIntegerParameterRange
-  from clearml.automation import HyperParameterOptimizer
-  from clearml.automation.optuna import OptimizerOptuna
-  ```
+   ```python 
+   from clearml.automation import UniformParameterRange, UniformIntegerParameterRange
+   from clearml.automation import HyperParameterOptimizer
+   from clearml.automation.optuna import OptimizerOptuna
+   ```
 1. Initialize the Task, which will be stored in ClearML Server when the code runs. After the code runs at least once, 
    it can be reproduced, and the parameters can be tuned:
-  ```python
-  from clearml import Task
+   ```python
+   from clearml import Task
   
-  task = Task.init(
-      project_name='Hyper-Parameter Optimization',
-      task_name='Automatic Hyper-Parameter Optimization',
-      task_type=Task.TaskTypes.optimizer,
-      reuse_last_task_id=False
-  )
-  ```
+   task = Task.init(
+       project_name='Hyper-Parameter Optimization',
+       task_name='Automatic Hyper-Parameter Optimization',
+       task_type=Task.TaskTypes.optimizer,
+       reuse_last_task_id=False
+   )
+   ```
 
 1. Define the optimization configuration and resources budget:
-  ```python
-  optimizer = HyperParameterOptimizer(
-        # specifying the task to be optimized, task must be in system already so it can be cloned
-        base_task_id=TEMPLATE_TASK_ID,  
-        # setting the hyperparameters to optimize
-        hyper_parameters=[
-            UniformIntegerParameterRange('number_of_epochs', min_value=2, max_value=12, step_size=2),
-            UniformIntegerParameterRange('batch_size', min_value=2, max_value=16, step_size=2),
-            UniformParameterRange('dropout', min_value=0, max_value=0.5, step_size=0.05),
-            UniformParameterRange('base_lr', min_value=0.00025, max_value=0.01, step_size=0.00025),
-            ],
-        # setting the objective metric we want to maximize/minimize
-        objective_metric_title='accuracy',
-        objective_metric_series='total',
-        objective_metric_sign='max',  
+   ```python
+   optimizer = HyperParameterOptimizer(
+         # specifying the task to be optimized, task must be in system already so it can be cloned
+         base_task_id=TEMPLATE_TASK_ID,  
+         # setting the hyperparameters to optimize
+         hyper_parameters=[
+             UniformIntegerParameterRange('number_of_epochs', min_value=2, max_value=12, step_size=2),
+             UniformIntegerParameterRange('batch_size', min_value=2, max_value=16, step_size=2),
+             UniformParameterRange('dropout', min_value=0, max_value=0.5, step_size=0.05),
+             UniformParameterRange('base_lr', min_value=0.00025, max_value=0.01, step_size=0.00025),
+             ],
+         # setting the objective metric we want to maximize/minimize
+         objective_metric_title='accuracy',
+         objective_metric_series='total',
+         objective_metric_sign='max',  
+ 
+         # setting optimizer  
+         optimizer_class=OptimizerOptuna,
+     
+         # configuring optimization parameters
+         execution_queue='default',  
+         max_number_of_concurrent_tasks=2,  
+         optimization_time_limit=60., 
+         compute_time_limit=120, 
+         total_max_jobs=20,  
+         min_iteration_per_job=15000,  
+         max_iteration_per_job=150000,  
+         )
+   ```
 
-        # setting optimizer  
-        optimizer_class=OptimizerOptuna,
-    
-        # configuring optimization parameters
-        execution_queue='default',  
-        max_number_of_concurrent_tasks=2,  
-        optimization_time_limit=60., 
-        compute_time_limit=120, 
-        total_max_jobs=20,  
-        min_iteration_per_job=15000,  
-        max_iteration_per_job=150000,  
-        )
-  ```
+   :::tip Locating Task ID
+   To locate the base task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). The ID appears 
+   in the task header.
+   :::
 
-  :::tip Locating Task ID
-  To locate the base task's ID, go to the task's info panel in the [WebApp](../webapp/webapp_overview.md). The ID appears 
-  in the task header.
-  :::
+   :::tip Multi-objective Optimization
+   If you are using the Optuna framework (see [Supported Optimizers](#supported-optimizers)), you can list multiple optimization objectives. 
+   When doing so, make sure the `objective_metric_title`, `objective_metric_series`, and `objective_metric_sign` lists 
+   are the same length. Each title will be matched to its respective series and sign. 
 
-  :::tip Multi-objective Optimization
-  If you are using the Optuna framework (see [Supported Optimizers](#supported-optimizers)), you can list multiple optimization objectives. 
-  When doing so, make sure the `objective_metric_title`, `objective_metric_series`, and `objective_metric_sign` lists 
-  are the same length. Each title will be matched to its respective series and sign. 
-
-  For example, the code below sets two objectives: to minimize the `validation/loss` metric and to maximize the `validation/accuracy` metric. 
-  ```python
-  objective_metric_title=["validation", "validation"]
-  objective_metric_series=["loss", "accuracy"]
-  objective_metric_sign=["min", "max"]
-  ```
-  :::
+   For example, the code below sets two objectives: to minimize the `validation/loss` metric and to maximize the `validation/accuracy` metric. 
+   ```python
+   objective_metric_title=["validation", "validation"]
+   objective_metric_series=["loss", "accuracy"]
+   objective_metric_sign=["min", "max"]
+   ```
+   :::
 
 
 ## Optimizer Execution Options

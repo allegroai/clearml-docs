@@ -21,20 +21,20 @@ Integrate ClearML into your Keras Tuner optimization script by doing the followi
 
 * Specify `ClearMLTunerLogger` as the Keras Tuner logger:  
 
- ```python
- from clearml.external.kerastuner import ClearmlTunerLogger
- import keras_tuner as kt
-    
- # Create tuner object
- tuner = kt.Hyperband(  
-    build_model,
-    project_name='kt examples',
-    logger=ClearMLTunerLogger(),    # specify ClearMLTunerLogger
-    objective='val_accuracy',
-    max_epochs=10,
-    hyperband_iterations=6
- )
- ```
+   ```python
+   from clearml.external.kerastuner import ClearmlTunerLogger
+   import keras_tuner as kt
+      
+   # Create tuner object
+   tuner = kt.Hyperband(  
+      build_model,
+      project_name='kt examples',
+      logger=ClearMLTunerLogger(),    # specify ClearMLTunerLogger
+      objective='val_accuracy',
+      max_epochs=10,
+      hyperband_iterations=6
+   )
+   ```
 
 And that's it! This creates a [ClearML Task](../fundamentals/task.md) which captures: 
 * Output Keras model

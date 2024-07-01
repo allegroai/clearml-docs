@@ -102,7 +102,7 @@ hyperparameters. Passing `alias=<dataset_alias_string>` stores the dataset's ID 
 `dataset_alias_string` parameter in the experiment's **CONFIGURATION > HYPERPARAMETERS > Datasets** section. This way 
 you can easily track which dataset the task is using. 
 
-[`Dataset.get_local_copy`](../../references/sdk/dataset.md#get_local_copy) returns a path to the cached, 
+[`Dataset.get_local_copy()`](../../references/sdk/dataset.md#get_local_copy) returns a path to the cached, 
 downloaded dataset. Then the dataset path is input to PyTorch's `datasets` object.
 
 The script then trains a neural network to classify images using the dataset created above.

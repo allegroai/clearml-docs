@@ -77,48 +77,48 @@ Integrate ClearML with the following steps:
        )
    ```
 
-1. Attach the ClearMLLogger object to helper handlers to log experiment outputs. Ignite supports the following helper handlers for ClearML:
+1. Attach the `ClearMLLogger` object to helper handlers to log experiment outputs. Ignite supports the following helper handlers for ClearML:
 
    * **ClearMLSaver** - Saves input snapshots as ClearML artifacts.
    * **GradsHistHandler** and **WeightsHistHandler** - Logs the model's gradients and weights respectively as histograms.
    * **GradsScalarHandler** and **WeightsScalarHandler** - Logs gradients and weights respectively as scalars.
    * **OptimizerParamsHandler** - Logs optimizer parameters
 
-  ```python
-  # Attach the logger to the trainer to log model's weights norm
-  clearml_logger.attach(
-      trainer, log_handler=WeightsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
-  )
+   ```python
+   # Attach the logger to the trainer to log model's weights norm
+   clearml_logger.attach(
+       trainer, log_handler=WeightsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
+   )
 
-  # Attach the logger to the trainer to log model's weights as a histogram 
-  clearml_logger.attach(trainer, log_handler=WeightsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
+   # Attach the logger to the trainer to log model's weights as a histogram 
+   clearml_logger.attach(trainer, log_handler=WeightsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
 
-  # Attach the logger to the trainer to log model's gradients as scalars
-  clearml_logger.attach(
-      trainer, log_handler=GradsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
-  )
+   # Attach the logger to the trainer to log model's gradients as scalars
+   clearml_logger.attach(
+       trainer, log_handler=GradsScalarHandler(model), event_name=Events.ITERATION_COMPLETED(every=100)
+   )
 
-  #Attach the logger to the trainer to log model's gradients as a histogram    
-  clearml_logger.attach(trainer, log_handler=GradsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
+   #Attach the logger to the trainer to log model's gradients as a histogram    
+   clearml_logger.attach(trainer, log_handler=GradsHistHandler(model), event_name=Events.EPOCH_COMPLETED(every=100))
 
-  handler = Checkpoint(
-      {"model": model},
-      ClearMLSaver(),
-      n_saved=1,
-      score_function=lambda e: e.state.metrics["accuracy"],
-      score_name="val_acc",
-      filename_prefix="best",
-      global_step_transform=global_step_from_engine(trainer),
-  )
-  validation_evaluator.add_event_handler(Events.EPOCH_COMPLETED, handler)
+   handler = Checkpoint(
+       {"model": model},
+       ClearMLSaver(),
+       n_saved=1,
+       score_function=lambda e: e.state.metrics["accuracy"],
+       score_name="val_acc",
+       filename_prefix="best",
+       global_step_transform=global_step_from_engine(trainer),
+   )
+   validation_evaluator.add_event_handler(Events.EPOCH_COMPLETED, handler)
    
-  # Attach the logger to the trainer to log optimizer's parameters, e.g. learning rate at each iteration
-  clearml_logger.attach(
-     trainer,
-     log_handler=OptimizerParamsHandler(optimizer),
-     event_name=Events.ITERATION_STARTED
-  )
-  ```
+   # Attach the logger to the trainer to log optimizer's parameters, e.g. learning rate at each iteration
+   clearml_logger.attach(
+      trainer,
+      log_handler=OptimizerParamsHandler(optimizer),
+      event_name=Events.ITERATION_STARTED
+   )
+   ```
    
 Visualize all the captured information in the experiment's page in ClearML's [WebApp](#webapp).
 

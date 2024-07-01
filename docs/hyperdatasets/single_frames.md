@@ -324,7 +324,7 @@ myDatasetVersion.update_frames(frames)
 
 ### Deleting Frames
 
-To delete a SingleFrame, use [`DatasetVersion.delete_frames()`](../references/hyperdataset/hyperdatasetversion.md#delete_frames).
+To delete a SingleFrame, use [`DatasetVersion.delete_frames()`](../references/hyperdataset/hyperdatasetversion.md#delete_frames):
 
 ```python
 frames = []                
