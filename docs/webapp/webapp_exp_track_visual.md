@@ -222,7 +222,6 @@ General experiment details appear in the **INFO** tab. This includes information
   * Processor
   * Python version
 * Experiment Progress    
-
     
 ![Info tab](../img/webapp_tracking_31.png)
 
