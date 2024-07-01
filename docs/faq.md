@@ -1067,8 +1067,10 @@ Do the following:
 1. Allow bypassing of your proxy server to `localhost`
     using a system environment variable, for example:
     
-        NO_PROXY = localhost
-
+   ```
+   NO_PROXY = localhost
+   ```
+   
 1. If a ClearML configuration file (`clearml.conf`) exists, delete it.
 1. Open a terminal session.
 1. Set the system environment variable to `127.0.0.1` in the terminal session. For example:
