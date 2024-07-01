@@ -509,7 +509,7 @@ If you are running Slurm with Singularity containers support, set the following:
 
 1. Add `--singularity-mode` to the command line, for example:
    ```
-   clearml-agent-slurm --container-mode --template-files slurm.example_singularity.template --queue default
+   clearml-agent-slurm --singularity-mode --template-files slurm.example_singularity.template --queue default
    ```
 
 ### Explicit Task Execution
