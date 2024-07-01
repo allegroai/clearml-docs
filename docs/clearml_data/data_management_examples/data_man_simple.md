@@ -107,12 +107,13 @@ Using ClearML Data, you can create child datasets that inherit the content of ot
    ```bash
    clearml-data create --project datasets --name HelloDataset-improved --parents 24d05040f3e14fbfbed8edb1bf08a88c
    ```
-:::note
-You'll need to input the Dataset ID you received when created the dataset above 
-:::
+   :::note
+   You'll need to input the Dataset ID you received when created the dataset above 
+   :::
 
 1. Add a new file. 
    * Create a new file: `echo "data data data" > new_data.txt` 
+   
    * Now add the file to the dataset:  
 
    ```bash

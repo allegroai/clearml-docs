@@ -16,8 +16,8 @@ The script does the following:
     * Hyperparameters - Hyperparameters created in each subprocess Task are added to the main Task's hyperparameters.  
       
     
-  Each Task in a subprocess references the main Task by calling [`Task.current_task()`](../../../references/sdk/task.md#taskcurrent_task), 
-    which always returns the main Task.
+   Each Task in a subprocess references the main Task by calling [`Task.current_task()`](../../../references/sdk/task.md#taskcurrent_task), 
+   which always returns the main Task.
 
 1. When the script runs, it creates an experiment named `test torch distributed` in the `examples` project in the **ClearML Web UI**.
 

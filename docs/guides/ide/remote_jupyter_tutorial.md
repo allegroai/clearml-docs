@@ -95,13 +95,16 @@ Now, let's execute some code in the remote session!
 
 1. In the first cell of the notebook, clone the [ClearML repository](https://github.com/allegroai/clearml): 
 
-        !git clone https://github.com/allegroai/clearml.git
-
+   ```
+   !git clone https://github.com/allegroai/clearml.git
+   ```
+   
 1. In the second cell of the notebook, run this [script](https://github.com/allegroai/clearml/blob/master/examples/frameworks/keras/keras_tensorboard.py) 
    from the cloned repository:
    
-        %run clearml/examples/frameworks/keras/keras_tensorboard.py
-
+   ```
+   %run clearml/examples/frameworks/keras/keras_tensorboard.py
+   ```
    Look in the script, and notice that it makes use of ClearML, Keras, and TensorFlow, but you don't need to install these 
    packages in Jupyter, because you specified them in the `--packages` flag of `clearml-session`. 
    
