@@ -92,6 +92,6 @@ Here's an example of Previews in the ClearML Enterprise WebApp (UI). Each thumbn
 
 ![Previews](../img/hyperdatasets/web-app/dataset_versions.png)
 
-If the preview's `uri`is for a video, the thumbnail will display the video with video controls:
+If the preview's `uri` is for a video, the thumbnail will display the video with video controls:
 
 ![Video previews](../img/hyperdatasets/video_preview.png)
