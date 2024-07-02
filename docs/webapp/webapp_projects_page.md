@@ -53,6 +53,12 @@ of a project folder to open its context menu and access the following project ac
 * **Delete** - Delete the project. To delete a project, all of its contents (i.e. any pipelines/reports/datasets) must
 first be archived or removed. 
 
+:::note Enterprise Feature
+The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
+appear in the context menu. Create a custom action by defining an HTTP request to issue when clicking on the context menu
+action. For more information see [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).
+:::
+
 ## Create Projects
 
 To create a project, click the **+ NEW PROJECT** button in the top right of the page or in a project's context menu, 
