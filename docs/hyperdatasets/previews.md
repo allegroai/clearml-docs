@@ -88,7 +88,7 @@ The following is an example of preview metadata.
 
 </Collapsible>
 
-Here's an example of Previews in the ClearML Enterprise WebApp (UI). Each thumbnail is a Preview.
+Here's an example of Previews in the ClearML Enterprise WebApp (UI). Each thumbnail is a Preview:
 
 ![Previews](../img/hyperdatasets/web-app/dataset_versions.png)
 
