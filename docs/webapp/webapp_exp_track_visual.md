@@ -204,6 +204,7 @@ In the **ARTIFACTS** tab **>** **OTHER** **>** Select an artifact **>** Either:
 ## General Information
 
 General experiment details appear in the **INFO** tab. This includes information describing the stored experiment:
+* Experiment description (editable, hover over the description box and click **Edit**)
 * The parent experiment
 * Project name
 * Creation, start, and last update dates and times
@@ -221,7 +222,6 @@ General experiment details appear in the **INFO** tab. This includes information
   * Processor
   * Python version
 * Experiment Progress    
-
     
 ![Info tab](../img/webapp_tracking_31.png)
 
