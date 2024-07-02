@@ -85,7 +85,12 @@ Access these actions with the context menu in any of the following ways:
 | Clone | Make an exact copy of a Dataview that is editable. |
 | Move to Project | Move a Dataview to another project. |
 | Publish |  Publish a Dataview to prevent changes to it. *Published* Dataviews are read-only.|
-| Custom action | When available, provides a mechanism to define your own custom action which will appear in the context menu. See [Custom UI Context Menu Actions](../../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).|
+
+:::note Enterprise Feature
+The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
+appear in the context menu. Create a custom action by defining an HTTP request to issue when clicking on the action from 
+the context menu. For more information see [Custom UI Context Menu Actions](../../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).
+:::
 
 Some of the actions mentioned in the chart above can be performed on multiple Dataviews at once.
 Select multiple Dataviews, then use either the context menu, or the batch action bar that appears at the bottom of the page, to perform

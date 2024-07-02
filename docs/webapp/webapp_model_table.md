@@ -96,7 +96,12 @@ open the context menu
 | Download | Download a model. The file format depends upon the framework. | *Published* |
 | Move to Project | Move a model to another project. | Any state |
 | Compare | Compare selected models (see [Comparing Models](webapp_model_comparing.md)). | Any state |
-| Custom action | The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions). | Any state |
+
+:::note Enterprise Feature
+The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
+appear in the context menu. Create a custom action by defining an HTTP request to issue when clicking on the action from 
+the context menu. For more information see [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).
+:::
 
 Some actions mentioned in the chart above can be performed on multiple models at once.
 Select multiple models, then use either the context menu, or the bar that appears at the bottom of the page, to perform

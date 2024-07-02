@@ -108,9 +108,13 @@ to access queue actions:
 * Delete - Delete the queue. Any pending tasks will be dequeued.
 * Rename - Change the queue's name
 * Clear - Remove all pending tasks from the queue
-* Custom action - The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
-  appear in the context menu. See [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions)
-  
+
+:::note Enterprise Feature
+The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
+appear in the context menu. Create a custom action by defining an HTTP request to issue when clicking on the action from 
+the context menu. For more information see [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).
+:::
+
 Clicking on a queue will open the queue's details panel and replace the graphs with that queue's statistics.
 
 The queue's details panel includes the following two tabs: 
