@@ -2,11 +2,11 @@
 title: Previews
 ---
 
-A `preview` is a dictionary containing metadata for optional thumbnail images that can be used in the ClearML Enterprise
-WebApp (UI) to view selected images in a Dataset. `previews` includes the `uri` of the thumbnail image.
+A `preview` is a dictionary containing metadata for optional thumbnail images or videos that can be used in the ClearML Enterprise
+WebApp (UI) to view selected content in a Dataset. `previews` includes the `uri` of the thumbnail image or video.
 
 Previews are not mandatory. Their primary use is to view images with formats that cannot be displayed in a web browser 
-(such as TIFF and 3D formats). 
+(such as TIFF and 3D formats).  
 
 ## Example
 
@@ -92,3 +92,6 @@ Here's an example of Previews in the ClearML Enterprise WebApp (UI). Each thumbn
 
 ![Previews](../img/hyperdatasets/web-app/dataset_versions.png)
 
+If the preview's `uri`is for a video, the thumbnail will display the video with video controls:
+
+![Video previews](../img/hyperdatasets/video_preview.png)
