@@ -25,7 +25,7 @@ Configure ClearML Server to use Web Login authentication, which requires a usern
 
 ## File Server Security
 
-By default, the ClearML file server uses token authentication. To disable, set `auth.enabled` to `false` in 
+Starting with v1.16.0, the ClearML file server uses token authentication. To disable, set `auth.enabled` to `false` in 
 `fileserver.conf` or set `CLEARML__fileserver__auth__enabled=false`. 
 
 For ClearML Server versions older than v1.16.0, the file server is not secured, even if [Web Login Authentication](clearml_server_config.md#web-login-authentication)
