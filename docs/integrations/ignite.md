@@ -38,22 +38,22 @@ during training and validation.
 Integrate ClearML with the following steps:
 1. Create a `ClearMLLogger` object:
 
-  ```python
-  from ignite.contrib.handlers.clearml_logger import *
+   ```python
+   from ignite.contrib.handlers.clearml_logger import *
 
-  clearml_logger = ClearMLLogger(task_name="ignite", project_name="examples")
-  ```
-
-  This creates a [ClearML Task](../fundamentals/task.md) called `ignite` in the `examples` project, which captures your 
-  script's information, including Git details, uncommitted code, python environment. 
+   clearml_logger = ClearMLLogger(task_name="ignite", project_name="examples")
+   ```
+   
+   This creates a [ClearML Task](../fundamentals/task.md) called `ignite` in the `examples` project, which captures your 
+   script's information, including Git details, uncommitted code, python environment. 
   
-  You can also pass the following parameters to the `ClearMLLogger` object:
-  * `task_type` – The type of experiment (see [task types](../fundamentals/task.md#task-types)).
-  * `report_freq` – The histogram processing frequency (handles histogram values every X calls to the handler). Affects 
-    `GradsHistHandler` and `WeightsHistHandler` (default: 100).
-  * `histogram_update_freq_multiplier` – The histogram report frequency (report first X histograms and once every X 
-    reports afterwards) (default: 10).
-  * `histogram_granularity` - Histogram sampling granularity (default: 50).
+   You can also pass the following parameters to the `ClearMLLogger` object:
+   * `task_type` – The type of experiment (see [task types](../fundamentals/task.md#task-types)).
+   * `report_freq` – The histogram processing frequency (handles histogram values every X calls to the handler). Affects 
+     `GradsHistHandler` and `WeightsHistHandler` (default: 100).
+   * `histogram_update_freq_multiplier` – The histogram report frequency (report first X histograms and once every X 
+     reports afterwards) (default: 10).
+   * `histogram_granularity` - Histogram sampling granularity (default: 50).
 
 1. Attach the `ClearMLLogger` to output handlers to log metrics: 
 
