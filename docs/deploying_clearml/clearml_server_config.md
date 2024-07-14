@@ -394,6 +394,82 @@ an alternate folder you configured), and input the modified configuration
 See the [Flask-Cors documentation](https://flask-cors.corydolphin.com/en/latest/api.html) for detailed initialization 
 options.
 
+### How to configure the ClearML Enterprise Server to send API logs to Splunk
+Logging 
+
+#### Create a Splunk Index
+
+1. Log in to your Splunk Enterprise web application.
+1. Click on the Settings menu item in the upper right side where you can find the Indexes option.
+![]
+
+1. Click on the New Index button in the upper right corner.
+2. In the index creation pop-up window, provide your Index's name (`<SPLUNK_INDEX>`). Then save. 
+  * If you don’t need special configurations, keep other fields.
+1. Navigate to the Settings menu item again and select Data Inputs.
+![]
+
+1. Click on the Add new button on the HTTP Event Collector row
+![]
+
+1. On the next page, give a name to the collector and click Next.
+1. On the next page, click your previously created index from the list on the left to add it to the selected items list on the right, then click Review.
+1. Click Submit.
+1. The last page will show the collector token value (<SPLUNK_TOKEN>). Make sure to copy it and use it in the next section.
+
+
+#### ClearML
+##### Configure ClearML
+Add the following values.override.yaml to your ClearML installation.
+Make sure to replace the placeholders `<SPLUNK_TOKEN>` and `<SPLUNK_INDEX>`
+
+```
+apiserver:
+  logCalls: true # Sets CLEARML__APISERVER__LOG_CALLS to true
+  extraEnvs:
+    - name: CLEARML__apiserver__endpoints___default__log_call
+      value: "true"
+    - name: CLEARML__apiserver__endpoints__debug__ping__log_call
+      value: "false"
+  additionalConfigs:
+    apiserver.conf: |
+      apilog: {
+        adapter: ["logging"],
+        adapters: {
+          logging: {
+            logger_prefix: "",
+            formatter: {
+              cls: "logstash_formatter.LogstashFormatterV1",
+              -kwargs: {}
+            },
+            handler: {
+              cls: "splunk_handler.SplunkHandler",
+              -custom_kwargs: {},
+              -kwargs: {
+                host: "splunk-splunk-standalone-service.splunk.svc.cluster.local",
+                port: 8088,
+                token: "<SPLUNK_TOKEN>",
+                index: "<SPLUNK_INDEX>",
+                protocol: https,
+                verify: false
+              },
+            }
+          }
+        }
+      }
+```
+
+Exclude some API Calls from Logging
+Single API calls can be excluded from the logs adding extra environment variables.
+Following is an example. Make sure to replace the placeholders <SERVICE> and <ACTION>
+
+```
+apiserver:
+  extraEnvs:
+    - name: CLEARML__apiserver__endpoints__<SERVICE>__<ACTION>__log_call
+      value: "false"
+```
+
 ### Custom UI Context Menu Actions
 
 :::important Enterprise Feature
