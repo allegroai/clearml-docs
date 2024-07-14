@@ -241,7 +241,8 @@ To replace the URL of each model, execute the following commands:
     sudo docker exec -it clearml-mongo /bin/bash
     ```
 
-1. Create the following script inside the Docker shell (as well as the URL protocol if you aren't using `s3`):   
+1. Create the following script inside the Docker shell (as well as the URL protocol if you aren't using `s3`).
+   Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`.   
 
     ```bash
     cat <<EOT >> script.js
@@ -250,7 +251,6 @@ To replace the URL of each model, execute the following commands:
     db.model.save(e);});
     EOT 
     ```
-    Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`.
 
 1. Run the script against the backend DB:
 
@@ -273,7 +273,7 @@ To fix this, the registered URL of each model needs to be replaced with its curr
    sudo docker exec -it clearml-mongo /bin/bash
    ```
 
-1. Create the following script inside the Docker shell:  
+1. Create the following script inside the Docker shell (Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3):  
     ```bash
     cat <<EOT >> script.js
     db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
@@ -281,7 +281,6 @@ To fix this, the registered URL of each model needs to be replaced with its curr
     db.model.save(e);});
     EOT 
     ```
-   Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, as well as the URL protocol prefixes if you aren't using S3.
 1. Run the script against the backend DB:
 
     ```bash

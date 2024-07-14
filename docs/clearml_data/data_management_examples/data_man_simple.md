@@ -7,7 +7,7 @@ In this example we'll create a simple dataset and demonstrate basic actions on i
 ## Prerequisites
 1. First, make sure that you have cloned the [clearml](https://github.com/allegroai/clearml) repository. It contains all
 the needed files.
-1. Open terminal and change directory to the cloned repository's examples folder
+1. Open terminal and change directory to the cloned repository's examples folder:
    
     ```
     cd clearml/examples/reporting
@@ -140,7 +140,7 @@ Using ClearML Data, you can create child datasets that inherit the content of ot
    1 files removed
    ```
 
-1. Close and finalize the dataset
+1. Close and finalize the dataset:
 
    ```bash
    clearml-data close
