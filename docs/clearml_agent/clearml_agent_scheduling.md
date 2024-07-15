@@ -62,7 +62,9 @@ Use the same time span format for days and hours as is used in the command line.
 
 For example, set a worker's schedule from 5 PM to 8 PM on Sunday through Tuesday, and 1 PM to 10 PM on Wednesday.
 
-    agent.uptime: ["17-20 SUN-TUE", "13-22 WED"]
+```
+agent.uptime: ["17-20 SUN-TUE", "13-22 WED"]
+```
 
 ## Overriding Worker Schedules Using Runtime Properties
 
