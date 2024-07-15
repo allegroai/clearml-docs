@@ -36,7 +36,13 @@ module.exports = {
         {'ClearML Fundamentals': ['fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/artifacts', 'fundamentals/logger', 'fundamentals/agents_and_queues',
             'fundamentals/hpo']},
         {'ClearML SDK': ['clearml_sdk/clearml_sdk', 'clearml_sdk/task_sdk', 'clearml_sdk/model_sdk', 'clearml_sdk/apiclient_sdk']},
-        'clearml_agent',
+        {'ClearML Agent':
+            ['clearml_agent', 'clearml_agent/clearml_agent_setup', 'clearml_agent/clearml_agent_deployment',
+            'clearml_agent/clearml_agent_execution_env', 'clearml_agent/clearml_agent_env_caching',
+            'clearml_agent/clearml_agent_dynamic_gpus', 'clearml_agent/clearml_agent_fractional_gpus',
+            'clearml_agent/clearml_agent_services_mode', 'clearml_agent/clearml_agent_docker',
+            'clearml_agent/clearml_agent_google_colab', 'clearml_agent/clearml_agent_scheduling'
+        ]},
         {'Cloud Autoscaling': [
             'cloud_autoscaling/autoscaling_overview',
              {'Autoscaler Apps': [

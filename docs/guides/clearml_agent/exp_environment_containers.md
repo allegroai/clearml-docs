@@ -10,7 +10,7 @@ A use case for this would be manual hyperparameter optimization, where a base ta
 be used when running optimization tasks.
 
 ## Prerequisites
-* [`clearml-agent`](../../clearml_agent.md#installation) installed and configured
+* [`clearml-agent`](../../clearml_agent/clearml_agent_setup.md#installation) installed and configured
 * [`clearml`](../../getting_started/ds/ds_first_steps.md#install-clearml) installed and configured
 * [clearml](https://github.com/allegroai/clearml) repo cloned (`git clone https://github.com/allegroai/clearml.git`)
   
@@ -66,7 +66,7 @@ Make use of the container you've just built by having a ClearML agent make use o
    of the new Docker image, `new_docker`. See [Tuning Experiments](../../webapp/webapp_exp_tuning.md) for more task 
    modification options. 
 1. Enqueue the cloned experiment to the `default` queue.
-1. Launch a `clearml-agent` in [Docker Mode](../../clearml_agent.md#docker-mode) and assign it to the `default` queue:
+1. Launch a `clearml-agent` in [Docker Mode](../../clearml_agent/clearml_agent_execution_env.md#docker-mode) and assign it to the `default` queue:
    ```console
    clearml-agent daemon --docker --queue default
    ```

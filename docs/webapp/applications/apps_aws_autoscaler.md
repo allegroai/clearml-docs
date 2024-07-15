@@ -38,7 +38,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **Workers Prefix** (optional) - A Prefix added to workers' names, associating them with this autoscaler
 * **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
 * **Use docker mode** - If selected, tasks enqueued to the autoscaler will be executed by ClearML Agents running in 
-[Docker mode](../../clearml_agent.md#docker-mode) 
+[Docker mode](../../clearml_agent/clearml_agent_execution_env.md#docker-mode) 
   * **Base Docker Image** (optional) - Available when `Use docker mode` is selected: Default Docker image in which the 
   ClearML Agent will run. Provide an image stored in a Docker artifactory so instances can automatically fetch it
 * **Compute Resources**
