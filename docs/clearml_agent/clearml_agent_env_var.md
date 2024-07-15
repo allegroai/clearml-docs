@@ -6,7 +6,7 @@ This page lists the available environment variables for configuring ClearML Agen
 
 In addition to the environment variables listed below, ClearML also supports **dynamic environment variables** to override 
 any configuration option that appears in the [`agent`](../configs/clearml_conf.md#agent-section) section of the `clearml.conf`. 
-For more information, see [Dynamic Environment Variables](../clearml_agent.md#dynamic-environment-variables).
+For more information, see [Dynamic Environment Variables](../clearml_agent/clearml_agent_setup.md#dynamic-environment-variables).
 
 :::info
 ClearML's environment variables override the [clearml.conf file](../configs/clearml_conf.md), SDK, and 
@@ -16,7 +16,7 @@ but can be overridden by command-line arguments.
 
 |Name| Description                                                                                                                                                                                                                                     |
 |---|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|**CLEARML_DOCKER_IMAGE** | Sets the default docker image to use when running an agent in [Docker mode](../clearml_agent.md#docker-mode)                                                                                                                                                                                                              |
+|**CLEARML_DOCKER_IMAGE** | Sets the default docker image to use when running an agent in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode)                                                                                                                                                                                                              |
 |**CLEARML_WORKER_NAME** | Sets the Worker's name                                                                                                                                                                                                                          |
 |**CLEARML_WORKER_ID** | Sets the Worker ID                                                                                                                                                                                                                              |
 |**CLEARML_CUDA_VERSION** | Sets the CUDA version to be used                                                                                                                                                                                                                |

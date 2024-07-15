@@ -55,7 +55,7 @@ an `APIClient` object that establishes a session with the ClearML Server, and ac
 The experiment's hyperparameters are explicitly logged to ClearML using the [`Task.connect`](../../references/sdk/task.md#connect) 
 method. View them in the WebApp, in the experiment's **CONFIGURATION** page under **HYPERPARAMETERS > General**.
 
-The task can be reused. Clone the task, edit its parameters, and enqueue the task to run in ClearML Agent [services mode](../../clearml_agent.md#services-mode).
+The task can be reused. Clone the task, edit its parameters, and enqueue the task to run in ClearML Agent [services mode](../../clearml_agent/clearml_agent_services_mode.md).
 
 ![Cleanup service configuration](../../img/example_cleanup_configuration.png)
 
