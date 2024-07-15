@@ -109,7 +109,7 @@ to access queue actions:
 * Rename - Change the queue's name
 * Clear - Remove all pending tasks from the queue
 
-:::note Enterprise Feature
+:::important Enterprise Feature
 The ClearML Enterprise Server provides a mechanism to define your own custom actions, which will 
 appear in the context menu. Create a custom action by defining an HTTP request to issue when clicking on the context menu
 action. For more information see [Custom UI Context Menu Actions](../deploying_clearml/clearml_server_config.md#custom-ui-context-menu-actions).

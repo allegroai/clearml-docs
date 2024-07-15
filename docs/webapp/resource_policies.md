@@ -2,7 +2,7 @@
 title: Resource Policies
 ---
 
-:::note ENTERPRISE FEATURE
+:::important ENTERPRISE FEATURE
 This feature is available under the ClearML Enterprise plan
 ::: 
 
@@ -18,6 +18,8 @@ Set resource reservation and limits for user groups
 
 * Connect resource profiles to a policy, making them available to its user group via ClearML queues
 * Non-administrator users can see the resource policies currently applied to them.
+
+![Resource Policy dashboard](../img/resource_policies_dashboard.png)
 
 ## Create a Policy
 
