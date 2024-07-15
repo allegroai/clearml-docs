@@ -331,6 +331,32 @@ template)
 * Inside each job pod the `clearml-agent` will install the ClearML task's environment and run and monitor the experiment's 
 process
 
+:::important Enterprise Feature
+The ClearML Enterprise plan supports K8S servicing multiple ClearML queues, as well as providing a pod template for each 
+queue for describing the resources for each pod to use.
+
+For example, the following configures which resources to use for `example_queue_1` and `example_queue_2`:
+
+```yaml
+agentk8sglue:
+  queues:
+    example_queue_1:
+      templateOverrides:
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+      nodeSelector:
+        nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
+    example_queue_2:
+      templateOverrides:
+        resources:
+          limits:
+            nvidia.com/gpu: 2
+      nodeSelector:
+        nvidia.com/gpu.product: A100-SXM4-40GB
+```
+:::
+
 ### Slurm
 
 :::important Enterprise Feature
