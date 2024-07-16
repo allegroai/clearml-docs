@@ -94,37 +94,37 @@ myDataset = DatasetVersion.get_current(dataset_name='myDataset')
 
 ### Deleting Datasets
 
-Use the [`Dataset.delete`](../references/hyperdataset/hyperdataset.md#datasetdelete) method to delete a Dataset.
+Use the [`Dataset.delete`](../references/hyperdataset/hyperdataset.md#datasetdelete) class method to delete a Dataset:
 
-Delete an empty Dataset (no versions).
+* Delete an empty Dataset (no versions):
 
-```python
-Dataset.delete(dataset_name='MyDataset', delete_all_versions=False, force=False)
-```
+  ```python
+  Dataset.delete(dataset_name='MyDataset', delete_all_versions=False, force=False)
+  ```
 
-Delete a Dataset containing only versions whose status is *Draft*.
+* Delete a Dataset containing only versions whose status is *Draft*:
 
-```python
-Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=False)
-```    
+  ```python
+  Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=False)
+  ```    
 
-Delete a Dataset even if it contains versions whose status is *Published*.
+* Delete a Dataset even if it contains versions whose status is *Published*:
 
-```python
-Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=True)
-```
+  ```python
+  Dataset.delete(dataset_name='MyDataset', delete_all_versions=True, force=True)
+  ```
   
-Delete a Dataset and the sources associated with its deleted frames:
+* Delete a Dataset and the sources associated with its deleted frames:
 
-```python
-Dataset.delete(
-  dataset_name='MyDataset', delete_all_versions=True, force=True, delete_sources=True
-)
-```
+  ```python
+  Dataset.delete(
+    dataset_name='MyDataset', delete_all_versions=True, force=True, delete_sources=True
+  )
+  ```
 
-This supports deleting sources located in AWS S3, GCP, and Azure Storage (not local storage). The `delete_sources` 
-parameter is ignored if `delete_all_versions` is `False`. You can view the deletion process' progress by passing 
-`show_progress=True` (`tqdm` required).  
+  This supports deleting sources located in AWS S3, GCP, and Azure Storage (not local storage). The `delete_sources` 
+  parameter is ignored if `delete_all_versions` is `False`. You can view the deletion process' progress by passing 
+  `show_progress=True` (`tqdm` required).  
 
 ### Tagging Datasets
 

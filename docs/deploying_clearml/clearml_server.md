@@ -29,7 +29,7 @@ Use the ClearML Web UI to:
 
 For detailed information about the ClearML Web UI, see [User Interface](../webapp/webapp_overview.md).
 
-ClearML Server also comes with a [services agent](../clearml_agent.md#services-mode) preinstalled.
+ClearML Server also comes with a [services agent](../clearml_agent/clearml_agent_services_mode.md) preinstalled.
 
 ## Deployment
 

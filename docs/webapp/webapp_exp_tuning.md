@@ -70,7 +70,7 @@ Select source code by changing any of the following:
 
 
 #### Base Docker Image
-Select a pre-configured Docker that **ClearML Agent** will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent.md#exporting-a-task-into-a-standalone-docker-container)).
+Select a pre-configured Docker that **ClearML Agent** will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent/clearml_agent_docker.md)).
 
 **To add, change, or delete a base Docker image:**
 

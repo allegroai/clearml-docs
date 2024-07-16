@@ -482,7 +482,7 @@ match_rules: [
 
 **`agent.package_manager.use_conda_base_env`** (*bool*)
 
-* When set to `True`, installation will be performed into the base Conda environment. Use in [Docker mode](../clearml_agent.md#docker-mode). 
+* When set to `True`, installation will be performed into the base Conda environment. Use in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode). 
 
 ___
 

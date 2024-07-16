@@ -99,7 +99,7 @@ Alternatively, a combination of ROI, frame, and source rules can be specified to
 filters.
 
 **To apply advanced filters:**
-1. In the **FRAMES** tab, click **Advanced filters**.
+1. In the **FRAMES** tab, click <img src="/docs/latest/icons/ico-advanced-filters.svg" alt="Advanced filters" className="icon size-md space-sm" /> (**Advanced filters**).
 1. In a **FRAME FILTER**, create one of the following rules:
    * ROI rule - Use "Include" and "Exclude" conditions to match frames by ROI label; frames match the rule when 
    containing at least one annotation object (ROI) with **all** labels in the rule. Click <img src="/docs/latest/icons/ico-code.svg" alt="Lucene query mode" className="icon size-md space-sm" /> 
