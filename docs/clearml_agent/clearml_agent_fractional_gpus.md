@@ -317,9 +317,10 @@ See example custom Dockerfiles in the [clearml-fractional-gpu repository](https:
 Set up NVIDIA MIG (Multi-Instance GPU) support for Kubernetes to define GPU fraction profiles for specific workloads 
 through your NVIDIA device plugin.
 
-The ClearML Agent Helm chart lets you specify a pod template for each queue which describes the resources that the pod 
-will use. The template should specify the requested GPU slices under `Containers.resources.limits` to have the pods use 
-the defined resources. For example, the following configures a K8s pod to run a `3g.20gb` MIG device:
+The standard way to configure a Kubernetes pod template to use specific MIG slices is for the template to specify the 
+requested GPU slices under `Containers.resources.limits`. For example, the 
+following configures a K8s pod to run a 3g.20gb MIG device:
+
 ```
 # tf-benchmarks-mixed.yaml
 apiVersion: v1
@@ -340,6 +341,10 @@ spec:
    nvidia.com/gpu.product: A100-SXM4-40GB
 ```
 
+The ClearML Agent Helm chart lets you specify a pod template for each queue which describes the resources that the pod 
+will use. The ClearML Agent uses this configuration to generate the necessary Kubernetes pod template for executing 
+tasks based on the queue through which they are scheduled.
+
 When tasks are added to the relevant queue, the agent pulls the task and creates a pod to execute it, using the 
 specified GPU slice.
 
@@ -353,7 +358,7 @@ agentk8sglue:
    resources:
      limits:
        nvidia.com/gpu: 1
- nodeSelector:
-   nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
+   nodeSelector:
+     nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
 ```
 
