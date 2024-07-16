@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Overview
 ---
 
 Pipelines are a way to streamline and connect multiple processes, plugging the output of one process as the input of another. 
