@@ -20,7 +20,7 @@ The agent also supports overriding parameter values on-the-fly without code modi
 ClearML [Hyperparameter Optimization](hpo.md) is implemented).  
 
 An agent can be associated with specific GPUs, enabling workload distribution. For example, on a machine with 8 GPUs you 
-can allocate several GPUs to an agent and use the rest for a different workload, even through another agent (see [Dynamic GPU Allocation](../clearml_agent.md#dynamic-gpu-allocation)).   
+can allocate several GPUs to an agent and use the rest for a different workload, even through another agent (see [Dynamic GPU Allocation](../clearml_agent/clearml_agent_dynamic_gpus.md)).   
 
 
 
@@ -81,7 +81,7 @@ The Agent supports the following running modes:
 * **Virtual Environment Mode** - The agent creates a new virtual environment for the experiment, installs the required 
   python packages based on the Task specification, clones the code repository, applies the uncommitted changes and 
   finally executes the code while monitoring it. This mode uses smart caching so packages and environments can be reused
-  over multiple tasks (see [Virtual Environment Reuse](../clearml_agent.md#virtual-environment-reuse)). 
+  over multiple tasks (see [Virtual Environment Reuse](../clearml_agent/clearml_agent_env_caching.md#virtual-environment-reuse)). 
 
   ClearML Agent supports using the following package managers: `pip` (default), `conda`, `poetry`. 
 
