@@ -59,12 +59,17 @@ original values:
 * Modified recorded command line arguments will have the ClearML agent inject the new values in their stead
 * Code-level configuration instrumented with [`Task.connect()`](references/sdk/task.md#connect) will be overridden by modified hyperparameters
 
-For more information, see [ClearML Agent Reference](clearml_agent/clearml_agent_ref.md), 
-and [configuration options](configs/clearml_conf.md#agent-section).
-
+ClearML Agent can be deployed in various setups to suit different workflows and infrastructure needs:
+* [Bare Metal](clearml_agent/clearml_agent_deployment.md#spinning-up-an-agent)
+* [Kubernetes](clearml_agent/clearml_agent_deployment.md#kubernetes)
+* [Slurm](clearml_agent/clearml_agent_deployment.md#slurm)
+* [Google Colab](guides/ide/google_colab.md)
 
 ## References
 
-* See [ClearML Agent CLI](clearml_agent/clearml_agent_ref.md) for a reference for `clearml-agent`'s CLI commands. 
-* See [ClearML Agent Environment Variables](clearml_agent/clearml_agent_env_var.md) for a list of environment variables
+For more information, see the following:
+* [ClearML Agent CLI](clearml_agent/clearml_agent_ref.md) for a reference for `clearml-agent`'s CLI commands. 
+* [ClearML Agent Environment Variables](clearml_agent/clearml_agent_env_var.md) for a list of environment variables
 to configure ClearML Agent
+* [Agent Section](configs/clearml_conf.md#agent-section) for a list of options to configure the ClearML Agent in the 
+`clearml.conf`
