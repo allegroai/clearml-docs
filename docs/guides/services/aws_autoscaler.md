@@ -14,7 +14,7 @@ up new instances when there aren't enough to execute pending tasks.
 Run the ClearML AWS autoscaler in one of these ways:
 * Run the [aws_autoscaler.py](https://github.com/allegroai/clearml/blob/master/examples/services/aws-autoscaler/aws_autoscaler.py) 
   script locally
-* Launch through your [`services` queue](../../clearml_agent.md#services-mode)
+* Launch through your [`services` queue](../../clearml_agent/clearml_agent_services_mode.md)
 
 :::note Default AMI
 The autoscaler service uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI.
@@ -140,7 +140,7 @@ Execution log https://app.clear.ml/projects/142a598b5d234bebb37a57d692f5689f/exp
 ```
 
 ### Remote Execution
-Using the `--remote` command line option will enqueue the autoscaler to your [`services` queue](../../clearml_agent.md#services-mode)
+Using the `--remote` command line option will enqueue the autoscaler to your [`services` queue](../../clearml_agent/clearml_agent_services_mode.md)
 once the configuration wizard is complete:
 
 ```bash
@@ -162,7 +162,7 @@ page under **HYPERPARAMETERS > General**.
 
 The task can be reused to launch another autoscaler instance: clone the task, then edit its parameters for the instance 
 types and budget configuration, and enqueue the task for execution (you'll typically want to use a ClearML Agent running 
-in [services mode](../../clearml_agent.md#services-mode) for such service tasks).
+in [services mode](../../clearml_agent/clearml_agent_services_mode.md) for such service tasks).
 
 ### Console
 

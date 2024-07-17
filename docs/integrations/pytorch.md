@@ -97,7 +97,7 @@ additional tools, like argparse, TensorBoard, and matplotlib:
 
 ## Remote Execution
 ClearML logs all the information required to reproduce an experiment on a different machine (installed packages, 
-uncommitted changes etc.). The [ClearML Agent](../clearml_agent) listens to designated queues and when a task is enqueued, 
+uncommitted changes etc.). The [ClearML Agent](../clearml_agent.md) listens to designated queues and when a task is enqueued, 
 the agent pulls it, recreates its execution environment, and runs it, reporting its scalars, plots, etc. to the 
 experiment manager.
 
@@ -123,7 +123,7 @@ with the new configuration on a remote machine:
 * Edit the hyperparameters and/or other details
 * Enqueue the task
 
-The ClearML Agent executing the task will use the new values to [override any hard coded values](../clearml_agent).
+The ClearML Agent executing the task will use the new values to [override any hard coded values](../clearml_agent.md).
 
 ### Executing a Task Remotely
 
