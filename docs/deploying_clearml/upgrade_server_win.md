@@ -33,7 +33,7 @@ title: Windows
    
 1. If upgrading from **Trains Server** to **ClearML Server**, rename `/opt/trains` and its subdirectories to `/opt/clearml`.
 
-1. Download the latest `docker-compose.yml` file.
+1. Download the latest `docker-compose.yml` file:
 
    ```  
    curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose-win10.yml -o c:\opt\clearml\docker-compose-win10.yml
