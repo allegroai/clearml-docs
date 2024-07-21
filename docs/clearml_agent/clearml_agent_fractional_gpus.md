@@ -319,7 +319,7 @@ through your NVIDIA device plugin.
 
 The standard way to configure a Kubernetes pod template to use specific MIG slices is for the template to specify the 
 requested GPU slices under `Containers.resources.limits`. For example, the 
-following configures a K8s pod to run a 3g.20gb MIG device:
+following configures a K8s pod to run a `3g.20gb` MIG device:
 
 ```
 # tf-benchmarks-mixed.yaml
