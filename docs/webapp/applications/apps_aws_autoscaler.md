@@ -147,7 +147,7 @@ auto_scaler.v1.aws {
 }
 ```
 
-#### Configure Specific Instances
+#### Configure Specific Autoscaler Instances
 To configure a specific instance(s) in the Configuration Vault, add a regular expression to match the autoscaler's `Workers Prefix` under 
 `auto_scaler.v1.aws.match`. Within this section, input the specific configuration which will be merged to any 
 matched autoscaler's configuration.
@@ -172,17 +172,15 @@ auto_scaler.v1.aws {
 }
 ```
 
-#### Apply Configuration to Instances Spawned by the Autoscaler
-To ensure configurations are properly applied to instances spawned by the autoscaler, follow these best practices:
-
-* Add Required Configuration in the `extra_clearml_conf` field - Include any necessary ClearML configuration settings 
-directly within the `extra_clearml_conf` section of the Configuration Vault. This will ensure that the settings are 
-applied to all instances launched by the autoscaler. 
-* Use a ClearML Service Account - Run the Autoscaler using a ClearML Service Account.
-Add the required configuration to the Service Account's ClearML Vault. This helps maintain consistent configurations across different instances and users.
-Associate a ClearML Administrator Vault:
-* Ensure there is a ClearML Administrator Vault associated with the group to which the user running the Autoscaler is a member. This provides a centralized way to manage and enforce configurations across multiple users and instances.
-By following these best practices, you can effectively manage and apply configurations to instances spawned by the autoscaler, ensuring consistent and reliable performance.
+#### Configure Instances Spawned by the Autoscaler
+To configure instances spawned by the autoscaler, do any of the following:
+* Add the configuration in the `extra_clearml_conf` field of the configuration vault
+* Run the Autoscaler using a [ClearML Service Account](../../webapp/webapp_profile.md#service-accounts). Add the 
+configuration to the service account's configuration vault, and set the autoscaler to run under that account
+in the `Run with Service Account` field
+* Admins can add the configuration to a [ClearML Administrator Vault](../../webapp/webapp_profile.md#administrator-vaults)
+and link the vault with the [user group](../../webapp/webapp_profile.md#user-groups) that includes the user running the 
+autoscaler
 
 ## Dashboard
 Once an autoscaler is launched, the autoscaler's dashboard provides information about available EC2 instances and their 
