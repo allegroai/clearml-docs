@@ -69,7 +69,7 @@ and ClearML Server needs to be installed.
             
 1. For **Kubernetes** and **Kubernetes using Helm**, connect to the node in the Kubernetes cluster labeled `app=trains`.
                 
-1. Download the migration package archive.
+1. Download the migration package archive:
 
    ``` 
    curl -L -O  https://github.com/allegroai/clearml-server/releases/download/0.16.0/trains-server-0.16.0-migration.zip
@@ -77,13 +77,13 @@ and ClearML Server needs to be installed.
    
    If the file needs to be downloaded manually, use this direct link: [trains-server-0.16.0-migration.zip](https://github.com/allegroai/clearml-server/releases/download/0.16.0/trains-server-0.16.0-migration.zip).
 
-1. Extract the archive.
+1. Extract the archive:
 
    ```
    unzip trains-server-0.16.0-migration.zip  -d /opt/trains
    ```
         
-1. Migrate the data.        
+1. Migrate the data:      
 
     * **Linux, macOS, and Windows** - if managing own containers.
     

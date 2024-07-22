@@ -15,7 +15,7 @@ title: Google Cloud Platform
     1. Follow these [data migration instructions](clearml_server_es7_migration.md), 
        and then continue this upgrade.
        
-    1. Rename `/opt/trains` and its subdirectories to `/opt/clearml`.
+    1. Rename `/opt/trains` and its subdirectories to `/opt/clearml`:
    
        ```
        sudo mv /opt/trains /opt/clearml
@@ -25,7 +25,7 @@ title: Google Cloud Platform
 1. [Backing up data](clearml_server_gcp.md#backing-up-and-restoring-data-and-configuration) is recommended, and if the configuration folder is 
    not empty, backing up the configuration.
 
-1. Download the latest `docker-compose.yml` file.
+1. Download the latest `docker-compose.yml` file:
 
    ```
    curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose.yml -o /opt/clearml/docker-compose.yml
@@ -38,4 +38,4 @@ title: Google Cloud Platform
    docker-compose -f /opt/clearml/docker-compose.yml up -d
    ```
         
-If issues arise during your upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq.md#common-docker-upgrade-errors).
+If issues arise during your upgrade, see the FAQ page, [How do I fix Docker upgrade errors?](../faq.md#common-docker-upgrade-errors)
