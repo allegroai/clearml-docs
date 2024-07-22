@@ -249,7 +249,7 @@ according to the previously configured setting.
 When using multi-source FrameGroups, users can choose which of the FrameGroups' sources will be displayed as the preview. 
 
 Select a source from the **PREVIEW SOURCE** menu.
-Choose the `Default preview source` option to present the first available source.
+Choose the `Default preview source` option to present the first available source for each frame (sources are retrieved in ASCIIbetical order).
 
 :::note Unavailable Source
 If a FrameGroup doesn't have the selected preview source, the preview displays the "Source not available" message.
