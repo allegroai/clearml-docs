@@ -147,7 +147,8 @@ auto_scaler.v1.aws {
 }
 ```
 
-To configure a specific instance(s), add a regular expression to match the autoscaler's `Workers Prefix` under 
+#### Configure Specific Autoscaler Instances
+Use the configuration vault to configure specific instances: Add a regular expression to match the autoscaler's `Workers Prefix` under 
 `auto_scaler.v1.aws.match`. Within this section, input the specific configuration which will be merged to any 
 matched autoscaler's configuration.
 
@@ -171,6 +172,15 @@ auto_scaler.v1.aws {
 }
 ```
 
+#### Configure Instances Spawned by the Autoscaler
+To configure instances spawned by the autoscaler, do any of the following:
+* Add the configuration in the `auto_scaler.v1.aws.extra_clearml_conf` field of the configuration vault
+* Run the Autoscaler using a [ClearML Service Account](../../webapp/webapp_profile.md#service-accounts). Add the 
+configuration to the service account's configuration vault, and set the autoscaler to run under that account
+in the `Run with Service Account` field
+* Admins can add the configuration to a [ClearML Administrator Vault](../../webapp/webapp_profile.md#administrator-vaults)
+and link the vault with a [user group](../../webapp/webapp_profile.md#user-groups) that includes the user running the 
+autoscaler
 
 ## Dashboard
 Once an autoscaler is launched, the autoscaler's dashboard provides information about available EC2 instances and their 
