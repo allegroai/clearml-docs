@@ -147,7 +147,8 @@ auto_scaler.v1.aws {
 }
 ```
 
-To configure a specific instance(s), add a regular expression to match the autoscaler's `Workers Prefix` under 
+#### Configure Specific Instances
+To configure a specific instance(s) in the Configuration Vault, add a regular expression to match the autoscaler's `Workers Prefix` under 
 `auto_scaler.v1.aws.match`. Within this section, input the specific configuration which will be merged to any 
 matched autoscaler's configuration.
 
@@ -171,6 +172,17 @@ auto_scaler.v1.aws {
 }
 ```
 
+#### Apply Configuration to Instances Spawned by the Autoscaler
+To ensure configurations are properly applied to instances spawned by the autoscaler, follow these best practices:
+
+* Add Required Configuration in the `extra_clearml_conf` field - Include any necessary ClearML configuration settings 
+directly within the `extra_clearml_conf` section of the Configuration Vault. This will ensure that the settings are 
+applied to all instances launched by the autoscaler. 
+* Use a ClearML Service Account - Run the Autoscaler using a ClearML Service Account.
+Add the required configuration to the Service Account's ClearML Vault. This helps maintain consistent configurations across different instances and users.
+Associate a ClearML Administrator Vault:
+* Ensure there is a ClearML Administrator Vault associated with the group to which the user running the Autoscaler is a member. This provides a centralized way to manage and enforce configurations across multiple users and instances.
+By following these best practices, you can effectively manage and apply configurations to instances spawned by the autoscaler, ensuring consistent and reliable performance.
 
 ## Dashboard
 Once an autoscaler is launched, the autoscaler's dashboard provides information about available EC2 instances and their 
