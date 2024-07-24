@@ -78,7 +78,6 @@ Integrate ClearML with the following steps:
    ```
 
 1. Attach the `ClearMLLogger` object to helper handlers to log experiment outputs. Ignite supports the following helper handlers for ClearML:
-
    * **ClearMLSaver** - Saves input snapshots as ClearML artifacts.
    * **GradsHistHandler** and **WeightsHistHandler** - Logs the model's gradients and weights respectively as histograms.
    * **GradsScalarHandler** and **WeightsScalarHandler** - Logs gradients and weights respectively as scalars.
@@ -122,7 +121,7 @@ Integrate ClearML with the following steps:
    
 Visualize all the captured information in the experiment's page in ClearML's [WebApp](#webapp).
 
-For more information, see the [ignite documentation](https://pytorch.org/ignite/generated/ignite.contrib.handlers.clearml_logger.html). 
+For more information, see the [ignite documentation](https://pytorch.org/ignite/v0.5.0.post2/generated/ignite.handlers.clearml_logger.html). 
 
 See code example [here](https://github.com/pytorch/ignite/blob/master/examples/mnist/mnist_with_clearml_logger.py).
 
