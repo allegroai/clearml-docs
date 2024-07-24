@@ -87,7 +87,7 @@ installed ClearML under a different path, replace the file locations accordingly
    sudo docker exec mongodb_upgrade bash -c 'mongo --eval "db.adminCommand({setFeatureCompatibilityVersion:\"4.0\"})"'
    ```
    This command should return an `{ "ok" : 1 }` response.
-1. Stop the mongo 4.0 container
+1. Stop the mongo 4.0 container:
    
    ```bash
    sudo docker stop mongodb_upgrade && sudo docker rm mongodb_upgrade
@@ -103,7 +103,7 @@ installed ClearML under a different path, replace the file locations accordingly
    sudo docker exec mongodb_upgrade bash -c 'mongo --eval "db.adminCommand({setFeatureCompatibilityVersion:\"4.2\"})"'  
    ```
    This command should return an `{ "ok" : 1 }` response. 
-1. Stop the mongo 4.2 container
+1. Stop the mongo 4.2 container:
 
    ```bash
    sudo docker stop mongodb_upgrade && sudo docker rm mongodb_upgrade
@@ -119,7 +119,7 @@ installed ClearML under a different path, replace the file locations accordingly
    sudo docker exec mongodb_upgrade bash -c 'mongo --eval "db.adminCommand({setFeatureCompatibilityVersion:\"4.4\"})"'   
    ```
    This command should return an `{ "ok" : 1 }` response.
-1. Stop the mongo 4.4
+1. Stop the mongo 4.4:
 
    ```bash
    sudo docker stop mongodb_upgrade && sudo docker rm mongodb_upgrade
