@@ -20,7 +20,7 @@ the same environment will be used.
 ClearML does not support environment reuse when using Poetry package manager
 :::
 
-To enable virutal environment reuse, modify the `clearml.conf` file and uncomment the `venvs_cache` section.
+To enable virtual environment reuse, modify the `clearml.conf` file and uncomment the `venvs_cache` section.
 ```
 venvs_cache: {
         # maximum number of cached venvs

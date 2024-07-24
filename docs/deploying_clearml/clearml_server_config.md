@@ -391,7 +391,7 @@ If the `apiserver.conf` file does not exist, create your own in ClearML Server's
 an alternate folder you configured), and input the modified configuration
 :::
 
-See the [Flask-Cors documentation](https://flask-cors.corydolphin.com/en/latest/api.html) for detailed initialization 
+See the [Flask-Cors documentation](https://flask-cors.readthedocs.io/en/latest/api.html) for detailed initialization 
 options.
 
 ### Custom UI Context Menu Actions

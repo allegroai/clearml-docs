@@ -196,7 +196,7 @@ object, setting the following optimization parameters:
 
 ## Running as a Service
 
-The optimization can run as a service, if the `run_as_service` argument is set to `true`. For more information about 
+To run the optimization as a service, set the `run_as_service` argument to `true`. For more information about 
 running as a service, see [Services Mode](../../../clearml_agent/clearml_agent_services_mode.md).
 
 ```python
@@ -210,7 +210,7 @@ if args['run_as_service']:
 ## Optimize
 
 The optimizer is ready. Set the report period and [start](../../../references/sdk/hpo_optimization_hyperparameteroptimizer.md#start) 
-it, providing the callback method to report the best performance.
+it, providing the callback method to report the best performance:
 
 ```python
 # report every 12 seconds, this is way too often, but we are testing here J

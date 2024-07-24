@@ -34,7 +34,7 @@ This release is not backwards compatible - see notes below on upgrading
 - Add `Task.force_store_standalone_script()` to force storing standalone script instead of a Git repository reference ([ClearML GitHub issue #340](https://github.com/allegroai/clearml/issues/340))
 - Add `Logger.set_default_debug_sample_history()` and `Logger.get_default_debug_sample_history()` to allow controlling 
   maximum debug samples programmatically
-- Add populate now stores function arg types as part of the hyperparemeters
+- Add populate now stores function arg types as part of the hyperparameters
 - Add `status_message` argument to `Task.mark_stopped()`
 - Change `HTTP` driver timeout and retry codes (connection timeout will now trigger a retry)
 
