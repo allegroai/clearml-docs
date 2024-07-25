@@ -50,7 +50,7 @@ field of the [`clearml.conf`](../configs/clearml_conf.md) file:
 log_os_environments: ["AWS_*", "CUDA_VERSION"]
 ```
 
-You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` variable:
+You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` environment variable:
 * All environment variables:
    ```
    export CLEARML_LOG_ENVIRONMENT=*
