@@ -43,20 +43,34 @@ Relying on environment variables makes an experiment not fully reproducible, sin
 runtime.
 :::
 
-Environment variables can be logged by modifying the [clearml.conf](../configs/clearml_conf.md) file. Modify the `log_os_environments` 
-parameter specifying parameters to log.
+Environment variables can be logged by modifying the [clearml.conf](../configs/clearml_conf.md) file. Modify the `development.log_os_environments` 
+field specifying the parameters to log.
 
 ```editorconfig
 log_os_environments: ["AWS_*", "CUDA_VERSION"]
 ```
 
-You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` variable.
-
+You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` variable:
+* All environment variables:
+   ```
+   export CLEARML_LOG_ENVIRONMENT="*"
+   ```
+   
+* Specific environment variables. For example, log `PWD` and `PYTHONPATH`:
+   ```
+   export CLEARML_LOG_ENVIRONMENT="PWD,PYTHONPATH" 
+   ```
+  
+* No environment variables
+   ```
+   export CLEARML_LOG_ENVIRONMENT=
+   ```
+  
 :::note Overriding clearml.conf
 The `CLEARML_LOG_ENVIRONMENT` always overrides the `clearml.conf` file. 
 :::
 
-When a script that has integrated ClearML is executed, the environment variables listed in `clearml.conf` or specified by 
+When a script that has integrated ClearML is executed, the environment variables listed in the `clearml.conf` or specified by 
 the `CLEARML_LOG_ENVIRONMENT` variable are logged by ClearML.
 
 ### Explicit Logging 
