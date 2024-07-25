@@ -53,12 +53,12 @@ log_os_environments: ["AWS_*", "CUDA_VERSION"]
 You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` variable:
 * All environment variables:
    ```
-   export CLEARML_LOG_ENVIRONMENT="*"
+   export CLEARML_LOG_ENVIRONMENT=*
    ```
    
 * Specific environment variables. For example, log `PWD` and `PYTHONPATH`:
    ```
-   export CLEARML_LOG_ENVIRONMENT="PWD,PYTHONPATH" 
+   export CLEARML_LOG_ENVIRONMENT=PWD,PYTHONPATH 
    ```
   
 * No environment variables
