@@ -104,9 +104,9 @@ including their subsections (see [WebApp sections](#webapp-interface) below).
 Configurations can be viewed in web UI experiment pages, in the **CONFIGURATION** tab. 
 
 The configuration panel is split into three sections according to type:
-- **User Properties** - Modifiable section that can be edited post-execution.
+- **User Properties** - Modifiable section that can be edited post-execution
 - **Hyperparameters** - Individual parameters for configuration
-- **Configuration Objects** - Usually configuration files (JSON / YAML) or Python objects. 
+- **Configuration Objects** - Usually configuration files (JSON / YAML) or Python objects
   
 These sections are further broken down into subsections based on how the parameters were logged (General / Args / TF_Define / Environment).
 
