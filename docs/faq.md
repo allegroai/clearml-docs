@@ -854,7 +854,14 @@ export CLEARML_API_HOST="http://localhost:8008"
 
 #### How can I track OS environment variables with experiments?    <a id="track-env-vars"></a>
 
-Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you need track, either:
+You can set environment variables to track in an experiment task by specifying them in the `sdk.development.log_os_environments` 
+field of the [`clearml.conf`](configs/clearml_conf.md) file:
+
+```editorconfig
+log_os_environments: ["AWS_*", "CUDA_VERSION"]
+```
+
+You can also use the `CLEARML_LOG_ENVIRONMENT` variable to track environment variables:
 
 * All environment variables:
 
@@ -865,7 +872,7 @@ Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you
 * Specific environment variables, for example, log `PWD` and `PYTHONPATH`:
 
   ```
-  export CLEARML_LOG_ENVIRONMENT="PWD,PYTHONPATH"
+  export CLEARML_LOG_ENVIRONMENT=PWD,PYTHONPATH
   ```
     
 * No environment variables:
@@ -873,6 +880,10 @@ Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you
   ```
   export CLEARML_LOG_ENVIRONMENT=
   ```
+
+:::note Overriding clearml.conf
+The `CLEARML_LOG_ENVIRONMENT` variable always overrides the `clearml.conf` file. 
+:::
 
 ## ClearML Hosted Service
         

@@ -1044,7 +1044,7 @@ and limitations on bucket naming.
   Multiple selected variables are supported including the suffix "\*". For example: "AWS\_\*" will log any OS environment 
   variable starting with "AWS\_". Example: `log_os_environments: ["AWS_*", "CUDA_VERSION"]`
         
-* This value can be overwritten with OS environment variable `CLEARML_LOG_ENVIRONMENT="[AWS_*, CUDA_VERSION]"`. 
+* This value can be overwritten with OS environment variable `CLEARML_LOG_ENVIRONMENT=AWS_*,CUDA_VERSION`. 
 
 ---
     

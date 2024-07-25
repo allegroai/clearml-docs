@@ -122,7 +122,12 @@ parameter's line, and the type, description, and default value appear, if they w
 
 #### Environment Variables
 
-If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group will show environment variables (see [this FAQ](../faq.md#track-env-vars)).
+If environment variables were listed in the `CLEARML_LOG_ENVIRONMENT` environment variable or the `sdk.development.log_os_environments` 
+field of the `clearml.conf` file, the **Environment** group display the listed environment variables (see [this FAQ](../faq.md#track-env-vars)).
+
+:::note
+The `CLEARML_LOG_ENVIRONMENT` variable always overrides the `clearml.conf` file. 
+:::
 
 ![Environment variables configuration group](../img/webapp_tracking_23.png)
 
