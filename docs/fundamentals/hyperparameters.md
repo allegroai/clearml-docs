@@ -56,7 +56,7 @@ You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` v
 The `CLEARML_LOG_ENVIRONMENT` always overrides the `clearml.conf` file. 
 :::
 
-When a script that has integrated ClearML is executed, the environment variables listed in the `clearml.conf` or specified by 
+When a script that has integrated ClearML is executed, the environment variables listed in `clearml.conf` or specified by 
 the `CLEARML_LOG_ENVIRONMENT` variable are logged by ClearML.
 
 ### Explicit Logging 
