@@ -72,7 +72,7 @@ This section is mostly used for debugging. It's recommended to use [artifacts](t
 outputs that would be used later on.
 
 Only the last X results of each title / series are saved to prevent overloading the server.
-See details in [Logger.report_media](../references/sdk/logger.md#report_media). 
+See details in [`Logger.report_media`](../references/sdk/logger.md#report_media). 
 
 ![image](../img/fundamentals_logger_reported_images.png)
 

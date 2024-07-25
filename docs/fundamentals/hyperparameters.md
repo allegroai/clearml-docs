@@ -22,10 +22,10 @@ and tracks hyperparameters of various types, supporting automatic logging and ex
 Once a ClearML Task has been [initialized](../references/sdk/task.md#taskinit) in a script, ClearML automatically captures and tracks 
 the following types of parameters:
 * Command line parsing - command line parameters passed when invoking code that uses standard python packages, including:
-  * [click](../integrations/click.md).
-  * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options).
-  * [Python Fire](../integrations/python_fire.md).
-  * [LightningCLI](../integrations/pytorch_lightning.md).
+  * [click](../integrations/click.md)
+  * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options)
+  * [Python Fire](../integrations/python_fire.md)
+  * [LightningCLI](../integrations/pytorch_lightning.md)
 * TensorFlow Definitions (`absl-py`). See examples of ClearML's automatic logging of TF Defines:
     * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
     * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
@@ -56,7 +56,7 @@ You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` v
 The `CLEARML_LOG_ENVIRONMENT` always overrides the `clearml.conf` file. 
 :::
 
-When a script that has integrated ClearML is executed, the environment variables listed in `clearml.conf` or specified by 
+When a script that has integrated ClearML is executed, the environment variables listed in the `clearml.conf` or specified by 
 the `CLEARML_LOG_ENVIRONMENT` variable are logged by ClearML.
 
 ### Explicit Logging 
