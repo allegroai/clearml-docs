@@ -92,10 +92,12 @@ html[data-theme="dark"] a:hover {
 
 /* sidebar & content in the center of the page */
 
-.navbar__inner,
-.main-wrapper > div {
-  margin: 0 auto;
-  max-width: var(--max-page-width);
+/*.navbar__inner,*/
+.main-wrapper > div,
+.navbar__inner {
+    margin: 0 auto;
+    max-width: var(--max-page-width);
+    width: 100%;
 }
 
 

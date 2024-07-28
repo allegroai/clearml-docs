@@ -201,7 +201,6 @@ These methods can be used on `Model`, `InputModel`, and/or `OutputModel` objects
   * 3d plots 
     * Scatter plot - [`report_scatter3d`](../references/sdk/model_outputmodel.md#report_scatter3d) 
     * Surface plot - [`report_surface`](../references/sdk/model_outputmodel.md#report_surface)
-
   
 ## SDK Reference
 

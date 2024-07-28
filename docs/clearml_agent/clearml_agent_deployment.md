@@ -239,6 +239,13 @@ If you are running Slurm with Singularity containers support, set the following:
    clearml-agent-slurm --singularity-mode --template-files slurm.example_singularity.template --queue default
    ```
 
+## Google Colab
+
+ClearML Agent can run on a [Google Colab](https://colab.research.google.com/) instance. This helps users to leverage 
+compute resources provided by Google Colab and send experiments for execution on it. 
+
+Check out [this tutorial](../guides/ide/google_colab.md) on how to run a ClearML Agent on Google Colab!
+
 ## Explicit Task Execution
 
 ClearML Agent can also execute specific tasks directly, without listening to a queue.

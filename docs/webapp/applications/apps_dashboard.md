@@ -6,7 +6,7 @@ title: Project Dashboard
 The ClearML Project Dashboard App is available under the ClearML Pro plan
 :::
 
-The Project Dashboard Application provides an overview of a project or workspace's progress. It presents an aggregated 
+The Project Dashboard Application provides an overview of a project's or workspace's progress. It presents an aggregated 
 view of task status and a chosen metric over time, as well as project GPU and worker usage. It also supports alerts/warnings 
 on completed/failed Tasks via Slack integration.
 

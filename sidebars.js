@@ -41,7 +41,7 @@ module.exports = {
             'clearml_agent/clearml_agent_execution_env', 'clearml_agent/clearml_agent_env_caching',
             'clearml_agent/clearml_agent_dynamic_gpus', 'clearml_agent/clearml_agent_fractional_gpus',
             'clearml_agent/clearml_agent_services_mode', 'clearml_agent/clearml_agent_docker',
-            'clearml_agent/clearml_agent_google_colab', 'clearml_agent/clearml_agent_scheduling'
+            'clearml_agent/clearml_agent_scheduling'
         ]},
         {'Cloud Autoscaling': [
             'cloud_autoscaling/autoscaling_overview',
