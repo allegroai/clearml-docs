@@ -35,7 +35,7 @@ Single IP (domain) with the following open ports:
 
 ### Subdomain Configuration
     
-Subdomain configuration with default http/s ports (`80` or `443`):
+Subdomain configuration with default HTTP/S ports (`80` or `443`):
 
 * Web application on subdomain: `app.*.*`
 * API service on subdomain: `api.*.*`
