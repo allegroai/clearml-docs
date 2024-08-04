@@ -71,7 +71,7 @@ To create an experiment through the UI interface:
    * **Docker** (*optional*) - Specify Docker container configuration for executing the experiment
      * Image - Docker image to use for running the experiment
      * Arguments - Add Docker arguments as a single string
-       * Startup Script - Add a bash script to be executed inside the Docker before setting up the experiment's environment 
+     * Startup Script - Add a bash script to be executed inside the Docker before setting up the experiment's environment 
        
        :::important 
        For a task to run in the specified container, the ClearML Agent executing the task must be running in 
