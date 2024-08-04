@@ -16,7 +16,9 @@ example script.
 
 In the `examples/frameworks/pytorch` directory, run the experiment script:
 
-    python pytorch_mnist.py
+```commandline
+python pytorch_mnist.py
+```
 
 ## Step 2: Clone the Experiment
 
