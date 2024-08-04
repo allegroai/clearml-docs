@@ -77,7 +77,16 @@ Select a pre-configured Docker that **ClearML Agent** will use to remotely execu
 * In **EXECUTION** **>** **AGENT CONFIGURATION** **>** **BASE DOCKER IMAGE** **>** hover **>** **EDIT** **>**
   Enter the base Docker image.
 
+:::important 
+For a ClearML Agent to execute the task in a container, the agent must be running in 
+Docker mode:
 
+```bash
+clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional default docker image to use]
+```
+
+For more information, see [Docker Mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+:::
 
 #### Output Destination
 
