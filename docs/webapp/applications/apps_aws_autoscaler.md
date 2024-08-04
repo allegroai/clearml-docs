@@ -128,11 +128,12 @@ auto_scaler.v1.aws {
    """
    files {
      boto3_file {
-       contents: |
+       contents: """
           boto3 {
             pool_connections: 512
             max_multipart_concurrency: 16
-          }      	
+          }
+       """      	
        path: "/boto3_config.yaml"
        target_format: yaml
        mode: "0o644"
