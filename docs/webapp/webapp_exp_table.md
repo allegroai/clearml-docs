@@ -72,6 +72,17 @@ To create an experiment through the UI interface:
      * Image - Docker image to use for running the experiment
      * Arguments - Add Docker arguments as a single string
      * Startup Script - Add a bash script to be executed inside the Docker before setting up the experiment's environment 
+       
+       :::important 
+       For a task to run in the specified container, the ClearML Agent executing the task must be running in 
+       Docker mode:
+
+       ```bash
+       clearml-agent daemon --queue <execution_queue_to_pull_from> --docker
+       ```
+       For more information, see [Docker Mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+       :::
+     
    * **Run**
      * Queue - [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) where the experiment should be 
      enqueued for execution

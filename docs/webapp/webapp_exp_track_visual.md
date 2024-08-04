@@ -92,6 +92,16 @@ The Container section list the following information:
 * Arguments - add Docker arguments
 * Setup shell script - a bash script to be executed inside the Docker before setting up the experiment's environment
 
+:::important 
+To [rerun](webapp_exp_tuning.md) an experiment through the UI in the listed container, the ClearML Agent executing the experiment must be running in 
+Docker mode:
+
+```bash
+clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional default docker image to use]
+```
+
+For more information, see [Docker Mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+:::
 
 ![Container section](../img/webapp_exp_container.png)
 
