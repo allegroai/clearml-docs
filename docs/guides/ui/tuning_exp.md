@@ -44,13 +44,9 @@ To demonstrate tuning, change two hyperparameter values.
 
 ## Step 4: Run a Worker Daemon Listening to a Queue
 
-To execute the cloned experiment, use a worker that can run a worker daemon listening to a queue.
+To execute the cloned experiment, use a [ClearML Agent](../../fundamentals/agents_and_queues.md).
 
-:::note
-For more information about workers, worker daemons, and queues, see [Agents and queues](../../fundamentals/agents_and_queues.md).
-:::
-
-Run the worker daemon on the local development machine.
+Run the agent on the local development machine:
 1. Open a terminal session.
 1. Run the following `clearml-agent` command which runs a worker daemon listening to the `default` queue:
     ```
@@ -121,5 +117,4 @@ To compare the original and tuned experiments:
 
 ## Next Steps
 
-* For more information about editing experiments, see [modify experiments](../../webapp/webapp_exp_tuning.md#modifying-experiments) 
-  in the User Interface section.
+* For more information about editing experiments, see [modifying experiments](../../webapp/webapp_exp_tuning.md#modifying-experiments).
