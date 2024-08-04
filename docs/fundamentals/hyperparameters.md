@@ -22,10 +22,10 @@ and tracks hyperparameters of various types, supporting automatic logging and ex
 Once a ClearML Task has been [initialized](../references/sdk/task.md#taskinit) in a script, ClearML automatically captures and tracks 
 the following types of parameters:
 * Command line parsing - command line parameters passed when invoking code that uses standard python packages, including:
-  * [click](../integrations/click.md).
-  * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options).
-  * [Python Fire](../integrations/python_fire.md).
-  * [LightningCLI](../integrations/pytorch_lightning.md).
+  * [click](../integrations/click.md)
+  * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options)
+  * [Python Fire](../integrations/python_fire.md)
+  * [LightningCLI](../integrations/pytorch_lightning.md)
 * TensorFlow Definitions (`absl-py`). See examples of ClearML's automatic logging of TF Defines:
     * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
     * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
@@ -118,9 +118,9 @@ including their subsections (see [WebApp sections](#webapp-interface) below).
 Configurations can be viewed in web UI experiment pages, in the **CONFIGURATION** tab. 
 
 The configuration panel is split into three sections according to type:
-- **User Properties** - Modifiable section that can be edited post-execution.
+- **User Properties** - Modifiable section that can be edited post-execution
 - **Hyperparameters** - Individual parameters for configuration
-- **Configuration Objects** - Usually configuration files (JSON / YAML) or Python objects. 
+- **Configuration Objects** - Usually configuration files (JSON / YAML) or Python objects
   
 These sections are further broken down into subsections based on how the parameters were logged (General / Args / TF_Define / Environment).
 
