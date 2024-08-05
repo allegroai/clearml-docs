@@ -22,8 +22,7 @@ project.
 
 ## Reporting (Uploading) Media from a Source by URL
 
-Report by calling [`Logger.report_media()`](../../references/sdk/logger.md#report_media) 
-using the `url` parameter.
+Report by using the `url` parameter of [`Logger.report_media()`](../../references/sdk/logger.md#report_media):
 
 ```python
 # report video, an already uploaded video media (url)
@@ -46,7 +45,7 @@ The reported audio can be viewed in the **DEBUG SAMPLES** tab. Click a thumbnail
 
 ## Reporting (Uploading) Media from a Local File
 
-Use the `local_path` parameter of [`Logger.report_media()`](../../references/sdk/logger.md#report_media).
+Report by using the `local_path` parameter of [`Logger.report_media()`](../../references/sdk/logger.md#report_media):
 
 ```python
 #  report audio, report local media audio file
