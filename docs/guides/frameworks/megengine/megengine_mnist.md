@@ -50,5 +50,6 @@ The model info panel contains the model details, including:
 ## Console
 
 All console output during the script's execution appears in the experiment's **CONSOLE** page.
+
 ![Console tab](../../../img/examples_megengine_console.png)
 

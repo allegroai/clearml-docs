@@ -61,7 +61,7 @@ You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` e
    export CLEARML_LOG_ENVIRONMENT=PWD,PYTHONPATH 
    ```
   
-* No environment variables
+* No environment variables:
    ```
    export CLEARML_LOG_ENVIRONMENT=
    ```

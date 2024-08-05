@@ -1,5 +1,5 @@
 ---
-title: Workers & Queues
+title: Workers and Queues
 ---
 
 Two major components of MLOps/LLMOps are experiment reproducibility, and the ability to scale work to multiple machines. ClearML workers, 

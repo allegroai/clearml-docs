@@ -128,7 +128,7 @@ Use with care! This might introduce security risks by allowing access to keys/se
         
 ---
 
-**`docker_args_extra_precedes_task`** (*bool*)
+**`agent.docker_args_extra_precedes_task`** (*bool*)
 
 *  Allow the arguments specified in `agent.extra_docker_arguments` to override task level docker arguments, in the case that
 the same argument is passed in both. If set to `False`, a task's docker arguments will override the `extra_docker_arguments`.
@@ -1038,6 +1038,8 @@ and limitations on bucket naming.
    do not analyze the entire repository.
 
 ---
+
+<a id="log_env_var"/>
 
 **`sdk.development.log_os_environments`** (*[string]*)
 
