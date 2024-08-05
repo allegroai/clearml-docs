@@ -77,7 +77,16 @@ Select a pre-configured Docker that **ClearML Agent** will use to remotely execu
 * In **EXECUTION** **>** **AGENT CONFIGURATION** **>** **BASE DOCKER IMAGE** **>** hover **>** **EDIT** **>**
   Enter the base Docker image.
 
+:::important 
+For a ClearML Agent to execute the task in a container, the agent must be running in 
+Docker mode:
 
+```bash
+clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional default docker image to use]
+```
+
+For more information, see [Docker Mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+:::
 
 #### Output Destination
 
@@ -117,7 +126,8 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 
 * **General** - Parameter dictionaries (from code, connected to the Task by calling [`Task.connect()`](../references/sdk/task.md#connect)).
 
-* Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq.md#track-env-vars)).
+* Environment variables - Tracked if variables were listed in the `CLEARML_LOG_ENVIRONMENT` environment variable 
+or the `sdk.development.log_os_environments` field of the `clearml.conf` file (see this [FAQ](../faq.md#track-env-vars)).
 
 * Custom named parameter groups (see the `name` parameter in [`Task.connect`](../references/sdk/task.md#connect)).
 

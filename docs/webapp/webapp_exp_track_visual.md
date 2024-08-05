@@ -92,6 +92,16 @@ The Container section list the following information:
 * Arguments - add Docker arguments
 * Setup shell script - a bash script to be executed inside the Docker before setting up the experiment's environment
 
+:::important 
+To [rerun](webapp_exp_tuning.md) an experiment through the UI in the listed container, the ClearML Agent executing the experiment must be running in 
+Docker mode:
+
+```bash
+clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional default docker image to use]
+```
+
+For more information, see [Docker Mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+:::
 
 ![Container section](../img/webapp_exp_container.png)
 
@@ -122,7 +132,12 @@ parameter's line, and the type, description, and default value appear, if they w
 
 #### Environment Variables
 
-If the `CLEARML_LOG_ENVIRONMENT` variable was set, the **Environment** group will show environment variables (see [this FAQ](../faq.md#track-env-vars)).
+If environment variables were listed in the `CLEARML_LOG_ENVIRONMENT` environment variable or the `sdk.development.log_os_environments` 
+field of the `clearml.conf` file, the **Environment** group displays the listed environment variables (see [this FAQ](../faq.md#track-env-vars)).
+
+:::note
+The `CLEARML_LOG_ENVIRONMENT` variable always overrides the `clearml.conf` file. 
+:::
 
 ![Environment variables configuration group](../img/webapp_tracking_23.png)
 

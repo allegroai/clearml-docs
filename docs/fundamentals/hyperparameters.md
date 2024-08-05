@@ -22,10 +22,10 @@ and tracks hyperparameters of various types, supporting automatic logging and ex
 Once a ClearML Task has been [initialized](../references/sdk/task.md#taskinit) in a script, ClearML automatically captures and tracks 
 the following types of parameters:
 * Command line parsing - command line parameters passed when invoking code that uses standard python packages, including:
-  * [click](../integrations/click.md).
-  * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options).
-  * [Python Fire](../integrations/python_fire.md).
-  * [LightningCLI](../integrations/pytorch_lightning.md).
+  * [click](../integrations/click.md)
+  * [argparse](../guides/reporting/hyper_parameters.md#argparse-command-line-options)
+  * [Python Fire](../integrations/python_fire.md)
+  * [LightningCLI](../integrations/pytorch_lightning.md)
 * TensorFlow Definitions (`absl-py`). See examples of ClearML's automatic logging of TF Defines:
     * [TensorFlow MNIST](../guides/frameworks/tensorflow/tensorflow_mnist.md)
     * [TensorBoard PR Curve](../guides/frameworks/tensorflow/tensorboard_pr_curve.md)
@@ -43,20 +43,34 @@ Relying on environment variables makes an experiment not fully reproducible, sin
 runtime.
 :::
 
-Environment variables can be logged by modifying the [clearml.conf](../configs/clearml_conf.md) file. Modify the `log_os_environments` 
-parameter specifying parameters to log.
+Environment variables can be logged to a task by specifying the variables in the `sdk.development.log_os_environments` 
+field of the [`clearml.conf`](../configs/clearml_conf.md) file:
 
 ```editorconfig
 log_os_environments: ["AWS_*", "CUDA_VERSION"]
 ```
 
-You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` variable.
-
+You can also specify environment variables using the `CLEARML_LOG_ENVIRONMENT` environment variable:
+* All environment variables:
+   ```
+   export CLEARML_LOG_ENVIRONMENT=*
+   ```
+   
+* Specific environment variables. For example, log `PWD` and `PYTHONPATH`:
+   ```
+   export CLEARML_LOG_ENVIRONMENT=PWD,PYTHONPATH 
+   ```
+  
+* No environment variables
+   ```
+   export CLEARML_LOG_ENVIRONMENT=
+   ```
+  
 :::note Overriding clearml.conf
-The `CLEARML_LOG_ENVIRONMENT` always overrides the `clearml.conf` file. 
+The `CLEARML_LOG_ENVIRONMENT` variable always overrides the `clearml.conf` file. 
 :::
 
-When a script that has integrated ClearML is executed, the environment variables listed in `clearml.conf` or specified by 
+When a script that has integrated ClearML is executed, the environment variables listed in the `clearml.conf` or specified by 
 the `CLEARML_LOG_ENVIRONMENT` variable are logged by ClearML.
 
 ### Explicit Logging 
@@ -104,9 +118,9 @@ including their subsections (see [WebApp sections](#webapp-interface) below).
 Configurations can be viewed in web UI experiment pages, in the **CONFIGURATION** tab. 
 
 The configuration panel is split into three sections according to type:
-- **User Properties** - Modifiable section that can be edited post-execution.
+- **User Properties** - Modifiable section that can be edited post-execution
 - **Hyperparameters** - Individual parameters for configuration
-- **Configuration Objects** - Usually configuration files (JSON / YAML) or Python objects. 
+- **Configuration Objects** - Usually configuration files (JSON / YAML) or Python objects
   
 These sections are further broken down into subsections based on how the parameters were logged (General / Args / TF_Define / Environment).
 
