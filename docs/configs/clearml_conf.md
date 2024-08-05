@@ -122,17 +122,17 @@ Use with care! This might introduce security risks by allowing access to keys/se
 
 ---
 
+**`agent.docker_apt_cache`** (*string*)
+        
+* The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
+
+---
+
 **`agent.docker_args_extra_precedes_task`** (*bool*)
 
 *  Allow the arguments specified in `agent.extra_docker_arguments` to override task level docker arguments, in the case that
 the same argument is passed in both. If set to `False`, a task's docker arguments will override the `extra_docker_arguments`.
-
----
-
-**`agent.docker_apt_cache`** (*string*)
-        
-* The apt (Linux package tool) cache folder for mapping Ubuntu package caching into Docker.
-        
+ 
 ---
 **`agent.docker_container_name_format`** (*string*)
 
