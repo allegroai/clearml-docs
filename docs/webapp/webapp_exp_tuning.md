@@ -127,7 +127,7 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 * **General** - Parameter dictionaries (from code, connected to the Task by calling [`Task.connect()`](../references/sdk/task.md#connect)).
 
 * Environment variables - Tracked if variables were listed in the `CLEARML_LOG_ENVIRONMENT` environment variable 
-or the `sdk.development.log_os_environments` field of the `clearml.conf` file (see this [FAQ](../faq.md#track-env-vars)).
+or the [`sdk.development.log_os_environments`](../configs/clearml_conf.md#log_env_var) field of the `clearml.conf` file (see this [FAQ](../faq.md#track-env-vars)).
 
 * Custom named parameter groups (see the `name` parameter in [`Task.connect`](../references/sdk/task.md#connect)).
 
@@ -178,7 +178,7 @@ model in the **MODELS** tab.
 **To edit a model's configuration or label enumeration:**
 
 1. Click the model name hyperlink. The model details appear in the **MODELS** tab.
-1. Edit the model configuration or label enumeration.
+1. Edit the model configuration or label enumeration:
 
     * Model configuration - In the **NETWORK** tab **>** Hover and click **EDIT**. **>** CLick **EDIT** or **CLEAR** (to
       remove the configuration).

@@ -49,6 +49,7 @@ To execute the cloned experiment, use a [ClearML Agent](../../fundamentals/agent
 Run the agent on the local development machine:
 1. Open a terminal session.
 1. Run the following `clearml-agent` command which runs a worker daemon listening to the `default` queue:
+
     ```
     clearml-agent daemon --queue default
     ```

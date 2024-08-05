@@ -1039,6 +1039,8 @@ and limitations on bucket naming.
 
 ---
 
+<a id="log_env_var"/>
+
 **`sdk.development.log_os_environments`** (*[string]*)
 
 * Log specific environment variables. OS environments are listed in the UI, under an experiment's  

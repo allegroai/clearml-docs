@@ -132,7 +132,7 @@ parameter's line, and the type, description, and default value appear, if they w
 
 #### Environment Variables
 
-If environment variables were listed in the `CLEARML_LOG_ENVIRONMENT` environment variable or the `sdk.development.log_os_environments` 
+If environment variables were listed in the `CLEARML_LOG_ENVIRONMENT` environment variable or the [`sdk.development.log_os_environments`](../configs/clearml_conf.md#log_env_var) 
 field of the `clearml.conf` file, the **Environment** group displays the listed environment variables (see [this FAQ](../faq.md#track-env-vars)).
 
 :::note
