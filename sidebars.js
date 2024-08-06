@@ -105,6 +105,7 @@ module.exports = {
                 'integrations/ignite',
                 'integrations/pytorch_lightning',
                 'integrations/scikit_learn', 'integrations/seaborn',
+                'integrations/splunk',
                 'integrations/tensorboard', 'integrations/tensorboardx', 'integrations/tensorflow',
                 'integrations/xgboost', 'integrations/yolov5', 'integrations/yolov8'
             ]
