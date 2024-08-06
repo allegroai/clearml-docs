@@ -128,7 +128,7 @@ Use with care! This might introduce security risks by allowing access to keys/se
         
 ---
 
-**`docker_args_extra_precedes_task`** (*bool*)
+**`agent.docker_args_extra_precedes_task`** (*bool*)
 
 *  Allow the arguments specified in `agent.extra_docker_arguments` to override task level docker arguments, in the case that
 the same argument is passed in both. If set to `False`, a task's docker arguments will override the `extra_docker_arguments`.
@@ -140,7 +140,7 @@ the same argument is passed in both. If set to `False`, a task's docker argument
 Compatible with Docker versions 0.6.5 and above
 :::
 
-* Set a name format for Docker containers created by an agent
+* Set a name format for Docker containers created by an agent running in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode)
 
 * The following variables can be used:
   * `task_id`
@@ -206,7 +206,7 @@ For example:
 
 **`agent.docker_use_activated_venv`** (*bool*)
 
-* In Docker mode, if the container's entrypoint automatically activates a virtual environment, the activated virtual 
+* In [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode), if the container's entrypoint automatically activates a virtual environment, the activated virtual 
 environment is used and everything is installed in it. Set to `false` to disable, and always create a new venv inheriting 
 from `system_site_packages`
 
@@ -232,13 +232,14 @@ from `system_site_packages`
 
 **`agent.extra_docker_arguments`** (*[string]*)
         
-* Optional arguments to pass to the Docker image. These are local for this agent, and will not be updated in the experiment's `docker_cmd` section. For example, `["--ipc=host", ]`.
+* Optional arguments to pass to the Docker image when ClearML Agent is running in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode). These are local for this agent, and will not be updated in the experiment's `docker_cmd` section. For example, `["--ipc=host", ]`.
         
 ---
         
 **`agent.extra_docker_shell_script`** (*[string]*)
         
-* An optional shell script to run in the Docker, when the Docker starts, before the experiment starts. For example, `["apt-get install -y bindfs", ]`
+* When ClearML Agent is running in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode), this 
+optional shell script executes inside the Docker on startup, before the experiment starts. For example, `["apt-get install -y bindfs", ]`.
         
 ---
 
@@ -397,19 +398,19 @@ ___
 
 **`agent.default_docker`** (*dict*)
         
-* Dictionary containing the default options for workers in Docker mode.
+* Dictionary containing the default options for workers in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
         
 ---
         
 **`agent.default_docker.arguments`** (*string*)
         
-* If running a worker in Docker mode, this option specifies the options to pass to the Docker container.
+* If running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode), this option specifies the options to pass to the Docker container.
         
 ---
         
 **`agent.default_docker.image`** (*string*)
         
-* If running a worker in Docker mode, this option specifies the default Docker image to use.
+* If running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode), this option specifies the default Docker image to use.
         
 ---
 
@@ -419,7 +420,8 @@ ___
 This feature is available under the ClearML Enterprise plan
 :::
 
-* Lookup table of rules for default container. The first matched rule will be picked, according to rule order. 
+* Lookup table of rules for default container if running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode). 
+The first matched rule will be picked, according to rule order. 
   
 * Each dictionary in the list lays out rules, and the container to be used if the rules are matched. The
 rules can be script requirements, Git details, and/or Python binary, and/or the task's project. 
@@ -1037,6 +1039,8 @@ and limitations on bucket naming.
 
 ---
 
+<a id="log_env_var"/>
+
 **`sdk.development.log_os_environments`** (*[string]*)
 
 * Log specific environment variables. OS environments are listed in the UI, under an experiment's  
@@ -1044,7 +1048,7 @@ and limitations on bucket naming.
   Multiple selected variables are supported including the suffix "\*". For example: "AWS\_\*" will log any OS environment 
   variable starting with "AWS\_". Example: `log_os_environments: ["AWS_*", "CUDA_VERSION"]`
         
-* This value can be overwritten with OS environment variable `CLEARML_LOG_ENVIRONMENT="[AWS_*, CUDA_VERSION]"`. 
+* This value can be overwritten with OS environment variable `CLEARML_LOG_ENVIRONMENT=AWS_*,CUDA_VERSION`. 
 
 ---
     

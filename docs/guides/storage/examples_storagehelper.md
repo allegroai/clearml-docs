@@ -10,7 +10,7 @@ class. The storage examples include:
 * [Setting cache limits](#setting-cache-limits) - Set the maximum number of objects.
 
 :::note 
-`StorageManager` supports http(s), S3, Google Cloud Storage, Azure, and file system folders.
+`StorageManager` supports HTTP(S), S3, Google Cloud Storage, Azure, and file system folders.
 :::
 
 ## StorageManager

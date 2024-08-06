@@ -45,8 +45,8 @@ through a `Task` or `OutputModel` object.
 
 ClearML provides flexibility for explicitly connecting input models and experimentation, including:
 
-* Importing pre-trained models from external sources such as Amazon AWS, GIT repositories, PyTorch, and TensorFlow.
-* Using standalone models already registered in ClearML by previously run experiments. 
+* Importing pre-trained models from external sources such as Amazon AWS, GIT repositories, PyTorch, and TensorFlow
+* Using standalone models already registered in ClearML by previously run experiments
 * Defining your own input models in scripts
   
 ## Setting Upload Destination

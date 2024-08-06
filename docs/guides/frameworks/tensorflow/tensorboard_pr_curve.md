@@ -11,8 +11,8 @@ The example script does the following:
   label of each random color is associated with the normal distribution that generated it.
 * Computes the probability that each color belongs to the class, using three other normal distributions.
 * Generate PR curves using those probabilities. 
-* Creates a summary per class using [tensorboard.plugins.pr_curve.summary](https://github.com/tensorflow/tensorboard/blob/master/tensorboard/plugins/pr_curve/summary.py), 
-* ClearML automatically captures TensorBoard output, TensorFlow Definitions, and output to the console
+* Creates a summary per class using [tensorboard.plugins.pr_curve.summary](https://github.com/tensorflow/tensorboard/blob/master/tensorboard/plugins/pr_curve/summary.py).
+* ClearML automatically captures TensorBoard output, TensorFlow Definitions, and output to the console.
 
 ## Plots
 
