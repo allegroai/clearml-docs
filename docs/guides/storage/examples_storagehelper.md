@@ -78,7 +78,7 @@ class method. Specify the remote storage location as the `remote_url` argument a
 `local_folder` argument. 
 
 ```python
-StorageManager.download_folder(remote_url="s3://bucket/", local_file="/folder/’")
+StorageManager.download_folder(remote_url="s3://bucket/", local_file="/folder/")
 ```
 
 This method downloads a remote folder recursively, maintaining the sub-folder structure from 
@@ -87,24 +87,26 @@ the remote storage.
 For example: if you have a remote file `s3://bucket/sub/file.ext`, then 
 `StorageManager.download_folder(remote_url="s3://bucket/", local_file="/folder/")` will create `/folder/sub/file.ext`.
 
-You can input `match_wildcard` so only files matching the wild card are downloaded.
+You can input `match_wildcard` so only files matching the wildcard are downloaded.
 
 ### Uploading a Folder
 Upload a local folder to remote storage using the [`StorageManager.upload_folder`](../../references/sdk/storage.md#storagemanagerupload_folder) 
 class method. Specify the local folder to upload as the `local_folder` argument and the target remote location as the
-`remote_url` argument. This method uploads the local folder recursively to remote storage, maintaining the sub-folder structure from the local 
-storage. 
+`remote_url` argument. 
 
 ```python
 StorageManager.upload_folder(local_file="/LocalFolder", remote_url="s3://MyBucket/MyFolder")
 ```
 
-For example: If you a local file `/LocalFolder/sub/file.ext` then `StorageManager.upload_folder(local_file="/LocalFolder", remote_url="s3://MyBucket/MyFolder")`
+This method uploads the local folder recursively to remote storage, maintaining the sub-folder structure from the local 
+storage. 
+
+For example: If you have a local file `/LocalFolder/sub/file.ext` then `StorageManager.upload_folder(local_file="/LocalFolder", remote_url="s3://MyBucket/MyFolder")`
 will create `s3://bucket/sub/file.ext`.
 
 Use the `retries` parameter to set the number of times folder upload should be retried in case of failure.
 
-You can input `match_wildcard` so only files matching the wild card are uploaded.
+You can input `match_wildcard` so only files matching the wildcard are uploaded.
 
 ## Setting Cache Limits
 
