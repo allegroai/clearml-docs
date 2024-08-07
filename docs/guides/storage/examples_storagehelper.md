@@ -1,24 +1,22 @@
 ---
-title: Storage Examples
+title: StorageManager
 ---
 
-This page describes storage examples using the [StorageManager](../../references/sdk/storage.md) 
+This page describes storage examples using the [`StorageManager`](../../references/sdk/storage.md) 
 class. The storage examples include:
 
-* [Downloading a file](#downloading-a-file) - Get an object from storage.
-* [Uploading a file](#uploading-a-file) - Upload an object.
-* [Setting cache limits](#setting-cache-limits) - Set the maximum number of objects.
+* Downloading [files](#downloading-a-file) and [folders](#downloading-a-folder) - Get an object from storage.
+* Uploading [files](#uploading-a-file) and [folders](#uploading-a-folder) - Upload an object.
+* [Setting cache limits](#setting-cache-limits)
 
 :::note 
 `StorageManager` supports HTTP(S), S3, Google Cloud Storage, Azure, and file system folders.
 :::
 
-## StorageManager
-
-
+## Working with Files
 ### Downloading a File
 
-To download a ZIP file from storage to the `global` cache context, call the [`StorageManager.get_local_copy`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
+To download a ZIP file from storage to the `global` cache context, use the [`StorageManager.get_local_copy`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
 class method, and specify the destination location as the `remote_url` argument:
 
 ```python
@@ -47,15 +45,19 @@ By default, the `StorageManager` reports its download progress to the console ev
 [`StorageManager.set_report_download_chunk_size`](../../references/sdk/storage.md#storagemanagerset_report_download_chunk_size) 
 class method, and specifying the chunk size in MB (not supported for Azure and GCP storage).
 
+```python
+StorageManager.set_report_download_chunk_size(chunk_size_mb=10)
+```
+
 ### Uploading a File
 
-To upload a file to storage, call the [`StorageManager.upload_file`](../../references/sdk/storage.md#storagemanagerupload_file) 
+To upload a file to storage, use the [`StorageManager.upload_file`](../../references/sdk/storage.md#storagemanagerupload_file) 
 class method. Specify the full path of the local file as the `local_file` argument, and the remote URL as the `remote_url` 
 argument.
 
 ```python
 StorageManager.upload_file(
-    local_file="/mnt/data/also_file.ext", remote_url="s3://MyBucket/MyFolder"
+    local_file="/mnt/data/also_file.ext", remote_url="s3://MyBucket/MyFolder/also_file.ext"
 )
 ```
 
@@ -65,10 +67,48 @@ By default, the `StorageManager` reports its upload progress to the console ever
 [`StorageManager.set_report_upload_chunk_size`](../../references/sdk/storage.md#storagemanagerset_report_upload_chunk_size) 
 class method, and specifying the chunk size in MB (not supported for Azure and GCP storage).
 
+```python
+StorageManager.set_report_upload_chunk_size(chunk_size_mb=10)
+```
 
-### Setting Cache Limits
+## Working with Folders
+### Downloading a Folder
+Download a folder to a local machine using the [`StorageManager.download_folder`](../../references/sdk/storage.md#storagemanagerdownload_folder) 
+class method. Specify the remote storage location as the `remote_url` argument and the target local location as the 
+`local_folder` argument. 
 
-To set a limit on the number of files cached, call the [`StorageManager.set_cache_file_limit`](../../references/sdk/storage.md#storagemanagerset_cache_file_limit) 
+```python
+StorageManager.download_folder(remote_url="s3://bucket/", local_file="/folder/’")
+```
+
+This method downloads a remote folder recursively, maintaining the sub-folder structure from 
+the remote storage.
+
+For example: if you have a remote file `s3://bucket/sub/file.ext`, then 
+`StorageManager.download_folder(remote_url="s3://bucket/", local_file="/folder/")` will create `/folder/sub/file.ext`.
+
+You can input `match_wildcard` so only files matching the wild card are downloaded.
+
+### Uploading a Folder
+Upload a local folder to remote storage using the [`StorageManager.upload_folder`](../../references/sdk/storage.md#storagemanagerupload_folder) 
+class method. Specify the local folder to upload as the `local_folder` argument and the target remote location as the
+`remote_url` argument. This method uploads the local folder recursively to remote storage, maintaining the sub-folder structure from the local 
+storage. 
+
+```python
+StorageManager.upload_folder(local_file="/LocalFolder", remote_url="s3://MyBucket/MyFolder")
+```
+
+For example: If you a local file `/LocalFolder/sub/file.ext` then `StorageManager.upload_folder(local_file="/LocalFolder", remote_url="s3://MyBucket/MyFolder")`
+will create `s3://bucket/sub/file.ext`.
+
+Use the `retries` parameter to set the number of times folder upload should be retried in case of failure.
+
+You can input `match_wildcard` so only files matching the wild card are uploaded.
+
+## Setting Cache Limits
+
+To set a limit on the number of files cached, use the [`StorageManager.set_cache_file_limit`](../../references/sdk/storage.md#storagemanagerset_cache_file_limit) 
 class method and specify the `cache_file_limit` argument as the maximum number of files. This does not limit the cache size, 
 only the number of files.
 

@@ -211,7 +211,7 @@ fails to load the credentials as a file, it will attempt to decode the JSON dire
 ClearML provides the [StorageManager](../references/sdk/storage.md) class to manage downloading, uploading, and caching of 
 content directly from code.
 
-See [Storage Examples](../guides/storage/examples_storagehelper.md).
+See [StorageManager Examples](../guides/storage/examples_storagehelper.md).
 
 ### Path Substitution
 The ClearML StorageManager supports local path substitution when fetching files.
