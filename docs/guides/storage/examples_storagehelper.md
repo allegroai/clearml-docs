@@ -104,7 +104,9 @@ storage.
 For example: If you have a local file `/LocalFolder/sub/file.ext` then `StorageManager.upload_folder(local_file="/LocalFolder", remote_url="s3://MyBucket/MyFolder")`
 will create `s3://bucket/sub/file.ext`.
 
-Use the `retries` parameter to set the number of times folder upload should be retried in case of failure.
+Use the `retries` parameter to set the number of upload attempts for each file in the folder in case 
+of failure. If some files fail to upload, the incomplete folder will remain in the target location with the 
+successfully uploaded files.
 
 You can input `match_wildcard` so only files matching the wildcard are uploaded.
 
