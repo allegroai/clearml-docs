@@ -88,7 +88,7 @@ Configure the ClearML server to send API logs to Splunk using [Docker Compose](#
 
 ### Kubernetes Helm 
 1. Add the following `values.override.yaml` to your ClearML installation specification. Make sure to replace `<SPLUNK_TOKEN>` 
-   and `<SPLUNK_INDEX>` with  the values from the previous steps.
+   and `<SPLUNK_INDEX>` with the values from the previous steps.
 
    ```
    apiserver:
