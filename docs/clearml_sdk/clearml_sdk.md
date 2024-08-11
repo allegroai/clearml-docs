@@ -82,7 +82,7 @@ See [ClearML Data](../clearml_data/clearml_data.md) or the [Dataset SDK referenc
 The `StorageManager` class provides support for downloading and uploading from storage, 
 including local folders, S3, Google Cloud Storage, Azure Storage, and http(s).
 
-See the [StorageManager SDK reference page](../references/sdk/storage.md).
+See [examples](../guides/storage/examples_storagehelper.md) of `StorageManager` usage or the [StorageManager SDK reference page](../references/sdk/storage.md).
 
 ### APIClient
 The `APIClient` class provides a Pythonic interface to access ClearML's backend REST API.
