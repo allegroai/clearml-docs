@@ -153,8 +153,8 @@ Use the configuration vault to store global ClearML configuration entries that c
 of any ClearML Agents or the ClearML SDK running with your credentials. Productivity tip: Keep the vault disabled while 
 you edit your configuration, and enable it when the configuration is ready.
 
-New entries will extend the configuration in the ClearML [configuration file](../configs/clearml_conf.md), and existing 
-file entries will be overridden by the vault values.
+Vault entries will extend the configuration in the ClearML [configuration file](../configs/clearml_conf.md) if they don't
+exist, and override values for those already present in the file.
 
 Fill in values using any of ClearML supported configuration formats: HOCON / JSON / YAML.
 
