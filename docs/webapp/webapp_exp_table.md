@@ -13,8 +13,9 @@ using the buttons on the top left of the page. Use the table view for a comparat
 to columns of interest. Use the details view to access a selected experiment's details, while keeping the experiment list 
 in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
 Use the [comparison view](#comparing-experiments) to compare your experiments' scalar and plot results (for a more in 
-depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). When selected, this view presents a comparison 
-of all selected experiments. If no experiments are selected, all currently visible experiments in the table are compared.
+depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). This view compares
+the scalars/plots of currently selected experiments. If no experiments are selected, the first 100
+visible experiments in the table are compared.
 
 You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
 table to open the archive and view all archived experiments. From the archive, you can restore 
@@ -266,7 +267,7 @@ selecting items beyond the items currently on-screen:
 
 The comparison view compares experiment scalar and plot results (for a more in depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). 
 When selected, the view presents a comparison of all [selected experiments](#selecting-multiple-experiments). If no 
-experiments are selected, all currently visible experiments in the table are displayed in the comparison. 
+experiments are selected, the first 100 visible experiments in the table are displayed in the comparison. 
 
 In the dropdown menu, select to view **Scalars** or **Plots**. **Scalars** shows experiment scalar results as time 
 series line graphs. **Plots** shows the last reported iteration sample of each metric/variant combination per compared 
