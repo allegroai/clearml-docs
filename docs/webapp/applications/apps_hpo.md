@@ -3,7 +3,7 @@ title: Hyperparameter Optimization
 ---
 
 :::info Pro Plan Offering
-The ClearML HPO App is available under the ClearML Pro plan
+The ClearML HPO App is available under the ClearML Pro plan.
 :::
 
 The Hyperparameter Optimization Application finds the set of parameter values that optimize a specific metric(s) for your 

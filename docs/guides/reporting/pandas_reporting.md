@@ -26,8 +26,8 @@ df = pd.DataFrame(
 )
 df.index.name = "id"
 Logger.current_logger().report_table(
-    "table pd", 
-    "PD with index", 
+    title="table pd", 
+    series="PD with index", 
     iteration=iteration, 
     table_plot=df
 )
@@ -43,8 +43,8 @@ Report CSV files by providing the URL location of the CSV file in the `url` para
 # Report table - CSV from path
 csv_url = "https://raw.githubusercontent.com/plotly/datasets/master/Mining-BTC-180.csv"
 Logger.current_logger().report_table(
-    "table csv", 
-    "remote csv", 
+    title="table csv", 
+    series="remote csv", 
     iteration=iteration, 
     url=csv_url
 )
