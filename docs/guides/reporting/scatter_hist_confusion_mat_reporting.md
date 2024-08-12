@@ -23,8 +23,8 @@ To report more than one series on the same plot, use same the `title` argument. 
 # report a single histogram
 histogram = np.random.randint(10, size=10)
 Logger.current_logger().report_histogram(
-    "single_histogram",
-    "random histogram",
+    title="single_histogram",
+    series="random histogram",
     iteration=iteration,
     values=histogram,
     xaxis="title x",
@@ -35,8 +35,8 @@ Logger.current_logger().report_histogram(
 histogram1 = np.random.randint(13, size=10)
 histogram2 = histogram * 0.75
 Logger.current_logger().report_histogram(
-    "two_histogram",
-    "series 1",
+    title="two_histogram",
+    series="series 1",
     iteration=iteration,
     values=histogram1,
     xaxis="title x",
@@ -65,8 +65,8 @@ Report confusion matrices by calling [`Logger.report_confusion_matrix()`](../../
 # report confusion matrix
 confusion = np.random.randint(10, size=(10, 10))
 Logger.current_logger().report_confusion_matrix(
-    "example_confusion",
-    "ignored",
+    title="example_confusion",
+    series="ignored",
     iteration=iteration,
     matrix=confusion,
     xaxis="title X",
@@ -79,8 +79,8 @@ Logger.current_logger().report_confusion_matrix(
 ```python
 # report confusion matrix with 0,0 is at the top left
 Logger.current_logger().report_confusion_matrix(
-    "example_confusion_0_0_at_top",
-    "ignored",
+    title="example_confusion_0_0_at_top",
+    series="ignored",
     iteration=iteration,
     matrix=confusion,
     xaxis="title X",
@@ -101,8 +101,8 @@ scatter2d = np.hstack(
     
 # report 2d scatter plot with lines
 Logger.current_logger().report_scatter2d(
-    "example_scatter",
-    "series_xy",
+    title="example_scatter",
+    series="series_xy",
     iteration=iteration,
     scatter=scatter2d,
     xaxis="title x",
@@ -111,8 +111,8 @@ Logger.current_logger().report_scatter2d(
     
 # report 2d scatter plot with markers
 Logger.current_logger().report_scatter2d(
-    "example_scatter",
-    "series_markers",
+    title="example_scatter",
+    series="series_markers",
     iteration=iteration,
     scatter=scatter2d,
     xaxis="title x",
@@ -122,8 +122,8 @@ Logger.current_logger().report_scatter2d(
     
 # report 2d scatter plot with lines and markers
 Logger.current_logger().report_scatter2d(
-    "example_scatter",
-    "series_lines+markers",
+    title="example_scatter",
+    series="series_lines+markers",
     iteration=iteration,
     scatter=scatter2d,
     xaxis="title x",

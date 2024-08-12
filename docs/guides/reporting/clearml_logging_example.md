@@ -23,8 +23,8 @@ The scalar plots appear in the **web UI** in **SCALARS**.
 ```python
 # report two scalar series on two different graphs
 for i in range(10):
-    logger.report_scalar("graph A", "series A", iteration=i, value=1./(i+1))
-    logger.report_scalar("graph B", "series B", iteration=i, value=10./(i+1))
+    logger.report_scalar(title="graph A", series="series A", iteration=i, value=1./(i+1))
+    logger.report_scalar(title="graph B", series="series B", iteration=i, value=10./(i+1))
 ```
 
 ![Separate scalar plots](../../img/colab_explicit_reporting_01.png)
@@ -32,8 +32,8 @@ for i in range(10):
 ```python
 # report two scalar series on the same graph
 for i in range(10):
-    logger.report_scalar("unified graph", "series A", iteration=i, value=1./(i+1))
-    logger.report_scalar("unified graph", "series B", iteration=i, value=10./(i+1))
+    logger.report_scalar(title="unified graph", series="series A", iteration=i, value=1./(i+1))
+    logger.report_scalar(title="unified graph", series="series B", iteration=i, value=10./(i+1))
 ```    
 
 ![Unified scalar plots](../../img/colab_explicit_reporting_02.png)

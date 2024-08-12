@@ -35,7 +35,7 @@ This sets the following arguments:
 
 :::note
 Enter a project name using `--project <name>`. If no project is input, the default project 
-name is "DevOps"
+name is `DevOps`.
 :::
    
 After launching the command, the `clearml-agent` listening to the `default` queue spins a remote Jupyter environment with 

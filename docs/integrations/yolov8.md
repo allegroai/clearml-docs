@@ -137,7 +137,7 @@ task = Task.init(
 # Load a model
 model_variant = "yolov8n"
 # Log "model_variant" parameter to task
-task.set_parameter("model_variant", model_variant)
+task.set_parameter(name="model_variant", value=model_variant)
 
 # Load the YOLOv8 model
 model = YOLO(f'{model_variant}.pt') 

@@ -41,7 +41,7 @@ script.
    ```
 
    :::tip
-   If the container will not make use of a GPU, add the `--cpu-only` flag
+   If the container will not make use of a GPU, add the `--cpu-only` flag.
    :::
 
    This command will create a Docker container, set up with the execution environment for this experiment in the 
