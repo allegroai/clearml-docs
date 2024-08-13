@@ -362,7 +362,7 @@ Your firewall may be preventing the connection. Try one of the following solutio
 * Disable certificate verification   
   
   :::warning
-  For security reasons, it is not recommended to disable certificate verification
+  For security reasons, it is not recommended to disable certificate verification.
   :::
     1. Upgrade ClearML to the current version:
        ``` 

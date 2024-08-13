@@ -18,7 +18,7 @@ The Slack API token and channel you create are required to configure the Slack a
 
 1. Login to your Slack account.
 1. Go to [https://api.slack.com/apps/new](https://api.slack.com/apps/new).
-1. In **App Name**, enter an app name; for example, "ClearML Bot".
+1. In **App Name**, enter an app name. For example, "ClearML Bot".
 1. In **Development Slack Workspace**, select a workspace.
 1. Click **Create App**.
 1. In **Basic Information**, under **Display Information**, complete the following:
@@ -31,7 +31,7 @@ The Slack API token and channel you create are required to configure the Slack a
     * **channels:read**
     * **chat:write**
 1. In **OAuth Tokens & Redirect URLs**:
-    1. Click **Install App to Workspace**
+    1. Click **Install App to Workspace**.
     1. In the confirmation dialog, click **Allow**.
     1. Click **Copy** to copy the **Bot User OAuth Access Token**.
 

@@ -3,7 +3,7 @@ title: VS Code
 ---
 
 :::important Enterprise Feature
-The VS Code application is available under the ClearML Enterprise plan
+The VS Code application is available under the ClearML Enterprise plan.
 :::
 
 The VS Code UI application allows you to launch a remote VS Code session on a machine that better meets resource needs. 
