@@ -214,8 +214,17 @@ task = Task.create(
     script='examples/reporting/html_reporting.py',
     working_directory='.',
     docker=None,
+    argparse_args=[
+      ("lr", 0.01),
+      ("epochs", 10)      
+    ]
 )
 ```
+
+:::info Passing Argument
+When specifying arguments in `argparse_args`, use the full argument name (e.g., `--lr`) instead of the short form 
+(e.g., `-l`).
+:::
 
 For more information, see [`Task.create()`](../references/sdk/task.md#taskcreate).
 
