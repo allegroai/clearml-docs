@@ -221,9 +221,9 @@ task = Task.create(
 )
 ```
 
-:::info Passing Argument
+:::info Argument Specification
 When specifying arguments in `argparse_args`, use the full argument name (e.g., `--lr`) instead of the short form 
-(e.g., `-l`).
+(e.g., `-l`). Using flags will not work.
 :::
 
 For more information, see [`Task.create()`](../references/sdk/task.md#taskcreate).
