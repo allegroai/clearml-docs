@@ -118,18 +118,18 @@ agentk8sglue:
   queues:
     example_queue_1:
       templateOverrides:
+        nodeSelector:
+          nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
         resources:
           limits:
             nvidia.com/gpu: 1
-      nodeSelector:
-        nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
     example_queue_2:
       templateOverrides:
+        nodeSelector:
+          nvidia.com/gpu.product: A100-SXM4-40GB
         resources:
           limits:
             nvidia.com/gpu: 2
-      nodeSelector:
-        nvidia.com/gpu.product: A100-SXM4-40GB
 ```
 :::
 
