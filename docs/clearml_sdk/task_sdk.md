@@ -214,8 +214,19 @@ task = Task.create(
     script='examples/reporting/html_reporting.py',
     working_directory='.',
     docker=None,
+    argparse_args=[
+      ("lr", 0.01),
+      ("epochs", 10)      
+    ]
 )
 ```
+
+:::info Argument Specification
+When specifying arguments in `argparse_args`, use the full argument name (e.g., `--lr`) instead of the short form 
+(e.g., `-l`).  ClearML works by connecting with the argument parser and replacing the associated variable name, not the 
+flag. In most cases, the full argument name and the variable name are the same, but the short version is different and 
+will not work.
+:::
 
 For more information, see [`Task.create()`](../references/sdk/task.md#taskcreate).
 
