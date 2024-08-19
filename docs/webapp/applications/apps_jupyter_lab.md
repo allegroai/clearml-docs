@@ -27,8 +27,26 @@ Once you have launched an app instance, you can view the following information i
 
 ![Jupyter Lab Dashboard](../../img/apps_jupyter_lab.png)
 
-## Extra Python packages to be installedApp Instance Configuration
+## App Instance Configuration
+When configuring a new Jupyter Lab instance, you can start from scratch or reuse an existing configuration. 
 
+Launch an app instance with the configuration of a previously launched instance using one of the following options:
+* Cloning a previously launched app instance will open the launch wizard with the original instance's configuration 
+prefilled.
+* Importing an app configuration file. You can export an existing app instance's configuration as a JSON file when 
+viewing its configuration.
+
+The prefilled configuration wizard can be edited before launching the new app instance.
+
+To  configure a new app instance:
+* Click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> to 
+open the app's configuration wizard
+* Fill in the configuration details listed below 
+
+### Configuration Options
+
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **Git** - To access a git repository remotely, add git information. 
   * Repository
   * Branch
@@ -44,5 +62,6 @@ Once you have launched an app instance, you can view the following information i
   * Idle Network Threshold (MB/s) - Throughput under which the session will be considered idle
   * Idle CPU Threshold (%) - CPU utilization under which the session will be considered idle
   * Idle GPU Threshold (%) - GPU utilization under which the session will be considered idle
-
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration
 
