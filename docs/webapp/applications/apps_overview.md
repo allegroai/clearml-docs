@@ -40,7 +40,7 @@ Each application's page is split into two sections:
 ## Launching an App Instance
 
 1. Choose the desired app
-1. Click the `Launch New` button <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" />  to open the app's configuration wizard
+1. Click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> to open the app's configuration wizard
 1. Fill in the configuration details
 1. **Launch**
 
