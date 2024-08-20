@@ -21,6 +21,22 @@ when each VM instance is spun up.
 For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
 
 ## Autoscaler Instance Configuration
+When configuring a new GCP Autoscaler instance, you can start from scratch or reuse an existing configuration. 
+
+Launch an app instance with the configuration of a previously launched instance using one of the following options:
+* Cloning a previously launched app instance will open the launch wizard with the original instance's configuration 
+prefilled.
+* Importing an app configuration file. You can export an existing app instance's configuration as a JSON file when 
+viewing its configuration.
+
+The prefilled configuration wizard can be edited before launching the new app instance.
+
+To  configure a new app instance:
+* Click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> to 
+open the app's configuration wizard
+* Fill in the configuration details listed below 
+
+### Configuration Options
 * **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
   values from the file, which can be modified before launching the app instance
 * **GCP Configuration**

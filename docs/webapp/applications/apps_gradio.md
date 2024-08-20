@@ -38,7 +38,24 @@ Once you start a Gradio launcher instance, you can view the following informatio
  
 
 ## Gradio Launcher Instance Configuration
+When configuring a new Gradio launcher instance, you can start from scratch or reuse an existing configuration. 
 
+Launch an app instance with the configuration of a previously launched instance using one of the following options:
+* Cloning a previously launched app instance will open the launch wizard with the original instance's configuration 
+prefilled.
+* Importing an app configuration file. You can export an existing app instance's configuration as a JSON file when 
+viewing its configuration.
+
+The prefilled configuration wizard can be edited before launching the new app instance.
+
+To  configure a new app instance:
+* Click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> to 
+open the app's configuration wizard
+* Fill in the configuration details listed below 
+
+### Configuration Options
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+  values from the file, which can be modified before launching the app instance
 * **Gradio Instance Name** - Name for the Gradio launcher instance. This will appear in the instance list
 * **Project name** - Project where your Gradio launcher app instance task will be stored
 * **Task name** - Name of task for your Gradio launcher app instance
@@ -51,3 +68,5 @@ Once you start a Gradio launcher instance, you can view the following informatio
 * **Arguments** - Arguments to be passed to the script
 * **Idle Time Limit** (Hours) - Maximum idle time (Period in which no requests are received by the Gradio app) after 
   which the Gradio app and the launcher instance will shut down.
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration 
