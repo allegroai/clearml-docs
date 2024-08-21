@@ -903,7 +903,7 @@ This method saves configuration objects as blobs (i.e. ClearML is not aware of t
 ```python
 # connect a configuration dictionary
 model_config_dict = {
-   'value': 13.37,  'dict': {'sub_value': 'string'},  'list_of_ints': [1, 2, 3, 4],
+   'value': 13.37, 'dict': {'sub_value': 'string'}, 'list_of_ints': [1, 2, 3, 4],
 }
 model_config_dict = task.connect_configuration(
   name='dictionary', configuration=model_config_dict
