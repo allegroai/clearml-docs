@@ -221,6 +221,7 @@ clearml-session --continue-session <session_id> --store-workspace ~/workspace
 | `--config-file` | Specify a path to another configuration file for `clearml-session` to store its previous state | `.clearml_session.json` or previously entered configuration file |  
 | `--continue-session` | Pass the session of a previous session to continue, restoring your workspace (see `--store-workspace`) | `none` |
 | `--debugging-session` | Pass existing Task ID, create a copy of the experiment on a remote machine, and launch Jupyter/SSH for interactive access. Example `--debugging-session <task_id>`| `none`|
+| `--disable-fingerprint-check` | If set, bypass the remote SSH server fingerprint verification process | `none` |
 | `--disable-session-cleanup` | If `True`, previous interactive sessions are not deleted | `false`|
 | `--disable-store-defaults` | If set, do not store current setup as new default configuration| `none`|
 | `--docker`| Select the docker image to use in the interactive session |`nvidia/cuda:11.6.2-runtime-ubuntu20.04` or previously used docker image|
@@ -237,6 +238,7 @@ clearml-session --continue-session <session_id> --store-workspace ~/workspace
 | `--queue`| Select the queue to launch the interactive session on | Previously used queue|
 | `--queue-excluded-tag` | The queue option list will exclude queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
 | `--queue-include-tag` | The queue option list will include only queues with specified tags. See the `tags` parameter in the [queues.create](../references/api/queues.md#post-queuescreate) API call | `none` |
+| `--randomize` | Generate a new random SSH password for the interactive session. Pass `--randomize` to create a random password for the current session. Pass `--randomize always` to generate a new random password for every session you start. | `false` |
 | `--remote-gateway` | Specify a gateway IP to pass to the interactive session, if an external address needs to be accessed | `none`|
 | `--remote-ssh-port`| Set the remote SSH server port, running on the agent's machine | 10022|
 | `--requirements`| Specify `requirements.txt` file to install when setting the interactive session. | `none` or previously used requirements (can be overridden by calling `--packages`)|
