@@ -30,7 +30,7 @@ Logger.current_logger().report_media(
 
 ## Reporting HTML Local Files
 
-Report the following using the `Logger.report_media` parameter method `local_path` parameter:
+Report the following using `Logger.report_media()`'s `local_path` parameter:
 * [Interactive HTML](#interactive-html)
 * [Bokeh GroupBy HTML](#bokeh-groupby-html)
 * [Bokeh Graph HTML](#bokeh-graph-html)

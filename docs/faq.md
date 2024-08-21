@@ -455,7 +455,7 @@ You cannot undo the deletion of a ClearML object.
 #### Can I change the random seed my experiment uses?  
 
 Yes! By default, ClearML initializes Tasks with an initial seed of `1337` to ensure reproducibility. To set a different 
-value for your task, use the [`Task.set_random_seed`](references/sdk/task.md#taskset_random_seed) class method and 
+value for your task, use the [`Task.set_random_seed()`](references/sdk/task.md#taskset_random_seed) class method and 
 provide the new seed value, **before initializing the task**.
 
 You can disable the deterministic behavior entirely by passing `Task.set_random_seed(None)`.
@@ -557,7 +557,7 @@ Yes! You can use ClearML's Offline Mode, in which all the data and logs that a t
 local folder. 
 
 You can enable offline mode in one of the following ways:
-* Before initializing a task, use the [`Task.set_offline`](references/sdk/task.md#taskset_offline) class method and set 
+* Before initializing a task, use the [`Task.set_offline()`](references/sdk/task.md#taskset_offline) class method and set 
 the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
@@ -578,7 +578,7 @@ ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b78684
 In order to upload to the ClearML Server the execution data that the Task captured offline, do one of the
 following:
 * Use the `import-offline-session <session_path>` option of the [clearml-task](apps/clearml_task.md) CLI
-* Use the [`Task.import_offline_session`](references/sdk/task.md#taskimport_offline_session) method. 
+* Use the [`Task.import_offline_session()`](references/sdk/task.md#taskimport_offline_session) method. 
   
 See [Storing Task Data Offline](guides/set_offline.md).
 
@@ -627,7 +627,7 @@ tutorial.
 
 #### How can I report more than one scatter 2D series on the same plot?    <a id="multiple-scatter2D"></a>
 
-The [`Logger.report_scatter2d`](references/sdk/logger.md#report_scatter2d) 
+The [`Logger.report_scatter2d()`](references/sdk/logger.md#report_scatter2d) 
 method reports all series with the same `title` and `iteration` parameter values on the same plot.
 
 For example, the following two scatter2D series are reported on the same plot, because both have a `title` of `example_scatter` and an `iteration` of `1`:
