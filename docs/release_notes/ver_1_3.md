@@ -19,7 +19,7 @@ title: Version 1.3
 **New Features and Improvements**
 * 20% Overall performance increase 
 * gRPC channel configuration ([ClearML Serving GitHub issue #49](https://github.com/allegroai/clearml-serving/issues/49)) 
-* Huggingface Transformer example 
+* Hugging Face Transformer example 
 
 **Bug fixes**
 * Fix NumPy compatibility ([ClearML Serving GitHub issue #47](https://github.com/allegroai/clearml-serving/issues/47) and [#46](https://github.com/allegroai/clearml-serving/issues/46))

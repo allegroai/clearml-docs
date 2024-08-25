@@ -16,7 +16,7 @@ This release is not backwards compatible - see notes below on upgrading
 * Add version number of serving session task
 * Triton engine support for variable request (matrix) sizes
 * Triton support, fix `--aux-config` to support more configurations elements
-* Huggingface Transformer support
+* Hugging Face Transformer support
 * `Preprocess` class as module 
 
 
