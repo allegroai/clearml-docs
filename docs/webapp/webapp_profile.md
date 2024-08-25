@@ -598,7 +598,7 @@ Administrators specify the total number of resources available in each pool. The
 workload assignment up to the available number of resources.
 
 Administrators control the execution priority within a pool across the resource profiles making use of it (e.g. if jobs 
-of profile A and jobs of profile B currently need to run in a pool,  allocate resources for profile A jobs first or vice 
+of profile A and jobs of profile B currently need to run in a pool, allocate resources for profile A jobs first or vice 
 versa).
 
 The resource pool cards are displayed on the top of the Resource Configuration settings page. Each card displays the 

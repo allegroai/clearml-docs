@@ -259,7 +259,7 @@ dataset.get_logger().report_histogram(
 
 ## Uploading Files
 
-To upload the dataset files to network storage, use the [`Dataset.upload`](../references/sdk/dataset.md#upload) method. 
+To upload the dataset files to network storage, use [`Dataset.upload()`](../references/sdk/dataset.md#upload). 
 
 Use the `output_url` parameter to specify storage target, such as S3 / GS / Azure. For example:
 * A shared folder: `/mnt/share/folder`
@@ -319,7 +319,7 @@ Dataset.delete(
 ``` 
 
 ## Renaming Datasets
-Rename a dataset using the [`Dataset.rename`](../references/sdk/dataset.md#datasetrename) class method. All the datasets 
+Rename a dataset using the [`Dataset.rename()`](../references/sdk/dataset.md#datasetrename) class method. All the datasets 
 with the given `dataset_project` and `dataset_name` will be renamed.  
 
 ```python
@@ -331,7 +331,7 @@ Dataset.rename(
 ```
 
 ## Moving Datasets to Another Project
-Move a dataset to another project using the [`Dataset.move_to_project`](../references/sdk/dataset.md#datasetmove_to_projetc) 
+Move a dataset to another project using the [`Dataset.move_to_project()`](../references/sdk/dataset.md#datasetmove_to_projetc) 
 class method. All the datasets with the given `dataset_project` and `dataset_name` will be moved to the new dataset 
 project. 
 

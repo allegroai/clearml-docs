@@ -3,8 +3,7 @@ title: HTML Reporting
 ---
 
 The [html_reporting.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/html_reporting.py) example 
-demonstrates reporting local HTML files and HTML by URL, using the [Logger.report_media](../../references/sdk/logger.md#report_media) 
-method. 
+demonstrates reporting local HTML files and HTML by URL using [`Logger.report_media()`](../../references/sdk/logger.md#report_media). 
 
 ClearML reports these HTML debug samples in the **ClearML Web UI** **>** experiment details **>** 
 **DEBUG SAMPLES** tab. 
@@ -31,7 +30,7 @@ Logger.current_logger().report_media(
 
 ## Reporting HTML Local Files
 
-Report the following using the `Logger.report_media` parameter method `local_path` parameter:
+Report the following using `Logger.report_media()`'s `local_path` parameter:
 * [Interactive HTML](#interactive-html)
 * [Bokeh GroupBy HTML](#bokeh-groupby-html)
 * [Bokeh Graph HTML](#bokeh-graph-html)
