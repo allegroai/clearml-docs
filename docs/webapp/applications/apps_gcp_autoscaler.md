@@ -36,7 +36,7 @@ To  configure a new app instance, click `Launch New` <img src="/docs/latest/icon
 to open the app's configuration form.
 
 ### Configuration Options
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration form with the 
   values from the file, which can be modified before launching the app instance
 * **GCP Configuration**
     * GCP Project ID - Project used for spinning up VM instances
@@ -100,7 +100,7 @@ to open the app's configuration form.
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration 
 
-![GCP autoscaler wizard](../../img/apps_gcp_autoscaler_wizard.png)
+![GCP autoscaler form](../../img/apps_gcp_autoscaler_wizard.png)
 
 <a id="configuration_vault"/>
 
@@ -194,11 +194,11 @@ account to configure the autoscaler app:
    
    ![GCP credential key creation](../../img/apps_gcp_autoscaler_credentials_6.png)
    
-1. Go to the GCP Autoscaler wizard **>** open the **GCP Configuration** panel **>** click *Edit* in the 
+1. Go to the GCP Autoscaler form **>** open the **GCP Configuration** panel **>** click *Edit* in the 
    **GCP Credentials** field.
 
    ![GCP credentials field](../../img/apps_gcp_autoscaler_credentials_6a.png)   
    
    Paste the contents of the JSON file from the previous step into the **GCP Credentials** popup. 
 
-   ![GCP credential wizard input](../../img/apps_gcp_autoscaler_credentials_7.png)
+   ![GCP credential form input](../../img/apps_gcp_autoscaler_credentials_7.png)

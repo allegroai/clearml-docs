@@ -36,7 +36,7 @@ To  configure a new app instance, click `Launch New` <img src="/docs/latest/icon
 to open the app's configuration form.
 
 ### Configuration Options
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration form with the 
   values from the file, which can be modified before launching the app instance
 * **AWS Credentials** - Credentials with which the autoscaler can access your AWS account. See [Generating AWS IAM Credentials](#generating-aws-iam-credentials)
     * Use IAM role - Select if you are running your autoscalers on your own EC2 instances which are attached to an [IAM 
@@ -109,7 +109,7 @@ and [AWS API Reference: RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration 
 
-![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
+![Autoscaler form](../../img/app_aws_autoscaler_wizard.png)
 
 ### Configuration Vault 
 
@@ -121,9 +121,9 @@ You can utilize the [configuration vault](../../webapp/webapp_profile.md#configu
 * `aws_region`
 * `aws_credentials_key_id` and `aws_secret_access_key` - AWS credentials for the Autoscaler
 * `extra_vm_bash_script` - A bash script to execute after launching the EC2 instance. This script will be appended to
-the one set in the `Init script` field of the autoscaler wizard
+the one set in the `Init script` field of the autoscaler form
 * `extra_clearml_conf` - ClearML configuration to use by the ClearML Agent when executing your experiments. This 
-configuration will be appended to that set in the `Additional ClearML Configuration` field of the autoscaler wizard
+configuration will be appended to that set in the `Additional ClearML Configuration` field of the autoscaler form
 * `files` - Files to create at designated paths with predefined content inside the container running the autoscaler. 
 For more information, see [Files Section](../../configs/clearml_conf.md#files-section)
 * `environment` - Dictionary of environment variables and values to set in the OS environment of the container running 

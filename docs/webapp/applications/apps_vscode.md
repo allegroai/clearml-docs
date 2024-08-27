@@ -44,7 +44,7 @@ to open the app's configuration form.
 
 ### Configuration Options
 
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the configuration form with the 
   values from the file, which can be modified before launching the app instance
 * **Git** - To access a git repository remotely, add git information. 
   * Repository
