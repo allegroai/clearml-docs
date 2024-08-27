@@ -28,24 +28,23 @@ Once you have launched an app instance, you can view the following information i
 ![Jupyter Lab Dashboard](../../img/apps_jupyter_lab.png)
 
 ## App Instance Configuration
-When configuring a new Jupyter Lab instance, you can start from scratch or reuse an existing configuration. 
+When configuring a new Jupyter Lab instance, you can fill in the required parameters or reuse the configuration of 
+a previously launched instance.  
 
 Launch an app instance with the configuration of a previously launched instance using one of the following options:
-* Cloning a previously launched app instance will open the launch wizard with the original instance's configuration 
-prefilled.
-* Importing an app configuration file. You can export an existing app instance's configuration as a JSON file when 
-viewing its configuration.
+* Cloning a previously launched app instance will open the instance launch form with the original instance's 
+configuration prefilled.
+* Importing an app configuration file. You can export the configuration of a previously launched instance as a JSON file 
+when viewing its configuration.
 
-The prefilled configuration wizard can be edited before launching the new app instance.
+The prefilled instance launch form can be edited before starting the new app instance. 
 
-To  configure a new app instance:
-* Click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> to 
-open the app's configuration wizard
-* Fill in the configuration details listed below 
+To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
+to open the app's instance launch form.
 
 ### Configuration Options
 
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **Git** - To access a git repository remotely, add git information. 
   * Repository

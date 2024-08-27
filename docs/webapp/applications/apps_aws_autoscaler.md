@@ -21,23 +21,22 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 
 ## Autoscaler Instance Configuration
 
-When configuring a new AWS Autoscaler instance, you can start from scratch or reuse an existing configuration. 
+When configuring a new AWS Autoscaler instance, you can fill in the required parameters or reuse the configuration of 
+a previously launched instance.  
 
 Launch an app instance with the configuration of a previously launched instance using one of the following options:
-* Cloning a previously launched app instance will open the launch wizard with the original instance's configuration 
-prefilled.
-* Importing an app configuration file. You can export an existing app instance's configuration as a JSON file when 
-viewing its configuration.
+* Cloning a previously launched app instance will open the instance launch form with the original instance's 
+configuration prefilled.
+* Importing an app configuration file. You can export the configuration of a previously launched instance as a JSON file 
+when viewing its configuration.
 
-The prefilled configuration wizard can be edited before launching the new app instance.
+The prefilled instance launch form can be edited before starting the new app instance. 
 
-To  configure a new app instance:
-* Click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> to 
-open the app's configuration wizard
-* Fill in the configuration details listed below 
+To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
+to open the app's instance launch form.
 
 ### Configuration Options
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **AWS Credentials** - Credentials with which the autoscaler can access your AWS account. See [Generating AWS IAM Credentials](#generating-aws-iam-credentials)
     * Use IAM role - Select if you are running your autoscalers on your own EC2 instances which are attached to an [IAM 
@@ -110,7 +109,7 @@ and [AWS API Reference: RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration 
 
-![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
+![Autoscaler instance launch form](../../img/app_aws_autoscaler_wizard.png)
 
 ### Configuration Vault 
 
@@ -122,9 +121,9 @@ You can utilize the [configuration vault](../../webapp/webapp_profile.md#configu
 * `aws_region`
 * `aws_credentials_key_id` and `aws_secret_access_key` - AWS credentials for the Autoscaler
 * `extra_vm_bash_script` - A bash script to execute after launching the EC2 instance. This script will be appended to
-the one set in the `Init script` field of the autoscaler wizard
+the one set in the `Init script` field of the instance launch form
 * `extra_clearml_conf` - ClearML configuration to use by the ClearML Agent when executing your experiments. This 
-configuration will be appended to that set in the `Additional ClearML Configuration` field of the autoscaler wizard
+configuration will be appended to that set in the `Additional ClearML Configuration` field of the instance launch form
 * `files` - Files to create at designated paths with predefined content inside the container running the autoscaler. 
 For more information, see [Files Section](../../configs/clearml_conf.md#files-section)
 * `environment` - Dictionary of environment variables and values to set in the OS environment of the container running 
