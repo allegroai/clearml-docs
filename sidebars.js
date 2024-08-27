@@ -147,14 +147,28 @@ module.exports = {
             {
                 'ClearML Applications': [
                     'webapp/applications/apps_overview',
-                    'webapp/applications/apps_hpo',
-                    'webapp/applications/apps_dashboard',
-                    'webapp/applications/apps_task_scheduler',
-                    'webapp/applications/apps_trigger_manager',
-                    'webapp/applications/apps_jupyter_lab',
-                    'webapp/applications/apps_vscode',
-                    'webapp/applications/apps_gradio',
-                    'webapp/applications/apps_streamlit'
+                    {
+                        "General": [
+                            'webapp/applications/apps_hpo',
+                            'webapp/applications/apps_dashboard',
+                            'webapp/applications/apps_task_scheduler',
+                            'webapp/applications/apps_trigger_manager',
+                            'webapp/applications/apps_jupyter_lab',
+                            'webapp/applications/apps_vscode',
+                        ]
+                    },
+                    {
+                        "AI Dev": [
+                            'webapp/applications/apps_gradio',
+                            'webapp/applications/apps_streamlit'
+                        ]
+                    },
+                    {
+                        "Deploy": [
+                            'webapp/applications/apps_embed_model_deployment',
+                            'webapp/applications/apps_model_deployment'
+                        ]
+                    },
                 ]
 
             },
