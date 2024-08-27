@@ -42,7 +42,7 @@ pick the right credentials. This includes picking credentials from environment v
 with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
 
 You can specify additional [ExtraArgs](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#the-extraargs-parameter) 
-to pass to boto3 when uploading files. You can set this on a per-bucket basis. 
+to pass to Boto3 when uploading files. You can set this on a per-bucket basis. 
 
 ```
 sdk {
@@ -63,7 +63,6 @@ sdk {
                     bucket: "my-bucket-name"
                     key: ""
                     secret: ""
-                    verify: "/path/to/ca/bundle.crt" OR false to not verify
                     use_credentials_chain: false
                 },
                     
@@ -82,45 +81,72 @@ AWS's S3 access parameters can be specified by referencing the standard environm
 For example: 
 ```
 sdk {
-    aws {
-            s3 {
-                # default, used for any bucket not specified below
-                key: ${AWS_ACCESS_KEY_ID}
-                secret: ${AWS_SECRET_ACCESS_KEY}
-                region: ${AWS_DEFAULT_REGION}
-            }
-    }
+   aws {
+      s3 {
+         # default, used for any bucket not specified below
+         key: ${AWS_ACCESS_KEY_ID}
+         secret: ${AWS_SECRET_ACCESS_KEY}
+         region: ${AWS_DEFAULT_REGION}
+      }
+   }
 }
 ``` 
 
-ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
+ClearML supports any S3-compatible services, such as [MinIO](https://github.com/minio/minio) as well as other 
+cloud-based or locally deployed storage services. For non-AWS endpoints, use a configuration like this:
+
 ```
 sdk {
-    aws {
-            s3 {
-                # default, used for any bucket not specified below
-                key: ""
-                secret: ""
-                region: ""
+   aws {
+      s3 {
+         # default, used for any bucket not specified below
+         key: ""
+         secret: ""
+         region: ""
     
-                credentials: [
-                    {
-                        # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
-                        host: "my-minio-host:9000"
-                        key: ""
-                        secret: ""
-                        multipart: false
-                        secure: false
-                    }
-                ]
-            } 
-    }
+         credentials: [
+            {
+               # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
+               host: "my-minio-host:9000"
+               key: ""
+               secret: ""
+               multipart: false
+               secure: false
+               verify: "/path/to/ca/bundle.crt" OR "https://downloadable/link/to/ca/bundle.crt" OR false to not verify                    
+            }
+         ]
+      } 
+   }
 }
 ```
 
 :::info non-AWS Endpoints
-To force usage of a non-AWS endpoint (like the MinIO example above), port declaration is *always* needed, even if standard.
-To enable TLS, pass `secure: true`.
+To force usage of a non-AWS endpoint (like the MinIO example above), port declaration is *always* needed, even if using
+the standard port (for example, `host: "my-minio-host:433"`).
+
+To enable TLS, pass `secure: true`. For example: 
+```
+sdk {
+   aws {
+      s3 {
+         key: ""
+         secret: ""
+         region: ""
+   
+         credentials: [
+            {
+               host: "my-minio-host:9000"
+               key: ""
+               secret: ""
+               multipart: false
+               secure: true
+               verify: "/path/to/ca/bundle.crt"
+            }
+         ]
+      } 
+   }
+}
+```
 :::
 
 ### Configuring Azure
