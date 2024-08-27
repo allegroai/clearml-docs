@@ -19,10 +19,10 @@ channel to the model
 
 After starting an Embedding Model Deployment instance, you can view the following information in its dashboard:
 * Status indicator
-    * <icon> - App instance is running and is actively in use
-    * <icon> - App instance is setting up
-    * <icon> - App instance is idle
-    * <icon> App instance is stopped
+  * <img src="/docs/latest/icons/ico-embedding-model-active.svg" alt="Active instance" className="icon size-md space-sm" /> - App instance is running and is actively in use
+  * <img src="/docs/latest/icons/ico-embedding-model-loading.svg" alt="Loading instance" className="icon size-md space-sm" /> - App instance is setting up
+  * <img src="/docs/latest/icons/ico-embedding-model-idle.svg" alt="Idle instance" className="icon size-md space-sm" /> - App instance is idle
+  * <img src="/docs/latest/icons/ico-embedding-model-stopped.svg" alt="Stopped instance" className="icon size-md space-sm" /> - App instance is stopped
 * Idle time - Time elapsed since last activity 
 * Endpoint - The publicly accessible URL of the model endpoint
 * API base - The base URL for the model endpoint

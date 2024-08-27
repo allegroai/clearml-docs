@@ -19,10 +19,10 @@ to the model
 
 Once you start a Model Deployment instance, you can view the following information in its dashboard:
 * Status indicator
-  * <image> - App instance is running and is actively in use
-  * <image> - App instance is setting up
-  * <image> - App instance is idle
-  * <image> - App instance is stopped
+  * <img src="/docs/latest/icons/ico-model-active.svg" alt="Active instance" className="icon size-md space-sm" /> - App instance is running and is actively in use
+  * <img src="/docs/latest/icons/ico-model-loading.svg" alt="Loading instance" className="icon size-md space-sm" /> - App instance is setting up
+  * <img src="/docs/latest/icons/ico-model-idle.svg" alt="Idle instance" className="icon size-md space-sm" /> - App instance is idle
+  * <img src="/docs/latest/icons/ico-model-stopped.svg" alt="Stopped instance" className="icon size-md space-sm" /> - App instance is stopped
 * Idle time - Time elapsed since last activity 
 * Endpoint - The publicly accessible URL of the model endpoint
 * API base - The base URL for the model endpoint 
