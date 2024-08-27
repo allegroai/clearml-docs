@@ -46,12 +46,12 @@ Each application's page is split into two sections:
 
 :::tip Configuration shortcuts
 You can also launch an app instance with the configuration of a previously launched instance:
-* Cloning a previously launched app instance will open the launch form with the original instance's configuration 
+* Cloning a previously launched app instance will open the instance launch form with the original instance's configuration 
   prefilled.
 * Importing an app configuration file. You can export an existing app instance's configuration as a JSON file when 
   viewing its configuration.
 
-The prefilled configuration form can be edited before launching the new app instance.
+The prefilled instance launch form can be edited before starting the new app instance. 
 :::
   
 ## App Instance Actions
@@ -74,7 +74,7 @@ on the instance list header:
 
 ![Instance list actions](../../img/apps_instance_list_actions.png)
 
-* **Import Configuration** - Import an app instance's configuration file. This opens the app configuration form 
+* **Import Configuration** - Import an app instance's configuration file. This opens the app instance launch form
   prefilled according to the imported file. You can modify the configuration before launching the instance.  
 
 * **Clear Completed** - Delete all app instances that have completed their execution. This action only 

@@ -47,14 +47,14 @@ configuration prefilled.
 * Importing an app configuration file. You can export the configuration of a previously launched instance as a JSON file 
 when viewing its configuration.
 
-The prefilled configuration form can be edited before launching the new app instance.
+The prefilled instance launch form can be edited before starting the new app instance. 
 
 To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
-to open the app's configuration form.
+to open the app's instance launch form.
 
 ### Configuration Options
 
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration form with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **Streamlit Instance Name** - Name for the Streamlit launcher instance. This will appear in the instance list
 * **Project name** - Project where your Streamlit launcher app instance task will be stored
