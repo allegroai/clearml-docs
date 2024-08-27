@@ -27,7 +27,7 @@ Artifact details (location and size) can be viewed in ClearML's **web UI > exper
 
 ## Task 2: Accessing an Artifact
 
-After the second task is initialized, the script uses the [`Task.get_task`](../../references/sdk/task.md#taskget_task) 
+After the second task is initialized, the script uses the [`Task.get_task()`](../../references/sdk/task.md#taskget_task) 
 class method to get the first task and access its artifacts, specifically the `data file` artifact. The `get_local_copy` 
 method downloads the files and returns a path. 
 

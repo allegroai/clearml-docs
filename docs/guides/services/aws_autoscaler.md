@@ -152,7 +152,7 @@ Make sure a `clearml-agent` is assigned to that queue.
 ### Configuration 
 
 The values configured through the wizard are stored in the task's hyperparameters and configuration objects by using the 
-[`Task.connect`](../../references/sdk/task.md#connect) and [`Task.set_configuration_object`](../../references/sdk/task.md#set_configuration_object) 
+[`Task.connect()`](../../references/sdk/task.md#connect) and [`Task.set_configuration_object()`](../../references/sdk/task.md#set_configuration_object) 
 methods respectively. They can be viewed in the WebApp, in the task's **CONFIGURATION** page under **HYPERPARAMETERS** and **CONFIGURATION OBJECTS > General**. 
 
 ClearML automatically logs command line arguments defined with argparse. View them in the experiments **CONFIGURATION** 

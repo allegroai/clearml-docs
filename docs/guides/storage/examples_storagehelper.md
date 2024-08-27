@@ -16,7 +16,7 @@ class. The storage examples include:
 ## Working with Files
 ### Downloading a File
 
-To download a ZIP file from storage to the `global` cache context, use the [`StorageManager.get_local_copy`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
+To download a ZIP file from storage to the `global` cache context, use the [`StorageManager.get_local_copy()`](../../references/sdk/storage.md#storagemanagerget_local_copy) 
 class method, and specify the destination location as the `remote_url` argument:
 
 ```python
@@ -42,7 +42,7 @@ StorageManager.get_local_copy(remote_url="s3://MyBucket/MyFolder/file.ext", extr
 ```
 
 By default, the `StorageManager` reports its download progress to the console every 5MB. You can change this using the 
-[`StorageManager.set_report_download_chunk_size`](../../references/sdk/storage.md#storagemanagerset_report_download_chunk_size) 
+[`StorageManager.set_report_download_chunk_size()`](../../references/sdk/storage.md#storagemanagerset_report_download_chunk_size) 
 class method, and specifying the chunk size in MB (not supported for Azure and GCP storage).
 
 ```python
@@ -51,7 +51,7 @@ StorageManager.set_report_download_chunk_size(chunk_size_mb=10)
 
 ### Uploading a File
 
-To upload a file to storage, use the [`StorageManager.upload_file`](../../references/sdk/storage.md#storagemanagerupload_file) 
+To upload a file to storage, use the [`StorageManager.upload_file()`](../../references/sdk/storage.md#storagemanagerupload_file) 
 class method. Specify the full path of the local file as the `local_file` argument, and the remote URL as the `remote_url` 
 argument.
 
@@ -64,7 +64,7 @@ StorageManager.upload_file(
 Use the `retries` parameter to set the number of times file upload should be retried in case of failure.
 
 By default, the `StorageManager` reports its upload progress to the console every 5MB. You can change this using the 
-[`StorageManager.set_report_upload_chunk_size`](../../references/sdk/storage.md#storagemanagerset_report_upload_chunk_size) 
+[`StorageManager.set_report_upload_chunk_size()`](../../references/sdk/storage.md#storagemanagerset_report_upload_chunk_size) 
 class method, and specifying the chunk size in MB (not supported for Azure and GCP storage).
 
 ```python
@@ -73,7 +73,7 @@ StorageManager.set_report_upload_chunk_size(chunk_size_mb=10)
 
 ## Working with Folders
 ### Downloading a Folder
-Download a folder to a local machine using the [`StorageManager.download_folder`](../../references/sdk/storage.md#storagemanagerdownload_folder) 
+Download a folder to a local machine using the [`StorageManager.download_folder()`](../../references/sdk/storage.md#storagemanagerdownload_folder) 
 class method. Specify the remote storage location as the `remote_url` argument and the target local location as the 
 `local_folder` argument. 
 
@@ -90,7 +90,7 @@ For example: if you have a remote file `s3://bucket/sub/file.ext`, then
 You can input `match_wildcard` so only files matching the wildcard are downloaded.
 
 ### Uploading a Folder
-Upload a local folder to remote storage using the [`StorageManager.upload_folder`](../../references/sdk/storage.md#storagemanagerupload_folder) 
+Upload a local folder to remote storage using the [`StorageManager.upload_folder()`](../../references/sdk/storage.md#storagemanagerupload_folder) 
 class method. Specify the local folder to upload as the `local_folder` argument and the target remote location as the
 `remote_url` argument. 
 
@@ -112,7 +112,7 @@ You can input `match_wildcard` so only files matching the wildcard are uploaded.
 
 ## Setting Cache Limits
 
-To set a limit on the number of files cached, use the [`StorageManager.set_cache_file_limit`](../../references/sdk/storage.md#storagemanagerset_cache_file_limit) 
+To set a limit on the number of files cached, use the [`StorageManager.set_cache_file_limit()`](../../references/sdk/storage.md#storagemanagerset_cache_file_limit) 
 class method and specify the `cache_file_limit` argument as the maximum number of files. This does not limit the cache size, 
 only the number of files.
 

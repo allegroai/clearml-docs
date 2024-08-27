@@ -50,7 +50,7 @@ To add FrameGroups to a Dataset Version:
   
 1. Append the FrameGroup object to a list of frames
   
-1. Add that list to a DatasetVersion using the [`DatasetVersion.add_frames`](../references/hyperdataset/hyperdatasetversion.md#add_frames) 
+1. Add that list to a DatasetVersion using the [`DatasetVersion.add_frames()`](../references/hyperdataset/hyperdatasetversion.md#add_frames) 
 method. Use the `upload_retries` parameter to set the number of times the upload of a frame should be retried in case of 
 failure, before marking the frame as failed and continuing to upload the next frames. In the case that a single frame in 
 the FrameGroup fails to upload, the entire group will not be registered. The method returns a list of frames that were 
@@ -116,7 +116,7 @@ myVersion.update_frames(frames)
    
 ### Deleting Frames
 
-To delete a FrameGroup, use the [`DatasetVersion.delete_frames`](../references/hyperdataset/hyperdatasetversion.md#delete_frames) 
+To delete a FrameGroup, use the [`DatasetVersion.delete_frames()`](../references/hyperdataset/hyperdatasetversion.md#delete_frames) 
 method, just like when deleting a SingleFrame, except that a FrameGroup is being referenced.
 
 ```python

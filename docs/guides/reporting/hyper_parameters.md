@@ -54,8 +54,8 @@ TensorFlow Definitions appear in **HYPEPARAMETERS** **>** **TF_DEFINE**.
 
 ## Parameter Dictionaries
 
-Connect a parameter dictionary to a Task by calling the [`Task.connect`](../../references/sdk/task.md#connect)
-method, and ClearML logs the parameters. ClearML also tracks changes to the parameters.
+Connect a parameter dictionary to a Task by calling [`Task.connect()`](../../references/sdk/task.md#connect),
+and ClearML logs the parameters. ClearML also tracks changes to the parameters.
 
 ```python
 parameters = {
