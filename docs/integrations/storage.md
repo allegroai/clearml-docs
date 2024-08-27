@@ -115,7 +115,7 @@ sdk {
                         verify: "/path/to/ca/bundle.crt" OR "https://downloadable/link/to/ca/bundle.crt" OR false to not verify                    
                     }
                 ]
-           } 
+            } 
     }
 }
 ```
