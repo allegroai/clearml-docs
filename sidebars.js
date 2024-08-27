@@ -153,12 +153,16 @@ module.exports = {
                             'webapp/applications/apps_dashboard',
                             'webapp/applications/apps_task_scheduler',
                             'webapp/applications/apps_trigger_manager',
+                        ]
+                    },
+                    {
+                        "AI Dev": [
                             'webapp/applications/apps_jupyter_lab',
                             'webapp/applications/apps_vscode',
                         ]
                     },
                     {
-                        "AI Dev": [
+                        "UI Dev": [
                             'webapp/applications/apps_gradio',
                             'webapp/applications/apps_streamlit'
                         ]

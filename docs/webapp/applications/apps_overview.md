@@ -19,9 +19,10 @@ ClearML provides the following applications:
   * [**Project Dashboard**](apps_dashboard.md) - High-level project monitoring with Slack alerts
   * [**Task Scheduler**](apps_task_scheduler.md) - Schedule tasks for one-shot and/or periodic execution at specified times (available under ClearML Enterprise Plan)
   * [**Trigger Manager**](apps_trigger_manager.md) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
+* AI Dev: 
   * [**Jupyter Lab**](apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine (available under ClearML Enterprise Plan)
   * [**VS Code**](apps_vscode.md) - Launch a VS Code session on a remote machine (available under ClearML Enterprise Plan)
-* AI Dev: 
+* UI Dev:
   * [**Gradio Launcher**](apps_gradio.md) - Create visual web interfaces for your models with Gradio (available under ClearML Enterprise Plan)
   * [**Streamlit Launcher**](apps_streamlit.md) - Create visual web interfaces for your models with Streamlit (available under ClearML Enterprise Plan)
 * Deploy:
