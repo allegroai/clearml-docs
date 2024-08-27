@@ -6,11 +6,14 @@ The pipeline runs table is a [customizable](#customizing-the-runs-table) list of
 view a run's details, and manage runs (create, continue, or abort). The runs table's auto-refresh allows users 
 to continually monitor run progress.
 
-View the runs table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
-or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, 
-using the buttons on the top left of the page. Use the table view for a comparative view of your runs according to 
-columns of interest. Use the details view to access a selected run's details, while keeping the pipeline runs list in view. 
-Details view can also be accessed by double-clicking a specific pipeline run in the table view to open its details view. 
+View the runs table in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" />, 
+details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, 
+or comparison view <img src="/docs/latest/icons/ico-charts-view.svg" alt="Comparison view" className="icon size-md space-sm" />
+using the buttons on the top left of the page. Use the details view to access a selected run's details, while keeping 
+the run list in view. Details view can also be accessed by double-clicking a specific pipeline run in the table view to 
+open its details view. Use the [comparison view](#comparing-runs) to compare your pipeline run's scalar and plot results. 
+This view compares the scalars/plots  of currently selected pipeline runs. If no runs are selected, The first 100 visible 
+runs in the table are compared.
 
 You can archive pipeline runs so the runs table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 
 table to open the archive and view all archived runs. From the archive, you can restore 
@@ -146,3 +149,39 @@ selecting items beyond the items currently on-screen:
 * **None** - Clear selection
 * **Filtered** - Select all runs in the project that match the current active table filters 
 
+## Comparing Runs
+The comparison view compares pipeline run scalar and plot results. When selected, the view presents a comparison of all 
+[selected runs](#selecting-multiple-runs). If no runs are selected, the first 100 visible runs in the table are compared.
+
+In the dropdown menu, select to view **Scalars** or **Plots**.
+
+**Scalars** shows pipeline run scalar results as time series line graphs. 
+
+![Scalar line graphs](../../img/pipelines_comparison_scalars.png)
+
+All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
+represents a reported metric, and each bar in the cluster represents an experiment.
+
+![Single scalar comparison](../../img/pipelines_comparison_single_scalar.png)
+
+Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> to customize which 
+metrics to view.
+
+In the **Scalars** view, click <img src="/docs/latest/icons/ico-settings.svg" alt="Tuning" className="icon size-md" /> to access [scalar plot tools](../webapp_exp_track_visual.md#scalar-plot-tools).
+
+**Plots** shows the last reported iteration sample of each metric/variant combination per compared run. 
+
+Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared runs' into a single 
+comparative plot.
+
+![Merged plots](../../img/pipelines_comparison_plots_merged.png)
+
+Other plot types are displayed separately for each run.
+
+![Side-by-side plots](../../img/pipelines_comparison_plots.png)
+
+
+### Further Comparison
+For a more in depth comparison of pipeline runs, select the runs to compare and click **Compare** in the batch action 
+bar. In the run comparison pages, you can compare details, hyperparameters, scalars, plots, and debug samples. For more 
+information, see [Comparing Experiments](../webapp_exp_comparing.md).
