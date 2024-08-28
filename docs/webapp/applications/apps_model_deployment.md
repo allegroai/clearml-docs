@@ -8,7 +8,7 @@ The Model Deployment App is available under the ClearML Enterprise plan.
 
 The Model Deployment application enables users to quickly deploy LLM models as networking services over a secure 
 endpoint. This application supports various model configurations and customizations to optimize performance and resource 
-usage. The Model Deployment application serves your model on a machine of your choice.  Once an app instance is running, 
+usage. The Model Deployment application serves your model on a machine of your choice. Once an app instance is running, 
 it serves your model through a secure, publicly accessible network endpoint. The app monitors endpoint activity and 
 shuts down if the model remains inactive for a specified maximum idle time.
 
@@ -43,7 +43,7 @@ etc.
 
 ![Model Deployment App](../../img/apps_model_deployment.png)
 
-## Embedding Model Deployment Instance Configuration
+## Model Deployment Instance Configuration
 
 When configuring a new Model Deployment instance, you can fill in the required parameters or reuse the 
 configuration of a previously launched instance. 
@@ -70,8 +70,8 @@ instance task will be enqueued (make sure an agent is assigned to that queue)
 * Model Configuration
   * Trust Remote Code - Select to set Hugging Face [`trust_remote_code`](https://huggingface.co/docs/text-generation-inference/main/en/reference/launcher#trustremotecode) 
   to `true`.
-  * Revision - The specific Hugging Face version of the model you want to use. You can use a specific commit ID or a 
-  branch like `refs/pr/2`.
+  * Revision - The specific Hugging Face version of the model (i.e. weights) you want to use. You 
+  can use a specific commit ID or a branch like `refs/pr/2`.
   * Code Revision - The specific revision to use for the model code on HuggingFace Hub. It can be a branch name, a tag 
   name, or a commit ID. If unspecified, will use the default version.
   * Max Model Length - Model context length. If unspecified, will be automatically derived from the model
