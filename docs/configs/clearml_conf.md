@@ -941,8 +941,8 @@ and limitations on bucket naming.
     
 **`sdk.aws.s3.credentials.verify`** (*string*/*boolean*)
 
-* Specify whether to verify SSL certificates. By default, they are verified. Input a path or a downloadable link to a CA bundle, or set to 
-  `false` to skip SSL certificate verification. 
+* Specify whether to verify SSL certificates. By default, verification is enabled (`true`). You can provide a path or a 
+downloadable link to a CA bundle, or set this option to `false` to skip SSL certificate verification. 
 
   
 <br/>
