@@ -38,24 +38,23 @@ Once you start a Streamlit launcher instance, you can view the following informa
   changes
 
 ## Streamlit Launcher Instance Configuration
-When configuring a new Streamlit launcher instance, you can start from scratch or reuse an existing configuration. 
+When configuring a new Streamlit launcher instance, you can fill in the required parameters or reuse the configuration of 
+a previously launched instance.  
 
 Launch an app instance with the configuration of a previously launched instance using one of the following options:
-* Cloning a previously launched app instance will open the launch wizard with the original instance's configuration 
-prefilled.
-* Importing an app configuration file. You can export an existing app instance's configuration as a JSON file when 
-viewing its configuration.
+* Cloning a previously launched app instance will open the instance launch form with the original instance's 
+configuration prefilled.
+* Importing an app configuration file. You can export the configuration of a previously launched instance as a JSON file 
+when viewing its configuration.
 
-The prefilled configuration wizard can be edited before launching the new app instance.
+The prefilled instance launch form can be edited before starting the new app instance. 
 
-To  configure a new app instance:
-* Click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> to 
-open the app's configuration wizard
-* Fill in the configuration details listed below 
+To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
+to open the app's instance launch form.
 
 ### Configuration Options
 
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **Streamlit Instance Name** - Name for the Streamlit launcher instance. This will appear in the instance list
 * **Project name** - Project where your Streamlit launcher app instance task will be stored
