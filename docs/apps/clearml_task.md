@@ -57,7 +57,7 @@ errors in identifying the correct default branch.
 |---|----|---|
 | `--args` | Arguments to pass to the remote task, list of `<argument>=<value>` strings. Currently only argparse arguments are supported | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--base-task-id` | Use a pre-existing task in the system, instead of a local repo / script. Essentially clones an existing task and overrides arguments / requirements | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
-| `--binary` | Python executable used to launch the entry point. For example: `--binary python3`, `--binary /bin/bash`. By default, the binary will be auto-detected | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--binary` | Binary executable used to launch the entry point. For example: `--binary python3`, `--binary /bin/bash`. By default, the binary will be auto-detected | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--branch` | Select repository branch / tag. By default, latest commit from the master branch | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--commit` | Select commit ID to use. By default, latest commit, or local commit ID when using local repository | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--cwd` | Working directory to launch the script from. Relative to repo root or local `--folder` | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |

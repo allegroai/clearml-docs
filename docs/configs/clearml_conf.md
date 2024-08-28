@@ -942,7 +942,7 @@ and limitations on bucket naming.
 **`sdk.aws.s3.credentials.verify`** (*string*/*boolean*)
 
 * Specify whether to verify SSL certificates. By default, verification is enabled (`true`). You can provide a path or a 
-downloadable link to a CA bundle, or set this option to `false` to skip SSL certificate verification. 
+URL to a CA bundle, or set this option to `false` to skip SSL certificate verification. 
 
   
 <br/>
@@ -1003,9 +1003,9 @@ downloadable link to a CA bundle, or set this option to `false` to skip SSL cert
 
 **`sdk.development.default_pandas_dataframe_extension_name`** (*string*)
 
-* Set the default `extension_name` for pandas `DataFrame` objects. 
+* Set the default `extension_name` for pandas `DataFrame` objects 
 * Valid values are: `.csv.gz`, `.parquet`, `.feather`, `.pickle`
-* This value can be overwritten by the `extension_name` argument supplied to `Task.upload_artifact()`
+* This value can be overridden by the `extension_name` argument supplied to `Task.upload_artifact()`
 
 ---
     
