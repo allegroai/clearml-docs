@@ -56,11 +56,11 @@ when viewing its configuration.
 
 The prefilled configuration form can be edited before launching the new app instance.
 
-To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
+To configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
 to open the app's configuration form.
 
 ### Configuration Options
-* Import Configuration - Import an app instance configuration file. This will fill the configuration wizard with the 
+* Import Configuration - Import an app instance configuration file. This will fill the instance launch form with the 
 values from the file, which can be modified before launching the app instance
 * Project name - ClearML Project Name
 * Task name - Name of ClearML Task for your Model Deployment app instance

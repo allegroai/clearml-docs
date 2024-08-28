@@ -55,7 +55,7 @@ when viewing its configuration.
 
 The prefilled configuration form can be edited before launching the new app instance.
 
-To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
+To configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
 to open the app's configuration form.
 
 ### Configuration Options
