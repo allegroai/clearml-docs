@@ -150,7 +150,7 @@ sdk {
 
 Use the `sdk.aws.s3.credentials.verify` configuration option to control SSL certificate verification:
 * By default, verify is set to `true`, meaning certificate verification is enabled
-* You can provide a path or a downloadable link to a CA bundle for custom certificate verification
+* You can provide a path or a URL to a CA bundle for custom certificate verification
 
 ### Configuring Azure
 To configure Azure blob storage specify the account name and key.
