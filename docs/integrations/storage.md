@@ -113,7 +113,7 @@ sdk {
                         secret: ""
                         multipart: false
                         secure: false
-                        verify: true # OR "/path/to/ca/bundle.crt" OR "https://downloadable/link/to/ca/bundle.crt" OR false to not verify                    
+                        verify: true # OR "/path/to/ca/bundle.crt" OR "https://url/of/ca/bundle.crt" OR false to not verify                    
                     }
                 ]
             } 
