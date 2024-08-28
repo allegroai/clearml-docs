@@ -52,11 +52,12 @@ pip install clearml
 1. The setup wizard prompts for ClearML credentials.
 
    ```console
-   Please create new clearml credentials through the settings page in your `clearml-server` web app, 
-   or create a free account at https://app.clear.ml/settings/webapp-configuration
-    
-   In the settings > workspace page, press "Create new credentials", then press "Copy to clipboard".
-   Paste copied configuration here: 
+   Please create new clearml credentials through the settings page in your `clearml-server` web app (e.g. http://localhost:8080//settings/workspace-configuration), 
+   or create a free account at https://app.clear.ml/settings/workspace-configuration
+   
+   In the settings page, press "Create new credentials", then press "Copy to clipboard".
+   
+   Paste copied configuration here:
    ```
       
 1. Get ClearML credentials. Open the ClearML Web UI in a browser. On the [**SETTINGS > WORKSPACE**](https://app.clear.ml/settings/workspace-configuration) 
@@ -66,30 +67,10 @@ pip install clearml
    hover)
     
 1. At the command prompt `Paste copied configuration here:`, copy and paste the ClearML credentials.
-   The setup wizard confirms the credentials. 
+   The setup wizard verifies the credentials. 
    ```console
    Detected credentials key="********************" secret="*******"
-   ```
-   
-1. Enter the ClearML Server web server URL, or press **Enter** to accept the default which is detected from the 
-   credentials.
-   
-   ```console 
-   WEB Host configured to: [https://app.<your-domain>] 
-   ```
-    
-1. Enter the ClearML Server API server URL, or press **Enter** to accept the default value which is based on the previous response:
-   ```console 
-   API Host configured to: [https://api.<your-domain>] 
-   ```
-   
-1. Enter the ClearML Server file server URL, or press **Enter** to accept the default value which is based on the previous response:
-   ```console
-   File Store Host configured to: [files.<your-domain>] 
-   ``` 
-   
-   The wizard responds with a configuration and directs to the ClearML Server.
-   ```console 
+
    CLEARML Hosts configuration:
    Web App: https://app.<your-domain>
    API: https://api.<your-domain>
