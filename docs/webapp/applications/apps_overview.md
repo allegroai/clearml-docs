@@ -22,7 +22,7 @@ ClearML provides the following applications:
 * AI Dev: Applications for deploying AI development environments on remote machines. 
   * [**Jupyter Lab**](apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine (available under ClearML Enterprise Plan)
   * [**VS Code**](apps_vscode.md) - Launch a VS Code session on a remote machine (available under ClearML Enterprise Plan)
-* UI Dev: Applications for deploying user interfaces for models
+* UI Dev: Applications for deploying user interfaces for models.
   * [**Gradio Launcher**](apps_gradio.md) - Create visual web interfaces for your models with Gradio (available under ClearML Enterprise Plan)
   * [**Streamlit Launcher**](apps_streamlit.md) - Create visual web interfaces for your models with Streamlit (available under ClearML Enterprise Plan)
 * Deploy: Applications for deploying machine learning models as scalable, secure services.
