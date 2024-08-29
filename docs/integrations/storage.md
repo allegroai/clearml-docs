@@ -82,12 +82,12 @@ For example:
 ```
 sdk {
     aws {
-            s3 {
-                # default, used for any bucket not specified below
-                key: ${AWS_ACCESS_KEY_ID}
-                secret: ${AWS_SECRET_ACCESS_KEY}
-                region: ${AWS_DEFAULT_REGION}
-            }
+        s3 {
+            # default, used for any bucket not specified below
+            key: ${AWS_ACCESS_KEY_ID}
+            secret: ${AWS_SECRET_ACCESS_KEY}
+            region: ${AWS_DEFAULT_REGION}
+        }
     }
 }
 ``` 
@@ -99,24 +99,24 @@ cloud-based or locally deployed storage services. For non-AWS endpoints, use a c
 ```
 sdk {
     aws {
-            s3 {
-                # default, used for any bucket not specified below
-                key: ""
-                secret: ""
-                region: ""
+        s3 {
+            # default, used for any bucket not specified below
+            key: ""
+            secret: ""
+            region: ""
     
-                credentials: [
-                    {
-                        # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
-                        host: "my-minio-host:9000"
-                        key: ""
-                        secret: ""
-                        multipart: false
-                        secure: false
-                        verify: true # OR "/path/to/ca/bundle.crt" OR "https://url/of/ca/bundle.crt" OR false to not verify                    
-                    }
-                ]
-            } 
+            credentials: [
+                {
+                    # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
+                    host: "my-minio-host:9000"
+                    key: ""
+                    secret: ""
+                    multipart: false
+                    secure: false
+                    verify: true # OR "/path/to/ca/bundle.crt" OR "https://url/of/ca/bundle.crt" OR false to not verify                    
+                }
+            ]
+        } 
     }
 }
 ```
@@ -213,7 +213,7 @@ sdk {
 }
 ```
 
-GCP's storage access parameters can be specified by referencing the standard environment variables if already defined.
+GCP storage access parameters can be specified by referencing the standard environment variables if already defined.
 
 ```
 sdk {
