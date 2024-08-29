@@ -72,6 +72,12 @@ it can't do that when running from a virtual environment.
    Credentials verified!
    ```
 
+1. Input the default output URI. Model checkpoints (snapshots) and task artifacts will be stored in this output location.
+
+   ```
+   Default Output URI (used to automatically store models and artifacts): (N)one/ClearML (S)erver/(C)ustom [None]
+   ```
+
 1. Enter your Git username and password. Leave blank for SSH key authentication or when only using public repositories.
    
    This is needed for cloning repositories by the agent.
