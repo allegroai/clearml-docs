@@ -20,6 +20,8 @@ ClearML provides the following applications:
   * [**Task Scheduler**](apps_task_scheduler.md) - Schedule tasks for one-shot and/or periodic execution at specified times (available under ClearML Enterprise Plan)
   * [**Trigger Manager**](apps_trigger_manager.md) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
 * AI Dev: 
+  * [**SSH Session**](apps_ssh_session.md) - Launch a complete development environment on a remote machine with a 
+  detached interactive SSH session (available under ClearML Enterprise Plan)
   * [**Jupyter Lab**](apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine (available under ClearML Enterprise Plan)
   * [**VS Code**](apps_vscode.md) - Launch a VS Code session on a remote machine (available under ClearML Enterprise Plan)
 * UI Dev:
