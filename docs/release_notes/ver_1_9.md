@@ -2,6 +2,11 @@
 title: Version 1.9
 ---
 
+### ClearML Agent 1.9.1
+
+**New Features and Improvements**
+* Add default pip version support for Python 3.12
+
 ### ClearML Agent 1.9.0
 
 **New Features and Improvements**
