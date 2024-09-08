@@ -44,7 +44,7 @@ jobs:
           echo "Fourth batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_4.txt" | wc -l) file."
           echo "Fifth batch has $(cat "${MD_ARTIFACTS_DIR}/MD_FILES_BATCH_5.txt" | wc -l) file."
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: artifacts-markdown
           path: ${{ env.MD_ARTIFACTS_DIR }}
