@@ -30,7 +30,7 @@ Contributions come in many forms:
 
 * Reporting [issues](https://github.com/allegroai/clearml/issues) you've come upon
 * Participating in issue discussions in the [issue tracker](https://github.com/allegroai/clearml/issues) and the
-  [ClearML community slack space](https://joinslack.clear.ml)
+  [ClearML Community Slack space](https://joinslack.clear.ml)
 * Suggesting new features or enhancements
 * Implementing new features or fixing outstanding issues
 
@@ -86,11 +86,13 @@ Enhancement suggestions are tracked as GitHub issues. After you determine which 
 Before you submit a new PR:
 
 * Verify that the work you plan to merge addresses an existing [issue](https://github.com/allegroai/clearml/issues) (if not, open a new one)
-* Check related discussions in the [ClearML slack community](https://joinslack.clear.ml) 
+* Check related discussions in the [ClearML Slack community](https://joinslack.clear.ml) 
   (or start your own discussion on the ``#clearml-dev`` channel)
 * Make sure your code conforms to the ClearML coding standards by running:
   
-      flake8 --max-line-length=120 --statistics --show-source --extend-ignore=E501 ./clearml*
+  ```
+  flake8 --max-line-length=120 --statistics --show-source --extend-ignore=E501 ./clearml*
+  ```
 
 In your PR include:
 
