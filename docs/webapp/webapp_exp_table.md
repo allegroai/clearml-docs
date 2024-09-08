@@ -298,11 +298,6 @@ Other plot types are displayed separately for each experiment.
 
 ![Separate comparison plots](../img/webapp_compare_view_2.png)
 
-
-
-
-
-
 ## Creating an Experiment Leaderboard
 
 Filter and sort the experiments of any project to create a leaderboard that can be shared and stored. This leaderboard
