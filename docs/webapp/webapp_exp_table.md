@@ -269,18 +269,11 @@ The comparison view compares experiment scalar and plot results (for a more in d
 When selected, the view presents a comparison of all [selected experiments](#selecting-multiple-experiments). If no 
 experiments are selected, the first 100 visible experiments in the table are displayed in the comparison. 
 
-In the dropdown menu, select to view **Scalars** or **Plots**. **Scalars** shows experiment scalar results as time 
-series line graphs. **Plots** shows the last reported iteration sample of each metric/variant combination per compared 
-experiment. 
+In the dropdown menu, select to view **Scalars** or **Plots**. 
 
-Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
-single comparative plot. 
+**Scalars** shows experiment scalar results as time series line graphs. 
 
 ![Merged comparison plots](../img/webapp_compare_view_1.png)
-
-Other plot types are displayed separately for each experiment.
-
-![Separate comparison plots](../img/webapp_compare_view_2.png)
 
 All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
 represents a reported metric, and each bar in the cluster represents an experiment.
@@ -290,9 +283,20 @@ represents a reported metric, and each bar in the cluster represents an experime
 Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> to customize which 
 metrics to view.
 
-In the **Scalars** view, click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size-md" /> to access 
+Click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size-md" /> to access 
 [scalar plot tools](webapp_exp_track_visual.md#scalar-plot-tools).
 
+**Plots** shows the last reported iteration sample of each metric/variant combination per compared 
+experiment. 
+
+Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
+single comparative plot. 
+
+![Merged comparison plots](../img/webapp_compare_view_4.png)
+
+Other plot types are displayed separately for each experiment.
+
+![Separate comparison plots](../img/webapp_compare_view_2.png)
 
 ## Creating an Experiment Leaderboard
 
