@@ -96,7 +96,7 @@ Want a more in depth introduction to ClearML? Choose where you want to get start
                 <img src="/docs/latest/icons/ico-devops-engineer.svg" alt="DevOps Engineer logo" />
             </i>
             <h4>DevOps Engineers</h4>
-            <p>Learn learn how to deploy and configure a ClearML Server</p>
+            <p>Learn how to deploy and configure a ClearML Server</p>
             <span class="btn-link">
                 <a href="./deploying_clearml/clearml_server#deployment">START HERE</a>
             </span>
