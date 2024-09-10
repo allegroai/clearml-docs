@@ -4,10 +4,11 @@ title: What is ClearML?
 slug: /
 ---
 
-ClearML is an open source platform that automates and simplifies developing and managing machine learning solutions
-for thousands of data science teams all over the world.
-It is designed as an end-to-end MLOps and LLMOps suite allowing you to focus on developing your ML code and automation,
-while ClearML ensures your work is reproducible and scalable.
+ClearML is open-source, end-to-end AI Platform designed to streamline AI adoption and the entire development lifecycle. 
+It supports every phase of AI development, from research to production, allowing users to 
+leverage any model, dataset, or architecture at scale. ClearML integrates seamlessly with existing tools, 
+frameworks, and infrastructures, offering unmatched flexibility and control for AI builders and DevOps teams building, 
+training, and deploying models at every scale on any AI infrastructure.
 
 
 ## Getting Started
