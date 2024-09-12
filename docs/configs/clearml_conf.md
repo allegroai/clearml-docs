@@ -424,7 +424,11 @@ This feature is available under the ClearML Enterprise plan
 The first matched rule will be picked, according to rule order. 
   
 * Each dictionary in the list lays out rules, and the container to be used if the rules are matched. The
-rules can be script requirements, Git details, and/or Python binary, and/or the task's project. 
+rules can be script requirements, Git details, and/or Python binary, and/or the task's project.
+
+:::note
+`match_rules` are ignore if `--docker <container>` is passed in the command line. 
+:::
 
 ```console
 match_rules: [
