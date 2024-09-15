@@ -141,7 +141,7 @@ agentk8sglue:
 ## Slurm
 
 :::important Enterprise Feature
-Slurm Glue is available under the ClearML Enterprise plan
+Slurm Glue is available under the ClearML Enterprise plan.
 :::
 
 Agents can be deployed bare-metal or inside [`Singularity`](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) 

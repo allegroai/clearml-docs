@@ -3,7 +3,7 @@ title: Jupyter Lab
 ---
 
 :::important Enterprise Feature
-The Jupyter Lab application is available under the ClearML Enterprise plan
+The Jupyter Lab application is available under the ClearML Enterprise plan.
 :::
 
 The Jupyter Lab UI application allows you to launch a remote Jupyter Lab session on a machine that better meets resource needs. 

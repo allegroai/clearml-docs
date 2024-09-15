@@ -2,7 +2,7 @@
 title: Scheduling Working Hours
 ---
 :::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 The Agent scheduler enables scheduling working hours for each Agent. During working hours, a worker will actively poll 

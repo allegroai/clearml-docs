@@ -417,7 +417,7 @@ ___
 **`agent.default_docker.match_rules`** (*[dict]*)
 
 :::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 * Lookup table of rules for default container if running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode). 
@@ -1535,7 +1535,7 @@ sdk {
 ## Configuration Vault
 
 :::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 The ClearML Enterprise Server includes the configuration vault. Users can add configuration sections to the vault and, once 
