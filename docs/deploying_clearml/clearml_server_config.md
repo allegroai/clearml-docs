@@ -397,7 +397,7 @@ options.
 ### Custom UI Context Menu Actions
 
 :::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 Create custom UI context menu actions to be performed on ClearML objects (projects, tasks, models, dataviews, or queues) 
