@@ -3,7 +3,7 @@ title: Trigger Manager
 --- 
 
 :::important Enterprise Feature
-The Trigger Manager application is available under the ClearML Enterprise plan
+The Trigger Manager application is available under the ClearML Enterprise plan.
 :::
 
 ClearML's Trigger Manager Application lets you define tasks to be run when predefined events occur. The Trigger Manager 

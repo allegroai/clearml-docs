@@ -3,7 +3,7 @@ title: User Groups
 ---
 
 :::important Enterprise Feature
-User Groups are available under the ClearML Enterprise plan
+User Groups are available under the ClearML Enterprise plan.
 :::
 
 Administrators can define user groups, which can be used for access privilege management. User groups facilitate easy 

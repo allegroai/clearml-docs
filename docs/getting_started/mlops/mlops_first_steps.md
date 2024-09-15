@@ -67,7 +67,7 @@ Cloning a task duplicates the task's configuration, but not its outputs.
 
 **To clone an experiment in the ClearML WebApp:** 
 1. Click on any project card to open its [experiments table](../../webapp/webapp_exp_table.md).
-1. Right-click one of the experiments on the table .
+1. Right-click one of the experiments on the table.
 1. Click **Clone** in the context menu, which will open a **CLONE EXPERIMENT** window.
 1. Click **CLONE** in the window. 
 
