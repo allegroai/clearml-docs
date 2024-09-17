@@ -199,7 +199,7 @@ Pass one of the following in the `continue_last_task` parameter:
 You can also continue a task previously executed in offline mode, using `Task.import_offline_session()`. 
 See [Offline Mode](#offline-mode). 
 
-### Empty Task Creation
+### Task Creation from Existing Code or Container
 
 A task can also be created without the need to execute the code itself.
 Unlike the runtime detections, all the environment and configuration details need to be provided explicitly.
