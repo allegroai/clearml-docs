@@ -394,63 +394,108 @@ ___
 
 #### agent.default_docker
         
-<a class="tr_top_negative" name="agent_default_docker"></a> 
-
 **`agent.default_docker`** (*dict*)
         
-* Dictionary containing the default options for workers in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
-        
----
-        
-**`agent.default_docker.arguments`** (*string*)
-        
-* If running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode), this option specifies the options to pass to the Docker container.
-        
----
-        
-**`agent.default_docker.image`** (*string*)
-        
-* If running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode), this option specifies the default Docker image to use.
-        
----
+* Dictionary containing the default options for workers running in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+These settings define which Docker image and arguments should be used unless [explicitly overridden through the UI or an agent](../clearml_agent/clearml_agent_execution_env.md#docker-mode). 
+  * **`agent.default_docker.image`** (*str*) - Specifies the default Docker image to use.
+  * **`agent.default_docker.arguments`** ([*str*]) - Specifies the list of options to pass to the Docker container. For 
+  example: `arguments: ["--ipc=host", ]`
+  * **`agent.default_docker.match_rules`** (*[dict]*)
 
-**`agent.default_docker.match_rules`** (*[dict]*)
-
-:::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan.
-:::
-
-* Lookup table of rules for default container if running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode). 
-The first matched rule will be picked, according to rule order. 
+    :::important Enterprise Feature
+    This feature is available under the ClearML Enterprise plan.
+    :::
+    
+    * Lookup table of rules that determine the default container and arguments when running a worker in Docker mode. The 
+    first matched rule will be picked, according to rule order.  
+    * Each dictionary in the list lays out rules, and the container and container arguments to be used if the rules are 
+    matched.  
   
-* Each dictionary in the list lays out rules, and the container to be used if the rules are matched. The
-rules can be script requirements, Git details, and/or Python binary, and/or the task's project. 
-
-```console
-match_rules: [
-      {
-          image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
-          arguments: "-e define=value"
-          match: {
-              script {
-                  # Optional: must match all requirements (not partial)
-                  requirements: {
-                      # version selection matching PEP-440
-                      pip: {
-                          tensorflow: "~=2.6"
-                      },
+    :::note Match rule arguments
+    `default_docker.match_rules.arguments` should be formatted as a single string (for example: `"-e VALUE=1 --ipc=host"`),
+    unlike  `agent.default_docker.arguments`
+    :::
+    
+    * The rules can be: 
+      * `script.requirements` - Match all script requirements
+      * `script.repostiry`, `script.branch` - Match based on Git repository or branch where the script is stored
+      * `script.binary` - Match binary executable used to launch the entry point
+      * `project` - Match the Task project's name
+    * Matching is done via regular expression. For example `"^searchme$"` will match exactly the `"searchme"` 
+    string. 
+    * Example: 
+        * The following rule matches tasks where the script's Git repository is `/my_repository/`, the branch is `main`, the 
+        Python binary is `python3.6`, and the task's project is `project/sub_project`. If all conditions are met, the 
+        `nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04` image is used.
+        
+           ```
+            "default_docker": {
+                "image": "nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04",
+                match_rules: [
+                   {
+                       image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04",
+                       arguments: "-e define=value",
+                       match: {
+                           script {
+                               # Optional: must match all requirements (not partial)
+                               requirements: {
+                                   # version selection matching PEP-440
+                                   pip: {
+                                       tensorflow: "~=2.6"
+                                   },
+                               }
+                               repository: "/my_repository/"
+                               branch: "main"
+                               binary: "python3.6"
+                           }
+                           project: "project/sub_project"
+                       }
+                   },
+                ]
+             }
+             ```
+        * The following rule matches tasks in the `example` project that require `tensorflow~=1.6`,
+        and if the conditions are met, the `sample_container:tag` image is used.
+      
+          ```yaml
+          "default_docker": {
+              match_rules: [
+                  {
+                     "image": "sample_container:tag",
+                     "arguments": "-e VALUE=1 --ipc=host",
+                     "match": {
+                        "script": {
+                           "requirements": {
+                              "pip": {
+                                 "tensorflow": "~=1.6"
+                              }
+                           },
+                        },
+                        "project": "example"
+                     }
                   }
-                  # Optional: matching based on regular expression, example: "^exact_match$"
-                  repository: "/my_repository/"
-                  branch: "main"
-                  binary: "python3.6"
-              }
-              # Optional: matching based on regular expression, example: "^exact_match$"
-              project: "project/sub_project"
+              ]
           }
-      },
-  ]
-```
+          ```
+        * The following rule uses a regular expression to match any project that starts with `examples` (e.g., `examples`, 
+        `examples/sub_project`), and if the condition is met, the `another_container:tag` image will be used.
+        
+            ```yaml
+            "default_docker": {
+               match_rules: [
+                 {
+                     "image": "another_container:tag",
+                     "arguments": "",
+                     "match": {
+                         # anything that starts with "examples", e.g. "examples", "examples/sub_project"
+                         "project": "^examples", 
+                     }
+                 }
+             ] 
+            ```
+        
+
 
 
 <br/>
