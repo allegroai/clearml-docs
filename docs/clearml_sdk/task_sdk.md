@@ -222,7 +222,7 @@ task = Task.create(
 ```
 
 If the code does not contain a `Task.init()` call, pass `add_task_init_call=True`, and the code will be patched when 
-executed by ClearML Agent. 
+executed by a ClearML Agent. 
 
 :::info Argument Specification
 When specifying arguments in `argparse_args`, use the full argument name (e.g., `--lr`) instead of the short form 
