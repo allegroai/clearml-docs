@@ -231,8 +231,6 @@ flag. In most cases, the full argument name and the variable name are the same, 
 will not work.
 :::
 
-
-
 For more information, see [`Task.create()`](../references/sdk/task.md#taskcreate).
 
 ## Tracking Task Progress
