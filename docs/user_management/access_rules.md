@@ -3,7 +3,7 @@ title: Access Rules
 ---
 
 :::important Enterprise Feature
-Access Rules are available under the ClearML Enterprise plan
+Access Rules are available under the ClearML Enterprise plan.
 :::
 
 Workspace administrators can use Access Rules to specify which users, service accounts and/or [user groups](user_groups.md) 
