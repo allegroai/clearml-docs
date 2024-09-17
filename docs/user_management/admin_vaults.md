@@ -3,7 +3,7 @@ title: Administrator Vaults
 ---
 
 :::important Enterprise Feature
-Administrator Vaults are available under the ClearML Enterprise plan
+Administrator Vaults are available under the ClearML Enterprise plan.
 :::
 
 Administrators can set configuration for users, [service accounts](../webapp/webapp_profile.md#service-accounts), 
