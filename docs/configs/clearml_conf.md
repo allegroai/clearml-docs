@@ -424,39 +424,74 @@ These settings define which Docker image and arguments should be used unless [ex
       * `project` - Match the Task project's name
     * Matching is done via regular expression. For example `"^searchme$"` will match exactly the `"searchme"` string, and `^examples` 
     will match that starts with `examples` (e.g., `examples`, `examples/sub_project`).
-    * For example: in the configuration below, two `match_rules` are used to specify different Docker images based on 
-    the Python binary version. The first rule applies the `python:3.6-bullseye` image with the `--ipc=host` argument 
-    when the task requires `python3.6`. The second rule applies the `python:3.7-bullseye` image with the same argument 
-    when the script requires `python3.7`. If no match is found, the default `nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04` 
-    image is used.
-        
-          ```
-          agent {
-            default_docker: {
-              image: "nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04",
-              match_rules: [
-                {
-                  image: "python:3.6-bullseye"
-                  arguments": "--ipc=host"
-                  match: {
+    * Examples: 
+      *  In the example configuration below, the rules match tasks where the Python binary is `python3.6`, `tensorflow~=2.6` 
+      is required, the script's Git repository is `/my_repository/`, the branch is `main`, and the task's project is 
+      `project/sub_project`. If all conditions are met, the `nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04` image is used 
+      with the argument `-e define=value`.
+       
+         ```
+         agent {
+          default_docker {
+            matche_rules [
+              {
+                image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
+                arguments: "-e define=value"
+                match: {
                     script {
-                      binary: "python3.6$"
-                    },
-                  }
-                },
-                {
-                  image: "python:3.7-bullseye"
-                  arguments: "--ipc=host"
-                  match: {
-                    script {
-                      binary: "python3.7$"
-                    },
-                  }
-                },
-              ]
-            }
+                        # Optional: must match all requirements (not partial)
+                        requirements: {
+                            # version selection matching PEP-440
+                            pip: {
+                                tensorflow: "~=2.6"
+                            },
+                        # Optional: matching based on regular expression, example: "^exact_match$"
+                        repository: "/my_repository/"
+                        branch: "main"
+                        binary: "python3.6"
+                    }
+                    # Optional: matching based on regular expression, example: "^exact_match$"
+                    project: "project/sub_project"
+                }
+              }
+            ]
           }
-          ```
+         }
+         ```
+                    
+      * In the example configuration below, two `match_rules` are used to specify different Docker images based on 
+      the Python binary version. The first rule applies the `python:3.6-bullseye` image with the `--ipc=host` argument 
+      when the task requires `python3.6`. The second rule applies the `python:3.7-bullseye` image with the same argument 
+      when the script requires `python3.7`. If no match is found, the default `nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04` 
+      image is used.
+        
+            ```
+            agent {
+              default_docker: {
+                image: "nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04",
+                match_rules: [
+                  {
+                    image: "python:3.6-bullseye"
+                    arguments": "--ipc=host"
+                    match: {
+                      script {
+                        binary: "python3.6$"
+                      },
+                    }
+                  },
+                  {
+                    image: "python:3.7-bullseye"
+                    arguments: "--ipc=host"
+                    match: {
+                      script {
+                        binary: "python3.7$"
+                      },
+                    }
+                  },
+                ]
+              }
+            }
+            ```
 
 
 <br/>
