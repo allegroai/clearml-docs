@@ -400,7 +400,7 @@ ___
 These settings define which Docker image and arguments should be used unless [explicitly overridden through the UI or an agent](../clearml_agent/clearml_agent_execution_env.md#docker-mode). 
   * **`agent.default_docker.image`** (*str*) - Specifies the default Docker image to use.
   * **`agent.default_docker.arguments`** ([*str*]) - Specifies the list of options to pass to the Docker container. For 
-  example: `arguments: ["--ipc=host", ]`
+  example: `arguments: ["--ipc=host", ]`.
   * **`agent.default_docker.match_rules`** (*[dict]*)
 
     :::important Enterprise Feature
@@ -422,80 +422,41 @@ These settings define which Docker image and arguments should be used unless [ex
       * `script.repostiry`, `script.branch` - Match based on Git repository or branch where the script is stored
       * `script.binary` - Match binary executable used to launch the entry point
       * `project` - Match the Task project's name
-    * Matching is done via regular expression. For example `"^searchme$"` will match exactly the `"searchme"` 
-    string. 
-    * Example: 
-        * The following rule matches tasks where the script's Git repository is `/my_repository/`, the branch is `main`, the 
-        Python binary is `python3.6`, and the task's project is `project/sub_project`. If all conditions are met, the 
-        `nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04` image is used.
+    * Matching is done via regular expression. For example `"^searchme$"` will match exactly the `"searchme"` string, and `^examples` 
+    will match that starts with `examples` (e.g., `examples`, `examples/sub_project`).
+    * For example: in the configuration below, two `match_rules` are used to specify different Docker images based on 
+    the Python binary version. The first rule applies the `python:3.6-bullseye` image with the `--ipc=host` argument 
+    when the task requires `python3.6`. The second rule applies the `python:3.7-bullseye` image with the same argument 
+    when the script requires `python3.7`. If no match is found, the default `nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04` 
+    image is used.
         
-           ```
-            "default_docker": {
-                "image": "nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04",
-                match_rules: [
-                   {
-                       image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04",
-                       arguments: "-e define=value",
-                       match: {
-                           script {
-                               # Optional: must match all requirements (not partial)
-                               requirements: {
-                                   # version selection matching PEP-440
-                                   pip: {
-                                       tensorflow: "~=2.6"
-                                   },
-                               }
-                               repository: "/my_repository/"
-                               branch: "main"
-                               binary: "python3.6"
-                           }
-                           project: "project/sub_project"
-                       }
-                   },
-                ]
-             }
-             ```
-        * The following rule matches tasks in the `example` project that require `tensorflow~=1.6`,
-        and if the conditions are met, the `sample_container:tag` image is used.
-      
-          ```yaml
-          "default_docker": {
+          ```
+          agent {
+            default_docker: {
+              image: "nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04",
               match_rules: [
-                  {
-                     "image": "sample_container:tag",
-                     "arguments": "-e VALUE=1 --ipc=host",
-                     "match": {
-                        "script": {
-                           "requirements": {
-                              "pip": {
-                                 "tensorflow": "~=1.6"
-                              }
-                           },
-                        },
-                        "project": "example"
-                     }
+                {
+                  image: "python:3.6-bullseye"
+                  arguments": "--ipc=host"
+                  match: {
+                    script {
+                      binary: "python3.6$"
+                    },
                   }
+                },
+                {
+                  image: "python:3.7-bullseye"
+                  arguments: "--ipc=host"
+                  match: {
+                    script {
+                      binary: "python3.7$"
+                    },
+                  }
+                },
               ]
+            }
           }
           ```
-        * The following rule uses a regular expression to match any project that starts with `examples` (e.g., `examples`, 
-        `examples/sub_project`), and if the condition is met, the `another_container:tag` image will be used.
-        
-            ```yaml
-            "default_docker": {
-               match_rules: [
-                 {
-                     "image": "another_container:tag",
-                     "arguments": "",
-                     "match": {
-                         # anything that starts with "examples", e.g. "examples", "examples/sub_project"
-                         "project": "^examples", 
-                     }
-                 }
-             ] 
-            ```
-        
-
 
 
 <br/>
