@@ -274,7 +274,7 @@ In the dropdown menu, select to view **Scalars** or **Plots**. **Scalars** shows
 series line graphs. **Plots** shows the last reported iteration sample of each metric/variant combination per compared 
 experiment. 
 
-Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
+Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
 single comparative plot. 
 
 ![Merged comparison plots](../img/webapp_compare_view_1.png)
