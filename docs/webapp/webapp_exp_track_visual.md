@@ -8,7 +8,7 @@ including:
 * [Execution details](#execution) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
-* [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
+* [Info](#info) - Extended experiment information, such as the experiment start, create, and last update times and dates, user creating the experiment, and its description.
 * [Console](#console) - stdout, stderr, output to the console from libraries, and ClearML explicit reporting.
 * [Scalars](#scalars) - Metric plots.
 * [Plots](#plots) - Other plots and data, for example: Matplotlib, Plotly, and ClearML explicit reporting.
@@ -216,10 +216,41 @@ In the **ARTIFACTS** tab **>** **OTHER** **>** Select an artifact **>** Either:
 
 ![Other artifacts section](../img/webapp_tracking_30.png)
 
-## General Information
+## Info
 
-General experiment details appear in the **INFO** tab. This includes information describing the stored experiment:
-* Experiment description (editable, hover over the description box and click **Edit**)
+The **INFO** tab shows extended experiment information:
+* [Latest experiment events log](#latest-events-log)
+* [Experiment description](#description)
+* [Experiment details](#experiment-details)
+
+### Latest Events Log 
+
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan
+:::
+
+The Enterprise Server also displays a detailed history of  task activity: 
+* Task action (e.g. status changes, project move, etc.)
+* Action time
+* Acting user
+* Action source (i.e. ClearML Agent, SDK, or UI)
+* Action source version 
+
+To download the task history as a CSV file, hover over the log and click <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.   
+
+![Task audit log](../img/webapp_info_audit_log.png)
+
+:::note Limited persistency
+ClearML maintains a system-wide, large but strict limit for task history items. Once the limit is reached, the oldest entries are purged to make room for fresh entries.
+:::
+
+### Description 
+Add descriptive text to the experiment in the **Description** section. To modify the description, hover over the 
+description box and click **Edit**.
+
+### Experiment Details
+The **Experiment Details** section lists information describing the experiment:
+
 * The parent experiment
 * Project name
 * Creation, start, and last update dates and times
