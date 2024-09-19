@@ -157,6 +157,7 @@ module.exports = {
                     },
                     {
                         "AI Dev": [
+                            'webapp/applications/apps_ssh_session',
                             'webapp/applications/apps_jupyter_lab',
                             'webapp/applications/apps_vscode',
                         ]
