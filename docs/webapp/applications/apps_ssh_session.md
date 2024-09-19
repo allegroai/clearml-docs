@@ -6,15 +6,15 @@ title: SSH Session
 The SSH Session application is available under the ClearML Enterprise plan.
 :::
 
-The SSH Session UI application allows you to launch a complete development environment on a remote machine complete with 
+The SSH Session UI application allows you to launch a full development environment on a remote machine complete with 
 a detached interactive SSH session. 
 
 The Session app offers workspace management features, allowing you to store, sync, and restore interactive workspaces 
 across sessions. This ensures that all your work is preserved and can be easily accessed in future sessions.
 
 The SSH Session is set up using a [ClearML Agent](../../clearml_agent.md). When configuring an app instance, select a 
-queue, and the agent servicing that queue will set up the remote environment and SSH session. When the server setup is 
-complete, the dashboard displays SSH connection parameters and the command line to connect to the session.
+queue, and the agent servicing that queue will set up the remote environment and SSH session. When the environment setup is 
+complete, the app instance dashboard displays SSH connection parameters and the command line to connect to the session.
 
 The application monitors the session's activity and shuts down if it is inactive for a specified maximum idle time.
 
@@ -41,7 +41,7 @@ Once you have launched an app instance, you can view the following information i
   * GPU memory usage 
 * Console - The console log shows the instance's activity, including session setup progress and SSH server status changes
 
-## SSH Session Deployment Instance Configuration
+## SSH Session Instance Configuration
 
 When configuring a new SSH Session instance, you can fill in the required parameters or reuse the configuration of 
 a previously launched instance.  
@@ -61,7 +61,7 @@ to open the app's instance launch form.
 ### Configuration Options 
 * Import Configuration - Import an app instance configuration file. This will fill the instance launch form with the 
 values from the file, which can be modified before launching the app instance
-* Git - To access a git repository remotely, add git information:
+* Git - The details for a git repository to optionally clone into your remote environment:
   * Repository
   * Branch
   * Commit
@@ -72,7 +72,7 @@ values from the file, which can be modified before launching the app instance
   line)
 * Extra Packages - Specify Python packages to install when setting up the remote environment
 * Persistent Workspace Path - Specify your workspace root directory, it will be automatically stored when the session is 
-closed and restored into a new instance when the session is cloned (example: `~/workspace`)
+closed and restored into a new instance when the session app instance is cloned (example: `~/workspace`)
 * Queue - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which the SSH Session app 
   instance task will be enqueued (make sure an agent is assigned to that queue)
 * Maximum idle time (in hours) - Maximum idle time after which the app instance will shut down
