@@ -41,6 +41,8 @@ Once you have launched an app instance, you can view the following information i
   * GPU memory usage 
 * Console - The console log shows the instance's activity, including session setup progress and SSH server status changes
 
+![SSH Session Dashboard](../../img/apps_ssh_session_dashboard.png)
+
 ## SSH Session Instance Configuration
 
 When configuring a new SSH Session instance, you can fill in the required parameters or reuse the configuration of 
@@ -89,3 +91,5 @@ closed and restored into a new instance when the session app instance is cloned 
   * Idle GPU Threshold (%) - GPU utilization under which the session will be considered idle
 * Export Configuration - Export the app instance configuration as a JSON file, which you can later import to create a 
 new instance with the same configuration
+
+![SSH Session form](../../img/apps_ssh_session_wizard.png)
