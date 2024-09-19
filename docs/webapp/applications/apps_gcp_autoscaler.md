@@ -73,7 +73,7 @@ to open the app's instance launch form.
     * Monitored Queue - Queue associated with this VM instance type. The tasks enqueued to this queue will be executed on VM instances of this type
     * Machine Image (optional) - The GCP machine image to launch 
     :::note
-    The machine image used for the autoscaler must include docker runtime and virtualenv 
+    The machine image used for the autoscaler must include docker runtime and virtualenv. 
     :::
     * Disc Size (in GB) (optional) 
     * Use the default GCP Service Account - If selected, the default service account will be used. To use a 

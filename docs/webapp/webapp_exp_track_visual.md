@@ -253,11 +253,7 @@ tools (e.g. Notion). See [Plot Controls](#plot-controls).
 The complete experiment log containing everything printed to stdout and stderr appears in the **CONSOLE** tab. The full log
 is downloadable. To view the end of the log, click **Jump to end**.
 
-<Collapsible type="screenshot" title="View a screenshot">
-
 ![Console tab](../img/webapp_tracking_32.png)
-
-</Collapsible>
 
 
 
@@ -270,7 +266,7 @@ Scalar series are presented in a line chart. To see the series for a metric in h
 view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
 
 :::info Full Screen Refresh
-Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon lt size-md space-sm medium-zoom-image" /> 
+Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-md space-sm medium-zoom-image" /> 
 to update the graph. 
 :::
 

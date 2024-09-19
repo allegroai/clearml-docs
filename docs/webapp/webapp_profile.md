@@ -146,7 +146,7 @@ in that workspace. You can rejoin the workspace only if you are re-invited.
 ### Configuration Vault
 
 :::info Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 Use the configuration vault to store global ClearML configuration entries that can extend the ClearML [configuration file](../configs/clearml_conf.md) 
@@ -172,7 +172,7 @@ Fill in values using any of ClearML supported configuration formats: HOCON / JSO
 ## Administrator Vaults
 
 :::info Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 Administrators can define multiple [configuration vaults](#configuration-vault) which will each be applied to designated 
@@ -375,7 +375,7 @@ otherwise provided individually or to another group they are members of).
 ## Access Rules
 
 :::important Enterprise Feature 
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 Workspace administrators can use the **Access Rules** page to manage workspace permissions, by specifying which users,
@@ -435,7 +435,7 @@ on the respective column and select the users / groups / service accounts to vie
 ## Identity Providers
 
 :::important Enterprise Feature 
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 Administrators can connect identity service providers to the server: configure an identity connection, which allows

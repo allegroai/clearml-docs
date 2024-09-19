@@ -199,7 +199,7 @@ Pass one of the following in the `continue_last_task` parameter:
 You can also continue a task previously executed in offline mode, using `Task.import_offline_session()`. 
 See [Offline Mode](#offline-mode). 
 
-### Empty Task Creation
+### Task Creation from Existing Code or Container
 
 A task can also be created without the need to execute the code itself.
 Unlike the runtime detections, all the environment and configuration details need to be provided explicitly.
@@ -220,6 +220,9 @@ task = Task.create(
     ]
 )
 ```
+
+If the code does not contain a `Task.init()` call, pass `add_task_init_call=True`, and the code will be patched when 
+executed by a ClearML Agent. 
 
 :::info Argument Specification
 When specifying arguments in `argparse_args`, use the full argument name (e.g., `--lr`) instead of the short form 

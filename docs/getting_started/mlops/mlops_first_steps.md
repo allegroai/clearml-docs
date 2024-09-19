@@ -53,18 +53,21 @@ required python packages, and execute and monitor the process.
    (or even multiple queues), but only a single agent will pull a Task to be executed.
 
 :::tip Agent Deployment Modes
-ClearML Agents can be deployed in Virtual Environment Mode or Docker Mode. In [virtual environment mode](../../clearml_agent/clearml_agent_execution_env.md), 
-the agent creates a new venv to execute an experiment. In [Docker mode](../../clearml_agent/clearml_agent_execution_env.md#docker-mode), 
-the agent executes an experiment inside a Docker container. For more information, see [Running Modes](../../fundamentals/agents_and_queues.md#running-modes).  
+ClearML Agents can be deployed in:
+* [Virtual environment mode](../../clearml_agent/clearml_agent_execution_env.md): Agent creates a new venv to execute an experiment. 
+* [Docker mode](../../clearml_agent/clearml_agent_execution_env.md#docker-mode): Agent executes an experiment inside a 
+Docker container. 
+
+For more information, see [Running Modes](../../fundamentals/agents_and_queues.md#running-modes).  
 :::
 
 ## Clone an Experiment
-Experiments already in the system can be reproduced for validation, or used as a baseline for further experimentation. 
+Experiments can be reproduced (cloned) for validation or as a baseline for further experimentation. 
 Cloning a task duplicates the task's configuration, but not its outputs.
 
 **To clone an experiment in the ClearML WebApp:** 
-1. Click on any project card to open its [experiments table](../../webapp/webapp_exp_table.md)
-1. Right-click one of the experiments on the table 
+1. Click on any project card to open its [experiments table](../../webapp/webapp_exp_table.md).
+1. Right-click one of the experiments on the table.
 1. Click **Clone** in the context menu, which will open a **CLONE EXPERIMENT** window.
 1. Click **CLONE** in the window. 
 
@@ -169,7 +172,7 @@ Logging models into the model repository is the easiest way to integrate the dev
 Any model stored by a supported framework (Keras / TensorFlow / PyTorch / Joblib etc.) will be automatically logged into ClearML.
 
 ClearML also supports methods to explicitly log models. Models can be automatically stored on a preferred storage medium 
-(s3 bucket, google storage, etc.). 
+(S3 bucket, Google storage, etc.). 
 
 #### Log Metrics
 Log as many metrics as you want from your processes using the [Logger](../../fundamentals/logger.md) module. This 

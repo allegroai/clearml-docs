@@ -85,17 +85,17 @@ For example, if the Task ID is `9ed78536b91a44fbb3cc7a006128c1b0`, then the dire
 In addition to ClearML automagical logging, the `clearml` Python
 package contains methods for explicit reporting of plots, log text, media, and tables. These methods include:
 
-* [Logger.report_histogram](../../references/sdk/logger.md#report_histogram)
-* [Logger.report_confusion_matrix](../../references/sdk/logger.md#report_confusion_matrix)
-* [Logger.report_scatter2d](../../references/sdk/logger.md#report_scatter2d)
-* [Logger.report_scatter3d](../../references/sdk/logger.md#report_scatter3d)
-* [Logger.report_surface](../../references/sdk/logger.md#report_surface) 
+* [`Logger.report_histogram`](../../references/sdk/logger.md#report_histogram)
+* [`Logger.report_confusion_matrix`](../../references/sdk/logger.md#report_confusion_matrix)
+* [`Logger.report_scatter2d`](../../references/sdk/logger.md#report_scatter2d)
+* [`Logger.report_scatter3d`](../../references/sdk/logger.md#report_scatter3d)
+* [`Logger.report_surface`](../../references/sdk/logger.md#report_surface) 
   (surface diagrams)
-* [Logger.report_image](../../references/sdk/logger.md#report_image) - Report an image and upload its contents.
-* [Logger.report_table](../../references/sdk/logger.md#report_table) - Report a table as a Pandas DataFrame, CSV file, 
+* [`Logger.report_image`](../../references/sdk/logger.md#report_image) - Report an image and upload its contents.
+* [`Logger.report_table`](../../references/sdk/logger.md#report_table) - Report a table as a Pandas DataFrame, CSV file, 
   or URL for a CSV file.
-* [Logger.report_media](../../references/sdk/logger.md#report_media) - Report media including images, audio, and video.
-* [Logger.get_default_upload_destination](../../references/sdk/logger.md#get_default_upload_destination) - Retrieve the destination that is set for uploaded media.
+* [`Logger.report_media`](../../references/sdk/logger.md#report_media) - Report media including images, audio, and video.
+* [`Logger.get_default_upload_destination`](../../references/sdk/logger.md#get_default_upload_destination) - Retrieve the destination that is set for uploaded media.
 
 ### Get a Logger
 
