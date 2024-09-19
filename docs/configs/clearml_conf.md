@@ -394,63 +394,104 @@ ___
 
 #### agent.default_docker
         
-<a class="tr_top_negative" name="agent_default_docker"></a> 
-
 **`agent.default_docker`** (*dict*)
         
-* Dictionary containing the default options for workers in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
-        
----
-        
-**`agent.default_docker.arguments`** (*string*)
-        
-* If running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode), this option specifies the options to pass to the Docker container.
-        
----
-        
-**`agent.default_docker.image`** (*string*)
-        
-* If running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode), this option specifies the default Docker image to use.
-        
----
+* Dictionary containing the default options for workers running in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+These settings define which Docker image and arguments should be used unless [explicitly overridden through the UI or an agent](../clearml_agent/clearml_agent_execution_env.md#docker-mode). 
+  * **`agent.default_docker.image`** (*str*) - Specifies the default Docker image to use.
+  * **`agent.default_docker.arguments`** ([*str*]) - Specifies the list of options to pass to the Docker container. For 
+  example: `arguments: ["--ipc=host", ]`.
+  * **`agent.default_docker.match_rules`** (*[dict]*)
 
-**`agent.default_docker.match_rules`** (*[dict]*)
-
-:::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan.
-:::
-
-* Lookup table of rules for default container if running a worker in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode). 
-The first matched rule will be picked, according to rule order. 
+    :::important Enterprise Feature
+    This feature is available under the ClearML Enterprise plan.
+    :::
+    
+    * Lookup table of rules that determine the default container and arguments when running a worker in Docker mode. The 
+    first matched rule will be picked, according to rule order.  
+    * Each dictionary in the list lays out rules, and the container and container arguments to be used if the rules are 
+    matched.  
   
-* Each dictionary in the list lays out rules, and the container to be used if the rules are matched. The
-rules can be script requirements, Git details, and/or Python binary, and/or the task's project. 
-
-```console
-match_rules: [
-      {
-          image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
-          arguments: "-e define=value"
-          match: {
-              script {
-                  # Optional: must match all requirements (not partial)
-                  requirements: {
-                      # version selection matching PEP-440
-                      pip: {
-                          tensorflow: "~=2.6"
-                      },
-                  }
-                  # Optional: matching based on regular expression, example: "^exact_match$"
-                  repository: "/my_repository/"
-                  branch: "main"
-                  binary: "python3.6"
+    :::note Match rule arguments
+    `default_docker.match_rules.arguments` should be formatted as a single string (for example: `"-e VALUE=1 --ipc=host"`),
+    unlike  `agent.default_docker.arguments`
+    :::
+    
+    * The rules can be: 
+      * `script.requirements` - Match all script requirements
+      * `script.repostiry`, `script.branch` - Match based on Git repository or branch where the script is stored
+      * `script.binary` - Match binary executable used to launch the entry point
+      * `project` - Match the Task project's name
+    * Matching is done via regular expression. For example `"^searchme$"` will match exactly the `"searchme"` string, and `^examples` 
+    will match that starts with `examples` (e.g., `examples`, `examples/sub_project`).
+    * Examples: 
+      *  In the example configuration below, the rules match tasks where the Python binary is `python3.6`, `tensorflow~=2.6` 
+      is required, the script's Git repository is `/my_repository/`, the branch is `main`, and the task's project is 
+      `project/sub_project`. If all conditions are met, the `nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04` image is used 
+      with the argument `-e define=value`.
+       
+         ```
+         agent {
+          default_docker {
+            matche_rules [
+              {
+                image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
+                arguments: "-e define=value"
+                match: {
+                    script {
+                        # Optional: must match all requirements (not partial)
+                        requirements: {
+                            # version selection matching PEP-440
+                            pip: {
+                                tensorflow: "~=2.6"
+                            },
+                        # Optional: matching based on regular expression, example: "^exact_match$"
+                        repository: "/my_repository/"
+                        branch: "main"
+                        binary: "python3.6"
+                    }
+                    # Optional: matching based on regular expression, example: "^exact_match$"
+                    project: "project/sub_project"
+                }
               }
-              # Optional: matching based on regular expression, example: "^exact_match$"
-              project: "project/sub_project"
+            ]
           }
-      },
-  ]
-```
+         }
+         ```
+                    
+      * In the example configuration below, two `match_rules` are used to specify different Docker images based on 
+      the Python binary version. The first rule applies the `python:3.6-bullseye` image with the `--ipc=host` argument 
+      when the task requires `python3.6`. The second rule applies the `python:3.7-bullseye` image with the same argument 
+      when the script requires `python3.7`. If no match is found, the default `nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04` 
+      image is used.
+        
+            ```
+            agent {
+              default_docker: {
+                image: "nvidia/cuda:11.0.3-cudnn8-runtime-ubuntu20.04",
+                match_rules: [
+                  {
+                    image: "python:3.6-bullseye"
+                    arguments": "--ipc=host"
+                    match: {
+                      script {
+                        binary: "python3.6$"
+                      },
+                    }
+                  },
+                  {
+                    image: "python:3.7-bullseye"
+                    arguments: "--ipc=host"
+                    match: {
+                      script {
+                        binary: "python3.7$"
+                      },
+                    }
+                  },
+                ]
+              }
+            }
+            ```
 
 
 <br/>
