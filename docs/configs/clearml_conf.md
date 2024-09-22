@@ -432,30 +432,31 @@ These settings define which Docker image and arguments should be used unless [ex
        
          ```
          agent {
-          default_docker {
-            matche_rules [
-              {
-                image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
-                arguments: "-e define=value"
-                match: {
-                    script {
-                        # Optional: must match all requirements (not partial)
-                        requirements: {
-                            # version selection matching PEP-440
-                            pip: {
-                                tensorflow: "~=2.6"
-                            },
-                        # Optional: matching based on regular expression, example: "^exact_match$"
-                        repository: "/my_repository/"
-                        branch: "main"
-                        binary: "python3.6"
-                    }
-                    # Optional: matching based on regular expression, example: "^exact_match$"
-                    project: "project/sub_project"
-                }
-              }
-            ]
-          }
+           default_docker {
+             matche_rules [
+               {
+                 image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
+                 arguments: "-e define=value"
+                 match: {
+                   script {
+                     # Optional: must match all requirements (not partial)
+                     requirements: {
+                       # version selection matching PEP-440
+                       pip: {
+                         tensorflow: "~=2.6"
+                       },
+                     }
+                     # Optional: matching based on regular expression, example: "^exact_match$"
+                     repository: "/my_repository/"
+                     branch: "main"
+                     binary: "python3.6"
+                   }
+                   # Optional: matching based on regular expression, example: "^exact_match$"
+                   project: "project/sub_project"
+                 }
+               }
+             ]
+           }
          }
          ```
                     
