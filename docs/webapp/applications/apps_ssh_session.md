@@ -21,10 +21,10 @@ The application monitors the session's activity and shuts down if it is inactive
 Once you have launched an app instance, you can view the following information in its dashboard:
 
 * App status indicator
-  * <img src="/docs/latest/icons/ico-ssh-loading.svg" alt="Active instance" className="icon size-md space-sm" /> - Remote SSH session is setting up
-  * <img src="/docs/latest/icons/ico-ssh-active.svg" alt="Loading instance" className="icon size-md space-sm" /> - Remote SSH session is active
-  * <img src="/docs/latest/icons/ico-ssh-idle.svg" alt="Idle instance" className="icon size-md space-sm" /> - Remote SSH session is idle
-  * <img src="/docs/latest/icons/ico-ssh-stopped.svg" alt="Stopped instance" className="icon size-md space-sm" /> - Remote SSH session is stopped
+  * <img src="/docs/latest/icons/ico-ssh-loading.svg" alt="Active instance" className="icon size-lg space-sm" /> - Remote SSH session is setting up
+  * <img src="/docs/latest/icons/ico-ssh-active.svg" alt="Loading instance" className="icon size-lg space-sm" /> - Remote SSH session is active
+  * <img src="/docs/latest/icons/ico-ssh-idle.svg" alt="Idle instance" className="icon size-lg space-sm" /> - Remote SSH session is idle
+  * <img src="/docs/latest/icons/ico-ssh-stopped.svg" alt="Stopped instance" className="icon size-lg space-sm" /> - Remote SSH session is stopped
 * Idle time
 * Restored workspace - If a previous session’s workspace was restored, this will display its session ID
 * Current session ID

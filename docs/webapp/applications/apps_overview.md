@@ -3,7 +3,7 @@ title: Overview
 ---
 
 :::info Pro Plan Offering
-ClearML Applications are available under the ClearML Pro plan
+ClearML Applications are available under the ClearML Pro plan.
 :::
 
 Use ClearML's GUI Applications to manage ML workloads and automatically run your recurring workflows without any coding. 
