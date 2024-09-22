@@ -23,7 +23,7 @@ meets resource needs:
   tools.
   * [SSH Session](webapp/applications/apps_ssh_session.md) - Launch a full development environment with a detached interactive SSH session on a remote machine
   * [JupyterLab](webapp/applications/apps_jupyter_lab.md) - Launch a JupyterLab session on a remote machine 
-  * [VS Code](webapp/applications/apps_vscode.md) - Launch a VS Code session on a remote machine
+  * [VS Code](webapp/applications/apps_vscode.md) - Launch a VS Code session on a remote machine 
 
 :::info Remote PyCharm
 You can also work with PyCharm in a remote session over SSH. Use the [PyCharm Plugin](guides/ide/integration_pycharm.md) 
