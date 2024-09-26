@@ -101,7 +101,7 @@ module.exports = {
 
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_16',
+              to: '/docs/release_notes/clearml_server/open_source/ver_1_16',
             },
             {
               label: 'Community Resources',
