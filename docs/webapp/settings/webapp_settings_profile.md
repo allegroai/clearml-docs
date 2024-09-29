@@ -43,7 +43,7 @@ In the **Web App Cloud Access** section, enter the following credentials:
 * **Bucket** - The name of a Cloud bucket.
 * **Key** - The access key.
 * **Secret / SAS** - The secret key or shared access signature if required.
-* **Token** - The access token 
+* **Token** - The access token. 
 * **AWS Region** - The region for AWS S3.
 * **Host (Endpoint)** - The host for non-AWS S3 servers.
 
