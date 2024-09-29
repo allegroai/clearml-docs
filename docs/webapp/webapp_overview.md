@@ -51,7 +51,7 @@ The WebApp's sidebar provides access to the following modules:
 
 Click the profile menu button <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" />
 in the top right corner of the web UI screen to access the following:
-* **Settings** - Navigate to ClearML's user [Settings](webapp_profile.md) page:
+* **Settings** - Navigate to ClearML's user [Settings](settings/webapp_settings_profile.md) page:
   * Set WebApp preferences
   * Manage workspace API credentials
   * Configure cloud storage access credentials for the ClearML Web UI
@@ -60,7 +60,7 @@ in the top right corner of the web UI screen to access the following:
     * Manage users and workspaces
     * Manage resource access permissions (available in the ClearML Enterprise plan)
 * **Invite a User** to your workspace (supported in hosted service). Click **Invite a User** > input user's 
-email > click **ADD** > page redirects to the [Users & Groups](webapp_profile.md#users--groups) section of 
+email > click **ADD** > page redirects to the [Users & Groups](settings/webapp_settings_users.md#user-groups) section of 
   the **Settings** page 
 * **Switch to Workspace** - Hosted service users can be members of multiple workspaces. These workspaces are listed here. 
   Click a workspace to switch to.
