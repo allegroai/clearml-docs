@@ -10,7 +10,7 @@ For more information, see [Dynamic Environment Variables](../clearml_agent/clear
 
 :::info
 ClearML's environment variables override the [clearml.conf file](../configs/clearml_conf.md), SDK, and 
-[configuration vault](../webapp/webapp_profile.md#configuration-vault), 
+[configuration vault](../webapp/settings/webapp_settings_profile.md#configuration-vault), 
 but can be overridden by command-line arguments. 
 :::
 
