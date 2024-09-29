@@ -111,10 +111,10 @@ To revoke a set of credentials:
 
 ### Service Account Configuration Vault
 Use a service account’s configuration vault to store ClearML configuration entries that can extend the ClearML 
-[configuration file](../configs/clearml_conf.md) of any ClearML Agents or ClearML SDK running with the service account's 
+[configuration file](../../configs/clearml_conf.md) of any ClearML Agents or ClearML SDK running with the service account's 
 credentials. 
 
-Vault entries will extend the configuration in the ClearML [configuration file](../configs/clearml_conf.md) if they 
+Vault entries will extend the configuration in the ClearML [configuration file](../../configs/clearml_conf.md) if they 
 don't yet exist, and override values for those already present in the file.
 
 Fill in values using any of ClearML supported configuration formats: HOCON / JSON / YAML.
