@@ -29,11 +29,11 @@ Set resource reservation and limits for user groups
    * Name - Resource policy name. This name will appear on the Policies list
    * Reservation - The number of resources guaranteed to be available for the policy’s users 
    * Limit -  The maximum amount of resources that jobs run through this policy’s queues can concurrently use. 
-   * User Group - The [User groups](webapp_profile.md#user-groups) to which the policy applies 
+   * User Group - The [User groups](settings/webapp_settings_users.md#user-groups) to which the policy applies 
    * Description - Optional free form text for additional descriptive information
 1. Click **Add**
 
-Once the policy is defined, you can connect profiles to it (Resource profiles are defined in the [Resource Configuration](webapp_profile.md#resource-configuration) 
+Once the policy is defined, you can connect profiles to it (Resource profiles are defined in the [Resource Configuration](settings/webapp_settings_resource_configs.md) 
 settings page, available to administrators). Resource profiles serve as an interface for resource policies to provide 
 users with access to the available resource pools based on their job resource requirements (i.e. a job running through a 
 profile is allocated the profile’s defined amount of resources). 
@@ -48,7 +48,7 @@ profile is allocated the profile’s defined amount of resources).
 1. Click **Connect**
 
 :::note Available Profiles
-Only profiles that are part of the currently provisioned [resource configuration](webapp_profile.md#resource-configuration) 
+Only profiles that are part of the currently provisioned [resource configuration](settings/webapp_settings_resource_configs.md) 
 are available for selection (Profiles that are part of a configuration that has been saved but not yet provisioned 
 will not appear in the list).
 

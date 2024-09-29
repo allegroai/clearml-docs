@@ -112,7 +112,8 @@ module.exports = {
             ]
         },
         'integrations/storage',
-        {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
+        {'WebApp': [
+            'webapp/webapp_overview', 'webapp/webapp_home',
             {
                 'Projects': [
                     'webapp/webapp_projects_page',
@@ -178,7 +179,15 @@ module.exports = {
                 ]
 
             },
-            'webapp/webapp_profile']
+            {
+                "Settings": [
+                    'webapp/settings/webapp_settings_overview', 'webapp/settings/webapp_settings_profile',
+                    'webapp/settings/webapp_settings_admin_vaults', 'webapp/settings/webapp_settings_users',
+                    'webapp/settings/webapp_settings_access_rules', 'webapp/settings/webapp_settings_id_providers',
+                    'webapp/settings/webapp_settings_resource_configs', 'webapp/settings/webapp_settings_usage_billing',
+                 ]
+            },
+            ]
         },
         {'Configuring ClearML': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
         {'User Management': [
