@@ -296,8 +296,8 @@ module.exports = {
             {
                 'Enterprise':
                         [
-                           'release_notes/clearml_server/enterprise/ver_3_22', 'release_notes/clearml_server/enterprise/ver_3_21',
-                           'release_notes/clearml_server/enterprise/ver_3_20',
+                           'release_notes/clearml_server/enterprise/ver_3_23', 'release_notes/clearml_server/enterprise/ver_3_22',
+                           'release_notes/clearml_server/enterprise/ver_3_21', 'release_notes/clearml_server/enterprise/ver_3_20',
                         ]
             }
         ]},
