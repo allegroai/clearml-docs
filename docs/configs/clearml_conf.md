@@ -433,7 +433,7 @@ These settings define which Docker image and arguments should be used unless [ex
          ```
          agent {
            default_docker {
-             matche_rules [
+             match_rules [
                {
                  image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
                  arguments: "-e define=value"
