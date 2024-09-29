@@ -3,7 +3,7 @@ title: Project Dashboard
 ---
 
 :::info Pro Plan Offering
-The ClearML Project Dashboard App is available under the ClearML Pro plan
+The ClearML Project Dashboard App is available under the ClearML Pro plan.
 :::
 
 The Project Dashboard Application provides an overview of a project's or workspace's progress. It presents an aggregated 
@@ -11,7 +11,7 @@ view of task status and a chosen metric over time, as well as project GPU and wo
 on completed/failed Tasks via Slack integration.
 
 ## Project Dashboard Instance Configuration
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **Dashboard Title** - Name of the project dashboard instance, which will appear in the instance list
 * **Monitoring** - Select what the app instance should monitor. The options are:
@@ -38,7 +38,7 @@ of the chosen metric over time.
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration.
   
-![Dashboard app wizard](../../img/apps_dashboard_wizard.png)
+![Dashboard app instance launch form](../../img/apps_dashboard_wizard.png)
 
 ## Dashboard
 

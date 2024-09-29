@@ -27,7 +27,7 @@ it can't do that when running from a virtual environment.
    clearml-agent init
    ```
 
-    The setup wizard prompts for ClearML credentials (see [here](../webapp/webapp_profile.md#clearml-credentials) about obtaining credentials).
+    The setup wizard prompts for ClearML credentials (see [here](../webapp/settings/webapp_settings_profile.md#clearml-credentials) about obtaining credentials).
     ```
     Please create new clearml credentials through the settings page in your `clearml-server` web app, 
     or create a free account at https://app.clear.ml/settings/webapp-configuration
@@ -72,6 +72,12 @@ it can't do that when running from a virtual environment.
    Credentials verified!
    ```
 
+1. Input the default output URI. Model checkpoints (snapshots) and task artifacts will be stored in this output location.
+
+   ```
+   Default Output URI (used to automatically store models and artifacts): (N)one/ClearML (S)erver/(C)ustom [None]
+   ```
+
 1. Enter your Git username and password. Leave blank for SSH key authentication or when only using public repositories.
    
    This is needed for cloning repositories by the agent.
@@ -107,7 +113,7 @@ it can't do that when running from a virtual environment.
    and the [ClearML Agent Environment Variables reference](../clearml_agent/clearml_agent_env_var.md). 
    
 :::note
-The ClearML Enterprise server provides a [configuration vault](../webapp/webapp_profile.md#configuration-vault), the contents 
+The ClearML Enterprise server provides a [configuration vault](../webapp/settings/webapp_settings_profile.md#configuration-vault), the contents 
 of which are categorically applied on top of the agent-local configuration
 :::
 

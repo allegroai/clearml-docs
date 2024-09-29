@@ -3,7 +3,7 @@ title: Remote Execution
 ---
 
 The [execute_remotely_example](https://github.com/allegroai/clearml/blob/master/examples/advanced/execute_remotely_example.py)
-script demonstrates the use of the [`Task.execute_remotely`](../../references/sdk/task.md#execute_remotely) method. 
+script demonstrates the use of the [`Task.execute_remotely()`](../../references/sdk/task.md#execute_remotely) method. 
 
 :::note
 Make sure to have at least one [ClearML Agent](../../clearml_agent.md) running and assigned to listen to the `default` queue: 

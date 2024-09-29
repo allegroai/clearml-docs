@@ -2,7 +2,7 @@
 title: Accelerate
 ---
 
-HuggingFace's [Accelerate](https://huggingface.co/docs/accelerate/main/en/index) library simplifies DL model training 
+Hugging Face's [Accelerate](https://huggingface.co/docs/accelerate/main/en/index) library simplifies DL model training 
 and inference. ClearML is a supported tracker in Accelerate: It automatically logs experiment environment information, 
 such as required packages and uncommitted changes, and supports reporting scalars, parameters, debug samples, and plots.
 

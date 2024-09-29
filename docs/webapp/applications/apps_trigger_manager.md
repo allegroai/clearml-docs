@@ -3,7 +3,7 @@ title: Trigger Manager
 --- 
 
 :::important Enterprise Feature
-The Trigger Manager application is available under the ClearML Enterprise plan
+The Trigger Manager application is available under the ClearML Enterprise plan.
 :::
 
 ClearML's Trigger Manager Application lets you define tasks to be run when predefined events occur. The Trigger Manager 
@@ -21,7 +21,7 @@ The app monitors your workspace for trigger events and will launch copies of the
 
 ## Trigger Manager Instance Configuration 
 
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **Name** - Name for the app instance. This will appear in the instance list
 * **Triggers** - Events whose occurrence will cause a task to be executed
@@ -52,7 +52,7 @@ The app monitors your workspace for trigger events and will launch copies of the
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration
 
-![Trigger manager wizard](../../img/apps_trigger_manager_wizard.png)
+![Trigger manager instance launch form](../../img/apps_trigger_manager_wizard.png)
 
 ## Dashboard 
 

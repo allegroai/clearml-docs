@@ -420,7 +420,7 @@ monitor. It's the ClearML monitor. It's essentially an object that you can imple
 allows you to take a look into the depths of the ClearML ecosystem, what happens there? So it can give you an idea of 
 when tasks failed, when tasks succeeded, all of the types of events that ClearML can generate for you. So one of the 
 things you can do with it, and this is part of the example, it's also in the example repository, is create a Slack bot 
-for it. So essentially we've just used a bunch of slack APIs around this monitor, which is just a Slack monitor that we 
+for it. So essentially we've just used a bunch of Slack APIs around this monitor, which is just a Slack monitor that we 
 created ourselves and that will essentially just give you a message whenever a task succeeds, fails, whatever you want 
 to do. So in this case, it's fully equipped. We added a lot of arguments there so that you can just use it as a 
 command line tool, but you can create your own script based on your own requirements. Now what it will do is, let me 

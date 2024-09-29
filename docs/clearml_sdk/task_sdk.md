@@ -196,10 +196,10 @@ Pass one of the following in the `continue_last_task` parameter:
   iteration after the last reported one. Pass `0`, to disable the automatic last iteration offset. To also specify a 
   task ID, use the `reuse_last_task_id` parameter.
 
-You can also continue a task previously executed in offline mode, using the `Task.import_offline_session` method. 
+You can also continue a task previously executed in offline mode, using `Task.import_offline_session()`. 
 See [Offline Mode](#offline-mode). 
 
-### Empty Task Creation
+### Task Creation from Existing Code or Container
 
 A task can also be created without the need to execute the code itself.
 Unlike the runtime detections, all the environment and configuration details need to be provided explicitly.
@@ -220,6 +220,9 @@ task = Task.create(
     ]
 )
 ```
+
+If the code does not contain a `Task.init()` call, pass `add_task_init_call=True`, and the code will be patched when 
+executed by a ClearML Agent. 
 
 :::info Argument Specification
 When specifying arguments in `argparse_args`, use the full argument name (e.g., `--lr`) instead of the short form 
@@ -263,7 +266,7 @@ A task can be identified by its project and name, and by a unique identifier (UU
 a task can be changed after an experiment has been executed, but its ID can't be changed.
 
 Programmatically, task objects can be retrieved by querying the system based on either the task ID or a project and name 
-combination using the [`Task.get_task`](../references/sdk/task.md#taskget_task) class method. If a project / name 
+combination using the [`Task.get_task()`](../references/sdk/task.md#taskget_task) class method. If a project / name 
 combination is used, and multiple tasks have the exact same name, the function will return the *last modified task*.
 
 For example:
@@ -283,7 +286,7 @@ The task's outputs, such as artifacts and models, can also be retrieved.
 
 ## Querying / Searching Tasks
 
-Search and filter tasks programmatically. Input search parameters into the [`Task.get_tasks`](../references/sdk/task.md#taskget_tasks) 
+Search and filter tasks programmatically. Input search parameters into the [`Task.get_tasks()`](../references/sdk/task.md#taskget_tasks) 
 class method, which returns a list of task objects that match the search. Pass `allow_archived=False` to filter out archived 
 tasks.
 
@@ -570,7 +573,7 @@ You can work with tasks in Offline Mode, in which all the data and logs that the
 session folder, which can later be uploaded to the [ClearML Server](../deploying_clearml/clearml_server.md). 
 
 You can enable offline mode in one of the following ways:
-* Before initializing a task, use the [`Task.set_offline`](../references/sdk/task.md#taskset_offline) class method and set 
+* Before initializing a task, use the [`Task.set_offline()`](../references/sdk/task.md#taskset_offline) class method and set 
 the `offline_mode` argument to `True`:
   
   ```python
@@ -607,7 +610,7 @@ Upload the execution data that the Task captured offline to the ClearML Server u
   ```  
   Pass the path to the zip folder containing the captured information with the `--import-offline-session` parameter
 
-* [`Task.import_offline_session`](../references/sdk/task.md#taskimport_offline_session) class method
+* [`Task.import_offline_session()`](../references/sdk/task.md#taskimport_offline_session) class method
   ```python
   from clearml import Task
   
@@ -903,7 +906,7 @@ This method saves configuration objects as blobs (i.e. ClearML is not aware of t
 ```python
 # connect a configuration dictionary
 model_config_dict = {
-   'value': 13.37,  'dict': {'sub_value': 'string'},  'list_of_ints': [1, 2, 3, 4],
+   'value': 13.37, 'dict': {'sub_value': 'string'}, 'list_of_ints': [1, 2, 3, 4],
 }
 model_config_dict = task.connect_configuration(
   name='dictionary', configuration=model_config_dict

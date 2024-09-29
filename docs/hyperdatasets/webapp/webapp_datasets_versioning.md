@@ -166,7 +166,7 @@ Filter by metadata using Lucene queries.
 
 Filter by sources using Lucene queries.    
 
-* Add a source rule to filter for sources URIs with wildcards.
+* Add a source rule to filter for source URIs with wildcards.
   
 ![Filter by source](../../img/hyperdatasets/frame_filtering_10.png)
 

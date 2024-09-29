@@ -284,11 +284,7 @@ tools (e.g. Notion). See [Plot Controls](#plot-controls).
 The complete experiment log containing everything printed to stdout and stderr appears in the **CONSOLE** tab. The full log
 is downloadable. To view the end of the log, click **Jump to end**.
 
-<Collapsible type="screenshot" title="View a screenshot">
-
 ![Console tab](../img/webapp_tracking_32.png)
-
-</Collapsible>
 
 
 

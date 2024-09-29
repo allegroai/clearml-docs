@@ -10,7 +10,7 @@ For more information, see [Dynamic Environment Variables](../clearml_agent/clear
 
 :::info
 ClearML's environment variables override the [clearml.conf file](../configs/clearml_conf.md), SDK, and 
-[configuration vault](../webapp/webapp_profile.md#configuration-vault), 
+[configuration vault](../webapp/settings/webapp_settings_profile.md#configuration-vault), 
 but can be overridden by command-line arguments. 
 :::
 
@@ -45,6 +45,6 @@ but can be overridden by command-line arguments.
 |**CLEARML_AGENT_PACKAGE_PYTORCH_RESOLVE**|Sets the PyTorch resolving mode. The options are: <ul><li>`none` - No resolving. Install PyTorch like any other package</li><li>`pip` (default) - Sets extra index based on cuda and lets pip resolve</li><li>`direct` - Resolve a direct link to the PyTorch wheel by parsing the pytorch.org pip repository, and matching the automatically detected cuda version with the required PyTorch wheel. If the exact cuda version is not found for the required PyTorch wheel, it will try a lower cuda version until a match is found</li></ul>  |
 |**CLEARML_AGENT_DEBUG_INFO** | Provide additional debug information for a specific context (currently only the `docker` value is supported)                                                                                                                                    |
 |**CLEARML_AGENT_CHILD_AGENTS_COUNT_CMD** | Provide an alternate bash command to list child agents while working in services mode                                                                                                                                                           |
-|**CLEARML_AGENT_SKIP_PIP_VENV_INSTALL** | Skips Python virtual env installation on execute and provides a custom venv binary                                                                                                                                                              |
-|**CLEARML_AGENT_SKIP_PYTHON_ENV_INSTALL** | Skips entire Python venv installation and assumes python as well as every dependency is preinstalled                                                                                                                                            |
+|**CLEARML_AGENT_SKIP_PIP_VENV_INSTALL** | Instead of creating a new virtual environment inheriting from the system packages, use an existing virtual environment and install missing packages directly to it. Specify the python binary of the existing virtual environment. For example: `CLEARML_AGENT_SKIP_PIP_VENV_INSTALL=/home/venv/bin/python`                                                                                                                                                             |
+|**CLEARML_AGENT_SKIP_PYTHON_ENV_INSTALL** | If set to `1`, the agent will not install any required python packages and will just use the preexisting python environment to run the task.                                                                                                                                            |
 |**CLEARML_AGENT_VENV_CACHE_PATH** | Overrides venv cache folder configuration                                                                                                                                                                                                       |
