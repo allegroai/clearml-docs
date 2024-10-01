@@ -12,7 +12,7 @@ Use ClearML's GUI Applications to manage ML workloads and automatically run your
 
 Configure and launch app instances, then track their execution from the app dashboard.
 
-ClearML provides a range of applications to enhance your workflows: 
+ClearML provides applications in a range of categories to enhance your workflows: 
 
 ### General
 Applications for automating and optimizing workflows, and monitoring project performance:
