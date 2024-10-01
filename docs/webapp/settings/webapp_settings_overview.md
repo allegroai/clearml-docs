@@ -24,4 +24,6 @@ The Settings page consists of the following sections:
   * [Identity Providers](webapp_settings_id_providers.md) (ClearML Enterprise Server) - Manage server identity providers
   * [Resource Configuration](webapp_settings_resource_configs.md) (ClearML Enterprise Server) - Define the available resources and the way in which they 
   will be allocated to different workloads 
-  * [Usage & Billing](webapp_settings_usage_billing.md) (ClearML Hosted Service) - View current usage information and billing details 
+  * [Usage & Billing](webapp_settings_usage_billing.md) (ClearML Hosted Service) - View current usage information and billing details
+  * [Storage Credentials](webapp_settings_storage_credentials.md) - Configure storage provider access credentials to 
+  enable ClearML to delete task artifacts stored in cloud storage when tasks are deleted
