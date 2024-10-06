@@ -62,6 +62,7 @@ module.exports = {
       logo: {
         alt: 'ClearML',
         src: 'img/logo.svg',
+        href: 'https://clear.ml/'
       },
       items: [
         {
