@@ -74,6 +74,7 @@ module.exports = {
         {'Remote IDE': [
             'remote_session',
             'apps/clearml_session',
+            {type: 'ref', id: 'webapp/applications/apps_ssh_session'},
             {type: 'ref', id: 'webapp/applications/apps_jupyter_lab'},
             {type: 'ref', id: 'webapp/applications/apps_vscode'}
             ]
@@ -111,7 +112,8 @@ module.exports = {
             ]
         },
         'integrations/storage',
-        {'WebApp': ['webapp/webapp_overview', 'webapp/webapp_home',
+        {'WebApp': [
+            'webapp/webapp_overview', 'webapp/webapp_home',
             {
                 'Projects': [
                     'webapp/webapp_projects_page',
@@ -177,7 +179,15 @@ module.exports = {
                 ]
 
             },
-            'webapp/webapp_profile']
+            {
+                "Settings": [
+                    'webapp/settings/webapp_settings_overview', 'webapp/settings/webapp_settings_profile',
+                    'webapp/settings/webapp_settings_admin_vaults', 'webapp/settings/webapp_settings_users',
+                    'webapp/settings/webapp_settings_access_rules', 'webapp/settings/webapp_settings_id_providers',
+                    'webapp/settings/webapp_settings_resource_configs', 'webapp/settings/webapp_settings_usage_billing',
+                 ]
+            },
+            ]
         },
         {'Configuring ClearML': ['configs/configuring_clearml', 'configs/clearml_conf', 'configs/env_vars']},
         {'User Management': [
@@ -262,17 +272,82 @@ module.exports = {
             {'Web UI': ['guides/ui/building_leader_board','guides/ui/tuning_exp']}
 
     ],
-    rnSidebar: {
-        'Release Notes': [
-            'release_notes/ver_1_16', 'release_notes/ver_1_15',
-            'release_notes/ver_1_14', 'release_notes/ver_1_13', 'release_notes/ver_1_12', 'release_notes/ver_1_11',
-            'release_notes/ver_1_10', 'release_notes/ver_1_9', 'release_notes/ver_1_8', 'release_notes/ver_1_7',
-            'release_notes/ver_1_6', 'release_notes/ver_1_5', 'release_notes/ver_1_4', 'release_notes/ver_1_3',
-            'release_notes/ver_1_2','release_notes/ver_1_1', 'release_notes/ver_1_0', 'release_notes/ver_0_17',
-            'release_notes/ver_0_16', 'release_notes/ver_0_15', 'release_notes/ver_0_14', 'release_notes/ver_0_13',
-            'release_notes/ver_0_12', 'release_notes/ver_0_11', 'release_notes/ver_0_10', 'release_notes/ver_0_9',
-        ],
-    },
+    rnSidebar: [
+        {'Server': [
+            {
+                'Open Source':
+                        [
+                           'release_notes/clearml_server/open_source/ver_1_16',
+                           'release_notes/clearml_server/open_source/ver_1_15', 'release_notes/clearml_server/open_source/ver_1_14',
+                           'release_notes/clearml_server/open_source/ver_1_13', 'release_notes/clearml_server/open_source/ver_1_12',
+                           'release_notes/clearml_server/open_source/ver_1_11', 'release_notes/clearml_server/open_source/ver_1_10',
+                           'release_notes/clearml_server/open_source/ver_1_9', 'release_notes/clearml_server/open_source/ver_1_8',
+                           'release_notes/clearml_server/open_source/ver_1_7', 'release_notes/clearml_server/open_source/ver_1_6',
+                           'release_notes/clearml_server/open_source/ver_1_5', 'release_notes/clearml_server/open_source/ver_1_4',
+                           'release_notes/clearml_server/open_source/ver_1_3', 'release_notes/clearml_server/open_source/ver_1_2',
+                           'release_notes/clearml_server/open_source/ver_1_1', 'release_notes/clearml_server/open_source/ver_1_0',
+                           'release_notes/clearml_server/open_source/ver_0_17', 'release_notes/clearml_server/open_source/ver_0_16',
+                           'release_notes/clearml_server/open_source/ver_0_15', 'release_notes/clearml_server/open_source/ver_0_14',
+                           'release_notes/clearml_server/open_source/ver_0_13', 'release_notes/clearml_server/open_source/ver_0_12',
+                           'release_notes/clearml_server/open_source/ver_0_11', 'release_notes/clearml_server/open_source/ver_0_10',
+
+                        ]
+            },
+            {
+                'Enterprise':
+                        [
+                           'release_notes/clearml_server/enterprise/ver_3_22', 'release_notes/clearml_server/enterprise/ver_3_21',
+                           'release_notes/clearml_server/enterprise/ver_3_20',
+                        ]
+            }
+        ]},
+        {'SDK': [
+            {
+                'Open Source':
+                        [
+                           'release_notes/sdk/open_source/ver_1_16', 'release_notes/sdk/open_source/ver_1_15',
+                           'release_notes/sdk/open_source/ver_1_14', 'release_notes/sdk/open_source/ver_1_13',
+                           'release_notes/sdk/open_source/ver_1_12', 'release_notes/sdk/open_source/ver_1_11',
+                           'release_notes/sdk/open_source/ver_1_10', 'release_notes/sdk/open_source/ver_1_9',
+                           'release_notes/sdk/open_source/ver_1_8', 'release_notes/sdk/open_source/ver_1_7',
+                           'release_notes/sdk/open_source/ver_1_6', 'release_notes/sdk/open_source/ver_1_5',
+                           'release_notes/sdk/open_source/ver_1_4', 'release_notes/sdk/open_source/ver_1_3',
+                           'release_notes/sdk/open_source/ver_1_2', 'release_notes/sdk/open_source/ver_1_1',
+                           'release_notes/sdk/open_source/ver_1_0', 'release_notes/sdk/open_source/ver_0_17',
+                           'release_notes/sdk/open_source/ver_0_16', 'release_notes/sdk/open_source/ver_0_15',
+                           'release_notes/sdk/open_source/ver_0_14', 'release_notes/sdk/open_source/ver_0_13',
+                           'release_notes/sdk/open_source/ver_0_12', 'release_notes/sdk/open_source/ver_0_11',
+                           'release_notes/sdk/open_source/ver_0_10', 'release_notes/sdk/open_source/ver_0_9',
+                        ]
+            },
+            {
+                'Enterprise':
+                        [
+                           'release_notes/sdk/enterprise/ver_3_12', 'release_notes/sdk/enterprise/ver_3_11',
+                           'release_notes/sdk/enterprise/ver_3_10',
+
+                        ]
+            }
+        ]},
+        {'ClearML Agent':
+            [
+                'release_notes/clearml_agent/ver_1_9', 'release_notes/clearml_agent/ver_1_8',
+                'release_notes/clearml_agent/ver_1_7', 'release_notes/clearml_agent/ver_1_6',
+                'release_notes/clearml_agent/ver_1_5', 'release_notes/clearml_agent/ver_1_4',
+                'release_notes/clearml_agent/ver_1_3', 'release_notes/clearml_agent/ver_1_2',
+                'release_notes/clearml_agent/ver_1_1', 'release_notes/clearml_agent/ver_1_0',
+                'release_notes/clearml_agent/ver_0_17', 'release_notes/clearml_agent/ver_0_16',
+                'release_notes/clearml_agent/ver_0_15', 'release_notes/clearml_agent/ver_0_14',
+                'release_notes/clearml_agent/ver_0_13', 'release_notes/clearml_agent/ver_0_12',
+            ]
+        },
+        {'ClearML Serving':
+            [
+                'release_notes/clearml_serving/ver_1_3', 'release_notes/clearml_serving/ver_1_2',
+                'release_notes/clearml_serving/ver_1_1', 'release_notes/clearml_serving/ver_1_0',
+            ]
+        }
+    ],
     sdkSidebar: [
             'references/sdk/task',
             'references/sdk/logger',

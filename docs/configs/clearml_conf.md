@@ -18,7 +18,7 @@ See an [example configuration file](https://github.com/allegroai/clearml-agent/b
 in the ClearML Agent GitHub repository. 
 
 :::info
-The values in the ClearML configuration file can be overridden by environment variables, the [configuration vault](../webapp/webapp_profile.md#configuration-vault), 
+The values in the ClearML configuration file can be overridden by environment variables, the [configuration vault](../webapp/settings/webapp_settings_profile.md#configuration-vault), 
 and command-line arguments. 
 :::
 
@@ -432,30 +432,31 @@ These settings define which Docker image and arguments should be used unless [ex
        
          ```
          agent {
-          default_docker {
-            matche_rules [
-              {
-                image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
-                arguments: "-e define=value"
-                match: {
-                    script {
-                        # Optional: must match all requirements (not partial)
-                        requirements: {
-                            # version selection matching PEP-440
-                            pip: {
-                                tensorflow: "~=2.6"
-                            },
-                        # Optional: matching based on regular expression, example: "^exact_match$"
-                        repository: "/my_repository/"
-                        branch: "main"
-                        binary: "python3.6"
-                    }
-                    # Optional: matching based on regular expression, example: "^exact_match$"
-                    project: "project/sub_project"
-                }
-              }
-            ]
-          }
+           default_docker {
+             match_rules [
+               {
+                 image: "nvidia/cuda:10.1-cudnn7-runtime-ubuntu18.04"
+                 arguments: "-e define=value"
+                 match: {
+                   script {
+                     # Optional: must match all requirements (not partial)
+                     requirements: {
+                       # version selection matching PEP-440
+                       pip: {
+                         tensorflow: "~=2.6"
+                       },
+                     }
+                     # Optional: matching based on regular expression, example: "^exact_match$"
+                     repository: "/my_repository/"
+                     branch: "main"
+                     binary: "python3.6"
+                   }
+                   # Optional: matching based on regular expression, example: "^exact_match$"
+                   project: "project/sub_project"
+                 }
+               }
+             ]
+           }
          }
          ```
                     
@@ -1584,4 +1585,4 @@ the vault is enabled, the configurations will be merged into the ClearML and Cle
 
 These configurations override the configurations written in the configuration file. 
 
-See [configuration vault](../webapp/webapp_profile.md#configuration-vault). 
+See [configuration vault](../webapp/settings/webapp_settings_profile.md#configuration-vault). 
