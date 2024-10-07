@@ -52,13 +52,17 @@ The WebApp's sidebar provides access to the following modules:
 Click the profile menu button <img src="/docs/latest/icons/ico-me.svg" alt="Profile button" className="icon size-lg space-sm" />
 in the top right corner of the web UI screen to access the following:
 * **Settings** - Navigate to ClearML's user [Settings](settings/webapp_settings_profile.md) page:
-  * Set WebApp preferences
-  * Manage workspace API credentials
-  * Configure cloud storage access credentials for the ClearML Web UI
+  * Set [WebApp preferences](settings/webapp_settings_profile.md)
+  * Manage [workspace API credentials](settings/webapp_settings_profile.md#clearml-credentials)
+  * Configure [cloud storage access credentials](settings/webapp_settings_profile.md#browser-cloud-storage-access) for the ClearML Web UI
   * ClearML Hosted service specific options
-    * View usage information
-    * Manage users and workspaces
-    * Manage resource access permissions (available in the ClearML Enterprise plan)
+    * Manage [users and workspaces](settings/webapp_settings_users.md)
+    * Manage [resource access permissions](settings/webapp_settings_access_rules.md) (available in the ClearML Enterprise plan)
+    * Define [configuration vaults](settings/webapp_settings_admin_vaults.md) to apply to designated user groups (available in the ClearML Enterprise plan)
+    * Manage [server identity providers](settings/webapp_settings_id_providers.md) (available in the ClearML Enterprise plan)
+    * Define the [available resources](settings/webapp_settings_resource_configs.md) and the way in which they will be 
+    allocated to different workloads (available in the ClearML Enterprise plan)
+    * View [usage and billing](settings/webapp_settings_usage_billing.md) information
 * **Invite a User** to your workspace (supported in hosted service). Click **Invite a User** > input user's 
 email > click **ADD** > page redirects to the [Users & Groups](settings/webapp_settings_users.md#user-groups) section of 
   the **Settings** page 
