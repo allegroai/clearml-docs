@@ -58,7 +58,7 @@ The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-
 * [Scalars](../webapp/webapp_exp_track_visual.md#scalars)
 * [Plots](../webapp/webapp_exp_track_visual.md#plots)
 * [Debug samples](../webapp/webapp_exp_track_visual.md#debug-samples)
-* [Models](artifacts.md) 
+* [Models](models.md) 
 
 For a more in-depth description of each task section, see [Tracking Experiments and Visualizing Results](../webapp/webapp_exp_track_visual.md).
 
@@ -92,7 +92,7 @@ ClearML provides methods to easily track files generated throughout your experim
 - and more!
 
 Most importantly, ClearML also logs experiments' input and output models as well as interim model snapshots (see 
-[Models](artifacts.md)).
+[Models](models.md)).
 
 #### Logging Artifacts 
 ClearML provides an explicit logging interface that supports manually reporting a variety of artifacts. Any type of 
