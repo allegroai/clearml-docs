@@ -716,20 +716,21 @@ registered was their full URL at the time of registration (e.g. `https://files.<
 
 To fix this, the registered URL of each debug image and/or artifact needs to be replaced with its current URL.
 
-* For **debug images**, use the following command. Make sure to insert the old address and the new address that will replace it
-    ```bash
-    curl --header "Content-Type: application/json" \
-    --request POST \
-    --data '{
-        "script": {
-            "source": "ctx._source.url = ctx._source.url.replace('https://files.<OLD_ADDRESS>', 'https://files.<NEW_ADDRESS>')",
-            "lang": "painless"
-        },
-        "query": {
-            "match_all": {}
-        }
-    }' \
-    ```
+* For **debug images**, use the following command. Make sure to insert the old address and the new address that will replace it:
+
+   :::important
+   Note that in the following command, the `'\''` sequences end with double single quotes (`''`) and not double quotes (`"`)
+   :::
+
+   ```bash
+   curl -XPOST -H "Content-Type: application/json" "localhost:9200/events-training_debug_image-*/_update_by_query?conflicts=proceed" -d'{
+       "script": {
+           "source": "ctx._source.url = ctx._source.url.replace('\''https://files.<OLD_ADDRESS>'\'', '\''https://files.<NEW_ADDRESS>'\'')",
+           "lang": "painless"
+       },
+       "query": {"prefix": {"url": {"value": "https://files.<OLD_ADDRESS>"}}}
+   }'
+   ```
 
 * For **artifacts**, you can do the following:
 
