@@ -167,7 +167,7 @@ represents a reported metric, and each bar in the cluster represents an experime
 Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> to customize which 
 metrics to view.
 
-In the **Scalars** view, click <img src="/docs/latest/icons/ico-settings.svg" alt="Tuning" className="icon size-md" /> to access [scalar plot tools](../webapp_exp_track_visual.md#scalar-plot-tools).
+In the **Scalars** view, click <img src="/docs/latest/icons/ico-tune.svg" alt="Tuning" className="icon size-md" /> to access [scalar plot tools](../webapp_exp_track_visual.md#scalar-plot-tools).
 
 **Plots** shows the last reported iteration sample of each metric/variant combination per compared run. 
 

@@ -344,7 +344,7 @@ See additional [plot controls](#plot-controls) below.
 
 #### Metric Values View
 
-The metric values view (<img src="/docs/latest/icons/ico-charts-view.svg" alt="Charts view" className="icon size-md space-sm" />)
+The metric values view (<img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" />)
 shows a table summary of your metrics with a row per metric/variant:
 
 * First - The metric/variant series' initial value
@@ -353,12 +353,12 @@ shows a table summary of your metrics with a row per metric/variant:
 * Max - The metric/variant series' maximum value
 * Mean - The metric/variant series' mean value
 
-If all the values of a specific metric/variant are the same, the row will display a <img src="/docs/latest/icons/ico-equal-outline.svg" alt="Same values" className="icon size-sm space-sm" /> sign.
+If all the values of a specific metric/variant are the same, the row will display a <img src="/docs/latest/icons/ico-equal-outline.svg" alt="Same values" className="icon size-md space-sm" /> sign.
 
 ![Plots tab](../img/webapp_tracking_34a.png)
 
 Choose which metrics to view using one of the following out the options:
-* Use the quick filter bar (<img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-sm space-sm" />) 
+* Use the quick filter bar (<img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" />) 
 to only show metrics/variants whose name fit a partial-string match 
 * Use the filter menu (<img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />) to 
 select which metrics to view by clicking their show/hide button (<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" />). 

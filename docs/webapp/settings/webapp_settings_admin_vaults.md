@@ -59,12 +59,12 @@ UI storage credential vaults configure UI access to cloud storage credentials fo
 The **Administrator Vaults** table lists all currently defined vaults, and the following details:
 * Active - Toggle to enable / disable the vault
 * Name - Vault name
-* Target - Type of vault: Client (Agent/SDK/CLI) or UI storage credentials 
+* Target - Type of vault: `Client (Agent/SDK/CLI)` or `UI storage credentials` 
 * Group - User groups to apply this vault to 
 * ID - Vault ID (click to copy)
 * Vault Content - Vault content summary
 * Update - Last update time
 
-Hover over a vault in the table to Download, Edit, or Delete a vault.  
+Hover over a vault in the table to **Download**, **Edit**, or **Delete** a vault.  
 
 ![Admin vaults](../../img/settings_admin_vaults.png)
