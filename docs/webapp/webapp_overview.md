@@ -36,6 +36,9 @@ The WebApp's sidebar provides access to the following modules:
     <img src="/docs/latest/icons/ico-pipelines.svg" alt="Pipelines" className="icon size-md space-sm" /> <a href="pipelines/webapp_pipeline_page">Pipelines</a> - View and manage your pipelines.
   </li>
   <li>
+    <img src="/docs/latest/icons/ico-model-endpoints.svg" alt="Model endpoints" className="icon size-md space-sm" /> <a href="pipelines/webapp_pipeline_page">Pipelines</a> - Monitor your live model endpoints.
+  </li>
+  <li>
     <img src="/docs/latest/icons/ico-reports.svg" alt="Reports" className="icon size-md space-sm" /> <a href="webapp_reports">Reports</a> - View and manage your reports.
   </li>
   <li>

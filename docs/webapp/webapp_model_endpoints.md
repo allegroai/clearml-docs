@@ -82,5 +82,5 @@ The Monitor tab displays the endpoint's operational metrics and resource usage o
 
 The graphs' time span can be controlled through the menu at its top right corner. 
 Click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> to control which 
-plots to display. Click **HIDE ALL**, and then click <icon> on the plots you want to see.
+plots to display. Click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> on the plots you want to see.
 
