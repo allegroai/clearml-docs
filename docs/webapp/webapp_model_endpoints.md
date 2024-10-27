@@ -14,8 +14,6 @@ double-clicking a specific endpoint in the table view to open its details view.
 
 Download the model endpoint table as a CSV file by clicking **Download** <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-sm space-sm" />.
 
-<Table image>
-
 ## Endpoint Tables
 
 Active Endpoints are displayed in the **Active** tab. The table provides the following information: 
@@ -28,6 +26,8 @@ Active Endpoints are displayed in the **Active** tab. The table provides the fol
 * Requests / MIN (avg) - Average request rate in the last minute
 * Latency (avg) - Average endpoint response latency
 
+![Active endpoints](../img/webapp_model_endpoints_active_table.png)
+
 The **Loading** tab shows endpoints that are being set up, but are not yet active. The table provides the following 
 information:
 
@@ -37,6 +37,8 @@ information:
 * Preprocess artifact - Preprocessing code used for the endpoint 
 * Input type - Model matrix input type  (e.g. uint8, float32, int16, float16)
 * Input size - Model matrix input size `[Rows x Columns X Channels etc ...]`
+
+![Loading endpoints](../img/webapp_model_endpoints_loading_table.png)
 
 You can apply column filters by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />, 
 and sort endpoints by clicking <img src="/docs/latest/icons/ico-sort-off.svg" alt="Sort order" className="icon size-md space-sm" /> on the relevant column.
@@ -63,6 +65,8 @@ The **Details** tab displays the model endpoint information:
   * GPU Count 
   * Latency - Average request latency in the last minute
 
+![Endpoints details](../img/webapp_model_endpoints_details.png)
+
 ### Monitor
 The Monitor tab displays the endpoint's operational metrics and resource usage over time graphs: 
 * Total number of requests 
@@ -73,6 +77,8 @@ The Monitor tab displays the endpoint's operational metrics and resource usage o
   * Memory Usage 
   * Video Memory Usage
   * Network Usage
+
+![Endpoints monitor](../img/webapp_model_endpoints_monitor.png)
 
 The graphs' time span can be controlled through the menu at its top right corner. 
 Click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> to control which 
