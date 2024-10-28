@@ -734,27 +734,23 @@ To fix this, the registered URL of each debug image and/or artifact needs to be 
 
 * For **artifacts**, you can do the following:
 
-    1. Open bash in the mongo DB docker container:
+    1. Run shell in the `apiserver` container:
 
        ```bash 
-       sudo docker exec -it clearml-mongo /bin/bash
+       sudo docker exec -it clearml-apiserver /bin/bash
        ```
 
-    1. Inside the docker shell, create the following script. Make sure to replace `<old-bucket-name>` and `<new-bucket-name>`, 
-   as well as the URL protocol prefixes if you aren't using `s3`. 
+    1. Navigate to the `apiserver` folder: 
    
        ```bash
-       cat <<EOT >> script.js
-       db.model.find({uri:{$regex:/^s3/}}).forEach(function(e,i) {
-       e.uri = e.uri.replace("s3://<old-bucket-name>/","s3://<new-bucket-name>/");
-       db.model.save(e);});
-       EOT 
+       cd /opt/clearml/apiserver
        ```
 
-   1. Run the script against the backend DB:
+   1. Run the `fix_mongo_urls.py` script for fixing the artifacts. Make sure to insert the old address and the new 
+      address that will replace it:
 
       ```bash
-      mongo backend script.js
+      python3 fix_mongo_urls.py --host-source http://old_address_and_port --host-target http://new_address_and_port
       ```
    
 
