@@ -181,7 +181,7 @@ Other plot types are displayed separately for each run.
 ![Side-by-side plots](../../img/pipelines_comparison_plots.png)
 
 
-### Further Comparison
+### Run Details Comparison
 For a more in depth comparison of pipeline runs, select the runs to compare and click **Compare** in the batch action 
 bar. In the run comparison pages, you can compare details, hyperparameters, scalars, plots, and debug samples. For more 
 information, see [Comparing Experiments](../webapp_exp_comparing.md).

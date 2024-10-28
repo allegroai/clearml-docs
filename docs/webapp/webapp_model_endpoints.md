@@ -10,7 +10,7 @@ The Model Endpoints table lists all currently live (active, and being brought up
 endpoint details and monitor status over time. Whenever you deploy a model through the [ClearML Deploy UI applications](applications/apps_overview.md#deploy), 
 it will be listed in the table. 
 
-View the model endpoints in table view img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
+View the model endpoints in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" /> 
 or in details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" /> 
 using the buttons on the top left of the page. Use the table view for a comparative view of your endpoints according to 
 columns of interest. Use the details view to access a selected endpoint's details. Details view can also be accessed by 
@@ -40,7 +40,7 @@ information:
 * Uptime - Time since this endpoint has started setting up
 * Preprocess artifact - Preprocessing code used for the endpoint 
 * Input type - Model matrix input type  (e.g. uint8, float32, int16, float16)
-* Input size - Model matrix input size `[Rows x Columns X Channels etc ...]`
+* Input size - Model matrix input size 
 
 ![Loading endpoints](../img/webapp_model_endpoints_loading_table.png)
 
@@ -59,7 +59,7 @@ The **Details** tab displays the model endpoint information:
 * Uptime - Duration of longest running endpoint instance
 * Preprocess artifact - Preprocessing code used for the endpoint 
 * Input type - Model matrix input type  (e.g. uint8, float32, int16, float16)
-* Input size - Model matrix input size `[Rows x Columns X Channels etc ...]`
+* Input size - Model matrix input size 
 * Model instances list - Model instances servicing the endpoint. The following information is displayed for each instance:
   * Instance ID - Click instance ID to go to the model endpoint's ClearML Application instance dashboard .
   * Uptime
@@ -86,5 +86,8 @@ The Monitor tab displays the endpoint's operational metrics and resource usage o
 
 The graphs' time span can be controlled through the menu at its top right corner. 
 Click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> to control which 
-plots to display. Click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> on the plots you want to see.
+plots to display. 
+
+For example, to display specific plots, click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> 
+on each plot you want to view.
 

@@ -11,6 +11,8 @@ Administrators can define multiple [configuration vaults](webapp_settings_profil
 * [Client configuration (Agent/SDK/CLI)](#client-configuration-agentsdkcli)
 * [UI storage credentials](#ui-storage-credentials)   
 
+To apply its contents, a vault should be enabled in the [Administrator Vault Table](#administrator-vault-table). 
+
 ## Client Configuration (Agent/SDK/CLI)
 Client configuration vaults extend and/or override entries in the local ClearML [configuration file](../../configs/clearml_conf.md)
 where a task is executed. Vault values will be applied to tasks run by members of the designated user groups. 
@@ -36,10 +38,8 @@ The following configuration values are machine and/or agent specific, so they ca
    1. Target - Vault type. Select `Client (Agent/SDK/UI)`
    1. Format - Specify the configuration format: HOCON / JSON / YAML. 
    1. Fill in the configuration values (click <img src="/docs/latest/icons/ico-info.svg" alt="Info" className="icon size-md space-sm" /> 
-   to view configuration file reference). To import and existing configuration file, click <img src="/docs/latest/icons/ico-import.svg" alt="Import" className="icon size-md space-sm" />. 
+   to view configuration file reference). To import an existing configuration file, click <img src="/docs/latest/icons/ico-import.svg" alt="Import" className="icon size-md space-sm" />. 
 1. Click **Save** 
-
-To apply its contents, a vault should be enabled. 
 
 ## UI Storage Credentials   
 UI storage credential vaults configure UI access to cloud storage credentials for a designated group of users. 

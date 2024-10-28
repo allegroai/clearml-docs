@@ -27,7 +27,7 @@ Project folders display summarized project information:
 
 </div>
 
-* When the project contains subprojects, the folder  shows the number of subprojects within the project as an additional 
+* When the project contains subprojects, the folder shows the number of subprojects within the project as an additional 
   tab. Click the tab to view a list of subprojects, and click on a subproject's name to navigate to it.
 
   <div class="max-w-50">
