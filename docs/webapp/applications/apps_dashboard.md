@@ -3,7 +3,7 @@ title: Project Dashboard
 ---
 
 :::info Pro Plan Offering
-The ClearML Project Dashboard App is available under the ClearML Pro plan
+The ClearML Project Dashboard App is available under the ClearML Pro plan.
 :::
 
 The Project Dashboard Application provides an overview of a project's or workspace's progress. It presents an aggregated 

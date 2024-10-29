@@ -3,7 +3,7 @@ title: Task Scheduler
 ---
 
 :::important Enterprise Feature
-The Task Scheduler application is available under the ClearML Enterprise plan
+The Task Scheduler application is available under the ClearML Enterprise plan.
 :::
 
 ClearML's Task Scheduler Application lets you schedule tasks for one-shot and/or periodic execution at specified times. 
