@@ -145,7 +145,7 @@ The **Scalars** (Graph view) and **Plots** tabs compare experiments' plots.
 The **Scalars** tab displays scalar values as time series line charts. The **Plots** tab compares the last reported 
 iteration sample of each metric/variant combination per compared experiment.
 
-Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a single
+Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a single
 comparative plot. 
 
 Use **Group by** to select how to group plots:
