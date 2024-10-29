@@ -1043,11 +1043,18 @@ URL to a CA bundle, or set this option to `false` to skip SSL certificate verifi
     
 ---
 
-**`sdk.development.default_pandas_dataframe_extension_name`** (*string*)
-
-* Set the default `extension_name` for pandas `DataFrame` objects 
-* Valid values are: `.csv.gz`, `.parquet`, `.feather`, `.pickle`
-* This value can be overridden by the `extension_name` argument supplied to `Task.upload_artifact()`
+**`sdk.development.artifacts`** (*dict*)
+* Control default behavior when logging task artifacts:
+  * **`sdk.development.artifacts.default_pandas_dataframe_extension_name`** (*str*)
+    * Set the default `extension_name` for pandas `DataFrame` objects 
+    * Valid values are: `.csv.gz`, `.parquet`, `.feather`, `.pickle`
+    * This value can be overridden by the `extension_name` argument supplied to `Task.upload_artifact()`
+  * **`sdk.development.artifacts.auto_pickle`** (*bool*)
+    * If `true` and the artifact is not of a specific type (`pathlib2.Path`, `dict`, `pandas.DataFrame`, `numpy.ndarray`, 
+    `PIL.Image`, url string, `local_file` string), the artifact will be
+    pickled and uploaded as a pickle file artifact (with the `.pkl` file extension).
+    * If `false`, the auto-pickle behavior is disabled in the artifact upload
+    * This value can be overridden by the `auto_pickle` argument supplied to `Task.upload_artifact()` 
 
 ---
     
