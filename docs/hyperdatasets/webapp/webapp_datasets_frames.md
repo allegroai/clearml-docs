@@ -100,7 +100,7 @@ a dropdown list in the **Current Source** section.
 Use the **MASKS** panel to select which masks to apply over the frame. 
 
 To view / hide a specific mask, click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" />.
-In order to view all masks, click **Show all** / **Hide all**. 
+In order to view / hide all masks, click **Show all** / **Hide all**. 
 
 Masks are applied over the image either by pixel segmentation or as an alpha channel:
 * <img src="/docs/latest/icons/ico-segmentation.svg" alt="Pixel segmentation mode" className="icon size-md space-sm" /> Pixel 
