@@ -190,6 +190,7 @@ For example:
        pip_cache: "/root/.cache/pip"
        poetry_cache: "/root/.cache/pypoetry"
        vcs_cache: "/root/.clearml/vcs-cache"
+       venvs_cache: "/root/.clearml/venvs-cache"
        venv_build: "/root/.clearml/venvs-builds"
        pip_download: "/root/.clearml/pip-download-cache"
   }
