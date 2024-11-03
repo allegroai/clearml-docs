@@ -190,6 +190,7 @@ For example:
        pip_cache: "/root/.cache/pip"
        poetry_cache: "/root/.cache/pypoetry"
        vcs_cache: "/root/.clearml/vcs-cache"
+       venvs_cache: "/root/.clearml/venvs-cache"
        venv_build: "/root/.clearml/venvs-builds"
        pip_download: "/root/.clearml/pip-download-cache"
   }
@@ -415,6 +416,10 @@ These settings define which Docker image and arguments should be used unless [ex
     :::note Match rule arguments
     `default_docker.match_rules.arguments` should be formatted as a single string (for example: `"-e VALUE=1 --ipc=host"`),
     unlike  `agent.default_docker.arguments`
+    :::
+    
+    :::note
+    `match_rules` are ignore if `--docker <container>` is passed in the command line. 
     :::
     
     * The rules can be: 

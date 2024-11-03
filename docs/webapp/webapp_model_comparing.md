@@ -83,7 +83,7 @@ The **Scalars** (Graph view) and **Plots** tabs display plots attached to the mo
 scalar values as time series line charts. The **Plots** tab compares the last reported iteration sample of each 
 metric/variant combination per compared model. 
 
-Line, scatter, and bar graphs are compared by a single plot per metric/variant into which the plots of all compared 
+Line, scatter, box, and bar graphs are compared by a single plot per metric/variant into which the plots of all compared 
 models are combined.
 
 ![Merged plots](../img/webapp_compare_models_merge_plots.png)

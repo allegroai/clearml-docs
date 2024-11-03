@@ -109,6 +109,32 @@ To revoke a set of credentials:
 1. In the editing panel, hover of the relevant credential's row
 2. Click the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 
+### Service Account Configuration Vault
+Use a service account’s configuration vault to store ClearML configuration entries that can extend the ClearML 
+[configuration file](../../configs/clearml_conf.md) of any ClearML Agents or ClearML SDK running with the service account's 
+credentials. 
+
+Vault entries will extend the configuration in the ClearML [configuration file](../../configs/clearml_conf.md) if they 
+don't yet exist, and override values for those already present in the file.
+
+Fill in values using any of ClearML supported configuration formats: HOCON / JSON / YAML.
+
+To edit vault contents:
+1. Click on the relevant service account to open its details panel 
+2. Click **EDIT** on the configuration vault 
+3. Insert / edit the configurations in the vault
+4. Press **OK**
+
+To apply vault contents:
+* Click the toggle atop the vault to enable / disable the configurations
+* Once enabled, the configurations will be merged to the configuration file during ClearML and ClearML Agent usage
+
+In addition to the service account-specific configuration vault, [administrator vaults](#administrator-vaults) can also 
+be applied to service accounts. See all the vaults applied to the account in the **Applied administrator vaults** below 
+the configuration vault.   
+
+![Service Account Config Vault](../../img/settings_service_account_config_vault.png)
+
 ### Deleting Service Account
 Deleting a service account will revoke its credentials, causing agents using the account's credentials to fail. 
 Tasks and associated artifacts logged to your workspace by a service account will remain in your workspace.
