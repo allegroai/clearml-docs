@@ -8,7 +8,7 @@ including:
 * [Execution details](#execution) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
-* [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
+* [Info](#info) - Extended experiment information, such as the experiment start, create, and last update times and dates, user creating the experiment, and its description.
 * [Console](#console) - stdout, stderr, output to the console from libraries, and ClearML explicit reporting.
 * [Scalars](#scalars) - Metric plots.
 * [Plots](#plots) - Other plots and data, for example: Matplotlib, Plotly, and ClearML explicit reporting.
@@ -216,10 +216,41 @@ In the **ARTIFACTS** tab **>** **OTHER** **>** Select an artifact **>** Either:
 
 ![Other artifacts section](../img/webapp_tracking_30.png)
 
-## General Information
+## Info
 
-General experiment details appear in the **INFO** tab. This includes information describing the stored experiment:
-* Experiment description (editable, hover over the description box and click **Edit**)
+The **INFO** tab shows extended experiment information:
+* [Latest experiment events log](#latest-events-log)
+* [Experiment description](#description)
+* [Experiment details](#experiment-details)
+
+### Latest Events Log 
+
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan
+:::
+
+The Enterprise Server also displays a detailed history of  task activity: 
+* Task action (e.g. status changes, project move, etc.)
+* Action time
+* Acting user
+* Action source (i.e. ClearML Agent, SDK, or UI)
+* Action source version 
+
+To download the task history as a CSV file, hover over the log and click <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.   
+
+![Task audit log](../img/webapp_info_audit_log.png)
+
+:::note Limited persistency
+ClearML maintains a system-wide, large but strict limit for task history items. Once the limit is reached, the oldest entries are purged to make room for fresh entries.
+:::
+
+### Description 
+Add descriptive text to the experiment in the **Description** section. To modify the description, hover over the 
+description box and click **Edit**.
+
+### Experiment Details
+The **Experiment Details** section lists information describing the experiment:
+
 * The parent experiment
 * Project name
 * Creation, start, and last update dates and times
@@ -262,18 +293,20 @@ is downloadable. To view the end of the log, click **Jump to end**.
 All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in
 **SCALARS**. 
 
-Scalar series are presented in a line chart. To see the series for a metric in high resolution, 
-view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
+Scalar series can be displayed in [graph view](#graph-view) (default) or in [metric values view](#metric-values-view):
+
+#### Graph View 
+Scalar graph view (<img src="/docs/latest/icons/ico-charts-view.svg" alt="Graph view" className="icon size-md space-sm" />) 
+shows scalar series plotted as a time series line chart. The series are sub-sampled for 
+display efficiency. For high resolution, view a series in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
+
+Single value scalars (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value)) are shown in 
+a `Summary` table.
 
 :::info Full Screen Refresh
 Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-md space-sm medium-zoom-image" /> 
 to update the graph. 
 :::
-
-Reported single value scalars are aggregated into a table plot displaying scalar names and values (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value)). 
-
-
-#### Scalar Plot Tools
 
 Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" alt="Settings gear" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
@@ -309,6 +342,29 @@ which will copy to clipboard the embed code to put in your Reports. In contrast 
 are retrieved when the report is displayed allowing your reports to show the latest up-to-date data.
 
 See additional [plot controls](#plot-controls) below.
+
+#### Metric Values View
+
+The metric values view (<img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" />)
+shows a table summary of your metrics with a row per metric/variant:
+
+* First - The metric/variant series' initial value
+* Last - The metric/variant series' last value
+* Min -  The metric/variant series' minimum value
+* Max - The metric/variant series' maximum value
+* Mean - The metric/variant series' mean value
+
+If all the values of a specific metric/variant are the same, the row will display a <img src="/docs/latest/icons/ico-equal-outline.svg" alt="Same values" className="icon size-md space-sm" /> sign.
+
+![Plots tab](../img/webapp_tracking_34a.png)
+
+Choose which metrics to view using one of the following out the options:
+* Use the quick filter bar (<img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" />) 
+to only show metrics/variants whose name fit a partial-string match 
+* Use the filter menu (<img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />) to 
+select which metrics to view by clicking their show/hide button (<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" />). 
+Click **Hide/Show all**, to quickly hide/show all metrics.
+
 
 ### Plots
 Non-time-series plots appear in **PLOTS**. These include data generated by libraries, visualization tools, and 

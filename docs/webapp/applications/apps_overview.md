@@ -50,6 +50,8 @@ Each application's page is split into two sections:
 * App Instance List - Launch new app instances and view previously launched instances. Click on an instance to view its 
   dashboard. Hover over it to access the [app instance actions](#app-instance-actions).
 * App Instance Dashboard - The main section of the app page: displays the selected app instance's status and results.
+  Use the search bar <img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" /> 
+  to quickly find an app instance by name.
 
 ![App format](../../img/apps_format_overview.png)
 
