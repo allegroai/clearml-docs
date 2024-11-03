@@ -50,7 +50,7 @@ UI storage credential vaults configure UI access to cloud storage credentials fo
 1. Fill in vault details:
    1. Vault name - Name that appears in the Administrator Vaults table
    1. User Group - Specify the User Group that the vault affects
-   1. Target - Select `UI storage credentials` 
+   1. Target - Vault type. Select `UI storage credentials` 
    1. \+ Add access keys - Enter storage credentials (see [Browser Cloud Storage Access](webapp_settings_profile.md#browser-cloud-storage-access))
 1. Click **Save**
 

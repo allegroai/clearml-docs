@@ -36,7 +36,7 @@ The WebApp's sidebar provides access to the following modules:
     <img src="/docs/latest/icons/ico-pipelines.svg" alt="Pipelines" className="icon size-md space-sm" /> <a href="pipelines/webapp_pipeline_page">Pipelines</a> - View and manage your pipelines.
   </li>
   <li>
-    <img src="/docs/latest/icons/ico-model-endpoints.svg" alt="Model endpoints" className="icon size-md space-sm" /> <a href="pipelines/webapp_pipeline_page">Model Endpoints</a> - Monitor your live model endpoints (available in the ClearML Enterprise plan).
+    <img src="/docs/latest/icons/ico-model-endpoints.svg" alt="Model endpoints" className="icon size-md space-sm" /> <a href="webapp_model_endpoints">Model Endpoints</a> - Monitor your live model endpoints (available in the ClearML Enterprise plan).
   </li>
   <li>
     <img src="/docs/latest/icons/ico-reports.svg" alt="Reports" className="icon size-md space-sm" /> <a href="webapp_reports">Reports</a> - View and manage your reports.

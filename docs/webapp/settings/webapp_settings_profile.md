@@ -91,7 +91,7 @@ these credentials cannot be recovered.
 
 **To revoke ClearML credentials:** hover over the desired credentials, and click <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" />
 
-## AI Application Gateway Tokens 
+### AI Application Gateway Tokens 
 
 :::important Enterprise Feature
 This feature is available under the ClearML Enterprise plan.

@@ -5,7 +5,7 @@ title: Version 1.9
 ### ClearML Agent 1.9.2
 
 **New Features and Bug Fixes**
-* Handle OSError when checking for is_file ([ClearML GitHub issue #1337](https://github.com/allegroai/clearml/issues/1337))
+* Handle OSError when checking for `is_file` ([ClearML GitHub issue #1337](https://github.com/allegroai/clearml/issues/1337))
 * Add support for pip legacy resolver for versions specified using the `agent.package_manager.pip_legacy_resolver` configuration option
 * Add skip existing packages
 * Fix report index not advancing in resource monitoring causes more than one GPU not to be reported
