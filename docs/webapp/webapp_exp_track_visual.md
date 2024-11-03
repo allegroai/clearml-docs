@@ -226,7 +226,7 @@ The **INFO** tab shows extended experiment information:
 ### Latest Events Log 
 
 :::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 The Enterprise Server also displays a detailed history of  task activity: 
