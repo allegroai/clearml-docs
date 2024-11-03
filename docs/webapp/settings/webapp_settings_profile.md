@@ -104,7 +104,7 @@ Generate tokens providing API access to the AI Application Gateway endpoints:
 
 1. Click **Generate a Token**
 1. Under `Expiration`, enter the number of days the token should remain valid 
-1. Click `Generate`, which create a token and copy it to your clipboard 
+1. Click `Generate`, which creates a token and copies it to your clipboard 
 
 ### Changing Your Workspace Name
 To change the name of your own workspace, click **Edit workspace name**  <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> 
