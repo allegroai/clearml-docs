@@ -187,7 +187,7 @@ module.exports = {
         },
       ],
       // Please do not remove the credits, help to publicize Docusaurus :)
-      copyright: `Copyright © ${new Date().getFullYear()} allegro.ai. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ClearML. Built with Docusaurus.`,
     },
   },
   presets: [
