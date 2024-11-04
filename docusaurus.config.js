@@ -27,6 +27,20 @@ module.exports = {
       theme: prismThemes.dracula,
       darkTheme: prismThemes.dracula,
     },
+    imageZoom: {
+      // CSS selector to apply the plugin to, defaults to '.markdown img'
+      selector: '.markdown img',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        margin: 24,
+        background: '#BADA55',
+        scrollOffset: 0,
+        container: '#zoom-container',
+        template: '#zoom-template',
+      },
+    },
+
     //algolia algolia: {
       //algolia appId: 'ALGOLIA_APP_ID', // The application ID provided by Algolia
       //algolia apiKey: 'ALGOLIA_APP_KEY',  // Public API key
@@ -265,6 +279,6 @@ module.exports = {
         id: 'none', // GTM Container ID
       }
     ],
-    path.resolve(__dirname, 'src/zoom-plugin')
+    require.resolve('plugin-image-zoom'),
   ],
 };
