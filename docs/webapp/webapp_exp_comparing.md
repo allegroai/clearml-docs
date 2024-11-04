@@ -74,8 +74,8 @@ experiments' hyperparameter and their values.
 The experiments are laid out in vertical cards, so each field is lined up side-by-side. The experiment on the 
 left is used as the base experiment, to which the other experiments are compared. You can set a new base experiment in 
 one of the following ways:
-* Click on <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> on the top right of the experiment that will be the new base.
-* Click on <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> the new base experiment and drag it all the way to the left
+* Click <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> on the top right of the experiment that will be the new base.
+* Click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> on the new base experiment and drag it all the way to the left
 
 The differences between the experiments are highlighted. Easily locate 
 value differences by clicking click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />

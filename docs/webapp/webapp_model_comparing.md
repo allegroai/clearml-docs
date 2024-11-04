@@ -57,7 +57,7 @@ The model on the left is used as the base model, to which the other models are c
 in one of the following ways:
 * Click <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> 
 on the top right of the model that will be the new base.
-* Click on the new base model and drag it all the way to the left
+* Click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-md space-sm" /> on the new base model and drag it all the way to the left
 
 The differences between the models are highlighted. You can obscure identical fields by switching on the
 **Hide Identical Fields** toggle.

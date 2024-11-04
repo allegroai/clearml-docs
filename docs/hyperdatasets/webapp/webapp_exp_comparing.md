@@ -26,7 +26,7 @@ new base experiment
 in one of the following ways:
 * Click <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> 
 on the top right of the experiment that will be the new base.
-* Click on the new base experiment and drag it all the way to the left
+* Click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-md space-sm" /> on the new base experiment and drag it all the way to the left
 
 
 ![Dataview comparison](../../img/hyperdatasets/web-app/compare_dataviews.png)
