@@ -74,8 +74,8 @@ experiments' hyperparameter and their values.
 The experiments are laid out in vertical cards, so each field is lined up side-by-side. The experiment on the 
 left is used as the base experiment, to which the other experiments are compared. You can set a new base experiment in 
 one of the following ways:
-* Click on <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> on the top right of the experiment that will be the new base.
-* Click on <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> the new base experiment and drag it all the way to the left
+* Hover and click <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> on the experiment that will be the new base.
+* Hover and click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan" className="icon size-md space-sm" /> on the new base experiment and drag it all the way to the left
 
 The differences between the experiments are highlighted. Easily locate 
 value differences by clicking click <img src="/docs/latest/icons/ico-previous-diff.svg" alt="Up arrow" className="icon size-md" />
@@ -148,14 +148,16 @@ iteration sample of each metric/variant combination per compared experiment.
 Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a single
 comparative plot. 
 
-Use **Group by** to select how to group plots:
+For overlaid plots, use **Group by** to select how to group plots:
 * **Metric** - All variants for a metric appear on the same plot.
+    
+    ![Scalar plot grouped by metric](../img/webapp_compare_07.png)
+    
 * **Metric+Variant** (default) - Every variant appears on its own plot.
 
+    ![Scalar plot grouped by metric and variant](../img/webapp_compare_08.png)
 
-![Scalar comparison](../img/webapp_compare_08.png)
-
-Other plot types are displayed separately for each experiment.
+Other plot types that are not overlaid are displayed separately for each experiment.
 
 ![non-merged comparison](../img/webapp_compare_exp_plots.png)
 

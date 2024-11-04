@@ -300,13 +300,15 @@ Scalar graph view (<img src="/docs/latest/icons/ico-charts-view.svg" alt="Graph 
 shows scalar series plotted as a time series line chart. The series are sub-sampled for 
 display efficiency. For high resolution, view a series in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
 
-Single value scalars (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value)) are shown in 
-a `Summary` table.
-
 :::info Full Screen Refresh
 Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-md space-sm medium-zoom-image" /> 
 to update the graph. 
 :::
+
+Single value scalars (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value)) are shown in 
+a `Summary` table.
+
+![Single value scalar plot](../img/webapp_single_scalar_plot.png)
 
 Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" alt="Settings gear" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
