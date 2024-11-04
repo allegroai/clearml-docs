@@ -148,14 +148,16 @@ iteration sample of each metric/variant combination per compared experiment.
 Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a single
 comparative plot. 
 
-Use **Group by** to select how to group plots:
+For overlaid groups, use **Group by** to select how to group plots:
 * **Metric** - All variants for a metric appear on the same plot.
+    
+    ![Scalar plot grouped by metric](../img/webapp_compare_07.png)
+    
 * **Metric+Variant** (default) - Every variant appears on its own plot.
 
+    ![Scalar plot grouped by metric and variant](../img/webapp_compare_08.png)
 
-![Scalar comparison](../img/webapp_compare_08.png)
-
-Other plot types are displayed separately for each experiment.
+Other plot types that are not overlaid are displayed separately for each experiment.
 
 ![non-merged comparison](../img/webapp_compare_exp_plots.png)
 
