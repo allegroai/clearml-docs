@@ -578,6 +578,9 @@ html[data-theme="dark"] .footer__link-item:hover {
   pointer-events: none;
 }
 
+html[data-theme=light] .medium-zoom--opened .medium-zoom-overlay {background: white !important; opacity: 0.4}
+html[data-theme=dark] .medium-zoom--opened .medium-zoom-overlay {background: black !important; opacity: 0.6}
+
 /* table */
 .markdown table {
   border-spacing: 0;
