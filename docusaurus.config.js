@@ -33,11 +33,7 @@ module.exports = {
       // Optional medium-zoom options
       // see: https://www.npmjs.com/package/medium-zoom#options
       options: {
-        margin: 24,
-        background: '#BADA55',
-        scrollOffset: 0,
-        container: '#zoom-container',
-        template: '#zoom-template',
+        margin: 20
       },
     },
 
