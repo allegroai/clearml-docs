@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: Configuring ClearML
 ---
 
 ClearML can be tailored to your requirements by setting configurations in a variety of methods. All ClearML and ClearML 
