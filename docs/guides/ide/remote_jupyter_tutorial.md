@@ -35,7 +35,7 @@ This sets the following arguments:
 
 :::note
 Enter a project name using `--project <name>`. If no project is input, the default project 
-name is "DevOps"
+name is `DevOps`.
 :::
    
 After launching the command, the `clearml-agent` listening to the `default` queue spins a remote Jupyter environment with 
@@ -85,7 +85,7 @@ Jupyter Lab URL: http://localhost:8878/?token=ff7e5e8b9e5493a01b1a72530d18181320
 VSCode server available at http://localhost:8898/
 ```
 
-Click on the JupyterLab link, which will open the remote session
+Click on the JupyterLab link, which will open the remote session.
    
 Now, let's execute some code in the remote session!
 

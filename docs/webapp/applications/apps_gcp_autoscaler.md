@@ -3,7 +3,7 @@ title: GCP Autoscaler
 ---
 
 :::info Pro Plan Offering
-The ClearML GCP Autoscaler App is available under the ClearML Pro plan
+The ClearML GCP Autoscaler App is available under the ClearML Pro plan.
 :::
 
 The GCP Autoscaler Application optimizes GCP VM instance usage according to a user defined instance budget: Define your 
@@ -21,7 +21,22 @@ when each VM instance is spun up.
 For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
 
 ## Autoscaler Instance Configuration
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+When configuring a new GCP Autoscaler instance, you can fill in the required parameters or reuse the configuration of 
+a previously launched instance.  
+
+Launch an app instance with the configuration of a previously launched instance using one of the following options:
+* Cloning a previously launched app instance will open the instance launch form with the original instance's 
+configuration prefilled.
+* Importing an app configuration file. You can export the configuration of a previously launched instance as a JSON file 
+when viewing its configuration.
+
+The prefilled instance launch form can be edited before starting the new app instance. 
+
+To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
+to open the app's instance launch form.
+
+### Configuration Options
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **GCP Configuration**
     * GCP Project ID - Project used for spinning up VM instances
@@ -58,7 +73,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Monitored Queue - Queue associated with this VM instance type. The tasks enqueued to this queue will be executed on VM instances of this type
     * Machine Image (optional) - The GCP machine image to launch 
     :::note
-    The machine image used for the autoscaler must include docker runtime and virtualenv 
+    The machine image used for the autoscaler must include docker runtime and virtualenv. 
     :::
     * Disc Size (in GB) (optional) 
     * Use the default GCP Service Account - If selected, the default service account will be used. To use a 
@@ -72,7 +87,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **Max Idle Time** (optional) - Maximum time in minutes that a VM instance can be idle before the autoscaler spins it down
 * **Workers Prefix** (optional) - A Prefix added to workers' names, associating them with this autoscaler
 * **Polling Interval** (optional) - Time period in minutes at which the designated queue is polled for new tasks
-* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [configuration vault](../webapp_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
+* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [configuration vault](../settings/webapp_settings_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
 * **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
   instances are running the same task. In most cases, this indicates an issue.
 * **Exclude .bashrc script** - Select in order to skip `.bashrc` script execution 
@@ -81,16 +96,16 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
   tasks run by the autoscaler. For more information, see [Configuration Vault note](#configuration_vault) (available under ClearML Enterprise Plan).
 * **Init Script** (optional) - A bash script to execute after launching the VM instance
 * **Additional ClearML Configuration** (optional) - A ClearML configuration file to use by the ClearML Agent when executing your experiments
-* **Run with Service Account** -  Select to allow running the application under a [Service Account](../webapp_profile.md#service-accounts) identity instead of under your own identity (available under ClearML Enterprise Plan)
+* **Run with Service Account** -  Select to allow running the application under a [Service Account](../settings/webapp_settings_users.md#service-accounts) identity instead of under your own identity (available under ClearML Enterprise Plan)
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration 
 
-![GCP autoscaler wizard](../../img/apps_gcp_autoscaler_wizard.png)
+![GCP autoscaler instance launch form](../../img/apps_gcp_autoscaler_wizard.png)
 
 <a id="configuration_vault"/>
 
 :::important Enterprise Feature
-You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to configure GCP 
+You can utilize the [configuration vault](../settings/webapp_settings_profile.md#configuration-vault) to configure GCP 
 credentials for the Autoscaler in the following format: 
 
 ```
@@ -179,11 +194,11 @@ account to configure the autoscaler app:
    
    ![GCP credential key creation](../../img/apps_gcp_autoscaler_credentials_6.png)
    
-1. Go to the GCP Autoscaler wizard **>** open the **GCP Configuration** panel **>** click *Edit* in the 
+1. Go to the GCP Autoscaler instance launch form **>** open the **GCP Configuration** panel **>** click *Edit* in the 
    **GCP Credentials** field.
 
    ![GCP credentials field](../../img/apps_gcp_autoscaler_credentials_6a.png)   
    
    Paste the contents of the JSON file from the previous step into the **GCP Credentials** popup. 
 
-   ![GCP credential wizard input](../../img/apps_gcp_autoscaler_credentials_7.png)
+   ![GCP credential instance launch form input](../../img/apps_gcp_autoscaler_credentials_7.png)

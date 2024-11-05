@@ -35,7 +35,7 @@ Single IP (domain) with the following open ports:
 
 ### Subdomain Configuration
     
-Subdomain configuration with default http/s ports (`80` or `443`):
+Subdomain configuration with default HTTP/S ports (`80` or `443`):
 
 * Web application on subdomain: `app.*.*`
 * API service on subdomain: `api.*.*`
@@ -145,7 +145,7 @@ If the `secure.conf` file does not exist, create your own in ClearML Server's `/
 an alternate folder you configured), and input the modified configuration
 :::
 
-the default secret for the system's apiserver component can be overridden by setting the following environment variable: 
+The default secret for the system's apiserver component can be overridden by setting the following environment variable: 
 `CLEARML__SECURE__CREDENTIALS__APISERVER__USER_SECRET="my-new-secret"`
 
 :::note
@@ -397,7 +397,7 @@ options.
 ### Custom UI Context Menu Actions
 
 :::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan
+This feature is available under the ClearML Enterprise plan.
 :::
 
 Create custom UI context menu actions to be performed on ClearML objects (projects, tasks, models, dataviews, or queues) 

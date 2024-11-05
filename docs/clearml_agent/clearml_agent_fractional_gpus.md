@@ -41,7 +41,7 @@ both MIG-enabled and non-MIG devices.
    flag to specify the queue name(s) and number (or fraction) of GPUs to allocate to them. 
 
    ```
-   clearml-agent daemon --dynamic-gpus --gpus 0, 1 --queue half_gpu=0.5
+   clearml-agent daemon --dynamic-gpus --gpus 0, 1 --queue half_gpu=0.5 --docker
    ```
 
 The agent can utilize 2 GPUs (GPUs 0 and 1). Every task enqueued to the `half_gpu` queue will be run by the agent and 
@@ -57,7 +57,7 @@ You can set up multiple queues, each allocated a different number of GPUs per ta
 are listed is their order of priority, so the agent will service tasks from the first listed queue before servicing 
 subsequent queues:
 ```
-clearml-agent daemon --dynamic-gpus --gpus 0-2 --queue dual_gpus=2 quarter_gpu=0.25 half_gpu=0.5 single_gpu=1 
+clearml-agent daemon --dynamic-gpus --gpus 0-2 --queue dual_gpus=2 quarter_gpu=0.25 half_gpu=0.5 single_gpu=1 --docker
 ```
 
 This agent will utilize 3 GPUs (GPUs 0, 1, and 2). The agent can spin multiple jobs from the different queues based on 

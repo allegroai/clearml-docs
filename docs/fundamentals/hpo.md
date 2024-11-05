@@ -57,7 +57,7 @@ optimization.
   documentation and a [code example](../guides/frameworks/pytorch/notebooks/image/hyperparameter_search.md).
 * **Random** uniform sampling of hyperparameters - [`automation.RandomSearch`](../references/sdk/hpo_optimization_randomsearch.md).
 * **Full grid** sampling strategy of every hyperparameter combination - [`automation.GridSearch`](../references/sdk/hpo_optimization_gridsearch.md).
-* **Custom** - [`automation.optimization.SearchStrategy`](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L268) - Use a custom class and inherit from the ClearML automation base strategy class 
+* **Custom** - [`automation.optimization.SearchStrategy`](https://github.com/allegroai/clearml/blob/master/clearml/automation/optimization.py#L268) - Use a custom class and inherit from the ClearML automation base strategy class. 
 
 
 ## Defining a Hyperparameter Optimization Search Example
@@ -161,7 +161,7 @@ ClearML also provides `clearml-param-search`, a CLI utility for managing the hyp
 ## UI Application
 
 :::info Pro Plan Offering
-The ClearML HPO App is available under the ClearML Pro plan
+The ClearML HPO App is available under the ClearML Pro plan.
 :::
 
 ClearML provides the [Hyperparameter Optimization GUI application](../webapp/applications/apps_hpo.md) for launching and 

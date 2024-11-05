@@ -27,6 +27,17 @@ module.exports = {
       theme: prismThemes.dracula,
       darkTheme: prismThemes.dracula,
     },
+    imageZoom: {
+      // CSS selector to apply the plugin to, defaults to '.markdown img'
+      selector: '.markdown img',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        margin: 24,
+        background: "transparent"
+      },
+    },
+
     //algolia algolia: {
       //algolia appId: 'ALGOLIA_APP_ID', // The application ID provided by Algolia
       //algolia apiKey: 'ALGOLIA_APP_KEY',  // Public API key
@@ -62,6 +73,7 @@ module.exports = {
       logo: {
         alt: 'ClearML',
         src: 'img/logo.svg',
+        href: 'https://clear.ml/'
       },
       items: [
         {
@@ -101,7 +113,7 @@ module.exports = {
 
             {
               label: 'Release Notes',
-              to: '/docs/release_notes/ver_1_16',
+              to: '/docs/release_notes/clearml_server/open_source/ver_1_16',
             },
             {
               label: 'Community Resources',
@@ -186,7 +198,7 @@ module.exports = {
         },
       ],
       // Please do not remove the credits, help to publicize Docusaurus :)
-      copyright: `Copyright © ${new Date().getFullYear()} allegro.ai. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ClearML. Built with Docusaurus.`,
     },
   },
   presets: [
@@ -264,6 +276,6 @@ module.exports = {
         id: 'none', // GTM Container ID
       }
     ],
-    path.resolve(__dirname, 'src/zoom-plugin')
+    require.resolve('plugin-image-zoom'),
   ],
 };

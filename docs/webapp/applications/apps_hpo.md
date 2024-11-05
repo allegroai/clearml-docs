@@ -3,7 +3,7 @@ title: Hyperparameter Optimization
 ---
 
 :::info Pro Plan Offering
-The ClearML HPO App is available under the ClearML Pro plan
+The ClearML HPO App is available under the ClearML Pro plan.
 :::
 
 The Hyperparameter Optimization Application finds the set of parameter values that optimize a specific metric(s) for your 
@@ -19,7 +19,7 @@ Control the optimization process with the advanced configuration options, which 
 limits.
 
 ## HPO Instance Configuration
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **Initial Task to Optimize** - ID of a ClearML task to optimize. This task will be cloned, and each clone will 
   sample a different set of hyperparameters values
@@ -74,7 +74,7 @@ limits.
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration 
   
-![HPO app wizard](../../img/apps_hpo_wizard.png)
+![HPO app instance launch form](../../img/apps_hpo_wizard.png)
  
 ## Dashboard
 Once an HPO instance is launched, the dashboard displays a summary of the optimization process.

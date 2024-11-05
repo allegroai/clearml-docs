@@ -3,15 +3,16 @@ title: Media Reporting
 ---
 
 The [media_reporting.py](https://github.com/allegroai/clearml/blob/master/examples/reporting/media_reporting.py) example 
-demonstrates reporting (uploading) images, audio, and video. Use the [Logger.report_media](../../references/sdk/logger.md#report_media)
-method to upload from: 
+demonstrates reporting (uploading) images, audio, and video. Use [`Logger.report_media()`](../../references/sdk/logger.md#report_media)
+to upload from: 
 * Local path
 * BytesIO stream
 * URL of media already uploaded to some storage
 
-ClearML uploads media to the bucket specified in the ClearML configuration file or ClearML can be configured for image storage, see [Logger.set_default_upload_destination](../../references/sdk/logger.md#set_default_upload_destination)
-(storage for [artifacts](../../clearml_sdk/task_sdk.md#setting-upload-destination) is different). Set credentials for storage in the ClearML 
-[configuration file](../../configs/clearml_conf.md).
+ClearML uploads media to the bucket specified in the ClearML configuration file. You can configure ClearML for image 
+storage using [`Logger.set_default_upload_destination()`](../../references/sdk/logger.md#set_default_upload_destination) 
+(note that [artifact storage](../../clearml_sdk/task_sdk.md#setting-upload-destination) is handled differently). 
+Set the storage credentials in the [clearml.conf file](../../configs/clearml_conf.md#sdk-section).
 
 ClearML reports media in the **ClearML Web UI** **>** experiment details **>** **DEBUG SAMPLES** 
 tab. 
@@ -21,8 +22,7 @@ project.
 
 ## Reporting (Uploading) Media from a Source by URL
 
-Report by calling the [Logger.report_media](../../references/sdk/logger.md#report_media) 
-method using the `url` parameter.
+Report by using the `url` parameter of [`Logger.report_media()`](../../references/sdk/logger.md#report_media):
 
 ```python
 # report video, an already uploaded video media (url)
@@ -45,7 +45,7 @@ The reported audio can be viewed in the **DEBUG SAMPLES** tab. Click a thumbnail
 
 ## Reporting (Uploading) Media from a Local File
 
-Use the `local_path` parameter.
+Report by using the `local_path` parameter of [`Logger.report_media()`](../../references/sdk/logger.md#report_media):
 
 ```python
 #  report audio, report local media audio file

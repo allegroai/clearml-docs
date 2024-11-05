@@ -3,7 +3,7 @@ title: Task Scheduler
 ---
 
 :::important Enterprise Feature
-The Task Scheduler application is available under the ClearML Enterprise plan
+The Task Scheduler application is available under the ClearML Enterprise plan.
 :::
 
 ClearML's Task Scheduler Application lets you schedule tasks for one-shot and/or periodic execution at specified times. 
@@ -16,6 +16,8 @@ times.
 
 ## Scheduler Instance Configuration
 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
+  values from the file, which can be modified before launching the app instance
 * **Scheduled Tasks** 
   * **Base Task ID** - ID of a ClearML task to clone and enqueue for execution at the specified time. 
   * **Destination Project** - The project where the task will be cloned to.
@@ -28,8 +30,10 @@ times.
     * **Time of the Day** - The time(s) (UTC) at which the task should run
     * **Add item** - Add another task to schedule 
 * **Scheduling Job Name** - Name for the Scheduler instance. This will appear in the instance list
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration 
 
-![TaskScheduler wizard](../../img/apps_taskscheduler_wizard.png)
+![TaskScheduler instance launch form](../../img/apps_taskscheduler_wizard.png)
 
  
 ## Dashboard

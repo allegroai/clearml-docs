@@ -39,28 +39,33 @@ clearml-agent daemon <arguments> --stop
 
 ### Allocating Resources
 To specify GPUs associated with the agent, add the `--gpus` flag.
+
+:::info Docker Mode
+Make sure to include the `--docker` flag, as GPU management through the agent is only supported in [Docker Mode](clearml_agent_execution_env.md#docker-mode).
+:::
+
 To execute multiple agents on the same machine (usually assigning GPU for the different agents), run:
 ```bash
-clearml-agent daemon --detached --queue default --gpus 0
-clearml-agent daemon --detached --queue default --gpus 1
+clearml-agent daemon --gpus 0 --queue default --docker
+clearml-agent daemon --gpus 1 --queue default --docker
 ```
 To allocate more than one GPU, provide a list of allocated GPUs
 ```bash
-clearml-agent daemon --gpus 0,1 --queue dual_gpu
+clearml-agent daemon --gpus 0,1 --queue dual_gpu --docker
 ```
 
 ### Queue Prioritization
 A single agent can listen to multiple queues. The priority is set by their order.
 
 ```bash
-clearml-agent daemon --detached --queue high_q low_q --gpus 0
+clearml-agent daemon --queue high_q low_q
 ```
 This ensures the agent first tries to pull a Task from the `high_q` queue, and only if it is empty, the agent will try to pull 
 from the `low_q` queue.
 
 To make sure an agent pulls from all queues equally, add the `--order-fairness` flag.
 ```bash
-clearml-agent daemon --detached --queue group_a group_b --order-fairness  --gpus 0
+clearml-agent daemon --queue group_a group_b --order-fairness
 ```
 It will make sure the agent will pull from the `group_a` queue, then from `group_b`, then back to `group_a`, etc. This ensures 
 that `group_a` or `group_b` will not be able to starve one another of resources.
@@ -118,25 +123,25 @@ agentk8sglue:
   queues:
     example_queue_1:
       templateOverrides:
+        nodeSelector:
+          nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
         resources:
           limits:
             nvidia.com/gpu: 1
-      nodeSelector:
-        nvidia.com/gpu.product: A100-SXM4-40GB-MIG-1g.5gb
     example_queue_2:
       templateOverrides:
+        nodeSelector:
+          nvidia.com/gpu.product: A100-SXM4-40GB
         resources:
           limits:
             nvidia.com/gpu: 2
-      nodeSelector:
-        nvidia.com/gpu.product: A100-SXM4-40GB
 ```
 :::
 
 ## Slurm
 
 :::important Enterprise Feature
-Slurm Glue is available under the ClearML Enterprise plan
+Slurm Glue is available under the ClearML Enterprise plan.
 :::
 
 Agents can be deployed bare-metal or inside [`Singularity`](https://docs.sylabs.io/guides/3.5/user-guide/introduction.html) 

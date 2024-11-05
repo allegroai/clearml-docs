@@ -13,8 +13,9 @@ using the buttons on the top left of the page. Use the table view for a comparat
 to columns of interest. Use the details view to access a selected experiment's details, while keeping the experiment list 
 in view. Details view can also be accessed by double-clicking a specific experiment in the table view to open its details view.
 Use the [comparison view](#comparing-experiments) to compare your experiments' scalar and plot results (for a more in 
-depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). When selected, this view presents a comparison 
-of all selected experiments. If no experiments are selected, all currently visible experiments in the table are compared.
+depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). This view compares
+the scalars/plots of currently selected experiments. If no experiments are selected, the first 100
+visible experiments in the table are compared.
 
 You can archive experiments so the experiments table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the
 table to open the archive and view all archived experiments. From the archive, you can restore 
@@ -72,6 +73,17 @@ To create an experiment through the UI interface:
      * Image - Docker image to use for running the experiment
      * Arguments - Add Docker arguments as a single string
      * Startup Script - Add a bash script to be executed inside the Docker before setting up the experiment's environment 
+       
+       :::important 
+       For a task to run in the specified container, the ClearML Agent executing the task must be running in 
+       Docker mode:
+
+       ```bash
+       clearml-agent daemon --queue <execution_queue_to_pull_from> --docker
+       ```
+       For more information, see [Docker Mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+       :::
+     
    * **Run**
      * Queue - [ClearML Queue](../fundamentals/agents_and_queues.md#what-is-a-queue) where the experiment should be 
      enqueued for execution
@@ -211,11 +223,12 @@ to open the context menu
 | Archive | Move experiment to the project's archive. If it is shared (ClearML Hosted Service only), the experiment becomes private. | Any state |  *Pending* to *Draft*  |
 | Restore |Action available in the archive. Restore an experiment to the active experiments table.| Any State | None |
 | Delete |  Action available in the archive. Delete an experiment, which will also remove all their logs, results, artifacts and debug samples. | Any State | N/A |
-| Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft* | *Pending* |
+| Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft*, *Aborted* | *Pending* |
 | Dequeue | Remove an experiment from a queue. | *Pending* | *Draft* |
 | Reset  | Delete the log and output from a previous run of an experiment (for example, before rerunning it). | *Completed*, *Aborted*, or *Failed* | *Draft* |
 | Abort | Manually terminate a *Running* experiment. | *Running* | *Aborted* |
 | Abort All Children | Manually terminate all *Running* experiments which have this task as a parent | *Running* or *Aborted* | None for parent experiment, *Aborted* for child experiments |
+| Retry | Enqueue a failed experiment in order to rerun it. Make sure you have resolved the external problem which previously prevented the experiment’s completion. | *Failed* | *Pending* |
 | Publish | Publish an experiment to prevent changes to its tracking data, inputs, and outputs. Published experiments and their models are read-only. *Published* experiments cannot be enqueued, but they can be cloned, and their clones can be edited, tuned, and enqueued. | *Completed*, *Aborted*, or *Failed*.  | *Published* |
 | Add Tag | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
@@ -255,20 +268,13 @@ selecting items beyond the items currently on-screen:
 
 The comparison view compares experiment scalar and plot results (for a more in depth comparison, see [Comparing Experiments](webapp_exp_comparing.md)). 
 When selected, the view presents a comparison of all [selected experiments](#selecting-multiple-experiments). If no 
-experiments are selected, all currently visible experiments in the table are displayed in the comparison. 
+experiments are selected, the first 100 visible experiments in the table are displayed in the comparison. 
 
-In the dropdown menu, select to view **Scalars** or **Plots**. **Scalars** shows experiment scalar results as time 
-series line graphs. **Plots** shows the last reported iteration sample of each metric/variant combination per compared 
-experiment. 
+In the dropdown menu, select to view **Scalars** or **Plots**. 
 
-Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
-single comparative plot. 
+**Scalars** shows experiment scalar results as time series line graphs. 
 
 ![Merged comparison plots](../img/webapp_compare_view_1.png)
-
-Other plot types are displayed separately for each experiment.
-
-![Separate comparison plots](../img/webapp_compare_view_2.png)
 
 All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
 represents a reported metric, and each bar in the cluster represents an experiment.
@@ -278,9 +284,20 @@ represents a reported metric, and each bar in the cluster represents an experime
 Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> to customize which 
 metrics to view.
 
-In the **Scalars** view, click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size-md" /> to access 
+Click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size-md" /> to access 
 [scalar plot tools](webapp_exp_track_visual.md#scalar-plot-tools).
 
+**Plots** shows the last reported iteration sample of each metric/variant combination per compared 
+experiment. 
+
+Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
+single comparative plot. 
+
+![Merged comparison plots](../img/webapp_compare_view_4.png)
+
+Other plot types are displayed separately for each experiment.
+
+![Separate comparison plots](../img/webapp_compare_view_2.png)
 
 ## Creating an Experiment Leaderboard
 

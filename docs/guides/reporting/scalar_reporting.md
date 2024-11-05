@@ -16,19 +16,19 @@ To report more than one series on the same plot, use the same `title` argument. 
 # report two scalar series on the same graph
 for i in range(100):
     Logger.current_logger().report_scalar(
-        "unified graph", "series A", iteration=i, value=1./(i+1)
+        title="unified graph", series="series A", iteration=i, value=1./(i+1)
     )
     Logger.current_logger().report_scalar(
-        "unified graph", "series B", iteration=i, value=10./(i+1)
+        title="unified graph", series="series B", iteration=i, value=10./(i+1)
     )
     
 # report two scalar series on two different graphs
 for i in range(100):
     Logger.current_logger().report_scalar(
-        "graph A", "series A", iteration=i, value=1./(i+1)
+        title="graph A", series="series A", iteration=i, value=1./(i+1)
     )
     Logger.current_logger().report_scalar(
-        "graph B", "series B", iteration=i, value=10./(i+1)
+        title="graph B", series="series B", iteration=i, value=10./(i+1)
     )
 ```
 

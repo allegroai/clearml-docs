@@ -362,7 +362,7 @@ Your firewall may be preventing the connection. Try one of the following solutio
 * Disable certificate verification   
   
   :::warning
-  For security reasons, it is not recommended to disable certificate verification
+  For security reasons, it is not recommended to disable certificate verification.
   :::
     1. Upgrade ClearML to the current version:
        ``` 
@@ -455,7 +455,7 @@ You cannot undo the deletion of a ClearML object.
 #### Can I change the random seed my experiment uses?  
 
 Yes! By default, ClearML initializes Tasks with an initial seed of `1337` to ensure reproducibility. To set a different 
-value for your task, use the [`Task.set_random_seed`](references/sdk/task.md#taskset_random_seed) class method and 
+value for your task, use the [`Task.set_random_seed()`](references/sdk/task.md#taskset_random_seed) class method and 
 provide the new seed value, **before initializing the task**.
 
 You can disable the deterministic behavior entirely by passing `Task.set_random_seed(None)`.
@@ -557,7 +557,7 @@ Yes! You can use ClearML's Offline Mode, in which all the data and logs that a t
 local folder. 
 
 You can enable offline mode in one of the following ways:
-* Before initializing a task, use the [`Task.set_offline`](references/sdk/task.md#taskset_offline) class method and set 
+* Before initializing a task, use the [`Task.set_offline()`](references/sdk/task.md#taskset_offline) class method and set 
 the `offline_mode` argument to `True`
 * Before running a task, set `CLEARML_OFFLINE_MODE=1`
 
@@ -578,7 +578,7 @@ ClearML Task: Offline session stored in /home/user/.clearml/cache/offline/b78684
 In order to upload to the ClearML Server the execution data that the Task captured offline, do one of the
 following:
 * Use the `import-offline-session <session_path>` option of the [clearml-task](apps/clearml_task.md) CLI
-* Use the [`Task.import_offline_session`](references/sdk/task.md#taskimport_offline_session) method. 
+* Use the [`Task.import_offline_session()`](references/sdk/task.md#taskimport_offline_session) method. 
   
 See [Storing Task Data Offline](guides/set_offline.md).
 
@@ -627,7 +627,7 @@ tutorial.
 
 #### How can I report more than one scatter 2D series on the same plot?    <a id="multiple-scatter2D"></a>
 
-The [`Logger.report_scatter2d`](references/sdk/logger.md#report_scatter2d) 
+The [`Logger.report_scatter2d()`](references/sdk/logger.md#report_scatter2d) 
 method reports all series with the same `title` and `iteration` parameter values on the same plot.
 
 For example, the following two scatter2D series are reported on the same plot, because both have a `title` of `example_scatter` and an `iteration` of `1`:
@@ -716,20 +716,21 @@ registered was their full URL at the time of registration (e.g. `https://files.<
 
 To fix this, the registered URL of each debug image and/or artifact needs to be replaced with its current URL.
 
-* For **debug images**, use the following command. Make sure to insert the old address and the new address that will replace it
-    ```bash
-    curl --header "Content-Type: application/json" \
-    --request POST \
-    --data '{
-        "script": {
-            "source": "ctx._source.url = ctx._source.url.replace('https://files.<OLD_ADDRESS>', 'https://files.<NEW_ADDRESS>')",
-            "lang": "painless"
-        },
-        "query": {
-            "match_all": {}
-        }
-    }' \
-    ```
+* For **debug images**, use the following command. Make sure to insert the old address and the new address that will replace it:
+
+   :::important
+   Note that in the following command, the `'\''` sequences end with double single quotes (`''`) and not double quotes (`"`)
+   :::
+
+   ```bash
+   curl -XPOST -H "Content-Type: application/json" "localhost:9200/events-training_debug_image-*/_update_by_query?conflicts=proceed" -d'{
+       "script": {
+           "source": "ctx._source.url = ctx._source.url.replace('\''https://files.<OLD_ADDRESS>'\'', '\''https://files.<NEW_ADDRESS>'\'')",
+           "lang": "painless"
+       },
+       "query": {"prefix": {"url": {"value": "https://files.<OLD_ADDRESS>"}}}
+   }'
+   ```
 
 * For **artifacts**, you can do the following:
 
@@ -854,18 +855,25 @@ export CLEARML_API_HOST="http://localhost:8008"
 
 #### How can I track OS environment variables with experiments?    <a id="track-env-vars"></a>
 
-Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you need track, either:
+You can set environment variables to track in an experiment by specifying them in the `sdk.development.log_os_environments` 
+field of the [`clearml.conf`](configs/clearml_conf.md#log_env_var) file:
+
+```editorconfig
+log_os_environments: ["AWS_*", "CUDA_VERSION"]
+```
+
+You can also use the `CLEARML_LOG_ENVIRONMENT` variable to track environment variables:
 
 * All environment variables:
 
   ```
-  export CLEARML_LOG_ENVIRONMENT="*"
+  export CLEARML_LOG_ENVIRONMENT=*
   ```
     
 * Specific environment variables, for example, log `PWD` and `PYTHONPATH`:
 
   ```
-  export CLEARML_LOG_ENVIRONMENT="PWD,PYTHONPATH"
+  export CLEARML_LOG_ENVIRONMENT=PWD,PYTHONPATH
   ```
     
 * No environment variables:
@@ -873,6 +881,10 @@ Set the OS environment variable `CLEARML_LOG_ENVIRONMENT` with the variables you
   ```
   export CLEARML_LOG_ENVIRONMENT=
   ```
+
+:::note Overriding clearml.conf
+The `CLEARML_LOG_ENVIRONMENT` variable always overrides the `clearml.conf` file. 
+:::
 
 ## ClearML Hosted Service
         

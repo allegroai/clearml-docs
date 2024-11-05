@@ -56,16 +56,18 @@ User parameters are editable in any experiment, except experiments whose status 
 
 #### Source Code
 
-Select source code by changing any of the following:
+Modify code execution by changing any of the following:
 
-* Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, and/or working directory.
-* Installed Python packages and/or versions - Edit or clear (remove) them all.
-* Uncommitted changes - Edit or clear (remove) them all.
+* Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, working directory, 
+and/or binary.
+* The Python packages to be installed and/or their versions - Edit the package list, or clear it to have the ClearML 
+Agent either not install any packages or use an existing repo `requirements.txt` file. If the experiment is based on a 
+run in which the packages used were eventually different to the ones originally specified, you can easily or reset the 
+packages to originally recorded values ("Original Pip").
+* Uncommitted changes - Edit or clear all.
 
-**To select different source code:**
-
-* In the **EXECUTION** tab, hover over a section **>** **EDIT** or (**DISCARD DIFFS** for **UNCOMMITTED CHANGES**) **>**
-  edit **>** **SAVE**.
+**To modify the source code**, hover over the relevant sections in the **EXECUTION** tab to access Edit, Clear/Discard, 
+and/or Reset functions.
 
 
 
@@ -77,7 +79,16 @@ Select a pre-configured Docker that **ClearML Agent** will use to remotely execu
 * In **EXECUTION** **>** **AGENT CONFIGURATION** **>** **BASE DOCKER IMAGE** **>** hover **>** **EDIT** **>**
   Enter the base Docker image.
 
+:::important 
+For a ClearML Agent to execute the task in a container, the agent must be running in 
+Docker mode:
 
+```bash
+clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional default docker image to use]
+```
+
+For more information, see [Docker Mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
+:::
 
 #### Output Destination
 
@@ -117,7 +128,8 @@ Add, change, or delete hyperparameters, which are organized in the **ClearML Web
 
 * **General** - Parameter dictionaries (from code, connected to the Task by calling [`Task.connect()`](../references/sdk/task.md#connect)).
 
-* Environment variables - Tracked if the `CLEARML_LOG_ENVIRONMENT` environment variable was set (see this [FAQ](../faq.md#track-env-vars)).
+* Environment variables - Tracked if variables were listed in the `CLEARML_LOG_ENVIRONMENT` environment variable 
+or the [`sdk.development.log_os_environments`](../configs/clearml_conf.md#log_env_var) field of the `clearml.conf` file (see this [FAQ](../faq.md#track-env-vars)).
 
 * Custom named parameter groups (see the `name` parameter in [`Task.connect`](../references/sdk/task.md#connect)).
 
@@ -168,7 +180,7 @@ model in the **MODELS** tab.
 **To edit a model's configuration or label enumeration:**
 
 1. Click the model name hyperlink. The model details appear in the **MODELS** tab.
-1. Edit the model configuration or label enumeration.
+1. Edit the model configuration or label enumeration:
 
     * Model configuration - In the **NETWORK** tab **>** Hover and click **EDIT**. **>** CLick **EDIT** or **CLEAR** (to
       remove the configuration).

@@ -3,7 +3,7 @@ title: AWS Autoscaler
 ---
 
 :::info Pro Plan Offering
-The ClearML AWS Autoscaler App is available under the ClearML Pro plan
+The ClearML AWS Autoscaler App is available under the ClearML Pro plan.
 :::
 
 The AWS Autoscaler Application optimizes AWS EC2 instance usage according to a user defined resource budget: define your 
@@ -20,7 +20,23 @@ each instance is spun up.
 For more information about how autoscalers work, see [Autoscalers Overview](../../cloud_autoscaling/autoscaling_overview.md#autoscaler-applications).
 
 ## Autoscaler Instance Configuration
-* **Import Configuration** - Import an app instance configuration file. This will fill the configuration wizard with the 
+
+When configuring a new AWS Autoscaler instance, you can fill in the required parameters or reuse the configuration of 
+a previously launched instance.  
+
+Launch an app instance with the configuration of a previously launched instance using one of the following options:
+* Cloning a previously launched app instance will open the instance launch form with the original instance's 
+configuration prefilled.
+* Importing an app configuration file. You can export the configuration of a previously launched instance as a JSON file 
+when viewing its configuration.
+
+The prefilled instance launch form can be edited before starting the new app instance. 
+
+To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
+to open the app's instance launch form.
+
+### Configuration Options
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
   values from the file, which can be modified before launching the app instance
 * **AWS Credentials** - Credentials with which the autoscaler can access your AWS account. See [Generating AWS IAM Credentials](#generating-aws-iam-credentials)
     * Use IAM role - Select if you are running your autoscalers on your own EC2 instances which are attached to an [IAM 
@@ -76,7 +92,7 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
     * Arn - Amazon Resource Name specifying the instance profile
     * Name - Name identifying the instance profile
 * **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
-* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [configuration vault](../webapp_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
+* **Apply Task Owner Vault Configuration** - Select to apply values from the task owner's [configuration vault](../settings/webapp_settings_profile.md#configuration-vault) when executing the task (available under ClearML Enterprise Plan)
 * **Warn if more than one instance is executing the same task** - Select to print warning to console when multiple 
   instances are running the same task. In most cases, this indicates an issue.
 * **Exclude .bashrc script** - Select in order to skip `.bashrc` script execution 
@@ -89,11 +105,11 @@ For more information about how autoscalers work, see [Autoscalers Overview](../.
 * **Custom Launch Spec** - Custom AWS EC2 launch specification in JSON format. This will be used as the basis for 
 creating the instances launch spec. See [boto3 EC2.client.run_instances Request Syntax](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2/client/run_instances.html) 
 and [AWS API Reference: RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html) (available under ClearML Enterprise Plan)
-* **Run with Service Account** -  Select to allow running the application under a [Service Account](../webapp_profile.md#service-accounts) identity instead of under your own identity (available under ClearML Enterprise Plan)
+* **Run with Service Account** -  Select to allow running the application under a [Service Account](../settings/webapp_settings_users.md#service-accounts) identity instead of under your own identity (available under ClearML Enterprise Plan)
 * **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
   a new instance with the same configuration 
 
-![Autoscaler wizard](../../img/app_aws_autoscaler_wizard.png)
+![Autoscaler instance launch form](../../img/app_aws_autoscaler_wizard.png)
 
 ### Configuration Vault 
 
@@ -101,13 +117,13 @@ and [AWS API Reference: RunInstances](https://docs.aws.amazon.com/AWSEC2/latest/
 The Configuration Vault is available under the ClearML Enterprise plan.
 :::
 
-You can utilize the [configuration vault](../../webapp/webapp_profile.md#configuration-vault) to set the following: 
+You can utilize the [configuration vault](../settings/webapp_settings_profile.md#configuration-vault) to set the following: 
 * `aws_region`
 * `aws_credentials_key_id` and `aws_secret_access_key` - AWS credentials for the Autoscaler
 * `extra_vm_bash_script` - A bash script to execute after launching the EC2 instance. This script will be appended to
-the one set in the `Init script` field of the autoscaler wizard
+the one set in the `Init script` field of the instance launch form
 * `extra_clearml_conf` - ClearML configuration to use by the ClearML Agent when executing your experiments. This 
-configuration will be appended to that set in the `Additional ClearML Configuration` field of the autoscaler wizard
+configuration will be appended to that set in the `Additional ClearML Configuration` field of the instance launch form
 * `files` - Files to create at designated paths with predefined content inside the container running the autoscaler. 
 For more information, see [Files Section](../../configs/clearml_conf.md#files-section)
 * `environment` - Dictionary of environment variables and values to set in the OS environment of the container running 
@@ -128,11 +144,12 @@ auto_scaler.v1.aws {
    """
    files {
      boto3_file {
-       contents: |
+       contents: """
           boto3 {
             pool_connections: 512
             max_multipart_concurrency: 16
-          }      	
+          }
+       """      	
        path: "/boto3_config.yaml"
        target_format: yaml
        mode: "0o644"
@@ -175,11 +192,11 @@ auto_scaler.v1.aws {
 #### Configure Instances Spawned by the Autoscaler
 To configure instances spawned by the autoscaler, do any of the following:
 * Add the configuration in the `auto_scaler.v1.aws.extra_clearml_conf` field of the configuration vault
-* Run the Autoscaler using a [ClearML Service Account](../../webapp/webapp_profile.md#service-accounts). Add the 
+* Run the Autoscaler using a [ClearML Service Account](../settings/webapp_settings_users.md#service-accounts). Add the 
 configuration to the service account's configuration vault, and set the autoscaler to run under that account
 in the `Run with Service Account` field
-* Admins can add the configuration to a [ClearML Administrator Vault](../../webapp/webapp_profile.md#administrator-vaults)
-and link the vault with a [user group](../../webapp/webapp_profile.md#user-groups) that includes the user running the 
+* Admins can add the configuration to a [ClearML Administrator Vault](../settings/webapp_settings_admin_vaults.md)
+and link the vault with a [user group](../settings/webapp_settings_users.md#user-groups) that includes the user running the 
 autoscaler
 
 ## Dashboard

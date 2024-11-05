@@ -57,6 +57,7 @@ errors in identifying the correct default branch.
 |---|----|---|
 | `--args` | Arguments to pass to the remote task, list of `<argument>=<value>` strings. Currently only argparse arguments are supported | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--base-task-id` | Use a pre-existing task in the system, instead of a local repo / script. Essentially clones an existing task and overrides arguments / requirements | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--binary` | Binary executable used to launch the entry point. For example: `--binary python3`, `--binary /bin/bash`. By default, the binary will be auto-detected | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--branch` | Select repository branch / tag. By default, latest commit from the master branch | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--commit` | Select commit ID to use. By default, latest commit, or local commit ID when using local repository | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--cwd` | Working directory to launch the script from. Relative to repo root or local `--folder` | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
@@ -74,6 +75,7 @@ errors in identifying the correct default branch.
 | `--requirements` | Specify `requirements.txt` file to install when setting the session. By default, the` requirements.txt` from the repository will be used |  <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--script` | Entry point script for the remote execution. When used with `--repo`, input the script's relative path inside the repository. For example: `--script source/train.py`. When used with `--folder`, it supports a direct path to a file inside the local repository itself, for example: `--script ~/project/source/train.py` | <img src="/docs/latest/icons/ico-optional-no.svg" alt="No" className="icon size-md center-md" /> |
 | `--skip-task-init` | If set, `Task.init()` call is not added to the entry point, and is assumed to be called within the script | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
+| `--tags` | Add tags to the newly created task. For example: `--tags "base" "job"` | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--task-type` | Set the task type. Optional values: training, testing, inference, data_processing, application, monitor, controller, optimizer, service, qc, custom | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 | `--version` | Display the `clearml-task` utility version | <img src="/docs/latest/icons/ico-optional-yes.svg" alt="Yes" className="icon size-md center-md" /> |
 

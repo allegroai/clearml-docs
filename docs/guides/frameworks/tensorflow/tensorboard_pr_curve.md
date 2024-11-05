@@ -11,19 +11,24 @@ The example script does the following:
   label of each random color is associated with the normal distribution that generated it.
 * Computes the probability that each color belongs to the class, using three other normal distributions.
 * Generate PR curves using those probabilities. 
-* Creates a summary per class using [tensorboard.plugins.pr_curve.summary](https://github.com/tensorflow/tensorboard/blob/master/tensorboard/plugins/pr_curve/summary.py), 
-* ClearML automatically captures TensorBoard output, TensorFlow Definitions, and output to the console
+* Creates a summary per class using [`tensorboard.plugins.pr_curve.summary`](https://github.com/tensorflow/tensorboard/blob/master/tensorboard/plugins/pr_curve/summary.py).
+* ClearML automatically captures TensorBoard output, TensorFlow Definitions, and output to the console.
 
 ## Plots
 
 In the **ClearML Web UI**, the PR Curve summaries appear in the experiment's page under **PLOTS**.
 
 * Blue PR curves
-    ![image](../../../img/examples_tensorboard_pr_curve_01.png)
+
+  ![image](../../../img/examples_tensorboard_pr_curve_01.png)
+
 * Green PR curves
-    ![image](../../../img/examples_tensorboard_pr_curve_02.png)
+
+  ![image](../../../img/examples_tensorboard_pr_curve_02.png)
+
 * Red PR curves
-    ![image](../../../img/examples_tensorboard_pr_curve_03.png)
+
+  ![image](../../../img/examples_tensorboard_pr_curve_03.png)
 
 ## Hyperparameters
 

@@ -22,17 +22,17 @@ Report images using several formats by calling [`Logger.report_image()`](../../r
 ```python
 # report image as float image
 m = np.eye(256, 256, dtype=np.float)
-Logger.current_logger().report_image("image", "image float", iteration=iteration, image=m)
+Logger.current_logger().report_image(title="image", series="image float", iteration=iteration, image=m)
         
 # report image as uint8
 m = np.eye(256, 256, dtype=np.uint8) * 255
-Logger.current_logger().report_image("image", "image uint8", iteration=iteration, image=m)
+Logger.current_logger().report_image(title="image", series="image uint8", iteration=iteration, image=m)
         
 # report image as uint8 RGB
 m = np.concatenate((np.atleast_3d(m), np.zeros((256, 256, 2), dtype=np.uint8)), axis=2)
 Logger.current_logger().report_image(
-    "image", 
-    "image color red", 
+    title="image", 
+    series="image color red", 
     iteration=iteration, 
     image=m
 )
@@ -40,8 +40,8 @@ Logger.current_logger().report_image(
 # report PIL Image object
 image_open = Image.open(os.path.join("data_samples", "picasso.jpg"))
 Logger.current_logger().report_image(
-    "image", 
-    "image PIL", 
+    title="image", 
+    series="image PIL", 
     iteration=iteration, 
     image=image_open
 )

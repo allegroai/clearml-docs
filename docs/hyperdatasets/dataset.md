@@ -42,7 +42,7 @@ from allegroai import DatasetVersion
 myDataset = DatasetVersion.create_new_dataset(dataset_name='myDataset Two')
 ```
 
-When creating a dataset, you can put it into a project. In this case, the dataset will adhere to the [access rules](../webapp/webapp_profile.md#access-rules) 
+When creating a dataset, you can put it into a project. In this case, the dataset will adhere to the [access rules](../webapp/settings/webapp_settings_access_rules.md) 
 specified for its containing project. Use `dataset_project` parameter in `Dataset.create` or `DatasetVersion.create_new_dataset` 
 to specify a project name. 
 

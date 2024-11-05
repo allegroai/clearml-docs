@@ -8,7 +8,7 @@ In addition to the environment variables listed below, ClearML also supports **d
 any configuration option that appears in the configuration files. For more information, see [Dynamic Environment Variables](../deploying_clearml/clearml_server_config.md#dynamic-environment-variables).
 
 :::info
-ClearML's environment variables override the clearml.conf file, SDK, and [configuration vault](../webapp/webapp_profile.md#configuration-vault), 
+ClearML's environment variables override the clearml.conf file, SDK, and [configuration vault](../webapp/settings/webapp_settings_profile.md#configuration-vault), 
 but can be overridden by command-line arguments. 
 :::
 
@@ -17,7 +17,7 @@ but can be overridden by command-line arguments.
 ### General
 |Name| Description                                                                    |
 |---|--------------------------------------------------------------------------------|
-|**CLEARML_LOG_ENVIRONMENT** | List of Environment variable names. These environment variables will be logged in the ClearML task's configuration hyperparameters `Environment` section. When executed by a ClearML agent, these values will be set in the task's execution environment. |
+|**CLEARML_LOG_ENVIRONMENT** | List of Environment variable names. These environment variables will be logged in the ClearML task's configuration hyperparameters `Environment` section. When executed by a ClearML agent, these values will be set in the task's execution environment. The list should be specified in the following format: `CLEARML_LOG_ENVIRONMENT=VAR_1,VAR_2`.  |
 |**CLEARML_TASK_NO_REUSE** | Boolean. <br/> When set to `1`, a new task is created for every execution (see Task [reuse](../clearml_sdk/task_sdk.md#task-reuse)).                                                              |
 |**CLEARML_CACHE_DIR** | Set the path for the ClearML cache directory, where ClearML stores all downloaded content.   |
 |**CLEARML_DOCKER_IMAGE** | Sets the default docker image to use when running an agent in [Docker mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).  |

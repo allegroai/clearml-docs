@@ -55,9 +55,9 @@ information is displayed in a column, so each field is lined up side-by-side.
 
 The model on the left is used as the base model, to which the other models are compared. You can set a new base model 
 in one of the following ways:
-* Click <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> 
-on the top right of the model that will be the new base.
-* Click on the new base model and drag it all the way to the left
+* Hover and click <img src="/docs/latest/icons/ico-switch-base.svg" alt="Switch base experiment" className="icon size-md space-sm" /> 
+on the model that will be the new base.
+* Hover and click <img src="/docs/latest/icons/ico-pan.svg" alt="Pan icon" className="icon size-md space-sm" /> on the new base model and drag it all the way to the left
 
 The differences between the models are highlighted. You can obscure identical fields by switching on the
 **Hide Identical Fields** toggle.
@@ -83,7 +83,7 @@ The **Scalars** (Graph view) and **Plots** tabs display plots attached to the mo
 scalar values as time series line charts. The **Plots** tab compares the last reported iteration sample of each 
 metric/variant combination per compared model. 
 
-Line, scatter, and bar graphs are compared by a single plot per metric/variant into which the plots of all compared 
+Line, scatter, box, and bar graphs are compared by a single plot per metric/variant into which the plots of all compared 
 models are combined.
 
 ![Merged plots](../img/webapp_compare_models_merge_plots.png)

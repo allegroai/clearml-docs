@@ -44,7 +44,7 @@ clearml-agent build --id <TASK_ID> --docker --target new_docker
 ```
 
 :::tip
-If the container will not make use of a GPU, add the `--cpu-only` flag
+If the container will not make use of a GPU, add the `--cpu-only` flag.
 :::
 
 This will create a container with the specified task's execution environment in the `--target` folder. 
@@ -72,7 +72,7 @@ Make use of the container you've just built by having a ClearML agent make use o
    ```
 
    :::tip
-   If the agent will not make use of a GPU, add the `--cpu-only` flag
+   If the agent will not make use of a GPU, add the `--cpu-only` flag.
    :::
 
    This agent will pull the enqueued task and run it using the `new_docker` image to create the execution environment. 

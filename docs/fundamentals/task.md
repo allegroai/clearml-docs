@@ -31,10 +31,10 @@ You can create copies of a task ([clone](../webapp/webapp_exp_reproducing.md)) t
 * Set hyperparameter and run-time configuration values
 
 Modifying a task clone's configuration will have the executing ClearML agent override the original values:
-* Modified package requirements will have the experiment script run with updated packages.
+* Modified package requirements will have the experiment script run with updated packages
 * Modified recorded command line arguments will have the ClearML agent inject the new values in their stead
 * Code-level configuration instrumented with [`Task.connect`](../references/sdk/task.md#connect) will be overridden by 
-modified hyperparameters.
+modified hyperparameters
  
 
 
@@ -103,7 +103,7 @@ ClearML can be configured to upload artifacts to any of the supported types of s
 folders, AWS S3 buckets, Google Cloud Storage, and Azure Storage. For more information, see [Storage](../integrations/storage.md). 
 
 :::note Debug Sample Storage
-Debug samples are handled differently, see [`Logger.set_default_upload_destination`](../references/sdk/logger.md#set_default_upload_destination)
+Debug samples are handled differently, see [`Logger.set_default_upload_destination`](../references/sdk/logger.md#set_default_upload_destination).
 :::
 
 #### Accessing Artifacts
@@ -149,7 +149,7 @@ The above diagram describes how execution information is recorded when running c
    including:
    * Source code
    * Python environment 
-   * Configuration parameters.
+   * Configuration parameters
 1. As the execution progresses, any outputs produced are recorded including:
    * Console logs
    * Metrics and graphs 

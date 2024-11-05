@@ -45,7 +45,7 @@ optimizer = HyperParameterOptimizer(
     # Configuring optimization parameters
     execution_queue='dan_queue',  # queue to schedule the experiments for execution
     max_number_of_concurrent_tasks=2,  # number of concurrent experiments
-    optimization_time_limit=60.,  # set the time limit for the optimization process
+    optimization_time_limit=60,  # set the time limit for the optimization process
     compute_time_limit=120,  # set the compute time limit (sum of execution time on all machines)
     total_max_jobs=20,  # set the maximum number of experiments for the optimization. 
                         # Converted to total number of iteration for OptimizerBOHB

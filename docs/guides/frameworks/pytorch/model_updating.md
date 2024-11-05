@@ -45,7 +45,7 @@ Task.current_task().connect_label_enumeration(enumeration)
 
 :::note Directly Setting Model Enumeration
 You can set a model's label enumeration directly using the [`OutputModel.update_labels`](../../../references/sdk/model_outputmodel.md#update_labels) 
-method
+method.
 :::
 
 ## Model Configuration

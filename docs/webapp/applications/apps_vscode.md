@@ -3,7 +3,7 @@ title: VS Code
 ---
 
 :::important Enterprise Feature
-The VS Code application is available under the ClearML Enterprise plan
+The VS Code application is available under the ClearML Enterprise plan.
 :::
 
 The VS Code UI application allows you to launch a remote VS Code session on a machine that better meets resource needs. 
@@ -28,7 +28,24 @@ Once you have launched an app instance, you can view the following information i
 ![VS Code Dashboard](../../img/apps_vs_code.png)
 
 ## VS Code App Instance Configuration
+When configuring a new VS Code instance, you can fill in the required parameters or reuse the configuration of 
+a previously launched instance.  
 
+Launch an app instance with the configuration of a previously launched instance using one of the following options:
+* Cloning a previously launched app instance will open the instance launch form with the original instance's 
+configuration prefilled.
+* Importing an app configuration file. You can export the configuration of a previously launched instance as a JSON file 
+when viewing its configuration.
+
+The prefilled instance launch form can be edited before starting the new app instance. 
+
+To  configure a new app instance, click `Launch New` <img src="/docs/latest/icons/ico-add.svg" alt="Add new" className="icon size-md space-sm" /> 
+to open the app's instance launch form.
+
+### Configuration Options
+
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
+  values from the file, which can be modified before launching the app instance
 * **Git** - To access a git repository remotely, add git information. 
   * Repository
   * Branch
@@ -45,5 +62,7 @@ Once you have launched an app instance, you can view the following information i
   * Idle Network Threshold (MB/s) - Throughput under which the session will be considered idle
   * Idle CPU Threshold (%) - CPU utilization under which the session will be considered idle
   * Idle GPU Threshold (%) - GPU utilization under which the session will be considered idle
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create 
+  a new instance with the same configuration
 
 

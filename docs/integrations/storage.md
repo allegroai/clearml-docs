@@ -32,17 +32,17 @@ The ClearML configuration file uses [HOCON](https://github.com/lightbend/config/
 
 ### Configuring AWS S3
 
-Modify these parts of the clearml.conf file and add the key, secret, and region of the S3 bucket.
+Modify the `sdk.aws.s3` section of the `clearml.conf` to add the key, secret, and region of the S3 bucket.
 
-You can also give access to specific S3 buckets in the `aws.s3.credentials` section. The default configuration 
-provided in the `aws.s3` section is applied to any bucket without a bucket-specific configuration. 
+You can also give access to specific S3 buckets in the `sdk.aws.s3.credentials` section. The default configuration 
+provided in the `sdk.aws.s3` section is applied to any bucket without a bucket-specific configuration. 
 
 You can also enable using a credentials chain to let Boto3 
 pick the right credentials. This includes picking credentials from environment variables, a credential file, and metadata service 
-with an IAM role configured. See [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
+with an IAM role configured. For more details, see [Boto3 documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#configuring-credentials).
 
 You can specify additional [ExtraArgs](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html#the-extraargs-parameter) 
-to pass to boto3 when uploading files. You can set this on a per-bucket basis. 
+to pass to Boto3 when uploading files. You can set this on a per-bucket basis. 
 
 ```
 sdk {
@@ -63,7 +63,6 @@ sdk {
                     bucket: "my-bucket-name"
                     key: ""
                     secret: ""
-                    verify: "/path/to/ca/bundle.crt" OR false to not verify
                     use_credentials_chain: false
                 },
                     
@@ -77,51 +76,81 @@ sdk {
 }
 ```
 
-AWS's S3 access parameters can be specified by referencing the standard environment variables if already defined.
+AWS S3 access parameters can be specified by referencing the standard environment variables if they are already defined.
 
 For example: 
 ```
 sdk {
     aws {
-            s3 {
-                # default, used for any bucket not specified below
-                key: ${AWS_ACCESS_KEY_ID}
-                secret: ${AWS_SECRET_ACCESS_KEY}
-                region: ${AWS_DEFAULT_REGION}
-            }
+        s3 {
+            # default, used for any bucket not specified below
+            key: ${AWS_ACCESS_KEY_ID}
+            secret: ${AWS_SECRET_ACCESS_KEY}
+            region: ${AWS_DEFAULT_REGION}
+        }
     }
 }
 ``` 
 
-ClearML also supports [MinIO](https://github.com/minio/minio) by adding this configuration:
+#### Non-AWS Endpoints
+ClearML supports any S3-compatible services, such as [MinIO](https://github.com/minio/minio) as well as other 
+cloud-based or locally deployed storage services. For non-AWS endpoints, use a configuration like this:
+
 ```
 sdk {
     aws {
-            s3 {
-                # default, used for any bucket not specified below
-                key: ""
-                secret: ""
-                region: ""
+        s3 {
+            # default, used for any bucket not specified below
+            key: ""
+            secret: ""
+            region: ""
     
-                credentials: [
-                    {
-                        # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
-                        host: "my-minio-host:9000"
-                        key: ""
-                        secret: ""
-                        multipart: false
-                        secure: false
-                    }
-                ]
-            } 
+            credentials: [
+                {
+                    # This will apply to all buckets in this host (unless key/value is specifically provided for a given bucket)
+                    host: "my-minio-host:9000"
+                    key: ""
+                    secret: ""
+                    multipart: false
+                    secure: false
+                    verify: true # OR "/path/to/ca/bundle.crt" OR "https://url/of/ca/bundle.crt" OR false to not verify                    
+                }
+            ]
+        } 
     }
 }
 ```
 
-:::info non-AWS Endpoints
-To force usage of a non-AWS endpoint (like the MinIO example above), port declaration is *always* needed, even if standard.
-To enable TLS, pass `secure: true`.
-:::
+To force usage of a non-AWS endpoint, port declaration is *always* needed (e.g. `host: "my-minio-host:9000"`), 
+even for standard ports like `433` for HTTPS (e.g. `host: "my-minio-host:433"`).
+
+To enable TLS, pass `secure: true`. For example: 
+```
+sdk {
+   aws {
+      s3 {
+         key: ""
+         secret: ""
+         region: ""
+   
+         credentials: [
+            {
+               host: "my-minio-host:9000"
+               key: ""
+               secret: ""
+               multipart: false
+               secure: true
+               verify: true
+            }
+         ]
+      } 
+   }
+}
+```
+
+Use the `sdk.aws.s3.credentials.verify` configuration option to control SSL certificate verification:
+* By default, verify is set to `true`, meaning certificate verification is enabled
+* You can provide a path or a URL to a CA bundle for custom certificate verification
 
 ### Configuring Azure
 To configure Azure blob storage specify the account name and key.
@@ -184,7 +213,7 @@ sdk {
 }
 ```
 
-GCP's storage access parameters can be specified by referencing the standard environment variables if already defined.
+GCP storage access parameters can be specified by referencing the standard environment variables if already defined.
 
 ```
 sdk {
@@ -211,7 +240,7 @@ fails to load the credentials as a file, it will attempt to decode the JSON dire
 ClearML provides the [StorageManager](../references/sdk/storage.md) class to manage downloading, uploading, and caching of 
 content directly from code.
 
-See [Storage Examples](../guides/storage/examples_storagehelper.md).
+See [StorageManager Examples](../guides/storage/examples_storagehelper.md).
 
 ### Path Substitution
 The ClearML StorageManager supports local path substitution when fetching files.

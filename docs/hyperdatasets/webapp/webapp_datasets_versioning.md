@@ -166,7 +166,7 @@ Filter by metadata using Lucene queries.
 
 Filter by sources using Lucene queries.    
 
-* Add a source rule to filter for sources URIs with wildcards.
+* Add a source rule to filter for source URIs with wildcards.
   
 ![Filter by source](../../img/hyperdatasets/frame_filtering_10.png)
 
@@ -248,8 +248,14 @@ according to the previously configured setting.
 #### Preview Source
 When using multi-source FrameGroups, users can choose which of the FrameGroups' sources will be displayed as the preview. 
 
-Select a source from the **PREVIEW SOURCE** menu.
+Select a source from the **Current Source** menu.
 Choose the `Default preview source` option to present the first available source for each frame (sources are retrieved in ASCIIbetical order).
+
+Choose the `All sources` option to present all the FrameGroup’s sources in a grid. In this view, the annotation panel 
+shows annotations grouped by their respective sources. Additionally, annotation tools  (e.g. create/delete/modify 
+annotations) are not available in this view.    
+
+![All sources preview](../../img/hyperdatasets/preview_all_sources.png)
 
 :::note Unavailable Source
 If a FrameGroup doesn't have the selected preview source, the preview displays the "Source not available" message.
