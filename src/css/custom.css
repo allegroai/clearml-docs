@@ -576,9 +576,11 @@ html[data-theme="dark"] .footer__link-item:hover {
   pointer-events: none;
 }
 
+/* zoom image application screens */
 .markdown img.medium-zoom-image[src*="png"],
 .markdown img.medium-zoom-image[src*="gif"]  {
   border:1px solid #2c3246;
+  border-radius: 6px;
 }
 
 html[data-theme=light] .medium-zoom--opened .medium-zoom-overlay {background: white !important; opacity: 0.4}
