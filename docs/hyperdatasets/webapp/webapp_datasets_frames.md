@@ -95,6 +95,14 @@ a dropdown list in the **Current Source** section.
 
 ![Frame dropdown menu in FrameGroup](../../img/hyperdatasets/framegroup_01.png)
 
+If an annotation applies to all frames in a FrameGroup, it is displayed with a `Multi Source` indicator:
+
+<div class="max-w-50">
+
+![Multi-source ROI](../../img/hyperdatasets/multi_source_annotation.png)
+
+</div>
+
 ## Masks 
 
 Use the **MASKS** panel to select which masks to apply over the frame. 
