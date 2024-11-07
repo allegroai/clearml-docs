@@ -77,7 +77,8 @@ module.exports = {
             link: {type: 'doc', id: 'pipelines/pipelines'},
             items: [{"Building Pipelines":
                         ['pipelines/pipelines_sdk_tasks', 'pipelines/pipelines_sdk_function_decorators']
-                }]
+                }
+            ]
         },
         {
             type: 'category',
@@ -86,19 +87,19 @@ module.exports = {
             label: 'ClearML Data',
             link: {type: 'doc', id: 'clearml_data/clearml_data'},
             items: ['clearml_data/clearml_data_cli', 'clearml_data/clearml_data_sdk', 'clearml_data/best_practices',
-                        {
-                            type: 'category',
-                            collapsible: true,
-                            collapsed: true,
-                            label: 'Workflows',
-                            link: {type: 'doc', id: 'clearml_data/data_management_examples/workflows'},
-                            items: [
-                                'clearml_data/data_management_examples/data_man_simple',
-                                'clearml_data/data_management_examples/data_man_folder_sync',
-                                'clearml_data/data_management_examples/data_man_cifar_classification',
-                                'clearml_data/data_management_examples/data_man_python'
-                            ]
-                        },
+                {
+                    type: 'category',
+                    collapsible: true,
+                    collapsed: true,
+                    label: 'Workflows',
+                    link: {type: 'doc', id: 'clearml_data/data_management_examples/workflows'},
+                    items: [
+                        'clearml_data/data_management_examples/data_man_simple',
+                        'clearml_data/data_management_examples/data_man_folder_sync',
+                        'clearml_data/data_management_examples/data_man_cifar_classification',
+                        'clearml_data/data_management_examples/data_man_python'
+                    ]
+                },
             ]
         },
         'hyper_datasets',
