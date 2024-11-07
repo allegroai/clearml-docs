@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: WebApp
 ---
 
 The **ClearML Web UI** is the graphical user interface for the ClearML platform, which includes:

@@ -357,6 +357,15 @@ html[data-theme="light"] [class^="sidebarLogo"] > img {
   background-repeat: no-repeat;
 }
 
+.menu__caret:hover {
+  background: transparent;
+}
+
+.menu__caret:before {
+  background-size: 1.25rem;
+}
+
+
 .navbar-sidebar .navbar-sidebar__back {color: var(--ifm-link-color);}
 
 

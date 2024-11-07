@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: ClearML Applications
 ---
 
 :::info Pro Plan Offering
