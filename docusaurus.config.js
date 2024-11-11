@@ -11,6 +11,11 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 const path = require('path');
 
+const config = {
+  future: {
+    experimental_faster: true,
+  },
+};
 
 module.exports = {
   title: 'ClearML',
