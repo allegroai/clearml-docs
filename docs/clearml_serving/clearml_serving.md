@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: ClearML Serving
 ---
 
 `clearml-serving` is a command line utility for model deployment and orchestration.

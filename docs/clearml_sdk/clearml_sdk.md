@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: ClearML SDK
 ---
 
 The ClearML Python Package supports the [automatic logging](../fundamentals/logger.md#automatic-reporting) that documents 
