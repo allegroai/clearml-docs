@@ -29,7 +29,7 @@ Once you start a Gradio launcher instance, you can view the following informatio
   * <img src="/docs/latest/icons/ico-gradio-stopped.svg" alt="Stopped server" className="icon size-md space-sm" /> - App is stopped 
 * Idle time 
 * Gradio App - Externally accessible link to your Gradio app. You can send this link to your colleagues, so they can 
-  access the app. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-sm space-sm" />
+  access the app. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-md space-sm" />
   to copy link
 * Gradio Git repo - Repository that holds the Gradio app script
 * Live preview of the Gradio app

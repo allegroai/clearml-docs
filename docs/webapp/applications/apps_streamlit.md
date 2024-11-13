@@ -30,7 +30,7 @@ Once you start a Streamlit launcher instance, you can view the following informa
   * <img src="/docs/latest/icons/ico-streamlit-stopped.svg" alt="Stopped server" className="icon size-md space-sm" /> - App is stopped 
 * Idle time 
 * Streamlit App - Externally accessible link to your Streamlit app. You can send this link to your colleagues, so they can 
-  access the app. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-sm space-sm" />
+  access the app. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-md space-sm" />
   to copy link
 * Streamlit Git repo - Repository that holds the Streamlit app script
 * Live preview of the Streamlit app

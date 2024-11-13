@@ -37,9 +37,9 @@ Hover over the model configuration area to access the following actions:
 
 ![Model config actions](../img/webapp_model_config_actions.png)
 
-* <img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-sm space-sm" /> Search 
-* <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-sm space-sm" /> Copy configuration 
-* <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-sm space-sm" />CLEAR (for Draft models) - Delete the configuration 
+* <img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" /> Search 
+* <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-md space-sm" /> Copy configuration 
+* <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-md space-sm" />CLEAR (for Draft models) - Delete the configuration 
 * EDIT (for Draft models) - Modify / Add model configuration
 
 ## Label Enumeration
@@ -81,7 +81,7 @@ Use the search bar to look for experiments based on their name, ID, or descripti
 
 The **SCALARS** tab displays all scalar plots attached to a model. Scalar values are presented as time series line 
 plots. To see the series for a metric in high resolution, view it in full screen mode by hovering over the graph and 
-clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
+clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-md space-sm" />.
 Reported single value scalars are aggregated into a table plot displaying scalar names and values. 
 
 To embed scalar plots in your [Reports](webapp_reports.md), hover over a plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 

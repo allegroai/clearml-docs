@@ -117,7 +117,7 @@ group of experiments. A tag can show any text, for any purpose. For example, add
 experiments execute on, label versions of experiments, or apply team names to organize experimentation.
 
 * To Add tags and to change tag colors:
-    1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" />
+    1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" />
        (menu)
     1. Do one of the following:
         * Add a new tag - Type the new tag name **>** **(Create New)**.
