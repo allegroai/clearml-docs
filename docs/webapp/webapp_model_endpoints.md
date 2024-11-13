@@ -16,7 +16,7 @@ using the buttons on the top left of the page. Use the table view for a comparat
 columns of interest. Use the details view to access a selected endpoint's details. Details view can also be accessed by 
 double-clicking a specific endpoint in the table view to open its details view.
 
-Download the model endpoint table as a CSV file by clicking **Download** <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-sm space-sm" />.
+Download the model endpoint table as a CSV file by clicking **Download** <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.
 
 ## Endpoint Tables
 

@@ -23,7 +23,7 @@ The ClearML Web UI provides two viewing modes for experiment details:
 * Full screen details mode.
 
 Both modes contain all experiment details. When either view is open, switch to the other mode by clicking <img src="/docs/latest/icons/ico-info-min.svg" alt="Table/Full screen view" className="icon size-md space-sm" />
-(**View in experiments table / full screen**), or clicking <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (**menu**) > **View in experiments
+(**View in experiments table / full screen**), or clicking <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" /> (**menu**) > **View in experiments
 table / full screen**.
 
 
@@ -179,10 +179,10 @@ parameter in [`Task.connect_configuration`](../references/sdk/task.md#connect_co
 
 Artifacts tracked in an experiment appear in the **ARTIFACTS** tab, and include models and other artifacts.
 
-Artifacts location is stored in the `FILE PATH` field.
-The UI provides locally stored artifacts with a 'copy to clipboard' action (<img src="/docs/latest/icons/ico-clipboard.svg" alt="Clipboard" className="icon size-sm space-sm" />) 
+Artifact location is displayed in the `FILE PATH` field.
+The UI provides locally stored artifacts with a 'copy to clipboard' action (<img src="/docs/latest/icons/ico-clipboard.svg" alt="Clipboard" className="icon size-md space-sm" />) 
 to facilitate local storage access (since web applications are prohibited from accessing the local disk for security reasons).
-The UI provides Network hosted (e.g. https://, s3:// etc. URIs) artifacts with a download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" />) 
+The UI provides Network hosted (e.g. https://, s3:// etc. URIs) artifacts with a download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />) 
 to retrieve these files.
 
 ### Models
@@ -298,7 +298,7 @@ Scalar series can be displayed in [graph view](#graph-view) (default) or in [met
 #### Graph View 
 Scalar graph view (<img src="/docs/latest/icons/ico-charts-view.svg" alt="Graph view" className="icon size-md space-sm" />) 
 shows scalar series plotted as a time series line chart. The series are sub-sampled for 
-display efficiency. For high resolution, view a series in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
+display efficiency. For high resolution, view a series in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-md space-sm" />.
 
 :::info Full Screen Refresh
 Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-md space-sm medium-zoom-image" /> 
@@ -377,9 +377,9 @@ Plotly plots. Individual plots can be shown / hidden or filtered by title.
 
 For each metric, the latest reported plot is displayed.
 
-When viewing a plot in full screen (<img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />), 
+When viewing a plot in full screen (<img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-md space-sm" />), 
 older iterations are available through the iteration slider (or using the up/down arrow keyboard shortcut). Go to the 
-previous/next plot in the current iteration using the <img src="/docs/latest/icons/ico-previous.svg" alt="Previous" className="icon size-sm space-sm" /> / <img src="/docs/latest/icons/ico-next.svg" alt="Next" className="icon size-sm space-sm" /> 
+previous/next plot in the current iteration using the <img src="/docs/latest/icons/ico-previous.svg" alt="Previous" className="icon size-md space-sm" /> / <img src="/docs/latest/icons/ico-next.svg" alt="Next" className="icon size-md space-sm" /> 
 buttons (or using the left/right arrow keyboard shortcut).
 
 
@@ -437,7 +437,7 @@ For each metric, the latest reported debug sample is displayed.
 Click a sample to view it in full screen. If the sample is video or audio, the full screen mode includes a player. 
 
 When viewing a sample in full screen, older iterations are available through the iteration slider (or using the up/down 
-arrow keyboard shortcut). Go to the previous/next sample in the current iteration using the <img src="/docs/latest/icons/ico-previous.svg" alt="Previous" className="icon size-sm space-sm" /> / <img src="/docs/latest/icons/ico-next.svg" alt="Next" className="icon size-sm space-sm" /> 
+arrow keyboard shortcut). Go to the previous/next sample in the current iteration using the <img src="/docs/latest/icons/ico-previous.svg" alt="Previous" className="icon size-md space-sm" /> / <img src="/docs/latest/icons/ico-next.svg" alt="Next" className="icon size-md space-sm" /> 
 buttons (or using the left/right arrow keyboard shortcut).
 
 
@@ -468,7 +468,7 @@ experiment execution according to their tags (see [TriggerScheduler](../referenc
 deploy models according to their tags (see [ClearML Serving](../clearml_serving/clearml_serving_tutorial.md#automatic-model-deployment)).
 
 **To add tags:**
-1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (menu)
+1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" /> (menu)
 1. Do one of the following:
     * Add a new tag - Type the new tag name **>** **(Create New)**.
     * Add an existing tag - Click a tag.
