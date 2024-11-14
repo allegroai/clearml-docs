@@ -177,44 +177,35 @@ parameter in [`Task.connect_configuration`](../references/sdk/task.md#connect_co
 
 ## Artifacts
 
-Artifacts tracked in an experiment appear in the **ARTIFACTS** tab, and include models and other artifacts.
+Task artifacts, including models, appear in the **ARTIFACTS** tab. 
 
-Artifact location is displayed in the `FILE PATH` field.
-The UI provides locally stored artifacts with a 'copy to clipboard' action (<img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Clipboard" className="icon size-md space-sm" />) 
-to facilitate local storage access (since web applications are prohibited from accessing the local disk for security reasons).
-The UI provides Network hosted (e.g. https://, s3:// etc. URIs) artifacts with a download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />) 
-to retrieve these files.
+Each non-model artifact entry displays: 
+* File path
+* File size
+* Hash
+* Metadata (if set)
+
+Artifact location is displayed in the `FILE PATH` field. To access model and other artifact files:
+* **Local Files**: Use the 'copy to clipboard' action (<img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Clipboard" className="icon size-md space-sm" />)
+to obtain the file path to facilitate local storage access since web applications are prohibited from accessing the local disk for security reasons.
+* **Remote Files**  (e.g. network-hosted artifacts with `https://`, `s3://`, etc. URIs): Use the download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />) 
+to retrieve the file.
+
+![Other artifacts section](../img/webapp_tracking_30.png)
 
 ### Models
 
-The input and output models appear in the **ARTIFACTS** tab. Models are associated with the experiment, but to see further model details,
-including design, label enumeration, and general information, go to the **MODELS** tab, by clicking the model name, which is a hyperlink to those details.
-
-**To retrieve a model:**
-
-1. In the **ARTIFACTS** tab **>** **MODELS** **>** **Input Model** or **Output Model**, click the model name hyperlink.
-1. In the model details **>** **GENERAL** tab **>** **MODEL URL**, either:
-
-    * Download the model<img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />, if it is stored in remote storage.
-    * Copy its location to the clipboard <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
-      if it is in a local file.
-
+The task's input and output models appear in the **ARTIFACTS** tab. Each model entry shows:
+* Model name
+* ID
+* Configuration. 
+Input models also display their creating experiment, which on-click navigates you to the experiment's page. 
 
 ![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png)
 
-### Other Artifacts
+To view more model details, including design, label enumeration, and general information, click the model name
+to navigate to its page in the **MODELS** tab (see [Model Details](webapp_model_viewing.md)). 
 
-Other artifacts, which are uploaded but not dynamically tracked after the upload, appear in the **OTHER** section. 
-They include the file path, file size, and hash.
-
-**To retrieve Other artifacts:**
-
-In the **ARTIFACTS** tab **>** **OTHER** **>** Select an artifact **>** Either:
-* Download the artifact <img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />, if it is stored in remote storage.
-* Copy its location to the clipboard <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
-      if it is in a local file.
-
-![Other artifacts section](../img/webapp_tracking_30.png)
 
 ## Info
 
