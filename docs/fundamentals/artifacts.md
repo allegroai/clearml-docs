@@ -72,7 +72,7 @@ the models associated with a project are listed.
 
 ## SDK Interface
 
-See [the Models SDK interface](../clearml_sdk/model_sdk.md) for an overview for using the most basic Pythonic methods of the model 
+See the [Models SDK interface](../clearml_sdk/model_sdk.md) for an overview for using the most basic Pythonic methods of the model 
 classes. See a detailed list of all available methods in the [Model](../references/sdk/model_model.md), [OutputModel](../references/sdk/model_outputmodel.md), and [InputModel](../references/sdk/model_inputmodel.md) 
 reference pages. 
 

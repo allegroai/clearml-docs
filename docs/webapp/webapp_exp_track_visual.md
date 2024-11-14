@@ -180,7 +180,7 @@ parameter in [`Task.connect_configuration`](../references/sdk/task.md#connect_co
 Artifacts tracked in an experiment appear in the **ARTIFACTS** tab, and include models and other artifacts.
 
 Artifact location is displayed in the `FILE PATH` field.
-The UI provides locally stored artifacts with a 'copy to clipboard' action (<img src="/docs/latest/icons/ico-clipboard.svg" alt="Clipboard" className="icon size-md space-sm" />) 
+The UI provides locally stored artifacts with a 'copy to clipboard' action (<img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Clipboard" className="icon size-md space-sm" />) 
 to facilitate local storage access (since web applications are prohibited from accessing the local disk for security reasons).
 The UI provides Network hosted (e.g. https://, s3:// etc. URIs) artifacts with a download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />) 
 to retrieve these files.
@@ -196,7 +196,7 @@ including design, label enumeration, and general information, go to the **MODELS
 1. In the model details **>** **GENERAL** tab **>** **MODEL URL**, either:
 
     * Download the model<img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />, if it is stored in remote storage.
-    * Copy its location to the clipboard <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
+    * Copy its location to the clipboard <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
       if it is in a local file.
 
 
@@ -211,7 +211,7 @@ They include the file path, file size, and hash.
 
 In the **ARTIFACTS** tab **>** **OTHER** **>** Select an artifact **>** Either:
 * Download the artifact <img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />, if it is stored in remote storage.
-* Copy its location to the clipboard <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
+* Copy its location to the clipboard <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
       if it is in a local file.
 
 ![Other artifacts section](../img/webapp_tracking_30.png)
