@@ -186,7 +186,7 @@ model in the **MODELS** tab.
       remove the configuration).
 
        Users can also search for the configuration (hover over the configuration textbox, the search box appears) and copy the
-      configuration to the clipboard (hover and click <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md" />).
+      configuration to the clipboard (hover and click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy Clipboard" className="icon size-md" />).
 
     * Label enumeration - In the **LABELS** tab **>** Hover and click **EDIT** **>** Add, change, or delete label
       enumeration key-value pairs.
