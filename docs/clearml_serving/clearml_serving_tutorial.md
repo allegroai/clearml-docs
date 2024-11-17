@@ -72,7 +72,7 @@ Spin the Inference Container:
 Now that you have an inference container running, you can add new model inference endpoints directly with the CLI. The 
 inference container will automatically sync every 5 minutes. The first few requests may take longer while the inference container 
 downloads the model file and preprocessing Python code. Once 
-everything is cached, it will return almost immediately.
+everything is cached, responses will return almost immediately.
 
 :::note
 Review the model repository in the ClearML web UI, under the "serving examples" Project on your ClearML 
