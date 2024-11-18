@@ -39,8 +39,8 @@ Hover over the model configuration area to access the following actions:
 
 * <img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" /> Search 
 * <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-md space-sm" /> Copy configuration 
-* <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-md space-sm" />CLEAR (for Draft models) - Delete the configuration 
-* EDIT (for Draft models) - Modify / Add model configuration
+* <img src="/docs/latest/icons/ico-trash.svg" alt="Trash" className="icon size-md space-sm" />**CLEAR** (for *Draft* models) - Delete the configuration 
+* **EDIT** (for *Draft* models) - Modify / Add model configuration
 
 ## Label Enumeration
 
