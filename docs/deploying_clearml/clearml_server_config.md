@@ -75,10 +75,10 @@ authentication cookie to be used for accessing files.
 
 ```
 services:
-	webserver:
-		environment:
-			WEBSERVER__fileBaseUrl: "https://files.<my_domain>/"
-			WEBSERVER__useFilesProxy: true
+    webserver:
+        environment:
+	        WEBSERVER__fileBaseUrl: "https://files.<my_domain>/"
+	        WEBSERVER__useFilesProxy: true
 ```
 :::
 
