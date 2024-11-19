@@ -58,7 +58,7 @@ For example, a domain is called `mydomain.com`, and a subdomain named `clearml.m
 Accessing the [ClearML Web UI](../webapp/webapp_overview.md) with `app.clearml.mydomain.com` will automatically send API requests to `api.clearml.mydomain.com`.
 
 :::important Image Plot Display
-The ClearML web UI uses [plotly](https://github.com/plotly/plotly.py) to display plots. Image plots are stored on 
+The ClearML web UI uses [plotly](https://github.com/plotly/plotly.js) to display plots. Image plots are stored on 
 network storage (e.g. the ClearML file server).
 
 Starting from v1.16.0, the ClearML file server uses token authentication (see [File Server Security](clearml_server_security.md#file-server-security)). 
