@@ -57,7 +57,32 @@ For example, a domain is called `mydomain.com`, and a subdomain named `clearml.m
 
 Accessing the [ClearML Web UI](../webapp/webapp_overview.md) with `app.clearml.mydomain.com` will automatically send API requests to `api.clearml.mydomain.com`.
 
-:::note
+:::important Image Plot Display
+The ClearML web UI uses [plotly](https://github.com/plotly/plotly.py) to display plots. Image plots are stored on 
+network storage (e.g. the ClearML file server).
+
+Starting from v1.16.0, the ClearML file server uses token authentication (see [File Server Security](clearml_server_security.md#file-server-security)). 
+If the file server is configured to a different domain than the web server (e.g. the web server is on `https://app.<domain_1>` 
+and the file server is on `https://files.<domain_2>`), image plots stored on the file server can fail to load, as the 
+WebApp will be unable to make use of the required authentication cookies. 
+
+To mitigate, configure the WebApp to use a proxy when accessing the file server, so that requests will stay within the same domain:
+1. Specify the file server's base URL with `WEBSERVER__fileBaseUrl` under the `environment` section of `webserver` 
+service in the `docker-compose` file. This defines the target URL for the web server to use when proxying the file server
+1. Set `WEBSERVER__useFilesProxy` to `True` in the `environment` section of `webserver` service in the `docker-compose` 
+file. This makes the web server use `<web_server_url>/files` as a same domain proxy to your file server, allowing the 
+authentication cookie to be used for accessing files.
+
+```
+services:
+	webserver:
+		environment:
+			WEBSERVER__fileBaseUrl: "https://files.<my_domain>/"
+			WEBSERVER__useFilesProxy: true
+```
+:::
+
+:::note Cloudflare Tunnels
 If using Cloudflare Tunnels as a reverse proxy, create three tunnels, one for each respective service. Importantly, the SSL certs (in the free tier) will only be valid for one level of subdomain, so instead use `app.mydomain.com`, `api.mydomain.com`, and `files.mydomain.com` in order to avoid [version-cipher-mismatch errors](https://developers.cloudflare.com/ssl/troubleshooting/version-cipher-mismatch/#multi-level-subdomains).
 :::
 
