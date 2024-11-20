@@ -91,7 +91,7 @@ title: FAQ
 
 **ClearML Server Troubleshooting**
 
-* [I did a reinstall. Why can't I create credentials in the WebApp (UI)?](#clearml-server-reinstall-cookies)
+* [After reinstalling, why can't I create credentials in the WebApp (UI)?](#clearml-server-reinstall-cookies)
 * [How do I fix Docker upgrade errors?](#common-docker-upgrade-errors)
 * [Why is web login authentication not working?](#port-conflict)
 * [How do I bypass a proxy configuration to access my local ClearML Server?](#proxy-localhost)
@@ -326,8 +326,8 @@ For more task configuration options, see [Hyperparameters](fundamentals/hyperpar
 
 #### I noticed that all of my experiments appear as "Training". Are there other options?   <a id="other-experiment-types"></a>
 
-Yes! When creating experiments and calling [`Task.init()`](references/sdk/task.md#taskinit), 
-you can provide an experiment type. ClearML supports [multiple experiment types](fundamentals/task.md#task-types). For example:
+Yes! ClearML supports [multiple experiment types](fundamentals/task.md#task-types). When creating experiments and 
+calling [`Task.init()`](references/sdk/task.md#taskinit), you can provide an experiment type. For example:
 
 ```python
 task = Task.init(project_name, task_name, Task.TaskTypes.testing)
@@ -977,7 +977,7 @@ For detailed instructions, see [Modifying non-responsive Task watchdog settings]
 
 ## ClearML Server Troubleshooting
 
-#### I did a reinstall. Why can't I create credentials in the WebApp (UI)?   <a id="clearml-server-reinstall-cookies"></a>
+#### After reinstalling, why can't I create credentials in the WebApp (UI)?   <a id="clearml-server-reinstall-cookies"></a>
 
 The issue is likely your browser cookies for ClearML Server. Clearing your browser cookies for ClearML Server is recommended. 
 For example: 

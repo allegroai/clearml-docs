@@ -217,7 +217,7 @@ to open the context menu
 |---|---|---|---|
 | Details | Open the experiment's [info panel](webapp_exp_track_visual.md#info-panel) (keeps the experiments list in view). Can also be accessed by double-clicking an experiment in the experiments table. | Any state |  None  |
 | View Full Screen | View experiment details in [full screen](webapp_exp_track_visual.md#full-screen-details-view). | Any state |  None  |
-| Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
+| Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Orchestration](webapp_workers_queues.md) page. | *Enqueued* |  None  |
 | View Worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
 | Archive | Move experiment to the project's archive. If it is shared (ClearML Hosted Service only), the experiment becomes private. | Any state |  *Pending* to *Draft*  |

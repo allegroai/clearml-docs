@@ -470,7 +470,7 @@ The action will appear in the context menu for the object type in which it was s
   to access the context menu. 
 * Project - In the project page > click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" className="icon size-md space-sm" /> 
   on a specific project card to access its context menu
-* Queue - In the [Workers and Queues](../webapp/webapp_workers_queues.md) page > **QUEUES** tab, right-click the queue 
+* Queue - In the [Orchestration](../webapp/webapp_workers_queues.md) page > **QUEUES** tab, right-click the queue 
   to access its context menu
 
 The custom action is always performed from a context-menu opened from a specific selected item.
