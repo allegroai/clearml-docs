@@ -2,7 +2,7 @@
 title: Projects
 ---
 
-Projects are contextual containers for [tasks](task.md) and [models](artifacts.md) (as well as [dataviews](../hyperdatasets/dataviews.md) 
+Projects are contextual containers for [tasks](task.md) and [models](models.md) (as well as [dataviews](../hyperdatasets/dataviews.md) 
 when Hyper-Datasets are enabled), providing a logical structure similar to file system folders. 
 An often useful method is to categorize components into projects according to models or objectives. 
 Grouping into projects helps in identifying tasks, models, and dataviews when queried.
