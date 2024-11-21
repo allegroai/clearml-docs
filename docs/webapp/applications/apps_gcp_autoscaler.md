@@ -149,7 +149,7 @@ The console's log level will update in the autoscaler's next iteration.
 :::
 
 * Instance log files - Click to access the app instance's logs. This takes you to the app instance task's ARTIFACTS tab, 
-  which lists the app instance's logs. In a log's `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
+  which lists the app instance's logs. In a log's `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" /> 
   to download the complete log. 
 
 :::tip EMBEDDING CLEARML VISUALIZATION

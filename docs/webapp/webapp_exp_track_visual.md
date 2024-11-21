@@ -8,7 +8,7 @@ including:
 * [Execution details](#execution) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
-* [General information](#general-information) - Information about the experiment, for example: the experiment start, create, and last update times and dates, user creating the experiment, and its description.
+* [Info](#info) - Extended experiment information, such as the experiment start, create, and last update times and dates, user creating the experiment, and its description.
 * [Console](#console) - stdout, stderr, output to the console from libraries, and ClearML explicit reporting.
 * [Scalars](#scalars) - Metric plots.
 * [Plots](#plots) - Other plots and data, for example: Matplotlib, Plotly, and ClearML explicit reporting.
@@ -23,7 +23,7 @@ The ClearML Web UI provides two viewing modes for experiment details:
 * Full screen details mode.
 
 Both modes contain all experiment details. When either view is open, switch to the other mode by clicking <img src="/docs/latest/icons/ico-info-min.svg" alt="Table/Full screen view" className="icon size-md space-sm" />
-(**View in experiments table / full screen**), or clicking <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (**menu**) > **View in experiments
+(**View in experiments table / full screen**), or clicking <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" /> (**menu**) > **View in experiments
 table / full screen**.
 
 
@@ -177,49 +177,71 @@ parameter in [`Task.connect_configuration`](../references/sdk/task.md#connect_co
 
 ## Artifacts
 
-Artifacts tracked in an experiment appear in the **ARTIFACTS** tab, and include models and other artifacts.
+Task artifacts, including models, appear in the **ARTIFACTS** tab. 
 
-Artifacts location is stored in the `FILE PATH` field.
-The UI provides locally stored artifacts with a 'copy to clipboard' action (<img src="/docs/latest/icons/ico-clipboard.svg" alt="Clipboard" className="icon size-sm space-sm" />) 
-to facilitate local storage access (since web applications are prohibited from accessing the local disk for security reasons).
-The UI provides Network hosted (e.g. https://, s3:// etc. URIs) artifacts with a download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" />) 
-to retrieve these files.
+Each non-model artifact entry displays: 
+* File path
+* File size
+* Hash
+* Metadata (if set)
 
-### Models
-
-The input and output models appear in the **ARTIFACTS** tab. Models are associated with the experiment, but to see further model details,
-including design, label enumeration, and general information, go to the **MODELS** tab, by clicking the model name, which is a hyperlink to those details.
-
-**To retrieve a model:**
-
-1. In the **ARTIFACTS** tab **>** **MODELS** **>** **Input Model** or **Output Model**, click the model name hyperlink.
-1. In the model details **>** **GENERAL** tab **>** **MODEL URL**, either:
-
-    * Download the model<img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />, if it is stored in remote storage.
-    * Copy its location to the clipboard <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
-      if it is in a local file.
-
-
-![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png)
-
-### Other Artifacts
-
-Other artifacts, which are uploaded but not dynamically tracked after the upload, appear in the **OTHER** section. 
-They include the file path, file size, and hash.
-
-**To retrieve Other artifacts:**
-
-In the **ARTIFACTS** tab **>** **OTHER** **>** Select an artifact **>** Either:
-* Download the artifact <img src="/docs/latest/icons/ico-download.svg" className="icon size-md space-sm" />, if it is stored in remote storage.
-* Copy its location to the clipboard <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md space-sm" />,
-      if it is in a local file.
+Artifact location is displayed in the `FILE PATH` field. To access model and other artifact files:
+* **Local Files**: Use the 'copy to clipboard' action (<img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Clipboard" className="icon size-md space-sm" />)
+to obtain the file path to facilitate local storage access since web applications are prohibited from accessing the local disk for security reasons.
+* **Remote Files**  (e.g. network-hosted artifacts with `https://`, `s3://`, etc. URIs): Use the download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />) 
+to retrieve the file.
 
 ![Other artifacts section](../img/webapp_tracking_30.png)
 
-## General Information
+### Models
 
-General experiment details appear in the **INFO** tab. This includes information describing the stored experiment:
-* Experiment description (editable, hover over the description box and click **Edit**)
+The task's input and output models appear in the **ARTIFACTS** tab. Each model entry shows:
+* Model name
+* ID
+* Configuration. 
+Input models also display their creating experiment, which on-click navigates you to the experiment's page. 
+
+![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png)
+
+To view more model details, including design, label enumeration, and general information, click the model name
+to navigate to its page in the **MODELS** tab (see [Model Details](webapp_model_viewing.md)). 
+
+
+## Info
+
+The **INFO** tab shows extended experiment information:
+* [Latest experiment events log](#latest-events-log)
+* [Experiment description](#description)
+* [Experiment details](#experiment-details)
+
+### Latest Events Log 
+
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan.
+:::
+
+The Enterprise Server also displays a detailed history of  task activity: 
+* Task action (e.g. status changes, project move, etc.)
+* Action time
+* Acting user
+* Action source (i.e. ClearML Agent, SDK, or UI)
+* Action source version 
+
+To download the task history as a CSV file, hover over the log and click <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.   
+
+![Task audit log](../img/webapp_info_audit_log.png)
+
+:::note Limited persistency
+ClearML maintains a system-wide, large but strict limit for task history items. Once the limit is reached, the oldest entries are purged to make room for fresh entries.
+:::
+
+### Description 
+Add descriptive text to the experiment in the **Description** section. To modify the description, hover over the 
+description box and click **Edit**.
+
+### Experiment Details
+The **Experiment Details** section lists information describing the experiment:
+
 * The parent experiment
 * Project name
 * Creation, start, and last update dates and times
@@ -262,18 +284,22 @@ is downloadable. To view the end of the log, click **Jump to end**.
 All scalars that ClearML automatically logs, as well as those explicitly reported in code, appear in
 **SCALARS**. 
 
-Scalar series are presented in a line chart. To see the series for a metric in high resolution, 
-view it in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />.
+Scalar series can be displayed in [graph view](#graph-view) (default) or in [metric values view](#metric-values-view):
+
+#### Graph View 
+Scalar graph view (<img src="/docs/latest/icons/ico-charts-view.svg" alt="Graph view" className="icon size-md space-sm" />) 
+shows scalar series plotted as a time series line chart. The series are sub-sampled for 
+display efficiency. For high resolution, view a series in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-md space-sm" />.
 
 :::info Full Screen Refresh
 Scalar graphs in full screen mode do not auto-refresh. Click <img src="/docs/latest/icons/ico-reset.svg" alt="Refresh" className="icon size-md space-sm medium-zoom-image" /> 
 to update the graph. 
 :::
 
-Reported single value scalars are aggregated into a table plot displaying scalar names and values (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value)). 
+Single value scalars (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value)) are shown in 
+a `Summary` table.
 
-
-#### Scalar Plot Tools
+![Single value scalar plot](../img/webapp_single_scalar_plot.png)
 
 Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" alt="Settings gear" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
@@ -300,14 +326,38 @@ are on the left side of the window. The tools include:
   * Wall time - Local clock time
 * Curve smoothing - Choose which smoothing algorithm to use from the dropdown menu: Exponential moving average, Gaussian, 
   or Running Average. Use the slider to configure the smoothing factor or specify a value manually. 
-* Show / hide plots - Click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show All" className="icon size-md space-sm" />
-  on those you want to see.
+* Show / hide plots - Click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> to control which 
+  plots to display. For example, to display specific plots, click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> 
+  on each plot you want to view.
 
 To embed scalar plots in your [Reports](webapp_reports.md), hover over a plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 
 which will copy to clipboard the embed code to put in your Reports. In contrast to static screenshots, embedded resources 
 are retrieved when the report is displayed allowing your reports to show the latest up-to-date data.
 
 See additional [plot controls](#plot-controls) below.
+
+#### Metric Values View
+
+The metric values view (<img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" />)
+shows a table summary of your metrics with a row per metric/variant:
+
+* First - The metric/variant series' initial value
+* Last - The metric/variant series' last value
+* Min -  The metric/variant series' minimum value
+* Max - The metric/variant series' maximum value
+* Mean - The metric/variant series' mean value
+
+If all the values of a specific metric/variant are the same, the row will display a <img src="/docs/latest/icons/ico-equal-outline.svg" alt="Same values" className="icon size-md space-sm" /> sign.
+
+![Plots tab](../img/webapp_tracking_34a.png)
+
+Choose which metrics to view using one of the following out the options:
+* Use the quick filter bar (<img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" />) 
+to only show metrics/variants whose name fit a partial-string match 
+* Use the filter menu (<img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" />) to 
+select which metrics to view by clicking their show/hide button (<img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" />). 
+Click **Hide/Show all**, to quickly hide/show all metrics.
+
 
 ### Plots
 Non-time-series plots appear in **PLOTS**. These include data generated by libraries, visualization tools, and 
@@ -318,9 +368,9 @@ Plotly plots. Individual plots can be shown / hidden or filtered by title.
 
 For each metric, the latest reported plot is displayed.
 
-When viewing a plot in full screen (<img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-sm space-sm" />), 
+When viewing a plot in full screen (<img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-md space-sm" />), 
 older iterations are available through the iteration slider (or using the up/down arrow keyboard shortcut). Go to the 
-previous/next plot in the current iteration using the <img src="/docs/latest/icons/ico-previous.svg" alt="Previous" className="icon size-sm space-sm" /> / <img src="/docs/latest/icons/ico-next.svg" alt="Next" className="icon size-sm space-sm" /> 
+previous/next plot in the current iteration using the <img src="/docs/latest/icons/ico-previous.svg" alt="Previous" className="icon size-md space-sm" /> / <img src="/docs/latest/icons/ico-next.svg" alt="Next" className="icon size-md space-sm" /> 
 buttons (or using the left/right arrow keyboard shortcut).
 
 
@@ -378,7 +428,7 @@ For each metric, the latest reported debug sample is displayed.
 Click a sample to view it in full screen. If the sample is video or audio, the full screen mode includes a player. 
 
 When viewing a sample in full screen, older iterations are available through the iteration slider (or using the up/down 
-arrow keyboard shortcut). Go to the previous/next sample in the current iteration using the <img src="/docs/latest/icons/ico-previous.svg" alt="Previous" className="icon size-sm space-sm" /> / <img src="/docs/latest/icons/ico-next.svg" alt="Next" className="icon size-sm space-sm" /> 
+arrow keyboard shortcut). Go to the previous/next sample in the current iteration using the <img src="/docs/latest/icons/ico-previous.svg" alt="Previous" className="icon size-md space-sm" /> / <img src="/docs/latest/icons/ico-next.svg" alt="Next" className="icon size-md space-sm" /> 
 buttons (or using the left/right arrow keyboard shortcut).
 
 
@@ -409,7 +459,7 @@ experiment execution according to their tags (see [TriggerScheduler](../referenc
 deploy models according to their tags (see [ClearML Serving](../clearml_serving/clearml_serving_tutorial.md#automatic-model-deployment)).
 
 **To add tags:**
-1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-sm space-sm" /> (menu)
+1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" /> (menu)
 1. Do one of the following:
     * Add a new tag - Type the new tag name **>** **(Create New)**.
     * Add an existing tag - Click a tag.

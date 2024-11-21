@@ -56,16 +56,18 @@ User parameters are editable in any experiment, except experiments whose status 
 
 #### Source Code
 
-Select source code by changing any of the following:
+Modify code execution by changing any of the following:
 
-* Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, and/or working directory.
-* Installed Python packages and/or versions - Edit or clear (remove) them all.
-* Uncommitted changes - Edit or clear (remove) them all.
+* Repository, commit (select by ID, tag name, or choose the last commit in the branch), script, working directory, 
+and/or binary.
+* The Python packages to be installed and/or their versions - Edit the package list, or clear it to have the ClearML 
+Agent either not install any packages or use an existing repo `requirements.txt` file. If the experiment is based on a 
+run in which the packages used were eventually different to the ones originally specified, you can easily or reset the 
+packages to originally recorded values ("Original Pip").
+* Uncommitted changes - Edit or clear all.
 
-**To select different source code:**
-
-* In the **EXECUTION** tab, hover over a section **>** **EDIT** or (**DISCARD DIFFS** for **UNCOMMITTED CHANGES**) **>**
-  edit **>** **SAVE**.
+**To modify the source code**, hover over the relevant sections in the **EXECUTION** tab to access Edit, Clear/Discard, 
+and/or Reset functions.
 
 
 
@@ -184,7 +186,7 @@ model in the **MODELS** tab.
       remove the configuration).
 
        Users can also search for the configuration (hover over the configuration textbox, the search box appears) and copy the
-      configuration to the clipboard (hover and click <img src="/docs/latest/icons/ico-clipboard.svg" alt="Copy Clipboard" className="icon size-md" />).
+      configuration to the clipboard (hover and click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy Clipboard" className="icon size-md" />).
 
     * Label enumeration - In the **LABELS** tab **>** Hover and click **EDIT** **>** Add, change, or delete label
       enumeration key-value pairs.

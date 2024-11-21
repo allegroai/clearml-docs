@@ -45,7 +45,7 @@ Hover over any of this data to see the number of currently idle machines.
 
 Use the **Event Log** to view updates of worker events: worker addition/removal, worker has become idle/busy. Hover over 
 the log to download (<img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />) 
-it or open the expanded view (<img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize" className="icon size-sm space-sm" />).
+it or open the expanded view (<img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize" className="icon size-md space-sm" />).
 
 ## Resource Graph
 
