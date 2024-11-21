@@ -33,8 +33,12 @@ module.exports = {
                 ]
             }        
         ]}]},
-        {'ClearML Fundamentals': ['fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters', 'fundamentals/models', 'fundamentals/logger', 'fundamentals/agents_and_queues',
-            'fundamentals/hpo']},
+        {'ClearML Fundamentals': [
+            'fundamentals/projects', 'fundamentals/task', 'fundamentals/hyperparameters',
+            'fundamentals/artifacts', 'fundamentals/models', 'fundamentals/logger', 'fundamentals/agents_and_queues',
+            'fundamentals/hpo'
+            ]
+        },
         {
             type: 'category',
             collapsible: true,

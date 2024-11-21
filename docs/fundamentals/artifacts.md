@@ -2,42 +2,57 @@
 title: Artifacts
 ---
 
-Artifacts are the output files created by a task. ClearML uploads and logs these products, so they can later be easily 
-accessed, modified, and used.
+**Artifacts** are objects associated with ClearML [tasks](task.md) that are logged to ClearML, so they can later be 
+easily accessed, modified, and used. 
 
-ClearML allows easy storage of experiment outputs as artifacts that can later be accessed and used, 
-through the web UI or programmatically. 
-
-ClearML provides methods to track files generated throughout your experiments' execution such as:
-* Numpy objects
+Task artifacts support built-in serialization for a wide range of object types, such as:
+* Numpy arrays (`.npz`)
 * Pandas DataFrames
-* PIL
+* PIL images (converted to `.jpg`)
 * Files and folders
 * Python objects
-* and more!
+* and more
 
-ClearML also logs experiments' input and output models as well as interim model snapshots (see [Models](models.md)).
+ClearML also logs your tasks' input and output models as well as interim model checkpoints. Model artifacts also have 
+unique ClearML Model IDs (see [Models](models.md)).
 
-## Logging Artifacts 
-ClearML provides an explicit logging interface that supports manually reporting a variety of artifacts. Any type of 
-artifact can be logged to a task using [`Task.upload_artifact()`](../references/sdk/task.md#upload_artifact). 
-See more details in the [Artifacts Reporting example](../guides/reporting/artifacts.md).
+Artifacts allow you to:
+* **Track Task Inputs**: Record non source-controlled data to reproduce your workflows.
+* **Compare Outputs**: Easily access model snapshots.
+* **Build Elaborate Workflows**: Implement pipelines by using the outputs of one task as inputs to another (e.g. a data 
+cleaning task logs its clean dataset for use by a subsequent training task).
 
-ClearML can be configured to upload artifacts to any of the supported types of storage, which include local and shared 
-folders, AWS S3 buckets, Google Cloud Storage, and Azure Storage. For more information, see [Storage](../integrations/storage.md). 
+## Logging Artifacts
+ClearML automatically logs artifacts created by popular frameworks, including TensorFlow and PyTorch. See [supported frameworks](../clearml_sdk/task_sdk.md#automatic-logging).
 
-:::note Debug Sample Storage
-Debug samples are handled differently, see [`Logger.set_default_upload_destination`](../references/sdk/logger.md#set_default_upload_destination).
-:::
+You can also log any other object using [`Task.upload_artifact()`](../references/sdk/task.md#upload_)artifact. See 
+the [Artifacts Reporting](../guides/reporting/artifacts.md) example for details.
+
+ClearML can be configured to upload artifacts to any supported types of storage, which include local and shared folders, 
+AWS S3 buckets, Google Cloud Storage, and Azure Storage (see [Storage](../integrations/storage.md)).
+
+## Updating Artifacts Dynamically
+
+Clearml can automatically update artifacts as their contents change while your task is running through the use of 
+[`register_artifact()`](../references/sdk/task.md#register_artifact).
 
 ## Accessing Artifacts
-Artifacts that have been logged can be accessed by other tasks [through the task](../clearml_sdk/task_sdk.md#accessing-tasks) 
-they are attached to, and then retrieving the artifact with one of its following methods:
-* `get_local_copy()` - caches the files for later use and returns a path to the cached file. 
-* `get()` - use for Python objects. The method that returns the Python object.
-   
-See more details in the [Using Artifacts example](https://github.com/allegroai/clearml/blob/master/examples/reporting/using_artifacts_example.py).
+Task artifacts can be accessed by other tasks. To use an artifact, first retrieve the `Task` that created it. Then use 
+one of the following methods:
+* `get_local_copy()`: Caches the file for later use and returns its path.
+* `get()`: Directly retrieves the Python object associated with the artifact.
 
-## Models 
-Models are a special kind of artifact and, unlike regular artifacts, which can only be accessed with the creating Task's ID,
-Models are entities with their own unique ID that can be accessed directly or via the creating task.
+For more information, see [Using Artifacts](../clearml_sdk/task_sdk.md#using-artifacts).
+
+## WebApp Interface
+Artifacts appear under the **ARTIFACTS** tab of a Task. Each artifact's location is displayed in the **FILE PATH** field:
+* **Locally stored artifacts**: Include an option to copy the artifact’s location for accessibility (since web 
+applications are prohibited from accessing the local disk for security reasons)
+* **Network stored artifacts**: Display a download action to retrieve files from URLs (e.g., `https://`, `s3://`).
+
+![WebApp Artifacts section](../img/webapp_tracking_30.png)
+
+## SDK Interface
+See the [Artifacts](../clearml_sdk/task_sdk.md#artifacts) section in the Task SDK page for an overview of how to work 
+with ClearML Artifacts using Pythonic methods. 
+
