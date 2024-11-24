@@ -1107,8 +1107,8 @@ URL to a CA bundle, or set this option to `false` to skip SSL certificate verifi
 
 * Log specific environment variables. OS environments are listed in the UI, under an experiment's  
   **CONFIGURATION > HYPERPARAMETERS > Environment** section. 
-  Multiple selected variables are supported including the suffix "\*". For example: "AWS\_\*" will log any OS environment 
-  variable starting with `"AWS\_"`. Example: `log_os_environments: ["AWS_*", "CUDA_VERSION"]`
+  Multiple selected variables are supported including the suffix `*`. For example: `"AWS_*"` will log any OS environment 
+  variable starting with `"AWS_"`. Example: `log_os_environments: ["AWS_*", "CUDA_VERSION"]`
         
 * This value can be overwritten with OS environment variable `CLEARML_LOG_ENVIRONMENT=AWS_*,CUDA_VERSION`. 
 
