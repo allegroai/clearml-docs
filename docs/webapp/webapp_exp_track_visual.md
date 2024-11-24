@@ -199,6 +199,7 @@ The task's input and output models appear in the **ARTIFACTS** tab. Each model e
 * Model name
 * ID
 * Configuration. 
+
 Input models also display their creating experiment, which on-click navigates you to the experiment's page. 
 
 ![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png)

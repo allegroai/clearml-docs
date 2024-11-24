@@ -38,13 +38,13 @@ clearml-serving --id <service_id> model add --engine sklearn --endpoint "test_mo
 :::info Service ID
 Make sure that you have executed `clearml-serving`'s
 [initial setup](clearml_serving_setup.md#initial-setup), in which you create a Serving Service. 
-The Serving Service's ID is required to register a model, and to execute `clearml-serving`'s `metrics` and `config` commands 
+The Serving Service's ID is required to register a model, and to execute `clearml-serving`'s `metrics` and `config` commands. 
 :::
 
   
 :::note
 The preprocessing Python code is packaged and uploaded to the Serving Service, to be used by any inference container, 
-and downloaded in real time when updated
+and downloaded in real time when updated.
 :::
 
 ### Step 3: Spin Inference Container
@@ -110,7 +110,7 @@ or with the `clearml-serving` CLI.
 You can also provide a different storage destination for the model, such as S3/GS/Azure, by passing
 `--destination="s3://bucket/folder"`, `s3://host_addr:port/bucket` (for non-AWS S3-like services like MinIO), `gs://bucket/folder`, `azure://<account name>.blob.core.windows.net/path/to/file`. There is no need to provide a unique 
 path to the destination argument, the location of the model will be a unique path based on the serving service ID and the 
-model name
+model name.
 :::
 
 ## Additional Options 
@@ -160,7 +160,7 @@ This means that any request coming to `/test_model_sklearn_canary/` will be rout
 
 :::note
 As with any other Serving Service configuration, you can configure the Canary endpoint while the Inference containers are 
-already running and deployed, they will get updated in their next update cycle (default: once every 5 minutes)
+already running and deployed, they will get updated in their next update cycle (default: once every 5 minutes).
 :::
 
 You can also prepare a "fixed" canary endpoint, always splitting the load between the last two deployed models:
@@ -244,7 +244,7 @@ With the new metrics logged, you can create a visualization dashboard over the l
 :::note
 If not specified all serving requests will be logged, which can be changed with the `CLEARML_DEFAULT_METRIC_LOG_FREQ` 
 environment variable. For example `CLEARML_DEFAULT_METRIC_LOG_FREQ=0.2` means only 20% of all requests will be logged. 
-You can also specify per-endpoint log frequency with the `clearml-serving` CLI. See [clearml-serving metrics](clearml_serving_cli.md#metrics)
+You can also specify per-endpoint log frequency with the `clearml-serving` CLI. See [clearml-serving metrics](clearml_serving_cli.md#metrics).
 :::
 
 ## Further Examples

@@ -831,7 +831,7 @@ task = Task.init(project_name='examples', task_name='parameters')
 task.set_parameters({'Args/epochs':7, 'lr': 0.5})
 
 # setting a single parameter
-task.set_parameter(name='decay',value=0.001)
+task.set_parameter(name='decay', value=0.001)
 ```
 
 :::warning Overwriting Parameters
@@ -889,7 +889,7 @@ me = Person('Erik', 5)
 
 params_dictionary = {'epochs': 3, 'lr': 0.4}
 
-task = Task.init(project_name='examples',task_name='python objects')
+task = Task.init(project_name='examples', task_name='python objects')
 
 task.connect(me)
 task.connect(params_dictionary)
