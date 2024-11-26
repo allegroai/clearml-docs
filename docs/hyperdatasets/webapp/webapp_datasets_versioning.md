@@ -101,8 +101,11 @@ filters.
 **To apply advanced filters:**
 1. In the **FRAMES** tab, click <img src="/docs/latest/icons/ico-advanced-filters.svg" alt="Advanced filters" className="icon size-md space-sm" /> (**Advanced filters**).
 1. In a **FRAME FILTER**, create one of the following rules:
-   * ROI rule - Use "Include" and "Exclude" conditions to match frames by ROI label; frames match the rule when 
-   containing at least one annotation object (ROI) with **all** labels in the rule. Click <img src="/docs/latest/icons/ico-code.svg" alt="Lucene query mode" className="icon size-md space-sm" /> 
+   * ROI rule - Use "Include" and "Exclude" conditions to match frames according to ROI label. If the "Include" 
+   condition is used, frames match the rule if they contain at least one annotation object (ROI) with ALL labels in the 
+   rule. If the "Exclude" condition is used, frames match the rule if NONE of their ROIs contain the label. Multiple ROI 
+   rules in the same filter are evaluated independently against all frame ROIs. Meaning, a frame will match the filter 
+   if it contains at least one annotation matching each rule, even if the annotations are in different ROIs. Click <img src="/docs/latest/icons/ico-code.svg" alt="Lucene query mode" className="icon size-md space-sm" /> 
    to explicitly specify your rule with Lucene 
    * Frame rule - Query frame metadata. Enter a Lucene query of frame metadata fields in the format `meta.<key>:<value>` 
    (can use AND, OR, and NOT operators).
@@ -145,6 +148,18 @@ To clear all filters click <img src="/docs/latest/icons/ico-filter-reset.svg" al
 * By opening a frame in the frame viewer, you can see an ROI labeled with both.
 
 ![Labeled ROIs in frame viewer](../../img/hyperdatasets/frame_filtering_05.png)
+
+* To find frames that contain multiple ROIs, each with a different label, use separate ROI rules. Create an ROI rule for
+  the `teddy bear` label and, in the same filter, add another ROI rule for the `person` label. This will return all 
+  frames that include at least one ROIs with a `person` label AND at least one (other) ROI with a `teddy bear` label. 
+
+![Add multiple ROI Rules](../../img/hyperdatasets/frame_filtering_06.png)
+
+* You can also exclude certain ROI labels. Create an ROI rule to include `teddy bear` and, in the same filter, an ROI 
+  rule to exclude `person`. This will return all frames that include at least one ROI with the label `teddy bear` AND have
+  NO ROI with the `person` label
+
+![Add Exclude ROI Rule](../../img/hyperdatasets/frame_filtering_07.png)
 
 </Collapsible>
 
