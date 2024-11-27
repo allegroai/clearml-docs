@@ -12,9 +12,11 @@ usage. The Model Deployment application serves your model on a machine of your c
 it serves your model through a secure, publicly accessible network endpoint. The app monitors endpoint activity and 
 shuts down if the model remains inactive for a specified maximum idle time.
 
-:::info Task Traffic Router
-The Model Deployment app relies on the ClearML Traffic Router which implements a secure, authenticated network channel 
-to the model
+:::info AI Application Gateway
+The Model Deployment app makes use of the ClearML Traffic Router which implements a secure, authenticated 
+network endpoint for the model.
+
+If the ClearML AI application Gateway is not available, the model endpoint might not be accessible.
 :::
 
 Once you start a Model Deployment instance, you can view the following information in its dashboard:
