@@ -364,7 +364,7 @@ order, number, timing, and reproducibility of frames for training.
 #### Iterate Frames Infinitely 
 
 This example demonstrates creating a Dataview and setting its parameters to iterate infinitely until the script is 
-manually terminated. 
+manually terminated: 
 
 ```python
 # Create a Dataview object for an iterator that returns frames
@@ -375,7 +375,7 @@ myDataView.set_iteration_parameters(order=IterationOrder.random, infinite=True)
 ```
 
 #### Iterate All Frames Matching the Query
-This example demonstrates creating a DataView and setting its parameters to iterate and return all frames matching a query.
+This example demonstrates creating a DataView and setting its parameters to iterate and return all frames matching a query:
 
 ```python
 # Create a Dataview object for an iterator for frames
@@ -504,7 +504,7 @@ certain labels for training.
 
 This example demonstrates consolidating two disparate Datasets. Two Dataset versions use `car` (lower case "c"), but the
 third uses `Car` (upper case "C"). 
-The example maps `Car` (upper case "C") to `car` (lower case "c").
+The example maps `Car` (upper case "C") to `car` (lower case "c"):
 
 ```python
 # Create a Dataview object for an iterator that randomly returns frames according to queries 
@@ -551,9 +551,9 @@ my_dataview = DataView.get(dataview_id='<dataview_id>')
 
 Access the Dataview's frames as a python list, dictionary, or through a pythonic iterator.
 
-The [`DataView.to_list`](../references/hyperdataset/dataview.md#to_list) method returns the Dataview queries result as a python list. 	
+[`DataView.to_list()`](../references/hyperdataset/dataview.md#to_list) returns the Dataview queries result as a Python list. 	
 
-The [`DataView.to_dict`](../references/hyperdataset/dataview.md#to_dict) method returns a list of dictionaries, where each dictionary represents a frame. Use the 
+[`DataView.to_dict()`](../references/hyperdataset/dataview.md#to_dict) returns a list of dictionaries, where each dictionary represents a frame. Use the 
 `projection` parameter to specify a subset of the frame fields to be included in the result. Input a list of strings, 
 where each string represents a frame field or subfield (using dot-separated notation). 
 
