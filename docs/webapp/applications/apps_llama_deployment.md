@@ -20,10 +20,10 @@ If the ClearML AI application Gateway is not available, the model endpoint might
 
 After starting a llama.cpp Model Deployment instance, you can view the following information in its dashboard:
 * Status indicator
- * <icon> - App instance is running and is actively in use
- * <icon> - App instance is setting up
- * <icon> - App instance is idle
- * <icon> - App instance is stopped
+  * <img src="/docs/latest/icons/ico-llama-active.svg" alt="Active server" className="icon size-md space-sm" /> - App instance is running and is actively in use
+  * <img src="/docs/latest/icons/ico-llama-loading.svg" alt="Loading server" className="icon size-md space-sm" /> - App instance is setting up
+  * <img src="/docs/latest/icons/ico-llama-idle.svg" alt="Idle server" className="icon size-md space-sm" /> - App instance is idle
+  * <img src="/docs/latest/icons/ico-llama-stopped.svg" alt="Stopped server" className="icon size-md space-sm" /> - App instance is stopped
 * Idle time - Time elapsed since last activity
 * App - The publicly accessible URL of the model endpoint. Active model endpoints are also available in the 
   [Model Endpoints](../webapp_model_endpoints.md) table, which allows you to view and compare endpoint details and 
