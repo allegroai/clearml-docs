@@ -26,7 +26,9 @@ Once you start a Model Deployment instance, you can view the following informati
   * <img src="/docs/latest/icons/ico-model-idle.svg" alt="Idle instance" className="icon size-md space-sm" /> - App instance is idle
   * <img src="/docs/latest/icons/ico-model-stopped.svg" alt="Stopped instance" className="icon size-md space-sm" /> - App instance is stopped
 * Idle time - Time elapsed since last activity 
-* Endpoint - The publicly accessible URL of the model endpoint
+* Endpoint - The publicly accessible URL of the model endpoint. Active model endpoints are also available in the 
+  [Model Endpoints](../webapp_model_endpoints.md) table, which allows you to view and compare endpoint details and 
+  monitor status over time
 * API base - The base URL for the model endpoint 
 * API key - The authentication key for the model endpoint
 * Test Command - An example command line to test the deployed model
