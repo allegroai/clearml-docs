@@ -16,8 +16,19 @@ Run the ClearML AWS autoscaler in one of these ways:
   script locally
 * Launch through your [`services` queue](../../clearml_agent/clearml_agent_services_mode.md)
 
-:::note Default AMI
-The autoscaler service uses by default the `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b` AMI.
+:::note AMIs
+The AWS autoscaler can run with any AMI (e.g. `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b`), 
+provided that AWS supports the configuration specified. Note that AWS frequently updates its AMIs, and the latest 
+versions may not have all required dependencies preinstalled. 
+
+Recent NVIDIA AMIs require an initial login to set up drivers. To handle interactive logins for these AMIs, add the 
+following pre-execution bash script (see [step 5](#step_5)):
+
+```
+apt-get update
+DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
+su -l ubuntu -c '/usr/bin/bash /home/ubuntu/.profile'
+```
 :::
 
 ### Running the Script
@@ -95,7 +106,7 @@ When the script runs, a configuration wizard prompts for instance details and bu
       Define another instance type? [y/N]:
       ```
    
-1. Enter any bash script to run on newly created instances before launching the ClearML Agent.
+1. Enter any bash script to run on newly created instances before launching the ClearML Agent. <a id="step_5"></a>
 
       ```console
       Enter any pre-execution bash script to be executed on the newly created instances []:
