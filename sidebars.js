@@ -234,7 +234,8 @@ module.exports = {
                         {
                             "Deploy": [
                                 'webapp/applications/apps_embed_model_deployment',
-                                'webapp/applications/apps_model_deployment'
+                                'webapp/applications/apps_model_deployment',
+                                'webapp/applications/apps_llama_deployment'
                             ]
                         },
                     ]
