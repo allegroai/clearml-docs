@@ -177,7 +177,7 @@ You can retrieve the Dataview frames using [`DataView.to_list()`](../references/
 
 * **ROI query for a single label**
 
-This example uses an ROI query to filter for frames containing at least one ROI with the label `cat`.
+This example uses an ROI query to filter for frames containing at least one ROI with the label `cat`:
 
 ```python
 # Create a Dataview object for an iterator that randomly returns frames according to queries
@@ -220,7 +220,7 @@ list_of_frames = myDataView.to_list()
 
 * **ROI query for two specific labels in the same ROI**  
 
-This example uses an ROI query to filter for frames containing at least one ROI with both the label `Car` AND the label `partly_occluded`.
+This example uses an ROI query to filter for frames containing at least one ROI with both the label `Car` AND the label `partly_occluded`:
 
 ```python
 # Add a query for a Dataset version
@@ -238,7 +238,7 @@ list_of_frames = myDataView.to_list()
 * **ROI query for one label AND NOT another (Lucene query)**    
 
 This example uses an ROI query to filter for frames containing at least one ROI that has with the label `Car` AND DOES NOT 
-have the label `partly_occluded`.
+have the label `partly_occluded`:
 
 ```python
 # Add a query for a Dataset version
@@ -260,7 +260,7 @@ list_of_frames = myDataView.to_list()
 
 This example uses an ROI query to filter for frames containing at least one ROI with the label `Car` and at least one 
 ROI with the label `Person`. The example demonstrates using the `roi_queries` parameter of [`DataView.add_multi_query()`](../references/hyperdataset/dataview.md#add_multi_query) 
-with a list of [`DataView.RoiQuery`](../references/hyperdataset/dataview.md#roiquery) objects.  
+with a list of [`DataView.RoiQuery`](../references/hyperdataset/dataview.md#roiquery) objects:
 
 ```python
 myDataview = DataView()
@@ -289,8 +289,7 @@ myDataview.add_multi_query(
 )
 
 # retrieving the actual SingleFrames / FrameGroups
-# you can also iterate over the frames with `
-for frame in myDataView.get_iterator():`
+# you can also iterate over the frames with `for frame in myDataView.get_iterator():`
 list_of_frames = myDataView.to_list()
 ```
 
@@ -298,7 +297,7 @@ list_of_frames = myDataView.to_list()
 #### Querying Multiple Datasets and Versions
 
 This example demonstrates an ROI query filtering for frames containing the ROI labels `car`, `truck`, or `bicycle` 
-from two versions of one Dataset, and one version of another Dataset.
+from two versions of one Dataset, and one version of another Dataset:
 
 ```python
 # Add queries:
@@ -340,7 +339,7 @@ exclude for the Dataview to return the frame.
 **Frame queries** match frame meta key-value pairs, ROI labels, or both.
 They use the same logical OR, AND, NOT AND matching as ROI queries.
 
-This example demonstrates a frame query filtering for frames containing the meta key `city` value of `bremen`.
+This example demonstrates a frame query filtering for frames containing the meta key `city` value of `bremen`:
         
 ```python
 # Add a frame query for frames with the meta key "city" value of "bremen"
