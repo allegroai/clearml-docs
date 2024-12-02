@@ -75,3 +75,5 @@ values from the file, which can be modified before launching the app instance
   * Last Action Report Interval (Seconds) - The frequency at which the last activity made by the application is reported. 
   Used to stop the application from entering an idle state when the machine metrics are low but the application is 
   actually still running
+
+![llama deployment app form](../../img/apps_llama_form.png)
