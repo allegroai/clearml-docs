@@ -43,6 +43,8 @@ After starting a llama.cpp Model Deployment instance, you can view the following
   * GPU temperature
 * Console log - The console log shows the app instance's console output: setup progress, status changes, error messages, etc.
 
+![llama deployment dashboard](../../img/apps_llama_dashboard.png)
+
 ## Llama.cpp Model Deployment Instance Configuration
 
 When configuring a new llama.cpp Model Deployment instance, you can fill in the required parameters or reuse the 
@@ -75,3 +77,5 @@ values from the file, which can be modified before launching the app instance
   * Last Action Report Interval (Seconds) - The frequency at which the last activity made by the application is reported. 
   Used to stop the application from entering an idle state when the machine metrics are low but the application is 
   actually still running
+
+![llama deployment app form](../../img/apps_llama_form.png)
