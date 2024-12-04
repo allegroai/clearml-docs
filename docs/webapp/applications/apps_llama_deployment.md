@@ -43,6 +43,8 @@ After starting a llama.cpp Model Deployment instance, you can view the following
   * GPU temperature
 * Console log - The console log shows the app instance's console output: setup progress, status changes, error messages, etc.
 
+![llama deployment dashboard](../../img/apps_llama_dashboard.png)
+
 ## Llama.cpp Model Deployment Instance Configuration
 
 When configuring a new llama.cpp Model Deployment instance, you can fill in the required parameters or reuse the 
