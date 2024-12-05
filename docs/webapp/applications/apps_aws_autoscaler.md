@@ -258,51 +258,61 @@ to an IAM user, and create credentials keys for that user to configure in the au
 1. Insert the following policy into the text box (make sure to replace `<AWS_ACCOUNT_ID>` with your account ID): 
 
    ```json
-   {
-       "Version": "2012-10-17",
-       "Statement": [
-           {
-               "Sid": "CreateTags",
-               "Effect": "Allow",
-               "Action": "ec2:CreateTags",
-               "Resource": [
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:instance/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:dedicated-host/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:elastic-ip/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:reserved-instances/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>>:capacity-reservation-fleet/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>>:volume/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:capacity-reservation/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:fleet/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:spot-instances-request/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:host-reservation/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:launch-template/*",
-                   "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:network-interface/*"
-               ]
-           },
-           {
-               "Sid": "EC2Actions",
-               "Effect": "Allow",
-               "Action": [
-                   "ec2:DescribeInstances",
-                   "ec2:RequestSpotInstances",
-                   "ec2:CancelSpotFleetRequests",
-                   "ec2:DescribeInstanceAttribute",
-                   "ec2:SendSpotInstanceInterruptions",
-                   "ec2:RunInstances",
-                   "ec2:RequestSpotFleet",
-                   "ec2:DescribeSpotInstanceRequests",
-                   "ec2:DescribeInstanceEventNotificationAttributes",
-                   "ec2:GetConsoleOutput",
-                   "ec2:CancelSpotInstanceRequests",
-                   "ec2:DescribeInstanceTypes",
-                   "ec2:DescribeInstanceStatus",
-                   "ec2:TerminateInstances"
-               ],
-               "Resource": "*"
-           }
-       ]
-   }
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "CreateTags",
+                "Effect": "Allow",
+                "Action": "ec2:CreateTags",
+                "Resource": [
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:instance/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:dedicated-host/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:elastic-ip/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:reserved-instances/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>>:capacity-reservation-fleet/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>>:volume/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:capacity-reservation/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:fleet/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:spot-instances-request/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:host-reservation/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:launch-template/*",
+                    "arn:aws:ec2:*:<AWS_ACCOUNT_ID>:network-interface/*"
+                ]
+            },
+            {
+                "Sid": "EC2Actions",
+                "Effect": "Allow",
+                "Action": [
+                    "ec2:DescribeInstances",
+                    "ec2:RequestSpotInstances",
+                    "ec2:CancelSpotFleetRequests",
+                    "ec2:DescribeInstanceAttribute",
+                    "ec2:SendSpotInstanceInterruptions",
+                    "ec2:RunInstances",
+                    "ec2:RequestSpotFleet",
+                    "ec2:DescribeSpotInstanceRequests",
+                    "ec2:DescribeInstanceEventNotificationAttributes",
+                    "ec2:GetConsoleOutput",
+                    "ec2:CancelSpotInstanceRequests",
+                    "ec2:DescribeInstanceTypes",
+                    "ec2:DescribeInstanceStatus",
+                    "ec2:TerminateInstances"
+                ],
+                "Resource": "*"
+            },
+            {
+                "Sid": "AllowUsingMarketplaceAMIAliases",
+                "Effect": "Allow",
+                "Action": [
+                    "ssm:GetParametersByPath",
+                    "ssm:GetParameters",
+                    "ssm:GetParameter"
+                ],
+                "Resource": "arn:aws:ssm:*::parameter/aws/service/marketplace/*"
+            }
+        ]
+    }
    ```
 
 1. Complete creating the policy
