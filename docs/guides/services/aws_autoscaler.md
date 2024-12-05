@@ -17,11 +17,12 @@ Run the ClearML AWS autoscaler in one of these ways:
 * Launch through your [`services` queue](../../clearml_agent/clearml_agent_services_mode.md)
 
 :::note AMIs
-The AWS autoscaler can run with any AMI (e.g. `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b`), 
-provided that AWS supports the configuration specified. Note that AWS frequently updates its AMIs. 
+The AWS autoscaler can make use of any AMI (e.g. `NVIDIA Deep Learning AMI v20.11.0-46a68101-e56b-41cd-8e32-631ac6e5d02b`), 
+available to your AWS account. Note that AWS frequently updates its available AMIs. 
 
-Recent NVIDIA AMIs require an initial login to set up drivers. To handle interactive logins for these AMIs, add the 
-following pre-execution bash script (see [step 5](#step_5)):
+Recent NVIDIA AMIs only install the required drivers on initial user login. To make use of such AMIs, the autoscaler 
+needs to mimic an initial user login. This can be accomplished by adding the following pre-execution bash script 
+(see [step 5](#step_5)):
 
 ```
 apt-get update

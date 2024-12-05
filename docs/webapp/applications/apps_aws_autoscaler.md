@@ -72,8 +72,9 @@ to open the app's instance launch form.
     :::note AMI prerequisites
     The AMI used for the autoscaler must include docker runtime and virtualenv.
     
-    Recent NVIDIA AMIs require an initial login to set up drivers. To handle interactive logins for these AMIs, add the 
-    following script under the `Init script` field:
+    Recent NVIDIA AMIs only install the required drivers on initial user login. To make use of such AMIs, the autoscaler 
+    needs to mimic an initial user login. This can be accomplished by, adding the following script to the `Init script`
+    field:
     
     ```
     apt-get update
