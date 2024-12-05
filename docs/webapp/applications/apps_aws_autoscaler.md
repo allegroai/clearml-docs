@@ -310,6 +310,16 @@ to an IAM user, and create credentials keys for that user to configure in the au
                    "ec2:TerminateInstances"
                ],
                "Resource": "*"
+           },
+           {
+               "Sid": "AllowUsingMarketplaceAMIAliases",
+               "Effect": "Allow",
+               "Action": [
+                   "ssm:GetParametersByPath",
+                   "ssm:GetParameters",
+                   "ssm:GetParameter"
+               ],
+               "Resource": "arn:aws:ssm:*::parameter/aws/service/marketplace/*"
            }
        ]
    }
