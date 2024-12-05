@@ -70,7 +70,17 @@ to open the app's instance launch form.
       to launch this resource in
     * AMI ID - The AWS AMI to launch
     :::note AMI prerequisites
-    The AMI used for the autoscaler must include docker runtime and virtualenv 
+    The AMI used for the autoscaler must include docker runtime and virtualenv.
+    
+    Recent NVIDIA AMIs only install the required drivers on initial user login. To make use of such AMIs, the autoscaler 
+    needs to mimic an initial user login. This can be accomplished by, adding the following script to the `Init script`
+    field:
+    
+    ```
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
+    su -l ubuntu -c '/usr/bin/bash /home/ubuntu/.profile'
+    ```
     :::
     * Max Number of Instances - Maximum number of concurrent running instances of this type allowed
     * Monitored Queue - Queue associated with this instance type. The tasks enqueued to this queue will be executed on 
