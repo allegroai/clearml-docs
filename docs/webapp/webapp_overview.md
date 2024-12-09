@@ -15,6 +15,7 @@ The **ClearML Web UI** is the graphical user interface for the ClearML platform,
 The WebApp's sidebar provides access to the following modules:
 
 * <img src="/docs/latest/icons/ico-homepage.svg" alt="Homepage" className="icon size-md space-sm" />[Dashboard](webapp_home.md) - The dashboard for recent activity and quick access to experiments and projects. 
+
 * <img src="/docs/latest/icons/ico-projects.svg" alt="Projects" className="icon size-md space-sm" />[Projects](webapp_projects_page.md) - The main experimentation page. Access your experiments and models as they are organized into projects. The experiments and models are displayed in tables which let you:
   * Track ongoing experiments and visualize their results 
   * Reproduce previously run experiments 
