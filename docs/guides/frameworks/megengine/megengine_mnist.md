@@ -7,7 +7,7 @@ example demonstrates the integration of ClearML into code that uses [MegEngine](
 and [TensorBoardX](https://github.com/lanpa/tensorboardX). ClearML automatically captures models saved with `megengine`.
 
 The example script does the following:
-* Trains a simple deep neural network on MegEngine's built-in [MNIST](https://megengine.org.cn/doc/stable/en/reference/api/megengine.data.dataset.MNIST.html)
+* Trains a simple deep neural network on MegEngine's built-in [MNIST](https://www.megengine.org.cn/doc/master/en/reference/api/megengine.data.dataset.MNIST.html)
   dataset.
 * Creates a TensorBoardX `SummaryWriter` object to log scalars during training.  
 * Creates a ClearML experiment named `megengine mnist train` in the `examples` project.
