@@ -6,7 +6,7 @@ title: First Steps
 ## Install ClearML
 
 
-First, [sign up for free](https://app.clear.ml)
+First, [sign up for free](https://app.clear.ml).
 
 Install the `clearml` python package:
 ```bash
