@@ -46,7 +46,7 @@ We can change the task’s name by clicking it here, and add a description or ge
 
 First of all, source code is captured. If you’re working in a git repository we’ll save your git information along with any uncommitted changes. If you’re running an unversioned script, `clearml` will save the script instead.
 
-Together with the python packages your coded uses, this’ll allow you to recreate your experiment on any machine.
+Together with the Python packages your code uses, this will allow you to recreate your experiment on any machine.
 
 Similarly, all of the output the code produces will also be captured.
 
