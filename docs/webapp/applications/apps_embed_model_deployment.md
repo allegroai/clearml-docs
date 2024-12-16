@@ -12,9 +12,11 @@ cases. The Embedding Model Deployment application serves your model on a machine
 running, it serves your embedding model through a secure, publicly accessible network endpoint. The app monitors 
 endpoint activity and shuts down if the model remains inactive for a specified maximum idle time.
 
-:::info Task Traffic Router
-The Embedding Model Deployment app relies on the ClearML Traffic Router which implements a secure, authenticated network 
-channel to the model
+:::info AI Application Gateway
+The Embedding Model Deployment app makes use of the ClearML Traffic Router which implements a secure, authenticated 
+network endpoint for the model.
+
+If the ClearML AI application Gateway is not available, the model endpoint might not be accessible.
 :::
 
 After starting an Embedding Model Deployment instance, you can view the following information in its dashboard:
@@ -24,7 +26,9 @@ After starting an Embedding Model Deployment instance, you can view the followin
   * <img src="/docs/latest/icons/ico-embedding-model-idle.svg" alt="Idle instance" className="icon size-md space-sm" /> - App instance is idle
   * <img src="/docs/latest/icons/ico-embedding-model-stopped.svg" alt="Stopped instance" className="icon size-md space-sm" /> - App instance is stopped
 * Idle time - Time elapsed since last activity 
-* Endpoint - The publicly accessible URL of the model endpoint
+* Endpoint - The publicly accessible URL of the model endpoint. Active model endpoints are also available in the 
+  [Model Endpoints](../webapp_model_endpoints.md) table, which allows you to view and compare endpoint details and 
+  monitor status over time
 * API base - The base URL for the model endpoint
 * API key - The authentication key for the model endpoint
 * Test Command - An example command line to test the deployed model

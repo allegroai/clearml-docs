@@ -58,7 +58,7 @@ to open the app's instance launch form.
   * **Base Docker Image** (optional) - Available when `Use docker mode` is selected: Default Docker image in which the 
   ClearML Agent will run. Provide an image stored in a Docker artifactory so instances can automatically fetch it
 * **Compute Resources**
-    * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
+    * Resource Name - Assign a name to the resource type. This name will appear in the autoscaler dashboard
     * EC2 Instance Type - See [Instance Types](https://aws.amazon.com/ec2/instance-types) for full list of types
     * Run in CPU mode - Check box to run with CPU only
     * Use Spot Instance - Select to use a spot instance. Otherwise, a reserved instance is used.
@@ -70,7 +70,17 @@ to open the app's instance launch form.
       to launch this resource in
     * AMI ID - The AWS AMI to launch
     :::note AMI prerequisites
-    The AMI used for the autoscaler must include docker runtime and virtualenv 
+    The AMI used for the autoscaler must include docker runtime and virtualenv.
+    
+    Recent NVIDIA AMIs only install the required drivers on initial user login. To make use of such AMIs, the autoscaler 
+    needs to mimic an initial user login. This can be accomplished by, adding the following script to the `Init script`
+    field:
+    
+    ```
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
+    su -l ubuntu -c '/usr/bin/bash /home/ubuntu/.profile'
+    ```
     :::
     * Max Number of Instances - Maximum number of concurrent running instances of this type allowed
     * Monitored Queue - Queue associated with this instance type. The tasks enqueued to this queue will be executed on 
@@ -88,7 +98,7 @@ to open the app's instance launch form.
       instance. Read more [here](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html) 
     * VPC Subnet ID - The subnet ID For the created instance. If more than one ID is provided, the instance will be started in the first available subnet. For more information, see [What is Amazon VPC?](https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html)
     * \+ Add Item - Define another resource type
-* **IAM Instance Profile** (optional) - Set an IAM instance profile for all instances spun by the Autoscaler 
+* **IAM Instance Profile** (optional) - Set an IAM instance profile for all instances spun by the autoscaler 
     * Arn - Amazon Resource Name specifying the instance profile
     * Name - Name identifying the instance profile
 * **Autoscaler Instance Name** (optional) - Name for the Autoscaler instance. This will appear in the instance list
@@ -119,7 +129,7 @@ The Configuration Vault is available under the ClearML Enterprise plan.
 
 You can utilize the [configuration vault](../settings/webapp_settings_profile.md#configuration-vault) to set the following: 
 * `aws_region`
-* `aws_credentials_key_id` and `aws_secret_access_key` - AWS credentials for the Autoscaler
+* `aws_credentials_key_id` and `aws_secret_access_key` - AWS credentials for the autoscaler
 * `extra_vm_bash_script` - A bash script to execute after launching the EC2 instance. This script will be appended to
 the one set in the `Init script` field of the instance launch form
 * `extra_clearml_conf` - ClearML configuration to use by the ClearML Agent when executing your experiments. This 
@@ -192,7 +202,7 @@ auto_scaler.v1.aws {
 #### Configure Instances Spawned by the Autoscaler
 To configure instances spawned by the autoscaler, do any of the following:
 * Add the configuration in the `auto_scaler.v1.aws.extra_clearml_conf` field of the configuration vault
-* Run the Autoscaler using a [ClearML Service Account](../settings/webapp_settings_users.md#service-accounts). Add the 
+* Run the autoscaler using a [ClearML Service Account](../settings/webapp_settings_users.md#service-accounts). Add the 
 configuration to the service account's configuration vault, and set the autoscaler to run under that account
 in the `Run with Service Account` field
 * Admins can add the configuration to a [ClearML Administrator Vault](../settings/webapp_settings_admin_vaults.md)
@@ -225,7 +235,7 @@ The console's log level will update in the autoscaler's next iteration.
 :::
 
 * Instance log files - Click to access the app instance's logs. This takes you to the app instance task's ARTIFACTS tab, 
-  which lists the app instance's logs. In a log's `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
+  which lists the app instance's logs. In a log's `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" /> 
   to download the complete log. 
 
 
@@ -300,6 +310,16 @@ to an IAM user, and create credentials keys for that user to configure in the au
                    "ec2:TerminateInstances"
                ],
                "Resource": "*"
+           },
+           {
+               "Sid": "AllowUsingMarketplaceAMIAliases",
+               "Effect": "Allow",
+               "Action": [
+                   "ssm:GetParametersByPath",
+                   "ssm:GetParameters",
+                   "ssm:GetParameter"
+               ],
+               "Resource": "arn:aws:ssm:*::parameter/aws/service/marketplace/*"
            }
        ]
    }

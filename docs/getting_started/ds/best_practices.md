@@ -21,7 +21,7 @@ During early stages of model development, while code is still being modified hea
   - **Workstation with a GPU**, usually with a limited amount of memory for small batch-sizes. Use this workstation to train 
     the model and ensure that you choose a model that makes sense, and the training procedure works. Can be used to provide initial models for testing. 
 
-The abovementioned setups might be folded into each other and that's great! If you have a GPU machine for each researcher, that's awesome! 
+These setups can be folded into each other and that's great! If you have a GPU machine for each researcher, that's awesome! 
 The goal of this phase is to get a code, dataset, and environment set up, so you can start digging to find the best model!
 
 - [ClearML SDK](../../clearml_sdk/clearml_sdk.md) should be integrated into your code (check out [Getting Started](ds_first_steps.md)). 

@@ -58,7 +58,7 @@ to open the app's instance launch form.
 * **Base Docker Image** (optional) - Available when `Use docker mode` is selected. Default Docker image in which the ClearML Agent will run. Provide an image stored in a 
   Docker artifactory so VM instances can automatically fetch it
 * **Compute Resources**
-    * Resource Name - Assign a name to the resource type. This name will appear in the Autoscaler dashboard
+    * Resource Name - Assign a name to the resource type. This name will appear in the autoscaler dashboard
     * GCP Machine Type - See list of [machine types](https://cloud.google.com/compute/docs/machine-types)
     * Run in CPU mode - Select to have the autoscaler utilize only CPU VM instances
     * GPU Type - See list of [supported GPUs by instance](https://cloud.google.com/compute/docs/gpus)
@@ -106,7 +106,7 @@ to open the app's instance launch form.
 
 :::important Enterprise Feature
 You can utilize the [configuration vault](../settings/webapp_settings_profile.md#configuration-vault) to configure GCP 
-credentials for the Autoscaler in the following format: 
+credentials for the autoscaler in the following format: 
 
 ```
 auto_scaler.v1 {
@@ -149,7 +149,7 @@ The console's log level will update in the autoscaler's next iteration.
 :::
 
 * Instance log files - Click to access the app instance's logs. This takes you to the app instance task's ARTIFACTS tab, 
-  which lists the app instance's logs. In a log's `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-sm space-sm" /> 
+  which lists the app instance's logs. In a log's `File Path` field, click <img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" /> 
   to download the complete log. 
 
 :::tip EMBEDDING CLEARML VISUALIZATION

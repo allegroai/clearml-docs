@@ -15,9 +15,11 @@ The Gradio launcher monitors the Gradio app activity and shuts down if it is ina
 
 <a id="traffic_router"/>
 
-:::important Task Traffic Router
-The Gradio Launcher relies on the ClearML Traffic Router which facilitates user authentication, and redirects requests 
+:::important AI Application Gateway
+The Gradio Launcher relies on the ClearML Traffic Router which implements user authentication, and redirects requests 
 to the IP/port served by the Gradio app. 
+
+If the ClearML AI application Gateway is not available, the Gradio app might not be accessible.
 :::
 
 Once you start a Gradio launcher instance, you can view the following information in its dashboard:
@@ -29,7 +31,7 @@ Once you start a Gradio launcher instance, you can view the following informatio
   * <img src="/docs/latest/icons/ico-gradio-stopped.svg" alt="Stopped server" className="icon size-md space-sm" /> - App is stopped 
 * Idle time 
 * Gradio App - Externally accessible link to your Gradio app. You can send this link to your colleagues, so they can 
-  access the app. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-sm space-sm" />
+  access the app. Click <img src="/docs/latest/icons/ico-copy-to-clipboard.svg" alt="Copy" className="icon size-md space-sm" />
   to copy link
 * Gradio Git repo - Repository that holds the Gradio app script
 * Live preview of the Gradio app

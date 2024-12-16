@@ -62,7 +62,7 @@ to switch to.
  
 ![Workspace configuration page](../../img/settings_workspace_configuration.png)
 
-### ClearML Credentials
+### ClearML App Credentials
 
 Generate ClearML credentials, made up of an access and secret key pair, and insert them into your [configuration file](../../configs/clearml_conf.md) 
 or Jupyter Notebook to grant the ClearML SDK and the ClearML Agent API access to the server. 
@@ -91,6 +91,20 @@ these credentials cannot be recovered.
 
 **To revoke ClearML credentials:** hover over the desired credentials, and click <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" />
 
+### AI Application Gateway Tokens 
+
+:::important Enterprise Feature
+This feature is available under the ClearML Enterprise plan.
+:::
+
+The AI Application Gateway enables external access to ClearML tasks and applications. The gateway is configured with an 
+endpoint or external address (ingress), accessible from outside ClearML.
+
+Generate tokens providing API access to the AI Application Gateway endpoints:
+
+1. Click **Generate a Token**
+1. Under `Expiration`, enter the number of days the token should remain valid 
+1. Click `Generate`, which creates a token and copies it to your clipboard 
 
 ### Changing Your Workspace Name
 To change the name of your own workspace, click **Edit workspace name**  <img src="/docs/latest/icons/ico-edit.svg" alt="Edit Pencil" className="icon size-md" /> 

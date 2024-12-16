@@ -217,17 +217,18 @@ to open the context menu
 |---|---|---|---|
 | Details | Open the experiment's [info panel](webapp_exp_track_visual.md#info-panel) (keeps the experiments list in view). Can also be accessed by double-clicking an experiment in the experiments table. | Any state |  None  |
 | View Full Screen | View experiment details in [full screen](webapp_exp_track_visual.md#full-screen-details-view). | Any state |  None  |
-| Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Workers and Queues](webapp_workers_queues.md) page. | *Enqueued* |  None  |
+| Manage Queue | If an experiment is *Pending* in a queue, view the utilization of that queue, manage that queue (remove experiments and change the order of experiments), and view information about the worker(s) listening to the queue. See the [Orchestration](webapp_workers_queues.md) page. | *Enqueued* |  None  |
 | View Worker | If an experiment is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* |  None  |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) an experiment and its model with a **ClearML Hosted Service** user in another workspace. |  Any state |  None  |
 | Archive | Move experiment to the project's archive. If it is shared (ClearML Hosted Service only), the experiment becomes private. | Any state |  *Pending* to *Draft*  |
 | Restore |Action available in the archive. Restore an experiment to the active experiments table.| Any State | None |
 | Delete |  Action available in the archive. Delete an experiment, which will also remove all their logs, results, artifacts and debug samples. | Any State | N/A |
-| Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft* | *Pending* |
+| Enqueue | Add an experiment to a queue for a worker or workers (listening to the queue) to execute. | *Draft*, *Aborted* | *Pending* |
 | Dequeue | Remove an experiment from a queue. | *Pending* | *Draft* |
 | Reset  | Delete the log and output from a previous run of an experiment (for example, before rerunning it). | *Completed*, *Aborted*, or *Failed* | *Draft* |
 | Abort | Manually terminate a *Running* experiment. | *Running* | *Aborted* |
 | Abort All Children | Manually terminate all *Running* experiments which have this task as a parent | *Running* or *Aborted* | None for parent experiment, *Aborted* for child experiments |
+| Retry | Enqueue a failed experiment in order to rerun it. Make sure you have resolved the external problem which previously prevented the experiment’s completion. | *Failed* | *Pending* |
 | Publish | Publish an experiment to prevent changes to its tracking data, inputs, and outputs. Published experiments and their models are read-only. *Published* experiments cannot be enqueued, but they can be cloned, and their clones can be edited, tuned, and enqueued. | *Completed*, *Aborted*, or *Failed*.  | *Published* |
 | Add Tag | Tag experiments with color-coded labels to assist you in organizing your work. See [tagging experiments](webapp_exp_track_visual.md#tagging-experiments). | Any state |  None  |
 | Clone | Make an exact, editable copy of an experiment (for example, to reproduce an experiment, but keep the original). | *Draft* | Newly Cloned Experiment is *Draft* |
@@ -289,7 +290,7 @@ Click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size
 **Plots** shows the last reported iteration sample of each metric/variant combination per compared 
 experiment. 
 
-Line, scatter, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
+Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
 single comparative plot. 
 
 ![Merged comparison plots](../img/webapp_compare_view_4.png)

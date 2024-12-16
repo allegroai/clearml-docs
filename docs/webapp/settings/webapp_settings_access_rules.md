@@ -11,7 +11,7 @@ service accounts, and/or user groups have access permissions to the following wo
  
 * [Projects](../../fundamentals/projects.md)
 * [Tasks](../../fundamentals/task.md) 
-* [Models](../../fundamentals/artifacts.md)
+* [Models](../../fundamentals/models.md)
 * [Dataviews](../../hyperdatasets/dataviews.md) 
 * [Datasets](../../hyperdatasets/dataset.md)
 * [Queues](../../fundamentals/agents_and_queues.md#what-is-a-queue) 

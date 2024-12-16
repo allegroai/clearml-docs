@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: ClearML Applications
 ---
 
 :::info Pro Plan Offering
@@ -38,6 +38,7 @@ Applications for deploying user interfaces for models:
 Applications for deploying machine learning models as scalable, secure services:
 * [**Embedding Model Deployment**](apps_embed_model_deployment.md) - Deploy embedding models as networking services over a secure endpoint (available under ClearML Enterprise Plan)
 * [**Model Deployment**](apps_model_deployment.md) - Deploy LLM models as networking services over a secure endpoint (available under ClearML Enterprise Plan)
+* [**llama.cpp**](apps_llama_deployment.md) - Deploy LLM models in GGUF format using [`llama.cpp`](https://github.com/ggerganov/llama.cpp) as networking services over a secure endpoint (available under ClearML Enterprise Plan)
 
 :::info Autoscalers
 Autoscaling ([AWS Autoscaler](apps_aws_autoscaler.md) and [GCP Autoscaler](apps_gcp_autoscaler.md))
@@ -50,6 +51,8 @@ Each application's page is split into two sections:
 * App Instance List - Launch new app instances and view previously launched instances. Click on an instance to view its 
   dashboard. Hover over it to access the [app instance actions](#app-instance-actions).
 * App Instance Dashboard - The main section of the app page: displays the selected app instance's status and results.
+  Use the search bar <img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" /> 
+  to quickly find an app instance by name.
 
 ![App format](../../img/apps_format_overview.png)
 

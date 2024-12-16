@@ -190,6 +190,7 @@ For example:
        pip_cache: "/root/.cache/pip"
        poetry_cache: "/root/.cache/pypoetry"
        vcs_cache: "/root/.clearml/vcs-cache"
+       venvs_cache: "/root/.clearml/venvs-cache"
        venv_build: "/root/.clearml/venvs-builds"
        pip_download: "/root/.clearml/pip-download-cache"
   }
@@ -415,6 +416,10 @@ These settings define which Docker image and arguments should be used unless [ex
     :::note Match rule arguments
     `default_docker.match_rules.arguments` should be formatted as a single string (for example: `"-e VALUE=1 --ipc=host"`),
     unlike  `agent.default_docker.arguments`
+    :::
+    
+    :::note
+    `match_rules` are ignore if `--docker <container>` is passed in the command line. 
     :::
     
     * The rules can be: 
@@ -1043,11 +1048,18 @@ URL to a CA bundle, or set this option to `false` to skip SSL certificate verifi
     
 ---
 
-**`sdk.development.default_pandas_dataframe_extension_name`** (*string*)
-
-* Set the default `extension_name` for pandas `DataFrame` objects 
-* Valid values are: `.csv.gz`, `.parquet`, `.feather`, `.pickle`
-* This value can be overridden by the `extension_name` argument supplied to `Task.upload_artifact()`
+**`sdk.development.artifacts`** (*dict*)
+* Control default behavior when logging task artifacts:
+  * **`sdk.development.artifacts.default_pandas_dataframe_extension_name`** (*str*)
+    * Set the default `extension_name` for pandas `DataFrame` objects 
+    * Valid values are: `.csv.gz`, `.parquet`, `.feather`, `.pickle`
+    * This value can be overridden by the `extension_name` argument supplied to `Task.upload_artifact()`
+  * **`sdk.development.artifacts.auto_pickle`** (*bool*)
+    * If `true` and the artifact is not of a specific type (`pathlib2.Path`, `dict`, `pandas.DataFrame`, `numpy.ndarray`, 
+    `PIL.Image`, url string, `local_file` string), the artifact will be
+    pickled and uploaded as a pickle file artifact (with the `.pkl` file extension).
+    * If `false`, the auto-pickle behavior is disabled in the artifact upload
+    * This value can be overridden by the `auto_pickle` argument supplied to `Task.upload_artifact()` 
 
 ---
     
@@ -1095,8 +1107,8 @@ URL to a CA bundle, or set this option to `false` to skip SSL certificate verifi
 
 * Log specific environment variables. OS environments are listed in the UI, under an experiment's  
   **CONFIGURATION > HYPERPARAMETERS > Environment** section. 
-  Multiple selected variables are supported including the suffix "\*". For example: "AWS\_\*" will log any OS environment 
-  variable starting with "AWS\_". Example: `log_os_environments: ["AWS_*", "CUDA_VERSION"]`
+  Multiple selected variables are supported including the suffix `*`. For example: `"AWS_*"` will log any OS environment 
+  variable starting with `"AWS_"`. Example: `log_os_environments: ["AWS_*", "CUDA_VERSION"]`
         
 * This value can be overwritten with OS environment variable `CLEARML_LOG_ENVIRONMENT=AWS_*,CUDA_VERSION`. 
 
