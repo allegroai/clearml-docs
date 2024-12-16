@@ -170,7 +170,7 @@ If the `secure.conf` file does not exist, create your own in ClearML Server's `/
 an alternate folder you configured), and input the modified configuration
 :::
 
-The default secret for the system's apiserver component can be overridden by setting the following environment variable: 
+You can override the default secret for the system's `apiserver` component by setting the following environment variable: 
 `CLEARML__SECURE__CREDENTIALS__APISERVER__USER_SECRET="my-new-secret"`
 
 :::note
