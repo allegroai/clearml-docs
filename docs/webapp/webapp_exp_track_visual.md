@@ -221,7 +221,7 @@ The **INFO** tab shows extended experiment information:
 This feature is available under the ClearML Enterprise plan.
 :::
 
-The Enterprise Server also displays a detailed history of  task activity: 
+The Enterprise Server also displays a detailed history of task activity: 
 * Task action (e.g. status changes, project move, etc.)
 * Action time
 * Acting user
