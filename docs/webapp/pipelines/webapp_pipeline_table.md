@@ -12,7 +12,7 @@ or comparison view <img src="/docs/latest/icons/ico-charts-view.svg" alt="Compar
 using the buttons on the top left of the page. Use the details view to access a selected run's details, while keeping 
 the run list in view. Details view can also be accessed by double-clicking a specific pipeline run in the table view to 
 open its details view. Use the [comparison view](#comparing-runs) to compare your pipeline run's scalar and plot results. 
-This view compares the scalars/plots  of currently selected pipeline runs. If no runs are selected, The first 100 visible 
+This view compares the scalars/plots of currently selected pipeline runs. If no runs are selected, The first 100 visible 
 runs in the table are compared.
 
 You can archive pipeline runs so the runs table doesn't get too cluttered. Click **OPEN ARCHIVE** on the top of the 

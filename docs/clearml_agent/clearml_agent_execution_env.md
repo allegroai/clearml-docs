@@ -28,8 +28,9 @@ If you are using pyenv to control the environment where you use ClearML Agent, y
 
 ## Docker Mode 
 :::note notes
-* Docker Mode is only supported in linux.
+* Docker Mode is only supported in Linux.
 * Docker Mode requires docker service v19.03 or higher installed.
+* If your machine requires root permissions to run Docker, the ClearML Agent in Docker Mode must also run with root permissions. 
 :::
 
 When executing the ClearML Agent in Docker mode, it will: 
