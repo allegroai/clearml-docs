@@ -32,20 +32,22 @@ table / full screen**.
 The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table.md#experiment-actions)
 can be performed from the table (as well as the menu in the info panel).
 
-![Info panel](../img/webapp_tracking_40.png)
+![Info panel](../img/webapp_tracking_40.png#light-mode-only) 
+![Info panel](../img/webapp_tracking_40_dark.png#dark-mode-only)
 
 Click <img src="/docs/latest/icons/ico-compact-view.svg" alt="Compressed view" className="icon size-md space-sm" /> to 
 hide details in the experiment table, so only the experiment names and statuses are displayed
 
-![Compressed info panel](../img/webapp_tracking_41.png)
+![Compressed info panel](../img/webapp_tracking_41.png#light-mode-only) 
+![Compressed info panel](../img/webapp_tracking_41_dark.png#dark-mode-only)
 
 ### Full Screen Details View
 
 The full screen details view allows for easier viewing and working with experiment tracking and results. The experiments
 table is not visible when the full screen details view is open. Perform experiment actions from the menu.
 
-![Full screen view](../img/webapp_tracking_33.png)
-
+![Full screen view](../img/webapp_tracking_33.png#light-mode-only) 
+![Full screen view](../img/webapp_tracking_33_dark.png#dark-mode-only)
 
 ## Execution 
 An experiment's **EXECUTION** tab of lists the following:
@@ -66,25 +68,29 @@ The Source Code section of an experiment's **EXECUTION** tab includes:
 * Working directory
 * Binary (Python executable)
 
-![Source code section](../img/webapp_exp_source_code.png)
+![Source code section](../img/webapp_exp_source_code.png#light-mode-only) 
+![Source code section](../img/webapp_exp_source_code_dark.png#dark-mode-only)
 
 ### Uncommitted Changes
 
 ClearML displays the git diff of the experiment in the Uncommitted Changes section. 
 
-![Uncommitted changes section](../img/webapp_exp_uncommitted_changes.png)
+![Uncommitted changes section](../img/webapp_exp_uncommitted_changes.png#light-mode-only) 
+![Uncommitted changes section](../img/webapp_exp_uncommitted_changes_dark.png#dark-mode-only)
 
 ### Installed Packages
 
 The Installed Packages section lists the experiment's installed Python packages and their versions.
 
-![Installed packages section](../img/webapp_exp_installed_packages.png)
+![Installed packages section](../img/webapp_exp_installed_packages.png#light-mode-only) 
+![Installed packages section](../img/webapp_exp_installed_packages_dark.png#dark-mode-only)
 
 When a ClearML agent executing an experiment ends up using a different set of python packages than was originally 
 specified, both the original specification (`original pip` or `original conda`), and the packages the agent ended up 
 using to set up an environment (`pip` or `conda`) are available. Select which requirements to view in the dropdown menu.  
 
-![Packages used by agent](../img/webapp_exp_installed_packages_2.png.png)
+![Packages used by agent](../img/webapp_exp_installed_packages_2.png#light-mode-only)
+![Packages used by agent](../img/webapp_exp_installed_packages_2_dark.png#dark-mode-only)
 
 ### Container
 The Container section list the following information:
@@ -103,14 +109,16 @@ clearml-agent daemon --queue <execution_queue_to_pull_from> --docker [optional d
 For more information, see [Docker Mode](../clearml_agent/clearml_agent_execution_env.md#docker-mode).
 :::
 
-![Container section](../img/webapp_exp_container.png)
+![Container section](../img/webapp_exp_container.png#light-mode-only)
+![Container section](../img/webapp_exp_container_dark.png#dark-mode-only)
 
 ### Output
 The Output details include:
 * The output destination used for storing model checkpoints (snapshots) and artifacts (see also, [default_output_uri](../configs/clearml_conf.md#config_default_output_uri)
   in the configuration file, and `output_uri` in [`Task.init`](../references/sdk/task.md#taskinit) parameters).
 
-![Execution details section](../img/webapp_exp_output.png)
+![Execution details section](../img/webapp_exp_output.png#light-mode-only)
+![Execution details section](../img/webapp_exp_output_dark.png#dark-mode-only)
 
 ## Configuration
 
@@ -128,7 +136,8 @@ The **Args** group shows automatically logged argument parser parameters (e.g. `
 Hover over <img src="/docs/latest/icons/ico-description.svg" alt="Description" className="icon size-md space-sm" /> (menu) on a 
 parameter's line, and the type, description, and default value appear, if they were provided.
 
-![Command line arguments configuration group](../img/webapp_tracking_22.png)
+![Command line arguments configuration group](../img/webapp_tracking_22.png#light-mode-only)
+![Command line arguments configuration group](../img/webapp_tracking_22_dark.png#dark-mode-only)
 
 #### Environment Variables
 
@@ -139,7 +148,8 @@ field of the `clearml.conf` file, the **Environment** group displays the listed 
 The `CLEARML_LOG_ENVIRONMENT` variable always overrides the `clearml.conf` file. 
 :::
 
-![Environment variables configuration group](../img/webapp_tracking_23.png)
+![Environment variables configuration group](../img/webapp_tracking_23.png#light-mode-only)
+![Environment variables configuration group](../img/webapp_tracking_23_dark.png#dark-mode-only)
 
 #### Custom Parameter Groups
 
@@ -147,33 +157,37 @@ Custom parameter groups show parameter dictionaries if the parameters were conne
 [`Task.connect()`](../references/sdk/task.md#connect) with a `name` argument provided. `General` is the default section
 if a name is not provided.
 
-![Custom parameters group](../img/webapp_tracking_25.png)
+![Custom parameters group](../img/webapp_tracking_25.png#light-mode-only)
+![Custom parameters group](../img/webapp_tracking_25_dark.png#dark-mode-only)
 
 #### TensorFlow Definitions
 
 The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
-![TF_DEFINE parameter group](../img/webapp_tracking_26.png)
+![TF_DEFINE parameter group](../img/webapp_tracking_26.png#light-mode-only)
+![TF_DEFINE parameter group](../img/webapp_tracking_26_dark.png#dark-mode-only)
 
 ### User Properties
 
 User properties allow to store any descriptive information in a key-value pair format. They are editable in any experiment,
 except experiments whose status is *Published* (read-only).
 
-![User properties section](../img/webapp_tracking_21.png)
+![User properties section](../img/webapp_tracking_21.png#light-mode-only)
+![User properties section](../img/webapp_tracking_21_dark.png#dark-mode-only)
 
 ### Configuration Objects
 
 ClearML tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
 These objects include those that are automatically tracked, and those connected to a Task in code (see [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration)).
 
-![Configuration objects](../img/webapp_tracking_24.png)
+![Configuration objects](../img/webapp_tracking_24.png#light-mode-only)
+![Configuration objects](../img/webapp_tracking_24_dark.png#dark-mode-only)
 
 ClearML supports providing a name for a Task model configuration object (see the `name`
 parameter in [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration)).
 
-![Custom configuration objects](../img/webapp_tracking_28.png)
-
+![Custom configuration objects](../img/webapp_tracking_28.png#light-mode-only)
+![Custom configuration objects](../img/webapp_tracking_28_dark.png#dark-mode-only)
 
 ## Artifacts
 
@@ -191,7 +205,8 @@ to obtain the file path to facilitate local storage access since web application
 * **Remote Files**  (e.g. network-hosted artifacts with `https://`, `s3://`, etc. URIs): Use the download action (<img src="/docs/latest/icons/ico-download-json.svg" alt="Download" className="icon size-md space-sm" />) 
 to retrieve the file.
 
-![Other artifacts section](../img/webapp_tracking_30.png)
+![Other artifacts section](../img/webapp_tracking_30.png#light-mode-only)
+![Other artifacts section](../img/webapp_tracking_30_dark.png#dark-mode-only)
 
 ### Models
 
@@ -202,7 +217,8 @@ The task's input and output models appear in the **ARTIFACTS** tab. Each model e
 
 Input models also display their creating experiment, which on-click navigates you to the experiment's page. 
 
-![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png)
+![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png#light-mode-only)
+![Models in Artifacts tab](../img/webapp_exp_artifacts_01_dark.png#dark-mode-only)
 
 To view more model details, including design, label enumeration, and general information, click the model name
 to navigate to its page in the **MODELS** tab (see [Model Details](webapp_model_viewing.md)). 
@@ -230,7 +246,8 @@ The Enterprise Server also displays a detailed history of task activity:
 
 To download the task history as a CSV file, hover over the log and click <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" />.   
 
-![Task audit log](../img/webapp_info_audit_log.png)
+![Task audit log](../img/webapp_info_audit_log.png#light-mode-only)
+![Task audit log](../img/webapp_info_audit_log_dark.png#dark-mode-only)
 
 :::note Limited persistency
 ClearML maintains a system-wide, large but strict limit for task history items. Once the limit is reached, the oldest entries are purged to make room for fresh entries.
@@ -261,7 +278,8 @@ The **Experiment Details** section lists information describing the experiment:
   * Python version
 * Experiment Progress    
     
-![Info tab](../img/webapp_tracking_31.png)
+![Info tab](../img/webapp_tracking_31.png#light-mode-only)
+![Info tab](../img/webapp_tracking_31_dark.png#dark-mode-only)
 
 ## Experiment Results
 
@@ -276,8 +294,8 @@ tools (e.g. Notion). See [Plot Controls](#plot-controls).
 The complete experiment log containing everything printed to stdout and stderr appears in the **CONSOLE** tab. The full log
 is downloadable. To view the end of the log, click **Jump to end**.
 
-![Console tab](../img/webapp_tracking_32.png)
-
+![Console tab](../img/webapp_tracking_32.png#light-mode-only)
+![Console tab](../img/webapp_tracking_32_dark.png#dark-mode-only)
 
 
 ### Scalars
@@ -300,7 +318,8 @@ to update the graph.
 Single value scalars (see [`Logger.report_single_value`](../references/sdk/logger.md#report_single_value)) are shown in 
 a `Summary` table.
 
-![Single value scalar plot](../img/webapp_single_scalar_plot.png)
+![Single value scalar plot](../img/webapp_single_scalar_plot.png#light-mode-only)
+![Single value scalar plot](../img/webapp_single_scalar_plot_dark.png#dark-mode-only)
 
 Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" alt="Settings gear" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
@@ -309,7 +328,8 @@ are on the left side of the window. The tools include:
 
     <Collapsible type="screenshot" title="View a screenshot">
 
-    ![Plots grouped by metric](../img/webapp_tracking_33.png)
+    ![Plots grouped by metric](../img/webapp_tracking_33.png#light-mode-only)
+    ![Plots grouped by metric](../img/webapp_tracking_33_dark.png#dark-mode-only)
 
     </Collapsible>
       
@@ -317,7 +337,8 @@ are on the left side of the window. The tools include:
 
     <Collapsible type="screenshot" title="View a screenshot">
 
-    ![Plots groups my metric and variant](../img/webapp_tracking_34.png)
+    ![Plots groups my metric and variant](../img/webapp_tracking_34.png#light-mode-only)
+    ![Plots groups my metric and variant](../img/webapp_tracking_34_dark.png#dark-mode-only)
 
     </Collapsible>
 
@@ -350,7 +371,8 @@ shows a table summary of your metrics with a row per metric/variant:
 
 If all the values of a specific metric/variant are the same, the row will display a <img src="/docs/latest/icons/ico-equal-outline.svg" alt="Same values" className="icon size-md space-sm" /> sign.
 
-![Plots tab](../img/webapp_tracking_34a.png)
+![Plots tab](../img/webapp_tracking_34a.png#light-mode-only)
+![Plots tab](../img/webapp_tracking_34a_dark.png#dark-mode-only)
 
 Choose which metrics to view using one of the following out the options:
 * Use the quick filter bar (<img src="/docs/latest/icons/ico-search.svg" alt="Magnifying glass" className="icon size-md space-sm" />) 
@@ -365,7 +387,8 @@ Non-time-series plots appear in **PLOTS**. These include data generated by libra
 explicitly reported using the ClearML Logger. These may include 2D and 3D plots, tables (Pandas and CSV files), and 
 Plotly plots. Individual plots can be shown / hidden or filtered by title.
 
-![Plots tab](../img/webapp_tracking_35.png)
+![Plots tab](../img/webapp_tracking_35.png#light-mode-only)
+![Plots tab](../img/webapp_tracking_35_dark.png#dark-mode-only)
 
 For each metric, the latest reported plot is displayed.
 
@@ -375,7 +398,8 @@ previous/next plot in the current iteration using the <img src="/docs/latest/ico
 buttons (or using the left/right arrow keyboard shortcut).
 
 
-![Plots maximize tab](../img/webapp_tracking_35a.png)
+![Plots maximize tab](../img/webapp_tracking_35a.png#light-mode-only)
+![Plots maximize tab](../img/webapp_tracking_35a_dark.png#dark-mode-only)
 
 #### Plot Controls
 
@@ -422,7 +446,8 @@ libraries and visualization tools, and explicitly reported using the [ClearML Lo
 You can view debug samples by metric in the reported iterations. Filter the samples by metric by selecting a metric from the 
 dropdown menu above the samples. The most recent iteration appears first.
 
-![Debug Samples tab](../img/webapp_tracking_43.png)
+![Debug Samples tab](../img/webapp_tracking_43.png#light-mode-only)
+![Debug Samples tab](../img/webapp_tracking_43_dark.png#dark-mode-only)
 
 For each metric, the latest reported debug sample is displayed.
 
@@ -433,7 +458,8 @@ arrow keyboard shortcut). Go to the previous/next sample in the current iteratio
 buttons (or using the left/right arrow keyboard shortcut).
 
 
-![Debug Samples image viewer](../img/webapp_tracking_44.png)
+![Debug Samples image viewer](../img/webapp_tracking_44.png#light-mode-only)
+![Debug Samples image viewer](../img/webapp_tracking_44_dark.png#dark-mode-only)
 
 ## Tagging Experiments
 

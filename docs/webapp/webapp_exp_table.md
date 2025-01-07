@@ -28,7 +28,8 @@ and choosing one of these options:
 
 The downloaded data consists of the currently displayed table columns.
 
-![Experiment table](../img/webapp_experiment_table.png)
+![Experiment table](../img/webapp_experiment_table.png#light-mode-only)
+![Experiment table](../img/webapp_experiment_table_dark.png#dark-mode-only)
 
 ## Creating Experiments
 
@@ -249,7 +250,8 @@ operations on the selected experiments. Actions can be performed only on the exp
 of experiments that can be affected by each action. The same information can be found in the batch action bar, in a tooltip that
 appears when hovering over an action icon. 
 
-![Experiment table batch operations](../img/webapp_experiment_table_context_menu.png)
+![Experiment table batch operations](../img/webapp_experiment_table_context_menu.png#light-mode-only)
+![Experiment table batch operations](../img/webapp_experiment_table_context_menu_dark.png#dark-mode-only)
 
 ## Selecting Multiple Experiments
 
@@ -274,12 +276,14 @@ In the dropdown menu, select to view **Scalars** or **Plots**.
 
 **Scalars** shows experiment scalar results as time series line graphs. 
 
-![Merged comparison plots](../img/webapp_compare_view_1.png)
+![Merged comparison plots](../img/webapp_compare_view_1.png#light-mode-only)
+![Merged comparison plots](../img/webapp_compare_view_1_dark.png#dark-mode-only)
 
 All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
 represents a reported metric, and each bar in the cluster represents an experiment.
 
-![Single scalar comparison](../img/webapp_compare_view_3.png)
+![Single scalar comparison](../img/webapp_compare_view_3.png#light-mode-only)
+![Single scalar comparison](../img/webapp_compare_view_3_dark.png#dark-mode-only)
 
 Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> to customize which 
 metrics to view.
@@ -293,11 +297,12 @@ experiment.
 Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
 single comparative plot. 
 
-![Merged comparison plots](../img/webapp_compare_view_4.png)
+![Merged comparison plots](../img/webapp_compare_view_4.png#light-mode-only)
+![Merged comparison plots](../img/webapp_compare_view_4_dark.png#dark-mode-only)
 
 Other plot types are displayed separately for each experiment.
 
-![Separate comparison plots](../img/webapp_compare_view_2.png)
+![Separate comparison plots](../img/webapp_compare_view_2_dark.png#dark-mode-only)
 
 ## Creating an Experiment Leaderboard
 
@@ -318,4 +323,4 @@ based on their name by using the search bar.
 The final dashboard can be shared by copying the URL from the address bar, this address will replicate the exact same dashboard on any browser.
 The dashboard can also be bookmarked for later use.
 
-![Experiment table sharing](../img/webapp_exp_table_sharing.png)
+![Experiment table sharing](../img/webapp_exp_table_sharing.png#light-mode-only)
