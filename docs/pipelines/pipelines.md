@@ -85,11 +85,24 @@ the execution of every task in a pipeline. Additionally, you can create customiz
 When you run your pipeline, ClearML collects and stores all the information required to reproduce the run (DAG, 
 configuration, installed packages, uncommitted changes etc.). 
 
-You can rerun the pipeline via the [ClearML Web UI](../webapp/pipelines/webapp_pipeline_table.md). To launch a new run 
-for a pipeline, click **+ NEW RUN** on the top left of the pipeline runs page. This opens a **NEW RUN** modal, where you 
+You can rerun the pipeline programmatically or via the ClearML Web UI: 
+* To programmatically create a new run, use [`PipelineController.clone()`](../references/sdk/automation_controller_pipelinecontroller.md#pipelinecontrollerclone) 
+  which returns a copy of the original pipeline in [*draft*](../fundamentals/task.md#task-states) state, allowing you to 
+  modify any configuration. Run the new pipeline using [`PipelineController.start()`](../references/sdk/automation_controller_pipelinecontroller.md#start).
+  
+  ```python
+  pipeline = PipelineController.get(pipeline_id="<pipeline_ID>")
+  cloned_pipeline = PipelineController.clone(pipeline_controller=pipeline)
+    
+  # tweak pipeline parameters
+  
+  cloned_pipeline.start()
+  ```
+  
+* To launch a new pipeline run in the UI, click **+ NEW RUN** in the [pipeline runs](../webapp/pipelines/webapp_pipeline_table.md) page. This opens a **NEW RUN** modal, where you 
 can set the run's parameters and execution queue.  
 
-![Pipeline params UI](../img/pipelines_new_run.png)
+  ![Pipeline params UI](../img/pipelines_new_run.png)
 
 The new pipeline run will be executed through the execution queue by a ClearML agent. The agent will rebuild 
 the pipeline according to the configuration and DAG that was captured in the original run, and override the original 
