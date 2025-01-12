@@ -28,7 +28,8 @@ and choosing one of these options:
 
 The downloaded data consists of the currently displayed table columns.
 
-![Experiment table](../img/webapp_experiment_table.png)
+![Experiment table](../img/webapp_experiment_table.png#light-mode-only)
+![Experiment table](../img/webapp_experiment_table_dark.png#dark-mode-only)
 
 ## Creating Experiments
 
@@ -159,7 +160,8 @@ all the experiments in the project. The customizations of these two views are sa
 
 ### Adding Metrics and/or Hyperparameters
 
-![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
+![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif#light-mode-only)
+![Experiment table customization gif](../img/gif/webapp_exp_table_cust_dark.gif#dark-mode-only)
 
 Add metrics and/or hyperparameters columns to the experiments table. The metrics and hyperparameters depend upon the
 experiments in the table.
@@ -181,7 +183,8 @@ tooltip that appears. To view all precise values in a column, hover over a float
 
 ### Filtering Columns
 
-![Filtering table gif](../img/gif/filter_screenshots.gif)
+![Filtering table gif](../img/gif/filter_screenshots.gif#light-mode-only)
+![Filtering table gif](../img/gif/filter_screenshots_dark.gif#dark-mode-only)
 
 Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
 on a column, and the relevant filter appears.
@@ -249,7 +252,8 @@ operations on the selected experiments. Actions can be performed only on the exp
 of experiments that can be affected by each action. The same information can be found in the batch action bar, in a tooltip that
 appears when hovering over an action icon. 
 
-![Experiment table batch operations](../img/webapp_experiment_table_context_menu.png)
+![Experiment table batch operations](../img/webapp_experiment_table_context_menu.png#light-mode-only)
+![Experiment table batch operations](../img/webapp_experiment_table_context_menu_dark.png#dark-mode-only)
 
 ## Selecting Multiple Experiments
 
@@ -274,12 +278,14 @@ In the dropdown menu, select to view **Scalars** or **Plots**.
 
 **Scalars** shows experiment scalar results as time series line graphs. 
 
-![Merged comparison plots](../img/webapp_compare_view_1.png)
+![Merged comparison plots](../img/webapp_compare_view_1.png#light-mode-only)
+![Merged comparison plots](../img/webapp_compare_view_1_dark.png#dark-mode-only)
 
 All single value scalars are plotted into a single clustered bar chart under the "Summary" title, where each cluster 
 represents a reported metric, and each bar in the cluster represents an experiment.
 
-![Single scalar comparison](../img/webapp_compare_view_3.png)
+![Single scalar comparison](../img/webapp_compare_view_3.png#light-mode-only)
+![Single scalar comparison](../img/webapp_compare_view_3_dark.png#dark-mode-only)
 
 Click <img src="/docs/latest/icons/ico-settings.svg" alt="Setting Gear" className="icon size-md" /> to customize which 
 metrics to view.
@@ -293,11 +299,13 @@ experiment.
 Line, scatter, box, and bar graphs are compared by overlaying each metric/variant from all compared experiments' into a 
 single comparative plot. 
 
-![Merged comparison plots](../img/webapp_compare_view_4.png)
+![Merged comparison plots](../img/webapp_compare_view_4.png#light-mode-only)
+![Merged comparison plots](../img/webapp_compare_view_4_dark.png#dark-mode-only)
 
 Other plot types are displayed separately for each experiment.
 
-![Separate comparison plots](../img/webapp_compare_view_2.png)
+![Separate comparison plots](../img/webapp_compare_view_2.png#light-mode-only)
+![Separate comparison plots](../img/webapp_compare_view_2_dark.png#dark-mode-only)
 
 ## Creating an Experiment Leaderboard
 
