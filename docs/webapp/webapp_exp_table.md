@@ -2,9 +2,9 @@
 title: The Task Table
 ---
 
-The task table is a [customizable](#customizing-the-tasks-table) list of tasks associated with a project. From the tasks
+The task table is a [customizable](#customizing-the-task-table) list of tasks associated with a project. From the tasks
 table, view task details, and work with tasks (reset, clone, enqueue, create [tracking leaderboards](../guides/ui/building_leader_board.md)
-to monitor experimentation, and more). The tasks table's auto-refresh lets users continually monitor task progress.
+to monitor experimentation, and more). The task table's auto-refresh lets users continually monitor task progress.
 
 View the tasks in table view <img src="/docs/latest/icons/ico-table-view.svg" alt="Table view" className="icon size-md space-sm" />, 
 details view <img src="/docs/latest/icons/ico-split-view.svg" alt="Details view" className="icon size-md space-sm" />, or
@@ -21,7 +21,7 @@ You can archive tasks so the table doesn't get too cluttered. Click **OPEN ARCHI
 table to open the archive and view all archived tasks. From the archive, you can restore 
 tasks to remove them from the archive. You can also permanently delete tasks.
 
-You can download the tasks table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
+You can download the task table as a CSV file by clicking <img src="/docs/latest/icons/ico-download.svg" alt="Download" className="icon size-md space-sm" /> 
 and choosing one of these options:
 * **Download onscreen items** - Download the values for tasks currently visible on screen  
 * **Download all items** - Download the values for all tasks in this project that match the current active filters  
@@ -50,20 +50,20 @@ To create a task through the UI interface:
          * Tag 
          * Branch 
          * Commit ID
-       * Entry Point - The code to run
-         * Working Directory
-         * Script type - Python/Shell 
-         * Binary - The binary executing the script (e.g. python3, bash etc).
-         * Type – How the code is provided
-           * Script - The name of the file to run using the above specified binary
-           * Module - The name of a python module to run (Python only, see [Python module specification](https://docs.python.org/3/using/cmdline.html#cmdoption-m))
-           * Custom code - Directly provide the code to run. Write code, or upload a file:
-             * File name - The script in which your code is stored. Click `Upload` to upload an existing file.
-             * Content - The actual code. Click `Edit` to modify the script’s contents.
+     * Entry Point - The code to run
+       * Working Directory
+       * Script type - Python/Shell 
+       * Binary - The binary executing the script (e.g. python3, bash etc).
+       * Type – How the code is provided
+         * Script - The name of the file to run using the above specified binary
+         * Module - The name of a python module to run (Python only, see [Python module specification](https://docs.python.org/3/using/cmdline.html#cmdoption-m))
+         * Custom code - Directly provide the code to run. Write code, or upload a file:
+           * File name - The script in which your code is stored. Click `Upload` to upload an existing file.
+           * Content - The actual code. Click `Edit` to modify the script’s contents.
        * Add `Task.init` call (Python only) - If selected, a [`Task.init()`](../references/sdk/task.md#taskinit) call is automatically added to 
        your script (Use if if you script does not yet make use of ClearML)
    * **Arguments** (*optional*) - Add [hyperparameter](../fundamentals/hyperparameters.md) values.
-   * **Environment** (optional) - Set up the task’s execution environment
+   * **Environment** (*optional*) - Set up the task’s execution environment
      * Python - Python environment settings
        * Use Poetry - Force Poetry instead of pip package manager. Disables additional python settings.
        * Preinstalled venv - The name of a virtual environment available in the task’s execution environment to use when 
@@ -98,9 +98,9 @@ To create a task through the UI interface:
 Once you have completed the task creation wizard, the task will be saved in your current project (where 
 you clicked `+ New Task`). See what you can do with your task in [Task Actions](#task-actions).
 
-## Tasks Table Columns
+## Task Table Columns
 
-The tasks table default and customizable columns are described in the following table.
+The task table default and customizable columns are described in the following table.
 
 | Column | Description | Type |
 |---|---|---|
@@ -120,7 +120,7 @@ The tasks table default and customizable columns are described in the following 
 
 
 
-## Customizing the Tasks Table
+## Customizing the Task Table
 
 Customize the table using any of the following:
 * Dynamic column order - Drag a column title to a different position.
@@ -135,7 +135,7 @@ Customize the table using any of the following:
 * [Filter columns](#filtering-columns)
 * Sort columns - According to metrics and hyperparameters, type of task, task name, start and last update elapsed time, and last iteration.
 
-Use tasks table customization for various use cases, including:
+Use task table customization for various use cases, including:
 
 * Creating a [leaderboard](#creating-a-task-leaderboard) that will update in real time with task
   performance, which can be shared and stored.
@@ -147,7 +147,7 @@ Changes are persistent (cached in the browser), and represented in the URL so cu
 bookmark and shared with other ClearML users to collaborate.
 
 :::note
-The following tasks-table customizations are saved on a **per-project** basis: 
+The following task-table customizations are saved on a **per-project** basis: 
 * Columns order
 * Column width
 * Active sort order
@@ -164,7 +164,7 @@ all the tasks in the project. The customizations of these two views are saved se
 
 ![Task table customization gif](../img/gif/webapp_exp_table_cust.gif)
 
-Add metrics and/or hyperparameters columns to the tasks table. The metrics and hyperparameters depend upon the
+Add metrics and/or hyperparameters columns to the task table. The metrics and hyperparameters depend upon the
 tasks in the table.
 
 #### To Add Metrics:
@@ -178,7 +178,7 @@ tasks in the table.
   hyperparameter checkboxes.
   
 :::note Float Values Display
-By default, the tasks table displays rounded up float values. Hover over a float to view its precise value in the 
+By default, the task table displays rounded up float values. Hover over a float to view its precise value in the 
 tooltip that appears. To view all precise values in a column, hover over a float and click <img src="/docs/latest/icons/ico-line-expand.svg" alt="Expand" className="icon size-md" />.  
 :::
 
@@ -207,24 +207,24 @@ in the top right corner of the table.
 
 ## Task Actions
 
-The following table describes the actions that can be done from the tasks table, including the [states](../fundamentals/task.md#task-states)
+The following table describes the actions that can be done from the task table, including the [states](../fundamentals/task.md#task-states)
 that allow each operation.  
 
 Access these actions in any of the following ways:
-* In the tasks table, right-click a task or hover over a task and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
+* In the task table, right-click a task or hover over a task and click <img src="/docs/latest/icons/ico-dots-v-menu.svg" alt="Dot menu" className="icon size-md space-sm" />
 to open the context menu
 * In a task info panel, click the menu button <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bar menu" className="icon size-md space-sm" />
 * Through the batch action bar: available at screen bottom when multiple tasks are selected
 
 | Action | Description | States Valid for the Action | State Transition                                |
 |---|---|---|-------------------------------------------------|
-| Details | Open the task's [info panel](webapp_exp_track_visual.md#info-panel) (keeps the tasks list in view). Can also be accessed by double-clicking a task in the tasks table. | Any state | None                                            |
+| Details | Open the task's [info panel](webapp_exp_track_visual.md#info-panel) (keeps the tasks list in view). Can also be accessed by double-clicking a task in the task table. | Any state | None                                            |
 | View Full Screen | View task details in [full screen](webapp_exp_track_visual.md#full-screen-details-view). | Any state | None                                            |
 | Manage Queue | If a task is *Pending* in a queue, view the utilization of that queue, manage that queue (remove tasks and change the order of tasks), and view information about the worker(s) listening to the queue. See the [Orchestration](webapp_workers_queues.md) page. | *Enqueued* | None                                            |
 | View Worker | If a task is *Running*, view resource utilization, worker details, and queues to which a worker is listening. | *Running* | None                                            |
 | Share | For **ClearML Hosted Service** users only, [share](webapp_exp_sharing.md) a task and its model with a **ClearML Hosted Service** user in another workspace. |  Any state | None                                            |
 | Archive | Move task to the project's archive. If it is shared (ClearML Hosted Service only), the task becomes private. | Any state | *Pending* to *Draft*                            |
-| Restore |Action available in the archive. Restore a task to the active tasks table.| Any State | None                                            |
+| Restore |Action available in the archive. Restore a task to the active task table.| Any State | None                                            |
 | Delete |  Action available in the archive. Delete a task, which will also remove all their logs, results, artifacts and debug samples. | Any State | N/A                                             |
 | Enqueue | Add a task to a queue for a worker or workers (listening to the queue) to execute. | *Draft*, *Aborted* | *Pending*                                       |
 | Dequeue | Remove a task from a queue. | *Pending* | *Draft*                                         |
@@ -307,7 +307,7 @@ Other plot types are displayed separately for each task.
 Filter and sort the tasks of any project to create a leaderboard that can be shared and stored. This leaderboard
 updates in real time with task performance and outputs.
 
-Modify the tasks table in the following ways to create a customized leaderboard:
+Modify the task table in the following ways to create a customized leaderboard:
 * Add task configuration ([hyperparameters](#to-add-hyperparameters))
 * Edit and add task [properties](webapp_exp_track_visual.md#user-properties)
 * Add reported [metrics](#to-add-metrics), any time series reported metric can be selected, then select the last reported

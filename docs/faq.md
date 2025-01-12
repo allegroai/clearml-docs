@@ -165,7 +165,7 @@ add a [custom column](webapp/webapp_model_table.md#customizing-the-models-table)
 that metric column. Available custom column options depend upon the models in the table and the metrics that have been
 attached to them (see [Logging Metrics and Plots](clearml_sdk/model_sdk.md#logging-metrics-and-plots)). 
 
-ClearML associates models with the experiments that created them, so you can also add a [custom column](webapp/webapp_exp_table.md#customizing-the-tasks-table) 
+ClearML associates models with the experiments that created them, so you can also add a [custom column](webapp/webapp_exp_table.md#customizing-the-task-table) 
 in an experiments table and sort by that metric column. 
 
 <br/> 
