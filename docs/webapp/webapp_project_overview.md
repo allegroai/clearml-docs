@@ -23,7 +23,8 @@ value to show
 
 <div class="max-w-75">
 
-![Metric Snapshot selection](../img/webapp_metric_snapshot_selection.png)
+![Metric Snapshot selection](../img/webapp_metric_snapshot_selection.png#light-mode-only)
+![Metric Snapshot selection](../img/webapp_metric_snapshot_selection_dark.png#dark-mode-only)
 
 </div>
 

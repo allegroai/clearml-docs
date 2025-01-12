@@ -1,6 +1,6 @@
 ---
 title: Reproducing Experiments
----npm
+---
 
 Reproduce experiments on local or remote machines in one of the following ways:
 * Cloning any experiment - Make an exact copy, while maintaining the original experiment

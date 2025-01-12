@@ -50,7 +50,8 @@ are labeled with <img src="/docs/latest/icons/ico-ghost.svg" alt="Hidden project
 
 <br/>
 
-![Hidden project configuration](../img/settings_hidden_projects.png)
+![Hidden project configuration](../img/settings_hidden_projects.png#light-mode-only)
+![Hidden project configuration](../img/settings_hidden_projects_dark.png#dark-mode-only)
 
 </Collapsible>
 
