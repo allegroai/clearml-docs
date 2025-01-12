@@ -3,7 +3,7 @@ title: vLLM Model Deployment
 ---
 
 :::important Enterprise Feature
-The Model Deployment App is available under the ClearML Enterprise plan.
+The vLLM Model Deployment App is available under the ClearML Enterprise plan.
 :::
 
 The vLLM Model Deployment application enables users to quickly deploy LLM models as networking services over a secure 
