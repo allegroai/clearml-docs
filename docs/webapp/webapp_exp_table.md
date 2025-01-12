@@ -160,7 +160,8 @@ all the experiments in the project. The customizations of these two views are sa
 
 ### Adding Metrics and/or Hyperparameters
 
-![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif)
+![Experiment table customization gif](../img/gif/webapp_exp_table_cust.gif#light-mode-only)
+![Experiment table customization gif](../img/gif/webapp_exp_table_cust_dark.gif#dark-mode-only)
 
 Add metrics and/or hyperparameters columns to the experiments table. The metrics and hyperparameters depend upon the
 experiments in the table.
@@ -182,7 +183,8 @@ tooltip that appears. To view all precise values in a column, hover over a float
 
 ### Filtering Columns
 
-![Filtering table gif](../img/gif/filter_screenshots.gif)
+![Filtering table gif](../img/gif/filter_screenshots.gif#light-mode-only)
+![Filtering table gif](../img/gif/filter_screenshots_dark.gif#dark-mode-only)
 
 Filters can be applied by clicking <img src="/docs/latest/icons/ico-filter-off.svg" alt="Filter" className="icon size-md" /> 
 on a column, and the relevant filter appears.
