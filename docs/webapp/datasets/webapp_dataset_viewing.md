@@ -83,17 +83,17 @@ to view the version's details panel. The panel includes three tabs:
 * **CONTENT** - Table summarizing version contents, including file names, file sizes, and hashes 
 
   ![content](../../img/webapp_dataset_content.png#light-mode-only)
-![content](../../img/webapp_dataset_content_dark.png#dark-mode-only)
+  ![content](../../img/webapp_dataset_content_dark.png#dark-mode-only)
 
 * **PREVIEW** - A preview of the dataset version's contents. 
 
   ![preview](../../img/webapp_dataset_preview.png#light-mode-only)
-![preview](../../img/webapp_dataset_preview_dark.png#dark-mode-only)
+  ![preview](../../img/webapp_dataset_preview_dark.png#dark-mode-only)
 
 * **CONSOLE** - The dataset version's console output
 
   ![console](../../img/webapp_dataset_console.png#light-mode-only)
-![console](../../img/webapp_dataset_console_dark.png#dark-mode-only)
+  ![console](../../img/webapp_dataset_console_dark.png#dark-mode-only)
 
 
 Click <img src="/docs/latest/icons/ico-max-panel.svg" alt="Expand" className="icon size-md space-sm" /> on the content panel header to view the panel in full screen. 

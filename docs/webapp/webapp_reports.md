@@ -62,7 +62,7 @@ object comparison)
 3. Return to your report page and paste the code snippet
 
    ![Reports step 3](../img/reports_step_3.png#light-mode-only)
-![Reports step 3](../img/reports_step_3_dark.png#dark-mode-only)
+   ![Reports step 3](../img/reports_step_3_dark.png#dark-mode-only)
 
 Once embedded in the report, you can return to the resource's original location (e.g. comparison page, experiment/model/app page) 
 by clicking <img src="/docs/latest/icons/ico-resource-return.svg" alt="Return to resource" className="icon size-md" />.

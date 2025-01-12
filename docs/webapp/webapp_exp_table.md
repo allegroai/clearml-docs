@@ -304,6 +304,7 @@ single comparative plot.
 
 Other plot types are displayed separately for each experiment.
 
+![Separate comparison plots](../img/webapp_compare_view_2.png#light-mode-only)
 ![Separate comparison plots](../img/webapp_compare_view_2_dark.png#dark-mode-only)
 
 ## Creating an Experiment Leaderboard
