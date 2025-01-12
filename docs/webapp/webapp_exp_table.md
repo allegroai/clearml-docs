@@ -325,4 +325,4 @@ based on their name by using the search bar.
 The final dashboard can be shared by copying the URL from the address bar, this address will replicate the exact same dashboard on any browser.
 The dashboard can also be bookmarked for later use.
 
-![Experiment table sharing](../img/webapp_exp_table_sharing.png#light-mode-only)
+![Experiment table sharing](../img/webapp_exp_table_sharing.png)
