@@ -653,10 +653,10 @@ Torch Nightly builds are ephemeral and are deleted from time to time.
     * `conda`
     * `poetry`
   
-* If `pip` or `conda` are used, the agent installs the required packages based on the "installed packages" section of the 
-  Task. If the "installed packages" is empty, it will revert to using `requirements.txt` from the repository's root 
-  directory. If `poetry` is selected, and the root repository contains `poetry.lock` or `pyproject.toml`, the "installed 
-  packages" section is ignored, and `poetry` is used. If `poetry` is selected and no lock file is found, it reverts to 
+* If `pip` or `conda` are used, the agent installs the required packages based on the "Python Packages" section of the 
+  Task. If the "Python Packages" section is empty, it will revert to using `requirements.txt` from the repository's root 
+  directory. If `poetry` is selected, and the root repository contains `poetry.lock` or `pyproject.toml`, the "Python 
+  Packages" section is ignored, and `poetry` is used. If `poetry` is selected and no lock file is found, it reverts to 
   `pip` package manager behaviour.
   
 <br/>
@@ -1073,7 +1073,7 @@ URL to a CA bundle, or set this option to `false` to skip SSL certificate verifi
  
 **`sdk.development.detailed_import_report`** (*bool*)
 
-* If `true` (default is `false`), provide a detailed report of all python package imports as comments inside the "Installed packages" section.
+* If `true` (default is `false`), provide a detailed report of all Python package imports as comments inside the "Python Packages" section.
 
 ---
 
