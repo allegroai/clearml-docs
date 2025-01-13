@@ -29,7 +29,7 @@ table / full screen**.
 
 ### Info Panel
 
-The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table.md#experiment-actions)
+The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table.md#task-actions)
 can be performed from the table (as well as the menu in the info panel).
 
 ![Info panel](../img/webapp_tracking_40.png)
