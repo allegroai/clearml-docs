@@ -74,13 +74,13 @@ ClearML displays the git diff of the experiment in the Uncommitted Changes secti
 
 ![Uncommitted changes section](../img/webapp_exp_uncommitted_changes.png)
 
-### Installed Packages
+### Python Packages
 
-The Installed Packages section lists the experiment's installed Python packages and their versions.
+The Python Packages section lists the task's installed Python packages and their versions.
 
-![Installed packages section](../img/webapp_exp_installed_packages.png)
+![Python packages section](../img/webapp_exp_installed_packages.png)
 
-When a ClearML agent executing an experiment ends up using a different set of python packages than was originally 
+When a ClearML agent executing a task ends up using a different set of Python packages than was originally 
 specified, both the original specification (`original pip` or `original conda`), and the packages the agent ended up 
 using to set up an environment (`pip` or `conda`) are available. Select which requirements to view in the dropdown menu.  
 
