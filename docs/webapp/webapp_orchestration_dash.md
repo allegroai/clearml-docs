@@ -92,8 +92,12 @@ Click <img src="/docs/latest/icons/ico-tune.svg" alt="Tune" className="icon size
 The threshold values applied to the dashboard table affect all workspace users who view the page 
 :::
 
+<div class="max-w-50">
+
 ![Threshold modal](../img/webapp_orch_dash_threshold_modal.png#light-mode-only)
 ![Threshold modal](../img/webapp_orch_dash_threshold_modal_dark.png#dark-mode-only)
+
+</div>
 
 Clicking on a resource group opens the group's info panel and replace the **Overview** graph with that resource's usage
 history. 
