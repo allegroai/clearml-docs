@@ -58,7 +58,7 @@ In full-screen mode, the source code and output details are grouped in the **DET
 
 ### Source Code
 
-The Source Code section of an task's **EXECUTION** tab includes:
+The Source Code section of a task's **EXECUTION** tab includes:
 * The task's repository
 * Commit ID
 * Script path
