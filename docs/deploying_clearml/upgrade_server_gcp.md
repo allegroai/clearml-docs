@@ -2,6 +2,16 @@
 title: Google Cloud Platform
 ---
 
+<Collapsible title="Important: Upgrading to v2.x from v1.6.0 or older" type="info">
+
+MongoDB major version was upgraded from `v5.x` to `6.x`. Please note that if your current ClearML Server version is older than 
+`v1.17` (where MongoDB `v5.x` was first used), you'll need to first upgrade to ClearML Server v1.17.
+
+First upgrade to ClearML Server v1.17 following the procedure below and using [this `docker-compose` file](https://github.com/allegroai/clearml-server/blob/2976ce69cc91550a3614996e8a8d8cd799af2efd/upgrade/1_17_to_2_0/docker-compose.yml). Once successfully upgraded, 
+you can proceed to upgrade to v2.x. 
+
+</Collapsible>
+
 **To upgrade ClearML Server Docker deployment:**
 
 1. Shut down the docker containers with the following command:
@@ -22,7 +32,6 @@ title: Google Cloud Platform
        ```
        
 1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md). 
-1. If upgrading from ClearML Server version older than 1.7, you first need to upgrade to ClearML Server v1.17 using [this `docker-compose` file](https://github.com/allegroai/clearml-server/blob/2976ce69cc91550a3614996e8a8d8cd799af2efd/upgrade/1_17_to_2_0/docker-compose.yml).
 1. [Backing up data](clearml_server_gcp.md#backing-up-and-restoring-data-and-configuration) is recommended, and if the configuration folder is 
    not empty, backing up the configuration.
 
