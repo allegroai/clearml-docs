@@ -5,7 +5,7 @@ title: Tracking Tasks and Visualizing Results
 While a task is running, and any time after it finishes, track it and visualize the results in the ClearML Web UI,
 including:
 
-* [Execution details](#execution) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
+* [Execution details](#execution) - Code, the container image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
 * [Info](#info) - Extended task information, such as the start, create, and last update times and dates, user creating the task, and its description.
@@ -87,9 +87,9 @@ using to set up an environment (`pip` or `conda`) are available. Select which re
 
 ### Container
 The Container section list the following information:
-* Image - a pre-configured Docker that ClearML Agent will use to remotely execute this task (see [Building Docker containers](../clearml_agent/clearml_agent_docker.md))
-* Arguments - add Docker arguments
-* Setup shell script - a bash script to be executed inside the Docker before setting up the task's environment
+* Image - a pre-configured container that ClearML Agent will use to remotely execute this task (see [Building Docker containers](../clearml_agent/clearml_agent_docker.md))
+* Arguments - add container arguments
+* Setup shell script - a bash script to be executed inside the container before setting up the task's environment
 
 :::important 
 To [rerun](webapp_exp_tuning.md) a task through the UI in the listed container, the ClearML Agent executing the task must be running in 
