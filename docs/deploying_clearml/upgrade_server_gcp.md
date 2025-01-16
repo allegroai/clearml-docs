@@ -22,6 +22,7 @@ title: Google Cloud Platform
        ```
        
 1. If upgrading from ClearML Server version older than 1.2, you need to migrate your data before upgrading your server. See instructions [here](clearml_server_mongo44_migration.md). 
+1. If upgrading from ClearML Server version older than 1.7, you first need to upgrade to ClearML Server v1.17 using [this `docker-compose` file](https://github.com/allegroai/clearml-server/blob/2976ce69cc91550a3614996e8a8d8cd799af2efd/upgrade/1_17_to_2_0/docker-compose.yml).
 1. [Backing up data](clearml_server_gcp.md#backing-up-and-restoring-data-and-configuration) is recommended, and if the configuration folder is 
    not empty, backing up the configuration.
 
