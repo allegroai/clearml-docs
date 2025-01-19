@@ -831,7 +831,8 @@ This configuration option is experimental, and has not been vigorously tested, s
     The values are:
 
     * `true` - Verify   
-    * `false` - Do not verify. 
+    * `false` - Do not verify.
+    * `path/to/certificate` - The certificate file to use for verification.
 
 :::warning
 Set to False only if required.
