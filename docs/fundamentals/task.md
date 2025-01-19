@@ -53,7 +53,7 @@ The captured [code execution information](../webapp/webapp_exp_track_visual.md#e
 * Python environment
 * [Execution configuration](#execution-configuration) and hyperparameters
 
-The captured [execution output](../webapp/webapp_exp_track_visual.md#experiment-results) includes:
+The captured [execution output](../webapp/webapp_exp_track_visual.md#task-results) includes:
 * [Console output](../webapp/webapp_exp_track_visual.md#console)
 * [Scalars](../webapp/webapp_exp_track_visual.md#scalars)
 * [Plots](../webapp/webapp_exp_track_visual.md#plots)

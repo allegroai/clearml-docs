@@ -233,7 +233,7 @@ to open the context menu
 | Abort All Children | Manually terminate all *Running* tasks which have this task as a parent | *Running* or *Aborted* | None for parent task, *Aborted* for child tasks |
 | Retry | Enqueue a failed task in order to rerun it. Make sure you have resolved the external problem which previously prevented the task’s completion. | *Failed* | *Pending*                                       |
 | Publish | Publish a task to prevent changes to its tracking data, inputs, and outputs. Published tasks and their models are read-only. *Published* tasks cannot be enqueued, but they can be cloned, and their clones can be edited, tuned, and enqueued. | *Completed*, *Aborted*, or *Failed*.  | *Published*                                     |
-| Add Tag | Tag tasks with color-coded labels to assist you in organizing your work. See [tagging tasks](webapp_exp_track_visual.md#tagging-experiments). | Any state | None                                            |
+| Add Tag | Tag tasks with color-coded labels to assist you in organizing your work. See [tagging tasks](webapp_exp_track_visual.md#tagging-tasks). | Any state | None                                            |
 | Clone | Make an exact, editable copy of a task (for example, to reproduce a task, but keep the original). | *Draft* | Newly cloned task is *Draft*              |
 | Move to Project | Move a task to another project. | Any state | None                                            |
 | Compare | Compare selected tasks (see [Comparing Tasks](webapp_exp_comparing.md)) | Any state | None                                            |
