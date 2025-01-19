@@ -2,7 +2,7 @@
 title: Windows
 ---
 
-<Collapsible title="Important: Upgrading to v2.x from v1.6.0 or older" type="info">
+<Collapsible title="Important: Upgrading to v2.x from v1.16.0 or older" type="info">
 
 MongoDB major version was upgraded from `v5.x` to `6.x`. Please note that if your current ClearML Server version is older than 
 `v1.17` (where MongoDB `v5.x` was first used), you'll need to first upgrade to ClearML Server v1.17.
