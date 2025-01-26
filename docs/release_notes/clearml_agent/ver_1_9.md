@@ -32,7 +32,7 @@ those matching these filters to be used when running containers
 
 ### ClearML Agent 1.9.1
 
-**New Features and Improvements**
+**New Feature**
 * Add default pip version support for Python 3.12
 
 ### ClearML Agent 1.9.0
