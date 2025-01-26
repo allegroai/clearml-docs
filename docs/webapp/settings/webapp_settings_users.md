@@ -169,7 +169,7 @@ The user group table lists all the active user groups. Each row includes a group
 1. Click **+ ADD GROUP**
 1. In the dialog, add a group name and description
 1. Add members to the group. When clicking the input box, a list of workspace members appears, from which group members 
-   can be selected. Filter the list by typing part of the username. To remove a member, Hover over a user's row and click 
+   can be selected. Filter the list by typing part of the username. To remove a member, hover over a user's row and click 
    the <img src="/docs/latest/icons/ico-trash.svg" alt="Trash can" className="icon size-md" /> button
 1. Click **SAVE**
 
