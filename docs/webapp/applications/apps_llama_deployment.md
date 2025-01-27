@@ -45,7 +45,7 @@ After starting a llama.cpp Model Deployment instance, you can view the following
 
 ![llama deployment dashboard](../../img/apps_llama_dashboard.png)
 
-## Llama.cpp Model Deployment Instance Configuration
+### Llama.cpp Model Deployment Instance Configuration
 
 When configuring a new llama.cpp Model Deployment instance, you can fill in the required parameters or reuse the 
 configuration of a previously launched instance.
