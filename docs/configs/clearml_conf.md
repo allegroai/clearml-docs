@@ -135,10 +135,10 @@ the same argument is passed in both. If set to `False`, a task's docker argument
 
 ---
 
-**`agent.docker_args_filter`** (*list*)
+**`agent.docker_args_filters`** (*list*)
 
 * Set a whitelist of allowed Docker arguments. Only arguments matching the specified patterns can be used when running
-a task. For example: `docker_args_filters: ["^--env$", "^-e$"]`
+a task. For example: `docker_args_filters: ["^--env$", "^-e$"]`.
 
 
 ---
