@@ -47,7 +47,8 @@ value. Click the point to go to the experiment's details page.
 
 ## Project Description
 
-Every project has a `description` field. The UI provides a Markdown editor to edit this field.
+Every project has a `description` field. The UI provides a Markdown editor to edit this field. For a quick reference for 
+the MarkDown syntax that can be used, see [Markdown Formatting Quick Guide](webapp_reports.md#markdown-formatting-quick-guide).
 
 In the Markdown document, you can write and share reports and add links to ClearML experiments 
 or any network resource such as issue tracker, web repository, etc.
