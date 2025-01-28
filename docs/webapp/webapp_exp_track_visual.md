@@ -1,14 +1,14 @@
 ---
-title: Tracking Experiments and Visualizing Results
+title: Tracking Tasks and Visualizing Results
 ---
 
-While an experiment is running, and any time after it finishes, track it and visualize the results in the ClearML Web UI,
+While a task is running, and any time after it finishes, track it and visualize the results in the ClearML Web UI,
 including:
 
-* [Execution details](#execution) - Code, the base Docker image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
+* [Execution details](#execution) - Code, the container image used for [ClearML Agent](../clearml_agent.md), output destination for artifacts, and the logging level.
 * [Configuration](#configuration) - Hyperparameters, user properties, and configuration objects.
 * [Artifacts](#artifacts) - Input model, output model, model snapshot locations, other artifacts.
-* [Info](#info) - Extended experiment information, such as the experiment start, create, and last update times and dates, user creating the experiment, and its description.
+* [Info](#info) - Extended task information, such as the start, create, and last update times and dates, user creating the task, and its description.
 * [Console](#console) - stdout, stderr, output to the console from libraries, and ClearML explicit reporting.
 * [Scalars](#scalars) - Metric plots.
 * [Plots](#plots) - Other plots and data, for example: Matplotlib, Plotly, and ClearML explicit reporting.
@@ -16,41 +16,40 @@ including:
 
 ## Viewing Modes
 
-The ClearML Web UI provides two viewing modes for experiment details:
+The ClearML Web UI provides two viewing modes for task details:
 
-* The info panel
+* [Info panel](#info-panel)
+* [Full screen details mode](#full-screen-details-view)
 
-* Full screen details mode.
-
-Both modes contain all experiment details. When either view is open, switch to the other mode by clicking <img src="/docs/latest/icons/ico-info-min.svg" alt="Table/Full screen view" className="icon size-md space-sm" />
-(**View in experiments table / full screen**), or clicking <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" /> (**menu**) > **View in experiments
+Both modes contain all task details. When either view is open, switch to the other mode by clicking <img src="/docs/latest/icons/ico-info-min.svg" alt="Table/Full screen view" className="icon size-md space-sm" />
+(**View in task table / full screen**), or clicking <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" /> (**menu**) > **View in tasks
 table / full screen**.
 
 
 ### Info Panel
 
-The info panel keeps the experiment table in view so that [experiment actions](webapp_exp_table.md#experiment-actions)
+The info panel keeps the task table in view so that [task actions](webapp_exp_table.md#task-actions)
 can be performed from the table (as well as the menu in the info panel).
 
 ![Info panel](../img/webapp_tracking_40.png#light-mode-only) 
 ![Info panel](../img/webapp_tracking_40_dark.png#dark-mode-only)
 
 Click <img src="/docs/latest/icons/ico-compact-view.svg" alt="Compressed view" className="icon size-md space-sm" /> to 
-hide details in the experiment table, so only the experiment names and statuses are displayed
+hide details in the task table, so only the task names and statuses are displayed
 
 ![Compressed info panel](../img/webapp_tracking_41.png#light-mode-only) 
 ![Compressed info panel](../img/webapp_tracking_41_dark.png#dark-mode-only)
 
 ### Full Screen Details View
 
-The full screen details view allows for easier viewing and working with experiment tracking and results. The experiments
-table is not visible when the full screen details view is open. Perform experiment actions from the menu.
+The full screen details view allows for easier viewing and working with task tracking and results. The task
+table is not visible when the full screen details view is open. Perform task actions from the menu.
 
 ![Full screen view](../img/webapp_tracking_33.png#light-mode-only) 
 ![Full screen view](../img/webapp_tracking_33_dark.png#dark-mode-only)
 
 ## Execution 
-An experiment's **EXECUTION** tab of lists the following:
+A task's **EXECUTION** tab of lists the following:
 * Source code
 * Uncommitted changes
 * Installed Python packages
@@ -61,8 +60,8 @@ In full-screen mode, the source code and output details are grouped in the **DET
 
 ### Source Code
 
-The Source Code section of an experiment's **EXECUTION** tab includes:
-* The experiment's repository
+The Source Code section of a task's **EXECUTION** tab includes:
+* The task's repository
 * Commit ID
 * Script path
 * Working directory
@@ -73,19 +72,19 @@ The Source Code section of an experiment's **EXECUTION** tab includes:
 
 ### Uncommitted Changes
 
-ClearML displays the git diff of the experiment in the Uncommitted Changes section. 
+ClearML displays the git diff of the task in the Uncommitted Changes section. 
 
 ![Uncommitted changes section](../img/webapp_exp_uncommitted_changes.png#light-mode-only) 
 ![Uncommitted changes section](../img/webapp_exp_uncommitted_changes_dark.png#dark-mode-only)
 
-### Installed Packages
+### Python Packages
 
-The Installed Packages section lists the experiment's installed Python packages and their versions.
+The Python Packages section lists the task's installed Python packages and their versions.
 
-![Installed packages section](../img/webapp_exp_installed_packages.png#light-mode-only) 
-![Installed packages section](../img/webapp_exp_installed_packages_dark.png#dark-mode-only)
+![Python packages section](../img/webapp_exp_installed_packages.png#light-mode-only) 
+![Python packages section](../img/webapp_exp_installed_packages_dark.png#dark-mode-only)
 
-When a ClearML agent executing an experiment ends up using a different set of python packages than was originally 
+When a ClearML agent executing a task ends up using a different set of Python packages than was originally 
 specified, both the original specification (`original pip` or `original conda`), and the packages the agent ended up 
 using to set up an environment (`pip` or `conda`) are available. Select which requirements to view in the dropdown menu.  
 
@@ -94,12 +93,12 @@ using to set up an environment (`pip` or `conda`) are available. Select which re
 
 ### Container
 The Container section list the following information:
-* Image - a pre-configured Docker that ClearML Agent will use to remotely execute this experiment (see [Building Docker containers](../clearml_agent/clearml_agent_docker.md))
-* Arguments - add Docker arguments
-* Setup shell script - a bash script to be executed inside the Docker before setting up the experiment's environment
+* Image - a pre-configured container that ClearML Agent will use to remotely execute this task (see [Building Docker containers](../clearml_agent/clearml_agent_docker.md))
+* Arguments - add container arguments
+* Setup shell script - a bash script to be executed inside the container before setting up the task's environment
 
 :::important 
-To [rerun](webapp_exp_tuning.md) an experiment through the UI in the listed container, the ClearML Agent executing the experiment must be running in 
+To [rerun](webapp_exp_tuning.md) a task through the UI in the listed container, the ClearML Agent executing the task must be running in 
 Docker mode:
 
 ```bash
@@ -127,7 +126,7 @@ All parameters and configuration objects appear in the **CONFIGURATION** tab.
 
 ### Hyperparameters
 
-Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPERPARAMETERS**. Once an experiment 
+Hyperparameters are grouped by their type and appear in **CONFIGURATION** **>** **HYPERPARAMETERS**. Once a task 
 is run and stored in ClearML Server, any of these hyperparameters can be [modified](webapp_exp_tuning.md#modifying-experiments).
 
 #### Command Line Arguments
@@ -169,15 +168,15 @@ The **TF_DEFINE** parameter group shows automatic TensorFlow logging.
 
 ### User Properties
 
-User properties allow to store any descriptive information in a key-value pair format. They are editable in any experiment,
-except experiments whose status is *Published* (read-only).
+User properties allow to store any descriptive information in a key-value pair format. They are editable in any task,
+except *Published* ones (read-only).
 
 ![User properties section](../img/webapp_tracking_21.png#light-mode-only)
 ![User properties section](../img/webapp_tracking_21_dark.png#dark-mode-only)
 
 ### Configuration Objects
 
-ClearML tracks experiment (Task) model configuration objects, which appear in **Configuration Objects** **>** **General**.
+ClearML tracks a task's model configuration objects, which appear in **Configuration Objects** **>** **General**.
 These objects include those that are automatically tracked, and those connected to a Task in code (see [`Task.connect_configuration`](../references/sdk/task.md#connect_configuration)).
 
 ![Configuration objects](../img/webapp_tracking_24.png#light-mode-only)
@@ -215,7 +214,7 @@ The task's input and output models appear in the **ARTIFACTS** tab. Each model e
 * ID
 * Configuration. 
 
-Input models also display their creating experiment, which on-click navigates you to the experiment's page. 
+Input models also display their creating task, which on-click navigates you to the task's page. 
 
 ![Models in Artifacts tab](../img/webapp_exp_artifacts_01.png#light-mode-only)
 ![Models in Artifacts tab](../img/webapp_exp_artifacts_01_dark.png#dark-mode-only)
@@ -226,10 +225,10 @@ to navigate to its page in the **MODELS** tab (see [Model Details](webapp_model_
 
 ## Info
 
-The **INFO** tab shows extended experiment information:
-* [Latest experiment events log](#latest-events-log)
-* [Experiment description](#description)
-* [Experiment details](#experiment-details)
+The **INFO** tab shows extended task information:
+* [Latest task events log](#latest-events-log)
+* [Task description](#description)
+* [Task details](#task-details)
 
 ### Latest Events Log 
 
@@ -254,19 +253,19 @@ ClearML maintains a system-wide, large but strict limit for task history items. 
 :::
 
 ### Description 
-Add descriptive text to the experiment in the **Description** section. To modify the description, hover over the 
+Add descriptive text to the task in the **Description** section. To modify the description, hover over the 
 description box and click **Edit**.
 
-### Experiment Details
-The **Experiment Details** section lists information describing the experiment:
+### Task Details
+The **Task Details** section lists information describing the task:
 
-* The parent experiment
+* The parent task
 * Project name
 * Creation, start, and last update dates and times
-* User who created the experiment
-* Experiment state (status)
-* Whether the experiment is archived
-* Runtime properties - Information about the machine running the experiment, including:
+* User who created the task
+* Task state (status)
+* Whether the task is archived
+* Runtime properties - Information about the machine running the task:
   * Operating system
   * CUDA driver version
   * Number of CPU cores
@@ -276,22 +275,22 @@ The **Experiment Details** section lists information describing the experiment:
   * Host name 
   * Processor
   * Python version
-* Experiment Progress    
+* Task Progress    
     
 ![Info tab](../img/webapp_tracking_31.png#light-mode-only)
 ![Info tab](../img/webapp_tracking_31_dark.png#dark-mode-only)
 
-## Experiment Results
+## Task Results
 
 :::tip Embedding ClearML Visualization
-You can embed experiment plots and debug samples into ClearML [Reports](webapp_reports.md). These visualizations are 
-updated live as the experiment(s) updates. The Enterprise Plan and Hosted Service support embedding resources in external 
+You can embed task plots and debug samples into ClearML [Reports](webapp_reports.md). These visualizations are 
+updated live as the task(s) updates. The Enterprise Plan and Hosted Service support embedding resources in external 
 tools (e.g. Notion). See [Plot Controls](#plot-controls).  
 :::
 
 ### Console
 
-The complete experiment log containing everything printed to stdout and stderr appears in the **CONSOLE** tab. The full log
+The complete task log containing everything printed to stdout and stderr appears in the **CONSOLE** tab. The full log
 is downloadable. To view the end of the log, click **Jump to end**.
 
 ![Console tab](../img/webapp_tracking_32.png#light-mode-only)
@@ -307,7 +306,10 @@ Scalar series can be displayed in [graph view](#graph-view) (default) or in [met
 
 #### Graph View 
 Scalar graph view (<img src="/docs/latest/icons/ico-charts-view.svg" alt="Graph view" className="icon size-md space-sm" />) 
-shows scalar series plotted as a time series line chart. The series are sub-sampled for 
+shows scalar series plotted as a time series line chart. By default, a single plot is shown for each scalar metric, 
+with all variants overlaid within.
+
+The series are sub-sampled for 
 display efficiency. For high resolution, view a series in full screen mode by hovering over the graph and clicking <img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-md space-sm" />.
 
 :::info Full Screen Refresh
@@ -323,28 +325,26 @@ a `Summary` table.
 
 Use the scalar tools to improve analysis of scalar metrics. In the info panel, click <img src="/docs/latest/icons/ico-settings.svg" alt="Settings gear" className="icon size-md space-sm" /> to use the tools. In the full screen details view, the tools
 are on the left side of the window. The tools include:
-* **Group by** - Select one of the following:
-  * **Metric** - All variants for a metric on the same plot
 
-    <Collapsible type="screenshot" title="View a screenshot">
+<a id="group_by"/>
+
+* **Group by** - Select one of the following:
+  * **Metric** - Displays all variants for a metric on the same plot. For example, if you have a "Test" metric with 
+    "loss" and "accuracy" variants, both variants will appear on the same plot that is titled "Test".
 
     ![Plots grouped by metric](../img/webapp_tracking_33.png#light-mode-only)
     ![Plots grouped by metric](../img/webapp_tracking_33_dark.png#dark-mode-only)
-
-    </Collapsible>
-      
-  * **None** - Group by metric and variant (individual metric-variant plots).
-
-    <Collapsible type="screenshot" title="View a screenshot">
+  
+  * **None** -  Displays individual plots for each metric-variant combination, grouped into sections by metric. For 
+    example, a "Test" metric with "loss" and "accuracy" variants will have a separate plot for each variant under the 
+    "Test" group.
 
     ![Plots groups my metric and variant](../img/webapp_tracking_34.png#light-mode-only)
     ![Plots groups my metric and variant](../img/webapp_tracking_34_dark.png#dark-mode-only)
 
-    </Collapsible>
-
 * Horizontal axis - Select the x-axis units:
   * Iterations
-  * Time from start - Time since experiment began
+  * Time from start - Time since task began
   * Wall time - Local clock time
 * Curve smoothing - Choose which smoothing algorithm to use from the dropdown menu: Exponential moving average, Gaussian, 
   or Running Average. Use the slider to configure the smoothing factor or specify a value manually. 
@@ -352,8 +352,14 @@ are on the left side of the window. The tools include:
   plots to display. For example, to display specific plots, click **HIDE ALL**, and then click <img src="/docs/latest/icons/ico-show.svg" alt="Eye Show" className="icon size-md space-sm" /> 
   on each plot you want to view.
 
-To embed scalar plots in your [Reports](webapp_reports.md), hover over a plot and click <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 
-which will copy to clipboard the embed code to put in your Reports. In contrast to static screenshots, embedded resources 
+To embed scalar plots in your [Reports](webapp_reports.md), hover over a plot and click Embed <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" />, 
+which will copy to clipboard the embed code to put in your Reports. To quickly get the embed codes for all plots of a 
+specific metric, click Embed <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" /> 
+on the group section header (available when plots are [grouped by](#group_by) `None`).
+
+![Embed metric group](../img/webapp_tracking_34b.png)
+
+In contrast to static screenshots, embedded resources 
 are retrieved when the report is displayed allowing your reports to show the latest up-to-date data.
 
 See additional [plot controls](#plot-controls) below.
@@ -390,7 +396,10 @@ Plotly plots. Individual plots can be shown / hidden or filtered by title.
 ![Plots tab](../img/webapp_tracking_35.png#light-mode-only)
 ![Plots tab](../img/webapp_tracking_35_dark.png#dark-mode-only)
 
-For each metric, the latest reported plot is displayed.
+Plots are grouped into sections by metric. To quickly get the embed codes for all plots of a specific metric, click Embed <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" /> 
+on the group section header.
+
+For each metric/variant combination, the latest reported plot is displayed.
 
 When viewing a plot in full screen (<img src="/docs/latest/icons/ico-maximize.svg" alt="Maximize plot icon" className="icon size-md space-sm" />), 
 older iterations are available through the iteration slider (or using the up/down arrow keyboard shortcut). Go to the 
@@ -440,7 +449,7 @@ These controls allow you to better analyze the results. Hover over a plot, and t
 
 ### Debug Samples
 
-Experiment outputs such as images, audio, and videos appear in **DEBUG SAMPLES**. These include data generated by 
+Task outputs such as images, audio, and videos appear in **DEBUG SAMPLES**. These include data generated by 
 libraries and visualization tools, and explicitly reported using the [ClearML Logger](../fundamentals/logger.md). 
 
 You can view debug samples by metric in the reported iterations. Filter the samples by metric by selecting a metric from the 
@@ -461,7 +470,7 @@ buttons (or using the left/right arrow keyboard shortcut).
 ![Debug Samples image viewer](../img/webapp_tracking_44.png#light-mode-only)
 ![Debug Samples image viewer](../img/webapp_tracking_44_dark.png#dark-mode-only)
 
-## Tagging Experiments
+## Tagging Tasks
 
 <div class="vid" >
 <iframe style={{position: 'absolute', top: '0', left: '0', bottom: '0', right: '0', width: '100%', height: '100%'}} 
@@ -475,18 +484,18 @@ buttons (or using the left/right arrow keyboard shortcut).
 
 <br/>
 
-Tags are user-defined, color-coded labels that can be added to experiments (and pipelines, datasets, and models), 
-allowing to easily identify and group experiments. Tags can help in organizing, querying, and automating experiments.
-For example, tag experiments by the machine type used to execute them, label versions, team names, or any other
+Tags are user-defined, color-coded labels that can be added to tasks (and pipelines, datasets, and models), 
+allowing to easily identify and group tasks. Tags can help in organizing, querying, and automating tasks.
+For example, tag tasks by the machine type used to execute them, label versions, team names, or any other
 category.
 
-You can use tags to filter your experiments in your experiment table (see [Filtering Columns](webapp_exp_table.md#filtering-columns))
-or when querying experiments in your code (see [Tag Filters](../clearml_sdk/task_sdk.md#tag-filters)). You can trigger 
-experiment execution according to their tags (see [TriggerScheduler](../references/sdk/trigger.md)) or automatically
+You can use tags to filter the tasks in your task table (see [Filtering Columns](webapp_exp_table.md#filtering-columns))
+or when querying tasks in your code (see [Tag Filters](../clearml_sdk/task_sdk.md#tag-filters)). You can trigger 
+task execution according to their tags (see [TriggerScheduler](../references/sdk/trigger.md)) or automatically
 deploy models according to their tags (see [ClearML Serving](../clearml_serving/clearml_serving_tutorial.md#automatic-model-deployment)).
 
 **To add tags:**
-1. Click the experiment **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" /> (menu)
+1. Click the task **>** Hover over the tag area **>** **+ADD TAG** or <img src="/docs/latest/icons/ico-bars-menu.svg" alt="Bars menu" className="icon size-md space-sm" /> (menu)
 1. Do one of the following:
     * Add a new tag - Type the new tag name **>** **(Create New)**.
     * Add an existing tag - Click a tag.
@@ -497,6 +506,6 @@ deploy models according to their tags (see [ClearML Serving](../clearml_serving/
 
 
 
-## Locating the Experiment (Task) ID
+## Locating the Task ID
 
-The task ID appears in the experiment page's header. 
+The task ID appears in the task page's header. 

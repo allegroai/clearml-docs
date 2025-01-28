@@ -2,10 +2,6 @@
 title: Model Endpoints 
 ---
 
-:::important Enterprise Feature
-This feature is available under the ClearML Enterprise plan.
-:::
-
 The Model Endpoints table lists all currently live (active, and being brought up) model endpoints, allowing you to view 
 endpoint details and monitor status over time. Whenever you deploy a model through the [ClearML Deploy UI applications](applications/apps_overview.md#deploy), 
 it will be listed in the table. 
