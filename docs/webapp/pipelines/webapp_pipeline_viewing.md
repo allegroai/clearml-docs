@@ -19,10 +19,46 @@ Each step shows:
 
 While the pipeline is running, the steps' details and colors are updated.
 
+## Run Stages
+Steps that were set into the same stage when created, are grouped into stages in the Run Details panel. 
+
+In stages view, click`Expand Stages` to view the complete pipeline DAG with all steps visible. 
+In the detailed view, click `Collapse Stages` to view the pipeline DAG outline with the same stage steps grouped into a single stage.
+
+![Pipeline structure in stages](../../img/webapp_pipeline_DAG_collapsed.png)
+
+
+
+In the collapsed view, each stage displays:
+
+<div class="max-w-25"> 
+
+![Pipeline stage card](../../img/webapp_pipeline_stage_card.png)
+
+</div>
+
+* Stage name 
+* Number of steps in stage 
+
+Click <img src="/docs/latest/icons/ico-zoom-to-fit.svg" alt="Expand" className="icon size-md space-md" /> to view the 
+steps that comprise the stage. Select a step to view its [Step Info](#run-and-step-info).
+
+Click on a stage to view its **STAGE INFO**:
+
+<div class="max-w-50"> 
+
+![Pipeline stage info](../../img/webapp_pipeline_stage_info.png)
+
+</div> 
+
+* Stage name
+* Step count by status - The number of steps in each status category (e.g. completed, running, pending)
+
+
 ## Run and Step Details
 ### Run and Step Info
 
-On the right side of the pipeline run panel, view the **RUN INFO** which shows: 
+On the pipeline run panel, view the **RUN INFO** which shows: 
 * Run Parameters 
 * Reported Metrics
 * Produced Artifacts 
