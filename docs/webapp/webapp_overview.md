@@ -45,7 +45,7 @@ in the top right corner of the web UI screen to access the following:
     * Manage [server identity providers](settings/webapp_settings_id_providers.md) (available in the ClearML Enterprise plan)
     * Define the [available resources](settings/webapp_settings_resource_configs.md) and the way in which they will be 
     allocated to different workloads (available in the ClearML Enterprise plan)
-    * View [usage and billing](settings/webapp_settings_usage_billing.md) information
+    * View [billing and usage](settings/webapp_settings_usage_billing.md) information
 * **Invite a User** to your workspace (supported in hosted service). Click **Invite a User** > input user's 
 email > click **ADD** > page redirects to the [Users & Groups](settings/webapp_settings_users.md#user-groups) section of 
   the **Settings** page 
