@@ -27,15 +27,15 @@ Steps that were set into the same stage when created, are grouped into stages in
 In stages view, click`Expand Stages` to view the complete pipeline DAG with all steps visible. 
 In the detailed view, click `Collapse Stages` to view the pipeline DAG outline with the same stage steps grouped into a single stage.
 
-![Pipeline structure in stages](../../img/webapp_pipeline_DAG_collapsed.png)
-
-
+![Pipeline structure in stages](../../img/webapp_pipeline_DAG_collapsed.png#light-mode-only)
+![Pipeline structure in stages](../../img/webapp_pipeline_DAG_collapsed_dark.png#dark-mode-only)
 
 In the collapsed view, each stage displays:
 
 <div class="max-w-25"> 
 
-![Pipeline stage card](../../img/webapp_pipeline_stage_card.png)
+![Pipeline stage card](../../img/webapp_pipeline_stage_card.png#light-mode-only)
+![Pipeline stage card](../../img/webapp_pipeline_stage_card_dark.png#dark-mode-only)
 
 </div>
 
@@ -49,7 +49,8 @@ Click on a stage to view its **STAGE INFO**:
 
 <div class="max-w-50"> 
 
-![Pipeline stage info](../../img/webapp_pipeline_stage_info.png)
+![Pipeline stage info](../../img/webapp_pipeline_stage_info.png#light-mode-only)
+![Pipeline stage info](../../img/webapp_pipeline_stage_info_dark.png#dark-mode-only)
 
 </div> 
 
