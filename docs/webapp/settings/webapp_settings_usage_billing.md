@@ -1,8 +1,8 @@
 ---
-title: Usage & Billing
+title: Billing & Usage
 ---
 
-The **USAGE & BILLING** section displays your ClearML workspace usage information including: 
+The **Billing & Usage** section displays your ClearML workspace usage information including: 
 * Number of workspace users
 * Available storage
 * Number of monthly API calls  
@@ -18,7 +18,7 @@ To add users to your workspace, click **INVITE USERS** in the **USERS** section.
 If you use up your free resources, consider upgrading your account! See the [ClearML pricing page](https://clear.ml/pricing/) 
 for additional plans information.
 
-With the ClearML Pro plan, the **USAGE & BILLING** page additionally shows estimated charges for the current billing 
+With the ClearML Pro plan, the **Billing & Usage** page additionally shows estimated charges for the current billing 
 period and provides access to billing information.
 
 ![Billing and Usage pro](../../img/settings_billing_usage.png#light-mode-only)

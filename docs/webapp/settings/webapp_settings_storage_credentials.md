@@ -2,10 +2,6 @@
 title: Storage Credentials 
 ---
 
-:::important Enterprise Feature 
-This feature is available under the ClearML Enterprise plan.
-:::
-
 To enable ClearML to delete task artifacts stored in cloud storage when a task is deleted, configure access credentials for your storage provider:
 * [Google Cloud Storage](#google-cloud-storage)
 * [AWS S3 Storage](#aws-s3-storage)

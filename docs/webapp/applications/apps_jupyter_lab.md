@@ -28,7 +28,7 @@ Once you have launched an app instance, you can view the following information i
 ![Jupyter Lab Dashboard](../../img/apps_jupyter_lab.png#light-mode-only)
 ![Jupyter Lab Dashboard](../../img/apps_jupyter_lab_dark.png#dark-mode-only)
 
-## App Instance Configuration
+## Jupyter Lab Instance Configuration
 When configuring a new Jupyter Lab instance, you can fill in the required parameters or reuse the configuration of 
 a previously launched instance.  
 
