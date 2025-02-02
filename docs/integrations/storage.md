@@ -124,6 +124,16 @@ sdk {
 To force usage of a non-AWS endpoint, port declaration is *always* needed (e.g. `host: "my-minio-host:9000"`), 
 even for standard ports like `433` for HTTPS (e.g. `host: "my-minio-host:433"`).
 
+:::important
+Port specification is mandatory whenever you specify non-AWS S3 endpoints access. Use the following URI 
+format: `s3://<hostname>:<port>/<bucket-name>/path`.
+
+This applies when setting output URIs for tasks (via SDK or UI), registering Hyper-Dataset frames, and all fields where 
+endpoint access is specified. 
+:::
+
+
+##### TLS
 To enable TLS, pass `secure: true`. For example: 
 ```
 sdk {
