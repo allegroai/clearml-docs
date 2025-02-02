@@ -800,7 +800,7 @@ task = Task.init(
 Specify the model storage URI location using the relevant format: 
 * A shared folder: `/mnt/share/folder`
 * S3: `s3://bucket/folder`
-* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket` 
+* Non-AWS S3-like services (such as MinIO): `s3://host_addr:port/bucket`. **Note that port specification is required**. 
 * Google Cloud Storage: `gs://bucket-name/folder`
 * Azure Storage: `azure://<account name>.blob.core.windows.net/path/to/file`
 :::
