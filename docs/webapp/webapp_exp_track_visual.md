@@ -357,7 +357,8 @@ which will copy to clipboard the embed code to put in your Reports. To quickly g
 specific metric, click Embed <img src="/docs/latest/icons/ico-plotly-embed-code.svg" alt="Embed code" className="icon size-md space-sm" /> 
 on the group section header (available when plots are [grouped by](#group_by) `None`).
 
-![Embed metric group](../img/webapp_tracking_34b.png)
+![Embed metric group](../img/webapp_tracking_34b.png#light-mode-only)
+![Embed metric group](../img/webapp_tracking_34b_dark.png#dark-mode-only)
 
 In contrast to static screenshots, embedded resources 
 are retrieved when the report is displayed allowing your reports to show the latest up-to-date data.
