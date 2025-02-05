@@ -22,8 +22,8 @@ Applications for automating and optimizing workflows, and monitoring project per
 * [**Task Scheduler**](apps_task_scheduler.md) - Schedule tasks for one-shot and/or periodic execution at specified times (available under ClearML Enterprise Plan)
 * [**Trigger Manager**](apps_trigger_manager.md) - Define tasks to be run when predefined events occur (available under ClearML Enterprise Plan)
  
-### GPUaaS
-Applications for leveraging GPU-powered remote development environments:
+### AI Dev
+Applications for deploying AI development environments on remote machines:
 * [**SSH Session**](apps_ssh_session.md) - Launch a full development environment on a remote machine with a 
 detached interactive SSH session (available under ClearML Enterprise Plan)
 * [**Jupyter Lab**](apps_jupyter_lab.md) - Launch a Jupyter Lab session on a remote machine (available under ClearML Enterprise Plan)
