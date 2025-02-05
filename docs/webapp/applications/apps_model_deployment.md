@@ -64,14 +64,14 @@ To configure a new app instance, click `Launch New` <img src="/docs/latest/icons
 to open the app's configuration form.
 
 ### Configuration Options
-* Import Configuration - Import an app instance configuration file. This will fill the instance launch form with the 
+* **Import Configuration** - Import an app instance configuration file. This will fill the instance launch form with the 
 values from the file, which can be modified before launching the app instance
-* Project name - ClearML Project Name
-* Task name - Name of ClearML Task for your vLLM Model Deployment app instance
-* Queue - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which the vLLM Model Deployment app 
+* **Project name** - ClearML Project Name
+* **Task name** - Name of ClearML Task for your vLLM Model Deployment app instance
+* **Queue** - The [ClearML Queue](../../fundamentals/agents_and_queues.md#what-is-a-queue) to which the vLLM Model Deployment app 
 instance task will be enqueued (make sure an agent is assigned to that queue)
-* Model - A ClearML Model ID or a HuggingFace model name (e.g. `openai-community/gpt2`)
-* Model Configuration
+* **Model** - A ClearML Model ID or a HuggingFace model name (e.g. `openai-community/gpt2`)
+* **Model Configuration**
   * Trust Remote Code - Select to set Hugging Face [`trust_remote_code`](https://huggingface.co/docs/text-generation-inference/main/en/reference/launcher#trustremotecode) 
   to `true`.
   * Revision - The specific Hugging Face version of the model (i.e. weights) you want to use. You 
@@ -85,7 +85,7 @@ instance task will be enqueued (make sure an agent is assigned to that queue)
   * Tokenizer Mode - Select the tokenizer mode:
     * `auto` - Uses the fast tokenizer if available
     * `slow` - Uses the slow tokenizer.
-* LoRA Configuration 
+* **LoRA Configuration** 
   * Enable LoRA - If checked, enable handling of [LoRA adapters](https://huggingface.co/docs/diffusers/en/training/lora#lora).
   * LoRA Modules - LoRA module configurations in the format `name=path`. Multiple modules can be specified.
   * Max LoRAs - Max number of LoRAs in a single batch. 
@@ -98,7 +98,7 @@ instance task will be enqueued (make sure an agent is assigned to that queue)
     * `float32`    
   * Max CPU LoRAs - Maximum number of LoRAs to store in CPU memory. Must be greater or equal to the 
   `Max Number of Sequences` field in the General section below. Defaults to `Max Number of Sequences`.
-* General
+* **General**
   * Disable Log Stats - Disable logging statistics
   * Enforce Eager - Always use eager-mode PyTorch. If False, a hybrid of eager mode and CUDA graph will be used for 
   maximal performance and flexibility.
@@ -140,8 +140,8 @@ instance task will be enqueued (make sure an agent is assigned to that queue)
   * Max Context Length to Capture - Maximum context length covered by CUDA graphs. When a sequence has context length 
   larger than this, we fall back to eager mode.
   * Max Log Length - Max number of prompt characters or prompt ID numbers being printed in log. Default: unlimited
-* Idle Time Limit (Hours) - Maximum idle time after which the app instance will shut down
-* Export Configuration - Export the app instance configuration as a JSON file, which you can later import to create a 
+* **Idle Time Limit** (Hours) - Maximum idle time after which the app instance will shut down
+* **Export Configuration** - Export the app instance configuration as a JSON file, which you can later import to create a 
 new instance with the same configuration
 
 ![vLLM Model Deployment app form](../../img/apps_model_deployment_form.png)
